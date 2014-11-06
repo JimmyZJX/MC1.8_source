@@ -38,7 +38,7 @@ package net.minecraft.src;
 /*  34: 80 */   protected final abk d = new abk(this);
 /*  35: 87 */   private qv[] S = { new qv(null), new qv(null) };
 /*  36:    */   private int T;
-/*  37: 92 */   private static final List<vl> U = Lists.newArrayList(new vl[] { new vl(ItemList.stick, 0, 1, 3, 10), new vl(Item.fromProtoBlock(BlockList.planks), 0, 1, 3, 10), new vl(Item.fromProtoBlock(BlockList.log), 0, 1, 3, 10), new vl(ItemList.t, 0, 1, 1, 3), new vl(ItemList.p, 0, 1, 1, 5), new vl(ItemList.s, 0, 1, 1, 3), new vl(ItemList.o, 0, 1, 1, 5), new vl(ItemList.e, 0, 2, 3, 5), new vl(ItemList.P, 0, 2, 3, 3), new vl(Item.fromProtoBlock(BlockList.log2), 0, 1, 3, 10) });
+/*  37: 92 */   private static final List<vl> U = Lists.newArrayList(new vl[] { new vl(ItemList.stick, 0, 1, 3, 10), new vl(Item.fromProtoBlock(BlockList.planks), 0, 1, 3, 10), new vl(Item.fromProtoBlock(BlockList.log), 0, 1, 3, 10), new vl(ItemList.t, 0, 1, 1, 3), new vl(ItemList.p, 0, 1, 1, 5), new vl(ItemList.s, 0, 1, 1, 3), new vl(ItemList.o, 0, 1, 1, 5), new vl(ItemList.apple, 0, 2, 3, 5), new vl(ItemList.P, 0, 2, 3, 3), new vl(Item.fromProtoBlock(BlockList.log2), 0, 1, 3, 10) });
 /*  38:    */   
 /*  39:    */   public WorldServer(MinecraftServer paramMinecraftServer, bqy parambqy, WorldInfo parambqo, int paramInt, uw paramuw)
 /*  40:    */   {

@@ -99,7 +99,7 @@ package net.minecraft.src;
 /* 100:    */     }
 /* 101:116 */     if (paramamj.getItem() == ItemList.filledMap)
 /* 102:    */     {
-/* 103:117 */       bqe localbqe = ((amn)paramamj.getItem()).a(paramamj, this.world);
+/* 103:117 */       MapInfo localbqe = ((ItemFilledMap)paramamj.getItem()).a(paramamj, this.world);
 /* 104:118 */       localbqe.icons.remove("frame-" + getID());
 /* 105:    */     }
 /* 106:120 */     paramamj.a((adk)null);

@@ -2,8 +2,8 @@ package net.minecraft.src;
 /*  2:   */ 
 /*  3:   */ public class bqf
 /*  4:   */ {
-/*  5:   */   public final EntityPlayer a;
-			  private final bqe c;
+/*  5:   */   public final EntityPlayer player;
+			  private final MapInfo mapInfo;
 /*  6:32 */   private boolean d = true;
 /*  7:33 */   private int e = 0;
 /*  8:34 */   private int f = 0;
@@ -12,9 +12,9 @@ package net.minecraft.src;
 /* 11:   */   private int i;
 /* 12:   */   public int b;
 /* 13:   */   
-/* 14:   */   public bqf(bqe parambqe, EntityPlayer paramahd)
+/* 14:   */   public bqf(MapInfo parambqe, EntityPlayer paramahd)
 /* 15:   */   {
-/* 16:41 */     this.a = paramahd;c=parambqe;
+/* 16:41 */     this.player = paramahd;mapInfo=parambqe;
 /* 17:   */   }
 /* 18:   */   
 /* 19:   */   public id<ik> a(ItemStack paramamj)
@@ -22,10 +22,10 @@ package net.minecraft.src;
 /* 21:45 */     if (this.d)
 /* 22:   */     {
 /* 23:46 */       this.d = false;
-/* 24:47 */       return new jx(paramamj.i(), this.c.scale, this.c.icons.values(), this.c.f, this.e, this.f, this.g + 1 - this.e, this.h + 1 - this.f);
+/* 24:47 */       return new jx(paramamj.i(), this.mapInfo.scale, this.mapInfo.icons.values(), this.mapInfo.f, this.e, this.f, this.g + 1 - this.e, this.h + 1 - this.f);
 /* 25:   */     }
 /* 26:48 */     if (this.i++ % 5 == 0) {
-/* 27:49 */       return new jx(paramamj.i(), this.c.scale, this.c.icons.values(), this.c.f, 0, 0, 0, 0);
+/* 27:49 */       return new jx(paramamj.i(), this.mapInfo.scale, this.mapInfo.icons.values(), this.mapInfo.f, 0, 0, 0, 0);
 /* 28:   */     }
 /* 29:52 */     return null;
 /* 30:   */   }

@@ -54,7 +54,7 @@ package net.minecraft.src;
 /*   53: 128 */     this.g = new cen(this, new WorldSettings(0L, paramjw.c(), false, paramjw.b(), paramjw.g()), paramjw.d(), paramjw.e(), this.f.y);
 /*   54: 129 */     this.f.t.av = paramjw.e();
 /*   55: 130 */     this.f.a(this.g);
-/*   56: 131 */     this.f.h.am = paramjw.d();
+/*   56: 131 */     this.f.h.dimension = paramjw.d();
 /*   57: 132 */     this.f.a(new bxd(this));
 /*   58: 133 */     this.f.h.setID(paramjw.a());
 /*   59: 134 */     this.a = paramjw.f();
@@ -654,14 +654,14 @@ package net.minecraft.src;
 /*  653:     */   public void a(kp paramkp)
 /*  654:     */   {
 /*  655: 682 */     ig.a(paramkp, this, this.f);
-/*  656: 683 */     if (paramkp.a() != this.f.h.am)
+/*  656: 683 */     if (paramkp.a() != this.f.h.dimension)
 /*  657:     */     {
 /*  658: 684 */       this.h = false;
 /*  659: 685 */       bsd localbsd = this.g.Z();
 /*  660: 686 */       this.g = new cen(this, new WorldSettings(0L, paramkp.c(), false, this.f.f.getWorldInfo().isHardcore(), paramkp.d()), paramkp.a(), paramkp.b(), this.f.y);
 /*  661: 687 */       this.g.a(localbsd);
 /*  662: 688 */       this.f.a(this.g);
-/*  663: 689 */       this.f.h.am = paramkp.a();
+/*  663: 689 */       this.f.h.dimension = paramkp.a();
 /*  664: 690 */       this.f.a(new bxd(this));
 /*  665:     */     }
 /*  666: 693 */     this.f.a(paramkp.a());
@@ -951,8 +951,8 @@ package net.minecraft.src;
 /*  950:     */   public void a(jx paramjx)
 /*  951:     */   {
 /*  952: 952 */     ig.a(paramjx, this, this.f);
-/*  953: 953 */     bqe localbqe = amn.a(paramjx.a(), this.f.f);
-/*  954: 954 */     paramjx.a(localbqe);
+/*  953: 953 */     MapInfo localbqe = ItemFilledMap.a(paramjx.a(), this.f.f);
+/*  954: 954 */     paramjx.pushInfo(localbqe);
 /*  955: 955 */     this.f.o.k().a(localbqe);
 /*  956:     */   }
 /*  957:     */   

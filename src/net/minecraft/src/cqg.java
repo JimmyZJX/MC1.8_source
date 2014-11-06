@@ -85,7 +85,7 @@ package net.minecraft.src;
 /*  84:105 */       localObject = ItemList.filledMap.a(localadw.getItemStack(), paramadk.world);
 /*  85:106 */       cjm.glTranslatef(0.0F, 0.0F, -1.0F);
 /*  86:107 */       if (localObject != null) {
-/*  87:108 */         this.e.o.k().a((bqe)localObject, true);
+/*  87:108 */         this.e.o.k().a((MapInfo)localObject, true);
 /*  88:    */       }
 /*  89:    */     }
 /*  90:    */     else

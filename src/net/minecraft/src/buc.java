@@ -13,17 +13,17 @@ package net.minecraft.src;
 /* 12:27 */     this.b = paramcug;
 /* 13:   */   }
 /* 14:   */   
-/* 15:   */   public void a(bqe parambqe)
+/* 15:   */   public void a(MapInfo parambqe)
 /* 16:   */   {
 /* 17:31 */     MapRenderer.a(b(parambqe));
 /* 18:   */   }
 /* 19:   */   
-/* 20:   */   public void a(bqe parambqe, boolean paramBoolean)
+/* 20:   */   public void a(MapInfo parambqe, boolean paramBoolean)
 /* 21:   */   {
 /* 22:35 */     MapRenderer.a(b(parambqe), paramBoolean);
 /* 23:   */   }
 /* 24:   */   
-/* 25:   */   private MapRenderer b(bqe parambqe)
+/* 25:   */   private MapRenderer b(MapInfo parambqe)
 /* 26:   */   {
 /* 27:39 */     MapRenderer localbue = (MapRenderer)this.c.get(parambqe.a);
 /* 28:41 */     if (localbue == null)

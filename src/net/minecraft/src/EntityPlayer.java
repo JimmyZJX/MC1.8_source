@@ -462,7 +462,7 @@ package net.minecraft.src;
 /*  461: 561 */     b(this.xPos, this.yPos, this.zPos);
 /*  462: 562 */     this.yVelocity = 0.1000000014901161D;
 /*  463: 564 */     if (getName().equals("Notch")) {
-/*  464: 565 */       a(new ItemStack(ItemList.e, 1), true, false);
+/*  464: 565 */       a(new ItemStack(ItemList.apple, 1), true, false);
 /*  465:     */     }
 /*  466: 567 */     if (!this.world.getGameRules().getBoolean("keepInventory")) {
 /*  467: 568 */       this.bg.n();

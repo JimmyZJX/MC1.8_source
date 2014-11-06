@@ -792,7 +792,7 @@ package net.minecraft.src;
 /*  791:     */ 
 /*  792:     */ 
 /*  793:     */ 
-/*  794: 800 */     a(new ItemStack(ItemList.ao, 1, 0), new Object[] { "###", "#X#", "###", Character.valueOf('#'), ItemList.k, Character.valueOf('X'), ItemList.e });
+/*  794: 800 */     a(new ItemStack(ItemList.ao, 1, 0), new Object[] { "###", "#X#", "###", Character.valueOf('#'), ItemList.k, Character.valueOf('X'), ItemList.apple });
 /*  795:     */     
 /*  796:     */ 
 /*  797:     */ 
@@ -801,7 +801,7 @@ package net.minecraft.src;
 /*  800:     */ 
 /*  801:     */ 
 /*  802:     */ 
-/*  803: 809 */     a(new ItemStack(ItemList.ao, 1, 1), new Object[] { "###", "#X#", "###", Character.valueOf('#'), BlockList.R, Character.valueOf('X'), ItemList.e });
+/*  803: 809 */     a(new ItemStack(ItemList.ao, 1, 1), new Object[] { "###", "#X#", "###", Character.valueOf('#'), BlockList.R, Character.valueOf('X'), ItemList.apple });
 /*  804:     */     
 /*  805:     */ 
 /*  806:     */ 
@@ -891,7 +891,7 @@ package net.minecraft.src;
 /*  890:     */ 
 /*  891:     */ 
 /*  892:     */ 
-/*  893: 899 */     a(new ItemStack(ItemList.bV, 1), new Object[] { "###", "#X#", "###", Character.valueOf('#'), ItemList.aK, Character.valueOf('X'), ItemList.aQ });
+/*  893: 899 */     a(new ItemStack(ItemList.map, 1), new Object[] { "###", "#X#", "###", Character.valueOf('#'), ItemList.aK, Character.valueOf('X'), ItemList.aQ });
 /*  894:     */     
 /*  895:     */ 
 /*  896:     */ 

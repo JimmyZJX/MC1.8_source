@@ -67,7 +67,7 @@ package net.minecraft.src;
 /*  62: 89 */     localry.a(localGameProfile1);
 /*  63:    */     
 /*  64: 91 */     NBTTagCompound localfn = a(paramqw);
-/*  65: 92 */     paramqw.a(this.j.a(paramqw.am));
+/*  65: 92 */     paramqw.a(this.j.a(paramqw.dimension));
 /*  66: 93 */     paramqw.c.a((WorldServer)paramqw.world);
 /*  67:    */     
 /*  68: 95 */     String str2 = "local";
@@ -76,7 +76,7 @@ package net.minecraft.src;
 /*  71:    */     }
 /*  72:101 */     h.info(paramqw.getName() + "[" + str2 + "] logged in with entity id " + paramqw.getID() + " at (" + paramqw.xPos + ", " + paramqw.yPos + ", " + paramqw.zPos + ")");
 /*  73:    */     
-/*  74:103 */     WorldServer localqt = this.j.a(paramqw.am);
+/*  74:103 */     WorldServer localqt = this.j.a(paramqw.dimension);
 /*  75:104 */     WorldInfo localbqo = localqt.getWorldInfo();
 /*  76:    */     
 /*  77:106 */     BlockPosition localdt = localqt.getWorldSpawn();
@@ -210,7 +210,7 @@ package net.minecraft.src;
 /* 205:265 */     a(new kh(kj.a, new qw[] { paramqw }));
 /* 206:    */     
 /* 207:    */ 
-/* 208:268 */     WorldServer localqt = this.j.a(paramqw.am);
+/* 208:268 */     WorldServer localqt = this.j.a(paramqw.dimension);
 /* 209:    */     
 /* 210:    */ 
 /* 211:    */ 
@@ -313,29 +313,29 @@ package net.minecraft.src;
 /* 307:368 */     paramqw.u().s().b(paramqw);
 /* 308:369 */     paramqw.u().t().c(paramqw);
 /* 309:370 */     this.e.remove(paramqw);
-/* 310:371 */     this.j.a(paramqw.am).removeEntity(paramqw);
+/* 310:371 */     this.j.a(paramqw.dimension).removeEntity(paramqw);
 /* 311:    */     
 /* 312:373 */     BlockPosition localdt1 = paramqw.cg();
 /* 313:374 */     boolean bool = paramqw.ch();
 /* 314:    */     
-/* 315:376 */     paramqw.am = paramInt;
+/* 315:376 */     paramqw.dimension = paramInt;
 /* 316:    */     Object localObject;
 /* 317:380 */     if (this.j.W()) {
-/* 318:381 */       localObject = new qk(this.j.a(paramqw.am));
+/* 318:381 */       localObject = new qk(this.j.a(paramqw.dimension));
 /* 319:    */     } else {
-/* 320:383 */       localObject = new qx(this.j.a(paramqw.am));
+/* 320:383 */       localObject = new qx(this.j.a(paramqw.dimension));
 /* 321:    */     }
-/* 322:386 */     qw localqw = new qw(this.j, this.j.a(paramqw.am), paramqw.cc(), (qx)localObject);
+/* 322:386 */     qw localqw = new qw(this.j, this.j.a(paramqw.dimension), paramqw.cc(), (qx)localObject);
 /* 323:387 */     localqw.a = paramqw.a;
 /* 324:388 */     localqw.a(paramqw, paramBoolean);
 /* 325:389 */     localqw.setID(paramqw.getID());
 /* 326:390 */     localqw.o(paramqw);
 /* 327:    */     
-/* 328:392 */     WorldServer localqt = this.j.a(paramqw.am);
+/* 328:392 */     WorldServer localqt = this.j.a(paramqw.dimension);
 /* 329:393 */     a(localqw, paramqw, localqt);
 /* 330:395 */     if (localdt1 != null)
 /* 331:    */     {
-/* 332:396 */       BlockPosition localdt2 = EntityPlayer.a(this.j.a(paramqw.am), localdt1, bool);
+/* 332:396 */       BlockPosition localdt2 = EntityPlayer.a(this.j.a(paramqw.dimension), localdt1, bool);
 /* 333:397 */       if (localdt2 != null)
 /* 334:    */       {
 /* 335:398 */         localqw.setPositionAndAngles(localdt2.getX() + 0.5F, localdt2.getY() + 0.1F, localdt2.getZ() + 0.5F, 0.0F, 0.0F);
@@ -350,7 +350,7 @@ package net.minecraft.src;
 /* 344:408 */     while ((!localqt.getCollidingAABBs(localqw, localqw.getAABB()).isEmpty()) && (localqw.yPos < 256.0D)) {
 /* 345:409 */       localqw.b(localqw.xPos, localqw.yPos + 1.0D, localqw.zPos);
 /* 346:    */     }
-/* 347:412 */     localqw.a.a(new kp(localqw.am, localqw.world.getDifficulty(), localqw.world.getWorldInfo().u(), localqw.c.b()));
+/* 347:412 */     localqw.a.a(new kp(localqw.dimension, localqw.world.getDifficulty(), localqw.world.getWorldInfo().u(), localqw.c.b()));
 /* 348:413 */     BlockPosition localdt2 = localqt.getWorldSpawn();
 /* 349:414 */     localqw.a.a(localqw.xPos, localqw.yPos, localqw.zPos, localqw.yaw, localqw.pitch);
 /* 350:415 */     localqw.a.a(new lh(localdt2));
@@ -369,13 +369,13 @@ package net.minecraft.src;
 /* 363:    */   
 /* 364:    */   public void a(qw paramqw, int paramInt)
 /* 365:    */   {
-/* 366:430 */     int i1 = paramqw.am;
-/* 367:431 */     WorldServer localqt1 = this.j.a(paramqw.am);
-/* 368:432 */     paramqw.am = paramInt;
+/* 366:430 */     int i1 = paramqw.dimension;
+/* 367:431 */     WorldServer localqt1 = this.j.a(paramqw.dimension);
+/* 368:432 */     paramqw.dimension = paramInt;
 /* 369:    */     
-/* 370:434 */     WorldServer localqt2 = this.j.a(paramqw.am);
+/* 370:434 */     WorldServer localqt2 = this.j.a(paramqw.dimension);
 /* 371:    */     
-/* 372:436 */     paramqw.a.a(new kp(paramqw.am, paramqw.world.getDifficulty(), paramqw.world.getWorldInfo().u(), paramqw.c.b()));
+/* 372:436 */     paramqw.a.a(new kp(paramqw.dimension, paramqw.world.getDifficulty(), paramqw.world.getWorldInfo().u(), paramqw.c.b()));
 /* 373:    */     
 /* 374:438 */     localqt1.removeEntity(paramqw);
 /* 375:439 */     paramqw.isDead = false;
@@ -400,7 +400,7 @@ package net.minecraft.src;
 /* 394:458 */     float f1 = paramwv.yaw;
 /* 395:    */     
 /* 396:460 */     paramqt1.profiler.a("moving");
-/* 397:461 */     if (paramwv.am == -1)
+/* 397:461 */     if (paramwv.dimension == -1)
 /* 398:    */     {
 /* 399:463 */       d1 = MathUtils.clamp(d1 / d3, paramqt2.af().b() + 16.0D, paramqt2.af().d() - 16.0D);
 /* 400:464 */       d2 = MathUtils.clamp(d2 / d3, paramqt2.af().c() + 16.0D, paramqt2.af().e() - 16.0D);
@@ -409,7 +409,7 @@ package net.minecraft.src;
 /* 403:467 */         paramqt1.a(paramwv, false);
 /* 404:    */       }
 /* 405:    */     }
-/* 406:469 */     else if (paramwv.am == 0)
+/* 406:469 */     else if (paramwv.dimension == 0)
 /* 407:    */     {
 /* 408:471 */       d1 = MathUtils.clamp(d1 * d3, paramqt2.af().b() + 16.0D, paramqt2.af().d() - 16.0D);
 /* 409:472 */       d2 = MathUtils.clamp(d2 * d3, paramqt2.af().c() + 16.0D, paramqt2.af().e() - 16.0D);
@@ -475,7 +475,7 @@ package net.minecraft.src;
 /* 469:532 */     for (int i1 = 0; i1 < this.e.size(); i1++)
 /* 470:    */     {
 /* 471:533 */       qw localqw = (qw)this.e.get(i1);
-/* 472:534 */       if (localqw.am == paramInt) {
+/* 472:534 */       if (localqw.dimension == paramInt) {
 /* 473:535 */         localqw.a.a(paramid);
 /* 474:    */       }
 /* 475:    */     }
@@ -596,7 +596,7 @@ package net.minecraft.src;
 /* 590:    */     {
 /* 591:635 */       qw localqw = this.e.get(i1);
 /* 592:636 */       if (localqw != paramahd) {
-/* 593:639 */         if (localqw.am == paramInt)
+/* 593:639 */         if (localqw.dimension == paramInt)
 /* 594:    */         {
 /* 595:642 */           double d1 = paramDouble1 - localqw.xPos;
 /* 596:643 */           double d2 = paramDouble2 - localqw.yPos;

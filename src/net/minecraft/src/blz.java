@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*    5:     */ public class blz
 /*    6:     */   extends bmk
 /*    7:     */ {
-/*    8:1142 */   private static final List a = Lists.newArrayList(new vl[] { new vl(ItemList.book, 0, 1, 3, 20), new vl(ItemList.aK, 0, 2, 7, 20), new vl(ItemList.bV, 0, 1, 1, 1), new vl(ItemList.aQ, 0, 1, 1, 1) });
+/*    8:1142 */   private static final List a = Lists.newArrayList(new vl[] { new vl(ItemList.book, 0, 1, 3, 20), new vl(ItemList.aK, 0, 2, 7, 20), new vl(ItemList.map, 0, 1, 1, 1), new vl(ItemList.aQ, 0, 1, 1, 1) });
 /*    9:     */   private boolean b;
 /*   10:     */   
 /*   11:     */   public blz() {}

@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*  8:   */   
 /*  9:   */   public Item e()
 /* 10:   */   {
-/* 11:58 */     return ItemList.e;
+/* 11:58 */     return ItemList.apple;
 /* 12:   */   }
 /* 13:   */ }
 

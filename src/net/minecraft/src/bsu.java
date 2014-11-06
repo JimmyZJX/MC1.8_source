@@ -1856,7 +1856,7 @@ package net.minecraft.src;
 /* 1855:2012 */     cio localcio = this.h;
 /* 1856:2013 */     this.h = this.c.a(this.f, this.h == null ? new tz() : this.h.x());
 /* 1857:2014 */     this.h.H().a(localcio.H().c());
-/* 1858:2015 */     this.h.am = paramInt;
+/* 1858:2015 */     this.h.dimension = paramInt;
 /* 1859:2016 */     this.Z = this.h;
 /* 1860:2017 */     this.h.prepareForSpawn();
 /* 1861:2018 */     this.h.f(str);

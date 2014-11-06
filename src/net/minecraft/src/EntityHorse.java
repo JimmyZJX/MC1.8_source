@@ -748,7 +748,7 @@ package net.minecraft.src;
 /*  749: 824 */           f = 20.0F;
 /*  750: 825 */           k = 180;
 /*  751:     */         }
-/*  752: 826 */         else if (localamj.getItem() == ItemList.e)
+/*  752: 826 */         else if (localamj.getItem() == ItemList.apple)
 /*  753:     */         {
 /*  754: 827 */           f = 3.0F;
 /*  755: 828 */           k = 60;

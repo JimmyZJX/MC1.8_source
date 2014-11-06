@@ -2,13 +2,13 @@ package net.minecraft.src;
 /*   2:    */ 
 /*   3:    */ class MapRenderer
 /*   4:    */ {
-/*   5:    */   private final bqe b;
+/*   5:    */   private final MapInfo b;
 /*   6:    */   private final ctp c;
 /*   7:    */   private final oa d;
 /*   8:    */   private final int[] e;
 				private final buc a;
 /*   9:    */   
-/*  10:    */   private MapRenderer(buc parambuc, bqe parambqe)
+/*  10:    */   private MapRenderer(buc parambuc, MapInfo parambqe)
 /*  11:    */   {
 				  a=parambuc;
 /*  12: 63 */     this.b = parambqe;
@@ -90,7 +90,7 @@ package net.minecraft.src;
 /*  88:    */   }
 				static void a(MapRenderer arg0) {arg0.a();}
 				static void a(MapRenderer arg0, boolean arg1) {arg0.a(arg1);}
-				MapRenderer(buc arg0, bqe arg1, bud arg2) {this(arg0,arg1);}
+				MapRenderer(buc arg0, MapInfo arg1, bud arg2) {this(arg0,arg1);}
 				static oa b(MapRenderer arg0) {return arg0.d;}
 /*  89:    */ }
 

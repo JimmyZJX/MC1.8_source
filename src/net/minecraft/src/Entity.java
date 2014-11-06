@@ -75,7 +75,7 @@ package net.minecraft.src;
 /*   74:     */   public int aj;
 /*   75:     */   protected boolean ak;
 /*   76:     */   protected int al;
-/*   77:     */   public int am;
+/*   77:     */   public int dimension;
 /*   78:     */   protected int an;
 /*   79:     */   private boolean ar;
 /*   80: 130 */   protected UUID uuid = MathUtils.a(this.random);
@@ -101,7 +101,7 @@ package net.minecraft.src;
 /*  100: 146 */     this.world = world;
 /*  101: 147 */     b(0.0D, 0.0D, 0.0D);
 /*  102: 149 */     if (world != null) {
-/*  103: 150 */       this.am = world.t.q();
+/*  103: 150 */       this.dimension = world.t.q();
 /*  104:     */     }
 /*  105: 153 */     this.ac = new xv(this);
 /*  106: 154 */     this.ac.a(0, Byte.valueOf((byte)0));
@@ -1137,7 +1137,7 @@ package net.minecraft.src;
 /* 1136:1158 */       tag.setShort("Fire", (short)this.i);
 /* 1137:1159 */       tag.setShort("Air", (short)aA());
 /* 1138:1160 */       tag.setBoolean("OnGround", this.C);
-/* 1139:1161 */       tag.setInt("Dimension", this.am);
+/* 1139:1161 */       tag.setInt("Dimension", this.dimension);
 /* 1140:1162 */       tag.setBoolean("Invulnerable", this.ar);
 /* 1141:1163 */       tag.setInt("PortalCooldown", this.aj);
 /* 1142:     */       
@@ -1201,7 +1201,7 @@ package net.minecraft.src;
 /* 1200:1221 */       this.i = paramfn.e("Fire");
 /* 1201:1222 */       h(paramfn.e("Air"));
 /* 1202:1223 */       this.C = paramfn.getBoolean("OnGround");
-/* 1203:1224 */       this.am = paramfn.getInteger("Dimension");
+/* 1203:1224 */       this.dimension = paramfn.getInteger("Dimension");
 /* 1204:1225 */       this.ar = paramfn.getBoolean("Invulnerable");
 /* 1205:1226 */       this.aj = paramfn.getInteger("PortalCooldown");
 /* 1206:1228 */       if ((paramfn.hasKey("UUIDMost", 4)) && (paramfn.hasKey("UUIDLeast", 4))) {
@@ -1725,14 +1725,14 @@ package net.minecraft.src;
 /* 1724:1722 */     this.world.profiler.a("changeDimension");
 /* 1725:     */     
 /* 1726:1724 */     MinecraftServer localMinecraftServer = MinecraftServer.M();
-/* 1727:1725 */     int i1 = this.am;
+/* 1727:1725 */     int i1 = this.dimension;
 /* 1728:1726 */     WorldServer localqt1 = localMinecraftServer.a(i1);
 /* 1729:1727 */     WorldServer localqt2 = localMinecraftServer.a(paramInt);
-/* 1730:1728 */     this.am = paramInt;
+/* 1730:1728 */     this.dimension = paramInt;
 /* 1731:1730 */     if ((i1 == 1) && (paramInt == 1))
 /* 1732:     */     {
 /* 1733:1731 */       localqt2 = localMinecraftServer.a(0);
-/* 1734:1732 */       this.am = 0;
+/* 1734:1732 */       this.dimension = 0;
 /* 1735:     */     }
 /* 1736:1735 */     this.world.setEntityDead(this);
 /* 1737:1736 */     this.isDead = false;

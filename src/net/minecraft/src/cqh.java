@@ -751,7 +751,7 @@ package net.minecraft.src;
 /*  750:     */     
 /*  751: 780 */     a(ItemList.c, "iron_axe");
 /*  752: 781 */     a(ItemList.d, "flint_and_steel");
-/*  753: 782 */     a(ItemList.e, "apple");
+/*  753: 782 */     a(ItemList.apple, "apple");
 /*  754: 783 */     a(ItemList.f, 0, "bow");
 /*  755: 784 */     a(ItemList.f, 1, "bow_pulling_0");
 /*  756: 785 */     a(ItemList.f, 2, "bow_pulling_1");
@@ -956,7 +956,7 @@ package net.minecraft.src;
 /*  955:     */     
 /*  956: 985 */     a(ItemList.bT, "baked_potato");
 /*  957: 986 */     a(ItemList.bU, "poisonous_potato");
-/*  958: 987 */     a(ItemList.bV, "map");
+/*  958: 987 */     a(ItemList.map, "map");
 /*  959: 988 */     a(ItemList.bW, "golden_carrot");
 /*  960: 989 */     a(ItemList.bX, 0, "skull_skeleton");
 /*  961: 990 */     a(ItemList.bX, 1, "skull_wither");

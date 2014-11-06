@@ -387,7 +387,7 @@ package net.minecraft.src;
 /* 386:    */   
 /* 387:    */   public void c(int paramInt)
 /* 388:    */   {
-/* 389:410 */     if ((this.am == 1) && (paramInt == 1))
+/* 389:410 */     if ((this.dimension == 1) && (paramInt == 1))
 /* 390:    */     {
 /* 391:411 */       b(AchievementList.D);
 /* 392:412 */       this.world.setEntityDead(this);
@@ -396,7 +396,7 @@ package net.minecraft.src;
 /* 395:    */     }
 /* 396:    */     else
 /* 397:    */     {
-/* 398:416 */       if ((this.am == 0) && (paramInt == 1))
+/* 398:416 */       if ((this.dimension == 0) && (paramInt == 1))
 /* 399:    */       {
 /* 400:417 */         b(AchievementList.C);
 /* 401:418 */         BlockPosition localdt = this.b.a(paramInt).m();

@@ -12,7 +12,7 @@ package net.minecraft.src;
 /* 11:15 */     ItemStack localamj = new ItemStack(ItemList.filledMap, 1, paramaqu.b("map"));
 /* 12:   */     
 /* 13:17 */     String str = "map_" + localamj.i();
-/* 14:18 */     bqe localbqe = new bqe(str);
+/* 14:18 */     MapInfo localbqe = new MapInfo(str);
 /* 15:19 */     paramaqu.a(str, localbqe);
 /* 16:   */     
 /* 17:21 */     localbqe.scale = 0;

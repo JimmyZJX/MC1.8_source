@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*   5:    */   implements id<ik>
 /*   6:    */ {
 /*   7:    */   private int a;
-/*   8:    */   private byte b;
+/*   8:    */   private byte scale;
 /*   9:    */   private MapIcon[] icons;
 /*  10:    */   private int d;
 /*  11:    */   private int e;
@@ -18,7 +18,7 @@ package net.minecraft.src;
 /*  18:    */   public jx(int paramInt1, byte paramByte, Collection<MapIcon> paramCollection, byte[] paramArrayOfByte, int paramInt2, int paramInt3, int paramInt4, int paramInt5)
 /*  19:    */   {
 /*  20: 29 */     this.a = paramInt1;
-/*  21: 30 */     this.b = paramByte;
+/*  21: 30 */     this.scale = paramByte;
 /*  22: 31 */     this.icons = paramCollection.toArray(new MapIcon[paramCollection.size()]);
 /*  23: 32 */     this.d = paramInt2;
 /*  24: 33 */     this.e = paramInt3;
@@ -36,7 +36,7 @@ package net.minecraft.src;
 /*  36:    */   public void fromBuffer(ByteBufWrapper buffer)
 /*  37:    */   {
 /*  38: 47 */     this.a = buffer.e();
-/*  39: 48 */     this.b = buffer.readByte();
+/*  39: 48 */     this.scale = buffer.readByte();
 /*  40: 49 */     this.icons = new MapIcon[buffer.e()];
 /*  41: 50 */     for (int i = 0; i < this.icons.length; i++)
 /*  42:    */     {
@@ -56,7 +56,7 @@ package net.minecraft.src;
 /*  56:    */   public void toBuffer(ByteBufWrapper paramhd)
 /*  57:    */   {
 /*  58: 65 */     paramhd.b(this.a);
-/*  59: 66 */     paramhd.writeByte(this.b);
+/*  59: 66 */     paramhd.writeByte(this.scale);
 /*  60: 67 */     paramhd.b(this.icons.length);
 /*  61: 68 */     for (MapIcon localbqd : this.icons)
 /*  62:    */     {
@@ -84,9 +84,9 @@ package net.minecraft.src;
 /*  84: 88 */     return this.a;
 /*  85:    */   }
 /*  86:    */   
-/*  87:    */   public void a(bqe parambqe)
+/*  87:    */   public void pushInfo(MapInfo parambqe)
 /*  88:    */   {
-/*  89: 92 */     parambqe.scale = this.b;
+/*  89: 92 */     parambqe.scale = this.scale;
 /*  90: 93 */     parambqe.icons.clear();
 /*  91: 94 */     for (int i = 0; i < this.icons.length; i++)
 /*  92:    */     {

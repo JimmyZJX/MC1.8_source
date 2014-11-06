@@ -101,7 +101,7 @@ package net.minecraft.src;
 /*   96:     */   public void a(mg parammg)
 /*   97:     */   {
 /*   98: 148 */     ig.a(parammg, this, this.b.u());
-/*   99: 149 */     WorldServer localqt = this.d.a(this.b.am);
+/*   99: 149 */     WorldServer localqt = this.d.a(this.b.dimension);
 /*  100:     */     
 /*  101: 151 */     this.h = true;
 /*  102: 153 */     if (this.b.i) {
@@ -319,7 +319,7 @@ package net.minecraft.src;
 /*  314:     */   public void a(ml paramml)
 /*  315:     */   {
 /*  316: 375 */     ig.a(paramml, this, this.b.u());
-/*  317: 376 */     WorldServer localqt = this.d.a(this.b.am);
+/*  317: 376 */     WorldServer localqt = this.d.a(this.b.dimension);
 /*  318: 377 */     BlockPosition localdt = paramml.a();
 /*  319: 378 */     this.b.z();
 /*  320: 380 */     switch (rn.a[paramml.c().ordinal()])
@@ -380,7 +380,7 @@ package net.minecraft.src;
 /*  375:     */   public void a(mx parammx)
 /*  376:     */   {
 /*  377: 436 */     ig.a(parammx, this, this.b.u());
-/*  378: 437 */     WorldServer localqt = this.d.a(this.b.am);
+/*  378: 437 */     WorldServer localqt = this.d.a(this.b.dimension);
 /*  379: 438 */     ItemStack localamj = this.b.bg.h();
 /*  380: 439 */     int i1 = 0;
 /*  381: 440 */     BlockPosition localdt = parammx.a();
@@ -457,8 +457,8 @@ package net.minecraft.src;
 /*  452: 509 */           WorldServer localqt2 = this.b.u();
 /*  453: 510 */           WorldServer localqt1 = (WorldServer)localwv.world;
 /*  454:     */           
-/*  455: 512 */           this.b.am = localwv.am;
-/*  456: 513 */           a(new kp(this.b.am, localqt2.getDifficulty(), localqt2.getWorldInfo().u(), this.b.c.b()));
+/*  455: 512 */           this.b.dimension = localwv.dimension;
+/*  456: 513 */           a(new kp(this.b.dimension, localqt2.getDifficulty(), localqt2.getWorldInfo().u(), this.b.c.b()));
 /*  457:     */           
 /*  458: 515 */           localqt2.removeEntity(this.b);
 /*  459: 516 */           this.b.isDead = false;
@@ -639,7 +639,7 @@ package net.minecraft.src;
 /*  634:     */   public void a(md parammd)
 /*  635:     */   {
 /*  636: 704 */     ig.a(parammd, this, this.b.u());
-/*  637: 705 */     WorldServer localqt = this.d.a(this.b.am);
+/*  637: 705 */     WorldServer localqt = this.d.a(this.b.dimension);
 /*  638: 706 */     Entity localwv = parammd.a(localqt);
 /*  639: 707 */     this.b.z();
 /*  640: 709 */     if (localwv != null)
@@ -838,7 +838,7 @@ package net.minecraft.src;
 /*  833:     */   {
 /*  834: 880 */     ig.a(parammu, this, this.b.u());
 /*  835: 881 */     this.b.z();
-/*  836: 882 */     WorldServer localqt = this.d.a(this.b.am);
+/*  836: 882 */     WorldServer localqt = this.d.a(this.b.dimension);
 /*  837: 883 */     BlockPosition localdt = parammu.a();
 /*  838: 884 */     if (localqt.e(localdt))
 /*  839:     */     {

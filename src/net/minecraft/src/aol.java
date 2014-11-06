@@ -17,7 +17,7 @@ package net.minecraft.src;
 /* 16:   */           }
 /* 17:26 */           localObject = localamj;
 /* 18:   */         }
-/* 19:27 */         else if (localamj.getItem() == ItemList.bV)
+/* 19:27 */         else if (localamj.getItem() == ItemList.map)
 /* 20:   */         {
 /* 21:28 */           i++;
 /* 22:   */         }
@@ -45,7 +45,7 @@ package net.minecraft.src;
 /* 44:   */           }
 /* 45:53 */           localObject = localamj2;
 /* 46:   */         }
-/* 47:54 */         else if (localamj2.getItem() == ItemList.bV)
+/* 47:54 */         else if (localamj2.getItem() == ItemList.map)
 /* 48:   */         {
 /* 49:55 */           i++;
 /* 50:   */         }

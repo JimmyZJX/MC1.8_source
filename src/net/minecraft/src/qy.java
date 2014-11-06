@@ -86,8 +86,8 @@ package net.minecraft.src;
 /*  85:    */     {
 /*  86:103 */       adk localadk = (adk)this.a;
 /*  87:104 */       ItemStack localamj = localadk.getItem();
-/*  88:    */       bqe localbqe;
-/*  89:106 */       if ((localamj != null) && ((localamj.getItem() instanceof amn)))
+/*  88:    */       MapInfo localbqe;
+/*  89:106 */       if ((localamj != null) && ((localamj.getItem() instanceof ItemFilledMap)))
 /*  90:    */       {
 /*  91:107 */         localbqe = ItemList.filledMap.a(localamj, this.a.world);
 /*  92:108 */         for (EntityPlayer localahd : paramList)

@@ -693,7 +693,7 @@ package net.minecraft.src;
 /* 691:753 */     a(355, "bed", new ajt().setStackLimit(1).setID("bed"));
 /* 692:754 */     a(356, "repeater", new ajv(BlockList.bb).setID("diode").setTabToDisplayOn(CreativeTabs.tabRedstone));
 /* 693:755 */     a(357, "cookie", new all(2, 0.1F, false).setID("cookie"));
-/* 694:756 */     a(358, "filled_map", new amn().setID("map"));
+/* 694:756 */     a(358, "filled_map", new ItemFilledMap().setID("map"));
 /* 695:757 */     a(359, "shears", new and().setID("shears"));
 /* 696:758 */     a(360, "melon", new all(2, 0.3F, false).setID("melon"));
 /* 697:759 */     a(361, "pumpkin_seeds", new anc(BlockList.bl, BlockList.ak).setID("seeds_pumpkin"));

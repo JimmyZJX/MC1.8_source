@@ -46,7 +46,7 @@ package net.minecraft.src;
 /*  45:    */   protected void a(World paramaqu, BlockPosition paramdt, Block parambec, int paramInt)
 /*  46:    */   {
 /*  47: 69 */     if ((parambec.getProperty(P) == EnumWoodVariant.OAK) && (paramaqu.rng.nextInt(paramInt) == 0)) {
-/*  48: 70 */       a(paramaqu, paramdt, new ItemStack(ItemList.e, 1, 0));
+/*  48: 70 */       a(paramaqu, paramdt, new ItemStack(ItemList.apple, 1, 0));
 /*  49:    */     }
 /*  50:    */   }
 /*  51:    */   

@@ -163,7 +163,7 @@ package net.minecraft.src;
 /* 162:360 */     localciv.addVertexWithUV(-7.0D, -7.0D, 0.0D, 0.0D, 0.0D);
 /* 163:361 */     localckx.draw();
 /* 164:    */     
-/* 165:363 */     bqe localbqe = ItemList.filledMap.a(this.d, this.c.f);
+/* 165:363 */     MapInfo localbqe = ItemList.filledMap.a(this.d, this.c.f);
 /* 166:364 */     if (localbqe != null) {
 /* 167:365 */       this.c.o.k().a(localbqe, false);
 /* 168:    */     }

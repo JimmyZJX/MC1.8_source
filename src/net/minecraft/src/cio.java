@@ -34,7 +34,7 @@ package net.minecraft.src;
 /*  34: 75 */     this.a = paramcee;
 /*  35: 76 */     this.bH = paramtz;
 /*  36: 77 */     this.c = parambsu;
-/*  37: 78 */     this.am = 0;
+/*  37: 78 */     this.dimension = 0;
 /*  38:    */   }
 /*  39:    */   
 /*  40:    */   public boolean a(wh paramwh, float paramFloat)
