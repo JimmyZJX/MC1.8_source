@@ -24,7 +24,7 @@ package net.minecraft.src;
 /*  22:    */   {
 /*  23: 75 */     for (int i = 0; i < 16384; i++)
 /*  24:    */     {
-/*  25: 76 */       int j = this.b.f[i] & 0xFF;
+/*  25: 76 */       int j = this.b.content[i] & 0xFF;
 /*  26: 77 */       if (j / 4 == 0) {
 /*  27: 78 */         this.e[i] = ((i + i / 128 & 0x1) * 8 + 16 << 24);
 /*  28:    */       } else {

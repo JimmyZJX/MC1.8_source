@@ -11,7 +11,7 @@ package net.minecraft.src;
 /*  10:    */   public int zCenter;
 /*  11:    */   public byte dimension;
 /*  12:    */   public byte scale;
-/*  13: 74 */   public byte[] f = new byte[16384];
+/*  13: 74 */   public byte[] content = new byte[16384];
 /*  14: 75 */   public List<bqf> g = Lists.newArrayList();
 /*  15: 76 */   private Map<EntityPlayer,bqf> i = Maps.newHashMap();
 /*  16: 77 */   public Map<String,MapIcon> icons = Maps.newLinkedHashMap();
@@ -44,12 +44,12 @@ package net.minecraft.src;
 /*  43:102 */     int k = tag.e("height");
 /*  44:103 */     if ((j == 128) && (k == 128))
 /*  45:    */     {
-/*  46:104 */       this.f = tag.k("colors");
+/*  46:104 */       this.content = tag.k("colors");
 /*  47:    */     }
 /*  48:    */     else
 /*  49:    */     {
 /*  50:106 */       byte[] arrayOfByte = tag.k("colors");
-/*  51:107 */       this.f = new byte[16384];
+/*  51:107 */       this.content = new byte[16384];
 /*  52:108 */       int m = (128 - j) / 2;
 /*  53:109 */       int n = (128 - k) / 2;
 /*  54:110 */       for (int i1 = 0; i1 < k; i1++)
@@ -60,7 +60,7 @@ package net.minecraft.src;
 /*  59:    */           {
 /*  60:116 */             int i4 = i3 + m;
 /*  61:117 */             if ((i4 >= 0) || (i4 < 128)) {
-/*  62:120 */               this.f[(i4 + i2 * 128)] = arrayOfByte[(i3 + i1 * j)];
+/*  62:120 */               this.content[(i4 + i2 * 128)] = arrayOfByte[(i3 + i1 * j)];
 /*  63:    */             }
 /*  64:    */           }
 /*  65:    */         }
@@ -76,7 +76,7 @@ package net.minecraft.src;
 /*  75:131 */     tag.setByte("scale", this.scale);
 /*  76:132 */     tag.setShort("width", (short)128);
 /*  77:133 */     tag.setShort("height", (short)128);
-/*  78:134 */     tag.setByteArray("colors", this.f);
+/*  78:134 */     tag.setByteArray("colors", this.content);
 /*  79:    */   }
 /*  80:    */   
 /*  81:    */   public void a(EntityPlayer paramahd, ItemStack paramamj)

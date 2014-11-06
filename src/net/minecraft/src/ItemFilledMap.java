@@ -163,11 +163,11 @@ package net.minecraft.src;
 /* 162:188 */                 if (i5 * i5 + i6 * i6 < i1 * i1) {
 /* 163:191 */                   if ((i7 == 0) || ((i3 + i4 & 0x1) != 0))
 /* 164:    */                   {
-/* 165:194 */                     i16 = parambqe.f[(i3 + i4 * 128)];
+/* 165:194 */                     i16 = parambqe.content[(i3 + i4 * 128)];
 /* 166:195 */                     byte i17 = (byte)(((MapColor)localObject).M * 4 + i15);
 /* 167:196 */                     if (i16 != i17)
 /* 168:    */                     {
-/* 169:197 */                       parambqe.f[(i3 + i4 * 128)] = i17;
+/* 169:197 */                       parambqe.content[(i3 + i4 * 128)] = i17;
 /* 170:198 */                       parambqe.a(i3, i4);
 /* 171:199 */                       i2 = 1;
 /* 172:    */                     }
