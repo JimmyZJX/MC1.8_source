@@ -9,9 +9,9 @@ package net.minecraft.src;
 /*  8:10 */     this.a = paramString;
 /*  9:   */   }
 /* 10:   */   
-/* 11:   */   public abstract void a(NBTTagCompound paramfn);
+/* 11:   */   public abstract void readFromNBT(NBTTagCompound paramfn);
 /* 12:   */   
-/* 13:   */   public abstract void b(NBTTagCompound paramfn);
+/* 13:   */   public abstract void writeToNBT(NBTTagCompound paramfn);
 /* 14:   */   
 /* 15:   */   public void c()
 /* 16:   */   {

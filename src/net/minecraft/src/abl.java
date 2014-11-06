@@ -208,7 +208,7 @@ package net.minecraft.src;
 /* 207:203 */     return false;
 /* 208:    */   }
 /* 209:    */   
-/* 210:    */   public void a(NBTTagCompound paramfn)
+/* 210:    */   public void readFromNBT(NBTTagCompound paramfn)
 /* 211:    */   {
 /* 212:208 */     this.f = paramfn.getInteger("Tick");
 /* 213:209 */     fv localfv = paramfn.c("Villages", 10);
@@ -221,7 +221,7 @@ package net.minecraft.src;
 /* 220:    */     }
 /* 221:    */   }
 /* 222:    */   
-/* 223:    */   public void b(NBTTagCompound paramfn)
+/* 223:    */   public void writeToNBT(NBTTagCompound paramfn)
 /* 224:    */   {
 /* 225:220 */     paramfn.setInt("Tick", this.f);
 /* 226:221 */     fv localfv = new fv();

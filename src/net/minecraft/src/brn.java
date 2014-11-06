@@ -48,7 +48,7 @@ package net.minecraft.src;
 /*  49: 43 */           NBTTagCompound localfn = fz.a(localFileInputStream);
 /*  50: 44 */           localFileInputStream.close();
 /*  51:    */           
-/*  52: 46 */           localbqc.a(localfn.getCompoundTag("data"));
+/*  52: 46 */           localbqc.readFromNBT(localfn.getCompoundTag("data"));
 /*  53:    */         }
 /*  54:    */       }
 /*  55:    */       catch (Exception localException1)
@@ -97,7 +97,7 @@ package net.minecraft.src;
 /*  98: 84 */       if (localFile != null)
 /*  99:    */       {
 /* 100: 85 */         NBTTagCompound localfn1 = new NBTTagCompound();
-/* 101: 86 */         parambqc.b(localfn1);
+/* 101: 86 */         parambqc.writeToNBT(localfn1);
 /* 102:    */         
 /* 103: 88 */         NBTTagCompound localfn2 = new NBTTagCompound();
 /* 104: 89 */         localfn2.setNBT("data", localfn1);

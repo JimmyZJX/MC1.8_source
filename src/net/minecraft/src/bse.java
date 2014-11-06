@@ -24,11 +24,11 @@ package net.minecraft.src;
 /*  24:    */   {
 /*  25: 31 */     this.c = parambsd;
 /*  26: 33 */     if (this.d != null) {
-/*  27: 34 */       a(this.d);
+/*  27: 34 */       readFromNBT(this.d);
 /*  28:    */     }
 /*  29:    */   }
 /*  30:    */   
-/*  31:    */   public void a(NBTTagCompound paramfn)
+/*  31:    */   public void readFromNBT(NBTTagCompound paramfn)
 /*  32:    */   {
 /*  33: 40 */     if (this.c == null)
 /*  34:    */     {
@@ -133,7 +133,7 @@ package net.minecraft.src;
 /* 133:    */     }
 /* 134:    */   }
 /* 135:    */   
-/* 136:    */   public void b(NBTTagCompound paramfn)
+/* 136:    */   public void writeToNBT(NBTTagCompound paramfn)
 /* 137:    */   {
 /* 138:136 */     if (this.c == null)
 /* 139:    */     {

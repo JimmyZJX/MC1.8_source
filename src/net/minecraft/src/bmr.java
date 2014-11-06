@@ -10,12 +10,12 @@ package net.minecraft.src;
 /*  9:12 */     this.b = new NBTTagCompound();
 /* 10:   */   }
 /* 11:   */   
-/* 12:   */   public void a(NBTTagCompound paramfn)
+/* 12:   */   public void readFromNBT(NBTTagCompound paramfn)
 /* 13:   */   {
 /* 14:17 */     this.b = paramfn.getCompoundTag("Features");
 /* 15:   */   }
 /* 16:   */   
-/* 17:   */   public void b(NBTTagCompound paramfn)
+/* 17:   */   public void writeToNBT(NBTTagCompound paramfn)
 /* 18:   */   {
 /* 19:22 */     paramfn.setNBT("Features", this.b);
 /* 20:   */   }
