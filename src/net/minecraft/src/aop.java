@@ -783,7 +783,7 @@ package net.minecraft.src;
 /*  782:     */ 
 /*  783:     */ 
 /*  784:     */ 
-/*  785: 791 */     a(new ItemStack(ItemList.bP, 1), new Object[] { "###", "#X#", "###", Character.valueOf('#'), ItemList.stick, Character.valueOf('X'), ItemList.leather });
+/*  785: 791 */     a(new ItemStack(ItemList.itemFrame, 1), new Object[] { "###", "#X#", "###", Character.valueOf('#'), ItemList.stick, Character.valueOf('X'), ItemList.leather });
 /*  786:     */     
 /*  787:     */ 
 /*  788:     */ 

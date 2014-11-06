@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*   4:    */ import java.util.Random;
 /*   5:    */ 
 /*   6:    */ public class adm
-/*   7:    */   extends adj
+/*   7:    */   extends EntityFrame
 /*   8:    */ {
 /*   9:    */   public EnumArt c;
 /*  10:    */   

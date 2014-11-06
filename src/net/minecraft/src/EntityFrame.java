@@ -3,20 +3,20 @@ package net.minecraft.src;
 /*   2:    */ import java.util.List;
 /*   3:    */ import org.apache.commons.lang3.Validate;
 /*   4:    */ 
-/*   5:    */ public abstract class adj
+/*   5:    */ public abstract class EntityFrame
 /*   6:    */   extends Entity
 /*   7:    */ {
 /*   8:    */   private int c;
 /*   9:    */   protected BlockPosition a;
 /*  10:    */   public EnumDirection b;
 /*  11:    */   
-/*  12:    */   public adj(World paramaqu)
+/*  12:    */   public EntityFrame(World paramaqu)
 /*  13:    */   {
 /*  14: 24 */     super(paramaqu);
 /*  15: 25 */     a(0.5F, 0.5F);
 /*  16:    */   }
 /*  17:    */   
-/*  18:    */   public adj(World paramaqu, BlockPosition paramdt)
+/*  18:    */   public EntityFrame(World paramaqu, BlockPosition paramdt)
 /*  19:    */   {
 /*  20: 29 */     this(paramaqu);
 /*  21: 30 */     this.a = paramdt;
@@ -121,7 +121,7 @@ package net.minecraft.src;
 /* 120:129 */     for (Iterator<Entity> localIterator = localList.iterator(); localIterator.hasNext();)
 /* 121:    */     {
 /* 122:129 */       localObject = (Entity)localIterator.next();
-/* 123:130 */       if ((localObject instanceof adj)) {
+/* 123:130 */       if ((localObject instanceof EntityFrame)) {
 /* 124:131 */         return false;
 /* 125:    */       }
 /* 126:    */     }

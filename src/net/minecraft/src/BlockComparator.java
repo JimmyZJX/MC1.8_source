@@ -108,7 +108,7 @@ package net.minecraft.src;
 /* 107:    */       }
 /* 108:130 */       else if (localatr.getMaterial() == Material.air)
 /* 109:    */       {
-/* 110:131 */         adk localadk = a(paramaqu, localej, localdt);
+/* 110:131 */         EntityItemFrame localadk = a(paramaqu, localej, localdt);
 /* 111:132 */         if (localadk != null) {
 /* 112:133 */           i = localadk.q();
 /* 113:    */         }
@@ -117,11 +117,11 @@ package net.minecraft.src;
 /* 116:138 */     return i;
 /* 117:    */   }
 /* 118:    */   
-/* 119:    */   private adk a(World paramaqu, EnumDirection paramej, BlockPosition paramdt)
+/* 119:    */   private EntityItemFrame a(World paramaqu, EnumDirection paramej, BlockPosition paramdt)
 /* 120:    */   {
-/* 121:143 */     List<adk> localList = paramaqu.a(adk.class, new AABB(paramdt.getX(), paramdt.getY(), paramdt.getZ(), paramdt.getX() + 1, paramdt.getY() + 1, paramdt.getZ() + 1), new auq(this, paramej));
+/* 121:143 */     List<EntityItemFrame> localList = paramaqu.a(EntityItemFrame.class, new AABB(paramdt.getX(), paramdt.getY(), paramdt.getZ(), paramdt.getX() + 1, paramdt.getY() + 1, paramdt.getZ() + 1), new auq(this, paramej));
 /* 122:150 */     if (localList.size() == 1) {
-/* 123:151 */       return (adk)localList.get(0);
+/* 123:151 */       return (EntityItemFrame)localList.get(0);
 /* 124:    */     }
 /* 125:154 */     return null;
 /* 126:    */   }

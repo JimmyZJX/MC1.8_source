@@ -1,16 +1,16 @@
 package net.minecraft.src;
 /*   3:    */ 
-/*   4:    */ public class adk
-/*   5:    */   extends adj
+/*   4:    */ public class EntityItemFrame
+/*   5:    */   extends EntityFrame
 /*   6:    */ {
 /*   7: 25 */   private float itemDropChance = 1.0F;
 /*   8:    */   
-/*   9:    */   public adk(World paramaqu)
+/*   9:    */   public EntityItemFrame(World paramaqu)
 /*  10:    */   {
 /*  11: 28 */     super(paramaqu);
 /*  12:    */   }
 /*  13:    */   
-/*  14:    */   public adk(World paramaqu, BlockPosition paramdt, EnumDirection paramej)
+/*  14:    */   public EntityItemFrame(World paramaqu, BlockPosition paramdt, EnumDirection paramej)
 /*  15:    */   {
 /*  16: 32 */     super(paramaqu, paramdt);
 /*  17: 33 */     a(paramej);
@@ -82,7 +82,7 @@ package net.minecraft.src;
 /*  83:    */       }
 /*  84:    */     }
 /*  85:102 */     if (paramBoolean) {
-/*  86:103 */       a(new ItemStack(ItemList.bP), 0.0F);
+/*  86:103 */       a(new ItemStack(ItemList.itemFrame), 0.0F);
 /*  87:    */     }
 /*  88:105 */     if ((localamj != null) && (this.random.nextFloat() < this.itemDropChance))
 /*  89:    */     {
@@ -102,7 +102,7 @@ package net.minecraft.src;
 /* 103:117 */       MapInfo localbqe = ((ItemFilledMap)paramamj.getItem()).a(paramamj, this.world);
 /* 104:118 */       localbqe.icons.remove("frame-" + getID());
 /* 105:    */     }
-/* 106:120 */     paramamj.a((adk)null);
+/* 106:120 */     paramamj.a((EntityItemFrame)null);
 /* 107:    */   }
 /* 108:    */   
 /* 109:    */   public ItemStack getItem()

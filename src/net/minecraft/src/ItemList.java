@@ -153,7 +153,7 @@ package net.minecraft.src;
 /* 152:157 */   public static final Item bM = a("writable_book");
 /* 153:158 */   public static final Item bN = a("written_book");
 /* 154:159 */   public static final Item bO = a("emerald");
-/* 155:160 */   public static final Item bP = a("item_frame");
+/* 155:160 */   public static final Item itemFrame = a("item_frame");
 /* 156:161 */   public static final Item bQ = a("flower_pot");
 /* 157:162 */   public static final Item carrot = a("carrot");
 /* 158:163 */   public static final Item bS = a("potato");

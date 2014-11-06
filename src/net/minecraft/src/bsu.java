@@ -1942,13 +1942,13 @@ package net.minecraft.src;
 /* 1941:     */       {
 /* 1942:2099 */         localObject1 = ItemList.cn;
 /* 1943:     */       }
-/* 1944:2100 */       else if ((this.s.d instanceof adk))
+/* 1944:2100 */       else if ((this.s.d instanceof EntityItemFrame))
 /* 1945:     */       {
-/* 1946:2101 */         adk localObject2 = (adk)this.s.d;
+/* 1946:2101 */         EntityItemFrame localObject2 = (EntityItemFrame)this.s.d;
 /* 1947:2102 */         localObject3 = localObject2.getItem();
 /* 1948:2103 */         if (localObject3 == null)
 /* 1949:     */         {
-/* 1950:2104 */           localObject1 = ItemList.bP;
+/* 1950:2104 */           localObject1 = ItemList.itemFrame;
 /* 1951:     */         }
 /* 1952:     */         else
 /* 1953:     */         {

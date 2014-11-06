@@ -3,7 +3,7 @@ package net.minecraft.src;
 /*   2:    */ import java.util.List;
 /*   3:    */ 
 /*   4:    */ public class adl
-/*   5:    */   extends adj
+/*   5:    */   extends EntityFrame
 /*   6:    */ {
 /*   7:    */   public adl(World paramaqu)
 /*   8:    */   {

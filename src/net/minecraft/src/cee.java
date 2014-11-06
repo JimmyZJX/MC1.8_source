@@ -95,7 +95,7 @@ package net.minecraft.src;
 /*   94:     */     }
 /*   95: 161 */     else if (paramil.j() == 71)
 /*   96:     */     {
-/*   97: 162 */       localObject1 = new adk(this.g, new BlockPosition(MathUtils.floor(d1), MathUtils.floor(d2), MathUtils.floor(d3)), EnumDirection.b(paramil.k()));
+/*   97: 162 */       localObject1 = new EntityItemFrame(this.g, new BlockPosition(MathUtils.floor(d1), MathUtils.floor(d2), MathUtils.floor(d3)), EnumDirection.b(paramil.k()));
 /*   98: 163 */       paramil.g(0);
 /*   99:     */     }
 /*  100: 164 */     else if (paramil.j() == 77)

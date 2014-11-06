@@ -120,7 +120,7 @@ package net.minecraft.src;
 /* 119:    */     {
 /* 120: 93 */       a(paramwv, 160, 20, true);
 /* 121:    */     }
-/* 122: 94 */     else if ((paramwv instanceof adj))
+/* 122: 94 */     else if ((paramwv instanceof EntityFrame))
 /* 123:    */     {
 /* 124: 95 */       a(paramwv, 160, 2147483647, false);
 /* 125:    */     }

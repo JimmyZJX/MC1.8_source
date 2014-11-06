@@ -334,7 +334,7 @@ package net.minecraft.src;
 /*  333: 449 */       (d3 < d2) || (this.h.s == null)))
 /*  334:     */     {
 /*  335: 450 */       this.h.s = new HitResult(this.n, localbrw4);
-/*  336: 451 */       if (((this.n instanceof EntityLiving)) || ((this.n instanceof adk))) {
+/*  336: 451 */       if (((this.n instanceof EntityLiving)) || ((this.n instanceof EntityItemFrame))) {
 /*  337: 452 */         this.h.i = this.n;
 /*  338:     */       }
 /*  339:     */     }

@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ import org.lwjgl.opengl.GL11;
 /*   2:    */ 
 /*   3:    */ public class cqg
-/*   4:    */   extends cpu<adk>
+/*   4:    */   extends cpu<EntityItemFrame>
 /*   5:    */ {
 /*   6: 27 */   private static final oa a = new oa("textures/map/map_background.png");
 /*   7: 28 */   private final bsu e = bsu.z();
@@ -16,7 +16,7 @@ package net.minecraft.src;
 /*  15: 35 */     this.h = paramcqh;
 /*  16:    */   }
 /*  17:    */   
-/*  18:    */   public void a(adk paramadk, double paramDouble1, double paramDouble2, double paramDouble3, float paramFloat1, float paramFloat2)
+/*  18:    */   public void a(EntityItemFrame paramadk, double paramDouble1, double paramDouble2, double paramDouble3, float paramFloat1, float paramFloat2)
 /*  19:    */   {
 /*  20: 40 */     cjm.glPushMatrix();
 /*  21:    */     
@@ -48,12 +48,12 @@ package net.minecraft.src;
 /*  47: 68 */     a(paramadk, paramDouble1 + paramadk.b.g() * 0.3F, paramDouble2 - 0.25D, paramDouble3 + paramadk.b.i() * 0.3F);
 /*  48:    */   }
 /*  49:    */   
-/*  50:    */   protected oa a(adk paramadk)
+/*  50:    */   protected oa a(EntityItemFrame paramadk)
 /*  51:    */   {
 /*  52: 74 */     return null;
 /*  53:    */   }
 /*  54:    */   
-/*  55:    */   private void cqg_b(adk paramadk)
+/*  55:    */   private void cqg_b(EntityItemFrame paramadk)
 /*  56:    */   {
 /*  57: 78 */     ItemStack localamj = paramadk.getItem();
 /*  58: 79 */     if (localamj == null) {
@@ -130,7 +130,7 @@ package net.minecraft.src;
 /* 129:152 */     cjm.glPopMatrix();
 /* 130:    */   }
 /* 131:    */   
-/* 132:    */   protected void a(adk paramadk, double paramDouble1, double paramDouble2, double paramDouble3)
+/* 132:    */   protected void a(EntityItemFrame paramadk, double paramDouble1, double paramDouble2, double paramDouble3)
 /* 133:    */   {
 /* 134:157 */     if ((bsu.u()) && (paramadk.getItem() != null) && (paramadk.getItem().s()) && (this.b.d == paramadk))
 /* 135:    */     {

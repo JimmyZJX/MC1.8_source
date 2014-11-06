@@ -62,7 +62,7 @@ import org.apache.logging.log4j.LogManager;
 /*  61: 85 */     a(EntityEnderEye.class, "EyeOfEnderSignal", 15);
 /*  62: 86 */     a(ahv.class, "ThrownPotion", 16);
 /*  63: 87 */     a(ahu.class, "ThrownExpBottle", 17);
-/*  64: 88 */     a(adk.class, "ItemFrame", 18);
+/*  64: 88 */     a(EntityItemFrame.class, "ItemFrame", 18);
 /*  65: 89 */     a(ahw.class, "WitherSkull", 19);
 /*  66:    */     
 /*  67: 91 */     a(aek.class, "PrimedTnt", 20);

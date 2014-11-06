@@ -66,7 +66,7 @@ package net.minecraft.src;
 /*  65:110 */     this.k.put(Entity.class, new cpo(this));
 /*  66:    */     
 /*  67:112 */     this.k.put(adm.class, new crc(this));
-/*  68:113 */     this.k.put(adk.class, new cqg(this, paramcqh));
+/*  68:113 */     this.k.put(EntityItemFrame.class, new cqg(this, paramcqh));
 /*  69:114 */     this.k.put(adl.class, new cqt(this));
 /*  70:115 */     this.k.put(ahj.class, new cpg(this));
 /*  71:116 */     this.k.put(ahq.class, new crp(this, ItemList.aD, paramcqh));

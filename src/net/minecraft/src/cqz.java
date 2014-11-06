@@ -58,7 +58,7 @@ package net.minecraft.src;
 /*  57: 64 */       double d3 = Math.cos(d1);
 /*  58: 65 */       double d4 = Math.sin(d1);
 /*  59: 66 */       double d5 = Math.sin(d2);
-/*  60: 67 */       if ((localwv instanceof adj))
+/*  60: 67 */       if ((localwv instanceof EntityFrame))
 /*  61:    */       {
 /*  62: 68 */         d3 = 0.0D;
 /*  63: 69 */         d4 = 0.0D;

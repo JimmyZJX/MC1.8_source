@@ -82,9 +82,9 @@ package net.minecraft.src;
 /*  81: 98 */       this.w = this.a.vehicle;
 /*  82: 99 */       a(new ky(0, this.a, this.a.vehicle));
 /*  83:    */     }
-/*  84:102 */     if (((this.a instanceof adk)) && (this.m % 10 == 0))
+/*  84:102 */     if (((this.a instanceof EntityItemFrame)) && (this.m % 10 == 0))
 /*  85:    */     {
-/*  86:103 */       adk localadk = (adk)this.a;
+/*  86:103 */       EntityItemFrame localadk = (EntityItemFrame)this.a;
 /*  87:104 */       ItemStack localamj = localadk.getItem();
 /*  88:    */       MapInfo localbqe;
 /*  89:106 */       if ((localamj != null) && ((localamj.getItem() instanceof ItemFilledMap)))
@@ -450,11 +450,11 @@ package net.minecraft.src;
 /* 449:448 */       return new ip((adm)this.a);
 /* 450:    */     }
 /* 451:    */     BlockPosition localdt;
-/* 452:450 */     if ((this.a instanceof adk))
+/* 452:450 */     if ((this.a instanceof EntityItemFrame))
 /* 453:    */     {
-/* 454:451 */       localObject = (adk)this.a;
-/* 455:452 */       localil = new il(this.a, 71, ((adk)localObject).b.b());
-/* 456:453 */       localdt = ((adk)localObject).n();
+/* 454:451 */       localObject = (EntityItemFrame)this.a;
+/* 455:452 */       localil = new il(this.a, 71, ((EntityItemFrame)localObject).b.b());
+/* 456:453 */       localdt = ((EntityItemFrame)localObject).n();
 /* 457:454 */       localil.a(MathUtils.floor(localdt.getX() * 32));
 /* 458:455 */       localil.b(MathUtils.floor(localdt.getY() * 32));
 /* 459:456 */       localil.c(MathUtils.floor(localdt.getZ() * 32));

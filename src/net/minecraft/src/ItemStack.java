@@ -18,7 +18,7 @@ package net.minecraft.src;
 /*  19:    */   private Item item;
 /*  20:    */   private NBTTagCompound stackTagCompound;
 /*  21:    */   private int itemDamage;
-/*  22:    */   private adk g;
+/*  22:    */   private EntityItemFrame g;
 /*  23:    */   
 /*  24:    */   public ItemStack(ProtoBlock paramatr)
 /*  25:    */   {
@@ -710,12 +710,12 @@ package net.minecraft.src;
 /* 711:716 */     return this.g != null;
 /* 712:    */   }
 /* 713:    */   
-/* 714:    */   public void a(adk paramadk)
+/* 714:    */   public void a(EntityItemFrame paramadk)
 /* 715:    */   {
 /* 716:720 */     this.g = paramadk;
 /* 717:    */   }
 /* 718:    */   
-/* 719:    */   public adk z()
+/* 719:    */   public EntityItemFrame z()
 /* 720:    */   {
 /* 721:724 */     return this.g;
 /* 722:    */   }

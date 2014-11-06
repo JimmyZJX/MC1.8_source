@@ -1,10 +1,10 @@
 package net.minecraft.src;
-/*  1:   */ public class aln
+/*  1:   */ public class ItemFrame
 /*  2:   */   extends Item
 /*  3:   */ {
 /*  4:   */   private final Class a;
 /*  5:   */   
-/*  6:   */   public aln(Class paramClass)
+/*  6:   */   public ItemFrame(Class paramClass)
 /*  7:   */   {
 /*  8:15 */     this.a = paramClass;
 /*  9:16 */     setTabToDisplayOn(CreativeTabs.tabDeco);
@@ -22,7 +22,7 @@ package net.minecraft.src;
 /* 21:30 */     if (!paramahd.a(localdt, paramej, paramamj)) {
 /* 22:31 */       return false;
 /* 23:   */     }
-/* 24:34 */     adj localadj = a(paramaqu, localdt, paramej);
+/* 24:34 */     EntityFrame localadj = a(paramaqu, localdt, paramej);
 /* 25:35 */     if ((localadj != null) && (localadj.j()))
 /* 26:   */     {
 /* 27:36 */       if (!paramaqu.isClient) {
@@ -33,13 +33,13 @@ package net.minecraft.src;
 /* 32:41 */     return true;
 /* 33:   */   }
 /* 34:   */   
-/* 35:   */   private adj a(World paramaqu, BlockPosition paramdt, EnumDirection paramej)
+/* 35:   */   private EntityFrame a(World paramaqu, BlockPosition paramdt, EnumDirection paramej)
 /* 36:   */   {
 /* 37:45 */     if (this.a == adm.class) {
 /* 38:46 */       return new adm(paramaqu, paramdt, paramej);
 /* 39:   */     }
-/* 40:47 */     if (this.a == adk.class) {
-/* 41:48 */       return new adk(paramaqu, paramdt, paramej);
+/* 40:47 */     if (this.a == EntityItemFrame.class) {
+/* 41:48 */       return new EntityItemFrame(paramaqu, paramdt, paramej);
 /* 42:   */     }
 /* 43:50 */     return null;
 /* 44:   */   }

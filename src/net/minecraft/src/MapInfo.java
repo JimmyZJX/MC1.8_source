@@ -107,7 +107,7 @@ package net.minecraft.src;
 /* 106:    */     
 /* 107:159 */     if (paramamj.y())
 /* 108:    */     {
-/* 109:160 */       adk localObject1 = paramamj.z();
+/* 109:160 */       EntityItemFrame localObject1 = paramamj.z();
 /* 110:161 */       BlockPosition pos = localObject1.n();
 /* 111:162 */       updateIcon(1, paramahd.world, "frame-" + localObject1.getID(), pos.getX(), pos.getZ(), localObject1.b.b() * 90);
 /* 112:    */     }

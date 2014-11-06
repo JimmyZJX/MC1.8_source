@@ -241,9 +241,9 @@ package net.minecraft.src;
 /* 241:275 */         localfn2.a("UUIDMost", this.bn.getUUID().getMostSignificantBits());
 /* 242:276 */         localfn2.a("UUIDLeast", this.bn.getUUID().getLeastSignificantBits());
 /* 243:    */       }
-/* 244:277 */       else if ((this.bn instanceof adj))
+/* 244:277 */       else if ((this.bn instanceof EntityFrame))
 /* 245:    */       {
-/* 246:279 */         BlockPosition localdt = ((adj)this.bn).n();
+/* 246:279 */         BlockPosition localdt = ((EntityFrame)this.bn).n();
 /* 247:280 */         localfn2.setInt("X", localdt.getX());
 /* 248:281 */         localfn2.setInt("Y", localdt.getY());
 /* 249:282 */         localfn2.setInt("Z", localdt.getZ());
