@@ -86,7 +86,7 @@ package net.minecraft.src;
 /*  85:    */       {
 /*  86:107 */         if (!paramahd.by.d)
 /*  87:    */         {
-/*  88:108 */           localObject = new ItemStack(ItemList.bz, 1, 0);
+/*  88:108 */           localObject = new ItemStack(ItemList.potion, 1, 0);
 /*  89:109 */           if (!paramahd.bg.a((ItemStack)localObject)) {
 /*  90:110 */             paramaqu.spawnEntity(new EntityItem(paramaqu, paramdt.getX() + 0.5D, paramdt.getY() + 1.5D, paramdt.getZ() + 0.5D, (ItemStack)localObject));
 /*  91:111 */           } else if ((paramahd instanceof qw)) {

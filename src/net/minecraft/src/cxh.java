@@ -336,7 +336,7 @@ package net.minecraft.src;
 /* 336:335 */     this.u.put(ItemList.fish, Lists.newArrayList(new String[] { "cod", "salmon", "clownfish", "pufferfish" }));
 /* 337:336 */     this.u.put(ItemList.aV, Lists.newArrayList(new String[] { "cooked_cod", "cooked_salmon" }));
 /* 338:337 */     this.u.put(ItemList.dye, Lists.newArrayList(new String[] { "dye_black", "dye_red", "dye_green", "dye_brown", "dye_blue", "dye_purple", "dye_cyan", "dye_silver", "dye_gray", "dye_pink", "dye_lime", "dye_yellow", "dye_light_blue", "dye_magenta", "dye_orange", "dye_white" }));
-/* 339:338 */     this.u.put(ItemList.bz, Lists.newArrayList(new String[] { "bottle_drinkable", "bottle_splash" }));
+/* 339:338 */     this.u.put(ItemList.potion, Lists.newArrayList(new String[] { "bottle_drinkable", "bottle_splash" }));
 /* 340:339 */     this.u.put(ItemList.bX, Lists.newArrayList(new String[] { "skull_skeleton", "skull_wither", "skull_zombie", "skull_char", "skull_creeper" }));
 /* 341:    */     
 /* 342:    */ 

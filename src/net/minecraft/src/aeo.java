@@ -28,7 +28,7 @@ package net.minecraft.src;
 /* 27:36 */           i = 15;
 /* 28:   */         }
 /* 29:39 */         if (i > 0) {
-/* 30:40 */           ((EntityLiving)paramwv).c(new wq(Potion.u.H, i * 20, 0));
+/* 30:40 */           ((EntityLiving)paramwv).c(new wq(Potion.u.id, i * 20, 0));
 /* 31:   */         }
 /* 32:   */       }
 /* 33:44 */       return true;

@@ -159,7 +159,7 @@ package net.minecraft.src;
 /*  159: 193 */     int j = (bool) && (((EntityPlayer)this).by.a) ? 1 : 0;
 /*  160: 195 */     if ((ai()) && (a(Material.water)))
 /*  161:     */     {
-/*  162: 196 */       if ((!aX()) && (!k(Potion.o.H)) && (j == 0))
+/*  162: 196 */       if ((!aX()) && (!k(Potion.o.id)) && (j == 0))
 /*  163:     */       {
 /*  164: 197 */         h(j(aA()));
 /*  165: 198 */         if (aA() == -20)
@@ -350,7 +350,7 @@ package net.minecraft.src;
 /*  350:     */     {
 /*  351: 375 */       fv localfv = new fv();
 /*  352: 377 */       for (wq localwq : this.g.values()) {
-/*  353: 378 */         localfv.a(localwq.a(new NBTTagCompound()));
+/*  353: 378 */         localfv.a(localwq.writeToNBT(new NBTTagCompound()));
 /*  354:     */       }
 /*  355: 380 */       tag.setNBT("ActiveEffects", localfv);
 /*  356:     */     }
@@ -369,9 +369,9 @@ package net.minecraft.src;
 /*  369: 394 */       for (int j = 0; j < ((fv)localObject).c(); j++)
 /*  370:     */       {
 /*  371: 395 */         NBTTagCompound localfn = ((fv)localObject).b(j);
-/*  372: 396 */         wq localwq = wq.b(localfn);
+/*  372: 396 */         wq localwq = wq.fromNBT(localfn);
 /*  373: 397 */         if (localwq != null) {
-/*  374: 398 */           this.g.put(Integer.valueOf(localwq.a()), localwq);
+/*  374: 398 */           this.g.put(Integer.valueOf(localwq.getID()), localwq);
 /*  375:     */         }
 /*  376:     */       }
 /*  377:     */     }
@@ -410,7 +410,7 @@ package net.minecraft.src;
 /*  410: 431 */           b(localwq);
 /*  411:     */         }
 /*  412:     */       }
-/*  413: 433 */       else if (localwq.b() % 600 == 0) {
+/*  413: 433 */       else if (localwq.getDuration() % 600 == 0) {
 /*  414: 436 */         a(localwq, false);
 /*  415:     */       }
 /*  416:     */     }
@@ -458,7 +458,7 @@ package net.minecraft.src;
 /*  458: 480 */       int j = ans.a(this.g.values());
 /*  459: 481 */       this.ac.b(8, Byte.valueOf((byte)(ans.b(this.g.values()) ? 1 : 0)));
 /*  460: 482 */       this.ac.b(7, Integer.valueOf(j));
-/*  461: 483 */       e(k(Potion.p.H));
+/*  461: 483 */       e(k(Potion.p.id));
 /*  462:     */     }
 /*  463:     */   }
 /*  464:     */   
@@ -495,12 +495,12 @@ package net.minecraft.src;
 /*  495:     */   
 /*  496:     */   public boolean a(Potion paramwp)
 /*  497:     */   {
-/*  498: 514 */     return this.g.containsKey(Integer.valueOf(paramwp.H));
+/*  498: 514 */     return this.g.containsKey(Integer.valueOf(paramwp.id));
 /*  499:     */   }
 /*  500:     */   
 /*  501:     */   public wq b(Potion paramwp)
 /*  502:     */   {
-/*  503: 518 */     return (wq)this.g.get(Integer.valueOf(paramwp.H));
+/*  503: 518 */     return (wq)this.g.get(Integer.valueOf(paramwp.id));
 /*  504:     */   }
 /*  505:     */   
 /*  506:     */   public void c(wq paramwq)
@@ -508,14 +508,14 @@ package net.minecraft.src;
 /*  508: 522 */     if (!d(paramwq)) {
 /*  509: 523 */       return;
 /*  510:     */     }
-/*  511: 526 */     if (this.g.containsKey(Integer.valueOf(paramwq.a())))
+/*  511: 526 */     if (this.g.containsKey(Integer.valueOf(paramwq.getID())))
 /*  512:     */     {
-/*  513: 528 */       ((wq)this.g.get(Integer.valueOf(paramwq.a()))).a(paramwq);
-/*  514: 529 */       a((wq)this.g.get(Integer.valueOf(paramwq.a())), true);
+/*  513: 528 */       ((wq)this.g.get(Integer.valueOf(paramwq.getID()))).a(paramwq);
+/*  514: 529 */       a((wq)this.g.get(Integer.valueOf(paramwq.getID())), true);
 /*  515:     */     }
 /*  516:     */     else
 /*  517:     */     {
-/*  518: 531 */       this.g.put(Integer.valueOf(paramwq.a()), paramwq);
+/*  518: 531 */       this.g.put(Integer.valueOf(paramwq.getID()), paramwq);
 /*  519: 532 */       a(paramwq);
 /*  520:     */     }
 /*  521:     */   }
@@ -524,8 +524,8 @@ package net.minecraft.src;
 /*  524:     */   {
 /*  525: 537 */     if (by() == xs.b)
 /*  526:     */     {
-/*  527: 538 */       int j = paramwq.a();
-/*  528: 539 */       if ((j == Potion.l.H) || (j == Potion.u.H)) {
+/*  527: 538 */       int j = paramwq.getID();
+/*  528: 539 */       if ((j == Potion.l.id) || (j == Potion.u.id)) {
 /*  529: 540 */         return false;
 /*  530:     */       }
 /*  531:     */     }
@@ -554,7 +554,7 @@ package net.minecraft.src;
 /*  554:     */   {
 /*  555: 563 */     this.i = true;
 /*  556: 564 */     if (!this.world.isClient) {
-/*  557: 565 */       Potion.a[paramwq.a()].b(this, bx(), paramwq.c());
+/*  557: 565 */       Potion.potionList[paramwq.getID()].b(this, bx(), paramwq.getAmplifier());
 /*  558:     */     }
 /*  559:     */   }
 /*  560:     */   
@@ -563,8 +563,8 @@ package net.minecraft.src;
 /*  563: 570 */     this.i = true;
 /*  564: 571 */     if ((paramBoolean) && (!this.world.isClient))
 /*  565:     */     {
-/*  566: 572 */       Potion.a[paramwq.a()].a(this, bx(), paramwq.c());
-/*  567: 573 */       Potion.a[paramwq.a()].b(this, bx(), paramwq.c());
+/*  566: 572 */       Potion.potionList[paramwq.getID()].a(this, bx(), paramwq.getAmplifier());
+/*  567: 573 */       Potion.potionList[paramwq.getID()].b(this, bx(), paramwq.getAmplifier());
 /*  568:     */     }
 /*  569:     */   }
 /*  570:     */   
@@ -572,7 +572,7 @@ package net.minecraft.src;
 /*  572:     */   {
 /*  573: 578 */     this.i = true;
 /*  574: 579 */     if (!this.world.isClient) {
-/*  575: 580 */       Potion.a[paramwq.a()].a(this, bx(), paramwq.c());
+/*  575: 580 */       Potion.potionList[paramwq.getID()].a(this, bx(), paramwq.getAmplifier());
 /*  576:     */     }
 /*  577:     */   }
 /*  578:     */   
@@ -802,7 +802,7 @@ package net.minecraft.src;
 /*  802:     */   {
 /*  803: 802 */     super.e(paramFloat1, paramFloat2);
 /*  804: 803 */     wq localwq = b(Potion.j);
-/*  805: 804 */     float f1 = localwq != null ? localwq.c() + 1 : 0.0F;
+/*  805: 804 */     float f1 = localwq != null ? localwq.getAmplifier() + 1 : 0.0F;
 /*  806:     */     
 /*  807: 806 */     int j = MathUtils.ceil((paramFloat1 - 3.0F - f1) * paramFloat2);
 /*  808: 808 */     if (j > 0)
@@ -873,7 +873,7 @@ package net.minecraft.src;
 /*  873:     */     float f1;
 /*  874: 872 */     if ((a(Potion.m)) && (paramwh != wh.j))
 /*  875:     */     {
-/*  876: 873 */       int j = (b(Potion.m).c() + 1) * 5;
+/*  876: 873 */       int j = (b(Potion.m).getAmplifier() + 1) * 5;
 /*  877: 874 */       k = 25 - j;
 /*  878: 875 */       f1 = paramFloat * k;
 /*  879: 876 */       paramFloat = f1 / 25.0F;
@@ -951,10 +951,10 @@ package net.minecraft.src;
 /*  951:     */   private int n()
 /*  952:     */   {
 /*  953: 946 */     if (a(Potion.e)) {
-/*  954: 947 */       return 6 - (1 + b(Potion.e).c()) * 1;
+/*  954: 947 */       return 6 - (1 + b(Potion.e).getAmplifier()) * 1;
 /*  955:     */     }
 /*  956: 949 */     if (a(Potion.f)) {
-/*  957: 950 */       return 6 + (1 + b(Potion.f).c()) * 2;
+/*  957: 950 */       return 6 + (1 + b(Potion.f).getAmplifier()) * 2;
 /*  958:     */     }
 /*  959: 952 */     return 6;
 /*  960:     */   }
@@ -1133,7 +1133,7 @@ package net.minecraft.src;
 /* 1133:     */   {
 /* 1134:1112 */     this.yVelocity = bD();
 /* 1135:1113 */     if (a(Potion.j)) {
-/* 1136:1114 */       this.yVelocity += (b(Potion.j).c() + 1) * 0.1F;
+/* 1136:1114 */       this.yVelocity += (b(Potion.j).getAmplifier() + 1) * 0.1F;
 /* 1137:     */     }
 /* 1138:1116 */     if (ax())
 /* 1139:     */     {

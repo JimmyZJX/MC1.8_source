@@ -7,32 +7,32 @@ package net.minecraft.src;
 /*   5:    */ 
 /*   6:    */ public class Potion
 /*   7:    */ {
-/*   8: 25 */   public static final Potion[] a = new Potion[32];
+/*   8: 25 */   public static final Potion[] potionList = new Potion[32];
 /*   9: 26 */   private static final Map<oa,Potion> I = Maps.newHashMap();
 /*  10: 28 */   public static final Potion b = null;
-/*  11: 29 */   public static final Potion c = new Potion(1, new oa("speed"), false, 8171462).c("potion.moveSpeed").b(0, 0).a(afs.d, "91AEAA56-376B-4498-935B-2F7F68070635", 0.2000000029802322D, 2);
-/*  12: 30 */   public static final Potion d = new Potion(2, new oa("slowness"), true, 5926017).c("potion.moveSlowdown").b(1, 0).a(afs.d, "7107DE5E-7CE8-4030-940E-514C1F160890", -0.1500000059604645D, 2);
-/*  13: 31 */   public static final Potion e = new Potion(3, new oa("haste"), false, 14270531).c("potion.digSpeed").b(2, 0).a(1.5D);
-/*  14: 32 */   public static final Potion f = new Potion(4, new oa("mining_fatigue"), true, 4866583).c("potion.digSlowDown").b(3, 0);
-/*  15: 33 */   public static final Potion g = new wm(5, new oa("strength"), false, 9643043).c("potion.damageBoost").b(4, 0).a(afs.e, "648D7064-6A60-4F59-8ABE-C2C23A6DD7A9", 2.5D, 2);
-/*  16: 34 */   public static final Potion h = new wo(6, new oa("instant_health"), false, 16262179).c("potion.heal");
-/*  17: 35 */   public static final Potion i = new wo(7, new oa("instant_damage"), true, 4393481).c("potion.harm");
-/*  18: 36 */   public static final Potion j = new Potion(8, new oa("jump_boost"), false, 2293580).c("potion.jump").b(2, 1);
-/*  19: 37 */   public static final Potion k = new Potion(9, new oa("nausea"), true, 5578058).c("potion.confusion").b(3, 1).a(0.25D);
-/*  20: 38 */   public static final Potion l = new Potion(10, new oa("regeneration"), false, 13458603).c("potion.regeneration").b(7, 0).a(0.25D);
-/*  21: 39 */   public static final Potion m = new Potion(11, new oa("resistance"), false, 10044730).c("potion.resistance").b(6, 1);
-/*  22: 40 */   public static final Potion n = new Potion(12, new oa("fire_resistance"), false, 14981690).c("potion.fireResistance").b(7, 1);
-/*  23: 41 */   public static final Potion o = new Potion(13, new oa("water_breathing"), false, 3035801).c("potion.waterBreathing").b(0, 2);
-/*  24: 42 */   public static final Potion p = new Potion(14, new oa("invisibility"), false, 8356754).c("potion.invisibility").b(0, 1);
-/*  25: 43 */   public static final Potion q = new Potion(15, new oa("blindness"), true, 2039587).c("potion.blindness").b(5, 1).a(0.25D);
-/*  26: 44 */   public static final Potion r = new Potion(16, new oa("night_vision"), false, 2039713).c("potion.nightVision").b(4, 1);
-/*  27: 45 */   public static final Potion s = new Potion(17, new oa("hunger"), true, 5797459).c("potion.hunger").b(1, 1);
-/*  28: 46 */   public static final Potion t = new wm(18, new oa("weakness"), true, 4738376).c("potion.weakness").b(5, 0).a(afs.e, "22653B89-116E-49DC-9B6B-9971489B5BE5", 2.0D, 0);
-/*  29: 47 */   public static final Potion u = new Potion(19, new oa("poison"), true, 5149489).c("potion.poison").b(6, 0).a(0.25D);
-/*  30: 48 */   public static final Potion v = new Potion(20, new oa("wither"), true, 3484199).c("potion.wither").b(1, 2).a(0.25D);
-/*  31: 49 */   public static final Potion w = new wn(21, new oa("health_boost"), false, 16284963).c("potion.healthBoost").b(2, 2).a(afs.a, "5D6F0BA2-1186-46AC-B896-C61C5CEE99CC", 4.0D, 0);
-/*  32: 50 */   public static final Potion x = new wl(22, new oa("absorption"), false, 2445989).c("potion.absorption").b(2, 2);
-/*  33: 51 */   public static final Potion y = new wo(23, new oa("saturation"), false, 16262179).c("potion.saturation");
+/*  11: 29 */   public static final Potion c = new Potion(1, new oa("speed"), false, 8171462).setName("potion.moveSpeed").b(0, 0).a(afs.d, "91AEAA56-376B-4498-935B-2F7F68070635", 0.2000000029802322D, 2);
+/*  12: 30 */   public static final Potion d = new Potion(2, new oa("slowness"), true, 5926017).setName("potion.moveSlowdown").b(1, 0).a(afs.d, "7107DE5E-7CE8-4030-940E-514C1F160890", -0.1500000059604645D, 2);
+/*  13: 31 */   public static final Potion e = new Potion(3, new oa("haste"), false, 14270531).setName("potion.digSpeed").b(2, 0).a(1.5D);
+/*  14: 32 */   public static final Potion f = new Potion(4, new oa("mining_fatigue"), true, 4866583).setName("potion.digSlowDown").b(3, 0);
+/*  15: 33 */   public static final Potion g = new wm(5, new oa("strength"), false, 9643043).setName("potion.damageBoost").b(4, 0).a(afs.e, "648D7064-6A60-4F59-8ABE-C2C23A6DD7A9", 2.5D, 2);
+/*  16: 34 */   public static final Potion h = new wo(6, new oa("instant_health"), false, 16262179).setName("potion.heal");
+/*  17: 35 */   public static final Potion i = new wo(7, new oa("instant_damage"), true, 4393481).setName("potion.harm");
+/*  18: 36 */   public static final Potion j = new Potion(8, new oa("jump_boost"), false, 2293580).setName("potion.jump").b(2, 1);
+/*  19: 37 */   public static final Potion k = new Potion(9, new oa("nausea"), true, 5578058).setName("potion.confusion").b(3, 1).a(0.25D);
+/*  20: 38 */   public static final Potion l = new Potion(10, new oa("regeneration"), false, 13458603).setName("potion.regeneration").b(7, 0).a(0.25D);
+/*  21: 39 */   public static final Potion m = new Potion(11, new oa("resistance"), false, 10044730).setName("potion.resistance").b(6, 1);
+/*  22: 40 */   public static final Potion n = new Potion(12, new oa("fire_resistance"), false, 14981690).setName("potion.fireResistance").b(7, 1);
+/*  23: 41 */   public static final Potion o = new Potion(13, new oa("water_breathing"), false, 3035801).setName("potion.waterBreathing").b(0, 2);
+/*  24: 42 */   public static final Potion p = new Potion(14, new oa("invisibility"), false, 8356754).setName("potion.invisibility").b(0, 1);
+/*  25: 43 */   public static final Potion q = new Potion(15, new oa("blindness"), true, 2039587).setName("potion.blindness").b(5, 1).a(0.25D);
+/*  26: 44 */   public static final Potion r = new Potion(16, new oa("night_vision"), false, 2039713).setName("potion.nightVision").b(4, 1);
+/*  27: 45 */   public static final Potion s = new Potion(17, new oa("hunger"), true, 5797459).setName("potion.hunger").b(1, 1);
+/*  28: 46 */   public static final Potion t = new wm(18, new oa("weakness"), true, 4738376).setName("potion.weakness").b(5, 0).a(afs.e, "22653B89-116E-49DC-9B6B-9971489B5BE5", 2.0D, 0);
+/*  29: 47 */   public static final Potion u = new Potion(19, new oa("poison"), true, 5149489).setName("potion.poison").b(6, 0).a(0.25D);
+/*  30: 48 */   public static final Potion v = new Potion(20, new oa("wither"), true, 3484199).setName("potion.wither").b(1, 2).a(0.25D);
+/*  31: 49 */   public static final Potion w = new wn(21, new oa("health_boost"), false, 16284963).setName("potion.healthBoost").b(2, 2).a(afs.a, "5D6F0BA2-1186-46AC-B896-C61C5CEE99CC", 4.0D, 0);
+/*  32: 50 */   public static final Potion x = new wl(22, new oa("absorption"), false, 2445989).setName("potion.absorption").b(2, 2);
+/*  33: 51 */   public static final Potion y = new wo(23, new oa("saturation"), false, 16262179).setName("potion.saturation");
 /*  34: 52 */   public static final Potion z = null;
 /*  35: 53 */   public static final Potion A = null;
 /*  36: 54 */   public static final Potion B = null;
@@ -41,20 +41,20 @@ package net.minecraft.src;
 /*  39: 57 */   public static final Potion E = null;
 /*  40: 58 */   public static final Potion F = null;
 /*  41: 59 */   public static final Potion G = null;
-/*  42:    */   public final int H;
+/*  42:    */   public final int id;
 /*  43: 62 */   private final Map<xy,ya> J = Maps.newHashMap();
 /*  44:    */   private final boolean K;
 /*  45:    */   private final int L;
-/*  46: 65 */   private String M = "";
+/*  46: 65 */   private String name = "";
 /*  47: 66 */   private int N = -1;
 /*  48:    */   private double O;
 /*  49:    */   private boolean P;
 /*  50:    */   
-/*  51:    */   protected Potion(int paramInt1, oa paramoa, boolean paramBoolean, int paramInt2)
+/*  51:    */   protected Potion(int id, oa paramoa, boolean paramBoolean, int paramInt2)
 /*  52:    */   {
-/*  53: 71 */     this.H = paramInt1;
+/*  53: 71 */     this.id = id;
 /*  54:    */     
-/*  55: 73 */     a[paramInt1] = this;
+/*  55: 73 */     potionList[id] = this;
 /*  56: 74 */     I.put(paramoa, this);
 /*  57: 75 */     this.K = paramBoolean;
 /*  58: 76 */     if (paramBoolean) {
@@ -88,36 +88,36 @@ package net.minecraft.src;
 /*  86:    */   
 /*  87:    */   public int d()
 /*  88:    */   {
-/*  89:104 */     return this.H;
+/*  89:104 */     return this.id;
 /*  90:    */   }
 /*  91:    */   
 /*  92:    */   public void a(EntityLiving paramxm, int paramInt)
 /*  93:    */   {
-/*  94:117 */     if (this.H == l.H)
+/*  94:117 */     if (this.id == l.id)
 /*  95:    */     {
 /*  96:118 */       if (paramxm.getHealth() < paramxm.bt()) {
 /*  97:119 */         paramxm.g(1.0F);
 /*  98:    */       }
 /*  99:    */     }
-/* 100:121 */     else if (this.H == u.H)
+/* 100:121 */     else if (this.id == u.id)
 /* 101:    */     {
 /* 102:122 */       if (paramxm.getHealth() > 1.0F) {
 /* 103:123 */         paramxm.a(wh.l, 1.0F);
 /* 104:    */       }
 /* 105:    */     }
-/* 106:125 */     else if (this.H == v.H) {
+/* 106:125 */     else if (this.id == v.id) {
 /* 107:126 */       paramxm.a(wh.m, 1.0F);
-/* 108:127 */     } else if ((this.H == s.H) && ((paramxm instanceof EntityPlayer))) {
+/* 108:127 */     } else if ((this.id == s.id) && ((paramxm instanceof EntityPlayer))) {
 /* 109:130 */       ((EntityPlayer)paramxm).a(0.025F * (paramInt + 1));
-/* 110:131 */     } else if ((this.H == y.H) && ((paramxm instanceof EntityPlayer)))
+/* 110:131 */     } else if ((this.id == y.id) && ((paramxm instanceof EntityPlayer)))
 /* 111:    */     {
 /* 112:132 */       if (!paramxm.world.isClient) {
 /* 113:133 */         ((EntityPlayer)paramxm).ck().a(paramInt + 1, 1.0F);
 /* 114:    */       }
 /* 115:    */     }
-/* 116:135 */     else if (((this.H == h.H) && (!paramxm.bl())) || ((this.H == i.H) && (paramxm.bl()))) {
+/* 116:135 */     else if (((this.id == h.id) && (!paramxm.bl())) || ((this.id == i.id) && (paramxm.bl()))) {
 /* 117:136 */       paramxm.g(Math.max(4 << paramInt, 0));
-/* 118:137 */     } else if (((this.H == i.H) && (!paramxm.bl())) || ((this.H == h.H) && (paramxm.bl()))) {
+/* 118:137 */     } else if (((this.id == i.id) && (!paramxm.bl())) || ((this.id == h.id) && (paramxm.bl()))) {
 /* 119:138 */       paramxm.a(wh.l, 6 << paramInt);
 /* 120:    */     }
 /* 121:    */   }
@@ -125,12 +125,12 @@ package net.minecraft.src;
 /* 123:    */   public void a(Entity paramwv1, Entity paramwv2, EntityLiving paramxm, int paramInt, double paramDouble)
 /* 124:    */   {
 /* 125:    */     int i1;
-/* 126:143 */     if (((this.H == h.H) && (!paramxm.bl())) || ((this.H == i.H) && (paramxm.bl())))
+/* 126:143 */     if (((this.id == h.id) && (!paramxm.bl())) || ((this.id == i.id) && (paramxm.bl())))
 /* 127:    */     {
 /* 128:144 */       i1 = (int)(paramDouble * (4 << paramInt) + 0.5D);
 /* 129:145 */       paramxm.g(i1);
 /* 130:    */     }
-/* 131:146 */     else if (((this.H == i.H) && (!paramxm.bl())) || ((this.H == h.H) && (paramxm.bl())))
+/* 131:146 */     else if (((this.id == i.id) && (!paramxm.bl())) || ((this.id == h.id) && (paramxm.bl())))
 /* 132:    */     {
 /* 133:147 */       i1 = (int)(paramDouble * (6 << paramInt) + 0.5D);
 /* 134:148 */       if (paramwv1 == null) {
@@ -149,7 +149,7 @@ package net.minecraft.src;
 /* 147:    */   public boolean a(int paramInt1, int paramInt2)
 /* 148:    */   {
 /* 149:    */     int i1;
-/* 150:172 */     if (this.H == l.H)
+/* 150:172 */     if (this.id == l.id)
 /* 151:    */     {
 /* 152:174 */       i1 = 50 >> paramInt2;
 /* 153:175 */       if (i1 > 0) {
@@ -157,7 +157,7 @@ package net.minecraft.src;
 /* 155:    */       }
 /* 156:178 */       return true;
 /* 157:    */     }
-/* 158:179 */     if (this.H == u.H)
+/* 158:179 */     if (this.id == u.id)
 /* 159:    */     {
 /* 160:181 */       i1 = 25 >> paramInt2;
 /* 161:182 */       if (i1 > 0) {
@@ -165,7 +165,7 @@ package net.minecraft.src;
 /* 163:    */       }
 /* 164:185 */       return true;
 /* 165:    */     }
-/* 166:186 */     if (this.H == v.H)
+/* 166:186 */     if (this.id == v.id)
 /* 167:    */     {
 /* 168:187 */       i1 = 40 >> paramInt2;
 /* 169:188 */       if (i1 > 0) {
@@ -173,21 +173,21 @@ package net.minecraft.src;
 /* 171:    */       }
 /* 172:191 */       return true;
 /* 173:    */     }
-/* 174:192 */     if (this.H == s.H) {
+/* 174:192 */     if (this.id == s.id) {
 /* 175:193 */       return true;
 /* 176:    */     }
 /* 177:196 */     return false;
 /* 178:    */   }
 /* 179:    */   
-/* 180:    */   public Potion c(String paramString)
+/* 180:    */   public Potion setName(String paramString)
 /* 181:    */   {
-/* 182:201 */     this.M = paramString;
+/* 182:201 */     this.name = paramString;
 /* 183:202 */     return this;
 /* 184:    */   }
 /* 185:    */   
-/* 186:    */   public String a()
+/* 186:    */   public String getName()
 /* 187:    */   {
-/* 188:207 */     return this.M;
+/* 188:207 */     return this.name;
 /* 189:    */   }
 /* 190:    */   
 /* 191:    */   public boolean e()
@@ -205,12 +205,12 @@ package net.minecraft.src;
 /* 203:219 */     return this.K;
 /* 204:    */   }
 /* 205:    */   
-/* 206:    */   public static String a(wq paramwq)
+/* 206:    */   public static String getDurationString(wq paramwq)
 /* 207:    */   {
 /* 208:223 */     if (paramwq.h()) {
 /* 209:224 */       return "**:**";
 /* 210:    */     }
-/* 211:226 */     int i1 = paramwq.b();
+/* 211:226 */     int i1 = paramwq.getDuration();
 /* 212:227 */     return vb.a(i1);
 /* 213:    */   }
 /* 214:    */   
@@ -237,7 +237,7 @@ package net.minecraft.src;
 /* 235:    */   
 /* 236:    */   public Potion a(xy paramxy, String paramString, double paramDouble, int paramInt)
 /* 237:    */   {
-/* 238:253 */     ya localya = new ya(UUID.fromString(paramString), a(), paramDouble, paramInt);
+/* 238:253 */     ya localya = new ya(UUID.fromString(paramString), getName(), paramDouble, paramInt);
 /* 239:254 */     this.J.put(paramxy, localya);
 /* 240:255 */     return this;
 /* 241:    */   }
@@ -267,7 +267,7 @@ package net.minecraft.src;
 /* 265:    */       {
 /* 266:277 */         ya localya = (ya)localEntry.getValue();
 /* 267:278 */         localxz.c(localya);
-/* 268:279 */         localxz.b(new ya(localya.a(), a() + " " + paramInt, a(paramInt, localya), localya.c()));
+/* 268:279 */         localxz.b(new ya(localya.a(), getName() + " " + paramInt, a(paramInt, localya), localya.c()));
 /* 269:    */       }
 /* 270:    */     }
 /* 271:    */   }

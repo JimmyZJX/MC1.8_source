@@ -607,12 +607,12 @@ package net.minecraft.src;
 /*  606:     */       }
 /*  607:     */     }
 /*  608: 707 */     if (a(Potion.e)) {
-/*  609: 708 */       f1 *= (1.0F + (b(Potion.e).c() + 1) * 0.2F);
+/*  609: 708 */       f1 *= (1.0F + (b(Potion.e).getAmplifier() + 1) * 0.2F);
 /*  610:     */     }
 /*  611: 710 */     if (a(Potion.f))
 /*  612:     */     {
 /*  613: 713 */       float f2 = 1.0F;
-/*  614: 714 */       switch (b(Potion.f).c())
+/*  614: 714 */       switch (b(Potion.f).getAmplifier())
 /*  615:     */       {
 /*  616:     */       case 0: 
 /*  617: 716 */         f2 = 0.3F;

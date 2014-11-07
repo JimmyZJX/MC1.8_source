@@ -74,7 +74,7 @@ package net.minecraft.src;
 /*  73:105 */     if (super.r(paramwv))
 /*  74:    */     {
 /*  75:106 */       if ((ck() == 1) && ((paramwv instanceof EntityLiving))) {
-/*  76:107 */         ((EntityLiving)paramwv).c(new wq(Potion.v.H, 200));
+/*  76:107 */         ((EntityLiving)paramwv).c(new wq(Potion.v.id, 200));
 /*  77:    */       }
 /*  78:109 */       return true;
 /*  79:    */     }

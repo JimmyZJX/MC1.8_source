@@ -8,7 +8,7 @@ package net.minecraft.src;
 /*   6:    */   
 /*   7:    */   public byq(byn parambyn, int paramInt1, int paramInt2, int paramInt3, int paramInt4, int paramInt5)
 /*   8:    */   {
-/*   9:234 */     super(paramInt1, paramInt2, paramInt3, byl.a, 0 + Potion.a[paramInt4].f() % 8 * 18, 198 + Potion.a[paramInt4].f() / 8 * 18);
+/*   9:234 */     super(paramInt1, paramInt2, paramInt3, byl.a, 0 + Potion.potionList[paramInt4].f() % 8 * 18, 198 + Potion.potionList[paramInt4].f() / 8 * 18);
 				  o=parambyn;
 /*  10:235 */     this.p = paramInt4;
 /*  11:236 */     this.q = paramInt5;
@@ -16,8 +16,8 @@ package net.minecraft.src;
 /*  13:    */   
 /*  14:    */   public void b(int paramInt1, int paramInt2)
 /*  15:    */   {
-/*  16:241 */     String str = cwc.a(Potion.a[this.p].a(), new Object[0]);
-/*  17:244 */     if ((this.q >= 3) && (this.p != Potion.l.H)) {
+/*  16:241 */     String str = cwc.a(Potion.potionList[this.p].getName(), new Object[0]);
+/*  17:244 */     if ((this.q >= 3) && (this.p != Potion.l.id)) {
 /*  18:245 */       str = str + " II";
 /*  19:    */     }
 /*  20:248 */     byn.a(this.o, str, paramInt1, paramInt2);

@@ -137,7 +137,7 @@ package net.minecraft.src;
 /* 136:141 */   public static final Item bw = a("ghast_tear");
 /* 137:142 */   public static final Item goldNugget = a("gold_nugget");
 /* 138:143 */   public static final Item by = a("nether_wart");
-/* 139:144 */   public static final amw bz = (amw)a("potion");
+/* 139:144 */   public static final ItemPotion potion = (ItemPotion)a("potion");
 /* 140:145 */   public static final Item bA = a("glass_bottle");
 /* 141:146 */   public static final Item bB = a("spider_eye");
 /* 142:147 */   public static final Item bC = a("fermented_spider_eye");

@@ -22,7 +22,7 @@ package net.minecraft.src;
 /*  21:    */   
 /*  22:    */   public void a(EntityPlayer paramahd, ItemStack paramamj)
 /*  23:    */   {
-/*  24:144 */     if ((paramamj.getItem() == ItemList.bz) && (paramamj.i() > 0)) {
+/*  24:144 */     if ((paramamj.getItem() == ItemList.potion) && (paramamj.i() > 0)) {
 /*  25:145 */       this.a.b(AchievementList.B);
 /*  26:    */     }
 /*  27:147 */     super.a(paramahd, paramamj);
@@ -30,7 +30,7 @@ package net.minecraft.src;
 /*  29:    */   
 /*  30:    */   public static boolean b_(ItemStack paramamj)
 /*  31:    */   {
-/*  32:151 */     return (paramamj != null) && ((paramamj.getItem() == ItemList.bz) || (paramamj.getItem() == ItemList.bA));
+/*  32:151 */     return (paramamj != null) && ((paramamj.getItem() == ItemList.potion) || (paramamj.getItem() == ItemList.bA));
 /*  33:    */   }
 /*  34:    */ }
 

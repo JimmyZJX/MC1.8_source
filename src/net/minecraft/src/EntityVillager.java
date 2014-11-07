@@ -135,7 +135,7 @@ package net.minecraft.src;
 /*  136: 191 */             this.bk.a(this.bu, 1);
 /*  137:     */           }
 /*  138:     */         }
-/*  139: 194 */         c(new wq(Potion.l.H, 200, 0));
+/*  139: 194 */         c(new wq(Potion.l.id, 200, 0));
 /*  140:     */       }
 /*  141:     */     }
 /*  142: 198 */     super.E();

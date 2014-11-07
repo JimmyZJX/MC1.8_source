@@ -917,7 +917,7 @@ package net.minecraft.src;
 /*  916: 945 */     a(ItemList.goldNugget, "gold_nugget");
 /*  917: 946 */     a(ItemList.by, "nether_wart");
 /*  918:     */     
-/*  919: 948 */     this.m.a(ItemList.bz, new cqn(this));
+/*  919: 948 */     this.m.a(ItemList.potion, new cqn(this));
 /*  920:     */     
 /*  921:     */ 
 /*  922:     */ 

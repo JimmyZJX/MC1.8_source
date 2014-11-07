@@ -117,10 +117,10 @@ package net.minecraft.src;
 /* 116:209 */     float f3 = 0.0F;
 /* 117:210 */     float f4 = 0.0F;
 /* 118:212 */     for (wq localwq : paramCollection) {
-/* 119:213 */       if (localwq.f())
+/* 119:213 */       if (localwq.getShowParticles())
 /* 120:    */       {
-/* 121:216 */         int i2 = Potion.a[localwq.a()].k();
-/* 122:218 */         for (int i3 = 0; i3 <= localwq.c(); i3++)
+/* 121:216 */         int i2 = Potion.potionList[localwq.getID()].k();
+/* 122:218 */         for (int i3 = 0; i3 <= localwq.getAmplifier(); i3++)
 /* 123:    */         {
 /* 124:219 */           f1 += (i2 >> 16 & 0xFF) / 255.0F;
 /* 125:220 */           f2 += (i2 >> 8 & 0xFF) / 255.0F;
@@ -142,7 +142,7 @@ package net.minecraft.src;
 /* 141:    */   public static boolean b(Collection<wq> paramCollection)
 /* 142:    */   {
 /* 143:238 */     for (wq localwq : paramCollection) {
-/* 144:239 */       if (!localwq.e()) {
+/* 144:239 */       if (!localwq.getAmbient()) {
 /* 145:240 */         return false;
 /* 146:    */       }
 /* 147:    */     }
@@ -348,10 +348,10 @@ package net.minecraft.src;
 /* 338:451 */     return i9;
 /* 339:    */   }
 /* 340:    */   
-/* 341:    */   public static List b(int paramInt, boolean paramBoolean)
+/* 341:    */   public static List<wq> b(int paramInt, boolean paramBoolean)
 /* 342:    */   {
-/* 343:455 */     ArrayList localArrayList = null;
-/* 344:457 */     for (Potion localwp : Potion.a) {
+/* 343:455 */     ArrayList<wq> localArrayList = null;
+/* 344:457 */     for (Potion localwp : Potion.potionList) {
 /* 345:458 */       if ((localwp != null) && ((!localwp.j()) || (paramBoolean)))
 /* 346:    */       {
 /* 347:461 */         String str1 = (String)o.get(Integer.valueOf(localwp.d()));

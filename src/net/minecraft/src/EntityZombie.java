@@ -447,8 +447,8 @@ package net.minecraft.src;
 /* 447:500 */     this.bm = paramInt;
 /* 448:501 */     H().b(14, Byte.valueOf((byte)1));
 /* 449:    */     
-/* 450:503 */     m(Potion.t.H);
-/* 451:504 */     c(new wq(Potion.g.H, paramInt, Math.min(this.world.getDifficulty().a() - 1, 0)));
+/* 450:503 */     m(Potion.t.id);
+/* 451:504 */     c(new wq(Potion.g.id, paramInt, Math.min(this.world.getDifficulty().a() - 1, 0)));
 /* 452:    */     
 /* 453:506 */     this.world.a(this, (byte)16);
 /* 454:    */   }
@@ -488,7 +488,7 @@ package net.minecraft.src;
 /* 488:537 */     this.world.setEntityDead(this);
 /* 489:538 */     this.world.spawnEntity(localagp);
 /* 490:    */     
-/* 491:540 */     localagp.c(new wq(Potion.k.H, 200, 0));
+/* 491:540 */     localagp.c(new wq(Potion.k.id, 200, 0));
 /* 492:541 */     this.world.playLevelEvent(null, 1017, new BlockPosition((int)this.xPos, (int)this.yPos, (int)this.zPos), 0);
 /* 493:    */   }
 /* 494:    */   

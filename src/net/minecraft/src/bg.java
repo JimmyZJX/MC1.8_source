@@ -46,15 +46,15 @@ package net.minecraft.src;
 /*  45: 58 */       if (localwp1 == null) {
 /*  46: 59 */         throw localdk;
 /*  47:    */       }
-/*  48: 61 */       i = localwp1.H;
+/*  48: 61 */       i = localwp1.id;
 /*  49:    */     }
 /*  50: 64 */     int j = 600;
 /*  51: 65 */     int k = 30;
 /*  52: 66 */     int m = 0;
-/*  53: 68 */     if ((i < 0) || (i >= Potion.a.length) || (Potion.a[i] == null)) {
+/*  53: 68 */     if ((i < 0) || (i >= Potion.potionList.length) || (Potion.potionList[i] == null)) {
 /*  54: 69 */       throw new NumberInvalidException("commands.effect.notFound", new Object[] { Integer.valueOf(i) });
 /*  55:    */     }
-/*  56: 72 */     Potion localwp2 = Potion.a[i];
+/*  56: 72 */     Potion localwp2 = Potion.potionList[i];
 /*  57: 73 */     if (paramArrayOfString.length >= 3)
 /*  58:    */     {
 /*  59: 74 */       k = a(paramArrayOfString[2], 0, 1000000);
@@ -80,17 +80,17 @@ package net.minecraft.src;
 /*  79:    */     {
 /*  80: 96 */       wq localwq = new wq(i, j, m, false, bool);
 /*  81: 97 */       localxm.c(localwq);
-/*  82: 98 */       a(paramae, this, "commands.effect.success", new Object[] { new hz(localwq.g(), new Object[0]), Integer.valueOf(i), Integer.valueOf(m), localxm.getName(), Integer.valueOf(k) });
+/*  82: 98 */       a(paramae, this, "commands.effect.success", new Object[] { new hz(localwq.getPotionName(), new Object[0]), Integer.valueOf(i), Integer.valueOf(m), localxm.getName(), Integer.valueOf(k) });
 /*  83: 99 */       return;
 /*  84:    */     }
 /*  85:102 */     if (localxm.k(i))
 /*  86:    */     {
 /*  87:103 */       localxm.m(i);
-/*  88:104 */       a(paramae, this, "commands.effect.success.removed", new Object[] { new hz(localwp2.a(), new Object[0]), localxm.getName() });
+/*  88:104 */       a(paramae, this, "commands.effect.success.removed", new Object[] { new hz(localwp2.getName(), new Object[0]), localxm.getName() });
 /*  89:    */     }
 /*  90:    */     else
 /*  91:    */     {
-/*  92:106 */       throw new CommandException("commands.effect.failure.notActive", new Object[] { new hz(localwp2.a(), new Object[0]), localxm.getName() });
+/*  92:106 */       throw new CommandException("commands.effect.failure.notActive", new Object[] { new hz(localwp2.getName(), new Object[0]), localxm.getName() });
 /*  93:    */     }
 /*  94:    */   }
 /*  95:    */   

@@ -27,15 +27,15 @@ package net.minecraft.src;
 /* 26:   */   protected void c(ItemStack paramamj, World paramaqu, EntityPlayer paramahd)
 /* 27:   */   {
 /* 28:33 */     if (!paramaqu.isClient) {
-/* 29:34 */       paramahd.c(new wq(Potion.x.H, 2400, 0));
+/* 29:34 */       paramahd.c(new wq(Potion.x.id, 2400, 0));
 /* 30:   */     }
 /* 31:37 */     if (paramamj.i() > 0)
 /* 32:   */     {
 /* 33:38 */       if (!paramaqu.isClient)
 /* 34:   */       {
-/* 35:39 */         paramahd.c(new wq(Potion.l.H, 600, 4));
-/* 36:40 */         paramahd.c(new wq(Potion.m.H, 6000, 0));
-/* 37:41 */         paramahd.c(new wq(Potion.n.H, 6000, 0));
+/* 35:39 */         paramahd.c(new wq(Potion.l.id, 600, 4));
+/* 36:40 */         paramahd.c(new wq(Potion.m.id, 6000, 0));
+/* 37:41 */         paramahd.c(new wq(Potion.n.id, 6000, 0));
 /* 38:   */       }
 /* 39:   */     }
 /* 40:   */     else {

@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*   5:    */   
 /*   6:    */   public ItemStack a(dz paramdz, ItemStack paramamj)
 /*   7:    */   {
-/*   8: 83 */     if (amw.f(paramamj.i())) {
+/*   8: 83 */     if (ItemPotion.f(paramamj.i())) {
 /*   9: 84 */       return new or(this, paramamj).a(paramdz, paramamj);
 /*  10:    */     }
 /*  11:101 */     return this.b.a(paramdz, paramamj);

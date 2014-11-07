@@ -31,7 +31,7 @@ package net.minecraft.src;
 /* 30:39 */   public static tk y = new tk("achievement.portal", "portal", -1, 7, BlockList.obsidian, w).c();
 /* 31:40 */   public static tk z = new tk("achievement.ghast", "ghast", -4, 8, ItemList.bw, y).b().c();
 /* 32:41 */   public static tk A = new tk("achievement.blazeRod", "blazeRod", 0, 9, ItemList.bv, y).c();
-/* 33:42 */   public static tk B = new tk("achievement.potion", "potion", 2, 8, ItemList.bz, A).c();
+/* 33:42 */   public static tk B = new tk("achievement.potion", "potion", 2, 8, ItemList.potion, A).c();
 /* 34:43 */   public static tk C = new tk("achievement.theEnd", "theEnd", 3, 10, ItemList.bH, A).b().c();
 /* 35:44 */   public static tk D = new tk("achievement.theEnd2", "theEnd2", 4, 13, BlockList.dragonEgg, C).b().c();
 /* 36:45 */   public static tk E = new tk("achievement.enchantments", "enchantments", -4, 4, BlockList.bC, w).c();

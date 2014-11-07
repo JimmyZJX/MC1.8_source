@@ -14,7 +14,7 @@ package net.minecraft.src;
 /*  13:    */   
 /*  14:    */   public ahv(World paramaqu, EntityLiving paramxm, int paramInt)
 /*  15:    */   {
-/*  16: 30 */     this(paramaqu, paramxm, new ItemStack(ItemList.bz, 1, paramInt));
+/*  16: 30 */     this(paramaqu, paramxm, new ItemStack(ItemList.potion, 1, paramInt));
 /*  17:    */   }
 /*  18:    */   
 /*  19:    */   public ahv(World paramaqu, EntityLiving paramxm, ItemStack paramamj)
@@ -26,7 +26,7 @@ package net.minecraft.src;
 /*  25:    */   
 /*  26:    */   public ahv(World paramaqu, double paramDouble1, double paramDouble2, double paramDouble3, int paramInt)
 /*  27:    */   {
-/*  28: 40 */     this(paramaqu, paramDouble1, paramDouble2, paramDouble3, new ItemStack(ItemList.bz, 1, paramInt));
+/*  28: 40 */     this(paramaqu, paramDouble1, paramDouble2, paramDouble3, new ItemStack(ItemList.potion, 1, paramInt));
 /*  29:    */   }
 /*  30:    */   
 /*  31:    */   public ahv(World paramaqu, double paramDouble1, double paramDouble2, double paramDouble3, ItemStack paramamj)
@@ -53,7 +53,7 @@ package net.minecraft.src;
 /*  52:    */   public void a(int paramInt)
 /*  53:    */   {
 /*  54: 64 */     if (this.c == null) {
-/*  55: 65 */       this.c = new ItemStack(ItemList.bz, 1, 0);
+/*  55: 65 */       this.c = new ItemStack(ItemList.potion, 1, 0);
 /*  56:    */     }
 /*  57: 67 */     this.c.b(paramInt);
 /*  58:    */   }
@@ -61,7 +61,7 @@ package net.minecraft.src;
 /*  60:    */   public int o()
 /*  61:    */   {
 /*  62: 71 */     if (this.c == null) {
-/*  63: 72 */       this.c = new ItemStack(ItemList.bz, 1, 0);
+/*  63: 72 */       this.c = new ItemStack(ItemList.potion, 1, 0);
 /*  64:    */     }
 /*  65: 74 */     return this.c.i();
 /*  66:    */   }
@@ -70,7 +70,7 @@ package net.minecraft.src;
 /*  69:    */   {
 /*  70: 79 */     if (!this.world.isClient)
 /*  71:    */     {
-/*  72: 80 */       List<wq> localList1 = ItemList.bz.h(this.c);
+/*  72: 80 */       List<wq> localList1 = ItemList.potion.h(this.c);
 /*  73:    */       Iterator localIterator1;
 /*  74: 82 */       if ((localList1 != null) && (!localList1.isEmpty()))
 /*  75:    */       {
@@ -89,16 +89,16 @@ package net.minecraft.src;
 /*  88:    */               }
 /*  89: 95 */               for (wq localwq : localList1)
 /*  90:    */               {
-/*  91: 96 */                 int i = localwq.a();
-/*  92: 97 */                 if (Potion.a[i].b())
+/*  91: 96 */                 int i = localwq.getID();
+/*  92: 97 */                 if (Potion.potionList[i].b())
 /*  93:    */                 {
-/*  94: 98 */                   Potion.a[i].a(this, n(), localxm, localwq.c(), d2);
+/*  94: 98 */                   Potion.potionList[i].a(this, n(), localxm, localwq.getAmplifier(), d2);
 /*  95:    */                 }
 /*  96:    */                 else
 /*  97:    */                 {
-/*  98:100 */                   int j = (int)(d2 * localwq.b() + 0.5D);
+/*  98:100 */                   int j = (int)(d2 * localwq.getDuration() + 0.5D);
 /*  99:101 */                   if (j > 20) {
-/* 100:102 */                     localxm.c(new wq(i, j, localwq.c()));
+/* 100:102 */                     localxm.c(new wq(i, j, localwq.getAmplifier()));
 /* 101:    */                   }
 /* 102:    */                 }
 /* 103:    */               }

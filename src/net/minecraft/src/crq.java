@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*  3:   */ {
 /*  4:   */   public crq(cpt paramcpt, cqh paramcqh)
 /*  5:   */   {
-/*  6: 9 */     super(paramcpt, ItemList.bz, paramcqh);
+/*  6: 9 */     super(paramcpt, ItemList.potion, paramcqh);
 /*  7:   */   }
 /*  8:   */   
 /*  9:   */   public ItemStack d(ahv paramahv)

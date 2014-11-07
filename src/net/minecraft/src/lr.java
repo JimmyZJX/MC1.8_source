@@ -13,14 +13,14 @@ package net.minecraft.src;
 /* 12:   */   public lr(int paramInt, wq paramwq)
 /* 13:   */   {
 /* 14:23 */     this.a = paramInt;
-/* 15:24 */     this.b = ((byte)(paramwq.a() & 0xFF));
-/* 16:25 */     this.c = ((byte)(paramwq.c() & 0xFF));
-/* 17:26 */     if (paramwq.b() > 32767) {
+/* 15:24 */     this.b = ((byte)(paramwq.getID() & 0xFF));
+/* 16:25 */     this.c = ((byte)(paramwq.getAmplifier() & 0xFF));
+/* 17:26 */     if (paramwq.getDuration() > 32767) {
 /* 18:27 */       this.d = 32767;
 /* 19:   */     } else {
-/* 20:30 */       this.d = paramwq.b();
+/* 20:30 */       this.d = paramwq.getDuration();
 /* 21:   */     }
-/* 22:32 */     this.e = ((byte)(paramwq.f() ? 1 : 0));
+/* 22:32 */     this.e = ((byte)(paramwq.getShowParticles() ? 1 : 0));
 /* 23:   */   }
 /* 24:   */   
 /* 25:   */   public void fromBuffer(ByteBufWrapper paramhd)

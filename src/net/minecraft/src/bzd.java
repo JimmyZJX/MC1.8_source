@@ -59,7 +59,7 @@ package net.minecraft.src;
 /* 58:   */     }
 /* 59:62 */     for (wq localwq : this.j.h.bk())
 /* 60:   */     {
-/* 61:63 */       Potion localwp = Potion.a[localwq.a()];
+/* 61:63 */       Potion localwp = Potion.potionList[localwq.getID()];
 /* 62:   */       
 /* 63:65 */       cjm.c(1.0F, 1.0F, 1.0F, 1.0F);
 /* 64:66 */       this.j.N().a(a);
@@ -70,17 +70,17 @@ package net.minecraft.src;
 /* 69:71 */         int n = localwp.f();
 /* 70:72 */         b(i + 6, j + 7, 0 + n % 8 * 18, 198 + n / 8 * 18, 18, 18);
 /* 71:   */       }
-/* 72:75 */       String str1 = cwc.a(localwp.a(), new Object[0]);
-/* 73:77 */       if (localwq.c() == 1) {
+/* 72:75 */       String str1 = cwc.a(localwp.getName(), new Object[0]);
+/* 73:77 */       if (localwq.getAmplifier() == 1) {
 /* 74:78 */         str1 = str1 + " " + cwc.a("enchantment.level.2", new Object[0]);
-/* 75:79 */       } else if (localwq.c() == 2) {
+/* 75:79 */       } else if (localwq.getAmplifier() == 2) {
 /* 76:80 */         str1 = str1 + " " + cwc.a("enchantment.level.3", new Object[0]);
-/* 77:81 */       } else if (localwq.c() == 3) {
+/* 77:81 */       } else if (localwq.getAmplifier() == 3) {
 /* 78:82 */         str1 = str1 + " " + cwc.a("enchantment.level.4", new Object[0]);
 /* 79:   */       }
 /* 80:85 */       this.q.a(str1, i + 10 + 18, j + 6, 16777215);
 /* 81:   */       
-/* 82:87 */       String str2 = Potion.a(localwq);
+/* 82:87 */       String str2 = Potion.getDurationString(localwq);
 /* 83:88 */       this.q.a(str2, i + 10 + 18, j + 6 + 10, 8355711);
 /* 84:   */       
 /* 85:90 */       j += m;

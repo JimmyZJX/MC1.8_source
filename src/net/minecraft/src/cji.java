@@ -783,7 +783,7 @@ package net.minecraft.src;
 /*  782:     */   
 /*  783:     */   private float a(EntityLiving paramxm, float paramFloat)
 /*  784:     */   {
-/*  785: 909 */     int i1 = paramxm.b(Potion.r).b();
+/*  785: 909 */     int i1 = paramxm.b(Potion.r).getDuration();
 /*  786: 910 */     if (i1 > 200) {
 /*  787: 911 */       return 1.0F;
 /*  788:     */     }
@@ -1543,7 +1543,7 @@ package net.minecraft.src;
 /* 1542:1641 */     double d2 = (localwv.Q + (localwv.yPos - localwv.Q) * paramFloat) * localcen.t.j();
 /* 1543:1642 */     if (((localwv instanceof EntityLiving)) && (((EntityLiving)localwv).a(Potion.q)))
 /* 1544:     */     {
-/* 1545:1643 */       int i1 = ((EntityLiving)localwv).b(Potion.q).b();
+/* 1545:1643 */       int i1 = ((EntityLiving)localwv).b(Potion.q).getDuration();
 /* 1546:1644 */       if (i1 < 20) {
 /* 1547:1645 */         d2 *= (1.0F - i1 / 20.0F);
 /* 1548:     */       } else {
@@ -1614,7 +1614,7 @@ package net.minecraft.src;
 /* 1613:1710 */     if (((localwv instanceof EntityLiving)) && (((EntityLiving)localwv).a(Potion.q)))
 /* 1614:     */     {
 /* 1615:1711 */       f1 = 5.0F;
-/* 1616:1712 */       int i1 = ((EntityLiving)localwv).b(Potion.q).b();
+/* 1616:1712 */       int i1 = ((EntityLiving)localwv).b(Potion.q).getDuration();
 /* 1617:1713 */       if (i1 < 20) {
 /* 1618:1714 */         f1 = 5.0F + (this.k - 5.0F) * (1.0F - i1 / 20.0F);
 /* 1619:     */       }

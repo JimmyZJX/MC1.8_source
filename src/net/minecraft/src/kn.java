@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*  9:   */   public kn(int paramInt, wq paramwq)
 /* 10:   */   {
 /* 11:18 */     this.a = paramInt;
-/* 12:19 */     this.b = paramwq.a();
+/* 12:19 */     this.b = paramwq.getID();
 /* 13:   */   }
 /* 14:   */   
 /* 15:   */   public void fromBuffer(ByteBufWrapper paramhd)

@@ -54,7 +54,7 @@ package net.minecraft.src;
 /*  53:    */ 
 /*  54:    */ 
 /*  55:    */ 
-/*  56: 78 */     ave.M.a(ItemList.bz, new oq());
+/*  56: 78 */     ave.M.a(ItemList.potion, new oq());
 /*  57:    */     
 /*  58:    */ 
 /*  59:    */ 

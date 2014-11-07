@@ -364,10 +364,10 @@ package net.minecraft.src;
 /* 363:    */         
 /* 364:390 */         List<qw> localList = this.world.b(qw.class, new afh(this));
 /* 365:396 */         for (qw localqw : localList) {
-/* 366:397 */           if ((!localqw.a(localwp)) || (localqw.b(localwp).c() < 2) || (localqw.b(localwp).b() < 1200))
+/* 366:397 */           if ((!localqw.a(localwp)) || (localqw.b(localwp).getAmplifier() < 2) || (localqw.b(localwp).getDuration() < 1200))
 /* 367:    */           {
 /* 368:398 */             localqw.a.a(new jo(10, 0.0F));
-/* 369:399 */             localqw.c(new wq(localwp.H, 6000, 2));
+/* 369:399 */             localqw.c(new wq(localwp.id, 6000, 2));
 /* 370:    */           }
 /* 371:    */         }
 /* 372:    */       }

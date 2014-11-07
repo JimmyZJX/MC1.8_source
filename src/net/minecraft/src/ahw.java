@@ -68,7 +68,7 @@ package net.minecraft.src;
 /*  67: 77 */             i = 40;
 /*  68:    */           }
 /*  69: 79 */           if (i > 0) {
-/*  70: 80 */             ((EntityLiving)parambru.d).c(new wq(Potion.v.H, 20 * i, 1));
+/*  70: 80 */             ((EntityLiving)parambru.d).c(new wq(Potion.v.id, 20 * i, 1));
 /*  71:    */           }
 /*  72:    */         }
 /*  73:    */       }

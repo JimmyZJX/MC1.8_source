@@ -71,7 +71,7 @@ package net.minecraft.src;
 /* 70:93 */       if ((this.a == 2) && (localxm.by() == xs.c))
 /* 71:   */       {
 /* 72:94 */         int i = 20 + paramxm.bb().nextInt(10 * paramInt);
-/* 73:95 */         localxm.c(new wq(Potion.d.H, i, 3));
+/* 73:95 */         localxm.c(new wq(Potion.d.id, i, 3));
 /* 74:   */       }
 /* 75:   */     }
 /* 76:   */   }

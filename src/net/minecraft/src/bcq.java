@@ -89,17 +89,17 @@ package net.minecraft.src;
 /*  88:    */     }
 /*  89:115 */     boolean bool = false;
 /*  90:116 */     for (int m = 0; m < 3; m++) {
-/*  91:117 */       if ((this.g[m] != null) && (this.g[m].getItem() == ItemList.bz))
+/*  91:117 */       if ((this.g[m] != null) && (this.g[m].getItem() == ItemList.potion))
 /*  92:    */       {
 /*  93:118 */         int n = this.g[m].i();
 /*  94:119 */         int i1 = c(n, localamj);
-/*  95:121 */         if ((!amw.f(n)) && (amw.f(i1)))
+/*  95:121 */         if ((!ItemPotion.f(n)) && (ItemPotion.f(i1)))
 /*  96:    */         {
 /*  97:122 */           bool = true;
 /*  98:123 */           break;
 /*  99:    */         }
-/* 100:126 */         List localList1 = ItemList.bz.e(n);
-/* 101:127 */         List localList2 = ItemList.bz.e(i1);
+/* 100:126 */         List localList1 = ItemList.potion.e(n);
+/* 101:127 */         List localList2 = ItemList.potion.e(i1);
 /* 102:129 */         if (((n <= 0) || (localList1 != localList2)) && ((localList1 == null) || ((!localList1.equals(localList2)) && (localList2 != null)))) {
 /* 103:131 */           if (n != i1)
 /* 104:    */           {
@@ -119,16 +119,16 @@ package net.minecraft.src;
 /* 118:    */     }
 /* 119:169 */     ItemStack localamj = this.g[3];
 /* 120:172 */     for (int m = 0; m < 3; m++) {
-/* 121:173 */       if ((this.g[m] != null) && (this.g[m].getItem() == ItemList.bz))
+/* 121:173 */       if ((this.g[m] != null) && (this.g[m].getItem() == ItemList.potion))
 /* 122:    */       {
 /* 123:174 */         int n = this.g[m].i();
 /* 124:175 */         int i1 = c(n, localamj);
 /* 125:    */         
-/* 126:177 */         List localList1 = ItemList.bz.e(n);
-/* 127:178 */         List localList2 = ItemList.bz.e(i1);
+/* 126:177 */         List localList1 = ItemList.potion.e(n);
+/* 127:178 */         List localList2 = ItemList.potion.e(i1);
 /* 128:180 */         if (((n > 0) && (localList1 == localList2)) || ((localList1 != null) && ((localList1.equals(localList2)) || (localList2 == null))))
 /* 129:    */         {
-/* 130:181 */           if ((!amw.f(n)) && (amw.f(i1))) {
+/* 130:181 */           if ((!ItemPotion.f(n)) && (ItemPotion.f(i1))) {
 /* 131:182 */             this.g[m].b(i1);
 /* 132:    */           }
 /* 133:    */         }
@@ -264,7 +264,7 @@ package net.minecraft.src;
 /* 263:338 */     if (paramInt == 3) {
 /* 264:340 */       return paramamj.getItem().l(paramamj);
 /* 265:    */     }
-/* 266:346 */     return (paramamj.getItem() == ItemList.bz) || (paramamj.getItem() == ItemList.bA);
+/* 266:346 */     return (paramamj.getItem() == ItemList.potion) || (paramamj.getItem() == ItemList.bA);
 /* 267:    */   }
 /* 268:    */   
 /* 269:    */   public boolean[] m()

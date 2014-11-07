@@ -80,9 +80,9 @@ package net.minecraft.src;
 /*  79: 97 */           a(false);
 /*  80: 98 */           ItemStack localamj = bz();
 /*  81: 99 */           c(0, null);
-/*  82:101 */           if ((localamj != null) && (localamj.getItem() == ItemList.bz))
+/*  82:101 */           if ((localamj != null) && (localamj.getItem() == ItemList.potion))
 /*  83:    */           {
-/*  84:102 */             localObject = ItemList.bz.h(localamj);
+/*  84:102 */             localObject = ItemList.potion.h(localamj);
 /*  85:103 */             if (localObject != null) {
 /*  86:104 */               for (wq localwq : localObject) {
 /*  87:105 */                 c(new wq(localwq));
@@ -108,7 +108,7 @@ package net.minecraft.src;
 /* 107:    */         }
 /* 108:127 */         if (i > -1)
 /* 109:    */         {
-/* 110:128 */           c(0, new ItemStack(ItemList.bz, 1, i));
+/* 110:128 */           c(0, new ItemStack(ItemList.potion, 1, i));
 /* 111:129 */           this.bl = bz().l();
 /* 112:130 */           a(true);
 /* 113:131 */           xz localObject1 = a(afs.d);

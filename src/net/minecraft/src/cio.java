@@ -485,7 +485,7 @@ package net.minecraft.src;
 /* 485:    */       }
 /* 486:525 */       this.ak = false;
 /* 487:    */     }
-/* 488:526 */     else if ((a(Potion.k)) && (b(Potion.k).b() > 60))
+/* 488:526 */     else if ((a(Potion.k)) && (b(Potion.k).getDuration() > 60))
 /* 489:    */     {
 /* 490:527 */       this.bF += 0.006666667F;
 /* 491:528 */       if (this.bF > 1.0F) {

@@ -44,9 +44,9 @@ package net.minecraft.src;
 /* 43:57 */     ali localali = ali.a(paramamj);
 /* 44:59 */     if (localali == ali.d)
 /* 45:   */     {
-/* 46:60 */       paramahd.c(new wq(Potion.u.H, 1200, 3));
-/* 47:61 */       paramahd.c(new wq(Potion.s.H, 300, 2));
-/* 48:62 */       paramahd.c(new wq(Potion.k.H, 300, 1));
+/* 46:60 */       paramahd.c(new wq(Potion.u.id, 1200, 3));
+/* 47:61 */       paramahd.c(new wq(Potion.s.id, 300, 2));
+/* 48:62 */       paramahd.c(new wq(Potion.k.id, 300, 1));
 /* 49:   */     }
 /* 50:65 */     super.c(paramamj, paramaqu, paramahd);
 /* 51:   */   }

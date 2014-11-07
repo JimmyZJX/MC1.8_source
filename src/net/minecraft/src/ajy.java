@@ -27,10 +27,10 @@ package net.minecraft.src;
 /* 26:32 */         paramamj.stackSize -= 1;
 /* 27:33 */         paramahd.b(StatList.J[Item.b(this)]);
 /* 28:34 */         if (paramamj.stackSize <= 0) {
-/* 29:35 */           return new ItemStack(ItemList.bz);
+/* 29:35 */           return new ItemStack(ItemList.potion);
 /* 30:   */         }
-/* 31:37 */         if (!paramahd.bg.a(new ItemStack(ItemList.bz))) {
-/* 32:38 */           paramahd.a(new ItemStack(ItemList.bz, 1, 0), false);
+/* 31:37 */         if (!paramahd.bg.a(new ItemStack(ItemList.potion))) {
+/* 32:38 */           paramahd.a(new ItemStack(ItemList.potion, 1, 0), false);
 /* 33:   */         }
 /* 34:   */       }
 /* 35:   */     }

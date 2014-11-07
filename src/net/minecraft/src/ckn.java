@@ -1966,16 +1966,16 @@ package net.minecraft.src;
 /* 1965:2271 */       d2 = paramdt.getY();
 /* 1966:2272 */       d3 = paramdt.getZ();
 /* 1967:2274 */       for (int i4 = 0; i4 < 8; i4++) {
-/* 1968:2275 */         a(ew.K, d1, d2, d3, localRandom.nextGaussian() * 0.15D, localRandom.nextDouble() * 0.2D, localRandom.nextGaussian() * 0.15D, new int[] { Item.b(ItemList.bz), paramInt2 });
+/* 1968:2275 */         a(ew.K, d1, d2, d3, localRandom.nextGaussian() * 0.15D, localRandom.nextDouble() * 0.2D, localRandom.nextGaussian() * 0.15D, new int[] { Item.b(ItemList.potion), paramInt2 });
 /* 1969:     */       }
-/* 1970:2278 */       int i4 = ItemList.bz.g(paramInt2);
+/* 1970:2278 */       int i4 = ItemList.potion.g(paramInt2);
 /* 1971:     */       
 /* 1972:2280 */       float f1 = (i4 >> 16 & 0xFF) / 255.0F;
 /* 1973:2281 */       float f2 = (i4 >> 8 & 0xFF) / 255.0F;
 /* 1974:2282 */       float f3 = (i4 >> 0 & 0xFF) / 255.0F;
 /* 1975:     */       
 /* 1976:2284 */       ew localew = ew.n;
-/* 1977:2285 */       if (ItemList.bz.h(paramInt2)) {
+/* 1977:2285 */       if (ItemList.potion.h(paramInt2)) {
 /* 1978:2286 */         localew = ew.o;
 /* 1979:     */       }
 /* 1980:2289 */       for (i6 = 0; i6 < 100; i6++)

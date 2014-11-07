@@ -52,7 +52,7 @@ package net.minecraft.src;
 /*  51: 66 */         int i1 = n * 22 + (n - 1) * 2;
 /*  52: 68 */         for (int i2 = 0; i2 < n; i2++)
 /*  53:    */         {
-/*  54: 69 */           i3 = bck.a[m][i2].H;
+/*  54: 69 */           i3 = bck.a[m][i2].id;
 /*  55: 70 */           localbyq2 = new byq(this, m << 8 | i3, this.i + 76 + i2 * 24 - i1 / 2, this.r + 22 + m * 25, i3, m);
 /*  56: 71 */           this.n.add(localbyq2);
 /*  57: 73 */           if (m >= i) {
@@ -68,7 +68,7 @@ package net.minecraft.src;
 /*  67: 84 */       int i1 = n * 22 + (n - 1) * 2;
 /*  68: 86 */       for (int i2 = 0; i2 < n - 1; i2++)
 /*  69:    */       {
-/*  70: 87 */         i3 = bck.a[m][i2].H;
+/*  70: 87 */         i3 = bck.a[m][i2].id;
 /*  71: 88 */         localbyq2 = new byq(this, m << 8 | i3, this.i + 167 + i2 * 24 - i1 / 2, this.r + 47, i3, m);
 /*  72: 89 */         this.n.add(localbyq2);
 /*  73: 91 */         if (m >= i) {

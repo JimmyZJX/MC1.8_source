@@ -1113,7 +1113,7 @@ package net.minecraft.src;
 /* 1114:     */     {
 /* 1115:1220 */       this.yVelocity = (cD() * this.bp);
 /* 1116:1221 */       if (a(Potion.j)) {
-/* 1117:1222 */         this.yVelocity += (b(Potion.j).c() + 1) * 0.1F;
+/* 1117:1222 */         this.yVelocity += (b(Potion.j).getAmplifier() + 1) * 0.1F;
 /* 1118:     */       }
 /* 1119:1225 */       m(true);
 /* 1120:1226 */       this.ai = true;
