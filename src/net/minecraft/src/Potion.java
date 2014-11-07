@@ -2,7 +2,6 @@ package net.minecraft.src;
 /*   1:    */ import com.google.common.collect.Maps;
 
 /*   2:    */ import java.util.Map;
-/*   3:    */ import java.util.Map.Entry;
 /*   4:    */ import java.util.UUID;
 /*   5:    */ 
 /*   6:    */ public class Potion
