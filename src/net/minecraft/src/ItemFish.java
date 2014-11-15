@@ -1,12 +1,12 @@
 package net.minecraft.src;
 /*  1:   */ import java.util.List;
 /*  2:   */ 
-/*  3:   */ public class alh
+/*  3:   */ public class ItemFish
 /*  4:   */   extends all
 /*  5:   */ {
 /*  6:   */   private final boolean b;
 /*  7:   */   
-/*  8:   */   public alh(boolean paramBoolean)
+/*  8:   */   public ItemFish(boolean paramBoolean)
 /*  9:   */   {
 /* 10:19 */     super(0, 0.0F, false);
 /* 11:   */     
@@ -34,7 +34,7 @@ package net.minecraft.src;
 /* 33:   */   public String j(ItemStack paramamj)
 /* 34:   */   {
 /* 35:48 */     if (ali.a(paramamj) == ali.d) {
-/* 36:49 */       return ans.m;
+/* 36:49 */       return PotionHelper.pufferfishEffect;
 /* 37:   */     }
 /* 38:51 */     return null;
 /* 39:   */   }
@@ -44,9 +44,9 @@ package net.minecraft.src;
 /* 43:57 */     ali localali = ali.a(paramamj);
 /* 44:59 */     if (localali == ali.d)
 /* 45:   */     {
-/* 46:60 */       paramahd.c(new wq(Potion.u.id, 1200, 3));
-/* 47:61 */       paramahd.c(new wq(Potion.s.id, 300, 2));
-/* 48:62 */       paramahd.c(new wq(Potion.k.id, 300, 1));
+/* 46:60 */       paramahd.c(new PotionEffect(Potion.poison.id, 1200, 3));
+/* 47:61 */       paramahd.c(new PotionEffect(Potion.hunger.id, 300, 2));
+/* 48:62 */       paramahd.c(new PotionEffect(Potion.nausea.id, 300, 1));
 /* 49:   */     }
 /* 50:65 */     super.c(paramamj, paramaqu, paramahd);
 /* 51:   */   }

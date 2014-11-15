@@ -139,7 +139,7 @@ package net.minecraft.src;
 /* 139:    */       {
 /* 140:150 */         ArrayList<Entity> localArrayList = Lists.newArrayList(this.world.b(this, getAABB()));
 /* 141:151 */         int j = localatr == BlockList.cf ? 1 : 0;
-/* 142:152 */         wh localwh = j != 0 ? wh.n : wh.o;
+/* 142:152 */         DamageSource localwh = j != 0 ? DamageSource.n : DamageSource.o;
 /* 143:154 */         for (Entity localwv : localArrayList) {
 /* 144:155 */           localwv.a(localwh, Math.min(MathUtils.floor(i * this.h), this.g));
 /* 145:    */         }

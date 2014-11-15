@@ -74,7 +74,7 @@ package net.minecraft.src;
 /*  73: 79 */           if (localamj1.getItem() != localamj2.getItem()) {
 /*  74: 80 */             return false;
 /*  75:    */           }
-/*  76: 82 */           if ((localamj1.i() != 32767) && (localamj1.i() != localamj2.i())) {
+/*  76: 82 */           if ((localamj1.getDamage2() != 32767) && (localamj1.getDamage2() != localamj2.getDamage2())) {
 /*  77: 83 */             return false;
 /*  78:    */           }
 /*  79:    */         }

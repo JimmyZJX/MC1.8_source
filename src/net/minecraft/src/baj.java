@@ -126,7 +126,7 @@ package net.minecraft.src;
 /* 125:    */   
 /* 126:    */   public boolean b(World paramaqu, BlockPosition paramdt, ItemStack paramamj)
 /* 127:    */   {
-/* 128:168 */     if ((paramamj.i() == 1) && (paramdt.getY() >= 2) && (paramaqu.getDifficulty() != EnumDifficulty.PEACEFUL) && (!paramaqu.isClient)) {
+/* 128:168 */     if ((paramamj.getDamage2() == 1) && (paramdt.getY() >= 2) && (paramaqu.getDifficulty() != EnumDifficulty.PEACEFUL) && (!paramaqu.isClient)) {
 /* 129:169 */       return j().a(paramaqu, paramdt) != null;
 /* 130:    */     }
 /* 131:172 */     return false;

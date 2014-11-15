@@ -491,7 +491,7 @@ package net.minecraft.src;
 /* 491:506 */     if (paramamj1.getItem() != paramamj2.getItem()) {
 /* 492:507 */       return false;
 /* 493:    */     }
-/* 494:509 */     if (paramamj1.i() != paramamj2.i()) {
+/* 494:509 */     if (paramamj1.getDamage2() != paramamj2.getDamage2()) {
 /* 495:510 */       return false;
 /* 496:    */     }
 /* 497:512 */     if (paramamj1.stackSize > paramamj1.getMaxStackSize()) {

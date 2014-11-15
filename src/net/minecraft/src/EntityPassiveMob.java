@@ -22,7 +22,7 @@ package net.minecraft.src;
 /*  21:    */     {
 /*  22: 34 */       if (!this.world.isClient)
 /*  23:    */       {
-/*  24: 35 */         Class localClass = EntityList.a(localamj.i());
+/*  24: 35 */         Class localClass = EntityList.a(localamj.getDamage2());
 /*  25: 36 */         if ((localClass != null) && (getClass() == localClass))
 /*  26:    */         {
 /*  27: 37 */           EntityPassiveMob localws = a(this);

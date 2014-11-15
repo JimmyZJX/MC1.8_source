@@ -16,7 +16,7 @@ package net.minecraft.src;
 /*  15:    */   {
 /*  16: 36 */     String str1 = ("" + fi.a(new StringBuilder().append(a()).append(".name").toString())).trim();
 /*  17:    */     
-/*  18: 38 */     String str2 = EntityList.b(paramamj.i());
+/*  18: 38 */     String str2 = EntityList.b(paramamj.getDamage2());
 /*  19: 39 */     if (str2 != null) {
 /*  20: 40 */       str1 = str1 + " " + fi.a(new StringBuilder().append("entity.").append(str2).append(".name").toString());
 /*  21:    */     }
@@ -25,7 +25,7 @@ package net.minecraft.src;
 /*  24:    */   
 /*  25:    */   public int a(ItemStack paramamj, int paramInt)
 /*  26:    */   {
-/*  27: 48 */     xc localxc = (xc)EntityList.entityEggs.get(Integer.valueOf(paramamj.i()));
+/*  27: 48 */     xc localxc = (xc)EntityList.entityEggs.get(Integer.valueOf(paramamj.getDamage2()));
 /*  28: 49 */     if (localxc != null)
 /*  29:    */     {
 /*  30: 50 */       if (paramInt == 0) {
@@ -51,7 +51,7 @@ package net.minecraft.src;
 /*  50: 70 */       if ((localbcm instanceof bdg))
 /*  51:    */       {
 /*  52: 71 */         aqi localaqi = ((bdg)localbcm).b();
-/*  53: 72 */         localaqi.a(EntityList.b(paramamj.i()));
+/*  53: 72 */         localaqi.a(EntityList.b(paramamj.getDamage2()));
 /*  54: 73 */         localbcm.o_();
 /*  55: 74 */         paramaqu.h(paramdt);
 /*  56: 75 */         if (!paramahd.by.d) {
@@ -66,7 +66,7 @@ package net.minecraft.src;
 /*  65: 85 */     if ((paramej == EnumDirection.UP) && ((localbec instanceof avv))) {
 /*  66: 87 */       d = 0.5D;
 /*  67:    */     }
-/*  68: 90 */     Entity localwv = a(paramaqu, paramamj.i(), paramdt.getX() + 0.5D, paramdt.getY() + d, paramdt.getZ() + 0.5D);
+/*  68: 90 */     Entity localwv = a(paramaqu, paramamj.getDamage2(), paramdt.getX() + 0.5D, paramdt.getY() + d, paramdt.getZ() + 0.5D);
 /*  69: 91 */     if (localwv != null)
 /*  70:    */     {
 /*  71: 92 */       if (((localwv instanceof EntityLiving)) && (paramamj.s())) {
@@ -99,7 +99,7 @@ package net.minecraft.src;
 /*  98:    */       }
 /*  99:124 */       if ((paramaqu.getBlock(localdt).getProto() instanceof axl))
 /* 100:    */       {
-/* 101:125 */         Entity localwv = a(paramaqu, paramamj.i(), localdt.getX() + 0.5D, localdt.getY() + 0.5D, localdt.getZ() + 0.5D);
+/* 101:125 */         Entity localwv = a(paramaqu, paramamj.getDamage2(), localdt.getX() + 0.5D, localdt.getY() + 0.5D, localdt.getZ() + 0.5D);
 /* 102:126 */         if (localwv != null)
 /* 103:    */         {
 /* 104:127 */           if (((localwv instanceof EntityLiving)) && (paramamj.s())) {

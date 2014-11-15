@@ -125,7 +125,7 @@ package net.minecraft.src;
 /* 124:    */   
 /* 125:142 */   private static final apn b = new apn();
 /* 126:    */   
-/* 127:    */   public static int a(ItemStack[] paramArrayOfamj, wh paramwh)
+/* 127:    */   public static int a(ItemStack[] paramArrayOfamj, DamageSource paramwh)
 /* 128:    */   {
 /* 129:152 */     b.a = 0;
 /* 130:153 */     b.b = paramwh;

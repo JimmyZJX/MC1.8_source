@@ -239,7 +239,7 @@ package net.minecraft.src;
 /* 238:254 */     ItemStack localamj = this.a.h.bz();
 /* 239:255 */     int k = (this.d == null) && (localamj == null) ? 1 : 0;
 /* 240:256 */     if ((this.d != null) && (localamj != null)) {
-/* 241:257 */       k = (localamj.getItem() == this.d.getItem()) && (ItemStack.a(localamj, this.d)) && ((localamj.e()) || (localamj.i() == this.d.i())) ? 1 : 0;
+/* 241:257 */       k = (localamj.getItem() == this.d.getItem()) && (ItemStack.a(localamj, this.d)) && ((localamj.e()) || (localamj.getDamage2() == this.d.getDamage2())) ? 1 : 0;
 /* 242:    */     }
 /* 243:259 */     return (paramdt.equals(this.c)) && (k != 0);
 /* 244:    */   }
@@ -289,7 +289,7 @@ package net.minecraft.src;
 /* 288:    */     }
 /* 289:307 */     if (this.i.d())
 /* 290:    */     {
-/* 291:308 */       int m = paramamj.i();
+/* 291:308 */       int m = paramamj.getDamage2();
 /* 292:309 */       int n = paramamj.stackSize;
 /* 293:310 */       boolean bool = paramamj.a(paramcio, paramcen, paramdt, paramej, f1, f2, f3);
 /* 294:311 */       paramamj.b(m);

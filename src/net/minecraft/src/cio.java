@@ -37,7 +37,7 @@ package net.minecraft.src;
 /*  37: 78 */     this.dimension = 0;
 /*  38:    */   }
 /*  39:    */   
-/*  40:    */   public boolean a(wh paramwh, float paramFloat)
+/*  40:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /*  41:    */   {
 /*  42: 83 */     return false;
 /*  43:    */   }
@@ -160,7 +160,7 @@ package net.minecraft.src;
 /* 160:203 */     this.a.a(new lv(lw.PERFORM_RESPAWN));
 /* 161:    */   }
 /* 162:    */   
-/* 163:    */   protected void d(wh paramwh, float paramFloat)
+/* 163:    */   protected void d(DamageSource paramwh, float paramFloat)
 /* 164:    */   {
 /* 165:208 */     if (b(paramwh)) {
 /* 166:209 */       return;
@@ -198,7 +198,7 @@ package net.minecraft.src;
 /* 198:236 */         this.aV = f1;
 /* 199:237 */         h(getHealth());
 /* 200:238 */         this.Z = this.aB;
-/* 201:239 */         d(wh.k, f1);
+/* 201:239 */         d(DamageSource.k, f1);
 /* 202:240 */         this.hurtTime = (this.at = 10);
 /* 203:    */       }
 /* 204:    */     }
@@ -485,7 +485,7 @@ package net.minecraft.src;
 /* 485:    */       }
 /* 486:525 */       this.ak = false;
 /* 487:    */     }
-/* 488:526 */     else if ((a(Potion.k)) && (b(Potion.k).getDuration() > 60))
+/* 488:526 */     else if ((a(Potion.nausea)) && (b(Potion.nausea).getDuration() > 60))
 /* 489:    */     {
 /* 490:527 */       this.bF += 0.006666667F;
 /* 491:528 */       if (this.bF > 1.0F) {
@@ -522,14 +522,14 @@ package net.minecraft.src;
 /* 522:558 */     j(this.xPos + this.J * 0.35D, getAABB().minY + 0.5D, this.zPos + this.J * 0.35D);
 /* 523:    */     
 /* 524:560 */     int k = (ck().a() > 6.0F) || (this.by.c) ? 1 : 0;
-/* 525:561 */     if ((this.C) && (!bool2) && (j == 0) && (this.b.b >= f1) && (!ax()) && (k != 0) && (!bR()) && (!a(Potion.q))) {
+/* 525:561 */     if ((this.C) && (!bool2) && (j == 0) && (this.b.b >= f1) && (!ax()) && (k != 0) && (!bR()) && (!a(Potion.blindness))) {
 /* 526:562 */       if ((this.d > 0) || (this.c.t.af.d())) {
 /* 527:563 */         d(true);
 /* 528:    */       } else {
 /* 529:565 */         this.d = 7;
 /* 530:    */       }
 /* 531:    */     }
-/* 532:568 */     if ((!ax()) && (this.b.b >= f1) && (k != 0) && (!bR()) && (!a(Potion.q)) && (this.c.t.af.d())) {
+/* 532:568 */     if ((!ax()) && (this.b.b >= f1) && (k != 0) && (!bR()) && (!a(Potion.blindness)) && (this.c.t.af.d())) {
 /* 533:569 */       d(true);
 /* 534:    */     }
 /* 535:571 */     if ((ax()) && ((this.b.b < f1) || (this.D) || (k == 0))) {

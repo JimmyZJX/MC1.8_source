@@ -54,8 +54,8 @@ package net.minecraft.src;
 /* 53:59 */       if ((localamj1.getItem() == localamj2.getItem()) && (localamj1.stackSize == 1) && (localamj2.stackSize == 1) && (localamj1.getItem().m()))
 /* 54:   */       {
 /* 55:60 */         localObject = localamj1.getItem();
-/* 56:61 */         int j = ((Item)localObject).l() - localamj1.h();
-/* 57:62 */         int k = ((Item)localObject).l() - localamj2.h();
+/* 56:61 */         int j = ((Item)localObject).l() - localamj1.getDamage();
+/* 57:62 */         int k = ((Item)localObject).l() - localamj2.getDamage();
 /* 58:63 */         int m = j + k + ((Item)localObject).l() * 5 / 100;
 /* 59:64 */         int n = ((Item)localObject).l() - m;
 /* 60:65 */         if (n < 0) {

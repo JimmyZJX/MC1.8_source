@@ -43,7 +43,7 @@ package net.minecraft.src;
 /*  42:    */   
 /*  43:    */   public Object a(ItemStack paramamj)
 /*  44:    */   {
-/*  45: 59 */     return bbg.a(paramamj.i() & 0x7);
+/*  45: 59 */     return bbg.a(paramamj.getDamage2() & 0x7);
 /*  46:    */   }
 /*  47:    */   
 /*  48:    */   public void a(Item paramalq, CreativeTabs paramakf, List<ItemStack> paramList)

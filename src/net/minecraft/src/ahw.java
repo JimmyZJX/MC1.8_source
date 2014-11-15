@@ -48,7 +48,7 @@ package net.minecraft.src;
 /*  47:    */       {
 /*  48: 61 */         if (this.a != null)
 /*  49:    */         {
-/*  50: 62 */           if (parambru.d.a(wh.a(this.a), 8.0F)) {
+/*  50: 62 */           if (parambru.d.a(DamageSource.a(this.a), 8.0F)) {
 /*  51: 63 */             if (!parambru.d.ai()) {
 /*  52: 64 */               this.a.g(5.0F);
 /*  53:    */             } else {
@@ -57,7 +57,7 @@ package net.minecraft.src;
 /*  56:    */           }
 /*  57:    */         }
 /*  58:    */         else {
-/*  59: 70 */           parambru.d.a(wh.l, 5.0F);
+/*  59: 70 */           parambru.d.a(DamageSource.l, 5.0F);
 /*  60:    */         }
 /*  61: 72 */         if ((parambru.d instanceof EntityLiving))
 /*  62:    */         {
@@ -68,7 +68,7 @@ package net.minecraft.src;
 /*  67: 77 */             i = 40;
 /*  68:    */           }
 /*  69: 79 */           if (i > 0) {
-/*  70: 80 */             ((EntityLiving)parambru.d).c(new wq(Potion.v.id, 20 * i, 1));
+/*  70: 80 */             ((EntityLiving)parambru.d).c(new PotionEffect(Potion.wither.id, 20 * i, 1));
 /*  71:    */           }
 /*  72:    */         }
 /*  73:    */       }
@@ -82,7 +82,7 @@ package net.minecraft.src;
 /*  81: 91 */     return false;
 /*  82:    */   }
 /*  83:    */   
-/*  84:    */   public boolean a(wh paramwh, float paramFloat)
+/*  84:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /*  85:    */   {
 /*  86: 96 */     return false;
 /*  87:    */   }

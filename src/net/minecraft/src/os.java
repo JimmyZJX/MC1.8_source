@@ -11,7 +11,7 @@ package net.minecraft.src;
 /*  10:113 */     double d2 = paramdz.d().getY() + 0.2F;
 /*  11:114 */     double d3 = paramdz.c() + localej.i();
 /*  12:    */     
-/*  13:116 */     Entity localwv = anl.a(paramdz.i(), paramamj.i(), d1, d2, d3);
+/*  13:116 */     Entity localwv = anl.a(paramdz.i(), paramamj.getDamage2(), d1, d2, d3);
 /*  14:118 */     if (((localwv instanceof EntityLiving)) && (paramamj.s())) {
 /*  15:119 */       ((EntityMob)localwv).a(paramamj.q());
 /*  16:    */     }

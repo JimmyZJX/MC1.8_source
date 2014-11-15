@@ -20,12 +20,12 @@ package net.minecraft.src;
 /* 19:   */   
 /* 20:   */   public int a(ItemStack paramamj, int paramInt)
 /* 21:   */   {
-/* 22:23 */     return this.b.h(this.b.a(paramamj.i()));
+/* 22:23 */     return this.b.h(this.b.a(paramamj.getDamage2()));
 /* 23:   */   }
 /* 24:   */   
 /* 25:   */   public String e_(ItemStack paramamj)
 /* 26:   */   {
-/* 27:28 */     return super.a() + "." + this.b.b(paramamj.i()).c();
+/* 27:28 */     return super.a() + "." + this.b.b(paramamj.getDamage2()).c();
 /* 28:   */   }
 /* 29:   */ }
 

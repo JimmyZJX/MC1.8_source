@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*  9:   */   
 /* 10:   */   public lr() {}
 /* 11:   */   
-/* 12:   */   public lr(int paramInt, wq paramwq)
+/* 12:   */   public lr(int paramInt, PotionEffect paramwq)
 /* 13:   */   {
 /* 14:23 */     this.a = paramInt;
 /* 15:24 */     this.b = ((byte)(paramwq.getID() & 0xFF));

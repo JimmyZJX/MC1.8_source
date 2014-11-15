@@ -28,7 +28,7 @@ package net.minecraft.src;
 /* 27:   */       boolean bool;
 /* 28:32 */       if (parambru.d != null)
 /* 29:   */       {
-/* 30:33 */         bool = parambru.d.a(wh.a(this, this.a), 5.0F);
+/* 30:33 */         bool = parambru.d.a(DamageSource.a(this, this.a), 5.0F);
 /* 31:34 */         if (bool)
 /* 32:   */         {
 /* 33:35 */           a(this.a, parambru.d);
@@ -60,7 +60,7 @@ package net.minecraft.src;
 /* 59:58 */     return false;
 /* 60:   */   }
 /* 61:   */   
-/* 62:   */   public boolean a(wh paramwh, float paramFloat)
+/* 62:   */   public boolean a(DamageSource paramwh, float paramFloat)
 /* 63:   */   {
 /* 64:63 */     return false;
 /* 65:   */   }

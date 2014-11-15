@@ -7,7 +7,7 @@ package net.minecraft.src;
 /*  6:   */   
 /*  7:   */   public kn() {}
 /*  8:   */   
-/*  9:   */   public kn(int paramInt, wq paramwq)
+/*  9:   */   public kn(int paramInt, PotionEffect paramwq)
 /* 10:   */   {
 /* 11:18 */     this.a = paramInt;
 /* 12:19 */     this.b = paramwq.getID();

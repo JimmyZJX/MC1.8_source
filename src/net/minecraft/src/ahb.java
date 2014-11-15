@@ -40,7 +40,7 @@ package net.minecraft.src;
 /*  39:    */   private int a(Item paramalq, int paramInt)
 /*  40:    */   {
 /*  41: 61 */     for (int i = 0; i < this.a.length; i++) {
-/*  42: 62 */       if ((this.a[i] != null) && (this.a[i].getItem() == paramalq) && (this.a[i].i() == paramInt)) {
+/*  42: 62 */       if ((this.a[i] != null) && (this.a[i].getItem() == paramalq) && (this.a[i].getDamage2() == paramInt)) {
 /*  43: 63 */         return i;
 /*  44:    */       }
 /*  45:    */     }
@@ -50,7 +50,7 @@ package net.minecraft.src;
 /*  49:    */   private int d(ItemStack paramamj)
 /*  50:    */   {
 /*  51: 70 */     for (int i = 0; i < this.a.length; i++) {
-/*  52: 71 */       if ((this.a[i] != null) && (this.a[i].getItem() == paramamj.getItem()) && (this.a[i].isStackable()) && (this.a[i].stackSize < this.a[i].getMaxStackSize()) && (this.a[i].stackSize < p_()) && ((!this.a[i].f()) || (this.a[i].i() == paramamj.i())) && (ItemStack.a(this.a[i], paramamj))) {
+/*  52: 71 */       if ((this.a[i] != null) && (this.a[i].getItem() == paramamj.getItem()) && (this.a[i].isStackable()) && (this.a[i].stackSize < this.a[i].getMaxStackSize()) && (this.a[i].stackSize < p_()) && ((!this.a[i].f()) || (this.a[i].getDamage2() == paramamj.getDamage2())) && (ItemStack.a(this.a[i], paramamj))) {
 /*  53: 72 */         return i;
 /*  54:    */       }
 /*  55:    */     }
@@ -83,7 +83,7 @@ package net.minecraft.src;
 /*  82:100 */     if ((j >= 0) && (j < 9)) {
 /*  83:101 */       this.c = j;
 /*  84:    */     }
-/*  85:105 */     if ((localamj == null) || (!localamj.v()) || (a(localamj.getItem(), localamj.h()) != this.c))
+/*  85:105 */     if ((localamj == null) || (!localamj.v()) || (a(localamj.getItem(), localamj.getDamage()) != this.c))
 /*  86:    */     {
 /*  87:106 */       int k = a(paramalq, paramInt);
 /*  88:    */       int m;
@@ -127,7 +127,7 @@ package net.minecraft.src;
 /* 126:139 */       localamj = this.a[j];
 /* 127:140 */       if (localamj != null) {
 /* 128:143 */         if ((paramalq == null) || (localamj.getItem() == paramalq)) {
-/* 129:146 */           if ((paramInt1 <= -1) || (localamj.i() == paramInt1)) {
+/* 129:146 */           if ((paramInt1 <= -1) || (localamj.getDamage2() == paramInt1)) {
 /* 130:149 */             if ((paramfn == null) || (cy.a(paramfn, localamj.getTagCompound(), true)))
 /* 131:    */             {
 /* 132:153 */               k = paramInt2 <= 0 ? localamj.stackSize : Math.min(paramInt2 - i, localamj.stackSize);
@@ -152,7 +152,7 @@ package net.minecraft.src;
 /* 151:166 */       localamj = this.b[j];
 /* 152:167 */       if (localamj != null) {
 /* 153:170 */         if ((paramalq == null) || (localamj.getItem() == paramalq)) {
-/* 154:173 */           if ((paramInt1 <= -1) || (localamj.i() == paramInt1)) {
+/* 154:173 */           if ((paramInt1 <= -1) || (localamj.getDamage2() == paramInt1)) {
 /* 155:176 */             if ((paramfn == null) || (cy.a(paramfn, localamj.getTagCompound(), false)))
 /* 156:    */             {
 /* 157:180 */               k = paramInt2 <= 0 ? localamj.stackSize : Math.min(paramInt2 - i, localamj.stackSize);
@@ -177,7 +177,7 @@ package net.minecraft.src;
 /* 176:194 */       if ((paramalq != null) && (this.f.getItem() != paramalq)) {
 /* 177:195 */         return i;
 /* 178:    */       }
-/* 179:197 */       if ((paramInt1 > -1) && (this.f.i() != paramInt1)) {
+/* 179:197 */       if ((paramInt1 > -1) && (this.f.getDamage2() != paramInt1)) {
 /* 180:198 */         return i;
 /* 181:    */       }
 /* 182:200 */       if ((paramfn != null) && (!cy.a(paramfn, this.f.getTagCompound(), false))) {
@@ -213,7 +213,7 @@ package net.minecraft.src;
 /* 212:    */     }
 /* 213:231 */     if (this.a[j] == null)
 /* 214:    */     {
-/* 215:232 */       this.a[j] = new ItemStack(localalq, 0, paramamj.i());
+/* 215:232 */       this.a[j] = new ItemStack(localalq, 0, paramamj.getDamage2());
 /* 216:233 */       if (paramamj.hasTagCompound()) {
 /* 217:234 */         this.a[j].setTagCompound((NBTTagCompound)paramamj.getTagCompound().b());
 /* 218:    */       }
@@ -308,7 +308,7 @@ package net.minecraft.src;
 /* 306:326 */       j localj = localb.a("Item being added");
 /* 307:    */       
 /* 308:328 */       localj.a("Item ID", Integer.valueOf(Item.b(paramamj.getItem())));
-/* 309:329 */       localj.a("Item data", Integer.valueOf(paramamj.i()));
+/* 309:329 */       localj.a("Item data", Integer.valueOf(paramamj.getDamage2()));
 /* 310:330 */       localj.a("Item name", new ahc(this, paramamj));
 /* 311:    */       
 /* 312:    */ 

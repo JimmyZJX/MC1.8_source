@@ -369,15 +369,15 @@ package net.minecraft.src;
 /* 367:390 */     a(0, paramxm);
 /* 368:    */   }
 /* 369:    */   
-/* 370:    */   public boolean a(wh paramwh, float paramFloat)
+/* 370:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /* 371:    */   {
 /* 372:395 */     if (b(paramwh)) {
 /* 373:396 */       return false;
 /* 374:    */     }
-/* 375:398 */     if ((paramwh == wh.f) || ((paramwh.j() instanceof EntityWither))) {
+/* 375:398 */     if ((paramwh == DamageSource.f) || ((paramwh.j() instanceof EntityWither))) {
 /* 376:399 */       return false;
 /* 377:    */     }
-/* 378:401 */     if ((cj() > 0) && (paramwh != wh.j)) {
+/* 378:401 */     if ((cj() > 0) && (paramwh != DamageSource.j)) {
 /* 379:402 */       return false;
 /* 380:    */     }
 /* 381:405 */     if (ck())
@@ -427,7 +427,7 @@ package net.minecraft.src;
 /* 425:    */   
 /* 426:    */   public void e(float paramFloat1, float paramFloat2) {}
 /* 427:    */   
-/* 428:    */   public void c(wq paramwq) {}
+/* 428:    */   public void c(PotionEffect paramwq) {}
 /* 429:    */   
 /* 430:    */   protected void aW()
 /* 431:    */   {

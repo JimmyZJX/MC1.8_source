@@ -54,12 +54,12 @@ package net.minecraft.src;
 /*  53: 76 */     return "mob.silverfish.kill";
 /*  54:    */   }
 /*  55:    */   
-/*  56:    */   public boolean a(wh paramwh, float paramFloat)
+/*  56:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /*  57:    */   {
 /*  58: 81 */     if (b(paramwh)) {
 /*  59: 82 */       return false;
 /*  60:    */     }
-/*  61: 84 */     if (((paramwh instanceof wi)) || (paramwh == wh.l)) {
+/*  61: 84 */     if (((paramwh instanceof wi)) || (paramwh == DamageSource.l)) {
 /*  62: 85 */       this.b.f();
 /*  63:    */     }
 /*  64: 87 */     return super.a(paramwh, paramFloat);

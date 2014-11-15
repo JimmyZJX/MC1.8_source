@@ -44,7 +44,7 @@ package net.minecraft.src;
 /* 44:   */   
 /* 45:   */   protected int b(ItemStack paramamj)
 /* 46:   */   {
-/* 47:50 */     return paramamj.e() ? 0 : paramamj.i();
+/* 47:50 */     return paramamj.e() ? 0 : paramamj.getDamage2();
 /* 48:   */   }
 /* 49:   */   
 /* 50:   */   protected cxe b(Item paramalq, int paramInt)

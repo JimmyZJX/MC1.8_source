@@ -34,7 +34,7 @@ package net.minecraft.src;
 /*  34: 84 */     if (!(localbcm instanceof axd)) {
 /*  35: 85 */       return;
 /*  36:    */     }
-/*  37: 88 */     ((axd)localbcm).a(new ItemStack(paramamj.getItem(), 1, paramamj.i()));
+/*  37: 88 */     ((axd)localbcm).a(new ItemStack(paramamj.getItem(), 1, paramamj.getDamage2()));
 /*  38: 89 */     paramaqu.setBlock(paramdt, parambec.a(a, Boolean.valueOf(true)), 2);
 /*  39:    */   }
 /*  40:    */   

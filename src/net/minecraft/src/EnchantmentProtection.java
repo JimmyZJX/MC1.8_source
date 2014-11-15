@@ -32,7 +32,7 @@ package net.minecraft.src;
 /*  31: 54 */     return 4;
 /*  32:    */   }
 /*  33:    */   
-/*  34:    */   public int a(int paramInt, wh paramwh)
+/*  34:    */   public int a(int paramInt, DamageSource paramwh)
 /*  35:    */   {
 /*  36: 59 */     if (paramwh.g()) {
 /*  37: 60 */       return 0;
@@ -44,7 +44,7 @@ package net.minecraft.src;
 /*  43: 68 */     if ((this.a == 1) && (paramwh.o())) {
 /*  44: 69 */       return MathUtils.floor(f * 1.25F);
 /*  45:    */     }
-/*  46: 71 */     if ((this.a == 2) && (paramwh == wh.i)) {
+/*  46: 71 */     if ((this.a == 2) && (paramwh == DamageSource.i)) {
 /*  47: 72 */       return MathUtils.floor(f * 2.5F);
 /*  48:    */     }
 /*  49: 74 */     if ((this.a == 3) && (paramwh.c())) {

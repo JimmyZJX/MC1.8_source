@@ -336,7 +336,7 @@ package net.minecraft.src;
 /* 336:367 */             localObject1 = (ItemSword)localamj1.getItem();
 /* 337:368 */             localObject2 = (ItemSword)localamj2.getItem();
 /* 338:370 */             if (((ItemSword)localObject1).g() == ((ItemSword)localObject2).g()) {
-/* 339:371 */               k = (localamj1.i() > localamj2.i()) || ((localamj1.hasTagCompound()) && (!localamj2.hasTagCompound())) ? 1 : 0;
+/* 339:371 */               k = (localamj1.getDamage2() > localamj2.getDamage2()) || ((localamj1.hasTagCompound()) && (!localamj2.hasTagCompound())) ? 1 : 0;
 /* 340:    */             } else {
 /* 341:373 */               k = ((ItemSword)localObject1).g() > ((ItemSword)localObject2).g() ? 1 : 0;
 /* 342:    */             }
@@ -359,7 +359,7 @@ package net.minecraft.src;
 /* 359:384 */           localObject1 = (ajn)localamj1.getItem();
 /* 360:385 */           localObject2 = (ajn)localamj2.getItem();
 /* 361:387 */           if (((ajn)localObject1).c == ((ajn)localObject2).c) {
-/* 362:388 */             k = (localamj1.i() > localamj2.i()) || ((localamj1.hasTagCompound()) && (!localamj2.hasTagCompound())) ? 1 : 0;
+/* 362:388 */             k = (localamj1.getDamage2() > localamj2.getDamage2()) || ((localamj1.hasTagCompound()) && (!localamj2.hasTagCompound())) ? 1 : 0;
 /* 363:    */           } else {
 /* 364:390 */             k = ((ajn)localObject1).c > ((ajn)localObject2).c ? 1 : 0;
 /* 365:    */           }

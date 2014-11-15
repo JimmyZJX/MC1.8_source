@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*   5:    */ {
 /*   6:    */   public String apply(ItemStack paramamj)
 /*   7:    */   {
-/*   8:461 */     return (paramamj.i() & 0x1) == 1 ? "wet" : "dry";
+/*   8:461 */     return (paramamj.getDamage2() & 0x1) == 1 ? "wet" : "dry";
 /*   9:    */   }
 /*  10:    */ }
 

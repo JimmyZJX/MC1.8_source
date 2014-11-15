@@ -36,10 +36,10 @@ package net.minecraft.src;
 /*  35: 54 */       int j = MathUtils.floor(this.yPos);
 /*  36: 55 */       int k = MathUtils.floor(this.zPos);
 /*  37: 57 */       if (U()) {
-/*  38: 58 */         a(wh.f, 1.0F);
+/*  38: 58 */         a(DamageSource.f, 1.0F);
 /*  39:    */       }
 /*  40: 61 */       if (this.world.b(new BlockPosition(i, 0, k)).a(new BlockPosition(i, j, k)) > 1.0F) {
-/*  41: 62 */         a(wh.c, 1.0F);
+/*  41: 62 */         a(DamageSource.c, 1.0F);
 /*  42:    */       }
 /*  43: 65 */       for (int m = 0; m < 4; m++)
 /*  44:    */       {

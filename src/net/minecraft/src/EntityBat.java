@@ -160,7 +160,7 @@ package net.minecraft.src;
 /* 159:176 */     return true;
 /* 160:    */   }
 /* 161:    */   
-/* 162:    */   public boolean a(wh paramwh, float paramFloat)
+/* 162:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /* 163:    */   {
 /* 164:181 */     if (b(paramwh)) {
 /* 165:182 */       return false;

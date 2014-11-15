@@ -91,7 +91,7 @@ package net.minecraft.src;
 /*  90:116 */     for (int m = 0; m < 3; m++) {
 /*  91:117 */       if ((this.g[m] != null) && (this.g[m].getItem() == ItemList.potion))
 /*  92:    */       {
-/*  93:118 */         int n = this.g[m].i();
+/*  93:118 */         int n = this.g[m].getDamage2();
 /*  94:119 */         int i1 = c(n, localamj);
 /*  95:121 */         if ((!ItemPotion.f(n)) && (ItemPotion.f(i1)))
 /*  96:    */         {
@@ -121,7 +121,7 @@ package net.minecraft.src;
 /* 120:172 */     for (int m = 0; m < 3; m++) {
 /* 121:173 */       if ((this.g[m] != null) && (this.g[m].getItem() == ItemList.potion))
 /* 122:    */       {
-/* 123:174 */         int n = this.g[m].i();
+/* 123:174 */         int n = this.g[m].getDamage2();
 /* 124:175 */         int i1 = c(n, localamj);
 /* 125:    */         
 /* 126:177 */         List localList1 = ItemList.potion.e(n);
@@ -156,7 +156,7 @@ package net.minecraft.src;
 /* 155:215 */       return paramInt;
 /* 156:    */     }
 /* 157:225 */     if (paramamj.getItem().l(paramamj)) {
-/* 158:226 */       return ans.a(paramInt, paramamj.getItem().j(paramamj));
+/* 158:226 */       return PotionHelper.parsePotionOperation(paramInt, paramamj.getItem().j(paramamj));
 /* 159:    */     }
 /* 160:228 */     return paramInt;
 /* 161:    */   }

@@ -267,7 +267,7 @@ package net.minecraft.src;
 /* 266:    */                 }
 /* 267:256 */                 else if (localajk1.a((ItemStack)localObject2))
 /* 268:    */                 {
-/* 269:258 */                   if ((((ItemStack)localObject1).getItem() != ((ItemStack)localObject2).getItem()) || (((ItemStack)localObject1).i() != ((ItemStack)localObject2).i()) || (!ItemStack.a((ItemStack)localObject1, (ItemStack)localObject2)))
+/* 269:258 */                   if ((((ItemStack)localObject1).getItem() != ((ItemStack)localObject2).getItem()) || (((ItemStack)localObject1).getDamage2() != ((ItemStack)localObject2).getDamage2()) || (!ItemStack.a((ItemStack)localObject1, (ItemStack)localObject2)))
 /* 270:    */                   {
 /* 271:260 */                     if (((ItemStack)localObject2).stackSize <= localajk1.b((ItemStack)localObject2))
 /* 272:    */                     {
@@ -291,7 +291,7 @@ package net.minecraft.src;
 /* 290:277 */                     localObject1.stackSize += localamj31;
 /* 291:    */                   }
 /* 292:    */                 }
-/* 293:281 */                 else if ((((ItemStack)localObject1).getItem() == ((ItemStack)localObject2).getItem()) && (((ItemStack)localObject2).getMaxStackSize() > 1) && ((!((ItemStack)localObject1).f()) || (((ItemStack)localObject1).i() == ((ItemStack)localObject2).i())) && (ItemStack.a((ItemStack)localObject1, (ItemStack)localObject2)))
+/* 293:281 */                 else if ((((ItemStack)localObject1).getItem() == ((ItemStack)localObject2).getItem()) && (((ItemStack)localObject2).getMaxStackSize() > 1) && ((!((ItemStack)localObject1).f()) || (((ItemStack)localObject1).getDamage2() == ((ItemStack)localObject2).getDamage2())) && (ItemStack.a((ItemStack)localObject1, (ItemStack)localObject2)))
 /* 294:    */                 {
 /* 295:282 */                   int localamj31 = ((ItemStack)localObject1).stackSize;
 /* 296:283 */                   if ((localamj31 > 0) && (localamj31 + ((ItemStack)localObject2).stackSize <= ((ItemStack)localObject2).getMaxStackSize()))
@@ -485,7 +485,7 @@ package net.minecraft.src;
 /* 484:    */       {
 /* 485:448 */         localajk = (ajk)this.c.get(j);
 /* 486:449 */         localamj = localajk.d();
-/* 487:450 */         if ((localamj != null) && (localamj.getItem() == paramamj.getItem()) && ((!paramamj.f()) || (paramamj.i() == localamj.i())) && (ItemStack.a(paramamj, localamj)))
+/* 487:450 */         if ((localamj != null) && (localamj.getItem() == paramamj.getItem()) && ((!paramamj.f()) || (paramamj.getDamage2() == localamj.getDamage2())) && (ItemStack.a(paramamj, localamj)))
 /* 488:    */         {
 /* 489:451 */           int k = localamj.stackSize + paramamj.stackSize;
 /* 490:452 */           if (k <= paramamj.getMaxStackSize())

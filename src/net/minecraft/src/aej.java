@@ -47,7 +47,7 @@ package net.minecraft.src;
 /*  46:    */     }
 /*  47:    */   }
 /*  48:    */   
-/*  49:    */   public boolean a(wh paramwh, float paramFloat)
+/*  49:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /*  50:    */   {
 /*  51: 62 */     Entity localwv = paramwh.i();
 /*  52: 63 */     if ((localwv instanceof ahj))
@@ -60,7 +60,7 @@ package net.minecraft.src;
 /*  59: 69 */     return super.a(paramwh, paramFloat);
 /*  60:    */   }
 /*  61:    */   
-/*  62:    */   public void a(wh paramwh)
+/*  62:    */   public void a(DamageSource paramwh)
 /*  63:    */   {
 /*  64: 74 */     super.a(paramwh);
 /*  65:    */     

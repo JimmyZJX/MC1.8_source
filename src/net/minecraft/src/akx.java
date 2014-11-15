@@ -17,7 +17,7 @@ package net.minecraft.src;
 /* 16:   */   
 /* 17:   */   public String e_(ItemStack paramamj)
 /* 18:   */   {
-/* 19:20 */     return super.a() + "." + EnumDyeColor.b(paramamj.i()).d();
+/* 19:20 */     return super.a() + "." + EnumDyeColor.b(paramamj.getDamage2()).d();
 /* 20:   */   }
 /* 21:   */ }
 

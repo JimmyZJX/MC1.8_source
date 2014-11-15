@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ import org.apache.logging.log4j.LogManager;
 /*   2:    */ import org.apache.logging.log4j.Logger;
 /*   3:    */ 
-/*   4:    */ public class wq
+/*   4:    */ public class PotionEffect
 /*   5:    */ {
 /*   6: 10 */   private static final Logger a = LogManager.getLogger();
 /*   7:    */   private int id;
@@ -13,17 +13,17 @@ package net.minecraft.src;
 /*  12:    */   private boolean g;
 /*  13:    */   private boolean showParticles;
 /*  14:    */   
-/*  15:    */   public wq(int paramInt1, int paramInt2)
+/*  15:    */   public PotionEffect(int paramInt1, int paramInt2)
 /*  16:    */   {
 /*  17: 28 */     this(paramInt1, paramInt2, 0);
 /*  18:    */   }
 /*  19:    */   
-/*  20:    */   public wq(int paramInt1, int paramInt2, int paramInt3)
+/*  20:    */   public PotionEffect(int paramInt1, int paramInt2, int paramInt3)
 /*  21:    */   {
 /*  22: 32 */     this(paramInt1, paramInt2, paramInt3, false, true);
 /*  23:    */   }
 /*  24:    */   
-/*  25:    */   public wq(int id, int duration, int amplifier, boolean ambient, boolean showParticles)
+/*  25:    */   public PotionEffect(int id, int duration, int amplifier, boolean ambient, boolean showParticles)
 /*  26:    */   {
 /*  27: 36 */     this.id = id;
 /*  28: 37 */     this.duration = duration;
@@ -32,7 +32,7 @@ package net.minecraft.src;
 /*  31: 40 */     this.showParticles = showParticles;
 /*  32:    */   }
 /*  33:    */   
-/*  34:    */   public wq(wq paramwq)
+/*  34:    */   public PotionEffect(PotionEffect paramwq)
 /*  35:    */   {
 /*  36: 44 */     this.id = paramwq.id;
 /*  37: 45 */     this.duration = paramwq.duration;
@@ -41,7 +41,7 @@ package net.minecraft.src;
 /*  40: 48 */     this.showParticles = paramwq.showParticles;
 /*  41:    */   }
 /*  42:    */   
-/*  43:    */   public void a(wq paramwq)
+/*  43:    */   public void a(PotionEffect paramwq)
 /*  44:    */   {
 /*  45: 52 */     if (this.id != paramwq.id) {
 /*  46: 53 */       a.warn("This method should only be called for matching effects!");
@@ -112,7 +112,7 @@ package net.minecraft.src;
 /* 111:    */   public void b(EntityLiving paramxm)
 /* 112:    */   {
 /* 113:115 */     if (this.duration > 0) {
-/* 114:116 */       Potion.potionList[this.id].a(paramxm, this.amplifier);
+/* 114:116 */       Potion.potionList[this.id].tickEffect(paramxm, this.amplifier);
 /* 115:    */     }
 /* 116:    */   }
 /* 117:    */   
@@ -148,10 +148,10 @@ package net.minecraft.src;
 /* 147:    */   
 /* 148:    */   public boolean equals(Object paramObject)
 /* 149:    */   {
-/* 150:151 */     if (!(paramObject instanceof wq)) {
+/* 150:151 */     if (!(paramObject instanceof PotionEffect)) {
 /* 151:152 */       return false;
 /* 152:    */     }
-/* 153:154 */     wq localwq = (wq)paramObject;
+/* 153:154 */     PotionEffect localwq = (PotionEffect)paramObject;
 /* 154:155 */     return (this.id == localwq.id) && (this.amplifier == localwq.amplifier) && (this.duration == localwq.duration) && (this.splash == localwq.splash) && (this.ambient == localwq.ambient);
 /* 155:    */   }
 /* 156:    */   
@@ -165,7 +165,7 @@ package net.minecraft.src;
 /* 164:164 */     return tag;
 /* 165:    */   }
 /* 166:    */   
-/* 167:    */   public static wq fromNBT(NBTTagCompound tag)
+/* 167:    */   public static PotionEffect fromNBT(NBTTagCompound tag)
 /* 168:    */   {
 /* 169:168 */     int id = tag.d("Id");
 /* 170:169 */     if ((id < 0) || (id >= Potion.potionList.length) || (Potion.potionList[id] == null)) {
@@ -178,7 +178,7 @@ package net.minecraft.src;
 /* 177:176 */     if (tag.hasKey("ShowParticles", 1)) {
 /* 178:177 */       showParticles = tag.getBoolean("ShowParticles");
 /* 179:    */     }
-/* 180:179 */     return new wq(id, duration, amplifier, ambient, showParticles);
+/* 180:179 */     return new PotionEffect(id, duration, amplifier, ambient, showParticles);
 /* 181:    */   }
 /* 182:    */   
 /* 183:    */   public void b(boolean paramBoolean)

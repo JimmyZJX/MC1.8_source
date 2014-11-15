@@ -240,11 +240,11 @@ package net.minecraft.src;
 /* 240:271 */         if (l()) {
 /* 241:272 */           n += this.random.nextInt(n / 2 + 2);
 /* 242:    */         }
-/* 243:    */         wh localwh;
+/* 243:    */         DamageSource localwh;
 /* 244:276 */         if (this.c == null) {
-/* 245:277 */           localwh = wh.a(this, this);
+/* 245:277 */           localwh = DamageSource.a(this, this);
 /* 246:    */         } else {
-/* 247:279 */           localwh = wh.a(this, this.c);
+/* 247:279 */           localwh = DamageSource.a(this, this.c);
 /* 248:    */         }
 /* 249:284 */         if ((au()) && (!(localbru1.d instanceof EntityEnderman))) {
 /* 250:285 */           localbru1.d.e(5);

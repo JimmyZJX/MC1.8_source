@@ -20,7 +20,7 @@ package net.minecraft.src;
 /*  19:368 */         bcm localbcm = localaqu.s(localdt);
 /*  20:369 */         if ((localbcm instanceof bdm))
 /*  21:    */         {
-/*  22:370 */           if (paramamj.i() == 3)
+/*  22:370 */           if (paramamj.getDamage2() == 3)
 /*  23:    */           {
 /*  24:371 */             GameProfile localGameProfile = null;
 /*  25:372 */             if (paramamj.hasTagCompound())
@@ -36,7 +36,7 @@ package net.minecraft.src;
 /*  35:    */           }
 /*  36:    */           else
 /*  37:    */           {
-/*  38:384 */             ((bdm)localbcm).a(paramamj.i());
+/*  38:384 */             ((bdm)localbcm).a(paramamj.getDamage2());
 /*  39:    */           }
 /*  40:386 */           ((bdm)localbcm).b(localej.d().b() * 4);
 /*  41:387 */           BlockList.ce.a(localaqu, localdt, (bdm)localbcm);

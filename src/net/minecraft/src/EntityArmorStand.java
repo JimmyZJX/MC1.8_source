@@ -351,12 +351,12 @@ package net.minecraft.src;
 /* 350:383 */     paramahd.bg.a(j, localamj1);
 /* 351:    */   }
 /* 352:    */   
-/* 353:    */   public boolean a(wh paramwh, float paramFloat)
+/* 353:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /* 354:    */   {
 /* 355:388 */     if ((this.world.isClient) || (this.h)) {
 /* 356:389 */       return false;
 /* 357:    */     }
-/* 358:392 */     if (wh.j.equals(paramwh))
+/* 358:392 */     if (DamageSource.j.equals(paramwh))
 /* 359:    */     {
 /* 360:393 */       setDead();
 /* 361:394 */       return false;
@@ -370,7 +370,7 @@ package net.minecraft.src;
 /* 369:401 */       setDead();
 /* 370:402 */       return false;
 /* 371:    */     }
-/* 372:404 */     if (wh.a.equals(paramwh))
+/* 372:404 */     if (DamageSource.a.equals(paramwh))
 /* 373:    */     {
 /* 374:405 */       if (!au()) {
 /* 375:406 */         e(5);
@@ -379,7 +379,7 @@ package net.minecraft.src;
 /* 378:    */       }
 /* 379:410 */       return false;
 /* 380:    */     }
-/* 381:412 */     if ((wh.c.equals(paramwh)) && (getHealth() > 0.5F))
+/* 381:412 */     if ((DamageSource.c.equals(paramwh)) && (getHealth() > 0.5F))
 /* 382:    */     {
 /* 383:413 */       a(4.0F);
 /* 384:414 */       return false;

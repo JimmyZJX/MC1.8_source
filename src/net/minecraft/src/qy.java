@@ -323,7 +323,7 @@ package net.minecraft.src;
 /* 322:334 */           localObject1 = (EntityLiving)this.a;
 /* 323:335 */           for (localObject2 = ((EntityLiving)localObject1).bk().iterator(); ((Iterator)localObject2).hasNext();)
 /* 324:    */           {
-/* 325:335 */             wq localwq = (wq)((Iterator)localObject2).next();
+/* 325:335 */             PotionEffect localwq = (PotionEffect)((Iterator)localObject2).next();
 /* 326:336 */             paramqw.a.a(new lr(this.a.getID(), localwq));
 /* 327:    */           }
 /* 328:    */         }

@@ -24,12 +24,12 @@ package net.minecraft.src;
 /*  23:272 */       if (localfn.hasKey("Base", 99)) {
 /*  24:273 */         this.a = localfn.getInteger("Base");
 /*  25:    */       } else {
-/*  26:275 */         this.a = (paramamj.i() & 0xF);
+/*  26:275 */         this.a = (paramamj.getDamage2() & 0xF);
 /*  27:    */       }
 /*  28:    */     }
 /*  29:    */     else
 /*  30:    */     {
-/*  31:278 */       this.a = (paramamj.i() & 0xF);
+/*  31:278 */       this.a = (paramamj.getDamage2() & 0xF);
 /*  32:    */     }
 /*  33:280 */     this.h = null;
 /*  34:281 */     this.i = null;
@@ -78,7 +78,7 @@ package net.minecraft.src;
 /*  77:323 */     if ((localfn != null) && (localfn.c("Base"))) {
 /*  78:324 */       return localfn.getInteger("Base");
 /*  79:    */     }
-/*  80:326 */     return paramamj.i();
+/*  80:326 */     return paramamj.getDamage2();
 /*  81:    */   }
 /*  82:    */   
 /*  83:    */   public static int c(ItemStack paramamj)

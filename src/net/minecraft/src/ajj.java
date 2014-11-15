@@ -68,7 +68,7 @@ package net.minecraft.src;
 /*  67: 74 */     if (paramamj.getItem() == Item.fromProtoBlock(BlockList.bookshelf)) {
 /*  68: 75 */       this.b.b(AchievementList.G);
 /*  69:    */     }
-/*  70: 77 */     if ((paramamj.getItem() == ItemList.ao) && (paramamj.i() == 1)) {
+/*  70: 77 */     if ((paramamj.getItem() == ItemList.ao) && (paramamj.getDamage2() == 1)) {
 /*  71: 78 */       this.b.b(AchievementList.M);
 /*  72:    */     }
 /*  73:    */   }

@@ -24,7 +24,7 @@ package net.minecraft.src;
 /*  23: 30 */     this.j = 10.0D;
 /*  24:    */   }
 /*  25:    */   
-/*  26:    */   public boolean a(wh paramwh, float paramFloat)
+/*  26:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /*  27:    */   {
 /*  28: 35 */     return true;
 /*  29:    */   }

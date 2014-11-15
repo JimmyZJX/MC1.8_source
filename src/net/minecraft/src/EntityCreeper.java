@@ -127,7 +127,7 @@ package net.minecraft.src;
 /* 126:150 */     return "mob.creeper.death";
 /* 127:    */   }
 /* 128:    */   
-/* 129:    */   public void a(wh paramwh)
+/* 129:    */   public void a(DamageSource paramwh)
 /* 130:    */   {
 /* 131:155 */     super.a(paramwh);
 /* 132:157 */     if ((paramwh.j() instanceof EntitySkeleton))

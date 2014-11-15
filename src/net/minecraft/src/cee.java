@@ -1007,7 +1007,7 @@ package net.minecraft.src;
 /* 1006:1009 */     if (!(localwv instanceof EntityLiving)) {
 /* 1007:1010 */       return;
 /* 1008:     */     }
-/* 1009:1013 */     wq localwq = new wq(paramlr.c(), paramlr.e(), paramlr.d(), false, paramlr.f());
+/* 1009:1013 */     PotionEffect localwq = new PotionEffect(paramlr.c(), paramlr.e(), paramlr.d(), false, paramlr.f());
 /* 1010:1014 */     localwq.b(paramlr.a());
 /* 1011:1015 */     ((EntityLiving)localwv).c(localwq);
 /* 1012:     */   }

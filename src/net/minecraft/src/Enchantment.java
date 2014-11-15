@@ -110,7 +110,7 @@ package net.minecraft.src;
 /* 110:135 */     return a(paramInt) + 5;
 /* 111:    */   }
 /* 112:    */   
-/* 113:    */   public int a(int paramInt, wh paramwh)
+/* 113:    */   public int a(int paramInt, DamageSource paramwh)
 /* 114:    */   {
 /* 115:139 */     return 0;
 /* 116:    */   }

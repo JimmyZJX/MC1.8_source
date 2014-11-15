@@ -285,7 +285,7 @@ package net.minecraft.src;
 /*  286: 366 */     return i;
 /*  287:     */   }
 /*  288:     */   
-/*  289:     */   public boolean a(wh paramwh, float paramFloat)
+/*  289:     */   public boolean a(DamageSource paramwh, float paramFloat)
 /*  290:     */   {
 /*  291: 371 */     Entity localwv = paramwh.j();
 /*  292: 372 */     if ((this.rider != null) && (this.rider.equals(localwv))) {
@@ -339,9 +339,9 @@ package net.minecraft.src;
 /*  340: 427 */     if (i <= 0) {
 /*  341: 428 */       return;
 /*  342:     */     }
-/*  343: 431 */     a(wh.i, i);
+/*  343: 431 */     a(DamageSource.i, i);
 /*  344: 433 */     if (this.rider != null) {
-/*  345: 434 */       this.rider.a(wh.i, i);
+/*  345: 434 */       this.rider.a(DamageSource.i, i);
 /*  346:     */     }
 /*  347: 437 */     ProtoBlock localatr = this.world.getBlock(new BlockPosition(this.xPos, this.yPos - 0.2D - this.lastYaw, this.zPos)).getProto();
 /*  348: 438 */     if ((localatr.getMaterial() != Material.air) && (!R()))
@@ -889,7 +889,7 @@ package net.minecraft.src;
 /*  890: 982 */     this.bk = 1;
 /*  891:     */   }
 /*  892:     */   
-/*  893:     */   public void a(wh paramwh)
+/*  893:     */   public void a(DamageSource paramwh)
 /*  894:     */   {
 /*  895: 995 */     super.a(paramwh);
 /*  896: 996 */     if (!this.world.isClient) {
@@ -1112,8 +1112,8 @@ package net.minecraft.src;
 /* 1113:1219 */     if ((this.bp > 0.0F) && (!ct()) && (this.C))
 /* 1114:     */     {
 /* 1115:1220 */       this.yVelocity = (cD() * this.bp);
-/* 1116:1221 */       if (a(Potion.j)) {
-/* 1117:1222 */         this.yVelocity += (b(Potion.j).getAmplifier() + 1) * 0.1F;
+/* 1116:1221 */       if (a(Potion.jumpBoost)) {
+/* 1117:1222 */         this.yVelocity += (b(Potion.jumpBoost).getAmplifier() + 1) * 0.1F;
 /* 1118:     */       }
 /* 1119:1225 */       m(true);
 /* 1120:1226 */       this.ai = true;

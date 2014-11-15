@@ -16,7 +16,7 @@ package net.minecraft.src;
 /*  15:    */   
 /*  16:    */   public String e_(ItemStack paramamj)
 /*  17:    */   {
-/*  18: 29 */     int i = paramamj.i();
+/*  18: 29 */     int i = paramamj.getDamage2();
 /*  19: 30 */     return super.a() + "." + EnumDyeColor.fromIndex(i).d();
 /*  20:    */   }
 /*  21:    */   
@@ -25,7 +25,7 @@ package net.minecraft.src;
 /*  24: 35 */     if (!paramahd.a(pos.a(paramej), paramej, paramamj)) {
 /*  25: 36 */       return false;
 /*  26:    */     }
-/*  27: 39 */     EnumDyeColor localakv = EnumDyeColor.fromIndex(paramamj.i());
+/*  27: 39 */     EnumDyeColor localakv = EnumDyeColor.fromIndex(paramamj.getDamage2());
 /*  28: 40 */     if (localakv == EnumDyeColor.WHITE)
 /*  29:    */     {
 /*  30: 43 */       if (a(paramamj, world, pos))
@@ -108,7 +108,7 @@ package net.minecraft.src;
 /* 107:118 */     if ((paramxm instanceof EntitySheep))
 /* 108:    */     {
 /* 109:119 */       EntitySheep localacl = (EntitySheep)paramxm;
-/* 110:120 */       EnumDyeColor localakv = EnumDyeColor.fromIndex(paramamj.i());
+/* 110:120 */       EnumDyeColor localakv = EnumDyeColor.fromIndex(paramamj.getDamage2());
 /* 111:121 */       if ((!localacl.ck()) && (localacl.cj() != localakv))
 /* 112:    */       {
 /* 113:122 */         localacl.b(localakv);

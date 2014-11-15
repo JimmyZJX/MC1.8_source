@@ -1,14 +1,14 @@
 package net.minecraft.src;
 /*  1:   */ public class wf
 /*  2:   */ {
-/*  3:   */   private final wh a;
+/*  3:   */   private final DamageSource a;
 /*  4:   */   private final int b;
 /*  5:   */   private final float c;
 /*  6:   */   private final float d;
 /*  7:   */   private final String e;
 /*  8:   */   private final float f;
 /*  9:   */   
-/* 10:   */   public wf(wh paramwh, int paramInt, float paramFloat1, float paramFloat2, String paramString, float paramFloat3)
+/* 10:   */   public wf(DamageSource paramwh, int paramInt, float paramFloat1, float paramFloat2, String paramString, float paramFloat3)
 /* 11:   */   {
 /* 12:15 */     this.a = paramwh;
 /* 13:16 */     this.b = paramInt;
@@ -18,7 +18,7 @@ package net.minecraft.src;
 /* 17:20 */     this.f = paramFloat3;
 /* 18:   */   }
 /* 19:   */   
-/* 20:   */   public wh a()
+/* 20:   */   public DamageSource a()
 /* 21:   */   {
 /* 22:24 */     return this.a;
 /* 23:   */   }
@@ -45,7 +45,7 @@ package net.minecraft.src;
 /* 44:   */   
 /* 45:   */   public float i()
 /* 46:   */   {
-/* 47:56 */     if (this.a == wh.j) {
+/* 47:56 */     if (this.a == DamageSource.j) {
 /* 48:57 */       return 3.4028235E+38F;
 /* 49:   */     }
 /* 50:59 */     return this.f;

@@ -57,7 +57,7 @@ package net.minecraft.src;
 /* 56:58 */     if (localCollection.size() > 5) {
 /* 57:59 */       m = 132 / (localCollection.size() - 1);
 /* 58:   */     }
-/* 59:62 */     for (wq localwq : this.j.h.bk())
+/* 59:62 */     for (PotionEffect localwq : this.j.h.bk())
 /* 60:   */     {
 /* 61:63 */       Potion localwp = Potion.potionList[localwq.getID()];
 /* 62:   */       

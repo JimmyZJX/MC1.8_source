@@ -18,7 +18,7 @@ package net.minecraft.src;
 /* 17:   */   {
 /* 18:24 */     EntityLiving localxm = n();
 /* 19:26 */     if (parambru.d != null) {
-/* 20:27 */       parambru.d.a(wh.a(this, localxm), 0.0F);
+/* 20:27 */       parambru.d.a(DamageSource.a(this, localxm), 0.0F);
 /* 21:   */     }
 /* 22:30 */     for (int i = 0; i < 32; i++) {
 /* 23:31 */       this.world.a(ew.y, this.xPos, this.yPos + this.random.nextDouble() * 2.0D, this.zPos, this.random.nextGaussian(), 0.0D, this.random.nextGaussian(), new int[0]);
@@ -42,7 +42,7 @@ package net.minecraft.src;
 /* 41:   */           }
 /* 42:49 */           localxm.setPosition(this.xPos, this.yPos, this.zPos);
 /* 43:50 */           localxm.O = 0.0F;
-/* 44:51 */           localxm.a(wh.i, 5.0F);
+/* 44:51 */           localxm.a(DamageSource.i, 5.0F);
 /* 45:   */         }
 /* 46:   */       }
 /* 47:54 */       setDead();

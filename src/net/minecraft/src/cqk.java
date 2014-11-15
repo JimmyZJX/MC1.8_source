@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*   7:    */   
 /*   8:    */   public String call()
 /*   9:    */   {
-/*  10:386 */     return String.valueOf(this.a.i());
+/*  10:386 */     return String.valueOf(this.a.getDamage2());
 /*  11:    */   }
 /*  12:    */ }
 

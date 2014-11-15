@@ -31,7 +31,7 @@ package net.minecraft.src;
 /* 30:45 */     Item localalq = localamj.getItem();
 /* 31:46 */     bsu localbsu = bsu.z();
 /* 32:   */     float f2;
-/* 33:47 */     if (((localalq instanceof aju)) && (localbsu.ab().a(ProtoBlock.a(localalq), localamj.i())))
+/* 33:47 */     if (((localalq instanceof aju)) && (localbsu.ab().a(ProtoBlock.a(localalq), localamj.getDamage2())))
 /* 34:   */     {
 /* 35:48 */       cjm.glTranslatef(0.0F, 0.1875F, -0.3125F);
 /* 36:49 */       cjm.glRotatef(20.0F, 1.0F, 0.0F, 0.0F);

@@ -258,9 +258,9 @@ package net.minecraft.src;
 /* 257:299 */     if (cl() == 99)
 /* 258:    */     {
 /* 259:300 */       a("mob.attack", 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
-/* 260:301 */       return paramwv.a(wh.a(this), 8.0F);
+/* 260:301 */       return paramwv.a(DamageSource.a(this), 8.0F);
 /* 261:    */     }
-/* 262:303 */     return paramwv.a(wh.a(this), 3.0F);
+/* 262:303 */     return paramwv.a(DamageSource.a(this), 3.0F);
 /* 263:    */   }
 /* 264:    */   
 /* 265:    */   public int bq()
@@ -271,7 +271,7 @@ package net.minecraft.src;
 /* 270:311 */     return super.bq();
 /* 271:    */   }
 /* 272:    */   
-/* 273:    */   public boolean a(wh paramwh, float paramFloat)
+/* 273:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /* 274:    */   {
 /* 275:316 */     if (b(paramwh)) {
 /* 276:317 */       return false;

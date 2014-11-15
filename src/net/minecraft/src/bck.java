@@ -8,7 +8,7 @@ package net.minecraft.src;
 /*   7:    */   extends bdf
 /*   8:    */   implements pm, vq
 /*   9:    */ {
-/*  10: 42 */   public static final Potion[][] a = { { Potion.c, Potion.e }, { Potion.m, Potion.j }, { Potion.g }, { Potion.l } };
+/*  10: 42 */   public static final Potion[][] a = { { Potion.speed, Potion.haste }, { Potion.resistance, Potion.jumpBoost }, { Potion.strength }, { Potion.regeneration } };
 /*  11:    */   private final List<bcl> f;
 /*  12:    */   private long g;
 /*  13:    */   private float h;
@@ -62,13 +62,13 @@ package net.minecraft.src;
 /*  61: 91 */       for (localIterator = localList.iterator(); localIterator.hasNext();)
 /*  62:    */       {
 /*  63: 91 */         localahd = (EntityPlayer)localIterator.next();
-/*  64: 92 */         localahd.c(new wq(this.k, 180, i1, true, true));
+/*  64: 92 */         localahd.c(new PotionEffect(this.k, 180, i1, true, true));
 /*  65:    */       }
 /*  66: 95 */       if ((this.j >= 4) && (this.k != this.l) && (this.l > 0)) {
 /*  67: 96 */         for (localIterator = localList.iterator(); localIterator.hasNext();)
 /*  68:    */         {
 /*  69: 96 */           localahd = (EntityPlayer)localIterator.next();
-/*  70: 97 */           localahd.c(new wq(this.l, 180, 0, true, true));
+/*  70: 97 */           localahd.c(new PotionEffect(this.l, 180, 0, true, true));
 /*  71:    */         }
 /*  72:    */       }
 /*  73:    */     }
@@ -245,7 +245,7 @@ package net.minecraft.src;
 /* 244:315 */         return localamj;
 /* 245:    */       }
 /* 246:317 */       this.m.stackSize -= paramInt2;
-/* 247:318 */       return new ItemStack(this.m.getItem(), paramInt2, this.m.i());
+/* 247:318 */       return new ItemStack(this.m.getItem(), paramInt2, this.m.getDamage2());
 /* 248:    */     }
 /* 249:321 */     return null;
 /* 250:    */   }

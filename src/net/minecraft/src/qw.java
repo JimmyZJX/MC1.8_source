@@ -307,7 +307,7 @@ package net.minecraft.src;
 /* 306:    */     }
 /* 307:    */   }
 /* 308:    */   
-/* 309:    */   public void a(wh paramwh)
+/* 309:    */   public void a(DamageSource paramwh)
 /* 310:    */   {
 /* 311:334 */     if (this.world.getGameRules().getBoolean("showDeathMessages"))
 /* 312:    */     {
@@ -346,13 +346,13 @@ package net.minecraft.src;
 /* 345:366 */     br().g();
 /* 346:    */   }
 /* 347:    */   
-/* 348:    */   public boolean a(wh paramwh, float paramFloat)
+/* 348:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /* 349:    */   {
 /* 350:371 */     if (b(paramwh)) {
 /* 351:372 */       return false;
 /* 352:    */     }
 /* 353:375 */     int j = (this.b.ad()) && (cq()) && ("fall".equals(paramwh.p)) ? 1 : 0;
-/* 354:376 */     if ((j == 0) && (this.bO > 0) && (paramwh != wh.j)) {
+/* 354:376 */     if ((j == 0) && (this.bO > 0) && (paramwh != DamageSource.j)) {
 /* 355:377 */       return false;
 /* 356:    */     }
 /* 357:380 */     if ((paramwh instanceof wi))
@@ -735,19 +735,19 @@ package net.minecraft.src;
 /* 734:763 */     this.bH.addAll(((qw)paramahd).bH);
 /* 735:    */   }
 /* 736:    */   
-/* 737:    */   protected void a(wq paramwq)
+/* 737:    */   protected void a(PotionEffect paramwq)
 /* 738:    */   {
 /* 739:768 */     super.a(paramwq);
 /* 740:769 */     this.a.a(new lr(getID(), paramwq));
 /* 741:    */   }
 /* 742:    */   
-/* 743:    */   protected void a(wq paramwq, boolean paramBoolean)
+/* 743:    */   protected void a(PotionEffect paramwq, boolean paramBoolean)
 /* 744:    */   {
 /* 745:774 */     super.a(paramwq, paramBoolean);
 /* 746:775 */     this.a.a(new lr(getID(), paramwq));
 /* 747:    */   }
 /* 748:    */   
-/* 749:    */   protected void b(wq paramwq)
+/* 749:    */   protected void b(PotionEffect paramwq)
 /* 750:    */   {
 /* 751:780 */     super.b(paramwq);
 /* 752:781 */     this.a.a(new kn(getID(), paramwq));

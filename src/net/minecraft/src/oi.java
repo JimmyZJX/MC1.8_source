@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*   5:    */   
 /*   6:    */   protected ItemStack b(dz paramdz, ItemStack paramamj)
 /*   7:    */   {
-/*   8:312 */     if (EnumDyeColor.WHITE == EnumDyeColor.fromIndex(paramamj.i()))
+/*   8:312 */     if (EnumDyeColor.WHITE == EnumDyeColor.fromIndex(paramamj.getDamage2()))
 /*   9:    */     {
 /*  10:313 */       World world = paramdz.i();
 /*  11:    */       

@@ -49,7 +49,7 @@ package net.minecraft.src;
 /*  48:194 */         ItemStack localObject = paramain.a(k);
 /*  49:195 */         if ((localObject != null) && (((ItemStack)localObject).getItem() == ItemList.dye))
 /*  50:    */         {
-/*  51:198 */           j = ((ItemStack)localObject).i();
+/*  51:198 */           j = ((ItemStack)localObject).getDamage2();
 /*  52:199 */           break;
 /*  53:    */         }
 /*  54:    */       }
@@ -160,7 +160,7 @@ package net.minecraft.src;
 /* 159:295 */                 k = 0;
 /* 160:296 */                 break;
 /* 161:    */               }
-/* 162:298 */               if ((m != -1) && (m != localamj2.i()))
+/* 162:298 */               if ((m != -1) && (m != localamj2.getDamage2()))
 /* 163:    */               {
 /* 164:299 */                 k = 0;
 /* 165:300 */                 break;
@@ -170,7 +170,7 @@ package net.minecraft.src;
 /* 169:303 */                 k = 0;
 /* 170:304 */                 break;
 /* 171:    */               }
-/* 172:306 */               m = localamj2.i();
+/* 172:306 */               m = localamj2.getDamage2();
 /* 173:    */             }
 /* 174:    */           }
 /* 175:    */         }

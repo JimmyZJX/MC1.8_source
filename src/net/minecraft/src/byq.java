@@ -17,7 +17,7 @@ package net.minecraft.src;
 /*  14:    */   public void b(int paramInt1, int paramInt2)
 /*  15:    */   {
 /*  16:241 */     String str = cwc.a(Potion.potionList[this.p].getName(), new Object[0]);
-/*  17:244 */     if ((this.q >= 3) && (this.p != Potion.l.id)) {
+/*  17:244 */     if ((this.q >= 3) && (this.p != Potion.regeneration.id)) {
 /*  18:245 */       str = str + " II";
 /*  19:    */     }
 /*  20:248 */     byn.a(this.o, str, paramInt1, paramInt2);

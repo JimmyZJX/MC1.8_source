@@ -47,7 +47,7 @@ package net.minecraft.src;
 /*  46: 66 */       if ((localbcm instanceof bdm))
 /*  47:    */       {
 /*  48: 67 */         bdm localbdm = (bdm)localbcm;
-/*  49: 68 */         if (paramamj.i() == 3)
+/*  49: 68 */         if (paramamj.getDamage2() == 3)
 /*  50:    */         {
 /*  51: 69 */           GameProfile localGameProfile = null;
 /*  52: 70 */           if (paramamj.hasTagCompound())
@@ -63,7 +63,7 @@ package net.minecraft.src;
 /*  62:    */         }
 /*  63:    */         else
 /*  64:    */         {
-/*  65: 82 */           localbdm.a(paramamj.i());
+/*  65: 82 */           localbdm.a(paramamj.getDamage2());
 /*  66:    */         }
 /*  67: 84 */         localbdm.b(i);
 /*  68: 85 */         BlockList.ce.a(paramaqu, paramdt, localbdm);
@@ -87,7 +87,7 @@ package net.minecraft.src;
 /*  86:    */   
 /*  87:    */   public String e_(ItemStack paramamj)
 /*  88:    */   {
-/*  89:108 */     int i = paramamj.i();
+/*  89:108 */     int i = paramamj.getDamage2();
 /*  90:109 */     if ((i < 0) || (i >= a.length)) {
 /*  91:110 */       i = 0;
 /*  92:    */     }
@@ -96,7 +96,7 @@ package net.minecraft.src;
 /*  95:    */   
 /*  96:    */   public String a(ItemStack paramamj)
 /*  97:    */   {
-/*  98:117 */     if ((paramamj.i() == 3) && (paramamj.hasTagCompound()))
+/*  98:117 */     if ((paramamj.getDamage2() == 3) && (paramamj.hasTagCompound()))
 /*  99:    */     {
 /* 100:118 */       if (paramamj.getTagCompound().hasKey("SkullOwner", 8)) {
 /* 101:119 */         return fi.a("item.skull.player.name", new Object[] { paramamj.getTagCompound().getString("SkullOwner") });

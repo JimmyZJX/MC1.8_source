@@ -103,7 +103,7 @@ package net.minecraft.src;
 /* 102:124 */     if ((localfn != null) && (localfn.c("Base"))) {
 /* 103:125 */       localakv = EnumDyeColor.fromIndex(localfn.getInteger("Base"));
 /* 104:    */     } else {
-/* 105:127 */       localakv = EnumDyeColor.fromIndex(paramamj.i());
+/* 105:127 */       localakv = EnumDyeColor.fromIndex(paramamj.getDamage2());
 /* 106:    */     }
 /* 107:129 */     return localakv;
 /* 108:    */   }

@@ -12,7 +12,7 @@ package net.minecraft.src;
 /* 11:22 */     super(paramaqu, paramDouble1, paramDouble2, paramDouble3);
 /* 12:   */   }
 /* 13:   */   
-/* 14:   */   public void a(wh paramwh)
+/* 14:   */   public void a(DamageSource paramwh)
 /* 15:   */   {
 /* 16:27 */     super.a(paramwh);
 /* 17:   */     

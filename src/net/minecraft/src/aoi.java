@@ -91,7 +91,7 @@ package net.minecraft.src;
 /*  90:109 */         ItemStack localamj3 = paramain.a(i6);
 /*  91:110 */         if (localamj3 != null) {
 /*  92:114 */           if (localamj3.getItem() == ItemList.dye) {
-/*  93:115 */             localArrayList.add(Integer.valueOf(akw.a[(localamj3.i() & 0xF)]));
+/*  93:115 */             localArrayList.add(Integer.valueOf(akw.a[(localamj3.getDamage2() & 0xF)]));
 /*  94:116 */           } else if (localamj3.getItem() == ItemList.aT) {
 /*  95:118 */             ((NBTTagCompound)localObject2).setBoolean("Flicker", true);
 /*  96:119 */           } else if (localamj3.getItem() == ItemList.diamond) {
@@ -126,7 +126,7 @@ package net.minecraft.src;
 /* 125:147 */         if (localamj1 != null) {
 /* 126:151 */           if (localamj1.getItem() == ItemList.dye)
 /* 127:    */           {
-/* 128:152 */             ((List)localObject1).add(Integer.valueOf(akw.a[(localamj1.i() & 0xF)]));
+/* 128:152 */             ((List)localObject1).add(Integer.valueOf(akw.a[(localamj1.getDamage2() & 0xF)]));
 /* 129:    */           }
 /* 130:153 */           else if (localamj1.getItem() == ItemList.cc)
 /* 131:    */           {

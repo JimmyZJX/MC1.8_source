@@ -95,7 +95,7 @@ package net.minecraft.src;
 /*  94:    */       int i13;
 /*  95:181 */       if ((localamj2.e()) && (localamj2.getItem().a(localamj1, localamj3)))
 /*  96:    */       {
-/*  97:182 */         i11 = Math.min(localamj2.h(), localamj2.j() / 4);
+/*  97:182 */         i11 = Math.min(localamj2.getDamage(), localamj2.j() / 4);
 /*  98:183 */         if (i11 <= 0)
 /*  99:    */         {
 /* 100:184 */           this.g.a(0, null);
@@ -105,11 +105,11 @@ package net.minecraft.src;
 /* 104:188 */         i13 = 0;
 /* 105:189 */         while ((i11 > 0) && (i13 < localamj3.stackSize))
 /* 106:    */         {
-/* 107:190 */           i14 = localamj2.h() - i11;
+/* 107:190 */           i14 = localamj2.getDamage() - i11;
 /* 108:191 */           localamj2.b(i14);
 /* 109:192 */           i7++;
 /* 110:    */           
-/* 111:194 */           i11 = Math.min(localamj2.h(), localamj2.j() / 4);
+/* 111:194 */           i11 = Math.min(localamj2.getDamage(), localamj2.j() / 4);
 /* 112:195 */           i13++;
 /* 113:    */         }
 /* 114:197 */         this.k = i13;
@@ -124,15 +124,15 @@ package net.minecraft.src;
 /* 123:    */         }
 /* 124:204 */         if ((localamj2.e()) && (i10 == 0))
 /* 125:    */         {
-/* 126:205 */           i11 = localamj1.j() - localamj1.h();
-/* 127:206 */           i13 = localamj3.j() - localamj3.h();
+/* 126:205 */           i11 = localamj1.j() - localamj1.getDamage();
+/* 127:206 */           i13 = localamj3.j() - localamj3.getDamage();
 /* 128:207 */           i14 = i13 + localamj2.j() * 12 / 100;
 /* 129:208 */           int i15 = i11 + i14;
 /* 130:209 */           i16 = localamj2.j() - i15;
 /* 131:210 */           if (i16 < 0) {
 /* 132:211 */             i16 = 0;
 /* 133:    */           }
-/* 134:214 */           if (i16 < localamj2.i())
+/* 134:214 */           if (i16 < localamj2.getDamage2())
 /* 135:    */           {
 /* 136:215 */             localamj2.b(i16);
 /* 137:216 */             i7 += 2;

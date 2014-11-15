@@ -120,7 +120,7 @@ package net.minecraft.src;
 /* 119:134 */     return false;
 /* 120:    */   }
 /* 121:    */   
-/* 122:    */   public void a(wh paramwh)
+/* 122:    */   public void a(DamageSource paramwh)
 /* 123:    */   {
 /* 124:139 */     super.a(paramwh);
 /* 125:    */     

@@ -304,7 +304,7 @@ package net.minecraft.src;
 /* 303:328 */       if (this.bx.isDead)
 /* 304:    */       {
 /* 305:329 */         if (!this.world.isClient) {
-/* 306:330 */           a(this.bl, wh.a((aqo)null), 10.0F);
+/* 306:330 */           a(this.bl, DamageSource.a((aqo)null), 10.0F);
 /* 307:    */         }
 /* 308:333 */         this.bx = null;
 /* 309:    */       }
@@ -356,7 +356,7 @@ package net.minecraft.src;
 /* 355:375 */       Entity localwv = paramList.get(i);
 /* 356:376 */       if ((localwv instanceof EntityLiving))
 /* 357:    */       {
-/* 358:377 */         localwv.a(wh.a(this), 10.0F);
+/* 358:377 */         localwv.a(DamageSource.a(this), 10.0F);
 /* 359:378 */         a(this, localwv);
 /* 360:    */       }
 /* 361:    */     }
@@ -435,7 +435,7 @@ package net.minecraft.src;
 /* 434:447 */     return bool;
 /* 435:    */   }
 /* 436:    */   
-/* 437:    */   public boolean a(acz paramacz, wh paramwh, float paramFloat)
+/* 437:    */   public boolean a(acz paramacz, DamageSource paramwh, float paramFloat)
 /* 438:    */   {
 /* 439:452 */     if (paramacz != this.bl) {
 /* 440:453 */       paramFloat = paramFloat / 4.0F + 1.0F;
@@ -454,7 +454,7 @@ package net.minecraft.src;
 /* 453:467 */     return true;
 /* 454:    */   }
 /* 455:    */   
-/* 456:    */   public boolean a(wh paramwh, float paramFloat)
+/* 456:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /* 457:    */   {
 /* 458:472 */     if (((paramwh instanceof wi)) && (((wi)paramwh).w())) {
 /* 459:473 */       e(paramwh, paramFloat);
@@ -462,7 +462,7 @@ package net.minecraft.src;
 /* 461:475 */     return false;
 /* 462:    */   }
 /* 463:    */   
-/* 464:    */   protected boolean e(wh paramwh, float paramFloat)
+/* 464:    */   protected boolean e(DamageSource paramwh, float paramFloat)
 /* 465:    */   {
 /* 466:479 */     return super.a(paramwh, paramFloat);
 /* 467:    */   }

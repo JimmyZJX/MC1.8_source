@@ -230,7 +230,7 @@ package net.minecraft.src;
 /* 230:244 */     return 1.0F;
 /* 231:    */   }
 /* 232:    */   
-/* 233:    */   public boolean a(wh paramwh, float paramFloat)
+/* 233:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /* 234:    */   {
 /* 235:249 */     if (b(paramwh)) {
 /* 236:250 */       return false;

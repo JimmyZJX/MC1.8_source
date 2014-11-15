@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*   5:    */ {
 /*   6:    */   public String apply(ItemStack itemStack)
 /*   7:    */   {
-/*   8:495 */     return EnumFlowerVariant.a(awc.b, itemStack.i()).d();
+/*   8:495 */     return EnumFlowerVariant.a(awc.b, itemStack.getDamage2()).d();
 /*   9:    */   }
 /*  10:    */ }
 

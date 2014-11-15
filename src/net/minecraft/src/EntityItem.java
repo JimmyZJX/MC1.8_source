@@ -136,7 +136,7 @@ package net.minecraft.src;
 /* 136:159 */     if (localamj2.getItem() == null) {
 /* 137:160 */       return false;
 /* 138:    */     }
-/* 139:162 */     if ((localamj2.getItem().k()) && (localamj2.i() != localamj1.i())) {
+/* 139:162 */     if ((localamj2.getItem().k()) && (localamj2.getDamage2() != localamj1.getDamage2())) {
 /* 140:163 */       return false;
 /* 141:    */     }
 /* 142:165 */     if (localamj2.stackSize < localamj1.stackSize) {
@@ -177,10 +177,10 @@ package net.minecraft.src;
 /* 177:    */   
 /* 178:    */   protected void f(int paramInt)
 /* 179:    */   {
-/* 180:201 */     a(wh.a, paramInt);
+/* 180:201 */     a(DamageSource.a, paramInt);
 /* 181:    */   }
 /* 182:    */   
-/* 183:    */   public boolean a(wh paramwh, float paramFloat)
+/* 183:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /* 184:    */   {
 /* 185:206 */     if (b(paramwh)) {
 /* 186:207 */       return false;

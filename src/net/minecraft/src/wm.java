@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*  8:   */   
 /*  9:   */   public double a(int paramInt, ya paramya)
 /* 10:   */   {
-/* 11:13 */     if (this.id == Potion.t.id) {
+/* 11:13 */     if (this.id == Potion.weakness.id) {
 /* 12:14 */       return -0.5F * (paramInt + 1);
 /* 13:   */     }
 /* 14:16 */     return 1.3D * (paramInt + 1);

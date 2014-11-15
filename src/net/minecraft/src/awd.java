@@ -63,10 +63,10 @@ package net.minecraft.src;
 /*  62: 84 */       return false;
 /*  63:    */     }
 /*  64: 87 */     ProtoBlock localatr = ProtoBlock.a(localamj.getItem());
-/*  65: 88 */     if (!a(localatr, localamj.i())) {
+/*  65: 88 */     if (!a(localatr, localamj.getDamage2())) {
 /*  66: 89 */       return false;
 /*  67:    */     }
-/*  68: 91 */     localbdb.a(localamj.getItem(), localamj.i());
+/*  68: 91 */     localbdb.a(localamj.getItem(), localamj.getDamage2());
 /*  69: 92 */     localbdb.o_();
 /*  70: 93 */     paramaqu.h(paramdt);
 /*  71: 95 */     if (!paramahd.by.d) {

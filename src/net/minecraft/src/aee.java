@@ -49,7 +49,7 @@ package net.minecraft.src;
 /*  48: 61 */     return 0.2D;
 /*  49:    */   }
 /*  50:    */   
-/*  51:    */   public void a(wh paramwh)
+/*  51:    */   public void a(DamageSource paramwh)
 /*  52:    */   {
 /*  53: 66 */     super.a(paramwh);
 /*  54: 68 */     if (!paramwh.c()) {

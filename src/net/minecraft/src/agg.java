@@ -10,13 +10,13 @@ package net.minecraft.src;
 /*   9:    */   {
 /*  10:197 */     int i = paramRandom.nextInt(5);
 /*  11:198 */     if (i <= 1) {
-/*  12:199 */       this.a = Potion.c.id;
+/*  12:199 */       this.a = Potion.speed.id;
 /*  13:200 */     } else if (i <= 2) {
-/*  14:201 */       this.a = Potion.g.id;
+/*  14:201 */       this.a = Potion.strength.id;
 /*  15:202 */     } else if (i <= 3) {
-/*  16:203 */       this.a = Potion.l.id;
+/*  16:203 */       this.a = Potion.regeneration.id;
 /*  17:204 */     } else if (i <= 4) {
-/*  18:205 */       this.a = Potion.p.id;
+/*  18:205 */       this.a = Potion.invisibility.id;
 /*  19:    */     }
 /*  20:    */   }
 /*  21:    */ }

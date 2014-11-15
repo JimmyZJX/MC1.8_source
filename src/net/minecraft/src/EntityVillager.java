@@ -135,7 +135,7 @@ package net.minecraft.src;
 /*  136: 191 */             this.bk.a(this.bu, 1);
 /*  137:     */           }
 /*  138:     */         }
-/*  139: 194 */         c(new wq(Potion.l.id, 200, 0));
+/*  139: 194 */         c(new PotionEffect(Potion.regeneration.id, 200, 0));
 /*  140:     */       }
 /*  141:     */     }
 /*  142: 198 */     super.E();
@@ -284,7 +284,7 @@ package net.minecraft.src;
 /*  285:     */     }
 /*  286:     */   }
 /*  287:     */   
-/*  288:     */   public void a(wh paramwh)
+/*  288:     */   public void a(DamageSource paramwh)
 /*  289:     */   {
 /*  290: 338 */     if (this.bk != null)
 /*  291:     */     {

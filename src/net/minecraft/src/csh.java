@@ -68,7 +68,7 @@ package net.minecraft.src;
 /* 67:82 */           localfn.setNBT("SkullOwner", ga.a(new NBTTagCompound(), localGameProfile));
 /* 68:   */         }
 /* 69:   */       }
-/* 70:86 */       cnw.c.a(-0.5F, 0.0F, -0.5F, EnumDirection.UP, 180.0F, localamj.i(), localGameProfile, -1);
+/* 70:86 */       cnw.c.a(-0.5F, 0.0F, -0.5F, EnumDirection.UP, 180.0F, localamj.getDamage2(), localGameProfile, -1);
 /* 71:   */     }
 /* 72:88 */     cjm.glPopMatrix();
 /* 73:   */   }

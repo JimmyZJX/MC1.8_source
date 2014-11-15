@@ -270,7 +270,7 @@ package net.minecraft.src;
 /*  269:     */       else
 /*  270:     */       {
 /*  271: 334 */         if (this.i % 20 == 0) {
-/*  272: 335 */           a(wh.c, 1.0F);
+/*  272: 335 */           a(DamageSource.c, 1.0F);
 /*  273:     */         }
 /*  274: 337 */         this.i -= 1;
 /*  275:     */       }
@@ -301,7 +301,7 @@ package net.minecraft.src;
 /*  300: 365 */     if (this.ab) {
 /*  301: 366 */       return;
 /*  302:     */     }
-/*  303: 369 */     a(wh.d, 4.0F);
+/*  303: 369 */     a(DamageSource.d, 4.0F);
 /*  304: 370 */     e(15);
 /*  305:     */   }
 /*  306:     */   
@@ -729,7 +729,7 @@ package net.minecraft.src;
 /*  728:     */   protected void f(int paramInt)
 /*  729:     */   {
 /*  730: 789 */     if (!this.ab) {
-/*  731: 790 */       a(wh.a, paramInt);
+/*  731: 790 */       a(DamageSource.a, paramInt);
 /*  732:     */     }
 /*  733:     */   }
 /*  734:     */   
@@ -1026,7 +1026,7 @@ package net.minecraft.src;
 /* 1025:1054 */     this.G = true;
 /* 1026:     */   }
 /* 1027:     */   
-/* 1028:     */   public boolean a(wh paramwh, float paramFloat)
+/* 1028:     */   public boolean a(DamageSource paramwh, float paramFloat)
 /* 1029:     */   {
 /* 1030:1058 */     if (b(paramwh)) {
 /* 1031:1059 */       return false;
@@ -1580,7 +1580,7 @@ package net.minecraft.src;
 /* 1579:     */   
 /* 1580:     */   public void a(ads paramads)
 /* 1581:     */   {
-/* 1582:1587 */     a(wh.b, 5.0F);
+/* 1582:1587 */     a(DamageSource.b, 5.0F);
 /* 1583:1588 */     this.i += 1;
 /* 1584:1589 */     if (this.i == 0) {
 /* 1585:1590 */       e(8);
@@ -1698,9 +1698,9 @@ package net.minecraft.src;
 /* 1697:1699 */     return String.format("%s['%s'/%d, l='%s', x=%.2f, y=%.2f, z=%.2f]", new Object[] { getClass().getSimpleName(), getName(), Integer.valueOf(this.id), this.world == null ? "~NULL~" : this.world.getWorldInfo().k(), Double.valueOf(this.xPos), Double.valueOf(this.yPos), Double.valueOf(this.zPos) });
 /* 1698:     */   }
 /* 1699:     */   
-/* 1700:     */   public boolean b(wh paramwh)
+/* 1700:     */   public boolean b(DamageSource paramwh)
 /* 1701:     */   {
-/* 1702:1703 */     return (this.ar) && (paramwh != wh.j) && (!paramwh.u());
+/* 1702:1703 */     return (this.ar) && (paramwh != DamageSource.j) && (!paramwh.u());
 /* 1703:     */   }
 /* 1704:     */   
 /* 1705:     */   public void m(Entity paramwv)

@@ -273,7 +273,7 @@ package net.minecraft.src;
 /* 272:304 */           return null;
 /* 273:    */         }
 /* 274:    */       }
-/* 275:306 */       else if ((localamj2.getItem() == ItemList.dye) && (EnumDyeColor.fromIndex(localamj2.i()) == EnumDyeColor.BLUE))
+/* 275:306 */       else if ((localamj2.getItem() == ItemList.dye) && (EnumDyeColor.fromIndex(localamj2.getDamage2()) == EnumDyeColor.BLUE))
 /* 276:    */       {
 /* 277:307 */         if (!a(localamj2, 1, 2, true)) {
 /* 278:308 */           return null;
@@ -288,7 +288,7 @@ package net.minecraft.src;
 /* 287:    */         }
 /* 288:314 */         else if (localamj2.stackSize >= 1)
 /* 289:    */         {
-/* 290:315 */           ((ajk)this.c.get(0)).d(new ItemStack(localamj2.getItem(), 1, localamj2.i()));
+/* 290:315 */           ((ajk)this.c.get(0)).d(new ItemStack(localamj2.getItem(), 1, localamj2.getDamage2()));
 /* 291:316 */           localamj2.stackSize -= 1;
 /* 292:    */         }
 /* 293:    */       }

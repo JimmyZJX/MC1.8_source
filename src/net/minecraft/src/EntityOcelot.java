@@ -125,10 +125,10 @@ package net.minecraft.src;
 /* 127:    */   
 /* 128:    */   public boolean r(Entity paramwv)
 /* 129:    */   {
-/* 130:155 */     return paramwv.a(wh.a(this), 3.0F);
+/* 130:155 */     return paramwv.a(DamageSource.a(this), 3.0F);
 /* 131:    */   }
 /* 132:    */   
-/* 133:    */   public boolean a(wh paramwh, float paramFloat)
+/* 133:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /* 134:    */   {
 /* 135:160 */     if (b(paramwh)) {
 /* 136:161 */       return false;

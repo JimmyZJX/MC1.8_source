@@ -84,7 +84,7 @@ package net.minecraft.src;
 /*  83:    */   protected void E()
 /*  84:    */   {
 /*  85:103 */     if (U()) {
-/*  86:104 */       a(wh.f, 1.0F);
+/*  86:104 */       a(DamageSource.f, 1.0F);
 /*  87:    */     }
 /*  88:107 */     this.c -= 1;
 /*  89:108 */     if (this.c <= 0)

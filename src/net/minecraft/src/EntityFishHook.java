@@ -240,7 +240,7 @@ package net.minecraft.src;
 /* 240:282 */     if (localbru1 != null) {
 /* 241:283 */       if (localbru1.d != null)
 /* 242:    */       {
-/* 243:284 */         if (localbru1.d.a(wh.a(this, this.b), 0.0F)) {
+/* 243:284 */         if (localbru1.d.a(DamageSource.a(this, this.b), 0.0F)) {
 /* 244:285 */           this.c = localbru1.d;
 /* 245:    */         }
 /* 246:    */       }

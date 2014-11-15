@@ -236,7 +236,7 @@ package net.minecraft.src;
 /* 237:259 */     return super.bP();
 /* 238:    */   }
 /* 239:    */   
-/* 240:    */   public boolean a(wh paramwh, float paramFloat)
+/* 240:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /* 241:    */   {
 /* 242:264 */     if (b(paramwh)) {
 /* 243:265 */       return false;
@@ -251,7 +251,7 @@ package net.minecraft.src;
 /* 252:    */   
 /* 253:    */   public boolean r(Entity paramwv)
 /* 254:    */   {
-/* 255:279 */     boolean bool = paramwv.a(wh.a(this), (int)a(afs.e).e());
+/* 255:279 */     boolean bool = paramwv.a(DamageSource.a(this), (int)a(afs.e).e());
 /* 256:280 */     if (bool) {
 /* 257:281 */       a(this, paramwv);
 /* 258:    */     }
@@ -294,7 +294,7 @@ package net.minecraft.src;
 /* 295:    */         }
 /* 296:318 */         else if (localamj.getItem() == ItemList.dye)
 /* 297:    */         {
-/* 298:319 */           localObject = EnumDyeColor.fromIndex(localamj.i());
+/* 298:319 */           localObject = EnumDyeColor.fromIndex(localamj.getDamage2());
 /* 299:320 */           if (localObject != cu())
 /* 300:    */           {
 /* 301:321 */             a((EnumDyeColor)localObject);

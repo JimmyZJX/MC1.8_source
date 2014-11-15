@@ -36,7 +36,7 @@ package net.minecraft.src;
 /*  35:    */     }
 /*  36:    */   }
 /*  37:    */   
-/*  38:    */   public void a(wh paramwh, float paramFloat1, float paramFloat2)
+/*  38:    */   public void a(DamageSource paramwh, float paramFloat1, float paramFloat2)
 /*  39:    */   {
 /*  40: 51 */     g();
 /*  41: 52 */     a();
@@ -66,10 +66,10 @@ package net.minecraft.src;
 /*  65: 76 */     ho localho1 = localwf2.h();
 /*  66: 77 */     Entity localwv1 = localwf2.a().j();
 /*  67:    */     ho localObject1;
-/*  68: 79 */     if ((localwf1 != null) && (localwf2.a() == wh.i))
+/*  68: 79 */     if ((localwf1 != null) && (localwf2.a() == DamageSource.i))
 /*  69:    */     {
 /*  70: 80 */       ho localho2 = localwf1.h();
-/*  71: 82 */       if ((localwf1.a() == wh.i) || (localwf1.a() == wh.j))
+/*  71: 82 */       if ((localwf1.a() == DamageSource.i) || (localwf1.a() == DamageSource.j))
 /*  72:    */       {
 /*  73: 83 */         localObject1 = new hz("death.fell.accident." + a(localwf1), new Object[] { this.b.e_() });
 /*  74:    */       }
@@ -143,7 +143,7 @@ package net.minecraft.src;
 /* 142:    */     {
 /* 143:142 */       wf localwf = this.a.get(j);
 /* 144:143 */       wf localObject3 = j > 0 ? this.a.get(j - 1) : null;
-/* 145:145 */       if (((localwf.a() == wh.i) || (localwf.a() == wh.j)) && (localwf.i() > 0.0F) && ((localObject1 == null) || (localwf.i() > f1)))
+/* 145:145 */       if (((localwf.a() == DamageSource.i) || (localwf.a() == DamageSource.j)) && (localwf.i() > 0.0F) && ((localObject1 == null) || (localwf.i() > f1)))
 /* 146:    */       {
 /* 147:146 */         if (j > 0) {
 /* 148:147 */           localObject1 = localObject3;

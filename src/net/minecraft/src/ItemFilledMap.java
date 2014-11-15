@@ -28,12 +28,12 @@ package net.minecraft.src;
 /*  27:    */   
 /*  28:    */   public MapInfo a(ItemStack paramamj, World paramaqu)
 /*  29:    */   {
-/*  30: 47 */     String str = "map_" + paramamj.i();
+/*  30: 47 */     String str = "map_" + paramamj.getDamage2();
 /*  31: 48 */     MapInfo localbqe = (MapInfo)paramaqu.a(MapInfo.class, str);
 /*  32: 50 */     if ((localbqe == null) && (!paramaqu.isClient))
 /*  33:    */     {
 /*  34: 51 */       paramamj.b(paramaqu.b("map"));
-/*  35: 52 */       str = "map_" + paramamj.i();
+/*  35: 52 */       str = "map_" + paramamj.getDamage2();
 /*  36: 53 */       localbqe = new MapInfo(str);
 /*  37:    */       
 /*  38: 55 */       localbqe.scale = 3;
@@ -208,7 +208,7 @@ package net.minecraft.src;
 /* 207:    */     {
 /* 208:231 */       MapInfo localbqe1 = ItemList.filledMap.a(paramamj, paramaqu);
 /* 209:232 */       paramamj.b(paramaqu.b("map"));
-/* 210:233 */       MapInfo localbqe2 = new MapInfo("map_" + paramamj.i());
+/* 210:233 */       MapInfo localbqe2 = new MapInfo("map_" + paramamj.getDamage2());
 /* 211:    */       
 /* 212:235 */       localbqe2.scale = ((byte)(localbqe1.scale + 1));
 /* 213:236 */       if (localbqe2.scale > 4) {
@@ -217,7 +217,7 @@ package net.minecraft.src;
 /* 216:240 */       localbqe2.a(localbqe1.xCenter, localbqe1.zCenter, localbqe2.scale);
 /* 217:241 */       localbqe2.dimension = localbqe1.dimension;
 /* 218:242 */       localbqe2.c();
-/* 219:243 */       paramaqu.a("map_" + paramamj.i(), localbqe2);
+/* 219:243 */       paramaqu.a("map_" + paramamj.getDamage2(), localbqe2);
 /* 220:    */     }
 /* 221:    */   }
 /* 222:    */   

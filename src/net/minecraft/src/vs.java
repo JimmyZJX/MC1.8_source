@@ -39,7 +39,7 @@ package net.minecraft.src;
 /* 38:   */       }
 /* 39:44 */       paramamj.stackSize -= i;
 /* 40:   */       
-/* 41:46 */       EntityItem item = new EntityItem(paramaqu, paramDouble1 + f1, paramDouble2 + f2, paramDouble3 + f3, new ItemStack(paramamj.getItem(), i, paramamj.i()));
+/* 41:46 */       EntityItem item = new EntityItem(paramaqu, paramDouble1 + f1, paramDouble2 + f2, paramDouble3 + f3, new ItemStack(paramamj.getItem(), i, paramamj.getDamage2()));
 /* 42:47 */       if (paramamj.hasTagCompound()) {
 /* 43:48 */         item.getItemStack().setTagCompound((NBTTagCompound)paramamj.getTagCompound().b());
 /* 44:   */       }

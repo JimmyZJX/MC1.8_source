@@ -89,8 +89,8 @@ package net.minecraft.src;
 /*  88:    */   
 /*  89:    */   public static ali a(ItemStack paramamj)
 /*  90:    */   {
-/*  91:163 */     if ((paramamj.getItem() instanceof alh)) {
-/*  92:164 */       return a(paramamj.i());
+/*  91:163 */     if ((paramamj.getItem() instanceof ItemFish)) {
+/*  92:164 */       return a(paramamj.getDamage2());
 /*  93:    */     }
 /*  94:166 */     return a;
 /*  95:    */   }

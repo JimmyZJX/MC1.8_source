@@ -76,7 +76,7 @@ package net.minecraft.src;
 /*  75:    */         }
 /*  76: 83 */         else if (localamj2.getItem() == ItemList.dye)
 /*  77:    */         {
-/*  78: 84 */           float[] arrayOfFloat = EntitySheep.a(EnumDyeColor.fromIndex(localamj2.i()));
+/*  78: 84 */           float[] arrayOfFloat = EntitySheep.a(EnumDyeColor.fromIndex(localamj2.getDamage2()));
 /*  79: 85 */           int i2 = (int)(arrayOfFloat[0] * 255.0F);
 /*  80: 86 */           int i3 = (int)(arrayOfFloat[1] * 255.0F);
 /*  81: 87 */           int i4 = (int)(arrayOfFloat[2] * 255.0F);

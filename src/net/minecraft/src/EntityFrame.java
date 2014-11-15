@@ -136,7 +136,7 @@ package net.minecraft.src;
 /* 135:    */   public boolean l(Entity paramwv)
 /* 136:    */   {
 /* 137:145 */     if ((paramwv instanceof EntityPlayer)) {
-/* 138:146 */       return a(wh.a((EntityPlayer)paramwv), 0.0F);
+/* 138:146 */       return a(DamageSource.a((EntityPlayer)paramwv), 0.0F);
 /* 139:    */     }
 /* 140:148 */     return false;
 /* 141:    */   }
@@ -146,7 +146,7 @@ package net.minecraft.src;
 /* 145:153 */     return this.b;
 /* 146:    */   }
 /* 147:    */   
-/* 148:    */   public boolean a(wh paramwh, float paramFloat)
+/* 148:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /* 149:    */   {
 /* 150:158 */     if (b(paramwh)) {
 /* 151:159 */       return false;

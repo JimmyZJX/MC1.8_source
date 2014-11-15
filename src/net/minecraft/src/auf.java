@@ -94,7 +94,7 @@ package net.minecraft.src;
 /*  93:    */   
 /*  94:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, Entity paramwv)
 /*  95:    */   {
-/*  96:107 */     paramwv.a(wh.h, 1.0F);
+/*  96:107 */     paramwv.a(DamageSource.h, 1.0F);
 /*  97:    */   }
 /*  98:    */   
 /*  99:    */   public aql k()

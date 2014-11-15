@@ -170,12 +170,12 @@ package net.minecraft.src;
 /* 171:208 */     return (e()) && (this.itemDamage > 0);
 /* 172:    */   }
 /* 173:    */   
-/* 174:    */   public int h()
+/* 174:    */   public int getDamage()
 /* 175:    */   {
 /* 176:212 */     return this.itemDamage;
 /* 177:    */   }
 /* 178:    */   
-/* 179:    */   public int i()
+/* 179:    */   public int getDamage2()
 /* 180:    */   {
 /* 181:216 */     return this.itemDamage;
 /* 182:    */   }
@@ -638,7 +638,7 @@ package net.minecraft.src;
 /* 639:652 */     if (paramBoolean)
 /* 640:    */     {
 /* 641:653 */       if (g()) {
-/* 642:654 */         localArrayList.add("Durability: " + (j() - h()) + " / " + j());
+/* 642:654 */         localArrayList.add("Durability: " + (j() - getDamage()) + " / " + j());
 /* 643:    */       }
 /* 644:656 */       localArrayList.add(a.i + ((oa)Item.e.c(this.item)).toString());
 /* 645:657 */       if (hasTagCompound()) {

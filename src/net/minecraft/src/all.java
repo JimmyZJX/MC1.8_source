@@ -42,7 +42,7 @@ package net.minecraft.src;
 /* 41:   */   protected void c(ItemStack paramamj, World paramaqu, EntityPlayer paramahd)
 /* 42:   */   {
 /* 43:47 */     if ((!paramaqu.isClient) && (this.l > 0) && (paramaqu.rng.nextFloat() < this.o)) {
-/* 44:48 */       paramahd.c(new wq(this.l, this.m * 20, this.n));
+/* 44:48 */       paramahd.c(new PotionEffect(this.l, this.m * 20, this.n));
 /* 45:   */     }
 /* 46:   */   }
 /* 47:   */   

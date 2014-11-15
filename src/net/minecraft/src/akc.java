@@ -24,7 +24,7 @@ package net.minecraft.src;
 /* 23:27 */     if ((paramahd.av()) && ((paramahd.vehicle instanceof EntityPig)))
 /* 24:   */     {
 /* 25:28 */       EntityPig localaca = (EntityPig)paramahd.vehicle;
-/* 26:30 */       if ((localaca.ck().h()) && (paramamj.j() - paramamj.i() >= 7))
+/* 26:30 */       if ((localaca.ck().h()) && (paramamj.j() - paramamj.getDamage2() >= 7))
 /* 27:   */       {
 /* 28:31 */         localaca.ck().g();
 /* 29:32 */         paramamj.a(7, paramahd);

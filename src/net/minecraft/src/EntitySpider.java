@@ -98,9 +98,9 @@ package net.minecraft.src;
 /*  97:131 */     return xs.c;
 /*  98:    */   }
 /*  99:    */   
-/* 100:    */   public boolean d(wq paramwq)
+/* 100:    */   public boolean d(PotionEffect paramwq)
 /* 101:    */   {
-/* 102:136 */     if (paramwq.getID() == Potion.u.id) {
+/* 102:136 */     if (paramwq.getID() == Potion.poison.id) {
 /* 103:137 */       return false;
 /* 104:    */     }
 /* 105:139 */     return super.d(paramwq);
@@ -144,7 +144,7 @@ package net.minecraft.src;
 /* 143:    */     {
 /* 144:177 */       int i = ((agg)paramxq).a;
 /* 145:178 */       if ((i > 0) && (Potion.potionList[i] != null)) {
-/* 146:179 */         c(new wq(i, 2147483647));
+/* 146:179 */         c(new PotionEffect(i, 2147483647));
 /* 147:    */       }
 /* 148:    */     }
 /* 149:183 */     return paramxq;

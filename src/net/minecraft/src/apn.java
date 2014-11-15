@@ -3,7 +3,7 @@ package net.minecraft.src;
 /*   2:    */   implements apl
 /*   3:    */ {
 /*   4:    */   public int a;
-/*   5:    */   public wh b;
+/*   5:    */   public DamageSource b;
 /*   6:    */   
 /*   7:    */   public void a(Enchantment paramapf, int paramInt)
 /*   8:    */   {

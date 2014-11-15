@@ -11,7 +11,7 @@ package net.minecraft.src;
 /* 10:   */   
 /* 11:   */   public int a(ItemStack paramamj, int paramInt)
 /* 12:   */   {
-/* 13:15 */     avk localavk = avk.a(paramamj.i());
+/* 13:15 */     avk localavk = avk.a(paramamj.getDamage2());
 /* 14:16 */     if ((localavk == avk.c) || (localavk == avk.d)) {
 /* 15:17 */       return aqt.a(0.5D, 1.0D);
 /* 16:   */     }

@@ -58,7 +58,7 @@ package net.minecraft.src;
 /* 57:61 */     if ((localObject == null) || (i < 1)) {
 /* 58:62 */       return null;
 /* 59:   */     }
-/* 60:65 */     ItemStack localamj1 = new ItemStack(ItemList.filledMap, i + 1, localObject.i());
+/* 60:65 */     ItemStack localamj1 = new ItemStack(ItemList.filledMap, i + 1, localObject.getDamage2());
 /* 61:66 */     if (localObject.s()) {
 /* 62:67 */       localamj1.c(localObject.q());
 /* 63:   */     }

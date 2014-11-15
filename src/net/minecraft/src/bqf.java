@@ -22,10 +22,10 @@ package net.minecraft.src;
 /* 21:45 */     if (this.d)
 /* 22:   */     {
 /* 23:46 */       this.d = false;
-/* 24:47 */       return new jx(paramamj.i(), this.mapInfo.scale, this.mapInfo.icons.values(), this.mapInfo.content, this.xmin, this.ymin, this.xmax + 1 - this.xmin, this.ymax + 1 - this.ymin);
+/* 24:47 */       return new jx(paramamj.getDamage2(), this.mapInfo.scale, this.mapInfo.icons.values(), this.mapInfo.content, this.xmin, this.ymin, this.xmax + 1 - this.xmin, this.ymax + 1 - this.ymin);
 /* 25:   */     }
 /* 26:48 */     if (this.i++ % 5 == 0) {
-/* 27:49 */       return new jx(paramamj.i(), this.mapInfo.scale, this.mapInfo.icons.values(), this.mapInfo.content, 0, 0, 0, 0);
+/* 27:49 */       return new jx(paramamj.getDamage2(), this.mapInfo.scale, this.mapInfo.icons.values(), this.mapInfo.content, 0, 0, 0, 0);
 /* 28:   */     }
 /* 29:52 */     return null;
 /* 30:   */   }

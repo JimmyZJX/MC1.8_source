@@ -360,14 +360,14 @@ package net.minecraft.src;
 /* 359:    */       Potion localwp;
 /* 360:387 */       if ((this.W + getID()) % 1200 == 0)
 /* 361:    */       {
-/* 362:388 */         localwp = Potion.f;
+/* 362:388 */         localwp = Potion.miningFatigue;
 /* 363:    */         
 /* 364:390 */         List<qw> localList = this.world.b(qw.class, new afh(this));
 /* 365:396 */         for (qw localqw : localList) {
 /* 366:397 */           if ((!localqw.a(localwp)) || (localqw.b(localwp).getAmplifier() < 2) || (localqw.b(localwp).getDuration() < 1200))
 /* 367:    */           {
 /* 368:398 */             localqw.a.a(new jo(10, 0.0F));
-/* 369:399 */             localqw.c(new wq(localwp.id, 6000, 2));
+/* 369:399 */             localqw.c(new PotionEffect(localwp.id, 6000, 2));
 /* 370:    */           }
 /* 371:    */         }
 /* 372:    */       }
@@ -415,14 +415,14 @@ package net.minecraft.src;
 /* 414:450 */     return ((this.random.nextInt(20) == 0) || (!this.world.j(new BlockPosition(this)))) && (super.canSpawn());
 /* 415:    */   }
 /* 416:    */   
-/* 417:    */   public boolean a(wh paramwh, float paramFloat)
+/* 417:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /* 418:    */   {
 /* 419:455 */     if ((!n()) && (!paramwh.s()) && ((paramwh.i() instanceof EntityLiving)))
 /* 420:    */     {
 /* 421:456 */       EntityLiving localxm = (EntityLiving)paramwh.i();
 /* 422:459 */       if (!paramwh.c())
 /* 423:    */       {
-/* 424:460 */         localxm.a(wh.a(this), 2.0F);
+/* 424:460 */         localxm.a(DamageSource.a(this), 2.0F);
 /* 425:461 */         localxm.a("damage.thorns", 0.5F, 1.0F);
 /* 426:    */       }
 /* 427:    */     }

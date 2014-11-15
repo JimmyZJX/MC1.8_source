@@ -18,7 +18,7 @@ package net.minecraft.src;
 /* 17:   */   
 /* 18:   */   public int a(ItemStack paramamj, int paramInt)
 /* 19:   */   {
-/* 20:21 */     return this.b.h(this.b.a(paramamj.i()));
+/* 20:21 */     return this.b.h(this.b.a(paramamj.getDamage2()));
 /* 21:   */   }
 /* 22:   */   
 /* 23:   */   public int a(int paramInt)
@@ -37,7 +37,7 @@ package net.minecraft.src;
 /* 36:36 */     if (this.c == null) {
 /* 37:37 */       return super.e_(paramamj);
 /* 38:   */     }
-/* 39:39 */     int i = paramamj.i();
+/* 39:39 */     int i = paramamj.getDamage2();
 /* 40:40 */     if ((i >= 0) && (i < this.c.length)) {
 /* 41:41 */       return super.e_(paramamj) + "." + this.c[i];
 /* 42:   */     }

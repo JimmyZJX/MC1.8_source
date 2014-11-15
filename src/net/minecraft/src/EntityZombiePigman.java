@@ -113,7 +113,7 @@ package net.minecraft.src;
 /* 114:    */     }
 /* 115:    */   }
 /* 116:    */   
-/* 117:    */   public boolean a(wh paramwh, float paramFloat)
+/* 117:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /* 118:    */   {
 /* 119:136 */     if (b(paramwh)) {
 /* 120:137 */       return false;

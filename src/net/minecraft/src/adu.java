@@ -70,7 +70,7 @@ package net.minecraft.src;
 /*  69: 84 */     return this.K * 0.0D - 0.300000011920929D;
 /*  70:    */   }
 /*  71:    */   
-/*  72:    */   public boolean a(wh paramwh, float paramFloat)
+/*  72:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /*  73:    */   {
 /*  74: 89 */     if (b(paramwh)) {
 /*  75: 90 */       return false;

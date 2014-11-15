@@ -11,7 +11,7 @@ package net.minecraft.src;
 /* 10:   */   {
 /* 11:15 */     ItemStack localamj = new ItemStack(ItemList.filledMap, 1, paramaqu.b("map"));
 /* 12:   */     
-/* 13:17 */     String str = "map_" + localamj.i();
+/* 13:17 */     String str = "map_" + localamj.getDamage2();
 /* 14:18 */     MapInfo localbqe = new MapInfo(str);
 /* 15:19 */     paramaqu.a(str, localbqe);
 /* 16:   */     

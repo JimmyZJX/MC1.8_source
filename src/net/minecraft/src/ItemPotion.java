@@ -9,8 +9,8 @@ package net.minecraft.src;
 /*  13:    */ public class ItemPotion
 /*  14:    */   extends Item
 /*  15:    */ {
-/*  16: 33 */   private Map<Integer,List<wq>> a = Maps.newHashMap();
-/*  17: 34 */   private static final Map<List<wq>,Integer> b = Maps.newLinkedHashMap();
+/*  16: 33 */   private Map<Integer,List<PotionEffect>> a = Maps.newHashMap();
+/*  17: 34 */   private static final Map<List<PotionEffect>,Integer> b = Maps.newLinkedHashMap();
 /*  18:    */   
 /*  19:    */   public ItemPotion()
 /*  20:    */   {
@@ -20,24 +20,24 @@ package net.minecraft.src;
 /*  24: 40 */     setTabToDisplayOn(CreativeTabs.tabBrewing);
 /*  25:    */   }
 /*  26:    */   
-/*  27:    */   public List<wq> h(ItemStack paramamj)
+/*  27:    */   public List<PotionEffect> h(ItemStack paramamj)
 /*  28:    */   {
 /*  29: 44 */     if ((!paramamj.hasTagCompound()) || (!paramamj.getTagCompound().hasKey("CustomPotionEffects", 9)))
 /*  30:    */     {
-/*  31: 45 */       List<wq> localObject = this.a.get(Integer.valueOf(paramamj.i()));
+/*  31: 45 */       List<PotionEffect> localObject = this.a.get(Integer.valueOf(paramamj.getDamage2()));
 /*  32: 47 */       if (localObject == null)
 /*  33:    */       {
-/*  34: 48 */         localObject = ans.b(paramamj.i(), false);
-/*  35: 49 */         this.a.put(Integer.valueOf(paramamj.i()), localObject);
+/*  34: 48 */         localObject = PotionHelper.getPotionEffects(paramamj.getDamage2(), false);
+/*  35: 49 */         this.a.put(Integer.valueOf(paramamj.getDamage2()), localObject);
 /*  36:    */       }
 /*  37: 52 */       return localObject;
 /*  38:    */     }
-/*  39: 54 */     List<wq> localObject = Lists.newArrayList();
+/*  39: 54 */     List<PotionEffect> localObject = Lists.newArrayList();
 /*  40: 55 */     fv localfv = paramamj.getTagCompound().c("CustomPotionEffects", 10);
 /*  41: 57 */     for (int i = 0; i < localfv.c(); i++)
 /*  42:    */     {
 /*  43: 58 */       NBTTagCompound localfn = localfv.b(i);
-/*  44: 59 */       wq localwq = wq.fromNBT(localfn);
+/*  44: 59 */       PotionEffect localwq = PotionEffect.fromNBT(localfn);
 /*  45: 60 */       if (localwq != null) {
 /*  46: 61 */         localObject.add(localwq);
 /*  47:    */       }
@@ -45,12 +45,12 @@ package net.minecraft.src;
 /*  49: 65 */     return localObject;
 /*  50:    */   }
 /*  51:    */   
-/*  52:    */   public List<wq> e(int paramInt)
+/*  52:    */   public List<PotionEffect> e(int paramInt)
 /*  53:    */   {
-/*  54: 70 */     List<wq> localList = this.a.get(Integer.valueOf(paramInt));
+/*  54: 70 */     List<PotionEffect> localList = this.a.get(Integer.valueOf(paramInt));
 /*  55: 71 */     if (localList == null)
 /*  56:    */     {
-/*  57: 72 */       localList = ans.b(paramInt, false);
+/*  57: 72 */       localList = PotionHelper.getPotionEffects(paramInt, false);
 /*  58: 73 */       this.a.put(Integer.valueOf(paramInt), localList);
 /*  59:    */     }
 /*  60: 75 */     return localList;
@@ -63,10 +63,10 @@ package net.minecraft.src;
 /*  67:    */     }
 /*  68: 84 */     if (!paramaqu.isClient)
 /*  69:    */     {
-/*  70: 85 */       List<wq> localList = h(paramamj);
+/*  70: 85 */       List<PotionEffect> localList = h(paramamj);
 /*  71: 86 */       if (localList != null) {
-/*  72: 87 */         for (wq localwq : localList) {
-/*  73: 88 */           paramahd.c(new wq(localwq));
+/*  72: 87 */         for (PotionEffect localwq : localList) {
+/*  73: 88 */           paramahd.c(new PotionEffect(localwq));
 /*  74:    */         }
 /*  75:    */       }
 /*  76:    */     }
@@ -93,7 +93,7 @@ package net.minecraft.src;
 /*  97:    */   
 /*  98:    */   public ItemStack a(ItemStack paramamj, World paramaqu, EntityPlayer paramahd)
 /*  99:    */   {
-/* 100:116 */     if (f(paramamj.i()))
+/* 100:116 */     if (f(paramamj.getDamage2()))
 /* 101:    */     {
 /* 102:117 */       if (!paramahd.by.d) {
 /* 103:118 */         paramamj.stackSize -= 1;
@@ -116,7 +116,7 @@ package net.minecraft.src;
 /* 120:    */   
 /* 121:    */   public int g(int paramInt)
 /* 122:    */   {
-/* 123:136 */     return ans.a(paramInt, false);
+/* 123:136 */     return PotionHelper.a(paramInt, false);
 /* 124:    */   }
 /* 125:    */   
 /* 126:    */   public int a(ItemStack paramamj, int paramInt)
@@ -124,17 +124,17 @@ package net.minecraft.src;
 /* 128:141 */     if (paramInt > 0) {
 /* 129:142 */       return 16777215;
 /* 130:    */     }
-/* 131:144 */     return g(paramamj.i());
+/* 131:144 */     return g(paramamj.getDamage2());
 /* 132:    */   }
 /* 133:    */   
 /* 134:    */   public boolean h(int paramInt)
 /* 135:    */   {
-/* 136:148 */     List<wq> localList = e(paramInt);
+/* 136:148 */     List<PotionEffect> localList = e(paramInt);
 /* 137:149 */     if ((localList == null) || (localList.isEmpty())) {
 /* 138:150 */       return false;
 /* 139:    */     }
-/* 140:152 */     for (wq localwq : localList) {
-/* 141:153 */       if (Potion.potionList[localwq.getID()].b()) {
+/* 140:152 */     for (PotionEffect localwq : localList) {
+/* 141:153 */       if (Potion.potionList[localwq.getID()].isInstant()) {
 /* 142:154 */         return true;
 /* 143:    */       }
 /* 144:    */     }
@@ -143,39 +143,39 @@ package net.minecraft.src;
 /* 147:    */   
 /* 148:    */   public String a(ItemStack paramamj)
 /* 149:    */   {
-/* 150:162 */     if (paramamj.i() == 0) {
+/* 150:162 */     if (paramamj.getDamage2() == 0) {
 /* 151:163 */       return fi.a("item.emptyPotion.name").trim();
 /* 152:    */     }
 /* 153:166 */     String str1 = "";
-/* 154:167 */     if (f(paramamj.i())) {
+/* 154:167 */     if (f(paramamj.getDamage2())) {
 /* 155:168 */       str1 = fi.a("potion.prefix.grenade").trim() + " ";
 /* 156:    */     }
-/* 157:171 */     List<wq> localList = ItemList.potion.h(paramamj);
+/* 157:171 */     List<PotionEffect> localList = ItemList.potion.h(paramamj);
 /* 158:172 */     if ((localList != null) && (!localList.isEmpty()))
 /* 159:    */     {
-/* 160:173 */       String str2 = ((wq)localList.get(0)).getPotionName();
+/* 160:173 */       String str2 = ((PotionEffect)localList.get(0)).getPotionName();
 /* 161:174 */       str2 = str2 + ".postfix";
 /* 162:175 */       return str1 + fi.a(str2).trim();
 /* 163:    */     }
-/* 164:177 */     String str2 = ans.c(paramamj.i());
+/* 164:177 */     String str2 = PotionHelper.c(paramamj.getDamage2());
 /* 165:178 */     return fi.a(str2).trim() + " " + super.a(paramamj);
 /* 166:    */   }
 /* 167:    */   
 /* 168:    */   public void a(ItemStack paramamj, EntityPlayer paramahd, List<String> paramList, boolean paramBoolean)
 /* 169:    */   {
-/* 170:184 */     if (paramamj.i() == 0) {
+/* 170:184 */     if (paramamj.getDamage2() == 0) {
 /* 171:185 */       return;
 /* 172:    */     }
-/* 173:188 */     List<wq> localList = ItemList.potion.h(paramamj);
+/* 173:188 */     List<PotionEffect> localList = ItemList.potion.h(paramamj);
 /* 174:189 */     HashMultimap<String,ya> localHashMultimap = HashMultimap.create();
 /* 175:    */     
 /* 176:    */     
 /* 177:    */     Object localObject3;
 /* 178:191 */     if ((localList != null) && (!localList.isEmpty()))
 /* 179:    */     {
-/* 180:192 */       for (Iterator<wq> localObject1 = localList.iterator(); localObject1.hasNext();)
+/* 180:192 */       for (Iterator<PotionEffect> localObject1 = localList.iterator(); localObject1.hasNext();)
 /* 181:    */       {
-/* 182:192 */         wq localObject2 = localObject1.next();
+/* 182:192 */         PotionEffect localObject2 = localObject1.next();
 /* 183:193 */         localObject3 = fi.a(localObject2.getPotionName()).trim();
 /* 184:194 */         Potion localwp = Potion.potionList[localObject2.getID()];
 /* 185:195 */         Map<xy,ya> localMap = localwp.l();
@@ -183,15 +183,15 @@ package net.minecraft.src;
 /* 187:198 */           for (Map.Entry<xy,ya> localEntry : localMap.entrySet())
 /* 188:    */           {
 /* 189:199 */             ya localya1 = (ya)localEntry.getValue();
-/* 190:200 */             ya localya2 = new ya(localya1.b(), localwp.a(((wq)localObject2).getAmplifier(), localya1), localya1.c());
+/* 190:200 */             ya localya2 = new ya(localya1.b(), localwp.a(((PotionEffect)localObject2).getAmplifier(), localya1), localya1.c());
 /* 191:201 */             localHashMultimap.put((localEntry.getKey()).a(), localya2);
 /* 192:    */           }
 /* 193:    */         }
-/* 194:205 */         if (((wq)localObject2).getAmplifier() > 0) {
-/* 195:206 */           localObject3 = (String)localObject3 + " " + fi.a(new StringBuilder().append("potion.potency.").append(((wq)localObject2).getAmplifier()).toString()).trim();
+/* 194:205 */         if (((PotionEffect)localObject2).getAmplifier() > 0) {
+/* 195:206 */           localObject3 = (String)localObject3 + " " + fi.a(new StringBuilder().append("potion.potency.").append(((PotionEffect)localObject2).getAmplifier()).toString()).trim();
 /* 196:    */         }
-/* 197:209 */         if (((wq)localObject2).getDuration() > 20) {
-/* 198:210 */           localObject3 = (String)localObject3 + " (" + Potion.getDurationString((wq)localObject2) + ")";
+/* 197:209 */         if (((PotionEffect)localObject2).getDuration() > 20) {
+/* 198:210 */           localObject3 = (String)localObject3 + " (" + Potion.getDurationString((PotionEffect)localObject2) + ")";
 /* 199:    */         }
 /* 200:213 */         if (localwp.g()) {
 /* 201:214 */           paramList.add(net.minecraft.src.a.m + (String)localObject3);
@@ -235,7 +235,7 @@ package net.minecraft.src;
 /* 239:    */   
 /* 240:    */   public boolean f(ItemStack paramamj)
 /* 241:    */   {
-/* 242:251 */     List<wq> localList = h(paramamj);
+/* 242:251 */     List<PotionEffect> localList = h(paramamj);
 /* 243:252 */     return (localList != null) && (!localList.isEmpty());
 /* 244:    */   }
 /* 245:    */   
@@ -263,7 +263,7 @@ package net.minecraft.src;
 /* 267:275 */                 n |= 0x40;
 /* 268:    */               }
 /* 269:    */             }
-/* 270:278 */             List<wq> localList = ans.b(n, false);
+/* 270:278 */             List<PotionEffect> localList = PotionHelper.getPotionEffects(n, false);
 /* 271:280 */             if ((localList != null) && (!localList.isEmpty())) {
 /* 272:281 */               b.put(localList, Integer.valueOf(n));
 /* 273:    */             }

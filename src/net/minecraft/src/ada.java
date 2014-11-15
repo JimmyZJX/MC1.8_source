@@ -59,7 +59,7 @@ package net.minecraft.src;
 /* 58:72 */     return true;
 /* 59:   */   }
 /* 60:   */   
-/* 61:   */   public boolean a(wh paramwh, float paramFloat)
+/* 61:   */   public boolean a(DamageSource paramwh, float paramFloat)
 /* 62:   */   {
 /* 63:77 */     if (b(paramwh)) {
 /* 64:78 */       return false;

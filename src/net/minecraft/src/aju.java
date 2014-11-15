@@ -37,7 +37,7 @@ package net.minecraft.src;
 /*  36:    */     }
 /*  37: 54 */     if (paramaqu.a(this.a, paramdt, false, paramej, null, paramamj))
 /*  38:    */     {
-/*  39: 55 */       int i = a(paramamj.i());
+/*  39: 55 */       int i = a(paramamj.getDamage2());
 /*  40: 56 */       Block localbec2 = this.a.a(paramaqu, paramdt, paramej, paramFloat1, paramFloat2, paramFloat3, i, paramahd);
 /*  41: 57 */       if (paramaqu.setBlock(paramdt, localbec2, 3))
 /*  42:    */       {

@@ -284,7 +284,7 @@ package net.minecraft.src;
 /* 283:309 */     ItemStack localamj = aop.a().a(this.bk, ((EntitySheep)paramabq1).world);
 /* 284:    */     int k;
 /* 285:312 */     if ((localamj != null) && (localamj.getItem() == ItemList.dye)) {
-/* 286:313 */       k = localamj.i();
+/* 286:313 */       k = localamj.getDamage2();
 /* 287:    */     } else {
 /* 288:315 */       k = this.world.rng.nextBoolean() ? i : j;
 /* 289:    */     }

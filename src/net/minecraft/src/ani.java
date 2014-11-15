@@ -22,7 +22,7 @@ package net.minecraft.src;
 /*  21:    */   
 /*  22:    */   public String e_(ItemStack paramamj)
 /*  23:    */   {
-/*  24: 32 */     return this.b.b(paramamj.i());
+/*  24: 32 */     return this.b.b(paramamj.getDamage2());
 /*  25:    */   }
 /*  26:    */   
 /*  27:    */   public boolean a(ItemStack paramamj, EntityPlayer paramahd, World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3)

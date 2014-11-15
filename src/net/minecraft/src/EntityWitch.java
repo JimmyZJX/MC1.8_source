@@ -72,7 +72,7 @@ package net.minecraft.src;
 /*  71:    */   {
 /*  72: 94 */     if (!this.world.isClient)
 /*  73:    */     {
-/*  74:    */       List<wq> localObject;
+/*  74:    */       List<PotionEffect> localObject;
 /*  75: 95 */       if (n())
 /*  76:    */       {
 /*  77: 96 */         if (this.bl-- <= 0)
@@ -84,8 +84,8 @@ package net.minecraft.src;
 /*  83:    */           {
 /*  84:102 */             localObject = ItemList.potion.h(localamj);
 /*  85:103 */             if (localObject != null) {
-/*  86:104 */               for (wq localwq : localObject) {
-/*  87:105 */                 c(new wq(localwq));
+/*  86:104 */               for (PotionEffect localwq : localObject) {
+/*  87:105 */                 c(new PotionEffect(localwq));
 /*  88:    */               }
 /*  89:    */             }
 /*  90:    */           }
@@ -95,15 +95,15 @@ package net.minecraft.src;
 /*  94:    */       else
 /*  95:    */       {
 /*  96:113 */         int i = -1;
-/*  97:115 */         if ((this.random.nextFloat() < 0.15F) && (a(Material.water)) && (!a(Potion.o))) {
+/*  97:115 */         if ((this.random.nextFloat() < 0.15F) && (a(Material.water)) && (!a(Potion.waterBreathing))) {
 /*  98:116 */           i = 8237;
-/*  99:117 */         } else if ((this.random.nextFloat() < 0.15F) && (au()) && (!a(Potion.n))) {
+/*  99:117 */         } else if ((this.random.nextFloat() < 0.15F) && (au()) && (!a(Potion.fireResistance))) {
 /* 100:118 */           i = 16307;
 /* 101:119 */         } else if ((this.random.nextFloat() < 0.05F) && (getHealth() < bt())) {
 /* 102:120 */           i = 16341;
-/* 103:121 */         } else if ((this.random.nextFloat() < 0.25F) && (u() != null) && (!a(Potion.c)) && (u().h(this) > 121.0D)) {
+/* 103:121 */         } else if ((this.random.nextFloat() < 0.25F) && (u() != null) && (!a(Potion.speed)) && (u().h(this) > 121.0D)) {
 /* 104:122 */           i = 16274;
-/* 105:123 */         } else if ((this.random.nextFloat() < 0.25F) && (u() != null) && (!a(Potion.c)) && (u().h(this) > 121.0D)) {
+/* 105:123 */         } else if ((this.random.nextFloat() < 0.25F) && (u() != null) && (!a(Potion.speed)) && (u().h(this) > 121.0D)) {
 /* 106:124 */           i = 16274;
 /* 107:    */         }
 /* 108:127 */         if (i > -1)
@@ -134,7 +134,7 @@ package net.minecraft.src;
 /* 133:    */     }
 /* 134:    */   }
 /* 135:    */   
-/* 136:    */   protected float c(wh paramwh, float paramFloat)
+/* 136:    */   protected float c(DamageSource paramwh, float paramFloat)
 /* 137:    */   {
 /* 138:158 */     paramFloat = super.c(paramwh, paramFloat);
 /* 139:160 */     if (paramwh.j() == this) {
@@ -174,11 +174,11 @@ package net.minecraft.src;
 /* 173:196 */     double d3 = d1 - this.yPos;
 /* 174:197 */     double d4 = paramxm.zPos + paramxm.zVelocity - this.zPos;
 /* 175:198 */     float f = MathUtils.a(d2 * d2 + d4 * d4);
-/* 176:200 */     if ((f >= 8.0F) && (!paramxm.a(Potion.d))) {
+/* 176:200 */     if ((f >= 8.0F) && (!paramxm.a(Potion.slowness))) {
 /* 177:201 */       localahv.a(32698);
-/* 178:202 */     } else if ((paramxm.getHealth() >= 8.0F) && (!paramxm.a(Potion.u))) {
+/* 178:202 */     } else if ((paramxm.getHealth() >= 8.0F) && (!paramxm.a(Potion.poison))) {
 /* 179:203 */       localahv.a(32660);
-/* 180:204 */     } else if ((f <= 3.0F) && (!paramxm.a(Potion.t)) && (this.random.nextFloat() < 0.25F)) {
+/* 180:204 */     } else if ((f <= 3.0F) && (!paramxm.a(Potion.weakness)) && (this.random.nextFloat() < 0.25F)) {
 /* 181:205 */       localahv.a(32696);
 /* 182:    */     }
 /* 183:208 */     localahv.c(d2, d3 + f * 0.2F, d4, 0.75F, 8.0F);

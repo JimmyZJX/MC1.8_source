@@ -114,7 +114,7 @@ package net.minecraft.src;
 /* 109:    */     }
 /* 110:141 */     for (Object localObject = paramqw.bk().iterator(); ((Iterator)localObject).hasNext();)
 /* 111:    */     {
-/* 112:141 */       wq localwq = (wq)((Iterator)localObject).next();
+/* 112:141 */       PotionEffect localwq = (PotionEffect)((Iterator)localObject).next();
 /* 113:142 */       localrj.a(new lr(paramqw.getID(), localwq));
 /* 114:    */     }
 /* 115:145 */     paramqw.f_();
@@ -387,7 +387,7 @@ package net.minecraft.src;
 /* 381:445 */     paramqw.c.a(localqt2);
 /* 382:446 */     b(paramqw, localqt2);
 /* 383:447 */     f(paramqw);
-/* 384:449 */     for (wq localwq : paramqw.bk()) {
+/* 384:449 */     for (PotionEffect localwq : paramqw.bk()) {
 /* 385:450 */       paramqw.a.a(new lr(paramqw.getID(), localwq));
 /* 386:    */     }
 /* 387:    */   }

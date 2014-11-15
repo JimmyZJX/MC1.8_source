@@ -77,7 +77,7 @@ package net.minecraft.src;
 /*  76:128 */     if ((this.j.t.ax == 0) && (localamj != null) && (localamj.getItem() == Item.fromProtoBlock(BlockList.pumpkin))) {
 /*  77:129 */       e(localbuf);
 /*  78:    */     }
-/*  79:132 */     if (!this.j.h.a(Potion.k))
+/*  79:132 */     if (!this.j.h.a(Potion.nausea))
 /*  80:    */     {
 /*  81:133 */       float f1 = this.j.h.bG + (this.j.h.bF - this.j.h.bG) * paramFloat;
 /*  82:134 */       if (f1 > 0.0F) {
@@ -500,7 +500,7 @@ package net.minecraft.src;
 /* 499:    */     
 /* 500:559 */     int i13 = localahd.bq();
 /* 501:560 */     int i14 = -1;
-/* 502:561 */     if (localahd.a(Potion.l)) {
+/* 502:561 */     if (localahd.a(Potion.regeneration)) {
 /* 503:562 */       i14 = this.n % MathUtils.ceil(f1 + 5.0F);
 /* 504:    */     }
 /* 505:566 */     this.j.y.a("armor");
@@ -529,9 +529,9 @@ package net.minecraft.src;
 /* 528:582 */     for (int i15 = MathUtils.ceil((f1 + f2) / 2.0F) - 1; i15 >= 0; i15--)
 /* 529:    */     {
 /* 530:583 */       i16 = 16;
-/* 531:584 */       if (localahd.a(Potion.u)) {
+/* 531:584 */       if (localahd.a(Potion.poison)) {
 /* 532:585 */         i16 += 36;
-/* 533:586 */       } else if (localahd.a(Potion.v)) {
+/* 533:586 */       } else if (localahd.a(Potion.wither)) {
 /* 534:587 */         i16 += 72;
 /* 535:    */       }
 /* 536:590 */       i18 = 0;
@@ -590,7 +590,7 @@ package net.minecraft.src;
 /* 589:    */         
 /* 590:644 */         i19 = 16;
 /* 591:645 */         i21 = 0;
-/* 592:646 */         if (localahd.a(Potion.s))
+/* 592:646 */         if (localahd.a(Potion.hunger))
 /* 593:    */         {
 /* 594:647 */           i19 += 36;
 /* 595:648 */           i21 = 13;
@@ -846,7 +846,7 @@ package net.minecraft.src;
 /* 845:903 */       ItemStack localamj = this.j.h.bg.h();
 /* 846:905 */       if (localamj == null) {
 /* 847:906 */         this.r = 0;
-/* 848:907 */       } else if ((this.s == null) || (localamj.getItem() != this.s.getItem()) || (!ItemStack.a(localamj, this.s)) || ((!localamj.e()) && (localamj.i() != this.s.i()))) {
+/* 848:907 */       } else if ((this.s == null) || (localamj.getItem() != this.s.getItem()) || (!ItemStack.a(localamj, this.s)) || ((!localamj.e()) && (localamj.getDamage2() != this.s.getDamage2()))) {
 /* 849:908 */         this.r = 40;
 /* 850:909 */       } else if (this.r > 0) {
 /* 851:910 */         this.r -= 1;

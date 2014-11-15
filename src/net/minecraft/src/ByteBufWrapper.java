@@ -198,7 +198,7 @@ import java.io.DataOutput;
 /* 194:    */     {
 /* 195:208 */       writeShort(Item.b(paramamj.getItem()));
 /* 196:209 */       writeByte(paramamj.stackSize);
-/* 197:210 */       writeShort(paramamj.i());
+/* 197:210 */       writeShort(paramamj.getDamage2());
 /* 198:    */       
 /* 199:212 */       NBTTagCompound localfn = null;
 /* 200:213 */       if ((paramamj.getItem().m()) || (paramamj.getItem().p())) {

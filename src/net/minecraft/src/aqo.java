@@ -125,7 +125,7 @@ package net.minecraft.src;
 /* 124:    */             
 /* 125:145 */             double d13 = this.d.a(localbrw, localwv.getAABB());
 /* 126:146 */             double d14 = (1.0D - d5) * d13;
-/* 127:147 */             localwv.a(wh.a(this), (int)((d14 * d14 + d14) / 2.0D * 8.0D * f1 + 1.0D));
+/* 127:147 */             localwv.a(DamageSource.a(this), (int)((d14 * d14 + d14) / 2.0D * 8.0D * f1 + 1.0D));
 /* 128:    */             
 /* 129:149 */             double d15 = EnchantmentProtection.a(localwv, d14);
 /* 130:150 */             localwv.xVelocity += d7 * d15;

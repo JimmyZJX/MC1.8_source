@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*  7:   */   
 /*  8:   */   public String apply(ItemStack paramamj)
 /*  9:   */   {
-/* 10:27 */     int i = paramamj.i();
+/* 10:27 */     int i = paramamj.getDamage2();
 /* 11:28 */     if ((i < 0) || (i >= this.a.length)) {
 /* 12:29 */       i = 0;
 /* 13:   */     }

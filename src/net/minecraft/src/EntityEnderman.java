@@ -128,7 +128,7 @@ package net.minecraft.src;
 /* 127:    */   protected void E()
 /* 128:    */   {
 /* 129:164 */     if (U()) {
-/* 130:165 */       a(wh.f, 1.0F);
+/* 130:165 */       a(DamageSource.f, 1.0F);
 /* 131:    */     }
 /* 132:168 */     if ((cm()) && (!this.bl) && (this.random.nextInt(100) == 0)) {
 /* 133:169 */       a(false);
@@ -270,7 +270,7 @@ package net.minecraft.src;
 /* 269:297 */     return ProtoBlock.d(this.ac.b(16) & 0xFFFF);
 /* 270:    */   }
 /* 271:    */   
-/* 272:    */   public boolean a(wh paramwh, float paramFloat)
+/* 272:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /* 273:    */   {
 /* 274:310 */     if (b(paramwh)) {
 /* 275:311 */       return false;

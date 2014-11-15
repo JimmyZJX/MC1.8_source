@@ -413,8 +413,8 @@ package net.minecraft.src;
 /*  412:     */     }
 /*  413: 434 */     if (paramamj.g())
 /*  414:     */     {
-/*  415: 435 */       int i1 = (int)Math.round(13.0D - paramamj.h() * 13.0D / paramamj.j());
-/*  416: 436 */       int i2 = (int)Math.round(255.0D - paramamj.h() * 255.0D / paramamj.j());
+/*  415: 435 */       int i1 = (int)Math.round(13.0D - paramamj.getDamage() * 13.0D / paramamj.j());
+/*  416: 436 */       int i2 = (int)Math.round(255.0D - paramamj.getDamage() * 255.0D / paramamj.j());
 /*  417: 437 */       cjm.disableLighting();
 /*  418: 438 */       cjm.i();
 /*  419: 439 */       cjm.x();

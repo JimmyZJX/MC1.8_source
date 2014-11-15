@@ -128,10 +128,10 @@ package net.minecraft.src;
 /* 127:    */   
 /* 128:    */   protected void f(int paramInt)
 /* 129:    */   {
-/* 130:144 */     a(wh.a, paramInt);
+/* 130:144 */     a(DamageSource.a, paramInt);
 /* 131:    */   }
 /* 132:    */   
-/* 133:    */   public boolean a(wh paramwh, float paramFloat)
+/* 133:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /* 134:    */   {
 /* 135:149 */     if (b(paramwh)) {
 /* 136:150 */       return false;

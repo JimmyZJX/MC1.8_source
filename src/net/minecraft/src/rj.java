@@ -802,7 +802,7 @@ package net.minecraft.src;
 /*  797:     */       }
 /*  798: 845 */       int i2 = (parammt.a() >= 1) && (parammt.a() < 36 + ahb.i()) ? 1 : 0;
 /*  799: 846 */       int i3 = (localamj == null) || (localamj.getItem() != null) ? 1 : 0;
-/*  800: 847 */       int i4 = (localamj == null) || ((localamj.i() >= 0) && (localamj.stackSize <= 64) && (localamj.stackSize > 0)) ? 1 : 0;
+/*  800: 847 */       int i4 = (localamj == null) || ((localamj.getDamage2() >= 0) && (localamj.stackSize <= 64) && (localamj.stackSize > 0)) ? 1 : 0;
 /*  801: 849 */       if ((i2 != 0) && (i3 != 0) && (i4 != 0))
 /*  802:     */       {
 /*  803: 850 */         if (localamj == null) {

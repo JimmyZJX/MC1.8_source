@@ -25,7 +25,7 @@ package net.minecraft.src;
 /* 24:27 */       if ((parambru.d instanceof EntityBlaze)) {
 /* 25:28 */         i = 3;
 /* 26:   */       }
-/* 27:30 */       parambru.d.a(wh.a(this, n()), i);
+/* 27:30 */       parambru.d.a(DamageSource.a(this, n()), i);
 /* 28:   */     }
 /* 29:32 */     for (int i = 0; i < 8; i++) {
 /* 30:33 */       this.world.a(ew.F, this.xPos, this.yPos, this.zPos, 0.0D, 0.0D, 0.0D, new int[0]);

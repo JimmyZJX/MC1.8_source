@@ -1,13 +1,13 @@
 package net.minecraft.src;
-/*  1:   */ public class wo
+/*  1:   */ public class InstantPotion
 /*  2:   */   extends Potion
 /*  3:   */ {
-/*  4:   */   public wo(int paramInt1, oa paramoa, boolean paramBoolean, int paramInt2)
+/*  4:   */   public InstantPotion(int paramInt1, oa paramoa, boolean paramBoolean, int paramInt2)
 /*  5:   */   {
 /*  6: 7 */     super(paramInt1, paramoa, paramBoolean, paramInt2);
 /*  7:   */   }
 /*  8:   */   
-/*  9:   */   public boolean b()
+/*  9:   */   public boolean isInstant()
 /* 10:   */   {
 /* 11:12 */     return true;
 /* 12:   */   }

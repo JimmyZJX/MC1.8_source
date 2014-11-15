@@ -44,7 +44,7 @@ package net.minecraft.src;
 /* 43:49 */           cjm.glTranslatef(-0.5F, 0.0F, -0.5F);
 /* 44:50 */           cjm.glScalef(2.0F, 2.0F, 2.0F);
 /* 45:51 */           cjm.p();
-/* 46:52 */           cnw.c.a(0.0F, 0.0F, 0.0F, EnumDirection.UP, 0.0F, paramamj.i(), (GameProfile)localObject, -1);
+/* 46:52 */           cnw.c.a(0.0F, 0.0F, 0.0F, EnumDirection.UP, 0.0F, paramamj.getDamage2(), (GameProfile)localObject, -1);
 /* 47:53 */           cjm.o();
 /* 48:54 */           cjm.glPopMatrix();
 /* 49:   */         }

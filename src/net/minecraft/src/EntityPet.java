@@ -178,7 +178,7 @@ package net.minecraft.src;
 /* 178:175 */     return super.c(paramxm);
 /* 179:    */   }
 /* 180:    */   
-/* 181:    */   public void a(wh paramwh)
+/* 181:    */   public void a(DamageSource paramwh)
 /* 182:    */   {
 /* 183:180 */     if ((!this.world.isClient) && (this.world.getGameRules().getBoolean("showDeathMessages")) && (k_()) && 
 /* 184:181 */       ((l_() instanceof qw))) {

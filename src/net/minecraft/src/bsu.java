@@ -1953,7 +1953,7 @@ package net.minecraft.src;
 /* 1952:     */         else
 /* 1953:     */         {
 /* 1954:2106 */           localObject1 = ((ItemStack)localObject3).getItem();
-/* 1955:2107 */           i1 = ((ItemStack)localObject3).i();
+/* 1955:2107 */           i1 = ((ItemStack)localObject3).getDamage2();
 /* 1956:2108 */           bool2 = true;
 /* 1957:     */         }
 /* 1958:     */       }

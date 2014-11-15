@@ -27,7 +27,7 @@ package net.minecraft.src;
 /*  26:900 */     if (this.d != null) {
 /*  27:901 */       j = this.d.a(paramRandom);
 /*  28:    */     }
-/*  29:904 */     paramaqd.add(new aqc(new ItemStack(this.a.getItem(), i, this.a.i()), new ItemStack(ItemList.bO), new ItemStack(this.c.getItem(), j, this.c.i())));
+/*  29:904 */     paramaqd.add(new aqc(new ItemStack(this.a.getItem(), i, this.a.getDamage2()), new ItemStack(ItemList.bO), new ItemStack(this.c.getItem(), j, this.c.getDamage2())));
 /*  30:    */   }
 /*  31:    */ }
 

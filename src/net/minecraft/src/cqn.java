@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*   5:    */   
 /*   6:    */   public cxl a(ItemStack paramamj)
 /*   7:    */   {
-/*   8:951 */     if (ItemPotion.f(paramamj.i())) {
+/*   8:951 */     if (ItemPotion.f(paramamj.getDamage2())) {
 /*   9:952 */       return new cxl("bottle_splash", "inventory");
 /*  10:    */     }
 /*  11:955 */     return new cxl("bottle_drinkable", "inventory");

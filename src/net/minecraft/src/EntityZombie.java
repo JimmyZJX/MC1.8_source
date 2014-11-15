@@ -142,8 +142,8 @@ package net.minecraft.src;
 /* 142:    */         {
 /* 143:184 */           if (localamj.e())
 /* 144:    */           {
-/* 145:185 */             localamj.b(localamj.h() + this.random.nextInt(2));
-/* 146:186 */             if (localamj.h() >= localamj.j())
+/* 145:185 */             localamj.b(localamj.getDamage() + this.random.nextInt(2));
+/* 146:186 */             if (localamj.getDamage() >= localamj.j())
 /* 147:    */             {
 /* 148:187 */               b(localamj);
 /* 149:188 */               c(4, null);
@@ -162,7 +162,7 @@ package net.minecraft.src;
 /* 162:203 */     super.m();
 /* 163:    */   }
 /* 164:    */   
-/* 165:    */   public boolean a(wh paramwh, float paramFloat)
+/* 165:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /* 166:    */   {
 /* 167:208 */     if (super.a(paramwh, paramFloat))
 /* 168:    */     {
@@ -426,7 +426,7 @@ package net.minecraft.src;
 /* 426:    */   public boolean a(EntityPlayer paramahd)
 /* 427:    */   {
 /* 428:479 */     ItemStack localamj = paramahd.bY();
-/* 429:481 */     if ((localamj != null) && (localamj.getItem() == ItemList.ao) && (localamj.i() == 0) && (cm()) && (a(Potion.t)))
+/* 429:481 */     if ((localamj != null) && (localamj.getItem() == ItemList.ao) && (localamj.getDamage2() == 0) && (cm()) && (a(Potion.weakness)))
 /* 430:    */     {
 /* 431:482 */       if (!paramahd.by.d) {
 /* 432:483 */         localamj.stackSize -= 1;
@@ -447,8 +447,8 @@ package net.minecraft.src;
 /* 447:500 */     this.bm = paramInt;
 /* 448:501 */     H().b(14, Byte.valueOf((byte)1));
 /* 449:    */     
-/* 450:503 */     m(Potion.t.id);
-/* 451:504 */     c(new wq(Potion.g.id, paramInt, Math.min(this.world.getDifficulty().a() - 1, 0)));
+/* 450:503 */     m(Potion.weakness.id);
+/* 451:504 */     c(new PotionEffect(Potion.strength.id, paramInt, Math.min(this.world.getDifficulty().a() - 1, 0)));
 /* 452:    */     
 /* 453:506 */     this.world.a(this, (byte)16);
 /* 454:    */   }
@@ -488,7 +488,7 @@ package net.minecraft.src;
 /* 488:537 */     this.world.setEntityDead(this);
 /* 489:538 */     this.world.spawnEntity(localagp);
 /* 490:    */     
-/* 491:540 */     localagp.c(new wq(Potion.k.id, 200, 0));
+/* 491:540 */     localagp.c(new PotionEffect(Potion.nausea.id, 200, 0));
 /* 492:541 */     this.world.playLevelEvent(null, 1017, new BlockPosition((int)this.xPos, (int)this.yPos, (int)this.zPos), 0);
 /* 493:    */   }
 /* 494:    */   
@@ -546,7 +546,7 @@ package net.minecraft.src;
 /* 546:603 */     return super.am() - 0.5D;
 /* 547:    */   }
 /* 548:    */   
-/* 549:    */   public void a(wh paramwh)
+/* 549:    */   public void a(DamageSource paramwh)
 /* 550:    */   {
 /* 551:608 */     super.a(paramwh);
 /* 552:610 */     if (((paramwh.j() instanceof EntityCreeper)) && (!(this instanceof EntityZombiePigman)) && 

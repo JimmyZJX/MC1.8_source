@@ -78,7 +78,7 @@ package net.minecraft.src;
 /* 77:   */   
 /* 78:   */   private boolean a(ItemStack paramamj1, ItemStack paramamj2)
 /* 79:   */   {
-/* 80:85 */     return (paramamj2.getItem() == paramamj1.getItem()) && ((paramamj2.i() == 32767) || (paramamj2.i() == paramamj1.i()));
+/* 80:85 */     return (paramamj2.getItem() == paramamj1.getItem()) && ((paramamj2.getDamage2() == 32767) || (paramamj2.getDamage2() == paramamj1.getDamage2()));
 /* 81:   */   }
 /* 82:   */   
 /* 83:   */   public Map<ItemStack,ItemStack> b()

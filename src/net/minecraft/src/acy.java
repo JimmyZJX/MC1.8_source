@@ -3,7 +3,7 @@ public abstract interface acy
 {
   public abstract World a();
   
-  public abstract boolean a(acz paramacz, wh paramwh, float paramFloat);
+  public abstract boolean a(acz paramacz, DamageSource paramwh, float paramFloat);
 }
 
 

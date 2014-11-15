@@ -40,7 +40,7 @@ package net.minecraft.src;
 /*  39:    */   
 /*  40:    */   public Object a(ItemStack paramamj)
 /*  41:    */   {
-/*  42: 54 */     return EnumWoodVariant.fromIndex(paramamj.i() & 0x7);
+/*  42: 54 */     return EnumWoodVariant.fromIndex(paramamj.getDamage2() & 0x7);
 /*  43:    */   }
 /*  44:    */   
 /*  45:    */   public void a(Item paramalq, CreativeTabs paramakf, List<ItemStack> paramList)

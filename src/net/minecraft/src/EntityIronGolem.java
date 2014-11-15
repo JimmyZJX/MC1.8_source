@@ -122,7 +122,7 @@ package net.minecraft.src;
 /* 122:    */   {
 /* 123:150 */     this.c = 10;
 /* 124:151 */     this.world.a(this, (byte)4);
-/* 125:152 */     boolean bool = paramwv.a(wh.a(this), 7 + this.random.nextInt(15));
+/* 125:152 */     boolean bool = paramwv.a(DamageSource.a(this), 7 + this.random.nextInt(15));
 /* 126:153 */     if (bool)
 /* 127:    */     {
 /* 128:154 */       paramwv.yVelocity += 0.4000000059604645D;
@@ -212,7 +212,7 @@ package net.minecraft.src;
 /* 212:    */     }
 /* 213:    */   }
 /* 214:    */   
-/* 215:    */   public void a(wh paramwh)
+/* 215:    */   public void a(DamageSource paramwh)
 /* 216:    */   {
 /* 217:232 */     if ((!cl()) && (this.aL != null) && (this.a != null)) {
 /* 218:233 */       this.a.a(this.aL.getName(), -5);

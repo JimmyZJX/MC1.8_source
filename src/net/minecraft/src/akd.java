@@ -13,7 +13,7 @@ package net.minecraft.src;
 /* 12:   */   
 /* 13:   */   public String e_(ItemStack paramamj)
 /* 14:   */   {
-/* 15:19 */     if (paramamj.i() == 1) {
+/* 15:19 */     if (paramamj.getDamage2() == 1) {
 /* 16:20 */       return "item.charcoal";
 /* 17:   */     }
 /* 18:22 */     return "item.coal";

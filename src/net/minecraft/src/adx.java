@@ -88,7 +88,7 @@ package net.minecraft.src;
 /*  87:158 */     return this.K * 0.5D - 0.2000000029802322D;
 /*  88:    */   }
 /*  89:    */   
-/*  90:    */   public boolean a(wh paramwh, float paramFloat)
+/*  90:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /*  91:    */   {
 /*  92:163 */     if ((this.world.isClient) || (this.isDead)) {
 /*  93:164 */       return true;
@@ -115,7 +115,7 @@ package net.minecraft.src;
 /* 114:186 */     return true;
 /* 115:    */   }
 /* 116:    */   
-/* 117:    */   public void a(wh paramwh)
+/* 117:    */   public void a(DamageSource paramwh)
 /* 118:    */   {
 /* 119:190 */     setDead();
 /* 120:191 */     ItemStack localamj = new ItemStack(ItemList.az, 1);

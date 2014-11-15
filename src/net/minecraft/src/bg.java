@@ -58,13 +58,13 @@ package net.minecraft.src;
 /*  57: 73 */     if (paramArrayOfString.length >= 3)
 /*  58:    */     {
 /*  59: 74 */       k = a(paramArrayOfString[2], 0, 1000000);
-/*  60: 75 */       if (localwp2.b()) {
+/*  60: 75 */       if (localwp2.isInstant()) {
 /*  61: 76 */         j = k;
 /*  62:    */       } else {
 /*  63: 78 */         j = k * 20;
 /*  64:    */       }
 /*  65:    */     }
-/*  66: 80 */     else if (localwp2.b())
+/*  66: 80 */     else if (localwp2.isInstant())
 /*  67:    */     {
 /*  68: 81 */       j = 1;
 /*  69:    */     }
@@ -78,7 +78,7 @@ package net.minecraft.src;
 /*  77:    */     }
 /*  78: 95 */     if (k > 0)
 /*  79:    */     {
-/*  80: 96 */       wq localwq = new wq(i, j, m, false, bool);
+/*  80: 96 */       PotionEffect localwq = new PotionEffect(i, j, m, false, bool);
 /*  81: 97 */       localxm.c(localwq);
 /*  82: 98 */       a(paramae, this, "commands.effect.success", new Object[] { new hz(localwq.getPotionName(), new Object[0]), Integer.valueOf(i), Integer.valueOf(m), localxm.getName(), Integer.valueOf(k) });
 /*  83: 99 */       return;

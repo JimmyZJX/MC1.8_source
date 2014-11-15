@@ -242,7 +242,7 @@ package net.minecraft.src;
 /* 241:281 */     } else if (this.h[2].getItem() == localamj.getItem()) {
 /* 242:282 */       this.h[2].stackSize += 1;
 /* 243:    */     }
-/* 244:285 */     if ((this.h[0].getItem() == Item.fromProtoBlock(BlockList.v)) && (this.h[0].i() == 1) && (this.h[1] != null) && (this.h[1].getItem() == ItemList.aw)) {
+/* 244:285 */     if ((this.h[0].getItem() == Item.fromProtoBlock(BlockList.v)) && (this.h[0].getDamage2() == 1) && (this.h[1] != null) && (this.h[1].getItem() == ItemList.aw)) {
 /* 245:286 */       this.h[1] = new ItemStack(ItemList.ax);
 /* 246:    */     }
 /* 247:289 */     this.h[0].stackSize -= 1;

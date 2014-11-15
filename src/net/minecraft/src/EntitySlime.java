@@ -185,7 +185,7 @@ package net.minecraft.src;
 /* 184:    */   {
 /* 185:204 */     int i = ck();
 /* 186:205 */     if ((t(paramxm)) && (h(paramxm) < 0.6D * i * (0.6D * i)) && 
-/* 187:206 */       (paramxm.a(wh.a(this), ch())))
+/* 187:206 */       (paramxm.a(DamageSource.a(this), ch())))
 /* 188:    */     {
 /* 189:207 */       a("mob.attack", 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
 /* 190:208 */       a(this, paramxm);

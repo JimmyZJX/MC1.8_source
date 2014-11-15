@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*  8:   */   
 /*  9:   */   public boolean a(ItemStack paramamj)
 /* 10:   */   {
-/* 11:68 */     return (paramamj.getItem() == ItemList.dye) && (EnumDyeColor.fromIndex(paramamj.i()) == EnumDyeColor.BLUE);
+/* 11:68 */     return (paramamj.getItem() == ItemList.dye) && (EnumDyeColor.fromIndex(paramamj.getDamage2()) == EnumDyeColor.BLUE);
 /* 12:   */   }
 /* 13:   */ }
 

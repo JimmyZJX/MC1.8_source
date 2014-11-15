@@ -1,6 +1,6 @@
 package net.minecraft.src;
 /*  1:   */ public class wi
-/*  2:   */   extends wh
+/*  2:   */   extends DamageSource
 /*  3:   */ {
 /*  4:   */   protected Entity q;
 /*  5:13 */   private boolean r = false;

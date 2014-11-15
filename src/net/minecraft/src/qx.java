@@ -255,9 +255,9 @@ package net.minecraft.src;
 /* 255:244 */       return false;
 /* 256:    */     }
 /* 257:246 */     int m = paramamj.stackSize;
-/* 258:247 */     int n = paramamj.i();
+/* 258:247 */     int n = paramamj.getDamage2();
 /* 259:248 */     ItemStack localamj = paramamj.a(paramaqu, paramahd);
-/* 260:249 */     if ((localamj != paramamj) || ((localamj != null) && ((localamj.stackSize != m) || (localamj.l() > 0) || (localamj.i() != n))))
+/* 260:249 */     if ((localamj != paramamj) || ((localamj != null) && ((localamj.stackSize != m) || (localamj.l() > 0) || (localamj.getDamage2() != n))))
 /* 261:    */     {
 /* 262:250 */       paramahd.bg.a[paramahd.bg.c] = localamj;
 /* 263:251 */       if (d())
@@ -316,7 +316,7 @@ package net.minecraft.src;
 /* 316:    */     }
 /* 317:301 */     if (d())
 /* 318:    */     {
-/* 319:302 */       int m = paramamj.i();
+/* 319:302 */       int m = paramamj.getDamage2();
 /* 320:303 */       int n = paramamj.stackSize;
 /* 321:304 */       boolean bool = paramamj.a(paramahd, paramaqu, paramdt, paramej, paramFloat1, paramFloat2, paramFloat3);
 /* 322:305 */       paramamj.b(m);

@@ -44,7 +44,7 @@ package net.minecraft.src;
 /* 43:   */         {
 /* 44:49 */           int k = 0;
 /* 45:50 */           for (ItemStack localamj2 : localArrayList) {
-/* 46:51 */             if ((localamj1.getItem() == localamj2.getItem()) && ((localamj2.i() == 32767) || (localamj1.i() == localamj2.i())))
+/* 46:51 */             if ((localamj1.getItem() == localamj2.getItem()) && ((localamj2.getDamage2() == 32767) || (localamj1.getDamage2() == localamj2.getDamage2())))
 /* 47:   */             {
 /* 48:52 */               k = 1;
 /* 49:53 */               localArrayList.remove(localamj2);

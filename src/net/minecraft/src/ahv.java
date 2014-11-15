@@ -63,14 +63,14 @@ package net.minecraft.src;
 /*  62: 71 */     if (this.c == null) {
 /*  63: 72 */       this.c = new ItemStack(ItemList.potion, 1, 0);
 /*  64:    */     }
-/*  65: 74 */     return this.c.i();
+/*  65: 74 */     return this.c.getDamage2();
 /*  66:    */   }
 /*  67:    */   
 /*  68:    */   protected void a(HitResult parambru)
 /*  69:    */   {
 /*  70: 79 */     if (!this.world.isClient)
 /*  71:    */     {
-/*  72: 80 */       List<wq> localList1 = ItemList.potion.h(this.c);
+/*  72: 80 */       List<PotionEffect> localList1 = ItemList.potion.h(this.c);
 /*  73:    */       Iterator localIterator1;
 /*  74: 82 */       if ((localList1 != null) && (!localList1.isEmpty()))
 /*  75:    */       {
@@ -87,10 +87,10 @@ package net.minecraft.src;
 /*  86: 91 */               if (localxm == parambru.d) {
 /*  87: 92 */                 d2 = 1.0D;
 /*  88:    */               }
-/*  89: 95 */               for (wq localwq : localList1)
+/*  89: 95 */               for (PotionEffect localwq : localList1)
 /*  90:    */               {
 /*  91: 96 */                 int i = localwq.getID();
-/*  92: 97 */                 if (Potion.potionList[i].b())
+/*  92: 97 */                 if (Potion.potionList[i].isInstant())
 /*  93:    */                 {
 /*  94: 98 */                   Potion.potionList[i].a(this, n(), localxm, localwq.getAmplifier(), d2);
 /*  95:    */                 }
@@ -98,7 +98,7 @@ package net.minecraft.src;
 /*  97:    */                 {
 /*  98:100 */                   int j = (int)(d2 * localwq.getDuration() + 0.5D);
 /*  99:101 */                   if (j > 20) {
-/* 100:102 */                     localxm.c(new wq(i, j, localwq.getAmplifier()));
+/* 100:102 */                     localxm.c(new PotionEffect(i, j, localwq.getAmplifier()));
 /* 101:    */                   }
 /* 102:    */                 }
 /* 103:    */               }

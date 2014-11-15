@@ -280,7 +280,7 @@ package net.minecraft.src;
 /*  279: 382 */         localbrw2 = localbrw2.b(-this.yaw * 3.141593F / 180.0F);
 /*  280: 383 */         localbrw2 = localbrw2.b(this.xPos, this.yPos + aR(), this.zPos);
 /*  281: 384 */         if (paramamj.f()) {
-/*  282: 385 */           this.world.a(ew.K, localbrw2.x, localbrw2.y, localbrw2.z, localbrw1.x, localbrw1.y + 0.05D, localbrw1.z, new int[] { Item.b(paramamj.getItem()), paramamj.i() });
+/*  282: 385 */           this.world.a(ew.K, localbrw2.x, localbrw2.y, localbrw2.z, localbrw1.x, localbrw1.y + 0.05D, localbrw1.z, new int[] { Item.b(paramamj.getItem()), paramamj.getDamage2() });
 /*  283:     */         } else {
 /*  284: 387 */           this.world.a(ew.K, localbrw2.x, localbrw2.y, localbrw2.z, localbrw1.x, localbrw1.y + 0.05D, localbrw1.z, new int[] { Item.b(paramamj.getItem()) });
 /*  285:     */         }
@@ -455,7 +455,7 @@ package net.minecraft.src;
 /*  454: 554 */     this.ac.b(18, Integer.valueOf(j + paramInt));
 /*  455:     */   }
 /*  456:     */   
-/*  457:     */   public void a(wh paramwh)
+/*  457:     */   public void a(DamageSource paramwh)
 /*  458:     */   {
 /*  459: 559 */     super.a(paramwh);
 /*  460: 560 */     a(0.2F, 0.2F);
@@ -606,13 +606,13 @@ package net.minecraft.src;
 /*  605: 703 */         f1 += j * j + 1;
 /*  606:     */       }
 /*  607:     */     }
-/*  608: 707 */     if (a(Potion.e)) {
-/*  609: 708 */       f1 *= (1.0F + (b(Potion.e).getAmplifier() + 1) * 0.2F);
+/*  608: 707 */     if (a(Potion.haste)) {
+/*  609: 708 */       f1 *= (1.0F + (b(Potion.haste).getAmplifier() + 1) * 0.2F);
 /*  610:     */     }
-/*  611: 710 */     if (a(Potion.f))
+/*  611: 710 */     if (a(Potion.miningFatigue))
 /*  612:     */     {
 /*  613: 713 */       float f2 = 1.0F;
-/*  614: 714 */       switch (b(Potion.f).getAmplifier())
+/*  614: 714 */       switch (b(Potion.miningFatigue).getAmplifier())
 /*  615:     */       {
 /*  616:     */       case 0: 
 /*  617: 716 */         f2 = 0.3F;
@@ -709,7 +709,7 @@ package net.minecraft.src;
 /*  708:     */     }
 /*  709:     */   }
 /*  710:     */   
-/*  711:     */   public boolean a(wh paramwh, float paramFloat)
+/*  711:     */   public boolean a(DamageSource paramwh, float paramFloat)
 /*  712:     */   {
 /*  713: 819 */     if (b(paramwh)) {
 /*  714: 820 */       return false;
@@ -781,7 +781,7 @@ package net.minecraft.src;
 /*  780: 891 */     return j / this.bg.b.length;
 /*  781:     */   }
 /*  782:     */   
-/*  783:     */   protected void d(wh paramwh, float paramFloat)
+/*  783:     */   protected void d(DamageSource paramwh, float paramFloat)
 /*  784:     */   {
 /*  785: 896 */     if (b(paramwh)) {
 /*  786: 897 */       return;
@@ -897,7 +897,7 @@ package net.minecraft.src;
 /*  896:     */     }
 /*  897:1025 */     if ((f1 > 0.0F) || (f2 > 0.0F))
 /*  898:     */     {
-/*  899:1026 */       int k = (this.O > 0.0F) && (!this.C) && (!j_()) && (!V()) && (!a(Potion.q)) && (this.vehicle == null) && ((paramwv instanceof EntityLiving)) ? 1 : 0;
+/*  899:1026 */       int k = (this.O > 0.0F) && (!this.C) && (!j_()) && (!V()) && (!a(Potion.blindness)) && (this.vehicle == null) && ((paramwv instanceof EntityLiving)) ? 1 : 0;
 /*  900:1027 */       if ((k != 0) && (f1 > 0.0F)) {
 /*  901:1028 */         f1 *= 1.5F;
 /*  902:     */       }
@@ -916,7 +916,7 @@ package net.minecraft.src;
 /*  915:1042 */       double d2 = paramwv.yVelocity;
 /*  916:1043 */       double d3 = paramwv.zVelocity;
 /*  917:     */       
-/*  918:1045 */       boolean bool = paramwv.a(wh.a(this), f1);
+/*  918:1045 */       boolean bool = paramwv.a(DamageSource.a(this), f1);
 /*  919:1046 */       if (bool)
 /*  920:     */       {
 /*  921:1047 */         if (j > 0)

@@ -25,7 +25,7 @@ package net.minecraft.src;
 /* 24:   */     {
 /* 25:29 */       if (parambru.d != null)
 /* 26:   */       {
-/* 27:30 */         parambru.d.a(wh.a(this, this.a), 6.0F);
+/* 27:30 */         parambru.d.a(DamageSource.a(this, this.a), 6.0F);
 /* 28:31 */         a(this.a, parambru.d);
 /* 29:   */       }
 /* 30:33 */       boolean bool = this.world.getGameRules().getBoolean("mobGriefing");

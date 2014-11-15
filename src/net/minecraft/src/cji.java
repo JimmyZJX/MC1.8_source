@@ -558,7 +558,7 @@ package net.minecraft.src;
 /*  557: 674 */     if (f2 > 0.0F)
 /*  558:     */     {
 /*  559: 675 */       int i1 = 20;
-/*  560: 676 */       if (this.h.h.a(Potion.k)) {
+/*  560: 676 */       if (this.h.h.a(Potion.nausea)) {
 /*  561: 677 */         i1 = 7;
 /*  562:     */       }
 /*  563: 680 */       float f3 = 5.0F / (f2 * f2 + 5.0F) - f2 * 0.04F;
@@ -712,7 +712,7 @@ package net.minecraft.src;
 /*  711: 831 */         f11 = 0.28F + f8 * 0.75F;
 /*  712: 832 */         f12 = 0.25F + f9 * 0.75F;
 /*  713:     */       }
-/*  714: 835 */       if (this.h.h.a(Potion.r))
+/*  714: 835 */       if (this.h.h.a(Potion.nightVision))
 /*  715:     */       {
 /*  716: 836 */         float f13 = a(this.h.h, paramFloat);
 /*  717:     */         
@@ -783,7 +783,7 @@ package net.minecraft.src;
 /*  782:     */   
 /*  783:     */   private float a(EntityLiving paramxm, float paramFloat)
 /*  784:     */   {
-/*  785: 909 */     int i1 = paramxm.b(Potion.r).getDuration();
+/*  785: 909 */     int i1 = paramxm.b(Potion.nightVision).getDuration();
 /*  786: 910 */     if (i1 > 200) {
 /*  787: 911 */       return 1.0F;
 /*  788:     */     }
@@ -1522,7 +1522,7 @@ package net.minecraft.src;
 /* 1521:1620 */     else if (localatr.getMaterial() == Material.water)
 /* 1522:     */     {
 /* 1523:1621 */       float f9 = aph.a(localwv) * 0.2F;
-/* 1524:1622 */       if (((localwv instanceof EntityLiving)) && (((EntityLiving)localwv).a(Potion.o))) {
+/* 1524:1622 */       if (((localwv instanceof EntityLiving)) && (((EntityLiving)localwv).a(Potion.waterBreathing))) {
 /* 1525:1624 */         f9 = f9 * 0.3F + 0.6F;
 /* 1526:     */       }
 /* 1527:1627 */       this.Q = (0.02F + f9);
@@ -1541,9 +1541,9 @@ package net.minecraft.src;
 /* 1540:1639 */     this.S *= f9;
 /* 1541:     */     
 /* 1542:1641 */     double d2 = (localwv.Q + (localwv.yPos - localwv.Q) * paramFloat) * localcen.t.j();
-/* 1543:1642 */     if (((localwv instanceof EntityLiving)) && (((EntityLiving)localwv).a(Potion.q)))
+/* 1543:1642 */     if (((localwv instanceof EntityLiving)) && (((EntityLiving)localwv).a(Potion.blindness)))
 /* 1544:     */     {
-/* 1545:1643 */       int i1 = ((EntityLiving)localwv).b(Potion.q).getDuration();
+/* 1545:1643 */       int i1 = ((EntityLiving)localwv).b(Potion.blindness).getDuration();
 /* 1546:1644 */       if (i1 < 20) {
 /* 1547:1645 */         d2 *= (1.0F - i1 / 20.0F);
 /* 1548:     */       } else {
@@ -1569,7 +1569,7 @@ package net.minecraft.src;
 /* 1568:1664 */       this.S = (this.S * (1.0F - f10) + this.S * 0.6F * f10);
 /* 1569:     */     }
 /* 1570:     */     float f11;
-/* 1571:1667 */     if (((localwv instanceof EntityLiving)) && (((EntityLiving)localwv).a(Potion.r)))
+/* 1571:1667 */     if (((localwv instanceof EntityLiving)) && (((EntityLiving)localwv).a(Potion.nightVision)))
 /* 1572:     */     {
 /* 1573:1668 */       f10 = a((EntityLiving)localwv, paramFloat);
 /* 1574:     */       
@@ -1611,10 +1611,10 @@ package net.minecraft.src;
 /* 1610:     */     
 /* 1611:1708 */     ProtoBlock localatr = bsp.a(this.h.f, localwv, paramFloat);
 /* 1612:     */     float f1;
-/* 1613:1710 */     if (((localwv instanceof EntityLiving)) && (((EntityLiving)localwv).a(Potion.q)))
+/* 1613:1710 */     if (((localwv instanceof EntityLiving)) && (((EntityLiving)localwv).a(Potion.blindness)))
 /* 1614:     */     {
 /* 1615:1711 */       f1 = 5.0F;
-/* 1616:1712 */       int i1 = ((EntityLiving)localwv).b(Potion.q).getDuration();
+/* 1616:1712 */       int i1 = ((EntityLiving)localwv).b(Potion.blindness).getDuration();
 /* 1617:1713 */       if (i1 < 20) {
 /* 1618:1714 */         f1 = 5.0F + (this.k - 5.0F) * (1.0F - i1 / 20.0F);
 /* 1619:     */       }
@@ -1641,7 +1641,7 @@ package net.minecraft.src;
 /* 1640:1731 */     else if (localatr.getMaterial() == Material.water)
 /* 1641:     */     {
 /* 1642:1732 */       cjm.d(2048);
-/* 1643:1733 */       if (((localwv instanceof EntityLiving)) && (((EntityLiving)localwv).a(Potion.o))) {
+/* 1643:1733 */       if (((localwv instanceof EntityLiving)) && (((EntityLiving)localwv).a(Potion.waterBreathing))) {
 /* 1644:1735 */         cjm.a(0.01F);
 /* 1645:     */       } else {
 /* 1646:1737 */         cjm.a(0.1F - aph.a(localwv) * 0.03F);
