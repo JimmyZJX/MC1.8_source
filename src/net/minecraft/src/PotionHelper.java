@@ -101,7 +101,7 @@ package net.minecraft.src;
 /* 100:193 */     return checkFlag(paramInt1, paramInt2) ? 0 : 1;
 /* 101:    */   }
 /* 102:    */   
-/* 103:    */   public static int a(int paramInt)
+/* 103:    */   public static int checkFlags(int paramInt)
 /* 104:    */   {
 /* 105:197 */     return checkFlags(paramInt, 5, 4, 3, 2, 1);
 /* 106:    */   }
@@ -181,7 +181,7 @@ package net.minecraft.src;
 /* 180:    */   
 /* 181:    */   public static String c(int paramInt)
 /* 182:    */   {
-/* 183:304 */     int i1 = a(paramInt);
+/* 183:304 */     int i1 = checkFlags(paramInt);
 /* 184:305 */     return potionPrefixes[i1];
 /* 185:    */   }
 /* 186:    */   
