@@ -3,7 +3,7 @@ package net.minecraft.src;
 /*   2:    */ import java.util.List;
 /*   3:    */ 
 /*   4:    */ public class bgp
-/*   5:    */   implements bfe
+/*   5:    */   implements IChunkProvider
 /*   6:    */ {
 /*   7: 23 */   private static final List<beg> a = Lists.newArrayList();
 /*   8:    */   
@@ -75,7 +75,7 @@ package net.minecraft.src;
 /*  74: 99 */     return true;
 /*  75:    */   }
 /*  76:    */   
-/*  77:    */   public boolean a(bfe parambfe, Chunk parambfh, int paramInt1, int paramInt2)
+/*  77:    */   public boolean a(IChunkProvider parambfe, Chunk parambfh, int paramInt1, int paramInt2)
 /*  78:    */   {
 /*  79:108 */     return false;
 /*  80:    */   }
@@ -95,12 +95,12 @@ package net.minecraft.src;
 /*  94:127 */     return true;
 /*  95:    */   }
 /*  96:    */   
-/*  97:    */   public String f()
+/*  97:    */   public String getName()
 /*  98:    */   {
 /*  99:132 */     return "DebugLevelSource";
 /* 100:    */   }
 /* 101:    */   
-/* 102:    */   public List<SpawnListEntry> a(EnumCreatureType paramxp, BlockPosition paramdt)
+/* 102:    */   public List<SpawnListEntry> getSpawnList(EnumCreatureType paramxp, BlockPosition paramdt)
 /* 103:    */   {
 /* 104:137 */     arm localarm = this.world.b(paramdt);
 /* 105:138 */     return localarm.a(paramxp);
@@ -121,7 +121,7 @@ package net.minecraft.src;
 /* 120:157 */     return getChunk(paramdt.getX() >> 4, paramdt.getZ() >> 4);
 /* 121:    */   }
 /* 122:    */   
-/* 123:    */   public void a(bfe parambfe, int paramInt1, int paramInt2) {}
+/* 123:    */   public void a(IChunkProvider parambfe, int paramInt1, int paramInt2) {}
 /* 124:    */   
 /* 125:    */   public void c() {}
 /* 126:    */   

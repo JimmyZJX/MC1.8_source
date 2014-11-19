@@ -20,7 +20,7 @@ package net.minecraft.src;
 /* 19:28 */     for (int i = 0; i < 128; i++)
 /* 20:   */     {
 /* 21:29 */       BlockPosition localdt = paramdt.offset(paramRandom.nextInt(8) - paramRandom.nextInt(8), paramRandom.nextInt(4) - paramRandom.nextInt(4), paramRandom.nextInt(8) - paramRandom.nextInt(8));
-/* 22:30 */       if ((paramaqu.d(localdt)) && 
+/* 22:30 */       if ((paramaqu.isEmpty(localdt)) && 
 /* 23:31 */         (BlockList.tallgrass.f(paramaqu, localdt, this.a))) {
 /* 24:32 */         paramaqu.setBlock(localdt, this.a, 2);
 /* 25:   */       }

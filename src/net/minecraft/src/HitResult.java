@@ -14,7 +14,7 @@ package net.minecraft.src;
 /* 13:   */   
 /* 14:   */   public HitResult(Vec3 parambrw, EnumDirection paramej)
 /* 15:   */   {
-/* 16:23 */     this(brv.BLOCK, parambrw, paramej, BlockPosition.a);
+/* 16:23 */     this(brv.BLOCK, parambrw, paramej, BlockPosition.zero);
 /* 17:   */   }
 /* 18:   */   
 /* 19:   */   public HitResult(Entity paramwv)

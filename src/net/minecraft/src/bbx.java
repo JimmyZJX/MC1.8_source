@@ -129,7 +129,7 @@ package net.minecraft.src;
 /* 128:    */   
 /* 129:    */   public Block a(Block parambec, IBlockAccess paramard, BlockPosition paramdt)
 /* 130:    */   {
-/* 131:152 */     return parambec.a(a, Boolean.valueOf(!paramard.d(paramdt.up()))).a(b, Boolean.valueOf(e(paramard, paramdt.north()))).a(M, Boolean.valueOf(e(paramard, paramdt.east()))).a(N, Boolean.valueOf(e(paramard, paramdt.south()))).a(O, Boolean.valueOf(e(paramard, paramdt.west())));
+/* 131:152 */     return parambec.a(a, Boolean.valueOf(!paramard.isEmpty(paramdt.up()))).a(b, Boolean.valueOf(e(paramard, paramdt.north()))).a(M, Boolean.valueOf(e(paramard, paramdt.east()))).a(N, Boolean.valueOf(e(paramard, paramdt.south()))).a(O, Boolean.valueOf(e(paramard, paramdt.west())));
 /* 132:    */   }
 /* 133:    */   
 /* 134:    */   protected bed e()

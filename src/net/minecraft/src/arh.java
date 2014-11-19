@@ -62,7 +62,7 @@ package net.minecraft.src;
 /*  61: 71 */     int k = MathUtils.floor(paramwv.zPos);
 /*  62: 72 */     int m = 1;
 /*  63:    */     
-/*  64: 74 */     Object localObject1 = BlockPosition.a;
+/*  64: 74 */     Object localObject1 = BlockPosition.zero;
 /*  65:    */     
 /*  66: 76 */     long l = ChunkID.toLong(j, k);
 /*  67:    */     Object localObject2;
@@ -205,7 +205,7 @@ package net.minecraft.src;
 /* 204:    */   
 /* 205:    */   private boolean a(BlockPosition paramdt)
 /* 206:    */   {
-/* 207:212 */     return (!this.a.d(paramdt)) || (!this.a.d(paramdt.up()));
+/* 207:212 */     return (!this.a.isEmpty(paramdt)) || (!this.a.isEmpty(paramdt.up()));
 /* 208:    */   }
 /* 209:    */   
 /* 210:    */   public boolean a(Entity paramwv)
@@ -238,9 +238,9 @@ package net.minecraft.src;
 /* 237:233 */         d7 = i3 + 0.5D - paramwv.zPos;
 /* 238:    */         label469:
 /* 239:234 */         for (i6 = this.a.V() - 1; i6 >= 0; i6--) {
-/* 240:235 */           if (this.a.d(new BlockPosition(d5, i6, i3)))
+/* 240:235 */           if (this.a.isEmpty(new BlockPosition(d5, i6, i3)))
 /* 241:    */           {
-/* 242:236 */             while ((i6 > 0) && (this.a.d(new BlockPosition(d5, i6 - 1, i3)))) {
+/* 242:236 */             while ((i6 > 0) && (this.a.isEmpty(new BlockPosition(d5, i6 - 1, i3)))) {
 /* 243:237 */               i6--;
 /* 244:    */             }
 /* 245:240 */             for (int i7 = i1; i7 < i1 + 4; i7++)
@@ -262,7 +262,7 @@ package net.minecraft.src;
 /* 261:256 */                     if ((i14 < 0) && (!this.a.getBlock(new BlockPosition(i17, i18, i19)).getProto().getMaterial().a())) {
 /* 262:    */                       break label469;
 /* 263:    */                     }
-/* 264:259 */                     if ((i14 >= 0) && (!this.a.d(new BlockPosition(i17, i18, i19)))) {
+/* 264:259 */                     if ((i14 >= 0) && (!this.a.isEmpty(new BlockPosition(i17, i18, i19)))) {
 /* 265:    */                       break label469;
 /* 266:    */                     }
 /* 267:    */                   }
@@ -292,9 +292,9 @@ package net.minecraft.src;
 /* 291:284 */           d7 = i3 + 0.5D - paramwv.zPos;
 /* 292:    */           label858:
 /* 293:285 */           for (i6 = this.a.V() - 1; i6 >= 0; i6--) {
-/* 294:286 */             if (this.a.d(new BlockPosition(d5, i6, i3)))
+/* 294:286 */             if (this.a.isEmpty(new BlockPosition(d5, i6, i3)))
 /* 295:    */             {
-/* 296:287 */               while ((i6 > 0) && (this.a.d(new BlockPosition(d5, i6 - 1, i3)))) {
+/* 296:287 */               while ((i6 > 0) && (this.a.isEmpty(new BlockPosition(d5, i6 - 1, i3)))) {
 /* 297:288 */                 i6--;
 /* 298:    */               }
 /* 299:291 */               for (int i7 = i1; i7 < i1 + 2; i7++)
@@ -310,7 +310,7 @@ package net.minecraft.src;
 /* 309:300 */                     if ((i13 < 0) && (!this.a.getBlock(new BlockPosition(i15, i17, i18)).getProto().getMaterial().a())) {
 /* 310:    */                       break label858;
 /* 311:    */                     }
-/* 312:303 */                     if ((i13 >= 0) && (!this.a.d(new BlockPosition(i15, i17, i18)))) {
+/* 312:303 */                     if ((i13 >= 0) && (!this.a.isEmpty(new BlockPosition(i15, i17, i18)))) {
 /* 313:    */                       break label858;
 /* 314:    */                     }
 /* 315:    */                   }

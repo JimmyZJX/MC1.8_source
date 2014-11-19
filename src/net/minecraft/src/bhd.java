@@ -8,7 +8,7 @@ package net.minecraft.src;
 /*   7:    */ {
 /*   8:    */   private Random rng;
 /*   9:    */   private World world;
-/*  10: 31 */   private BlockPosition pos = BlockPosition.a;
+/*  10: 31 */   private BlockPosition pos = BlockPosition.zero;
 /*  11:    */   int a;
 /*  12:    */   int b;
 /*  13: 35 */   double c = 0.618D;

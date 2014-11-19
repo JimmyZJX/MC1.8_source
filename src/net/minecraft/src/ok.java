@@ -12,7 +12,7 @@ package net.minecraft.src;
 /*  11:361 */     EnumDirection localej = ave.b(paramdz.f());
 /*  12:362 */     BlockPosition localdt = paramdz.d().a(localej);
 /*  13:363 */     baj localbaj = BlockList.ce;
-/*  14:365 */     if ((localaqu.d(localdt)) && (localbaj.b(localaqu, localdt, paramamj)))
+/*  14:365 */     if ((localaqu.isEmpty(localdt)) && (localbaj.b(localaqu, localdt, paramamj)))
 /*  15:    */     {
 /*  16:366 */       if (!localaqu.isClient)
 /*  17:    */       {

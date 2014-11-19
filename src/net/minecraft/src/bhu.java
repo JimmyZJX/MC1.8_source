@@ -38,19 +38,19 @@ package net.minecraft.src;
 /* 37:43 */       i++;
 /* 38:   */     }
 /* 39:46 */     int j = 0;
-/* 40:47 */     if (paramaqu.d(paramdt.west())) {
+/* 40:47 */     if (paramaqu.isEmpty(paramdt.west())) {
 /* 41:48 */       j++;
 /* 42:   */     }
-/* 43:50 */     if (paramaqu.d(paramdt.east())) {
+/* 43:50 */     if (paramaqu.isEmpty(paramdt.east())) {
 /* 44:51 */       j++;
 /* 45:   */     }
-/* 46:53 */     if (paramaqu.d(paramdt.north())) {
+/* 46:53 */     if (paramaqu.isEmpty(paramdt.north())) {
 /* 47:54 */       j++;
 /* 48:   */     }
-/* 49:56 */     if (paramaqu.d(paramdt.south())) {
+/* 49:56 */     if (paramaqu.isEmpty(paramdt.south())) {
 /* 50:57 */       j++;
 /* 51:   */     }
-/* 52:59 */     if (paramaqu.d(paramdt.down())) {
+/* 52:59 */     if (paramaqu.isEmpty(paramdt.down())) {
 /* 53:60 */       j++;
 /* 54:   */     }
 /* 55:63 */     if (((!this.b) && (i == 4) && (j == 1)) || (i == 5))

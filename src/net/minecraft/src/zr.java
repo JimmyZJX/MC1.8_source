@@ -46,7 +46,7 @@ package net.minecraft.src;
 /* 45:   */   
 /* 46:   */   protected boolean a(World paramaqu, BlockPosition paramdt)
 /* 47:   */   {
-/* 48:57 */     if (!paramaqu.d(paramdt.up())) {
+/* 48:57 */     if (!paramaqu.isEmpty(paramdt.up())) {
 /* 49:58 */       return false;
 /* 50:   */     }
 /* 51:61 */     Block localbec = paramaqu.getBlock(paramdt);

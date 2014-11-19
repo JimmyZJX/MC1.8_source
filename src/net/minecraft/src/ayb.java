@@ -33,12 +33,12 @@ package net.minecraft.src;
 /*  32: 30 */       BlockPosition localObject = paramdt.offset(paramRandom.nextInt(3) - 1, paramRandom.nextInt(2) - paramRandom.nextInt(2), paramRandom.nextInt(3) - 1);
 /*  33: 31 */       for (int k = 0; k < 4; k++)
 /*  34:    */       {
-/*  35: 32 */         if ((paramaqu.d((BlockPosition)localObject)) && (f(paramaqu, (BlockPosition)localObject, instance()))) {
+/*  35: 32 */         if ((paramaqu.isEmpty((BlockPosition)localObject)) && (f(paramaqu, (BlockPosition)localObject, instance()))) {
 /*  36: 33 */           paramdt = (BlockPosition)localObject;
 /*  37:    */         }
 /*  38: 35 */         localObject = paramdt.offset(paramRandom.nextInt(3) - 1, paramRandom.nextInt(2) - paramRandom.nextInt(2), paramRandom.nextInt(3) - 1);
 /*  39:    */       }
-/*  40: 38 */       if ((paramaqu.d((BlockPosition)localObject)) && (f(paramaqu, (BlockPosition)localObject, instance()))) {
+/*  40: 38 */       if ((paramaqu.isEmpty((BlockPosition)localObject)) && (f(paramaqu, (BlockPosition)localObject, instance()))) {
 /*  41: 39 */         paramaqu.setBlock((BlockPosition)localObject, instance(), 2);
 /*  42:    */       }
 /*  43:    */     }

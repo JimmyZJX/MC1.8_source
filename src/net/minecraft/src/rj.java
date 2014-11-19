@@ -792,7 +792,7 @@ package net.minecraft.src;
 /*  787: 834 */           if (localbcm != null)
 /*  788:     */           {
 /*  789: 835 */             localObject = new NBTTagCompound();
-/*  790: 836 */             localbcm.b((NBTTagCompound)localObject);
+/*  790: 836 */             localbcm.writeToNBT((NBTTagCompound)localObject);
 /*  791: 837 */             ((NBTTagCompound)localObject).o("x");
 /*  792: 838 */             ((NBTTagCompound)localObject).o("y");
 /*  793: 839 */             ((NBTTagCompound)localObject).o("z");

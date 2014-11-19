@@ -255,7 +255,7 @@ package net.minecraft.src;
 /* 254:    */   
 /* 255:    */   private int m(World paramaqu, BlockPosition paramdt)
 /* 256:    */   {
-/* 257:294 */     if (!paramaqu.d(paramdt)) {
+/* 257:294 */     if (!paramaqu.isEmpty(paramdt)) {
 /* 258:295 */       return 0;
 /* 259:    */     }
 /* 260:298 */     int i = 0;

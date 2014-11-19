@@ -21,8 +21,8 @@ package net.minecraft.src;
 /* 20:32 */       return false;
 /* 21:   */     }
 /* 22:35 */     BlockPosition localdt2 = localdt1.up();
-/* 23:36 */     int i = (!paramaqu.d(localdt1)) && (!paramaqu.getBlock(localdt1).getProto().f(paramaqu, localdt1)) ? 1 : 0;
-/* 24:37 */     i |= ((!paramaqu.d(localdt2)) && (!paramaqu.getBlock(localdt2).getProto().f(paramaqu, localdt2)) ? 1 : 0);
+/* 23:36 */     int i = (!paramaqu.isEmpty(localdt1)) && (!paramaqu.getBlock(localdt1).getProto().f(paramaqu, localdt1)) ? 1 : 0;
+/* 24:37 */     i |= ((!paramaqu.isEmpty(localdt2)) && (!paramaqu.getBlock(localdt2).getProto().f(paramaqu, localdt2)) ? 1 : 0);
 /* 25:38 */     if (i != 0) {
 /* 26:39 */       return false;
 /* 27:   */     }

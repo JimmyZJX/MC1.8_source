@@ -20,7 +20,7 @@ package net.minecraft.src;
 /* 19:25 */     if (!paramahd.a(paramdt.a(paramej), paramej, paramamj)) {
 /* 20:26 */       return false;
 /* 21:   */     }
-/* 22:29 */     if ((paramaqu.getBlock(paramdt).getProto() == this.b) && (paramaqu.d(paramdt.up())))
+/* 22:29 */     if ((paramaqu.getBlock(paramdt).getProto() == this.b) && (paramaqu.isEmpty(paramdt.up())))
 /* 23:   */     {
 /* 24:30 */       paramaqu.setBlock(paramdt.up(), this.a.instance());
 /* 25:31 */       paramamj.stackSize -= 1;

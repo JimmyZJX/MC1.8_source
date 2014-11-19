@@ -93,7 +93,7 @@ package net.minecraft.src;
 /*  91:109 */               localaqu.b(localdt6, true);
 /*  92:110 */             } else if (paramArrayOfString[8].equals("keep"))
 /*  93:    */             {
-/*  94:111 */               if (!localaqu.d(localdt6)) {
+/*  94:111 */               if (!localaqu.isEmpty(localdt6)) {
 /*  95:    */                 continue;
 /*  96:    */               }
 /*  97:    */             }
@@ -135,7 +135,7 @@ package net.minecraft.src;
 /* 133:150 */                 localfn.setInt("y", localdt6.getY());
 /* 134:151 */                 localfn.setInt("z", localdt6.getZ());
 /* 135:    */                 
-/* 136:153 */                 localbcm2.a(localfn);
+/* 136:153 */                 localbcm2.readFromNBT(localfn);
 /* 137:    */               }
 /* 138:    */             }
 /* 139:    */           }

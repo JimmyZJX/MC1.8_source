@@ -26,8 +26,8 @@ package net.minecraft.src;
 /* 25:39 */     BlockPosition localdt = paramdt.a(localej);
 /* 26:40 */     boolean bool2 = localatr.f(paramaqu, localdt);
 /* 27:   */     
-/* 28:42 */     int j = (paramaqu.d(paramdt)) || (bool1) ? 1 : 0;
-/* 29:43 */     int k = (paramaqu.d(localdt)) || (bool2) ? 1 : 0;
+/* 28:42 */     int j = (paramaqu.isEmpty(paramdt)) || (bool1) ? 1 : 0;
+/* 29:43 */     int k = (paramaqu.isEmpty(localdt)) || (bool2) ? 1 : 0;
 /* 30:45 */     if ((!paramahd.a(paramdt, paramej, paramamj)) || (!paramahd.a(localdt, paramej, paramamj))) {
 /* 31:46 */       return false;
 /* 32:   */     }

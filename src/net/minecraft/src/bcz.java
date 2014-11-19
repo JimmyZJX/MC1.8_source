@@ -18,17 +18,17 @@ package net.minecraft.src;
 /*  17: 25 */   private static Random o = new Random();
 /*  18:    */   private String p;
 /*  19:    */   
-/*  20:    */   public void b(NBTTagCompound paramfn)
+/*  20:    */   public void writeToNBT(NBTTagCompound paramfn)
 /*  21:    */   {
-/*  22: 30 */     super.b(paramfn);
+/*  22: 30 */     super.writeToNBT(paramfn);
 /*  23: 31 */     if (k_()) {
 /*  24: 32 */       paramfn.setString("CustomName", this.p);
 /*  25:    */     }
 /*  26:    */   }
 /*  27:    */   
-/*  28:    */   public void a(NBTTagCompound paramfn)
+/*  28:    */   public void readFromNBT(NBTTagCompound paramfn)
 /*  29:    */   {
-/*  30: 38 */     super.a(paramfn);
+/*  30: 38 */     super.readFromNBT(paramfn);
 /*  31: 39 */     if (paramfn.hasKey("CustomName", 8)) {
 /*  32: 40 */       this.p = paramfn.getString("CustomName");
 /*  33:    */     }
@@ -39,11 +39,11 @@ package net.minecraft.src;
 /*  38: 46 */     this.k = this.j;
 /*  39: 47 */     this.m = this.l;
 /*  40:    */     
-/*  41: 49 */     EntityPlayer localahd = this.b.a(this.c.getX() + 0.5F, this.c.getY() + 0.5F, this.c.getZ() + 0.5F, 3.0D);
+/*  41: 49 */     EntityPlayer localahd = this.world.a(this.pos.getX() + 0.5F, this.pos.getY() + 0.5F, this.pos.getZ() + 0.5F, 3.0D);
 /*  42: 50 */     if (localahd != null)
 /*  43:    */     {
-/*  44: 51 */       double d1 = localahd.xPos - (this.c.getX() + 0.5F);
-/*  45: 52 */       double d2 = localahd.zPos - (this.c.getZ() + 0.5F);
+/*  44: 51 */       double d1 = localahd.xPos - (this.pos.getX() + 0.5F);
+/*  45: 52 */       double d2 = localahd.zPos - (this.pos.getZ() + 0.5F);
 /*  46:    */       
 /*  47: 54 */       this.n = ((float)Math.atan2(d2, d1));
 /*  48:    */       
@@ -121,7 +121,7 @@ package net.minecraft.src;
 /* 120:    */   
 /* 121:    */   public aib a(ahb paramahb, EntityPlayer paramahd)
 /* 122:    */   {
-/* 123:128 */     return new aiq(paramahb, this.b, this.c);
+/* 123:128 */     return new aiq(paramahb, this.world, this.pos);
 /* 124:    */   }
 /* 125:    */   
 /* 126:    */   public String k()

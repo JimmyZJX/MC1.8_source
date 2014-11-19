@@ -27,7 +27,7 @@ package net.minecraft.src;
 /* 26:36 */     for (int i = 0; i < 4; i++)
 /* 27:   */     {
 /* 28:37 */       BlockPosition localdt1 = paramdt.offset(paramRandom.nextInt(4) - paramRandom.nextInt(4), paramRandom.nextInt(3) - paramRandom.nextInt(3), paramRandom.nextInt(4) - paramRandom.nextInt(4));
-/* 29:39 */       if ((paramaqu.d(localdt1)) && (World.isFlatSurface(paramaqu, localdt1.down())))
+/* 29:39 */       if ((paramaqu.isEmpty(localdt1)) && (World.isFlatSurface(paramaqu, localdt1.down())))
 /* 30:   */       {
 /* 31:40 */         paramaqu.setBlock(localdt1, BlockList.ae.instance(), 2);
 /* 32:   */         
@@ -39,16 +39,16 @@ package net.minecraft.src;
 /* 38:48 */         BlockPosition localdt3 = localdt1.west();
 /* 39:49 */         BlockPosition localdt4 = localdt1.north();
 /* 40:50 */         BlockPosition localdt5 = localdt1.south();
-/* 41:51 */         if ((paramaqu.d(localdt3)) && (World.isFlatSurface(paramaqu, localdt3.down()))) {
+/* 41:51 */         if ((paramaqu.isEmpty(localdt3)) && (World.isFlatSurface(paramaqu, localdt3.down()))) {
 /* 42:52 */           paramaqu.setBlock(localdt3, BlockList.torch.instance(), 2);
 /* 43:   */         }
-/* 44:54 */         if ((paramaqu.d(localdt2)) && (World.isFlatSurface(paramaqu, localdt2.down()))) {
+/* 44:54 */         if ((paramaqu.isEmpty(localdt2)) && (World.isFlatSurface(paramaqu, localdt2.down()))) {
 /* 45:55 */           paramaqu.setBlock(localdt2, BlockList.torch.instance(), 2);
 /* 46:   */         }
-/* 47:57 */         if ((paramaqu.d(localdt4)) && (World.isFlatSurface(paramaqu, localdt4.down()))) {
+/* 47:57 */         if ((paramaqu.isEmpty(localdt4)) && (World.isFlatSurface(paramaqu, localdt4.down()))) {
 /* 48:58 */           paramaqu.setBlock(localdt4, BlockList.torch.instance(), 2);
 /* 49:   */         }
-/* 50:60 */         if ((paramaqu.d(localdt5)) && (World.isFlatSurface(paramaqu, localdt5.down()))) {
+/* 50:60 */         if ((paramaqu.isEmpty(localdt5)) && (World.isFlatSurface(paramaqu, localdt5.down()))) {
 /* 51:61 */           paramaqu.setBlock(localdt5, BlockList.torch.instance(), 2);
 /* 52:   */         }
 /* 53:63 */         return true;

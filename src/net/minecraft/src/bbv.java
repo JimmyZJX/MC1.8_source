@@ -216,7 +216,7 @@ package net.minecraft.src;
 /* 212:    */     Object localObject1;
 /* 213:    */     Object localObject2;
 /* 214:    */     Object localObject3;
-/* 215:232 */     if ((localej1 == EnumDirection.UP) && (paramdt.getY() < 255) && (paramaqu.d(paramdt.up())))
+/* 215:232 */     if ((localej1 == EnumDirection.UP) && (paramdt.getY() < 255) && (paramaqu.isEmpty(paramdt.up())))
 /* 216:    */     {
 /* 217:233 */       if (k != 0) {
 /* 218:234 */         return;
@@ -259,9 +259,9 @@ package net.minecraft.src;
 /* 255:272 */           paramaqu.setBlock((BlockPosition)localObject1, instance().a(a((EnumDirection)localObject3), Boolean.valueOf(true)), 2);
 /* 256:273 */         } else if ((bool2) && (c(paramaqu.getBlock(localdt).getProto()))) {
 /* 257:274 */           paramaqu.setBlock((BlockPosition)localObject1, instance().a(a((EnumDirection)localObject4), Boolean.valueOf(true)), 2);
-/* 258:277 */         } else if ((bool1) && (paramaqu.d((BlockPosition)localObject5)) && (c(paramaqu.getBlock(paramdt.a((EnumDirection)localObject3)).getProto()))) {
+/* 258:277 */         } else if ((bool1) && (paramaqu.isEmpty((BlockPosition)localObject5)) && (c(paramaqu.getBlock(paramdt.a((EnumDirection)localObject3)).getProto()))) {
 /* 259:278 */           paramaqu.setBlock((BlockPosition)localObject5, instance().a(a(localej1.d()), Boolean.valueOf(true)), 2);
-/* 260:279 */         } else if ((bool2) && (paramaqu.d(localdt)) && (c(paramaqu.getBlock(paramdt.a((EnumDirection)localObject4)).getProto()))) {
+/* 260:279 */         } else if ((bool2) && (paramaqu.isEmpty(localdt)) && (c(paramaqu.getBlock(paramdt.a((EnumDirection)localObject4)).getProto()))) {
 /* 261:280 */           paramaqu.setBlock(localdt, instance().a(a(localej1.d()), Boolean.valueOf(true)), 2);
 /* 262:283 */         } else if (c(paramaqu.getBlock(((BlockPosition)localObject1).up()).getProto())) {
 /* 263:284 */           paramaqu.setBlock((BlockPosition)localObject1, instance(), 2);

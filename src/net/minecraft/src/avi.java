@@ -37,7 +37,7 @@ package net.minecraft.src;
 /*  36:    */   
 /*  37:    */   public boolean c(World paramaqu, BlockPosition paramdt)
 /*  38:    */   {
-/*  39: 56 */     return (super.c(paramaqu, paramdt)) && (paramaqu.d(paramdt.up()));
+/*  39: 56 */     return (super.c(paramaqu, paramdt)) && (paramaqu.isEmpty(paramdt.up()));
 /*  40:    */   }
 /*  41:    */   
 /*  42:    */   public boolean f(World paramaqu, BlockPosition paramdt)

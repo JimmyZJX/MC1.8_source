@@ -13,7 +13,7 @@ package net.minecraft.src;
 /* 12:   */   
 /* 13:   */   public boolean generate(World paramaqu, Random paramRandom, BlockPosition paramdt)
 /* 14:   */   {
-/* 15:21 */     if ((!paramaqu.d(paramdt)) || (paramaqu.getBlock(paramdt.down()).getProto() != this.a)) {
+/* 15:21 */     if ((!paramaqu.isEmpty(paramdt)) || (paramaqu.getBlock(paramdt.down()).getProto() != this.a)) {
 /* 16:22 */       return false;
 /* 17:   */     }
 /* 18:24 */     int i = paramRandom.nextInt(32) + 6;

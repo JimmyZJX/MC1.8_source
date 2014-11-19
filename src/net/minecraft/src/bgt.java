@@ -7,7 +7,7 @@ package net.minecraft.src;
 /*  6:12 */   protected Random b = new Random();
 /*  7:   */   protected World c;
 /*  8:   */   
-/*  9:   */   public void a(bfe parambfe, World paramaqu, int paramInt1, int paramInt2, bgk parambgk)
+/*  9:   */   public void a(IChunkProvider parambfe, World paramaqu, int paramInt1, int paramInt2, bgk parambgk)
 /* 10:   */   {
 /* 11:16 */     int i = this.a;
 /* 12:17 */     this.c = paramaqu;

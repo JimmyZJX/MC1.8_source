@@ -4,15 +4,15 @@ package net.minecraft.src;
 /*  3:   */ {
 /*  4:   */   private int a;
 /*  5:   */   
-/*  6:   */   public void b(NBTTagCompound paramfn)
+/*  6:   */   public void writeToNBT(NBTTagCompound paramfn)
 /*  7:   */   {
-/*  8:10 */     super.b(paramfn);
+/*  8:10 */     super.writeToNBT(paramfn);
 /*  9:11 */     paramfn.setInt("OutputSignal", this.a);
 /* 10:   */   }
 /* 11:   */   
-/* 12:   */   public void a(NBTTagCompound paramfn)
+/* 12:   */   public void readFromNBT(NBTTagCompound paramfn)
 /* 13:   */   {
-/* 14:16 */     super.a(paramfn);
+/* 14:16 */     super.readFromNBT(paramfn);
 /* 15:17 */     this.a = paramfn.getInteger("OutputSignal");
 /* 16:   */   }
 /* 17:   */   

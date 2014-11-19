@@ -24,7 +24,7 @@ package net.minecraft.src;
 /* 23:   */       }
 /* 24:36 */       BlockPosition localdt2 = localdt1.up();
 /* 25:37 */       Block localbec = paramaqu.getBlock(localdt1);
-/* 26:38 */       if ((localbec.getProto().getMaterial() == Material.water) && (((Integer)localbec.getProperty(axl.b)).intValue() == 0) && (paramaqu.d(localdt2)))
+/* 26:38 */       if ((localbec.getProto().getMaterial() == Material.water) && (((Integer)localbec.getProperty(axl.b)).intValue() == 0) && (paramaqu.isEmpty(localdt2)))
 /* 27:   */       {
 /* 28:39 */         paramaqu.setBlock(localdt2, BlockList.waterLily.instance());
 /* 29:40 */         if (!paramahd.by.d) {

@@ -8,7 +8,7 @@ package net.minecraft.src;
 /*  7:   */   {
 /*  8:16 */     while (paramdt.getY() < 128)
 /*  9:   */     {
-/* 10:17 */       if (paramaqu.d(paramdt)) {
+/* 10:17 */       if (paramaqu.isEmpty(paramdt)) {
 /* 11:19 */         for (EnumDirection localej : en.HORIZONTAL.getDirectionList()) {
 /* 12:20 */           if (BlockList.vine.a(paramaqu, paramdt, localej))
 /* 13:   */           {

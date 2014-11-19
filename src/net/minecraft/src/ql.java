@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*  5:   */ {
 /*  6:   */   private WorldServer a;
 /*  7:   */   
-/*  8:   */   public ql(MinecraftServer paramMinecraftServer, bqy parambqy, int paramInt, WorldServer paramqt, uw paramuw)
+/*  8:   */   public ql(MinecraftServer paramMinecraftServer, bqy parambqy, int paramInt, WorldServer paramqt, Profiler paramuw)
 /*  9:   */   {
 /* 10:16 */     super(paramMinecraftServer, parambqy, new bql(paramqt.getWorldInfo()), paramInt, paramuw);
 /* 11:17 */     this.a = paramqt;

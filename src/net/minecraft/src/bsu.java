@@ -119,7 +119,7 @@ package net.minecraft.src;
 /*  118:     */   private final boolean aq;
 /*  119:     */   private gr ar;
 /*  120:     */   private boolean as;
-/*  121: 223 */   public final uw y = new uw();
+/*  121: 223 */   public final Profiler y = new Profiler();
 /*  122: 224 */   private long at = -1L;
 /*  123:     */   private cvi au;
 /*  124: 226 */   private final cwk av = new cwk();
@@ -2009,7 +2009,7 @@ package net.minecraft.src;
 /* 2008:     */     else
 /* 2009:     */     {
 /* 2010:2154 */       localObject3 = new NBTTagCompound();
-/* 2011:2155 */       localbcm.b((NBTTagCompound)localObject3);
+/* 2011:2155 */       localbcm.writeToNBT((NBTTagCompound)localObject3);
 /* 2012:2156 */       localObject4 = new ItemStack((Item)localObject1, 1, i1);
 /* 2013:2157 */       ((ItemStack)localObject4).a("BlockEntityTag", (NBTBase)localObject3);
 /* 2014:2158 */       NBTTagCompound localfn = new NBTTagCompound();

@@ -18,7 +18,7 @@ package net.minecraft.src;
 /*  17:    */   
 /*  18:    */   public void a(bdm parambdm, double paramDouble1, double paramDouble2, double paramDouble3, float paramFloat, int paramInt)
 /*  19:    */   {
-/*  20: 36 */     EnumDirection localej = EnumDirection.a(parambdm.u() & 0x7);
+/*  20: 36 */     EnumDirection localej = EnumDirection.a(parambdm.getData() & 0x7);
 /*  21:    */     
 /*  22: 38 */     a((float)paramDouble1, (float)paramDouble2, (float)paramDouble3, localej, parambdm.d() * 360 / 16.0F, parambdm.c(), parambdm.b(), paramInt);
 /*  23:    */   }

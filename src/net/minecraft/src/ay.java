@@ -37,7 +37,7 @@ package net.minecraft.src;
 /* 36:50 */       throw new CommandException("commands.blockdata.notValid", new Object[0]);
 /* 37:   */     }
 /* 38:53 */     NBTTagCompound localfn1 = new NBTTagCompound();
-/* 39:54 */     localbcm.b(localfn1);
+/* 39:54 */     localbcm.writeToNBT(localfn1);
 /* 40:55 */     NBTTagCompound localfn2 = (NBTTagCompound)localfn1.b();
 /* 41:   */     NBTTagCompound localfn3;
 /* 42:   */     try
@@ -56,7 +56,7 @@ package net.minecraft.src;
 /* 55:70 */     if (localfn1.equals(localfn2)) {
 /* 56:71 */       throw new CommandException("commands.blockdata.failed", new Object[] { localfn1.toString() });
 /* 57:   */     }
-/* 58:74 */     localbcm.a(localfn1);
+/* 58:74 */     localbcm.readFromNBT(localfn1);
 /* 59:75 */     localbcm.o_();
 /* 60:76 */     localaqu.h(localdt);
 /* 61:   */     

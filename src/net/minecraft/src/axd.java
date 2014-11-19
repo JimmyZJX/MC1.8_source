@@ -4,9 +4,9 @@ package net.minecraft.src;
 /*  3:   */ {
 /*  4:   */   private ItemStack a;
 /*  5:   */   
-/*  6:   */   public void a(NBTTagCompound paramfn)
+/*  6:   */   public void readFromNBT(NBTTagCompound paramfn)
 /*  7:   */   {
-/*  8:29 */     super.a(paramfn);
+/*  8:29 */     super.readFromNBT(paramfn);
 /*  9:31 */     if (paramfn.hasKey("RecordItem", 10)) {
 /* 10:32 */       a(ItemStack.loadItemStackFromNBT(paramfn.getCompoundTag("RecordItem")));
 /* 11:33 */     } else if (paramfn.getInteger("Record") > 0) {
@@ -14,9 +14,9 @@ package net.minecraft.src;
 /* 13:   */     }
 /* 14:   */   }
 /* 15:   */   
-/* 16:   */   public void b(NBTTagCompound paramfn)
+/* 16:   */   public void writeToNBT(NBTTagCompound paramfn)
 /* 17:   */   {
-/* 18:40 */     super.b(paramfn);
+/* 18:40 */     super.writeToNBT(paramfn);
 /* 19:42 */     if (a() != null) {
 /* 20:43 */       paramfn.setNBT("RecordItem", a().writeToNBT(new NBTTagCompound()));
 /* 21:   */     }

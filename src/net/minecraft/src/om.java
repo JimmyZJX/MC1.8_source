@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*   5:    */   {
 /*   6:442 */     World localaqu = paramdz.i();
 /*   7:443 */     BlockPosition localdt = paramdz.d().a(ave.b(paramdz.f()));
-/*   8:445 */     if (localaqu.d(localdt))
+/*   8:445 */     if (localaqu.isEmpty(localdt))
 /*   9:    */     {
 /*  10:446 */       if (!localaqu.isClient)
 /*  11:    */       {

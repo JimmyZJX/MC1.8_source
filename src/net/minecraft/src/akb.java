@@ -88,7 +88,7 @@ package net.minecraft.src;
 /*  87:    */     }
 /*  88: 97 */     Material localbof = paramaqu.getBlock(paramdt).getProto().getMaterial();
 /*  89: 98 */     int i = !localbof.a() ? 1 : 0;
-/*  90: 99 */     if ((paramaqu.d(paramdt)) || (i != 0))
+/*  90: 99 */     if ((paramaqu.isEmpty(paramdt)) || (i != 0))
 /*  91:    */     {
 /*  92:100 */       if ((paramaqu.t.n()) && (this.a == BlockList.i))
 /*  93:    */       {

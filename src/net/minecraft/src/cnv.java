@@ -17,13 +17,13 @@ package net.minecraft.src;
 /*  16: 30 */     if (localatr == BlockList.an)
 /*  17:    */     {
 /*  18: 31 */       cjm.glTranslatef((float)paramDouble1 + 0.5F, (float)paramDouble2 + 0.75F * f1, (float)paramDouble3 + 0.5F);
-/*  19: 32 */       float f2 = parambdj.u() * 360 / 16.0F;
+/*  19: 32 */       float f2 = parambdj.getData() * 360 / 16.0F;
 /*  20: 33 */       cjm.glRotatef(-f2, 0.0F, 1.0F, 0.0F);
 /*  21: 34 */       this.d.b.j = true;
 /*  22:    */     }
 /*  23:    */     else
 /*  24:    */     {
-/*  25: 36 */       int i = parambdj.u();
+/*  25: 36 */       int i = parambdj.getData();
 /*  26: 37 */       float f3 = 0.0F;
 /*  27: 39 */       if (i == 2) {
 /*  28: 40 */         f3 = 180.0F;

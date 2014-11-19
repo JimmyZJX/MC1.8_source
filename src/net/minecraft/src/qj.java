@@ -7,7 +7,7 @@ package net.minecraft.src;
 /*  6:14 */   private static final long I = "North Carolina".hashCode();
 /*  7:16 */   public static final WorldSettings a = new WorldSettings(I, EnumGameType.b, true, false, WorldType.DEFAULT).a();
 /*  8:   */   
-/*  9:   */   public qj(MinecraftServer paramMinecraftServer, bqy parambqy, WorldInfo parambqo, int paramInt, uw paramuw)
+/*  9:   */   public qj(MinecraftServer paramMinecraftServer, bqy parambqy, WorldInfo parambqo, int paramInt, Profiler paramuw)
 /* 10:   */   {
 /* 11:19 */     super(paramMinecraftServer, parambqy, parambqo, paramInt, paramuw);
 /* 12:20 */     this.worldInfo.a(a);

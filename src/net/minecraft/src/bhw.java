@@ -15,7 +15,7 @@ package net.minecraft.src;
 /* 14:   */   
 /* 15:   */   public boolean generate(World paramaqu, Random paramRandom, BlockPosition paramdt)
 /* 16:   */   {
-/* 17:21 */     while ((paramaqu.d(paramdt)) && (paramdt.getY() > 2)) {
+/* 17:21 */     while ((paramaqu.isEmpty(paramdt)) && (paramdt.getY() > 2)) {
 /* 18:22 */       paramdt = paramdt.down();
 /* 19:   */     }
 /* 20:25 */     if (paramaqu.getBlock(paramdt).getProto() != BlockList.aJ) {

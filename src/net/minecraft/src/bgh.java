@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*  8:16 */     this.e = true;
 /*  9:   */   }
 /* 10:   */   
-/* 11:   */   public bfe c()
+/* 11:   */   public IChunkProvider c()
 /* 12:   */   {
 /* 13:21 */     return new bgw(this.world, this.world.J());
 /* 14:   */   }

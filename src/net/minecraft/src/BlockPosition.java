@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ public class BlockPosition
 /*   2:    */   extends fd
 /*   3:    */ {
-/*   4: 13 */   public static final BlockPosition a = new BlockPosition(0, 0, 0);
+/*   4: 13 */   public static final BlockPosition zero = new BlockPosition(0, 0, 0);
 /*   5: 15 */   private static final int b = 1 + MathUtils.log2(MathUtils.smallestEncompassingPowerOfTwo(30000000));
 /*   6: 16 */   private static final int c = b;
 /*   7: 17 */   private static final int d = 64 - b - c;

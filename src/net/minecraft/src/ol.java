@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*   8:413 */     World localaqu = paramdz.i();
 /*   9:414 */     BlockPosition localdt = paramdz.d().a(ave.b(paramdz.f()));
 /*  10:415 */     azk localazk = (azk)BlockList.pumpkin;
-/*  11:417 */     if ((localaqu.d(localdt)) && (localazk.d(localaqu, localdt)))
+/*  11:417 */     if ((localaqu.isEmpty(localdt)) && (localazk.d(localaqu, localdt)))
 /*  12:    */     {
 /*  13:418 */       if (!localaqu.isClient) {
 /*  14:419 */         localaqu.setBlock(localdt, localazk.instance(), 3);

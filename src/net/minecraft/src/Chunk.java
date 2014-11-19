@@ -718,7 +718,7 @@ package net.minecraft.src;
 /*  713:     */   public void a(BlockPosition paramdt, bcm parambcm)
 /*  714:     */   {
 /*  715: 719 */     parambcm.a(this.world);
-/*  716: 720 */     parambcm.a(paramdt);
+/*  716: 720 */     parambcm.setPos(paramdt);
 /*  717: 722 */     if (!(getBlock(paramdt) instanceof avs)) {
 /*  718: 723 */       return;
 /*  719:     */     }
@@ -836,7 +836,7 @@ package net.minecraft.src;
 /*  831: 828 */     return false;
 /*  832:     */   }
 /*  833:     */   
-/*  834:     */   public void a(bfe parambfe1, bfe parambfe2, int paramInt1, int paramInt2)
+/*  834:     */   public void a(IChunkProvider parambfe1, IChunkProvider parambfe2, int paramInt1, int paramInt2)
 /*  835:     */   {
 /*  836: 832 */     boolean bool1 = parambfe1.a(paramInt1, paramInt2 - 1);
 /*  837: 833 */     boolean bool2 = parambfe1.a(paramInt1 + 1, paramInt2);

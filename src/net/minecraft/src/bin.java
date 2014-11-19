@@ -36,16 +36,16 @@ package net.minecraft.src;
 /* 35:42 */       i++;
 /* 36:   */     }
 /* 37:45 */     int j = 0;
-/* 38:46 */     if (paramaqu.d(paramdt.west())) {
+/* 38:46 */     if (paramaqu.isEmpty(paramdt.west())) {
 /* 39:47 */       j++;
 /* 40:   */     }
-/* 41:49 */     if (paramaqu.d(paramdt.east())) {
+/* 41:49 */     if (paramaqu.isEmpty(paramdt.east())) {
 /* 42:50 */       j++;
 /* 43:   */     }
-/* 44:52 */     if (paramaqu.d(paramdt.north())) {
+/* 44:52 */     if (paramaqu.isEmpty(paramdt.north())) {
 /* 45:53 */       j++;
 /* 46:   */     }
-/* 47:55 */     if (paramaqu.d(paramdt.south())) {
+/* 47:55 */     if (paramaqu.isEmpty(paramdt.south())) {
 /* 48:56 */       j++;
 /* 49:   */     }
 /* 50:59 */     if ((i == 3) && (j == 1))

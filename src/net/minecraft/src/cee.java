@@ -788,7 +788,7 @@ package net.minecraft.src;
 /*  787:     */     {
 /*  788: 799 */       localObject = new bdj();
 /*  789: 800 */       ((bcm)localObject).a(this.g);
-/*  790: 801 */       ((bcm)localObject).a(paramkc.a());
+/*  790: 801 */       ((bcm)localObject).setPos(paramkc.a());
 /*  791:     */     }
 /*  792: 804 */     this.f.h.a((bdj)localObject);
 /*  793:     */   }
@@ -824,7 +824,7 @@ package net.minecraft.src;
 /*  823: 832 */       bcm localbcm = this.f.f.s(paramiu.a());
 /*  824: 833 */       int m = paramiu.b();
 /*  825: 835 */       if (((m == 1) && ((localbcm instanceof bdg))) || ((m == 2) && ((localbcm instanceof bct))) || ((m == 3) && ((localbcm instanceof bck))) || ((m == 4) && ((localbcm instanceof bdm))) || ((m == 5) && ((localbcm instanceof bdb))) || ((m == 6) && ((localbcm instanceof bci)))) {
-/*  826: 842 */         localbcm.a(paramiu.c());
+/*  826: 842 */         localbcm.readFromNBT(paramiu.c());
 /*  827:     */       }
 /*  828:     */     }
 /*  829:     */   }

@@ -3,7 +3,7 @@ package net.minecraft.src;
 /*   2:    */ import java.util.Random;
 /*   3:    */ 
 /*   4:    */ public class bgv
-/*   5:    */   implements bfe
+/*   5:    */   implements IChunkProvider
 /*   6:    */ {
 /*   7:    */   private Random h;
 /*   8:    */   private bnv i;
@@ -297,7 +297,7 @@ package net.minecraft.src;
 /* 296:352 */     return true;
 /* 297:    */   }
 /* 298:    */   
-/* 299:    */   public void a(bfe parambfe, int paramInt1, int paramInt2)
+/* 299:    */   public void a(IChunkProvider parambfe, int paramInt1, int paramInt2)
 /* 300:    */   {
 /* 301:410 */     avt.M = true;
 /* 302:411 */     int i1 = paramInt1 * 16;
@@ -381,7 +381,7 @@ package net.minecraft.src;
 /* 380:491 */     avt.M = false;
 /* 381:    */   }
 /* 382:    */   
-/* 383:    */   public boolean a(bfe parambfe, Chunk parambfh, int paramInt1, int paramInt2)
+/* 383:    */   public boolean a(IChunkProvider parambfe, Chunk parambfh, int paramInt1, int paramInt2)
 /* 384:    */   {
 /* 385:496 */     boolean bool = false;
 /* 386:497 */     if ((this.r.y) && (this.n)) {
@@ -409,12 +409,12 @@ package net.minecraft.src;
 /* 408:524 */     return true;
 /* 409:    */   }
 /* 410:    */   
-/* 411:    */   public String f()
+/* 411:    */   public String getName()
 /* 412:    */   {
 /* 413:529 */     return "RandomLevelSource";
 /* 414:    */   }
 /* 415:    */   
-/* 416:    */   public List<SpawnListEntry> a(EnumCreatureType paramxp, BlockPosition paramdt)
+/* 416:    */   public List<SpawnListEntry> getSpawnList(EnumCreatureType paramxp, BlockPosition paramdt)
 /* 417:    */   {
 /* 418:534 */     arm localarm = this.m.b(paramdt);
 /* 419:535 */     if (this.n)

@@ -95,9 +95,9 @@ package net.minecraft.src;
 /*  94:114 */     this.p = paramString;
 /*  95:    */   }
 /*  96:    */   
-/*  97:    */   public void a(NBTTagCompound paramfn)
+/*  97:    */   public void readFromNBT(NBTTagCompound paramfn)
 /*  98:    */   {
-/*  99:120 */     super.a(paramfn);
+/*  99:120 */     super.readFromNBT(paramfn);
 /* 100:121 */     fv localfv = paramfn.c("Items", 10);
 /* 101:122 */     this.m = new ItemStack[n_()];
 /* 102:123 */     if (paramfn.hasKey("CustomName", 8)) {
@@ -113,9 +113,9 @@ package net.minecraft.src;
 /* 112:    */     }
 /* 113:    */   }
 /* 114:    */   
-/* 115:    */   public void b(NBTTagCompound paramfn)
+/* 115:    */   public void writeToNBT(NBTTagCompound paramfn)
 /* 116:    */   {
-/* 117:137 */     super.b(paramfn);
+/* 117:137 */     super.writeToNBT(paramfn);
 /* 118:138 */     fv localfv = new fv();
 /* 119:140 */     for (int i1 = 0; i1 < this.m.length; i1++) {
 /* 120:141 */       if (this.m[i1] != null)
@@ -139,10 +139,10 @@ package net.minecraft.src;
 /* 138:    */   
 /* 139:    */   public boolean a(EntityPlayer paramahd)
 /* 140:    */   {
-/* 141:161 */     if (this.b.s(this.c) != this) {
+/* 141:161 */     if (this.world.s(this.pos) != this) {
 /* 142:162 */       return false;
 /* 143:    */     }
-/* 144:164 */     if (paramahd.e(this.c.getX() + 0.5D, this.c.getY() + 0.5D, this.c.getZ() + 0.5D) > 64.0D) {
+/* 144:164 */     if (paramahd.e(this.pos.getX() + 0.5D, this.pos.getY() + 0.5D, this.pos.getZ() + 0.5D) > 64.0D) {
 /* 145:165 */       return false;
 /* 146:    */     }
 /* 147:167 */     return true;
@@ -199,10 +199,10 @@ package net.minecraft.src;
 /* 198:    */   
 /* 199:    */   protected bcr a(EnumDirection paramej)
 /* 200:    */   {
-/* 201:219 */     BlockPosition localdt = this.c.a(paramej);
+/* 201:219 */     BlockPosition localdt = this.pos.a(paramej);
 /* 202:221 */     if (b(localdt))
 /* 203:    */     {
-/* 204:222 */       bcm localbcm = this.b.s(localdt);
+/* 204:222 */       bcm localbcm = this.world.s(localdt);
 /* 205:223 */       if ((localbcm instanceof bcr))
 /* 206:    */       {
 /* 207:224 */         bcr localbcr = (bcr)localbcm;
@@ -216,10 +216,10 @@ package net.minecraft.src;
 /* 215:    */   
 /* 216:    */   private boolean b(BlockPosition paramdt)
 /* 217:    */   {
-/* 218:235 */     if (this.b == null) {
+/* 218:235 */     if (this.world == null) {
 /* 219:236 */       return false;
 /* 220:    */     }
-/* 221:239 */     ProtoBlock localatr = this.b.getBlock(paramdt).getProto();
+/* 221:239 */     ProtoBlock localatr = this.world.getBlock(paramdt).getProto();
 /* 222:    */     
 /* 223:241 */     return ((localatr instanceof auj)) && (((auj)localatr).b == n());
 /* 224:    */   }
@@ -228,17 +228,17 @@ package net.minecraft.src;
 /* 227:    */   {
 /* 228:246 */     m();
 /* 229:    */     
-/* 230:248 */     int i1 = this.c.getX();
-/* 231:249 */     int i2 = this.c.getY();
-/* 232:250 */     int i3 = this.c.getZ();
+/* 230:248 */     int i1 = this.pos.getX();
+/* 231:249 */     int i2 = this.pos.getY();
+/* 232:250 */     int i3 = this.pos.getZ();
 /* 233:    */     
 /* 234:252 */     this.n += 1;
-/* 235:253 */     if ((!this.b.isClient) && (this.l != 0) && ((this.n + i1 + i2 + i3) % 200 == 0))
+/* 235:253 */     if ((!this.world.isClient) && (this.l != 0) && ((this.n + i1 + i2 + i3) % 200 == 0))
 /* 236:    */     {
 /* 237:254 */       this.l = 0;
 /* 238:    */       
 /* 239:256 */       float f1 = 5.0F;
-/* 240:257 */       List<EntityPlayer> localList = this.b.a(EntityPlayer.class, new AABB(i1 - f1, i2 - f1, i3 - f1, i1 + 1 + f1, i2 + 1 + f1, i3 + 1 + f1));
+/* 240:257 */       List<EntityPlayer> localList = this.world.a(EntityPlayer.class, new AABB(i1 - f1, i2 - f1, i3 - f1, i1 + 1 + f1, i2 + 1 + f1, i3 + 1 + f1));
 /* 241:258 */       for (EntityPlayer localahd : localList) {
 /* 242:259 */         if ((localahd.bi instanceof aim))
 /* 243:    */         {
@@ -264,7 +264,7 @@ package net.minecraft.src;
 /* 263:278 */       if (this.g != null) {
 /* 264:279 */         d1 += 0.5D;
 /* 265:    */       }
-/* 266:282 */       this.b.a(d1, i2 + 0.5D, d2, "random.chestopen", 0.5F, this.b.rng.nextFloat() * 0.1F + 0.9F);
+/* 266:282 */       this.world.a(d1, i2 + 0.5D, d2, "random.chestopen", 0.5F, this.world.rng.nextFloat() * 0.1F + 0.9F);
 /* 267:    */     }
 /* 268:285 */     if (((this.l == 0) && (this.j > 0.0F)) || ((this.l > 0) && (this.j < 1.0F)))
 /* 269:    */     {
@@ -289,7 +289,7 @@ package net.minecraft.src;
 /* 288:303 */         if (this.g != null) {
 /* 289:304 */           d2 += 0.5D;
 /* 290:    */         }
-/* 291:307 */         this.b.a(d2, i2 + 0.5D, d3, "random.chestclosed", 0.5F, this.b.rng.nextFloat() * 0.1F + 0.9F);
+/* 291:307 */         this.world.a(d2, i2 + 0.5D, d3, "random.chestclosed", 0.5F, this.world.rng.nextFloat() * 0.1F + 0.9F);
 /* 292:    */       }
 /* 293:310 */       if (this.j < 0.0F) {
 /* 294:311 */         this.j = 0.0F;
@@ -315,9 +315,9 @@ package net.minecraft.src;
 /* 314:329 */         this.l = 0;
 /* 315:    */       }
 /* 316:331 */       this.l += 1;
-/* 317:332 */       this.b.c(this.c, w(), 1, this.l);
-/* 318:333 */       this.b.c(this.c, w());
-/* 319:334 */       this.b.c(this.c.down(), w());
+/* 317:332 */       this.world.c(this.pos, w(), 1, this.l);
+/* 318:333 */       this.world.c(this.pos, w());
+/* 319:334 */       this.world.c(this.pos.down(), w());
 /* 320:    */     }
 /* 321:    */   }
 /* 322:    */   
@@ -327,9 +327,9 @@ package net.minecraft.src;
 /* 326:341 */       ((w() instanceof auj)))
 /* 327:    */     {
 /* 328:342 */       this.l -= 1;
-/* 329:343 */       this.b.c(this.c, w(), 1, this.l);
-/* 330:344 */       this.b.c(this.c, w());
-/* 331:345 */       this.b.c(this.c.down(), w());
+/* 329:343 */       this.world.c(this.pos, w(), 1, this.l);
+/* 330:344 */       this.world.c(this.pos, w());
+/* 331:345 */       this.world.c(this.pos.down(), w());
 /* 332:    */     }
 /* 333:    */   }
 /* 334:    */   
@@ -348,7 +348,7 @@ package net.minecraft.src;
 /* 347:    */   public int n()
 /* 348:    */   {
 /* 349:363 */     if (this.o == -1) {
-/* 350:364 */       if ((this.b != null) && ((w() instanceof auj))) {
+/* 350:364 */       if ((this.world != null) && ((w() instanceof auj))) {
 /* 351:365 */         this.o = ((auj)w()).b;
 /* 352:    */       } else {
 /* 353:367 */         return 0;

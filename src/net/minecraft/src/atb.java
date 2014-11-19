@@ -64,7 +64,7 @@ package net.minecraft.src;
 /*  63: 83 */       ItemStack localamj = new ItemStack(ItemList.cE, 1, ((bci)localbcm).b());
 /*  64:    */       
 /*  65: 85 */       NBTTagCompound localfn = new NBTTagCompound();
-/*  66: 86 */       localbcm.b(localfn);
+/*  66: 86 */       localbcm.writeToNBT(localfn);
 /*  67: 87 */       localfn.o("x");
 /*  68: 88 */       localfn.o("y");
 /*  69: 89 */       localfn.o("z");
@@ -86,7 +86,7 @@ package net.minecraft.src;
 /*  85:102 */       ItemStack localamj = new ItemStack(ItemList.cE, 1, ((bci)parambcm).b());
 /*  86:    */       
 /*  87:104 */       NBTTagCompound localfn = new NBTTagCompound();
-/*  88:105 */       parambcm.b(localfn);
+/*  88:105 */       parambcm.writeToNBT(localfn);
 /*  89:106 */       localfn.o("x");
 /*  90:107 */       localfn.o("y");
 /*  91:108 */       localfn.o("z");

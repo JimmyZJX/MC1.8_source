@@ -29,7 +29,7 @@ import java.util.List;
 /*  27: 36 */     return this.a;
 /*  28:    */   }
 /*  29:    */   
-/*  30:    */   public int u()
+/*  30:    */   public int getData()
 /*  31:    */   {
 /*  32: 41 */     return 0;
 /*  33:    */   }
@@ -90,10 +90,10 @@ import java.util.List;
 /*  88:    */     } else {
 /*  89: 93 */       paramFloat1 -= 1.0F;
 /*  90:    */     }
-/*  91: 96 */     AABB localbrt = BlockList.M.a(this.b, this.c, this.a, paramFloat1, this.f);
+/*  91: 96 */     AABB localbrt = BlockList.M.a(this.world, this.pos, this.a, paramFloat1, this.f);
 /*  92: 97 */     if (localbrt != null)
 /*  93:    */     {
-/*  94: 98 */       List<Entity> localList = this.b.b(null, localbrt);
+/*  94: 98 */       List<Entity> localList = this.world.b(null, localbrt);
 /*  95: 99 */       if (!localList.isEmpty())
 /*  96:    */       {
 /*  97:100 */         this.k.addAll(localList);
@@ -121,15 +121,15 @@ import java.util.List;
 /* 119:    */   
 /* 120:    */   public void h()
 /* 121:    */   {
-/* 122:125 */     if ((this.j < 1.0F) && (this.b != null))
+/* 122:125 */     if ((this.j < 1.0F) && (this.world != null))
 /* 123:    */     {
 /* 124:126 */       this.j = (this.i = 1.0F);
-/* 125:127 */       this.b.t(this.c);
+/* 125:127 */       this.world.t(this.pos);
 /* 126:128 */       y();
-/* 127:129 */       if (this.b.getBlock(this.c).getProto() == BlockList.M)
+/* 127:129 */       if (this.world.getBlock(this.pos).getProto() == BlockList.M)
 /* 128:    */       {
-/* 129:130 */         this.b.setBlock(this.c, this.a, 3);
-/* 130:131 */         this.b.d(this.c, this.a.getProto());
+/* 129:130 */         this.world.setBlock(this.pos, this.a, 3);
+/* 130:131 */         this.world.d(this.pos, this.a.getProto());
 /* 131:    */       }
 /* 132:    */     }
 /* 133:    */   }
@@ -140,12 +140,12 @@ import java.util.List;
 /* 138:140 */     if (this.j >= 1.0F)
 /* 139:    */     {
 /* 140:141 */       a(1.0F, 0.25F);
-/* 141:142 */       this.b.t(this.c);
+/* 141:142 */       this.world.t(this.pos);
 /* 142:143 */       y();
-/* 143:144 */       if (this.b.getBlock(this.c).getProto() == BlockList.M)
+/* 143:144 */       if (this.world.getBlock(this.pos).getProto() == BlockList.M)
 /* 144:    */       {
-/* 145:145 */         this.b.setBlock(this.c, this.a, 3);
-/* 146:146 */         this.b.d(this.c, this.a.getProto());
+/* 145:145 */         this.world.setBlock(this.pos, this.a, 3);
+/* 146:146 */         this.world.d(this.pos, this.a.getProto());
 /* 147:    */       }
 /* 148:148 */       return;
 /* 149:    */     }
@@ -158,9 +158,9 @@ import java.util.List;
 /* 156:    */     }
 /* 157:    */   }
 /* 158:    */   
-/* 159:    */   public void a(NBTTagCompound paramfn)
+/* 159:    */   public void readFromNBT(NBTTagCompound paramfn)
 /* 160:    */   {
-/* 161:163 */     super.a(paramfn);
+/* 161:163 */     super.readFromNBT(paramfn);
 /* 162:    */     
 /* 163:165 */     this.a = ProtoBlock.c(paramfn.getInteger("blockId")).a(paramfn.getInteger("blockData"));
 /* 164:166 */     this.f = EnumDirection.a(paramfn.getInteger("facing"));
@@ -168,9 +168,9 @@ import java.util.List;
 /* 166:168 */     this.g = paramfn.getBoolean("extending");
 /* 167:    */   }
 /* 168:    */   
-/* 169:    */   public void b(NBTTagCompound paramfn)
+/* 169:    */   public void writeToNBT(NBTTagCompound paramfn)
 /* 170:    */   {
-/* 171:173 */     super.b(paramfn);
+/* 171:173 */     super.writeToNBT(paramfn);
 /* 172:    */     
 /* 173:175 */     paramfn.setInt("blockId", ProtoBlock.a(this.a.getProto()));
 /* 174:176 */     paramfn.setInt("blockData", this.a.getProto().c(this.a));

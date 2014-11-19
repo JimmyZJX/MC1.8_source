@@ -122,7 +122,7 @@ package net.minecraft.src;
 /* 121:    */     }
 /* 122:    */     else
 /* 123:    */     {
-/* 124:133 */       if ((this.a != null) && ((!this.world.d(this.a)) || (this.a.getY() < 1))) {
+/* 124:133 */       if ((this.a != null) && ((!this.world.isEmpty(this.a)) || (this.a.getY() < 1))) {
 /* 125:134 */         this.a = null;
 /* 126:    */       }
 /* 127:136 */       if ((this.a == null) || (this.random.nextInt(30) == 0) || (this.a.dist2((int)this.xPos, (int)this.yPos, (int)this.zPos) < 4.0D)) {

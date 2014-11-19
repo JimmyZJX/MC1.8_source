@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*  8:   */   {
 /*  9:16 */     int i = 0;
 /* 10:18 */     if (parambda.t()) {
-/* 11:19 */       i = parambda.u();
+/* 11:19 */       i = parambda.getData();
 /* 12:   */     }
 /* 13:22 */     if (paramInt >= 0)
 /* 14:   */     {

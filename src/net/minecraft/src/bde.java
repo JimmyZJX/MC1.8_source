@@ -9,9 +9,9 @@ package net.minecraft.src;
 /*   9:    */   private String f;
 /*  10: 36 */   private int g = -1;
 /*  11:    */   
-/*  12:    */   public void a(NBTTagCompound paramfn)
+/*  12:    */   public void readFromNBT(NBTTagCompound paramfn)
 /*  13:    */   {
-/*  14: 40 */     super.a(paramfn);
+/*  14: 40 */     super.readFromNBT(paramfn);
 /*  15:    */     
 /*  16:    */ 
 /*  17: 43 */     fv localfv = paramfn.c("Items", 10);
@@ -30,9 +30,9 @@ package net.minecraft.src;
 /*  30:    */     }
 /*  31:    */   }
 /*  32:    */   
-/*  33:    */   public void b(NBTTagCompound paramfn)
+/*  33:    */   public void writeToNBT(NBTTagCompound paramfn)
 /*  34:    */   {
-/*  35: 60 */     super.b(paramfn);
+/*  35: 60 */     super.writeToNBT(paramfn);
 /*  36: 61 */     fv localfv = new fv();
 /*  37: 63 */     for (int i = 0; i < this.a.length; i++) {
 /*  38: 64 */       if (this.a[i] != null)
@@ -125,10 +125,10 @@ package net.minecraft.src;
 /* 125:    */   
 /* 126:    */   public boolean a(EntityPlayer paramahd)
 /* 127:    */   {
-/* 128:153 */     if (this.b.s(this.c) != this) {
+/* 128:153 */     if (this.world.s(this.pos) != this) {
 /* 129:154 */       return false;
 /* 130:    */     }
-/* 131:156 */     if (paramahd.e(this.c.getX() + 0.5D, this.c.getY() + 0.5D, this.c.getZ() + 0.5D) > 64.0D) {
+/* 131:156 */     if (paramahd.e(this.pos.getX() + 0.5D, this.pos.getY() + 0.5D, this.pos.getZ() + 0.5D) > 64.0D) {
 /* 132:157 */       return false;
 /* 133:    */     }
 /* 134:159 */     return true;
@@ -145,7 +145,7 @@ package net.minecraft.src;
 /* 145:    */   
 /* 146:    */   public void c()
 /* 147:    */   {
-/* 148:177 */     if ((this.b == null) || (this.b.isClient)) {
+/* 148:177 */     if ((this.world == null) || (this.world.isClient)) {
 /* 149:178 */       return;
 /* 150:    */     }
 /* 151:181 */     this.g -= 1;
@@ -158,10 +158,10 @@ package net.minecraft.src;
 /* 158:    */   
 /* 159:    */   public boolean m()
 /* 160:    */   {
-/* 161:190 */     if ((this.b == null) || (this.b.isClient)) {
+/* 161:190 */     if ((this.world == null) || (this.world.isClient)) {
 /* 162:191 */       return false;
 /* 163:    */     }
-/* 164:194 */     if ((!n()) && (BlockHopper.f(u())))
+/* 164:194 */     if ((!n()) && (BlockHopper.f(getData())))
 /* 165:    */     {
 /* 166:195 */       boolean bool = false;
 /* 167:197 */       if (!p()) {
@@ -206,7 +206,7 @@ package net.minecraft.src;
 /* 206:236 */     if (localvq == null) {
 /* 207:237 */       return false;
 /* 208:    */     }
-/* 209:240 */     EnumDirection localej = BlockHopper.b(u()).d();
+/* 209:240 */     EnumDirection localej = BlockHopper.b(getData()).d();
 /* 210:241 */     if (a(localvq, localej)) {
 /* 211:242 */       return false;
 /* 212:    */     }
@@ -437,8 +437,8 @@ package net.minecraft.src;
 /* 437:    */   
 /* 438:    */   private vq G()
 /* 439:    */   {
-/* 440:455 */     EnumDirection localej = BlockHopper.b(u());
-/* 441:456 */     return b(z(), this.c.getX() + localej.g(), this.c.getY() + localej.h(), this.c.getZ() + localej.i());
+/* 440:455 */     EnumDirection localej = BlockHopper.b(getData());
+/* 441:456 */     return b(z(), this.pos.getX() + localej.g(), this.pos.getY() + localej.h(), this.pos.getZ() + localej.i());
 /* 442:    */   }
 /* 443:    */   
 /* 444:    */   public static vq b(bdd parambdd)
@@ -505,17 +505,17 @@ package net.minecraft.src;
 /* 505:    */   
 /* 506:    */   public double A()
 /* 507:    */   {
-/* 508:523 */     return this.c.getX();
+/* 508:523 */     return this.pos.getX();
 /* 509:    */   }
 /* 510:    */   
 /* 511:    */   public double B()
 /* 512:    */   {
-/* 513:528 */     return this.c.getY();
+/* 513:528 */     return this.pos.getY();
 /* 514:    */   }
 /* 515:    */   
 /* 516:    */   public double C()
 /* 517:    */   {
-/* 518:533 */     return this.c.getZ();
+/* 518:533 */     return this.pos.getZ();
 /* 519:    */   }
 /* 520:    */   
 /* 521:    */   public void d(int paramInt)

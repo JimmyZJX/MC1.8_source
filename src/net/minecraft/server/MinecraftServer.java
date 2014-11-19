@@ -74,7 +74,7 @@ import net.minecraft.src.ry;
 import net.minecraft.src.sn;
 import net.minecraft.src.u;
 import net.minecraft.src.MathUtils;
-import net.minecraft.src.uw;
+import net.minecraft.src.Profiler;
 import net.minecraft.src.vn;
 import net.minecraft.src.EnumDifficulty;
 import net.minecraft.src.wb;
@@ -95,7 +95,7 @@ import net.minecraft.src.Entity;
 /*   98:     */   private final File n;
 /*   99:  97 */   private final List o = Lists.newArrayList();
 /*  100:     */   private final ad p;
-/*  101:  99 */   public final uw b = new uw();
+/*  101:  99 */   public final Profiler b = new Profiler();
 /*  102:     */   private final rc q;
 /*  103: 101 */   private final np r = new np();
 /*  104: 102 */   private final Random s = new Random();
@@ -1083,7 +1083,7 @@ import net.minecraft.src.Entity;
 /* 1086:     */   
 /* 1087:     */   public BlockPosition c()
 /* 1088:     */   {
-/* 1089:1168 */     return BlockPosition.a;
+/* 1089:1168 */     return BlockPosition.zero;
 /* 1090:     */   }
 /* 1091:     */   
 /* 1092:     */   public Vec3 d()

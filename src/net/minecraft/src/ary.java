@@ -166,7 +166,7 @@ package net.minecraft.src;
 /* 165:172 */       while (localObject1.getY() > 0)
 /* 166:    */       {
 /* 167:173 */         BlockPosition localObject2 = ((BlockPosition)localObject1).down();
-/* 168:174 */         if (!this.world.d((BlockPosition)localObject2)) {
+/* 168:174 */         if (!this.world.isEmpty((BlockPosition)localObject2)) {
 /* 169:    */           break;
 /* 170:    */         }
 /* 171:178 */         localObject1 = localObject2;

@@ -527,7 +527,7 @@ package net.minecraft.src;
 /* 526:559 */     if (!parambjb.b(localdt)) {
 /* 527:560 */       return;
 /* 528:    */     }
-/* 529:563 */     while ((!paramaqu.d(localdt)) && (localdt.getY() < 255))
+/* 529:563 */     while ((!paramaqu.isEmpty(localdt)) && (localdt.getY() < 255))
 /* 530:    */     {
 /* 531:564 */       paramaqu.setBlock(localdt, BlockList.air.instance(), 2);
 /* 532:565 */       localdt = localdt.up();
@@ -542,7 +542,7 @@ package net.minecraft.src;
 /* 541:574 */     if (!parambjb.b(new BlockPosition(i, j, k))) {
 /* 542:575 */       return;
 /* 543:    */     }
-/* 544:578 */     while (((paramaqu.d(new BlockPosition(i, j, k))) || (paramaqu.getBlock(new BlockPosition(i, j, k)).getProto().getMaterial().isLiquid())) && (j > 1))
+/* 544:578 */     while (((paramaqu.isEmpty(new BlockPosition(i, j, k))) || (paramaqu.getBlock(new BlockPosition(i, j, k)).getProto().getMaterial().isLiquid())) && (j > 1))
 /* 545:    */     {
 /* 546:579 */       paramaqu.setBlock(new BlockPosition(i, j, k), parambec, 2);
 /* 547:580 */       j--;

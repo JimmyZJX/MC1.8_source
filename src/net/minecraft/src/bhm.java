@@ -13,7 +13,7 @@ package net.minecraft.src;
 /* 12:22 */     for (int i = 0; i < 4; i++)
 /* 13:   */     {
 /* 14:23 */       BlockPosition localdt = paramdt.offset(paramRandom.nextInt(8) - paramRandom.nextInt(8), paramRandom.nextInt(4) - paramRandom.nextInt(4), paramRandom.nextInt(8) - paramRandom.nextInt(8));
-/* 15:24 */       if ((paramaqu.d(localdt)) && 
+/* 15:24 */       if ((paramaqu.isEmpty(localdt)) && 
 /* 16:25 */         (BlockList.deadbush.f(paramaqu, localdt, BlockList.deadbush.instance()))) {
 /* 17:26 */         paramaqu.setBlock(localdt, BlockList.deadbush.instance(), 2);
 /* 18:   */       }

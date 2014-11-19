@@ -9,19 +9,19 @@ package net.minecraft.src;
 /*   9:    */ import org.apache.logging.log4j.Logger;
 /*  10:    */ 
 /*  11:    */ public class qs
-/*  12:    */   implements bfe
+/*  12:    */   implements IChunkProvider
 /*  13:    */ {
 /*  14: 29 */   private static final Logger b = LogManager.getLogger();
 /*  15: 31 */   private Set<Long> c = Collections.newSetFromMap(new ConcurrentHashMap<Long,Boolean>());
 /*  16:    */   private Chunk d;
-/*  17:    */   private bfe e;
+/*  17:    */   private IChunkProvider e;
 /*  18:    */   private bfq f;
 /*  19: 35 */   public boolean a = true;
 /*  20: 37 */   private ur g = new ur();
 /*  21: 38 */   private List<Chunk> h = Lists.newArrayList();
 /*  22:    */   private WorldServer i;
 /*  23:    */   
-/*  24:    */   public qs(WorldServer paramqt, bfq parambfq, bfe parambfe)
+/*  24:    */   public qs(WorldServer paramqt, bfq parambfq, IChunkProvider parambfe)
 /*  25:    */   {
 /*  26: 42 */     this.d = new bfg(paramqt, 0, 0);
 /*  27:    */     
@@ -84,7 +84,7 @@ package net.minecraft.src;
 /*  84:    */             
 /*  85: 92 */             localj.a("Location", String.format("%d,%d", new Object[] { Integer.valueOf(paramInt1), Integer.valueOf(paramInt2) }));
 /*  86: 93 */             localj.a("Position hash", Long.valueOf(l));
-/*  87: 94 */             localj.a("Generator", this.e.f());
+/*  87: 94 */             localj.a("Generator", this.e.getName());
 /*  88:    */             
 /*  89: 96 */             throw new u(localb);
 /*  90:    */           }
@@ -170,7 +170,7 @@ package net.minecraft.src;
 /* 170:    */     }
 /* 171:    */   }
 /* 172:    */   
-/* 173:    */   public void a(bfe parambfe, int paramInt1, int paramInt2)
+/* 173:    */   public void a(IChunkProvider parambfe, int paramInt1, int paramInt2)
 /* 174:    */   {
 /* 175:170 */     Chunk localbfh = getChunk(paramInt1, paramInt2);
 /* 176:171 */     if (!localbfh.t())
@@ -184,7 +184,7 @@ package net.minecraft.src;
 /* 184:    */     }
 /* 185:    */   }
 /* 186:    */   
-/* 187:    */   public boolean a(bfe parambfe, Chunk parambfh, int paramInt1, int paramInt2)
+/* 187:    */   public boolean a(IChunkProvider parambfe, Chunk parambfh, int paramInt1, int paramInt2)
 /* 188:    */   {
 /* 189:182 */     if ((this.e != null) && 
 /* 190:183 */       (this.e.a(parambfe, parambfh, paramInt1, paramInt2)))
@@ -258,14 +258,14 @@ package net.minecraft.src;
 /* 258:250 */     return !this.i.c;
 /* 259:    */   }
 /* 260:    */   
-/* 261:    */   public String f()
+/* 261:    */   public String getName()
 /* 262:    */   {
 /* 263:255 */     return "ServerChunkCache: " + this.g.a() + " Drop: " + this.c.size();
 /* 264:    */   }
 /* 265:    */   
-/* 266:    */   public List<SpawnListEntry> a(EnumCreatureType paramxp, BlockPosition paramdt)
+/* 266:    */   public List<SpawnListEntry> getSpawnList(EnumCreatureType paramxp, BlockPosition paramdt)
 /* 267:    */   {
-/* 268:260 */     return this.e.a(paramxp, paramdt);
+/* 268:260 */     return this.e.getSpawnList(paramxp, paramdt);
 /* 269:    */   }
 /* 270:    */   
 /* 271:    */   public BlockPosition a(World paramaqu, String paramString, BlockPosition paramdt)

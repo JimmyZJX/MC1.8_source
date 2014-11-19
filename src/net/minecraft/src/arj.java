@@ -113,7 +113,7 @@ package net.minecraft.src;
 /* 112:186 */     return this.c[i][j].a(paramarf, paramdt);
 /* 113:    */   }
 /* 114:    */   
-/* 115:    */   public boolean d(BlockPosition paramdt)
+/* 115:    */   public boolean isEmpty(BlockPosition paramdt)
 /* 116:    */   {
 /* 117:191 */     return getBlock(paramdt).getProto().getMaterial() == Material.air;
 /* 118:    */   }

@@ -7,10 +7,10 @@ package net.minecraft.src;
 /*   7: 26 */   private EnumGameType c = EnumGameType.a;
 /*   8:    */   private boolean d;
 /*   9:    */   private int e;
-/*  10: 30 */   private BlockPosition f = BlockPosition.a;
+/*  10: 30 */   private BlockPosition f = BlockPosition.zero;
 /*  11:    */   private int g;
 /*  12:    */   private boolean h;
-/*  13: 34 */   private BlockPosition i = BlockPosition.a;
+/*  13: 34 */   private BlockPosition i = BlockPosition.zero;
 /*  14:    */   private int j;
 /*  15: 36 */   private int k = -1;
 /*  16:    */   

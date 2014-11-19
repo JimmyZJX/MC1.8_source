@@ -83,9 +83,9 @@ package net.minecraft.src;
 /*  82:125 */     this.m = paramString;
 /*  83:    */   }
 /*  84:    */   
-/*  85:    */   public void a(NBTTagCompound paramfn)
+/*  85:    */   public void readFromNBT(NBTTagCompound paramfn)
 /*  86:    */   {
-/*  87:131 */     super.a(paramfn);
+/*  87:131 */     super.readFromNBT(paramfn);
 /*  88:132 */     fv localfv = paramfn.c("Items", 10);
 /*  89:133 */     this.h = new ItemStack[n_()];
 /*  90:134 */     for (int n = 0; n < localfv.c(); n++)
@@ -105,9 +105,9 @@ package net.minecraft.src;
 /* 104:    */     }
 /* 105:    */   }
 /* 106:    */   
-/* 107:    */   public void b(NBTTagCompound paramfn)
+/* 107:    */   public void writeToNBT(NBTTagCompound paramfn)
 /* 108:    */   {
-/* 109:153 */     super.b(paramfn);
+/* 109:153 */     super.writeToNBT(paramfn);
 /* 110:154 */     paramfn.setShort("BurnTime", (short)this.i);
 /* 111:155 */     paramfn.setShort("CookTime", (short)this.k);
 /* 112:156 */     paramfn.setShort("CookTimeTotal", (short)this.l);
@@ -149,7 +149,7 @@ package net.minecraft.src;
 /* 148:191 */     if (m()) {
 /* 149:193 */       this.i -= 1;
 /* 150:    */     }
-/* 151:196 */     if (!this.b.isClient)
+/* 151:196 */     if (!this.world.isClient)
 /* 152:    */     {
 /* 153:197 */       if ((m()) || ((this.h[1] != null) && (this.h[0] != null)))
 /* 154:    */       {
@@ -194,7 +194,7 @@ package net.minecraft.src;
 /* 193:235 */       if (bool != m())
 /* 194:    */       {
 /* 195:236 */         n = 1;
-/* 196:237 */         awj.a(m(), this.b, this.c);
+/* 196:237 */         awj.a(m(), this.world, this.pos);
 /* 197:    */       }
 /* 198:    */     }
 /* 199:241 */     if (n != 0) {
@@ -304,10 +304,10 @@ package net.minecraft.src;
 /* 303:    */   
 /* 304:    */   public boolean a(EntityPlayer paramahd)
 /* 305:    */   {
-/* 306:355 */     if (this.b.s(this.c) != this) {
+/* 306:355 */     if (this.world.s(this.pos) != this) {
 /* 307:356 */       return false;
 /* 308:    */     }
-/* 309:358 */     if (paramahd.e(this.c.getX() + 0.5D, this.c.getY() + 0.5D, this.c.getZ() + 0.5D) > 64.0D) {
+/* 309:358 */     if (paramahd.e(this.pos.getX() + 0.5D, this.pos.getY() + 0.5D, this.pos.getZ() + 0.5D) > 64.0D) {
 /* 310:359 */       return false;
 /* 311:    */     }
 /* 312:361 */     return true;

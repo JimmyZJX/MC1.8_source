@@ -22,7 +22,7 @@ package net.minecraft.src;
 /*  21:    */   
 /*  22:    */   public aid(ahb paramahb, World paramaqu, EntityPlayer paramahd)
 /*  23:    */   {
-/*  24: 57 */     this(paramahb, paramaqu, BlockPosition.a, paramahd);
+/*  24: 57 */     this(paramahb, paramaqu, BlockPosition.zero, paramahd);
 /*  25:    */   }
 /*  26:    */   
 /*  27:    */   public aid(ahb paramahb, World paramaqu, BlockPosition paramdt, EntityPlayer paramahd)

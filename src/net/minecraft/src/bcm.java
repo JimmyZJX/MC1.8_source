@@ -7,17 +7,17 @@ package net.minecraft.src;
 /*   6:    */ public abstract class bcm
 /*   7:    */ {
 /*   8: 21 */   private static final Logger a = LogManager.getLogger();
-/*   9: 22 */   private static Map f = Maps.newHashMap();
-/*  10: 23 */   private static Map g = Maps.newHashMap();
-/*  11:    */   protected World b;
+/*   9: 22 */   private static Map<String,Class<? extends bcm>> idToClassMapping = Maps.newHashMap();
+/*  10: 23 */   private static Map<Class<? extends bcm>,String> classToIDMapping = Maps.newHashMap();
+/*  11:    */   protected World world;
 /*  12:    */   
-/*  13:    */   private static void a(Class paramClass, String paramString)
+/*  13:    */   private static void a(Class<? extends bcm> paramClass, String paramString)
 /*  14:    */   {
-/*  15: 26 */     if (f.containsKey(paramString)) {
+/*  15: 26 */     if (idToClassMapping.containsKey(paramString)) {
 /*  16: 27 */       throw new IllegalArgumentException("Duplicate id: " + paramString);
 /*  17:    */     }
-/*  18: 29 */     f.put(paramString, paramClass);
-/*  19: 30 */     g.put(paramClass, paramString);
+/*  18: 29 */     idToClassMapping.put(paramString, paramClass);
+/*  19: 30 */     classToIDMapping.put(paramClass, paramString);
 /*  20:    */   }
 /*  21:    */   
 /*  22:    */   static
@@ -45,51 +45,51 @@ package net.minecraft.src;
 /*  44: 54 */     a(bci.class, "Banner");
 /*  45:    */   }
 /*  46:    */   
-/*  47: 58 */   protected BlockPosition c = BlockPosition.a;
+/*  47: 58 */   protected BlockPosition pos = BlockPosition.zero;
 /*  48:    */   protected boolean d;
-/*  49: 61 */   private int h = -1;
+/*  49: 61 */   private int data = -1;
 /*  50:    */   protected ProtoBlock e;
 /*  51:    */   
 /*  52:    */   public World z()
 /*  53:    */   {
-/*  54: 65 */     return this.b;
+/*  54: 65 */     return this.world;
 /*  55:    */   }
 /*  56:    */   
 /*  57:    */   public void a(World paramaqu)
 /*  58:    */   {
-/*  59: 69 */     this.b = paramaqu;
+/*  59: 69 */     this.world = paramaqu;
 /*  60:    */   }
 /*  61:    */   
 /*  62:    */   public boolean t()
 /*  63:    */   {
-/*  64: 73 */     return this.b != null;
+/*  64: 73 */     return this.world != null;
 /*  65:    */   }
 /*  66:    */   
-/*  67:    */   public void a(NBTTagCompound paramfn)
+/*  67:    */   public void readFromNBT(NBTTagCompound paramfn)
 /*  68:    */   {
-/*  69: 77 */     this.c = new BlockPosition(paramfn.getInteger("x"), paramfn.getInteger("y"), paramfn.getInteger("z"));
+/*  69: 77 */     this.pos = new BlockPosition(paramfn.getInteger("x"), paramfn.getInteger("y"), paramfn.getInteger("z"));
 /*  70:    */   }
 /*  71:    */   
-/*  72:    */   public void b(NBTTagCompound paramfn)
+/*  72:    */   public void writeToNBT(NBTTagCompound paramfn)
 /*  73:    */   {
-/*  74: 81 */     String str = (String)g.get(getClass());
+/*  74: 81 */     String str = classToIDMapping.get(getClass());
 /*  75: 82 */     if (str == null) {
 /*  76: 83 */       throw new RuntimeException(getClass() + " is missing a mapping! This is a bug!");
 /*  77:    */     }
 /*  78: 85 */     paramfn.setString("id", str);
-/*  79: 86 */     paramfn.setInt("x", this.c.getX());
-/*  80: 87 */     paramfn.setInt("y", this.c.getY());
-/*  81: 88 */     paramfn.setInt("z", this.c.getZ());
+/*  79: 86 */     paramfn.setInt("x", this.pos.getX());
+/*  80: 87 */     paramfn.setInt("y", this.pos.getY());
+/*  81: 88 */     paramfn.setInt("z", this.pos.getZ());
 /*  82:    */   }
 /*  83:    */   
-/*  84:    */   public static bcm c(NBTTagCompound paramfn)
+/*  84:    */   public static bcm fromNBT(NBTTagCompound paramfn)
 /*  85:    */   {
 /*  86: 92 */     bcm localbcm = null;
 /*  87:    */     try
 /*  88:    */     {
-/*  89: 94 */       Class localClass = (Class)f.get(paramfn.getString("id"));
+/*  89: 94 */       Class<? extends bcm> localClass = idToClassMapping.get(paramfn.getString("id"));
 /*  90: 95 */       if (localClass != null) {
-/*  91: 96 */         localbcm = (bcm)localClass.newInstance();
+/*  91: 96 */         localbcm = localClass.newInstance();
 /*  92:    */       }
 /*  93:    */     }
 /*  94:    */     catch (Exception localException)
@@ -97,41 +97,41 @@ package net.minecraft.src;
 /*  96: 99 */       localException.printStackTrace();
 /*  97:    */     }
 /*  98:101 */     if (localbcm != null) {
-/*  99:102 */       localbcm.a(paramfn);
+/*  99:102 */       localbcm.readFromNBT(paramfn);
 /* 100:    */     } else {
 /* 101:104 */       a.warn("Skipping BlockEntity with id " + paramfn.getString("id"));
 /* 102:    */     }
 /* 103:106 */     return localbcm;
 /* 104:    */   }
 /* 105:    */   
-/* 106:    */   public int u()
+/* 106:    */   public int getData()
 /* 107:    */   {
-/* 108:110 */     if (this.h == -1)
+/* 108:110 */     if (this.data == -1)
 /* 109:    */     {
-/* 110:111 */       Block localbec = this.b.getBlock(this.c);
-/* 111:112 */       this.h = localbec.getProto().c(localbec);
+/* 110:111 */       Block localbec = this.world.getBlock(this.pos);
+/* 111:112 */       this.data = localbec.getProto().c(localbec);
 /* 112:    */     }
-/* 113:114 */     return this.h;
+/* 113:114 */     return this.data;
 /* 114:    */   }
 /* 115:    */   
 /* 116:    */   public void o_()
 /* 117:    */   {
-/* 118:122 */     if (this.b != null)
+/* 118:122 */     if (this.world != null)
 /* 119:    */     {
-/* 120:123 */       Block localbec = this.b.getBlock(this.c);
-/* 121:124 */       this.h = localbec.getProto().c(localbec);
-/* 122:125 */       this.b.b(this.c, this);
+/* 120:123 */       Block localbec = this.world.getBlock(this.pos);
+/* 121:124 */       this.data = localbec.getProto().c(localbec);
+/* 122:125 */       this.world.b(this.pos, this);
 /* 123:127 */       if (w() != BlockList.air) {
-/* 124:128 */         this.b.e(this.c, w());
+/* 124:128 */         this.world.e(this.pos, w());
 /* 125:    */       }
 /* 126:    */     }
 /* 127:    */   }
 /* 128:    */   
 /* 129:    */   public double a(double paramDouble1, double paramDouble2, double paramDouble3)
 /* 130:    */   {
-/* 131:134 */     double d1 = this.c.getX() + 0.5D - paramDouble1;
-/* 132:135 */     double d2 = this.c.getY() + 0.5D - paramDouble2;
-/* 133:136 */     double d3 = this.c.getZ() + 0.5D - paramDouble3;
+/* 131:134 */     double d1 = this.pos.getX() + 0.5D - paramDouble1;
+/* 132:135 */     double d2 = this.pos.getY() + 0.5D - paramDouble2;
+/* 133:136 */     double d3 = this.pos.getZ() + 0.5D - paramDouble3;
 /* 134:137 */     return d1 * d1 + d2 * d2 + d3 * d3;
 /* 135:    */   }
 /* 136:    */   
@@ -142,13 +142,13 @@ package net.minecraft.src;
 /* 141:    */   
 /* 142:    */   public BlockPosition v()
 /* 143:    */   {
-/* 144:145 */     return this.c;
+/* 144:145 */     return this.pos;
 /* 145:    */   }
 /* 146:    */   
 /* 147:    */   public ProtoBlock w()
 /* 148:    */   {
 /* 149:151 */     if (this.e == null) {
-/* 150:152 */       this.e = this.b.getBlock(this.c).getProto();
+/* 150:152 */       this.e = this.world.getBlock(this.pos).getProto();
 /* 151:    */     }
 /* 152:154 */     return this.e;
 /* 153:    */   }
@@ -181,16 +181,16 @@ package net.minecraft.src;
 /* 180:    */   public void E()
 /* 181:    */   {
 /* 182:178 */     this.e = null;
-/* 183:179 */     this.h = -1;
+/* 183:179 */     this.data = -1;
 /* 184:    */   }
 /* 185:    */   
 /* 186:    */   public void a(j paramj)
 /* 187:    */   {
 /* 188:183 */     paramj.a("Name", new bcn(this));
-/* 189:190 */     if (this.b == null) {
+/* 189:190 */     if (this.world == null) {
 /* 190:191 */       return;
 /* 191:    */     }
-/* 192:194 */     j.a(paramj, this.c, w(), u());
+/* 192:194 */     j.a(paramj, this.pos, w(), getData());
 /* 193:    */     
 /* 194:196 */     paramj.a("Actual block type", new bco(this));
 /* 195:    */     
@@ -207,11 +207,11 @@ package net.minecraft.src;
 /* 206:208 */     paramj.a("Actual block data value", new bcp(this));
 /* 207:    */   }
 /* 208:    */   
-/* 209:    */   public void a(BlockPosition paramdt)
+/* 209:    */   public void setPos(BlockPosition pos)
 /* 210:    */   {
-/* 211:225 */     this.c = paramdt;
+/* 211:225 */     this.pos = pos;
 /* 212:    */   }
-				static Map F() {return g;}
+				static Map<Class<? extends bcm>,String> F() {return classToIDMapping;}
 /* 213:    */ }
 
 

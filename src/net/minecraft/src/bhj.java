@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*  8:13 */     for (int i = 0; i < 10; i++)
 /*  9:   */     {
 /* 10:14 */       BlockPosition localdt = paramdt.offset(paramRandom.nextInt(8) - paramRandom.nextInt(8), paramRandom.nextInt(4) - paramRandom.nextInt(4), paramRandom.nextInt(8) - paramRandom.nextInt(8));
-/* 11:16 */       if (paramaqu.d(localdt))
+/* 11:16 */       if (paramaqu.isEmpty(localdt))
 /* 12:   */       {
 /* 13:17 */         int j = 1 + paramRandom.nextInt(paramRandom.nextInt(3) + 1);
 /* 14:18 */         for (int k = 0; k < j; k++) {

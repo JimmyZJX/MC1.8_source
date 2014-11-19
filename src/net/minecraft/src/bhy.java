@@ -14,7 +14,7 @@ package net.minecraft.src;
 /*  13:    */   public boolean generate(World paramaqu, Random paramRandom, BlockPosition paramdt)
 /*  14:    */   {
 /*  15: 22 */     paramdt = paramdt.offset(-8, 0, -8);
-/*  16: 23 */     while ((paramdt.getY() > 5) && (paramaqu.d(paramdt))) {
+/*  16: 23 */     while ((paramdt.getY() > 5) && (paramaqu.isEmpty(paramdt))) {
 /*  17: 24 */       paramdt = paramdt.down();
 /*  18:    */     }
 /*  19: 26 */     if (paramdt.getY() <= 4) {

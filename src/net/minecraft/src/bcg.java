@@ -66,7 +66,7 @@ package net.minecraft.src;
 /*  65:    */   
 /*  66:    */   private boolean d(World paramaqu, BlockPosition paramdt)
 /*  67:    */   {
-/*  68: 76 */     return !paramaqu.d(paramdt.down());
+/*  68: 76 */     return !paramaqu.isEmpty(paramdt.down());
 /*  69:    */   }
 /*  70:    */   
 /*  71:    */   public boolean a(IBlockAccess paramard, BlockPosition paramdt, EnumDirection paramej)

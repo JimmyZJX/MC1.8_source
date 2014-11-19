@@ -13,13 +13,13 @@ package net.minecraft.src;
 /* 12:   */   public void c()
 /* 13:   */   {
 /* 14:18 */     if (++this.h % 20 * 4 == 0) {
-/* 15:19 */       this.b.c(this.c, BlockList.bQ, 1, this.g);
+/* 15:19 */       this.world.c(this.pos, BlockList.bQ, 1, this.g);
 /* 16:   */     }
 /* 17:22 */     this.f = this.a;
 /* 18:   */     
-/* 19:24 */     int i = this.c.getX();
-/* 20:25 */     int j = this.c.getY();
-/* 21:26 */     int k = this.c.getZ();
+/* 19:24 */     int i = this.pos.getX();
+/* 20:25 */     int j = this.pos.getY();
+/* 21:26 */     int k = this.pos.getZ();
 /* 22:   */     
 /* 23:28 */     float f1 = 0.1F;
 /* 24:   */     double d2;
@@ -28,7 +28,7 @@ package net.minecraft.src;
 /* 27:30 */       double d1 = i + 0.5D;
 /* 28:31 */       d2 = k + 0.5D;
 /* 29:   */       
-/* 30:33 */       this.b.a(d1, j + 0.5D, d2, "random.chestopen", 0.5F, this.b.rng.nextFloat() * 0.1F + 0.9F);
+/* 30:33 */       this.world.a(d1, j + 0.5D, d2, "random.chestopen", 0.5F, this.world.rng.nextFloat() * 0.1F + 0.9F);
 /* 31:   */     }
 /* 32:35 */     if (((this.g == 0) && (this.a > 0.0F)) || ((this.g > 0) && (this.a < 1.0F)))
 /* 33:   */     {
@@ -47,7 +47,7 @@ package net.minecraft.src;
 /* 46:47 */         d2 = i + 0.5D;
 /* 47:48 */         double d3 = k + 0.5D;
 /* 48:   */         
-/* 49:50 */         this.b.a(d2, j + 0.5D, d3, "random.chestclosed", 0.5F, this.b.rng.nextFloat() * 0.1F + 0.9F);
+/* 49:50 */         this.world.a(d2, j + 0.5D, d3, "random.chestclosed", 0.5F, this.world.rng.nextFloat() * 0.1F + 0.9F);
 /* 50:   */       }
 /* 51:52 */       if (this.a < 0.0F) {
 /* 52:53 */         this.a = 0.0F;
@@ -74,21 +74,21 @@ package net.minecraft.src;
 /* 73:   */   public void b()
 /* 74:   */   {
 /* 75:74 */     this.g += 1;
-/* 76:75 */     this.b.c(this.c, BlockList.bQ, 1, this.g);
+/* 76:75 */     this.world.c(this.pos, BlockList.bQ, 1, this.g);
 /* 77:   */   }
 /* 78:   */   
 /* 79:   */   public void d()
 /* 80:   */   {
 /* 81:79 */     this.g -= 1;
-/* 82:80 */     this.b.c(this.c, BlockList.bQ, 1, this.g);
+/* 82:80 */     this.world.c(this.pos, BlockList.bQ, 1, this.g);
 /* 83:   */   }
 /* 84:   */   
 /* 85:   */   public boolean a(EntityPlayer paramahd)
 /* 86:   */   {
-/* 87:84 */     if (this.b.s(this.c) != this) {
+/* 87:84 */     if (this.world.s(this.pos) != this) {
 /* 88:85 */       return false;
 /* 89:   */     }
-/* 90:87 */     if (paramahd.e(this.c.getX() + 0.5D, this.c.getY() + 0.5D, this.c.getZ() + 0.5D) > 64.0D) {
+/* 90:87 */     if (paramahd.e(this.pos.getX() + 0.5D, this.pos.getY() + 0.5D, this.pos.getZ() + 0.5D) > 64.0D) {
 /* 91:88 */       return false;
 /* 92:   */     }
 /* 93:91 */     return true;

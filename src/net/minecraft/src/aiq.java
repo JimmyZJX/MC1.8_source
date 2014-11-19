@@ -15,7 +15,7 @@ package net.minecraft.src;
 /*  14:    */   
 /*  15:    */   public aiq(ahb paramahb, World paramaqu)
 /*  16:    */   {
-/*  17: 46 */     this(paramahb, paramaqu, BlockPosition.a);
+/*  17: 46 */     this(paramahb, paramaqu, BlockPosition.zero);
 /*  18:    */   }
 /*  19:    */   
 /*  20:    */   public aiq(ahb paramahb, World paramaqu, BlockPosition paramdt)
@@ -108,7 +108,7 @@ package net.minecraft.src;
 /* 107:139 */         for (int n = -1; n <= 1; n++) {
 /* 108:140 */           for (int i1 = -1; i1 <= 1; i1++) {
 /* 109:141 */             if ((n != 0) || (i1 != 0)) {
-/* 110:145 */               if ((this.i.d(this.j.offset(i1, 0, n))) && (this.i.d(this.j.offset(i1, 1, n))))
+/* 110:145 */               if ((this.i.isEmpty(this.j.offset(i1, 0, n))) && (this.i.isEmpty(this.j.offset(i1, 1, n))))
 /* 111:    */               {
 /* 112:146 */                 if (this.i.getBlock(this.j.offset(i1 * 2, 0, n * 2)).getProto() == BlockList.bookshelf) {
 /* 113:147 */                   m++;

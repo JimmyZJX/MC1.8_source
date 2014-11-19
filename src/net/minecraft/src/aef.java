@@ -7,7 +7,7 @@ package net.minecraft.src;
 /*   6:    */ {
 /*   7: 22 */   private boolean a = true;
 /*   8: 23 */   private int b = -1;
-/*   9: 24 */   private BlockPosition c = BlockPosition.a;
+/*   9: 24 */   private BlockPosition c = BlockPosition.zero;
 /*  10:    */   
 /*  11:    */   public aef(World paramaqu)
 /*  12:    */   {

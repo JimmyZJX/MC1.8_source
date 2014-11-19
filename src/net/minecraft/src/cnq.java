@@ -33,11 +33,11 @@ package net.minecraft.src;
 /*  32:    */     else
 /*  33:    */     {
 /*  34: 43 */       localObject = parambcr.w();
-/*  35: 44 */       m = parambcr.u();
+/*  35: 44 */       m = parambcr.getData();
 /*  36: 46 */       if (((localObject instanceof auj)) && (m == 0))
 /*  37:    */       {
 /*  38: 47 */         ((auj)localObject).e(parambcr.z(), parambcr.v(), parambcr.z().getBlock(parambcr.v()));
-/*  39: 48 */         m = parambcr.u();
+/*  39: 48 */         m = parambcr.getData();
 /*  40:    */       }
 /*  41: 51 */       parambcr.m();
 /*  42:    */     }

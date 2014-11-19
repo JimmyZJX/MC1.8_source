@@ -3,7 +3,7 @@ package net.minecraft.src;
 /*   2:    */ import java.util.Random;
 /*   3:    */ 
 /*   4:    */ public class bgr
-/*   5:    */   implements bfe
+/*   5:    */   implements IChunkProvider
 /*   6:    */ {
 /*   7:    */   private final World h;
 /*   8:    */   private final boolean i;
@@ -289,7 +289,7 @@ package net.minecraft.src;
 /* 288:309 */     return true;
 /* 289:    */   }
 /* 290:    */   
-/* 291:    */   public void a(bfe parambfe, int paramInt1, int paramInt2)
+/* 291:    */   public void a(IChunkProvider parambfe, int paramInt1, int paramInt2)
 /* 292:    */   {
 /* 293:314 */     avt.M = true;
 /* 294:315 */     BlockPosition localdt = new BlockPosition(paramInt1 * 16, 0, paramInt2 * 16);
@@ -324,7 +324,7 @@ package net.minecraft.src;
 /* 323:353 */     avt.M = false;
 /* 324:    */   }
 /* 325:    */   
-/* 326:    */   public boolean a(bfe parambfe, Chunk parambfh, int paramInt1, int paramInt2)
+/* 326:    */   public boolean a(IChunkProvider parambfe, Chunk parambfh, int paramInt1, int paramInt2)
 /* 327:    */   {
 /* 328:358 */     return false;
 /* 329:    */   }
@@ -346,12 +346,12 @@ package net.minecraft.src;
 /* 345:377 */     return true;
 /* 346:    */   }
 /* 347:    */   
-/* 348:    */   public String f()
+/* 348:    */   public String getName()
 /* 349:    */   {
 /* 350:382 */     return "HellRandomLevelSource";
 /* 351:    */   }
 /* 352:    */   
-/* 353:    */   public List<SpawnListEntry> a(EnumCreatureType paramxp, BlockPosition paramdt)
+/* 353:    */   public List<SpawnListEntry> getSpawnList(EnumCreatureType paramxp, BlockPosition paramdt)
 /* 354:    */   {
 /* 355:388 */     if (paramxp == EnumCreatureType.MONSTER)
 /* 356:    */     {

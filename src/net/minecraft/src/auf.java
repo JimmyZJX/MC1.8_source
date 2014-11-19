@@ -18,7 +18,7 @@ package net.minecraft.src;
 /*  17:    */   public void b(World paramaqu, BlockPosition paramdt, Block parambec, Random paramRandom)
 /*  18:    */   {
 /*  19: 31 */     BlockPosition localdt = paramdt.up();
-/*  20: 32 */     if (!paramaqu.d(localdt)) {
+/*  20: 32 */     if (!paramaqu.isEmpty(localdt)) {
 /*  21: 33 */       return;
 /*  22:    */     }
 /*  23: 36 */     int i = 1;

@@ -37,9 +37,9 @@ package net.minecraft.src;
 /*  36:283 */     this.g = true;
 /*  37:    */   }
 /*  38:    */   
-/*  39:    */   public void b(NBTTagCompound paramfn)
+/*  39:    */   public void writeToNBT(NBTTagCompound paramfn)
 /*  40:    */   {
-/*  41:288 */     super.b(paramfn);
+/*  41:288 */     super.writeToNBT(paramfn);
 /*  42:    */     
 /*  43:290 */     paramfn.setInt("Base", this.a);
 /*  44:291 */     if (this.f != null) {
@@ -47,9 +47,9 @@ package net.minecraft.src;
 /*  46:    */     }
 /*  47:    */   }
 /*  48:    */   
-/*  49:    */   public void a(NBTTagCompound paramfn)
+/*  49:    */   public void readFromNBT(NBTTagCompound paramfn)
 /*  50:    */   {
-/*  51:298 */     super.a(paramfn);
+/*  51:298 */     super.readFromNBT(paramfn);
 /*  52:    */     
 /*  53:300 */     this.a = paramfn.getInteger("Base");
 /*  54:301 */     this.f = paramfn.c("Patterns", 10);
@@ -63,8 +63,8 @@ package net.minecraft.src;
 /*  62:    */   public id<ik> x_()
 /*  63:    */   {
 /*  64:311 */     NBTTagCompound localfn = new NBTTagCompound();
-/*  65:312 */     b(localfn);
-/*  66:313 */     return new iu(this.c, 6, localfn);
+/*  65:312 */     writeToNBT(localfn);
+/*  66:313 */     return new iu(this.pos, 6, localfn);
 /*  67:    */   }
 /*  68:    */   
 /*  69:    */   public int b()

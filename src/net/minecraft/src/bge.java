@@ -25,7 +25,7 @@ package net.minecraft.src;
 /* 24:   */     }
 /* 25:   */   }
 /* 26:   */   
-/* 27:   */   public bfe c()
+/* 27:   */   public IChunkProvider c()
 /* 28:   */   {
 /* 29:36 */     return new bgr(this.world, this.world.getWorldInfo().s(), this.world.J());
 /* 30:   */   }

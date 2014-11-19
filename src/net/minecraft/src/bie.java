@@ -45,7 +45,7 @@ package net.minecraft.src;
 /*  44: 71 */             return false;
 /*  45:    */           }
 /*  46: 74 */           if (((i6 == k) || (i6 == m) || (i8 == i3) || (i8 == i4)) && 
-/*  47: 75 */             (i7 == 0) && (paramaqu.d(localdt1)) && (paramaqu.d(localdt1.up()))) {
+/*  47: 75 */             (i7 == 0) && (paramaqu.isEmpty(localdt1)) && (paramaqu.isEmpty(localdt1.up()))) {
 /*  48: 76 */             i5++;
 /*  49:    */           }
 /*  50:    */         }
@@ -85,7 +85,7 @@ package net.minecraft.src;
 /*  84:116 */         int i9 = paramdt.getY();
 /*  85:117 */         int i10 = paramdt.getZ() + paramRandom.nextInt(i2 * 2 + 1) - i2;
 /*  86:118 */         BlockPosition localdt2 = new BlockPosition(i8, i9, i10);
-/*  87:120 */         if (paramaqu.d(localdt2))
+/*  87:120 */         if (paramaqu.isEmpty(localdt2))
 /*  88:    */         {
 /*  89:124 */           int i11 = 0;
 /*  90:125 */           for (Object localObject1 = en.HORIZONTAL.iterator(); ((Iterator)localObject1).hasNext();)

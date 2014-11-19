@@ -32,7 +32,7 @@ package net.minecraft.src;
 /* 31:44 */             BlockPosition localdt = paramdt.offset(i, k, j);
 /* 32:45 */             if (paramaqu.getBlock(localdt).getProto() == BlockList.bookshelf)
 /* 33:   */             {
-/* 34:46 */               if (!paramaqu.d(paramdt.offset(i / 2, 0, j / 2))) {
+/* 34:46 */               if (!paramaqu.isEmpty(paramdt.offset(i / 2, 0, j / 2))) {
 /* 35:   */                 break;
 /* 36:   */               }
 /* 37:50 */               paramaqu.a(ew.z, paramdt.getX() + 0.5D, paramdt.getY() + 2.0D, paramdt.getZ() + 0.5D, i + paramRandom.nextFloat() - 0.5D, k - paramRandom.nextFloat() - 1.0F, j + paramRandom.nextFloat() - 0.5D, new int[0]);

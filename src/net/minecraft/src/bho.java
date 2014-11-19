@@ -17,7 +17,7 @@ package net.minecraft.src;
 /* 16:25 */     for (int i = 0; i < 64; i++)
 /* 17:   */     {
 /* 18:26 */       BlockPosition localdt = paramdt.offset(paramRandom.nextInt(8) - paramRandom.nextInt(8), paramRandom.nextInt(4) - paramRandom.nextInt(4), paramRandom.nextInt(8) - paramRandom.nextInt(8));
-/* 19:27 */       if ((paramaqu.d(localdt)) && ((!paramaqu.t.o()) || (localdt.getY() < 254)) && 
+/* 19:27 */       if ((paramaqu.isEmpty(localdt)) && ((!paramaqu.t.o()) || (localdt.getY() < 254)) && 
 /* 20:28 */         (BlockList.cF.c(paramaqu, localdt)))
 /* 21:   */       {
 /* 22:29 */         BlockList.cF.a(paramaqu, localdt, this.a, 2);

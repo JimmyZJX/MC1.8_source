@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*  8:   */   protected int a;
 /*  9:   */   private int e;
 /* 10:   */   private int f;
-/* 11:19 */   protected BlockPosition b = BlockPosition.a;
+/* 11:19 */   protected BlockPosition b = BlockPosition.zero;
 /* 12:   */   private boolean g;
 /* 13:   */   private int h;
 /* 14:   */   

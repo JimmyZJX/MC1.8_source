@@ -18,7 +18,7 @@ package net.minecraft.src;
 /* 17:   */   {
 /* 18:22 */     while (paramdt.getY() > 3)
 /* 19:   */     {
-/* 20:23 */       if (!paramaqu.d(paramdt.down()))
+/* 20:23 */       if (!paramaqu.isEmpty(paramdt.down()))
 /* 21:   */       {
 /* 22:24 */         ProtoBlock localatr = paramaqu.getBlock(paramdt.down()).getProto();
 /* 23:25 */         if ((localatr == BlockList.grass) || (localatr == BlockList.dirt) || (localatr == BlockList.stone)) {

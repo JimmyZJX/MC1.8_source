@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*  8:14 */     for (int i = 0; i < 20; i++)
 /*  9:   */     {
 /* 10:15 */       BlockPosition localdt1 = paramdt.offset(paramRandom.nextInt(4) - paramRandom.nextInt(4), 0, paramRandom.nextInt(4) - paramRandom.nextInt(4));
-/* 11:17 */       if (paramaqu.d(localdt1))
+/* 11:17 */       if (paramaqu.isEmpty(localdt1))
 /* 12:   */       {
 /* 13:18 */         BlockPosition localdt2 = localdt1.down();
 /* 14:20 */         if ((paramaqu.getBlock(localdt2.west()).getProto().getMaterial() == Material.water) || (paramaqu.getBlock(localdt2.east()).getProto().getMaterial() == Material.water) || (paramaqu.getBlock(localdt2.north()).getProto().getMaterial() == Material.water) || (paramaqu.getBlock(localdt2.south()).getProto().getMaterial() == Material.water))

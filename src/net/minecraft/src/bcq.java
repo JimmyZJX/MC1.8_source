@@ -60,20 +60,20 @@ package net.minecraft.src;
 /*  59: 85 */       this.h = 400;
 /*  60: 86 */       this.j = this.g[3].getItem();
 /*  61:    */     }
-/*  62: 89 */     if (!this.b.isClient)
+/*  62: 89 */     if (!this.world.isClient)
 /*  63:    */     {
 /*  64: 90 */       boolean[] arrayOfBoolean = m();
 /*  65: 91 */       if (!Arrays.equals(arrayOfBoolean, this.i))
 /*  66:    */       {
 /*  67: 92 */         this.i = arrayOfBoolean;
-/*  68: 93 */         Block localbec = this.b.getBlock(v());
+/*  68: 93 */         Block localbec = this.world.getBlock(v());
 /*  69: 94 */         if (!(localbec.getProto() instanceof aub)) {
 /*  70: 95 */           return;
 /*  71:    */         }
 /*  72: 97 */         for (int m = 0; m < aub.a.length; m++) {
 /*  73: 98 */           localbec = localbec.a(aub.a[m], Boolean.valueOf(arrayOfBoolean[m]));
 /*  74:    */         }
-/*  75:100 */         this.b.setBlock(this.c, localbec, 2);
+/*  75:100 */         this.world.setBlock(this.pos, localbec, 2);
 /*  76:    */       }
 /*  77:    */     }
 /*  78:    */   }
@@ -161,9 +161,9 @@ package net.minecraft.src;
 /* 160:228 */     return paramInt;
 /* 161:    */   }
 /* 162:    */   
-/* 163:    */   public void a(NBTTagCompound paramfn)
+/* 163:    */   public void readFromNBT(NBTTagCompound paramfn)
 /* 164:    */   {
-/* 165:234 */     super.a(paramfn);
+/* 165:234 */     super.readFromNBT(paramfn);
 /* 166:    */     
 /* 167:236 */     fv localfv = paramfn.c("Items", 10);
 /* 168:237 */     this.g = new ItemStack[n_()];
@@ -181,9 +181,9 @@ package net.minecraft.src;
 /* 180:    */     }
 /* 181:    */   }
 /* 182:    */   
-/* 183:    */   public void b(NBTTagCompound paramfn)
+/* 183:    */   public void writeToNBT(NBTTagCompound paramfn)
 /* 184:    */   {
-/* 185:254 */     super.b(paramfn);
+/* 185:254 */     super.writeToNBT(paramfn);
 /* 186:    */     
 /* 187:256 */     paramfn.setShort("BrewTime", (short)this.h);
 /* 188:257 */     fv localfv = new fv();
@@ -246,10 +246,10 @@ package net.minecraft.src;
 /* 245:    */   
 /* 246:    */   public boolean a(EntityPlayer paramahd)
 /* 247:    */   {
-/* 248:319 */     if (this.b.s(this.c) != this) {
+/* 248:319 */     if (this.world.s(this.pos) != this) {
 /* 249:320 */       return false;
 /* 250:    */     }
-/* 251:322 */     if (paramahd.e(this.c.getX() + 0.5D, this.c.getY() + 0.5D, this.c.getZ() + 0.5D) > 64.0D) {
+/* 251:322 */     if (paramahd.e(this.pos.getX() + 0.5D, this.pos.getY() + 0.5D, this.pos.getZ() + 0.5D) > 64.0D) {
 /* 252:323 */       return false;
 /* 253:    */     }
 /* 254:325 */     return true;

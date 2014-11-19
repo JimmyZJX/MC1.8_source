@@ -61,7 +61,7 @@ package net.minecraft.src;
 /*  60:    */         }
 /*  61:    */       }
 /*  62: 77 */       else if ((paramArrayOfString[5].equals("keep")) && 
-/*  63: 78 */         (!localaqu.d(localdt)))
+/*  63: 78 */         (!localaqu.isEmpty(localdt)))
 /*  64:    */       {
 /*  65: 79 */         throw new CommandException("commands.setblock.noChange", new Object[0]);
 /*  66:    */       }
@@ -87,7 +87,7 @@ package net.minecraft.src;
 /*  86:101 */         localfn.setInt("y", localdt.getY());
 /*  87:102 */         localfn.setInt("z", localdt.getZ());
 /*  88:    */         
-/*  89:104 */         localbcm.a(localfn);
+/*  89:104 */         localbcm.readFromNBT(localfn);
 /*  90:    */       }
 /*  91:    */     }
 /*  92:107 */     localaqu.b(localdt, localbec.getProto());

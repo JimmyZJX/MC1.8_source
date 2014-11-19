@@ -138,7 +138,7 @@ package net.minecraft.src;
 /* 138:    */   public EntityItem a(boolean paramBoolean)
 /* 139:    */   {
 /* 140:182 */     mm localmm = paramBoolean ? mm.d : mm.e;
-/* 141:183 */     this.a.a(new ml(localmm, BlockPosition.a, EnumDirection.DOWN));
+/* 141:183 */     this.a.a(new ml(localmm, BlockPosition.zero, EnumDirection.DOWN));
 /* 142:184 */     return null;
 /* 143:    */   }
 /* 144:    */   

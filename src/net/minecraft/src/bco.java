@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*   7:    */   
 /*   8:    */   public String call()
 /*   9:    */   {
-/*  10:199 */     int i = ProtoBlock.a(this.a.b.getBlock(this.a.c).getProto());
+/*  10:199 */     int i = ProtoBlock.a(this.a.world.getBlock(this.a.pos).getProto());
 /*  11:    */     try
 /*  12:    */     {
 /*  13:201 */       return String.format("ID #%d (%s // %s)", new Object[] { Integer.valueOf(i), ProtoBlock.c(i).a(), ProtoBlock.c(i).getClass().getCanonicalName() });

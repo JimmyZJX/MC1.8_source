@@ -5,15 +5,15 @@ package net.minecraft.src;
 /*  4:   */   public byte a;
 /*  5:   */   public boolean f;
 /*  6:   */   
-/*  7:   */   public void b(NBTTagCompound paramfn)
+/*  7:   */   public void writeToNBT(NBTTagCompound paramfn)
 /*  8:   */   {
-/*  9:16 */     super.b(paramfn);
+/*  9:16 */     super.writeToNBT(paramfn);
 /* 10:17 */     paramfn.setByte("note", this.a);
 /* 11:   */   }
 /* 12:   */   
-/* 13:   */   public void a(NBTTagCompound paramfn)
+/* 13:   */   public void readFromNBT(NBTTagCompound paramfn)
 /* 14:   */   {
-/* 15:22 */     super.a(paramfn);
+/* 15:22 */     super.readFromNBT(paramfn);
 /* 16:23 */     this.a = paramfn.d("note");
 /* 17:24 */     this.a = ((byte)MathUtils.clamp(this.a, 0, 24));
 /* 18:   */   }

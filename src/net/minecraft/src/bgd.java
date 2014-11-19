@@ -49,7 +49,7 @@ package net.minecraft.src;
 /*  48:    */     }
 /*  49:    */   }
 /*  50:    */   
-/*  51:    */   public bfe c()
+/*  51:    */   public IChunkProvider c()
 /*  52:    */   {
 /*  53: 67 */     if (this.h == WorldType.FLAT) {
 /*  54: 68 */       return new bgq(this.world, this.world.J(), this.world.getWorldInfo().s(), this.i);

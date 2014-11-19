@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*   4:    */ import org.apache.logging.log4j.Logger;
 /*   5:    */ 
 /*   6:    */ public class cel
-/*   7:    */   implements bfe
+/*   7:    */   implements IChunkProvider
 /*   8:    */ {
 /*   9: 20 */   private static final Logger a = LogManager.getLogger();
 /*  10:    */   private Chunk b;
@@ -78,19 +78,19 @@ package net.minecraft.src;
 /*  77: 92 */     return false;
 /*  78:    */   }
 /*  79:    */   
-/*  80:    */   public void a(bfe parambfe, int paramInt1, int paramInt2) {}
+/*  80:    */   public void a(IChunkProvider parambfe, int paramInt1, int paramInt2) {}
 /*  81:    */   
-/*  82:    */   public boolean a(bfe parambfe, Chunk parambfh, int paramInt1, int paramInt2)
+/*  82:    */   public boolean a(IChunkProvider parambfe, Chunk parambfh, int paramInt1, int paramInt2)
 /*  83:    */   {
 /*  84:101 */     return false;
 /*  85:    */   }
 /*  86:    */   
-/*  87:    */   public String f()
+/*  87:    */   public String getName()
 /*  88:    */   {
 /*  89:106 */     return "MultiplayerChunkCache: " + this.c.a() + ", " + this.d.size();
 /*  90:    */   }
 /*  91:    */   
-/*  92:    */   public List<SpawnListEntry> a(EnumCreatureType paramxp, BlockPosition paramdt)
+/*  92:    */   public List<SpawnListEntry> getSpawnList(EnumCreatureType paramxp, BlockPosition paramdt)
 /*  93:    */   {
 /*  94:111 */     return null;
 /*  95:    */   }

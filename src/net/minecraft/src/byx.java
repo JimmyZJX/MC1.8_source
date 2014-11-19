@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*  5:   */   
 /*  6:   */   public byx(ahb paramahb, World paramaqu)
 /*  7:   */   {
-/*  8:16 */     this(paramahb, paramaqu, BlockPosition.a);
+/*  8:16 */     this(paramahb, paramaqu, BlockPosition.zero);
 /*  9:   */   }
 /* 10:   */   
 /* 11:   */   public byx(ahb paramahb, World paramaqu, BlockPosition paramdt)

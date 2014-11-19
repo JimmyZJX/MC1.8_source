@@ -32,7 +32,7 @@ package net.minecraft.src;
 /*  31:    */   
 /*  32:    */   public void c()
 /*  33:    */   {
-/*  34: 68 */     if (this.b.K() % 80L == 0L) {
+/*  34: 68 */     if (this.world.K() % 80L == 0L) {
 /*  35: 69 */       m();
 /*  36:    */     }
 /*  37:    */   }
@@ -47,18 +47,18 @@ package net.minecraft.src;
 /*  46:    */   {
 /*  47:    */     Iterator<EntityPlayer> localIterator;
 /*  48:    */     EntityPlayer localahd;
-/*  49: 79 */     if ((this.i) && (this.j > 0) && (!this.b.isClient) && (this.k > 0))
+/*  49: 79 */     if ((this.i) && (this.j > 0) && (!this.world.isClient) && (this.k > 0))
 /*  50:    */     {
 /*  51: 80 */       double d = this.j * 10 + 10;
 /*  52: 81 */       int i1 = 0;
 /*  53: 82 */       if ((this.j >= 4) && (this.k == this.l)) {
 /*  54: 83 */         i1 = 1;
 /*  55:    */       }
-/*  56: 86 */       int i2 = this.c.getX();
-/*  57: 87 */       int i3 = this.c.getY();
-/*  58: 88 */       int i4 = this.c.getZ();
-/*  59: 89 */       AABB localbrt = new AABB(i2, i3, i4, i2 + 1, i3 + 1, i4 + 1).expand(d, d, d).addCoord(0.0D, this.b.U(), 0.0D);
-/*  60: 90 */       List<EntityPlayer> localList = this.b.a(EntityPlayer.class, localbrt);
+/*  56: 86 */       int i2 = this.pos.getX();
+/*  57: 87 */       int i3 = this.pos.getY();
+/*  58: 88 */       int i4 = this.pos.getZ();
+/*  59: 89 */       AABB localbrt = new AABB(i2, i3, i4, i2 + 1, i3 + 1, i4 + 1).expand(d, d, d).addCoord(0.0D, this.world.U(), 0.0D);
+/*  60: 90 */       List<EntityPlayer> localList = this.world.a(EntityPlayer.class, localbrt);
 /*  61: 91 */       for (localIterator = localList.iterator(); localIterator.hasNext();)
 /*  62:    */       {
 /*  63: 91 */         localahd = (EntityPlayer)localIterator.next();
@@ -78,9 +78,9 @@ package net.minecraft.src;
 /*  77:    */   {
 /*  78:104 */     int i1 = this.j;
 /*  79:    */     
-/*  80:106 */     int i2 = this.c.getX();
-/*  81:107 */     int i3 = this.c.getY();
-/*  82:108 */     int i4 = this.c.getZ();
+/*  80:106 */     int i2 = this.pos.getX();
+/*  81:107 */     int i3 = this.pos.getY();
+/*  82:108 */     int i4 = this.pos.getZ();
 /*  83:    */     
 /*  84:110 */     this.j = 0;
 /*  85:111 */     this.f.clear();
@@ -89,10 +89,10 @@ package net.minecraft.src;
 /*  88:114 */     bcl localbcl = new bcl(EntitySheep.a(EnumDyeColor.WHITE));
 /*  89:115 */     this.f.add(localbcl);
 /*  90:116 */     int i5 = 1;
-/*  91:118 */     for (int i6 = i3 + 1; i6 < this.b.V(); i6++)
+/*  91:118 */     for (int i6 = i3 + 1; i6 < this.world.V(); i6++)
 /*  92:    */     {
 /*  93:119 */       BlockPosition localdt = new BlockPosition(i2, i6, i4);
-/*  94:120 */       Block localbec = this.b.getBlock(localdt);
+/*  94:120 */       Block localbec = this.world.getBlock(localdt);
 /*  95:    */       float[] arrayOfFloat;
 /*  96:122 */       if (localbec.getProto() == BlockList.cG)
 /*  97:    */       {
@@ -139,7 +139,7 @@ package net.minecraft.src;
 /* 138:160 */         for (int i9 = i2 - i6; (i9 <= i2 + i6) && (i8 != 0); i9++) {
 /* 139:161 */           for (int i10 = i4 - i6; i10 <= i4 + i6; i10++)
 /* 140:    */           {
-/* 141:162 */             ProtoBlock localatr = this.b.getBlock(new BlockPosition(i9, i7, i10)).getProto();
+/* 141:162 */             ProtoBlock localatr = this.world.getBlock(new BlockPosition(i9, i7, i10)).getProto();
 /* 142:163 */             if ((localatr != BlockList.emeraldBlock) && (localatr != BlockList.R) && (localatr != BlockList.diamondBlock) && (localatr != BlockList.S))
 /* 143:    */             {
 /* 144:164 */               i8 = 0;
@@ -156,9 +156,9 @@ package net.minecraft.src;
 /* 155:178 */         this.i = false;
 /* 156:    */       }
 /* 157:    */     }
-/* 158:182 */     if ((!this.b.isClient) && 
+/* 158:182 */     if ((!this.world.isClient) && 
 /* 159:183 */       (this.j == 4) && (i1 < this.j)) {
-/* 160:184 */       for (EntityPlayer localahd : this.b.a(EntityPlayer.class, new AABB(i2, i3, i4, i2, i3 - 4, i4).expand(10.0D, 5.0D, 10.0D))) {
+/* 160:184 */       for (EntityPlayer localahd : this.world.a(EntityPlayer.class, new AABB(i2, i3, i4, i2, i3 - 4, i4).expand(10.0D, 5.0D, 10.0D))) {
 /* 161:185 */         localahd.b(AchievementList.K);
 /* 162:    */       }
 /* 163:    */     }
@@ -174,8 +174,8 @@ package net.minecraft.src;
 /* 173:196 */     if (!this.i) {
 /* 174:197 */       return 0.0F;
 /* 175:    */     }
-/* 176:200 */     int i1 = (int)(this.b.K() - this.g);
-/* 177:201 */     this.g = this.b.K();
+/* 176:200 */     int i1 = (int)(this.world.K() - this.g);
+/* 177:201 */     this.g = this.world.K();
 /* 178:202 */     if (i1 > 1)
 /* 179:    */     {
 /* 180:203 */       this.h -= i1 / 40.0F;
@@ -193,8 +193,8 @@ package net.minecraft.src;
 /* 192:    */   public id<ik> x_()
 /* 193:    */   {
 /* 194:265 */     NBTTagCompound localfn = new NBTTagCompound();
-/* 195:266 */     b(localfn);
-/* 196:267 */     return new iu(this.c, 3, localfn);
+/* 195:266 */     writeToNBT(localfn);
+/* 196:267 */     return new iu(this.pos, 3, localfn);
 /* 197:    */   }
 /* 198:    */   
 /* 199:    */   public double s()
@@ -202,18 +202,18 @@ package net.minecraft.src;
 /* 201:272 */     return 65536.0D;
 /* 202:    */   }
 /* 203:    */   
-/* 204:    */   public void a(NBTTagCompound paramfn)
+/* 204:    */   public void readFromNBT(NBTTagCompound paramfn)
 /* 205:    */   {
-/* 206:277 */     super.a(paramfn);
+/* 206:277 */     super.readFromNBT(paramfn);
 /* 207:    */     
 /* 208:279 */     this.k = paramfn.getInteger("Primary");
 /* 209:280 */     this.l = paramfn.getInteger("Secondary");
 /* 210:281 */     this.j = paramfn.getInteger("Levels");
 /* 211:    */   }
 /* 212:    */   
-/* 213:    */   public void b(NBTTagCompound paramfn)
+/* 213:    */   public void writeToNBT(NBTTagCompound paramfn)
 /* 214:    */   {
-/* 215:286 */     super.b(paramfn);
+/* 215:286 */     super.writeToNBT(paramfn);
 /* 216:    */     
 /* 217:288 */     paramfn.setInt("Primary", this.k);
 /* 218:289 */     paramfn.setInt("Secondary", this.l);
@@ -290,10 +290,10 @@ package net.minecraft.src;
 /* 289:    */   
 /* 290:    */   public boolean a(EntityPlayer paramahd)
 /* 291:    */   {
-/* 292:363 */     if (this.b.s(this.c) != this) {
+/* 292:363 */     if (this.world.s(this.pos) != this) {
 /* 293:364 */       return false;
 /* 294:    */     }
-/* 295:366 */     if (paramahd.e(this.c.getX() + 0.5D, this.c.getY() + 0.5D, this.c.getZ() + 0.5D) > 64.0D) {
+/* 295:366 */     if (paramahd.e(this.pos.getX() + 0.5D, this.pos.getY() + 0.5D, this.pos.getZ() + 0.5D) > 64.0D) {
 /* 296:367 */       return false;
 /* 297:    */     }
 /* 298:369 */     return true;

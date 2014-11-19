@@ -11,9 +11,9 @@ package net.minecraft.src;
 /*  12:    */   private int f;
 /*  13: 26 */   private GameProfile g = null;
 /*  14:    */   
-/*  15:    */   public void b(NBTTagCompound paramfn)
+/*  15:    */   public void writeToNBT(NBTTagCompound paramfn)
 /*  16:    */   {
-/*  17: 30 */     super.b(paramfn);
+/*  17: 30 */     super.writeToNBT(paramfn);
 /*  18: 31 */     paramfn.setByte("SkullType", (byte)(this.a & 0xFF));
 /*  19: 32 */     paramfn.setByte("Rot", (byte)(this.f & 0xFF));
 /*  20: 34 */     if (this.g != null)
@@ -24,9 +24,9 @@ package net.minecraft.src;
 /*  25:    */     }
 /*  26:    */   }
 /*  27:    */   
-/*  28:    */   public void a(NBTTagCompound paramfn)
+/*  28:    */   public void readFromNBT(NBTTagCompound paramfn)
 /*  29:    */   {
-/*  30: 43 */     super.a(paramfn);
+/*  30: 43 */     super.readFromNBT(paramfn);
 /*  31: 44 */     this.a = paramfn.d("SkullType");
 /*  32: 45 */     this.f = paramfn.d("Rot");
 /*  33: 47 */     if (this.a == 3) {
@@ -54,8 +54,8 @@ package net.minecraft.src;
 /*  55:    */   public id<ik> x_()
 /*  56:    */   {
 /*  57: 67 */     NBTTagCompound localfn = new NBTTagCompound();
-/*  58: 68 */     b(localfn);
-/*  59: 69 */     return new iu(this.c, 4, localfn);
+/*  58: 68 */     writeToNBT(localfn);
+/*  59: 69 */     return new iu(this.pos, 4, localfn);
 /*  60:    */   }
 /*  61:    */   
 /*  62:    */   public void a(int paramInt)

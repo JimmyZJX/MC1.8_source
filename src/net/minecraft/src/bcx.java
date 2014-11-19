@@ -99,9 +99,9 @@ package net.minecraft.src;
 /*  98:127 */     return this.a != null;
 /*  99:    */   }
 /* 100:    */   
-/* 101:    */   public void a(NBTTagCompound paramfn)
+/* 101:    */   public void readFromNBT(NBTTagCompound paramfn)
 /* 102:    */   {
-/* 103:133 */     super.a(paramfn);
+/* 103:133 */     super.readFromNBT(paramfn);
 /* 104:134 */     fv localfv = paramfn.c("Items", 10);
 /* 105:135 */     this.g = new ItemStack[n_()];
 /* 106:136 */     for (int i = 0; i < localfv.c(); i++)
@@ -117,9 +117,9 @@ package net.minecraft.src;
 /* 116:    */     }
 /* 117:    */   }
 /* 118:    */   
-/* 119:    */   public void b(NBTTagCompound paramfn)
+/* 119:    */   public void writeToNBT(NBTTagCompound paramfn)
 /* 120:    */   {
-/* 121:150 */     super.b(paramfn);
+/* 121:150 */     super.writeToNBT(paramfn);
 /* 122:151 */     fv localfv = new fv();
 /* 123:153 */     for (int i = 0; i < this.g.length; i++) {
 /* 124:154 */       if (this.g[i] != null)
@@ -143,10 +143,10 @@ package net.minecraft.src;
 /* 142:    */   
 /* 143:    */   public boolean a(EntityPlayer paramahd)
 /* 144:    */   {
-/* 145:174 */     if (this.b.s(this.c) != this) {
+/* 145:174 */     if (this.world.s(this.pos) != this) {
 /* 146:175 */       return false;
 /* 147:    */     }
-/* 148:177 */     if (paramahd.e(this.c.getX() + 0.5D, this.c.getY() + 0.5D, this.c.getZ() + 0.5D) > 64.0D) {
+/* 148:177 */     if (paramahd.e(this.pos.getX() + 0.5D, this.pos.getY() + 0.5D, this.pos.getZ() + 0.5D) > 64.0D) {
 /* 149:178 */       return false;
 /* 150:    */     }
 /* 151:180 */     return true;

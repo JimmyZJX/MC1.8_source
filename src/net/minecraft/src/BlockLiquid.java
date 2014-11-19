@@ -60,7 +60,7 @@ package net.minecraft.src;
 /* 59:62 */       for (int j = 0; j < 3; j++)
 /* 60:   */       {
 /* 61:63 */         BlockPosition localdt2 = paramdt.offset(paramRandom.nextInt(3) - 1, 0, paramRandom.nextInt(3) - 1);
-/* 62:64 */         if ((paramaqu.d(localdt2.up())) && (m(paramaqu, localdt2))) {
+/* 62:64 */         if ((paramaqu.isEmpty(localdt2.up())) && (m(paramaqu, localdt2))) {
 /* 63:65 */           paramaqu.setBlock(localdt2.up(), BlockList.ab.instance());
 /* 64:   */         }
 /* 65:   */       }

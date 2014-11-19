@@ -20,7 +20,7 @@ package net.minecraft.src;
 /*  19: 32 */     if ((paramaqu.getBlock(paramdt.down()).getProto() != BlockList.reeds) && (!e(paramaqu, paramdt, parambec))) {
 /*  20: 33 */       return;
 /*  21:    */     }
-/*  22: 36 */     if (paramaqu.d(paramdt.up()))
+/*  22: 36 */     if (paramaqu.isEmpty(paramdt.up()))
 /*  23:    */     {
 /*  24: 37 */       int i = 1;
 /*  25: 38 */       while (paramaqu.getBlock(paramdt.down(i)).getProto() == this) {

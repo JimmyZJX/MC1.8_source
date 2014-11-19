@@ -94,7 +94,7 @@ package net.minecraft.src;
 /*  93:    */   
 /*  94:    */   private void b(World paramaqu, Random paramRandom, BlockPosition paramdt, int paramInt)
 /*  95:    */   {
-/*  96: 97 */     if ((paramRandom.nextInt(3) > 0) && (paramaqu.d(paramdt))) {
+/*  96: 97 */     if ((paramRandom.nextInt(3) > 0) && (paramaqu.isEmpty(paramdt))) {
 /*  97: 98 */       setBlock(paramaqu, paramdt, BlockList.vine, paramInt);
 /*  98:    */     }
 /*  99:    */   }

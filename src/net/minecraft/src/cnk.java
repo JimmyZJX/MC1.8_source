@@ -22,7 +22,7 @@ package net.minecraft.src;
 /*  21:    */   {
 /*  22: 33 */     int i = parambci.z() != null ? 1 : 0;
 /*  23: 34 */     int j = (i == 0) || (parambci.w() == BlockList.cK) ? 1 : 0;
-/*  24: 35 */     int f1 = i != 0 ? parambci.u() : 0;
+/*  24: 35 */     int f1 = i != 0 ? parambci.getData() : 0;
 /*  25: 36 */     long l = i != 0 ? parambci.z().K() : 0L;
 /*  26:    */     
 /*  27: 38 */     cjm.glPushMatrix();

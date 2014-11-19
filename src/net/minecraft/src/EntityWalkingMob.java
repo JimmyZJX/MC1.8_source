@@ -14,7 +14,7 @@ package net.minecraft.src;
 /*  13: 19 */     this.c = new zo(this, 1.0D);
 /*  14:    */   }
 /*  15:    */   
-/*  16: 22 */   private BlockPosition a = BlockPosition.a;
+/*  16: 22 */   private BlockPosition a = BlockPosition.zero;
 /*  17: 23 */   private float b = -1.0F;
 /*  18:    */   private zb c;
 /*  19:    */   private boolean bk;

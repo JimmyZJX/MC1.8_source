@@ -8,8 +8,8 @@ package net.minecraft.src;
 /*   9:    */ {
 /*  10:    */   private World a;
 /*  11: 31 */   private final List<abh> b = Lists.newArrayList();
-/*  12: 33 */   private BlockPosition c = BlockPosition.a;
-/*  13: 34 */   private BlockPosition d = BlockPosition.a;
+/*  12: 33 */   private BlockPosition c = BlockPosition.zero;
+/*  13: 34 */   private BlockPosition d = BlockPosition.zero;
 /*  14:    */   private int e;
 /*  15:    */   private int f;
 /*  16:    */   private int g;

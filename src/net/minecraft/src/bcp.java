@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*   7:    */   
 /*   8:    */   public String call()
 /*   9:    */   {
-/*  10:211 */     Block localbec = this.a.b.getBlock(this.a.c);
+/*  10:211 */     Block localbec = this.a.world.getBlock(this.a.pos);
 /*  11:212 */     int i = localbec.getProto().c(localbec);
 /*  12:213 */     if (i < 0) {
 /*  13:214 */       return "Unknown? (Got " + i + ")";

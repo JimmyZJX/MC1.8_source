@@ -40,7 +40,7 @@ package net.minecraft.src;
 /*  36:    */   private int T;
 /*  37: 92 */   private static final List<vl> U = Lists.newArrayList(new vl[] { new vl(ItemList.stick, 0, 1, 3, 10), new vl(Item.fromProtoBlock(BlockList.planks), 0, 1, 3, 10), new vl(Item.fromProtoBlock(BlockList.log), 0, 1, 3, 10), new vl(ItemList.t, 0, 1, 1, 3), new vl(ItemList.p, 0, 1, 1, 5), new vl(ItemList.s, 0, 1, 1, 3), new vl(ItemList.o, 0, 1, 1, 5), new vl(ItemList.apple, 0, 2, 3, 5), new vl(ItemList.P, 0, 2, 3, 3), new vl(Item.fromProtoBlock(BlockList.log2), 0, 1, 3, 10) });
 /*  38:    */   
-/*  39:    */   public WorldServer(MinecraftServer paramMinecraftServer, bqy parambqy, WorldInfo parambqo, int paramInt, uw paramuw)
+/*  39:    */   public WorldServer(MinecraftServer paramMinecraftServer, bqy parambqy, WorldInfo parambqo, int paramInt, Profiler paramuw)
 /*  40:    */   {
 /*  41:106 */     super(parambqy, parambqo, bgd.a(paramInt), paramuw, false);
 /*  42:107 */     this.I = paramMinecraftServer;
@@ -152,7 +152,7 @@ package net.minecraft.src;
 /* 148:    */   
 /* 149:    */   public SpawnListEntry getSpawnEntry(EnumCreatureType paramxp, BlockPosition paramdt)
 /* 150:    */   {
-/* 151:222 */     List<SpawnListEntry> localList = N().a(paramxp, paramdt);
+/* 151:222 */     List<SpawnListEntry> localList = N().getSpawnList(paramxp, paramdt);
 /* 152:223 */     if ((localList == null) || (localList.isEmpty())) {
 /* 153:224 */       return null;
 /* 154:    */     }
@@ -161,7 +161,7 @@ package net.minecraft.src;
 /* 157:    */   
 /* 158:    */   public boolean a(EnumCreatureType paramxp, SpawnListEntry paramarq, BlockPosition paramdt)
 /* 159:    */   {
-/* 160:231 */     List<SpawnListEntry> localList = N().a(paramxp, paramdt);
+/* 160:231 */     List<SpawnListEntry> localList = N().getSpawnList(paramxp, paramdt);
 /* 161:232 */     if ((localList == null) || (localList.isEmpty())) {
 /* 162:233 */       return false;
 /* 163:    */     }
@@ -550,7 +550,7 @@ package net.minecraft.src;
 /* 546:609 */     return this.I.af();
 /* 547:    */   }
 /* 548:    */   
-/* 549:    */   protected bfe k()
+/* 549:    */   protected IChunkProvider k()
 /* 550:    */   {
 /* 551:627 */     bfq localbfq = this.w.a(this.t);
 /* 552:628 */     this.b = new qs(this, localbfq, this.t.c());
@@ -621,12 +621,12 @@ package net.minecraft.src;
 /* 617:    */   {
 /* 618:689 */     if (!this.t.e())
 /* 619:    */     {
-/* 620:690 */       this.worldInfo.a(BlockPosition.a.up(this.t.i()));
+/* 620:690 */       this.worldInfo.a(BlockPosition.zero.up(this.t.i()));
 /* 621:691 */       return;
 /* 622:    */     }
 /* 623:694 */     if (this.worldInfo.u() == WorldType.DEBUG_ALL_BLOCK_STATES)
 /* 624:    */     {
-/* 625:695 */       this.worldInfo.a(BlockPosition.a.up());
+/* 625:695 */       this.worldInfo.a(BlockPosition.zero.up());
 /* 626:696 */       return;
 /* 627:    */     }
 /* 628:699 */     this.y = true;

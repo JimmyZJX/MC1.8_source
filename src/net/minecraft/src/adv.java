@@ -100,7 +100,7 @@ package net.minecraft.src;
 /* 100:115 */               if (localbcm != null)
 /* 101:    */               {
 /* 102:116 */                 NBTTagCompound localfn = new NBTTagCompound();
-/* 103:117 */                 localbcm.b(localfn);
+/* 103:117 */                 localbcm.writeToNBT(localfn);
 /* 104:118 */                 for (String str : this.c.c())
 /* 105:    */                 {
 /* 106:119 */                   NBTBase localgd = this.c.a(str);
@@ -108,7 +108,7 @@ package net.minecraft.src;
 /* 108:123 */                     localfn.setNBT(str, localgd.b());
 /* 109:    */                   }
 /* 110:    */                 }
-/* 111:125 */                 localbcm.a(localfn);
+/* 111:125 */                 localbcm.readFromNBT(localfn);
 /* 112:126 */                 localbcm.o_();
 /* 113:    */               }
 /* 114:    */             }

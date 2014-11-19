@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*   8:275 */     World localaqu = paramdz.i();
 /*   9:    */     
 /*  10:277 */     BlockPosition localdt = paramdz.d().a(ave.b(paramdz.f()));
-/*  11:278 */     if (localaqu.d(localdt))
+/*  11:278 */     if (localaqu.isEmpty(localdt))
 /*  12:    */     {
 /*  13:279 */       localaqu.setBlock(localdt, BlockList.ab.instance());
 /*  14:281 */       if (paramamj.a(1, localaqu.rng)) {

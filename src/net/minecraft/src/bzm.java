@@ -86,14 +86,14 @@ package net.minecraft.src;
 /*  86: 98 */     ProtoBlock localatr = this.a.w();
 /*  87:100 */     if (localatr == BlockList.an)
 /*  88:    */     {
-/*  89:101 */       float f2 = this.a.u() * 360 / 16.0F;
+/*  89:101 */       float f2 = this.a.getData() * 360 / 16.0F;
 /*  90:102 */       cjm.glRotatef(f2, 0.0F, 1.0F, 0.0F);
 /*  91:    */       
 /*  92:104 */       cjm.glTranslatef(0.0F, -1.0625F, 0.0F);
 /*  93:    */     }
 /*  94:    */     else
 /*  95:    */     {
-/*  96:106 */       int i = this.a.u();
+/*  96:106 */       int i = this.a.getData();
 /*  97:107 */       float f3 = 0.0F;
 /*  98:109 */       if (i == 2) {
 /*  99:110 */         f3 = 180.0F;

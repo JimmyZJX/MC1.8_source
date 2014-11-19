@@ -64,7 +64,7 @@ package net.minecraft.src;
 /*  63:    */       {
 /*  64: 78 */         NBTTagCompound localfn1 = new NBTTagCompound();
 /*  65: 79 */         NBTTagCompound localfn2 = (NBTTagCompound)localfn1.b();
-/*  66: 80 */         localbcm.b(localfn1);
+/*  66: 80 */         localbcm.writeToNBT(localfn1);
 /*  67:    */         
 /*  68: 82 */         NBTTagCompound localfn3 = (NBTTagCompound)paramamj.getTagCompound().a("BlockEntityTag");
 /*  69: 83 */         localfn1.a(localfn3);
@@ -73,7 +73,7 @@ package net.minecraft.src;
 /*  72: 86 */         localfn1.setInt("z", paramdt.getZ());
 /*  73: 88 */         if (!localfn1.equals(localfn2))
 /*  74:    */         {
-/*  75: 89 */           localbcm.a(localfn1);
+/*  75: 89 */           localbcm.readFromNBT(localfn1);
 /*  76: 90 */           localbcm.o_();
 /*  77: 91 */           return true;
 /*  78:    */         }

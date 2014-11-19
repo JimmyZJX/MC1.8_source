@@ -39,13 +39,13 @@ import net.minecraft.server.MinecraftServer;
 /*   36:  98 */   public final Random rng = new Random();
 /*   37:     */   public final bgd t;
 /*   38: 101 */   protected List<IWorldAccess> worldAccesses = Lists.newArrayList();
-/*   39:     */   protected bfe v;
+/*   39:     */   protected IChunkProvider v;
 /*   40:     */   protected final bqy w;
 /*   41:     */   protected WorldInfo worldInfo;
 /*   42:     */   protected boolean y;
 /*   43:     */   protected brn z;
 /*   44:     */   protected abl A;
-/*   45:     */   public final uw profiler;
+/*   45:     */   public final Profiler profiler;
 /*   46: 115 */   private final Calendar J = Calendar.getInstance();
 /*   47: 116 */   protected bsd C = new bsd();
 /*   48:     */   public final boolean isClient;
@@ -56,7 +56,7 @@ import net.minecraft.server.MinecraftServer;
 /*   53:     */   private boolean L;
 /*   54:     */   private final bfb M;
 /*   55:     */   
-/*   56:     */   protected World(bqy parambqy, WorldInfo parambqo, bgd parambgd, uw paramuw, boolean paramBoolean)
+/*   56:     */   protected World(bqy parambqy, WorldInfo parambqo, bgd parambgd, Profiler paramuw, boolean paramBoolean)
 /*   57:     */   {
 /*   58: 129 */     this.w = parambqy;
 /*   59: 130 */     this.profiler = paramuw;
@@ -103,7 +103,7 @@ import net.minecraft.server.MinecraftServer;
 /*  100: 181 */     return this.t.m();
 /*  101:     */   }
 /*  102:     */   
-/*  103:     */   protected abstract bfe k();
+/*  103:     */   protected abstract IChunkProvider k();
 /*  104:     */   
 /*  105:     */   public void a(WorldSettings paramarb)
 /*  106:     */   {
@@ -118,18 +118,18 @@ import net.minecraft.server.MinecraftServer;
 /*  115:     */   public ProtoBlock c(BlockPosition paramdt)
 /*  116:     */   {
 /*  117: 195 */     BlockPosition localdt = new BlockPosition(paramdt.getX(), 63, paramdt.getZ());
-/*  118: 196 */     while (!d(localdt.up())) {
+/*  118: 196 */     while (!isEmpty(localdt.up())) {
 /*  119: 197 */       localdt = localdt.up();
 /*  120:     */     }
 /*  121: 199 */     return getBlock(localdt).getProto();
 /*  122:     */   }
 /*  123:     */   
-/*  124:     */   private boolean a(BlockPosition paramdt)
+/*  124:     */   private boolean isInBound(BlockPosition paramdt)
 /*  125:     */   {
 /*  126: 203 */     return (paramdt.getX() >= -30000000) && (paramdt.getZ() >= -30000000) && (paramdt.getX() < 30000000) && (paramdt.getZ() < 30000000) && (paramdt.getY() >= 0) && (paramdt.getY() < 256);
 /*  127:     */   }
 /*  128:     */   
-/*  129:     */   public boolean d(BlockPosition paramdt)
+/*  129:     */   public boolean isEmpty(BlockPosition paramdt)
 /*  130:     */   {
 /*  131: 208 */     return getBlock(paramdt).getProto().getMaterial() == Material.air;
 /*  132:     */   }
@@ -141,7 +141,7 @@ import net.minecraft.server.MinecraftServer;
 /*  138:     */   
 /*  139:     */   public boolean a(BlockPosition paramdt, boolean paramBoolean)
 /*  140:     */   {
-/*  141: 216 */     if (!a(paramdt)) {
+/*  141: 216 */     if (!isInBound(paramdt)) {
 /*  142: 217 */       return false;
 /*  143:     */     }
 /*  144: 219 */     return a(paramdt.getX() >> 4, paramdt.getZ() >> 4, paramBoolean);
@@ -213,7 +213,7 @@ import net.minecraft.server.MinecraftServer;
 /*  210:     */   
 /*  211:     */   public boolean setBlock(BlockPosition paramdt, Block parambec, int paramInt)
 /*  212:     */   {
-/*  213: 280 */     if (!a(paramdt)) {
+/*  213: 280 */     if (!isInBound(paramdt)) {
 /*  214: 281 */       return false;
 /*  215:     */     }
 /*  216: 284 */     if ((!this.isClient) && (this.worldInfo.u() == WorldType.DEBUG_ALL_BLOCK_STATES)) {
@@ -494,7 +494,7 @@ import net.minecraft.server.MinecraftServer;
 /*  491: 560 */     if (paramdt.getY() < 0) {
 /*  492: 561 */       paramdt = new BlockPosition(paramdt.getX(), 0, paramdt.getZ());
 /*  493:     */     }
-/*  494: 563 */     if (!a(paramdt)) {
+/*  494: 563 */     if (!isInBound(paramdt)) {
 /*  495: 564 */       return paramarf.c;
 /*  496:     */     }
 /*  497: 566 */     if (!e(paramdt)) {
@@ -530,7 +530,7 @@ import net.minecraft.server.MinecraftServer;
 /*  527: 597 */     if (paramdt.getY() < 0) {
 /*  528: 598 */       paramdt = new BlockPosition(paramdt.getX(), 0, paramdt.getZ());
 /*  529:     */     }
-/*  530: 600 */     if (!a(paramdt)) {
+/*  530: 600 */     if (!isInBound(paramdt)) {
 /*  531: 601 */       return paramarf.c;
 /*  532:     */     }
 /*  533: 603 */     if (!e(paramdt)) {
@@ -542,7 +542,7 @@ import net.minecraft.server.MinecraftServer;
 /*  539:     */   
 /*  540:     */   public void a(EnumSkyBlock paramarf, BlockPosition paramdt, int paramInt)
 /*  541:     */   {
-/*  542: 611 */     if (!a(paramdt)) {
+/*  542: 611 */     if (!isInBound(paramdt)) {
 /*  543: 612 */       return;
 /*  544:     */     }
 /*  545: 614 */     if (!e(paramdt)) {
@@ -577,7 +577,7 @@ import net.minecraft.server.MinecraftServer;
 /*  574:     */   
 /*  575:     */   public Block getBlock(BlockPosition pos)
 /*  576:     */   {
-/*  577: 654 */     if (!a(pos)) {
+/*  577: 654 */     if (!isInBound(pos)) {
 /*  578: 655 */       return BlockList.air.instance();
 /*  579:     */     }
 /*  580: 657 */     Chunk localbfh = getChunk(pos);
@@ -1660,12 +1660,12 @@ import net.minecraft.server.MinecraftServer;
 /* 1657:     */   
 /* 1658:     */   public String A()
 /* 1659:     */   {
-/* 1660:1683 */     return this.v.f();
+/* 1660:1683 */     return this.v.getName();
 /* 1661:     */   }
 /* 1662:     */   
 /* 1663:     */   public bcm s(BlockPosition paramdt)
 /* 1664:     */   {
-/* 1665:1689 */     if (!a(paramdt)) {
+/* 1665:1689 */     if (!isInBound(paramdt)) {
 /* 1666:1690 */       return null;
 /* 1667:     */     }
 /* 1668:1692 */     bcm localObject = null;
@@ -1704,7 +1704,7 @@ import net.minecraft.server.MinecraftServer;
 /* 1701:1721 */     if ((parambcm != null) && (!parambcm.x())) {
 /* 1702:1722 */       if (this.L)
 /* 1703:     */       {
-/* 1704:1723 */         parambcm.a(paramdt);
+/* 1704:1723 */         parambcm.setPos(paramdt);
 /* 1705:     */         
 /* 1706:     */ 
 /* 1707:1726 */         Iterator<bcm> localIterator = this.a.iterator();
@@ -1784,7 +1784,7 @@ import net.minecraft.server.MinecraftServer;
 /* 1781:     */   
 /* 1782:     */   public boolean d(BlockPosition paramdt, boolean paramBoolean)
 /* 1783:     */   {
-/* 1784:1804 */     if (!a(paramdt)) {
+/* 1784:1804 */     if (!isInBound(paramdt)) {
 /* 1785:1805 */       return paramBoolean;
 /* 1786:     */     }
 /* 1787:1807 */     Chunk localbfh = this.v.a(paramdt);
@@ -2587,7 +2587,7 @@ import net.minecraft.server.MinecraftServer;
 /* 2584:     */   
 /* 2585:     */   public void a(Entity paramwv, byte paramByte) {}
 /* 2586:     */   
-/* 2587:     */   public bfe N()
+/* 2587:     */   public IChunkProvider N()
 /* 2588:     */   {
 /* 2589:2621 */     return this.v;
 /* 2590:     */   }

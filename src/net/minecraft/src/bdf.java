@@ -5,16 +5,16 @@ package net.minecraft.src;
 /*  4:   */ {
 /*  5:12 */   private vx a = vx.a;
 /*  6:   */   
-/*  7:   */   public void a(NBTTagCompound paramfn)
+/*  7:   */   public void readFromNBT(NBTTagCompound paramfn)
 /*  8:   */   {
-/*  9:16 */     super.a(paramfn);
+/*  9:16 */     super.readFromNBT(paramfn);
 /* 10:   */     
 /* 11:18 */     this.a = vx.b(paramfn);
 /* 12:   */   }
 /* 13:   */   
-/* 14:   */   public void b(NBTTagCompound paramfn)
+/* 14:   */   public void writeToNBT(NBTTagCompound paramfn)
 /* 15:   */   {
-/* 16:23 */     super.b(paramfn);
+/* 16:23 */     super.writeToNBT(paramfn);
 /* 17:25 */     if (this.a != null) {
 /* 18:26 */       this.a.a(paramfn);
 /* 19:   */     }

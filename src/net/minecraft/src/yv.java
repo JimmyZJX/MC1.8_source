@@ -3,7 +3,7 @@ package net.minecraft.src;
 /*  2:   */   extends zb
 /*  3:   */ {
 /*  4:   */   protected EntityMob a;
-/*  5:14 */   protected BlockPosition b = BlockPosition.a;
+/*  5:14 */   protected BlockPosition b = BlockPosition.zero;
 /*  6:   */   protected avf c;
 /*  7:   */   boolean d;
 /*  8:   */   float e;

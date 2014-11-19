@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*  5:   */ {
 /*  6:   */   public boolean generate(World paramaqu, Random paramRandom, BlockPosition paramdt)
 /*  7:   */   {
-/*  8:15 */     if (!paramaqu.d(paramdt)) {
+/*  8:15 */     if (!paramaqu.isEmpty(paramdt)) {
 /*  9:16 */       return false;
 /* 10:   */     }
 /* 11:18 */     if (paramaqu.getBlock(paramdt.up()).getProto() != BlockList.netherrack) {

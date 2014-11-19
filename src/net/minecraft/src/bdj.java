@@ -11,9 +11,9 @@ package net.minecraft.src;
 /*  10:    */   private EntityPlayer h;
 /*  11: 25 */   private final af i = new af();
 /*  12:    */   
-/*  13:    */   public void b(NBTTagCompound paramfn)
+/*  13:    */   public void writeToNBT(NBTTagCompound paramfn)
 /*  14:    */   {
-/*  15: 29 */     super.b(paramfn);
+/*  15: 29 */     super.writeToNBT(paramfn);
 /*  16: 30 */     for (int j = 0; j < 4; j++)
 /*  17:    */     {
 /*  18: 31 */       String str = hp.a(this.a[j]);
@@ -22,10 +22,10 @@ package net.minecraft.src;
 /*  21: 34 */     this.i.b(paramfn);
 /*  22:    */   }
 /*  23:    */   
-/*  24:    */   public void a(NBTTagCompound paramfn)
+/*  24:    */   public void readFromNBT(NBTTagCompound paramfn)
 /*  25:    */   {
 /*  26: 39 */     this.g = false;
-/*  27: 40 */     super.a(paramfn);
+/*  27: 40 */     super.readFromNBT(paramfn);
 /*  28:    */     
 /*  29: 42 */     bdk localbdk = new bdk(this);
 /*  30: 92 */     for (int j = 0; j < 4; j++)
@@ -55,7 +55,7 @@ package net.minecraft.src;
 /*  54:    */   {
 /*  55:110 */     ho[] arrayOfho = new ho[4];
 /*  56:111 */     System.arraycopy(this.a, 0, arrayOfho, 0, 4);
-/*  57:112 */     return new ll(this.b, this.c, arrayOfho);
+/*  57:112 */     return new ll(this.world, this.pos, arrayOfho);
 /*  58:    */   }
 /*  59:    */   
 /*  60:    */   public boolean b()

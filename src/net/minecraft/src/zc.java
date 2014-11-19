@@ -10,11 +10,11 @@ package net.minecraft.src;
 /*   9: 12 */   private static final Logger a = LogManager.getLogger();
 /*  10: 25 */   private List<zd> b = Lists.newArrayList();
 /*  11: 26 */   private List<zd> c = Lists.newArrayList();
-/*  12:    */   private final uw d;
+/*  12:    */   private final Profiler d;
 /*  13:    */   private int e;
 /*  14: 29 */   private int f = 3;
 /*  15:    */   
-/*  16:    */   public zc(uw paramuw)
+/*  16:    */   public zc(Profiler paramuw)
 /*  17:    */   {
 /*  18: 32 */     this.d = paramuw;
 /*  19:    */   }

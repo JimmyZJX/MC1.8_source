@@ -25,12 +25,12 @@ package net.minecraft.src;
 /*  22:    */   
 /*  23:    */   public BlockPosition c()
 /*  24:    */   {
-/*  25:157 */     return this.b.c;
+/*  25:157 */     return this.b.pos;
 /*  26:    */   }
 /*  27:    */   
 /*  28:    */   public Vec3 d()
 /*  29:    */   {
-/*  30:162 */     return new Vec3(this.b.c.getX() + 0.5D, this.b.c.getY() + 0.5D, this.b.c.getZ() + 0.5D);
+/*  30:162 */     return new Vec3(this.b.pos.getX() + 0.5D, this.b.pos.getY() + 0.5D, this.b.pos.getZ() + 0.5D);
 /*  31:    */   }
 /*  32:    */   
 /*  33:    */   public World e()

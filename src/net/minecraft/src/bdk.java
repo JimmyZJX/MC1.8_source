@@ -24,17 +24,17 @@ package net.minecraft.src;
 /* 22:   */   
 /* 23:   */   public BlockPosition c()
 /* 24:   */   {
-/* 25:64 */     return this.a.c;
+/* 25:64 */     return this.a.pos;
 /* 26:   */   }
 /* 27:   */   
 /* 28:   */   public Vec3 d()
 /* 29:   */   {
-/* 30:69 */     return new Vec3(this.a.c.getX() + 0.5D, this.a.c.getY() + 0.5D, this.a.c.getZ() + 0.5D);
+/* 30:69 */     return new Vec3(this.a.pos.getX() + 0.5D, this.a.pos.getY() + 0.5D, this.a.pos.getZ() + 0.5D);
 /* 31:   */   }
 /* 32:   */   
 /* 33:   */   public World e()
 /* 34:   */   {
-/* 35:74 */     return this.a.b;
+/* 35:74 */     return this.a.world;
 /* 36:   */   }
 /* 37:   */   
 /* 38:   */   public Entity f()

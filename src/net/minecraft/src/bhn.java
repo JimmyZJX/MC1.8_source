@@ -12,7 +12,7 @@ package net.minecraft.src;
 /* 11:   */   
 /* 12:   */   public boolean generate(World paramaqu, Random paramRandom, BlockPosition paramdt)
 /* 13:   */   {
-/* 14:22 */     while ((paramaqu.d(paramdt)) && (paramdt.getY() > 2)) {
+/* 14:22 */     while ((paramaqu.isEmpty(paramdt)) && (paramdt.getY() > 2)) {
 /* 15:23 */       paramdt = paramdt.down();
 /* 16:   */     }
 /* 17:26 */     if (!a.apply(paramaqu.getBlock(paramdt))) {
@@ -21,7 +21,7 @@ package net.minecraft.src;
 /* 20:   */     int k;
 /* 21:31 */     for (int i = -2; i <= 2; i++) {
 /* 22:32 */       for (k = -2; k <= 2; k++) {
-/* 23:33 */         if ((paramaqu.d(paramdt.offset(i, -1, k))) && (paramaqu.d(paramdt.offset(i, -2, k)))) {
+/* 23:33 */         if ((paramaqu.isEmpty(paramdt.offset(i, -1, k))) && (paramaqu.isEmpty(paramdt.offset(i, -2, k)))) {
 /* 24:34 */           return false;
 /* 25:   */         }
 /* 26:   */       }

@@ -49,7 +49,7 @@ package net.minecraft.src;
 /*  48: 60 */           return false;
 /*  49:    */         }
 /*  50: 62 */         pos = pos.a(paramej);
-/*  51: 64 */         if (world.d(pos))
+/*  51: 64 */         if (world.isEmpty(pos))
 /*  52:    */         {
 /*  53: 65 */           Block localbec2 = BlockList.bN.a(world, pos, paramej, paramFloat1, paramFloat2, paramFloat3, 0, paramahd);
 /*  54: 66 */           world.setBlock(pos, localbec2, 2);

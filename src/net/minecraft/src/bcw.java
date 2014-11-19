@@ -5,11 +5,11 @@ package net.minecraft.src;
 /*  4:   */ {
 /*  5:   */   public void c()
 /*  6:   */   {
-/*  7:13 */     if ((this.b != null) && (!this.b.isClient) && (this.b.K() % 20L == 0L))
+/*  7:13 */     if ((this.world != null) && (!this.world.isClient) && (this.world.K() % 20L == 0L))
 /*  8:   */     {
 /*  9:14 */       this.e = w();
 /* 10:15 */       if ((this.e instanceof BlockDaylightDetector)) {
-/* 11:16 */         ((BlockDaylightDetector)this.e).d(this.b, this.c);
+/* 11:16 */         ((BlockDaylightDetector)this.e).d(this.world, this.pos);
 /* 12:   */       }
 /* 13:   */     }
 /* 14:   */   }

@@ -69,13 +69,13 @@ package net.minecraft.src;
 /*  68: 88 */               if ((localbcm1 != null) && (localbcm2 != null))
 /*  69:    */               {
 /*  70: 89 */                 NBTTagCompound localfn1 = new NBTTagCompound();
-/*  71: 90 */                 localbcm1.b(localfn1);
+/*  71: 90 */                 localbcm1.writeToNBT(localfn1);
 /*  72: 91 */                 localfn1.o("x");
 /*  73: 92 */                 localfn1.o("y");
 /*  74: 93 */                 localfn1.o("z");
 /*  75:    */                 
 /*  76: 95 */                 NBTTagCompound localfn2 = new NBTTagCompound();
-/*  77: 96 */                 localbcm2.b(localfn2);
+/*  77: 96 */                 localbcm2.writeToNBT(localfn2);
 /*  78: 97 */                 localfn2.o("x");
 /*  79: 98 */                 localfn2.o("y");
 /*  80: 99 */                 localfn2.o("z");

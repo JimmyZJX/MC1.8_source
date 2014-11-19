@@ -13,17 +13,17 @@ package net.minecraft.src;
 /* 12:20 */     this.data = paramInt;
 /* 13:   */   }
 /* 14:   */   
-/* 15:   */   public void b(NBTTagCompound paramfn)
+/* 15:   */   public void writeToNBT(NBTTagCompound paramfn)
 /* 16:   */   {
-/* 17:25 */     super.b(paramfn);
+/* 17:25 */     super.writeToNBT(paramfn);
 /* 18:26 */     oa localoa = (oa)Item.e.c(this.item);
 /* 19:27 */     paramfn.setString("Item", localoa == null ? "" : localoa.toString());
 /* 20:28 */     paramfn.setInt("Data", this.data);
 /* 21:   */   }
 /* 22:   */   
-/* 23:   */   public void a(NBTTagCompound paramfn)
+/* 23:   */   public void readFromNBT(NBTTagCompound paramfn)
 /* 24:   */   {
-/* 25:33 */     super.a(paramfn);
+/* 25:33 */     super.readFromNBT(paramfn);
 /* 26:34 */     if (paramfn.hasKey("Item", 8)) {
 /* 27:35 */       this.item = Item.d(paramfn.getString("Item"));
 /* 28:   */     } else {
@@ -35,11 +35,11 @@ package net.minecraft.src;
 /* 34:   */   public id x_()
 /* 35:   */   {
 /* 36:45 */     NBTTagCompound localfn = new NBTTagCompound();
-/* 37:46 */     b(localfn);
+/* 37:46 */     writeToNBT(localfn);
 /* 38:   */     
 /* 39:48 */     localfn.o("Item");
 /* 40:49 */     localfn.setInt("Item", Item.b(this.item));
-/* 41:50 */     return new iu(this.c, 5, localfn);
+/* 41:50 */     return new iu(this.pos, 5, localfn);
 /* 42:   */   }
 /* 43:   */   
 /* 44:   */   public void a(Item paramalq, int paramInt)

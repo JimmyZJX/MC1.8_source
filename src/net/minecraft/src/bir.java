@@ -99,16 +99,16 @@ package net.minecraft.src;
 /*  98: 95 */         setBlock(world, pos.up(i1), BlockList.log, this.c);
 /*  99: 96 */         if ((this.b) && (i1 > 0))
 /* 100:    */         {
-/* 101: 97 */           if ((paramRandom.nextInt(3) > 0) && (world.d(pos.offset(-1, i1, 0)))) {
+/* 101: 97 */           if ((paramRandom.nextInt(3) > 0) && (world.isEmpty(pos.offset(-1, i1, 0)))) {
 /* 102: 98 */             setBlock(world, pos.offset(-1, i1, 0), BlockList.vine, bbv.S);
 /* 103:    */           }
-/* 104:100 */           if ((paramRandom.nextInt(3) > 0) && (world.d(pos.offset(1, i1, 0)))) {
+/* 104:100 */           if ((paramRandom.nextInt(3) > 0) && (world.isEmpty(pos.offset(1, i1, 0)))) {
 /* 105:101 */             setBlock(world, pos.offset(1, i1, 0), BlockList.vine, bbv.T);
 /* 106:    */           }
-/* 107:103 */           if ((paramRandom.nextInt(3) > 0) && (world.d(pos.offset(0, i1, -1)))) {
+/* 107:103 */           if ((paramRandom.nextInt(3) > 0) && (world.isEmpty(pos.offset(0, i1, -1)))) {
 /* 108:104 */             setBlock(world, pos.offset(0, i1, -1), BlockList.vine, bbv.Q);
 /* 109:    */           }
-/* 110:106 */           if ((paramRandom.nextInt(3) > 0) && (world.d(pos.offset(0, i1, 1)))) {
+/* 110:106 */           if ((paramRandom.nextInt(3) > 0) && (world.isEmpty(pos.offset(0, i1, 1)))) {
 /* 111:107 */             setBlock(world, pos.offset(0, i1, 1), BlockList.vine, bbv.R);
 /* 112:    */           }
 /* 113:    */         }

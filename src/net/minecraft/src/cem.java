@@ -380,7 +380,7 @@ package net.minecraft.src;
 /* 379:    */   public void c(EntityPlayer paramahd)
 /* 380:    */   {
 /* 381:391 */     m();
-/* 382:392 */     this.b.a(new ml(mm.f, BlockPosition.a, EnumDirection.DOWN));
+/* 382:392 */     this.b.a(new ml(mm.f, BlockPosition.zero, EnumDirection.DOWN));
 /* 383:393 */     paramahd.bT();
 /* 384:    */   }
 /* 385:    */   

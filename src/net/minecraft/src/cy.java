@@ -75,7 +75,7 @@ package net.minecraft.src;
 /*  74: 87 */         throw new CommandException("commands.testforblock.failed.tileEntity", new Object[] { Integer.valueOf(localdt.getX()), Integer.valueOf(localdt.getY()), Integer.valueOf(localdt.getZ()) });
 /*  75:    */       }
 /*  76: 89 */       NBTTagCompound localfn2 = new NBTTagCompound();
-/*  77: 90 */       localbcm.b(localfn2);
+/*  77: 90 */       localbcm.writeToNBT(localfn2);
 /*  78: 92 */       if (!a(localfn1, localfn2, true)) {
 /*  79: 93 */         throw new CommandException("commands.testforblock.failed.nbt", new Object[] { Integer.valueOf(localdt.getX()), Integer.valueOf(localdt.getY()), Integer.valueOf(localdt.getZ()) });
 /*  80:    */       }

@@ -242,7 +242,7 @@ import java.io.IOException;
 /* 239:    */     {
 /* 240:251 */       localObject3 = localObject2.next();
 /* 241:252 */       localfn1 = new NBTTagCompound();
-/* 242:253 */       ((bcm)localObject3).b(localfn1);
+/* 242:253 */       ((bcm)localObject3).writeToNBT(localfn1);
 /* 243:254 */       localfv2.a(localfn1);
 /* 244:    */     }
 /* 245:256 */     paramfn.setNBT("TileEntities", localfv2);
@@ -355,7 +355,7 @@ import java.io.IOException;
 /* 352:353 */       for (int i2 = 0; i2 < localfv3.c(); i2++)
 /* 353:    */       {
 /* 354:354 */         NBTTagCompound localObject1 = localfv3.b(i2);
-/* 355:355 */         bcm localObject2 = bcm.c((NBTTagCompound)localObject1);
+/* 355:355 */         bcm localObject2 = bcm.fromNBT((NBTTagCompound)localObject1);
 /* 356:356 */         if (localObject2 != null) {
 /* 357:357 */           localbfh.a((bcm)localObject2);
 /* 358:    */         }

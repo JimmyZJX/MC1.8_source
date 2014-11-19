@@ -105,7 +105,7 @@ package net.minecraft.src;
 /* 104:119 */               if (localbcm != null)
 /* 105:    */               {
 /* 106:120 */                 NBTTagCompound localfn = new NBTTagCompound();
-/* 107:121 */                 localbcm.b(localfn);
+/* 107:121 */                 localbcm.writeToNBT(localfn);
 /* 108:122 */                 localArrayList2.add(new bb((BlockPosition)localObject5, (Block)localObject6, localfn));
 /* 109:123 */                 localLinkedList.addLast(localObject4);
 /* 110:    */               }
@@ -173,7 +173,7 @@ package net.minecraft.src;
 /* 172:171 */         ((bb)localObject4).c.setInt("x", ((bb)localObject4).a.getX());
 /* 173:172 */         ((bb)localObject4).c.setInt("y", ((bb)localObject4).a.getY());
 /* 174:173 */         ((bb)localObject4).c.setInt("z", ((bb)localObject4).a.getZ());
-/* 175:174 */         ((bcm)localObject5).a(((bb)localObject4).c);
+/* 175:174 */         ((bcm)localObject5).readFromNBT(((bb)localObject4).c);
 /* 176:175 */         ((bcm)localObject5).o_();
 /* 177:    */       }
 /* 178:177 */       localaqu.setBlock(((bb)localObject4).a, ((bb)localObject4).b, 2);

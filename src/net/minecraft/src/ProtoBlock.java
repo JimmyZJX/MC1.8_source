@@ -1033,7 +1033,7 @@ package net.minecraft.src;
 /* 1033:1109 */     a(173, "coal_block", new ProtoBlock(Material.rock).c(5.0F).b(10.0F).a(i).setName("blockCoal").setCreativeTab(CreativeTabs.tabBlock));
 /* 1034:1110 */     a(174, "packed_ice", new ayv().c(0.5F).a(k).setName("icePacked"));
 /* 1035:1111 */     a(175, "double_plant", new avi());
-/* 1036:1112 */     a(176, "standing_banner", new atd().c(1.0F).a(f).setName("banner").J());
+/* 1036:1112 */     a(176, "standing_banner", new BlockBanner().c(1.0F).a(f).setName("banner").J());
 /* 1037:1113 */     a(177, "wall_banner", new ate().c(1.0F).a(f).setName("banner").J());
 /* 1038:1114 */     a(178, "daylight_detector_inverted", new BlockDaylightDetector(true));
 /* 1039:1115 */     ProtoBlock localatr13 = new azq().a(i).c(0.8F).setName("redSandStone");

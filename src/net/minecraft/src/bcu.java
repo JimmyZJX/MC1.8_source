@@ -9,12 +9,12 @@ package net.minecraft.src;
 /*  7:   */   
 /*  8:   */   public BlockPosition c()
 /*  9:   */   {
-/* 10:18 */     return this.a.c;
+/* 10:18 */     return this.a.pos;
 /* 11:   */   }
 /* 12:   */   
 /* 13:   */   public Vec3 d()
 /* 14:   */   {
-/* 15:23 */     return new Vec3(this.a.c.getX() + 0.5D, this.a.c.getY() + 0.5D, this.a.c.getZ() + 0.5D);
+/* 15:23 */     return new Vec3(this.a.pos.getX() + 0.5D, this.a.pos.getY() + 0.5D, this.a.pos.getZ() + 0.5D);
 /* 16:   */   }
 /* 17:   */   
 /* 18:   */   public World e()
@@ -30,7 +30,7 @@ package net.minecraft.src;
 /* 28:   */   
 /* 29:   */   public void h()
 /* 30:   */   {
-/* 31:39 */     this.a.z().h(this.a.c);
+/* 31:39 */     this.a.z().h(this.a.pos);
 /* 32:   */   }
 /* 33:   */   
 /* 34:   */   public int i()
@@ -40,9 +40,9 @@ package net.minecraft.src;
 /* 38:   */   
 /* 39:   */   public void a(ByteBuf paramByteBuf)
 /* 40:   */   {
-/* 41:49 */     paramByteBuf.writeInt(this.a.c.getX());
-/* 42:50 */     paramByteBuf.writeInt(this.a.c.getY());
-/* 43:51 */     paramByteBuf.writeInt(this.a.c.getZ());
+/* 41:49 */     paramByteBuf.writeInt(this.a.pos.getX());
+/* 42:50 */     paramByteBuf.writeInt(this.a.pos.getY());
+/* 43:51 */     paramByteBuf.writeInt(this.a.pos.getZ());
 /* 44:   */   }
 /* 45:   */   
 /* 46:   */   public Entity f()

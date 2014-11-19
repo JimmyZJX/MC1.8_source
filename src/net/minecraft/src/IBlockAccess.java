@@ -7,7 +7,7 @@ public abstract interface IBlockAccess
   
   public abstract Block getBlock(BlockPosition paramdt);
   
-  public abstract boolean d(BlockPosition paramdt);
+  public abstract boolean isEmpty(BlockPosition paramdt);
   
   public abstract arm b(BlockPosition paramdt);
   

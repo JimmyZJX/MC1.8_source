@@ -11,7 +11,7 @@ package net.minecraft.src;
 /* 10:14 */       int j = paramdt.getX() + paramRandom.nextInt(8) - paramRandom.nextInt(8);
 /* 11:15 */       int k = paramdt.getY() + paramRandom.nextInt(4) - paramRandom.nextInt(4);
 /* 12:16 */       int m = paramdt.getZ() + paramRandom.nextInt(8) - paramRandom.nextInt(8);
-/* 13:17 */       if ((paramaqu.d(new BlockPosition(j, k, m))) && 
+/* 13:17 */       if ((paramaqu.isEmpty(new BlockPosition(j, k, m))) && 
 /* 14:18 */         (BlockList.waterLily.c(paramaqu, new BlockPosition(j, k, m)))) {
 /* 15:19 */         paramaqu.setBlock(new BlockPosition(j, k, m), BlockList.waterLily.instance(), 2);
 /* 16:   */       }

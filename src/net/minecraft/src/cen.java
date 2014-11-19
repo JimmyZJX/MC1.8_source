@@ -15,7 +15,7 @@ package net.minecraft.src;
 /*  14: 47 */   private final bsu I = bsu.z();
 /*  15: 48 */   private final Set J = Sets.newHashSet();
 /*  16:    */   
-/*  17:    */   public cen(cee paramcee, WorldSettings paramarb, int paramInt, EnumDifficulty paramvt, uw paramuw)
+/*  17:    */   public cen(cee paramcee, WorldSettings paramarb, int paramInt, EnumDifficulty paramvt, Profiler paramuw)
 /*  18:    */   {
 /*  19: 52 */     super(new brk(), new WorldInfo(paramarb, "MpServer"), bgd.a(paramInt), paramuw, true);
 /*  20:    */     
@@ -58,7 +58,7 @@ package net.minecraft.src;
 /*  57:    */   
 /*  58:    */   public void a(int paramInt1, int paramInt2, int paramInt3, int paramInt4, int paramInt5, int paramInt6) {}
 /*  59:    */   
-/*  60:    */   protected bfe k()
+/*  60:    */   protected IChunkProvider k()
 /*  61:    */   {
 /*  62: 97 */     this.b = new cel(this);
 /*  63: 98 */     return this.b;
