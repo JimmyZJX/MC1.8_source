@@ -6,9 +6,9 @@ package net.minecraft.src;
 /*   5:    */   extends ProtoBlock
 /*   6:    */ {
 /*   7: 24 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", en.HORIZONTAL);
-/*   8: 25 */   public static final BlockDataBoolean b = BlockDataBoolean.a("powered");
-/*   9: 26 */   public static final BlockDataBoolean M = BlockDataBoolean.a("attached");
-/*  10: 27 */   public static final BlockDataBoolean N = BlockDataBoolean.a("suspended");
+/*   8: 25 */   public static final BlockDataBoolean b = BlockDataBoolean.getInstance("powered");
+/*   9: 26 */   public static final BlockDataBoolean M = BlockDataBoolean.getInstance("attached");
+/*  10: 27 */   public static final BlockDataBoolean N = BlockDataBoolean.getInstance("suspended");
 /*  11:    */   
 /*  12:    */   public bbt()
 /*  13:    */   {

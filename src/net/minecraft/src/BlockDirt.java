@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*  4:   */   extends ProtoBlock
 /*  5:   */ {
 /*  6:19 */   public static final BlockDataEnum a = BlockDataEnum.getInstance("variant", avd.class);
-/*  7:20 */   public static final BlockDataBoolean b = BlockDataBoolean.a("snowy");
+/*  7:20 */   public static final BlockDataBoolean b = BlockDataBoolean.getInstance("snowy");
 /*  8:   */   
 /*  9:   */   protected BlockDirt()
 /* 10:   */   {

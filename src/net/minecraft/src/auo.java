@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*   3:    */ public class auo
 /*   4:    */   extends atg
 /*   5:    */ {
-/*   6: 22 */   public static final BlockDataBoolean a = BlockDataBoolean.a("triggered");
+/*   6: 22 */   public static final BlockDataBoolean a = BlockDataBoolean.getInstance("triggered");
 /*   7:    */   
 /*   8:    */   public auo()
 /*   9:    */   {

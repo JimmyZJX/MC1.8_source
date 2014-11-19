@@ -5,10 +5,10 @@ package net.minecraft.src;
 /*   4:    */ public class bbj
 /*   5:    */   extends ProtoBlock
 /*   6:    */ {
-/*   7: 22 */   public static final BlockDataBoolean b = BlockDataBoolean.a("north");
-/*   8: 23 */   public static final BlockDataBoolean M = BlockDataBoolean.a("east");
-/*   9: 24 */   public static final BlockDataBoolean N = BlockDataBoolean.a("south");
-/*  10: 25 */   public static final BlockDataBoolean O = BlockDataBoolean.a("west");
+/*   7: 22 */   public static final BlockDataBoolean b = BlockDataBoolean.getInstance("north");
+/*   8: 23 */   public static final BlockDataBoolean M = BlockDataBoolean.getInstance("east");
+/*   9: 24 */   public static final BlockDataBoolean N = BlockDataBoolean.getInstance("south");
+/*  10: 25 */   public static final BlockDataBoolean O = BlockDataBoolean.getInstance("west");
 /*  11:    */   private final boolean a;
 /*  12:    */   
 /*  13:    */   protected bbj(Material parambof, boolean paramBoolean)

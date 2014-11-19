@@ -2,9 +2,9 @@ package net.minecraft.src;
 /*   1:    */ public class avw
 /*   2:    */   extends avb
 /*   3:    */ {
-/*   4: 19 */   public static final BlockDataBoolean a = BlockDataBoolean.a("open");
-/*   5: 20 */   public static final BlockDataBoolean b = BlockDataBoolean.a("powered");
-/*   6: 21 */   public static final BlockDataBoolean M = BlockDataBoolean.a("in_wall");
+/*   4: 19 */   public static final BlockDataBoolean a = BlockDataBoolean.getInstance("open");
+/*   5: 20 */   public static final BlockDataBoolean b = BlockDataBoolean.getInstance("powered");
+/*   6: 21 */   public static final BlockDataBoolean M = BlockDataBoolean.getInstance("in_wall");
 /*   7:    */   
 /*   8:    */   public avw()
 /*   9:    */   {

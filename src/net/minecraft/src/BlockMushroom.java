@@ -1,10 +1,10 @@
 package net.minecraft.src;
 /*  1:   */ import java.util.Random;
 /*  2:   */ 
-/*  3:   */ public class auc
+/*  3:   */ public class BlockMushroom
 /*  4:   */   extends ProtoBlock
 /*  5:   */ {
-/*  6:   */   protected auc(Material parambof)
+/*  6:   */   protected BlockMushroom(Material parambof)
 /*  7:   */   {
 /*  8:16 */     super(parambof);
 /*  9:17 */     a(true);
@@ -13,7 +13,7 @@ package net.minecraft.src;
 /* 12:20 */     setCreativeTab(CreativeTabs.tabDeco);
 /* 13:   */   }
 /* 14:   */   
-/* 15:   */   protected auc()
+/* 15:   */   protected BlockMushroom()
 /* 16:   */   {
 /* 17:24 */     this(Material.plants);
 /* 18:   */   }

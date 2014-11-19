@@ -18,7 +18,7 @@ package net.minecraft.src;
 /* 17:17 */     return this.values;
 /* 18:   */   }
 /* 19:   */   
-/* 20:   */   public static BlockDataBoolean a(String paramString)
+/* 20:   */   public static BlockDataBoolean getInstance(String paramString)
 /* 21:   */   {
 /* 22:21 */     return new BlockDataBoolean(paramString);
 /* 23:   */   }

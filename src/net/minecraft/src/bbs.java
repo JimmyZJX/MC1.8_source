@@ -5,14 +5,14 @@ package net.minecraft.src;
 /*   4:    */ public class bbs
 /*   5:    */   extends ProtoBlock
 /*   6:    */ {
-/*   7: 23 */   public static final BlockDataBoolean a = BlockDataBoolean.a("powered");
-/*   8: 24 */   public static final BlockDataBoolean b = BlockDataBoolean.a("suspended");
-/*   9: 25 */   public static final BlockDataBoolean M = BlockDataBoolean.a("attached");
-/*  10: 26 */   public static final BlockDataBoolean N = BlockDataBoolean.a("disarmed");
-/*  11: 27 */   public static final BlockDataBoolean O = BlockDataBoolean.a("north");
-/*  12: 28 */   public static final BlockDataBoolean P = BlockDataBoolean.a("east");
-/*  13: 29 */   public static final BlockDataBoolean Q = BlockDataBoolean.a("south");
-/*  14: 30 */   public static final BlockDataBoolean R = BlockDataBoolean.a("west");
+/*   7: 23 */   public static final BlockDataBoolean a = BlockDataBoolean.getInstance("powered");
+/*   8: 24 */   public static final BlockDataBoolean b = BlockDataBoolean.getInstance("suspended");
+/*   9: 25 */   public static final BlockDataBoolean M = BlockDataBoolean.getInstance("attached");
+/*  10: 26 */   public static final BlockDataBoolean N = BlockDataBoolean.getInstance("disarmed");
+/*  11: 27 */   public static final BlockDataBoolean O = BlockDataBoolean.getInstance("north");
+/*  12: 28 */   public static final BlockDataBoolean P = BlockDataBoolean.getInstance("east");
+/*  13: 29 */   public static final BlockDataBoolean Q = BlockDataBoolean.getInstance("south");
+/*  14: 30 */   public static final BlockDataBoolean R = BlockDataBoolean.getInstance("west");
 /*  15:    */   
 /*  16:    */   public bbs()
 /*  17:    */   {

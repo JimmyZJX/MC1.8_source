@@ -3,7 +3,7 @@ package net.minecraft.src;
 /*   2:    */   extends ProtoBlock
 /*   3:    */ {
 /*   4: 25 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", en.HORIZONTAL);
-/*   5: 26 */   public static final BlockDataBoolean b = BlockDataBoolean.a("open");
+/*   5: 26 */   public static final BlockDataBoolean b = BlockDataBoolean.getInstance("open");
 /*   6: 27 */   public static final BlockDataEnum M = BlockDataEnum.getInstance("half", bbr.class);
 /*   7:    */   
 /*   8:    */   protected bbp(Material parambof)
@@ -174,7 +174,7 @@ package net.minecraft.src;
 /* 173:    */   
 /* 174:    */   private static boolean c(ProtoBlock paramatr)
 /* 175:    */   {
-/* 176:196 */     return ((paramatr.material.isOpaque()) && (paramatr.isOpaqueCube())) || (paramatr == BlockList.aX) || ((paramatr instanceof BlockSlab)) || ((paramatr instanceof BlockStairs));
+/* 176:196 */     return ((paramatr.material.isOpaque()) && (paramatr.isOpaqueCube())) || (paramatr == BlockList.glowstone) || ((paramatr instanceof BlockSlab)) || ((paramatr instanceof BlockStairs));
 /* 177:    */   }
 /* 178:    */   
 /* 179:    */   public aql k()

@@ -4,8 +4,8 @@ package net.minecraft.src;
 /*   3:    */ public abstract class BlockLeaves
 /*   4:    */   extends bbo
 /*   5:    */ {
-/*   6: 22 */   public static final BlockDataBoolean a = BlockDataBoolean.a("decayable");
-/*   7: 23 */   public static final BlockDataBoolean b = BlockDataBoolean.a("check_decay");
+/*   6: 22 */   public static final BlockDataBoolean a = BlockDataBoolean.getInstance("decayable");
+/*   7: 23 */   public static final BlockDataBoolean b = BlockDataBoolean.getInstance("check_decay");
 /*   8:    */   int[] M;
 /*   9:    */   protected int N;
 /*  10:    */   protected boolean O;

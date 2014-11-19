@@ -20,7 +20,7 @@ package net.minecraft.src;
 /* 19:25 */     if (paramaqu.getBlock(paramdt).getProto().getMaterial() == Material.air)
 /* 20:   */     {
 /* 21:26 */       paramaqu.a(paramdt.getX() + 0.5D, paramdt.getY() + 0.5D, paramdt.getZ() + 0.5D, "fire.ignite", 1.0F, random.nextFloat() * 0.4F + 0.8F);
-/* 22:27 */       paramaqu.setBlock(paramdt, BlockList.ab.instance());
+/* 22:27 */       paramaqu.setBlock(paramdt, BlockList.fire.instance());
 /* 23:   */     }
 /* 24:30 */     paramamj.a(1, paramahd);
 /* 25:31 */     return true;

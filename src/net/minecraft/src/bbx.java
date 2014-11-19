@@ -4,11 +4,11 @@ package net.minecraft.src;
 /*   3:    */ public class bbx
 /*   4:    */   extends ProtoBlock
 /*   5:    */ {
-/*   6: 22 */   public static final BlockDataBoolean a = BlockDataBoolean.a("up");
-/*   7: 23 */   public static final BlockDataBoolean b = BlockDataBoolean.a("north");
-/*   8: 24 */   public static final BlockDataBoolean M = BlockDataBoolean.a("east");
-/*   9: 25 */   public static final BlockDataBoolean N = BlockDataBoolean.a("south");
-/*  10: 26 */   public static final BlockDataBoolean O = BlockDataBoolean.a("west");
+/*   6: 22 */   public static final BlockDataBoolean a = BlockDataBoolean.getInstance("up");
+/*   7: 23 */   public static final BlockDataBoolean b = BlockDataBoolean.getInstance("north");
+/*   8: 24 */   public static final BlockDataBoolean M = BlockDataBoolean.getInstance("east");
+/*   9: 25 */   public static final BlockDataBoolean N = BlockDataBoolean.getInstance("south");
+/*  10: 26 */   public static final BlockDataBoolean O = BlockDataBoolean.getInstance("west");
 /*  11: 27 */   public static final BlockDataEnum P = BlockDataEnum.getInstance("variant", EnumCobblestoneVariant.class);
 /*  12:    */   
 /*  13:    */   public bbx(ProtoBlock paramatr)

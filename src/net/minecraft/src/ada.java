@@ -45,8 +45,8 @@ package net.minecraft.src;
 /* 44:54 */     int i = MathUtils.floor(this.xPos);
 /* 45:55 */     int j = MathUtils.floor(this.yPos);
 /* 46:56 */     int k = MathUtils.floor(this.zPos);
-/* 47:57 */     if (((this.world.t instanceof bgh)) && (this.world.getBlock(new BlockPosition(i, j, k)).getProto() != BlockList.ab)) {
-/* 48:58 */       this.world.setBlock(new BlockPosition(i, j, k), BlockList.ab.instance());
+/* 47:57 */     if (((this.world.t instanceof bgh)) && (this.world.getBlock(new BlockPosition(i, j, k)).getProto() != BlockList.fire)) {
+/* 48:58 */       this.world.setBlock(new BlockPosition(i, j, k), BlockList.fire.instance());
 /* 49:   */     }
 /* 50:   */   }
 /* 51:   */   

@@ -19,14 +19,14 @@ package net.minecraft.src;
 /* 18:29 */     if ((!paramaqu.isClient) && (paramaqu.getGameRules().getBoolean("doFireTick")) && ((paramaqu.getDifficulty() == EnumDifficulty.NORMAL) || (paramaqu.getDifficulty() == EnumDifficulty.HARD)) && (paramaqu.a(new BlockPosition(this), 10)))
 /* 19:   */     {
 /* 20:30 */       BlockPosition localdt1 = new BlockPosition(this);
-/* 21:32 */       if ((paramaqu.getBlock(localdt1).getProto().getMaterial() == Material.air) && (BlockList.ab.c(paramaqu, localdt1))) {
-/* 22:33 */         paramaqu.setBlock(localdt1, BlockList.ab.instance());
+/* 21:32 */       if ((paramaqu.getBlock(localdt1).getProto().getMaterial() == Material.air) && (BlockList.fire.c(paramaqu, localdt1))) {
+/* 22:33 */         paramaqu.setBlock(localdt1, BlockList.fire.instance());
 /* 23:   */       }
 /* 24:37 */       for (int i = 0; i < 4; i++)
 /* 25:   */       {
 /* 26:38 */         BlockPosition localdt2 = localdt1.offset(this.random.nextInt(3) - 1, this.random.nextInt(3) - 1, this.random.nextInt(3) - 1);
-/* 27:39 */         if ((paramaqu.getBlock(localdt2).getProto().getMaterial() == Material.air) && (BlockList.ab.c(paramaqu, localdt2))) {
-/* 28:40 */           paramaqu.setBlock(localdt2, BlockList.ab.instance());
+/* 27:39 */         if ((paramaqu.getBlock(localdt2).getProto().getMaterial() == Material.air) && (BlockList.fire.c(paramaqu, localdt2))) {
+/* 28:40 */           paramaqu.setBlock(localdt2, BlockList.fire.instance());
 /* 29:   */         }
 /* 30:   */       }
 /* 31:   */     }
@@ -53,8 +53,8 @@ package net.minecraft.src;
 /* 52:62 */         this.a = this.random.nextLong();
 /* 53:63 */         BlockPosition localdt = new BlockPosition(this);
 /* 54:64 */         if ((!this.world.isClient) && (this.world.getGameRules().getBoolean("doFireTick")) && (this.world.a(localdt, 10)) && 
-/* 55:65 */           (this.world.getBlock(localdt).getProto().getMaterial() == Material.air) && (BlockList.ab.c(this.world, localdt))) {
-/* 56:66 */           this.world.setBlock(localdt, BlockList.ab.instance());
+/* 55:65 */           (this.world.getBlock(localdt).getProto().getMaterial() == Material.air) && (BlockList.fire.c(this.world, localdt))) {
+/* 56:66 */           this.world.setBlock(localdt, BlockList.fire.instance());
 /* 57:   */         }
 /* 58:   */       }
 /* 59:   */     }

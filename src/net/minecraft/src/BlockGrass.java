@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*   4:    */   extends ProtoBlock
 /*   5:    */   implements atz
 /*   6:    */ {
-/*   7: 20 */   public static final BlockDataBoolean a = BlockDataBoolean.a("snowy");
+/*   7: 20 */   public static final BlockDataBoolean a = BlockDataBoolean.getInstance("snowy");
 /*   8:    */   
 /*   9:    */   protected BlockGrass()
 /*  10:    */   {

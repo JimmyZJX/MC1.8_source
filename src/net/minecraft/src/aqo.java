@@ -195,7 +195,7 @@ package net.minecraft.src;
 /* 194:    */       {
 /* 195:208 */         localdt = localIterator.next();
 /* 196:209 */         if ((this.d.getBlock(localdt).getProto().getMaterial() == Material.air) && (this.d.getBlock(localdt.down()).getProto().m()) && (this.c.nextInt(3) == 0)) {
-/* 197:210 */           this.d.setBlock(localdt, BlockList.ab.instance());
+/* 197:210 */           this.d.setBlock(localdt, BlockList.fire.instance());
 /* 198:    */         }
 /* 199:    */       }
 /* 200:    */     }

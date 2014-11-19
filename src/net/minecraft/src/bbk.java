@@ -3,7 +3,7 @@ package net.minecraft.src;
 /*   3:    */ public class bbk
 /*   4:    */   extends ProtoBlock
 /*   5:    */ {
-/*   6: 21 */   public static final BlockDataBoolean a = BlockDataBoolean.a("explode");
+/*   6: 21 */   public static final BlockDataBoolean a = BlockDataBoolean.getInstance("explode");
 /*   7:    */   
 /*   8:    */   public bbk()
 /*   9:    */   {

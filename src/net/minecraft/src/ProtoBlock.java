@@ -902,7 +902,7 @@ package net.minecraft.src;
 /*  902: 978 */     a(48, "mossy_cobblestone", new ProtoBlock(Material.rock).c(2.0F).b(10.0F).a(i).setName("stoneMoss").setCreativeTab(CreativeTabs.tabBlock));
 /*  903: 979 */     a(49, "obsidian", new ayo().c(50.0F).b(2000.0F).a(i).setName("obsidian"));
 /*  904: 980 */     a(50, "torch", new bbl().c(0.0F).a(0.9375F).a(f).setName("torch"));
-/*  905: 981 */     a(51, "fire", new avx().c(0.0F).a(1.0F).a(l).setName("fire").J());
+/*  905: 981 */     a(51, "fire", new BlockFire().c(0.0F).a(1.0F).a(l).setName("fire").J());
 /*  906: 982 */     a(52, "mob_spawner", new axr().c(5.0F).a(j).setName("mobSpawner").J());
 /*  907: 983 */     a(53, "oak_stairs", new BlockStairs(localatr2.instance().a(ayw.a, EnumWoodVariant.OAK)).setName("stairsWood"));
 /*  908: 984 */     a(54, "chest", new auj(0).c(2.5F).a(f).setName("chest"));

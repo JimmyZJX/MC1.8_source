@@ -3,7 +3,7 @@ package net.minecraft.src;
 /*   2:    */ import java.util.Random;
 /*   3:    */ 
 /*   4:    */ public class baf
-/*   5:    */   extends auc
+/*   5:    */   extends BlockMushroom
 /*   6:    */   implements atz
 /*   7:    */ {
 /*   8: 18 */   public static final BlockDataEnum a = BlockDataEnum.getInstance("type", EnumWoodVariant.class);
@@ -119,7 +119,7 @@ package net.minecraft.src;
 /* 118:    */     {
 /* 119:136 */       paramaqu.setBlock(paramdt, localbec, 4);
 /* 120:    */     }
-/* 121:139 */     if (!((bhp)localObject).generate(paramaqu, paramRandom, paramdt.offset(i, 0, j))) {
+/* 121:139 */     if (!((TerrainGenerator)localObject).generate(paramaqu, paramRandom, paramdt.offset(i, 0, j))) {
 /* 122:140 */       if (k != 0)
 /* 123:    */       {
 /* 124:141 */         paramaqu.setBlock(paramdt.offset(i, 0, j), parambec, 4);

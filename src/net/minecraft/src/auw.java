@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ import java.util.Random;
 /*  2:   */ 
 /*  3:   */ public class auw
-/*  4:   */   extends auc
+/*  4:   */   extends BlockMushroom
 /*  5:   */ {
 /*  6:   */   protected auw()
 /*  7:   */   {

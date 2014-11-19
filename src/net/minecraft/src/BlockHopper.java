@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*   4:    */   extends atg
 /*   5:    */ {
 /*   6: 28 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", new awy());
-/*   7: 34 */   public static final BlockDataBoolean b = BlockDataBoolean.a("enabled");
+/*   7: 34 */   public static final BlockDataBoolean b = BlockDataBoolean.getInstance("enabled");
 /*   8:    */   
 /*   9:    */   public BlockHopper()
 /*  10:    */   {

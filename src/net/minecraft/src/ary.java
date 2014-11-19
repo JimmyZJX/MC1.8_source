@@ -41,27 +41,27 @@ package net.minecraft.src;
 /*  40: 52 */     this.random = null;
 /*  41:    */   }
 /*  42:    */   
-/*  43: 55 */   protected bhp e = new bhl(4);
-/*  44: 56 */   protected bhp f = new bik(BlockList.sand, 7);
-/*  45: 57 */   protected bhp g = new bik(BlockList.gravel, 6);
-/*  46:    */   protected bhp dirtGenerator;
-/*  47:    */   protected bhp gravelGenerator;
-/*  48:    */   protected bhp graniteGenerator;
-/*  49:    */   protected bhp dioriteGenerator;
-/*  50:    */   protected bhp andesiteGenerator;
-/*  51:    */   protected bhp coalGenerator;
-/*  52:    */   protected bhp ironGenerator;
-/*  53:    */   protected bhp goldGenerator;
-/*  54:    */   protected bhp redstoneGenerator;
-/*  55:    */   protected bhp diamondGenerator;
-/*  56:    */   protected bhp lapisGenerator;
+/*  43: 55 */   protected TerrainGenerator e = new bhl(4);
+/*  44: 56 */   protected TerrainGenerator f = new bik(BlockList.sand, 7);
+/*  45: 57 */   protected TerrainGenerator g = new bik(BlockList.gravel, 6);
+/*  46:    */   protected TerrainGenerator dirtGenerator;
+/*  47:    */   protected TerrainGenerator gravelGenerator;
+/*  48:    */   protected TerrainGenerator graniteGenerator;
+/*  49:    */   protected TerrainGenerator dioriteGenerator;
+/*  50:    */   protected TerrainGenerator andesiteGenerator;
+/*  51:    */   protected TerrainGenerator coalGenerator;
+/*  52:    */   protected TerrainGenerator ironGenerator;
+/*  53:    */   protected TerrainGenerator goldGenerator;
+/*  54:    */   protected TerrainGenerator redstoneGenerator;
+/*  55:    */   protected TerrainGenerator diamondGenerator;
+/*  56:    */   protected TerrainGenerator lapisGenerator;
 /*  57: 69 */   protected bhq s = new bhq(BlockList.yellowFlower, EnumFlowerVariant.a);
-/*  58: 70 */   protected bhp t = new bhi(BlockList.brownMushroom);
-/*  59: 71 */   protected bhp u = new bhi(BlockList.redMushroom);
-/*  60: 72 */   protected bhp v = new bhv();
-/*  61: 73 */   protected bhp w = new bii();
-/*  62: 74 */   protected bhp x = new bhj();
-/*  63: 75 */   protected bhp y = new bit();
+/*  58: 70 */   protected TerrainGenerator t = new MushroomGenerator(BlockList.brownMushroom);
+/*  59: 71 */   protected TerrainGenerator u = new MushroomGenerator(BlockList.redMushroom);
+/*  60: 72 */   protected TerrainGenerator v = new bhv();
+/*  61: 73 */   protected TerrainGenerator w = new bii();
+/*  62: 74 */   protected TerrainGenerator x = new bhj();
+/*  63: 75 */   protected TerrainGenerator y = new bit();
 /*  64:    */   protected int z;
 /*  65:    */   protected int A;
 /*  66: 79 */   protected int B = 2;
@@ -251,7 +251,7 @@ package net.minecraft.src;
 /* 250:    */     }
 /* 251:    */   }
 /* 252:    */   
-/* 253:    */   protected void generateOre(int num, bhp parambhp, int y1, int y2)
+/* 253:    */   protected void generateOre(int num, TerrainGenerator parambhp, int y1, int y2)
 /* 254:    */   {
 /* 255:261 */     if (y2 < y1)
 /* 256:    */     {
@@ -274,7 +274,7 @@ package net.minecraft.src;
 /* 273:    */     }
 /* 274:    */   }
 /* 275:    */   
-/* 276:    */   protected void generateLapis(int paramInt1, bhp parambhp, int paramInt2, int paramInt3)
+/* 276:    */   protected void generateLapis(int paramInt1, TerrainGenerator parambhp, int paramInt2, int paramInt3)
 /* 277:    */   {
 /* 278:280 */     for (int i1 = 0; i1 < paramInt1; i1++)
 /* 279:    */     {

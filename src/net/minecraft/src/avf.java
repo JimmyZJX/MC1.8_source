@@ -5,9 +5,9 @@ package net.minecraft.src;
 /*   4:    */   extends ProtoBlock
 /*   5:    */ {
 /*   6: 26 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", en.HORIZONTAL);
-/*   7: 27 */   public static final BlockDataBoolean b = BlockDataBoolean.a("open");
+/*   7: 27 */   public static final BlockDataBoolean b = BlockDataBoolean.getInstance("open");
 /*   8: 28 */   public static final BlockDataEnum M = BlockDataEnum.getInstance("hinge", avh.class);
-/*   9: 29 */   public static final BlockDataBoolean N = BlockDataBoolean.a("powered");
+/*   9: 29 */   public static final BlockDataBoolean N = BlockDataBoolean.getInstance("powered");
 /*  10: 30 */   public static final BlockDataEnum O = BlockDataEnum.getInstance("half", avg.class);
 /*  11:    */   
 /*  12:    */   protected avf(Material parambof)

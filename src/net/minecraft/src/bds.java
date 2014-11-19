@@ -7,7 +7,7 @@ package net.minecraft.src;
 /*   6:    */ {
 /*   7: 26 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing");
 /*   8: 27 */   public static final BlockDataEnum b = BlockDataEnum.getInstance("type", bdu.class);
-/*   9: 28 */   public static final BlockDataBoolean M = BlockDataBoolean.a("short");
+/*   9: 28 */   public static final BlockDataBoolean M = BlockDataBoolean.getInstance("short");
 /*  10:    */   
 /*  11:    */   public bds()
 /*  12:    */   {

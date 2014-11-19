@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ import java.util.List;
 /*  2:   */ 
 /*  3:   */ public class bcb
-/*  4:   */   extends auc
+/*  4:   */   extends BlockMushroom
 /*  5:   */ {
 /*  6:   */   protected bcb()
 /*  7:   */   {

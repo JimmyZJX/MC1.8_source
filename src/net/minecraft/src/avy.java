@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ import java.util.List;
 /*   2:    */ 
 /*   3:    */ public abstract class avy
-/*   4:    */   extends auc
+/*   4:    */   extends BlockMushroom
 /*   5:    */ {
 /*   6:    */   protected BlockDataEnum a;
 /*   7:    */   

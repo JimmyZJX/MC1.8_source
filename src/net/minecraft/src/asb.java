@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*  3:   */ public class asb
 /*  4:   */   extends arm
 /*  5:   */ {
-/*  6:19 */   private bhp aD = new OreGenerator(BlockList.monsterEgg.instance().a(axs.a, EnumMonsterEggVariants.a), 9);
+/*  6:19 */   private TerrainGenerator aD = new OreGenerator(BlockList.monsterEgg.instance().a(axs.a, EnumMonsterEggVariants.a), 9);
 /*  7:20 */   private bio aE = new bio(false);
 /*  8:22 */   private int aF = 0;
 /*  9:23 */   private int aG = 1;

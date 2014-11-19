@@ -47,7 +47,7 @@ package net.minecraft.src;
 /* 46:   */         {
 /* 47:46 */           BlockPosition localdt = parambru.a().a(parambru.b);
 /* 48:47 */           if (this.world.isEmpty(localdt)) {
-/* 49:48 */             this.world.setBlock(localdt, BlockList.ab.instance());
+/* 49:48 */             this.world.setBlock(localdt, BlockList.fire.instance());
 /* 50:   */           }
 /* 51:   */         }
 /* 52:   */       }

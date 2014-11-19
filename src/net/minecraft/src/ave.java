@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*   4:    */   extends atg
 /*   5:    */ {
 /*   6: 25 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing");
-/*   7: 26 */   public static final BlockDataBoolean b = BlockDataBoolean.a("triggered");
+/*   7: 26 */   public static final BlockDataBoolean b = BlockDataBoolean.getInstance("triggered");
 /*   8: 28 */   public static final ei M = new ei(new eg());
 /*   9: 30 */   protected Random N = new Random();
 /*  10:    */   

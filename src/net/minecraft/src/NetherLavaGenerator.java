@@ -1,16 +1,16 @@
 package net.minecraft.src;
 /*  1:   */ import java.util.Random;
 /*  2:   */ 
-/*  3:   */ public class bhu
-/*  4:   */   extends bhp
+/*  3:   */ public class NetherLavaGenerator
+/*  4:   */   extends TerrainGenerator
 /*  5:   */ {
 /*  6:   */   private final ProtoBlock block;
-/*  7:   */   private final boolean b;
+/*  7:   */   private final boolean closedOnly;
 /*  8:   */   
-/*  9:   */   public bhu(ProtoBlock paramatr, boolean paramBoolean)
+/*  9:   */   public NetherLavaGenerator(ProtoBlock paramatr, boolean paramBoolean)
 /* 10:   */   {
 /* 11:16 */     this.block = paramatr;
-/* 12:17 */     this.b = paramBoolean;
+/* 12:17 */     this.closedOnly = paramBoolean;
 /* 13:   */   }
 /* 14:   */   
 /* 15:   */   public boolean generate(World paramaqu, Random paramRandom, BlockPosition pos)
@@ -53,7 +53,7 @@ package net.minecraft.src;
 /* 52:59 */     if (paramaqu.isEmpty(pos.down())) {
 /* 53:60 */       j++;
 /* 54:   */     }
-/* 55:63 */     if (((!this.b) && (i == 4) && (j == 1)) || (i == 5))
+/* 55:63 */     if (((!this.closedOnly) && (i == 4) && (j == 1)) || (i == 5))
 /* 56:   */     {
 /* 57:64 */       paramaqu.setBlock(pos, this.block.instance(), 2);
 /* 58:65 */       paramaqu.a(this.block, pos, paramRandom);

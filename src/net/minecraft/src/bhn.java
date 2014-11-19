@@ -3,7 +3,7 @@ package net.minecraft.src;
 /*  2:   */ import java.util.Random;
 /*  3:   */ 
 /*  4:   */ public class bhn
-/*  5:   */   extends bhp
+/*  5:   */   extends TerrainGenerator
 /*  6:   */ {
 /*  7:15 */   private static final beq a = beq.a(BlockList.sand).a(BlockSand.a, Predicates.<Comparable>equalTo(bac.a));
 /*  8:16 */   private final Block b = BlockList.U.instance().a(bbf.M, bbg.b).a(BlockSlab.half, EnumSlabHalf.BOTTOM);

@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ import java.util.Random;
 /*   2:    */ 
 /*   3:    */ public class bhv
-/*   4:    */   extends bhp
+/*   4:    */   extends TerrainGenerator
 /*   5:    */ {
 /*   6: 12 */   private int a = -1;
 /*   7:    */   

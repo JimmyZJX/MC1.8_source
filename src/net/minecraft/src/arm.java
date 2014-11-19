@@ -205,7 +205,7 @@ package net.minecraft.src;
 /* 204:266 */     return this.aA;
 /* 205:    */   }
 /* 206:    */   
-/* 207:    */   public bhp b(Random paramRandom)
+/* 207:    */   public TerrainGenerator b(Random paramRandom)
 /* 208:    */   {
 /* 209:270 */     return new biq(bbi.b);
 /* 210:    */   }

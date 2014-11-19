@@ -5,11 +5,11 @@ package net.minecraft.src;
 /*   4:    */ public class bbv
 /*   5:    */   extends ProtoBlock
 /*   6:    */ {
-/*   7: 27 */   public static final BlockDataBoolean a = BlockDataBoolean.a("up");
-/*   8: 28 */   public static final BlockDataBoolean b = BlockDataBoolean.a("north");
-/*   9: 29 */   public static final BlockDataBoolean M = BlockDataBoolean.a("east");
-/*  10: 30 */   public static final BlockDataBoolean N = BlockDataBoolean.a("south");
-/*  11: 31 */   public static final BlockDataBoolean O = BlockDataBoolean.a("west");
+/*   7: 27 */   public static final BlockDataBoolean a = BlockDataBoolean.getInstance("up");
+/*   8: 28 */   public static final BlockDataBoolean b = BlockDataBoolean.getInstance("north");
+/*   9: 29 */   public static final BlockDataBoolean M = BlockDataBoolean.getInstance("east");
+/*  10: 30 */   public static final BlockDataBoolean N = BlockDataBoolean.getInstance("south");
+/*  11: 31 */   public static final BlockDataBoolean O = BlockDataBoolean.getInstance("west");
 /*  12: 32 */   public static final BlockDataBoolean[] P = { a, b, N, O, M };
 /*  13: 34 */   public static final int Q = b(EnumDirection.SOUTH);
 /*  14: 35 */   public static final int R = b(EnumDirection.NORTH);

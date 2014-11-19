@@ -47,7 +47,7 @@ package net.minecraft.src;
 /* 46:52 */         if (localatr.material == Material.air)
 /* 47:   */         {
 /* 48:53 */           if (e(paramaqu, localdt1)) {
-/* 49:54 */             paramaqu.setBlock(localdt1, BlockList.ab.instance());
+/* 49:54 */             paramaqu.setBlock(localdt1, BlockList.fire.instance());
 /* 50:   */           }
 /* 51:   */         }
 /* 52:57 */         else if (localatr.material.c()) {
@@ -61,7 +61,7 @@ package net.minecraft.src;
 /* 60:   */       {
 /* 61:63 */         BlockPosition localdt2 = paramdt.offset(paramRandom.nextInt(3) - 1, 0, paramRandom.nextInt(3) - 1);
 /* 62:64 */         if ((paramaqu.isEmpty(localdt2.up())) && (m(paramaqu, localdt2))) {
-/* 63:65 */           paramaqu.setBlock(localdt2.up(), BlockList.ab.instance());
+/* 63:65 */           paramaqu.setBlock(localdt2.up(), BlockList.fire.instance());
 /* 64:   */         }
 /* 65:   */       }
 /* 66:   */     }

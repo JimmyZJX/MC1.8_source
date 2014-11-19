@@ -75,7 +75,7 @@ package net.minecraft.src;
 /*  74:    */   
 /*  75:    */   public boolean c(World paramaqu, BlockPosition paramdt)
 /*  76:    */   {
-/*  77:100 */     return (World.isFlatSurface(paramaqu, paramdt.down())) || (paramaqu.getBlock(paramdt.down()).getProto() == BlockList.aX);
+/*  77:100 */     return (World.isFlatSurface(paramaqu, paramdt.down())) || (paramaqu.getBlock(paramdt.down()).getProto() == BlockList.glowstone);
 /*  78:    */   }
 /*  79:    */   
 /*  80:    */   private Block e(World paramaqu, BlockPosition paramdt, Block parambec)

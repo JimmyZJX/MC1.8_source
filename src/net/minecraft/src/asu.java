@@ -48,7 +48,7 @@ package net.minecraft.src;
 /*  47: 56 */     return aE;
 /*  48:    */   }
 /*  49:    */   
-/*  50:    */   public bhp b(Random paramRandom)
+/*  50:    */   public TerrainGenerator b(Random paramRandom)
 /*  51:    */   {
 /*  52: 61 */     if (paramRandom.nextInt(5) > 0) {
 /*  53: 62 */       return new biq(bbi.c);

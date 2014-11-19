@@ -72,7 +72,7 @@ package net.minecraft.src;
 /* 71:   */   {
 /* 72:75 */     ProtoBlock localatr = paramaqu.getBlock(paramdt).getProto();
 /* 73:76 */     Material localbof = localatr.material;
-/* 74:77 */     return (localatr == BlockList.ab) || (localbof == Material.air) || (localbof == Material.water) || (localbof == Material.lava);
+/* 74:77 */     return (localatr == BlockList.fire) || (localbof == Material.air) || (localbof == Material.water) || (localbof == Material.lava);
 /* 75:   */   }
 /* 76:   */   
 /* 77:   */   public void a_(World paramaqu, BlockPosition paramdt) {}

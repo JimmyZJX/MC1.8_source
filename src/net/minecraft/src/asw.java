@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*  3:   */ public class asw
 /*  4:   */   extends ary
 /*  5:   */ {
-/*  6:13 */   protected bhp M = new bim(BlockList.endStone);
+/*  6:13 */   protected TerrainGenerator M = new bim(BlockList.endStone);
 /*  7:   */   
 /*  8:   */   protected void generate(arm paramarm)
 /*  9:   */   {

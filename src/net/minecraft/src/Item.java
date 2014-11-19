@@ -479,7 +479,7 @@ package net.minecraft.src;
 /* 477:539 */     c(BlockList.pumpkin);
 /* 478:540 */     c(BlockList.netherrack);
 /* 479:541 */     c(BlockList.aW);
-/* 480:542 */     c(BlockList.aX);
+/* 480:542 */     c(BlockList.glowstone);
 /* 481:543 */     c(BlockList.aZ);
 /* 482:544 */     c(BlockList.bd);
 /* 483:545 */     a(BlockList.monsterEgg, new amr(BlockList.monsterEgg, BlockList.monsterEgg, new alu()).b("monsterStoneEgg"));

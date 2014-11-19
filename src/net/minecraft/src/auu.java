@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ import java.util.Random;
 /*   2:    */ 
 /*   3:    */ public class auu
-/*   4:    */   extends auc
+/*   4:    */   extends BlockMushroom
 /*   5:    */   implements atz
 /*   6:    */ {
 /*   7: 18 */   public static final BlockDataInteger a = BlockDataInteger.getInstance("age", 0, 7);

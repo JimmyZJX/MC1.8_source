@@ -7,7 +7,7 @@ package net.minecraft.src;
 /*   6:    */   extends ati
 /*   7:    */ {
 /*   8: 27 */   public static final BlockDataEnum b = BlockDataEnum.getInstance("shape", EnumRailState.class, new auz());
-/*   9: 36 */   public static final BlockDataBoolean M = BlockDataBoolean.a("powered");
+/*   9: 36 */   public static final BlockDataBoolean M = BlockDataBoolean.getInstance("powered");
 /*  10:    */   
 /*  11:    */   public auy()
 /*  12:    */   {

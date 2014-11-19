@@ -3,7 +3,7 @@ package net.minecraft.src;
 /*   2:    */   extends ProtoBlock
 /*   3:    */ {
 /*   4: 22 */   public static final BlockDataEnum a = BlockDataEnum.getInstance("facing", axk.class);
-/*   5: 23 */   public static final BlockDataBoolean b = BlockDataBoolean.a("powered");
+/*   5: 23 */   public static final BlockDataBoolean b = BlockDataBoolean.getInstance("powered");
 /*   6:    */   
 /*   7:    */   protected axi()
 /*   8:    */   {

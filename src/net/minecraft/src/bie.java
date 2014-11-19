@@ -7,7 +7,7 @@ package net.minecraft.src;
 /*   6:    */ import org.apache.logging.log4j.Logger;
 /*   7:    */ 
 /*   8:    */ public class bie
-/*   9:    */   extends bhp
+/*   9:    */   extends TerrainGenerator
 /*  10:    */ {
 /*  11: 22 */   private static final Logger a = LogManager.getLogger();
 /*  12: 25 */   private static final String[] b = { "Skeleton", "Zombie", "Zombie", "Spider" };

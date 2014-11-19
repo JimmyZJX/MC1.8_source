@@ -135,7 +135,7 @@ package net.minecraft.src;
 /* 134:    */ 
 /* 135:    */ 
 /* 136:    */ 
-/* 137:142 */     paramaop.a(new ItemStack(BlockList.bJ, 1), new Object[] { " R ", "RGR", " R ", Character.valueOf('R'), ItemList.aC, Character.valueOf('G'), BlockList.aX });
+/* 137:142 */     paramaop.a(new ItemStack(BlockList.bJ, 1), new Object[] { " R ", "RGR", " R ", Character.valueOf('R'), ItemList.aC, Character.valueOf('G'), BlockList.glowstone });
 /* 138:    */     
 /* 139:    */ 
 /* 140:    */ 

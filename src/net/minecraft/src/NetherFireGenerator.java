@@ -1,8 +1,8 @@
 package net.minecraft.src;
 /*  1:   */ import java.util.Random;
 /*  2:   */ 
-/*  3:   */ public class bhs
-/*  4:   */   extends bhp
+/*  3:   */ public class NetherFireGenerator
+/*  4:   */   extends TerrainGenerator
 /*  5:   */ {
 /*  6:   */   public boolean generate(World paramaqu, Random paramRandom, BlockPosition paramdt)
 /*  7:   */   {
@@ -11,7 +11,7 @@ package net.minecraft.src;
 /* 10:14 */       BlockPosition localdt = paramdt.offset(paramRandom.nextInt(8) - paramRandom.nextInt(8), paramRandom.nextInt(4) - paramRandom.nextInt(4), paramRandom.nextInt(8) - paramRandom.nextInt(8));
 /* 11:15 */       if (paramaqu.isEmpty(localdt)) {
 /* 12:18 */         if (paramaqu.getBlock(localdt.down()).getProto() == BlockList.netherrack) {
-/* 13:21 */           paramaqu.setBlock(localdt, BlockList.ab.instance(), 2);
+/* 13:21 */           paramaqu.setBlock(localdt, BlockList.fire.instance(), 2);
 /* 14:   */         }
 /* 15:   */       }
 /* 16:   */     }

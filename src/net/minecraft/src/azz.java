@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*   3:    */ public class azz
 /*   4:    */   extends ava
 /*   5:    */ {
-/*   6: 21 */   public static final BlockDataBoolean a = BlockDataBoolean.a("locked");
+/*   6: 21 */   public static final BlockDataBoolean a = BlockDataBoolean.getInstance("locked");
 /*   7: 22 */   public static final BlockDataInteger b = BlockDataInteger.getInstance("delay", 1, 4);
 /*   8:    */   
 /*   9:    */   protected azz(boolean paramBoolean)

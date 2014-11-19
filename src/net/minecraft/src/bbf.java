@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*   4:    */ public abstract class bbf
 /*   5:    */   extends BlockSlab
 /*   6:    */ {
-/*   7: 21 */   public static final BlockDataBoolean b = BlockDataBoolean.a("seamless");
+/*   7: 21 */   public static final BlockDataBoolean b = BlockDataBoolean.getInstance("seamless");
 /*   8: 22 */   public static final BlockDataEnum M = BlockDataEnum.getInstance("variant", bbg.class);
 /*   9:    */   
 /*  10:    */   public bbf()

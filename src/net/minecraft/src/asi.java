@@ -38,7 +38,7 @@ package net.minecraft.src;
 /* 37:46 */     return new bir(false, 4 + paramRandom.nextInt(7), EnumWoodVariant.JUNGLE.getIndex(), EnumWoodVariant.JUNGLE.getIndex(), true);
 /* 38:   */   }
 /* 39:   */   
-/* 40:   */   public bhp b(Random paramRandom)
+/* 40:   */   public TerrainGenerator b(Random paramRandom)
 /* 41:   */   {
 /* 42:51 */     if (paramRandom.nextInt(4) == 0) {
 /* 43:52 */       return new biq(bbi.c);

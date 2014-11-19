@@ -428,7 +428,7 @@ package net.minecraft.src;
 /* 427:474 */       d();
 /* 428:    */     }
 /* 429:477 */     ProtoBlock.R();
-/* 430:478 */     avx.j();
+/* 430:478 */     BlockFire.j();
 /* 431:    */     
 /* 432:480 */     Item.t();
 /* 433:481 */     StatList.a();

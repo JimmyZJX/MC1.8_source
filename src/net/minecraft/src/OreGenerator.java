@@ -3,7 +3,7 @@ package net.minecraft.src;
 /*  2:   */ import java.util.Random;
 /*  3:   */ 
 /*  4:   */ public class OreGenerator
-/*  5:   */   extends bhp
+/*  5:   */   extends TerrainGenerator
 /*  6:   */ {
 /*  7:   */   private final Block block;
 /*  8:   */   private final int radius;

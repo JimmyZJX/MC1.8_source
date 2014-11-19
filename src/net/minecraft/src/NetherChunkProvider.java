@@ -19,14 +19,14 @@ package net.minecraft.src;
 /*  18:    */   private final bnv s;
 /*  19:    */   public final bnv a;
 /*  20:    */   public final bnv b;
-/*  21: 46 */   private final bhs t = new bhs();
-/*  22: 47 */   private final bhz u = new bhz();
-/*  23: 48 */   private final bht v = new bht();
-/*  24: 49 */   private final bhp quartzGenerator = new OreGenerator(BlockList.quartzOre.instance(), 14, BlockIs.instance(BlockList.netherrack));
-/*  25: 50 */   private final bhu x = new bhu(BlockList.flowingLava, true);
-/*  26: 51 */   private final bhu y = new bhu(BlockList.flowingLava, false);
-/*  27: 52 */   private final bhi z = new bhi(BlockList.brownMushroom);
-/*  28: 53 */   private final bhi A = new bhi(BlockList.redMushroom);
+/*  21: 46 */   private final NetherFireGenerator fireGenerator = new NetherFireGenerator();
+/*  22: 47 */   private final DownwardsGlowstoneGenerator u = new DownwardsGlowstoneGenerator();
+/*  23: 48 */   private final UpwardsGlowstoneGenerator v = new UpwardsGlowstoneGenerator();
+/*  24: 49 */   private final TerrainGenerator quartzGenerator = new OreGenerator(BlockList.quartzOre.instance(), 14, BlockIs.instance(BlockList.netherrack));
+/*  25: 50 */   private final NetherLavaGenerator closedLavaGenerator = new NetherLavaGenerator(BlockList.flowingLava, true);
+/*  26: 51 */   private final NetherLavaGenerator lavaGenerator = new NetherLavaGenerator(BlockList.flowingLava, false);
+/*  27: 52 */   private final MushroomGenerator z = new MushroomGenerator(BlockList.brownMushroom);
+/*  28: 53 */   private final MushroomGenerator A = new MushroomGenerator(BlockList.redMushroom);
 /*  29: 54 */   private final bjl B = new bjl();
 /*  30: 55 */   private final bgt C = new bgu();
 /*  31:    */   double[] c;
@@ -298,10 +298,10 @@ package net.minecraft.src;
 /* 297:    */     
 /* 298:319 */     this.B.a(this.world, this.rng, localaqm);
 /* 299:321 */     for (int i1 = 0; i1 < 8; i1++) {
-/* 300:322 */       this.y.generate(this.world, this.rng, localdt.offset(this.rng.nextInt(16) + 8, this.rng.nextInt(120) + 4, this.rng.nextInt(16) + 8));
+/* 300:322 */       this.lavaGenerator.generate(this.world, this.rng, localdt.offset(this.rng.nextInt(16) + 8, this.rng.nextInt(120) + 4, this.rng.nextInt(16) + 8));
 /* 301:    */     }
 /* 302:325 */     for (int i1 = 0; i1 < this.rng.nextInt(this.rng.nextInt(10) + 1) + 1; i1++) {
-/* 303:326 */       this.t.generate(this.world, this.rng, localdt.offset(this.rng.nextInt(16) + 8, this.rng.nextInt(120) + 4, this.rng.nextInt(16) + 8));
+/* 303:326 */       this.fireGenerator.generate(this.world, this.rng, localdt.offset(this.rng.nextInt(16) + 8, this.rng.nextInt(120) + 4, this.rng.nextInt(16) + 8));
 /* 304:    */     }
 /* 305:329 */     for (int i1 = 0; i1 < this.rng.nextInt(this.rng.nextInt(10) + 1); i1++) {
 /* 306:330 */       this.u.generate(this.world, this.rng, localdt.offset(this.rng.nextInt(16) + 8, this.rng.nextInt(120) + 4, this.rng.nextInt(16) + 8));
@@ -319,7 +319,7 @@ package net.minecraft.src;
 /* 318:346 */       this.quartzGenerator.generate(this.world, this.rng, localdt.offset(this.rng.nextInt(16), this.rng.nextInt(108) + 10, this.rng.nextInt(16)));
 /* 319:    */     }
 /* 320:349 */     for (int i1 = 0; i1 < 16; i1++) {
-/* 321:350 */       this.x.generate(this.world, this.rng, localdt.offset(this.rng.nextInt(16), this.rng.nextInt(108) + 10, this.rng.nextInt(16)));
+/* 321:350 */       this.closedLavaGenerator.generate(this.world, this.rng, localdt.offset(this.rng.nextInt(16), this.rng.nextInt(108) + 10, this.rng.nextInt(16)));
 /* 322:    */     }
 /* 323:353 */     avt.M = false;
 /* 324:    */   }

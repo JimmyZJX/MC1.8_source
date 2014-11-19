@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*   4:    */ public class aub
 /*   5:    */   extends atg
 /*   6:    */ {
-/*   7: 29 */   public static final BlockDataBoolean[] a = { BlockDataBoolean.a("has_bottle_0"), BlockDataBoolean.a("has_bottle_1"), BlockDataBoolean.a("has_bottle_2") };
+/*   7: 29 */   public static final BlockDataBoolean[] a = { BlockDataBoolean.getInstance("has_bottle_0"), BlockDataBoolean.getInstance("has_bottle_1"), BlockDataBoolean.getInstance("has_bottle_2") };
 /*   8: 35 */   private final Random b = new Random();
 /*   9:    */   
 /*  10:    */   public aub()

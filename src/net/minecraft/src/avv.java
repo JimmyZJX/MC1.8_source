@@ -4,10 +4,10 @@ package net.minecraft.src;
 /*   3:    */ public class avv
 /*   4:    */   extends ProtoBlock
 /*   5:    */ {
-/*   6: 20 */   public static final BlockDataBoolean a = BlockDataBoolean.a("north");
-/*   7: 21 */   public static final BlockDataBoolean b = BlockDataBoolean.a("east");
-/*   8: 22 */   public static final BlockDataBoolean M = BlockDataBoolean.a("south");
-/*   9: 23 */   public static final BlockDataBoolean N = BlockDataBoolean.a("west");
+/*   6: 20 */   public static final BlockDataBoolean a = BlockDataBoolean.getInstance("north");
+/*   7: 21 */   public static final BlockDataBoolean b = BlockDataBoolean.getInstance("east");
+/*   8: 22 */   public static final BlockDataBoolean M = BlockDataBoolean.getInstance("south");
+/*   9: 23 */   public static final BlockDataBoolean N = BlockDataBoolean.getInstance("west");
 /*  10:    */   
 /*  11:    */   public avv(Material parambof)
 /*  12:    */   {

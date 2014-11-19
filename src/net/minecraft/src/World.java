@@ -1494,7 +1494,7 @@ import net.minecraft.server.MinecraftServer;
 /* 1491:1526 */           for (int i9 = i5; i9 < i6; i9++)
 /* 1492:     */           {
 /* 1493:1527 */             ProtoBlock localatr = getBlock(new BlockPosition(i7, i8, i9)).getProto();
-/* 1494:1528 */             if ((localatr == BlockList.ab) || (localatr == BlockList.flowingLava) || (localatr == BlockList.lava)) {
+/* 1494:1528 */             if ((localatr == BlockList.fire) || (localatr == BlockList.flowingLava) || (localatr == BlockList.lava)) {
 /* 1495:1529 */               return true;
 /* 1496:     */             }
 /* 1497:     */           }
@@ -1644,7 +1644,7 @@ import net.minecraft.server.MinecraftServer;
 /* 1641:     */   public boolean a(EntityPlayer paramahd, BlockPosition paramdt, EnumDirection paramej)
 /* 1642:     */   {
 /* 1643:1668 */     paramdt = paramdt.a(paramej);
-/* 1644:1670 */     if (getBlock(paramdt).getProto() == BlockList.ab)
+/* 1644:1670 */     if (getBlock(paramdt).getProto() == BlockList.fire)
 /* 1645:     */     {
 /* 1646:1671 */       playLevelEvent(paramahd, 1004, paramdt, 0);
 /* 1647:1672 */       g(paramdt);

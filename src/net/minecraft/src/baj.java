@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*   5:    */   extends atg
 /*   6:    */ {
 /*   7: 36 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing");
-/*   8: 37 */   public static final BlockDataBoolean b = BlockDataBoolean.a("nodrop");
+/*   8: 37 */   public static final BlockDataBoolean b = BlockDataBoolean.getInstance("nodrop");
 /*   9: 39 */   private static final Predicate M = new bak();
 /*  10:    */   private bek N;
 /*  11:    */   private bek O;

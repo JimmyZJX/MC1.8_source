@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*   4:    */   extends avb
 /*   5:    */ {
 /*   6: 25 */   public static final BlockDataEnum a = BlockDataEnum.getInstance("part", atq.class);
-/*   7: 26 */   public static final BlockDataBoolean b = BlockDataBoolean.a("occupied");
+/*   7: 26 */   public static final BlockDataBoolean b = BlockDataBoolean.getInstance("occupied");
 /*   8:    */   
 /*   9:    */   public atp()
 /*  10:    */   {

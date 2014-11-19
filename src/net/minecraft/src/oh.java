@@ -11,7 +11,7 @@ package net.minecraft.src;
 /*  10:277 */     BlockPosition localdt = paramdz.d().a(ave.b(paramdz.f()));
 /*  11:278 */     if (localaqu.isEmpty(localdt))
 /*  12:    */     {
-/*  13:279 */       localaqu.setBlock(localdt, BlockList.ab.instance());
+/*  13:279 */       localaqu.setBlock(localdt, BlockList.fire.instance());
 /*  14:281 */       if (paramamj.a(1, localaqu.rng)) {
 /*  15:282 */         paramamj.stackSize = 0;
 /*  16:    */       }

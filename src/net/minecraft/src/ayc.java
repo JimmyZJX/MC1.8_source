@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*  3:   */ public class ayc
 /*  4:   */   extends ProtoBlock
 /*  5:   */ {
-/*  6:18 */   public static final BlockDataBoolean a = BlockDataBoolean.a("snowy");
+/*  6:18 */   public static final BlockDataBoolean a = BlockDataBoolean.getInstance("snowy");
 /*  7:   */   
 /*  8:   */   protected ayc()
 /*  9:   */   {

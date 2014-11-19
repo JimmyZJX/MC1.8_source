@@ -232,7 +232,7 @@ package net.minecraft.src;
 /*  231:     */ 
 /*  232:     */ 
 /*  233:     */ 
-/*  234: 240 */     a(new ItemStack(BlockList.aX, 1), new Object[] { "##", "##", Character.valueOf('#'), ItemList.aT });
+/*  234: 240 */     a(new ItemStack(BlockList.glowstone, 1), new Object[] { "##", "##", Character.valueOf('#'), ItemList.aT });
 /*  235:     */     
 /*  236:     */ 
 /*  237:     */ 

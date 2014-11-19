@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*   9:    */ public class baq
 /*  10:    */   extends ProtoBlock
 /*  11:    */ {
-/*  12: 24 */   public static final BlockDataBoolean a = BlockDataBoolean.a("wet");
+/*  12: 24 */   public static final BlockDataBoolean a = BlockDataBoolean.getInstance("wet");
 /*  13:    */   
 /*  14:    */   protected baq()
 /*  15:    */   {

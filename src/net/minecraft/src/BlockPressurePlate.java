@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*  3:   */ public class BlockPressurePlate
 /*  4:   */   extends ath
 /*  5:   */ {
-/*  6:17 */   public static final BlockDataBoolean a = BlockDataBoolean.a("powered");
+/*  6:17 */   public static final BlockDataBoolean a = BlockDataBoolean.getInstance("powered");
 /*  7:   */   private final azh b;
 /*  8:   */   
 /*  9:   */   protected BlockPressurePlate(Material parambof, azh paramazh)

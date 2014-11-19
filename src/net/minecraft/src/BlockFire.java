@@ -3,24 +3,24 @@ package net.minecraft.src;
 /*   2:    */ import java.util.Map;
 /*   3:    */ import java.util.Random;
 /*   4:    */ 
-/*   5:    */ public class avx
+/*   5:    */ public class BlockFire
 /*   6:    */   extends ProtoBlock
 /*   7:    */ {
-/*   8: 25 */   public static final BlockDataInteger a = BlockDataInteger.getInstance("age", 0, 15);
-/*   9: 26 */   public static final BlockDataBoolean b = BlockDataBoolean.a("flip");
-/*  10: 27 */   public static final BlockDataBoolean M = BlockDataBoolean.a("alt");
-/*  11: 28 */   public static final BlockDataBoolean N = BlockDataBoolean.a("north");
-/*  12: 29 */   public static final BlockDataBoolean O = BlockDataBoolean.a("east");
-/*  13: 30 */   public static final BlockDataBoolean P = BlockDataBoolean.a("south");
-/*  14: 31 */   public static final BlockDataBoolean Q = BlockDataBoolean.a("west");
-/*  15: 32 */   public static final BlockDataInteger R = BlockDataInteger.getInstance("upper", 0, 2);
+/*   8: 25 */   public static final BlockDataInteger age = BlockDataInteger.getInstance("age", 0, 15);
+/*   9: 26 */   public static final BlockDataBoolean flip = BlockDataBoolean.getInstance("flip");
+/*  10: 27 */   public static final BlockDataBoolean alt = BlockDataBoolean.getInstance("alt");
+/*  11: 28 */   public static final BlockDataBoolean north = BlockDataBoolean.getInstance("north");
+/*  12: 29 */   public static final BlockDataBoolean east = BlockDataBoolean.getInstance("east");
+/*  13: 30 */   public static final BlockDataBoolean south = BlockDataBoolean.getInstance("south");
+/*  14: 31 */   public static final BlockDataBoolean west = BlockDataBoolean.getInstance("west");
+/*  15: 32 */   public static final BlockDataInteger upper = BlockDataInteger.getInstance("upper", 0, 2);
 /*  16:    */   
 /*  17:    */   public Block a(Block parambec, IBlockAccess paramard, BlockPosition paramdt)
 /*  18:    */   {
 /*  19: 36 */     int i = paramdt.getX();
 /*  20: 37 */     int j = paramdt.getY();
 /*  21: 38 */     int k = paramdt.getZ();
-/*  22: 40 */     if ((World.isFlatSurface(paramard, paramdt.down())) || (BlockList.ab.e(paramard, paramdt.down()))) {
+/*  22: 40 */     if ((World.isFlatSurface(paramard, paramdt.down())) || (BlockList.fire.e(paramard, paramdt.down()))) {
 /*  23: 41 */       return instance();
 /*  24:    */     }
 /*  25: 44 */     boolean bool1 = (i + j + k & 0x1) == 1;
@@ -30,56 +30,56 @@ package net.minecraft.src;
 /*  29: 48 */     if (e(paramard, paramdt.up())) {
 /*  30: 49 */       m = bool1 ? 1 : 2;
 /*  31:    */     }
-/*  32: 52 */     return parambec.a(N, Boolean.valueOf(e(paramard, paramdt.north()))).a(O, Boolean.valueOf(e(paramard, paramdt.east()))).a(P, Boolean.valueOf(e(paramard, paramdt.south()))).a(Q, Boolean.valueOf(e(paramard, paramdt.west()))).a(R, Integer.valueOf(m)).a(b, Boolean.valueOf(bool2)).a(M, Boolean.valueOf(bool1));
+/*  32: 52 */     return parambec.a(north, Boolean.valueOf(e(paramard, paramdt.north()))).a(east, Boolean.valueOf(e(paramard, paramdt.east()))).a(south, Boolean.valueOf(e(paramard, paramdt.south()))).a(west, Boolean.valueOf(e(paramard, paramdt.west()))).a(upper, Integer.valueOf(m)).a(flip, Boolean.valueOf(bool2)).a(alt, Boolean.valueOf(bool1));
 /*  33:    */   }
 /*  34:    */   
 /*  35: 72 */   private final Map S = Maps.newIdentityHashMap();
 /*  36: 73 */   private final Map T = Maps.newIdentityHashMap();
 /*  37:    */   
-/*  38:    */   protected avx()
+/*  38:    */   protected BlockFire()
 /*  39:    */   {
 /*  40: 76 */     super(Material.o);
-/*  41: 77 */     j(this.L.b().a(a, Integer.valueOf(0)).a(b, Boolean.valueOf(false)).a(M, Boolean.valueOf(false)).a(N, Boolean.valueOf(false)).a(O, Boolean.valueOf(false)).a(P, Boolean.valueOf(false)).a(Q, Boolean.valueOf(false)).a(R, Integer.valueOf(0)));
+/*  41: 77 */     j(this.L.b().a(age, Integer.valueOf(0)).a(flip, Boolean.valueOf(false)).a(alt, Boolean.valueOf(false)).a(north, Boolean.valueOf(false)).a(east, Boolean.valueOf(false)).a(south, Boolean.valueOf(false)).a(west, Boolean.valueOf(false)).a(upper, Integer.valueOf(0)));
 /*  42: 78 */     a(true);
 /*  43:    */   }
 /*  44:    */   
 /*  45:    */   public static void j()
 /*  46:    */   {
-/*  47: 82 */     BlockList.ab.a(BlockList.planks, 5, 20);
-/*  48: 83 */     BlockList.ab.a(BlockList.bL, 5, 20);
-/*  49: 84 */     BlockList.ab.a(BlockList.bM, 5, 20);
-/*  50: 85 */     BlockList.ab.a(BlockList.bo, 5, 20);
-/*  51: 86 */     BlockList.ab.a(BlockList.bp, 5, 20);
-/*  52: 87 */     BlockList.ab.a(BlockList.bq, 5, 20);
-/*  53: 88 */     BlockList.ab.a(BlockList.br, 5, 20);
-/*  54: 89 */     BlockList.ab.a(BlockList.bs, 5, 20);
-/*  55: 90 */     BlockList.ab.a(BlockList.bt, 5, 20);
-/*  56: 91 */     BlockList.ab.a(BlockList.fence, 5, 20);
-/*  57: 92 */     BlockList.ab.a(BlockList.aP, 5, 20);
-/*  58: 93 */     BlockList.ab.a(BlockList.aQ, 5, 20);
-/*  59: 94 */     BlockList.ab.a(BlockList.aR, 5, 20);
-/*  60: 95 */     BlockList.ab.a(BlockList.darkOakFence, 5, 20);
-/*  61: 96 */     BlockList.ab.a(BlockList.aT, 5, 20);
-/*  62: 97 */     BlockList.ab.a(BlockList.ad, 5, 20);
-/*  63: 98 */     BlockList.ab.a(BlockList.bV, 5, 20);
-/*  64: 99 */     BlockList.ab.a(BlockList.bU, 5, 20);
-/*  65:100 */     BlockList.ab.a(BlockList.bW, 5, 20);
-/*  66:101 */     BlockList.ab.a(BlockList.log, 5, 5);
-/*  67:102 */     BlockList.ab.a(BlockList.log2, 5, 5);
-/*  68:103 */     BlockList.ab.a(BlockList.leaves, 30, 60);
-/*  69:104 */     BlockList.ab.a(BlockList.leaves2, 30, 60);
-/*  70:105 */     BlockList.ab.a(BlockList.bookshelf, 30, 20);
-/*  71:106 */     BlockList.ab.a(BlockList.W, 15, 100);
-/*  72:107 */     BlockList.ab.a(BlockList.tallgrass, 60, 100);
-/*  73:108 */     BlockList.ab.a(BlockList.cF, 60, 100);
-/*  74:109 */     BlockList.ab.a(BlockList.yellowFlower, 60, 100);
-/*  75:110 */     BlockList.ab.a(BlockList.redFlower, 60, 100);
-/*  76:111 */     BlockList.ab.a(BlockList.deadbush, 60, 100);
-/*  77:112 */     BlockList.ab.a(BlockList.wool, 30, 60);
-/*  78:113 */     BlockList.ab.a(BlockList.vine, 15, 100);
-/*  79:114 */     BlockList.ab.a(BlockList.cA, 5, 5);
-/*  80:115 */     BlockList.ab.a(BlockList.cx, 60, 20);
-/*  81:116 */     BlockList.ab.a(BlockList.cy, 60, 20);
+/*  47: 82 */     BlockList.fire.a(BlockList.planks, 5, 20);
+/*  48: 83 */     BlockList.fire.a(BlockList.bL, 5, 20);
+/*  49: 84 */     BlockList.fire.a(BlockList.bM, 5, 20);
+/*  50: 85 */     BlockList.fire.a(BlockList.bo, 5, 20);
+/*  51: 86 */     BlockList.fire.a(BlockList.bp, 5, 20);
+/*  52: 87 */     BlockList.fire.a(BlockList.bq, 5, 20);
+/*  53: 88 */     BlockList.fire.a(BlockList.br, 5, 20);
+/*  54: 89 */     BlockList.fire.a(BlockList.bs, 5, 20);
+/*  55: 90 */     BlockList.fire.a(BlockList.bt, 5, 20);
+/*  56: 91 */     BlockList.fire.a(BlockList.fence, 5, 20);
+/*  57: 92 */     BlockList.fire.a(BlockList.aP, 5, 20);
+/*  58: 93 */     BlockList.fire.a(BlockList.aQ, 5, 20);
+/*  59: 94 */     BlockList.fire.a(BlockList.aR, 5, 20);
+/*  60: 95 */     BlockList.fire.a(BlockList.darkOakFence, 5, 20);
+/*  61: 96 */     BlockList.fire.a(BlockList.aT, 5, 20);
+/*  62: 97 */     BlockList.fire.a(BlockList.ad, 5, 20);
+/*  63: 98 */     BlockList.fire.a(BlockList.bV, 5, 20);
+/*  64: 99 */     BlockList.fire.a(BlockList.bU, 5, 20);
+/*  65:100 */     BlockList.fire.a(BlockList.bW, 5, 20);
+/*  66:101 */     BlockList.fire.a(BlockList.log, 5, 5);
+/*  67:102 */     BlockList.fire.a(BlockList.log2, 5, 5);
+/*  68:103 */     BlockList.fire.a(BlockList.leaves, 30, 60);
+/*  69:104 */     BlockList.fire.a(BlockList.leaves2, 30, 60);
+/*  70:105 */     BlockList.fire.a(BlockList.bookshelf, 30, 20);
+/*  71:106 */     BlockList.fire.a(BlockList.W, 15, 100);
+/*  72:107 */     BlockList.fire.a(BlockList.tallgrass, 60, 100);
+/*  73:108 */     BlockList.fire.a(BlockList.cF, 60, 100);
+/*  74:109 */     BlockList.fire.a(BlockList.yellowFlower, 60, 100);
+/*  75:110 */     BlockList.fire.a(BlockList.redFlower, 60, 100);
+/*  76:111 */     BlockList.fire.a(BlockList.deadbush, 60, 100);
+/*  77:112 */     BlockList.fire.a(BlockList.wool, 30, 60);
+/*  78:113 */     BlockList.fire.a(BlockList.vine, 15, 100);
+/*  79:114 */     BlockList.fire.a(BlockList.cA, 5, 5);
+/*  80:115 */     BlockList.fire.a(BlockList.cx, 60, 20);
+/*  81:116 */     BlockList.fire.a(BlockList.cy, 60, 20);
 /*  82:    */   }
 /*  83:    */   
 /*  84:    */   public void a(ProtoBlock paramatr, int paramInt1, int paramInt2)
@@ -131,10 +131,10 @@ package net.minecraft.src;
 /* 130:167 */       paramaqu.g(paramdt);
 /* 131:168 */       return;
 /* 132:    */     }
-/* 133:171 */     int j = ((Integer)parambec.getProperty(a)).intValue();
+/* 133:171 */     int j = ((Integer)parambec.getProperty(age)).intValue();
 /* 134:172 */     if (j < 15)
 /* 135:    */     {
-/* 136:173 */       parambec = parambec.a(a, Integer.valueOf(j + paramRandom.nextInt(3) / 2));
+/* 136:173 */       parambec = parambec.a(age, Integer.valueOf(j + paramRandom.nextInt(3) / 2));
 /* 137:174 */       paramaqu.setBlock(paramdt, parambec, 4);
 /* 138:    */     }
 /* 139:177 */     paramaqu.a(paramdt, this, a(paramaqu) + paramRandom.nextInt(10));
@@ -188,7 +188,7 @@ package net.minecraft.src;
 /* 187:233 */                 if (i5 > 15) {
 /* 188:234 */                   i5 = 15;
 /* 189:    */                 }
-/* 190:236 */                 paramaqu.setBlock(localdt, parambec.a(a, Integer.valueOf(i5)), 3);
+/* 190:236 */                 paramaqu.setBlock(localdt, parambec.a(age, Integer.valueOf(i5)), 3);
 /* 191:    */               }
 /* 192:    */             }
 /* 193:    */           }
@@ -231,7 +231,7 @@ package net.minecraft.src;
 /* 230:269 */         if (j > 15) {
 /* 231:270 */           j = 15;
 /* 232:    */         }
-/* 233:272 */         paramaqu.setBlock(paramdt, instance().a(a, Integer.valueOf(j)), 3);
+/* 233:272 */         paramaqu.setBlock(paramdt, instance().a(age, Integer.valueOf(j)), 3);
 /* 234:    */       }
 /* 235:    */       else
 /* 236:    */       {
@@ -310,7 +310,7 @@ package net.minecraft.src;
 /* 309:    */     double d1;
 /* 310:    */     double d2;
 /* 311:    */     double d3;
-/* 312:348 */     if ((World.isFlatSurface(paramaqu, paramdt.down())) || (BlockList.ab.e(paramaqu, paramdt.down())))
+/* 312:348 */     if ((World.isFlatSurface(paramaqu, paramdt.down())) || (BlockList.fire.e(paramaqu, paramdt.down())))
 /* 313:    */     {
 /* 314:349 */       for (i = 0; i < 3; i++)
 /* 315:    */       {
@@ -322,7 +322,7 @@ package net.minecraft.src;
 /* 321:    */     }
 /* 322:    */     else
 /* 323:    */     {
-/* 324:356 */       if (BlockList.ab.e(paramaqu, paramdt.west())) {
+/* 324:356 */       if (BlockList.fire.e(paramaqu, paramdt.west())) {
 /* 325:357 */         for (i = 0; i < 2; i++)
 /* 326:    */         {
 /* 327:358 */           d1 = paramdt.getX() + paramRandom.nextDouble() * 0.1000000014901161D;
@@ -331,7 +331,7 @@ package net.minecraft.src;
 /* 330:361 */           paramaqu.a(ew.m, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 331:    */         }
 /* 332:    */       }
-/* 333:364 */       if (BlockList.ab.e(paramaqu, paramdt.east())) {
+/* 333:364 */       if (BlockList.fire.e(paramaqu, paramdt.east())) {
 /* 334:365 */         for (i = 0; i < 2; i++)
 /* 335:    */         {
 /* 336:366 */           d1 = paramdt.getX() + 1 - paramRandom.nextDouble() * 0.1000000014901161D;
@@ -340,7 +340,7 @@ package net.minecraft.src;
 /* 339:369 */           paramaqu.a(ew.m, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 340:    */         }
 /* 341:    */       }
-/* 342:372 */       if (BlockList.ab.e(paramaqu, paramdt.north())) {
+/* 342:372 */       if (BlockList.fire.e(paramaqu, paramdt.north())) {
 /* 343:373 */         for (i = 0; i < 2; i++)
 /* 344:    */         {
 /* 345:374 */           d1 = paramdt.getX() + paramRandom.nextDouble();
@@ -349,7 +349,7 @@ package net.minecraft.src;
 /* 348:377 */           paramaqu.a(ew.m, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 349:    */         }
 /* 350:    */       }
-/* 351:380 */       if (BlockList.ab.e(paramaqu, paramdt.south())) {
+/* 351:380 */       if (BlockList.fire.e(paramaqu, paramdt.south())) {
 /* 352:381 */         for (i = 0; i < 2; i++)
 /* 353:    */         {
 /* 354:382 */           d1 = paramdt.getX() + paramRandom.nextDouble();
@@ -358,7 +358,7 @@ package net.minecraft.src;
 /* 357:385 */           paramaqu.a(ew.m, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 358:    */         }
 /* 359:    */       }
-/* 360:388 */       if (BlockList.ab.e(paramaqu, paramdt.up())) {
+/* 360:388 */       if (BlockList.fire.e(paramaqu, paramdt.up())) {
 /* 361:389 */         for (i = 0; i < 2; i++)
 /* 362:    */         {
 /* 363:390 */           d1 = paramdt.getX() + paramRandom.nextDouble();
@@ -382,17 +382,17 @@ package net.minecraft.src;
 /* 381:    */   
 /* 382:    */   public Block a(int paramInt)
 /* 383:    */   {
-/* 384:411 */     return instance().a(a, Integer.valueOf(paramInt));
+/* 384:411 */     return instance().a(age, Integer.valueOf(paramInt));
 /* 385:    */   }
 /* 386:    */   
 /* 387:    */   public int c(Block parambec)
 /* 388:    */   {
-/* 389:417 */     return ((Integer)parambec.getProperty(a)).intValue();
+/* 389:417 */     return ((Integer)parambec.getProperty(age)).intValue();
 /* 390:    */   }
 /* 391:    */   
 /* 392:    */   protected bed e()
 /* 393:    */   {
-/* 394:422 */     return new bed(this, new IBlockData[] { a, N, O, P, Q, R, b, M });
+/* 394:422 */     return new bed(this, new IBlockData[] { age, north, east, south, west, upper, flip, alt });
 /* 395:    */   }
 /* 396:    */ }
 

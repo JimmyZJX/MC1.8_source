@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*   5:    */   extends ava
 /*   6:    */   implements avs
 /*   7:    */ {
-/*   8: 30 */   public static final BlockDataBoolean a = BlockDataBoolean.a("powered");
+/*   8: 30 */   public static final BlockDataBoolean a = BlockDataBoolean.getInstance("powered");
 /*   9: 31 */   public static final BlockDataEnum b = BlockDataEnum.getInstance("mode", aur.class);
 /*  10:    */   
 /*  11:    */   public BlockComparator(boolean paramBoolean)

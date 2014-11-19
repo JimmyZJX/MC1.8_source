@@ -116,7 +116,7 @@ package net.minecraft.src;
 /* 113:    */   
 /* 114:    */   protected boolean a(ProtoBlock paramatr)
 /* 115:    */   {
-/* 116:349 */     return (paramatr.material == Material.air) || (paramatr == BlockList.ab) || (paramatr == BlockList.aY);
+/* 116:349 */     return (paramatr.material == Material.air) || (paramatr == BlockList.fire) || (paramatr == BlockList.aY);
 /* 117:    */   }
 /* 118:    */   
 /* 119:    */   public boolean b()

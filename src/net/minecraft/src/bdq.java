@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*   5:    */   extends ProtoBlock
 /*   6:    */ {
 /*   7: 27 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing");
-/*   8: 28 */   public static final BlockDataBoolean b = BlockDataBoolean.a("extended");
+/*   8: 28 */   public static final BlockDataBoolean b = BlockDataBoolean.getInstance("extended");
 /*   9:    */   private final boolean M;
 /*  10:    */   
 /*  11:    */   public bdq(boolean paramBoolean)

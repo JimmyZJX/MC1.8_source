@@ -3,7 +3,7 @@ package net.minecraft.src;
 /*   2:    */   extends ati
 /*   3:    */ {
 /*   4: 15 */   public static final BlockDataEnum b = BlockDataEnum.getInstance("shape", EnumRailState.class, new azd());
-/*   5: 24 */   public static final BlockDataBoolean M = BlockDataBoolean.a("powered");
+/*   5: 24 */   public static final BlockDataBoolean M = BlockDataBoolean.getInstance("powered");
 /*   6:    */   
 /*   7:    */   protected azc()
 /*   8:    */   {
