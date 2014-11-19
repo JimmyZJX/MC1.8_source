@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ import java.util.List;
 /*   2:    */ import java.util.Random;
 /*   3:    */ 
-/*   4:    */ public class bgv
+/*   4:    */ public class OverworldChunkProvider
 /*   5:    */   implements IChunkProvider
 /*   6:    */ {
 /*   7:    */   private Random h;
@@ -19,9 +19,9 @@ package net.minecraft.src;
 /*  18:    */   private final double[] p;
 /*  19:    */   private final float[] q;
 /*  20:    */   private bgl r;
-/*  21: 64 */   private ProtoBlock s = BlockList.j;
+/*  21: 64 */   private ProtoBlock s = BlockList.water;
 /*  22:    */   
-/*  23:    */   public bgv(World paramaqu, long paramLong, boolean paramBoolean, String paramString)
+/*  23:    */   public OverworldChunkProvider(World paramaqu, long paramLong, boolean paramBoolean, String paramString)
 /*  24:    */   {
 /*  25: 67 */     this.m = paramaqu;
 /*  26: 68 */     this.n = paramBoolean;
@@ -56,7 +56,7 @@ package net.minecraft.src;
 /*  55: 97 */     if (paramString != null)
 /*  56:    */     {
 /*  57: 98 */       this.r = bgn.a(paramString).b();
-/*  58: 99 */       this.s = (this.r.E ? BlockList.l : BlockList.j);
+/*  58: 99 */       this.s = (this.r.E ? BlockList.lava : BlockList.water);
 /*  59:    */     }
 /*  60:    */   }
 /*  61:    */   
@@ -340,7 +340,7 @@ package net.minecraft.src;
 /* 339:447 */       int i3 = this.h.nextInt(16) + 8;
 /* 340:448 */       i4 = this.h.nextInt(256);
 /* 341:449 */       i5 = this.h.nextInt(16) + 8;
-/* 342:450 */       new bhy(BlockList.j).generate(this.m, this.h, localdt1.offset(i3, i4, i5));
+/* 342:450 */       new bhy(BlockList.water).generate(this.m, this.h, localdt1.offset(i3, i4, i5));
 /* 343:    */     }
 /* 344:454 */     if ((!bool) && (this.h.nextInt(this.r.D / 10) == 0) && (this.r.C))
 /* 345:    */     {
@@ -348,7 +348,7 @@ package net.minecraft.src;
 /* 347:456 */       i4 = this.h.nextInt(this.h.nextInt(248) + 8);
 /* 348:457 */       i5 = this.h.nextInt(16) + 8;
 /* 349:458 */       if ((i4 < 63) || (this.h.nextInt(this.r.D / 8) == 0)) {
-/* 350:459 */         new bhy(BlockList.l).generate(this.m, this.h, localdt1.offset(i3, i4, i5));
+/* 350:459 */         new bhy(BlockList.lava).generate(this.m, this.h, localdt1.offset(i3, i4, i5));
 /* 351:    */       }
 /* 352:    */     }
 /* 353:463 */     if (this.r.s) {

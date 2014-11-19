@@ -339,10 +339,10 @@ package net.minecraft.src;
 /* 338:    */   public static BlockFlowingLiquid a(Material parambof)
 /* 339:    */   {
 /* 340:330 */     if (parambof == Material.water) {
-/* 341:331 */       return BlockList.i;
+/* 341:331 */       return BlockList.flowingWater;
 /* 342:    */     }
 /* 343:332 */     if (parambof == Material.lava) {
-/* 344:333 */       return BlockList.k;
+/* 344:333 */       return BlockList.flowingLava;
 /* 345:    */     }
 /* 346:336 */     throw new IllegalArgumentException("Invalid material");
 /* 347:    */   }
@@ -350,10 +350,10 @@ package net.minecraft.src;
 /* 349:    */   public static BlockLiquid b(Material parambof)
 /* 350:    */   {
 /* 351:340 */     if (parambof == Material.water) {
-/* 352:341 */       return BlockList.j;
+/* 352:341 */       return BlockList.water;
 /* 353:    */     }
 /* 354:342 */     if (parambof == Material.lava) {
-/* 355:343 */       return BlockList.l;
+/* 355:343 */       return BlockList.lava;
 /* 356:    */     }
 /* 357:346 */     throw new IllegalArgumentException("Invalid material");
 /* 358:    */   }

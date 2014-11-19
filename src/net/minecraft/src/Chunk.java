@@ -412,7 +412,7 @@ package net.minecraft.src;
 /*  407: 419 */         localObject = BlockList.barrier.instance();
 /*  408:     */       }
 /*  409: 421 */       if (paramdt.getY() == 70) {
-/*  410: 422 */         localObject = bgp.b(paramdt.getX(), paramdt.getZ());
+/*  410: 422 */         localObject = DebugChunkProvider.b(paramdt.getX(), paramdt.getZ());
 /*  411:     */       }
 /*  412: 424 */       return localObject == null ? BlockList.air.instance() : localObject;
 /*  413:     */     }

@@ -41,7 +41,7 @@ package net.minecraft.src;
 /*  41:    */ 
 /*  42:    */ 
 /*  43:    */ 
-/*  44: 74 */     a("Water World", ItemList.ax, arm.N, Arrays.asList(new String[] { "biome_1", "oceanmonument" }), new biw[] { new biw(90, BlockList.j), new biw(5, BlockList.sand), new biw(5, BlockList.dirt), new biw(5, BlockList.stone), new biw(1, BlockList.bedrock) });
+/*  44: 74 */     a("Water World", ItemList.ax, arm.N, Arrays.asList(new String[] { "biome_1", "oceanmonument" }), new biw[] { new biw(90, BlockList.water), new biw(5, BlockList.sand), new biw(5, BlockList.dirt), new biw(5, BlockList.stone), new biw(1, BlockList.bedrock) });
 /*  45:    */     
 /*  46:    */ 
 /*  47:    */ 

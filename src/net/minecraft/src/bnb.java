@@ -88,8 +88,8 @@ package net.minecraft.src;
 /*   87:1807 */     a(paramaqu, parambjb, 1, 0, 0, 11, 0, 0, BlockList.log.instance(), BlockList.log.instance(), false);
 /*   88:1808 */     a(paramaqu, parambjb, 1, 0, 8, 11, 0, 8, BlockList.log.instance(), BlockList.log.instance(), false);
 /*   89:     */     
-/*   90:1810 */     a(paramaqu, parambjb, 3, 0, 1, 3, 0, 7, BlockList.j.instance(), BlockList.j.instance(), false);
-/*   91:1811 */     a(paramaqu, parambjb, 9, 0, 1, 9, 0, 7, BlockList.j.instance(), BlockList.j.instance(), false);
+/*   90:1810 */     a(paramaqu, parambjb, 3, 0, 1, 3, 0, 7, BlockList.water.instance(), BlockList.water.instance(), false);
+/*   91:1811 */     a(paramaqu, parambjb, 9, 0, 1, 9, 0, 7, BlockList.water.instance(), BlockList.water.instance(), false);
 /*   92:1813 */     for (int i = 1; i <= 7; i++)
 /*   93:     */     {
 /*   94:1814 */       a(paramaqu, this.a.a(MathUtils.nextInt(paramRandom, 2, 7)), 1, 1, i, parambjb);

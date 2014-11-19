@@ -61,12 +61,12 @@ package net.minecraft.src;
 /*   60:     */ 
 /*   61:1510 */     a(paramaqu, parambjb, 1, 1, 1, 2, 1, 4, false, paramRandom, blr.c());
 /*   62:1511 */     a(paramaqu, parambjb, 8, 1, 1, 9, 1, 4, false, paramRandom, blr.c());
-/*   63:1512 */     a(paramaqu, parambjb, 1, 1, 1, 1, 1, 3, BlockList.k.instance(), BlockList.k.instance(), false);
-/*   64:1513 */     a(paramaqu, parambjb, 9, 1, 1, 9, 1, 3, BlockList.k.instance(), BlockList.k.instance(), false);
+/*   63:1512 */     a(paramaqu, parambjb, 1, 1, 1, 1, 1, 3, BlockList.flowingLava.instance(), BlockList.flowingLava.instance(), false);
+/*   64:1513 */     a(paramaqu, parambjb, 9, 1, 1, 9, 1, 3, BlockList.flowingLava.instance(), BlockList.flowingLava.instance(), false);
 /*   65:     */     
 /*   66:     */ 
 /*   67:1516 */     a(paramaqu, parambjb, 3, 1, 8, 7, 1, 12, false, paramRandom, blr.c());
-/*   68:1517 */     a(paramaqu, parambjb, 4, 1, 9, 6, 1, 11, BlockList.k.instance(), BlockList.k.instance(), false);
+/*   68:1517 */     a(paramaqu, parambjb, 4, 1, 9, 6, 1, 11, BlockList.flowingLava.instance(), BlockList.flowingLava.instance(), false);
 /*   69:1520 */     for (int j = 3; j < 14; j += 2)
 /*   70:     */     {
 /*   71:1521 */       a(paramaqu, parambjb, 0, 3, j, 0, 4, j, BlockList.bi.instance(), BlockList.bi.instance(), false);

@@ -52,15 +52,15 @@ package net.minecraft.src;
 /*  51:    */   public IChunkProvider c()
 /*  52:    */   {
 /*  53: 67 */     if (this.h == WorldType.FLAT) {
-/*  54: 68 */       return new bgq(this.world, this.world.J(), this.world.getWorldInfo().s(), this.i);
+/*  54: 68 */       return new SuperFlatChunkProvider(this.world, this.world.J(), this.world.getWorldInfo().s(), this.i);
 /*  55:    */     }
 /*  56: 69 */     if (this.h == WorldType.DEBUG_ALL_BLOCK_STATES) {
-/*  57: 70 */       return new bgp(this.world);
+/*  57: 70 */       return new DebugChunkProvider(this.world);
 /*  58:    */     }
 /*  59: 71 */     if (this.h == WorldType.f) {
-/*  60: 72 */       return new bgv(this.world, this.world.J(), this.world.getWorldInfo().s(), this.i);
+/*  60: 72 */       return new OverworldChunkProvider(this.world, this.world.J(), this.world.getWorldInfo().s(), this.i);
 /*  61:    */     }
-/*  62: 74 */     return new bgv(this.world, this.world.J(), this.world.getWorldInfo().s(), this.i);
+/*  62: 74 */     return new OverworldChunkProvider(this.world, this.world.J(), this.world.getWorldInfo().s(), this.i);
 /*  63:    */   }
 /*  64:    */   
 /*  65:    */   public boolean a(int paramInt1, int paramInt2)

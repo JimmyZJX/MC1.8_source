@@ -11,7 +11,7 @@ package net.minecraft.src;
 /* 10:   */   
 /* 11:   */   public IChunkProvider c()
 /* 12:   */   {
-/* 13:21 */     return new bgw(this.world, this.world.J());
+/* 13:21 */     return new EndChunkProvider(this.world, this.world.J());
 /* 14:   */   }
 /* 15:   */   
 /* 16:   */   public float a(long paramLong, float paramFloat)

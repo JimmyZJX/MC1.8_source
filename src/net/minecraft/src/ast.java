@@ -58,10 +58,10 @@ package net.minecraft.src;
 /* 57:65 */       for (int k = 255; k >= 0; k--) {
 /* 58:66 */         if (parambgk.a(j, k, i).getProto().getMaterial() != Material.air)
 /* 59:   */         {
-/* 60:67 */           if ((k != 62) || (parambgk.a(j, k, i).getProto() == BlockList.j)) {
+/* 60:67 */           if ((k != 62) || (parambgk.a(j, k, i).getProto() == BlockList.water)) {
 /* 61:   */             break;
 /* 62:   */           }
-/* 63:68 */           parambgk.a(j, k, i, BlockList.j.instance());
+/* 63:68 */           parambgk.a(j, k, i, BlockList.water.instance());
 /* 64:69 */           if (d >= 0.12D) {
 /* 65:   */             break;
 /* 66:   */           }

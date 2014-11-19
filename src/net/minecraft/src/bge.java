@@ -27,7 +27,7 @@ package net.minecraft.src;
 /* 26:   */   
 /* 27:   */   public IChunkProvider c()
 /* 28:   */   {
-/* 29:36 */     return new bgr(this.world, this.world.getWorldInfo().s(), this.world.J());
+/* 29:36 */     return new NetherChunkProvider(this.world, this.world.getWorldInfo().s(), this.world.J());
 /* 30:   */   }
 /* 31:   */   
 /* 32:   */   public boolean d()

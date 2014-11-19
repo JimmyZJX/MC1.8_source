@@ -104,7 +104,7 @@ package net.minecraft.src;
 /* 103:121 */                 if ((i6 >= 0) && (i6 < 256))
 /* 104:    */                 {
 /* 105:124 */                   localbec3 = parambgk.a(i4, i6, i5);
-/* 106:125 */                   if ((localbec3.getProto() == BlockList.i) || (localbec3.getProto() == BlockList.j)) {
+/* 106:125 */                   if ((localbec3.getProto() == BlockList.flowingWater) || (localbec3.getProto() == BlockList.water)) {
 /* 107:126 */                     i3 = 1;
 /* 108:    */                   }
 /* 109:128 */                   if ((i6 != i1 - 1) && (i4 != m) && (i4 != n - 1) && (i5 != localbec1) && (i5 != localbec2 - 1)) {
@@ -137,7 +137,7 @@ package net.minecraft.src;
 /* 136:152 */                       if (a(localbec4, localbec5)) {
 /* 137:153 */                         if (i8 - 1 < 10)
 /* 138:    */                         {
-/* 139:154 */                           parambgk.a(i4, i8, localbec31, BlockList.l.instance());
+/* 139:154 */                           parambgk.a(i4, i8, localbec31, BlockList.lava.instance());
 /* 140:    */                         }
 /* 141:    */                         else
 /* 142:    */                         {

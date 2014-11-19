@@ -1494,7 +1494,7 @@ import net.minecraft.server.MinecraftServer;
 /* 1491:1526 */           for (int i9 = i5; i9 < i6; i9++)
 /* 1492:     */           {
 /* 1493:1527 */             ProtoBlock localatr = getBlock(new BlockPosition(i7, i8, i9)).getProto();
-/* 1494:1528 */             if ((localatr == BlockList.ab) || (localatr == BlockList.k) || (localatr == BlockList.l)) {
+/* 1494:1528 */             if ((localatr == BlockList.ab) || (localatr == BlockList.flowingLava) || (localatr == BlockList.lava)) {
 /* 1495:1529 */               return true;
 /* 1496:     */             }
 /* 1497:     */           }
@@ -1996,7 +1996,7 @@ import net.minecraft.server.MinecraftServer;
 /* 1993:     */     {
 /* 1994:1996 */       Block localbec = getBlock(paramdt);
 /* 1995:1997 */       ProtoBlock localatr = localbec.getProto();
-/* 1996:1998 */       if (((localatr == BlockList.j) || (localatr == BlockList.i)) && (((Integer)localbec.getProperty(axl.b)).intValue() == 0))
+/* 1996:1998 */       if (((localatr == BlockList.water) || (localatr == BlockList.flowingWater)) && (((Integer)localbec.getProperty(axl.b)).intValue() == 0))
 /* 1997:     */       {
 /* 1998:1999 */         if (!paramBoolean) {
 /* 1999:2000 */           return true;

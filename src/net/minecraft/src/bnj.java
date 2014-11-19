@@ -77,8 +77,8 @@ package net.minecraft.src;
 /*   76:     */     
 /*   77:     */ 
 /*   78:1565 */     a(paramaqu, parambjb, 6, 1, 4, 9, 4, 6, BlockList.cobblestone.instance(), BlockList.cobblestone.instance(), false);
-/*   79:1566 */     a(paramaqu, BlockList.k.instance(), 7, 1, 5, parambjb);
-/*   80:1567 */     a(paramaqu, BlockList.k.instance(), 8, 1, 5, parambjb);
+/*   79:1566 */     a(paramaqu, BlockList.flowingLava.instance(), 7, 1, 5, parambjb);
+/*   80:1567 */     a(paramaqu, BlockList.flowingLava.instance(), 8, 1, 5, parambjb);
 /*   81:1568 */     a(paramaqu, BlockList.bi.instance(), 9, 2, 5, parambjb);
 /*   82:1569 */     a(paramaqu, BlockList.bi.instance(), 9, 2, 4, parambjb);
 /*   83:1570 */     a(paramaqu, parambjb, 7, 2, 4, 8, 2, 5, BlockList.air.instance(), BlockList.air.instance(), false);

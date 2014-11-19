@@ -94,7 +94,7 @@ package net.minecraft.src;
 /*   93:1021 */       a(paramaqu, BlockList.bf.instance(), 5, 1, 5, parambjb);
 /*   94:1022 */       a(paramaqu, BlockList.bf.instance(), 5, 2, 5, parambjb);
 /*   95:1023 */       a(paramaqu, BlockList.bf.instance(), 5, 3, 5, parambjb);
-/*   96:1024 */       a(paramaqu, BlockList.i.instance(), 5, 4, 5, parambjb);
+/*   96:1024 */       a(paramaqu, BlockList.flowingWater.instance(), 5, 4, 5, parambjb);
 /*   97:1025 */       break;
 /*   98:     */     case 2: 
 /*   99:1027 */       for (i = 1; i <= 9; i++)

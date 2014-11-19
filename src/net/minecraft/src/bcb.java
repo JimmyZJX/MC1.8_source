@@ -41,7 +41,7 @@ package net.minecraft.src;
 /* 40:   */   
 /* 41:   */   protected boolean c(ProtoBlock paramatr)
 /* 42:   */   {
-/* 43:57 */     return paramatr == BlockList.j;
+/* 43:57 */     return paramatr == BlockList.water;
 /* 44:   */   }
 /* 45:   */   
 /* 46:   */   public boolean f(World paramaqu, BlockPosition paramdt, Block parambec)

@@ -41,7 +41,7 @@ package net.minecraft.src;
 /*  40:    */       }
 /*  41:440 */       this.l.a(0, this.h - this.l.e + 3, 0);
 /*  42:    */     }
-/*  43:443 */     a(paramaqu, parambjb, 1, 0, 1, 4, 12, 4, BlockList.cobblestone.instance(), BlockList.i.instance(), false);
+/*  43:443 */     a(paramaqu, parambjb, 1, 0, 1, 4, 12, 4, BlockList.cobblestone.instance(), BlockList.flowingWater.instance(), false);
 /*  44:444 */     a(paramaqu, BlockList.air.instance(), 2, 12, 2, parambjb);
 /*  45:445 */     a(paramaqu, BlockList.air.instance(), 3, 12, 2, parambjb);
 /*  46:446 */     a(paramaqu, BlockList.air.instance(), 2, 12, 3, parambjb);

@@ -103,7 +103,7 @@ package net.minecraft.src;
 /* 102:117 */                 if ((i6 >= 0) && (i6 < 128))
 /* 103:    */                 {
 /* 104:121 */                   localbec3 = parambgk.a(i4, i6, i5);
-/* 105:122 */                   if ((localbec3.getProto() == BlockList.k) || (localbec3.getProto() == BlockList.l)) {
+/* 105:122 */                   if ((localbec3.getProto() == BlockList.flowingLava) || (localbec3.getProto() == BlockList.lava)) {
 /* 106:123 */                     i3 = 1;
 /* 107:    */                   }
 /* 108:125 */                   if ((i6 != i1 - 1) && (i4 != m) && (i4 != n - 1) && (i5 != localbec1) && (i5 != localbec2 - 1)) {

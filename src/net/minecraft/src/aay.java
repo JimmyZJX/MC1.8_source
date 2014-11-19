@@ -35,7 +35,7 @@ package net.minecraft.src;
 /*  34: 48 */     int i = (int)this.b.getAABB().minY;
 /*  35: 49 */     ProtoBlock localatr = this.c.getBlock(new BlockPosition(MathUtils.floor(this.b.xPos), i, MathUtils.floor(this.b.zPos))).getProto();
 /*  36: 50 */     int j = 0;
-/*  37: 51 */     while ((localatr == BlockList.i) || (localatr == BlockList.j))
+/*  37: 51 */     while ((localatr == BlockList.flowingWater) || (localatr == BlockList.water))
 /*  38:    */     {
 /*  39: 52 */       i++;
 /*  40: 53 */       localatr = this.c.getBlock(new BlockPosition(MathUtils.floor(this.b.xPos), i, MathUtils.floor(this.b.zPos))).getProto();

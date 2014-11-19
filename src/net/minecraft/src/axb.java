@@ -40,7 +40,7 @@ package net.minecraft.src;
 /* 39:   */       
 /* 40:51 */       Material localbof = paramaqu.getBlock(paramdt.down()).getProto().getMaterial();
 /* 41:52 */       if ((localbof.c()) || (localbof.isLiquid())) {
-/* 42:53 */         paramaqu.setBlock(paramdt, BlockList.i.instance());
+/* 42:53 */         paramaqu.setBlock(paramdt, BlockList.flowingWater.instance());
 /* 43:   */       }
 /* 44:   */     }
 /* 45:   */   }
@@ -61,7 +61,7 @@ package net.minecraft.src;
 /* 60:71 */       return;
 /* 61:   */     }
 /* 62:74 */     b(paramaqu, paramdt, paramaqu.getBlock(paramdt), 0);
-/* 63:75 */     paramaqu.setBlock(paramdt, BlockList.j.instance());
+/* 63:75 */     paramaqu.setBlock(paramdt, BlockList.water.instance());
 /* 64:   */   }
 /* 65:   */   
 /* 66:   */   public int i()

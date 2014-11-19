@@ -29,7 +29,7 @@ package net.minecraft.src;
 /*  25: 70 */   private final Set<TickListener> L = Sets.newHashSet();
 /*  26: 71 */   private final TreeSet<TickListener> pendingList = new TreeSet<TickListener>();
 /*  27: 72 */   private final Map<UUID,Entity> N = Maps.newHashMap();
-/*  28:    */   public qs b;
+/*  28:    */   public ServerChunkCache b;
 /*  29:    */   public boolean c;
 /*  30:    */   private boolean O;
 /*  31:    */   private int P;
@@ -553,7 +553,7 @@ package net.minecraft.src;
 /* 549:    */   protected IChunkProvider k()
 /* 550:    */   {
 /* 551:627 */     bfq localbfq = this.w.a(this.t);
-/* 552:628 */     this.b = new qs(this, localbfq, this.t.c());
+/* 552:628 */     this.b = new ServerChunkCache(this, localbfq, this.t.c());
 /* 553:629 */     return this.b;
 /* 554:    */   }
 /* 555:    */   

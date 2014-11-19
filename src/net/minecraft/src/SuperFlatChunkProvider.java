@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*   4:    */ import java.util.Map;
 /*   5:    */ import java.util.Random;
 /*   6:    */ 
-/*   7:    */ public class bgq
+/*   7:    */ public class SuperFlatChunkProvider
 /*   8:    */   implements IChunkProvider
 /*   9:    */ {
 /*  10:    */   private World a;
@@ -18,7 +18,7 @@ package net.minecraft.src;
 /*  17:    */   private bhy h;
 /*  18:    */   private bhy i;
 /*  19:    */   
-/*  20:    */   public bgq(World world, long paramLong, boolean paramBoolean, String paramString)
+/*  20:    */   public SuperFlatChunkProvider(World world, long paramLong, boolean paramBoolean, String paramString)
 /*  21:    */   {
 /*  22: 40 */     this.a = world;
 /*  23: 41 */     this.b = new Random(paramLong);
@@ -48,10 +48,10 @@ package net.minecraft.src;
 /*  47:    */       }
 /*  48:    */     }
 /*  49: 69 */     if (this.d.b().containsKey("lake")) {
-/*  50: 70 */       this.h = new bhy(BlockList.j);
+/*  50: 70 */       this.h = new bhy(BlockList.water);
 /*  51:    */     }
 /*  52: 72 */     if (this.d.b().containsKey("lava_lake")) {
-/*  53: 73 */       this.i = new bhy(BlockList.l);
+/*  53: 73 */       this.i = new bhy(BlockList.lava);
 /*  54:    */     }
 /*  55: 75 */     this.g = this.d.b().containsKey("dungeon");
 /*  56:    */     

@@ -393,7 +393,7 @@ package net.minecraft.src;
 /* 392:442 */               if (a(new BlockPosition(paramInt1, i6, paramInt2)) < 0.15F) {
 /* 393:443 */                 localbec1 = BlockList.aI.instance();
 /* 394:    */               } else {
-/* 395:445 */                 localbec1 = BlockList.j.instance();
+/* 395:445 */                 localbec1 = BlockList.water.instance();
 /* 396:    */               }
 /* 397:    */             }
 /* 398:449 */             i2 = i3;

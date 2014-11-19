@@ -240,13 +240,13 @@ package net.minecraft.src;
 /* 239:243 */       for (int i2 = 0; i2 < 50; i2++)
 /* 240:    */       {
 /* 241:244 */         localdt1 = this.position.offset(this.random.nextInt(16) + 8, this.random.nextInt(this.random.nextInt(248) + 8), this.random.nextInt(16) + 8);
-/* 242:245 */         new bin(BlockList.i).generate(this.world, this.random, localdt1);
+/* 242:245 */         new bin(BlockList.flowingWater).generate(this.world, this.random, localdt1);
 /* 243:    */       }
 /* 244:248 */       for (int i2 = 0; i2 < 20; i2++)
 /* 245:    */       {
 /* 246:249 */         localdt1 = this.position.offset(this.random.nextInt(16) + 8, this.random.nextInt(this.random.nextInt(this.random.nextInt(240) + 8) + 8), this.random.nextInt(16) + 8);
 /* 247:    */         
-/* 248:251 */         new bin(BlockList.k).generate(this.world, this.random, localdt1);
+/* 248:251 */         new bin(BlockList.flowingLava).generate(this.world, this.random, localdt1);
 /* 249:    */       }
 /* 250:    */     }
 /* 251:    */   }

@@ -40,7 +40,7 @@ package net.minecraft.src;
 /*  39: 55 */     if ((!((Boolean)parambec.getProperty(a)).booleanValue()) && (d(paramaqu, paramdt)))
 /*  40:    */     {
 /*  41: 57 */       paramaqu.setBlock(paramdt, parambec.a(a, Boolean.valueOf(true)), 2);
-/*  42: 58 */       paramaqu.playLevelEvent(2001, paramdt, ProtoBlock.a(BlockList.j));
+/*  42: 58 */       paramaqu.playLevelEvent(2001, paramdt, ProtoBlock.a(BlockList.water));
 /*  43:    */     }
 /*  44:    */   }
 /*  45:    */   

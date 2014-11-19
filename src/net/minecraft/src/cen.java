@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*   8:    */   extends World
 /*   9:    */ {
 /*  10:    */   private cee a;
-/*  11:    */   private cel b;
+/*  11:    */   private MultiplayerChunkCache b;
 /*  12: 45 */   private final Set c = Sets.newHashSet();
 /*  13: 46 */   private final Set d = Sets.newHashSet();
 /*  14: 47 */   private final bsu I = bsu.z();
@@ -60,7 +60,7 @@ package net.minecraft.src;
 /*  59:    */   
 /*  60:    */   protected IChunkProvider k()
 /*  61:    */   {
-/*  62: 97 */     this.b = new cel(this);
+/*  62: 97 */     this.b = new MultiplayerChunkCache(this);
 /*  63: 98 */     return this.b;
 /*  64:    */   }
 /*  65:    */   

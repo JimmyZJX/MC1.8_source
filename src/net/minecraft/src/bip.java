@@ -36,7 +36,7 @@ package net.minecraft.src;
 /*  35:    */           {
 /*  36: 40 */             ProtoBlock localatr3 = paramaqu.getBlock(new BlockPosition(n, k, i2)).getProto();
 /*  37: 41 */             if ((localatr3.getMaterial() != Material.air) && (localatr3.getMaterial() != Material.leaves)) {
-/*  38: 42 */               if ((localatr3 == BlockList.j) || (localatr3 == BlockList.i))
+/*  38: 42 */               if ((localatr3 == BlockList.water) || (localatr3 == BlockList.flowingWater))
 /*  39:    */               {
 /*  40: 43 */                 if (k > paramdt.getY()) {
 /*  41: 44 */                   j = 0;
@@ -88,7 +88,7 @@ package net.minecraft.src;
 /*  87: 86 */     for (int m = 0; m < i; m++)
 /*  88:    */     {
 /*  89: 87 */       ProtoBlock localatr2 = paramaqu.getBlock(paramdt.up(m)).getProto();
-/*  90: 88 */       if ((localatr2.getMaterial() == Material.air) || (localatr2.getMaterial() == Material.leaves) || (localatr2 == BlockList.i) || (localatr2 == BlockList.j)) {
+/*  90: 88 */       if ((localatr2.getMaterial() == Material.air) || (localatr2.getMaterial() == Material.leaves) || (localatr2 == BlockList.flowingWater) || (localatr2 == BlockList.water)) {
 /*  91: 89 */         setBlock(paramaqu, paramdt.up(m), BlockList.log);
 /*  92:    */       }
 /*  93:    */     }

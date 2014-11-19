@@ -137,7 +137,7 @@ package net.minecraft.src;
 /* 136:137 */               localbec2 = this.al;
 /* 137:    */             }
 /* 138:140 */             if ((i3 < 63) && ((localbec1 == null) || (localbec1.getProto().getMaterial() == Material.air))) {
-/* 139:141 */               localbec1 = BlockList.j.instance();
+/* 139:141 */               localbec1 = BlockList.water.instance();
 /* 140:    */             }
 /* 141:144 */             i1 = m + Math.max(0, i3 - 63);
 /* 142:145 */             if (i3 >= 62)

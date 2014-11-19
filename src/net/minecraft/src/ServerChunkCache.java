@@ -8,7 +8,7 @@ package net.minecraft.src;
 /*   8:    */ import org.apache.logging.log4j.LogManager;
 /*   9:    */ import org.apache.logging.log4j.Logger;
 /*  10:    */ 
-/*  11:    */ public class qs
+/*  11:    */ public class ServerChunkCache
 /*  12:    */   implements IChunkProvider
 /*  13:    */ {
 /*  14: 29 */   private static final Logger b = LogManager.getLogger();
@@ -21,7 +21,7 @@ package net.minecraft.src;
 /*  21: 38 */   private List<Chunk> h = Lists.newArrayList();
 /*  22:    */   private WorldServer i;
 /*  23:    */   
-/*  24:    */   public qs(WorldServer paramqt, bfq parambfq, IChunkProvider parambfe)
+/*  24:    */   public ServerChunkCache(WorldServer paramqt, bfq parambfq, IChunkProvider parambfe)
 /*  25:    */   {
 /*  26: 42 */     this.d = new bfg(paramqt, 0, 0);
 /*  27:    */     

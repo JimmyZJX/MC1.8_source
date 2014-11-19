@@ -156,8 +156,8 @@ package net.minecraft.src;
 /* 154:    */   
 /* 155:    */   private static void a(tq[] paramArrayOftq)
 /* 156:    */   {
-/* 157:169 */     a(paramArrayOftq, BlockList.j, BlockList.i);
-/* 158:170 */     a(paramArrayOftq, BlockList.l, BlockList.k);
+/* 157:169 */     a(paramArrayOftq, BlockList.water, BlockList.flowingWater);
+/* 158:170 */     a(paramArrayOftq, BlockList.lava, BlockList.flowingLava);
 /* 159:    */     
 /* 160:172 */     a(paramArrayOftq, BlockList.aZ, BlockList.pumpkin);
 /* 161:173 */     a(paramArrayOftq, BlockList.am, BlockList.al);

@@ -416,7 +416,7 @@ package net.minecraft.src;
 /* 415:    */         {
 /* 416:428 */           ProtoBlock localatr = this.world.getBlock(new BlockPosition(i3, i4, i5)).getProto();
 /* 417:429 */           if (localatr.getMaterial() != Material.air) {
-/* 418:431 */             if ((localatr == BlockList.barrier) || (localatr == BlockList.obsidian) || (localatr == BlockList.bH) || (localatr == BlockList.bedrock) || (localatr == BlockList.bX) || (!this.world.getGameRules().getBoolean("mobGriefing"))) {
+/* 418:431 */             if ((localatr == BlockList.barrier) || (localatr == BlockList.obsidian) || (localatr == BlockList.endStone) || (localatr == BlockList.bedrock) || (localatr == BlockList.bX) || (!this.world.getGameRules().getBoolean("mobGriefing"))) {
 /* 419:432 */               bool = true;
 /* 420:    */             } else {
 /* 421:434 */               i2 = (this.world.g(new BlockPosition(i3, i4, i5))) || (i2 != 0) ? 1 : 0;

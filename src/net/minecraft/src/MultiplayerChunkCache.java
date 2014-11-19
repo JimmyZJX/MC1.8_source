@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*   3:    */ import org.apache.logging.log4j.LogManager;
 /*   4:    */ import org.apache.logging.log4j.Logger;
 /*   5:    */ 
-/*   6:    */ public class cel
+/*   6:    */ public class MultiplayerChunkCache
 /*   7:    */   implements IChunkProvider
 /*   8:    */ {
 /*   9: 20 */   private static final Logger a = LogManager.getLogger();
@@ -13,7 +13,7 @@ package net.minecraft.src;
 /*  12: 24 */   private List<Chunk> d = Lists.newArrayList();
 /*  13:    */   private World e;
 /*  14:    */   
-/*  15:    */   public cel(World paramaqu)
+/*  15:    */   public MultiplayerChunkCache(World paramaqu)
 /*  16:    */   {
 /*  17: 28 */     this.b = new bfg(paramaqu, 0, 0);
 /*  18:    */     

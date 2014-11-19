@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ import java.util.List;
 /*   2:    */ import java.util.Random;
 /*   3:    */ 
-/*   4:    */ public class bgr
+/*   4:    */ public class NetherChunkProvider
 /*   5:    */   implements IChunkProvider
 /*   6:    */ {
 /*   7:    */   private final World h;
@@ -23,8 +23,8 @@ package net.minecraft.src;
 /*  22: 47 */   private final bhz u = new bhz();
 /*  23: 48 */   private final bht v = new bht();
 /*  24: 49 */   private final bhp w = new OreGenerator(BlockList.quartzOre.instance(), 14, BlockIs.instance(BlockList.netherrack));
-/*  25: 50 */   private final bhu x = new bhu(BlockList.k, true);
-/*  26: 51 */   private final bhu y = new bhu(BlockList.k, false);
+/*  25: 50 */   private final bhu x = new bhu(BlockList.flowingLava, true);
+/*  26: 51 */   private final bhu y = new bhu(BlockList.flowingLava, false);
 /*  27: 52 */   private final bhi z = new bhi(BlockList.brownMushroom);
 /*  28: 53 */   private final bhi A = new bhi(BlockList.redMushroom);
 /*  29: 54 */   private final bjl B = new bjl();
@@ -35,7 +35,7 @@ package net.minecraft.src;
 /*  34:    */   double[] f;
 /*  35:    */   double[] g;
 /*  36:    */   
-/*  37:    */   public bgr(World paramaqu, boolean paramBoolean, long paramLong)
+/*  37:    */   public NetherChunkProvider(World paramaqu, boolean paramBoolean, long paramLong)
 /*  38:    */   {
 /*  39: 58 */     this.h = paramaqu;
 /*  40: 59 */     this.i = paramBoolean;
@@ -92,7 +92,7 @@ package net.minecraft.src;
 /*  91:    */               {
 /*  92:109 */                 Block localbec = null;
 /*  93:110 */                 if (i8 * 8 + i9 < i2) {
-/*  94:111 */                   localbec = BlockList.l.instance();
+/*  94:111 */                   localbec = BlockList.lava.instance();
 /*  95:    */                 }
 /*  96:113 */                 if (d16 > 0.0D) {
 /*  97:114 */                   localbec = BlockList.netherrack.instance();
@@ -169,7 +169,7 @@ package net.minecraft.src;
 /* 168:    */                   }
 /* 169:    */                 }
 /* 170:181 */                 if ((i8 < i1) && ((localbec1 == null) || (localbec1.getProto().getMaterial() == Material.air))) {
-/* 171:182 */                   localbec1 = BlockList.l.instance();
+/* 171:182 */                   localbec1 = BlockList.lava.instance();
 /* 172:    */                 }
 /* 173:185 */                 i7 = i6;
 /* 174:186 */                 if (i8 >= i1 - 1) {

@@ -33,10 +33,10 @@ package net.minecraft.src;
 /*  32: 49 */       if (localatr == BlockList.bQ) {
 /*  33: 50 */         return this.c.b().a("minecraft:blocks/obsidian");
 /*  34:    */       }
-/*  35: 51 */       if ((localatr == BlockList.k) || (localatr == BlockList.l)) {
+/*  35: 51 */       if ((localatr == BlockList.flowingLava) || (localatr == BlockList.lava)) {
 /*  36: 52 */         return this.c.b().a("minecraft:blocks/lava_still");
 /*  37:    */       }
-/*  38: 53 */       if ((localatr == BlockList.i) || (localatr == BlockList.j)) {
+/*  38: 53 */       if ((localatr == BlockList.flowingWater) || (localatr == BlockList.water)) {
 /*  39: 54 */         return this.c.b().a("minecraft:blocks/water_still");
 /*  40:    */       }
 /*  41: 55 */       if (localatr == BlockList.ce) {
@@ -86,7 +86,7 @@ package net.minecraft.src;
 /*  85:    */   
 /*  86:    */   private void d()
 /*  87:    */   {
-/*  88: 96 */     a(new ProtoBlock[] { BlockList.air, BlockList.i, BlockList.j, BlockList.k, BlockList.l, BlockList.M, BlockList.ae, BlockList.bQ, BlockList.cg, BlockList.an, BlockList.ce, BlockList.endPortal, BlockList.barrier, BlockList.ax, BlockList.cL, BlockList.cK });
+/*  88: 96 */     a(new ProtoBlock[] { BlockList.air, BlockList.flowingWater, BlockList.water, BlockList.flowingLava, BlockList.lava, BlockList.M, BlockList.ae, BlockList.bQ, BlockList.cg, BlockList.an, BlockList.ce, BlockList.endPortal, BlockList.barrier, BlockList.ax, BlockList.cL, BlockList.cK });
 /*  89:    */     
 /*  90:    */ 
 /*  91:    */ 

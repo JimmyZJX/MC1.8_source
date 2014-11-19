@@ -8,7 +8,7 @@ package net.minecraft.src;
 /*  7:15 */   private static final beq a = beq.a(BlockList.sand).a(BlockSand.a, Predicates.<Comparable>equalTo(bac.a));
 /*  8:16 */   private final Block b = BlockList.U.instance().a(bbf.M, bbg.b).a(BlockSlab.half, EnumSlabHalf.BOTTOM);
 /*  9:17 */   private final Block c = BlockList.A.instance();
-/* 10:18 */   private final Block d = BlockList.i.instance();
+/* 10:18 */   private final Block d = BlockList.flowingWater.instance();
 /* 11:   */   
 /* 12:   */   public boolean generate(World paramaqu, Random paramRandom, BlockPosition paramdt)
 /* 13:   */   {

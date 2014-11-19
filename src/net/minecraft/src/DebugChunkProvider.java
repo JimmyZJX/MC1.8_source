@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ import com.google.common.collect.Lists;
 /*   2:    */ import java.util.List;
 /*   3:    */ 
-/*   4:    */ public class bgp
+/*   4:    */ public class DebugChunkProvider
 /*   5:    */   implements IChunkProvider
 /*   6:    */ {
 /*   7: 23 */   private static final List<beg> a = Lists.newArrayList();
@@ -17,7 +17,7 @@ package net.minecraft.src;
 /*  16: 33 */   private static final int b = MathUtils.ceil(MathUtils.sqrt((float)a.size()));
 /*  17:    */   private final World world;
 /*  18:    */   
-/*  19:    */   public bgp(World world)
+/*  19:    */   public DebugChunkProvider(World world)
 /*  20:    */   {
 /*  21: 37 */     this.world = world;
 /*  22:    */   }

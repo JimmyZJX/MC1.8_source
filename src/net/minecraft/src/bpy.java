@@ -27,7 +27,7 @@ package net.minecraft.src;
 /*  26:    */     {
 /*  27: 42 */       k = (int)paramwv.getAABB().minY;
 /*  28: 43 */       ProtoBlock localatr = this.a.getBlock(new BlockPosition(MathUtils.floor(paramwv.xPos), k, MathUtils.floor(paramwv.zPos))).getProto();
-/*  29: 44 */       while ((localatr == BlockList.i) || (localatr == BlockList.j))
+/*  29: 44 */       while ((localatr == BlockList.flowingWater) || (localatr == BlockList.water))
 /*  30:    */       {
 /*  31: 45 */         k++;
 /*  32: 46 */         localatr = this.a.getBlock(new BlockPosition(MathUtils.floor(paramwv.xPos), k, MathUtils.floor(paramwv.zPos))).getProto();
@@ -139,7 +139,7 @@ package net.minecraft.src;
 /* 138:    */             {
 /* 139:156 */               k = 1;
 /* 140:    */             }
-/* 141:157 */             else if ((localatr == BlockList.i) || (localatr == BlockList.j))
+/* 141:157 */             else if ((localatr == BlockList.flowingWater) || (localatr == BlockList.water))
 /* 142:    */             {
 /* 143:158 */               if (paramBoolean1) {
 /* 144:159 */                 return -1;

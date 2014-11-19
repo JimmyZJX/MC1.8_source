@@ -90,7 +90,7 @@ package net.minecraft.src;
 /*  89: 98 */     int i = !localbof.a() ? 1 : 0;
 /*  90: 99 */     if ((paramaqu.isEmpty(paramdt)) || (i != 0))
 /*  91:    */     {
-/*  92:100 */       if ((paramaqu.t.n()) && (this.a == BlockList.i))
+/*  92:100 */       if ((paramaqu.t.n()) && (this.a == BlockList.flowingWater))
 /*  93:    */       {
 /*  94:101 */         int j = paramdt.getX();
 /*  95:102 */         int k = paramdt.getY();

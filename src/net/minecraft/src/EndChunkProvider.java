@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ import java.util.List;
 /*   2:    */ import java.util.Random;
 /*   3:    */ 
-/*   4:    */ public class bgw
+/*   4:    */ public class EndChunkProvider
 /*   5:    */   implements IChunkProvider
 /*   6:    */ {
 /*   7:    */   private Random h;
@@ -20,7 +20,7 @@ package net.minecraft.src;
 /*  19:    */   double[] f;
 /*  20:    */   double[] g;
 /*  21:    */   
-/*  22:    */   public bgw(World paramaqu, long paramLong)
+/*  22:    */   public EndChunkProvider(World paramaqu, long paramLong)
 /*  23:    */   {
 /*  24: 35 */     this.l = paramaqu;
 /*  25:    */     
@@ -73,7 +73,7 @@ package net.minecraft.src;
 /*  72:    */               {
 /*  73: 84 */                 Block localbec = null;
 /*  74: 85 */                 if (d16 > 0.0D) {
-/*  75: 86 */                   localbec = BlockList.bH.instance();
+/*  75: 86 */                   localbec = BlockList.endStone.instance();
 /*  76:    */                 }
 /*  77: 89 */                 int i11 = i9 + i5 * 8;
 /*  78: 90 */                 int i12 = i8 + i7 * 4;
@@ -102,8 +102,8 @@ package net.minecraft.src;
 /* 101:112 */         int i3 = 1;
 /* 102:113 */         int i4 = -1;
 /* 103:    */         
-/* 104:115 */         Block localbec1 = BlockList.bH.instance();
-/* 105:116 */         Block localbec2 = BlockList.bH.instance();
+/* 104:115 */         Block localbec1 = BlockList.endStone.instance();
+/* 105:116 */         Block localbec2 = BlockList.endStone.instance();
 /* 106:118 */         for (int i5 = 127; i5 >= 0; i5--)
 /* 107:    */         {
 /* 108:119 */           Block localbec3 = parambgk.a(i1, i5, i2);
@@ -115,7 +115,7 @@ package net.minecraft.src;
 /* 114:124 */               if (i3 <= 0)
 /* 115:    */               {
 /* 116:125 */                 localbec1 = BlockList.air.instance();
-/* 117:126 */                 localbec2 = BlockList.bH.instance();
+/* 117:126 */                 localbec2 = BlockList.endStone.instance();
 /* 118:    */               }
 /* 119:129 */               i4 = i3;
 /* 120:130 */               if (i5 >= 0) {

@@ -80,9 +80,9 @@ package net.minecraft.src;
 /*  78:209 */     String str1 = localamj == null ? "Air" : localalq.a(localamj);
 /*  79:210 */     if (localalq == null)
 /*  80:    */     {
-/*  81:211 */       if ((localatr == BlockList.j) || (localatr == BlockList.i)) {
+/*  81:211 */       if ((localatr == BlockList.water) || (localatr == BlockList.flowingWater)) {
 /*  82:212 */         localalq = ItemList.ax;
-/*  83:213 */       } else if ((localatr == BlockList.l) || (localatr == BlockList.k)) {
+/*  83:213 */       } else if ((localatr == BlockList.lava) || (localatr == BlockList.flowingLava)) {
 /*  84:214 */         localalq = ItemList.ay;
 /*  85:    */       }
 /*  86:216 */       if (localalq != null)

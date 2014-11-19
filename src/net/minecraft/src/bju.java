@@ -99,11 +99,11 @@ package net.minecraft.src;
 /*  98:932 */     a(paramaqu, parambjb, 5, 5, 5, 7, 5, 7, BlockList.by.instance(), BlockList.by.instance(), false);
 /*  99:933 */     a(paramaqu, parambjb, 6, 1, 6, 6, 4, 6, BlockList.air.instance(), BlockList.air.instance(), false);
 /* 100:934 */     a(paramaqu, BlockList.by.instance(), 6, 0, 6, parambjb);
-/* 101:935 */     a(paramaqu, BlockList.k.instance(), 6, 5, 6, parambjb);
+/* 101:935 */     a(paramaqu, BlockList.flowingLava.instance(), 6, 5, 6, parambjb);
 /* 102:    */     
 /* 103:937 */     BlockPosition localdt = new BlockPosition(a(6, 6), d(5), b(6, 6));
 /* 104:938 */     if (parambjb.b(localdt)) {
-/* 105:939 */       paramaqu.a(BlockList.k, localdt, paramRandom);
+/* 105:939 */       paramaqu.a(BlockList.flowingLava, localdt, paramRandom);
 /* 106:    */     }
 /* 107:942 */     return true;
 /* 108:    */   }
