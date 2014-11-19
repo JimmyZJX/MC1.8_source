@@ -50,7 +50,7 @@ package net.minecraft.src;
 /*  49:128 */     return d[paramInt];
 /*  50:    */   }
 /*  51:    */   
-/*  52:    */   public String l()
+/*  52:    */   public String toString2()
 /*  53:    */   {
 /*  54:133 */     return this.f;
 /*  55:    */   }

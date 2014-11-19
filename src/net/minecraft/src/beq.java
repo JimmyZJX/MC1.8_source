@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*  8:   */   implements Predicate<Block>
 /*  9:   */ {
 /* 10:   */   private final bed a;
-/* 11:15 */   private final Map<bex,Predicate<Comparable>> b = Maps.newHashMap();
+/* 11:15 */   private final Map<IBlockData,Predicate<Comparable>> b = Maps.newHashMap();
 /* 12:   */   
 /* 13:   */   private beq(bed parambed)
 /* 14:   */   {
@@ -26,7 +26,7 @@ package net.minecraft.src;
 /* 25:32 */     if ((parambec == null) || (!parambec.getProto().equals(this.a.c()))) {
 /* 26:33 */       return false;
 /* 27:   */     }
-/* 28:36 */     for (Map.Entry<bex,Predicate<Comparable>> localEntry : this.b.entrySet())
+/* 28:36 */     for (Map.Entry<IBlockData,Predicate<Comparable>> localEntry : this.b.entrySet())
 /* 29:   */     {
 /* 30:37 */       Comparable localComparable = parambec.getProperty(localEntry.getKey());
 /* 31:38 */       if (!(localEntry.getValue()).apply(localComparable)) {
@@ -36,7 +36,7 @@ package net.minecraft.src;
 /* 35:43 */     return true;
 /* 36:   */   }
 /* 37:   */   
-/* 38:   */   public beq a(bex parambex, Predicate<Comparable> paramPredicate)
+/* 38:   */   public beq a(IBlockData parambex, Predicate<Comparable> paramPredicate)
 /* 39:   */   {
 /* 40:47 */     if (!this.a.d().contains(parambex)) {
 /* 41:48 */       throw new IllegalArgumentException(this.a + " cannot support property " + parambex);

@@ -5,10 +5,10 @@ package net.minecraft.src;
 /*   4:    */ public class bbt
 /*   5:    */   extends ProtoBlock
 /*   6:    */ {
-/*   7: 24 */   public static final beu a = beu.a("facing", en.HORIZONTAL);
-/*   8: 25 */   public static final bet b = bet.a("powered");
-/*   9: 26 */   public static final bet M = bet.a("attached");
-/*  10: 27 */   public static final bet N = bet.a("suspended");
+/*   7: 24 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", en.HORIZONTAL);
+/*   8: 25 */   public static final BlockDataBoolean b = BlockDataBoolean.a("powered");
+/*   9: 26 */   public static final BlockDataBoolean M = BlockDataBoolean.a("attached");
+/*  10: 27 */   public static final BlockDataBoolean N = BlockDataBoolean.a("suspended");
 /*  11:    */   
 /*  12:    */   public bbt()
 /*  13:    */   {
@@ -284,7 +284,7 @@ package net.minecraft.src;
 /* 283:    */   
 /* 284:    */   protected bed e()
 /* 285:    */   {
-/* 286:311 */     return new bed(this, new bex[] { a, b, M, N });
+/* 286:311 */     return new bed(this, new IBlockData[] { a, b, M, N });
 /* 287:    */   }
 /* 288:    */ }
 

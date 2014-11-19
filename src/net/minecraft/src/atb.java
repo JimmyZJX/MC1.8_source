@@ -4,8 +4,8 @@ package net.minecraft.src;
 /*   3:    */ public class atb
 /*   4:    */   extends atg
 /*   5:    */ {
-/*   6: 26 */   public static final beu a = beu.a("facing", en.HORIZONTAL);
-/*   7: 27 */   public static final bew b = bew.a("rotation", 0, 15);
+/*   6: 26 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", en.HORIZONTAL);
+/*   7: 27 */   public static final BlockDataInteger b = BlockDataInteger.getInstance("rotation", 0, 15);
 /*   8:    */   
 /*   9:    */   protected atb()
 /*  10:    */   {

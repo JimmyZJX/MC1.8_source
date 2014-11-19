@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ public class azo
 /*  2:   */   extends ati
 /*  3:   */ {
-/*  4:11 */   public static final bev b = bev.a("shape", EnumRailState.class);
+/*  4:11 */   public static final BlockDataEnum b = BlockDataEnum.getInstance("shape", EnumRailState.class);
 /*  5:   */   
 /*  6:   */   protected azo()
 /*  7:   */   {
@@ -18,7 +18,7 @@ package net.minecraft.src;
 /* 17:   */     }
 /* 18:   */   }
 /* 19:   */   
-/* 20:   */   public bex<Enum<?>> l()
+/* 20:   */   public IBlockData<Enum<?>> l()
 /* 21:   */   {
 /* 22:29 */     return b;
 /* 23:   */   }
@@ -35,7 +35,7 @@ package net.minecraft.src;
 /* 34:   */   
 /* 35:   */   protected bed e()
 /* 36:   */   {
-/* 37:45 */     return new bed(this, new bex[] { b });
+/* 37:45 */     return new bed(this, new IBlockData[] { b });
 /* 38:   */   }
 /* 39:   */ }
 

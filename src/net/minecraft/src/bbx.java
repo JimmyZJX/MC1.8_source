@@ -4,12 +4,12 @@ package net.minecraft.src;
 /*   3:    */ public class bbx
 /*   4:    */   extends ProtoBlock
 /*   5:    */ {
-/*   6: 22 */   public static final bet a = bet.a("up");
-/*   7: 23 */   public static final bet b = bet.a("north");
-/*   8: 24 */   public static final bet M = bet.a("east");
-/*   9: 25 */   public static final bet N = bet.a("south");
-/*  10: 26 */   public static final bet O = bet.a("west");
-/*  11: 27 */   public static final bev P = bev.a("variant", EnumCobblestoneVariant.class);
+/*   6: 22 */   public static final BlockDataBoolean a = BlockDataBoolean.a("up");
+/*   7: 23 */   public static final BlockDataBoolean b = BlockDataBoolean.a("north");
+/*   8: 24 */   public static final BlockDataBoolean M = BlockDataBoolean.a("east");
+/*   9: 25 */   public static final BlockDataBoolean N = BlockDataBoolean.a("south");
+/*  10: 26 */   public static final BlockDataBoolean O = BlockDataBoolean.a("west");
+/*  11: 27 */   public static final BlockDataEnum P = BlockDataEnum.getInstance("variant", EnumCobblestoneVariant.class);
 /*  12:    */   
 /*  13:    */   public bbx(ProtoBlock paramatr)
 /*  14:    */   {
@@ -134,7 +134,7 @@ package net.minecraft.src;
 /* 133:    */   
 /* 134:    */   protected bed e()
 /* 135:    */   {
-/* 136:162 */     return new bed(this, new bex[] { a, b, M, O, N, P });
+/* 136:162 */     return new bed(this, new IBlockData[] { a, b, M, O, N, P });
 /* 137:    */   }
 /* 138:    */ }
 

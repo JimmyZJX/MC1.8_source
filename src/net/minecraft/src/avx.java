@@ -6,14 +6,14 @@ package net.minecraft.src;
 /*   5:    */ public class avx
 /*   6:    */   extends ProtoBlock
 /*   7:    */ {
-/*   8: 25 */   public static final bew a = bew.a("age", 0, 15);
-/*   9: 26 */   public static final bet b = bet.a("flip");
-/*  10: 27 */   public static final bet M = bet.a("alt");
-/*  11: 28 */   public static final bet N = bet.a("north");
-/*  12: 29 */   public static final bet O = bet.a("east");
-/*  13: 30 */   public static final bet P = bet.a("south");
-/*  14: 31 */   public static final bet Q = bet.a("west");
-/*  15: 32 */   public static final bew R = bew.a("upper", 0, 2);
+/*   8: 25 */   public static final BlockDataInteger a = BlockDataInteger.getInstance("age", 0, 15);
+/*   9: 26 */   public static final BlockDataBoolean b = BlockDataBoolean.a("flip");
+/*  10: 27 */   public static final BlockDataBoolean M = BlockDataBoolean.a("alt");
+/*  11: 28 */   public static final BlockDataBoolean N = BlockDataBoolean.a("north");
+/*  12: 29 */   public static final BlockDataBoolean O = BlockDataBoolean.a("east");
+/*  13: 30 */   public static final BlockDataBoolean P = BlockDataBoolean.a("south");
+/*  14: 31 */   public static final BlockDataBoolean Q = BlockDataBoolean.a("west");
+/*  15: 32 */   public static final BlockDataInteger R = BlockDataInteger.getInstance("upper", 0, 2);
 /*  16:    */   
 /*  17:    */   public Block a(Block parambec, IBlockAccess paramard, BlockPosition paramdt)
 /*  18:    */   {
@@ -392,7 +392,7 @@ package net.minecraft.src;
 /* 391:    */   
 /* 392:    */   protected bed e()
 /* 393:    */   {
-/* 394:422 */     return new bed(this, new bex[] { a, N, O, P, Q, R, b, M });
+/* 394:422 */     return new bed(this, new IBlockData[] { a, N, O, P, Q, R, b, M });
 /* 395:    */   }
 /* 396:    */ }
 

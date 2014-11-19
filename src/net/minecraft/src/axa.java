@@ -51,7 +51,7 @@ package net.minecraft.src;
 /*  38:115 */     return localaxa == null ? n[0] : localaxa;
 /*  39:    */   }
 /*  40:    */   
-/*  41:    */   public String l()
+/*  41:    */   public String toString2()
 /*  42:    */   {
 /*  43:120 */     return this.p;
 /*  44:    */   }

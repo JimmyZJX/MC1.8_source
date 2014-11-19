@@ -14,9 +14,9 @@ package net.minecraft.src;
 /*  13:247 */     ProtoBlock localatr = localbec.getProto();
 /*  14:248 */     Material localbof = localatr.getMaterial();
 /*  15:    */     Item localalq;
-/*  16:251 */     if ((Material.water.equals(localbof)) && ((localatr instanceof axl)) && (((Integer)localbec.getProperty(axl.b)).intValue() == 0)) {
+/*  16:251 */     if ((Material.water.equals(localbof)) && ((localatr instanceof BlockLiquid)) && (((Integer)localbec.getProperty(BlockLiquid.level)).intValue() == 0)) {
 /*  17:252 */       localalq = ItemList.ax;
-/*  18:253 */     } else if ((Material.lava.equals(localbof)) && ((localatr instanceof axl)) && (((Integer)localbec.getProperty(axl.b)).intValue() == 0)) {
+/*  18:253 */     } else if ((Material.lava.equals(localbof)) && ((localatr instanceof BlockLiquid)) && (((Integer)localbec.getProperty(BlockLiquid.level)).intValue() == 0)) {
 /*  19:254 */       localalq = ItemList.ay;
 /*  20:    */     } else {
 /*  21:256 */       return super.b(paramdz, paramamj);

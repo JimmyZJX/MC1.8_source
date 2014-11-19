@@ -11,10 +11,10 @@ package net.minecraft.src;
 /*  10:    */   
 /*  11:    */   public String toString()
 /*  12:    */   {
-/*  13:445 */     return l();
+/*  13:445 */     return toString2();
 /*  14:    */   }
 /*  15:    */   
-/*  16:    */   public String l()
+/*  16:    */   public String toString2()
 /*  17:    */   {
 /*  18:450 */     return this.d;
 /*  19:    */   }

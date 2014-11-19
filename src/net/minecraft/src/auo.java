@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*   3:    */ public class auo
 /*   4:    */   extends atg
 /*   5:    */ {
-/*   6: 22 */   public static final bet a = bet.a("triggered");
+/*   6: 22 */   public static final BlockDataBoolean a = BlockDataBoolean.a("triggered");
 /*   7:    */   
 /*   8:    */   public auo()
 /*   9:    */   {
@@ -115,7 +115,7 @@ package net.minecraft.src;
 /* 114:    */   
 /* 115:    */   protected bed e()
 /* 116:    */   {
-/* 117:136 */     return new bed(this, new bex[] { a });
+/* 117:136 */     return new bed(this, new IBlockData[] { a });
 /* 118:    */   }
 /* 119:    */   
 /* 120:    */   public Block a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3, int paramInt, EntityLiving paramxm)

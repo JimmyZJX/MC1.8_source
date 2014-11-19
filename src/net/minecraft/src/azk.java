@@ -100,7 +100,7 @@ package net.minecraft.src;
 /*  99:    */   
 /* 100:    */   protected bed e()
 /* 101:    */   {
-/* 102:114 */     return new bed(this, new bex[] { N });
+/* 102:114 */     return new bed(this, new IBlockData[] { N });
 /* 103:    */   }
 /* 104:    */   
 /* 105:    */   protected bek j()

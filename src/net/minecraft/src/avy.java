@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*   3:    */ public abstract class avy
 /*   4:    */   extends auc
 /*   5:    */ {
-/*   6:    */   protected bev a;
+/*   6:    */   protected BlockDataEnum a;
 /*   7:    */   
 /*   8:    */   protected avy()
 /*   9:    */   {
@@ -31,10 +31,10 @@ package net.minecraft.src;
 /*  30:    */   
 /*  31:    */   public abstract awc j();
 /*  32:    */   
-/*  33:    */   public bex<Enum<?>> l()
+/*  33:    */   public IBlockData<Enum<?>> l()
 /*  34:    */   {
 /*  35: 48 */     if (this.a == null) {
-/*  36: 49 */       this.a = bev.a("type", EnumFlowerVariant.class, new avz(this));
+/*  36: 49 */       this.a = BlockDataEnum.getInstance("type", EnumFlowerVariant.class, new avz(this));
 /*  37:    */     }
 /*  38: 56 */     return this.a;
 /*  39:    */   }
@@ -46,7 +46,7 @@ package net.minecraft.src;
 /*  45:    */   
 /*  46:    */   protected bed e()
 /*  47:    */   {
-/*  48: 66 */     return new bed(this, new bex[] { l() });
+/*  48: 66 */     return new bed(this, new IBlockData[] { l() });
 /*  49:    */   }
 /*  50:    */   
 /*  51:    */   public atw Q()

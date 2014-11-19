@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*   4:    */ public abstract class BlockSlab
 /*   5:    */   extends ProtoBlock
 /*   6:    */ {
-/*   7: 21 */   public static final bev half = bev.a("half", EnumSlabHalf.class);
+/*   7: 21 */   public static final BlockDataEnum half = BlockDataEnum.getInstance("half", EnumSlabHalf.class);
 /*   8:    */   
 /*   9:    */   public BlockSlab(Material parambof)
 /*  10:    */   {
@@ -133,7 +133,7 @@ package net.minecraft.src;
 /* 132:    */   
 /* 133:    */   public abstract boolean j();
 /* 134:    */   
-/* 135:    */   public abstract bex l();
+/* 135:    */   public abstract IBlockData l();
 /* 136:    */   
 /* 137:    */   public abstract Object a(ItemStack paramamj);
 /* 138:    */ }

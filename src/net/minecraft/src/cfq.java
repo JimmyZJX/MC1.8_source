@@ -103,8 +103,8 @@ package net.minecraft.src;
 /* 102:104 */     if ((localbof.isLiquid()) || (localbof.a()))
 /* 103:    */     {
 /* 104:105 */       double d1 = 0.0D;
-/* 105:106 */       if ((localbec.getProto() instanceof axl)) {
-/* 106:107 */         d1 = axl.b(((Integer)localbec.getProperty(axl.b)).intValue());
+/* 105:106 */       if ((localbec.getProto() instanceof BlockLiquid)) {
+/* 106:107 */         d1 = BlockLiquid.b(((Integer)localbec.getProperty(BlockLiquid.level)).intValue());
 /* 107:    */       }
 /* 108:109 */       double d2 = MathUtils.floor(this.yPos) + 1 - d1;
 /* 109:110 */       if (this.yPos < d2) {

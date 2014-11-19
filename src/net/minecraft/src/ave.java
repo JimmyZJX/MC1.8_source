@@ -4,8 +4,8 @@ package net.minecraft.src;
 /*   3:    */ public class ave
 /*   4:    */   extends atg
 /*   5:    */ {
-/*   6: 25 */   public static final beu a = beu.a("facing");
-/*   7: 26 */   public static final bet b = bet.a("triggered");
+/*   6: 25 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing");
+/*   7: 26 */   public static final BlockDataBoolean b = BlockDataBoolean.a("triggered");
 /*   8: 28 */   public static final ei M = new ei(new eg());
 /*   9: 30 */   protected Random N = new Random();
 /*  10:    */   
@@ -206,7 +206,7 @@ package net.minecraft.src;
 /* 205:    */   
 /* 206:    */   protected bed e()
 /* 207:    */   {
-/* 208:224 */     return new bed(this, new bex[] { a, b });
+/* 208:224 */     return new bed(this, new IBlockData[] { a, b });
 /* 209:    */   }
 /* 210:    */ }
 

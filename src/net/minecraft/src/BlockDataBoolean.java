@@ -2,28 +2,28 @@ package net.minecraft.src;
 /*  1:   */ import com.google.common.collect.ImmutableSet;
 /*  2:   */ import java.util.Collection;
 /*  3:   */ 
-/*  4:   */ public class bet
-/*  5:   */   extends bes<Boolean>
+/*  4:   */ public class BlockDataBoolean
+/*  5:   */   extends BlockData<Boolean>
 /*  6:   */ {
-/*  7:   */   private final ImmutableSet a;
+/*  7:   */   private final ImmutableSet<Boolean> values;
 /*  8:   */   
-/*  9:   */   protected bet(String paramString)
+/*  9:   */   protected BlockDataBoolean(String paramString)
 /* 10:   */   {
 /* 11:11 */     super(paramString, Boolean.class);
-/* 12:12 */     this.a = ImmutableSet.of(Boolean.valueOf(true), Boolean.valueOf(false));
+/* 12:12 */     this.values = ImmutableSet.of(Boolean.valueOf(true), Boolean.valueOf(false));
 /* 13:   */   }
 /* 14:   */   
-/* 15:   */   public Collection c()
+/* 15:   */   public Collection<Boolean> getValues()
 /* 16:   */   {
-/* 17:17 */     return this.a;
+/* 17:17 */     return this.values;
 /* 18:   */   }
 /* 19:   */   
-/* 20:   */   public static bet a(String paramString)
+/* 20:   */   public static BlockDataBoolean a(String paramString)
 /* 21:   */   {
-/* 22:21 */     return new bet(paramString);
+/* 22:21 */     return new BlockDataBoolean(paramString);
 /* 23:   */   }
 /* 24:   */   
-/* 25:   */   public String a(Boolean paramBoolean)
+/* 25:   */   public String toString(Boolean paramBoolean)
 /* 26:   */   {
 /* 27:31 */     return paramBoolean.toString();
 /* 28:   */   }

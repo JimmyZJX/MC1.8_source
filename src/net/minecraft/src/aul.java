@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*   4:    */   extends avb
 /*   5:    */   implements atz
 /*   6:    */ {
-/*   7: 24 */   public static final bew a = bew.a("age", 0, 2);
+/*   7: 24 */   public static final BlockDataInteger a = BlockDataInteger.getInstance("age", 0, 2);
 /*   8:    */   
 /*   9:    */   public aul()
 /*  10:    */   {
@@ -171,7 +171,7 @@ package net.minecraft.src;
 /* 170:    */   
 /* 171:    */   protected bed e()
 /* 172:    */   {
-/* 173:188 */     return new bed(this, new bex[] { N, a });
+/* 173:188 */     return new bed(this, new IBlockData[] { N, a });
 /* 174:    */   }
 /* 175:    */ }
 

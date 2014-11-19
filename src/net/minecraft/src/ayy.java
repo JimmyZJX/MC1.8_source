@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*   3:    */ public class ayy
 /*   4:    */   extends awt
 /*   5:    */ {
-/*   6: 23 */   public static final bev a = bev.a("axis", EnumAxis.class, new EnumAxis[] { EnumAxis.X, EnumAxis.Z });
+/*   6: 23 */   public static final BlockDataEnum a = BlockDataEnum.getInstance("axis", EnumAxis.class, new EnumAxis[] { EnumAxis.X, EnumAxis.Z });
 /*   7:    */   
 /*   8:    */   public ayy()
 /*   9:    */   {
@@ -209,7 +209,7 @@ package net.minecraft.src;
 /* 208:    */   
 /* 209:    */   protected bed e()
 /* 210:    */   {
-/* 211:234 */     return new bed(this, new bex[] { a });
+/* 211:234 */     return new bed(this, new IBlockData[] { a });
 /* 212:    */   }
 /* 213:    */ }
 

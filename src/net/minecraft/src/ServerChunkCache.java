@@ -280,7 +280,7 @@ package net.minecraft.src;
 /* 280:    */   
 /* 281:    */   public void a(Chunk parambfh, int paramInt1, int paramInt2) {}
 /* 282:    */   
-/* 283:    */   public Chunk a(BlockPosition paramdt)
+/* 283:    */   public Chunk getChunk(BlockPosition paramdt)
 /* 284:    */   {
 /* 285:279 */     return getChunk(paramdt.getX() >> 4, paramdt.getZ() >> 4);
 /* 286:    */   }

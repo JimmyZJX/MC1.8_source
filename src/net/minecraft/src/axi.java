@@ -2,8 +2,8 @@ package net.minecraft.src;
 /*   1:    */ public class axi
 /*   2:    */   extends ProtoBlock
 /*   3:    */ {
-/*   4: 22 */   public static final bev a = bev.a("facing", axk.class);
-/*   5: 23 */   public static final bet b = bet.a("powered");
+/*   4: 22 */   public static final BlockDataEnum a = BlockDataEnum.getInstance("facing", axk.class);
+/*   5: 23 */   public static final BlockDataBoolean b = BlockDataBoolean.a("powered");
 /*   6:    */   
 /*   7:    */   protected axi()
 /*   8:    */   {
@@ -218,7 +218,7 @@ package net.minecraft.src;
 /* 217:    */   
 /* 218:    */   protected bed e()
 /* 219:    */   {
-/* 220:240 */     return new bed(this, new bex[] { a, b });
+/* 220:240 */     return new bed(this, new IBlockData[] { a, b });
 /* 221:    */   }
 /* 222:    */ }
 

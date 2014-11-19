@@ -20,7 +20,7 @@ package net.minecraft.src;
 /*  19:    */   
 /*  20:    */   public boolean a(IBlockAccess paramard, Block parambec, BlockPosition paramdt, VertexBuffer paramciv)
 /*  21:    */   {
-/*  22: 33 */     axl localaxl = (axl)parambec.getProto();
+/*  22: 33 */     BlockLiquid localaxl = (BlockLiquid)parambec.getProto();
 /*  23: 34 */     localaxl.a(paramard, paramdt);
 /*  24:    */     
 /*  25: 36 */     cue[] arrayOfcue = localaxl.getMaterial() == Material.lava ? this.a : this.b;
@@ -69,7 +69,7 @@ package net.minecraft.src;
 /*  68:    */     {
 /*  69: 76 */       bool3 = true;
 /*  70: 77 */       localcue = arrayOfcue[0];
-/*  71: 78 */       f13 = (float)axl.a(paramard, paramdt, localbof);
+/*  71: 78 */       f13 = (float)BlockLiquid.a(paramard, paramdt, localbof);
 /*  72: 79 */       if (f13 > -999.0F) {
 /*  73: 80 */         localcue = arrayOfcue[1];
 /*  74:    */       }
@@ -238,13 +238,13 @@ package net.minecraft.src;
 /* 237:238 */       Material localbof = localbec.getProto().getMaterial();
 /* 238:239 */       if (localbof == parambof)
 /* 239:    */       {
-/* 240:240 */         int k = ((Integer)localbec.getProperty(axl.b)).intValue();
+/* 240:240 */         int k = ((Integer)localbec.getProperty(BlockLiquid.level)).intValue();
 /* 241:241 */         if ((k >= 8) || (k == 0))
 /* 242:    */         {
-/* 243:242 */           f += axl.b(k) * 10.0F;
+/* 243:242 */           f += BlockLiquid.b(k) * 10.0F;
 /* 244:243 */           i += 10;
 /* 245:    */         }
-/* 246:245 */         f += axl.b(k);
+/* 246:245 */         f += BlockLiquid.b(k);
 /* 247:246 */         i++;
 /* 248:    */       }
 /* 249:247 */       else if (!localbof.a())

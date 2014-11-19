@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*   3:    */ public class awj
 /*   4:    */   extends atg
 /*   5:    */ {
-/*   6: 24 */   public static final beu a = beu.a("facing", en.HORIZONTAL);
+/*   6: 24 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", en.HORIZONTAL);
 /*   7:    */   private final boolean b;
 /*   8:    */   private static boolean M;
 /*   9:    */   
@@ -194,7 +194,7 @@ package net.minecraft.src;
 /* 193:    */   
 /* 194:    */   protected bed e()
 /* 195:    */   {
-/* 196:217 */     return new bed(this, new bex[] { a });
+/* 196:217 */     return new bed(this, new IBlockData[] { a });
 /* 197:    */   }
 /* 198:    */ }
 

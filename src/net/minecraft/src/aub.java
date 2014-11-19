@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*   4:    */ public class aub
 /*   5:    */   extends atg
 /*   6:    */ {
-/*   7: 29 */   public static final bet[] a = { bet.a("has_bottle_0"), bet.a("has_bottle_1"), bet.a("has_bottle_2") };
+/*   7: 29 */   public static final BlockDataBoolean[] a = { BlockDataBoolean.a("has_bottle_0"), BlockDataBoolean.a("has_bottle_1"), BlockDataBoolean.a("has_bottle_2") };
 /*   8: 35 */   private final Random b = new Random();
 /*   9:    */   
 /*  10:    */   public aub()
@@ -135,7 +135,7 @@ package net.minecraft.src;
 /* 134:    */   
 /* 135:    */   protected bed e()
 /* 136:    */   {
-/* 137:169 */     return new bed(this, new bex[] { a[0], a[1], a[2] });
+/* 137:169 */     return new bed(this, new IBlockData[] { a[0], a[1], a[2] });
 /* 138:    */   }
 /* 139:    */ }
 

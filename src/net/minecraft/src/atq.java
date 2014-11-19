@@ -1,7 +1,7 @@
 package net.minecraft.src;
 /*   1:    */ public enum atq
 /*   2:    */   implements va
-/*   3:    */ { a(""),b(""); //BROKEN
+/*   3:    */ { HEAD("head"),FOOT("foot");
 /*   4:    */   private final String c;
 /*   5:    */   
 /*   6:    */   private atq(String paramString)
@@ -14,7 +14,7 @@ package net.minecraft.src;
 /*  13:283 */     return this.c;
 /*  14:    */   }
 /*  15:    */   
-/*  16:    */   public String l()
+/*  16:    */   public String toString2()
 /*  17:    */   {
 /*  18:288 */     return this.c;
 /*  19:    */   }

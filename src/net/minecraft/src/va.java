@@ -1,7 +1,7 @@
 package net.minecraft.src;
 public abstract interface va
 {
-  public abstract String l();
+  public abstract String toString2();
 }
 
 

@@ -6,8 +6,8 @@ package net.minecraft.src;
 /*   5:    */   extends ava
 /*   6:    */   implements avs
 /*   7:    */ {
-/*   8: 30 */   public static final bet a = bet.a("powered");
-/*   9: 31 */   public static final bev b = bev.a("mode", aur.class);
+/*   8: 30 */   public static final BlockDataBoolean a = BlockDataBoolean.a("powered");
+/*   9: 31 */   public static final BlockDataEnum b = BlockDataEnum.getInstance("mode", aur.class);
 /*  10:    */   
 /*  11:    */   public BlockComparator(boolean paramBoolean)
 /*  12:    */   {
@@ -241,7 +241,7 @@ package net.minecraft.src;
 /* 240:    */   
 /* 241:    */   protected bed e()
 /* 242:    */   {
-/* 243:286 */     return new bed(this, new bex[] { N, b, a });
+/* 243:286 */     return new bed(this, new IBlockData[] { N, b, a });
 /* 244:    */   }
 /* 245:    */   
 /* 246:    */   public Block a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3, int paramInt, EntityLiving paramxm)

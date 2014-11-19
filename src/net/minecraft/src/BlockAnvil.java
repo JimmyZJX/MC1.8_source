@@ -4,8 +4,8 @@ package net.minecraft.src;
 /*   3:    */ public class BlockAnvil
 /*   4:    */   extends avt
 /*   5:    */ {
-/*   6: 28 */   public static final beu a = beu.a("facing", en.HORIZONTAL);
-/*   7: 29 */   public static final bew b = bew.a("damage", 0, 2);
+/*   6: 28 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", en.HORIZONTAL);
+/*   7: 29 */   public static final BlockDataInteger b = BlockDataInteger.getInstance("damage", 0, 2);
 /*   8:    */   
 /*   9:    */   protected BlockAnvil()
 /*  10:    */   {
@@ -98,7 +98,7 @@ package net.minecraft.src;
 /*  97:    */   
 /*  98:    */   protected bed e()
 /*  99:    */   {
-/* 100:162 */     return new bed(this, new bex[] { a, b });
+/* 100:162 */     return new bed(this, new IBlockData[] { a, b });
 /* 101:    */   }
 /* 102:    */ }
 

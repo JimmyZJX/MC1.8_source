@@ -3,7 +3,7 @@ package net.minecraft.src;
 /*   3:    */ public class axc
 /*   4:    */   extends atg
 /*   5:    */ {
-/*   6: 57 */   public static final bet a = bet.a("has_record");
+/*   6: 57 */   public static final BlockDataBoolean a = BlockDataBoolean.a("has_record");
 /*   7:    */   
 /*   8:    */   protected axc()
 /*   9:    */   {
@@ -122,7 +122,7 @@ package net.minecraft.src;
 /* 122:    */   
 /* 123:    */   protected bed e()
 /* 124:    */   {
-/* 125:183 */     return new bed(this, new bex[] { a });
+/* 125:183 */     return new bed(this, new IBlockData[] { a });
 /* 126:    */   }
 /* 127:    */ }
 

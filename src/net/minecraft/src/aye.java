@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*   3:    */ public class aye
 /*   4:    */   extends auc
 /*   5:    */ {
-/*   6: 17 */   public static final bew a = bew.a("age", 0, 3);
+/*   6: 17 */   public static final BlockDataInteger a = BlockDataInteger.getInstance("age", 0, 3);
 /*   7:    */   
 /*   8:    */   protected aye()
 /*   9:    */   {
@@ -81,7 +81,7 @@ package net.minecraft.src;
 /*  80:    */   
 /*  81:    */   protected bed e()
 /*  82:    */   {
-/*  83:100 */     return new bed(this, new bex[] { a });
+/*  83:100 */     return new bed(this, new IBlockData[] { a });
 /*  84:    */   }
 /*  85:    */ }
 

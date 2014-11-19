@@ -4,10 +4,10 @@ package net.minecraft.src;
 /*   3:    */ public class avv
 /*   4:    */   extends ProtoBlock
 /*   5:    */ {
-/*   6: 20 */   public static final bet a = bet.a("north");
-/*   7: 21 */   public static final bet b = bet.a("east");
-/*   8: 22 */   public static final bet M = bet.a("south");
-/*   9: 23 */   public static final bet N = bet.a("west");
+/*   6: 20 */   public static final BlockDataBoolean a = BlockDataBoolean.a("north");
+/*   7: 21 */   public static final BlockDataBoolean b = BlockDataBoolean.a("east");
+/*   8: 22 */   public static final BlockDataBoolean M = BlockDataBoolean.a("south");
+/*   9: 23 */   public static final BlockDataBoolean N = BlockDataBoolean.a("west");
 /*  10:    */   
 /*  11:    */   public avv(Material parambof)
 /*  12:    */   {
@@ -141,7 +141,7 @@ package net.minecraft.src;
 /* 140:    */   
 /* 141:    */   protected bed e()
 /* 142:    */   {
-/* 143:163 */     return new bed(this, new bex[] { a, b, N, M });
+/* 143:163 */     return new bed(this, new IBlockData[] { a, b, N, M });
 /* 144:    */   }
 /* 145:    */ }
 

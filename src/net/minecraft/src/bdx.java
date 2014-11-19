@@ -4,8 +4,8 @@ package net.minecraft.src;
 /*   3:    */ public class bdx
 /*   4:    */   extends atg
 /*   5:    */ {
-/*   6: 26 */   public static final beu a = bds.a;
-/*   7: 27 */   public static final bev b = bds.b;
+/*   6: 26 */   public static final BlockDataDirection a = bds.a;
+/*   7: 27 */   public static final BlockDataEnum b = bds.b;
 /*   8:    */   
 /*   9:    */   public bdx()
 /*  10:    */   {
@@ -209,7 +209,7 @@ package net.minecraft.src;
 /* 208:    */   
 /* 209:    */   protected bed e()
 /* 210:    */   {
-/* 211:245 */     return new bed(this, new bex[] { a, b });
+/* 211:245 */     return new bed(this, new IBlockData[] { a, b });
 /* 212:    */   }
 /* 213:    */ }
 

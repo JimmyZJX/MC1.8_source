@@ -10,11 +10,11 @@ package net.minecraft.src;
 /*   9:    */ public class azt
 /*  10:    */   extends ProtoBlock
 /*  11:    */ {
-/*  12: 30 */   public static final bev a = bev.a("north", azu.class);
-/*  13: 31 */   public static final bev b = bev.a("east", azu.class);
-/*  14: 32 */   public static final bev M = bev.a("south", azu.class);
-/*  15: 33 */   public static final bev N = bev.a("west", azu.class);
-/*  16: 34 */   public static final bew O = bew.a("power", 0, 15);
+/*  12: 30 */   public static final BlockDataEnum a = BlockDataEnum.getInstance("north", azu.class);
+/*  13: 31 */   public static final BlockDataEnum b = BlockDataEnum.getInstance("east", azu.class);
+/*  14: 32 */   public static final BlockDataEnum M = BlockDataEnum.getInstance("south", azu.class);
+/*  15: 33 */   public static final BlockDataEnum N = BlockDataEnum.getInstance("west", azu.class);
+/*  16: 34 */   public static final BlockDataInteger O = BlockDataInteger.getInstance("power", 0, 15);
 /*  17: 36 */   private boolean P = true;
 /*  18: 37 */   private final Set<BlockPosition> Q = Sets.newHashSet();
 /*  19:    */   
@@ -400,7 +400,7 @@ package net.minecraft.src;
 /* 397:    */   
 /* 398:    */   protected bed e()
 /* 399:    */   {
-/* 400:428 */     return new bed(this, new bex[] { a, b, M, N, O });
+/* 400:428 */     return new bed(this, new IBlockData[] { a, b, M, N, O });
 /* 401:    */   }
 /* 402:    */ }
 

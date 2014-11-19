@@ -45,7 +45,7 @@ package net.minecraft.src;
 /*  44:100 */     return g[paramInt];
 /*  45:    */   }
 /*  46:    */   
-/*  47:    */   public String l()
+/*  47:    */   public String toString2()
 /*  48:    */   {
 /*  49:105 */     return this.name1;
 /*  50:    */   }

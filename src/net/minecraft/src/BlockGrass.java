@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*   4:    */   extends ProtoBlock
 /*   5:    */   implements atz
 /*   6:    */ {
-/*   7: 20 */   public static final bet a = bet.a("snowy");
+/*   7: 20 */   public static final BlockDataBoolean a = BlockDataBoolean.a("snowy");
 /*   8:    */   
 /*   9:    */   protected BlockGrass()
 /*  10:    */   {
@@ -123,7 +123,7 @@ package net.minecraft.src;
 /* 122:    */   
 /* 123:    */   protected bed e()
 /* 124:    */   {
-/* 125:136 */     return new bed(this, new bex[] { a });
+/* 125:136 */     return new bed(this, new IBlockData[] { a });
 /* 126:    */   }
 /* 127:    */ }
 

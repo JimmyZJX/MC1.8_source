@@ -2,9 +2,9 @@ package net.minecraft.src;
 /*   1:    */ public class bbp
 /*   2:    */   extends ProtoBlock
 /*   3:    */ {
-/*   4: 25 */   public static final beu a = beu.a("facing", en.HORIZONTAL);
-/*   5: 26 */   public static final bet b = bet.a("open");
-/*   6: 27 */   public static final bev M = bev.a("half", bbr.class);
+/*   4: 25 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", en.HORIZONTAL);
+/*   5: 26 */   public static final BlockDataBoolean b = BlockDataBoolean.a("open");
+/*   6: 27 */   public static final BlockDataEnum M = BlockDataEnum.getInstance("half", bbr.class);
 /*   7:    */   
 /*   8:    */   protected bbp(Material parambof)
 /*   9:    */   {
@@ -203,7 +203,7 @@ package net.minecraft.src;
 /* 202:    */   
 /* 203:    */   protected bed e()
 /* 204:    */   {
-/* 205:231 */     return new bed(this, new bex[] { a, b, M });
+/* 205:231 */     return new bed(this, new IBlockData[] { a, b, M });
 /* 206:    */   }
 /* 207:    */ }
 

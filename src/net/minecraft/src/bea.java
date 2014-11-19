@@ -12,9 +12,9 @@ package net.minecraft.src;
 /* 11:15 */   private static final Joiner a = Joiner.on(',');
 /* 12:16 */   private static final Function b = new beb();
 /* 13:   */   
-/* 14:   */   public Block a(bex parambex)
+/* 14:   */   public Block a(IBlockData parambex)
 /* 15:   */   {
-/* 16:31 */     return a(parambex, (Comparable)a(parambex.c(), getProperty(parambex)));
+/* 16:31 */     return a(parambex, (Comparable)a(parambex.getValues(), getProperty(parambex)));
 /* 17:   */   }
 /* 18:   */   
 /* 19:   */   protected static Object a(Collection paramCollection, Object paramObject)

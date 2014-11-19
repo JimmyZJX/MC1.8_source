@@ -64,8 +64,8 @@ package net.minecraft.src;
 /*  63: 75 */     if (localatr.getMaterial().isLiquid())
 /*  64:    */     {
 /*  65: 76 */       float f1 = 0.0F;
-/*  66: 77 */       if ((localbec.getProto() instanceof axl)) {
-/*  67: 78 */         f1 = axl.b(((Integer)localbec.getProperty(axl.b)).intValue()) - 0.1111111F;
+/*  66: 77 */       if ((localbec.getProto() instanceof BlockLiquid)) {
+/*  67: 78 */         f1 = BlockLiquid.b(((Integer)localbec.getProperty(BlockLiquid.level)).intValue()) - 0.1111111F;
 /*  68:    */       }
 /*  69: 80 */       float f2 = localdt.getY() + 1 - f1;
 /*  70: 81 */       if (localbrw.y >= f2) {

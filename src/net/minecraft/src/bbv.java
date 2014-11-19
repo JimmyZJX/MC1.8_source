@@ -5,12 +5,12 @@ package net.minecraft.src;
 /*   4:    */ public class bbv
 /*   5:    */   extends ProtoBlock
 /*   6:    */ {
-/*   7: 27 */   public static final bet a = bet.a("up");
-/*   8: 28 */   public static final bet b = bet.a("north");
-/*   9: 29 */   public static final bet M = bet.a("east");
-/*  10: 30 */   public static final bet N = bet.a("south");
-/*  11: 31 */   public static final bet O = bet.a("west");
-/*  12: 32 */   public static final bet[] P = { a, b, N, O, M };
+/*   7: 27 */   public static final BlockDataBoolean a = BlockDataBoolean.a("up");
+/*   8: 28 */   public static final BlockDataBoolean b = BlockDataBoolean.a("north");
+/*   9: 29 */   public static final BlockDataBoolean M = BlockDataBoolean.a("east");
+/*  10: 30 */   public static final BlockDataBoolean N = BlockDataBoolean.a("south");
+/*  11: 31 */   public static final BlockDataBoolean O = BlockDataBoolean.a("west");
+/*  12: 32 */   public static final BlockDataBoolean[] P = { a, b, N, O, M };
 /*  13: 34 */   public static final int Q = b(EnumDirection.SOUTH);
 /*  14: 35 */   public static final int R = b(EnumDirection.NORTH);
 /*  15: 36 */   public static final int S = b(EnumDirection.EAST);
@@ -139,7 +139,7 @@ package net.minecraft.src;
 /* 138:156 */     Block localbec1 = parambec;
 /* 139:158 */     for (EnumDirection localej : en.HORIZONTAL)
 /* 140:    */     {
-/* 141:159 */       bet localbet = a(localej);
+/* 141:159 */       BlockDataBoolean localbet = a(localej);
 /* 142:161 */       if ((((Boolean)parambec.getProperty(localbet)).booleanValue()) && 
 /* 143:162 */         (!c(paramaqu.getBlock(paramdt.a(localej)).getProto())))
 /* 144:    */       {
@@ -301,8 +301,8 @@ package net.minecraft.src;
 /* 297:    */         {
 /* 298:311 */           localej2 = (EnumDirection)localIterator.next();
 /* 299:312 */           localObject5 = a(localej2);
-/* 300:313 */           if ((paramRandom.nextBoolean()) || (!((Boolean)parambec.getProperty((bex)localObject5)).booleanValue())) {
-/* 301:314 */             localObject4 = ((Block)localObject4).a((bex)localObject5, Boolean.valueOf(false));
+/* 300:313 */           if ((paramRandom.nextBoolean()) || (!((Boolean)parambec.getProperty((IBlockData)localObject5)).booleanValue())) {
+/* 301:314 */             localObject4 = ((Block)localObject4).a((IBlockData)localObject5, Boolean.valueOf(false));
 /* 302:    */           }
 /* 303:    */         }
 /* 304:317 */         if ((((Boolean)((Block)localObject4).getProperty(b)).booleanValue()) || (((Boolean)((Block)localObject4).getProperty(M)).booleanValue()) || (((Boolean)((Block)localObject4).getProperty(N)).booleanValue()) || (((Boolean)((Block)localObject4).getProperty(O)).booleanValue())) {
@@ -381,10 +381,10 @@ package net.minecraft.src;
 /* 377:    */   
 /* 378:    */   protected bed e()
 /* 379:    */   {
-/* 380:400 */     return new bed(this, new bex[] { a, b, M, N, O });
+/* 380:400 */     return new bed(this, new IBlockData[] { a, b, M, N, O });
 /* 381:    */   }
 /* 382:    */   
-/* 383:    */   public static bet a(EnumDirection paramej)
+/* 383:    */   public static BlockDataBoolean a(EnumDirection paramej)
 /* 384:    */   {
 /* 385:404 */     switch (bbw.a[paramej.ordinal()])
 /* 386:    */     {
@@ -405,7 +405,7 @@ package net.minecraft.src;
 /* 401:    */   public static int d(Block parambec)
 /* 402:    */   {
 /* 403:421 */     int i = 0;
-/* 404:423 */     for (bet localbet : P) {
+/* 404:423 */     for (BlockDataBoolean localbet : P) {
 /* 405:424 */       if (((Boolean)parambec.getProperty(localbet)).booleanValue()) {
 /* 406:425 */         i++;
 /* 407:    */       }

@@ -97,7 +97,7 @@ package net.minecraft.src;
 /*  96:120 */       if (!paramahd.a(localdt, localbru.b, paramamj)) {
 /*  97:121 */         return paramamj;
 /*  98:    */       }
-/*  99:124 */       if ((paramaqu.getBlock(localdt).getProto() instanceof axl))
+/*  99:124 */       if ((paramaqu.getBlock(localdt).getProto() instanceof BlockLiquid))
 /* 100:    */       {
 /* 101:125 */         Entity localwv = a(paramaqu, paramamj.getDamage2(), localdt.getX() + 0.5D, localdt.getY() + 0.5D, localdt.getZ() + 0.5D);
 /* 102:126 */         if (localwv != null)

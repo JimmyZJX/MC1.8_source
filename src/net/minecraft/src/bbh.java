@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*   5:    */   extends auc
 /*   6:    */   implements atz
 /*   7:    */ {
-/*   8: 25 */   public static final bev a = bev.a("type", bbi.class);
+/*   8: 25 */   public static final BlockDataEnum a = BlockDataEnum.getInstance("type", bbi.class);
 /*   9:    */   
 /*  10:    */   protected bbh()
 /*  11:    */   {
@@ -122,7 +122,7 @@ package net.minecraft.src;
 /* 121:    */   
 /* 122:    */   protected bed e()
 /* 123:    */   {
-/* 124:142 */     return new bed(this, new bex[] { a });
+/* 124:142 */     return new bed(this, new IBlockData[] { a });
 /* 125:    */   }
 /* 126:    */   
 /* 127:    */   public atw Q()

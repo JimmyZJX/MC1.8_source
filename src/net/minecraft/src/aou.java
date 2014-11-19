@@ -154,7 +154,7 @@ package net.minecraft.src;
 /* 153:    */ 
 /* 154:    */ 
 /* 155:    */ 
-/* 156:161 */     paramaop.a(new ItemStack(BlockList.by, 1), new Object[] { "NN", "NN", Character.valueOf('N'), ItemList.cf });
+/* 156:161 */     paramaop.a(new ItemStack(BlockList.netherBrick, 1), new Object[] { "NN", "NN", Character.valueOf('N'), ItemList.cf });
 /* 157:    */     
 /* 158:    */ 
 /* 159:    */ 

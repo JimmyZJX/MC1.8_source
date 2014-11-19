@@ -4,8 +4,8 @@ package net.minecraft.src;
 /*  3:   */ public class BlockDirt
 /*  4:   */   extends ProtoBlock
 /*  5:   */ {
-/*  6:19 */   public static final bev a = bev.a("variant", avd.class);
-/*  7:20 */   public static final bet b = bet.a("snowy");
+/*  6:19 */   public static final BlockDataEnum a = BlockDataEnum.getInstance("variant", avd.class);
+/*  7:20 */   public static final BlockDataBoolean b = BlockDataBoolean.a("snowy");
 /*  8:   */   
 /*  9:   */   protected BlockDirt()
 /* 10:   */   {
@@ -52,7 +52,7 @@ package net.minecraft.src;
 /* 51:   */   
 /* 52:   */   protected bed e()
 /* 53:   */   {
-/* 54:66 */     return new bed(this, new bex[] { a, b });
+/* 54:66 */     return new bed(this, new IBlockData[] { a, b });
 /* 55:   */   }
 /* 56:   */   
 /* 57:   */   public int a(Block parambec)

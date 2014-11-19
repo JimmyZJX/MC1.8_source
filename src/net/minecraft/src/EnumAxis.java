@@ -62,7 +62,7 @@ package net.minecraft.src;
 /*  61:359 */     return this.f;
 /*  62:    */   }
 /*  63:    */   
-/*  64:    */   public String l()
+/*  64:    */   public String toString2()
 /*  65:    */   {
 /*  66:364 */     return this.e;
 /*  67:    */   }

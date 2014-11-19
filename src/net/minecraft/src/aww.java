@@ -36,7 +36,7 @@ package net.minecraft.src;
 /* 35:   */   
 /* 36:   */   protected bed e()
 /* 37:   */   {
-/* 38:50 */     return new bed(this, new bex[] { M });
+/* 38:50 */     return new bed(this, new IBlockData[] { M });
 /* 39:   */   }
 /* 40:   */   
 /* 41:   */   protected ItemStack i(Block parambec)

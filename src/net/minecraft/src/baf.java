@@ -6,8 +6,8 @@ package net.minecraft.src;
 /*   5:    */   extends auc
 /*   6:    */   implements atz
 /*   7:    */ {
-/*   8: 18 */   public static final bev a = bev.a("type", EnumWoodVariant.class);
-/*   9: 19 */   public static final bew b = bew.a("stage", 0, 1);
+/*   8: 18 */   public static final BlockDataEnum a = BlockDataEnum.getInstance("type", EnumWoodVariant.class);
+/*   9: 19 */   public static final BlockDataInteger b = BlockDataInteger.getInstance("stage", 0, 1);
 /*  10:    */   
 /*  11:    */   protected baf()
 /*  12:    */   {
@@ -184,7 +184,7 @@ package net.minecraft.src;
 /* 183:    */   
 /* 184:    */   protected bed e()
 /* 185:    */   {
-/* 186:202 */     return new bed(this, new bex[] { a, b });
+/* 186:202 */     return new bed(this, new IBlockData[] { a, b });
 /* 187:    */   }
 /* 188:    */ }
 

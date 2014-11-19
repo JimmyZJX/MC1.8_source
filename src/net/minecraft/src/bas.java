@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*  3:   */ public class bas
 /*  4:   */   extends bbj
 /*  5:   */ {
-/*  6:18 */   public static final bev a = bev.a("color", EnumDyeColor.class);
+/*  6:18 */   public static final BlockDataEnum a = BlockDataEnum.getInstance("color", EnumDyeColor.class);
 /*  7:   */   
 /*  8:   */   public bas()
 /*  9:   */   {
@@ -42,7 +42,7 @@ package net.minecraft.src;
 /* 41:   */   
 /* 42:   */   protected bed e()
 /* 43:   */   {
-/* 44:56 */     return new bed(this, new bex[] { b, M, O, N, a });
+/* 44:56 */     return new bed(this, new IBlockData[] { b, M, O, N, a });
 /* 45:   */   }
 /* 46:   */   
 /* 47:   */   public void c(World paramaqu, BlockPosition paramdt, Block parambec)

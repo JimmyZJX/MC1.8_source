@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*   3:    */ public class BlockSnowLayer
 /*   4:    */   extends ProtoBlock
 /*   5:    */ {
-/*   6: 26 */   public static final bew a = bew.a("layers", 1, 8);
+/*   6: 26 */   public static final BlockDataInteger a = BlockDataInteger.getInstance("layers", 1, 8);
 /*   7:    */   
 /*   8:    */   protected BlockSnowLayer()
 /*   9:    */   {
@@ -138,7 +138,7 @@ package net.minecraft.src;
 /* 137:    */   
 /* 138:    */   protected bed e()
 /* 139:    */   {
-/* 140:171 */     return new bed(this, new bex[] { a });
+/* 140:171 */     return new bed(this, new IBlockData[] { a });
 /* 141:    */   }
 /* 142:    */ }
 

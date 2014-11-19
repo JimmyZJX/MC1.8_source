@@ -21,10 +21,10 @@ package net.minecraft.src;
 /* 20:16 */   private static final Joiner a = Joiner.on(", ");
 /* 21:17 */   private static final Function b = new bee();
 /* 22:   */   private final ProtoBlock c;
-/* 23:   */   private final ImmutableList<bex> d;
+/* 23:   */   private final ImmutableList<IBlockData> d;
 /* 24:   */   private final ImmutableList<beg> e;
 /* 25:   */   
-/* 26:   */   public bed(ProtoBlock paramatr, bex... paramVarArgs)
+/* 26:   */   public bed(ProtoBlock paramatr, IBlockData... paramVarArgs)
 /* 27:   */   {
 /* 28:30 */     this.c = paramatr;
 /* 29:   */     
@@ -69,7 +69,7 @@ package net.minecraft.src;
 /* 68:   */   {
 /* 69:66 */     ArrayList<Collection> localArrayList = Lists.newArrayList();
 /* 70:67 */     for (int i = 0; i < this.d.size(); i++) {
-/* 71:68 */       localArrayList.add(((bex)this.d.get(i)).c());
+/* 71:68 */       localArrayList.add(((IBlockData)this.d.get(i)).getValues());
 /* 72:   */     }
 /* 73:71 */     return localArrayList;
 /* 74:   */   }

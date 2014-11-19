@@ -5,8 +5,8 @@ package net.minecraft.src;
 /*   4:    */ public class baj
 /*   5:    */   extends atg
 /*   6:    */ {
-/*   7: 36 */   public static final beu a = beu.a("facing");
-/*   8: 37 */   public static final bet b = bet.a("nodrop");
+/*   7: 36 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing");
+/*   8: 37 */   public static final BlockDataBoolean b = BlockDataBoolean.a("nodrop");
 /*   9: 39 */   private static final Predicate M = new bak();
 /*  10:    */   private bek N;
 /*  11:    */   private bek O;
@@ -195,7 +195,7 @@ package net.minecraft.src;
 /* 194:    */   
 /* 195:    */   protected bed e()
 /* 196:    */   {
-/* 197:245 */     return new bed(this, new bex[] { a, b });
+/* 197:245 */     return new bed(this, new IBlockData[] { a, b });
 /* 198:    */   }
 /* 199:    */   
 /* 200:    */   protected bek j()

@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*   3:    */ public class avr
 /*   4:    */   extends atg
 /*   5:    */ {
-/*   6: 29 */   public static final beu a = beu.a("facing", en.HORIZONTAL);
+/*   6: 29 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", en.HORIZONTAL);
 /*   7:    */   
 /*   8:    */   protected avr()
 /*   9:    */   {
@@ -112,7 +112,7 @@ package net.minecraft.src;
 /* 111:    */   
 /* 112:    */   protected bed e()
 /* 113:    */   {
-/* 114:140 */     return new bed(this, new bex[] { a });
+/* 114:140 */     return new bed(this, new IBlockData[] { a });
 /* 115:    */   }
 /* 116:    */ }
 

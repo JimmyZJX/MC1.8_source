@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*  3:   */ public class BlockPressurePlate
 /*  4:   */   extends ath
 /*  5:   */ {
-/*  6:17 */   public static final bet a = bet.a("powered");
+/*  6:17 */   public static final BlockDataBoolean a = BlockDataBoolean.a("powered");
 /*  7:   */   private final azh b;
 /*  8:   */   
 /*  9:   */   protected BlockPressurePlate(Material parambof, azh paramazh)
@@ -61,7 +61,7 @@ package net.minecraft.src;
 /* 60:   */   
 /* 61:   */   protected bed e()
 /* 62:   */   {
-/* 63:86 */     return new bed(this, new bex[] { a });
+/* 63:86 */     return new bed(this, new IBlockData[] { a });
 /* 64:   */   }
 /* 65:   */ }
 

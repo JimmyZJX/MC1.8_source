@@ -5,9 +5,9 @@ package net.minecraft.src;
 /*   4:    */ public class bds
 /*   5:    */   extends ProtoBlock
 /*   6:    */ {
-/*   7: 26 */   public static final beu a = beu.a("facing");
-/*   8: 27 */   public static final bev b = bev.a("type", bdu.class);
-/*   9: 28 */   public static final bet M = bet.a("short");
+/*   7: 26 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing");
+/*   8: 27 */   public static final BlockDataEnum b = BlockDataEnum.getInstance("type", bdu.class);
+/*   9: 28 */   public static final BlockDataBoolean M = BlockDataBoolean.a("short");
 /*  10:    */   
 /*  11:    */   public bds()
 /*  12:    */   {
@@ -200,7 +200,7 @@ package net.minecraft.src;
 /* 199:    */   
 /* 200:    */   protected bed e()
 /* 201:    */   {
-/* 202:225 */     return new bed(this, new bex[] { a, b, M });
+/* 202:225 */     return new bed(this, new IBlockData[] { a, b, M });
 /* 203:    */   }
 /* 204:    */ }
 

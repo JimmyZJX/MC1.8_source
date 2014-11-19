@@ -40,7 +40,7 @@ package net.minecraft.src;
 /*  39:206 */     return c[paramInt];
 /*  40:    */   }
 /*  41:    */   
-/*  42:    */   public String l()
+/*  42:    */   public String toString2()
 /*  43:    */   {
 /*  44:211 */     return this.e;
 /*  45:    */   }

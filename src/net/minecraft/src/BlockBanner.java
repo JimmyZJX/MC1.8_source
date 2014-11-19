@@ -29,7 +29,7 @@ package net.minecraft.src;
 /*  28:    */   
 /*  29:    */   protected bed e()
 /*  30:    */   {
-/*  31:212 */     return new bed(this, new bex[] { b });
+/*  31:212 */     return new bed(this, new IBlockData[] { b });
 /*  32:    */   }
 /*  33:    */ }
 

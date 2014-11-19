@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*  3:   */ public class ayw
 /*  4:   */   extends ProtoBlock
 /*  5:   */ {
-/*  6:15 */   public static final bev a = bev.a("variant", EnumWoodVariant.class);
+/*  6:15 */   public static final BlockDataEnum a = BlockDataEnum.getInstance("variant", EnumWoodVariant.class);
 /*  7:   */   
 /*  8:   */   public ayw()
 /*  9:   */   {
@@ -37,7 +37,7 @@ package net.minecraft.src;
 /* 36:   */   
 /* 37:   */   protected bed e()
 /* 38:   */   {
-/* 39:48 */     return new bed(this, new bex[] { a });
+/* 39:48 */     return new bed(this, new IBlockData[] { a });
 /* 40:   */   }
 /* 41:   */ }
 

@@ -12,7 +12,7 @@ package net.minecraft.src;
 /*  11:    */   {
 /*  12:223 */     LinkedHashMap localLinkedHashMap = Maps.newLinkedHashMap(parambec.b());
 /*  13:    */     
-/*  14:225 */     String str = BlockDirt.a.a((Comparable)localLinkedHashMap.remove(BlockDirt.a));
+/*  14:225 */     String str = BlockDirt.a.toString((Comparable)localLinkedHashMap.remove(BlockDirt.a));
 /*  15:227 */     if (avd.c != parambec.getProperty(BlockDirt.a)) {
 /*  16:228 */       localLinkedHashMap.remove(BlockDirt.b);
 /*  17:    */     }

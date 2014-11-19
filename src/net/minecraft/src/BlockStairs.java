@@ -6,9 +6,9 @@ package net.minecraft.src;
 /*   5:    */ public class BlockStairs
 /*   6:    */   extends ProtoBlock
 /*   7:    */ {
-/*   8: 29 */   public static final beu a = beu.a("facing", en.HORIZONTAL);
-/*   9: 30 */   public static final bev<EnumStairsHalf> half = bev.a("half", EnumStairsHalf.class);
-/*  10: 31 */   public static final bev<bav> M = bev.a("shape", bav.class);
+/*   8: 29 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", en.HORIZONTAL);
+/*   9: 30 */   public static final BlockDataEnum<EnumStairsHalf> half = BlockDataEnum.getInstance("half", EnumStairsHalf.class);
+/*  10: 31 */   public static final BlockDataEnum<bav> M = BlockDataEnum.getInstance("shape", bav.class);
 /*  11: 33 */   private static final int[][] N = { { 4, 5 }, { 5, 7 }, { 6, 7 }, { 4, 6 }, { 0, 1 }, { 1, 3 }, { 2, 3 }, { 0, 2 } };
 /*  12:    */   private final ProtoBlock O;
 /*  13:    */   private final Block P;
@@ -650,7 +650,7 @@ package net.minecraft.src;
 /* 649:    */   
 /* 650:    */   protected bed e()
 /* 651:    */   {
-/* 652:638 */     return new bed(this, new bex[] { a, half, M });
+/* 652:638 */     return new bed(this, new IBlockData[] { a, half, M });
 /* 653:    */   }
 /* 654:    */ }
 

@@ -51,8 +51,8 @@ package net.minecraft.src;
 /* 50:57 */     if ((localbof.isLiquid()) || (localbof.a()))
 /* 51:   */     {
 /* 52:58 */       double d1 = 0.0D;
-/* 53:59 */       if ((localbec.getProto() instanceof axl)) {
-/* 54:60 */         d1 = 1.0F - axl.b(((Integer)localbec.getProperty(axl.b)).intValue());
+/* 53:59 */       if ((localbec.getProto() instanceof BlockLiquid)) {
+/* 54:60 */         d1 = 1.0F - BlockLiquid.b(((Integer)localbec.getProperty(BlockLiquid.level)).intValue());
 /* 55:   */       } else {
 /* 56:62 */         d1 = localatr.C();
 /* 57:   */       }

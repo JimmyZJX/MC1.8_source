@@ -36,10 +36,10 @@ package net.minecraft.src;
 /* 35:50 */       int m = localej.b();
 /* 36:   */       
 /* 37:   */ 
-/* 38:53 */       Block localbec2 = BlockList.C.instance().a(atp.b, Boolean.valueOf(false)).a(atp.N, localej).a(atp.a, atq.b);
+/* 38:53 */       Block localbec2 = BlockList.C.instance().a(atp.b, Boolean.valueOf(false)).a(atp.N, localej).a(atp.a, atq.FOOT);
 /* 39:54 */       if (paramaqu.setBlock(paramdt, localbec2, 3))
 /* 40:   */       {
-/* 41:55 */         Block localbec3 = localbec2.a(atp.a, atq.a);
+/* 41:55 */         Block localbec3 = localbec2.a(atp.a, atq.HEAD);
 /* 42:56 */         paramaqu.setBlock(localdt, localbec3, 3);
 /* 43:   */       }
 /* 44:59 */       paramamj.stackSize -= 1;

@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*  3:   */ public class azi
 /*  4:   */   extends ProtoBlock
 /*  5:   */ {
-/*  6:15 */   public static final bev a = bev.a("variant", azj.class);
+/*  6:15 */   public static final BlockDataEnum a = BlockDataEnum.getInstance("variant", azj.class);
 /*  7:16 */   public static final int b = azj.a.a();
 /*  8:17 */   public static final int M = azj.b.a();
 /*  9:18 */   public static final int N = azj.c.a();
@@ -28,7 +28,7 @@ package net.minecraft.src;
 /* 27:   */   
 /* 28:   */   protected bed e()
 /* 29:   */   {
-/* 30:38 */     return new bed(this, new bex[] { a });
+/* 30:38 */     return new bed(this, new IBlockData[] { a });
 /* 31:   */   }
 /* 32:   */   
 /* 33:   */   public Block a(int paramInt)

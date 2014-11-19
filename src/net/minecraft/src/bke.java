@@ -31,16 +31,16 @@ package net.minecraft.src;
 /*  30:    */   
 /*  31:    */   public boolean a(World paramaqu, Random paramRandom, bjb parambjb)
 /*  32:    */   {
-/*  33:695 */     a(paramaqu, parambjb, 0, 0, 0, 6, 1, 6, BlockList.by.instance(), BlockList.by.instance(), false);
+/*  33:695 */     a(paramaqu, parambjb, 0, 0, 0, 6, 1, 6, BlockList.netherBrick.instance(), BlockList.netherBrick.instance(), false);
 /*  34:    */     
 /*  35:697 */     a(paramaqu, parambjb, 0, 2, 0, 6, 10, 6, BlockList.air.instance(), BlockList.air.instance(), false);
 /*  36:    */     
 /*  37:    */ 
-/*  38:700 */     a(paramaqu, parambjb, 0, 2, 0, 1, 8, 0, BlockList.by.instance(), BlockList.by.instance(), false);
-/*  39:701 */     a(paramaqu, parambjb, 5, 2, 0, 6, 8, 0, BlockList.by.instance(), BlockList.by.instance(), false);
-/*  40:702 */     a(paramaqu, parambjb, 0, 2, 1, 0, 8, 6, BlockList.by.instance(), BlockList.by.instance(), false);
-/*  41:703 */     a(paramaqu, parambjb, 6, 2, 1, 6, 8, 6, BlockList.by.instance(), BlockList.by.instance(), false);
-/*  42:704 */     a(paramaqu, parambjb, 1, 2, 6, 5, 8, 6, BlockList.by.instance(), BlockList.by.instance(), false);
+/*  38:700 */     a(paramaqu, parambjb, 0, 2, 0, 1, 8, 0, BlockList.netherBrick.instance(), BlockList.netherBrick.instance(), false);
+/*  39:701 */     a(paramaqu, parambjb, 5, 2, 0, 6, 8, 0, BlockList.netherBrick.instance(), BlockList.netherBrick.instance(), false);
+/*  40:702 */     a(paramaqu, parambjb, 0, 2, 1, 0, 8, 6, BlockList.netherBrick.instance(), BlockList.netherBrick.instance(), false);
+/*  41:703 */     a(paramaqu, parambjb, 6, 2, 1, 6, 8, 6, BlockList.netherBrick.instance(), BlockList.netherBrick.instance(), false);
+/*  42:704 */     a(paramaqu, parambjb, 1, 2, 6, 5, 8, 6, BlockList.netherBrick.instance(), BlockList.netherBrick.instance(), false);
 /*  43:    */     
 /*  44:    */ 
 /*  45:707 */     a(paramaqu, parambjb, 0, 3, 2, 0, 5, 4, BlockList.bz.instance(), BlockList.bz.instance(), false);
@@ -48,22 +48,22 @@ package net.minecraft.src;
 /*  47:709 */     a(paramaqu, parambjb, 6, 3, 4, 6, 5, 4, BlockList.bz.instance(), BlockList.bz.instance(), false);
 /*  48:    */     
 /*  49:    */ 
-/*  50:712 */     a(paramaqu, BlockList.by.instance(), 5, 2, 5, parambjb);
-/*  51:713 */     a(paramaqu, parambjb, 4, 2, 5, 4, 3, 5, BlockList.by.instance(), BlockList.by.instance(), false);
-/*  52:714 */     a(paramaqu, parambjb, 3, 2, 5, 3, 4, 5, BlockList.by.instance(), BlockList.by.instance(), false);
-/*  53:715 */     a(paramaqu, parambjb, 2, 2, 5, 2, 5, 5, BlockList.by.instance(), BlockList.by.instance(), false);
-/*  54:716 */     a(paramaqu, parambjb, 1, 2, 5, 1, 6, 5, BlockList.by.instance(), BlockList.by.instance(), false);
+/*  50:712 */     a(paramaqu, BlockList.netherBrick.instance(), 5, 2, 5, parambjb);
+/*  51:713 */     a(paramaqu, parambjb, 4, 2, 5, 4, 3, 5, BlockList.netherBrick.instance(), BlockList.netherBrick.instance(), false);
+/*  52:714 */     a(paramaqu, parambjb, 3, 2, 5, 3, 4, 5, BlockList.netherBrick.instance(), BlockList.netherBrick.instance(), false);
+/*  53:715 */     a(paramaqu, parambjb, 2, 2, 5, 2, 5, 5, BlockList.netherBrick.instance(), BlockList.netherBrick.instance(), false);
+/*  54:716 */     a(paramaqu, parambjb, 1, 2, 5, 1, 6, 5, BlockList.netherBrick.instance(), BlockList.netherBrick.instance(), false);
 /*  55:    */     
 /*  56:    */ 
-/*  57:719 */     a(paramaqu, parambjb, 1, 7, 1, 5, 7, 4, BlockList.by.instance(), BlockList.by.instance(), false);
+/*  57:719 */     a(paramaqu, parambjb, 1, 7, 1, 5, 7, 4, BlockList.netherBrick.instance(), BlockList.netherBrick.instance(), false);
 /*  58:720 */     a(paramaqu, parambjb, 6, 8, 2, 6, 8, 4, BlockList.air.instance(), BlockList.air.instance(), false);
 /*  59:    */     
 /*  60:    */ 
-/*  61:723 */     a(paramaqu, parambjb, 2, 6, 0, 4, 8, 0, BlockList.by.instance(), BlockList.by.instance(), false);
+/*  61:723 */     a(paramaqu, parambjb, 2, 6, 0, 4, 8, 0, BlockList.netherBrick.instance(), BlockList.netherBrick.instance(), false);
 /*  62:724 */     a(paramaqu, parambjb, 2, 5, 0, 4, 5, 0, BlockList.bz.instance(), BlockList.bz.instance(), false);
 /*  63:726 */     for (int i = 0; i <= 6; i++) {
 /*  64:727 */       for (int j = 0; j <= 6; j++) {
-/*  65:728 */         b(paramaqu, BlockList.by.instance(), i, -1, j, parambjb);
+/*  65:728 */         b(paramaqu, BlockList.netherBrick.instance(), i, -1, j, parambjb);
 /*  66:    */       }
 /*  67:    */     }
 /*  68:732 */     return true;

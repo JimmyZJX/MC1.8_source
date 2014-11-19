@@ -206,7 +206,7 @@ package net.minecraft.src;
 /* 205:    */     }
 /* 206:    */   }
 /* 207:    */   
-/* 208:    */   public Chunk a(BlockPosition paramdt)
+/* 208:    */   public Chunk getChunk(BlockPosition paramdt)
 /* 209:    */   {
 /* 210:241 */     return getChunk(paramdt.getX() >> 4, paramdt.getZ() >> 4);
 /* 211:    */   }

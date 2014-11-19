@@ -38,7 +38,7 @@ package net.minecraft.src;
 /*  37:157 */     return b[paramInt];
 /*  38:    */   }
 /*  39:    */   
-/*  40:    */   public String l()
+/*  40:    */   public String toString2()
 /*  41:    */   {
 /*  42:162 */     return this.d;
 /*  43:    */   }

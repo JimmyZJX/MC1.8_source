@@ -461,7 +461,7 @@ package net.minecraft.src;
 /* 460:    */     }
 /* 461:    */   }
 /* 462:    */   
-/* 463:    */   public Chunk a(BlockPosition paramdt)
+/* 463:    */   public Chunk getChunk(BlockPosition paramdt)
 /* 464:    */   {
 /* 465:579 */     return getChunk(paramdt.getX() >> 4, paramdt.getZ() >> 4);
 /* 466:    */   }

@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*   3:    */ import java.util.Set;
 /*   4:    */ 
 /*   5:    */ public class BlockFlowingLiquid
-/*   6:    */   extends axl
+/*   6:    */   extends BlockLiquid
 /*   7:    */ {
 /*   8:    */   int a;
 /*   9:    */   
@@ -15,12 +15,12 @@ package net.minecraft.src;
 /*  14:    */   
 /*  15:    */   private void f(World paramaqu, BlockPosition paramdt, Block parambec)
 /*  16:    */   {
-/*  17: 19 */     paramaqu.setBlock(paramdt, b(this.material).instance().a(b, parambec.getProperty(b)), 2);
+/*  17: 19 */     paramaqu.setBlock(paramdt, b(this.material).instance().a(level, parambec.getProperty(level)), 2);
 /*  18:    */   }
 /*  19:    */   
 /*  20:    */   public void b(World paramaqu, BlockPosition paramdt, Block parambec, Random paramRandom)
 /*  21:    */   {
-/*  22: 26 */     int i = ((Integer)parambec.getProperty(b)).intValue();
+/*  22: 26 */     int i = ((Integer)parambec.getProperty(level)).intValue();
 /*  23:    */     
 /*  24: 28 */     int j = 1;
 /*  25: 29 */     if ((this.material == Material.lava) && (!paramaqu.t.n())) {
@@ -52,7 +52,7 @@ package net.minecraft.src;
 /*  51: 57 */         Block localbec2 = paramaqu.getBlock(paramdt.down());
 /*  52: 58 */         if (localbec2.getProto().getMaterial().a()) {
 /*  53: 59 */           n = 0;
-/*  54: 60 */         } else if ((localbec2.getProto().getMaterial() == this.material) && (((Integer)localbec2.getProperty(b)).intValue() == 0)) {
+/*  54: 60 */         } else if ((localbec2.getProto().getMaterial() == this.material) && (((Integer)localbec2.getProperty(level)).intValue() == 0)) {
 /*  55: 61 */           n = 0;
 /*  56:    */         }
 /*  57:    */       }
@@ -75,7 +75,7 @@ package net.minecraft.src;
 /*  74:    */         }
 /*  75:    */         else
 /*  76:    */         {
-/*  77: 80 */           parambec = parambec.a(b, Integer.valueOf(i));
+/*  77: 80 */           parambec = parambec.a(level, Integer.valueOf(i));
 /*  78: 81 */           paramaqu.setBlock(paramdt, parambec, 2);
 /*  79: 82 */           paramaqu.a(paramdt, this, k);
 /*  80: 83 */           paramaqu.c(paramdt, this);
@@ -130,7 +130,7 @@ package net.minecraft.src;
 /* 129:127 */           parambec.getProto().b(paramaqu, paramdt, parambec, 0);
 /* 130:    */         }
 /* 131:    */       }
-/* 132:130 */       paramaqu.setBlock(paramdt, instance().a(b, Integer.valueOf(paramInt)), 3);
+/* 132:130 */       paramaqu.setBlock(paramdt, instance().a(level, Integer.valueOf(paramInt)), 3);
 /* 133:    */     }
 /* 134:    */   }
 /* 135:    */   
@@ -142,7 +142,7 @@ package net.minecraft.src;
 /* 141:    */       {
 /* 142:141 */         BlockPosition localdt = paramdt.a(localej);
 /* 143:142 */         Block localbec = paramaqu.getBlock(localdt);
-/* 144:144 */         if ((!g(paramaqu, localdt, localbec)) && ((localbec.getProto().getMaterial() != this.material) || (((Integer)localbec.getProperty(b)).intValue() > 0))) {
+/* 144:144 */         if ((!g(paramaqu, localdt, localbec)) && ((localbec.getProto().getMaterial() != this.material) || (((Integer)localbec.getProperty(level)).intValue() > 0))) {
 /* 145:145 */           if (g(paramaqu, localdt.down(), localbec))
 /* 146:    */           {
 /* 147:146 */             if (paramInt < 4)
@@ -170,7 +170,7 @@ package net.minecraft.src;
 /* 169:    */     {
 /* 170:165 */       BlockPosition localdt = paramdt.a(localej);
 /* 171:166 */       Block localbec = paramaqu.getBlock(localdt);
-/* 172:168 */       if ((!g(paramaqu, localdt, localbec)) && ((localbec.getProto().getMaterial() != this.material) || (((Integer)localbec.getProperty(b)).intValue() > 0)))
+/* 172:168 */       if ((!g(paramaqu, localdt, localbec)) && ((localbec.getProto().getMaterial() != this.material) || (((Integer)localbec.getProperty(level)).intValue() > 0)))
 /* 173:    */       {
 /* 174:    */         int j;
 /* 175:170 */         if (g(paramaqu, localdt.down(), paramaqu.getBlock(localdt.down()))) {

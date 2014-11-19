@@ -284,7 +284,7 @@ package net.minecraft.src;
 /* 283:    */   
 /* 284:    */   public void a(Chunk parambfh, int paramInt1, int paramInt2) {}
 /* 285:    */   
-/* 286:    */   public Chunk a(BlockPosition paramdt)
+/* 286:    */   public Chunk getChunk(BlockPosition paramdt)
 /* 287:    */   {
 /* 288:309 */     return getChunk(paramdt.getX() >> 4, paramdt.getZ() >> 4);
 /* 289:    */   }

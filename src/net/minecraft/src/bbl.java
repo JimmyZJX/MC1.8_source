@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*   3:    */ public class bbl
 /*   4:    */   extends ProtoBlock
 /*   5:    */ {
-/*   6: 23 */   public static final beu a = beu.a("facing", new bbm());
+/*   6: 23 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", new bbm());
 /*   7:    */   
 /*   8:    */   protected bbl()
 /*   9:    */   {
@@ -40,7 +40,7 @@ package net.minecraft.src;
 /*  39:    */   
 /*  40:    */   public boolean c(World paramaqu, BlockPosition paramdt)
 /*  41:    */   {
-/*  42: 63 */     for (EnumDirection localej : a.c()) {
+/*  42: 63 */     for (EnumDirection localej : a.getValues()) {
 /*  43: 64 */       if (b(paramaqu, paramdt, localej)) {
 /*  44: 65 */         return true;
 /*  45:    */       }
@@ -223,7 +223,7 @@ package net.minecraft.src;
 /* 222:    */   
 /* 223:    */   protected bed e()
 /* 224:    */   {
-/* 225:243 */     return new bed(this, new bex[] { a });
+/* 225:243 */     return new bed(this, new IBlockData[] { a });
 /* 226:    */   }
 /* 227:    */ }
 

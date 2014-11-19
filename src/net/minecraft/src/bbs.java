@@ -5,14 +5,14 @@ package net.minecraft.src;
 /*   4:    */ public class bbs
 /*   5:    */   extends ProtoBlock
 /*   6:    */ {
-/*   7: 23 */   public static final bet a = bet.a("powered");
-/*   8: 24 */   public static final bet b = bet.a("suspended");
-/*   9: 25 */   public static final bet M = bet.a("attached");
-/*  10: 26 */   public static final bet N = bet.a("disarmed");
-/*  11: 27 */   public static final bet O = bet.a("north");
-/*  12: 28 */   public static final bet P = bet.a("east");
-/*  13: 29 */   public static final bet Q = bet.a("south");
-/*  14: 30 */   public static final bet R = bet.a("west");
+/*   7: 23 */   public static final BlockDataBoolean a = BlockDataBoolean.a("powered");
+/*   8: 24 */   public static final BlockDataBoolean b = BlockDataBoolean.a("suspended");
+/*   9: 25 */   public static final BlockDataBoolean M = BlockDataBoolean.a("attached");
+/*  10: 26 */   public static final BlockDataBoolean N = BlockDataBoolean.a("disarmed");
+/*  11: 27 */   public static final BlockDataBoolean O = BlockDataBoolean.a("north");
+/*  12: 28 */   public static final BlockDataBoolean P = BlockDataBoolean.a("east");
+/*  13: 29 */   public static final BlockDataBoolean Q = BlockDataBoolean.a("south");
+/*  14: 30 */   public static final BlockDataBoolean R = BlockDataBoolean.a("west");
 /*  15:    */   
 /*  16:    */   public bbs()
 /*  17:    */   {
@@ -221,7 +221,7 @@ package net.minecraft.src;
 /* 220:    */   
 /* 221:    */   protected bed e()
 /* 222:    */   {
-/* 223:257 */     return new bed(this, new bex[] { a, b, M, N, O, P, R, Q });
+/* 223:257 */     return new bed(this, new IBlockData[] { a, b, M, N, O, P, R, Q });
 /* 224:    */   }
 /* 225:    */ }
 

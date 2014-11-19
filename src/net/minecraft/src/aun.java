@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*  3:   */ public class aun
 /*  4:   */   extends ProtoBlock
 /*  5:   */ {
-/*  6:16 */   public static final bev a = bev.a("color", EnumDyeColor.class);
+/*  6:16 */   public static final BlockDataEnum a = BlockDataEnum.getInstance("color", EnumDyeColor.class);
 /*  7:   */   
 /*  8:   */   public aun(Material parambof)
 /*  9:   */   {
@@ -42,7 +42,7 @@ package net.minecraft.src;
 /* 41:   */   
 /* 42:   */   protected bed e()
 /* 43:   */   {
-/* 44:54 */     return new bed(this, new bex[] { a });
+/* 44:54 */     return new bed(this, new IBlockData[] { a });
 /* 45:   */   }
 /* 46:   */ }
 

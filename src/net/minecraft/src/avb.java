@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ public abstract class avb
 /*  2:   */   extends ProtoBlock
 /*  3:   */ {
-/*  4: 8 */   public static final beu N = beu.a("facing", en.HORIZONTAL);
+/*  4: 8 */   public static final BlockDataDirection N = BlockDataDirection.getInstance("facing", en.HORIZONTAL);
 /*  5:   */   
 /*  6:   */   protected avb(Material parambof)
 /*  7:   */   {

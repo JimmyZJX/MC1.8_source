@@ -115,7 +115,7 @@ package net.minecraft.src;
 /*  114:     */ 
 /*  115:     */ 
 /*  116:     */ 
-/*  117: 123 */     a(new ItemStack(BlockList.bz, 6), new Object[] { "###", "###", Character.valueOf('#'), BlockList.by });
+/*  117: 123 */     a(new ItemStack(BlockList.bz, 6), new Object[] { "###", "###", Character.valueOf('#'), BlockList.netherBrick });
 /*  118:     */     
 /*  119:     */ 
 /*  120:     */ 
@@ -292,7 +292,7 @@ package net.minecraft.src;
 /*  291:     */ 
 /*  292:     */ 
 /*  293:     */ 
-/*  294: 300 */     a(new ItemStack(BlockList.U, 6, bbg.g.a()), new Object[] { "###", Character.valueOf('#'), BlockList.by });
+/*  294: 300 */     a(new ItemStack(BlockList.U, 6, bbg.g.a()), new Object[] { "###", Character.valueOf('#'), BlockList.netherBrick });
 /*  295:     */     
 /*  296:     */ 
 /*  297:     */ 
@@ -742,7 +742,7 @@ package net.minecraft.src;
 /*  741:     */ 
 /*  742:     */ 
 /*  743:     */ 
-/*  744: 750 */     a(new ItemStack(BlockList.bA, 4), new Object[] { "#  ", "## ", "###", Character.valueOf('#'), BlockList.by });
+/*  744: 750 */     a(new ItemStack(BlockList.bA, 4), new Object[] { "#  ", "## ", "###", Character.valueOf('#'), BlockList.netherBrick });
 /*  745:     */     
 /*  746:     */ 
 /*  747:     */ 

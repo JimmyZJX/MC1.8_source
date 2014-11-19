@@ -63,7 +63,7 @@ package net.minecraft.src;
 /*  62:    */   
 /*  63:    */   protected bed e()
 /*  64:    */   {
-/*  65:181 */     return new bed(this, new bex[] { a });
+/*  65:181 */     return new bed(this, new IBlockData[] { a });
 /*  66:    */   }
 /*  67:    */ }
 

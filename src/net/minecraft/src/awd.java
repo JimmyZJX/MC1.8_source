@@ -4,8 +4,8 @@ package net.minecraft.src;
 /*   3:    */ public class awd
 /*   4:    */   extends atg
 /*   5:    */ {
-/*   6: 26 */   public static final bew a = bew.a("legacy_data", 0, 15);
-/*   7: 27 */   public static final bev<awf> b = bev.a("contents", awf.class);
+/*   6: 26 */   public static final BlockDataInteger a = BlockDataInteger.getInstance("legacy_data", 0, 15);
+/*   7: 27 */   public static final BlockDataEnum<awf> b = BlockDataEnum.getInstance("contents", awf.class);
 /*   8:    */   
 /*   9:    */   public awd()
 /*  10:    */   {
@@ -221,7 +221,7 @@ package net.minecraft.src;
 /* 220:    */   
 /* 221:    */   protected bed e()
 /* 222:    */   {
-/* 223:254 */     return new bed(this, new bex[] { b, a });
+/* 223:254 */     return new bed(this, new IBlockData[] { b, a });
 /* 224:    */   }
 /* 225:    */   
 /* 226:    */   public int c(Block parambec)

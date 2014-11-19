@@ -50,25 +50,25 @@ package net.minecraft.src;
 /*  49:464 */       for (j = 3; j <= 4; j++)
 /*  50:    */       {
 /*  51:465 */         k = localRandom.nextInt(8);
-/*  52:466 */         a(paramaqu, parambjb, i, j, 0, i, j, k, BlockList.by.instance(), BlockList.by.instance(), false);
+/*  52:466 */         a(paramaqu, parambjb, i, j, 0, i, j, k, BlockList.netherBrick.instance(), BlockList.netherBrick.instance(), false);
 /*  53:    */       }
 /*  54:    */     }
 /*  55:472 */     int i = localRandom.nextInt(8);
-/*  56:473 */     a(paramaqu, parambjb, 0, 5, 0, 0, 5, i, BlockList.by.instance(), BlockList.by.instance(), false);
+/*  56:473 */     a(paramaqu, parambjb, 0, 5, 0, 0, 5, i, BlockList.netherBrick.instance(), BlockList.netherBrick.instance(), false);
 /*  57:    */     
 /*  58:    */ 
 /*  59:476 */     i = localRandom.nextInt(8);
-/*  60:477 */     a(paramaqu, parambjb, 4, 5, 0, 4, 5, i, BlockList.by.instance(), BlockList.by.instance(), false);
+/*  60:477 */     a(paramaqu, parambjb, 4, 5, 0, 4, 5, i, BlockList.netherBrick.instance(), BlockList.netherBrick.instance(), false);
 /*  61:481 */     for (i = 0; i <= 4; i++)
 /*  62:    */     {
 /*  63:482 */       j = localRandom.nextInt(5);
-/*  64:483 */       a(paramaqu, parambjb, i, 2, 0, i, 2, j, BlockList.by.instance(), BlockList.by.instance(), false);
+/*  64:483 */       a(paramaqu, parambjb, i, 2, 0, i, 2, j, BlockList.netherBrick.instance(), BlockList.netherBrick.instance(), false);
 /*  65:    */     }
 /*  66:485 */     for (i = 0; i <= 4; i++) {
 /*  67:486 */       for (j = 0; j <= 1; j++)
 /*  68:    */       {
 /*  69:487 */         k = localRandom.nextInt(3);
-/*  70:488 */         a(paramaqu, parambjb, i, j, 0, i, j, k, BlockList.by.instance(), BlockList.by.instance(), false);
+/*  70:488 */         a(paramaqu, parambjb, i, j, 0, i, j, k, BlockList.netherBrick.instance(), BlockList.netherBrick.instance(), false);
 /*  71:    */       }
 /*  72:    */     }
 /*  73:492 */     return true;

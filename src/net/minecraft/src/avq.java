@@ -5,8 +5,8 @@ package net.minecraft.src;
 /*  4:   */ public class avq
 /*  5:   */   extends ProtoBlock
 /*  6:   */ {
-/*  7:22 */   public static final beu a = beu.a("facing", en.HORIZONTAL);
-/*  8:23 */   public static final bet b = bet.a("eye");
+/*  7:22 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", en.HORIZONTAL);
+/*  8:23 */   public static final BlockDataBoolean b = BlockDataBoolean.a("eye");
 /*  9:   */   
 /* 10:   */   public avq()
 /* 11:   */   {
@@ -77,7 +77,7 @@ package net.minecraft.src;
 /* 76:   */   
 /* 77:   */   protected bed e()
 /* 78:   */   {
-/* 79:99 */     return new bed(this, new bex[] { a, b });
+/* 79:99 */     return new bed(this, new IBlockData[] { a, b });
 /* 80:   */   }
 /* 81:   */ }
 

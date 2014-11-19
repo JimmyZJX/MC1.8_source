@@ -820,7 +820,7 @@ package net.minecraft.src;
 /*  820:     */   
 /*  821:     */   protected bed e()
 /*  822:     */   {
-/*  823: 897 */     return new bed(this, new bex[0]);
+/*  823: 897 */     return new bed(this, new IBlockData[0]);
 /*  824:     */   }
 /*  825:     */   
 /*  826:     */   public bed O()
@@ -856,9 +856,9 @@ package net.minecraft.src;
 /*  856: 932 */     a(6, "sapling", new baf().c(0.0F).a(h).setName("sapling"));
 /*  857: 933 */     a(7, "bedrock", new ProtoBlock(Material.rock).v().b(6000000.0F).a(i).setName("bedrock").J().setCreativeTab(CreativeTabs.tabBlock));
 /*  858: 934 */     a(8, "flowing_water", new BlockFlowingLiquid(Material.water).c(100.0F).e(3).setName("water").J());
-/*  859: 935 */     a(9, "water", new BlockLiquid(Material.water).c(100.0F).e(3).setName("water").J());
+/*  859: 935 */     a(9, "water", new BlockStillLiquid(Material.water).c(100.0F).e(3).setName("water").J());
 /*  860: 936 */     a(10, "flowing_lava", new BlockFlowingLiquid(Material.lava).c(100.0F).a(1.0F).setName("lava").J());
-/*  861: 937 */     a(11, "lava", new BlockLiquid(Material.lava).c(100.0F).a(1.0F).setName("lava").J());
+/*  861: 937 */     a(11, "lava", new BlockStillLiquid(Material.lava).c(100.0F).a(1.0F).setName("lava").J());
 /*  862: 938 */     a(12, "sand", new BlockSand().c(0.5F).a(m).setName("sand"));
 /*  863: 939 */     a(13, "gravel", new awo().c(0.6F).a(g).setName("gravel"));
 /*  864: 940 */     a(14, "gold_ore", new ayu().c(3.0F).b(5.0F).a(i).setName("oreGold"));

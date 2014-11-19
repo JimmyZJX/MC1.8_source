@@ -50,7 +50,7 @@ package net.minecraft.src;
 /* 49:63 */       return false;
 /* 50:   */     }
 /* 51:65 */     Block localbec = paramaqu.getBlock(paramdt.down());
-/* 52:66 */     return (localbec.getProto().getMaterial() == Material.water) && (((Integer)localbec.getProperty(axl.b)).intValue() == 0);
+/* 52:66 */     return (localbec.getProto().getMaterial() == Material.water) && (((Integer)localbec.getProperty(BlockLiquid.level)).intValue() == 0);
 /* 53:   */   }
 /* 54:   */   
 /* 55:   */   public int c(Block parambec)

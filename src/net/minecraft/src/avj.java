@@ -4,10 +4,10 @@ package net.minecraft.src;
 /*   3:    */ { a,b;
 /*   4:    */   public String toString()
 /*   5:    */   {
-/*   6:351 */     return l();
+/*   6:351 */     return toString2();
 /*   7:    */   }
 /*   8:    */   
-/*   9:    */   public String l()
+/*   9:    */   public String toString2()
 /*  10:    */   {
 /*  11:356 */     return this == a ? "upper" : "lower";
 /*  12:    */   }

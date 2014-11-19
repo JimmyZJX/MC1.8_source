@@ -7,7 +7,7 @@ public abstract interface IChunkProvider
   
   public abstract Chunk getChunk(int paramInt1, int paramInt2);
   
-  public abstract Chunk a(BlockPosition paramdt);
+  public abstract Chunk getChunk(BlockPosition paramdt);
   
   public abstract void a(IChunkProvider parambfe, int paramInt1, int paramInt2);
   

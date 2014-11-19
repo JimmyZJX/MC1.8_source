@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ public class bbz
 /*  2:   */   extends bai
 /*  3:   */ {
-/*  4:12 */   public static final beu a = beu.a("facing", en.HORIZONTAL);
+/*  4:12 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", en.HORIZONTAL);
 /*  5:   */   
 /*  6:   */   public bbz()
 /*  7:   */   {
@@ -64,7 +64,7 @@ package net.minecraft.src;
 /* 63:   */   
 /* 64:   */   protected bed e()
 /* 65:   */   {
-/* 66:76 */     return new bed(this, new bex[] { a });
+/* 66:76 */     return new bed(this, new IBlockData[] { a });
 /* 67:   */   }
 /* 68:   */ }
 

@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ public class axe
 /*   2:    */   extends ProtoBlock
 /*   3:    */ {
-/*   4: 19 */   public static final beu a = beu.a("facing", en.HORIZONTAL);
+/*   4: 19 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", en.HORIZONTAL);
 /*   5:    */   
 /*   6:    */   protected axe()
 /*   7:    */   {
@@ -124,7 +124,7 @@ package net.minecraft.src;
 /* 123:    */   
 /* 124:    */   protected bed e()
 /* 125:    */   {
-/* 126:141 */     return new bed(this, new bex[] { a });
+/* 126:141 */     return new bed(this, new IBlockData[] { a });
 /* 127:    */   }
 /* 128:    */ }
 

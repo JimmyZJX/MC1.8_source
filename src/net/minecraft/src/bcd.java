@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*  3:   */ public class bcd
 /*  4:   */   extends ath
 /*  5:   */ {
-/*  6:15 */   public static final bew a = bew.a("power", 0, 15);
+/*  6:15 */   public static final BlockDataInteger a = BlockDataInteger.getInstance("power", 0, 15);
 /*  7:   */   private final int b;
 /*  8:   */   
 /*  9:   */   protected bcd(String paramString, Material parambof, int paramInt)
@@ -52,7 +52,7 @@ package net.minecraft.src;
 /* 51:   */   
 /* 52:   */   protected bed e()
 /* 53:   */   {
-/* 54:69 */     return new bed(this, new bex[] { a });
+/* 54:69 */     return new bed(this, new IBlockData[] { a });
 /* 55:   */   }
 /* 56:   */ }
 

@@ -512,7 +512,7 @@ package net.minecraft.src;
 /* 510:572 */     c(BlockList.bv);
 /* 511:573 */     c(BlockList.bw);
 /* 512:574 */     a(BlockList.waterLily, new anp(BlockList.waterLily));
-/* 513:575 */     c(BlockList.by);
+/* 513:575 */     c(BlockList.netherBrick);
 /* 514:576 */     c(BlockList.bz);
 /* 515:577 */     c(BlockList.bA);
 /* 516:578 */     c(BlockList.bC);

@@ -238,7 +238,7 @@ package net.minecraft.src;
 /* 232:298 */     return this.j;
 /* 233:    */   }
 /* 234:    */   
-/* 235:    */   public String l()
+/* 235:    */   public String toString2()
 /* 236:    */   {
 /* 237:303 */     return this.j;
 /* 238:    */   }

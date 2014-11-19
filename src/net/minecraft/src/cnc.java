@@ -8,19 +8,19 @@ package net.minecraft.src;
 /*  7:   */ {
 /*  8:12 */   protected Map<Block,cxl> b = Maps.newLinkedHashMap();
 /*  9:   */   
-/* 10:   */   public String a(Map<bex,Comparable> paramMap)
+/* 10:   */   public String a(Map<IBlockData,Comparable> paramMap)
 /* 11:   */   {
 /* 12:15 */     StringBuilder localStringBuilder = new StringBuilder();
-/* 13:16 */     for (Map.Entry<bex,Comparable> localEntry : paramMap.entrySet())
+/* 13:16 */     for (Map.Entry<IBlockData,Comparable> localEntry : paramMap.entrySet())
 /* 14:   */     {
 /* 15:17 */       if (localStringBuilder.length() != 0) {
 /* 16:18 */         localStringBuilder.append(",");
 /* 17:   */       }
-/* 18:21 */       bex localbex = (bex)localEntry.getKey();
+/* 18:21 */       IBlockData localbex = (IBlockData)localEntry.getKey();
 /* 19:22 */       Comparable localComparable = localEntry.getValue();
-/* 20:23 */       localStringBuilder.append(localbex.a());
+/* 20:23 */       localStringBuilder.append(localbex.getName());
 /* 21:24 */       localStringBuilder.append("=");
-/* 22:25 */       localStringBuilder.append(localbex.a(localComparable));
+/* 22:25 */       localStringBuilder.append(localbex.toString(localComparable));
 /* 23:   */     }
 /* 24:28 */     if (localStringBuilder.length() == 0) {
 /* 25:29 */       localStringBuilder.append("normal");

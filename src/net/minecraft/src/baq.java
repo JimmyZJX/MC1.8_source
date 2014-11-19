@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*   9:    */ public class baq
 /*  10:    */   extends ProtoBlock
 /*  11:    */ {
-/*  12: 24 */   public static final bet a = bet.a("wet");
+/*  12: 24 */   public static final BlockDataBoolean a = BlockDataBoolean.a("wet");
 /*  13:    */   
 /*  14:    */   protected baq()
 /*  15:    */   {
@@ -100,7 +100,7 @@ package net.minecraft.src;
 /*  99:    */   
 /* 100:    */   protected bed e()
 /* 101:    */   {
-/* 102:112 */     return new bed(this, new bex[] { a });
+/* 102:112 */     return new bed(this, new IBlockData[] { a });
 /* 103:    */   }
 /* 104:    */   
 /* 105:    */   public void c(World paramaqu, BlockPosition paramdt, Block parambec, Random paramRandom)

@@ -5,8 +5,8 @@ package net.minecraft.src;
 /*   4:    */ public abstract class bbf
 /*   5:    */   extends BlockSlab
 /*   6:    */ {
-/*   7: 21 */   public static final bet b = bet.a("seamless");
-/*   8: 22 */   public static final bev M = bev.a("variant", bbg.class);
+/*   7: 21 */   public static final BlockDataBoolean b = BlockDataBoolean.a("seamless");
+/*   8: 22 */   public static final BlockDataEnum M = BlockDataEnum.getInstance("variant", bbg.class);
 /*   9:    */   
 /*  10:    */   public bbf()
 /*  11:    */   {
@@ -36,7 +36,7 @@ package net.minecraft.src;
 /*  35: 49 */     return super.a() + "." + bbg.a(paramInt).c();
 /*  36:    */   }
 /*  37:    */   
-/*  38:    */   public bex<Enum<?>> l()
+/*  38:    */   public IBlockData<Enum<?>> l()
 /*  39:    */   {
 /*  40: 54 */     return M;
 /*  41:    */   }
@@ -89,9 +89,9 @@ package net.minecraft.src;
 /*  88:    */   protected bed e()
 /*  89:    */   {
 /*  90:110 */     if (j()) {
-/*  91:111 */       return new bed(this, new bex[] { b, M });
+/*  91:111 */       return new bed(this, new IBlockData[] { b, M });
 /*  92:    */     }
-/*  93:114 */     return new bed(this, new bex[] { half, M });
+/*  93:114 */     return new bed(this, new IBlockData[] { half, M });
 /*  94:    */   }
 /*  95:    */   
 /*  96:    */   public int a(Block parambec)

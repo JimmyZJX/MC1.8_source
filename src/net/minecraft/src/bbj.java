@@ -5,10 +5,10 @@ package net.minecraft.src;
 /*   4:    */ public class bbj
 /*   5:    */   extends ProtoBlock
 /*   6:    */ {
-/*   7: 22 */   public static final bet b = bet.a("north");
-/*   8: 23 */   public static final bet M = bet.a("east");
-/*   9: 24 */   public static final bet N = bet.a("south");
-/*  10: 25 */   public static final bet O = bet.a("west");
+/*   7: 22 */   public static final BlockDataBoolean b = BlockDataBoolean.a("north");
+/*   8: 23 */   public static final BlockDataBoolean M = BlockDataBoolean.a("east");
+/*   9: 24 */   public static final BlockDataBoolean N = BlockDataBoolean.a("south");
+/*  10: 25 */   public static final BlockDataBoolean O = BlockDataBoolean.a("west");
 /*  11:    */   private final boolean a;
 /*  12:    */   
 /*  13:    */   protected bbj(Material parambof, boolean paramBoolean)
@@ -155,7 +155,7 @@ package net.minecraft.src;
 /* 154:    */   
 /* 155:    */   protected bed e()
 /* 156:    */   {
-/* 157:159 */     return new bed(this, new bex[] { b, M, O, N });
+/* 157:159 */     return new bed(this, new IBlockData[] { b, M, O, N });
 /* 158:    */   }
 /* 159:    */ }
 

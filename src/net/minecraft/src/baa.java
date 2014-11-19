@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ public abstract class baa
 /*  2:   */   extends ProtoBlock
 /*  3:   */ {
-/*  4: 8 */   public static final bev M = bev.a("axis", EnumAxis.class);
+/*  4: 8 */   public static final BlockDataEnum M = BlockDataEnum.getInstance("axis", EnumAxis.class);
 /*  5:   */   
 /*  6:   */   protected baa(Material parambof)
 /*  7:   */   {

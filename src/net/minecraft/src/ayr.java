@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*  3:   */ public class ayr
 /*  4:   */   extends axm
 /*  5:   */ {
-/*  6:14 */   public static final bev<EnumWoodVariant> b = bev.a("variant", EnumWoodVariant.class, new ays());
+/*  6:14 */   public static final BlockDataEnum<EnumWoodVariant> b = BlockDataEnum.getInstance("variant", EnumWoodVariant.class, new ays());
 /*  7:   */   
 /*  8:   */   public ayr()
 /*  9:   */   {
@@ -60,7 +60,7 @@ package net.minecraft.src;
 /* 59:   */   
 /* 60:   */   protected bed e()
 /* 61:   */   {
-/* 62:79 */     return new bed(this, new bex[] { b, a });
+/* 62:79 */     return new bed(this, new IBlockData[] { b, a });
 /* 63:   */   }
 /* 64:   */   
 /* 65:   */   protected ItemStack i(Block parambec)

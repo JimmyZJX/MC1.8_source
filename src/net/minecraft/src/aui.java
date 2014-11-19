@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*   4:    */ public class aui
 /*   5:    */   extends ProtoBlock
 /*   6:    */ {
-/*   7: 27 */   public static final bew a = bew.a("level", 0, 3);
+/*   7: 27 */   public static final BlockDataInteger a = BlockDataInteger.getInstance("level", 0, 3);
 /*   8:    */   
 /*   9:    */   public aui()
 /*  10:    */   {
@@ -189,7 +189,7 @@ package net.minecraft.src;
 /* 188:    */   
 /* 189:    */   protected bed e()
 /* 190:    */   {
-/* 191:217 */     return new bed(this, new bex[] { a });
+/* 191:217 */     return new bed(this, new IBlockData[] { a });
 /* 192:    */   }
 /* 193:    */ }
 

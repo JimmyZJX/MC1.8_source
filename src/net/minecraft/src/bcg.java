@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*   3:    */ public class bcg
 /*   4:    */   extends ProtoBlock
 /*   5:    */ {
-/*   6: 19 */   public static final bev a = bev.a("color", EnumDyeColor.class);
+/*   6: 19 */   public static final BlockDataEnum a = BlockDataEnum.getInstance("color", EnumDyeColor.class);
 /*   7:    */   
 /*   8:    */   protected bcg()
 /*   9:    */   {
@@ -101,7 +101,7 @@ package net.minecraft.src;
 /* 100:    */   
 /* 101:    */   protected bed e()
 /* 102:    */   {
-/* 103:112 */     return new bed(this, new bex[] { a });
+/* 103:112 */     return new bed(this, new IBlockData[] { a });
 /* 104:    */   }
 /* 105:    */ }
 

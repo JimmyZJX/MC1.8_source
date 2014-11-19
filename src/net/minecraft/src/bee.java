@@ -2,11 +2,11 @@ package net.minecraft.src;
 /*  1:   */ import com.google.common.base.Function;
 /*  2:   */ 
 /*  3:   */ final class bee
-/*  4:   */   implements Function<bex<?>,String>
+/*  4:   */   implements Function<IBlockData<?>,String>
 /*  5:   */ {
-/*  6:   */   public String apply(bex<?> parambex)
+/*  6:   */   public String apply(IBlockData<?> parambex)
 /*  7:   */   {
-/*  8:21 */     return parambex == null ? "<NULL>" : parambex.a();
+/*  8:21 */     return parambex == null ? "<NULL>" : parambex.getName();
 /*  9:   */   }
 /* 10:   */ }
 

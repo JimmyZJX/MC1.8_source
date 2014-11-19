@@ -6,8 +6,8 @@ package net.minecraft.src;
 /*   5:    */   extends auc
 /*   6:    */   implements atz
 /*   7:    */ {
-/*   8: 26 */   public static final bev a = bev.a("variant", avk.class);
-/*   9: 27 */   public static final bev b = bev.a("half", avj.class);
+/*   8: 26 */   public static final BlockDataEnum a = BlockDataEnum.getInstance("variant", avk.class);
+/*   9: 27 */   public static final BlockDataEnum b = BlockDataEnum.getInstance("half", avj.class);
 /*  10:    */   
 /*  11:    */   public avi()
 /*  12:    */   {
@@ -256,7 +256,7 @@ package net.minecraft.src;
 /* 255:    */   
 /* 256:    */   protected bed e()
 /* 257:    */   {
-/* 258:279 */     return new bed(this, new bex[] { b, a });
+/* 258:279 */     return new bed(this, new IBlockData[] { b, a });
 /* 259:    */   }
 /* 260:    */   
 /* 261:    */   public atw Q()

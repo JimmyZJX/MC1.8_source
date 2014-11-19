@@ -37,7 +37,7 @@ package net.minecraft.src;
 /*  36: 45 */     Block localbec1 = paramaqu.getBlock(paramdt);
 /*  37: 47 */     if (localbec1.getProto() == this.b)
 /*  38:    */     {
-/*  39: 48 */       bex localbex = this.b.l();
+/*  39: 48 */       IBlockData localbex = this.b.l();
 /*  40: 49 */       Comparable localComparable = localbec1.getProperty(localbex);
 /*  41: 50 */       EnumSlabHalf localawr = (EnumSlabHalf)localbec1.getProperty(BlockSlab.half);
 /*  42: 52 */       if (((paramej == EnumDirection.UP) && (localawr == EnumSlabHalf.BOTTOM)) || ((paramej == EnumDirection.DOWN) && (localawr == EnumSlabHalf.TOP) && (localComparable == localObject)))
@@ -61,7 +61,7 @@ package net.minecraft.src;
 /*  60:    */   {
 /*  61: 72 */     BlockPosition localdt = paramdt;
 /*  62:    */     
-/*  63: 74 */     bex localbex = this.b.l();
+/*  63: 74 */     IBlockData localbex = this.b.l();
 /*  64: 75 */     Object localObject = this.b.a(paramamj);
 /*  65:    */     
 /*  66: 77 */     Block localbec1 = paramaqu.getBlock(paramdt);

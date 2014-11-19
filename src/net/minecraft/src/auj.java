@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*   4:    */ public class auj
 /*   5:    */   extends atg
 /*   6:    */ {
-/*   7: 32 */   public static final beu a = beu.a("facing", en.HORIZONTAL);
+/*   7: 32 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", en.HORIZONTAL);
 /*   8: 38 */   private final Random M = new Random();
 /*   9:    */   public final int b;
 /*  10:    */   
@@ -430,7 +430,7 @@ package net.minecraft.src;
 /* 429:    */   
 /* 430:    */   protected bed e()
 /* 431:    */   {
-/* 432:459 */     return new bed(this, new bex[] { a });
+/* 432:459 */     return new bed(this, new IBlockData[] { a });
 /* 433:    */   }
 /* 434:    */ }
 

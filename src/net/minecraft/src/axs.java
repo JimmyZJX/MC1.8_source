@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*  4:   */ public class axs
 /*  5:   */   extends ProtoBlock
 /*  6:   */ {
-/*  7:20 */   public static final bev a = bev.a("variant", EnumMonsterEggVariants.class);
+/*  7:20 */   public static final BlockDataEnum a = BlockDataEnum.getInstance("variant", EnumMonsterEggVariants.class);
 /*  8:   */   
 /*  9:   */   public axs()
 /* 10:   */   {
@@ -82,7 +82,7 @@ package net.minecraft.src;
 /* 81:   */   
 /* 82:   */   protected bed e()
 /* 83:   */   {
-/* 84:95 */     return new bed(this, new bex[] { a });
+/* 84:95 */     return new bed(this, new IBlockData[] { a });
 /* 85:   */   }
 /* 86:   */ }
 

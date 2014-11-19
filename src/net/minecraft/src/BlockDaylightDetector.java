@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*   4:    */ public class BlockDaylightDetector
 /*   5:    */   extends atg
 /*   6:    */ {
-/*   7: 27 */   public static final bew a = bew.a("power", 0, 15);
+/*   7: 27 */   public static final BlockDataInteger a = BlockDataInteger.getInstance("power", 0, 15);
 /*   8:    */   private final boolean b;
 /*   9:    */   
 /*  10:    */   public BlockDaylightDetector(boolean paramBoolean)
@@ -124,7 +124,7 @@ package net.minecraft.src;
 /* 123:    */   
 /* 124:    */   protected bed e()
 /* 125:    */   {
-/* 126:149 */     return new bed(this, new bex[] { a });
+/* 126:149 */     return new bed(this, new IBlockData[] { a });
 /* 127:    */   }
 /* 128:    */   
 /* 129:    */   public void a(Item paramalq, CreativeTabs paramakf, List<ItemStack> paramList)

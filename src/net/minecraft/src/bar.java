@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*  4:   */ public class bar
 /*  5:   */   extends awt
 /*  6:   */ {
-/*  7:20 */   public static final bev a = bev.a("color", EnumDyeColor.class);
+/*  7:20 */   public static final BlockDataEnum a = BlockDataEnum.getInstance("color", EnumDyeColor.class);
 /*  8:   */   
 /*  9:   */   public bar(Material parambof)
 /* 10:   */   {
@@ -77,7 +77,7 @@ package net.minecraft.src;
 /* 76:   */   
 /* 77:   */   protected bed e()
 /* 78:   */   {
-/* 79:92 */     return new bed(this, new bex[] { a });
+/* 79:92 */     return new bed(this, new IBlockData[] { a });
 /* 80:   */   }
 /* 81:   */ }
 

@@ -7,13 +7,13 @@ public abstract interface Block
 {
   public abstract Collection a();
   
-  public abstract Comparable getProperty(bex parambex);
+  public abstract Comparable getProperty(IBlockData parambex);
   
-  public abstract Block a(bex parambex, Comparable paramComparable);
+  public abstract Block a(IBlockData parambex, Comparable paramComparable);
   
-  public abstract Block a(bex parambex);
+  public abstract Block a(IBlockData parambex);
   
-  public abstract ImmutableMap<bex,Comparable> b();
+  public abstract ImmutableMap<IBlockData,Comparable> b();
   
   public abstract ProtoBlock getProto();
 }

@@ -6,8 +6,8 @@ package net.minecraft.src;
 /*   5:    */ public class auy
 /*   6:    */   extends ati
 /*   7:    */ {
-/*   8: 27 */   public static final bev b = bev.a("shape", EnumRailState.class, new auz());
-/*   9: 36 */   public static final bet M = bet.a("powered");
+/*   8: 27 */   public static final BlockDataEnum b = BlockDataEnum.getInstance("shape", EnumRailState.class, new auz());
+/*   9: 36 */   public static final BlockDataBoolean M = BlockDataBoolean.a("powered");
 /*  10:    */   
 /*  11:    */   public auy()
 /*  12:    */   {
@@ -95,7 +95,7 @@ package net.minecraft.src;
 /*  94:126 */     e(paramaqu, paramdt, parambec);
 /*  95:    */   }
 /*  96:    */   
-/*  97:    */   public bex l()
+/*  97:    */   public IBlockData l()
 /*  98:    */   {
 /*  99:131 */     return b;
 /* 100:    */   }
@@ -155,7 +155,7 @@ package net.minecraft.src;
 /* 154:    */   
 /* 155:    */   protected bed e()
 /* 156:    */   {
-/* 157:193 */     return new bed(this, new bex[] { b, M });
+/* 157:193 */     return new bed(this, new IBlockData[] { b, M });
 /* 158:    */   }
 /* 159:    */ }
 

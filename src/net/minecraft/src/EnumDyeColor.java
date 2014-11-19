@@ -88,7 +88,7 @@ package net.minecraft.src;
 /* 72:94 */     return this.v;
 /* 73:   */   }
 /* 74:   */   
-/* 75:   */   public String l()
+/* 75:   */   public String toString2()
 /* 76:   */   {
 /* 77:99 */     return this.u;
 /* 78:   */   }

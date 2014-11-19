@@ -116,7 +116,7 @@ package net.minecraft.src;
 /* 115:148 */     return 0;
 /* 116:    */   }
 /* 117:    */   
-/* 118:    */   public Chunk a(BlockPosition paramdt)
+/* 118:    */   public Chunk getChunk(BlockPosition paramdt)
 /* 119:    */   {
 /* 120:157 */     return getChunk(paramdt.getX() >> 4, paramdt.getZ() >> 4);
 /* 121:    */   }

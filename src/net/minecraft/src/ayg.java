@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*   4:    */ public class ayg
 /*   5:    */   extends BlockLeaves
 /*   6:    */ {
-/*   7: 20 */   public static final bev P = bev.a("variant", EnumWoodVariant.class, new ayh());
+/*   7: 20 */   public static final BlockDataEnum P = BlockDataEnum.getInstance("variant", EnumWoodVariant.class, new ayh());
 /*   8:    */   
 /*   9:    */   public ayg()
 /*  10:    */   {
@@ -67,7 +67,7 @@ package net.minecraft.src;
 /*  66:    */   
 /*  67:    */   protected bed e()
 /*  68:    */   {
-/*  69: 95 */     return new bed(this, new bex[] { P, b, a });
+/*  69: 95 */     return new bed(this, new IBlockData[] { P, b, a });
 /*  70:    */   }
 /*  71:    */   
 /*  72:    */   public void a(World paramaqu, EntityPlayer paramahd, BlockPosition paramdt, Block parambec, bcm parambcm)

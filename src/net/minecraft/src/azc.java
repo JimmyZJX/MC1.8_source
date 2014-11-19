@@ -2,8 +2,8 @@ package net.minecraft.src;
 /*   1:    */ public class azc
 /*   2:    */   extends ati
 /*   3:    */ {
-/*   4: 15 */   public static final bev b = bev.a("shape", EnumRailState.class, new azd());
-/*   5: 24 */   public static final bet M = bet.a("powered");
+/*   4: 15 */   public static final BlockDataEnum b = BlockDataEnum.getInstance("shape", EnumRailState.class, new azd());
+/*   5: 24 */   public static final BlockDataBoolean M = BlockDataBoolean.a("powered");
 /*   6:    */   
 /*   7:    */   protected azc()
 /*   8:    */   {
@@ -140,7 +140,7 @@ package net.minecraft.src;
 /* 139:    */     }
 /* 140:    */   }
 /* 141:    */   
-/* 142:    */   public bex l()
+/* 142:    */   public IBlockData l()
 /* 143:    */   {
 /* 144:153 */     return b;
 /* 145:    */   }
@@ -163,7 +163,7 @@ package net.minecraft.src;
 /* 162:    */   
 /* 163:    */   protected bed e()
 /* 164:    */   {
-/* 165:178 */     return new bed(this, new bex[] { b, M });
+/* 165:178 */     return new bed(this, new IBlockData[] { b, M });
 /* 166:    */   }
 /* 167:    */ }
 

@@ -52,7 +52,7 @@ package net.minecraft.src;
 /*  42:548 */     return k[paramInt];
 /*  43:    */   }
 /*  44:    */   
-/*  45:    */   public String l()
+/*  45:    */   public String toString2()
 /*  46:    */   {
 /*  47:553 */     return this.m;
 /*  48:    */   }

@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*  3:   */ public class ayc
 /*  4:   */   extends ProtoBlock
 /*  5:   */ {
-/*  6:18 */   public static final bet a = bet.a("snowy");
+/*  6:18 */   public static final BlockDataBoolean a = BlockDataBoolean.a("snowy");
 /*  7:   */   
 /*  8:   */   protected ayc()
 /*  9:   */   {
@@ -63,7 +63,7 @@ package net.minecraft.src;
 /* 62:   */   
 /* 63:   */   protected bed e()
 /* 64:   */   {
-/* 65:79 */     return new bed(this, new bex[] { a });
+/* 65:79 */     return new bed(this, new IBlockData[] { a });
 /* 66:   */   }
 /* 67:   */ }
 

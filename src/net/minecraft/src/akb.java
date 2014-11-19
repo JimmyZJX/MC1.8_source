@@ -35,13 +35,13 @@ package net.minecraft.src;
 /*  34:    */         }
 /*  35: 44 */         localObject = paramaqu.getBlock(localdt);
 /*  36: 45 */         Material localbof = ((Block)localObject).getProto().getMaterial();
-/*  37: 47 */         if ((localbof == Material.water) && (((Integer)((Block)localObject).getProperty(axl.b)).intValue() == 0))
+/*  37: 47 */         if ((localbof == Material.water) && (((Integer)((Block)localObject).getProperty(BlockLiquid.level)).intValue() == 0))
 /*  38:    */         {
 /*  39: 48 */           paramaqu.g(localdt);
 /*  40: 49 */           paramahd.b(StatList.J[Item.b(this)]);
 /*  41: 50 */           return a(paramamj, paramahd, ItemList.ax);
 /*  42:    */         }
-/*  43: 53 */         if ((localbof == Material.lava) && (((Integer)((Block)localObject).getProperty(axl.b)).intValue() == 0))
+/*  43: 53 */         if ((localbof == Material.lava) && (((Integer)((Block)localObject).getProperty(BlockLiquid.level)).intValue() == 0))
 /*  44:    */         {
 /*  45: 54 */           paramaqu.g(localdt);
 /*  46: 55 */           paramahd.b(StatList.J[Item.b(this)]);

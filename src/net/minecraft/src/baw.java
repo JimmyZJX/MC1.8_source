@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ public class baw
 /*  2:   */   extends bai
 /*  3:   */ {
-/*  4:10 */   public static final bew a = bew.a("rotation", 0, 15);
+/*  4:10 */   public static final BlockDataInteger a = BlockDataInteger.getInstance("rotation", 0, 15);
 /*  5:   */   
 /*  6:   */   public baw()
 /*  7:   */   {
@@ -31,7 +31,7 @@ package net.minecraft.src;
 /* 30:   */   
 /* 31:   */   protected bed e()
 /* 32:   */   {
-/* 33:39 */     return new bed(this, new bex[] { a });
+/* 33:39 */     return new bed(this, new IBlockData[] { a });
 /* 34:   */   }
 /* 35:   */ }
 

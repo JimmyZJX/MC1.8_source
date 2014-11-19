@@ -149,7 +149,7 @@ import java.util.Map;
 /* 144:    */       }
 /* 145:195 */       localArrayList.add("");
 /* 146:196 */       localArrayList.add(String.valueOf(ProtoBlock.c.c(localbec.getProto())));
-/* 147:198 */       for (Map.Entry<bex,Comparable> localEntry : localbec.b().entrySet())
+/* 147:198 */       for (Map.Entry<IBlockData,Comparable> localEntry : localbec.b().entrySet())
 /* 148:    */       {
 /* 149:199 */         String str = ((Comparable)localEntry.getValue()).toString();
 /* 150:201 */         if (localEntry.getValue() == Boolean.TRUE) {
@@ -157,7 +157,7 @@ import java.util.Map;
 /* 152:203 */         } else if (localEntry.getValue() == Boolean.FALSE) {
 /* 153:204 */           str = a.m + str;
 /* 154:    */         }
-/* 155:207 */         localArrayList.add(((bex)localEntry.getKey()).a() + ": " + str);
+/* 155:207 */         localArrayList.add(((IBlockData)localEntry.getKey()).getName() + ": " + str);
 /* 156:    */       }
 /* 157:    */     }
 /* 158:211 */     return localArrayList;

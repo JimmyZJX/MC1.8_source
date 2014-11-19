@@ -86,7 +86,7 @@ package net.minecraft.src;
 /*  78:327 */     throw new IllegalArgumentException("Invalid facing: " + paramej1);
 /*  79:    */   }
 /*  80:    */   
-/*  81:    */   public String l()
+/*  81:    */   public String toString2()
 /*  82:    */   {
 /*  83:332 */     return this.k;
 /*  84:    */   }

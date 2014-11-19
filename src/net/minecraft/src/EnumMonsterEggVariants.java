@@ -80,7 +80,7 @@ package net.minecraft.src;
 /*  44:178 */     return g[paramInt];
 /*  45:    */   }
 /*  46:    */   
-/*  47:    */   public String l()
+/*  47:    */   public String toString2()
 /*  48:    */   {
 /*  49:183 */     return this.i;
 /*  50:    */   }

@@ -35,7 +35,7 @@ package net.minecraft.src;
 /*  13:390 */     return this.w;
 /*  14:    */   }
 /*  15:    */   
-/*  16:    */   public String l()
+/*  16:    */   public String toString2()
 /*  17:    */   {
 /*  18:395 */     return this.w;
 /*  19:    */   }

@@ -12,8 +12,8 @@ import java.util.Map;
 /*  9:20 */     if (paramEntry == null) {
 /* 10:21 */       return "<NULL>";
 /* 11:   */     }
-/* 12:24 */     bex localbex = (bex)paramEntry.getKey();
-/* 13:25 */     return localbex.a() + "=" + localbex.a((Comparable)paramEntry.getValue());
+/* 12:24 */     IBlockData localbex = (IBlockData)paramEntry.getKey();
+/* 13:25 */     return localbex.getName() + "=" + localbex.toString((Comparable)paramEntry.getValue());
 /* 14:   */   }
 /* 15:   */ }
 

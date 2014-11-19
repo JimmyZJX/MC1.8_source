@@ -830,7 +830,7 @@ package net.minecraft.src;
 /*  829: 872 */     ProtoBlock localatr = localbec.getProto();
 /*  830: 873 */     if (localatr.getMaterial() == parambof)
 /*  831:     */     {
-/*  832: 874 */       float f1 = axl.b(localbec.getProto().c(localbec)) - 0.1111111F;
+/*  832: 874 */       float f1 = BlockLiquid.b(localbec.getProto().c(localbec)) - 0.1111111F;
 /*  833: 875 */       float f2 = localdt.getY() + 1 - f1;
 /*  834: 876 */       boolean bool = d < f2;
 /*  835: 878 */       if ((!bool) && ((this instanceof EntityPlayer))) {

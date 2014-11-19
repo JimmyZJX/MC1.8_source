@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*   3:    */ public class azy
 /*   4:    */   extends ProtoBlock
 /*   5:    */ {
-/*   6: 20 */   public static final bew a = bew.a("age", 0, 15);
+/*   6: 20 */   public static final BlockDataInteger a = BlockDataInteger.getInstance("age", 0, 15);
 /*   7:    */   
 /*   8:    */   protected azy()
 /*   9:    */   {
@@ -127,7 +127,7 @@ package net.minecraft.src;
 /* 126:    */   
 /* 127:    */   protected bed e()
 /* 128:    */   {
-/* 129:141 */     return new bed(this, new bex[] { a });
+/* 129:141 */     return new bed(this, new IBlockData[] { a });
 /* 130:    */   }
 /* 131:    */ }
 

@@ -5,11 +5,11 @@ package net.minecraft.src;
 /*  4:   */ 
 /*  5:   */ public class cnh
 /*  6:   */ {
-/*  7:   */   private bex a;
+/*  7:   */   private IBlockData a;
 /*  8:   */   private String b;
-/*  9:51 */   private final List<bex> c = Lists.newArrayList();
+/*  9:51 */   private final List<IBlockData> c = Lists.newArrayList();
 /* 10:   */   
-/* 11:   */   public cnh a(bex parambex)
+/* 11:   */   public cnh a(IBlockData parambex)
 /* 12:   */   {
 /* 13:57 */     this.a = parambex;
 /* 14:58 */     return this;
@@ -21,7 +21,7 @@ package net.minecraft.src;
 /* 20:63 */     return this;
 /* 21:   */   }
 /* 22:   */   
-/* 23:   */   public cnh a(bex... paramVarArgs)
+/* 23:   */   public cnh a(IBlockData... paramVarArgs)
 /* 24:   */   {
 /* 25:67 */     Collections.addAll(this.c, paramVarArgs);
 /* 26:68 */     return this;

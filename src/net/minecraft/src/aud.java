@@ -5,8 +5,8 @@ package net.minecraft.src;
 /*   4:    */ public abstract class aud
 /*   5:    */   extends ProtoBlock
 /*   6:    */ {
-/*   7: 25 */   public static final beu a = beu.a("facing");
-/*   8: 26 */   public static final bet b = bet.a("powered");
+/*   7: 25 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing");
+/*   8: 26 */   public static final BlockDataBoolean b = BlockDataBoolean.a("powered");
 /*   9:    */   private final boolean M;
 /*  10:    */   
 /*  11:    */   protected aud(boolean paramBoolean)
@@ -307,7 +307,7 @@ package net.minecraft.src;
 /* 306:    */   
 /* 307:    */   protected bed e()
 /* 308:    */   {
-/* 309:333 */     return new bed(this, new bex[] { a, b });
+/* 309:333 */     return new bed(this, new IBlockData[] { a, b });
 /* 310:    */   }
 /* 311:    */ }
 

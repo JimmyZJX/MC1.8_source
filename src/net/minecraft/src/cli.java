@@ -12,7 +12,7 @@ package net.minecraft.src;
 /*  11:    */   {
 /*  12:237 */     LinkedHashMap localLinkedHashMap = Maps.newLinkedHashMap(parambec.b());
 /*  13:    */     
-/*  14:239 */     String str1 = bbf.M.a((Comparable)localLinkedHashMap.remove(bbf.M));
+/*  14:239 */     String str1 = bbf.M.toString((Comparable)localLinkedHashMap.remove(bbf.M));
 /*  15:240 */     localLinkedHashMap.remove(bbf.b);
 /*  16:    */     
 /*  17:242 */     String str2 = ((Boolean)parambec.getProperty(bbf.b)).booleanValue() ? "all" : "normal";

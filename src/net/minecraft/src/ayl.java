@@ -5,8 +5,8 @@ package net.minecraft.src;
 /*   4:    */ public abstract class ayl
 /*   5:    */   extends BlockSlab
 /*   6:    */ {
-/*   7: 21 */   public static final bet b = bet.a("seamless");
-/*   8: 22 */   public static final bev M = bev.a("variant", aym.class);
+/*   7: 21 */   public static final BlockDataBoolean b = BlockDataBoolean.a("seamless");
+/*   8: 22 */   public static final BlockDataEnum M = BlockDataEnum.getInstance("variant", aym.class);
 /*   9:    */   
 /*  10:    */   public ayl()
 /*  11:    */   {
@@ -36,7 +36,7 @@ package net.minecraft.src;
 /*  35: 49 */     return super.a() + "." + aym.a(paramInt).c();
 /*  36:    */   }
 /*  37:    */   
-/*  38:    */   public bex l()
+/*  38:    */   public IBlockData l()
 /*  39:    */   {
 /*  40: 54 */     return M;
 /*  41:    */   }
@@ -87,9 +87,9 @@ package net.minecraft.src;
 /*  86:    */   protected bed e()
 /*  87:    */   {
 /*  88:107 */     if (j()) {
-/*  89:108 */       return new bed(this, new bex[] { b, M });
+/*  89:108 */       return new bed(this, new IBlockData[] { b, M });
 /*  90:    */     }
-/*  91:111 */     return new bed(this, new bex[] { half, M });
+/*  91:111 */     return new bed(this, new IBlockData[] { half, M });
 /*  92:    */   }
 /*  93:    */   
 /*  94:    */   public int a(Block parambec)

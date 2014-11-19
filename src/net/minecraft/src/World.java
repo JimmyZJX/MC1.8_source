@@ -1528,7 +1528,7 @@ import net.minecraft.server.MinecraftServer;
 /* 1525:1559 */           ProtoBlock localatr = localbec.getProto();
 /* 1526:1560 */           if (localatr.getMaterial() == parambof)
 /* 1527:     */           {
-/* 1528:1561 */             double d2 = i8 + 1 - axl.b(((Integer)localbec.getProperty(axl.b)).intValue());
+/* 1528:1561 */             double d2 = i8 + 1 - BlockLiquid.b(((Integer)localbec.getProperty(BlockLiquid.level)).intValue());
 /* 1529:1562 */             if (i4 >= d2)
 /* 1530:     */             {
 /* 1531:1563 */               bool = true;
@@ -1586,7 +1586,7 @@ import net.minecraft.server.MinecraftServer;
 /* 1583:1613 */           ProtoBlock localatr = localbec.getProto();
 /* 1584:1614 */           if (localatr.getMaterial() == parambof)
 /* 1585:     */           {
-/* 1586:1615 */             int i10 = ((Integer)localbec.getProperty(axl.b)).intValue();
+/* 1586:1615 */             int i10 = ((Integer)localbec.getProperty(BlockLiquid.level)).intValue();
 /* 1587:1616 */             double d1 = i8 + 1;
 /* 1588:1617 */             if (i10 < 8) {
 /* 1589:1618 */               d1 = i8 + 1 - i10 / 8.0D;
@@ -1787,7 +1787,7 @@ import net.minecraft.server.MinecraftServer;
 /* 1784:1804 */     if (!isInBound(paramdt)) {
 /* 1785:1805 */       return paramBoolean;
 /* 1786:     */     }
-/* 1787:1807 */     Chunk localbfh = this.v.a(paramdt);
+/* 1787:1807 */     Chunk localbfh = this.v.getChunk(paramdt);
 /* 1788:1808 */     if (localbfh.f()) {
 /* 1789:1809 */       return paramBoolean;
 /* 1790:     */     }
@@ -1996,7 +1996,7 @@ import net.minecraft.server.MinecraftServer;
 /* 1993:     */     {
 /* 1994:1996 */       Block localbec = getBlock(paramdt);
 /* 1995:1997 */       ProtoBlock localatr = localbec.getProto();
-/* 1996:1998 */       if (((localatr == BlockList.water) || (localatr == BlockList.flowingWater)) && (((Integer)localbec.getProperty(axl.b)).intValue() == 0))
+/* 1996:1998 */       if (((localatr == BlockList.water) || (localatr == BlockList.flowingWater)) && (((Integer)localbec.getProperty(BlockLiquid.level)).intValue() == 0))
 /* 1997:     */       {
 /* 1998:1999 */         if (!paramBoolean) {
 /* 1999:2000 */           return true;

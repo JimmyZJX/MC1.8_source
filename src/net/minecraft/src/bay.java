@@ -6,8 +6,8 @@ package net.minecraft.src;
 /*   5:    */   extends auc
 /*   6:    */   implements atz
 /*   7:    */ {
-/*   8: 23 */   public static final bew a = bew.a("age", 0, 7);
-/*   9: 24 */   public static final beu b = beu.a("facing", new baz());
+/*   8: 23 */   public static final BlockDataInteger a = BlockDataInteger.getInstance("age", 0, 7);
+/*   9: 24 */   public static final BlockDataDirection b = BlockDataDirection.getInstance("facing", new baz());
 /*  10:    */   private final ProtoBlock M;
 /*  11:    */   
 /*  12:    */   protected bay(ProtoBlock paramatr)
@@ -176,7 +176,7 @@ package net.minecraft.src;
 /* 175:    */   
 /* 176:    */   protected bed e()
 /* 177:    */   {
-/* 178:204 */     return new bed(this, new bex[] { a, b });
+/* 178:204 */     return new bed(this, new IBlockData[] { a, b });
 /* 179:    */   }
 /* 180:    */ }
 

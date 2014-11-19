@@ -14,7 +14,7 @@ package net.minecraft.src;
 /*  13:679 */     return this.f;
 /*  14:    */   }
 /*  15:    */   
-/*  16:    */   public String l()
+/*  16:    */   public String toString2()
 /*  17:    */   {
 /*  18:684 */     return this.f;
 /*  19:    */   }

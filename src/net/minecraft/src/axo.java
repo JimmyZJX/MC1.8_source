@@ -28,7 +28,7 @@ package net.minecraft.src;
 /* 27:82 */     return NONE;
 /* 28:   */   }
 /* 29:   */   
-/* 30:   */   public String l()
+/* 30:   */   public String toString2()
 /* 31:   */   {
 /* 32:87 */     return this.e;
 /* 33:   */   }

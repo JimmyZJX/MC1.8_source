@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*  3:   */ public class BlockSand
 /*  4:   */   extends avt
 /*  5:   */ {
-/*  6:15 */   public static final bev a = bev.a("variant", bac.class);
+/*  6:15 */   public static final BlockDataEnum a = BlockDataEnum.getInstance("variant", bac.class);
 /*  7:   */   
 /*  8:   */   public BlockSand()
 /*  9:   */   {
@@ -40,7 +40,7 @@ package net.minecraft.src;
 /* 39:   */   
 /* 40:   */   protected bed e()
 /* 41:   */   {
-/* 42:51 */     return new bed(this, new bex[] { a });
+/* 42:51 */     return new bed(this, new IBlockData[] { a });
 /* 43:   */   }
 /* 44:   */ }
 

@@ -4,11 +4,11 @@ package net.minecraft.src;
 /*   3:    */ public class avf
 /*   4:    */   extends ProtoBlock
 /*   5:    */ {
-/*   6: 26 */   public static final beu a = beu.a("facing", en.HORIZONTAL);
-/*   7: 27 */   public static final bet b = bet.a("open");
-/*   8: 28 */   public static final bev M = bev.a("hinge", avh.class);
-/*   9: 29 */   public static final bet N = bet.a("powered");
-/*  10: 30 */   public static final bev O = bev.a("half", avg.class);
+/*   6: 26 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", en.HORIZONTAL);
+/*   7: 27 */   public static final BlockDataBoolean b = BlockDataBoolean.a("open");
+/*   8: 28 */   public static final BlockDataEnum M = BlockDataEnum.getInstance("hinge", avh.class);
+/*   9: 29 */   public static final BlockDataBoolean N = BlockDataBoolean.a("powered");
+/*  10: 30 */   public static final BlockDataEnum O = BlockDataEnum.getInstance("half", avg.class);
 /*  11:    */   
 /*  12:    */   protected avf(Material parambof)
 /*  13:    */   {
@@ -365,7 +365,7 @@ package net.minecraft.src;
 /* 364:    */   
 /* 365:    */   protected bed e()
 /* 366:    */   {
-/* 367:423 */     return new bed(this, new bex[] { O, a, b, M, N });
+/* 367:423 */     return new bed(this, new IBlockData[] { O, a, b, M, N });
 /* 368:    */   }
 /* 369:    */ }
 

@@ -7,11 +7,11 @@ package net.minecraft.src;
 /*  6:   */ public class cnf
 /*  7:   */   extends cnc
 /*  8:   */ {
-/*  9:   */   private final bex a;
+/*  9:   */   private final IBlockData a;
 /* 10:   */   private final String c;
-/* 11:   */   private final List<bex> d;
+/* 11:   */   private final List<IBlockData> d;
 /* 12:   */   
-/* 13:   */   private cnf(bex parambex, String paramString, List<bex> paramList)
+/* 13:   */   private cnf(IBlockData parambex, String paramString, List<IBlockData> paramList)
 /* 14:   */   {
 /* 15:21 */     this.a = parambex;
 /* 16:22 */     this.c = paramString;
@@ -25,17 +25,17 @@ package net.minecraft.src;
 /* 24:31 */     if (this.a == null) {
 /* 25:32 */       str = ((oa)ProtoBlock.c.c(parambec.getProto())).toString();
 /* 26:   */     } else {
-/* 27:34 */       str = this.a.a((Comparable)localLinkedHashMap.remove(this.a));
+/* 27:34 */       str = this.a.toString((Comparable)localLinkedHashMap.remove(this.a));
 /* 28:   */     }
 /* 29:37 */     if (this.c != null) {
 /* 30:38 */       str = str + this.c;
 /* 31:   */     }
-/* 32:41 */     for (bex localbex : this.d) {
+/* 32:41 */     for (IBlockData localbex : this.d) {
 /* 33:42 */       localLinkedHashMap.remove(localbex);
 /* 34:   */     }
 /* 35:45 */     return new cxl(str, a(localLinkedHashMap));
 /* 36:   */   }
-			  cnf(bex arg0, String arg1, List<bex> arg2, cng arg3) {this(arg0,arg1,arg2);}
+			  cnf(IBlockData arg0, String arg1, List<IBlockData> arg2, cng arg3) {this(arg0,arg1,arg2);}
 /* 37:   */ }
 
 

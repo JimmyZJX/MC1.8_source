@@ -137,7 +137,7 @@ package net.minecraft.src;
 /* 136:    */     }
 /* 137:    */   }
 /* 138:    */   
-/* 139:    */   public abstract bex l();
+/* 139:    */   public abstract IBlockData l();
 /* 140:    */ }
 
 

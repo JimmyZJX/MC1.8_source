@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*   4:    */ public class auf
 /*   5:    */   extends ProtoBlock
 /*   6:    */ {
-/*   7: 20 */   public static final bew a = bew.a("age", 0, 15);
+/*   7: 20 */   public static final BlockDataInteger a = BlockDataInteger.getInstance("age", 0, 15);
 /*   8:    */   
 /*   9:    */   protected auf()
 /*  10:    */   {
@@ -114,7 +114,7 @@ package net.minecraft.src;
 /* 113:    */   
 /* 114:    */   protected bed e()
 /* 115:    */   {
-/* 116:128 */     return new bed(this, new bex[] { a });
+/* 116:128 */     return new bed(this, new IBlockData[] { a });
 /* 117:    */   }
 /* 118:    */ }
 

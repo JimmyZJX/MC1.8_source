@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*   4:    */ public abstract class BlockWoodenSlab
 /*   5:    */   extends BlockSlab
 /*   6:    */ {
-/*   7: 19 */   public static final bev b = bev.a("variant", EnumWoodVariant.class);
+/*   7: 19 */   public static final BlockDataEnum b = BlockDataEnum.getInstance("variant", EnumWoodVariant.class);
 /*   8:    */   
 /*   9:    */   public BlockWoodenSlab()
 /*  10:    */   {
@@ -33,7 +33,7 @@ package net.minecraft.src;
 /*  32: 44 */     return super.a() + "." + EnumWoodVariant.fromIndex(paramInt).c();
 /*  33:    */   }
 /*  34:    */   
-/*  35:    */   public bex<Enum<?>> l()
+/*  35:    */   public IBlockData<Enum<?>> l()
 /*  36:    */   {
 /*  37: 49 */     return b;
 /*  38:    */   }
@@ -76,9 +76,9 @@ package net.minecraft.src;
 /*  75:    */   protected bed e()
 /*  76:    */   {
 /*  77: 94 */     if (j()) {
-/*  78: 95 */       return new bed(this, new bex[] { b });
+/*  78: 95 */       return new bed(this, new IBlockData[] { b });
 /*  79:    */     }
-/*  80: 98 */     return new bed(this, new bex[] { half, b });
+/*  80: 98 */     return new bed(this, new IBlockData[] { half, b });
 /*  81:    */   }
 /*  82:    */   
 /*  83:    */   public int a(Block parambec)

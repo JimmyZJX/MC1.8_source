@@ -2,9 +2,9 @@ package net.minecraft.src;
 /*   1:    */ public class avw
 /*   2:    */   extends avb
 /*   3:    */ {
-/*   4: 19 */   public static final bet a = bet.a("open");
-/*   5: 20 */   public static final bet b = bet.a("powered");
-/*   6: 21 */   public static final bet M = bet.a("in_wall");
+/*   4: 19 */   public static final BlockDataBoolean a = BlockDataBoolean.a("open");
+/*   5: 20 */   public static final BlockDataBoolean b = BlockDataBoolean.a("powered");
+/*   6: 21 */   public static final BlockDataBoolean M = BlockDataBoolean.a("in_wall");
 /*   7:    */   
 /*   8:    */   public avw()
 /*   9:    */   {
@@ -143,7 +143,7 @@ package net.minecraft.src;
 /* 142:    */   
 /* 143:    */   protected bed e()
 /* 144:    */   {
-/* 145:168 */     return new bed(this, new bex[] { N, a, b, M });
+/* 145:168 */     return new bed(this, new IBlockData[] { N, a, b, M });
 /* 146:    */   }
 /* 147:    */ }
 

@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ public abstract class axm
 /*  2:   */   extends baa
 /*  3:   */ {
-/*  4:18 */   public static final bev a = bev.a("axis", axo.class);
+/*  4:18 */   public static final BlockDataEnum a = BlockDataEnum.getInstance("axis", axo.class);
 /*  5:   */   
 /*  6:   */   public axm()
 /*  7:   */   {

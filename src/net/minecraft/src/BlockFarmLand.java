@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*   3:    */ public class BlockFarmLand
 /*   4:    */   extends ProtoBlock
 /*   5:    */ {
-/*   6: 20 */   public static final bew a = bew.a("moisture", 0, 7);
+/*   6: 20 */   public static final BlockDataInteger a = BlockDataInteger.getInstance("moisture", 0, 7);
 /*   7:    */   
 /*   8:    */   protected BlockFarmLand()
 /*   9:    */   {
@@ -107,7 +107,7 @@ package net.minecraft.src;
 /* 106:    */   
 /* 107:    */   protected bed e()
 /* 108:    */   {
-/* 109:124 */     return new bed(this, new bex[] { a });
+/* 109:124 */     return new bed(this, new IBlockData[] { a });
 /* 110:    */   }
 /* 111:    */ }
 

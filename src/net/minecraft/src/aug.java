@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*   3:    */ public class aug
 /*   4:    */   extends ProtoBlock
 /*   5:    */ {
-/*   6: 24 */   public static final bew a = bew.a("bites", 0, 6);
+/*   6: 24 */   public static final BlockDataInteger a = BlockDataInteger.getInstance("bites", 0, 6);
 /*   7:    */   
 /*   8:    */   protected aug()
 /*   9:    */   {
@@ -128,7 +128,7 @@ package net.minecraft.src;
 /* 127:    */   
 /* 128:    */   protected bed e()
 /* 129:    */   {
-/* 130:150 */     return new bed(this, new bex[] { a });
+/* 130:150 */     return new bed(this, new IBlockData[] { a });
 /* 131:    */   }
 /* 132:    */   
 /* 133:    */   public int l(World paramaqu, BlockPosition paramdt)

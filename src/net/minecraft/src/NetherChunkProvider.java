@@ -5,9 +5,9 @@ package net.minecraft.src;
 /*   4:    */ public class NetherChunkProvider
 /*   5:    */   implements IChunkProvider
 /*   6:    */ {
-/*   7:    */   private final World h;
+/*   7:    */   private final World world;
 /*   8:    */   private final boolean i;
-/*   9:    */   private final Random j;
+/*   9:    */   private final Random rng;
 /*  10: 33 */   private double[] k = new double[256];
 /*  11: 34 */   private double[] l = new double[256];
 /*  12: 35 */   private double[] m = new double[256];
@@ -22,7 +22,7 @@ package net.minecraft.src;
 /*  21: 46 */   private final bhs t = new bhs();
 /*  22: 47 */   private final bhz u = new bhz();
 /*  23: 48 */   private final bht v = new bht();
-/*  24: 49 */   private final bhp w = new OreGenerator(BlockList.quartzOre.instance(), 14, BlockIs.instance(BlockList.netherrack));
+/*  24: 49 */   private final bhp quartzGenerator = new OreGenerator(BlockList.quartzOre.instance(), 14, BlockIs.instance(BlockList.netherrack));
 /*  25: 50 */   private final bhu x = new bhu(BlockList.flowingLava, true);
 /*  26: 51 */   private final bhu y = new bhu(BlockList.flowingLava, false);
 /*  27: 52 */   private final bhi z = new bhi(BlockList.brownMushroom);
@@ -35,20 +35,20 @@ package net.minecraft.src;
 /*  34:    */   double[] f;
 /*  35:    */   double[] g;
 /*  36:    */   
-/*  37:    */   public NetherChunkProvider(World paramaqu, boolean paramBoolean, long paramLong)
+/*  37:    */   public NetherChunkProvider(World paramaqu, boolean paramBoolean, long seed)
 /*  38:    */   {
-/*  39: 58 */     this.h = paramaqu;
+/*  39: 58 */     this.world = paramaqu;
 /*  40: 59 */     this.i = paramBoolean;
 /*  41:    */     
-/*  42: 61 */     this.j = new Random(paramLong);
-/*  43: 62 */     this.o = new bnv(this.j, 16);
-/*  44: 63 */     this.p = new bnv(this.j, 16);
-/*  45: 64 */     this.q = new bnv(this.j, 8);
-/*  46: 65 */     this.r = new bnv(this.j, 4);
-/*  47: 66 */     this.s = new bnv(this.j, 4);
+/*  42: 61 */     this.rng = new Random(seed);
+/*  43: 62 */     this.o = new bnv(this.rng, 16);
+/*  44: 63 */     this.p = new bnv(this.rng, 16);
+/*  45: 64 */     this.q = new bnv(this.rng, 8);
+/*  46: 65 */     this.r = new bnv(this.rng, 4);
+/*  47: 66 */     this.s = new bnv(this.rng, 4);
 /*  48:    */     
-/*  49: 68 */     this.a = new bnv(this.j, 10);
-/*  50: 69 */     this.b = new bnv(this.j, 16);
+/*  49: 68 */     this.a = new bnv(this.rng, 10);
+/*  50: 69 */     this.b = new bnv(this.rng, 16);
 /*  51:    */   }
 /*  52:    */   
 /*  53:    */   public void a(int paramInt1, int paramInt2, bgk parambgk)
@@ -127,16 +127,16 @@ package net.minecraft.src;
 /* 126:145 */     for (int i2 = 0; i2 < 16; i2++) {
 /* 127:146 */       for (int i3 = 0; i3 < 16; i3++)
 /* 128:    */       {
-/* 129:147 */         int i4 = this.k[(i2 + i3 * 16)] + this.j.nextDouble() * 0.2D > 0.0D ? 1 : 0;
-/* 130:148 */         int i5 = this.l[(i2 + i3 * 16)] + this.j.nextDouble() * 0.2D > 0.0D ? 1 : 0;
-/* 131:149 */         int i6 = (int)(this.m[(i2 + i3 * 16)] / 3.0D + 3.0D + this.j.nextDouble() * 0.25D);
+/* 129:147 */         int i4 = this.k[(i2 + i3 * 16)] + this.rng.nextDouble() * 0.2D > 0.0D ? 1 : 0;
+/* 130:148 */         int i5 = this.l[(i2 + i3 * 16)] + this.rng.nextDouble() * 0.2D > 0.0D ? 1 : 0;
+/* 131:149 */         int i6 = (int)(this.m[(i2 + i3 * 16)] / 3.0D + 3.0D + this.rng.nextDouble() * 0.25D);
 /* 132:    */         
 /* 133:151 */         int i7 = -1;
 /* 134:    */         
 /* 135:153 */         Block localbec1 = BlockList.netherrack.instance();
 /* 136:154 */         Block localbec2 = BlockList.netherrack.instance();
 /* 137:156 */         for (int i8 = 127; i8 >= 0; i8--) {
-/* 138:157 */           if ((i8 >= 127 - this.j.nextInt(5)) || (i8 <= this.j.nextInt(5)))
+/* 138:157 */           if ((i8 >= 127 - this.rng.nextInt(5)) || (i8 <= this.rng.nextInt(5)))
 /* 139:    */           {
 /* 140:158 */             parambgk.a(i3, i8, i2, BlockList.bedrock.instance());
 /* 141:    */           }
@@ -192,19 +192,19 @@ package net.minecraft.src;
 /* 191:    */   
 /* 192:    */   public Chunk getChunk(int paramInt1, int paramInt2)
 /* 193:    */   {
-/* 194:209 */     this.j.setSeed(paramInt1 * 341873128712L + paramInt2 * 132897987541L);
+/* 194:209 */     this.rng.setSeed(paramInt1 * 341873128712L + paramInt2 * 132897987541L);
 /* 195:    */     
 /* 196:211 */     bgk localbgk = new bgk();
 /* 197:    */     
 /* 198:213 */     a(paramInt1, paramInt2, localbgk);
 /* 199:214 */     b(paramInt1, paramInt2, localbgk);
 /* 200:    */     
-/* 201:216 */     this.C.a(this, this.h, paramInt1, paramInt2, localbgk);
+/* 201:216 */     this.C.a(this, this.world, paramInt1, paramInt2, localbgk);
 /* 202:217 */     if (this.i) {
-/* 203:218 */       this.B.a(this, this.h, paramInt1, paramInt2, localbgk);
+/* 203:218 */       this.B.a(this, this.world, paramInt1, paramInt2, localbgk);
 /* 204:    */     }
-/* 205:221 */     Chunk localbfh = new Chunk(this.h, localbgk, paramInt1, paramInt2);
-/* 206:222 */     arm[] arrayOfarm = this.h.v().b(null, paramInt1 * 16, paramInt2 * 16, 16, 16);
+/* 205:221 */     Chunk localbfh = new Chunk(this.world, localbgk, paramInt1, paramInt2);
+/* 206:222 */     arm[] arrayOfarm = this.world.v().b(null, paramInt1 * 16, paramInt2 * 16, 16, 16);
 /* 207:223 */     byte[] arrayOfByte = localbfh.k();
 /* 208:225 */     for (int i1 = 0; i1 < arrayOfByte.length; i1++) {
 /* 209:226 */       arrayOfByte[i1] = ((byte)arrayOfarm[i1].az);
@@ -296,30 +296,30 @@ package net.minecraft.src;
 /* 295:    */     
 /* 296:317 */     ChunkID localaqm = new ChunkID(paramInt1, paramInt2);
 /* 297:    */     
-/* 298:319 */     this.B.a(this.h, this.j, localaqm);
+/* 298:319 */     this.B.a(this.world, this.rng, localaqm);
 /* 299:321 */     for (int i1 = 0; i1 < 8; i1++) {
-/* 300:322 */       this.y.generate(this.h, this.j, localdt.offset(this.j.nextInt(16) + 8, this.j.nextInt(120) + 4, this.j.nextInt(16) + 8));
+/* 300:322 */       this.y.generate(this.world, this.rng, localdt.offset(this.rng.nextInt(16) + 8, this.rng.nextInt(120) + 4, this.rng.nextInt(16) + 8));
 /* 301:    */     }
-/* 302:325 */     for (int i1 = 0; i1 < this.j.nextInt(this.j.nextInt(10) + 1) + 1; i1++) {
-/* 303:326 */       this.t.generate(this.h, this.j, localdt.offset(this.j.nextInt(16) + 8, this.j.nextInt(120) + 4, this.j.nextInt(16) + 8));
+/* 302:325 */     for (int i1 = 0; i1 < this.rng.nextInt(this.rng.nextInt(10) + 1) + 1; i1++) {
+/* 303:326 */       this.t.generate(this.world, this.rng, localdt.offset(this.rng.nextInt(16) + 8, this.rng.nextInt(120) + 4, this.rng.nextInt(16) + 8));
 /* 304:    */     }
-/* 305:329 */     for (int i1 = 0; i1 < this.j.nextInt(this.j.nextInt(10) + 1); i1++) {
-/* 306:330 */       this.u.generate(this.h, this.j, localdt.offset(this.j.nextInt(16) + 8, this.j.nextInt(120) + 4, this.j.nextInt(16) + 8));
+/* 305:329 */     for (int i1 = 0; i1 < this.rng.nextInt(this.rng.nextInt(10) + 1); i1++) {
+/* 306:330 */       this.u.generate(this.world, this.rng, localdt.offset(this.rng.nextInt(16) + 8, this.rng.nextInt(120) + 4, this.rng.nextInt(16) + 8));
 /* 307:    */     }
 /* 308:333 */     for (int i1 = 0; i1 < 10; i1++) {
-/* 309:334 */       this.v.generate(this.h, this.j, localdt.offset(this.j.nextInt(16) + 8, this.j.nextInt(128), this.j.nextInt(16) + 8));
+/* 309:334 */       this.v.generate(this.world, this.rng, localdt.offset(this.rng.nextInt(16) + 8, this.rng.nextInt(128), this.rng.nextInt(16) + 8));
 /* 310:    */     }
-/* 311:337 */     if (this.j.nextBoolean()) {
-/* 312:338 */       this.z.generate(this.h, this.j, localdt.offset(this.j.nextInt(16) + 8, this.j.nextInt(128), this.j.nextInt(16) + 8));
+/* 311:337 */     if (this.rng.nextBoolean()) {
+/* 312:338 */       this.z.generate(this.world, this.rng, localdt.offset(this.rng.nextInt(16) + 8, this.rng.nextInt(128), this.rng.nextInt(16) + 8));
 /* 313:    */     }
-/* 314:341 */     if (this.j.nextBoolean()) {
-/* 315:342 */       this.A.generate(this.h, this.j, localdt.offset(this.j.nextInt(16) + 8, this.j.nextInt(128), this.j.nextInt(16) + 8));
+/* 314:341 */     if (this.rng.nextBoolean()) {
+/* 315:342 */       this.A.generate(this.world, this.rng, localdt.offset(this.rng.nextInt(16) + 8, this.rng.nextInt(128), this.rng.nextInt(16) + 8));
 /* 316:    */     }
 /* 317:345 */     for (int i1 = 0; i1 < 16; i1++) {
-/* 318:346 */       this.w.generate(this.h, this.j, localdt.offset(this.j.nextInt(16), this.j.nextInt(108) + 10, this.j.nextInt(16)));
+/* 318:346 */       this.quartzGenerator.generate(this.world, this.rng, localdt.offset(this.rng.nextInt(16), this.rng.nextInt(108) + 10, this.rng.nextInt(16)));
 /* 319:    */     }
 /* 320:349 */     for (int i1 = 0; i1 < 16; i1++) {
-/* 321:350 */       this.x.generate(this.h, this.j, localdt.offset(this.j.nextInt(16), this.j.nextInt(108) + 10, this.j.nextInt(16)));
+/* 321:350 */       this.x.generate(this.world, this.rng, localdt.offset(this.rng.nextInt(16), this.rng.nextInt(108) + 10, this.rng.nextInt(16)));
 /* 322:    */     }
 /* 323:353 */     avt.M = false;
 /* 324:    */   }
@@ -358,11 +358,11 @@ package net.minecraft.src;
 /* 357:389 */       if (this.B.b(paramdt)) {
 /* 358:390 */         return this.B.b();
 /* 359:    */       }
-/* 360:392 */       if ((this.B.a(this.h, paramdt)) && (this.h.getBlock(paramdt.down()).getProto() == BlockList.by)) {
+/* 360:392 */       if ((this.B.a(this.world, paramdt)) && (this.world.getBlock(paramdt.down()).getProto() == BlockList.netherBrick)) {
 /* 361:393 */         return this.B.b();
 /* 362:    */       }
 /* 363:    */     }
-/* 364:397 */     arm localarm = this.h.b(paramdt);
+/* 364:397 */     arm localarm = this.world.b(paramdt);
 /* 365:398 */     return localarm.a(paramxp);
 /* 366:    */   }
 /* 367:    */   
@@ -378,10 +378,10 @@ package net.minecraft.src;
 /* 377:    */   
 /* 378:    */   public void a(Chunk parambfh, int paramInt1, int paramInt2)
 /* 379:    */   {
-/* 380:413 */     this.B.a(this, this.h, paramInt1, paramInt2, null);
+/* 380:413 */     this.B.a(this, this.world, paramInt1, paramInt2, null);
 /* 381:    */   }
 /* 382:    */   
-/* 383:    */   public Chunk a(BlockPosition paramdt)
+/* 383:    */   public Chunk getChunk(BlockPosition paramdt)
 /* 384:    */   {
 /* 385:418 */     return getChunk(paramdt.getX() >> 4, paramdt.getZ() >> 4);
 /* 386:    */   }

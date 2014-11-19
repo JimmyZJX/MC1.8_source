@@ -31,23 +31,23 @@ package net.minecraft.src;
 /*   30:     */   
 /*   31:     */   public boolean a(World paramaqu, Random paramRandom, bjb parambjb)
 /*   32:     */   {
-/*   33:1131 */     a(paramaqu, parambjb, 0, 0, 0, 4, 1, 4, BlockList.by.instance(), BlockList.by.instance(), false);
+/*   33:1131 */     a(paramaqu, parambjb, 0, 0, 0, 4, 1, 4, BlockList.netherBrick.instance(), BlockList.netherBrick.instance(), false);
 /*   34:     */     
 /*   35:1133 */     a(paramaqu, parambjb, 0, 2, 0, 4, 5, 4, BlockList.air.instance(), BlockList.air.instance(), false);
 /*   36:     */     
 /*   37:     */ 
-/*   38:1136 */     a(paramaqu, parambjb, 0, 2, 0, 0, 5, 4, BlockList.by.instance(), BlockList.by.instance(), false);
-/*   39:1137 */     a(paramaqu, parambjb, 4, 2, 0, 4, 5, 4, BlockList.by.instance(), BlockList.by.instance(), false);
+/*   38:1136 */     a(paramaqu, parambjb, 0, 2, 0, 0, 5, 4, BlockList.netherBrick.instance(), BlockList.netherBrick.instance(), false);
+/*   39:1137 */     a(paramaqu, parambjb, 4, 2, 0, 4, 5, 4, BlockList.netherBrick.instance(), BlockList.netherBrick.instance(), false);
 /*   40:1138 */     a(paramaqu, parambjb, 0, 3, 1, 0, 4, 1, BlockList.bz.instance(), BlockList.bz.instance(), false);
 /*   41:1139 */     a(paramaqu, parambjb, 0, 3, 3, 0, 4, 3, BlockList.bz.instance(), BlockList.bz.instance(), false);
 /*   42:1140 */     a(paramaqu, parambjb, 4, 3, 1, 4, 4, 1, BlockList.bz.instance(), BlockList.bz.instance(), false);
 /*   43:1141 */     a(paramaqu, parambjb, 4, 3, 3, 4, 4, 3, BlockList.bz.instance(), BlockList.bz.instance(), false);
 /*   44:     */     
 /*   45:     */ 
-/*   46:1144 */     a(paramaqu, parambjb, 0, 6, 0, 4, 6, 4, BlockList.by.instance(), BlockList.by.instance(), false);
+/*   46:1144 */     a(paramaqu, parambjb, 0, 6, 0, 4, 6, 4, BlockList.netherBrick.instance(), BlockList.netherBrick.instance(), false);
 /*   47:1147 */     for (int i = 0; i <= 4; i++) {
 /*   48:1148 */       for (int j = 0; j <= 4; j++) {
-/*   49:1149 */         b(paramaqu, BlockList.by.instance(), i, -1, j, parambjb);
+/*   49:1149 */         b(paramaqu, BlockList.netherBrick.instance(), i, -1, j, parambjb);
 /*   50:     */       }
 /*   51:     */     }
 /*   52:1153 */     return true;

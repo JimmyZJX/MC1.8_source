@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*  4:   */ public class bba
 /*  5:   */   extends ProtoBlock
 /*  6:   */ {
-/*  7:17 */   public static final bev a = bev.a("variant", EnumStoneVariants.class);
+/*  7:17 */   public static final BlockDataEnum a = BlockDataEnum.getInstance("variant", EnumStoneVariants.class);
 /*  8:   */   
 /*  9:   */   public bba()
 /* 10:   */   {
@@ -46,7 +46,7 @@ package net.minecraft.src;
 /* 45:   */   
 /* 46:   */   protected bed e()
 /* 47:   */   {
-/* 48:59 */     return new bed(this, new bex[] { a });
+/* 48:59 */     return new bed(this, new IBlockData[] { a });
 /* 49:   */   }
 /* 50:   */ }
 

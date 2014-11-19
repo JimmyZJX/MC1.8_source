@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*  3:   */ public class awz
 /*  4:   */   extends ProtoBlock
 /*  5:   */ {
-/*  6:18 */   public static final bev a = bev.a("variant", axa.class);
+/*  6:18 */   public static final BlockDataEnum a = BlockDataEnum.getInstance("variant", axa.class);
 /*  7:   */   private final ProtoBlock b;
 /*  8:   */   
 /*  9:   */   public awz(Material parambof, ProtoBlock paramatr)
@@ -46,7 +46,7 @@ package net.minecraft.src;
 /* 45:   */   
 /* 46:   */   protected bed e()
 /* 47:   */   {
-/* 48:62 */     return new bed(this, new bex[] { a });
+/* 48:62 */     return new bed(this, new IBlockData[] { a });
 /* 49:   */   }
 /* 50:   */ }
 

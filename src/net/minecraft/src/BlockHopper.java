@@ -4,8 +4,8 @@ package net.minecraft.src;
 /*   3:    */ public class BlockHopper
 /*   4:    */   extends atg
 /*   5:    */ {
-/*   6: 28 */   public static final beu a = beu.a("facing", new awy());
-/*   7: 34 */   public static final bet b = bet.a("enabled");
+/*   6: 28 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", new awy());
+/*   7: 34 */   public static final BlockDataBoolean b = BlockDataBoolean.a("enabled");
 /*   8:    */   
 /*   9:    */   public BlockHopper()
 /*  10:    */   {
@@ -168,7 +168,7 @@ package net.minecraft.src;
 /* 167:    */   
 /* 168:    */   protected bed e()
 /* 169:    */   {
-/* 170:198 */     return new bed(this, new bex[] { a, b });
+/* 170:198 */     return new bed(this, new IBlockData[] { a, b });
 /* 171:    */   }
 /* 172:    */ }
 

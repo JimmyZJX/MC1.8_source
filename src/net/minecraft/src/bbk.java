@@ -3,7 +3,7 @@ package net.minecraft.src;
 /*   3:    */ public class bbk
 /*   4:    */   extends ProtoBlock
 /*   5:    */ {
-/*   6: 21 */   public static final bet a = bet.a("explode");
+/*   6: 21 */   public static final BlockDataBoolean a = BlockDataBoolean.a("explode");
 /*   7:    */   
 /*   8:    */   public bbk()
 /*   9:    */   {
@@ -109,7 +109,7 @@ package net.minecraft.src;
 /* 109:    */   
 /* 110:    */   protected bed e()
 /* 111:    */   {
-/* 112:122 */     return new bed(this, new bex[] { a });
+/* 112:122 */     return new bed(this, new IBlockData[] { a });
 /* 113:    */   }
 /* 114:    */ }
 

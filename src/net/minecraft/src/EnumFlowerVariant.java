@@ -72,7 +72,7 @@ package net.minecraft.src;
 /*  69:154 */     return this.n;
 /*  70:    */   }
 /*  71:    */   
-/*  72:    */   public String l()
+/*  72:    */   public String toString2()
 /*  73:    */   {
 /*  74:159 */     return this.n;
 /*  75:    */   }
