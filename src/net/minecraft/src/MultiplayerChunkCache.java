@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*   8:    */ {
 /*   9: 20 */   private static final Logger a = LogManager.getLogger();
 /*  10:    */   private Chunk b;
-/*  11: 23 */   private ur c = new ur();
+/*  11: 23 */   private LongHashMap c = new LongHashMap();
 /*  12: 24 */   private List<Chunk> d = Lists.newArrayList();
 /*  13:    */   private World e;
 /*  14:    */   
@@ -20,7 +20,7 @@ package net.minecraft.src;
 /*  19: 30 */     this.e = paramaqu;
 /*  20:    */   }
 /*  21:    */   
-/*  22:    */   public boolean a(int paramInt1, int paramInt2)
+/*  22:    */   public boolean chunkLoaded(int paramInt1, int paramInt2)
 /*  23:    */   {
 /*  24: 35 */     return true;
 /*  25:    */   }
@@ -31,14 +31,14 @@ package net.minecraft.src;
 /*  30: 40 */     if (!localbfh.f()) {
 /*  31: 41 */       localbfh.d();
 /*  32:    */     }
-/*  33: 44 */     this.c.d(ChunkID.toLong(paramInt1, paramInt2));
+/*  33: 44 */     this.c.remove(ChunkID.toLong(paramInt1, paramInt2));
 /*  34: 45 */     this.d.remove(localbfh);
 /*  35:    */   }
 /*  36:    */   
 /*  37:    */   public Chunk c(int paramInt1, int paramInt2)
 /*  38:    */   {
 /*  39: 50 */     Chunk localbfh = new Chunk(this.e, paramInt1, paramInt2);
-/*  40: 51 */     this.c.a(ChunkID.toLong(paramInt1, paramInt2), localbfh);
+/*  40: 51 */     this.c.add(ChunkID.toLong(paramInt1, paramInt2), localbfh);
 /*  41: 52 */     this.d.add(localbfh);
 /*  42: 53 */     localbfh.c(true);
 /*  43:    */     
@@ -47,7 +47,7 @@ package net.minecraft.src;
 /*  46:    */   
 /*  47:    */   public Chunk getChunk(int paramInt1, int paramInt2)
 /*  48:    */   {
-/*  49: 60 */     Chunk localbfh = (Chunk)this.c.a(ChunkID.toLong(paramInt1, paramInt2));
+/*  49: 60 */     Chunk localbfh = (Chunk)this.c.getValueByKey(ChunkID.toLong(paramInt1, paramInt2));
 /*  50: 61 */     if (localbfh == null) {
 /*  51: 62 */       return this.b;
 /*  52:    */     }
@@ -87,7 +87,7 @@ package net.minecraft.src;
 /*  86:    */   
 /*  87:    */   public String getName()
 /*  88:    */   {
-/*  89:106 */     return "MultiplayerChunkCache: " + this.c.a() + ", " + this.d.size();
+/*  89:106 */     return "MultiplayerChunkCache: " + this.c.getNumHashElements() + ", " + this.d.size();
 /*  90:    */   }
 /*  91:    */   
 /*  92:    */   public List<SpawnListEntry> getSpawnList(EnumCreatureType paramxp, BlockPosition paramdt)

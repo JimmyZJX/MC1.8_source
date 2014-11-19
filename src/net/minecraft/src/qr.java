@@ -49,7 +49,7 @@ package net.minecraft.src;
 /*  46:    */     {
 /*  47: 69 */       long l = this.c.x + 2147483647L | this.c.z + 2147483647L << 32;
 /*  48: 70 */       a(localbfh);
-/*  49: 71 */       qq.b(this.a).d(l);
+/*  49: 71 */       qq.b(this.a).remove(l);
 /*  50: 72 */       qq.c(this.a).remove(this);
 /*  51: 73 */       if (this.e > 0) {
 /*  52: 74 */         qq.d(this.a).remove(this);

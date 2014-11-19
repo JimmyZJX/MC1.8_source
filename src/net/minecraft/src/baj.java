@@ -201,7 +201,7 @@ package net.minecraft.src;
 /* 200:    */   protected bek j()
 /* 201:    */   {
 /* 202:249 */     if (this.N == null) {
-/* 203:250 */       this.N = ben.a().a(new String[] { "   ", "###", "~#~" }).a('#', bei.a(beq.a(BlockList.aW))).a('~', bei.a(beq.a(BlockList.air))).b();
+/* 203:250 */       this.N = ben.a().a(new String[] { "   ", "###", "~#~" }).a('#', bei.a(beq.a(BlockList.soulSand))).a('~', bei.a(beq.a(BlockList.air))).b();
 /* 204:    */     }
 /* 205:261 */     return this.N;
 /* 206:    */   }
@@ -209,7 +209,7 @@ package net.minecraft.src;
 /* 208:    */   protected bek l()
 /* 209:    */   {
 /* 210:265 */     if (this.O == null) {
-/* 211:266 */       this.O = ben.a().a(new String[] { "^^^", "###", "~#~" }).a('#', bei.a(beq.a(BlockList.aW))).a('^', M).a('~', bei.a(beq.a(BlockList.air))).b();
+/* 211:266 */       this.O = ben.a().a(new String[] { "^^^", "###", "~#~" }).a('#', bei.a(beq.a(BlockList.soulSand))).a('^', M).a('~', bei.a(beq.a(BlockList.air))).b();
 /* 212:    */     }
 /* 213:278 */     return this.O;
 /* 214:    */   }

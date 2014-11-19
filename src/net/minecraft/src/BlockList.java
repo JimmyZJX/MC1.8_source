@@ -108,7 +108,7 @@ package net.minecraft.src;
 /* 107:115 */   public static final ProtoBlock aT = a("acacia_fence");
 /* 108:116 */   public static final ProtoBlock pumpkin = a("pumpkin");
 /* 109:117 */   public static final ProtoBlock netherrack = a("netherrack");
-/* 110:118 */   public static final ProtoBlock aW = a("soul_sand");
+/* 110:118 */   public static final ProtoBlock soulSand = a("soul_sand");
 /* 111:119 */   public static final ProtoBlock glowstone = a("glowstone");
 /* 112:120 */   public static final ayy aY = (ayy)a("portal");
 /* 113:121 */   public static final ProtoBlock aZ = a("lit_pumpkin");

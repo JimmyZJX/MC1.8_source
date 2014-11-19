@@ -70,7 +70,7 @@ package net.minecraft.src;
 /*  69: 94 */     return block;
 /*  70:    */   }
 /*  71:    */   
-/*  72:    */   public boolean a(int paramInt1, int paramInt2)
+/*  72:    */   public boolean chunkLoaded(int paramInt1, int paramInt2)
 /*  73:    */   {
 /*  74: 99 */     return true;
 /*  75:    */   }

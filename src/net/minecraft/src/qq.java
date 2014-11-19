@@ -11,7 +11,7 @@ package net.minecraft.src;
 /*  10: 22 */   private static final Logger a = LogManager.getLogger();
 /*  11:    */   private final WorldServer b;
 /*  12:177 */   private final List c = Lists.newArrayList();
-/*  13:178 */   private final ur d = new ur();
+/*  13:178 */   private final LongHashMap d = new LongHashMap();
 /*  14:179 */   private final List e = Lists.newArrayList();
 /*  15:180 */   private final List f = Lists.newArrayList();
 /*  16:    */   private int g;
@@ -65,17 +65,17 @@ package net.minecraft.src;
 /*  64:    */   public boolean a(int paramInt1, int paramInt2)
 /*  65:    */   {
 /*  66:223 */     long l = paramInt1 + 2147483647L | paramInt2 + 2147483647L << 32;
-/*  67:224 */     return this.d.a(l) != null;
+/*  67:224 */     return this.d.getValueByKey(l) != null;
 /*  68:    */   }
 /*  69:    */   
 /*  70:    */   private qr a(int paramInt1, int paramInt2, boolean paramBoolean)
 /*  71:    */   {
 /*  72:228 */     long l = paramInt1 + 2147483647L | paramInt2 + 2147483647L << 32;
-/*  73:229 */     qr localqr = (qr)this.d.a(l);
+/*  73:229 */     qr localqr = (qr)this.d.getValueByKey(l);
 /*  74:230 */     if ((localqr == null) && (paramBoolean))
 /*  75:    */     {
 /*  76:231 */       localqr = new qr(this, paramInt1, paramInt2);
-/*  77:232 */       this.d.a(l, localqr);
+/*  77:232 */       this.d.add(l, localqr);
 /*  78:233 */       this.f.add(localqr);
 /*  79:    */     }
 /*  80:235 */     return localqr;
@@ -274,7 +274,7 @@ package net.minecraft.src;
 /* 273:    */   }
 				static Logger c() {return a;}
 				static WorldServer a(qq arg0) {return arg0.b;}
-				static ur b(qq arg0) {return arg0.d;}
+				static LongHashMap b(qq arg0) {return arg0.d;}
 				static List c(qq arg0) {return arg0.f;}
 				static List d(qq arg0) {return arg0.e;}
 /* 274:    */ }

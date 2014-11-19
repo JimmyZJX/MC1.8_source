@@ -102,7 +102,7 @@ package net.minecraft.src;
 /* 101:128 */     return localObject1;
 /* 102:    */   }
 /* 103:    */   
-/* 104:    */   public boolean a(int paramInt1, int paramInt2)
+/* 104:    */   public boolean chunkLoaded(int paramInt1, int paramInt2)
 /* 105:    */   {
 /* 106:133 */     return true;
 /* 107:    */   }

@@ -164,8 +164,8 @@ package net.minecraft.src;
 /* 163:    */                   }
 /* 164:175 */                   if (i4 != 0)
 /* 165:    */                   {
-/* 166:176 */                     localbec1 = BlockList.aW.instance();
-/* 167:177 */                     localbec2 = BlockList.aW.instance();
+/* 166:176 */                     localbec1 = BlockList.soulSand.instance();
+/* 167:177 */                     localbec2 = BlockList.soulSand.instance();
 /* 168:    */                   }
 /* 169:    */                 }
 /* 170:181 */                 if ((i8 < i1) && ((localbec1 == null) || (localbec1.getProto().getMaterial() == Material.air))) {
@@ -190,21 +190,21 @@ package net.minecraft.src;
 /* 189:    */     }
 /* 190:    */   }
 /* 191:    */   
-/* 192:    */   public Chunk getChunk(int paramInt1, int paramInt2)
+/* 192:    */   public Chunk getChunk(int x, int y)
 /* 193:    */   {
-/* 194:209 */     this.rng.setSeed(paramInt1 * 341873128712L + paramInt2 * 132897987541L);
+/* 194:209 */     this.rng.setSeed(x * 341873128712L + y * 132897987541L);
 /* 195:    */     
 /* 196:211 */     bgk localbgk = new bgk();
 /* 197:    */     
-/* 198:213 */     a(paramInt1, paramInt2, localbgk);
-/* 199:214 */     b(paramInt1, paramInt2, localbgk);
+/* 198:213 */     a(x, y, localbgk);
+/* 199:214 */     b(x, y, localbgk);
 /* 200:    */     
-/* 201:216 */     this.C.a(this, this.world, paramInt1, paramInt2, localbgk);
+/* 201:216 */     this.C.a(this, this.world, x, y, localbgk);
 /* 202:217 */     if (this.i) {
-/* 203:218 */       this.B.a(this, this.world, paramInt1, paramInt2, localbgk);
+/* 203:218 */       this.B.a(this, this.world, x, y, localbgk);
 /* 204:    */     }
-/* 205:221 */     Chunk localbfh = new Chunk(this.world, localbgk, paramInt1, paramInt2);
-/* 206:222 */     arm[] arrayOfarm = this.world.v().b(null, paramInt1 * 16, paramInt2 * 16, 16, 16);
+/* 205:221 */     Chunk localbfh = new Chunk(this.world, localbgk, x, y);
+/* 206:222 */     arm[] arrayOfarm = this.world.v().b(null, x * 16, y * 16, 16, 16);
 /* 207:223 */     byte[] arrayOfByte = localbfh.k();
 /* 208:225 */     for (int i1 = 0; i1 < arrayOfByte.length; i1++) {
 /* 209:226 */       arrayOfByte[i1] = ((byte)arrayOfarm[i1].az);
@@ -284,7 +284,7 @@ package net.minecraft.src;
 /* 283:304 */     return paramArrayOfDouble;
 /* 284:    */   }
 /* 285:    */   
-/* 286:    */   public boolean a(int paramInt1, int paramInt2)
+/* 286:    */   public boolean chunkLoaded(int paramInt1, int paramInt2)
 /* 287:    */   {
 /* 288:309 */     return true;
 /* 289:    */   }

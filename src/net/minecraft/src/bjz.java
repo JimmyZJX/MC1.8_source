@@ -114,8 +114,8 @@ package net.minecraft.src;
 /*  113:1063 */     a(paramaqu, BlockList.bA.a(j), 8, 5, 10, parambjb);
 /*  114:     */     
 /*  115:     */ 
-/*  116:1066 */     a(paramaqu, parambjb, 3, 4, 4, 4, 4, 8, BlockList.aW.instance(), BlockList.aW.instance(), false);
-/*  117:1067 */     a(paramaqu, parambjb, 8, 4, 4, 9, 4, 8, BlockList.aW.instance(), BlockList.aW.instance(), false);
+/*  116:1066 */     a(paramaqu, parambjb, 3, 4, 4, 4, 4, 8, BlockList.soulSand.instance(), BlockList.soulSand.instance(), false);
+/*  117:1067 */     a(paramaqu, parambjb, 8, 4, 4, 9, 4, 8, BlockList.soulSand.instance(), BlockList.soulSand.instance(), false);
 /*  118:1068 */     a(paramaqu, parambjb, 3, 5, 4, 4, 5, 8, BlockList.bB.instance(), BlockList.bB.instance(), false);
 /*  119:1069 */     a(paramaqu, parambjb, 8, 5, 4, 9, 5, 8, BlockList.bB.instance(), BlockList.bB.instance(), false);
 /*  120:     */     

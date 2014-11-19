@@ -838,14 +838,14 @@ package net.minecraft.src;
 /*  833:     */   
 /*  834:     */   public void a(IChunkProvider parambfe1, IChunkProvider parambfe2, int paramInt1, int paramInt2)
 /*  835:     */   {
-/*  836: 832 */     boolean bool1 = parambfe1.a(paramInt1, paramInt2 - 1);
-/*  837: 833 */     boolean bool2 = parambfe1.a(paramInt1 + 1, paramInt2);
-/*  838: 834 */     boolean bool3 = parambfe1.a(paramInt1, paramInt2 + 1);
-/*  839: 835 */     boolean bool4 = parambfe1.a(paramInt1 - 1, paramInt2);
-/*  840: 836 */     boolean bool5 = parambfe1.a(paramInt1 - 1, paramInt2 - 1);
-/*  841: 837 */     boolean bool6 = parambfe1.a(paramInt1 + 1, paramInt2 + 1);
-/*  842: 838 */     boolean bool7 = parambfe1.a(paramInt1 - 1, paramInt2 + 1);
-/*  843: 839 */     boolean bool8 = parambfe1.a(paramInt1 + 1, paramInt2 - 1);
+/*  836: 832 */     boolean bool1 = parambfe1.chunkLoaded(paramInt1, paramInt2 - 1);
+/*  837: 833 */     boolean bool2 = parambfe1.chunkLoaded(paramInt1 + 1, paramInt2);
+/*  838: 834 */     boolean bool3 = parambfe1.chunkLoaded(paramInt1, paramInt2 + 1);
+/*  839: 835 */     boolean bool4 = parambfe1.chunkLoaded(paramInt1 - 1, paramInt2);
+/*  840: 836 */     boolean bool5 = parambfe1.chunkLoaded(paramInt1 - 1, paramInt2 - 1);
+/*  841: 837 */     boolean bool6 = parambfe1.chunkLoaded(paramInt1 + 1, paramInt2 + 1);
+/*  842: 838 */     boolean bool7 = parambfe1.chunkLoaded(paramInt1 - 1, paramInt2 + 1);
+/*  843: 839 */     boolean bool8 = parambfe1.chunkLoaded(paramInt1 + 1, paramInt2 - 1);
 /*  844: 841 */     if ((bool2) && (bool3) && (bool6)) {
 /*  845: 842 */       if (!this.n) {
 /*  846: 843 */         parambfe1.a(parambfe2, paramInt1, paramInt2);

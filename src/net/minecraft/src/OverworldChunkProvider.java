@@ -292,7 +292,7 @@ package net.minecraft.src;
 /* 291:    */     }
 /* 292:    */   }
 /* 293:    */   
-/* 294:    */   public boolean a(int paramInt1, int paramInt2)
+/* 294:    */   public boolean chunkLoaded(int paramInt1, int paramInt2)
 /* 295:    */   {
 /* 296:352 */     return true;
 /* 297:    */   }

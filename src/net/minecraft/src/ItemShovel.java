@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*  4:   */ public class ItemShovel
 /*  5:   */   extends ItemTool
 /*  6:   */ {
-/*  7:10 */   private static final Set c = Sets.newHashSet(new ProtoBlock[] { BlockList.aL, BlockList.dirt, BlockList.ak, BlockList.grass, BlockList.gravel, BlockList.bw, BlockList.sand, BlockList.aJ, BlockList.aH, BlockList.aW });
+/*  7:10 */   private static final Set c = Sets.newHashSet(new ProtoBlock[] { BlockList.aL, BlockList.dirt, BlockList.ak, BlockList.grass, BlockList.gravel, BlockList.bw, BlockList.sand, BlockList.aJ, BlockList.aH, BlockList.soulSand });
 /*  8:   */   
 /*  9:   */   public ItemShovel(EnumToolMaterial paramami)
 /* 10:   */   {

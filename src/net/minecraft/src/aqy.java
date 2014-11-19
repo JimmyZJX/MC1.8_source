@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*    7:     */   
 /*    8:     */   public String call()
 /*    9:     */   {
-/*   10:2788 */     return this.a.v.getName();
+/*   10:2788 */     return this.a.chunkProvider.getName();
 /*   11:     */   }
 /*   12:     */ }
 

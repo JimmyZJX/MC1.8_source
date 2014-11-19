@@ -17,7 +17,7 @@ package net.minecraft.src;
 /*  16:    */   
 /*  17:    */   protected boolean c(ProtoBlock paramatr)
 /*  18:    */   {
-/*  19: 29 */     return paramatr == BlockList.aW;
+/*  19: 29 */     return paramatr == BlockList.soulSand;
 /*  20:    */   }
 /*  21:    */   
 /*  22:    */   public boolean f(World paramaqu, BlockPosition paramdt, Block parambec)

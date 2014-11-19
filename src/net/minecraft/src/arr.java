@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*  6:   */ {
 /*  7:   */   private final arz a;
 /*  8:   */   private long b;
-/*  9:40 */   private ur c = new ur();
+/*  9:40 */   private LongHashMap c = new LongHashMap();
 /* 10:41 */   private List<ars> d = Lists.newArrayList();
 /* 11:   */   
 /* 12:   */   public arr(arz paramarz)
@@ -22,11 +22,11 @@ package net.minecraft.src;
 /* 19:48 */     paramInt1 >>= 4;
 /* 20:49 */     paramInt2 >>= 4;
 /* 21:50 */     long l = paramInt1 & 0xFFFFFFFF | (paramInt2 & 0xFFFFFFFF) << 32;
-/* 22:51 */     ars localars = (ars)this.c.a(l);
+/* 22:51 */     ars localars = (ars)this.c.getValueByKey(l);
 /* 23:52 */     if (localars == null)
 /* 24:   */     {
 /* 25:53 */       localars = new ars(this, paramInt1, paramInt2);
-/* 26:54 */       this.c.a(l, localars);
+/* 26:54 */       this.c.add(l, localars);
 /* 27:55 */       this.d.add(localars);
 /* 28:   */     }
 /* 29:57 */     localars.e = MinecraftServer.ax();
@@ -57,7 +57,7 @@ package net.minecraft.src;
 /* 54:   */         {
 /* 55:83 */           this.d.remove(i--);
 /* 56:84 */           long l4 = localars.c & 0xFFFFFFFF | (localars.d & 0xFFFFFFFF) << 32;
-/* 57:85 */           this.c.d(l4);
+/* 57:85 */           this.c.remove(l4);
 /* 58:   */         }
 /* 59:   */       }
 /* 60:   */     }

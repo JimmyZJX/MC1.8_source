@@ -48,7 +48,7 @@ package net.minecraft.src;
 /*  44:109 */     this.K = new qq(this);
 /*  45:    */     
 /*  46:111 */     this.t.a(this);
-/*  47:112 */     this.v = k();
+/*  47:112 */     this.chunkProvider = k();
 /*  48:    */     
 /*  49:114 */     this.Q = new arh(this);
 /*  50:    */     
@@ -119,7 +119,7 @@ package net.minecraft.src;
 /* 115:182 */       this.spawner.work(this, this.spawnMonster, this.spawnPeaceful, this.worldInfo.getRealTime() % 400L == 0L);
 /* 116:    */     }
 /* 117:184 */     this.profiler.c("chunkSource");
-/* 118:185 */     this.v.d();
+/* 118:185 */     this.chunkProvider.d();
 /* 119:186 */     int i = calculateSkylightSubtracted(1.0F);
 /* 120:188 */     if (i != ab()) {
 /* 121:189 */       b(i);
@@ -688,7 +688,7 @@ package net.minecraft.src;
 /* 684:    */   
 /* 685:    */   public void a(boolean paramBoolean, uy paramuy) throws aqz
 /* 686:    */   {
-/* 687:755 */     if (!this.v.e()) {
+/* 687:755 */     if (!this.chunkProvider.e()) {
 /* 688:756 */       return;
 /* 689:    */     }
 /* 690:759 */     if (paramuy != null) {
@@ -698,7 +698,7 @@ package net.minecraft.src;
 /* 694:764 */     if (paramuy != null) {
 /* 695:765 */       paramuy.c("Saving chunks");
 /* 696:    */     }
-/* 697:767 */     this.v.a(paramBoolean, paramuy);
+/* 697:767 */     this.chunkProvider.a(paramBoolean, paramuy);
 /* 698:    */     
 /* 699:    */ 
 /* 700:770 */     List<Chunk> localList = this.b.a();
@@ -711,10 +711,10 @@ package net.minecraft.src;
 /* 707:    */   
 /* 708:    */   public void n()
 /* 709:    */   {
-/* 710:779 */     if (!this.v.e()) {
+/* 710:779 */     if (!this.chunkProvider.e()) {
 /* 711:780 */       return;
 /* 712:    */     }
-/* 713:782 */     this.v.c();
+/* 713:782 */     this.chunkProvider.c();
 /* 714:    */   }
 /* 715:    */   
 /* 716:    */   protected void a() throws aqz

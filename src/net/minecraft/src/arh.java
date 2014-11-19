@@ -8,7 +8,7 @@ package net.minecraft.src;
 /*   7:    */ {
 /*   8:    */   private final WorldServer a;
 /*   9:    */   private final Random b;
-/*  10: 23 */   private final ur c = new ur();
+/*  10: 23 */   private final LongHashMap c = new LongHashMap();
 /*  11: 24 */   private final List<Long> d = Lists.newArrayList();
 /*  12:    */   
 /*  13:    */   public arh(WorldServer paramqt)
@@ -66,9 +66,9 @@ package net.minecraft.src;
 /*  65:    */     
 /*  66: 76 */     long l = ChunkID.toLong(j, k);
 /*  67:    */     Object localObject2;
-/*  68: 77 */     if (this.c.b(l))
+/*  68: 77 */     if (this.c.containsItem(l))
 /*  69:    */     {
-/*  70: 78 */       localObject2 = (ari)this.c.a(l);
+/*  70: 78 */       localObject2 = (ari)this.c.getValueByKey(l);
 /*  71:    */       
 /*  72: 80 */       d1 = 0.0D;
 /*  73:    */       
@@ -107,7 +107,7 @@ package net.minecraft.src;
 /* 106:    */     {
 /* 107:113 */       if (m != 0)
 /* 108:    */       {
-/* 109:114 */         this.c.a(l, new ari(this, (BlockPosition)localObject1, this.a.K()));
+/* 109:114 */         this.c.add(l, new ari(this, (BlockPosition)localObject1, this.a.K()));
 /* 110:115 */         this.d.add(Long.valueOf(l));
 /* 111:    */       }
 /* 112:118 */       double d2 = ((BlockPosition)localObject1).getX() + 0.5D;
@@ -402,11 +402,11 @@ package net.minecraft.src;
 /* 401:390 */       while (localIterator.hasNext())
 /* 402:    */       {
 /* 403:391 */         Long localLong = (Long)localIterator.next();
-/* 404:392 */         ari localari = (ari)this.c.a(localLong.longValue());
+/* 404:392 */         ari localari = (ari)this.c.getValueByKey(localLong.longValue());
 /* 405:394 */         if ((localari == null) || (localari.b < l))
 /* 406:    */         {
 /* 407:395 */           localIterator.remove();
-/* 408:396 */           this.c.d(localLong.longValue());
+/* 408:396 */           this.c.remove(localLong.longValue());
 /* 409:    */         }
 /* 410:    */       }
 /* 411:    */     }

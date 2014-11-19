@@ -225,7 +225,7 @@ package net.minecraft.src;
 /* 224:241 */     return paramArrayOfDouble;
 /* 225:    */   }
 /* 226:    */   
-/* 227:    */   public boolean a(int paramInt1, int paramInt2)
+/* 227:    */   public boolean chunkLoaded(int paramInt1, int paramInt2)
 /* 228:    */   {
 /* 229:246 */     return true;
 /* 230:    */   }

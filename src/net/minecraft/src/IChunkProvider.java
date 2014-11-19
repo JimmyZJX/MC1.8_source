@@ -3,7 +3,7 @@ import java.util.List;
 
 public abstract interface IChunkProvider
 {
-  public abstract boolean a(int paramInt1, int paramInt2);
+  public abstract boolean chunkLoaded(int paramInt1, int paramInt2);
   
   public abstract Chunk getChunk(int paramInt1, int paramInt2);
   

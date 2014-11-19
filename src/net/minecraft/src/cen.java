@@ -24,7 +24,7 @@ package net.minecraft.src;
 /*  23: 56 */     B(new BlockPosition(8, 64, 8));
 /*  24:    */     
 /*  25: 58 */     this.t.a(this);
-/*  26: 59 */     this.v = k();
+/*  26: 59 */     this.chunkProvider = k();
 /*  27:    */     
 /*  28: 61 */     this.z = new brm();
 /*  29: 62 */     B();
