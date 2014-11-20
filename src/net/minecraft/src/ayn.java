@@ -76,7 +76,7 @@ package net.minecraft.src;
 /* 75:85 */     float f = (float)Math.pow(2.0D, (paramInt2 - 12) / 12.0D);
 /* 76:   */     
 /* 77:87 */     paramaqu.a(paramdt.getX() + 0.5D, paramdt.getY() + 0.5D, paramdt.getZ() + 0.5D, "note." + b(paramInt1), 3.0F, f);
-/* 78:88 */     paramaqu.a(ew.x, paramdt.getX() + 0.5D, paramdt.getY() + 1.2D, paramdt.getZ() + 0.5D, paramInt2 / 24.0D, 0.0D, 0.0D, new int[0]);
+/* 78:88 */     paramaqu.a(EnumParticleEffect.x, paramdt.getX() + 0.5D, paramdt.getY() + 1.2D, paramdt.getZ() + 0.5D, paramInt2 / 24.0D, 0.0D, 0.0D, new int[0]);
 /* 79:89 */     return true;
 /* 80:   */   }
 /* 81:   */   

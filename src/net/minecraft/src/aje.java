@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*   4:    */   private final aqb a;
 /*   5: 17 */   private ItemStack[] b = new ItemStack[3];
 /*   6:    */   private final EntityPlayer c;
-/*   7:    */   private aqc d;
+/*   7:    */   private TradeOffer d;
 /*   8:    */   private int e;
 /*   9:    */   
 /*  10:    */   public aje(EntityPlayer paramahd, aqb paramaqb)
@@ -14,17 +14,17 @@ package net.minecraft.src;
 /*  13: 24 */     this.a = paramaqb;
 /*  14:    */   }
 /*  15:    */   
-/*  16:    */   public int n_()
+/*  16:    */   public int getSize()
 /*  17:    */   {
 /*  18: 29 */     return this.b.length;
 /*  19:    */   }
 /*  20:    */   
-/*  21:    */   public ItemStack a(int paramInt)
+/*  21:    */   public ItemStack get(int paramInt)
 /*  22:    */   {
 /*  23: 35 */     return this.b[paramInt];
 /*  24:    */   }
 /*  25:    */   
-/*  26:    */   public ItemStack a(int paramInt1, int paramInt2)
+/*  26:    */   public ItemStack removeItems(int paramInt1, int paramInt2)
 /*  27:    */   {
 /*  28: 41 */     if (this.b[paramInt1] != null)
 /*  29:    */     {
@@ -144,19 +144,19 @@ package net.minecraft.src;
 /* 143:154 */       aqd localaqd = this.a.b_(this.c);
 /* 144:155 */       if (localaqd != null)
 /* 145:    */       {
-/* 146:156 */         aqc localaqc = localaqd.a((ItemStack)localObject, localamj, this.e);
-/* 147:157 */         if ((localaqc != null) && (!localaqc.h()))
+/* 146:156 */         TradeOffer localaqc = localaqd.a((ItemStack)localObject, localamj, this.e);
+/* 147:157 */         if ((localaqc != null) && (!localaqc.isBlocked()))
 /* 148:    */         {
 /* 149:158 */           this.d = localaqc;
-/* 150:159 */           a(2, localaqc.d().k());
+/* 150:159 */           a(2, localaqc.getItemSold().k());
 /* 151:    */         }
 /* 152:160 */         else if (localamj != null)
 /* 153:    */         {
 /* 154:162 */           localaqc = localaqd.a(localamj, (ItemStack)localObject, this.e);
-/* 155:163 */           if ((localaqc != null) && (!localaqc.h()))
+/* 155:163 */           if ((localaqc != null) && (!localaqc.isBlocked()))
 /* 156:    */           {
 /* 157:164 */             this.d = localaqc;
-/* 158:165 */             a(2, localaqc.d().k());
+/* 158:165 */             a(2, localaqc.getItemSold().k());
 /* 159:    */           }
 /* 160:    */           else
 /* 161:    */           {
@@ -169,10 +169,10 @@ package net.minecraft.src;
 /* 168:    */         }
 /* 169:    */       }
 /* 170:    */     }
-/* 171:175 */     this.a.a_(a(2));
+/* 171:175 */     this.a.a_(get(2));
 /* 172:    */   }
 /* 173:    */   
-/* 174:    */   public aqc i()
+/* 174:    */   public TradeOffer i()
 /* 175:    */   {
 /* 176:179 */     return this.d;
 /* 177:    */   }

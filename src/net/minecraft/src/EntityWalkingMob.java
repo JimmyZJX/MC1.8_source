@@ -44,7 +44,7 @@ package net.minecraft.src;
 /*  43: 46 */     if (this.b == -1.0F) {
 /*  44: 47 */       return true;
 /*  45:    */     }
-/*  46: 49 */     return this.a.i(paramdt) < this.b * this.b;
+/*  46: 49 */     return this.a.dist2(paramdt) < this.b * this.b;
 /*  47:    */   }
 /*  48:    */   
 /*  49:    */   public void a(BlockPosition paramdt, int paramInt)

@@ -92,7 +92,7 @@ package net.minecraft.src;
 /*  91:    */     {
 /*  92:122 */       float f = c(1.0F);
 /*  93:123 */       BlockPosition localdt = new BlockPosition(this.xPos, Math.round(this.yPos), this.zPos);
-/*  94:124 */       if ((f > 0.5F) && (this.random.nextFloat() * 30.0F < (f - 0.4F) * 2.0F) && (this.world.i(localdt)))
+/*  94:124 */       if ((f > 0.5F) && (this.rng.nextFloat() * 30.0F < (f - 0.4F) * 2.0F) && (this.world.i(localdt)))
 /*  95:    */       {
 /*  96:125 */         int i = 1;
 /*  97:    */         
@@ -101,7 +101,7 @@ package net.minecraft.src;
 /* 100:    */         {
 /* 101:129 */           if (localamj.e())
 /* 102:    */           {
-/* 103:130 */             localamj.b(localamj.getDamage() + this.random.nextInt(2));
+/* 103:130 */             localamj.b(localamj.getDamage() + this.rng.nextInt(2));
 /* 104:131 */             if (localamj.getDamage() >= localamj.j())
 /* 105:    */             {
 /* 106:132 */               b(localamj);
@@ -161,19 +161,19 @@ package net.minecraft.src;
 /* 160:    */   {
 /* 161:189 */     if (ck() == 1)
 /* 162:    */     {
-/* 163:191 */       int i = this.random.nextInt(3 + paramInt) - 1;
+/* 163:191 */       int i = this.rng.nextInt(3 + paramInt) - 1;
 /* 164:192 */       for (int j = 0; j < i; j++) {
 /* 165:193 */         a(ItemList.h, 1);
 /* 166:    */       }
 /* 167:    */     }
 /* 168:    */     else
 /* 169:    */     {
-/* 170:197 */       int i = this.random.nextInt(3 + paramInt);
+/* 170:197 */       int i = this.rng.nextInt(3 + paramInt);
 /* 171:198 */       for (int j = 0; j < i; j++) {
 /* 172:199 */         a(ItemList.g, 1);
 /* 173:    */       }
 /* 174:    */     }
-/* 175:204 */     int i = this.random.nextInt(3 + paramInt);
+/* 175:204 */     int i = this.rng.nextInt(3 + paramInt);
 /* 176:205 */     for (int j = 0; j < i; j++) {
 /* 177:206 */       a(ItemList.bone, 1);
 /* 178:    */     }
@@ -196,7 +196,7 @@ package net.minecraft.src;
 /* 195:    */   public xq beforeSpawn(vu paramvu, xq paramxq)
 /* 196:    */   {
 /* 197:227 */     paramxq = super.beforeSpawn(paramvu, paramxq);
-/* 198:229 */     if (((this.world.t instanceof bge)) && (bb().nextInt(5) > 0))
+/* 198:229 */     if (((this.world.t instanceof bge)) && (getRNG().nextInt(5) > 0))
 /* 199:    */     {
 /* 200:230 */       this.i.a(4, this.c);
 /* 201:    */       
@@ -211,13 +211,13 @@ package net.minecraft.src;
 /* 210:238 */       a(paramvu);
 /* 211:239 */       b(paramvu);
 /* 212:    */     }
-/* 213:242 */     j(this.random.nextFloat() < 0.55F * paramvu.c());
+/* 213:242 */     j(this.rng.nextFloat() < 0.55F * paramvu.c());
 /* 214:244 */     if (p(4) == null)
 /* 215:    */     {
 /* 216:245 */       Calendar localCalendar = this.world.Y();
-/* 217:247 */       if ((localCalendar.get(2) + 1 == 10) && (localCalendar.get(5) == 31) && (this.random.nextFloat() < 0.25F))
+/* 217:247 */       if ((localCalendar.get(2) + 1 == 10) && (localCalendar.get(5) == 31) && (this.rng.nextFloat() < 0.25F))
 /* 218:    */       {
-/* 219:249 */         c(4, new ItemStack(this.random.nextFloat() < 0.1F ? BlockList.aZ : BlockList.pumpkin));
+/* 219:249 */         c(4, new ItemStack(this.rng.nextFloat() < 0.1F ? BlockList.aZ : BlockList.pumpkin));
 /* 220:250 */         this.bh[4] = 0.0F;
 /* 221:    */       }
 /* 222:    */     }
@@ -243,7 +243,7 @@ package net.minecraft.src;
 /* 242:272 */     int i = aph.a(Enchantment.v.B, bz());
 /* 243:273 */     int j = aph.a(Enchantment.w.B, bz());
 /* 244:    */     
-/* 245:275 */     localahj.b(paramFloat * 2.0F + (this.random.nextGaussian() * 0.25D + this.world.getDifficulty().a() * 0.11F));
+/* 245:275 */     localahj.b(paramFloat * 2.0F + (this.rng.nextGaussian() * 0.25D + this.world.getDifficulty().a() * 0.11F));
 /* 246:277 */     if (i > 0) {
 /* 247:278 */       localahj.b(localahj.j() + i * 0.5D + 0.5D);
 /* 248:    */     }
@@ -253,7 +253,7 @@ package net.minecraft.src;
 /* 252:283 */     if ((aph.a(Enchantment.x.B, bz()) > 0) || (ck() == 1)) {
 /* 253:284 */       localahj.e(100);
 /* 254:    */     }
-/* 255:287 */     a("random.bow", 1.0F, 1.0F / (bb().nextFloat() * 0.4F + 0.8F));
+/* 255:287 */     a("random.bow", 1.0F, 1.0F / (getRNG().nextFloat() * 0.4F + 0.8F));
 /* 256:288 */     this.world.spawnEntity(localahj);
 /* 257:    */   }
 /* 258:    */   

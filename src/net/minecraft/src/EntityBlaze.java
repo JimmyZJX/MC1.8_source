@@ -71,11 +71,11 @@ package net.minecraft.src;
 /*  70:    */     }
 /*  71: 89 */     if (this.world.isClient)
 /*  72:    */     {
-/*  73: 90 */       if ((this.random.nextInt(24) == 0) && (!R())) {
-/*  74: 91 */         this.world.a(this.xPos + 0.5D, this.yPos + 0.5D, this.zPos + 0.5D, "fire.fire", 1.0F + this.random.nextFloat(), this.random.nextFloat() * 0.7F + 0.3F, false);
+/*  73: 90 */       if ((this.rng.nextInt(24) == 0) && (!R())) {
+/*  74: 91 */         this.world.a(this.xPos + 0.5D, this.yPos + 0.5D, this.zPos + 0.5D, "fire.fire", 1.0F + this.rng.nextFloat(), this.rng.nextFloat() * 0.7F + 0.3F, false);
 /*  75:    */       }
 /*  76: 93 */       for (int i = 0; i < 2; i++) {
-/*  77: 94 */         this.world.a(ew.m, this.xPos + (this.random.nextDouble() - 0.5D) * this.J, this.yPos + this.random.nextDouble() * this.K, this.zPos + (this.random.nextDouble() - 0.5D) * this.J, 0.0D, 0.0D, 0.0D, new int[0]);
+/*  77: 94 */         this.world.a(EnumParticleEffect.m, this.xPos + (this.rng.nextDouble() - 0.5D) * this.J, this.yPos + this.rng.nextDouble() * this.K, this.zPos + (this.rng.nextDouble() - 0.5D) * this.J, 0.0D, 0.0D, 0.0D, new int[0]);
 /*  78:    */       }
 /*  79:    */     }
 /*  80: 98 */     super.m();
@@ -90,7 +90,7 @@ package net.minecraft.src;
 /*  89:108 */     if (this.c <= 0)
 /*  90:    */     {
 /*  91:109 */       this.c = 100;
-/*  92:110 */       this.b = (0.5F + (float)this.random.nextGaussian() * 3.0F);
+/*  92:110 */       this.b = (0.5F + (float)this.rng.nextGaussian() * 3.0F);
 /*  93:    */     }
 /*  94:113 */     EntityLiving localxm = u();
 /*  95:114 */     if ((localxm != null) && (localxm.yPos + localxm.aR() > this.yPos + aR() + this.b))
@@ -117,7 +117,7 @@ package net.minecraft.src;
 /* 116:    */   {
 /* 117:138 */     if (paramBoolean)
 /* 118:    */     {
-/* 119:139 */       int i = this.random.nextInt(2 + paramInt);
+/* 119:139 */       int i = this.rng.nextInt(2 + paramInt);
 /* 120:140 */       for (int j = 0; j < i; j++) {
 /* 121:141 */         a(ItemList.bv, 1);
 /* 122:    */       }

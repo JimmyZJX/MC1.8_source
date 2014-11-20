@@ -50,7 +50,7 @@ import org.apache.logging.log4j.LogManager;
 /*  49:    */   static
 /*  50:    */   {
 /*  51: 75 */     a(EntityItem.class, "Item", 1);
-/*  52: 76 */     a(xk.class, "XPOrb", 2);
+/*  52: 76 */     a(EntityExperienceOrb.class, "XPOrb", 2);
 /*  53:    */     
 /*  54: 78 */     a(adl.class, "LeashKnot", 8);
 /*  55: 79 */     a(adm.class, "Painting", 9);
@@ -171,7 +171,7 @@ import org.apache.logging.log4j.LogManager;
 /* 170:190 */     Entity localwv = null;
 /* 171:    */     try
 /* 172:    */     {
-/* 173:192 */       Class<? extends Entity> localClass = a(paramInt);
+/* 173:192 */       Class<? extends Entity> localClass = fromID(paramInt);
 /* 174:193 */       if (localClass != null) {
 /* 175:194 */         localwv = localClass.getConstructor(new Class[] { World.class }).newInstance(new Object[] { paramaqu });
 /* 176:    */       }
@@ -192,19 +192,19 @@ import org.apache.logging.log4j.LogManager;
 /* 191:207 */     return localInteger == null ? 0 : localInteger.intValue();
 /* 192:    */   }
 /* 193:    */   
-/* 194:    */   public static Class<? extends Entity> a(int paramInt)
+/* 194:    */   public static Class<? extends Entity> fromID(int paramInt)
 /* 195:    */   {
 /* 196:212 */     return IDtoClassMapping.get(Integer.valueOf(paramInt));
 /* 197:    */   }
 /* 198:    */   
 /* 199:    */   public static String b(Entity paramwv)
 /* 200:    */   {
-/* 201:216 */     return (String)classToStringMapping.get(paramwv.getClass());
+/* 201:216 */     return classToStringMapping.get(paramwv.getClass());
 /* 202:    */   }
 /* 203:    */   
 /* 204:    */   public static int a(String paramString)
 /* 205:    */   {
-/* 206:220 */     Integer localInteger = (Integer)stringToIDMapping.get(paramString);
+/* 206:220 */     Integer localInteger = stringToIDMapping.get(paramString);
 /* 207:221 */     if (localInteger == null) {
 /* 208:223 */       return 90;
 /* 209:    */     }
@@ -213,7 +213,7 @@ import org.apache.logging.log4j.LogManager;
 /* 212:    */   
 /* 213:    */   public static String b(int paramInt)
 /* 214:    */   {
-/* 215:230 */     return (String)classToStringMapping.get(a(paramInt));
+/* 215:230 */     return (String)classToStringMapping.get(fromID(paramInt));
 /* 216:    */   }
 /* 217:    */   
 /* 218:    */   public static List<String> b()

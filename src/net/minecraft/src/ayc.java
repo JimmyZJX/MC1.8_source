@@ -47,7 +47,7 @@ package net.minecraft.src;
 /* 46:   */   {
 /* 47:60 */     super.c(paramaqu, paramdt, parambec, paramRandom);
 /* 48:61 */     if (paramRandom.nextInt(10) == 0) {
-/* 49:62 */       paramaqu.a(ew.w, paramdt.getX() + paramRandom.nextFloat(), paramdt.getY() + 1.1F, paramdt.getZ() + paramRandom.nextFloat(), 0.0D, 0.0D, 0.0D, new int[0]);
+/* 49:62 */       paramaqu.a(EnumParticleEffect.w, paramdt.getX() + paramRandom.nextFloat(), paramdt.getY() + 1.1F, paramdt.getZ() + paramRandom.nextFloat(), 0.0D, 0.0D, 0.0D, new int[0]);
 /* 50:   */     }
 /* 51:   */   }
 /* 52:   */   

@@ -660,7 +660,7 @@ package net.minecraft.src;
 /*  655:     */         }
 /*  656: 721 */         else if (parammd.a() == me.b)
 /*  657:     */         {
-/*  658: 722 */           if (((localwv instanceof EntityItem)) || ((localwv instanceof xk)) || ((localwv instanceof ahj)) || (localwv == this.b))
+/*  658: 722 */           if (((localwv instanceof EntityItem)) || ((localwv instanceof EntityExperienceOrb)) || ((localwv instanceof ahj)) || (localwv == this.b))
 /*  659:     */           {
 /*  660: 723 */             c("Attempting to attack an invalid entity");
 /*  661: 724 */             this.d.f("Player " + this.b.getName() + " tried to attack an invalid entity");

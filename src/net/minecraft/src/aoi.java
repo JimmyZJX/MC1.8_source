@@ -19,9 +19,9 @@ package net.minecraft.src;
 /*  18: 28 */     int n = 0;
 /*  19: 29 */     int i1 = 0;
 /*  20:    */     Object localObject2;
-/*  21: 31 */     for (int i2 = 0; i2 < paramain.n_(); i2++)
+/*  21: 31 */     for (int i2 = 0; i2 < paramain.getSize(); i2++)
 /*  22:    */     {
-/*  23: 32 */       localObject2 = paramain.a(i2);
+/*  23: 32 */       localObject2 = paramain.get(i2);
 /*  24: 33 */       if (localObject2 != null) {
 /*  25: 37 */         if (((ItemStack)localObject2).getItem() == ItemList.H) {
 /*  26: 38 */           j++;
@@ -61,9 +61,9 @@ package net.minecraft.src;
 /*  60: 77 */         localObject1 = new NBTTagCompound();
 /*  61: 78 */         localObject2 = new NBTTagCompound();
 /*  62: 79 */         fv localfv = new fv();
-/*  63: 81 */         for (int i5 = 0; i5 < paramain.n_(); i5++)
+/*  63: 81 */         for (int i5 = 0; i5 < paramain.getSize(); i5++)
 /*  64:    */         {
-/*  65: 82 */           ItemStack localamj2 = paramain.a(i5);
+/*  65: 82 */           ItemStack localamj2 = paramain.get(i5);
 /*  66: 83 */           if ((localamj2 != null) && (localamj2.getItem() == ItemList.cc)) {
 /*  67: 87 */             if ((localamj2.hasTagCompound()) && (localamj2.getTagCompound().hasKey("Explosion", 10))) {
 /*  68: 88 */               localfv.a(localamj2.getTagCompound().getCompoundTag("Explosion"));
@@ -86,9 +86,9 @@ package net.minecraft.src;
 /*  85:105 */       byte b = 0;
 /*  86:    */       
 /*  87:107 */       ArrayList localArrayList = Lists.newArrayList();
-/*  88:108 */       for (int i6 = 0; i6 < paramain.n_(); i6++)
+/*  88:108 */       for (int i6 = 0; i6 < paramain.getSize(); i6++)
 /*  89:    */       {
-/*  90:109 */         ItemStack localamj3 = paramain.a(i6);
+/*  90:109 */         ItemStack localamj3 = paramain.get(i6);
 /*  91:110 */         if (localamj3 != null) {
 /*  92:114 */           if (localamj3.getItem() == ItemList.dye) {
 /*  93:115 */             localArrayList.add(Integer.valueOf(akw.a[(localamj3.getDamage2() & 0xF)]));
@@ -120,9 +120,9 @@ package net.minecraft.src;
 /* 119:143 */     if ((j == 0) && (i == 0) && (m == 1) && (k > 0) && (k == n))
 /* 120:    */     {
 /* 121:144 */       localObject1 = Lists.newArrayList();
-/* 122:145 */       for (int i3 = 0; i3 < paramain.n_(); i3++)
+/* 122:145 */       for (int i3 = 0; i3 < paramain.getSize(); i3++)
 /* 123:    */       {
-/* 124:146 */         ItemStack localamj1 = paramain.a(i3);
+/* 124:146 */         ItemStack localamj1 = paramain.get(i3);
 /* 125:147 */         if (localamj1 != null) {
 /* 126:151 */           if (localamj1.getItem() == ItemList.dye)
 /* 127:    */           {
@@ -173,10 +173,10 @@ package net.minecraft.src;
 /* 172:    */   
 /* 173:    */   public ItemStack[] b(ain paramain)
 /* 174:    */   {
-/* 175:196 */     ItemStack[] arrayOfamj = new ItemStack[paramain.n_()];
+/* 175:196 */     ItemStack[] arrayOfamj = new ItemStack[paramain.getSize()];
 /* 176:198 */     for (int i = 0; i < arrayOfamj.length; i++)
 /* 177:    */     {
-/* 178:199 */       ItemStack localamj = paramain.a(i);
+/* 178:199 */       ItemStack localamj = paramain.get(i);
 /* 179:200 */       if ((localamj != null) && (localamj.getItem().r())) {
 /* 180:201 */         arrayOfamj[i] = new ItemStack(localamj.getItem().q());
 /* 181:    */       }

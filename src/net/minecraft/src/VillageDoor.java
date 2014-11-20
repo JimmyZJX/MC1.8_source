@@ -1,5 +1,5 @@
 package net.minecraft.src;
-/*   1:    */ public class abh
+/*   1:    */ public class VillageDoor
 /*   2:    */ {
 /*   3:    */   private final BlockPosition a;
 /*   4:    */   private final BlockPosition b;
@@ -8,7 +8,7 @@ package net.minecraft.src;
 /*   7:    */   private boolean e;
 /*   8:    */   private int f;
 /*   9:    */   
-/*  10:    */   public abh(BlockPosition paramdt, int paramInt1, int paramInt2, int paramInt3)
+/*  10:    */   public VillageDoor(BlockPosition paramdt, int paramInt1, int paramInt2, int paramInt3)
 /*  11:    */   {
 /*  12: 21 */     this(paramdt, a(paramInt1, paramInt2), paramInt3);
 /*  13:    */   }
@@ -27,7 +27,7 @@ package net.minecraft.src;
 /*  26: 32 */     return EnumDirection.SOUTH;
 /*  27:    */   }
 /*  28:    */   
-/*  29:    */   public abh(BlockPosition paramdt, EnumDirection paramej, int paramInt)
+/*  29:    */   public VillageDoor(BlockPosition paramdt, EnumDirection paramej, int paramInt)
 /*  30:    */   {
 /*  31: 37 */     this.a = paramdt;
 /*  32: 38 */     this.c = paramej;
@@ -42,12 +42,12 @@ package net.minecraft.src;
 /*  41:    */   
 /*  42:    */   public int a(BlockPosition paramdt)
 /*  43:    */   {
-/*  44: 52 */     return (int)paramdt.i(d());
+/*  44: 52 */     return (int)paramdt.dist2(d());
 /*  45:    */   }
 /*  46:    */   
 /*  47:    */   public int b(BlockPosition paramdt)
 /*  48:    */   {
-/*  49: 56 */     return (int)this.b.i(paramdt);
+/*  49: 56 */     return (int)this.b.dist2(paramdt);
 /*  50:    */   }
 /*  51:    */   
 /*  52:    */   public boolean c(BlockPosition paramdt)

@@ -794,7 +794,7 @@ package net.minecraft.src;
 /*  793: 822 */     a(ItemList.M, "golden_hoe");
 /*  794: 823 */     a(ItemList.N, "wheat_seeds");
 /*  795: 824 */     a(ItemList.O, "wheat");
-/*  796: 825 */     a(ItemList.P, "bread");
+/*  796: 825 */     a(ItemList.bread, "bread");
 /*  797:     */     
 /*  798: 827 */     a(ItemList.Q, "leather_helmet");
 /*  799: 828 */     a(ItemList.R, "leather_chestplate");
@@ -938,7 +938,7 @@ package net.minecraft.src;
 /*  937: 966 */     a(ItemList.bH, "ender_eye");
 /*  938: 967 */     a(ItemList.bI, "speckled_melon");
 /*  939:     */     
-/*  940: 969 */     this.m.a(ItemList.bJ, new cqo(this));
+/*  940: 969 */     this.m.a(ItemList.spawnEgg, new cqo(this));
 /*  941:     */     
 /*  942:     */ 
 /*  943:     */ 
@@ -948,11 +948,11 @@ package net.minecraft.src;
 /*  947: 976 */     a(ItemList.bK, "experience_bottle");
 /*  948: 977 */     a(ItemList.bL, "fire_charge");
 /*  949: 978 */     a(ItemList.bM, "writable_book");
-/*  950: 979 */     a(ItemList.bO, "emerald");
+/*  950: 979 */     a(ItemList.emerald, "emerald");
 /*  951: 980 */     a(ItemList.itemFrame, "item_frame");
 /*  952: 981 */     a(ItemList.bQ, "flower_pot");
 /*  953: 982 */     a(ItemList.carrot, "carrot");
-/*  954: 983 */     a(ItemList.bS, "potato");
+/*  954: 983 */     a(ItemList.potato, "potato");
 /*  955:     */     
 /*  956: 985 */     a(ItemList.bT, "baked_potato");
 /*  957: 986 */     a(ItemList.bU, "poisonous_potato");

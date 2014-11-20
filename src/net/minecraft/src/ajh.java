@@ -16,14 +16,14 @@ package net.minecraft.src;
 /* 15:   */   
 /* 16:   */   public void a(fv paramfv)
 /* 17:   */   {
-/* 18:22 */     for (int i = 0; i < n_(); i++) {
+/* 18:22 */     for (int i = 0; i < getSize(); i++) {
 /* 19:23 */       a(i, null);
 /* 20:   */     }
 /* 21:25 */     for (int i = 0; i < paramfv.c(); i++)
 /* 22:   */     {
 /* 23:26 */       NBTTagCompound localfn = paramfv.b(i);
 /* 24:27 */       int j = localfn.d("Slot") & 0xFF;
-/* 25:28 */       if ((j >= 0) && (j < n_())) {
+/* 25:28 */       if ((j >= 0) && (j < getSize())) {
 /* 26:29 */         a(j, ItemStack.loadItemStackFromNBT(localfn));
 /* 27:   */       }
 /* 28:   */     }
@@ -32,9 +32,9 @@ package net.minecraft.src;
 /* 31:   */   public fv h()
 /* 32:   */   {
 /* 33:35 */     fv localfv = new fv();
-/* 34:36 */     for (int i = 0; i < n_(); i++)
+/* 34:36 */     for (int i = 0; i < getSize(); i++)
 /* 35:   */     {
-/* 36:37 */       ItemStack localamj = a(i);
+/* 36:37 */       ItemStack localamj = get(i);
 /* 37:38 */       if (localamj != null)
 /* 38:   */       {
 /* 39:39 */         NBTTagCompound localfn = new NBTTagCompound();

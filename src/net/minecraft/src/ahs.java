@@ -24,16 +24,16 @@ package net.minecraft.src;
 /* 23:27 */     if (parambru.d != null) {
 /* 24:28 */       parambru.d.a(DamageSource.a(this, n()), 0.0F);
 /* 25:   */     }
-/* 26:30 */     if ((!this.world.isClient) && (this.random.nextInt(8) == 0))
+/* 26:30 */     if ((!this.world.isClient) && (this.rng.nextInt(8) == 0))
 /* 27:   */     {
 /* 28:31 */       int i = 1;
-/* 29:32 */       if (this.random.nextInt(32) == 0) {
+/* 29:32 */       if (this.rng.nextInt(32) == 0) {
 /* 30:33 */         i = 4;
 /* 31:   */       }
 /* 32:35 */       for (int j = 0; j < i; j++)
 /* 33:   */       {
 /* 34:36 */         EntityChicken localabr = new EntityChicken(this.world);
-/* 35:37 */         localabr.b(-24000);
+/* 35:37 */         localabr.setAge(-24000);
 /* 36:   */         
 /* 37:39 */         localabr.setPositionAndAngles(this.xPos, this.yPos, this.zPos, this.yaw, 0.0F);
 /* 38:40 */         this.world.spawnEntity(localabr);
@@ -41,7 +41,7 @@ package net.minecraft.src;
 /* 40:   */     }
 /* 41:44 */     double d = 0.08D;
 /* 42:45 */     for (int k = 0; k < 8; k++) {
-/* 43:46 */       this.world.a(ew.K, this.xPos, this.yPos, this.zPos, (this.random.nextFloat() - 0.5D) * 0.08D, (this.random.nextFloat() - 0.5D) * 0.08D, (this.random.nextFloat() - 0.5D) * 0.08D, new int[] { Item.b(ItemList.aP) });
+/* 43:46 */       this.world.a(EnumParticleEffect.K, this.xPos, this.yPos, this.zPos, (this.rng.nextFloat() - 0.5D) * 0.08D, (this.rng.nextFloat() - 0.5D) * 0.08D, (this.rng.nextFloat() - 0.5D) * 0.08D, new int[] { Item.b(ItemList.aP) });
 /* 44:   */     }
 /* 45:49 */     if (!this.world.isClient) {
 /* 46:50 */       setDead();

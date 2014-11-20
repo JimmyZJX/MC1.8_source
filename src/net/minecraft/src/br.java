@@ -47,7 +47,7 @@ package net.minecraft.src;
 /*  45: 57 */     boolean bool = localqw.bg.a(localamj);
 /*  46: 58 */     if (bool)
 /*  47:    */     {
-/*  48: 59 */       localqw.world.a(localqw, "random.pop", 0.2F, ((localqw.bb().nextFloat() - localqw.bb().nextFloat()) * 0.7F + 1.0F) * 2.0F);
+/*  48: 59 */       localqw.world.a(localqw, "random.pop", 0.2F, ((localqw.getRNG().nextFloat() - localqw.getRNG().nextFloat()) * 0.7F + 1.0F) * 2.0F);
 /*  49: 60 */       localqw.bh.b();
 /*  50:    */     }
 /*  51:    */     EntityItem localadw;

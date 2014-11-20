@@ -17,7 +17,7 @@ package net.minecraft.src;
 /* 16:   */   
 /* 17:   */   public boolean a()
 /* 18:   */   {
-/* 19:20 */     if (this.a.l() >= 0) {
+/* 19:20 */     if (this.a.getAge() >= 0) {
 /* 20:21 */       return false;
 /* 21:   */     }
 /* 22:24 */     List<? extends EntityAnimal> localList = this.a.world.a(this.a.getClass(), this.a.getAABB().expand(8.0D, 4.0D, 8.0D));
@@ -25,7 +25,7 @@ package net.minecraft.src;
 /* 24:26 */     EntityAnimal localObject = null;
 /* 25:27 */     double d1 = 1.7976931348623157E+308D;
 /* 26:28 */     for (EntityAnimal localabq : localList) {
-/* 27:29 */       if (localabq.l() >= 0)
+/* 27:29 */       if (localabq.getAge() >= 0)
 /* 28:   */       {
 /* 29:32 */         double d2 = this.a.h(localabq);
 /* 30:33 */         if (d2 <= d1)
@@ -47,7 +47,7 @@ package net.minecraft.src;
 /* 46:   */   
 /* 47:   */   public boolean b()
 /* 48:   */   {
-/* 49:52 */     if (this.a.l() >= 0) {
+/* 49:52 */     if (this.a.getAge() >= 0) {
 /* 50:53 */       return false;
 /* 51:   */     }
 /* 52:55 */     if (!this.b.ai()) {

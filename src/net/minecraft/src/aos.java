@@ -23,10 +23,10 @@ package net.minecraft.src;
 /*  22:    */   
 /*  23:    */   public ItemStack[] b(ain paramain)
 /*  24:    */   {
-/*  25: 32 */     ItemStack[] arrayOfamj = new ItemStack[paramain.n_()];
+/*  25: 32 */     ItemStack[] arrayOfamj = new ItemStack[paramain.getSize()];
 /*  26: 34 */     for (int i = 0; i < arrayOfamj.length; i++)
 /*  27:    */     {
-/*  28: 35 */       ItemStack localamj = paramain.a(i);
+/*  28: 35 */       ItemStack localamj = paramain.get(i);
 /*  29: 36 */       if ((localamj != null) && (localamj.getItem().r())) {
 /*  30: 37 */         arrayOfamj[i] = new ItemStack(localamj.getItem().q());
 /*  31:    */       }
@@ -87,9 +87,9 @@ package net.minecraft.src;
 /*  86:    */   {
 /*  87: 93 */     ItemStack localamj1 = b().k();
 /*  88: 95 */     if (this.e) {
-/*  89: 96 */       for (int i = 0; i < paramain.n_(); i++)
+/*  89: 96 */       for (int i = 0; i < paramain.getSize(); i++)
 /*  90:    */       {
-/*  91: 97 */         ItemStack localamj2 = paramain.a(i);
+/*  91: 97 */         ItemStack localamj2 = paramain.get(i);
 /*  92: 99 */         if ((localamj2 != null) && (localamj2.hasTagCompound())) {
 /*  93:100 */           localamj1.setTagCompound((NBTTagCompound)localamj2.getTagCompound().b());
 /*  94:    */         }

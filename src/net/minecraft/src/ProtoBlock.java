@@ -420,9 +420,9 @@ package net.minecraft.src;
 /*  420: 522 */     if (!paramaqu.isClient) {
 /*  421: 523 */       while (paramInt > 0)
 /*  422:     */       {
-/*  423: 524 */         int i1 = xk.a(paramInt);
+/*  423: 524 */         int i1 = EntityExperienceOrb.a(paramInt);
 /*  424: 525 */         paramInt -= i1;
-/*  425: 526 */         paramaqu.spawnEntity(new xk(paramaqu, paramdt.getX() + 0.5D, paramdt.getY() + 0.5D, paramdt.getZ() + 0.5D, i1));
+/*  425: 526 */         paramaqu.spawnEntity(new EntityExperienceOrb(paramaqu, paramdt.getX() + 0.5D, paramdt.getY() + 0.5D, paramdt.getZ() + 0.5D, i1));
 /*  426:     */       }
 /*  427:     */     }
 /*  428:     */   }

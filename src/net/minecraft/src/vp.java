@@ -24,9 +24,9 @@ package net.minecraft.src;
 /*  23:    */     }
 /*  24:    */   }
 /*  25:    */   
-/*  26:    */   public int n_()
+/*  26:    */   public int getSize()
 /*  27:    */   {
-/*  28: 38 */     return this.b.n_() + this.c.n_();
+/*  28: 38 */     return this.b.getSize() + this.c.getSize();
 /*  29:    */   }
 /*  30:    */   
 /*  31:    */   public boolean a(vq paramvq)
@@ -58,34 +58,34 @@ package net.minecraft.src;
 /*  57: 66 */     return new hz(getName(), new Object[0]);
 /*  58:    */   }
 /*  59:    */   
-/*  60:    */   public ItemStack a(int paramInt)
+/*  60:    */   public ItemStack get(int paramInt)
 /*  61:    */   {
-/*  62: 72 */     if (paramInt >= this.b.n_()) {
-/*  63: 73 */       return this.c.a(paramInt - this.b.n_());
+/*  62: 72 */     if (paramInt >= this.b.getSize()) {
+/*  63: 73 */       return this.c.get(paramInt - this.b.getSize());
 /*  64:    */     }
-/*  65: 75 */     return this.b.a(paramInt);
+/*  65: 75 */     return this.b.get(paramInt);
 /*  66:    */   }
 /*  67:    */   
-/*  68:    */   public ItemStack a(int paramInt1, int paramInt2)
+/*  68:    */   public ItemStack removeItems(int paramInt1, int paramInt2)
 /*  69:    */   {
-/*  70: 82 */     if (paramInt1 >= this.b.n_()) {
-/*  71: 83 */       return this.c.a(paramInt1 - this.b.n_(), paramInt2);
+/*  70: 82 */     if (paramInt1 >= this.b.getSize()) {
+/*  71: 83 */       return this.c.removeItems(paramInt1 - this.b.getSize(), paramInt2);
 /*  72:    */     }
-/*  73: 85 */     return this.b.a(paramInt1, paramInt2);
+/*  73: 85 */     return this.b.removeItems(paramInt1, paramInt2);
 /*  74:    */   }
 /*  75:    */   
 /*  76:    */   public ItemStack b(int paramInt)
 /*  77:    */   {
-/*  78: 92 */     if (paramInt >= this.b.n_()) {
-/*  79: 93 */       return this.c.b(paramInt - this.b.n_());
+/*  78: 92 */     if (paramInt >= this.b.getSize()) {
+/*  79: 93 */       return this.c.b(paramInt - this.b.getSize());
 /*  80:    */     }
 /*  81: 95 */     return this.b.b(paramInt);
 /*  82:    */   }
 /*  83:    */   
 /*  84:    */   public void a(int paramInt, ItemStack paramamj)
 /*  85:    */   {
-/*  86:101 */     if (paramInt >= this.b.n_()) {
-/*  87:102 */       this.c.a(paramInt - this.b.n_(), paramamj);
+/*  86:101 */     if (paramInt >= this.b.getSize()) {
+/*  87:102 */       this.c.a(paramInt - this.b.getSize(), paramamj);
 /*  88:    */     } else {
 /*  89:104 */       this.b.a(paramInt, paramamj);
 /*  90:    */     }

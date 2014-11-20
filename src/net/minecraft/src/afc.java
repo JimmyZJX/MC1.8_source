@@ -26,7 +26,7 @@ package net.minecraft.src;
 /*  25:183 */     double d4 = d1 * d1 + d2 * d2 + d3 * d3;
 /*  26:185 */     if (this.h-- <= 0)
 /*  27:    */     {
-/*  28:186 */       this.h += this.g.bb().nextInt(5) + 2;
+/*  28:186 */       this.h += this.g.getRNG().nextInt(5) + 2;
 /*  29:    */       
 /*  30:188 */       d4 = MathUtils.a(d4);
 /*  31:190 */       if (b(this.b, this.c, this.d, d4))

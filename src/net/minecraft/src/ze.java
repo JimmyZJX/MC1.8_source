@@ -60,10 +60,10 @@ package net.minecraft.src;
 /*  59:    */       }
 /*  60: 77 */       else if ((this.f == 1) && (localatr == BlockList.air))
 /*  61:    */       {
-/*  62: 80 */         wa localwa = this.c.co();
-/*  63: 81 */         for (int i = 0; i < localwa.n_(); i++)
+/*  62: 80 */         wa localwa = this.c.getInventory();
+/*  63: 81 */         for (int i = 0; i < localwa.getSize(); i++)
 /*  64:    */         {
-/*  65: 82 */           ItemStack localamj = localwa.a(i);
+/*  65: 82 */           ItemStack localamj = localwa.get(i);
 /*  66: 83 */           int j = 0;
 /*  67: 84 */           if (localamj != null) {
 /*  68: 85 */             if (localamj.getItem() == ItemList.N)
@@ -71,7 +71,7 @@ package net.minecraft.src;
 /*  70: 86 */               localaqu.setBlock(localdt, BlockList.aj.instance(), 3);
 /*  71: 87 */               j = 1;
 /*  72:    */             }
-/*  73: 88 */             else if (localamj.getItem() == ItemList.bS)
+/*  73: 88 */             else if (localamj.getItem() == ItemList.potato)
 /*  74:    */             {
 /*  75: 89 */               localaqu.setBlock(localdt, BlockList.cc.instance(), 3);
 /*  76: 90 */               j = 1;

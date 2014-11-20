@@ -43,11 +43,11 @@ package net.minecraft.src;
 /*  42: 51 */         i += localfn2.d("Flight");
 /*  43:    */       }
 /*  44:    */     }
-/*  45: 54 */     this.xVelocity = (this.random.nextGaussian() * 0.001D);
-/*  46: 55 */     this.zVelocity = (this.random.nextGaussian() * 0.001D);
+/*  45: 54 */     this.xVelocity = (this.rng.nextGaussian() * 0.001D);
+/*  46: 55 */     this.zVelocity = (this.rng.nextGaussian() * 0.001D);
 /*  47: 56 */     this.yVelocity = 0.05D;
 /*  48:    */     
-/*  49: 58 */     this.b = (10 * i + this.random.nextInt(6) + this.random.nextInt(7));
+/*  49: 58 */     this.b = (10 * i + this.rng.nextInt(6) + this.rng.nextInt(7));
 /*  50:    */   }
 /*  51:    */   
 /*  52:    */   public void i(double paramDouble1, double paramDouble2, double paramDouble3)
@@ -97,16 +97,16 @@ package net.minecraft.src;
 /*  96:    */     }
 /*  97:110 */     this.a += 1;
 /*  98:111 */     if ((this.world.isClient) && (this.a % 2 < 2)) {
-/*  99:112 */       this.world.a(ew.d, this.xPos, this.yPos - 0.3D, this.zPos, this.random.nextGaussian() * 0.05D, -this.yVelocity * 0.5D, this.random.nextGaussian() * 0.05D, new int[0]);
+/*  99:112 */       this.world.a(EnumParticleEffect.FIREWORKS_SPARK, this.xPos, this.yPos - 0.3D, this.zPos, this.rng.nextGaussian() * 0.05D, -this.yVelocity * 0.5D, this.rng.nextGaussian() * 0.05D, new int[0]);
 /* 100:    */     }
 /* 101:114 */     if ((!this.world.isClient) && (this.a > this.b))
 /* 102:    */     {
-/* 103:115 */       this.world.a(this, (byte)17);
+/* 103:115 */       this.world.sendSignal(this, (byte)17);
 /* 104:116 */       setDead();
 /* 105:    */     }
 /* 106:    */   }
 /* 107:    */   
-/* 108:    */   public void a(byte paramByte)
+/* 108:    */   public void onSignal(byte paramByte)
 /* 109:    */   {
 /* 110:122 */     if ((paramByte == 17) && (this.world.isClient))
 /* 111:    */     {
@@ -117,7 +117,7 @@ package net.minecraft.src;
 /* 116:    */       }
 /* 117:128 */       this.world.a(this.xPos, this.yPos, this.zPos, this.xVelocity, this.yVelocity, this.zVelocity, localfn);
 /* 118:    */     }
-/* 119:130 */     super.a(paramByte);
+/* 119:130 */     super.onSignal(paramByte);
 /* 120:    */   }
 /* 121:    */   
 /* 122:    */   public void writeEntityToNBT(NBTTagCompound paramfn)

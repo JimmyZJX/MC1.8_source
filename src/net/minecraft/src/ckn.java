@@ -1839,7 +1839,7 @@ package net.minecraft.src;
 /* 1838:     */     }
 /* 1839:     */   }
 /* 1840:     */   
-/* 1841:     */   private void a(ew paramew, double paramDouble1, double paramDouble2, double paramDouble3, double paramDouble4, double paramDouble5, double paramDouble6, int... paramVarArgs)
+/* 1841:     */   private void a(EnumParticleEffect paramew, double paramDouble1, double paramDouble2, double paramDouble3, double paramDouble4, double paramDouble5, double paramDouble6, int... paramVarArgs)
 /* 1842:     */   {
 /* 1843:2142 */     a(paramew.c(), paramew.e(), paramDouble1, paramDouble2, paramDouble3, paramDouble4, paramDouble5, paramDouble6, paramVarArgs);
 /* 1844:     */   }
@@ -1945,7 +1945,7 @@ package net.minecraft.src;
 /* 1944:2248 */         double d13 = i1 * d6 + localRandom.nextGaussian() * 0.01D;
 /* 1945:2249 */         double d15 = -0.03D + localRandom.nextGaussian() * 0.01D;
 /* 1946:2250 */         double d17 = i2 * d6 + localRandom.nextGaussian() * 0.01D;
-/* 1947:2251 */         a(ew.l, d7, d9, d11, d13, d15, d17, new int[0]);
+/* 1947:2251 */         a(EnumParticleEffect.l, d7, d9, d11, d13, d15, d17, new int[0]);
 /* 1948:     */       }
 /* 1949:2254 */       break;
 /* 1950:     */     case 2003: 
@@ -1953,12 +1953,12 @@ package net.minecraft.src;
 /* 1952:2257 */       d2 = paramdt.getY();
 /* 1953:2258 */       d3 = paramdt.getZ() + 0.5D;
 /* 1954:2260 */       for (int i3 = 0; i3 < 8; i3++) {
-/* 1955:2261 */         a(ew.K, d1, d2, d3, localRandom.nextGaussian() * 0.15D, localRandom.nextDouble() * 0.2D, localRandom.nextGaussian() * 0.15D, new int[] { Item.b(ItemList.bH) });
+/* 1955:2261 */         a(EnumParticleEffect.K, d1, d2, d3, localRandom.nextGaussian() * 0.15D, localRandom.nextDouble() * 0.2D, localRandom.nextGaussian() * 0.15D, new int[] { Item.b(ItemList.bH) });
 /* 1956:     */       }
 /* 1957:2263 */       for (double d5 = 0.0D; d5 < 6.283185307179586D; d5 += 0.1570796326794897D)
 /* 1958:     */       {
-/* 1959:2264 */         a(ew.y, d1 + Math.cos(d5) * 5.0D, d2 - 0.4D, d3 + Math.sin(d5) * 5.0D, Math.cos(d5) * -5.0D, 0.0D, Math.sin(d5) * -5.0D, new int[0]);
-/* 1960:2265 */         a(ew.y, d1 + Math.cos(d5) * 5.0D, d2 - 0.4D, d3 + Math.sin(d5) * 5.0D, Math.cos(d5) * -7.0D, 0.0D, Math.sin(d5) * -7.0D, new int[0]);
+/* 1959:2264 */         a(EnumParticleEffect.y, d1 + Math.cos(d5) * 5.0D, d2 - 0.4D, d3 + Math.sin(d5) * 5.0D, Math.cos(d5) * -5.0D, 0.0D, Math.sin(d5) * -5.0D, new int[0]);
+/* 1960:2265 */         a(EnumParticleEffect.y, d1 + Math.cos(d5) * 5.0D, d2 - 0.4D, d3 + Math.sin(d5) * 5.0D, Math.cos(d5) * -7.0D, 0.0D, Math.sin(d5) * -7.0D, new int[0]);
 /* 1961:     */       }
 /* 1962:2268 */       break;
 /* 1963:     */     case 2002: 
@@ -1966,7 +1966,7 @@ package net.minecraft.src;
 /* 1965:2271 */       d2 = paramdt.getY();
 /* 1966:2272 */       d3 = paramdt.getZ();
 /* 1967:2274 */       for (int i4 = 0; i4 < 8; i4++) {
-/* 1968:2275 */         a(ew.K, d1, d2, d3, localRandom.nextGaussian() * 0.15D, localRandom.nextDouble() * 0.2D, localRandom.nextGaussian() * 0.15D, new int[] { Item.b(ItemList.potion), paramInt2 });
+/* 1968:2275 */         a(EnumParticleEffect.K, d1, d2, d3, localRandom.nextGaussian() * 0.15D, localRandom.nextDouble() * 0.2D, localRandom.nextGaussian() * 0.15D, new int[] { Item.b(ItemList.potion), paramInt2 });
 /* 1969:     */       }
 /* 1970:2278 */       int i4 = ItemList.potion.g(paramInt2);
 /* 1971:     */       
@@ -1974,9 +1974,9 @@ package net.minecraft.src;
 /* 1973:2281 */       float f2 = (i4 >> 8 & 0xFF) / 255.0F;
 /* 1974:2282 */       float f3 = (i4 >> 0 & 0xFF) / 255.0F;
 /* 1975:     */       
-/* 1976:2284 */       ew localew = ew.n;
+/* 1976:2284 */       EnumParticleEffect localew = EnumParticleEffect.n;
 /* 1977:2285 */       if (ItemList.potion.h(paramInt2)) {
-/* 1978:2286 */         localew = ew.o;
+/* 1978:2286 */         localew = EnumParticleEffect.o;
 /* 1979:     */       }
 /* 1980:2289 */       for (i6 = 0; i6 < 100; i6++)
 /* 1981:     */       {
@@ -2010,8 +2010,8 @@ package net.minecraft.src;
 /* 2009:2315 */         d10 = paramdt.getY() + 0.5D + (this.k.rng.nextFloat() - 0.5D) * 2.0D;
 /* 2010:2316 */         d12 = paramdt.getZ() + 0.5D + (this.k.rng.nextFloat() - 0.5D) * 2.0D;
 /* 2011:     */         
-/* 2012:2318 */         this.k.a(ew.l, d8, d10, d12, 0.0D, 0.0D, 0.0D, new int[0]);
-/* 2013:2319 */         this.k.a(ew.A, d8, d10, d12, 0.0D, 0.0D, 0.0D, new int[0]);
+/* 2012:2318 */         this.k.a(EnumParticleEffect.l, d8, d10, d12, 0.0D, 0.0D, 0.0D, new int[0]);
+/* 2013:2319 */         this.k.a(EnumParticleEffect.A, d8, d10, d12, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 2014:     */       }
 /* 2015:2321 */       break;
 /* 2016:     */     case 2005: 

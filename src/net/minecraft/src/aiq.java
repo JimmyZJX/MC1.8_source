@@ -92,7 +92,7 @@ package net.minecraft.src;
 /*  91:    */   {
 /*  92:126 */     if (paramvq == this.a)
 /*  93:    */     {
-/*  94:127 */       ItemStack localamj = paramvq.a(0);
+/*  94:127 */       ItemStack localamj = paramvq.get(0);
 /*  95:    */       int m;
 /*  96:129 */       if ((localamj == null) || (!localamj.v()))
 /*  97:    */       {
@@ -162,8 +162,8 @@ package net.minecraft.src;
 /* 161:    */   
 /* 162:    */   public boolean a(EntityPlayer paramahd, int paramInt)
 /* 163:    */   {
-/* 164:197 */     ItemStack localamj1 = this.a.a(0);
-/* 165:198 */     ItemStack localamj2 = this.a.a(1);
+/* 164:197 */     ItemStack localamj1 = this.a.get(0);
+/* 165:198 */     ItemStack localamj2 = this.a.get(1);
 /* 166:    */     
 /* 167:200 */     int m = paramInt + 1;
 /* 168:202 */     if (((localamj2 == null) || (localamj2.stackSize < m)) && (!paramahd.by.d)) {
@@ -220,7 +220,7 @@ package net.minecraft.src;
 /* 219:    */   
 /* 220:    */   public int e()
 /* 221:    */   {
-/* 222:256 */     ItemStack localamj = this.a.a(1);
+/* 222:256 */     ItemStack localamj = this.a.get(1);
 /* 223:257 */     if (localamj == null) {
 /* 224:258 */       return 0;
 /* 225:    */     }
@@ -233,7 +233,7 @@ package net.minecraft.src;
 /* 232:266 */     if (this.i.isClient) {
 /* 233:267 */       return;
 /* 234:    */     }
-/* 235:270 */     for (int m = 0; m < this.a.n_(); m++)
+/* 235:270 */     for (int m = 0; m < this.a.getSize(); m++)
 /* 236:    */     {
 /* 237:271 */       ItemStack localamj = this.a.b(m);
 /* 238:272 */       if (localamj != null) {

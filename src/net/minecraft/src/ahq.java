@@ -28,7 +28,7 @@ package net.minecraft.src;
 /* 27:30 */       parambru.d.a(DamageSource.a(this, n()), i);
 /* 28:   */     }
 /* 29:32 */     for (int i = 0; i < 8; i++) {
-/* 30:33 */       this.world.a(ew.F, this.xPos, this.yPos, this.zPos, 0.0D, 0.0D, 0.0D, new int[0]);
+/* 30:33 */       this.world.a(EnumParticleEffect.F, this.xPos, this.yPos, this.zPos, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 31:   */     }
 /* 32:35 */     if (!this.world.isClient) {
 /* 33:36 */       setDead();

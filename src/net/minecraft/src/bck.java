@@ -221,12 +221,12 @@ package net.minecraft.src;
 /* 220:291 */     paramfn.setInt("Levels", this.j);
 /* 221:    */   }
 /* 222:    */   
-/* 223:    */   public int n_()
+/* 223:    */   public int getSize()
 /* 224:    */   {
 /* 225:296 */     return 1;
 /* 226:    */   }
 /* 227:    */   
-/* 228:    */   public ItemStack a(int paramInt)
+/* 228:    */   public ItemStack get(int paramInt)
 /* 229:    */   {
 /* 230:302 */     if (paramInt == 0) {
 /* 231:303 */       return this.m;
@@ -234,7 +234,7 @@ package net.minecraft.src;
 /* 233:305 */     return null;
 /* 234:    */   }
 /* 235:    */   
-/* 236:    */   public ItemStack a(int paramInt1, int paramInt2)
+/* 236:    */   public ItemStack removeItems(int paramInt1, int paramInt2)
 /* 237:    */   {
 /* 238:311 */     if ((paramInt1 == 0) && (this.m != null))
 /* 239:    */     {
@@ -305,7 +305,7 @@ package net.minecraft.src;
 /* 304:    */   
 /* 305:    */   public boolean b(int paramInt, ItemStack paramamj)
 /* 306:    */   {
-/* 307:382 */     return (paramamj.getItem() == ItemList.bO) || (paramamj.getItem() == ItemList.diamond) || (paramamj.getItem() == ItemList.k) || (paramamj.getItem() == ItemList.j);
+/* 307:382 */     return (paramamj.getItem() == ItemList.emerald) || (paramamj.getItem() == ItemList.diamond) || (paramamj.getItem() == ItemList.k) || (paramamj.getItem() == ItemList.j);
 /* 308:    */   }
 /* 309:    */   
 /* 310:    */   public String k()

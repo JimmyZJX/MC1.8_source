@@ -7,9 +7,9 @@ package net.minecraft.src;
 /*  6:   */   private Entity a;
 /*  7:   */   private int ax;
 /*  8:   */   private int ay;
-/*  9:   */   private ew az;
+/*  9:   */   private EnumParticleEffect az;
 /* 10:   */   
-/* 11:   */   public cif(World paramaqu, Entity paramwv, ew paramew)
+/* 11:   */   public cif(World paramaqu, Entity paramwv, EnumParticleEffect paramew)
 /* 12:   */   {
 /* 13:15 */     super(paramaqu, paramwv.xPos, paramwv.getAABB().minY + paramwv.K / 2.0F, paramwv.zPos, paramwv.xVelocity, paramwv.yVelocity, paramwv.zVelocity);
 /* 14:16 */     this.a = paramwv;
@@ -24,9 +24,9 @@ package net.minecraft.src;
 /* 23:   */   {
 /* 24:28 */     for (int i = 0; i < 16; i++)
 /* 25:   */     {
-/* 26:29 */       double d1 = this.random.nextFloat() * 2.0F - 1.0F;
-/* 27:30 */       double d2 = this.random.nextFloat() * 2.0F - 1.0F;
-/* 28:31 */       double d3 = this.random.nextFloat() * 2.0F - 1.0F;
+/* 26:29 */       double d1 = this.rng.nextFloat() * 2.0F - 1.0F;
+/* 27:30 */       double d2 = this.rng.nextFloat() * 2.0F - 1.0F;
+/* 28:31 */       double d3 = this.rng.nextFloat() * 2.0F - 1.0F;
 /* 29:32 */       if (d1 * d1 + d2 * d2 + d3 * d3 <= 1.0D)
 /* 30:   */       {
 /* 31:35 */         double d4 = this.a.xPos + d1 * this.a.J / 4.0D;

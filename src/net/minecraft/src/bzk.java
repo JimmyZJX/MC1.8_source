@@ -101,8 +101,8 @@ package net.minecraft.src;
 /* 100:108 */       if ((k < 0) || (k >= localaqd.size())) {
 /* 101:109 */         return;
 /* 102:    */       }
-/* 103:111 */       aqc localaqc = (aqc)localaqd.get(k);
-/* 104:113 */       if (localaqc.h())
+/* 103:111 */       TradeOffer localaqc = (TradeOffer)localaqd.get(k);
+/* 104:113 */       if (localaqc.isBlocked())
 /* 105:    */       {
 /* 106:114 */         this.j.N().a(v);
 /* 107:115 */         cjm.c(1.0F, 1.0F, 1.0F, 1.0F);
@@ -124,11 +124,11 @@ package net.minecraft.src;
 /* 123:130 */       int j = (this.m - this.g) / 2;
 /* 124:    */       
 /* 125:132 */       int k = this.z;
-/* 126:133 */       aqc localaqc = (aqc)localaqd.get(k);
+/* 126:133 */       TradeOffer localaqc = (TradeOffer)localaqd.get(k);
 /* 127:    */       
-/* 128:135 */       ItemStack localamj1 = localaqc.a();
-/* 129:136 */       ItemStack localamj2 = localaqc.b();
-/* 130:137 */       ItemStack localamj3 = localaqc.d();
+/* 128:135 */       ItemStack localamj1 = localaqc.getItemBought();
+/* 129:136 */       ItemStack localamj2 = localaqc.getItemBoughtB();
+/* 130:137 */       ItemStack localamj3 = localaqc.getItemSold();
 /* 131:    */       
 /* 132:139 */       cjm.glPushMatrix();
 /* 133:    */       
@@ -157,7 +157,7 @@ package net.minecraft.src;
 /* 156:165 */         a(localamj2, paramInt1, paramInt2);
 /* 157:166 */       } else if ((localamj3 != null) && (c(120, 24, 16, 16, paramInt1, paramInt2)) && (localamj3 != null)) {
 /* 158:167 */         a(localamj3, paramInt1, paramInt2);
-/* 159:168 */       } else if ((localaqc.h()) && ((c(83, 21, 28, 21, paramInt1, paramInt2)) || (c(83, 51, 28, 21, paramInt1, paramInt2)))) {
+/* 159:168 */       } else if ((localaqc.isBlocked()) && ((c(83, 21, 28, 21, paramInt1, paramInt2)) || (c(83, 51, 28, 21, paramInt1, paramInt2)))) {
 /* 160:169 */         a(cwc.a("merchant.deprecated", new Object[0]), paramInt1, paramInt2);
 /* 161:    */       }
 /* 162:172 */       cjm.glPopMatrix();

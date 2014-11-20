@@ -320,7 +320,7 @@ package net.minecraft.src;
 /* 318:    */     }
 /* 319:    */   }
 /* 320:    */   
-/* 321:    */   public ItemStack a(int paramInt1, int paramInt2)
+/* 321:    */   public ItemStack removeItems(int paramInt1, int paramInt2)
 /* 322:    */   {
 /* 323:344 */     ItemStack[] arrayOfamj = this.a;
 /* 324:345 */     if (paramInt1 >= this.a.length)
@@ -427,12 +427,12 @@ package net.minecraft.src;
 /* 425:    */     }
 /* 426:    */   }
 /* 427:    */   
-/* 428:    */   public int n_()
+/* 428:    */   public int getSize()
 /* 429:    */   {
 /* 430:442 */     return this.a.length + 4;
 /* 431:    */   }
 /* 432:    */   
-/* 433:    */   public ItemStack a(int paramInt)
+/* 433:    */   public ItemStack get(int paramInt)
 /* 434:    */   {
 /* 435:448 */     ItemStack[] arrayOfamj = this.a;
 /* 436:449 */     if (paramInt >= arrayOfamj.length)
@@ -471,7 +471,7 @@ package net.minecraft.src;
 /* 469:481 */     if (paramatr.getMaterial().l()) {
 /* 470:482 */       return true;
 /* 471:    */     }
-/* 472:485 */     ItemStack tool = a(this.c);
+/* 472:485 */     ItemStack tool = get(this.c);
 /* 473:486 */     if (tool != null) {
 /* 474:487 */       return tool.canHarvestBlock(paramatr);
 /* 475:    */     }

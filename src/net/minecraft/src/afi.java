@@ -59,7 +59,7 @@ package net.minecraft.src;
 /*  58:564 */     if (this.b == 0)
 /*  59:    */     {
 /*  60:566 */       EntityGuardian.a(this.a, this.a.u().getID());
-/*  61:567 */       this.a.world.a(this.a, (byte)21);
+/*  61:567 */       this.a.world.sendSignal(this.a, (byte)21);
 /*  62:    */     }
 /*  63:568 */     else if (this.b >= this.a.ck())
 /*  64:    */     {

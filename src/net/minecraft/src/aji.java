@@ -4,12 +4,12 @@ package net.minecraft.src;
 /*   3:    */ {
 /*   4: 13 */   private ItemStack[] a = new ItemStack[1];
 /*   5:    */   
-/*   6:    */   public int n_()
+/*   6:    */   public int getSize()
 /*   7:    */   {
 /*   8: 17 */     return 1;
 /*   9:    */   }
 /*  10:    */   
-/*  11:    */   public ItemStack a(int paramInt)
+/*  11:    */   public ItemStack get(int paramInt)
 /*  12:    */   {
 /*  13: 23 */     return this.a[0];
 /*  14:    */   }
@@ -32,7 +32,7 @@ package net.minecraft.src;
 /*  31: 41 */     return new hz(getName(), new Object[0]);
 /*  32:    */   }
 /*  33:    */   
-/*  34:    */   public ItemStack a(int paramInt1, int paramInt2)
+/*  34:    */   public ItemStack removeItems(int paramInt1, int paramInt2)
 /*  35:    */   {
 /*  36: 47 */     if (this.a[0] != null)
 /*  37:    */     {

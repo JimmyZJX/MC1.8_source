@@ -45,7 +45,7 @@ package net.minecraft.src;
 /*  44:    */   
 /*  45:    */   public ItemStack d()
 /*  46:    */   {
-/*  47: 73 */     return this.d.a(this.a);
+/*  47: 73 */     return this.d.get(this.a);
 /*  48:    */   }
 /*  49:    */   
 /*  50:    */   public boolean e()
@@ -81,7 +81,7 @@ package net.minecraft.src;
 /*  80:    */   
 /*  81:    */   public ItemStack a(int paramInt)
 /*  82:    */   {
-/*  83:103 */     return this.d.a(this.a, paramInt);
+/*  83:103 */     return this.d.removeItems(this.a, paramInt);
 /*  84:    */   }
 /*  85:    */   
 /*  86:    */   public boolean a(vq paramvq, int paramInt)

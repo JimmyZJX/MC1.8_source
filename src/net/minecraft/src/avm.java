@@ -27,7 +27,7 @@ package net.minecraft.src;
 /* 26:35 */       paramaqu.playLevelEvent(1001, paramdt, 0);
 /* 27:36 */       return;
 /* 28:   */     }
-/* 29:39 */     ItemStack localamj1 = localbcx.a(i);
+/* 29:39 */     ItemStack localamj1 = localbcx.get(i);
 /* 30:40 */     if (localamj1 == null) {
 /* 31:41 */       return;
 /* 32:   */     }

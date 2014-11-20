@@ -16,7 +16,7 @@ package net.minecraft.src;
 /*  15:    */   
 /*  16:    */   protected void E()
 /*  17:    */   {
-/*  18: 30 */     if (l() != 0) {
+/*  18: 30 */     if (getAge() != 0) {
 /*  19: 31 */       this.bk = 0;
 /*  20:    */     }
 /*  21: 33 */     super.E();
@@ -25,7 +25,7 @@ package net.minecraft.src;
 /*  24:    */   public void m()
 /*  25:    */   {
 /*  26: 38 */     super.m();
-/*  27: 40 */     if (l() != 0) {
+/*  27: 40 */     if (getAge() != 0) {
 /*  28: 41 */       this.bk = 0;
 /*  29:    */     }
 /*  30: 44 */     if (this.bk > 0)
@@ -33,10 +33,10 @@ package net.minecraft.src;
 /*  32: 45 */       this.bk -= 1;
 /*  33: 46 */       if (this.bk % 10 == 0)
 /*  34:    */       {
-/*  35: 47 */         double d1 = this.random.nextGaussian() * 0.02D;
-/*  36: 48 */         double d2 = this.random.nextGaussian() * 0.02D;
-/*  37: 49 */         double d3 = this.random.nextGaussian() * 0.02D;
-/*  38: 50 */         this.world.a(ew.I, this.xPos + this.random.nextFloat() * this.J * 2.0F - this.J, this.yPos + 0.5D + this.random.nextFloat() * this.K, this.zPos + this.random.nextFloat() * this.J * 2.0F - this.J, d1, d2, d3, new int[0]);
+/*  35: 47 */         double d1 = this.rng.nextGaussian() * 0.02D;
+/*  36: 48 */         double d2 = this.rng.nextGaussian() * 0.02D;
+/*  37: 49 */         double d3 = this.rng.nextGaussian() * 0.02D;
+/*  38: 50 */         this.world.a(EnumParticleEffect.HEART, this.xPos + this.rng.nextFloat() * this.J * 2.0F - this.J, this.yPos + 0.5D + this.rng.nextFloat() * this.K, this.zPos + this.rng.nextFloat() * this.J * 2.0F - this.J, d1, d2, d3, new int[0]);
 /*  39:    */       }
 /*  40:    */     }
 /*  41:    */   }
@@ -102,12 +102,12 @@ package net.minecraft.src;
 /* 101:112 */     return paramamj.getItem() == ItemList.O;
 /* 102:    */   }
 /* 103:    */   
-/* 104:    */   public boolean a(EntityPlayer paramahd)
+/* 104:    */   public boolean onRightClick(EntityPlayer paramahd)
 /* 105:    */   {
 /* 106:117 */     ItemStack localamj = paramahd.bg.h();
 /* 107:118 */     if (localamj != null)
 /* 108:    */     {
-/* 109:119 */       if ((d(localamj)) && (l() == 0) && (this.bk <= 0))
+/* 109:119 */       if ((d(localamj)) && (getAge() == 0) && (this.bk <= 0))
 /* 110:    */       {
 /* 111:120 */         a(paramahd, localamj);
 /* 112:121 */         c(paramahd);
@@ -116,11 +116,11 @@ package net.minecraft.src;
 /* 115:123 */       if ((i_()) && (d(localamj)))
 /* 116:    */       {
 /* 117:124 */         a(paramahd, localamj);
-/* 118:125 */         a((int)(-l() / 20 * 0.1F), true);
+/* 118:125 */         a((int)(-getAge() / 20 * 0.1F), true);
 /* 119:126 */         return true;
 /* 120:    */       }
 /* 121:    */     }
-/* 122:129 */     return super.a(paramahd);
+/* 122:129 */     return super.onRightClick(paramahd);
 /* 123:    */   }
 /* 124:    */   
 /* 125:    */   protected void a(EntityPlayer paramahd, ItemStack paramamj)
@@ -139,7 +139,7 @@ package net.minecraft.src;
 /* 138:142 */     this.bk = 600;
 /* 139:143 */     this.bm = paramahd;
 /* 140:    */     
-/* 141:145 */     this.world.a(this, (byte)18);
+/* 141:145 */     this.world.sendSignal(this, (byte)18);
 /* 142:    */   }
 /* 143:    */   
 /* 144:    */   public EntityPlayer co()
@@ -168,18 +168,18 @@ package net.minecraft.src;
 /* 167:167 */     return (cp()) && (paramabq.cp());
 /* 168:    */   }
 /* 169:    */   
-/* 170:    */   public void a(byte paramByte)
+/* 170:    */   public void onSignal(byte paramByte)
 /* 171:    */   {
 /* 172:172 */     if (paramByte == 18) {
 /* 173:173 */       for (int i = 0; i < 7; i++)
 /* 174:    */       {
-/* 175:174 */         double d1 = this.random.nextGaussian() * 0.02D;
-/* 176:175 */         double d2 = this.random.nextGaussian() * 0.02D;
-/* 177:176 */         double d3 = this.random.nextGaussian() * 0.02D;
-/* 178:177 */         this.world.a(ew.I, this.xPos + this.random.nextFloat() * this.J * 2.0F - this.J, this.yPos + 0.5D + this.random.nextFloat() * this.K, this.zPos + this.random.nextFloat() * this.J * 2.0F - this.J, d1, d2, d3, new int[0]);
+/* 175:174 */         double d1 = this.rng.nextGaussian() * 0.02D;
+/* 176:175 */         double d2 = this.rng.nextGaussian() * 0.02D;
+/* 177:176 */         double d3 = this.rng.nextGaussian() * 0.02D;
+/* 178:177 */         this.world.a(EnumParticleEffect.HEART, this.xPos + this.rng.nextFloat() * this.J * 2.0F - this.J, this.yPos + 0.5D + this.rng.nextFloat() * this.K, this.zPos + this.rng.nextFloat() * this.J * 2.0F - this.J, d1, d2, d3, new int[0]);
 /* 179:    */       }
 /* 180:    */     } else {
-/* 181:180 */       super.a(paramByte);
+/* 181:180 */       super.onSignal(paramByte);
 /* 182:    */     }
 /* 183:    */   }
 /* 184:    */ }

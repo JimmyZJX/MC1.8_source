@@ -34,7 +34,7 @@ package net.minecraft.src;
 /*  33:    */   
 /*  34:    */   protected String z()
 /*  35:    */   {
-/*  36: 47 */     if ((n()) && (this.random.nextInt(4) != 0)) {
+/*  36: 47 */     if ((n()) && (this.rng.nextInt(4) != 0)) {
 /*  37: 48 */       return null;
 /*  38:    */     }
 /*  39: 50 */     return "mob.bat.idle";
@@ -110,8 +110,8 @@ package net.minecraft.src;
 /* 109:    */       }
 /* 110:    */       else
 /* 111:    */       {
-/* 112:123 */         if (this.random.nextInt(200) == 0) {
-/* 113:124 */           this.aI = this.random.nextInt(360);
+/* 112:123 */         if (this.rng.nextInt(200) == 0) {
+/* 113:124 */           this.aI = this.rng.nextInt(360);
 /* 114:    */         }
 /* 115:127 */         if (this.world.a(this, 4.0D) != null)
 /* 116:    */         {
@@ -125,8 +125,8 @@ package net.minecraft.src;
 /* 124:133 */       if ((this.a != null) && ((!this.world.isEmpty(this.a)) || (this.a.getY() < 1))) {
 /* 125:134 */         this.a = null;
 /* 126:    */       }
-/* 127:136 */       if ((this.a == null) || (this.random.nextInt(30) == 0) || (this.a.dist2((int)this.xPos, (int)this.yPos, (int)this.zPos) < 4.0D)) {
-/* 128:137 */         this.a = new BlockPosition((int)this.xPos + this.random.nextInt(7) - this.random.nextInt(7), (int)this.yPos + this.random.nextInt(6) - 2, (int)this.zPos + this.random.nextInt(7) - this.random.nextInt(7));
+/* 127:136 */       if ((this.a == null) || (this.rng.nextInt(30) == 0) || (this.a.dist2((int)this.xPos, (int)this.yPos, (int)this.zPos) < 4.0D)) {
+/* 128:137 */         this.a = new BlockPosition((int)this.xPos + this.rng.nextInt(7) - this.rng.nextInt(7), (int)this.yPos + this.rng.nextInt(6) - 2, (int)this.zPos + this.rng.nextInt(7) - this.rng.nextInt(7));
 /* 129:    */       }
 /* 130:140 */       double d1 = this.a.getX() + 0.5D - this.xPos;
 /* 131:141 */       double d2 = this.a.getY() + 0.1D - this.yPos;
@@ -140,7 +140,7 @@ package net.minecraft.src;
 /* 139:149 */       float f2 = MathUtils.wrapDegrees(f1 - this.yaw);
 /* 140:150 */       this.aY = 0.5F;
 /* 141:151 */       this.yaw += f2;
-/* 142:153 */       if ((this.random.nextInt(100) == 0) && (this.world.getBlock(localdt2).getProto().blocksMovement())) {
+/* 142:153 */       if ((this.rng.nextInt(100) == 0) && (this.world.getBlock(localdt2).getProto().blocksMovement())) {
 /* 143:154 */         a(true);
 /* 144:    */       }
 /* 145:    */     }
@@ -196,10 +196,10 @@ package net.minecraft.src;
 /* 195:215 */     int j = 4;
 /* 196:217 */     if (a(this.world.Y())) {
 /* 197:218 */       j = 7;
-/* 198:219 */     } else if (this.random.nextBoolean()) {
+/* 198:219 */     } else if (this.rng.nextBoolean()) {
 /* 199:220 */       return false;
 /* 200:    */     }
-/* 201:223 */     if (i > this.random.nextInt(j)) {
+/* 201:223 */     if (i > this.rng.nextInt(j)) {
 /* 202:224 */       return false;
 /* 203:    */     }
 /* 204:227 */     return super.canSpawn();

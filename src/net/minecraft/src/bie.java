@@ -11,7 +11,7 @@ package net.minecraft.src;
 /*  10:    */ {
 /*  11: 22 */   private static final Logger a = LogManager.getLogger();
 /*  12: 25 */   private static final String[] b = { "Skeleton", "Zombie", "Zombie", "Spider" };
-/*  13: 26 */   private static final List c = Lists.newArrayList(new vl[] { new vl(ItemList.saddle, 0, 1, 1, 10), new vl(ItemList.j, 0, 1, 4, 10), new vl(ItemList.P, 0, 1, 1, 10), new vl(ItemList.O, 0, 1, 4, 10), new vl(ItemList.H, 0, 1, 4, 10), new vl(ItemList.F, 0, 1, 4, 10), new vl(ItemList.aw, 0, 1, 1, 10), new vl(ItemList.ao, 0, 1, 1, 1), new vl(ItemList.aC, 0, 1, 4, 10), new vl(ItemList.cq, 0, 1, 1, 4), new vl(ItemList.cr, 0, 1, 1, 4), new vl(ItemList.nameTag, 0, 1, 1, 10), new vl(ItemList.cl, 0, 1, 1, 2), new vl(ItemList.ck, 0, 1, 1, 5), new vl(ItemList.cm, 0, 1, 1, 1) });
+/*  13: 26 */   private static final List c = Lists.newArrayList(new vl[] { new vl(ItemList.saddle, 0, 1, 1, 10), new vl(ItemList.j, 0, 1, 4, 10), new vl(ItemList.bread, 0, 1, 1, 10), new vl(ItemList.O, 0, 1, 4, 10), new vl(ItemList.H, 0, 1, 4, 10), new vl(ItemList.F, 0, 1, 4, 10), new vl(ItemList.aw, 0, 1, 1, 10), new vl(ItemList.ao, 0, 1, 1, 1), new vl(ItemList.aC, 0, 1, 4, 10), new vl(ItemList.cq, 0, 1, 1, 4), new vl(ItemList.cr, 0, 1, 1, 4), new vl(ItemList.nameTag, 0, 1, 1, 10), new vl(ItemList.cl, 0, 1, 1, 2), new vl(ItemList.ck, 0, 1, 1, 5), new vl(ItemList.cm, 0, 1, 1, 1) });
 /*  14:    */   
 /*  15:    */   public boolean generate(World paramaqu, Random paramRandom, BlockPosition paramdt)
 /*  16:    */   {

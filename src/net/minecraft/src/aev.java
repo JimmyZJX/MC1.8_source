@@ -20,7 +20,7 @@ package net.minecraft.src;
 /*  19:513 */     if (this.a.ck().getProto().getMaterial() != Material.air) {
 /*  20:514 */       return false;
 /*  21:    */     }
-/*  22:516 */     if (this.a.bb().nextInt(20) != 0) {
+/*  22:516 */     if (this.a.getRNG().nextInt(20) != 0) {
 /*  23:517 */       return false;
 /*  24:    */     }
 /*  25:519 */     return true;
@@ -28,7 +28,7 @@ package net.minecraft.src;
 /*  27:    */   
 /*  28:    */   public void e()
 /*  29:    */   {
-/*  30:524 */     Random localRandom = this.a.bb();
+/*  30:524 */     Random localRandom = this.a.getRNG();
 /*  31:525 */     World localaqu = this.a.world;
 /*  32:    */     
 /*  33:527 */     int i = MathUtils.floor(this.a.xPos - 2.0D + localRandom.nextDouble() * 4.0D);

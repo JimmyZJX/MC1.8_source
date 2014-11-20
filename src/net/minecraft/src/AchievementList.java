@@ -16,7 +16,7 @@ package net.minecraft.src;
 /* 15:24 */   public static tk j = new tk("achievement.buildFurnace", "buildFurnace", 3, 4, BlockList.al, i).c();
 /* 16:25 */   public static tk k = new tk("achievement.acquireIron", "acquireIron", 1, 4, ItemList.j, j).c();
 /* 17:26 */   public static tk l = new tk("achievement.buildHoe", "buildHoe", 2, -3, ItemList.I, h).c();
-/* 18:27 */   public static tk m = new tk("achievement.makeBread", "makeBread", -1, -3, ItemList.P, l).c();
+/* 18:27 */   public static tk m = new tk("achievement.makeBread", "makeBread", -1, -3, ItemList.bread, l).c();
 /* 19:28 */   public static tk n = new tk("achievement.bakeCake", "bakeCake", 0, -5, ItemList.aZ, l).c();
 /* 20:29 */   public static tk o = new tk("achievement.buildBetterPickaxe", "buildBetterPickaxe", 6, 2, ItemList.s, i).c();
 /* 21:30 */   public static tk p = new tk("achievement.cookFish", "cookFish", 2, 6, ItemList.aV, j).c();

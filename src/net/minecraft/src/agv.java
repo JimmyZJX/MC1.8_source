@@ -29,15 +29,15 @@ package net.minecraft.src;
 /*  28:    */     ItemStack localamj2;
 /*  29:825 */     if (i < 0)
 /*  30:    */     {
-/*  31:826 */       localamj1 = new ItemStack(ItemList.bO, 1, 0);
+/*  31:826 */       localamj1 = new ItemStack(ItemList.emerald, 1, 0);
 /*  32:827 */       localamj2 = new ItemStack(this.a.getItem(), -i, this.a.getDamage2());
 /*  33:    */     }
 /*  34:    */     else
 /*  35:    */     {
-/*  36:829 */       localamj1 = new ItemStack(ItemList.bO, i, 0);
+/*  36:829 */       localamj1 = new ItemStack(ItemList.emerald, i, 0);
 /*  37:830 */       localamj2 = new ItemStack(this.a.getItem(), 1, this.a.getDamage2());
 /*  38:    */     }
-/*  39:832 */     paramaqd.add(new aqc(localamj1, localamj2));
+/*  39:832 */     paramaqd.add(new TradeOffer(localamj1, localamj2));
 /*  40:    */   }
 /*  41:    */ }
 

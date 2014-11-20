@@ -144,7 +144,7 @@ package net.minecraft.src;
 /* 143:161 */       double d2 = paramdt.getY() - 0.05D;
 /* 144:162 */       double d3 = paramdt.getZ() + paramRandom.nextFloat();
 /* 145:    */       
-/* 146:164 */       paramaqu.a(ew.s, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
+/* 146:164 */       paramaqu.a(EnumParticleEffect.s, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 147:    */     }
 /* 148:    */   }
 /* 149:    */   

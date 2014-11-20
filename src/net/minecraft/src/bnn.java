@@ -113,7 +113,7 @@ package net.minecraft.src;
 /* 112:334 */       EntityVillager localagp = new EntityVillager(paramaqu);
 /* 113:335 */       localagp.setPositionAndAngles(j + 0.5D, k, m + 0.5D, 0.0F, 0.0F);
 /* 114:336 */       localagp.beforeSpawn(paramaqu.E(new BlockPosition(localagp)), null);
-/* 115:337 */       localagp.r(c(i, localagp.cj()));
+/* 115:337 */       localagp.setProfession(c(i, localagp.getProfession()));
 /* 116:338 */       paramaqu.spawnEntity(localagp);
 /* 117:    */     }
 /* 118:    */   }

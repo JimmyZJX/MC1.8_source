@@ -166,7 +166,7 @@ package net.minecraft.src;
 /* 165:    */     }
 /* 166:209 */     paramaqu.spawnEntity(localadf);
 /* 167:211 */     for (int k = 0; k < 120; k++) {
-/* 168:212 */       paramaqu.a(ew.F, localdt.getX() + paramaqu.rng.nextDouble(), localdt.getY() - 2 + paramaqu.rng.nextDouble() * 3.9D, localdt.getZ() + paramaqu.rng.nextDouble(), 0.0D, 0.0D, 0.0D, new int[0]);
+/* 168:212 */       paramaqu.a(EnumParticleEffect.F, localdt.getX() + paramaqu.rng.nextDouble(), localdt.getY() - 2 + paramaqu.rng.nextDouble() * 3.9D, localdt.getZ() + paramaqu.rng.nextDouble(), 0.0D, 0.0D, 0.0D, new int[0]);
 /* 169:    */     }
 /* 170:215 */     for (int k = 0; k < localbek.c(); k++) {
 /* 171:216 */       for (int m = 0; m < localbek.b(); m++)

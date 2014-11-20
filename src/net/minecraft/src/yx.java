@@ -52,7 +52,7 @@ package net.minecraft.src;
 /* 51:   */   
 /* 52:   */   private Vec3 f()
 /* 53:   */   {
-/* 54:57 */     Random localRandom = this.a.bb();
+/* 54:57 */     Random localRandom = this.a.getRNG();
 /* 55:58 */     BlockPosition localdt1 = new BlockPosition(this.a.xPos, this.a.getAABB().minY, this.a.zPos);
 /* 56:60 */     for (int i = 0; i < 10; i++)
 /* 57:   */     {

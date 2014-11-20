@@ -22,11 +22,11 @@ package net.minecraft.src;
 /*  22:    */     {
 /*  23:206 */       this.a.b(0.0F, 0.0F, 0.0F);
 /*  24:    */     }
-/*  25:207 */     else if ((this.a.bb().nextInt(50) == 0) || (!EntitySquid.a(this.a)) || (!this.a.n()))
+/*  25:207 */     else if ((this.a.getRNG().nextInt(50) == 0) || (!EntitySquid.a(this.a)) || (!this.a.n()))
 /*  26:    */     {
-/*  27:208 */       float f1 = this.a.bb().nextFloat() * 3.141593F * 2.0F;
+/*  27:208 */       float f1 = this.a.getRNG().nextFloat() * 3.141593F * 2.0F;
 /*  28:209 */       float f2 = MathUtils.cos(f1) * 0.2F;
-/*  29:210 */       float f3 = -0.1F + this.a.bb().nextFloat() * 0.2F;
+/*  29:210 */       float f3 = -0.1F + this.a.getRNG().nextFloat() * 0.2F;
 /*  30:211 */       float f4 = MathUtils.sin(f1) * 0.2F;
 /*  31:212 */       this.a.b(f2, f3, f4);
 /*  32:    */     }

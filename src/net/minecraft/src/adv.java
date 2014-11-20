@@ -143,7 +143,7 @@ package net.minecraft.src;
 /* 143:154 */         for (Entity localwv : localArrayList) {
 /* 144:155 */           localwv.a(localwh, Math.min(MathUtils.floor(i * this.h), this.g));
 /* 145:    */         }
-/* 146:158 */         if ((j != 0) && (this.random.nextFloat() < 0.0500000007450581D + i * 0.05D))
+/* 146:158 */         if ((j != 0) && (this.rng.nextFloat() < 0.0500000007450581D + i * 0.05D))
 /* 147:    */         {
 /* 148:159 */           int k = ((Integer)this.d.getProperty(BlockAnvil.b)).intValue();
 /* 149:    */           

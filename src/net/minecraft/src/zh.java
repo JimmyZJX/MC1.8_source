@@ -31,7 +31,7 @@ package net.minecraft.src;
 /* 30:   */   
 /* 31:   */   public boolean a()
 /* 32:   */   {
-/* 33:34 */     if (this.a.bb().nextFloat() >= this.f) {
+/* 33:34 */     if (this.a.getRNG().nextFloat() >= this.f) {
 /* 34:35 */       return false;
 /* 35:   */     }
 /* 36:38 */     if (this.a.u() != null) {
@@ -40,7 +40,7 @@ package net.minecraft.src;
 /* 39:40 */     if (this.d == EntityPlayer.class) {
 /* 40:41 */       this.b = this.a.world.a(this.a, (double)this.c);
 /* 41:   */     } else {
-/* 42:43 */       this.b = this.a.world.a(this.d, this.a.getAABB().expand(this.c, 3.0D, this.c), this.a);
+/* 42:43 */       this.b = this.a.world.getNearestEntity(this.d, this.a.getAABB().expand(this.c, 3.0D, this.c), this.a);
 /* 43:   */     }
 /* 44:46 */     return this.b != null;
 /* 45:   */   }
@@ -58,7 +58,7 @@ package net.minecraft.src;
 /* 57:   */   
 /* 58:   */   public void c()
 /* 59:   */   {
-/* 60:62 */     this.e = (40 + this.a.bb().nextInt(40));
+/* 60:62 */     this.e = (40 + this.a.getRNG().nextInt(40));
 /* 61:   */   }
 /* 62:   */   
 /* 63:   */   public void d()

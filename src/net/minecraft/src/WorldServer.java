@@ -38,7 +38,7 @@ package net.minecraft.src;
 /*  34: 80 */   protected final abk d = new abk(this);
 /*  35: 87 */   private qv[] S = { new qv(null), new qv(null) };
 /*  36:    */   private int T;
-/*  37: 92 */   private static final List<vl> U = Lists.newArrayList(new vl[] { new vl(ItemList.stick, 0, 1, 3, 10), new vl(Item.fromProtoBlock(BlockList.planks), 0, 1, 3, 10), new vl(Item.fromProtoBlock(BlockList.log), 0, 1, 3, 10), new vl(ItemList.t, 0, 1, 1, 3), new vl(ItemList.p, 0, 1, 1, 5), new vl(ItemList.s, 0, 1, 1, 3), new vl(ItemList.o, 0, 1, 1, 5), new vl(ItemList.apple, 0, 2, 3, 5), new vl(ItemList.P, 0, 2, 3, 3), new vl(Item.fromProtoBlock(BlockList.log2), 0, 1, 3, 10) });
+/*  37: 92 */   private static final List<vl> U = Lists.newArrayList(new vl[] { new vl(ItemList.stick, 0, 1, 3, 10), new vl(Item.fromProtoBlock(BlockList.planks), 0, 1, 3, 10), new vl(Item.fromProtoBlock(BlockList.log), 0, 1, 3, 10), new vl(ItemList.t, 0, 1, 1, 3), new vl(ItemList.p, 0, 1, 1, 5), new vl(ItemList.s, 0, 1, 1, 3), new vl(ItemList.o, 0, 1, 1, 5), new vl(ItemList.apple, 0, 2, 3, 5), new vl(ItemList.bread, 0, 2, 3, 3), new vl(Item.fromProtoBlock(BlockList.log2), 0, 1, 3, 10) });
 /*  38:    */   
 /*  39:    */   public WorldServer(MinecraftServer paramMinecraftServer, bqy parambqy, WorldInfo parambqo, int paramInt, Profiler paramuw)
 /*  40:    */   {
@@ -62,17 +62,17 @@ package net.minecraft.src;
 /*  58:    */   {
 /*  59:124 */     this.z = new brn(this.w);
 /*  60:    */     
-/*  61:126 */     String str = abl.a(this.t);
-/*  62:127 */     abl localabl = (abl)this.z.a(abl.class, str);
+/*  61:126 */     String str = VillageManager.a(this.t);
+/*  62:127 */     VillageManager localabl = (VillageManager)this.z.a(VillageManager.class, str);
 /*  63:128 */     if (localabl == null)
 /*  64:    */     {
-/*  65:129 */       this.A = new abl(this);
-/*  66:130 */       this.z.a(str, this.A);
+/*  65:129 */       this.villageManager = new VillageManager(this);
+/*  66:130 */       this.z.a(str, this.villageManager);
 /*  67:    */     }
 /*  68:    */     else
 /*  69:    */     {
-/*  70:132 */       this.A = localabl;
-/*  71:133 */       this.A.a(this);
+/*  70:132 */       this.villageManager = localabl;
+/*  71:133 */       this.villageManager.setWorld(this);
 /*  72:    */     }
 /*  73:136 */     this.C = new pk(this.I);
 /*  74:    */     
@@ -138,7 +138,7 @@ package net.minecraft.src;
 /* 134:205 */     this.K.b();
 /* 135:    */     
 /* 136:207 */     this.profiler.c("village");
-/* 137:208 */     this.A.a();
+/* 137:208 */     this.villageManager.a();
 /* 138:209 */     this.d.a();
 /* 139:    */     
 /* 140:211 */     this.profiler.c("portalForcer");
@@ -772,7 +772,7 @@ package net.minecraft.src;
 /* 768:835 */     return false;
 /* 769:    */   }
 /* 770:    */   
-/* 771:    */   public void a(Entity paramwv, byte paramByte)
+/* 771:    */   public void sendSignal(Entity paramwv, byte paramByte)
 /* 772:    */   {
 /* 773:840 */     s().b(paramwv, new jk(paramwv, paramByte));
 /* 774:    */   }
@@ -880,12 +880,12 @@ package net.minecraft.src;
 /* 876:943 */     return this.Q;
 /* 877:    */   }
 /* 878:    */   
-/* 879:    */   public void a(ew paramew, double paramDouble1, double paramDouble2, double paramDouble3, int paramInt, double paramDouble4, double paramDouble5, double paramDouble6, double paramDouble7, int... paramVarArgs)
+/* 879:    */   public void a(EnumParticleEffect paramew, double paramDouble1, double paramDouble2, double paramDouble3, int paramInt, double paramDouble4, double paramDouble5, double paramDouble6, double paramDouble7, int... paramVarArgs)
 /* 880:    */   {
 /* 881:947 */     a(paramew, false, paramDouble1, paramDouble2, paramDouble3, paramInt, paramDouble4, paramDouble5, paramDouble6, paramDouble7, paramVarArgs);
 /* 882:    */   }
 /* 883:    */   
-/* 884:    */   public void a(ew paramew, boolean paramBoolean, double paramDouble1, double paramDouble2, double paramDouble3, int paramInt, double paramDouble4, double paramDouble5, double paramDouble6, double paramDouble7, int... paramVarArgs)
+/* 884:    */   public void a(EnumParticleEffect paramew, boolean paramBoolean, double paramDouble1, double paramDouble2, double paramDouble3, int paramInt, double paramDouble4, double paramDouble5, double paramDouble6, double paramDouble7, int... paramVarArgs)
 /* 885:    */   {
 /* 886:951 */     ju localju = new ju(paramew, paramBoolean, (float)paramDouble1, (float)paramDouble2, (float)paramDouble3, (float)paramDouble4, (float)paramDouble5, (float)paramDouble6, (float)paramDouble7, paramInt, paramVarArgs);
 /* 887:953 */     for (int i = 0; i < this.playerList.size(); i++)

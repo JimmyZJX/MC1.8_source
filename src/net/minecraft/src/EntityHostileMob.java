@@ -109,7 +109,7 @@ package net.minecraft.src;
 /* 109:    */   protected boolean spawnLightCheck()
 /* 110:    */   {
 /* 111:136 */     BlockPosition footPos = new BlockPosition(this.xPos, getAABB().minY, this.zPos);
-/* 112:138 */     if (this.world.getLightLevel(EnumSkyBlock.SKY, footPos) > this.random.nextInt(32)) {
+/* 112:138 */     if (this.world.getLightLevel(EnumSkyBlock.SKY, footPos) > this.rng.nextInt(32)) {
 /* 113:139 */       return false;
 /* 114:    */     }
 /* 115:142 */     int i = this.world.l(footPos);
@@ -120,7 +120,7 @@ package net.minecraft.src;
 /* 120:147 */       i = this.world.l(footPos);
 /* 121:148 */       this.world.b(j);
 /* 122:    */     }
-/* 123:150 */     return i <= this.random.nextInt(8);
+/* 123:150 */     return i <= this.rng.nextInt(8);
 /* 124:    */   }
 /* 125:    */   
 /* 126:    */   public boolean canSpawn()

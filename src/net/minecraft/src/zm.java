@@ -8,9 +8,9 @@ package net.minecraft.src;
 /*   7:    */   private EntityWalkingMob a;
 /*   8:    */   private double b;
 /*   9:    */   private bpv c;
-/*  10:    */   private abh d;
+/*  10:    */   private VillageDoor d;
 /*  11:    */   private boolean e;
-/*  12: 23 */   private List<abh> f = Lists.newArrayList();
+/*  12: 23 */   private List<VillageDoor> f = Lists.newArrayList();
 /*  13:    */   
 /*  14:    */   public zm(EntityWalkingMob paramxu, double paramDouble, boolean paramBoolean)
 /*  15:    */   {
@@ -29,7 +29,7 @@ package net.minecraft.src;
 /*  28: 40 */     if ((this.e) && (this.a.world.w())) {
 /*  29: 41 */       return false;
 /*  30:    */     }
-/*  31: 44 */     abi localabi = this.a.world.ae().a(new BlockPosition(this.a), 0);
+/*  31: 44 */     Village localabi = this.a.world.getVillageManager().getNearestVillage(new BlockPosition(this.a), 0);
 /*  32: 45 */     if (localabi == null) {
 /*  33: 46 */       return false;
 /*  34:    */     }
@@ -76,12 +76,12 @@ package net.minecraft.src;
 /*  75:    */     }
 /*  76:    */   }
 /*  77:    */   
-/*  78:    */   private abh a(abi paramabi)
+/*  78:    */   private VillageDoor a(Village paramabi)
 /*  79:    */   {
-/*  80: 95 */     abh localObject = null;
+/*  80: 95 */     VillageDoor localObject = null;
 /*  81: 96 */     int i = 2147483647;
-/*  82: 97 */     List<abh> localList = paramabi.f();
-/*  83: 98 */     for (abh localabh : localList)
+/*  82: 97 */     List<VillageDoor> localList = paramabi.f();
+/*  83: 98 */     for (VillageDoor localabh : localList)
 /*  84:    */     {
 /*  85: 99 */       int j = localabh.b(MathUtils.floor(this.a.xPos), MathUtils.floor(this.a.yPos), MathUtils.floor(this.a.zPos));
 /*  86:100 */       if (j < i) {
@@ -95,9 +95,9 @@ package net.minecraft.src;
 /*  94:108 */     return localObject;
 /*  95:    */   }
 /*  96:    */   
-/*  97:    */   private boolean a(abh paramabh)
+/*  97:    */   private boolean a(VillageDoor paramabh)
 /*  98:    */   {
-/*  99:112 */     for (abh localabh : this.f) {
+/*  99:112 */     for (VillageDoor localabh : this.f) {
 /* 100:113 */       if (paramabh.d().equals(localabh.d())) {
 /* 101:114 */         return true;
 /* 102:    */       }

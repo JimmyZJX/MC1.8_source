@@ -14,8 +14,8 @@ package net.minecraft.src;
 /* 13:   */   {
 /* 14:21 */     super(paramaqu, paramDouble1, paramDouble2, paramDouble3, 0.0D, 0.0D, 0.0D);
 /* 15:22 */     this.az = paramcug;
-/* 16:23 */     this.ay = (6 + this.random.nextInt(4));
-/* 17:24 */     this.ap = (this.aq = this.ar = this.random.nextFloat() * 0.6F + 0.4F);
+/* 16:23 */     this.ay = (6 + this.rng.nextInt(4));
+/* 17:24 */     this.ap = (this.aq = this.ar = this.rng.nextFloat() * 0.6F + 0.4F);
 /* 18:25 */     this.aA = (1.0F - (float)paramDouble4 * 0.5F);
 /* 19:   */   }
 /* 20:   */   

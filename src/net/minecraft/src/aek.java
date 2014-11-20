@@ -70,7 +70,7 @@ package net.minecraft.src;
 /*  69:    */     else
 /*  70:    */     {
 /*  71: 78 */       W();
-/*  72: 79 */       this.world.a(ew.l, this.xPos, this.yPos + 0.5D, this.zPos, 0.0D, 0.0D, 0.0D, new int[0]);
+/*  72: 79 */       this.world.a(EnumParticleEffect.l, this.xPos, this.yPos + 0.5D, this.zPos, 0.0D, 0.0D, 0.0D, new int[0]);
 /*  73:    */     }
 /*  74:    */   }
 /*  75:    */   

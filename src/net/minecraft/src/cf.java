@@ -129,7 +129,7 @@ package net.minecraft.src;
 /* 126:140 */         throw new CommandException("commands.replaceitem.noContainer", new Object[] { Integer.valueOf(((BlockPosition)localObject).getX()), Integer.valueOf(((BlockPosition)localObject).getY()), Integer.valueOf(((BlockPosition)localObject).getZ()) });
 /* 127:    */       }
 /* 128:142 */       vq localvq = (vq)localbcm;
-/* 129:143 */       if ((k >= 0) && (k < localvq.n_())) {
+/* 129:143 */       if ((k >= 0) && (k < localvq.getSize())) {
 /* 130:144 */         localvq.a(k, localamj);
 /* 131:    */       }
 /* 132:    */     }

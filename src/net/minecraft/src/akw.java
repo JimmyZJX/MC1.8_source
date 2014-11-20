@@ -99,7 +99,7 @@ package net.minecraft.src;
 /*  98:109 */       double d1 = random.nextGaussian() * 0.02D;
 /*  99:110 */       double d2 = random.nextGaussian() * 0.02D;
 /* 100:111 */       double d3 = random.nextGaussian() * 0.02D;
-/* 101:112 */       world.a(ew.VILLAGER_HAPPY, pos.getX() + random.nextFloat(), pos.getY() + random.nextFloat() * localatr.C(), pos.getZ() + random.nextFloat(), d1, d2, d3, new int[0]);
+/* 101:112 */       world.a(EnumParticleEffect.VILLAGER_HAPPY, pos.getX() + random.nextFloat(), pos.getY() + random.nextFloat() * localatr.C(), pos.getZ() + random.nextFloat(), d1, d2, d3, new int[0]);
 /* 102:    */     }
 /* 103:    */   }
 /* 104:    */   

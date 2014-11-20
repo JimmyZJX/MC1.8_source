@@ -61,7 +61,7 @@ package net.minecraft.src;
 /*  60: 98 */       if (k <= 1) {
 /*  61: 99 */         j = 1;
 /*  62:    */       }
-/*  63:101 */       localdt = paramqt.r(localdt.offset(this.random.nextInt(j * 2) - j, 0, this.random.nextInt(j * 2) - j));
+/*  63:101 */       localdt = paramqt.r(localdt.offset(this.rng.nextInt(j * 2) - j, 0, this.rng.nextInt(j * 2) - j));
 /*  64:    */     }
 /*  65:104 */     this.b = paramMinecraftServer;
 /*  66:105 */     this.bI = paramMinecraftServer.an().a((EntityPlayer)this);
@@ -221,9 +221,9 @@ package net.minecraft.src;
 /* 220:    */     try
 /* 221:    */     {
 /* 222:250 */       super.onUpdate();
-/* 223:252 */       for (int j = 0; j < this.bg.n_(); j++)
+/* 223:252 */       for (int j = 0; j < this.bg.getSize(); j++)
 /* 224:    */       {
-/* 225:253 */         ItemStack localObject1 = this.bg.a(j);
+/* 225:253 */         ItemStack localObject1 = this.bg.get(j);
 /* 226:254 */         if ((localObject1 != null) && 
 /* 227:255 */           (localObject1.getItem().f()))
 /* 228:    */         {
@@ -540,12 +540,12 @@ package net.minecraft.src;
 /* 539:559 */     cr();
 /* 540:561 */     if ((paramvq instanceof vv))
 /* 541:    */     {
-/* 542:562 */       this.a.a(new je(this.bT, ((vv)paramvq).k(), paramvq.e_(), paramvq.n_()));
+/* 542:562 */       this.a.a(new je(this.bT, ((vv)paramvq).k(), paramvq.e_(), paramvq.getSize()));
 /* 543:563 */       this.bi = ((vv)paramvq).a(this.bg, this);
 /* 544:    */     }
 /* 545:    */     else
 /* 546:    */     {
-/* 547:565 */       this.a.a(new je(this.bT, "minecraft:container", paramvq.e_(), paramvq.n_()));
+/* 547:565 */       this.a.a(new je(this.bT, "minecraft:container", paramvq.e_(), paramvq.getSize()));
 /* 548:566 */       this.bi = new aim(this.bg, paramvq, this);
 /* 549:    */     }
 /* 550:569 */     this.bi.d = this.bT;
@@ -561,7 +561,7 @@ package net.minecraft.src;
 /* 560:579 */     aje localaje = ((ajf)this.bi).e();
 /* 561:    */     
 /* 562:581 */     ho localho = paramaqb.e_();
-/* 563:582 */     this.a.a(new je(this.bT, "minecraft:villager", localho, localaje.n_()));
+/* 563:582 */     this.a.a(new je(this.bT, "minecraft:villager", localho, localaje.getSize()));
 /* 564:    */     
 /* 565:584 */     aqd localaqd = paramaqb.b_(this);
 /* 566:585 */     if (localaqd != null)
@@ -581,7 +581,7 @@ package net.minecraft.src;
 /* 580:598 */       n();
 /* 581:    */     }
 /* 582:600 */     cr();
-/* 583:601 */     this.a.a(new je(this.bT, "EntityHorse", paramvq.e_(), paramvq.n_(), paramabt.getID()));
+/* 583:601 */     this.a.a(new je(this.bT, "EntityHorse", paramvq.e_(), paramvq.getSize(), paramabt.getID()));
 /* 584:602 */     this.bi = new aiy(this.bg, paramvq, paramabt, this);
 /* 585:603 */     this.bi.d = this.bT;
 /* 586:604 */     this.bi.a((ail)this);

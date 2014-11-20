@@ -63,20 +63,20 @@ package net.minecraft.src;
 /*  62: 85 */     switch (awk.a[localej.ordinal()])
 /*  63:    */     {
 /*  64:    */     case 1: 
-/*  65: 87 */       paramaqu.a(ew.l, d1 - d4, d2, d3 + d5, 0.0D, 0.0D, 0.0D, new int[0]);
-/*  66: 88 */       paramaqu.a(ew.A, d1 - d4, d2, d3 + d5, 0.0D, 0.0D, 0.0D, new int[0]);
+/*  65: 87 */       paramaqu.a(EnumParticleEffect.l, d1 - d4, d2, d3 + d5, 0.0D, 0.0D, 0.0D, new int[0]);
+/*  66: 88 */       paramaqu.a(EnumParticleEffect.A, d1 - d4, d2, d3 + d5, 0.0D, 0.0D, 0.0D, new int[0]);
 /*  67: 89 */       break;
 /*  68:    */     case 2: 
-/*  69: 91 */       paramaqu.a(ew.l, d1 + d4, d2, d3 + d5, 0.0D, 0.0D, 0.0D, new int[0]);
-/*  70: 92 */       paramaqu.a(ew.A, d1 + d4, d2, d3 + d5, 0.0D, 0.0D, 0.0D, new int[0]);
+/*  69: 91 */       paramaqu.a(EnumParticleEffect.l, d1 + d4, d2, d3 + d5, 0.0D, 0.0D, 0.0D, new int[0]);
+/*  70: 92 */       paramaqu.a(EnumParticleEffect.A, d1 + d4, d2, d3 + d5, 0.0D, 0.0D, 0.0D, new int[0]);
 /*  71: 93 */       break;
 /*  72:    */     case 3: 
-/*  73: 95 */       paramaqu.a(ew.l, d1 + d5, d2, d3 - d4, 0.0D, 0.0D, 0.0D, new int[0]);
-/*  74: 96 */       paramaqu.a(ew.A, d1 + d5, d2, d3 - d4, 0.0D, 0.0D, 0.0D, new int[0]);
+/*  73: 95 */       paramaqu.a(EnumParticleEffect.l, d1 + d5, d2, d3 - d4, 0.0D, 0.0D, 0.0D, new int[0]);
+/*  74: 96 */       paramaqu.a(EnumParticleEffect.A, d1 + d5, d2, d3 - d4, 0.0D, 0.0D, 0.0D, new int[0]);
 /*  75: 97 */       break;
 /*  76:    */     case 4: 
-/*  77: 99 */       paramaqu.a(ew.l, d1 + d5, d2, d3 + d4, 0.0D, 0.0D, 0.0D, new int[0]);
-/*  78:100 */       paramaqu.a(ew.A, d1 + d5, d2, d3 + d4, 0.0D, 0.0D, 0.0D, new int[0]);
+/*  77: 99 */       paramaqu.a(EnumParticleEffect.l, d1 + d5, d2, d3 + d4, 0.0D, 0.0D, 0.0D, new int[0]);
+/*  78:100 */       paramaqu.a(EnumParticleEffect.A, d1 + d5, d2, d3 + d4, 0.0D, 0.0D, 0.0D, new int[0]);
 /*  79:    */     }
 /*  80:    */   }
 /*  81:    */   

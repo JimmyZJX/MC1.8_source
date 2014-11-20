@@ -196,22 +196,22 @@ package net.minecraft.src;
 /* 195:209 */       d7 = Math.sin(this.yaw * 3.141592653589793D / 180.0D);
 /* 196:211 */       for (int i1 = 0; i1 < 1.0D + d2 * 60.0D; i1++)
 /* 197:    */       {
-/* 198:212 */         double d11 = this.random.nextFloat() * 2.0F - 1.0F;
+/* 198:212 */         double d11 = this.rng.nextFloat() * 2.0F - 1.0F;
 /* 199:    */         
-/* 200:214 */         double d14 = (this.random.nextInt(2) * 2 - 1) * 0.7D;
+/* 200:214 */         double d14 = (this.rng.nextInt(2) * 2 - 1) * 0.7D;
 /* 201:    */         double d16;
 /* 202:    */         double d17;
-/* 203:215 */         if (this.random.nextBoolean())
+/* 203:215 */         if (this.rng.nextBoolean())
 /* 204:    */         {
 /* 205:216 */           d16 = this.xPos - d4 * d11 * 0.8D + d7 * d14;
 /* 206:217 */           d17 = this.zPos - d7 * d11 * 0.8D - d4 * d14;
-/* 207:218 */           this.world.a(ew.f, d16, this.yPos - 0.125D, d17, this.xVelocity, this.yVelocity, this.zVelocity, new int[0]);
+/* 207:218 */           this.world.a(EnumParticleEffect.f, d16, this.yPos - 0.125D, d17, this.xVelocity, this.yVelocity, this.zVelocity, new int[0]);
 /* 208:    */         }
 /* 209:    */         else
 /* 210:    */         {
 /* 211:220 */           d16 = this.xPos + d4 + d7 * d11 * 0.7D;
 /* 212:221 */           d17 = this.zPos + d7 - d4 * d11 * 0.7D;
-/* 213:222 */           this.world.a(ew.f, d16, this.yPos - 0.125D, d17, this.xVelocity, this.yVelocity, this.zVelocity, new int[0]);
+/* 213:222 */           this.world.a(EnumParticleEffect.f, d16, this.yPos - 0.125D, d17, this.xVelocity, this.yVelocity, this.zVelocity, new int[0]);
 /* 214:    */         }
 /* 215:    */       }
 /* 216:    */     }

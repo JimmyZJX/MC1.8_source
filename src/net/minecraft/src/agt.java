@@ -19,11 +19,11 @@ package net.minecraft.src;
 /*  18:848 */     if (this.b != null) {
 /*  19:849 */       i = this.b.a(paramRandom);
 /*  20:    */     }
-/*  21:854 */     ItemStack localamj1 = new ItemStack(ItemList.bO, i, 0);
+/*  21:854 */     ItemStack localamj1 = new ItemStack(ItemList.emerald, i, 0);
 /*  22:855 */     ItemStack localamj2 = new ItemStack(this.a.getItem(), 1, this.a.getDamage2());
 /*  23:856 */     localamj2 = aph.a(paramRandom, localamj2, 5 + paramRandom.nextInt(15));
 /*  24:    */     
-/*  25:858 */     paramaqd.add(new aqc(localamj1, localamj2));
+/*  25:858 */     paramaqd.add(new TradeOffer(localamj1, localamj2));
 /*  26:    */   }
 /*  27:    */ }
 

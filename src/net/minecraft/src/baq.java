@@ -143,7 +143,7 @@ package net.minecraft.src;
 /* 142:    */         }
 /* 143:    */       }
 /* 144:    */     }
-/* 145:155 */     paramaqu.a(ew.s, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
+/* 145:155 */     paramaqu.a(EnumParticleEffect.s, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 146:    */   }
 /* 147:    */ }
 

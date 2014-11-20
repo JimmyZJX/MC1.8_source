@@ -8,7 +8,7 @@ package net.minecraft.src;
 /*   8: 20 */   private int c = -1;
 /*   9:    */   private int d;
 /*  10:    */   private int e;
-/*  11:    */   private abi f;
+/*  11:    */   private Village f;
 /*  12:    */   private int g;
 /*  13:    */   private int h;
 /*  14:    */   private int i;
@@ -73,17 +73,17 @@ package net.minecraft.src;
 /*  73: 93 */     for (EntityPlayer localahd : localList) {
 /*  74: 94 */       if (!localahd.v())
 /*  75:    */       {
-/*  76: 95 */         this.f = this.world.ae().a(new BlockPosition(localahd), 1);
+/*  76: 95 */         this.f = this.world.getVillageManager().getNearestVillage(new BlockPosition(localahd), 1);
 /*  77: 96 */         if ((this.f != null) && 
 /*  78:    */         
 /*  79:    */ 
-/*  80: 99 */           (this.f.c() >= 10) && 
+/*  80: 99 */           (this.f.countDoors() >= 10) && 
 /*  81:    */           
 /*  82:    */ 
 /*  83:102 */           (this.f.d() >= 20) && 
 /*  84:    */           
 /*  85:    */ 
-/*  86:105 */           (this.f.e() >= 20))
+/*  86:105 */           (this.f.getPopulation() >= 20))
 /*  87:    */         {
 /*  88:110 */           BlockPosition localdt = this.f.a();
 /*  89:111 */           float f1 = this.f.b();
@@ -96,7 +96,7 @@ package net.minecraft.src;
 /*  96:117 */             this.h = localdt.getY();
 /*  97:118 */             this.i = (localdt.getZ() + (int)(MathUtils.sin(f2) * f1 * 0.9D));
 /*  98:119 */             j = 0;
-/*  99:120 */             for (abi localabi : this.world.ae().b()) {
+/*  99:120 */             for (Village localabi : this.world.getVillageManager().getVillages()) {
 /* 100:121 */               if (localabi != this.f) {
 /* 101:124 */                 if (localabi.a(new BlockPosition(this.g, this.h, this.i)))
 /* 102:    */                 {

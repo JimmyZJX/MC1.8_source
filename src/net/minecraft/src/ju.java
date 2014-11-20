@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ public class ju
 /*   2:    */   implements id<ik>
 /*   3:    */ {
-/*   4:    */   private ew a;
+/*   4:    */   private EnumParticleEffect a;
 /*   5:    */   private float b;
 /*   6:    */   private float c;
 /*   7:    */   private float d;
@@ -16,7 +16,7 @@ package net.minecraft.src;
 /*  15:    */   
 /*  16:    */   public ju() {}
 /*  17:    */   
-/*  18:    */   public ju(ew paramew, boolean paramBoolean, float paramFloat1, float paramFloat2, float paramFloat3, float paramFloat4, float paramFloat5, float paramFloat6, float paramFloat7, int paramInt, int... paramVarArgs)
+/*  18:    */   public ju(EnumParticleEffect paramew, boolean paramBoolean, float paramFloat1, float paramFloat2, float paramFloat3, float paramFloat4, float paramFloat5, float paramFloat6, float paramFloat7, int paramInt, int... paramVarArgs)
 /*  19:    */   {
 /*  20: 28 */     this.a = paramew;
 /*  21: 29 */     this.j = paramBoolean;
@@ -33,9 +33,9 @@ package net.minecraft.src;
 /*  32:    */   
 /*  33:    */   public void fromBuffer(ByteBufWrapper paramhd)
 /*  34:    */   {
-/*  35: 43 */     this.a = ew.a(paramhd.readInt());
+/*  35: 43 */     this.a = EnumParticleEffect.a(paramhd.readInt());
 /*  36: 44 */     if (this.a == null) {
-/*  37: 45 */       this.a = ew.J;
+/*  37: 45 */       this.a = EnumParticleEffect.J;
 /*  38:    */     }
 /*  39: 47 */     this.j = paramhd.readBoolean();
 /*  40: 48 */     this.b = paramhd.readFloat();
@@ -71,7 +71,7 @@ package net.minecraft.src;
 /*  70:    */     }
 /*  71:    */   }
 /*  72:    */   
-/*  73:    */   public ew a()
+/*  73:    */   public EnumParticleEffect a()
 /*  74:    */   {
 /*  75: 82 */     return this.a;
 /*  76:    */   }

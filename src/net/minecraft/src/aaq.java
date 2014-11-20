@@ -37,7 +37,7 @@ package net.minecraft.src;
 /* 36:   */   
 /* 37:   */   public boolean a()
 /* 38:   */   {
-/* 39:67 */     if ((this.g > 0) && (this.e.bb().nextInt(this.g) != 0)) {
+/* 39:67 */     if ((this.g > 0) && (this.e.getRNG().nextInt(this.g) != 0)) {
 /* 40:68 */       return false;
 /* 41:   */     }
 /* 42:71 */     double d1 = f();

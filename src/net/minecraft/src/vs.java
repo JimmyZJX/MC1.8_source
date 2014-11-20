@@ -17,9 +17,9 @@ package net.minecraft.src;
 /* 16:   */   
 /* 17:   */   private static void a(World paramaqu, double paramDouble1, double paramDouble2, double paramDouble3, vq paramvq)
 /* 18:   */   {
-/* 19:24 */     for (int i = 0; i < paramvq.n_(); i++)
+/* 19:24 */     for (int i = 0; i < paramvq.getSize(); i++)
 /* 20:   */     {
-/* 21:25 */       ItemStack localamj = paramvq.a(i);
+/* 21:25 */       ItemStack localamj = paramvq.get(i);
 /* 22:26 */       if (localamj != null) {
 /* 23:30 */         a(paramaqu, paramDouble1, paramDouble2, paramDouble3, localamj);
 /* 24:   */       }

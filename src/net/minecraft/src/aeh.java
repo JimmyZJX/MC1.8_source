@@ -36,7 +36,7 @@ package net.minecraft.src;
 /* 35:55 */     this.a.b(paramfn);
 /* 36:   */   }
 /* 37:   */   
-/* 38:   */   public void a(byte paramByte)
+/* 38:   */   public void onSignal(byte paramByte)
 /* 39:   */   {
 /* 40:60 */     this.a.b(paramByte);
 /* 41:   */   }

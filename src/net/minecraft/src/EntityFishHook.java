@@ -95,9 +95,9 @@ package net.minecraft.src;
 /*  95:136 */     paramDouble2 /= f1;
 /*  96:137 */     paramDouble3 /= f1;
 /*  97:    */     
-/*  98:139 */     paramDouble1 += this.random.nextGaussian() * 0.007499999832361937D * paramFloat2;
-/*  99:140 */     paramDouble2 += this.random.nextGaussian() * 0.007499999832361937D * paramFloat2;
-/* 100:141 */     paramDouble3 += this.random.nextGaussian() * 0.007499999832361937D * paramFloat2;
+/*  98:139 */     paramDouble1 += this.rng.nextGaussian() * 0.007499999832361937D * paramFloat2;
+/*  99:140 */     paramDouble2 += this.rng.nextGaussian() * 0.007499999832361937D * paramFloat2;
+/* 100:141 */     paramDouble3 += this.rng.nextGaussian() * 0.007499999832361937D * paramFloat2;
 /* 101:    */     
 /* 102:143 */     paramDouble1 *= paramFloat1;
 /* 103:144 */     paramDouble2 *= paramFloat1;
@@ -193,9 +193,9 @@ package net.minecraft.src;
 /* 193:    */       }
 /* 194:236 */       this.aq = false;
 /* 195:    */       
-/* 196:238 */       this.xVelocity *= this.random.nextFloat() * 0.2F;
-/* 197:239 */       this.yVelocity *= this.random.nextFloat() * 0.2F;
-/* 198:240 */       this.zVelocity *= this.random.nextFloat() * 0.2F;
+/* 196:238 */       this.xVelocity *= this.rng.nextFloat() * 0.2F;
+/* 197:239 */       this.yVelocity *= this.rng.nextFloat() * 0.2F;
+/* 198:240 */       this.zVelocity *= this.rng.nextFloat() * 0.2F;
 /* 199:241 */       this.ar = 0;
 /* 200:242 */       this.as = 0;
 /* 201:    */     }
@@ -295,10 +295,10 @@ package net.minecraft.src;
 /* 295:    */       
 /* 296:341 */       int n = 1;
 /* 297:342 */       BlockPosition localdt = new BlockPosition(this).up();
-/* 298:343 */       if ((this.random.nextFloat() < 0.25F) && (this.world.C(localdt))) {
+/* 298:343 */       if ((this.rng.nextFloat() < 0.25F) && (this.world.C(localdt))) {
 /* 299:344 */         n = 2;
 /* 300:    */       }
-/* 301:346 */       if ((this.random.nextFloat() < 0.5F) && (!this.world.i(localdt))) {
+/* 301:346 */       if ((this.rng.nextFloat() < 0.5F) && (!this.world.i(localdt))) {
 /* 302:347 */         n--;
 /* 303:    */       }
 /* 304:350 */       if (this.at > 0)
@@ -323,16 +323,16 @@ package net.minecraft.src;
 /* 323:360 */           if (this.av <= 0)
 /* 324:    */           {
 /* 325:361 */             this.yVelocity -= 0.2000000029802322D;
-/* 326:362 */             a("random.splash", 0.25F, 1.0F + (this.random.nextFloat() - this.random.nextFloat()) * 0.4F);
+/* 326:362 */             a("random.splash", 0.25F, 1.0F + (this.rng.nextFloat() - this.rng.nextFloat()) * 0.4F);
 /* 327:363 */             f4 = MathUtils.floor(getAABB().minY);
-/* 328:364 */             localqt.a(ew.e, this.xPos, f4 + 1.0F, this.zPos, (int)(1.0F + this.J * 20.0F), this.J, 0.0D, this.J, 0.2000000029802322D, new int[0]);
-/* 329:365 */             localqt.a(ew.g, this.xPos, f4 + 1.0F, this.zPos, (int)(1.0F + this.J * 20.0F), this.J, 0.0D, this.J, 0.2000000029802322D, new int[0]);
+/* 328:364 */             localqt.a(EnumParticleEffect.e, this.xPos, f4 + 1.0F, this.zPos, (int)(1.0F + this.J * 20.0F), this.J, 0.0D, this.J, 0.2000000029802322D, new int[0]);
+/* 329:365 */             localqt.a(EnumParticleEffect.g, this.xPos, f4 + 1.0F, this.zPos, (int)(1.0F + this.J * 20.0F), this.J, 0.0D, this.J, 0.2000000029802322D, new int[0]);
 /* 330:    */             
-/* 331:367 */             this.at = MathUtils.nextInt(this.random, 10, 30);
+/* 331:367 */             this.at = MathUtils.nextInt(this.rng, 10, 30);
 /* 332:    */           }
 /* 333:    */           else
 /* 334:    */           {
-/* 335:369 */             this.aw = ((float)(this.aw + this.random.nextGaussian() * 4.0D));
+/* 335:369 */             this.aw = ((float)(this.aw + this.rng.nextGaussian() * 4.0D));
 /* 336:    */             
 /* 337:371 */             f4 = this.aw * 0.01745329F;
 /* 338:372 */             f5 = MathUtils.sin(f4);
@@ -340,14 +340,14 @@ package net.minecraft.src;
 /* 340:374 */             d11 = this.xPos + f5 * this.av * 0.1F;
 /* 341:375 */             d12 = MathUtils.floor(getAABB().minY) + 1.0F;
 /* 342:376 */             d13 = this.zPos + f6 * this.av * 0.1F;
-/* 343:378 */             if (this.random.nextFloat() < 0.15F) {
-/* 344:379 */               localqt.a(ew.e, d11, d12 - 0.1000000014901161D, d13, 1, f5, 0.1D, f6, 0.0D, new int[0]);
+/* 343:378 */             if (this.rng.nextFloat() < 0.15F) {
+/* 344:379 */               localqt.a(EnumParticleEffect.e, d11, d12 - 0.1000000014901161D, d13, 1, f5, 0.1D, f6, 0.0D, new int[0]);
 /* 345:    */             }
 /* 346:382 */             float f7 = f5 * 0.04F;
 /* 347:383 */             float f8 = f6 * 0.04F;
 /* 348:    */             
-/* 349:385 */             localqt.a(ew.g, d11, d12, d13, 0, f8, 0.01D, -f7, 1.0D, new int[0]);
-/* 350:386 */             localqt.a(ew.g, d11, d12, d13, 0, -f8, 0.01D, f7, 1.0D, new int[0]);
+/* 349:385 */             localqt.a(EnumParticleEffect.g, d11, d12, d13, 0, f8, 0.01D, -f7, 1.0D, new int[0]);
+/* 350:386 */             localqt.a(EnumParticleEffect.g, d11, d12, d13, 0, -f8, 0.01D, f7, 1.0D, new int[0]);
 /* 351:    */           }
 /* 352:    */         }
 /* 353:388 */         else if (this.au > 0)
@@ -362,30 +362,30 @@ package net.minecraft.src;
 /* 362:397 */           } else if (this.au < 60) {
 /* 363:398 */             f4 = (float)(f4 + (60 - this.au) * 0.01D);
 /* 364:    */           }
-/* 365:401 */           if (this.random.nextFloat() < f4)
+/* 365:401 */           if (this.rng.nextFloat() < f4)
 /* 366:    */           {
-/* 367:402 */             f5 = MathUtils.nextFloat(this.random, 0.0F, 360.0F) * 0.01745329F;
-/* 368:403 */             f6 = MathUtils.nextFloat(this.random, 25.0F, 60.0F);
+/* 367:402 */             f5 = MathUtils.nextFloat(this.rng, 0.0F, 360.0F) * 0.01745329F;
+/* 368:403 */             f6 = MathUtils.nextFloat(this.rng, 25.0F, 60.0F);
 /* 369:404 */             d11 = this.xPos + MathUtils.sin(f5) * f6 * 0.1F;
 /* 370:405 */             d12 = MathUtils.floor(getAABB().minY) + 1.0F;
 /* 371:406 */             d13 = this.zPos + MathUtils.cos(f5) * f6 * 0.1F;
 /* 372:    */             
-/* 373:408 */             localqt.a(ew.f, d11, d12, d13, 2 + this.random.nextInt(2), 0.1000000014901161D, 0.0D, 0.1000000014901161D, 0.0D, new int[0]);
+/* 373:408 */             localqt.a(EnumParticleEffect.f, d11, d12, d13, 2 + this.rng.nextInt(2), 0.1000000014901161D, 0.0D, 0.1000000014901161D, 0.0D, new int[0]);
 /* 374:    */           }
 /* 375:411 */           if (this.au <= 0)
 /* 376:    */           {
-/* 377:412 */             this.aw = MathUtils.nextFloat(this.random, 0.0F, 360.0F);
-/* 378:413 */             this.av = MathUtils.nextInt(this.random, 20, 80);
+/* 377:412 */             this.aw = MathUtils.nextFloat(this.rng, 0.0F, 360.0F);
+/* 378:413 */             this.av = MathUtils.nextInt(this.rng, 20, 80);
 /* 379:    */           }
 /* 380:    */         }
 /* 381:    */         else
 /* 382:    */         {
-/* 383:416 */           this.au = MathUtils.nextInt(this.random, 100, 900);
+/* 383:416 */           this.au = MathUtils.nextInt(this.rng, 100, 900);
 /* 384:417 */           this.au -= aph.h(this.b) * 20 * 5;
 /* 385:    */         }
 /* 386:    */       }
 /* 387:420 */       if (this.at > 0) {
-/* 388:421 */         this.yVelocity -= this.random.nextFloat() * this.random.nextFloat() * this.random.nextFloat() * 0.2D;
+/* 388:421 */         this.yVelocity -= this.rng.nextFloat() * this.rng.nextFloat() * this.rng.nextFloat() * 0.2D;
 /* 389:    */       }
 /* 390:    */     }
 /* 391:425 */     double d8 = d6 * 2.0D - 1.0D;
@@ -459,7 +459,7 @@ package net.minecraft.src;
 /* 459:490 */       localadw.yVelocity = (d4 * d10 + MathUtils.a(d8) * 0.08D);
 /* 460:491 */       localadw.zVelocity = (d6 * d10);
 /* 461:492 */       this.world.spawnEntity(localadw);
-/* 462:493 */       this.b.world.spawnEntity(new xk(this.b.world, this.b.xPos, this.b.yPos + 0.5D, this.b.zPos + 0.5D, this.random.nextInt(6) + 1));
+/* 462:493 */       this.b.world.spawnEntity(new EntityExperienceOrb(this.b.world, this.b.xPos, this.b.yPos + 0.5D, this.b.zPos + 0.5D, this.rng.nextInt(6) + 1));
 /* 463:494 */       j = 1;
 /* 464:    */     }
 /* 465:496 */     if (this.aq) {
@@ -483,18 +483,18 @@ package net.minecraft.src;
 /* 483:515 */     if (f1 < probJunk)
 /* 484:    */     {
 /* 485:516 */       this.b.b(StatList.junkFished);
-/* 486:517 */       return ((adp)WeightedRandom.getRandomItem(this.random, junks)).a(this.random);
+/* 486:517 */       return ((adp)WeightedRandom.getRandomItem(this.rng, junks)).a(this.rng);
 /* 487:    */     }
 /* 488:519 */     f1 -= probJunk;
 /* 489:521 */     if (f1 < probTreasure)
 /* 490:    */     {
 /* 491:522 */       this.b.b(StatList.treasureFished);
-/* 492:523 */       return ((adp)WeightedRandom.getRandomItem(this.random, treasures)).a(this.random);
+/* 492:523 */       return ((adp)WeightedRandom.getRandomItem(this.rng, treasures)).a(this.rng);
 /* 493:    */     }
 /* 494:525 */     f1 -= probTreasure;
 /* 495:    */     
 /* 496:527 */     this.b.b(StatList.fishCaught);
-/* 497:528 */     return ((adp)WeightedRandom.getRandomItem(this.random, fishes)).a(this.random);
+/* 497:528 */     return ((adp)WeightedRandom.getRandomItem(this.rng, fishes)).a(this.rng);
 /* 498:    */   }
 /* 499:    */   
 /* 500:    */   public void setDead()

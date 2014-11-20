@@ -25,8 +25,8 @@ package net.minecraft.src;
 /*  24: 35 */       throw new WrongUsageException("commands.particle.usage", new Object[0]);
 /*  25:    */     }
 /*  26: 38 */     int i = 0;
-/*  27: 39 */     ew localObject1 = null;
-/*  28: 40 */     for (ew localObject3 : ew.values()) {
+/*  27: 39 */     EnumParticleEffect localObject1 = null;
+/*  28: 40 */     for (EnumParticleEffect localObject3 : EnumParticleEffect.values()) {
 /*  29: 41 */       if (localObject3.f())
 /*  30:    */       {
 /*  31: 42 */         if (paramArrayOfString[0].startsWith(localObject3.b()))
@@ -91,7 +91,7 @@ package net.minecraft.src;
 /*  90:    */   public List<String> a(ICommandSender paramae, String[] paramArrayOfString, BlockPosition paramdt)
 /*  91:    */   {
 /*  92:100 */     if (paramArrayOfString.length == 1) {
-/*  93:101 */       return a(paramArrayOfString, ew.a());
+/*  93:101 */       return a(paramArrayOfString, EnumParticleEffect.a());
 /*  94:    */     }
 /*  95:102 */     if ((paramArrayOfString.length > 1) && (paramArrayOfString.length <= 4)) {
 /*  96:103 */       return a(paramArrayOfString, 1, paramdt);

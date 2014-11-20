@@ -95,15 +95,15 @@ package net.minecraft.src;
 /*  94:    */       else
 /*  95:    */       {
 /*  96:113 */         int i = -1;
-/*  97:115 */         if ((this.random.nextFloat() < 0.15F) && (a(Material.water)) && (!a(Potion.waterBreathing))) {
+/*  97:115 */         if ((this.rng.nextFloat() < 0.15F) && (a(Material.water)) && (!a(Potion.waterBreathing))) {
 /*  98:116 */           i = 8237;
-/*  99:117 */         } else if ((this.random.nextFloat() < 0.15F) && (au()) && (!a(Potion.fireResistance))) {
+/*  99:117 */         } else if ((this.rng.nextFloat() < 0.15F) && (au()) && (!a(Potion.fireResistance))) {
 /* 100:118 */           i = 16307;
-/* 101:119 */         } else if ((this.random.nextFloat() < 0.05F) && (getHealth() < bt())) {
+/* 101:119 */         } else if ((this.rng.nextFloat() < 0.05F) && (getHealth() < bt())) {
 /* 102:120 */           i = 16341;
-/* 103:121 */         } else if ((this.random.nextFloat() < 0.25F) && (u() != null) && (!a(Potion.speed)) && (u().h(this) > 121.0D)) {
+/* 103:121 */         } else if ((this.rng.nextFloat() < 0.25F) && (u() != null) && (!a(Potion.speed)) && (u().h(this) > 121.0D)) {
 /* 104:122 */           i = 16274;
-/* 105:123 */         } else if ((this.random.nextFloat() < 0.25F) && (u() != null) && (!a(Potion.speed)) && (u().h(this) > 121.0D)) {
+/* 105:123 */         } else if ((this.rng.nextFloat() < 0.25F) && (u() != null) && (!a(Potion.speed)) && (u().h(this) > 121.0D)) {
 /* 106:124 */           i = 16274;
 /* 107:    */         }
 /* 108:127 */         if (i > -1)
@@ -116,21 +116,21 @@ package net.minecraft.src;
 /* 115:133 */           localObject1.b(c);
 /* 116:    */         }
 /* 117:    */       }
-/* 118:137 */       if (this.random.nextFloat() < 0.00075F) {
-/* 119:138 */         this.world.a(this, (byte)15);
+/* 118:137 */       if (this.rng.nextFloat() < 0.00075F) {
+/* 119:138 */         this.world.sendSignal(this, (byte)15);
 /* 120:    */       }
 /* 121:    */     }
 /* 122:142 */     super.m();
 /* 123:    */   }
 /* 124:    */   
-/* 125:    */   public void a(byte paramByte)
+/* 125:    */   public void onSignal(byte paramByte)
 /* 126:    */   {
 /* 127:147 */     if (paramByte == 15) {
-/* 128:148 */       for (int i = 0; i < this.random.nextInt(35) + 10; i++) {
-/* 129:149 */         this.world.a(ew.r, this.xPos + this.random.nextGaussian() * 0.1299999952316284D, getAABB().maxY + 0.5D + this.random.nextGaussian() * 0.1299999952316284D, this.zPos + this.random.nextGaussian() * 0.1299999952316284D, 0.0D, 0.0D, 0.0D, new int[0]);
+/* 128:148 */       for (int i = 0; i < this.rng.nextInt(35) + 10; i++) {
+/* 129:149 */         this.world.a(EnumParticleEffect.r, this.xPos + this.rng.nextGaussian() * 0.1299999952316284D, getAABB().maxY + 0.5D + this.rng.nextGaussian() * 0.1299999952316284D, this.zPos + this.rng.nextGaussian() * 0.1299999952316284D, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 130:    */       }
 /* 131:    */     } else {
-/* 132:152 */       super.a(paramByte);
+/* 132:152 */       super.onSignal(paramByte);
 /* 133:    */     }
 /* 134:    */   }
 /* 135:    */   
@@ -148,13 +148,13 @@ package net.minecraft.src;
 /* 147:    */   
 /* 148:    */   protected void b(boolean paramBoolean, int paramInt)
 /* 149:    */   {
-/* 150:172 */     int i = this.random.nextInt(3) + 1;
+/* 150:172 */     int i = this.rng.nextInt(3) + 1;
 /* 151:173 */     for (int j = 0; j < i; j++)
 /* 152:    */     {
-/* 153:174 */       int k = this.random.nextInt(3);
-/* 154:175 */       Item localalq = bk[this.random.nextInt(bk.length)];
+/* 153:174 */       int k = this.rng.nextInt(3);
+/* 154:175 */       Item localalq = bk[this.rng.nextInt(bk.length)];
 /* 155:176 */       if (paramInt > 0) {
-/* 156:177 */         k += this.random.nextInt(paramInt + 1);
+/* 156:177 */         k += this.rng.nextInt(paramInt + 1);
 /* 157:    */       }
 /* 158:180 */       for (int m = 0; m < k; m++) {
 /* 159:181 */         a(localalq, 1);
@@ -178,7 +178,7 @@ package net.minecraft.src;
 /* 177:201 */       localahv.a(32698);
 /* 178:202 */     } else if ((paramxm.getHealth() >= 8.0F) && (!paramxm.a(Potion.poison))) {
 /* 179:203 */       localahv.a(32660);
-/* 180:204 */     } else if ((f <= 3.0F) && (!paramxm.a(Potion.weakness)) && (this.random.nextFloat() < 0.25F)) {
+/* 180:204 */     } else if ((f <= 3.0F) && (!paramxm.a(Potion.weakness)) && (this.rng.nextFloat() < 0.25F)) {
 /* 181:205 */       localahv.a(32696);
 /* 182:    */     }
 /* 183:208 */     localahv.c(d2, d3 + f * 0.2F, d4, 0.75F, 8.0F);

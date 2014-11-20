@@ -146,7 +146,7 @@ package net.minecraft.src;
 /* 147:198 */         bms localObject4 = (bms)((bmv)localObject3).b().get(0);
 /* 148:199 */         BlockPosition localdt = ((bms)localObject4).a();
 /* 149:    */         
-/* 150:201 */         double d2 = localdt.i(paramdt);
+/* 150:201 */         double d2 = localdt.dist2(paramdt);
 /* 151:203 */         if (d2 < d1)
 /* 152:    */         {
 /* 153:204 */           d1 = d2;
@@ -168,7 +168,7 @@ package net.minecraft.src;
 /* 169:215 */       for (Iterator<BlockPosition> localObject4 = localObject2.iterator(); localObject4.hasNext();)
 /* 170:    */       {
 /* 171:215 */         localdt = localObject4.next();
-/* 172:216 */         d2 = localdt.i(paramdt);
+/* 172:216 */         d2 = localdt.dist2(paramdt);
 /* 173:218 */         if (d2 < d1)
 /* 174:    */         {
 /* 175:219 */           d1 = d2;

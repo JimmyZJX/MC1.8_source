@@ -105,7 +105,7 @@ package net.minecraft.src;
 /* 104:127 */             double d2 = paramdt.getY() + paramRandom.nextDouble() * 0.6D + 0.2D;
 /* 105:128 */             double d3 = paramdt.getZ() + paramRandom.nextDouble() * 0.6D + 0.2D;
 /* 106:    */             
-/* 107:130 */             paramaqu.a(ew.l, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
+/* 107:130 */             paramaqu.a(EnumParticleEffect.l, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 108:    */           }
 /* 109:133 */           paramaqu.a(paramdt, paramaqu.getBlock(paramdt).getProto(), 160);
 /* 110:    */         }
@@ -165,7 +165,7 @@ package net.minecraft.src;
 /* 164:191 */       d2 += 0.219999998807907D;
 /* 165:192 */       d3 += 0.2700000107288361D * localej2.i();
 /* 166:    */     }
-/* 167:194 */     paramaqu.a(ew.E, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
+/* 167:194 */     paramaqu.a(EnumParticleEffect.E, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 168:    */   }
 /* 169:    */   
 /* 170:    */   public Item b(World paramaqu, BlockPosition paramdt)

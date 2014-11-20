@@ -16,14 +16,14 @@ package net.minecraft.src;
 /* 15:   */   
 /* 16:   */   public boolean a()
 /* 17:   */   {
-/* 18:19 */     abi localabi = this.a.n();
+/* 18:19 */     Village localabi = this.a.n();
 /* 19:20 */     if (localabi == null) {
 /* 20:21 */       return false;
 /* 21:   */     }
 /* 22:23 */     this.b = localabi.b(this.a);
 /* 23:24 */     if (!a(this.b, false))
 /* 24:   */     {
-/* 25:26 */       if (this.e.bb().nextInt(20) == 0)
+/* 25:26 */       if (this.e.getRNG().nextInt(20) == 0)
 /* 26:   */       {
 /* 27:27 */         this.b = localabi.c(this.a);
 /* 28:28 */         return a(this.b, false);

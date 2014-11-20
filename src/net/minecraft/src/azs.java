@@ -113,7 +113,7 @@ package net.minecraft.src;
 /* 112:123 */         d2 = paramdt.getX() - d1;
 /* 113:    */       }
 /* 114:125 */       if ((d2 < paramdt.getX()) || (d2 > paramdt.getX() + 1) || (d3 < 0.0D) || (d3 > paramdt.getY() + 1) || (d4 < paramdt.getZ()) || (d4 > paramdt.getZ() + 1)) {
-/* 115:126 */         paramaqu.a(ew.E, d2, d3, d4, 0.0D, 0.0D, 0.0D, new int[0]);
+/* 115:126 */         paramaqu.a(EnumParticleEffect.E, d2, d3, d4, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 116:    */       }
 /* 117:    */     }
 /* 118:    */   }

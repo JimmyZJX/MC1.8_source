@@ -92,7 +92,7 @@ package net.minecraft.src;
 /*  91:116 */       double d5 = (paramRandom.nextFloat() - 0.5D) * 0.125D;
 /*  92:117 */       double d6 = paramRandom.nextFloat() * k;
 /*  93:    */       
-/*  94:119 */       paramaqu.a(ew.y, d1, d2, d3, d4, d5, d6, new int[0]);
+/*  94:119 */       paramaqu.a(EnumParticleEffect.y, d1, d2, d3, d4, d5, d6, new int[0]);
 /*  95:    */     }
 /*  96:    */   }
 /*  97:    */   

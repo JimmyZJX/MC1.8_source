@@ -99,11 +99,11 @@ package net.minecraft.src;
 /*  98:    */   
 /*  99:    */   protected void b(boolean paramBoolean, int paramInt)
 /* 100:    */   {
-/* 101:124 */     int i = this.random.nextInt(2) + this.random.nextInt(1 + paramInt);
+/* 101:124 */     int i = this.rng.nextInt(2) + this.rng.nextInt(1 + paramInt);
 /* 102:125 */     for (int j = 0; j < i; j++) {
 /* 103:126 */       a(ItemList.bw, 1);
 /* 104:    */     }
-/* 105:128 */     i = this.random.nextInt(3) + this.random.nextInt(1 + paramInt);
+/* 105:128 */     i = this.rng.nextInt(3) + this.rng.nextInt(1 + paramInt);
 /* 106:129 */     for (j = 0; j < i; j++) {
 /* 107:130 */       a(ItemList.H, 1);
 /* 108:    */     }
@@ -116,7 +116,7 @@ package net.minecraft.src;
 /* 115:    */   
 /* 116:    */   public boolean canSpawn()
 /* 117:    */   {
-/* 118:141 */     return (this.random.nextInt(20) == 0) && (super.canSpawn()) && (this.world.getDifficulty() != EnumDifficulty.PEACEFUL);
+/* 118:141 */     return (this.rng.nextInt(20) == 0) && (super.canSpawn()) && (this.world.getDifficulty() != EnumDifficulty.PEACEFUL);
 /* 119:    */   }
 /* 120:    */   
 /* 121:    */   public int getMaxSpawnedInChunk()

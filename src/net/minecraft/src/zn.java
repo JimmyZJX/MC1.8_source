@@ -28,7 +28,7 @@ package net.minecraft.src;
 /* 27:34 */       this.a -= 1;
 /* 28:35 */       return false;
 /* 29:   */     }
-/* 30:37 */     this.a = (200 + this.c.bb().nextInt(200));
+/* 30:37 */     this.a = (200 + this.c.getRNG().nextInt(200));
 /* 31:38 */     return g();
 /* 32:   */   }
 /* 33:   */   
@@ -41,7 +41,7 @@ package net.minecraft.src;
 /* 40:   */   {
 /* 41:48 */     this.c.s().a(this.b.getX() + 0.5D, this.b.getY() + 1, this.b.getZ() + 0.5D, this.d);
 /* 42:49 */     this.e = 0;
-/* 43:50 */     this.f = (this.c.bb().nextInt(this.c.bb().nextInt(1200) + 1200) + 1200);
+/* 43:50 */     this.f = (this.c.getRNG().nextInt(this.c.getRNG().nextInt(1200) + 1200) + 1200);
 /* 44:   */   }
 /* 45:   */   
 /* 46:   */   public void d() {}

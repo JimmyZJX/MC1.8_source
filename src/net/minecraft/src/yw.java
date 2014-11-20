@@ -20,7 +20,7 @@ package net.minecraft.src;
 /* 19:   */   
 /* 20:   */   public boolean a()
 /* 21:   */   {
-/* 22:36 */     if (this.c.bb().nextInt(this.c.i_() ? 50 : 1000) != 0) {
+/* 22:36 */     if (this.c.getRNG().nextInt(this.c.i_() ? 50 : 1000) != 0) {
 /* 23:37 */       return false;
 /* 24:   */     }
 /* 25:40 */     BlockPosition localdt = new BlockPosition(this.c.xPos, this.c.yPos, this.c.zPos);
@@ -36,7 +36,7 @@ package net.minecraft.src;
 /* 35:   */   public void c()
 /* 36:   */   {
 /* 37:52 */     this.a = 40;
-/* 38:53 */     this.d.a(this.c, (byte)10);
+/* 38:53 */     this.d.sendSignal(this.c, (byte)10);
 /* 39:54 */     this.c.s().n();
 /* 40:   */   }
 /* 41:   */   

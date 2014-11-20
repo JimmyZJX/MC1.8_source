@@ -76,7 +76,7 @@ package net.minecraft.src;
 /*  75:102 */     double d2 = paramdt.getY() + 0.7F + paramRandom.nextFloat() * 0.3F;
 /*  76:103 */     double d3 = paramdt.getZ() + 0.4F + paramRandom.nextFloat() * 0.2F;
 /*  77:    */     
-/*  78:105 */     paramaqu.a(ew.l, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
+/*  78:105 */     paramaqu.a(EnumParticleEffect.l, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
 /*  79:    */   }
 /*  80:    */   
 /*  81:    */   public void b(World paramaqu, BlockPosition paramdt, Block parambec)

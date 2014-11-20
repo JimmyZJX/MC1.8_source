@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*  9:   */   public aim(vq paramvq1, vq paramvq2, EntityPlayer paramahd)
 /* 10:   */   {
 /* 11:14 */     this.a = paramvq2;
-/* 12:15 */     this.f = (paramvq2.n_() / 9);
+/* 12:15 */     this.f = (paramvq2.getSize() / 9);
 /* 13:16 */     paramvq2.b(paramahd);
 /* 14:   */     
 /* 15:18 */     int i = (this.f - 4) * 18;

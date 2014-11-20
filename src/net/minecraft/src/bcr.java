@@ -29,17 +29,17 @@ package net.minecraft.src;
 /*  28: 48 */     this.o = paramInt;
 /*  29:    */   }
 /*  30:    */   
-/*  31:    */   public int n_()
+/*  31:    */   public int getSize()
 /*  32:    */   {
 /*  33: 53 */     return 27;
 /*  34:    */   }
 /*  35:    */   
-/*  36:    */   public ItemStack a(int paramInt)
+/*  36:    */   public ItemStack get(int paramInt)
 /*  37:    */   {
 /*  38: 59 */     return this.m[paramInt];
 /*  39:    */   }
 /*  40:    */   
-/*  41:    */   public ItemStack a(int paramInt1, int paramInt2)
+/*  41:    */   public ItemStack removeItems(int paramInt1, int paramInt2)
 /*  42:    */   {
 /*  43: 65 */     if (this.m[paramInt1] != null)
 /*  44:    */     {
@@ -99,7 +99,7 @@ package net.minecraft.src;
 /*  98:    */   {
 /*  99:120 */     super.readFromNBT(paramfn);
 /* 100:121 */     fv localfv = paramfn.c("Items", 10);
-/* 101:122 */     this.m = new ItemStack[n_()];
+/* 101:122 */     this.m = new ItemStack[getSize()];
 /* 102:123 */     if (paramfn.hasKey("CustomName", 8)) {
 /* 103:124 */       this.p = paramfn.getString("CustomName");
 /* 104:    */     }

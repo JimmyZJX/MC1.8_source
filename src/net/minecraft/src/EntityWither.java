@@ -157,14 +157,14 @@ package net.minecraft.src;
 /* 156:188 */       double d4 = u(i);
 /* 157:189 */       double d6 = v(i);
 /* 158:    */       
-/* 159:191 */       this.world.a(ew.l, d2 + this.random.nextGaussian() * 0.300000011920929D, d4 + this.random.nextGaussian() * 0.300000011920929D, d6 + this.random.nextGaussian() * 0.300000011920929D, 0.0D, 0.0D, 0.0D, new int[0]);
+/* 159:191 */       this.world.a(EnumParticleEffect.l, d2 + this.rng.nextGaussian() * 0.300000011920929D, d4 + this.rng.nextGaussian() * 0.300000011920929D, d6 + this.rng.nextGaussian() * 0.300000011920929D, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 160:192 */       if ((bool) && (this.world.rng.nextInt(4) == 0)) {
-/* 161:193 */         this.world.a(ew.p, d2 + this.random.nextGaussian() * 0.300000011920929D, d4 + this.random.nextGaussian() * 0.300000011920929D, d6 + this.random.nextGaussian() * 0.300000011920929D, 0.699999988079071D, 0.699999988079071D, 0.5D, new int[0]);
+/* 161:193 */         this.world.a(EnumParticleEffect.p, d2 + this.rng.nextGaussian() * 0.300000011920929D, d4 + this.rng.nextGaussian() * 0.300000011920929D, d6 + this.rng.nextGaussian() * 0.300000011920929D, 0.699999988079071D, 0.699999988079071D, 0.5D, new int[0]);
 /* 162:    */       }
 /* 163:    */     }
 /* 164:196 */     if (cj() > 0) {
 /* 165:197 */       for (int i = 0; i < 3; i++) {
-/* 166:198 */         this.world.a(ew.p, this.xPos + this.random.nextGaussian() * 1.0D, this.yPos + this.random.nextFloat() * 3.3F, this.zPos + this.random.nextGaussian() * 1.0D, 0.699999988079071D, 0.699999988079071D, 0.8999999761581421D, new int[0]);
+/* 166:198 */         this.world.a(EnumParticleEffect.p, this.xPos + this.rng.nextGaussian() * 1.0D, this.yPos + this.rng.nextFloat() * 3.3F, this.zPos + this.rng.nextGaussian() * 1.0D, 0.699999988079071D, 0.699999988079071D, 0.8999999761581421D, new int[0]);
 /* 167:    */       }
 /* 168:    */     }
 /* 169:    */   }
@@ -192,7 +192,7 @@ package net.minecraft.src;
 /* 190:223 */     for (i = 1; i < 3; i++) {
 /* 191:224 */       if (this.W >= this.bm[(i - 1)])
 /* 192:    */       {
-/* 193:225 */         this.bm[(i - 1)] = (this.W + 10 + this.random.nextInt(10));
+/* 193:225 */         this.bm[(i - 1)] = (this.W + 10 + this.rng.nextInt(10));
 /* 194:227 */         if ((this.world.getDifficulty() == EnumDifficulty.NORMAL) || (this.world.getDifficulty() == EnumDifficulty.HARD))
 /* 195:    */         {
 /* 196:227 */           int tmp185_184 = (i - 1); int[] tmp185_179 = this.bn; int tmp187_186 = tmp185_179[tmp185_184];tmp185_179[tmp185_184] = (tmp187_186 + 1);
@@ -200,9 +200,9 @@ package net.minecraft.src;
 /* 198:    */           {
 /* 199:228 */             float f1 = 10.0F;
 /* 200:229 */             float f2 = 5.0F;
-/* 201:230 */             double d1 = MathUtils.nextDouble(this.random, this.xPos - f1, this.xPos + f1);
-/* 202:231 */             double d2 = MathUtils.nextDouble(this.random, this.yPos - f2, this.yPos + f2);
-/* 203:232 */             double d3 = MathUtils.nextDouble(this.random, this.zPos - f1, this.zPos + f1);
+/* 201:230 */             double d1 = MathUtils.nextDouble(this.rng, this.xPos - f1, this.xPos + f1);
+/* 202:231 */             double d2 = MathUtils.nextDouble(this.rng, this.yPos - f2, this.yPos + f2);
+/* 203:232 */             double d3 = MathUtils.nextDouble(this.rng, this.zPos - f1, this.zPos + f1);
 /* 204:233 */             a(i + 1, d1, d2, d3, true);
 /* 205:234 */             this.bn[(i - 1)] = 0;
 /* 206:    */           }
@@ -219,7 +219,7 @@ package net.minecraft.src;
 /* 217:    */           else
 /* 218:    */           {
 /* 219:243 */             a(i + 1, (EntityLiving)localObject);
-/* 220:244 */             this.bm[(i - 1)] = (this.W + 40 + this.random.nextInt(20));
+/* 220:244 */             this.bm[(i - 1)] = (this.W + 40 + this.rng.nextInt(20));
 /* 221:245 */             this.bn[(i - 1)] = 0;
 /* 222:    */           }
 /* 223:    */         }
@@ -228,7 +228,7 @@ package net.minecraft.src;
 /* 226:248 */           localObject = this.world.a(EntityLiving.class, getAABB().expand(20.0D, 8.0D, 20.0D), Predicates.and(bp, xe.d));
 /* 227:250 */           for (m = 0; (m < 10) && (!((List)localObject).isEmpty()); m++)
 /* 228:    */           {
-/* 229:251 */             EntityLiving localxm = (EntityLiving)((List)localObject).get(this.random.nextInt(((List)localObject).size()));
+/* 229:251 */             EntityLiving localxm = (EntityLiving)((List)localObject).get(this.rng.nextInt(((List)localObject).size()));
 /* 230:253 */             if ((localxm != this) && (localxm.ai()) && (t(localxm)))
 /* 231:    */             {
 /* 232:254 */               if ((localxm instanceof EntityPlayer))
@@ -339,7 +339,7 @@ package net.minecraft.src;
 /* 337:    */   
 /* 338:    */   private void a(int paramInt, EntityLiving paramxm)
 /* 339:    */   {
-/* 340:364 */     a(paramInt, paramxm.xPos, paramxm.yPos + paramxm.aR() * 0.5D, paramxm.zPos, (paramInt == 0) && (this.random.nextFloat() < 0.001F));
+/* 340:364 */     a(paramInt, paramxm.xPos, paramxm.yPos + paramxm.aR() * 0.5D, paramxm.zPos, (paramInt == 0) && (this.rng.nextFloat() < 0.001F));
 /* 341:    */   }
 /* 342:    */   
 /* 343:    */   private void a(int paramInt, double paramDouble1, double paramDouble2, double paramDouble3, boolean paramBoolean)

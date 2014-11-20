@@ -222,7 +222,7 @@ package net.minecraft.src;
 /* 221:257 */       Block localbec = getBlock(localdt);
 /* 222:258 */       localbec.getProto().c(this, localdt, localbec, localRandom);
 /* 223:260 */       if ((j != 0) && (localbec.getProto() == BlockList.barrier)) {
-/* 224:261 */         a(ew.J, m + 0.5F, n + 0.5F, i1 + 0.5F, 0.0D, 0.0D, 0.0D, new int[0]);
+/* 224:261 */         a(EnumParticleEffect.J, m + 0.5F, n + 0.5F, i1 + 0.5F, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 225:    */       }
 /* 226:    */     }
 /* 227:    */   }

@@ -19,7 +19,7 @@ package net.minecraft.src;
 /*   18:     */   protected int bk;
 /*   19:     */   public float bl;
 /*   20:     */   public float bm;
-/*   21:     */   public int bn;
+/*   21:     */   public int expOrbCoolDown;
 /*   22:     */   public double bo;
 /*   23:     */   public double bp;
 /*   24:     */   public double bq;
@@ -153,8 +153,8 @@ package net.minecraft.src;
 /*  152: 250 */         bU();
 /*  153:     */       }
 /*  154:     */     }
-/*  155: 254 */     if (this.bn > 0) {
-/*  156: 255 */       this.bn -= 1;
+/*  155: 254 */     if (this.expOrbCoolDown > 0) {
+/*  156: 255 */       this.expOrbCoolDown -= 1;
 /*  157:     */     }
 /*  158: 257 */     if (bI())
 /*  159:     */     {
@@ -270,22 +270,22 @@ package net.minecraft.src;
 /*  269:     */     {
 /*  270: 374 */       for (int j = 0; j < paramInt; j++)
 /*  271:     */       {
-/*  272: 375 */         Vec3 localbrw1 = new Vec3((this.random.nextFloat() - 0.5D) * 0.1D, Math.random() * 0.1D + 0.1D, 0.0D);
+/*  272: 375 */         Vec3 localbrw1 = new Vec3((this.rng.nextFloat() - 0.5D) * 0.1D, Math.random() * 0.1D + 0.1D, 0.0D);
 /*  273: 376 */         localbrw1 = localbrw1.a(-this.pitch * 3.141593F / 180.0F);
 /*  274: 377 */         localbrw1 = localbrw1.b(-this.yaw * 3.141593F / 180.0F);
 /*  275:     */         
-/*  276: 379 */         double d1 = -this.random.nextFloat() * 0.6D - 0.3D;
-/*  277: 380 */         Vec3 localbrw2 = new Vec3((this.random.nextFloat() - 0.5D) * 0.3D, d1, 0.6D);
+/*  276: 379 */         double d1 = -this.rng.nextFloat() * 0.6D - 0.3D;
+/*  277: 380 */         Vec3 localbrw2 = new Vec3((this.rng.nextFloat() - 0.5D) * 0.3D, d1, 0.6D);
 /*  278: 381 */         localbrw2 = localbrw2.a(-this.pitch * 3.141593F / 180.0F);
 /*  279: 382 */         localbrw2 = localbrw2.b(-this.yaw * 3.141593F / 180.0F);
 /*  280: 383 */         localbrw2 = localbrw2.b(this.xPos, this.yPos + aR(), this.zPos);
 /*  281: 384 */         if (paramamj.f()) {
-/*  282: 385 */           this.world.a(ew.K, localbrw2.x, localbrw2.y, localbrw2.z, localbrw1.x, localbrw1.y + 0.05D, localbrw1.z, new int[] { Item.b(paramamj.getItem()), paramamj.getDamage2() });
+/*  282: 385 */           this.world.a(EnumParticleEffect.K, localbrw2.x, localbrw2.y, localbrw2.z, localbrw1.x, localbrw1.y + 0.05D, localbrw1.z, new int[] { Item.b(paramamj.getItem()), paramamj.getDamage2() });
 /*  283:     */         } else {
-/*  284: 387 */           this.world.a(ew.K, localbrw2.x, localbrw2.y, localbrw2.z, localbrw1.x, localbrw1.y + 0.05D, localbrw1.z, new int[] { Item.b(paramamj.getItem()) });
+/*  284: 387 */           this.world.a(EnumParticleEffect.K, localbrw2.x, localbrw2.y, localbrw2.z, localbrw1.x, localbrw1.y + 0.05D, localbrw1.z, new int[] { Item.b(paramamj.getItem()) });
 /*  285:     */         }
 /*  286:     */       }
-/*  287: 390 */       a("random.eat", 0.5F + 0.5F * this.random.nextInt(2), (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
+/*  287: 390 */       a("random.eat", 0.5F + 0.5F * this.rng.nextInt(2), (this.rng.nextFloat() - this.rng.nextFloat()) * 0.2F + 1.0F);
 /*  288:     */     }
 /*  289:     */   }
 /*  290:     */   
@@ -308,7 +308,7 @@ package net.minecraft.src;
 /*  307:     */     }
 /*  308:     */   }
 /*  309:     */   
-/*  310:     */   public void a(byte paramByte)
+/*  310:     */   public void onSignal(byte paramByte)
 /*  311:     */   {
 /*  312: 412 */     if (paramByte == 9) {
 /*  313: 413 */       s();
@@ -317,7 +317,7 @@ package net.minecraft.src;
 /*  316: 416 */     } else if (paramByte == 22) {
 /*  317: 417 */       this.bG = true;
 /*  318:     */     } else {
-/*  319: 419 */       super.a(paramByte);
+/*  319: 419 */       super.onSignal(paramByte);
 /*  320:     */     }
 /*  321:     */   }
 /*  322:     */   
@@ -538,7 +538,7 @@ package net.minecraft.src;
 /*  537:     */   
 /*  538:     */   public EntityItem a(boolean paramBoolean)
 /*  539:     */   {
-/*  540: 639 */     return a(this.bg.a(this.bg.c, (paramBoolean) && (this.bg.h() != null) ? this.bg.h().stackSize : 1), false, true);
+/*  540: 639 */     return a(this.bg.removeItems(this.bg.c, (paramBoolean) && (this.bg.h() != null) ? this.bg.h().stackSize : 1), false, true);
 /*  541:     */   }
 /*  542:     */   
 /*  543:     */   public EntityItem a(ItemStack paramamj, boolean paramBoolean)
@@ -564,8 +564,8 @@ package net.minecraft.src;
 /*  563:     */     float f2;
 /*  564: 664 */     if (paramBoolean1)
 /*  565:     */     {
-/*  566: 665 */       f1 = this.random.nextFloat() * 0.5F;
-/*  567: 666 */       f2 = this.random.nextFloat() * 3.141593F * 2.0F;
+/*  566: 665 */       f1 = this.rng.nextFloat() * 0.5F;
+/*  567: 666 */       f2 = this.rng.nextFloat() * 3.141593F * 2.0F;
 /*  568: 667 */       localadw.xVelocity = (-MathUtils.sin(f2) * f1);
 /*  569: 668 */       localadw.zVelocity = (MathUtils.cos(f2) * f1);
 /*  570: 669 */       localadw.yVelocity = 0.2000000029802322D;
@@ -577,10 +577,10 @@ package net.minecraft.src;
 /*  576: 674 */       localadw.zVelocity = (MathUtils.cos(this.yaw / 180.0F * 3.141593F) * MathUtils.cos(this.pitch / 180.0F * 3.141593F) * f1);
 /*  577: 675 */       localadw.yVelocity = (-MathUtils.sin(this.pitch / 180.0F * 3.141593F) * f1 + 0.1F);
 /*  578:     */       
-/*  579: 677 */       f2 = this.random.nextFloat() * 3.141593F * 2.0F;
-/*  580: 678 */       f1 = 0.02F * this.random.nextFloat();
+/*  579: 677 */       f2 = this.rng.nextFloat() * 3.141593F * 2.0F;
+/*  580: 678 */       f1 = 0.02F * this.rng.nextFloat();
 /*  581: 679 */       localadw.xVelocity += Math.cos(f2) * f1;
-/*  582: 680 */       localadw.yVelocity += (this.random.nextFloat() - this.random.nextFloat()) * 0.1F;
+/*  582: 680 */       localadw.yVelocity += (this.rng.nextFloat() - this.rng.nextFloat()) * 0.1F;
 /*  583: 681 */       localadw.zVelocity += Math.sin(f2) * f1;
 /*  584:     */     }
 /*  585: 684 */     a(localadw);
@@ -658,7 +658,7 @@ package net.minecraft.src;
 /*  657: 759 */     this.bA = paramfn.getInteger("XpTotal");
 /*  658: 760 */     this.f = paramfn.getInteger("XpSeed");
 /*  659: 761 */     if (this.f == 0) {
-/*  660: 762 */       this.f = this.random.nextInt();
+/*  660: 762 */       this.f = this.rng.nextInt();
 /*  661:     */     }
 /*  662: 764 */     r(paramfn.getInteger("Score"));
 /*  663: 766 */     if (this.bu)
@@ -1418,7 +1418,7 @@ package net.minecraft.src;
 /* 1417:1564 */       this.bB = 0.0F;
 /* 1418:1565 */       this.bA = 0;
 /* 1419:     */     }
-/* 1420:1567 */     this.f = this.random.nextInt();
+/* 1420:1567 */     this.f = this.rng.nextInt();
 /* 1421:     */   }
 /* 1422:     */   
 /* 1423:     */   public void a(int paramInt)
@@ -1726,7 +1726,7 @@ package net.minecraft.src;
 /* 1725:1868 */       return true;
 /* 1726:     */     }
 /* 1727:1870 */     int k = paramInt - 200;
-/* 1728:1871 */     if ((k >= 0) && (k < this.a.n_()))
+/* 1728:1871 */     if ((k >= 0) && (k < this.a.getSize()))
 /* 1729:     */     {
 /* 1730:1872 */       this.a.a(k, paramamj);
 /* 1731:1873 */       return true;

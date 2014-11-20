@@ -470,8 +470,8 @@ package net.minecraft.src;
 /* 469:465 */       localil.c(MathUtils.floor(localdt.getZ() * 32));
 /* 470:466 */       return localil;
 /* 471:    */     }
-/* 472:468 */     if ((this.a instanceof xk)) {
-/* 473:469 */       return new im((xk)this.a);
+/* 472:468 */     if ((this.a instanceof EntityExperienceOrb)) {
+/* 473:469 */       return new im((EntityExperienceOrb)this.a);
 /* 474:    */     }
 /* 475:471 */     throw new IllegalArgumentException("Don't know how to add " + this.a.getClass() + "!");
 /* 476:    */   }

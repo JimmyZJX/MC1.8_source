@@ -5,9 +5,9 @@ package net.minecraft.src;
 /*   4:    */   public boolean a(ain paramain, World paramaqu)
 /*   5:    */   {
 /*   6:149 */     int i = 0;
-/*   7:150 */     for (int j = 0; j < paramain.n_(); j++)
+/*   7:150 */     for (int j = 0; j < paramain.getSize(); j++)
 /*   8:    */     {
-/*   9:151 */       ItemStack localamj = paramain.a(j);
+/*   9:151 */       ItemStack localamj = paramain.get(j);
 /*  10:152 */       if ((localamj != null) && (localamj.getItem() == ItemList.cE))
 /*  11:    */       {
 /*  12:156 */         if (i != 0) {
@@ -28,9 +28,9 @@ package net.minecraft.src;
 /*  27:    */   public ItemStack a(ain paramain)
 /*  28:    */   {
 /*  29:175 */     ItemStack localamj1 = null;
-/*  30:176 */     for (int i = 0; i < paramain.n_(); i++)
+/*  30:176 */     for (int i = 0; i < paramain.getSize(); i++)
 /*  31:    */     {
-/*  32:177 */       ItemStack localamj2 = paramain.a(i);
+/*  32:177 */       ItemStack localamj2 = paramain.get(i);
 /*  33:178 */       if (localamj2 != null) {
 /*  34:181 */         if (localamj2.getItem() == ItemList.cE)
 /*  35:    */         {
@@ -44,9 +44,9 @@ package net.minecraft.src;
 /*  43:190 */     if (localbcj != null)
 /*  44:    */     {
 /*  45:192 */       int j = 0;
-/*  46:193 */       for (int k = 0; k < paramain.n_(); k++)
+/*  46:193 */       for (int k = 0; k < paramain.getSize(); k++)
 /*  47:    */       {
-/*  48:194 */         ItemStack localObject = paramain.a(k);
+/*  48:194 */         ItemStack localObject = paramain.get(k);
 /*  49:195 */         if ((localObject != null) && (((ItemStack)localObject).getItem() == ItemList.dye))
 /*  50:    */         {
 /*  51:198 */           j = ((ItemStack)localObject).getDamage2();
@@ -84,10 +84,10 @@ package net.minecraft.src;
 /*  83:    */   
 /*  84:    */   public ItemStack[] b(ain paramain)
 /*  85:    */   {
-/*  86:234 */     ItemStack[] arrayOfamj = new ItemStack[paramain.n_()];
+/*  86:234 */     ItemStack[] arrayOfamj = new ItemStack[paramain.getSize()];
 /*  87:236 */     for (int i = 0; i < arrayOfamj.length; i++)
 /*  88:    */     {
-/*  89:237 */       ItemStack localamj = paramain.a(i);
+/*  89:237 */       ItemStack localamj = paramain.get(i);
 /*  90:238 */       if ((localamj != null) && (localamj.getItem().r())) {
 /*  91:239 */         arrayOfamj[i] = new ItemStack(localamj.getItem().q());
 /*  92:    */       }
@@ -108,9 +108,9 @@ package net.minecraft.src;
 /* 107:    */         {
 /* 108:255 */           m = 0;
 /* 109:256 */           n = 0;
-/* 110:257 */           for (i1 = 0; (i1 < paramain.n_()) && (k != 0); i1++)
+/* 110:257 */           for (i1 = 0; (i1 < paramain.getSize()) && (k != 0); i1++)
 /* 111:    */           {
-/* 112:258 */             ItemStack localamj1 = paramain.a(i1);
+/* 112:258 */             ItemStack localamj1 = paramain.get(i1);
 /* 113:259 */             if ((localamj1 != null) && (localamj1.getItem() != ItemList.cE)) {
 /* 114:262 */               if (localamj1.getItem() == ItemList.dye)
 /* 115:    */               {
@@ -136,15 +136,15 @@ package net.minecraft.src;
 /* 135:277 */             k = 0;
 /* 136:    */           }
 /* 137:    */         }
-/* 138:279 */         else if (paramain.n_() == localbcj.c().length * localbcj.c()[0].length())
+/* 138:279 */         else if (paramain.getSize() == localbcj.c().length * localbcj.c()[0].length())
 /* 139:    */         {
 /* 140:281 */           m = -1;
-/* 141:282 */           for (n = 0; (n < paramain.n_()) && (k != 0); n++)
+/* 141:282 */           for (n = 0; (n < paramain.getSize()) && (k != 0); n++)
 /* 142:    */           {
 /* 143:283 */             i1 = n / 3;
 /* 144:284 */             int i2 = n % 3;
 /* 145:    */             
-/* 146:286 */             ItemStack localamj2 = paramain.a(n);
+/* 146:286 */             ItemStack localamj2 = paramain.get(n);
 /* 147:287 */             if ((localamj2 == null) || (localamj2.getItem() == ItemList.cE))
 /* 148:    */             {
 /* 149:288 */               if (localbcj.c()[i1].charAt(i2) != ' ')

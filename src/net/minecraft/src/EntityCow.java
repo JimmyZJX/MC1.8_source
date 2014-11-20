@@ -59,11 +59,11 @@ package net.minecraft.src;
 /*  59:    */   
 /*  60:    */   protected void b(boolean paramBoolean, int paramInt)
 /*  61:    */   {
-/*  62: 72 */     int i = this.random.nextInt(3) + this.random.nextInt(1 + paramInt);
+/*  62: 72 */     int i = this.rng.nextInt(3) + this.rng.nextInt(1 + paramInt);
 /*  63: 73 */     for (int j = 0; j < i; j++) {
 /*  64: 74 */       a(ItemList.leather, 1);
 /*  65:    */     }
-/*  66: 77 */     i = this.random.nextInt(3) + 1 + this.random.nextInt(1 + paramInt);
+/*  66: 77 */     i = this.rng.nextInt(3) + 1 + this.rng.nextInt(1 + paramInt);
 /*  67: 78 */     for (j = 0; j < i; j++) {
 /*  68: 79 */       if (au()) {
 /*  69: 80 */         a(ItemList.bj, 1);
@@ -73,7 +73,7 @@ package net.minecraft.src;
 /*  73:    */     }
 /*  74:    */   }
 /*  75:    */   
-/*  76:    */   public boolean a(EntityPlayer paramahd)
+/*  76:    */   public boolean onRightClick(EntityPlayer paramahd)
 /*  77:    */   {
 /*  78: 89 */     ItemStack localamj = paramahd.bg.h();
 /*  79: 90 */     if ((localamj != null) && (localamj.getItem() == ItemList.aw) && (!paramahd.by.d))
@@ -85,10 +85,10 @@ package net.minecraft.src;
 /*  85:    */       }
 /*  86: 97 */       return true;
 /*  87:    */     }
-/*  88: 99 */     return super.a(paramahd);
+/*  88: 99 */     return super.onRightClick(paramahd);
 /*  89:    */   }
 /*  90:    */   
-/*  91:    */   public EntityCow a(EntityPassiveMob paramws)
+/*  91:    */   public EntityCow getBaby(EntityPassiveMob paramws)
 /*  92:    */   {
 /*  93:104 */     return new EntityCow(this.world);
 /*  94:    */   }

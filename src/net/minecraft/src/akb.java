@@ -98,7 +98,7 @@ package net.minecraft.src;
 /*  97:    */         
 /*  98:105 */         paramaqu.a(j + 0.5F, k + 0.5F, m + 0.5F, "random.fizz", 0.5F, 2.6F + (paramaqu.rng.nextFloat() - paramaqu.rng.nextFloat()) * 0.8F);
 /*  99:107 */         for (int n = 0; n < 8; n++) {
-/* 100:108 */           paramaqu.a(ew.m, j + Math.random(), k + Math.random(), m + Math.random(), 0.0D, 0.0D, 0.0D, new int[0]);
+/* 100:108 */           paramaqu.a(EnumParticleEffect.m, j + Math.random(), k + Math.random(), m + Math.random(), 0.0D, 0.0D, 0.0D, new int[0]);
 /* 101:    */         }
 /* 102:    */       }
 /* 103:    */       else

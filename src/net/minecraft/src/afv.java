@@ -30,7 +30,7 @@ package net.minecraft.src;
 /*  29:158 */     if (this.b <= 0)
 /*  30:    */     {
 /*  31:159 */       World localaqu = this.a.world;
-/*  32:160 */       Random localRandom = this.a.bb();
+/*  32:160 */       Random localRandom = this.a.getRNG();
 /*  33:    */       
 /*  34:    */ 
 /*  35:163 */       BlockPosition localdt1 = new BlockPosition(this.a);

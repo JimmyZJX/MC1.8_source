@@ -8,14 +8,14 @@ package net.minecraft.src;
 /*  7:   */   {
 /*  8: 7 */     super(paramaqu, paramDouble1, paramDouble2, paramDouble3, paramDouble4, paramDouble5, paramDouble6);
 /*  9:   */     
-/* 10: 9 */     float f = this.random.nextFloat() * 0.1F + 0.2F;
+/* 10: 9 */     float f = this.rng.nextFloat() * 0.1F + 0.2F;
 /* 11:10 */     this.ap = f;
 /* 12:11 */     this.aq = f;
 /* 13:12 */     this.ar = f;
 /* 14:13 */     k(0);
 /* 15:14 */     a(0.02F, 0.02F);
 /* 16:   */     
-/* 17:16 */     this.h *= (this.random.nextFloat() * 0.6F + 0.5F);
+/* 17:16 */     this.h *= (this.rng.nextFloat() * 0.6F + 0.5F);
 /* 18:   */     
 /* 19:18 */     this.xVelocity *= 0.01999999955296516D;
 /* 20:19 */     this.yVelocity *= 0.01999999955296516D;

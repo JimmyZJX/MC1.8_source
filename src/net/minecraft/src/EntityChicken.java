@@ -15,7 +15,7 @@ package net.minecraft.src;
 /*  15:    */   {
 /*  16: 27 */     super(paramaqu);
 /*  17: 28 */     a(0.4F, 0.7F);
-/*  18: 29 */     this.bq = (this.random.nextInt(6000) + 6000);
+/*  18: 29 */     this.bq = (this.rng.nextInt(6000) + 6000);
 /*  19:    */     
 /*  20: 31 */     this.i.a(0, new yy(this));
 /*  21: 32 */     this.i.a(1, new zu(this, 1.4D));
@@ -59,9 +59,9 @@ package net.minecraft.src;
 /*  59: 73 */     this.bk += this.bp * 2.0F;
 /*  60: 75 */     if ((!this.world.isClient) && (!i_()) && (!cj()) && (--this.bq <= 0))
 /*  61:    */     {
-/*  62: 76 */       a("mob.chicken.plop", 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
+/*  62: 76 */       a("mob.chicken.plop", 1.0F, (this.rng.nextFloat() - this.rng.nextFloat()) * 0.2F + 1.0F);
 /*  63: 77 */       a(ItemList.aP, 1);
-/*  64: 78 */       this.bq = (this.random.nextInt(6000) + 6000);
+/*  64: 78 */       this.bq = (this.rng.nextInt(6000) + 6000);
 /*  65:    */     }
 /*  66:    */   }
 /*  67:    */   
@@ -94,7 +94,7 @@ package net.minecraft.src;
 /*  94:    */   
 /*  95:    */   protected void b(boolean paramBoolean, int paramInt)
 /*  96:    */   {
-/*  97:114 */     int i = this.random.nextInt(3) + this.random.nextInt(1 + paramInt);
+/*  97:114 */     int i = this.rng.nextInt(3) + this.rng.nextInt(1 + paramInt);
 /*  98:115 */     for (int j = 0; j < i; j++) {
 /*  99:116 */       a(ItemList.G, 1);
 /* 100:    */     }
@@ -105,7 +105,7 @@ package net.minecraft.src;
 /* 105:    */     }
 /* 106:    */   }
 /* 107:    */   
-/* 108:    */   public EntityChicken a(EntityPassiveMob paramws)
+/* 108:    */   public EntityChicken getBaby(EntityPassiveMob paramws)
 /* 109:    */   {
 /* 110:128 */     return new EntityChicken(this.world);
 /* 111:    */   }

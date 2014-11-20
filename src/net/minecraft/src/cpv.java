@@ -1,6 +1,6 @@
 package net.minecraft.src;
 /*  1:   */ public class cpv
-/*  2:   */   extends cpu<xk>
+/*  2:   */   extends cpu<EntityExperienceOrb>
 /*  3:   */ {
 /*  4:11 */   private static final oa a = new oa("textures/entity/experience_orb.png");
 /*  5:   */   
@@ -11,7 +11,7 @@ package net.minecraft.src;
 /* 10:16 */     this.d = 0.75F;
 /* 11:   */   }
 /* 12:   */   
-/* 13:   */   public void a(xk paramxk, double paramDouble1, double paramDouble2, double paramDouble3, float paramFloat1, float paramFloat2)
+/* 13:   */   public void a(EntityExperienceOrb paramxk, double paramDouble1, double paramDouble2, double paramDouble3, float paramFloat1, float paramFloat2)
 /* 14:   */   {
 /* 15:21 */     cjm.glPushMatrix();
 /* 16:22 */     cjm.glTranslatef((float)paramDouble1, (float)paramDouble2, (float)paramDouble3);
@@ -64,7 +64,7 @@ package net.minecraft.src;
 /* 63:69 */     super.a(paramxk, paramDouble1, paramDouble2, paramDouble3, paramFloat1, paramFloat2);
 /* 64:   */   }
 /* 65:   */   
-/* 66:   */   protected oa a(xk paramxk)
+/* 66:   */   protected oa a(EntityExperienceOrb paramxk)
 /* 67:   */   {
 /* 68:74 */     return a;
 /* 69:   */   }

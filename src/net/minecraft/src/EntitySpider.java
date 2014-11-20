@@ -81,7 +81,7 @@ package net.minecraft.src;
 /*  80:    */   protected void b(boolean paramBoolean, int paramInt)
 /*  81:    */   {
 /*  82:108 */     super.b(paramBoolean, paramInt);
-/*  83:110 */     if ((paramBoolean) && ((this.random.nextInt(3) == 0) || (this.random.nextInt(1 + paramInt) > 0))) {
+/*  83:110 */     if ((paramBoolean) && ((this.rng.nextInt(3) == 0) || (this.rng.nextInt(1 + paramInt) > 0))) {
 /*  84:111 */       a(ItemList.bB, 1);
 /*  85:    */     }
 /*  86:    */   }

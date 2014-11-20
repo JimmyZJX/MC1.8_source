@@ -32,12 +32,12 @@ package net.minecraft.src;
 /*  31: 31 */     this.R = paramDouble3;
 /*  32: 32 */     this.ap = (this.aq = this.ar = 1.0F);
 /*  33:    */     
-/*  34: 34 */     this.d = (this.random.nextFloat() * 3.0F);
-/*  35: 35 */     this.e = (this.random.nextFloat() * 3.0F);
+/*  34: 34 */     this.d = (this.rng.nextFloat() * 3.0F);
+/*  35: 35 */     this.e = (this.rng.nextFloat() * 3.0F);
 /*  36:    */     
-/*  37: 37 */     this.h = ((this.random.nextFloat() * 0.5F + 0.5F) * 2.0F);
+/*  37: 37 */     this.h = ((this.rng.nextFloat() * 0.5F + 0.5F) * 2.0F);
 /*  38:    */     
-/*  39: 39 */     this.g = ((int)(4.0F / (this.random.nextFloat() * 0.9F + 0.1F)));
+/*  39: 39 */     this.g = ((int)(4.0F / (this.rng.nextFloat() * 0.9F + 0.1F)));
 /*  40: 40 */     this.f = 0;
 /*  41:    */   }
 /*  42:    */   

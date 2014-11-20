@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*   4:    */   extends EntityUtilityMob
 /*   5:    */ {
 /*   6:    */   private int b;
-/*   7:    */   abi a;
+/*   7:    */   Village a;
 /*   8:    */   private int c;
 /*   9:    */   private int bk;
 /*  10:    */   
@@ -39,8 +39,8 @@ package net.minecraft.src;
 /*  39:    */   {
 /*  40: 67 */     if (--this.b <= 0)
 /*  41:    */     {
-/*  42: 68 */       this.b = (70 + this.random.nextInt(50));
-/*  43: 69 */       this.a = this.world.ae().a(new BlockPosition(this), 32);
+/*  42: 68 */       this.b = (70 + this.rng.nextInt(50));
+/*  43: 69 */       this.a = this.world.getVillageManager().getNearestVillage(new BlockPosition(this), 32);
 /*  44: 70 */       if (this.a == null)
 /*  45:    */       {
 /*  46: 71 */         ch();
@@ -70,7 +70,7 @@ package net.minecraft.src;
 /*  70:    */   protected void s(Entity paramwv)
 /*  71:    */   {
 /*  72: 97 */     if (((paramwv instanceof aex)) && 
-/*  73: 98 */       (bb().nextInt(20) == 0)) {
+/*  73: 98 */       (getRNG().nextInt(20) == 0)) {
 /*  74: 99 */       d((EntityLiving)paramwv);
 /*  75:    */     }
 /*  76:102 */     super.s(paramwv);
@@ -85,7 +85,7 @@ package net.minecraft.src;
 /*  85:112 */     if (this.bk > 0) {
 /*  86:113 */       this.bk -= 1;
 /*  87:    */     }
-/*  88:116 */     if ((this.xVelocity * this.xVelocity + this.zVelocity * this.zVelocity > 2.500000277905201E-007D) && (this.random.nextInt(5) == 0))
+/*  88:116 */     if ((this.xVelocity * this.xVelocity + this.zVelocity * this.zVelocity > 2.500000277905201E-007D) && (this.rng.nextInt(5) == 0))
 /*  89:    */     {
 /*  90:117 */       int i = MathUtils.floor(this.xPos);
 /*  91:118 */       int j = MathUtils.floor(this.yPos - 0.2000000029802322D);
@@ -93,7 +93,7 @@ package net.minecraft.src;
 /*  93:120 */       Block localbec = this.world.getBlock(new BlockPosition(i, j, k));
 /*  94:121 */       ProtoBlock localatr = localbec.getProto();
 /*  95:122 */       if (localatr.getMaterial() != Material.air) {
-/*  96:123 */         this.world.a(ew.L, this.xPos + (this.random.nextFloat() - 0.5D) * this.J, getAABB().minY + 0.1D, this.zPos + (this.random.nextFloat() - 0.5D) * this.J, 4.0D * (this.random.nextFloat() - 0.5D), 0.5D, (this.random.nextFloat() - 0.5D) * 4.0D, new int[] { ProtoBlock.f(localbec) });
+/*  96:123 */         this.world.a(EnumParticleEffect.L, this.xPos + (this.rng.nextFloat() - 0.5D) * this.J, getAABB().minY + 0.1D, this.zPos + (this.rng.nextFloat() - 0.5D) * this.J, 4.0D * (this.rng.nextFloat() - 0.5D), 0.5D, (this.rng.nextFloat() - 0.5D) * 4.0D, new int[] { ProtoBlock.f(localbec) });
 /*  97:    */       }
 /*  98:    */     }
 /*  99:    */   }
@@ -121,8 +121,8 @@ package net.minecraft.src;
 /* 121:    */   public boolean r(Entity paramwv)
 /* 122:    */   {
 /* 123:150 */     this.c = 10;
-/* 124:151 */     this.world.a(this, (byte)4);
-/* 125:152 */     boolean bool = paramwv.a(DamageSource.a(this), 7 + this.random.nextInt(15));
+/* 124:151 */     this.world.sendSignal(this, (byte)4);
+/* 125:152 */     boolean bool = paramwv.a(DamageSource.a(this), 7 + this.rng.nextInt(15));
 /* 126:153 */     if (bool)
 /* 127:    */     {
 /* 128:154 */       paramwv.yVelocity += 0.4000000059604645D;
@@ -132,7 +132,7 @@ package net.minecraft.src;
 /* 132:158 */     return bool;
 /* 133:    */   }
 /* 134:    */   
-/* 135:    */   public void a(byte paramByte)
+/* 135:    */   public void onSignal(byte paramByte)
 /* 136:    */   {
 /* 137:163 */     if (paramByte == 4)
 /* 138:    */     {
@@ -145,11 +145,11 @@ package net.minecraft.src;
 /* 145:    */     }
 /* 146:    */     else
 /* 147:    */     {
-/* 148:169 */       super.a(paramByte);
+/* 148:169 */       super.onSignal(paramByte);
 /* 149:    */     }
 /* 150:    */   }
 /* 151:    */   
-/* 152:    */   public abi n()
+/* 152:    */   public Village n()
 /* 153:    */   {
 /* 154:174 */     return this.a;
 /* 155:    */   }
@@ -162,7 +162,7 @@ package net.minecraft.src;
 /* 162:    */   public void a(boolean paramBoolean)
 /* 163:    */   {
 /* 164:182 */     this.bk = (paramBoolean ? 400 : 0);
-/* 165:183 */     this.world.a(this, (byte)11);
+/* 165:183 */     this.world.sendSignal(this, (byte)11);
 /* 166:    */   }
 /* 167:    */   
 /* 168:    */   protected String bn()
@@ -182,11 +182,11 @@ package net.minecraft.src;
 /* 182:    */   
 /* 183:    */   protected void b(boolean paramBoolean, int paramInt)
 /* 184:    */   {
-/* 185:203 */     int i = this.random.nextInt(3);
+/* 185:203 */     int i = this.rng.nextInt(3);
 /* 186:204 */     for (int j = 0; j < i; j++) {
 /* 187:205 */       a(Item.fromProtoBlock(BlockList.redFlower), 1, EnumFlowerVariant.b.b());
 /* 188:    */     }
-/* 189:207 */     j = 3 + this.random.nextInt(3);
+/* 189:207 */     j = 3 + this.rng.nextInt(3);
 /* 190:208 */     for (int k = 0; k < j; k++) {
 /* 191:209 */       a(ItemList.j, 1);
 /* 192:    */     }

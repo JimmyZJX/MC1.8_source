@@ -22,7 +22,7 @@ package net.minecraft.src;
 /* 23:32 */       return ItemList.dye;
 /* 24:   */     }
 /* 25:34 */     if (this == BlockList.bP) {
-/* 26:35 */       return ItemList.bO;
+/* 26:35 */       return ItemList.emerald;
 /* 27:   */     }
 /* 28:37 */     if (this == BlockList.quartzOre) {
 /* 29:38 */       return ItemList.cg;

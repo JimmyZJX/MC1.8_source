@@ -13,7 +13,7 @@ package net.minecraft.src;
 /* 12:15 */     return false;
 /* 13:   */   }
 /* 14:   */   
-/* 15:   */   protected boolean a(EntityPlayer paramahd)
+/* 15:   */   protected boolean onRightClick(EntityPlayer paramahd)
 /* 16:   */   {
 /* 17:20 */     return false;
 /* 18:   */   }

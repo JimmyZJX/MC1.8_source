@@ -67,7 +67,7 @@ package net.minecraft.src;
 /*  66:    */   
 /*  67:    */   private void g()
 /*  68:    */   {
-/*  69: 77 */     EntityPassiveMob localws = this.d.a((EntityPassiveMob)this.e);
+/*  69: 77 */     EntityPassiveMob localws = this.d.getBaby((EntityPassiveMob)this.e);
 /*  70: 78 */     if (localws == null) {
 /*  71: 79 */       return;
 /*  72:    */     }
@@ -82,24 +82,24 @@ package net.minecraft.src;
 /*  81: 91 */         localahd.b(AchievementList.H);
 /*  82:    */       }
 /*  83:    */     }
-/*  84: 95 */     this.d.b(6000);
-/*  85: 96 */     this.e.b(6000);
+/*  84: 95 */     this.d.setAge(6000);
+/*  85: 96 */     this.e.setAge(6000);
 /*  86: 97 */     this.d.cq();
 /*  87: 98 */     this.e.cq();
-/*  88: 99 */     localws.b(-24000);
+/*  88: 99 */     localws.setAge(-24000);
 /*  89:100 */     localws.setPositionAndAngles(this.d.xPos, this.d.yPos, this.d.zPos, 0.0F, 0.0F);
 /*  90:101 */     this.a.spawnEntity(localws);
 /*  91:    */     
-/*  92:103 */     Random localRandom = this.d.bb();
+/*  92:103 */     Random localRandom = this.d.getRNG();
 /*  93:104 */     for (int i = 0; i < 7; i++)
 /*  94:    */     {
 /*  95:105 */       double d1 = localRandom.nextGaussian() * 0.02D;
 /*  96:106 */       double d2 = localRandom.nextGaussian() * 0.02D;
 /*  97:107 */       double d3 = localRandom.nextGaussian() * 0.02D;
-/*  98:108 */       this.a.a(ew.I, this.d.xPos + localRandom.nextFloat() * this.d.J * 2.0F - this.d.J, this.d.yPos + 0.5D + localRandom.nextFloat() * this.d.K, this.d.zPos + localRandom.nextFloat() * this.d.J * 2.0F - this.d.J, d1, d2, d3, new int[0]);
+/*  98:108 */       this.a.a(EnumParticleEffect.HEART, this.d.xPos + localRandom.nextFloat() * this.d.J * 2.0F - this.d.J, this.d.yPos + 0.5D + localRandom.nextFloat() * this.d.K, this.d.zPos + localRandom.nextFloat() * this.d.J * 2.0F - this.d.J, d1, d2, d3, new int[0]);
 /*  99:    */     }
 /* 100:111 */     if (this.a.getGameRules().getBoolean("doMobLoot")) {
-/* 101:112 */       this.a.spawnEntity(new xk(this.a, this.d.xPos, this.d.yPos, this.d.zPos, localRandom.nextInt(7) + 1));
+/* 101:112 */       this.a.spawnEntity(new EntityExperienceOrb(this.a, this.d.xPos, this.d.yPos, this.d.zPos, localRandom.nextInt(7) + 1));
 /* 102:    */     }
 /* 103:    */   }
 /* 104:    */ }

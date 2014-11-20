@@ -55,7 +55,7 @@ package net.minecraft.src;
 /*  55: 61 */       this.c = d2;
 /*  56:    */     }
 /*  57: 64 */     this.d = 0;
-/*  58: 65 */     this.e = (this.random.nextInt(5) > 0);
+/*  58: 65 */     this.e = (this.rng.nextInt(5) > 0);
 /*  59:    */   }
 /*  60:    */   
 /*  61:    */   public void i(double paramDouble1, double paramDouble2, double paramDouble3)
@@ -121,10 +121,10 @@ package net.minecraft.src;
 /* 121:131 */     float f2 = 0.25F;
 /* 122:132 */     if (V()) {
 /* 123:133 */       for (int i = 0; i < 4; i++) {
-/* 124:134 */         this.world.a(ew.e, this.xPos - this.xVelocity * f2, this.yPos - this.yVelocity * f2, this.zPos - this.zVelocity * f2, this.xVelocity, this.yVelocity, this.zVelocity, new int[0]);
+/* 124:134 */         this.world.a(EnumParticleEffect.e, this.xPos - this.xVelocity * f2, this.yPos - this.yVelocity * f2, this.zPos - this.zVelocity * f2, this.xVelocity, this.yVelocity, this.zVelocity, new int[0]);
 /* 125:    */       }
 /* 126:    */     } else {
-/* 127:137 */       this.world.a(ew.y, this.xPos - this.xVelocity * f2 + this.random.nextDouble() * 0.6D - 0.3D, this.yPos - this.yVelocity * f2 - 0.5D, this.zPos - this.zVelocity * f2 + this.random.nextDouble() * 0.6D - 0.3D, this.xVelocity, this.yVelocity, this.zVelocity, new int[0]);
+/* 127:137 */       this.world.a(EnumParticleEffect.y, this.xPos - this.xVelocity * f2 + this.rng.nextDouble() * 0.6D - 0.3D, this.yPos - this.yVelocity * f2 - 0.5D, this.zPos - this.zVelocity * f2 + this.rng.nextDouble() * 0.6D - 0.3D, this.xVelocity, this.yVelocity, this.zVelocity, new int[0]);
 /* 128:    */     }
 /* 129:140 */     if (!this.world.isClient)
 /* 130:    */     {

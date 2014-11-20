@@ -6,9 +6,9 @@ package net.minecraft.src;
 /*  5:   */   {
 /*  6:15 */     int i = 0;
 /*  7:16 */     Object localObject = null;
-/*  8:18 */     for (int j = 0; j < paramain.n_(); j++)
+/*  8:18 */     for (int j = 0; j < paramain.getSize(); j++)
 /*  9:   */     {
-/* 10:19 */       ItemStack localamj = paramain.a(j);
+/* 10:19 */       ItemStack localamj = paramain.get(j);
 /* 11:20 */       if (localamj != null) {
 /* 12:24 */         if (localamj.getItem() == ItemList.bN)
 /* 13:   */         {
@@ -34,9 +34,9 @@ package net.minecraft.src;
 /* 33:   */   {
 /* 34:42 */     int i = 0;
 /* 35:43 */     ItemStack localObject = null;
-/* 36:45 */     for (int j = 0; j < paramain.n_(); j++)
+/* 36:45 */     for (int j = 0; j < paramain.getSize(); j++)
 /* 37:   */     {
-/* 38:46 */       ItemStack localamj2 = paramain.a(j);
+/* 38:46 */       ItemStack localamj2 = paramain.get(j);
 /* 39:47 */       if (localamj2 != null) {
 /* 40:51 */         if (localamj2.getItem() == ItemList.bN)
 /* 41:   */         {
@@ -79,10 +79,10 @@ package net.minecraft.src;
 /* 78:   */   
 /* 79:   */   public ItemStack[] b(ain paramain)
 /* 80:   */   {
-/* 81:89 */     ItemStack[] arrayOfamj = new ItemStack[paramain.n_()];
+/* 81:89 */     ItemStack[] arrayOfamj = new ItemStack[paramain.getSize()];
 /* 82:91 */     for (int i = 0; i < arrayOfamj.length; i++)
 /* 83:   */     {
-/* 84:92 */       ItemStack localamj = paramain.a(i);
+/* 84:92 */       ItemStack localamj = paramain.get(i);
 /* 85:93 */       if ((localamj != null) && ((localamj.getItem() instanceof anr)))
 /* 86:   */       {
 /* 87:94 */         arrayOfamj[i] = localamj;

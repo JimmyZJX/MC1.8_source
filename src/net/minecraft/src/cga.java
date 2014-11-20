@@ -64,7 +64,7 @@ package net.minecraft.src;
 /*  63:    */         }
 /*  64:    */       }
 /*  65: 75 */       String str = "fireworks." + (j != 0 ? "largeBlast" : "blast") + (bool1 ? "_far" : "");
-/*  66: 76 */       this.world.a(this.xPos, this.yPos, this.zPos, str, 20.0F, 0.95F + this.random.nextFloat() * 0.1F, true);
+/*  66: 76 */       this.world.a(this.xPos, this.yPos, this.zPos, str, 20.0F, 0.95F + this.rng.nextFloat() * 0.1F, true);
 /*  67:    */     }
 /*  68:    */     Object localObject;
 /*  69: 79 */     if ((this.ax % 2 == 0) && (this.az != null) && (this.ax / 2 < this.az.c()))
@@ -106,7 +106,7 @@ package net.minecraft.src;
 /* 105:    */       {
 /* 106:159 */         boolean bool2 = l();
 /* 107:160 */         localObject = "fireworks." + (bool2 ? "twinkle_far" : "twinkle");
-/* 108:161 */         this.world.a(this.xPos, this.yPos, this.zPos, (String)localObject, 20.0F, 0.9F + this.random.nextFloat() * 0.15F, true);
+/* 108:161 */         this.world.a(this.xPos, this.yPos, this.zPos, (String)localObject, 20.0F, 0.9F + this.rng.nextFloat() * 0.15F, true);
 /* 109:    */       }
 /* 110:163 */       setDead();
 /* 111:    */     }
@@ -129,10 +129,10 @@ package net.minecraft.src;
 /* 128:180 */     localcfz.a(paramBoolean1);
 /* 129:181 */     localcfz.i(paramBoolean2);
 /* 130:    */     
-/* 131:183 */     int i = this.random.nextInt(paramArrayOfInt1.length);
+/* 131:183 */     int i = this.rng.nextInt(paramArrayOfInt1.length);
 /* 132:184 */     localcfz.a(paramArrayOfInt1[i]);
 /* 133:185 */     if ((paramArrayOfInt2 != null) && (paramArrayOfInt2.length > 0)) {
-/* 134:186 */       localcfz.b(paramArrayOfInt2[this.random.nextInt(paramArrayOfInt2.length)]);
+/* 134:186 */       localcfz.b(paramArrayOfInt2[this.rng.nextInt(paramArrayOfInt2.length)]);
 /* 135:    */     }
 /* 136:188 */     this.ay.a(localcfz);
 /* 137:    */   }
@@ -146,10 +146,10 @@ package net.minecraft.src;
 /* 145:197 */       for (int j = -paramInt; j <= paramInt; j++) {
 /* 146:198 */         for (int k = -paramInt; k <= paramInt; k++)
 /* 147:    */         {
-/* 148:199 */           double d4 = j + (this.random.nextDouble() - this.random.nextDouble()) * 0.5D;
-/* 149:200 */           double d5 = i + (this.random.nextDouble() - this.random.nextDouble()) * 0.5D;
-/* 150:201 */           double d6 = k + (this.random.nextDouble() - this.random.nextDouble()) * 0.5D;
-/* 151:202 */           double d7 = MathUtils.a(d4 * d4 + d5 * d5 + d6 * d6) / paramDouble + this.random.nextGaussian() * 0.05D;
+/* 148:199 */           double d4 = j + (this.rng.nextDouble() - this.rng.nextDouble()) * 0.5D;
+/* 149:200 */           double d5 = i + (this.rng.nextDouble() - this.rng.nextDouble()) * 0.5D;
+/* 150:201 */           double d6 = k + (this.rng.nextDouble() - this.rng.nextDouble()) * 0.5D;
+/* 151:202 */           double d7 = MathUtils.a(d4 * d4 + d5 * d5 + d6 * d6) / paramDouble + this.rng.nextGaussian() * 0.05D;
 /* 152:    */           
 /* 153:204 */           a(d1, d2, d3, d4 / d7, d5 / d7, d6 / d7, paramArrayOfInt1, paramArrayOfInt2, paramBoolean1, paramBoolean2);
 /* 154:206 */           if ((i != -paramInt) && (i != paramInt) && (j != -paramInt) && (j != paramInt)) {
@@ -169,7 +169,7 @@ package net.minecraft.src;
 /* 168:219 */     a(this.xPos, this.yPos, this.zPos, d1 * paramDouble, d2 * paramDouble, 0.0D, paramArrayOfInt1, paramArrayOfInt2, paramBoolean1, paramBoolean2);
 /* 169:    */     
 /* 170:    */ 
-/* 171:222 */     float f = this.random.nextFloat() * 3.141593F;
+/* 171:222 */     float f = this.rng.nextFloat() * 3.141593F;
 /* 172:223 */     double d3 = paramBoolean3 ? 0.034D : 0.34D;
 /* 173:224 */     for (int i = 0; i < 3; i++)
 /* 174:    */     {
@@ -200,13 +200,13 @@ package net.minecraft.src;
 /* 199:    */   
 /* 200:    */   private void a(int[] paramArrayOfInt1, int[] paramArrayOfInt2, boolean paramBoolean1, boolean paramBoolean2)
 /* 201:    */   {
-/* 202:252 */     double d1 = this.random.nextGaussian() * 0.05D;
-/* 203:253 */     double d2 = this.random.nextGaussian() * 0.05D;
+/* 202:252 */     double d1 = this.rng.nextGaussian() * 0.05D;
+/* 203:253 */     double d2 = this.rng.nextGaussian() * 0.05D;
 /* 204:255 */     for (int i = 0; i < 70; i++)
 /* 205:    */     {
-/* 206:256 */       double d3 = this.xVelocity * 0.5D + this.random.nextGaussian() * 0.15D + d1;
-/* 207:257 */       double d4 = this.zVelocity * 0.5D + this.random.nextGaussian() * 0.15D + d2;
-/* 208:258 */       double d5 = this.yVelocity * 0.5D + this.random.nextDouble() * 0.5D;
+/* 206:256 */       double d3 = this.xVelocity * 0.5D + this.rng.nextGaussian() * 0.15D + d1;
+/* 207:257 */       double d4 = this.zVelocity * 0.5D + this.rng.nextGaussian() * 0.15D + d2;
+/* 208:258 */       double d5 = this.yVelocity * 0.5D + this.rng.nextDouble() * 0.5D;
 /* 209:    */       
 /* 210:260 */       a(this.xPos, this.yPos, this.zPos, d3, d5, d4, paramArrayOfInt1, paramArrayOfInt2, paramBoolean1, paramBoolean2);
 /* 211:    */     }

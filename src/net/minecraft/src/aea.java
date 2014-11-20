@@ -19,7 +19,7 @@ package net.minecraft.src;
 /* 18:29 */     a(Item.fromProtoBlock(BlockList.ae), 1, 0.0F);
 /* 19:   */   }
 /* 20:   */   
-/* 21:   */   public int n_()
+/* 21:   */   public int getSize()
 /* 22:   */   {
 /* 23:34 */     return 27;
 /* 24:   */   }

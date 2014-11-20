@@ -23,7 +23,7 @@ package net.minecraft.src;
 /*  22:    */     
 /*  23:288 */     this.h *= 0.75F;
 /*  24:    */     
-/*  25:290 */     this.g = (48 + this.random.nextInt(12));
+/*  25:290 */     this.g = (48 + this.rng.nextInt(12));
 /*  26:291 */     this.T = false;
 /*  27:    */   }
 /*  28:    */   

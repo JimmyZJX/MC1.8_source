@@ -82,7 +82,7 @@ package net.minecraft.src;
 /*  81:    */ 
 /*  82:    */ 
 /*  83:    */ 
-/*  84:106 */     ave.M.a(ItemList.bJ, new os());
+/*  84:106 */     ave.M.a(ItemList.spawnEgg, new os());
 /*  85:    */     
 /*  86:    */ 
 /*  87:    */ 

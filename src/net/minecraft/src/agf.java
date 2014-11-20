@@ -11,7 +11,7 @@ package net.minecraft.src;
 /*  11:    */   public boolean b()
 /*  12:    */   {
 /*  13:217 */     float f = this.b.c(1.0F);
-/*  14:218 */     if ((f >= 0.5F) && (this.b.bb().nextInt(100) == 0))
+/*  14:218 */     if ((f >= 0.5F) && (this.b.getRNG().nextInt(100) == 0))
 /*  15:    */     {
 /*  16:219 */       this.b.d((EntityLiving)null);
 /*  17:220 */       return false;

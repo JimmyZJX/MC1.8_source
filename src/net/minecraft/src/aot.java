@@ -22,10 +22,10 @@ package net.minecraft.src;
 /* 21:   */   
 /* 22:   */   public ItemStack[] b(ain paramain)
 /* 23:   */   {
-/* 24:28 */     ItemStack[] arrayOfamj = new ItemStack[paramain.n_()];
+/* 24:28 */     ItemStack[] arrayOfamj = new ItemStack[paramain.getSize()];
 /* 25:30 */     for (int i = 0; i < arrayOfamj.length; i++)
 /* 26:   */     {
-/* 27:31 */       ItemStack localamj = paramain.a(i);
+/* 27:31 */       ItemStack localamj = paramain.get(i);
 /* 28:32 */       if ((localamj != null) && (localamj.getItem().r())) {
 /* 29:33 */         arrayOfamj[i] = new ItemStack(localamj.getItem().q());
 /* 30:   */       }

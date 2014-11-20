@@ -70,7 +70,7 @@ package net.minecraft.src;
 /* 69:91 */       EntityLiving localxm = (EntityLiving)paramwv;
 /* 70:93 */       if ((this.a == 2) && (localxm.by() == xs.c))
 /* 71:   */       {
-/* 72:94 */         int i = 20 + paramxm.bb().nextInt(10 * paramInt);
+/* 72:94 */         int i = 20 + paramxm.getRNG().nextInt(10 * paramInt);
 /* 73:95 */         localxm.c(new PotionEffect(Potion.slowness.id, i, 3));
 /* 74:   */       }
 /* 75:   */     }

@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*   5:    */ public class blv
 /*   6:    */   extends bmk
 /*   7:    */ {
-/*   8:657 */   private static final List<vl> a = Lists.newArrayList(new vl[] { new vl(ItemList.bu, 0, 1, 1, 10), new vl(ItemList.diamond, 0, 1, 3, 3), new vl(ItemList.j, 0, 1, 5, 10), new vl(ItemList.k, 0, 1, 3, 5), new vl(ItemList.aC, 0, 4, 9, 5), new vl(ItemList.P, 0, 1, 3, 15), new vl(ItemList.apple, 0, 1, 3, 15), new vl(ItemList.b, 0, 1, 1, 5), new vl(ItemList.l, 0, 1, 1, 5), new vl(ItemList.Z, 0, 1, 1, 5), new vl(ItemList.Y, 0, 1, 1, 5), new vl(ItemList.aa, 0, 1, 1, 5), new vl(ItemList.ab, 0, 1, 1, 5), new vl(ItemList.ao, 0, 1, 1, 1), new vl(ItemList.saddle, 0, 1, 1, 1), new vl(ItemList.ck, 0, 1, 1, 1), new vl(ItemList.cl, 0, 1, 1, 1), new vl(ItemList.cm, 0, 1, 1, 1) });
+/*   8:657 */   private static final List<vl> a = Lists.newArrayList(new vl[] { new vl(ItemList.bu, 0, 1, 1, 10), new vl(ItemList.diamond, 0, 1, 3, 3), new vl(ItemList.j, 0, 1, 5, 10), new vl(ItemList.k, 0, 1, 3, 5), new vl(ItemList.aC, 0, 4, 9, 5), new vl(ItemList.bread, 0, 1, 3, 15), new vl(ItemList.apple, 0, 1, 3, 15), new vl(ItemList.b, 0, 1, 1, 5), new vl(ItemList.l, 0, 1, 1, 5), new vl(ItemList.Z, 0, 1, 1, 5), new vl(ItemList.Y, 0, 1, 1, 5), new vl(ItemList.aa, 0, 1, 1, 5), new vl(ItemList.ab, 0, 1, 1, 5), new vl(ItemList.ao, 0, 1, 1, 1), new vl(ItemList.saddle, 0, 1, 1, 1), new vl(ItemList.ck, 0, 1, 1, 1), new vl(ItemList.cl, 0, 1, 1, 1), new vl(ItemList.cm, 0, 1, 1, 1) });
 /*   9:    */   private boolean b;
 /*  10:    */   
 /*  11:    */   public blv() {}

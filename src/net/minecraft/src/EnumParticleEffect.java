@@ -4,11 +4,11 @@ package net.minecraft.src;
 /*   3:    */ import java.util.ArrayList;
 /*   5:    */ import java.util.Map;
 /*   6:    */ 
-/*   7:    */ public enum ew
-/*   8:    */ { a("",0,false),
-				b("",0,false),
-				c("",0,false),
-				d("",0,false),
+/*   7:    */ public enum EnumParticleEffect
+/*   8:    */ { EXPLOSION_NORMAL("explode",0,true),
+				EXPLOSION_LARGE("largeexplode",1,true),
+				EXPLOSION_HUGE("hugeexplosion",2,true),
+				FIREWORKS_SPARK("fireworksSpark",3,false),
 				e("",0,false),
 				f("",0,false),
 				g("",0,false),
@@ -25,7 +25,7 @@ package net.minecraft.src;
 				r("",0,false),
 				s("",0,false),
 				t("",0,false),
-				u("",0,false),
+				VILLAGER_ANGRY("angryVillager",20,false),
 				VILLAGER_HAPPY("happyVillager",21,false),
 				w("",0,false),
 				x("",0,false),
@@ -39,7 +39,7 @@ package net.minecraft.src;
 				F("",0,false),
 				G("",0,false),
 				H("",0,false),
-				I("",0,false),
+				HEART("heart",34,false),
 				J("",0,false),
 				K("",0,false),
 				L("",0,false),
@@ -51,7 +51,7 @@ package net.minecraft.src;
 /*  10:    */   private final int R;
 /*  11:    */   private final boolean S;
 /*  12:    */   private final int T;
-/*  13:    */   private static final Map<Integer,ew> U;
+/*  13:    */   private static final Map<Integer,EnumParticleEffect> U;
 /*  14:    */   private static final String[] V;
 /*  15:    */   
 /*  16:    */   static
@@ -62,7 +62,7 @@ package net.minecraft.src;
 /*  21:    */ 
 /*  22:    */ 
 /*  23: 63 */     ArrayList<String> localArrayList = Lists.newArrayList();
-/*  24: 64 */     for (ew localew : values())
+/*  24: 64 */     for (EnumParticleEffect localew : values())
 /*  25:    */     {
 /*  26: 65 */       U.put(Integer.valueOf(localew.c()), localew);
 /*  27: 67 */       if (!localew.b().endsWith("_")) {
@@ -72,7 +72,7 @@ package net.minecraft.src;
 /*  31: 72 */     V = (String[])localArrayList.toArray(new String[localArrayList.size()]);
 /*  32:    */   }
 /*  33:    */   
-/*  34:    */   private ew(String paramString, int paramInt1, boolean paramBoolean, int paramInt2)
+/*  34:    */   private EnumParticleEffect(String paramString, int paramInt1, boolean paramBoolean, int paramInt2)
 /*  35:    */   {
 /*  36: 76 */     this.Q = paramString;
 /*  37: 77 */     this.R = paramInt1;
@@ -80,7 +80,7 @@ package net.minecraft.src;
 /*  39: 79 */     this.T = paramInt2;
 /*  40:    */   }
 /*  41:    */   
-/*  42:    */   private ew(String paramString, int paramInt, boolean paramBoolean)
+/*  42:    */   private EnumParticleEffect(String paramString, int paramInt, boolean paramBoolean)
 /*  43:    */   {
 /*  44: 83 */     this(paramString, paramInt, paramBoolean, 0);
 /*  45:    */   }
@@ -115,9 +115,9 @@ package net.minecraft.src;
 /*  74:107 */     return this.T > 0;
 /*  75:    */   }
 /*  76:    */   
-/*  77:    */   public static ew a(int paramInt)
+/*  77:    */   public static EnumParticleEffect a(int paramInt)
 /*  78:    */   {
-/*  79:111 */     return (ew)U.get(Integer.valueOf(paramInt));
+/*  79:111 */     return (EnumParticleEffect)U.get(Integer.valueOf(paramInt));
 /*  80:    */   }
 /*  81:    */ }
 

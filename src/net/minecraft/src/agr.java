@@ -19,7 +19,7 @@ package net.minecraft.src;
 /*  18:794 */     if (this.b != null) {
 /*  19:795 */       i = this.b.a(paramRandom);
 /*  20:    */     }
-/*  21:798 */     paramaqd.add(new aqc(new ItemStack(this.a, i, 0), ItemList.bO));
+/*  21:798 */     paramaqd.add(new TradeOffer(new ItemStack(this.a, i, 0), ItemList.emerald));
 /*  22:    */   }
 /*  23:    */ }
 

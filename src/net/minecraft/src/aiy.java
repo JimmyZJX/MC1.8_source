@@ -54,9 +54,9 @@ package net.minecraft.src;
 /*  54:    */     {
 /*  55: 71 */       ItemStack localamj2 = localajk.d();
 /*  56: 72 */       localamj1 = localamj2.k();
-/*  57: 74 */       if (paramInt < this.a.n_())
+/*  57: 74 */       if (paramInt < this.a.getSize())
 /*  58:    */       {
-/*  59: 75 */         if (!a(localamj2, this.a.n_(), this.c.size(), true)) {
+/*  59: 75 */         if (!a(localamj2, this.a.getSize(), this.c.size(), true)) {
 /*  60: 76 */           return null;
 /*  61:    */         }
 /*  62:    */       }
@@ -72,7 +72,7 @@ package net.minecraft.src;
 /*  72: 85 */           return null;
 /*  73:    */         }
 /*  74:    */       }
-/*  75: 87 */       else if ((this.a.n_() <= 2) || (!a(localamj2, 2, this.a.n_(), false))) {
+/*  75: 87 */       else if ((this.a.getSize() <= 2) || (!a(localamj2, 2, this.a.getSize(), false))) {
 /*  76: 88 */         return null;
 /*  77:    */       }
 /*  78: 91 */       if (localamj2.stackSize == 0) {

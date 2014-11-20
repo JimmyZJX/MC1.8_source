@@ -28,7 +28,7 @@ package net.minecraft.src;
 /* 27:29 */     if (!this.a.C) {
 /* 28:30 */       return false;
 /* 29:   */     }
-/* 30:32 */     if (this.a.bb().nextInt(5) != 0) {
+/* 30:32 */     if (this.a.getRNG().nextInt(5) != 0) {
 /* 31:33 */       return false;
 /* 32:   */     }
 /* 33:35 */     return true;

@@ -84,7 +84,7 @@ package net.minecraft.src;
 /*  83:    */     else
 /*  84:    */     {
 /*  85:136 */       b(1.5D * paramace.a());
-/*  86:137 */       a(ck(), bA(), ((this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F) * 0.8F);
+/*  86:137 */       a(ck(), bA(), ((this.rng.nextFloat() - this.rng.nextFloat()) * 0.2F + 1.0F) * 0.8F);
 /*  87:    */     }
 /*  88:139 */     this.bo = paramBoolean;
 /*  89:    */   }
@@ -122,7 +122,7 @@ package net.minecraft.src;
 /* 121:    */     }
 /* 122:174 */     if (this.bs > 0)
 /* 123:    */     {
-/* 124:175 */       this.bs -= this.random.nextInt(3);
+/* 124:175 */       this.bs -= this.rng.nextInt(3);
 /* 125:176 */       if (this.bs < 0) {
 /* 126:177 */         this.bs = 0;
 /* 127:    */       }
@@ -200,7 +200,7 @@ package net.minecraft.src;
 /* 199:245 */     if (this.bm != this.bn)
 /* 200:    */     {
 /* 201:246 */       if ((this.bm == 0) && (!this.world.isClient)) {
-/* 202:247 */         this.world.a(this, (byte)1);
+/* 202:247 */         this.world.sendSignal(this, (byte)1);
 /* 203:    */       }
 /* 204:249 */       this.bm += 1;
 /* 205:    */     }
@@ -257,7 +257,7 @@ package net.minecraft.src;
 /* 256:    */   {
 /* 257:299 */     if (cl() == 99)
 /* 258:    */     {
-/* 259:300 */       a("mob.attack", 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
+/* 259:300 */       a("mob.attack", 1.0F, (this.rng.nextFloat() - this.rng.nextFloat()) * 0.2F + 1.0F);
 /* 260:301 */       return paramwv.a(DamageSource.a(this), 8.0F);
 /* 261:    */     }
 /* 262:303 */     return paramwv.a(DamageSource.a(this), 3.0F);
@@ -286,11 +286,11 @@ package net.minecraft.src;
 /* 285:    */   
 /* 286:    */   protected void b(boolean paramBoolean, int paramInt)
 /* 287:    */   {
-/* 288:330 */     int i = this.random.nextInt(2) + this.random.nextInt(1 + paramInt);
+/* 288:330 */     int i = this.rng.nextInt(2) + this.rng.nextInt(1 + paramInt);
 /* 289:331 */     for (int j = 0; j < i; j++) {
 /* 290:332 */       a(ItemList.bs, 1);
 /* 291:    */     }
-/* 292:336 */     i = this.random.nextInt(2);
+/* 292:336 */     i = this.rng.nextInt(2);
 /* 293:337 */     for (j = 0; j < i; j++) {
 /* 294:338 */       if (au()) {
 /* 295:339 */         a(ItemList.bp, 1);
@@ -309,7 +309,7 @@ package net.minecraft.src;
 /* 308:    */   {
 /* 309:352 */     EntityRabbit localacb = new EntityRabbit(this.world);
 /* 310:353 */     if ((paramws instanceof EntityRabbit)) {
-/* 311:354 */       localacb.r(this.random.nextBoolean() ? cl() : ((EntityRabbit)paramws).cl());
+/* 311:354 */       localacb.r(this.rng.nextBoolean() ? cl() : ((EntityRabbit)paramws).cl());
 /* 312:    */     }
 /* 313:356 */     return localacb;
 /* 314:    */   }
@@ -344,7 +344,7 @@ package net.minecraft.src;
 /* 343:    */   {
 /* 344:387 */     paramxq = super.beforeSpawn(paramvu, paramxq);
 /* 345:    */     
-/* 346:389 */     int i = this.random.nextInt(6);
+/* 346:389 */     int i = this.rng.nextInt(6);
 /* 347:390 */     int j = 0;
 /* 348:391 */     if ((paramxq instanceof acg))
 /* 349:    */     {
@@ -357,7 +357,7 @@ package net.minecraft.src;
 /* 356:    */     }
 /* 357:400 */     r(i);
 /* 358:401 */     if (j != 0) {
-/* 359:402 */       b(-24000);
+/* 359:402 */       setAge(-24000);
 /* 360:    */     }
 /* 361:405 */     return paramxq;
 /* 362:    */   }
@@ -374,11 +374,11 @@ package net.minecraft.src;
 /* 373:    */   
 /* 374:    */   protected void cn()
 /* 375:    */   {
-/* 376:425 */     this.world.a(ew.M, this.xPos + this.random.nextFloat() * this.J * 2.0F - this.J, this.yPos + 0.5D + this.random.nextFloat() * this.K, this.zPos + this.random.nextFloat() * this.J * 2.0F - this.J, 0.0D, 0.0D, 0.0D, new int[] { ProtoBlock.f(BlockList.cb.a(7)) });
+/* 376:425 */     this.world.a(EnumParticleEffect.M, this.xPos + this.rng.nextFloat() * this.J * 2.0F - this.J, this.yPos + 0.5D + this.rng.nextFloat() * this.K, this.zPos + this.rng.nextFloat() * this.J * 2.0F - this.J, 0.0D, 0.0D, 0.0D, new int[] { ProtoBlock.f(BlockList.cb.a(7)) });
 /* 377:426 */     this.bs = 100;
 /* 378:    */   }
 /* 379:    */   
-/* 380:    */   public void a(byte paramByte)
+/* 380:    */   public void onSignal(byte paramByte)
 /* 381:    */   {
 /* 382:431 */     if (paramByte == 1)
 /* 383:    */     {
@@ -388,10 +388,10 @@ package net.minecraft.src;
 /* 387:    */     }
 /* 388:    */     else
 /* 389:    */     {
-/* 390:437 */       super.a(paramByte);
+/* 390:437 */       super.onSignal(paramByte);
 /* 391:    */     }
 /* 392:    */   }
-				public EntityPassiveMob a(EntityPassiveMob arg0) {return b(arg0);}
+				public EntityPassiveMob getBaby(EntityPassiveMob arg0) {return b(arg0);}
 				static boolean a(EntityRabbit arg0) {return arg0.cv();}
 /* 393:    */ }
 

@@ -17,7 +17,7 @@ package net.minecraft.src;
 /* 16:   */   
 /* 17:   */   public boolean a()
 /* 18:   */   {
-/* 19:18 */     return this.a.bb().nextFloat() < 0.02F;
+/* 19:18 */     return this.a.getRNG().nextFloat() < 0.02F;
 /* 20:   */   }
 /* 21:   */   
 /* 22:   */   public boolean b()
@@ -27,10 +27,10 @@ package net.minecraft.src;
 /* 26:   */   
 /* 27:   */   public void c()
 /* 28:   */   {
-/* 29:28 */     double d1 = 6.283185307179586D * this.a.bb().nextDouble();
+/* 29:28 */     double d1 = 6.283185307179586D * this.a.getRNG().nextDouble();
 /* 30:29 */     this.b = Math.cos(d1);
 /* 31:30 */     this.c = Math.sin(d1);
-/* 32:31 */     this.d = (20 + this.a.bb().nextInt(20));
+/* 32:31 */     this.d = (20 + this.a.getRNG().nextInt(20));
 /* 33:   */   }
 /* 34:   */   
 /* 35:   */   public void e()

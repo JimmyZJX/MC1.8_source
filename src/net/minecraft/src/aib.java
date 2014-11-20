@@ -318,7 +318,7 @@ package net.minecraft.src;
 /* 317:298 */           localajk1 = (ajk)this.c.get(paramInt1);
 /* 318:299 */           if (localajk1.a(paramahd))
 /* 319:    */           {
-/* 320:300 */             ItemStack localObject1 = localahb.a(paramInt2);
+/* 320:300 */             ItemStack localObject1 = localahb.get(paramInt2);
 /* 321:301 */             int localamj21 = (localObject1 == null) || ((localajk1.d == localahb) && (localajk1.a((ItemStack)localObject1))) ? 1 : 0;
 /* 322:302 */             int localamj31 = -1;
 /* 323:304 */             if (localamj21 == 0)
@@ -619,16 +619,16 @@ package net.minecraft.src;
 /* 618:    */     }
 /* 619:579 */     int j = 0;
 /* 620:580 */     float f1 = 0.0F;
-/* 621:582 */     for (int k = 0; k < paramvq.n_(); k++)
+/* 621:582 */     for (int k = 0; k < paramvq.getSize(); k++)
 /* 622:    */     {
-/* 623:583 */       ItemStack localamj = paramvq.a(k);
+/* 623:583 */       ItemStack localamj = paramvq.get(k);
 /* 624:585 */       if (localamj != null)
 /* 625:    */       {
 /* 626:586 */         f1 += localamj.stackSize / Math.min(paramvq.p_(), localamj.getMaxStackSize());
 /* 627:587 */         j++;
 /* 628:    */       }
 /* 629:    */     }
-/* 630:591 */     f1 /= paramvq.n_();
+/* 630:591 */     f1 /= paramvq.getSize();
 /* 631:592 */     return MathUtils.floor(f1 * 14.0F) + (j > 0 ? 1 : 0);
 /* 632:    */   }
 /* 633:    */ }

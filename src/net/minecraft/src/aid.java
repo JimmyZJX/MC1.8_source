@@ -62,7 +62,7 @@ package net.minecraft.src;
 /*  61:148 */     int i5 = 1;
 /*  62:149 */     int i6 = 1;
 /*  63:    */     
-/*  64:151 */     ItemStack localamj1 = this.h.a(0);
+/*  64:151 */     ItemStack localamj1 = this.h.get(0);
 /*  65:152 */     this.a = 1;
 /*  66:153 */     int i7 = 0;
 /*  67:154 */     int i8 = 0;
@@ -74,7 +74,7 @@ package net.minecraft.src;
 /*  73:164 */       return;
 /*  74:    */     }
 /*  75:166 */     ItemStack localamj2 = localamj1.k();
-/*  76:167 */     ItemStack localamj3 = this.h.a(1);
+/*  76:167 */     ItemStack localamj3 = this.h.get(1);
 /*  77:168 */     Map localMap1 = aph.a(localamj2);
 /*  78:169 */     int i10 = 0;
 /*  79:    */     
@@ -262,7 +262,7 @@ package net.minecraft.src;
 /* 261:373 */     if (this.i.isClient) {
 /* 262:374 */       return;
 /* 263:    */     }
-/* 264:377 */     for (int n = 0; n < this.h.n_(); n++)
+/* 264:377 */     for (int n = 0; n < this.h.getSize(); n++)
 /* 265:    */     {
 /* 266:378 */       ItemStack localamj = this.h.b(n);
 /* 267:379 */       if (localamj != null) {

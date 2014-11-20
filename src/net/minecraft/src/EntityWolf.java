@@ -106,7 +106,7 @@ package net.minecraft.src;
 /* 107:135 */     if (ct()) {
 /* 108:136 */       return "mob.wolf.growl";
 /* 109:    */     }
-/* 110:138 */     if (this.random.nextInt(3) == 0)
+/* 110:138 */     if (this.rng.nextInt(3) == 0)
 /* 111:    */     {
 /* 112:139 */       if ((cj()) && (this.ac.d(18) < 10.0F)) {
 /* 113:140 */         return "mob.wolf.whine";
@@ -144,7 +144,7 @@ package net.minecraft.src;
 /* 145:172 */       this.bp = true;
 /* 146:173 */       this.bq = 0.0F;
 /* 147:174 */       this.br = 0.0F;
-/* 148:175 */       this.world.a(this, (byte)8);
+/* 148:175 */       this.world.sendSignal(this, (byte)8);
 /* 149:    */     }
 /* 150:177 */     if ((!this.world.isClient) && (u() == null) && (ct())) {
 /* 151:178 */       o(false);
@@ -172,7 +172,7 @@ package net.minecraft.src;
 /* 173:199 */       (this.bp))
 /* 174:    */     {
 /* 175:200 */       if (this.bq == 0.0F) {
-/* 176:201 */         a("mob.wolf.shake", bA(), (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
+/* 176:201 */         a("mob.wolf.shake", bA(), (this.rng.nextFloat() - this.rng.nextFloat()) * 0.2F + 1.0F);
 /* 177:    */       }
 /* 178:204 */       this.br = this.bq;
 /* 179:205 */       this.bq += 0.05F;
@@ -189,9 +189,9 @@ package net.minecraft.src;
 /* 190:216 */         int i = (int)(MathUtils.sin((this.bq - 0.4F) * 3.141593F) * 7.0F);
 /* 191:217 */         for (int j = 0; j < i; j++)
 /* 192:    */         {
-/* 193:218 */           float f2 = (this.random.nextFloat() * 2.0F - 1.0F) * this.J * 0.5F;
-/* 194:219 */           float f3 = (this.random.nextFloat() * 2.0F - 1.0F) * this.J * 0.5F;
-/* 195:220 */           this.world.a(ew.f, this.xPos + f2, f1 + 0.8F, this.zPos + f3, this.xVelocity, this.yVelocity, this.zVelocity, new int[0]);
+/* 193:218 */           float f2 = (this.rng.nextFloat() * 2.0F - 1.0F) * this.J * 0.5F;
+/* 194:219 */           float f3 = (this.rng.nextFloat() * 2.0F - 1.0F) * this.J * 0.5F;
+/* 195:220 */           this.world.a(EnumParticleEffect.f, this.xPos + f2, f1 + 0.8F, this.zPos + f3, this.xVelocity, this.yVelocity, this.zVelocity, new int[0]);
 /* 196:    */         }
 /* 197:    */       }
 /* 198:    */     }
@@ -269,7 +269,7 @@ package net.minecraft.src;
 /* 270:296 */     a(afs.e).a(4.0D);
 /* 271:    */   }
 /* 272:    */   
-/* 273:    */   public boolean a(EntityPlayer paramahd)
+/* 273:    */   public boolean onRightClick(EntityPlayer paramahd)
 /* 274:    */   {
 /* 275:301 */     ItemStack localamj = paramahd.bg.h();
 /* 276:303 */     if (cj())
@@ -325,7 +325,7 @@ package net.minecraft.src;
 /* 326:345 */         paramahd.bg.a(paramahd.bg.c, null);
 /* 327:    */       }
 /* 328:347 */       if (!this.world.isClient) {
-/* 329:348 */         if (this.random.nextInt(3) == 0)
+/* 329:348 */         if (this.rng.nextInt(3) == 0)
 /* 330:    */         {
 /* 331:349 */           m(true);
 /* 332:350 */           this.h.n();
@@ -334,20 +334,20 @@ package net.minecraft.src;
 /* 335:353 */           h(20.0F);
 /* 336:354 */           b(paramahd.getUUID().toString());
 /* 337:355 */           l(true);
-/* 338:356 */           this.world.a(this, (byte)7);
+/* 338:356 */           this.world.sendSignal(this, (byte)7);
 /* 339:    */         }
 /* 340:    */         else
 /* 341:    */         {
 /* 342:358 */           l(false);
-/* 343:359 */           this.world.a(this, (byte)6);
+/* 343:359 */           this.world.sendSignal(this, (byte)6);
 /* 344:    */         }
 /* 345:    */       }
 /* 346:363 */       return true;
 /* 347:    */     }
-/* 348:366 */     return super.a(paramahd);
+/* 348:366 */     return super.onRightClick(paramahd);
 /* 349:    */   }
 /* 350:    */   
-/* 351:    */   public void a(byte paramByte)
+/* 351:    */   public void onSignal(byte paramByte)
 /* 352:    */   {
 /* 353:371 */     if (paramByte == 8)
 /* 354:    */     {
@@ -357,7 +357,7 @@ package net.minecraft.src;
 /* 358:    */     }
 /* 359:    */     else
 /* 360:    */     {
-/* 361:376 */       super.a(paramByte);
+/* 361:376 */       super.onSignal(paramByte);
 /* 362:    */     }
 /* 363:    */   }
 /* 364:    */   
@@ -490,7 +490,7 @@ package net.minecraft.src;
 /* 491:    */   {
 /* 492:503 */     return (!ct()) && (super.ca());
 /* 493:    */   }
-				public EntityPassiveMob a(EntityPassiveMob arg0) {return b(arg0);}
+				public EntityPassiveMob getBaby(EntityPassiveMob arg0) {return b(arg0);}
 /* 494:    */ }
 
 

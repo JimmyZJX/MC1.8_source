@@ -43,9 +43,9 @@ package net.minecraft.src;
 /* 42:43 */       int i = 3 + this.world.rng.nextInt(5) + this.world.rng.nextInt(5);
 /* 43:44 */       while (i > 0)
 /* 44:   */       {
-/* 45:45 */         int j = xk.a(i);
+/* 45:45 */         int j = EntityExperienceOrb.a(i);
 /* 46:46 */         i -= j;
-/* 47:47 */         this.world.spawnEntity(new xk(this.world, this.xPos, this.yPos, this.zPos, j));
+/* 47:47 */         this.world.spawnEntity(new EntityExperienceOrb(this.world, this.xPos, this.yPos, this.zPos, j));
 /* 48:   */       }
 /* 49:50 */       setDead();
 /* 50:   */     }

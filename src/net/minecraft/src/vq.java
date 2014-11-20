@@ -2,11 +2,11 @@ package net.minecraft.src;
 public abstract interface vq
   extends vz
 {
-  public abstract int n_();
+  public abstract int getSize();
   
-  public abstract ItemStack a(int paramInt);
+  public abstract ItemStack get(int paramInt);
   
-  public abstract ItemStack a(int paramInt1, int paramInt2);
+  public abstract ItemStack removeItems(int paramInt1, int paramInt2);
   
   public abstract ItemStack b(int paramInt);
   

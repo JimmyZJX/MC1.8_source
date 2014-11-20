@@ -375,7 +375,7 @@ package net.minecraft.src;
 /* 372:399 */     float f3 = Math.max(0.0F, f1 * f1 * 0.7F - 0.5F);
 /* 373:400 */     float f4 = Math.max(0.0F, f1 * f1 * 0.6F - 0.7F);
 /* 374:    */     
-/* 375:402 */     paramaqu.a(ew.E, d1, d2, d3, f2, f3, f4, new int[0]);
+/* 375:402 */     paramaqu.a(EnumParticleEffect.E, d1, d2, d3, f2, f3, f4, new int[0]);
 /* 376:    */   }
 /* 377:    */   
 /* 378:    */   public Item b(World paramaqu, BlockPosition paramdt)

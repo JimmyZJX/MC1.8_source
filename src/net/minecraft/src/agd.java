@@ -23,8 +23,8 @@ package net.minecraft.src;
 /*  22:    */   {
 /*  23:428 */     if (--this.c <= 0)
 /*  24:    */     {
-/*  25:429 */       this.c = (40 + this.a.bb().nextInt(60));
-/*  26:430 */       this.b = this.a.bb().nextInt(360);
+/*  25:429 */       this.c = (40 + this.a.getRNG().nextInt(60));
+/*  26:430 */       this.b = this.a.getRNG().nextInt(360);
 /*  27:    */     }
 /*  28:432 */     ((agc)this.a.q()).a(this.b, false);
 /*  29:    */   }

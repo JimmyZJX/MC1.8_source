@@ -11,10 +11,10 @@ package net.minecraft.src;
 /* 10: 9 */     this.yVelocity = (paramDouble5 + (Math.random() * 2.0D - 1.0D) * 0.0500000007450581D);
 /* 11:10 */     this.zVelocity = (paramDouble6 + (Math.random() * 2.0D - 1.0D) * 0.0500000007450581D);
 /* 12:   */     
-/* 13:12 */     this.ap = (this.aq = this.ar = this.random.nextFloat() * 0.3F + 0.7F);
-/* 14:13 */     this.h = (this.random.nextFloat() * this.random.nextFloat() * 6.0F + 1.0F);
+/* 13:12 */     this.ap = (this.aq = this.ar = this.rng.nextFloat() * 0.3F + 0.7F);
+/* 14:13 */     this.h = (this.rng.nextFloat() * this.rng.nextFloat() * 6.0F + 1.0F);
 /* 15:   */     
-/* 16:15 */     this.g = ((int)(16.0D / (this.random.nextFloat() * 0.8D + 0.2D)) + 2);
+/* 16:15 */     this.g = ((int)(16.0D / (this.rng.nextFloat() * 0.8D + 0.2D)) + 2);
 /* 17:   */   }
 /* 18:   */   
 /* 19:   */   public void onUpdate()

@@ -22,17 +22,17 @@ package net.minecraft.src;
 /* 21:66 */     this.C = this.a.Z();
 /* 22:   */     
 /* 23:   */ 
-/* 24:69 */     String str = abl.a(this.t);
-/* 25:70 */     abl localabl = (abl)this.z.a(abl.class, str);
+/* 24:69 */     String str = VillageManager.a(this.t);
+/* 25:70 */     VillageManager localabl = (VillageManager)this.z.a(VillageManager.class, str);
 /* 26:71 */     if (localabl == null)
 /* 27:   */     {
-/* 28:72 */       this.A = new abl(this);
-/* 29:73 */       this.z.a(str, this.A);
+/* 28:72 */       this.villageManager = new VillageManager(this);
+/* 29:73 */       this.z.a(str, this.villageManager);
 /* 30:   */     }
 /* 31:   */     else
 /* 32:   */     {
-/* 33:75 */       this.A = localabl;
-/* 34:76 */       this.A.a(this);
+/* 33:75 */       this.villageManager = localabl;
+/* 34:76 */       this.villageManager.setWorld(this);
 /* 35:   */     }
 /* 36:79 */     return this;
 /* 37:   */   }

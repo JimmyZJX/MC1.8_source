@@ -13,7 +13,7 @@ package net.minecraft.src;
 /*  12:872 */     if (j > 64) {
 /*  13:873 */       j = 64;
 /*  14:    */     }
-/*  15:876 */     paramaqd.add(new aqc(new ItemStack(ItemList.book), new ItemStack(ItemList.bO, j), localamj));
+/*  15:876 */     paramaqd.add(new TradeOffer(new ItemStack(ItemList.book), new ItemStack(ItemList.emerald, j), localamj));
 /*  16:    */   }
 /*  17:    */ }
 

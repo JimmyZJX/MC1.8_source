@@ -22,8 +22,8 @@ package net.minecraft.src;
 /*  22:    */   {
 /*  23: 29 */     super(paramaqu);
 /*  24: 30 */     a(0.95F, 0.95F);
-/*  25: 31 */     this.random.setSeed(1 + getID());
-/*  26: 32 */     this.bo = (1.0F / (this.random.nextFloat() + 1.0F) * 0.2F);
+/*  25: 31 */     this.rng.setSeed(1 + getID());
+/*  26: 32 */     this.bo = (1.0F / (this.rng.nextFloat() + 1.0F) * 0.2F);
 /*  27:    */     
 /*  28: 34 */     this.i.a(0, new acp(this));
 /*  29:    */   }
@@ -72,7 +72,7 @@ package net.minecraft.src;
 /*  72:    */   
 /*  73:    */   protected void b(boolean paramBoolean, int paramInt)
 /*  74:    */   {
-/*  75: 81 */     int i = this.random.nextInt(3 + paramInt) + 1;
+/*  75: 81 */     int i = this.rng.nextInt(3 + paramInt) + 1;
 /*  76: 82 */     for (int j = 0; j < i; j++) {
 /*  77: 83 */       a(new ItemStack(ItemList.dye, 1, EnumDyeColor.BLACK.b()), 0.0F);
 /*  78:    */     }
@@ -102,10 +102,10 @@ package net.minecraft.src;
 /* 102:    */       else
 /* 103:    */       {
 /* 104:107 */         this.bj = ((float)(this.bj - 6.283185307179586D));
-/* 105:108 */         if (this.random.nextInt(10) == 0) {
-/* 106:109 */           this.bo = (1.0F / (this.random.nextFloat() + 1.0F) * 0.2F);
+/* 105:108 */         if (this.rng.nextInt(10) == 0) {
+/* 106:109 */           this.bo = (1.0F / (this.rng.nextFloat() + 1.0F) * 0.2F);
 /* 107:    */         }
-/* 108:111 */         this.world.a(this, (byte)19);
+/* 108:111 */         this.world.sendSignal(this, (byte)19);
 /* 109:    */       }
 /* 110:    */     }
 /* 111:115 */     if (this.Y)
@@ -167,12 +167,12 @@ package net.minecraft.src;
 /* 167:167 */     return (this.yPos > 45.0D) && (this.yPos < 63.0D) && (super.canSpawn());
 /* 168:    */   }
 /* 169:    */   
-/* 170:    */   public void a(byte paramByte)
+/* 170:    */   public void onSignal(byte paramByte)
 /* 171:    */   {
 /* 172:172 */     if (paramByte == 19) {
 /* 173:173 */       this.bj = 0.0F;
 /* 174:    */     } else {
-/* 175:175 */       super.a(paramByte);
+/* 175:175 */       super.onSignal(paramByte);
 /* 176:    */     }
 /* 177:    */   }
 /* 178:    */   

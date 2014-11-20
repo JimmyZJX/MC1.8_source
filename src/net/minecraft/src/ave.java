@@ -81,7 +81,7 @@ package net.minecraft.src;
 /*  80: 97 */       paramaqu.playLevelEvent(1001, paramdt, 0);
 /*  81: 98 */       return;
 /*  82:    */     }
-/*  83:101 */     ItemStack localamj1 = localbcx.a(i);
+/*  83:101 */     ItemStack localamj1 = localbcx.get(i);
 /*  84:102 */     eo localeo = a(localamj1);
 /*  85:104 */     if (localeo != eo.a)
 /*  86:    */     {

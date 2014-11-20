@@ -5,18 +5,18 @@ package net.minecraft.src;
 /*   4:    */ public class wa
 /*   5:    */   implements vq
 /*   6:    */ {
-/*   7:    */   private String a;
-/*   8:    */   private int b;
-/*   9:    */   private ItemStack[] c;
+/*   7:    */   private String name;
+/*   8:    */   private int size;
+/*   9:    */   private ItemStack[] stacks;
 /*  10:    */   private List<vr> d;
 /*  11:    */   private boolean e;
 /*  12:    */   
-/*  13:    */   public wa(String paramString, boolean paramBoolean, int paramInt)
+/*  13:    */   public wa(String paramString, boolean paramBoolean, int size)
 /*  14:    */   {
-/*  15: 21 */     this.a = paramString;
+/*  15: 21 */     this.name = paramString;
 /*  16: 22 */     this.e = paramBoolean;
-/*  17: 23 */     this.b = paramInt;
-/*  18: 24 */     this.c = new ItemStack[paramInt];
+/*  17: 23 */     this.size = size;
+/*  18: 24 */     this.stacks = new ItemStack[size];
 /*  19:    */   }
 /*  20:    */   
 /*  21:    */   public wa(ho paramho, int paramInt)
@@ -37,28 +37,28 @@ package net.minecraft.src;
 /*  36: 39 */     this.d.remove(paramvr);
 /*  37:    */   }
 /*  38:    */   
-/*  39:    */   public ItemStack a(int paramInt)
+/*  39:    */   public ItemStack get(int paramInt)
 /*  40:    */   {
-/*  41: 45 */     if ((paramInt < 0) || (paramInt >= this.c.length)) {
+/*  41: 45 */     if ((paramInt < 0) || (paramInt >= this.stacks.length)) {
 /*  42: 46 */       return null;
 /*  43:    */     }
-/*  44: 48 */     return this.c[paramInt];
+/*  44: 48 */     return this.stacks[paramInt];
 /*  45:    */   }
 /*  46:    */   
-/*  47:    */   public ItemStack a(int paramInt1, int paramInt2)
+/*  47:    */   public ItemStack removeItems(int i, int num)
 /*  48:    */   {
-/*  49: 54 */     if (this.c[paramInt1] != null)
+/*  49: 54 */     if (this.stacks[i] != null)
 /*  50:    */     {
-/*  51: 55 */       if (this.c[paramInt1].stackSize <= paramInt2)
+/*  51: 55 */       if (this.stacks[i].stackSize <= num)
 /*  52:    */       {
-/*  53: 56 */         ItemStack localamj = this.c[paramInt1];
-/*  54: 57 */         this.c[paramInt1] = null;
+/*  53: 56 */         ItemStack localamj = this.stacks[i];
+/*  54: 57 */         this.stacks[i] = null;
 /*  55: 58 */         o_();
 /*  56: 59 */         return localamj;
 /*  57:    */       }
-/*  58: 61 */       ItemStack localamj = this.c[paramInt1].split(paramInt2);
-/*  59: 62 */       if (this.c[paramInt1].stackSize == 0) {
-/*  60: 63 */         this.c[paramInt1] = null;
+/*  58: 61 */       ItemStack localamj = this.stacks[i].split(num);
+/*  59: 62 */       if (this.stacks[i].stackSize == 0) {
+/*  60: 63 */         this.stacks[i] = null;
 /*  61:    */       }
 /*  62: 65 */       o_();
 /*  63: 66 */       return localamj;
@@ -66,12 +66,12 @@ package net.minecraft.src;
 /*  65: 69 */     return null;
 /*  66:    */   }
 /*  67:    */   
-/*  68:    */   public ItemStack a(ItemStack paramamj)
+/*  68:    */   public ItemStack add(ItemStack paramamj)
 /*  69:    */   {
 /*  70: 74 */     ItemStack localamj1 = paramamj.k();
-/*  71: 76 */     for (int i = 0; i < this.b; i++)
+/*  71: 76 */     for (int i = 0; i < this.size; i++)
 /*  72:    */     {
-/*  73: 77 */       ItemStack localamj2 = a(i);
+/*  73: 77 */       ItemStack localamj2 = get(i);
 /*  74: 78 */       if (localamj2 == null)
 /*  75:    */       {
 /*  76: 79 */         a(i, localamj1);
@@ -102,10 +102,10 @@ package net.minecraft.src;
 /* 101:    */   
 /* 102:    */   public ItemStack b(int paramInt)
 /* 103:    */   {
-/* 104:105 */     if (this.c[paramInt] != null)
+/* 104:105 */     if (this.stacks[paramInt] != null)
 /* 105:    */     {
-/* 106:106 */       ItemStack localamj = this.c[paramInt];
-/* 107:107 */       this.c[paramInt] = null;
+/* 106:106 */       ItemStack localamj = this.stacks[paramInt];
+/* 107:107 */       this.stacks[paramInt] = null;
 /* 108:108 */       return localamj;
 /* 109:    */     }
 /* 110:110 */     return null;
@@ -113,21 +113,21 @@ package net.minecraft.src;
 /* 112:    */   
 /* 113:    */   public void a(int paramInt, ItemStack paramamj)
 /* 114:    */   {
-/* 115:115 */     this.c[paramInt] = paramamj;
+/* 115:115 */     this.stacks[paramInt] = paramamj;
 /* 116:116 */     if ((paramamj != null) && (paramamj.stackSize > p_())) {
 /* 117:117 */       paramamj.stackSize = p_();
 /* 118:    */     }
 /* 119:119 */     o_();
 /* 120:    */   }
 /* 121:    */   
-/* 122:    */   public int n_()
+/* 122:    */   public int getSize()
 /* 123:    */   {
-/* 124:124 */     return this.b;
+/* 124:124 */     return this.size;
 /* 125:    */   }
 /* 126:    */   
 /* 127:    */   public String getName()
 /* 128:    */   {
-/* 129:129 */     return this.a;
+/* 129:129 */     return this.name;
 /* 130:    */   }
 /* 131:    */   
 /* 132:    */   public boolean k_()
@@ -138,7 +138,7 @@ package net.minecraft.src;
 /* 137:    */   public void a(String paramString)
 /* 138:    */   {
 /* 139:138 */     this.e = true;
-/* 140:139 */     this.a = paramString;
+/* 140:139 */     this.name = paramString;
 /* 141:    */   }
 /* 142:    */   
 /* 143:    */   public ho e_()
@@ -158,7 +158,7 @@ package net.minecraft.src;
 /* 157:    */   {
 /* 158:157 */     if (this.d != null) {
 /* 159:158 */       for (int i = 0; i < this.d.size(); i++) {
-/* 160:159 */         ((vr)this.d.get(i)).a(this);
+/* 160:159 */         this.d.get(i).a(this);
 /* 161:    */       }
 /* 162:    */     }
 /* 163:    */   }
@@ -191,8 +191,8 @@ package net.minecraft.src;
 /* 190:    */   
 /* 191:    */   public void l()
 /* 192:    */   {
-/* 193:198 */     for (int i = 0; i < this.c.length; i++) {
-/* 194:199 */       this.c[i] = null;
+/* 193:198 */     for (int i = 0; i < this.stacks.length; i++) {
+/* 194:199 */       this.stacks[i] = null;
 /* 195:    */     }
 /* 196:    */   }
 /* 197:    */ }

@@ -19,10 +19,10 @@ package net.minecraft.src;
 /* 18:21 */     if (!this.a.world.w()) {
 /* 19:22 */       return false;
 /* 20:   */     }
-/* 21:24 */     if (this.a.bb().nextInt(8000) != 0) {
+/* 21:24 */     if (this.a.getRNG().nextInt(8000) != 0) {
 /* 22:25 */       return false;
 /* 23:   */     }
-/* 24:27 */     this.b = ((EntityVillager)this.a.world.a(EntityVillager.class, this.a.getAABB().expand(6.0D, 2.0D, 6.0D), this.a));
+/* 24:27 */     this.b = ((EntityVillager)this.a.world.getNearestEntity(EntityVillager.class, this.a.getAABB().expand(6.0D, 2.0D, 6.0D), this.a));
 /* 25:28 */     return this.b != null;
 /* 26:   */   }
 /* 27:   */   

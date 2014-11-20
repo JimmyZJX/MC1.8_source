@@ -137,7 +137,7 @@ package net.minecraft.src;
 /* 137:    */   
 /* 138:    */   private boolean a(EntityLiving paramxm)
 /* 139:    */   {
-/* 140:165 */     this.c = (10 + this.e.bb().nextInt(5));
+/* 140:165 */     this.c = (10 + this.e.getRNG().nextInt(5));
 /* 141:166 */     bpv localbpv = this.e.s().a(paramxm);
 /* 142:167 */     if (localbpv == null) {
 /* 143:168 */       return false;

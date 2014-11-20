@@ -6,12 +6,12 @@ package net.minecraft.src;
 /*  5:   */ {
 /*  6:   */   protected Item j()
 /*  7:   */   {
-/*  8:13 */     return ItemList.bS;
+/*  8:13 */     return ItemList.potato;
 /*  9:   */   }
 /* 10:   */   
 /* 11:   */   protected Item l()
 /* 12:   */   {
-/* 13:18 */     return ItemList.bS;
+/* 13:18 */     return ItemList.potato;
 /* 14:   */   }
 /* 15:   */   
 /* 16:   */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, float paramFloat, int paramInt)

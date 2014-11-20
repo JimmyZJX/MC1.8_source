@@ -23,7 +23,7 @@ package net.minecraft.src;
 /* 22:   */   
 /* 23:   */   protected oa a(EntityVillager paramagp)
 /* 24:   */   {
-/* 25:30 */     switch (paramagp.cj())
+/* 25:30 */     switch (paramagp.getProfession())
 /* 26:   */     {
 /* 27:   */     case 0: 
 /* 28:32 */       return e;
@@ -42,7 +42,7 @@ package net.minecraft.src;
 /* 41:   */   protected void a(EntityVillager paramagp, float paramFloat)
 /* 42:   */   {
 /* 43:48 */     float f = 0.9375F;
-/* 44:49 */     if (paramagp.l() < 0)
+/* 44:49 */     if (paramagp.getAge() < 0)
 /* 45:   */     {
 /* 46:50 */       f = (float)(f * 0.5D);
 /* 47:51 */       this.c = 0.25F;

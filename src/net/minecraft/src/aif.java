@@ -31,7 +31,7 @@ package net.minecraft.src;
 /*  26: 83 */     aid.a(this.c).a(0, null);
 /*  27: 84 */     if (aid.b(this.c) > 0)
 /*  28:    */     {
-/*  29: 85 */       ItemStack localObject = aid.a(this.c).a(1);
+/*  29: 85 */       ItemStack localObject = aid.a(this.c).get(1);
 /*  30: 86 */       if ((localObject != null) && (((ItemStack)localObject).stackSize > aid.b(this.c)))
 /*  31:    */       {
 /*  32: 87 */         localObject.stackSize -= aid.b(this.c);
@@ -49,7 +49,7 @@ package net.minecraft.src;
 /*  44: 95 */     this.c.a = 0;
 /*  45:    */     
 /*  46: 97 */     Object localObject = this.a.getBlock(this.b);
-/*  47: 98 */     if ((!paramahd.by.d) && (!this.a.isClient) && (((Block)localObject).getProto() == BlockList.cf) && (paramahd.bb().nextFloat() < 0.12F))
+/*  47: 98 */     if ((!paramahd.by.d) && (!this.a.isClient) && (((Block)localObject).getProto() == BlockList.cf) && (paramahd.getRNG().nextFloat() < 0.12F))
 /*  48:    */     {
 /*  49: 99 */       int i = ((Integer)((Block)localObject).getProperty(BlockAnvil.b)).intValue();
 /*  50:100 */       i++;

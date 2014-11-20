@@ -29,16 +29,16 @@ package net.minecraft.src;
 /* 28:36 */       this.e -= 1;
 /* 29:38 */       if (this.e == 0)
 /* 30:   */       {
-/* 31:40 */         wa localwa = this.f.co();
-/* 32:41 */         for (int i = 0; i < localwa.n_(); i++)
+/* 31:40 */         wa localwa = this.f.getInventory();
+/* 32:41 */         for (int i = 0; i < localwa.getSize(); i++)
 /* 33:   */         {
-/* 34:42 */           ItemStack localamj1 = localwa.a(i);
+/* 34:42 */           ItemStack localamj1 = localwa.get(i);
 /* 35:43 */           ItemStack localamj2 = null;
 /* 36:45 */           if (localamj1 != null)
 /* 37:   */           {
 /* 38:46 */             Item localalq = localamj1.getItem();
 /* 39:   */             int j;
-/* 40:48 */             if (((localalq == ItemList.P) || (localalq == ItemList.bS) || (localalq == ItemList.carrot)) && (localamj1.stackSize > 3))
+/* 40:48 */             if (((localalq == ItemList.bread) || (localalq == ItemList.potato) || (localalq == ItemList.carrot)) && (localamj1.stackSize > 3))
 /* 41:   */             {
 /* 42:49 */               j = localamj1.stackSize / 2;
 /* 43:50 */               localamj1.stackSize -= j;
@@ -49,7 +49,7 @@ package net.minecraft.src;
 /* 48:53 */               j = localamj1.stackSize / 2 / 3 * 3;
 /* 49:54 */               int k = j / 3;
 /* 50:55 */               localamj1.stackSize -= j;
-/* 51:56 */               localamj2 = new ItemStack(ItemList.P, k, 0);
+/* 51:56 */               localamj2 = new ItemStack(ItemList.bread, k, 0);
 /* 52:   */             }
 /* 53:58 */             if (localamj1.stackSize <= 0) {
 /* 54:59 */               localwa.a(i, null);

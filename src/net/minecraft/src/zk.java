@@ -88,12 +88,12 @@ package net.minecraft.src;
 /*  88: 92 */     this.h -= 1;
 /*  89: 94 */     if (((this.e) || (this.b.t().a(localxm))) && 
 /*  90: 95 */       (this.h <= 0) && (
-/*  91: 96 */       ((this.i == 0.0D) && (this.j == 0.0D) && (this.k == 0.0D)) || (localxm.e(this.i, this.j, this.k) >= 1.0D) || (this.b.bb().nextFloat() < 0.05F)))
+/*  91: 96 */       ((this.i == 0.0D) && (this.j == 0.0D) && (this.k == 0.0D)) || (localxm.e(this.i, this.j, this.k) >= 1.0D) || (this.b.getRNG().nextFloat() < 0.05F)))
 /*  92:    */     {
 /*  93: 97 */       this.i = localxm.xPos;
 /*  94: 98 */       this.j = localxm.getAABB().minY;
 /*  95: 99 */       this.k = localxm.zPos;
-/*  96:100 */       this.h = (4 + this.b.bb().nextInt(7));
+/*  96:100 */       this.h = (4 + this.b.getRNG().nextInt(7));
 /*  97:102 */       if (d1 > 1024.0D) {
 /*  98:103 */         this.h += 10;
 /*  99:104 */       } else if (d1 > 256.0D) {

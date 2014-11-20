@@ -76,9 +76,9 @@ package net.minecraft.src;
 /*  76: 90 */     a("mob.pig.step", 0.15F, 1.0F);
 /*  77:    */   }
 /*  78:    */   
-/*  79:    */   public boolean a(EntityPlayer paramahd)
+/*  79:    */   public boolean onRightClick(EntityPlayer paramahd)
 /*  80:    */   {
-/*  81: 95 */     if (!super.a(paramahd))
+/*  81: 95 */     if (!super.onRightClick(paramahd))
 /*  82:    */     {
 /*  83: 96 */       if ((cj()) && (!this.world.isClient) && ((this.rider == null) || (this.rider == paramahd)))
 /*  84:    */       {
@@ -100,7 +100,7 @@ package net.minecraft.src;
 /* 100:    */   
 /* 101:    */   protected void b(boolean paramBoolean, int paramInt)
 /* 102:    */   {
-/* 103:115 */     int i = this.random.nextInt(3) + 1 + this.random.nextInt(1 + paramInt);
+/* 103:115 */     int i = this.rng.nextInt(3) + 1 + this.rng.nextInt(1 + paramInt);
 /* 104:117 */     for (int j = 0; j < i; j++) {
 /* 105:118 */       if (au()) {
 /* 106:119 */         a(ItemList.am, 1);
@@ -127,7 +127,7 @@ package net.minecraft.src;
 /* 127:    */     }
 /* 128:    */   }
 /* 129:    */   
-/* 130:    */   public void a(ads paramads)
+/* 130:    */   public void onStruck(ads paramads)
 /* 131:    */   {
 /* 132:144 */     if (this.world.isClient) {
 /* 133:145 */       return;
@@ -147,7 +147,7 @@ package net.minecraft.src;
 /* 147:    */     }
 /* 148:    */   }
 /* 149:    */   
-/* 150:    */   public EntityPig a(EntityPassiveMob paramws)
+/* 150:    */   public EntityPig getBaby(EntityPassiveMob paramws)
 /* 151:    */   {
 /* 152:166 */     return new EntityPig(this.world);
 /* 153:    */   }

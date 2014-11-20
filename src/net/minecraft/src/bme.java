@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*    5:     */ public class bme
 /*    6:     */   extends bmk
 /*    7:     */ {
-/*    8: 919 */   private static final List<vl> b = Lists.newArrayList(new vl[] { new vl(ItemList.j, 0, 1, 5, 10), new vl(ItemList.k, 0, 1, 3, 5), new vl(ItemList.aC, 0, 4, 9, 5), new vl(ItemList.h, 0, 3, 8, 10), new vl(ItemList.P, 0, 1, 3, 15), new vl(ItemList.apple, 0, 1, 3, 15), new vl(ItemList.b, 0, 1, 1, 1) });
+/*    8: 919 */   private static final List<vl> b = Lists.newArrayList(new vl[] { new vl(ItemList.j, 0, 1, 5, 10), new vl(ItemList.k, 0, 1, 3, 5), new vl(ItemList.aC, 0, 4, 9, 5), new vl(ItemList.h, 0, 3, 8, 10), new vl(ItemList.bread, 0, 1, 3, 15), new vl(ItemList.apple, 0, 1, 3, 15), new vl(ItemList.b, 0, 1, 1, 1) });
 /*    9:     */   protected int a;
 /*   10:     */   
 /*   11:     */   public bme() {}

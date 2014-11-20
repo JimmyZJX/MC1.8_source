@@ -134,7 +134,7 @@ package net.minecraft.src;
 /* 133:    */     {
 /* 134:159 */       int i = Item.b(ItemList.cq);
 /* 135:160 */       int j = Item.b(ItemList.cB);
-/* 136:161 */       int k = i + this.random.nextInt(j - i + 1);
+/* 136:161 */       int k = i + this.rng.nextInt(j - i + 1);
 /* 137:162 */       a(Item.b(k), 1);
 /* 138:    */     }
 /* 139:163 */     else if (((paramwh.j() instanceof EntityCreeper)) && 
@@ -175,18 +175,18 @@ package net.minecraft.src;
 /* 174:194 */     this.ac.b(16, Byte.valueOf((byte)paramInt));
 /* 175:    */   }
 /* 176:    */   
-/* 177:    */   public void a(ads paramads)
+/* 177:    */   public void onStruck(ads paramads)
 /* 178:    */   {
-/* 179:199 */     super.a(paramads);
+/* 179:199 */     super.onStruck(paramads);
 /* 180:200 */     this.ac.b(17, Byte.valueOf((byte)1));
 /* 181:    */   }
 /* 182:    */   
-/* 183:    */   protected boolean a(EntityPlayer paramahd)
+/* 183:    */   protected boolean onRightClick(EntityPlayer paramahd)
 /* 184:    */   {
 /* 185:205 */     ItemStack localamj = paramahd.bg.h();
 /* 186:206 */     if ((localamj != null) && (localamj.getItem() == ItemList.d))
 /* 187:    */     {
-/* 188:207 */       this.world.a(this.xPos + 0.5D, this.yPos + 0.5D, this.zPos + 0.5D, "fire.ignite", 1.0F, this.random.nextFloat() * 0.4F + 0.8F);
+/* 188:207 */       this.world.a(this.xPos + 0.5D, this.yPos + 0.5D, this.zPos + 0.5D, "fire.ignite", 1.0F, this.rng.nextFloat() * 0.4F + 0.8F);
 /* 189:208 */       paramahd.bv();
 /* 190:209 */       if (!this.world.isClient)
 /* 191:    */       {
@@ -195,7 +195,7 @@ package net.minecraft.src;
 /* 194:212 */         return true;
 /* 195:    */       }
 /* 196:    */     }
-/* 197:216 */     return super.a(paramahd);
+/* 197:216 */     return super.onRightClick(paramahd);
 /* 198:    */   }
 /* 199:    */   
 /* 200:    */   private void cp()

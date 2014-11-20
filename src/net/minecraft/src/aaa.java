@@ -3,7 +3,7 @@ package net.minecraft.src;
 /*  2:   */   extends zb
 /*  3:   */ {
 /*  4:   */   private EntityWalkingMob a;
-/*  5:   */   private abh b;
+/*  5:   */   private VillageDoor b;
 /*  6:   */   
 /*  7:   */   public aaa(EntityWalkingMob paramxu)
 /*  8:   */   {
@@ -20,7 +20,7 @@ package net.minecraft.src;
 /* 19:   */     }
 /* 20:26 */     BlockPosition localdt = new BlockPosition(this.a);
 /* 21:   */     
-/* 22:28 */     abi localabi = this.a.world.ae().a(localdt, 16);
+/* 22:28 */     Village localabi = this.a.world.getVillageManager().getNearestVillage(localdt, 16);
 /* 23:29 */     if (localabi == null) {
 /* 24:30 */       return false;
 /* 25:   */     }

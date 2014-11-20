@@ -40,7 +40,7 @@ package net.minecraft.src;
 /* 40:   */   public void c()
 /* 41:   */   {
 /* 42:46 */     this.a.p(true);
-/* 43:47 */     this.e = (40 + this.a.bb().nextInt(40));
+/* 43:47 */     this.e = (40 + this.a.getRNG().nextInt(40));
 /* 44:   */   }
 /* 45:   */   
 /* 46:   */   public void d()

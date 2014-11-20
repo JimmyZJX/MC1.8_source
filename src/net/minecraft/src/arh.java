@@ -91,7 +91,7 @@ package net.minecraft.src;
 /*  90: 96 */               while (this.a.getBlock(localdt1 = ((BlockPosition)localObject3).down()).getProto() == BlockList.aY) {
 /*  91: 97 */                 localObject3 = localdt1;
 /*  92:    */               }
-/*  93:100 */               double d5 = ((BlockPosition)localObject3).i((fd)localObject2);
+/*  93:100 */               double d5 = ((BlockPosition)localObject3).dist2((fd)localObject2);
 /*  94:101 */               if ((d1 < 0.0D) || (d5 < d1))
 /*  95:    */               {
 /*  96:102 */                 d1 = d5;

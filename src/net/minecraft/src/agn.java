@@ -31,9 +31,9 @@ package net.minecraft.src;
 /* 30:45 */     this.c = paramaqd;
 /* 31:   */   }
 /* 32:   */   
-/* 33:   */   public void a(aqc paramaqc)
+/* 33:   */   public void a(TradeOffer paramaqc)
 /* 34:   */   {
-/* 35:50 */     paramaqc.g();
+/* 35:50 */     paramaqc.onUse();
 /* 36:   */   }
 /* 37:   */   
 /* 38:   */   public void a_(ItemStack paramamj) {}

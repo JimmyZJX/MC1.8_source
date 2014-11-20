@@ -43,16 +43,16 @@ package net.minecraft.src;
 /* 43:   */   
 /* 44:   */   public void e()
 /* 45:   */   {
-/* 46:48 */     if (this.a.bb().nextInt(50) == 0)
+/* 46:48 */     if (this.a.getRNG().nextInt(50) == 0)
 /* 47:   */     {
 /* 48:49 */       if ((this.a.rider instanceof EntityPlayer))
 /* 49:   */       {
 /* 50:50 */         int i = this.a.cA();
 /* 51:51 */         int j = this.a.cG();
-/* 52:52 */         if ((j > 0) && (this.a.bb().nextInt(j) < i))
+/* 52:52 */         if ((j > 0) && (this.a.getRNG().nextInt(j) < i))
 /* 53:   */         {
 /* 54:53 */           this.a.h((EntityPlayer)this.a.rider);
-/* 55:54 */           this.a.world.a(this.a, (byte)7);
+/* 55:54 */           this.a.world.sendSignal(this.a, (byte)7);
 /* 56:55 */           return;
 /* 57:   */         }
 /* 58:57 */         this.a.u(5);
@@ -60,7 +60,7 @@ package net.minecraft.src;
 /* 60:60 */       this.a.rider.mount((Entity)null);
 /* 61:61 */       this.a.rider = null;
 /* 62:62 */       this.a.cU();
-/* 63:63 */       this.a.world.a(this.a, (byte)6);
+/* 63:63 */       this.a.world.sendSignal(this.a, (byte)6);
 /* 64:   */     }
 /* 65:   */   }
 /* 66:   */ }

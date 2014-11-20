@@ -62,7 +62,7 @@ package net.minecraft.src;
 /*  61:    */   
 /*  62:    */   protected void b(boolean paramBoolean, int paramInt)
 /*  63:    */   {
-/*  64: 88 */     int i = this.random.nextInt(16);
+/*  64: 88 */     int i = this.rng.nextInt(16);
 /*  65: 89 */     for (int j = 0; j < i; j++) {
 /*  66: 90 */       a(ItemList.aD, 1);
 /*  67:    */     }
@@ -78,7 +78,7 @@ package net.minecraft.src;
 /*  77:101 */     float f = MathUtils.a(d2 * d2 + d4 * d4) * 0.2F;
 /*  78:102 */     localahq.c(d2, d3 + f, d4, 1.6F, 12.0F);
 /*  79:    */     
-/*  80:104 */     a("random.bow", 1.0F, 1.0F / (bb().nextFloat() * 0.4F + 0.8F));
+/*  80:104 */     a("random.bow", 1.0F, 1.0F / (getRNG().nextFloat() * 0.4F + 0.8F));
 /*  81:105 */     this.world.spawnEntity(localahq);
 /*  82:    */   }
 /*  83:    */   

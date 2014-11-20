@@ -50,7 +50,7 @@ package net.minecraft.src;
 /*  49: 56 */     if ((paramamj.getItem() instanceof alo)) {
 /*  50: 57 */       this.b.b(AchievementList.l);
 /*  51:    */     }
-/*  52: 59 */     if (paramamj.getItem() == ItemList.P) {
+/*  52: 59 */     if (paramamj.getItem() == ItemList.bread) {
 /*  53: 60 */       this.b.b(AchievementList.m);
 /*  54:    */     }
 /*  55: 62 */     if (paramamj.getItem() == ItemList.aZ) {
@@ -80,13 +80,13 @@ package net.minecraft.src;
 /*  79: 86 */     ItemStack[] arrayOfamj = aop.a().b(this.a, paramahd.world);
 /*  80: 88 */     for (int i = 0; i < arrayOfamj.length; i++)
 /*  81:    */     {
-/*  82: 89 */       ItemStack localamj1 = this.a.a(i);
+/*  82: 89 */       ItemStack localamj1 = this.a.get(i);
 /*  83: 90 */       ItemStack localamj2 = arrayOfamj[i];
 /*  84: 92 */       if (localamj1 != null) {
-/*  85: 93 */         this.a.a(i, 1);
+/*  85: 93 */         this.a.removeItems(i, 1);
 /*  86:    */       }
 /*  87: 96 */       if (localamj2 != null) {
-/*  88: 97 */         if (this.a.a(i) == null) {
+/*  88: 97 */         if (this.a.get(i) == null) {
 /*  89: 99 */           this.a.a(i, localamj2);
 /*  90:100 */         } else if (!this.b.bg.a(localamj2)) {
 /*  91:102 */           this.b.a(localamj2, false);

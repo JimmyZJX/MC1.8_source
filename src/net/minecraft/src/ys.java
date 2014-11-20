@@ -44,7 +44,7 @@ package net.minecraft.src;
 /* 43:   */   public void e()
 /* 44:   */   {
 /* 45:51 */     super.e();
-/* 46:52 */     if (this.a.bb().nextInt(20) == 0) {
+/* 46:52 */     if (this.a.getRNG().nextInt(20) == 0) {
 /* 47:53 */       this.a.world.playLevelEvent(1010, this.b, 0);
 /* 48:   */     }
 /* 49:56 */     this.g += 1;

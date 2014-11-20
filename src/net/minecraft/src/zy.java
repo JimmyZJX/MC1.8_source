@@ -32,7 +32,7 @@ package net.minecraft.src;
 /* 31:30 */       if (this.a.bg() >= 100) {
 /* 32:31 */         return false;
 /* 33:   */       }
-/* 34:33 */       if (this.a.bb().nextInt(this.f) != 0) {
+/* 34:33 */       if (this.a.getRNG().nextInt(this.f) != 0) {
 /* 35:34 */         return false;
 /* 36:   */       }
 /* 37:   */     }

@@ -34,7 +34,7 @@ package net.minecraft.src;
 /*  33: 46 */     return 1;
 /*  34:    */   }
 /*  35:    */   
-/*  36:    */   public int n_()
+/*  36:    */   public int getSize()
 /*  37:    */   {
 /*  38: 51 */     return 5;
 /*  39:    */   }

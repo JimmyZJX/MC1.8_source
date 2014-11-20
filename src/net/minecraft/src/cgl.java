@@ -19,10 +19,10 @@ package net.minecraft.src;
 /* 18:   */   {
 /* 19:24 */     for (int i = 0; i < 6; i++)
 /* 20:   */     {
-/* 21:25 */       double d1 = this.xPos + (this.random.nextDouble() - this.random.nextDouble()) * 4.0D;
-/* 22:26 */       double d2 = this.yPos + (this.random.nextDouble() - this.random.nextDouble()) * 4.0D;
-/* 23:27 */       double d3 = this.zPos + (this.random.nextDouble() - this.random.nextDouble()) * 4.0D;
-/* 24:28 */       this.world.a(ew.b, d1, d2, d3, this.a / this.ax, 0.0D, 0.0D, new int[0]);
+/* 21:25 */       double d1 = this.xPos + (this.rng.nextDouble() - this.rng.nextDouble()) * 4.0D;
+/* 22:26 */       double d2 = this.yPos + (this.rng.nextDouble() - this.rng.nextDouble()) * 4.0D;
+/* 23:27 */       double d3 = this.zPos + (this.rng.nextDouble() - this.rng.nextDouble()) * 4.0D;
+/* 24:28 */       this.world.a(EnumParticleEffect.EXPLOSION_LARGE, d1, d2, d3, this.a / this.ax, 0.0D, 0.0D, new int[0]);
 /* 25:   */     }
 /* 26:30 */     this.a += 1;
 /* 27:31 */     if (this.a == this.ax) {

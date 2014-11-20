@@ -16,7 +16,7 @@ package net.minecraft.src;
 /* 15:   */     
 /* 16:22 */     int i = 222;
 /* 17:23 */     int j = i - 108;
-/* 18:24 */     this.x = (paramvq2.n_() / 9);
+/* 18:24 */     this.x = (paramvq2.getSize() / 9);
 /* 19:   */     
 /* 20:26 */     this.g = (j + this.x * 18);
 /* 21:   */   }

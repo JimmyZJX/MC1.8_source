@@ -55,27 +55,27 @@ package net.minecraft.src;
 /*  55:    */   
 /*  56:    */   protected void l(boolean paramBoolean)
 /*  57:    */   {
-/*  58: 65 */     ew localew = ew.I;
+/*  58: 65 */     EnumParticleEffect localew = EnumParticleEffect.HEART;
 /*  59: 66 */     if (!paramBoolean) {
-/*  60: 67 */       localew = ew.l;
+/*  60: 67 */       localew = EnumParticleEffect.l;
 /*  61:    */     }
 /*  62: 69 */     for (int i = 0; i < 7; i++)
 /*  63:    */     {
-/*  64: 70 */       double d1 = this.random.nextGaussian() * 0.02D;
-/*  65: 71 */       double d2 = this.random.nextGaussian() * 0.02D;
-/*  66: 72 */       double d3 = this.random.nextGaussian() * 0.02D;
-/*  67: 73 */       this.world.a(localew, this.xPos + this.random.nextFloat() * this.J * 2.0F - this.J, this.yPos + 0.5D + this.random.nextFloat() * this.K, this.zPos + this.random.nextFloat() * this.J * 2.0F - this.J, d1, d2, d3, new int[0]);
+/*  64: 70 */       double d1 = this.rng.nextGaussian() * 0.02D;
+/*  65: 71 */       double d2 = this.rng.nextGaussian() * 0.02D;
+/*  66: 72 */       double d3 = this.rng.nextGaussian() * 0.02D;
+/*  67: 73 */       this.world.a(localew, this.xPos + this.rng.nextFloat() * this.J * 2.0F - this.J, this.yPos + 0.5D + this.rng.nextFloat() * this.K, this.zPos + this.rng.nextFloat() * this.J * 2.0F - this.J, d1, d2, d3, new int[0]);
 /*  68:    */     }
 /*  69:    */   }
 /*  70:    */   
-/*  71:    */   public void a(byte paramByte)
+/*  71:    */   public void onSignal(byte paramByte)
 /*  72:    */   {
 /*  73: 79 */     if (paramByte == 7) {
 /*  74: 80 */       l(true);
 /*  75: 81 */     } else if (paramByte == 6) {
 /*  76: 82 */       l(false);
 /*  77:    */     } else {
-/*  78: 84 */       super.a(paramByte);
+/*  78: 84 */       super.onSignal(paramByte);
 /*  79:    */     }
 /*  80:    */   }
 /*  81:    */   

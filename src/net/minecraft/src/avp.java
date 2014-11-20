@@ -64,7 +64,7 @@ package net.minecraft.src;
 /* 63:80 */     double d5 = 0.0D;
 /* 64:81 */     double d6 = 0.0D;
 /* 65:   */     
-/* 66:83 */     paramaqu.a(ew.l, d1, d2, d3, d4, d5, d6, new int[0]);
+/* 66:83 */     paramaqu.a(EnumParticleEffect.l, d1, d2, d3, d4, d5, d6, new int[0]);
 /* 67:   */   }
 /* 68:   */   
 /* 69:   */   public Item b(World paramaqu, BlockPosition paramdt)

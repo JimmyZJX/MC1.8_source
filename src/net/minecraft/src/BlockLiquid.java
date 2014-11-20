@@ -223,7 +223,7 @@ package net.minecraft.src;
 /* 222:    */         }
 /* 223:    */       }
 /* 224:222 */       else if (paramRandom.nextInt(10) == 0) {
-/* 225:223 */         paramaqu.a(ew.h, d1 + paramRandom.nextFloat(), d2 + paramRandom.nextFloat(), d3 + paramRandom.nextFloat(), 0.0D, 0.0D, 0.0D, new int[0]);
+/* 225:223 */         paramaqu.a(EnumParticleEffect.h, d1 + paramRandom.nextFloat(), d2 + paramRandom.nextFloat(), d3 + paramRandom.nextFloat(), 0.0D, 0.0D, 0.0D, new int[0]);
 /* 226:    */       }
 /* 227:    */     }
 /* 228:227 */     if ((this.material == Material.lava) && 
@@ -234,7 +234,7 @@ package net.minecraft.src;
 /* 233:230 */         double d4 = d1 + paramRandom.nextFloat();
 /* 234:231 */         double d6 = d2 + this.F;
 /* 235:232 */         double d8 = d3 + paramRandom.nextFloat();
-/* 236:233 */         paramaqu.a(ew.B, d4, d6, d8, 0.0D, 0.0D, 0.0D, new int[0]);
+/* 236:233 */         paramaqu.a(EnumParticleEffect.B, d4, d6, d8, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 237:234 */         paramaqu.a(d4, d6, d8, "liquid.lavapop", 0.2F + paramRandom.nextFloat() * 0.2F, 0.9F + paramRandom.nextFloat() * 0.15F, false);
 /* 238:    */       }
 /* 239:236 */       if (paramRandom.nextInt(200) == 0) {
@@ -250,9 +250,9 @@ package net.minecraft.src;
 /* 249:246 */         double d7 = d2 - 1.05D;
 /* 250:247 */         double d9 = d3 + paramRandom.nextFloat();
 /* 251:249 */         if (this.material == Material.water) {
-/* 252:250 */           paramaqu.a(ew.s, d5, d7, d9, 0.0D, 0.0D, 0.0D, new int[0]);
+/* 252:250 */           paramaqu.a(EnumParticleEffect.s, d5, d7, d9, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 253:    */         } else {
-/* 254:252 */           paramaqu.a(ew.t, d5, d7, d9, 0.0D, 0.0D, 0.0D, new int[0]);
+/* 254:252 */           paramaqu.a(EnumParticleEffect.t, d5, d7, d9, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 255:    */         }
 /* 256:    */       }
 /* 257:    */     }
@@ -317,7 +317,7 @@ package net.minecraft.src;
 /* 316:    */     
 /* 317:308 */     paramaqu.a(d1 + 0.5D, d2 + 0.5D, d3 + 0.5D, "random.fizz", 0.5F, 2.6F + (paramaqu.rng.nextFloat() - paramaqu.rng.nextFloat()) * 0.8F);
 /* 318:309 */     for (int i = 0; i < 8; i++) {
-/* 319:310 */       paramaqu.a(ew.m, d1 + Math.random(), d2 + 1.2D, d3 + Math.random(), 0.0D, 0.0D, 0.0D, new int[0]);
+/* 319:310 */       paramaqu.a(EnumParticleEffect.m, d1 + Math.random(), d2 + 1.2D, d3 + Math.random(), 0.0D, 0.0D, 0.0D, new int[0]);
 /* 320:    */     }
 /* 321:    */   }
 /* 322:    */   

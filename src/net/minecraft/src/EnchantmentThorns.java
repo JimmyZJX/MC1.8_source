@@ -36,7 +36,7 @@ package net.minecraft.src;
 /* 35:   */   
 /* 36:   */   public void b(EntityLiving paramxm, Entity paramwv, int paramInt)
 /* 37:   */   {
-/* 38:46 */     Random localRandom = paramxm.bb();
+/* 38:46 */     Random localRandom = paramxm.getRNG();
 /* 39:47 */     ItemStack localamj = aph.a(Enchantment.j, paramxm);
 /* 40:49 */     if (a(paramInt, localRandom))
 /* 41:   */     {

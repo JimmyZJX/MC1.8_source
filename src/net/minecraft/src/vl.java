@@ -38,7 +38,7 @@ package net.minecraft.src;
 /* 37:   */       {
 /* 38:38 */         ItemStack localamj1 = localvl.b.k();
 /* 39:39 */         localamj1.stackSize = j;
-/* 40:40 */         paramvq.a(paramRandom.nextInt(paramvq.n_()), localamj1);
+/* 40:40 */         paramvq.a(paramRandom.nextInt(paramvq.getSize()), localamj1);
 /* 41:   */       }
 /* 42:   */       else
 /* 43:   */       {
@@ -46,7 +46,7 @@ package net.minecraft.src;
 /* 45:   */         {
 /* 46:44 */           ItemStack localamj2 = localvl.b.k();
 /* 47:45 */           localamj2.stackSize = 1;
-/* 48:46 */           paramvq.a(paramRandom.nextInt(paramvq.n_()), localamj2);
+/* 48:46 */           paramvq.a(paramRandom.nextInt(paramvq.getSize()), localamj2);
 /* 49:   */         }
 /* 50:   */       }
 /* 51:   */     }
@@ -62,7 +62,7 @@ package net.minecraft.src;
 /* 61:   */       {
 /* 62:58 */         ItemStack localamj1 = localvl.b.k();
 /* 63:59 */         localamj1.stackSize = j;
-/* 64:60 */         parambcx.a(paramRandom.nextInt(parambcx.n_()), localamj1);
+/* 64:60 */         parambcx.a(paramRandom.nextInt(parambcx.getSize()), localamj1);
 /* 65:   */       }
 /* 66:   */       else
 /* 67:   */       {
@@ -70,7 +70,7 @@ package net.minecraft.src;
 /* 69:   */         {
 /* 70:64 */           ItemStack localamj2 = localvl.b.k();
 /* 71:65 */           localamj2.stackSize = 1;
-/* 72:66 */           parambcx.a(paramRandom.nextInt(parambcx.n_()), localamj2);
+/* 72:66 */           parambcx.a(paramRandom.nextInt(parambcx.getSize()), localamj2);
 /* 73:   */         }
 /* 74:   */       }
 /* 75:   */     }

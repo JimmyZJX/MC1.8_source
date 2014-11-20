@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*   9:    */   public boolean a(ItemStack paramamj)
 /*  10:    */   {
 /*  11:110 */     if (paramamj != null) {
-/*  12:111 */       return (paramamj.getItem() == ItemList.bO) || (paramamj.getItem() == ItemList.diamond) || (paramamj.getItem() == ItemList.k) || (paramamj.getItem() == ItemList.j);
+/*  12:111 */       return (paramamj.getItem() == ItemList.emerald) || (paramamj.getItem() == ItemList.diamond) || (paramamj.getItem() == ItemList.k) || (paramamj.getItem() == ItemList.j);
 /*  13:    */     }
 /*  14:113 */     return false;
 /*  15:    */   }

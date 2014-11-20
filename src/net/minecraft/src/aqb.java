@@ -9,7 +9,7 @@ public abstract interface aqb
   
   public abstract void a(aqd paramaqd);
   
-  public abstract void a(aqc paramaqc);
+  public abstract void a(TradeOffer paramaqc);
   
   public abstract void a_(ItemStack paramamj);
   

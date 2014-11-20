@@ -92,7 +92,7 @@ package net.minecraft.src;
 /*  91:122 */     if (!ck()) {
 /*  92:124 */       a(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, cj().a()), 0.0F);
 /*  93:    */     }
-/*  94:128 */     int i = this.random.nextInt(2) + 1 + this.random.nextInt(1 + paramInt);
+/*  94:128 */     int i = this.rng.nextInt(2) + 1 + this.rng.nextInt(1 + paramInt);
 /*  95:129 */     for (int j = 0; j < i; j++) {
 /*  96:130 */       if (au()) {
 /*  97:131 */         a(ItemList.bn, 1);
@@ -107,12 +107,12 @@ package net.minecraft.src;
 /* 106:140 */     return Item.fromProtoBlock(BlockList.wool);
 /* 107:    */   }
 /* 108:    */   
-/* 109:    */   public void a(byte paramByte)
+/* 109:    */   public void onSignal(byte paramByte)
 /* 110:    */   {
 /* 111:145 */     if (paramByte == 10) {
 /* 112:146 */       this.bn = 40;
 /* 113:    */     } else {
-/* 114:148 */       super.a(paramByte);
+/* 114:148 */       super.onSignal(paramByte);
 /* 115:    */     }
 /* 116:    */   }
 /* 117:    */   
@@ -143,7 +143,7 @@ package net.minecraft.src;
 /* 142:173 */     return this.pitch / 57.295776F;
 /* 143:    */   }
 /* 144:    */   
-/* 145:    */   public boolean a(EntityPlayer paramahd)
+/* 145:    */   public boolean onRightClick(EntityPlayer paramahd)
 /* 146:    */   {
 /* 147:178 */     ItemStack localamj = paramahd.bg.h();
 /* 148:180 */     if ((localamj != null) && (localamj.getItem() == ItemList.be) && (!ck()) && (!i_()))
@@ -151,19 +151,19 @@ package net.minecraft.src;
 /* 150:181 */       if (!this.world.isClient)
 /* 151:    */       {
 /* 152:182 */         l(true);
-/* 153:183 */         int i = 1 + this.random.nextInt(3);
+/* 153:183 */         int i = 1 + this.rng.nextInt(3);
 /* 154:184 */         for (int j = 0; j < i; j++)
 /* 155:    */         {
 /* 156:185 */           EntityItem localadw = a(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, cj().a()), 1.0F);
-/* 157:186 */           localadw.yVelocity += this.random.nextFloat() * 0.05F;
-/* 158:187 */           localadw.xVelocity += (this.random.nextFloat() - this.random.nextFloat()) * 0.1F;
-/* 159:188 */           localadw.zVelocity += (this.random.nextFloat() - this.random.nextFloat()) * 0.1F;
+/* 157:186 */           localadw.yVelocity += this.rng.nextFloat() * 0.05F;
+/* 158:187 */           localadw.xVelocity += (this.rng.nextFloat() - this.rng.nextFloat()) * 0.1F;
+/* 159:188 */           localadw.zVelocity += (this.rng.nextFloat() - this.rng.nextFloat()) * 0.1F;
 /* 160:    */         }
 /* 161:    */       }
 /* 162:191 */       localamj.a(1, paramahd);
 /* 163:192 */       a("mob.sheep.shear", 1.0F, 1.0F);
 /* 164:    */     }
-/* 165:195 */     return super.a(paramahd);
+/* 165:195 */     return super.onRightClick(paramahd);
 /* 166:    */   }
 /* 167:    */   
 /* 168:    */   public void writeEntityToNBT(NBTTagCompound paramfn)
@@ -247,7 +247,7 @@ package net.minecraft.src;
 /* 246:271 */     return EnumDyeColor.WHITE;
 /* 247:    */   }
 /* 248:    */   
-/* 249:    */   public EntitySheep a(EntityPassiveMob paramws)
+/* 249:    */   public EntitySheep getBaby(EntityPassiveMob paramws)
 /* 250:    */   {
 /* 251:276 */     EntitySheep localacl1 = (EntitySheep)paramws;
 /* 252:277 */     EntitySheep localacl2 = new EntitySheep(this.world);
@@ -278,8 +278,8 @@ package net.minecraft.src;
 /* 277:303 */     int i = ((EntitySheep)paramabq1).cj().b();
 /* 278:304 */     int j = ((EntitySheep)paramabq2).cj().b();
 /* 279:    */     
-/* 280:306 */     this.bk.a(0).b(i);
-/* 281:307 */     this.bk.a(1).b(j);
+/* 280:306 */     this.bk.get(0).b(i);
+/* 281:307 */     this.bk.get(1).b(j);
 /* 282:    */     
 /* 283:309 */     ItemStack localamj = aop.a().a(this.bk, ((EntitySheep)paramabq1).world);
 /* 284:    */     int k;

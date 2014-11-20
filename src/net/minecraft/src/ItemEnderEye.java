@@ -29,7 +29,7 @@ package net.minecraft.src;
 /*  28: 40 */         double d5 = 0.0D;
 /*  29: 41 */         double d6 = 0.0D;
 /*  30:    */         
-/*  31: 43 */         world.a(ew.l, d1, d2, d3, d4, d5, d6, new int[0]);
+/*  31: 43 */         world.a(EnumParticleEffect.l, d1, d2, d3, d4, d5, d6, new int[0]);
 /*  32:    */       }
 /*  33: 47 */       EnumDirection localej1 = (EnumDirection)localbec1.getProperty(avq.a);
 /*  34:    */       

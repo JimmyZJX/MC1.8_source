@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*  5:   */ {
 /*  6:16 */   private int d = -1;
 /*  7:16 */   private int c = -1;
-/*  8:   */   private abh b;
+/*  8:   */   private VillageDoor b;
 /*  9:   */   private EntityWalkingMob a;
 /* 10:   */   
 /* 11:   */   public zl(EntityWalkingMob paramxu)
@@ -21,13 +21,13 @@ package net.minecraft.src;
 /* 20:26 */     if (((this.a.world.w()) && ((!this.a.world.S()) || (this.a.world.b(localdt).e()))) || (this.a.world.t.o())) {
 /* 21:27 */       return false;
 /* 22:   */     }
-/* 23:29 */     if (this.a.bb().nextInt(50) != 0) {
+/* 23:29 */     if (this.a.getRNG().nextInt(50) != 0) {
 /* 24:30 */       return false;
 /* 25:   */     }
 /* 26:32 */     if ((this.c != -1) && (this.a.e(this.c, this.a.yPos, this.d) < 4.0D)) {
 /* 27:33 */       return false;
 /* 28:   */     }
-/* 29:35 */     abi localabi = this.a.world.ae().a(localdt, 14);
+/* 29:35 */     Village localabi = this.a.world.getVillageManager().getNearestVillage(localdt, 14);
 /* 30:36 */     if (localabi == null) {
 /* 31:37 */       return false;
 /* 32:   */     }

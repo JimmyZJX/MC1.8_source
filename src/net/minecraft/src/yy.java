@@ -20,7 +20,7 @@ package net.minecraft.src;
 /* 19:   */   
 /* 20:   */   public void e()
 /* 21:   */   {
-/* 22:23 */     if (this.a.bb().nextFloat() < 0.8F) {
+/* 22:23 */     if (this.a.getRNG().nextFloat() < 0.8F) {
 /* 23:24 */       this.a.r().a();
 /* 24:   */     }
 /* 25:   */   }

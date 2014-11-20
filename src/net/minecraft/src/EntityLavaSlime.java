@@ -43,9 +43,9 @@ package net.minecraft.src;
 /*  42: 44 */     return 1.0F;
 /*  43:    */   }
 /*  44:    */   
-/*  45:    */   protected ew n()
+/*  45:    */   protected EnumParticleEffect n()
 /*  46:    */   {
-/*  47: 49 */     return ew.A;
+/*  47: 49 */     return EnumParticleEffect.A;
 /*  48:    */   }
 /*  49:    */   
 /*  50:    */   protected EntitySlime cd()
@@ -63,9 +63,9 @@ package net.minecraft.src;
 /*  62: 64 */     Item localalq = A();
 /*  63: 65 */     if ((localalq != null) && (ck() > 1))
 /*  64:    */     {
-/*  65: 66 */       int i = this.random.nextInt(4) - 2;
+/*  65: 66 */       int i = this.rng.nextInt(4) - 2;
 /*  66: 67 */       if (paramInt > 0) {
-/*  67: 68 */         i += this.random.nextInt(paramInt + 1);
+/*  67: 68 */         i += this.rng.nextInt(paramInt + 1);
 /*  68:    */       }
 /*  69: 70 */       for (int j = 0; j < i; j++) {
 /*  70: 71 */         a(localalq, 1);

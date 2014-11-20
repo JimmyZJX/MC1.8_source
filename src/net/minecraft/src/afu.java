@@ -24,7 +24,7 @@ package net.minecraft.src;
 /*  23:205 */     if (!this.a.s().m()) {
 /*  24:206 */       return false;
 /*  25:    */     }
-/*  26:209 */     Random localRandom = this.a.bb();
+/*  26:209 */     Random localRandom = this.a.getRNG();
 /*  27:210 */     if (localRandom.nextInt(10) == 0)
 /*  28:    */     {
 /*  29:211 */       this.b = EnumDirection.a(localRandom);

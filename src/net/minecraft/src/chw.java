@@ -14,7 +14,7 @@ package net.minecraft.src;
 /* 13:14 */     k(0);
 /* 14:15 */     a(0.01F, 0.01F);
 /* 15:   */     
-/* 16:17 */     this.h *= (this.random.nextFloat() * 0.6F + 0.2F);
+/* 16:17 */     this.h *= (this.rng.nextFloat() * 0.6F + 0.2F);
 /* 17:   */     
 /* 18:19 */     this.xVelocity = (paramDouble4 * 0.0D);
 /* 19:20 */     this.yVelocity = (paramDouble5 * 0.0D);

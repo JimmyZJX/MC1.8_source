@@ -39,8 +39,8 @@ package net.minecraft.src;
 /*  38: 50 */       this.a = (this.b = 0.0D);
 /*  39:    */     }
 /*  40: 52 */     i(this.c > 0);
-/*  41: 54 */     if ((j()) && (this.random.nextInt(4) == 0)) {
-/*  42: 55 */       this.world.a(ew.m, this.xPos, this.yPos + 0.8D, this.zPos, 0.0D, 0.0D, 0.0D, new int[0]);
+/*  41: 54 */     if ((j()) && (this.rng.nextInt(4) == 0)) {
+/*  42: 55 */       this.world.a(EnumParticleEffect.m, this.xPos, this.yPos + 0.8D, this.zPos, 0.0D, 0.0D, 0.0D, new int[0]);
 /*  43:    */     }
 /*  44:    */   }
 /*  45:    */   

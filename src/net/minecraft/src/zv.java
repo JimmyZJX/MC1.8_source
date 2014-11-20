@@ -20,10 +20,10 @@ package net.minecraft.src;
 /* 19:   */   
 /* 20:   */   public boolean a()
 /* 21:   */   {
-/* 22:25 */     if (this.a.l() >= 0) {
+/* 22:25 */     if (this.a.getAge() >= 0) {
 /* 23:26 */       return false;
 /* 24:   */     }
-/* 25:28 */     if (this.a.bb().nextInt(400) != 0) {
+/* 25:28 */     if (this.a.getRNG().nextInt(400) != 0) {
 /* 26:29 */       return false;
 /* 27:   */     }
 /* 28:32 */     List localList = this.a.world.a(EntityVillager.class, this.a.getAABB().expand(6.0D, 3.0D, 6.0D));
@@ -37,7 +37,7 @@ package net.minecraft.src;
 /* 36:38 */         (!localagp.cl()) && 
 /* 37:   */         
 /* 38:   */ 
-/* 39:41 */         (localagp.l() < 0))
+/* 39:41 */         (localagp.getAge() < 0))
 /* 40:   */       {
 /* 41:44 */         double d2 = localagp.h(this.a);
 /* 42:45 */         if (d2 <= d1)

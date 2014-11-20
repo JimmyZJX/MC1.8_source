@@ -80,7 +80,7 @@ package net.minecraft.src;
 /*  79:124 */     this.k.put(ahp.class, new cpx(this, 0.5F));
 /*  80:125 */     this.k.put(ahw.class, new crx(this));
 /*  81:126 */     this.k.put(EntityItem.class, new cqf(this, paramcqh));
-/*  82:127 */     this.k.put(xk.class, new cpv(this));
+/*  82:127 */     this.k.put(EntityExperienceOrb.class, new cpv(this));
 /*  83:128 */     this.k.put(aek.class, new crs(this));
 /*  84:129 */     this.k.put(adv.class, new cpw(this));
 /*  85:130 */     this.k.put(EntityArmorStand.class, new cpe(this));

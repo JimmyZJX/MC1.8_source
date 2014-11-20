@@ -80,7 +80,7 @@ package net.minecraft.src;
 /*  79:232 */           this.a.world.playLevelEvent(null, 1009, new BlockPosition((int)this.a.xPos, (int)this.a.yPos, (int)this.a.zPos), 0);
 /*  80:233 */           for (int i = 0; i < 1; i++)
 /*  81:    */           {
-/*  82:234 */             ahp localahp = new ahp(this.a.world, this.a, d2 + this.a.bb().nextGaussian() * f, d3, d4 + this.a.bb().nextGaussian() * f);
+/*  82:234 */             ahp localahp = new ahp(this.a.world, this.a, d2 + this.a.getRNG().nextGaussian() * f, d3, d4 + this.a.getRNG().nextGaussian() * f);
 /*  83:235 */             localahp.yPos = (this.a.yPos + this.a.K / 2.0F + 0.5D);
 /*  84:236 */             this.a.world.spawnEntity(localahp);
 /*  85:    */           }

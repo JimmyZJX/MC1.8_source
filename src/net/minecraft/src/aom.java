@@ -13,9 +13,9 @@ package net.minecraft.src;
 /* 12:27 */       return false;
 /* 13:   */     }
 /* 14:29 */     ItemStack localObject = null;
-/* 15:31 */     for (int i = 0; (i < paramain.n_()) && (localObject == null); i++)
+/* 15:31 */     for (int i = 0; (i < paramain.getSize()) && (localObject == null); i++)
 /* 16:   */     {
-/* 17:32 */       ItemStack localamj = paramain.a(i);
+/* 17:32 */       ItemStack localamj = paramain.get(i);
 /* 18:33 */       if ((localamj != null) && (localamj.getItem() == ItemList.filledMap)) {
 /* 19:34 */         localObject = localamj;
 /* 20:   */       }
@@ -33,9 +33,9 @@ package net.minecraft.src;
 /* 32:   */   public ItemStack a(ain paramain)
 /* 33:   */   {
 /* 34:51 */     ItemStack localObject = null;
-/* 35:53 */     for (int i = 0; (i < paramain.n_()) && (localObject == null); i++)
+/* 35:53 */     for (int i = 0; (i < paramain.getSize()) && (localObject == null); i++)
 /* 36:   */     {
-/* 37:54 */       ItemStack localamj = paramain.a(i);
+/* 37:54 */       ItemStack localamj = paramain.get(i);
 /* 38:55 */       if ((localamj != null) && (localamj.getItem() == ItemList.filledMap)) {
 /* 39:56 */         localObject = localamj;
 /* 40:   */       }

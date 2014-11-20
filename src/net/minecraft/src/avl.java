@@ -84,7 +84,7 @@ package net.minecraft.src;
 /*  83: 86 */             double d2 = localdt.getX() + (paramdt.getX() - localdt.getX()) * d1 + (paramaqu.rng.nextDouble() - 0.5D) * 1.0D + 0.5D;
 /*  84: 87 */             double d3 = localdt.getY() + (paramdt.getY() - localdt.getY()) * d1 + paramaqu.rng.nextDouble() * 1.0D - 0.5D;
 /*  85: 88 */             double d4 = localdt.getZ() + (paramdt.getZ() - localdt.getZ()) * d1 + (paramaqu.rng.nextDouble() - 0.5D) * 1.0D + 0.5D;
-/*  86: 89 */             paramaqu.a(ew.y, d2, d3, d4, f1, f2, f3, new int[0]);
+/*  86: 89 */             paramaqu.a(EnumParticleEffect.y, d2, d3, d4, f1, f2, f3, new int[0]);
 /*  87:    */           }
 /*  88:    */         }
 /*  89:    */         else

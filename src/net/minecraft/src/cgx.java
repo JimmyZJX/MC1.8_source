@@ -32,47 +32,47 @@ package net.minecraft.src;
 /*  31:    */   
 /*  32:    */   private void c()
 /*  33:    */   {
-/*  34: 69 */     a(ew.a.c(), new cfw());
-/*  35: 70 */     a(ew.e.c(), new cfm());
-/*  36: 71 */     a(ew.f.c(), new chv());
-/*  37: 72 */     a(ew.g.c(), new cih());
-/*  38: 73 */     a(ew.N.c(), new cij());
-/*  39: 74 */     a(ew.h.c(), new chx());
-/*  40: 75 */     a(ew.i.c(), new cia());
-/*  41: 76 */     a(ew.j.c(), new cfp());
-/*  42: 77 */     a(ew.k.c(), new cfo());
-/*  43: 78 */     a(ew.l.c(), new chl());
-/*  44: 79 */     a(ew.m.c(), new cgp());
-/*  45: 80 */     a(ew.n.c(), new chs());
-/*  46: 81 */     a(ew.o.c(), new chq());
-/*  47: 82 */     a(ew.p.c(), new chr());
-/*  48: 83 */     a(ew.q.c(), new chp());
-/*  49: 84 */     a(ew.r.c(), new cht());
-/*  50: 85 */     a(ew.s.c(), new cfs());
-/*  51: 86 */     a(ew.t.c(), new cfr());
-/*  52: 87 */     a(ew.u.c(), new cgh());
-/*  53: 88 */     a(ew.VILLAGER_HAPPY.c(), new chz());
-/*  54: 89 */     a(ew.w.c(), new cia());
-/*  55: 90 */     a(ew.x.c(), new cgv());
-/*  56: 91 */     a(ew.y.c(), new chg());
-/*  57: 92 */     a(ew.z.c(), new cfu());
-/*  58: 93 */     a(ew.A.c(), new cgd());
-/*  59: 94 */     a(ew.B.c(), new cgr());
-/*  60: 95 */     a(ew.C.c(), new cgf());
-/*  61: 96 */     a(ew.D.c(), new che());
-/*  62: 97 */     a(ew.E.c(), new chi());
-/*  63: 98 */     a(ew.F.c(), new cfk());
-/*  64: 99 */     a(ew.G.c(), new chn());
-/*  65:100 */     a(ew.H.c(), new cfj());
-/*  66:101 */     a(ew.I.c(), new cgi());
-/*  67:102 */     a(ew.J.c(), new cfg());
-/*  68:103 */     a(ew.K.c(), new cfi());
-/*  69:104 */     a(ew.L.c(), new cie());
-/*  70:105 */     a(ew.M.c(), new cic());
-/*  71:106 */     a(ew.c.c(), new cgm());
-/*  72:107 */     a(ew.b.c(), new cgk());
-/*  73:108 */     a(ew.d.c(), new cgb());
-/*  74:109 */     a(ew.P.c(), new cgt());
+/*  34: 69 */     a(EnumParticleEffect.EXPLOSION_NORMAL.c(), new cfw());
+/*  35: 70 */     a(EnumParticleEffect.e.c(), new cfm());
+/*  36: 71 */     a(EnumParticleEffect.f.c(), new chv());
+/*  37: 72 */     a(EnumParticleEffect.g.c(), new cih());
+/*  38: 73 */     a(EnumParticleEffect.N.c(), new cij());
+/*  39: 74 */     a(EnumParticleEffect.h.c(), new chx());
+/*  40: 75 */     a(EnumParticleEffect.i.c(), new cia());
+/*  41: 76 */     a(EnumParticleEffect.j.c(), new cfp());
+/*  42: 77 */     a(EnumParticleEffect.k.c(), new cfo());
+/*  43: 78 */     a(EnumParticleEffect.l.c(), new chl());
+/*  44: 79 */     a(EnumParticleEffect.m.c(), new cgp());
+/*  45: 80 */     a(EnumParticleEffect.n.c(), new chs());
+/*  46: 81 */     a(EnumParticleEffect.o.c(), new chq());
+/*  47: 82 */     a(EnumParticleEffect.p.c(), new chr());
+/*  48: 83 */     a(EnumParticleEffect.q.c(), new chp());
+/*  49: 84 */     a(EnumParticleEffect.r.c(), new cht());
+/*  50: 85 */     a(EnumParticleEffect.s.c(), new cfs());
+/*  51: 86 */     a(EnumParticleEffect.t.c(), new cfr());
+/*  52: 87 */     a(EnumParticleEffect.VILLAGER_ANGRY.c(), new cgh());
+/*  53: 88 */     a(EnumParticleEffect.VILLAGER_HAPPY.c(), new chz());
+/*  54: 89 */     a(EnumParticleEffect.w.c(), new cia());
+/*  55: 90 */     a(EnumParticleEffect.x.c(), new cgv());
+/*  56: 91 */     a(EnumParticleEffect.y.c(), new chg());
+/*  57: 92 */     a(EnumParticleEffect.z.c(), new cfu());
+/*  58: 93 */     a(EnumParticleEffect.A.c(), new cgd());
+/*  59: 94 */     a(EnumParticleEffect.B.c(), new cgr());
+/*  60: 95 */     a(EnumParticleEffect.C.c(), new cgf());
+/*  61: 96 */     a(EnumParticleEffect.D.c(), new che());
+/*  62: 97 */     a(EnumParticleEffect.E.c(), new chi());
+/*  63: 98 */     a(EnumParticleEffect.F.c(), new cfk());
+/*  64: 99 */     a(EnumParticleEffect.G.c(), new chn());
+/*  65:100 */     a(EnumParticleEffect.H.c(), new cfj());
+/*  66:101 */     a(EnumParticleEffect.HEART.c(), new cgi());
+/*  67:102 */     a(EnumParticleEffect.J.c(), new cfg());
+/*  68:103 */     a(EnumParticleEffect.K.c(), new cfi());
+/*  69:104 */     a(EnumParticleEffect.L.c(), new cie());
+/*  70:105 */     a(EnumParticleEffect.M.c(), new cic());
+/*  71:106 */     a(EnumParticleEffect.EXPLOSION_HUGE.c(), new cgm());
+/*  72:107 */     a(EnumParticleEffect.EXPLOSION_LARGE.c(), new cgk());
+/*  73:108 */     a(EnumParticleEffect.FIREWORKS_SPARK.c(), new cgb());
+/*  74:109 */     a(EnumParticleEffect.P.c(), new cgt());
 /*  75:    */   }
 /*  76:    */   
 /*  77:    */   public void a(int paramInt, chc paramchc)
@@ -80,7 +80,7 @@ package net.minecraft.src;
 /*  79:113 */     this.g.put(Integer.valueOf(paramInt), paramchc);
 /*  80:    */   }
 /*  81:    */   
-/*  82:    */   public void a(Entity paramwv, ew paramew)
+/*  82:    */   public void a(Entity paramwv, EnumParticleEffect paramew)
 /*  83:    */   {
 /*  84:117 */     this.d.add(new cif(this.a, paramwv, paramew));
 /*  85:    */   }

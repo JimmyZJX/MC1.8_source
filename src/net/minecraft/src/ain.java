@@ -16,14 +16,14 @@ package net.minecraft.src;
 /*  15: 25 */     this.c = paramInt2;
 /*  16:    */   }
 /*  17:    */   
-/*  18:    */   public int n_()
+/*  18:    */   public int getSize()
 /*  19:    */   {
 /*  20: 30 */     return this.a.length;
 /*  21:    */   }
 /*  22:    */   
-/*  23:    */   public ItemStack a(int paramInt)
+/*  23:    */   public ItemStack get(int paramInt)
 /*  24:    */   {
-/*  25: 36 */     if (paramInt >= n_()) {
+/*  25: 36 */     if (paramInt >= getSize()) {
 /*  26: 37 */       return null;
 /*  27:    */     }
 /*  28: 39 */     return this.a[paramInt];
@@ -34,7 +34,7 @@ package net.minecraft.src;
 /*  33: 44 */     if ((paramInt1 < 0) || (paramInt1 >= this.b) || (paramInt2 < 0) || (paramInt2 > this.c)) {
 /*  34: 45 */       return null;
 /*  35:    */     }
-/*  36: 47 */     return a(paramInt1 + paramInt2 * this.b);
+/*  36: 47 */     return get(paramInt1 + paramInt2 * this.b);
 /*  37:    */   }
 /*  38:    */   
 /*  39:    */   public String getName()
@@ -66,7 +66,7 @@ package net.minecraft.src;
 /*  65: 76 */     return null;
 /*  66:    */   }
 /*  67:    */   
-/*  68:    */   public ItemStack a(int paramInt1, int paramInt2)
+/*  68:    */   public ItemStack removeItems(int paramInt1, int paramInt2)
 /*  69:    */   {
 /*  70: 82 */     if (this.a[paramInt1] != null)
 /*  71:    */     {

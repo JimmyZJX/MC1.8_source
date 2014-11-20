@@ -44,7 +44,7 @@ package net.minecraft.src;
 /*  43: 53 */       localacn.setPositionAndAngles(((BlockPosition)localObject).getX() + 0.5D, ((BlockPosition)localObject).getY() + 0.05D, ((BlockPosition)localObject).getZ() + 0.5D, 0.0F, 0.0F);
 /*  44: 54 */       paramaqu.spawnEntity(localacn);
 /*  45: 56 */       for (m = 0; m < 120; m++) {
-/*  46: 57 */         paramaqu.a(ew.G, ((BlockPosition)localObject).getX() + paramaqu.rng.nextDouble(), ((BlockPosition)localObject).getY() + paramaqu.rng.nextDouble() * 2.5D, ((BlockPosition)localObject).getZ() + paramaqu.rng.nextDouble(), 0.0D, 0.0D, 0.0D, new int[0]);
+/*  46: 57 */         paramaqu.a(EnumParticleEffect.G, ((BlockPosition)localObject).getX() + paramaqu.rng.nextDouble(), ((BlockPosition)localObject).getY() + paramaqu.rng.nextDouble() * 2.5D, ((BlockPosition)localObject).getZ() + paramaqu.rng.nextDouble(), 0.0D, 0.0D, 0.0D, new int[0]);
 /*  47:    */       }
 /*  48: 60 */       for (m = 0; m < l().b(); m++)
 /*  49:    */       {
@@ -66,7 +66,7 @@ package net.minecraft.src;
 /*  65: 75 */       localacq.setPositionAndAngles(localdt.getX() + 0.5D, localdt.getY() + 0.05D, localdt.getZ() + 0.5D, 0.0F, 0.0F);
 /*  66: 76 */       paramaqu.spawnEntity(localacq);
 /*  67: 78 */       for (m = 0; m < 120; m++) {
-/*  68: 79 */         paramaqu.a(ew.F, localdt.getX() + paramaqu.rng.nextDouble(), localdt.getY() + paramaqu.rng.nextDouble() * 3.9D, localdt.getZ() + paramaqu.rng.nextDouble(), 0.0D, 0.0D, 0.0D, new int[0]);
+/*  68: 79 */         paramaqu.a(EnumParticleEffect.F, localdt.getX() + paramaqu.rng.nextDouble(), localdt.getY() + paramaqu.rng.nextDouble() * 3.9D, localdt.getZ() + paramaqu.rng.nextDouble(), 0.0D, 0.0D, 0.0D, new int[0]);
 /*  69:    */       }
 /*  70: 82 */       for (m = 0; m < T().c(); m++) {
 /*  71: 83 */         for (int n = 0; n < T().b(); n++)

@@ -34,8 +34,8 @@ package net.minecraft.src;
 /* 33:38 */     a(BlockList.cactus, new ItemStack(ItemList.dye, 1, EnumDyeColor.GREEN.b()), 0.2F);
 /* 34:39 */     a(BlockList.log, new ItemStack(ItemList.h, 1, 1), 0.15F);
 /* 35:40 */     a(BlockList.log2, new ItemStack(ItemList.h, 1, 1), 0.15F);
-/* 36:41 */     a(BlockList.bP, new ItemStack(ItemList.bO), 1.0F);
-/* 37:42 */     a(ItemList.bS, new ItemStack(ItemList.bT), 0.35F);
+/* 36:41 */     a(BlockList.bP, new ItemStack(ItemList.emerald), 1.0F);
+/* 37:42 */     a(ItemList.potato, new ItemStack(ItemList.bT), 0.35F);
 /* 38:43 */     a(BlockList.netherrack, new ItemStack(ItemList.cf), 0.1F);
 /* 39:44 */     a(new ItemStack(BlockList.v, 1, 1), new ItemStack(BlockList.v, 1, 0), 0.15F);
 /* 40:46 */     for (ali localali : ali.values()) {

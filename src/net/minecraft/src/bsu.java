@@ -1991,7 +1991,7 @@ package net.minecraft.src;
 /* 1990:     */       }
 /* 1991:     */       else
 /* 1992:     */       {
-/* 1993:2138 */         localObject1 = ItemList.bJ;
+/* 1993:2138 */         localObject1 = ItemList.spawnEgg;
 /* 1994:2139 */         i1 = EntityList.a(this.s.d);
 /* 1995:2140 */         bool2 = true;
 /* 1996:2142 */         if (EntityList.entityEggs.containsKey(Integer.valueOf(i1))) {}
@@ -2022,7 +2022,7 @@ package net.minecraft.src;
 /* 2021:2166 */     if (bool1)
 /* 2022:     */     {
 /* 2023:2167 */       int i2 = this.h.bh.c.size() - 9 + ((ahb)localObject2).c;
-/* 2024:2168 */       this.c.a(((ahb)localObject2).a(((ahb)localObject2).c), i2);
+/* 2024:2168 */       this.c.a(((ahb)localObject2).get(((ahb)localObject2).c), i2);
 /* 2025:     */     }
 /* 2026:     */   }
 /* 2027:     */   

@@ -12,9 +12,9 @@ package net.minecraft.src;
 /* 11:13 */     this.xVelocity = (this.xVelocity * 0.009999999776482582D + paramDouble4);
 /* 12:14 */     this.yVelocity = (this.yVelocity * 0.009999999776482582D + paramDouble5);
 /* 13:15 */     this.zVelocity = (this.zVelocity * 0.009999999776482582D + paramDouble6);
-/* 14:16 */     paramDouble1 += (this.random.nextFloat() - this.random.nextFloat()) * 0.05F;
-/* 15:17 */     paramDouble2 += (this.random.nextFloat() - this.random.nextFloat()) * 0.05F;
-/* 16:18 */     paramDouble3 += (this.random.nextFloat() - this.random.nextFloat()) * 0.05F;
+/* 14:16 */     paramDouble1 += (this.rng.nextFloat() - this.rng.nextFloat()) * 0.05F;
+/* 15:17 */     paramDouble2 += (this.rng.nextFloat() - this.rng.nextFloat()) * 0.05F;
+/* 16:18 */     paramDouble3 += (this.rng.nextFloat() - this.rng.nextFloat()) * 0.05F;
 /* 17:   */     
 /* 18:20 */     this.a = this.h;
 /* 19:21 */     this.ap = (this.aq = this.ar = 1.0F);

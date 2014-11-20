@@ -88,7 +88,7 @@ package net.minecraft.src;
 /*  87:    */         }
 /*  88:    */       }
 /*  89:    */     }
-/*  90:109 */     this.x.l = ((this.w.a(0) != null) && (j > 0));
+/*  90:109 */     this.x.l = ((this.w.get(0) != null) && (j > 0));
 /*  91:    */   }
 /*  92:    */   
 /*  93:    */   protected void a(bug parambug)
@@ -151,7 +151,7 @@ package net.minecraft.src;
 /* 150:167 */     b(i, j, 0, 0, this.f, this.g);
 /* 151:    */     
 /* 152:169 */     this.k.a = 100.0F;
-/* 153:170 */     this.k.b(new ItemStack(ItemList.bO), i + 42, j + 109);
+/* 153:170 */     this.k.b(new ItemStack(ItemList.emerald), i + 42, j + 109);
 /* 154:171 */     this.k.b(new ItemStack(ItemList.diamond), i + 42 + 22, j + 109);
 /* 155:172 */     this.k.b(new ItemStack(ItemList.k), i + 42 + 44, j + 109);
 /* 156:173 */     this.k.b(new ItemStack(ItemList.j), i + 42 + 66, j + 109);

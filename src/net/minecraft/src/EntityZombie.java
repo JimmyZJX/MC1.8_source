@@ -51,7 +51,7 @@ package net.minecraft.src;
 /*  51: 98 */     a(afs.d).a(0.2300000041723251D);
 /*  52: 99 */     a(afs.e).a(3.0D);
 /*  53:    */     
-/*  54:101 */     bx().b(b).a(this.random.nextDouble() * 0.1000000014901161D);
+/*  54:101 */     bx().b(b).a(this.rng.nextDouble() * 0.1000000014901161D);
 /*  55:    */   }
 /*  56:    */   
 /*  57:    */   protected void h()
@@ -133,7 +133,7 @@ package net.minecraft.src;
 /* 133:    */     {
 /* 134:177 */       float f = c(1.0F);
 /* 135:178 */       BlockPosition localdt = new BlockPosition(this.xPos, Math.round(this.yPos), this.zPos);
-/* 136:179 */       if ((f > 0.5F) && (this.random.nextFloat() * 30.0F < (f - 0.4F) * 2.0F) && (this.world.i(localdt)))
+/* 136:179 */       if ((f > 0.5F) && (this.rng.nextFloat() * 30.0F < (f - 0.4F) * 2.0F) && (this.world.i(localdt)))
 /* 137:    */       {
 /* 138:180 */         int i = 1;
 /* 139:    */         
@@ -142,7 +142,7 @@ package net.minecraft.src;
 /* 142:    */         {
 /* 143:184 */           if (localamj.e())
 /* 144:    */           {
-/* 145:185 */             localamj.b(localamj.getDamage() + this.random.nextInt(2));
+/* 145:185 */             localamj.b(localamj.getDamage() + this.rng.nextInt(2));
 /* 146:186 */             if (localamj.getDamage() >= localamj.j())
 /* 147:    */             {
 /* 148:187 */               b(localamj);
@@ -170,7 +170,7 @@ package net.minecraft.src;
 /* 170:210 */       if ((localxm == null) && ((paramwh.j() instanceof EntityLiving))) {
 /* 171:211 */         localxm = (EntityLiving)paramwh.j();
 /* 172:    */       }
-/* 173:214 */       if ((localxm != null) && (this.world.getDifficulty() == EnumDifficulty.HARD) && (this.random.nextFloat() < a(b).e()))
+/* 173:214 */       if ((localxm != null) && (this.world.getDifficulty() == EnumDifficulty.HARD) && (this.rng.nextFloat() < a(b).e()))
 /* 174:    */       {
 /* 175:215 */         int i = MathUtils.floor(this.xPos);
 /* 176:216 */         int j = MathUtils.floor(this.yPos);
@@ -178,9 +178,9 @@ package net.minecraft.src;
 /* 178:218 */         EntityZombie localagj = new EntityZombie(this.world);
 /* 179:220 */         for (int m = 0; m < 50; m++)
 /* 180:    */         {
-/* 181:221 */           int n = i + MathUtils.nextInt(this.random, 7, 40) * MathUtils.nextInt(this.random, -1, 1);
-/* 182:222 */           int i1 = j + MathUtils.nextInt(this.random, 7, 40) * MathUtils.nextInt(this.random, -1, 1);
-/* 183:223 */           int i2 = k + MathUtils.nextInt(this.random, 7, 40) * MathUtils.nextInt(this.random, -1, 1);
+/* 181:221 */           int n = i + MathUtils.nextInt(this.rng, 7, 40) * MathUtils.nextInt(this.rng, -1, 1);
+/* 182:222 */           int i1 = j + MathUtils.nextInt(this.rng, 7, 40) * MathUtils.nextInt(this.rng, -1, 1);
+/* 183:223 */           int i2 = k + MathUtils.nextInt(this.rng, 7, 40) * MathUtils.nextInt(this.rng, -1, 1);
 /* 184:225 */           if ((World.isFlatSurface(this.world, new BlockPosition(n, i1 - 1, i2))) && (this.world.l(new BlockPosition(n, i1, i2)) < 10))
 /* 185:    */           {
 /* 186:226 */             localagj.b(n, i1, i2);
@@ -222,7 +222,7 @@ package net.minecraft.src;
 /* 222:266 */     if (bool)
 /* 223:    */     {
 /* 224:267 */       int i = this.world.getDifficulty().a();
-/* 225:268 */       if ((bz() == null) && (au()) && (this.random.nextFloat() < i * 0.3F)) {
+/* 225:268 */       if ((bz() == null) && (au()) && (this.rng.nextFloat() < i * 0.3F)) {
 /* 226:269 */         paramwv.e(2 * i);
 /* 227:    */       }
 /* 228:    */     }
@@ -261,7 +261,7 @@ package net.minecraft.src;
 /* 261:    */   
 /* 262:    */   protected void bp()
 /* 263:    */   {
-/* 264:308 */     switch (this.random.nextInt(3))
+/* 264:308 */     switch (this.rng.nextInt(3))
 /* 265:    */     {
 /* 266:    */     case 0: 
 /* 267:310 */       a(ItemList.j, 1);
@@ -270,16 +270,16 @@ package net.minecraft.src;
 /* 270:313 */       a(ItemList.carrot, 1);
 /* 271:314 */       break;
 /* 272:    */     case 2: 
-/* 273:316 */       a(ItemList.bS, 1);
+/* 273:316 */       a(ItemList.potato, 1);
 /* 274:    */     }
 /* 275:    */   }
 /* 276:    */   
 /* 277:    */   protected void a(vu paramvu)
 /* 278:    */   {
 /* 279:323 */     super.a(paramvu);
-/* 280:325 */     if (this.random.nextFloat() < (this.world.getDifficulty() == EnumDifficulty.HARD ? 0.05F : 0.01F))
+/* 280:325 */     if (this.rng.nextFloat() < (this.world.getDifficulty() == EnumDifficulty.HARD ? 0.05F : 0.01F))
 /* 281:    */     {
-/* 282:326 */       int i = this.random.nextInt(3);
+/* 282:326 */       int i = this.rng.nextInt(3);
 /* 283:327 */       if (i == 0) {
 /* 284:328 */         c(0, new ItemStack(ItemList.l));
 /* 285:    */       } else {
@@ -321,7 +321,7 @@ package net.minecraft.src;
 /* 321:367 */     super.a(paramxm);
 /* 322:369 */     if (((this.world.getDifficulty() == EnumDifficulty.NORMAL) || (this.world.getDifficulty() == EnumDifficulty.HARD)) && ((paramxm instanceof EntityVillager)))
 /* 323:    */     {
-/* 324:370 */       if ((this.world.getDifficulty() != EnumDifficulty.HARD) && (this.random.nextBoolean())) {
+/* 324:370 */       if ((this.world.getDifficulty() != EnumDifficulty.HARD) && (this.rng.nextBoolean())) {
 /* 325:371 */         return;
 /* 326:    */       }
 /* 327:374 */       EntityZombie localagj = new EntityZombie(this.world);
@@ -360,7 +360,7 @@ package net.minecraft.src;
 /* 360:408 */     paramxq = super.beforeSpawn(paramvu, paramxq);
 /* 361:409 */     float f = paramvu.c();
 /* 362:    */     
-/* 363:411 */     j(this.random.nextFloat() < 0.55F * f);
+/* 363:411 */     j(this.rng.nextFloat() < 0.55F * f);
 /* 364:413 */     if (paramxq == null) {
 /* 365:414 */       paramxq = new agl(this, this.world.rng.nextFloat() < 0.05F, this.world.rng.nextFloat() < 0.05F, null);
 /* 366:    */     }
@@ -396,34 +396,34 @@ package net.minecraft.src;
 /* 396:    */         }
 /* 397:    */       }
 /* 398:    */     }
-/* 399:446 */     a(this.random.nextFloat() < f * 0.1F);
+/* 399:446 */     a(this.rng.nextFloat() < f * 0.1F);
 /* 400:    */     
 /* 401:448 */     a(paramvu);
 /* 402:449 */     b(paramvu);
 /* 403:451 */     if (p(4) == null)
 /* 404:    */     {
 /* 405:452 */       localObject1 = this.world.Y();
-/* 406:455 */       if ((((Calendar)localObject1).get(2) + 1 == 10) && (((Calendar)localObject1).get(5) == 31) && (this.random.nextFloat() < 0.25F))
+/* 406:455 */       if ((((Calendar)localObject1).get(2) + 1 == 10) && (((Calendar)localObject1).get(5) == 31) && (this.rng.nextFloat() < 0.25F))
 /* 407:    */       {
-/* 408:457 */         c(4, new ItemStack(this.random.nextFloat() < 0.1F ? BlockList.aZ : BlockList.pumpkin));
+/* 408:457 */         c(4, new ItemStack(this.rng.nextFloat() < 0.1F ? BlockList.aZ : BlockList.pumpkin));
 /* 409:458 */         this.bh[4] = 0.0F;
 /* 410:    */       }
 /* 411:    */     }
-/* 412:462 */     a(afs.c).b(new ya("Random spawn bonus", this.random.nextDouble() * 0.0500000007450581D, 0));
-/* 413:463 */     double d = this.random.nextDouble() * 1.5D * f;
+/* 412:462 */     a(afs.c).b(new ya("Random spawn bonus", this.rng.nextDouble() * 0.0500000007450581D, 0));
+/* 413:463 */     double d = this.rng.nextDouble() * 1.5D * f;
 /* 414:464 */     if (d > 1.0D) {
 /* 415:465 */       a(afs.b).b(new ya("Random zombie-spawn bonus", d, 2));
 /* 416:    */     }
-/* 417:468 */     if (this.random.nextFloat() < f * 0.05F)
+/* 417:468 */     if (this.rng.nextFloat() < f * 0.05F)
 /* 418:    */     {
-/* 419:469 */       a(b).b(new ya("Leader zombie bonus", this.random.nextDouble() * 0.25D + 0.5D, 0));
-/* 420:470 */       a(afs.a).b(new ya("Leader zombie bonus", this.random.nextDouble() * 3.0D + 1.0D, 2));
+/* 419:469 */       a(b).b(new ya("Leader zombie bonus", this.rng.nextDouble() * 0.25D + 0.5D, 0));
+/* 420:470 */       a(afs.a).b(new ya("Leader zombie bonus", this.rng.nextDouble() * 3.0D + 1.0D, 2));
 /* 421:471 */       a(true);
 /* 422:    */     }
 /* 423:474 */     return paramxq;
 /* 424:    */   }
 /* 425:    */   
-/* 426:    */   public boolean a(EntityPlayer paramahd)
+/* 426:    */   public boolean onRightClick(EntityPlayer paramahd)
 /* 427:    */   {
 /* 428:479 */     ItemStack localamj = paramahd.bY();
 /* 429:481 */     if ((localamj != null) && (localamj.getItem() == ItemList.ao) && (localamj.getDamage2() == 0) && (cm()) && (a(Potion.weakness)))
@@ -435,7 +435,7 @@ package net.minecraft.src;
 /* 435:486 */         paramahd.bg.a(paramahd.bg.c, null);
 /* 436:    */       }
 /* 437:489 */       if (!this.world.isClient) {
-/* 438:490 */         a(this.random.nextInt(2401) + 3600);
+/* 438:490 */         a(this.rng.nextInt(2401) + 3600);
 /* 439:    */       }
 /* 440:493 */       return true;
 /* 441:    */     }
@@ -450,19 +450,19 @@ package net.minecraft.src;
 /* 450:503 */     m(Potion.weakness.id);
 /* 451:504 */     c(new PotionEffect(Potion.strength.id, paramInt, Math.min(this.world.getDifficulty().a() - 1, 0)));
 /* 452:    */     
-/* 453:506 */     this.world.a(this, (byte)16);
+/* 453:506 */     this.world.sendSignal(this, (byte)16);
 /* 454:    */   }
 /* 455:    */   
-/* 456:    */   public void a(byte paramByte)
+/* 456:    */   public void onSignal(byte paramByte)
 /* 457:    */   {
 /* 458:511 */     if (paramByte == 16)
 /* 459:    */     {
 /* 460:512 */       if (!R()) {
-/* 461:513 */         this.world.a(this.xPos + 0.5D, this.yPos + 0.5D, this.zPos + 0.5D, "mob.zombie.remedy", 1.0F + this.random.nextFloat(), this.random.nextFloat() * 0.7F + 0.3F, false);
+/* 461:513 */         this.world.a(this.xPos + 0.5D, this.yPos + 0.5D, this.zPos + 0.5D, "mob.zombie.remedy", 1.0F + this.rng.nextFloat(), this.rng.nextFloat() * 0.7F + 0.3F, false);
 /* 462:    */       }
 /* 463:    */     }
 /* 464:    */     else {
-/* 465:516 */       super.a(paramByte);
+/* 465:516 */       super.onSignal(paramByte);
 /* 466:    */     }
 /* 467:    */   }
 /* 468:    */   
@@ -483,7 +483,7 @@ package net.minecraft.src;
 /* 483:532 */     localagp.beforeSpawn(this.world.E(new BlockPosition(localagp)), null);
 /* 484:533 */     localagp.cn();
 /* 485:534 */     if (i_()) {
-/* 486:535 */       localagp.b(-24000);
+/* 486:535 */       localagp.setAge(-24000);
 /* 487:    */     }
 /* 488:537 */     this.world.setEntityDead(this);
 /* 489:538 */     this.world.spawnEntity(localagp);
@@ -495,7 +495,7 @@ package net.minecraft.src;
 /* 495:    */   protected int cp()
 /* 496:    */   {
 /* 497:545 */     int i = 1;
-/* 498:547 */     if (this.random.nextFloat() < 0.01F)
+/* 498:547 */     if (this.rng.nextFloat() < 0.01F)
 /* 499:    */     {
 /* 500:548 */       int j = 0;
 /* 501:550 */       for (int k = (int)this.xPos - 4; (k < (int)this.xPos + 4) && (j < 14); k++) {
@@ -505,7 +505,7 @@ package net.minecraft.src;
 /* 505:553 */             ProtoBlock localatr = this.world.getBlock(new BlockPosition(k, m, n)).getProto();
 /* 506:554 */             if ((localatr == BlockList.bi) || (localatr == BlockList.C))
 /* 507:    */             {
-/* 508:555 */               if (this.random.nextFloat() < 0.3F) {
+/* 508:555 */               if (this.rng.nextFloat() < 0.3F) {
 /* 509:556 */                 i++;
 /* 510:    */               }
 /* 511:558 */               j++;

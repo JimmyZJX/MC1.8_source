@@ -424,12 +424,12 @@ package net.minecraft.src;
 /* 424:    */   
 /* 425:    */   public void b(Entity paramwv)
 /* 426:    */   {
-/* 427:465 */     this.c.j.a(paramwv, ew.j);
+/* 427:465 */     this.c.j.a(paramwv, EnumParticleEffect.j);
 /* 428:    */   }
 /* 429:    */   
 /* 430:    */   public void c(Entity paramwv)
 /* 431:    */   {
-/* 432:470 */     this.c.j.a(paramwv, ew.k);
+/* 432:470 */     this.c.j.a(paramwv, EnumParticleEffect.k);
 /* 433:    */   }
 /* 434:    */   
 /* 435:    */   public boolean aw()
@@ -477,7 +477,7 @@ package net.minecraft.src;
 /* 477:515 */         this.c.a((bxf)null);
 /* 478:    */       }
 /* 479:518 */       if (this.bF == 0.0F) {
-/* 480:519 */         this.c.U().a(cxy.a(new oa("portal.trigger"), this.random.nextFloat() * 0.4F + 0.8F));
+/* 480:519 */         this.c.U().a(cxy.a(new oa("portal.trigger"), this.rng.nextFloat() * 0.4F + 0.8F));
 /* 481:    */       }
 /* 482:521 */       this.bF += 0.0125F;
 /* 483:522 */       if (this.bF >= 1.0F) {

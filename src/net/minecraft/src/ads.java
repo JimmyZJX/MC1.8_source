@@ -14,8 +14,8 @@ package net.minecraft.src;
 /* 13:23 */     super(paramaqu);
 /* 14:24 */     setPositionAndAngles(paramDouble1, paramDouble2, paramDouble3, 0.0F, 0.0F);
 /* 15:25 */     this.b = 2;
-/* 16:26 */     this.a = this.random.nextLong();
-/* 17:27 */     this.c = (this.random.nextInt(3) + 1);
+/* 16:26 */     this.a = this.rng.nextLong();
+/* 17:27 */     this.c = (this.rng.nextInt(3) + 1);
 /* 18:29 */     if ((!paramaqu.isClient) && (paramaqu.getGameRules().getBoolean("doFireTick")) && ((paramaqu.getDifficulty() == EnumDifficulty.NORMAL) || (paramaqu.getDifficulty() == EnumDifficulty.HARD)) && (paramaqu.a(new BlockPosition(this), 10)))
 /* 19:   */     {
 /* 20:30 */       BlockPosition localdt1 = new BlockPosition(this);
@@ -24,7 +24,7 @@ package net.minecraft.src;
 /* 23:   */       }
 /* 24:37 */       for (int i = 0; i < 4; i++)
 /* 25:   */       {
-/* 26:38 */         BlockPosition localdt2 = localdt1.offset(this.random.nextInt(3) - 1, this.random.nextInt(3) - 1, this.random.nextInt(3) - 1);
+/* 26:38 */         BlockPosition localdt2 = localdt1.offset(this.rng.nextInt(3) - 1, this.rng.nextInt(3) - 1, this.rng.nextInt(3) - 1);
 /* 27:39 */         if ((paramaqu.getBlock(localdt2).getProto().getMaterial() == Material.air) && (BlockList.fire.c(paramaqu, localdt2))) {
 /* 28:40 */           paramaqu.setBlock(localdt2, BlockList.fire.instance());
 /* 29:   */         }
@@ -37,8 +37,8 @@ package net.minecraft.src;
 /* 36:48 */     super.onUpdate();
 /* 37:50 */     if (this.b == 2)
 /* 38:   */     {
-/* 39:51 */       this.world.a(this.xPos, this.yPos, this.zPos, "ambient.weather.thunder", 10000.0F, 0.8F + this.random.nextFloat() * 0.2F);
-/* 40:52 */       this.world.a(this.xPos, this.yPos, this.zPos, "random.explode", 2.0F, 0.5F + this.random.nextFloat() * 0.2F);
+/* 39:51 */       this.world.a(this.xPos, this.yPos, this.zPos, "ambient.weather.thunder", 10000.0F, 0.8F + this.rng.nextFloat() * 0.2F);
+/* 40:52 */       this.world.a(this.xPos, this.yPos, this.zPos, "random.explode", 2.0F, 0.5F + this.rng.nextFloat() * 0.2F);
 /* 41:   */     }
 /* 42:55 */     this.b -= 1;
 /* 43:56 */     if (this.b < 0) {
@@ -46,11 +46,11 @@ package net.minecraft.src;
 /* 45:   */       {
 /* 46:58 */         setDead();
 /* 47:   */       }
-/* 48:59 */       else if (this.b < -this.random.nextInt(10))
+/* 48:59 */       else if (this.b < -this.rng.nextInt(10))
 /* 49:   */       {
 /* 50:60 */         this.c -= 1;
 /* 51:61 */         this.b = 1;
-/* 52:62 */         this.a = this.random.nextLong();
+/* 52:62 */         this.a = this.rng.nextLong();
 /* 53:63 */         BlockPosition localdt = new BlockPosition(this);
 /* 54:64 */         if ((!this.world.isClient) && (this.world.getGameRules().getBoolean("doFireTick")) && (this.world.a(localdt, 10)) && 
 /* 55:65 */           (this.world.getBlock(localdt).getProto().getMaterial() == Material.air) && (BlockList.fire.c(this.world, localdt))) {
@@ -66,11 +66,11 @@ package net.minecraft.src;
 /* 65:   */       else
 /* 66:   */       {
 /* 67:76 */         double d = 3.0D;
-/* 68:77 */         List localList = this.world.b(this, new AABB(this.xPos - d, this.yPos - d, this.zPos - d, this.xPos + d, this.yPos + 6.0D + d, this.zPos + d));
+/* 68:77 */         List<Entity> localList = this.world.b(this, new AABB(this.xPos - d, this.yPos - d, this.zPos - d, this.xPos + d, this.yPos + 6.0D + d, this.zPos + d));
 /* 69:78 */         for (int i = 0; i < localList.size(); i++)
 /* 70:   */         {
-/* 71:79 */           Entity localwv = (Entity)localList.get(i);
-/* 72:80 */           localwv.a(this);
+/* 71:79 */           Entity localwv = localList.get(i);
+/* 72:80 */           localwv.onStruck(this);
 /* 73:   */         }
 /* 74:   */       }
 /* 75:   */     }

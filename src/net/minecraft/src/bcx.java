@@ -9,17 +9,17 @@ package net.minecraft.src;
 /*   8: 21 */   private ItemStack[] g = new ItemStack[9];
 /*   9:    */   protected String a;
 /*  10:    */   
-/*  11:    */   public int n_()
+/*  11:    */   public int getSize()
 /*  12:    */   {
 /*  13: 26 */     return 9;
 /*  14:    */   }
 /*  15:    */   
-/*  16:    */   public ItemStack a(int paramInt)
+/*  16:    */   public ItemStack get(int paramInt)
 /*  17:    */   {
 /*  18: 32 */     return this.g[paramInt];
 /*  19:    */   }
 /*  20:    */   
-/*  21:    */   public ItemStack a(int paramInt1, int paramInt2)
+/*  21:    */   public ItemStack removeItems(int paramInt1, int paramInt2)
 /*  22:    */   {
 /*  23: 38 */     if (this.g[paramInt1] != null)
 /*  24:    */     {
@@ -103,7 +103,7 @@ package net.minecraft.src;
 /* 102:    */   {
 /* 103:133 */     super.readFromNBT(paramfn);
 /* 104:134 */     fv localfv = paramfn.c("Items", 10);
-/* 105:135 */     this.g = new ItemStack[n_()];
+/* 105:135 */     this.g = new ItemStack[getSize()];
 /* 106:136 */     for (int i = 0; i < localfv.c(); i++)
 /* 107:    */     {
 /* 108:137 */       NBTTagCompound localfn = localfv.b(i);

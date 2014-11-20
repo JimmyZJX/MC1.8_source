@@ -9,10 +9,10 @@ package net.minecraft.src;
 /*  8:16 */     this.bl = BlockList.bw;
 /*  9:   */   }
 /* 10:   */   
-/* 11:   */   public boolean a(EntityPlayer paramahd)
+/* 11:   */   public boolean onRightClick(EntityPlayer paramahd)
 /* 12:   */   {
 /* 13:21 */     ItemStack localamj = paramahd.bg.h();
-/* 14:22 */     if ((localamj != null) && (localamj.getItem() == ItemList.z) && (l() >= 0))
+/* 14:22 */     if ((localamj != null) && (localamj.getItem() == ItemList.z) && (getAge() >= 0))
 /* 15:   */     {
 /* 16:23 */       if (localamj.stackSize == 1)
 /* 17:   */       {
@@ -21,14 +21,14 @@ package net.minecraft.src;
 /* 20:   */       }
 /* 21:28 */       if ((paramahd.bg.a(new ItemStack(ItemList.A))) && (!paramahd.by.d))
 /* 22:   */       {
-/* 23:29 */         paramahd.bg.a(paramahd.bg.c, 1);
+/* 23:29 */         paramahd.bg.removeItems(paramahd.bg.c, 1);
 /* 24:30 */         return true;
 /* 25:   */       }
 /* 26:   */     }
-/* 27:33 */     if ((localamj != null) && (localamj.getItem() == ItemList.be) && (l() >= 0))
+/* 27:33 */     if ((localamj != null) && (localamj.getItem() == ItemList.be) && (getAge() >= 0))
 /* 28:   */     {
 /* 29:34 */       setDead();
-/* 30:35 */       this.world.a(ew.b, this.xPos, this.yPos + this.K / 2.0F, this.zPos, 0.0D, 0.0D, 0.0D, new int[0]);
+/* 30:35 */       this.world.a(EnumParticleEffect.EXPLOSION_LARGE, this.xPos, this.yPos + this.K / 2.0F, this.zPos, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 31:36 */       if (!this.world.isClient)
 /* 32:   */       {
 /* 33:37 */         EntityCow localabs = new EntityCow(this.world);
@@ -47,7 +47,7 @@ package net.minecraft.src;
 /* 46:   */       }
 /* 47:51 */       return true;
 /* 48:   */     }
-/* 49:53 */     return super.a(paramahd);
+/* 49:53 */     return super.onRightClick(paramahd);
 /* 50:   */   }
 /* 51:   */   
 /* 52:   */   public EntityMooshroom c(EntityPassiveMob paramws)

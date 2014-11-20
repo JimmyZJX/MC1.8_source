@@ -203,7 +203,7 @@ package net.minecraft.src;
 /*  202:     */   public void a(im paramim)
 /*  203:     */   {
 /*  204: 235 */     ig.a(paramim, this, this.f);
-/*  205: 236 */     xk localxk = new xk(this.g, paramim.b(), paramim.c(), paramim.d(), paramim.e());
+/*  205: 236 */     EntityExperienceOrb localxk = new EntityExperienceOrb(this.g, paramim.b(), paramim.c(), paramim.d(), paramim.e());
 /*  206: 237 */     localxk.bU = paramim.b();
 /*  207: 238 */     localxk.bV = paramim.c();
 /*  208: 239 */     localxk.bW = paramim.d();
@@ -477,7 +477,7 @@ package net.minecraft.src;
 /*  476:     */     }
 /*  477: 509 */     if (localwv != null)
 /*  478:     */     {
-/*  479: 510 */       if ((localwv instanceof xk)) {
+/*  479: 510 */       if ((localwv instanceof EntityExperienceOrb)) {
 /*  480: 511 */         this.g.a(localwv, "random.orb", 0.2F, ((this.k.nextFloat() - this.k.nextFloat()) * 0.7F + 1.0F) * 2.0F);
 /*  481:     */       } else {
 /*  482: 513 */         this.g.a(localwv, "random.pop", 0.2F, ((this.k.nextFloat() - this.k.nextFloat()) * 0.7F + 1.0F) * 2.0F);
@@ -521,11 +521,11 @@ package net.minecraft.src;
 /*  520:     */     }
 /*  521: 546 */     else if (paramir.b() == 4)
 /*  522:     */     {
-/*  523: 547 */       this.f.j.a(localwv, ew.j);
+/*  523: 547 */       this.f.j.a(localwv, EnumParticleEffect.j);
 /*  524:     */     }
 /*  525: 548 */     else if (paramir.b() == 5)
 /*  526:     */     {
-/*  527: 549 */       this.f.j.a(localwv, ew.k);
+/*  527: 549 */       this.f.j.a(localwv, EnumParticleEffect.k);
 /*  528:     */     }
 /*  529:     */   }
 /*  530:     */   
@@ -563,7 +563,7 @@ package net.minecraft.src;
 /*  562: 588 */     localxm.zVelocity = (paramio.i() / 8000.0F);
 /*  563: 589 */     this.g.a(paramio.b(), localxm);
 /*  564:     */     
-/*  565: 591 */     List localList = paramio.a();
+/*  565: 591 */     List<xw> localList = paramio.a();
 /*  566: 592 */     if (localList != null) {
 /*  567: 593 */       localxm.H().a(localList);
 /*  568:     */     }
@@ -632,7 +632,7 @@ package net.minecraft.src;
 /*  631: 658 */       if (paramjk.a() == 21) {
 /*  632: 659 */         this.f.U().a(new cxv((EntityGuardian)localwv));
 /*  633:     */       } else {
-/*  634: 661 */         localwv.a(paramjk.a());
+/*  634: 661 */         localwv.onSignal(paramjk.a());
 /*  635:     */       }
 /*  636:     */     }
 /*  637:     */   }
@@ -943,7 +943,7 @@ package net.minecraft.src;
 /*  942:     */     }
 /*  943: 944 */     else if (m == 10)
 /*  944:     */     {
-/*  945: 945 */       this.g.a(ew.P, localcio.xPos, localcio.yPos, localcio.zPos, 0.0D, 0.0D, 0.0D, new int[0]);
+/*  945: 945 */       this.g.a(EnumParticleEffect.P, localcio.xPos, localcio.yPos, localcio.zPos, 0.0D, 0.0D, 0.0D, new int[0]);
 /*  946: 946 */       this.g.a(localcio.xPos, localcio.yPos, localcio.zPos, "mob.guardian.curse", 1.0F, 1.0F, false);
 /*  947:     */     }
 /*  948:     */   }

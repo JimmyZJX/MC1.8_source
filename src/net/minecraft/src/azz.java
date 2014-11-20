@@ -88,7 +88,7 @@ package net.minecraft.src;
 /*  87:103 */     double d4 = f * localej.g();
 /*  88:104 */     double d5 = f * localej.i();
 /*  89:    */     
-/*  90:106 */     paramaqu.a(ew.E, d1 + d4, d2, d3 + d5, 0.0D, 0.0D, 0.0D, new int[0]);
+/*  90:106 */     paramaqu.a(EnumParticleEffect.E, d1 + d4, d2, d3 + d5, 0.0D, 0.0D, 0.0D, new int[0]);
 /*  91:    */   }
 /*  92:    */   
 /*  93:    */   public void b(World paramaqu, BlockPosition paramdt, Block parambec)

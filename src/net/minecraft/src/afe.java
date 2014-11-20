@@ -37,7 +37,7 @@ package net.minecraft.src;
 /*  36:    */   
 /*  37:    */   public void c()
 /*  38:    */   {
-/*  39:253 */     Random localRandom = this.a.bb();
+/*  39:253 */     Random localRandom = this.a.getRNG();
 /*  40:254 */     double d1 = this.a.xPos + (localRandom.nextFloat() * 2.0F - 1.0F) * 16.0F;
 /*  41:255 */     double d2 = this.a.yPos + (localRandom.nextFloat() * 2.0F - 1.0F) * 16.0F;
 /*  42:256 */     double d3 = this.a.zPos + (localRandom.nextFloat() * 2.0F - 1.0F) * 16.0F;

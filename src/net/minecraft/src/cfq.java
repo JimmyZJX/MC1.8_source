@@ -88,7 +88,7 @@ package net.minecraft.src;
 /*  87: 91 */       if (this.a == Material.water)
 /*  88:    */       {
 /*  89: 92 */         setDead();
-/*  90: 93 */         this.world.a(ew.f, this.xPos, this.yPos, this.zPos, 0.0D, 0.0D, 0.0D, new int[0]);
+/*  90: 93 */         this.world.a(EnumParticleEffect.f, this.xPos, this.yPos, this.zPos, 0.0D, 0.0D, 0.0D, new int[0]);
 /*  91:    */       }
 /*  92:    */       else
 /*  93:    */       {

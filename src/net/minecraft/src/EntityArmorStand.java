@@ -327,7 +327,7 @@ package net.minecraft.src;
 /* 326:361 */       return;
 /* 327:    */     }
 /* 328:364 */     int j = paramahd.bg.c;
-/* 329:365 */     ItemStack localamj2 = paramahd.bg.a(j);
+/* 329:365 */     ItemStack localamj2 = paramahd.bg.get(j);
 /* 330:    */     ItemStack localamj3;
 /* 331:366 */     if ((paramahd.by.d) && ((localamj1 == null) || (localamj1.getItem() == Item.fromProtoBlock(BlockList.air))) && (localamj2 != null))
 /* 332:    */     {
@@ -418,7 +418,7 @@ package net.minecraft.src;
 /* 417:    */   private void z()
 /* 418:    */   {
 /* 419:446 */     if ((this.world instanceof WorldServer)) {
-/* 420:447 */       ((WorldServer)this.world).a(ew.M, this.xPos, this.yPos + this.K / 1.5D, this.zPos, 10, this.J / 4.0F, this.K / 4.0F, this.J / 4.0F, 0.05D, new int[] { ProtoBlock.f(BlockList.planks.instance()) });
+/* 420:447 */       ((WorldServer)this.world).a(EnumParticleEffect.M, this.xPos, this.yPos + this.K / 1.5D, this.zPos, 10, this.J / 4.0F, this.K / 4.0F, this.J / 4.0F, 0.05D, new int[] { ProtoBlock.f(BlockList.planks.instance()) });
 /* 421:    */     }
 /* 422:    */   }
 /* 423:    */   

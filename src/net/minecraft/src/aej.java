@@ -32,7 +32,7 @@ package net.minecraft.src;
 /*  31: 44 */     if (this.a > 0)
 /*  32:    */     {
 /*  33: 45 */       this.a -= 1;
-/*  34: 46 */       this.world.a(ew.l, this.xPos, this.yPos + 0.5D, this.zPos, 0.0D, 0.0D, 0.0D, new int[0]);
+/*  34: 46 */       this.world.a(EnumParticleEffect.l, this.xPos, this.yPos + 0.5D, this.zPos, 0.0D, 0.0D, 0.0D, new int[0]);
 /*  35:    */     }
 /*  36: 47 */     else if (this.a == 0)
 /*  37:    */     {
@@ -81,7 +81,7 @@ package net.minecraft.src;
 /*  80: 90 */       if (d > 5.0D) {
 /*  81: 91 */         d = 5.0D;
 /*  82:    */       }
-/*  83: 93 */       this.world.a(this, this.xPos, this.yPos, this.zPos, (float)(4.0D + this.random.nextDouble() * 1.5D * d), true);
+/*  83: 93 */       this.world.a(this, this.xPos, this.yPos, this.zPos, (float)(4.0D + this.rng.nextDouble() * 1.5D * d), true);
 /*  84: 94 */       setDead();
 /*  85:    */     }
 /*  86:    */   }
@@ -103,12 +103,12 @@ package net.minecraft.src;
 /* 102:    */     }
 /* 103:    */   }
 /* 104:    */   
-/* 105:    */   public void a(byte paramByte)
+/* 105:    */   public void onSignal(byte paramByte)
 /* 106:    */   {
 /* 107:117 */     if (paramByte == 10) {
 /* 108:118 */       j();
 /* 109:    */     } else {
-/* 110:120 */       super.a(paramByte);
+/* 110:120 */       super.onSignal(paramByte);
 /* 111:    */     }
 /* 112:    */   }
 /* 113:    */   
@@ -117,7 +117,7 @@ package net.minecraft.src;
 /* 116:125 */     this.a = 80;
 /* 117:127 */     if (!this.world.isClient)
 /* 118:    */     {
-/* 119:128 */       this.world.a(this, (byte)10);
+/* 119:128 */       this.world.sendSignal(this, (byte)10);
 /* 120:129 */       if (!R()) {
 /* 121:130 */         this.world.a(this, "game.tnt.primed", 1.0F, 1.0F);
 /* 122:    */       }

@@ -24,7 +24,7 @@ package net.minecraft.src;
 /* 23:   */   
 /* 24:   */   private static Vec3 c(EntityWalkingMob paramxu, int paramInt1, int paramInt2, Vec3 parambrw)
 /* 25:   */   {
-/* 26:29 */     Random localRandom = paramxu.bb();
+/* 26:29 */     Random localRandom = paramxu.getRNG();
 /* 27:30 */     int i = 0;
 /* 28:31 */     int j = 0;int k = 0;int m = 0;
 /* 29:32 */     float f1 = -99999.0F;

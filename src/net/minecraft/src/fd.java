@@ -95,7 +95,7 @@ package net.minecraft.src;
 /*  95:190 */     return d1 * d1 + d2 * d2 + d3 * d3;
 /*  96:    */   }
 /*  97:    */   
-/*  98:    */   public double i(fd paramfd)
+/*  98:    */   public double dist2(fd paramfd)
 /*  99:    */   {
 /* 100:194 */     return dist2(paramfd.getX(), paramfd.getY(), paramfd.getZ());
 /* 101:    */   }

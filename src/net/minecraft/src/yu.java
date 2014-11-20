@@ -112,7 +112,7 @@ package net.minecraft.src;
 /* 111:134 */         localxu.r().a();
 /* 112:    */       }
 /* 113:    */     }
-/* 114:138 */     if ((!localahd.by.d) && (this.c >= this.b * 0.5F) && (this.a.bb().nextFloat() < 0.006F) && (!this.d))
+/* 114:138 */     if ((!localahd.by.d) && (this.c >= this.b * 0.5F) && (this.a.getRNG().nextFloat() < 0.006F) && (!this.d))
 /* 115:    */     {
 /* 116:139 */       localObject = localahd.bz();
 /* 117:141 */       if ((localObject != null) && (((ItemStack)localObject).getItem() == ItemList.bY))
@@ -143,7 +143,7 @@ package net.minecraft.src;
 /* 142:    */   {
 /* 143:164 */     this.d = true;
 /* 144:165 */     this.e = 0;
-/* 145:166 */     this.f = (this.a.bb().nextInt(841) + 140);
+/* 145:166 */     this.f = (this.a.getRNG().nextInt(841) + 140);
 /* 146:    */   }
 /* 147:    */   
 /* 148:    */   public boolean h()

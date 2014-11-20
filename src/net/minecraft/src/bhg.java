@@ -39,7 +39,7 @@ package net.minecraft.src;
 /* 38:40 */       int n = i + paramRandom.nextInt(2);
 /* 39:41 */       float f = (k + m + n) * 0.333F + 0.5F;
 /* 40:43 */       for (BlockPosition localdt : BlockPosition.a(paramdt.offset(-k, -m, -n), paramdt.offset(k, m, n))) {
-/* 41:44 */         if (localdt.i(paramdt) <= f * f) {
+/* 41:44 */         if (localdt.dist2(paramdt) <= f * f) {
 /* 42:45 */           paramaqu.setBlock(localdt, this.a.instance(), 4);
 /* 43:   */         }
 /* 44:   */       }

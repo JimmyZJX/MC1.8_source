@@ -317,7 +317,7 @@ package net.minecraft.src;
 /* 316:350 */         d1 = paramdt.getX() + paramRandom.nextDouble();
 /* 317:351 */         d2 = paramdt.getY() + paramRandom.nextDouble() * 0.5D + 0.5D;
 /* 318:352 */         d3 = paramdt.getZ() + paramRandom.nextDouble();
-/* 319:353 */         paramaqu.a(ew.m, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
+/* 319:353 */         paramaqu.a(EnumParticleEffect.m, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 320:    */       }
 /* 321:    */     }
 /* 322:    */     else
@@ -328,7 +328,7 @@ package net.minecraft.src;
 /* 327:358 */           d1 = paramdt.getX() + paramRandom.nextDouble() * 0.1000000014901161D;
 /* 328:359 */           d2 = paramdt.getY() + paramRandom.nextDouble();
 /* 329:360 */           d3 = paramdt.getZ() + paramRandom.nextDouble();
-/* 330:361 */           paramaqu.a(ew.m, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
+/* 330:361 */           paramaqu.a(EnumParticleEffect.m, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 331:    */         }
 /* 332:    */       }
 /* 333:364 */       if (BlockList.fire.e(paramaqu, paramdt.east())) {
@@ -337,7 +337,7 @@ package net.minecraft.src;
 /* 336:366 */           d1 = paramdt.getX() + 1 - paramRandom.nextDouble() * 0.1000000014901161D;
 /* 337:367 */           d2 = paramdt.getY() + paramRandom.nextDouble();
 /* 338:368 */           d3 = paramdt.getZ() + paramRandom.nextDouble();
-/* 339:369 */           paramaqu.a(ew.m, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
+/* 339:369 */           paramaqu.a(EnumParticleEffect.m, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 340:    */         }
 /* 341:    */       }
 /* 342:372 */       if (BlockList.fire.e(paramaqu, paramdt.north())) {
@@ -346,7 +346,7 @@ package net.minecraft.src;
 /* 345:374 */           d1 = paramdt.getX() + paramRandom.nextDouble();
 /* 346:375 */           d2 = paramdt.getY() + paramRandom.nextDouble();
 /* 347:376 */           d3 = paramdt.getZ() + paramRandom.nextDouble() * 0.1000000014901161D;
-/* 348:377 */           paramaqu.a(ew.m, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
+/* 348:377 */           paramaqu.a(EnumParticleEffect.m, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 349:    */         }
 /* 350:    */       }
 /* 351:380 */       if (BlockList.fire.e(paramaqu, paramdt.south())) {
@@ -355,7 +355,7 @@ package net.minecraft.src;
 /* 354:382 */           d1 = paramdt.getX() + paramRandom.nextDouble();
 /* 355:383 */           d2 = paramdt.getY() + paramRandom.nextDouble();
 /* 356:384 */           d3 = paramdt.getZ() + 1 - paramRandom.nextDouble() * 0.1000000014901161D;
-/* 357:385 */           paramaqu.a(ew.m, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
+/* 357:385 */           paramaqu.a(EnumParticleEffect.m, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 358:    */         }
 /* 359:    */       }
 /* 360:388 */       if (BlockList.fire.e(paramaqu, paramdt.up())) {
@@ -364,7 +364,7 @@ package net.minecraft.src;
 /* 363:390 */           d1 = paramdt.getX() + paramRandom.nextDouble();
 /* 364:391 */           d2 = paramdt.getY() + 1 - paramRandom.nextDouble() * 0.1000000014901161D;
 /* 365:392 */           d3 = paramdt.getZ() + paramRandom.nextDouble();
-/* 366:393 */           paramaqu.a(ew.m, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
+/* 366:393 */           paramaqu.a(EnumParticleEffect.m, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 367:    */         }
 /* 368:    */       }
 /* 369:    */     }

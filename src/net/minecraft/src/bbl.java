@@ -157,13 +157,13 @@ package net.minecraft.src;
 /* 156:174 */     if (localej1.k().c())
 /* 157:    */     {
 /* 158:175 */       EnumDirection localej2 = localej1.d();
-/* 159:176 */       paramaqu.a(ew.l, d1 + d5 * localej2.g(), d2 + d4, d3 + d5 * localej2.i(), 0.0D, 0.0D, 0.0D, new int[0]);
-/* 160:177 */       paramaqu.a(ew.A, d1 + d5 * localej2.g(), d2 + d4, d3 + d5 * localej2.i(), 0.0D, 0.0D, 0.0D, new int[0]);
+/* 159:176 */       paramaqu.a(EnumParticleEffect.l, d1 + d5 * localej2.g(), d2 + d4, d3 + d5 * localej2.i(), 0.0D, 0.0D, 0.0D, new int[0]);
+/* 160:177 */       paramaqu.a(EnumParticleEffect.A, d1 + d5 * localej2.g(), d2 + d4, d3 + d5 * localej2.i(), 0.0D, 0.0D, 0.0D, new int[0]);
 /* 161:    */     }
 /* 162:    */     else
 /* 163:    */     {
-/* 164:179 */       paramaqu.a(ew.l, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
-/* 165:180 */       paramaqu.a(ew.A, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
+/* 164:179 */       paramaqu.a(EnumParticleEffect.l, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
+/* 165:180 */       paramaqu.a(EnumParticleEffect.A, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 166:    */     }
 /* 167:    */   }
 /* 168:    */   

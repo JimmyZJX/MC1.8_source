@@ -28,7 +28,7 @@ package net.minecraft.src;
 /*  27:    */       }
 /*  28:    */     }
 /*  29: 82 */     if (!localArrayList.isEmpty()) {
-/*  30: 83 */       this.c = ((EnumArt)localArrayList.get(this.random.nextInt(localArrayList.size())));
+/*  30: 83 */       this.c = ((EnumArt)localArrayList.get(this.rng.nextInt(localArrayList.size())));
 /*  31:    */     }
 /*  32: 85 */     a(paramej);
 /*  33:    */   }

@@ -3,32 +3,32 @@ package net.minecraft.src;
 /*   2:    */ import java.util.Iterator;
 /*   3:    */ import java.util.List;
 /*   4:    */ 
-/*   5:    */ public class abl
+/*   5:    */ public class VillageManager
 /*   6:    */   extends bqc
 /*   7:    */ {
-/*   8:    */   private World b;
+/*   8:    */   private World world;
 /*   9: 25 */   private final List<BlockPosition> c = Lists.newArrayList();
-/*  10: 26 */   private final List<abh> d = Lists.newArrayList();
-/*  11: 27 */   private final List<abi> e = Lists.newArrayList();
+/*  10: 26 */   private final List<VillageDoor> d = Lists.newArrayList();
+/*  11: 27 */   private final List<Village> villages = Lists.newArrayList();
 /*  12:    */   private int f;
 /*  13:    */   
-/*  14:    */   public abl(String paramString)
+/*  14:    */   public VillageManager(String paramString)
 /*  15:    */   {
 /*  16: 31 */     super(paramString);
 /*  17:    */   }
 /*  18:    */   
-/*  19:    */   public abl(World paramaqu)
+/*  19:    */   public VillageManager(World world)
 /*  20:    */   {
-/*  21: 35 */     super(a(paramaqu.t));
-/*  22: 36 */     this.b = paramaqu;
+/*  21: 35 */     super(a(world.t));
+/*  22: 36 */     this.world = world;
 /*  23: 37 */     c();
 /*  24:    */   }
 /*  25:    */   
-/*  26:    */   public void a(World paramaqu)
+/*  26:    */   public void setWorld(World paramaqu)
 /*  27:    */   {
-/*  28: 41 */     this.b = paramaqu;
-/*  29: 43 */     for (abi localabi : this.e) {
-/*  30: 44 */       localabi.a(paramaqu);
+/*  28: 41 */     this.world = paramaqu;
+/*  29: 43 */     for (Village village : this.villages) {
+/*  30: 44 */       village.setWorld(paramaqu);
 /*  31:    */     }
 /*  32:    */   }
 /*  33:    */   
@@ -45,8 +45,8 @@ package net.minecraft.src;
 /*  44:    */   public void a()
 /*  45:    */   {
 /*  46: 58 */     this.f += 1;
-/*  47: 59 */     for (abi localabi : this.e) {
-/*  48: 60 */       localabi.a(this.f);
+/*  47: 59 */     for (Village village : this.villages) {
+/*  48: 60 */       village.a(this.f);
 /*  49:    */     }
 /*  50: 62 */     e();
 /*  51: 63 */     f();
@@ -58,40 +58,40 @@ package net.minecraft.src;
 /*  57:    */   
 /*  58:    */   private void e()
 /*  59:    */   {
-/*  60: 72 */     for (Iterator<abi> localIterator = this.e.iterator(); localIterator.hasNext();)
+/*  60: 72 */     for (Iterator<Village> it = this.villages.iterator(); it.hasNext();)
 /*  61:    */     {
-/*  62: 73 */       abi localabi = localIterator.next();
-/*  63: 74 */       if (localabi.g())
+/*  62: 73 */       Village village = it.next();
+/*  63: 74 */       if (village.g())
 /*  64:    */       {
-/*  65: 75 */         localIterator.remove();
+/*  65: 75 */         it.remove();
 /*  66: 76 */         c();
 /*  67:    */       }
 /*  68:    */     }
 /*  69:    */   }
 /*  70:    */   
-/*  71:    */   public List<abi> b()
+/*  71:    */   public List<Village> getVillages()
 /*  72:    */   {
-/*  73: 82 */     return this.e;
+/*  73: 82 */     return this.villages;
 /*  74:    */   }
 /*  75:    */   
-/*  76:    */   public abi a(BlockPosition paramdt, int paramInt)
+/*  76:    */   public Village getNearestVillage(BlockPosition pos, int paramInt)
 /*  77:    */   {
-/*  78: 86 */     abi localObject = null;
-/*  79: 87 */     double d1 = 3.402823466385289E+038D;
-/*  80: 88 */     for (abi localabi : this.e)
+/*  78: 86 */     Village res = null;
+/*  79: 87 */     double min = 3.402823466385289E+038D;
+/*  80: 88 */     for (Village village : this.villages)
 /*  81:    */     {
-/*  82: 89 */       double d2 = localabi.a().i(paramdt);
-/*  83: 90 */       if (d2 < d1)
+/*  82: 89 */       double dist2 = village.a().dist2(pos);
+/*  83: 90 */       if (dist2 < min)
 /*  84:    */       {
-/*  85: 94 */         float f1 = paramInt + localabi.b();
-/*  86: 95 */         if (d2 <= f1 * f1)
+/*  85: 94 */         float f1 = paramInt + village.b();
+/*  86: 95 */         if (dist2 <= f1 * f1)
 /*  87:    */         {
-/*  88: 99 */           localObject = localabi;
-/*  89:100 */           d1 = d2;
+/*  88: 99 */           res = village;
+/*  89:100 */           min = dist2;
 /*  90:    */         }
 /*  91:    */       }
 /*  92:    */     }
-/*  93:102 */     return localObject;
+/*  93:102 */     return res;
 /*  94:    */   }
 /*  95:    */   
 /*  96:    */   private void f()
@@ -106,15 +106,15 @@ package net.minecraft.src;
 /* 105:    */   {
 /* 106:114 */     for (int i = 0; i < this.d.size(); i++)
 /* 107:    */     {
-/* 108:115 */       abh localabh = (abh)this.d.get(i);
-/* 109:116 */       abi localabi = a(localabh.d(), 32);
-/* 110:117 */       if (localabi == null)
+/* 108:115 */       VillageDoor localabh = this.d.get(i);
+/* 109:116 */       Village village = getNearestVillage(localabh.d(), 32);
+/* 110:117 */       if (village == null)
 /* 111:    */       {
-/* 112:119 */         localabi = new abi(this.b);
-/* 113:120 */         this.e.add(localabi);
+/* 112:119 */         village = new Village(this.world);
+/* 113:120 */         this.villages.add(village);
 /* 114:121 */         c();
 /* 115:    */       }
-/* 116:123 */       localabi.a(localabh);
+/* 116:123 */       village.a(localabh);
 /* 117:    */     }
 /* 118:126 */     this.d.clear();
 /* 119:    */   }
@@ -129,7 +129,7 @@ package net.minecraft.src;
 /* 128:134 */           BlockPosition localdt = paramdt.offset(m, n, i1);
 /* 129:135 */           if (f(localdt))
 /* 130:    */           {
-/* 131:136 */             abh localabh = c(localdt);
+/* 131:136 */             VillageDoor localabh = c(localdt);
 /* 132:137 */             if (localabh == null) {
 /* 133:138 */               d(localdt);
 /* 134:    */             } else {
@@ -141,20 +141,20 @@ package net.minecraft.src;
 /* 140:    */     }
 /* 141:    */   }
 /* 142:    */   
-/* 143:    */   private abh c(BlockPosition paramdt)
+/* 143:    */   private VillageDoor c(BlockPosition paramdt)
 /* 144:    */   {
-/* 145:149 */     for (Iterator<abh> localIterator = this.d.iterator(); localIterator.hasNext();)
+/* 145:149 */     for (Iterator<VillageDoor> localIterator = this.d.iterator(); localIterator.hasNext();)
 /* 146:    */     {
-/* 147:149 */       abh localObject = (abh)localIterator.next();
-/* 148:150 */       if ((((abh)localObject).d().getX() == paramdt.getX()) && (((abh)localObject).d().getZ() == paramdt.getZ()) && (Math.abs(((abh)localObject).d().getY() - paramdt.getY()) <= 1)) {
+/* 147:149 */       VillageDoor localObject = (VillageDoor)localIterator.next();
+/* 148:150 */       if ((((VillageDoor)localObject).d().getX() == paramdt.getX()) && (((VillageDoor)localObject).d().getZ() == paramdt.getZ()) && (Math.abs(((VillageDoor)localObject).d().getY() - paramdt.getY()) <= 1)) {
 /* 149:151 */         return localObject;
 /* 150:    */       }
 /* 151:    */     }
 /* 152:    */     Object localObject;
-/* 153:154 */     for (Iterator<abi> localIterator = this.e.iterator(); localIterator.hasNext();)
+/* 153:154 */     for (Iterator<Village> localIterator = this.villages.iterator(); localIterator.hasNext();)
 /* 154:    */     {
-/* 155:154 */       localObject = (abi)localIterator.next();
-/* 156:155 */       abh localabh = ((abi)localObject).e(paramdt);
+/* 155:154 */       localObject = (Village)localIterator.next();
+/* 156:155 */       VillageDoor localabh = ((Village)localObject).e(paramdt);
 /* 157:156 */       if (localabh != null) {
 /* 158:157 */         return localabh;
 /* 159:    */       }
@@ -164,13 +164,13 @@ package net.minecraft.src;
 /* 163:    */   
 /* 164:    */   private void d(BlockPosition paramdt)
 /* 165:    */   {
-/* 166:164 */     EnumDirection localej1 = avf.h(this.b, paramdt);
+/* 166:164 */     EnumDirection localej1 = avf.h(this.world, paramdt);
 /* 167:165 */     EnumDirection localej2 = localej1.d();
 /* 168:    */     
 /* 169:167 */     int i = a(paramdt, localej1, 5);
 /* 170:168 */     int j = a(paramdt, localej2, i + 1);
 /* 171:170 */     if (i != j) {
-/* 172:171 */       this.d.add(new abh(paramdt, i < j ? localej1 : localej2, this.f));
+/* 172:171 */       this.d.add(new VillageDoor(paramdt, i < j ? localej1 : localej2, this.f));
 /* 173:    */     }
 /* 174:    */   }
 /* 175:    */   
@@ -178,7 +178,7 @@ package net.minecraft.src;
 /* 177:    */   {
 /* 178:176 */     int i = 0;
 /* 179:177 */     for (int j = 1; j <= 5; j++) {
-/* 180:178 */       if (this.b.i(paramdt.a(paramej, j)))
+/* 180:178 */       if (this.world.i(paramdt.a(paramej, j)))
 /* 181:    */       {
 /* 182:180 */         i++;
 /* 183:180 */         if (i >= paramInt) {
@@ -201,37 +201,37 @@ package net.minecraft.src;
 /* 200:    */   
 /* 201:    */   private boolean f(BlockPosition paramdt)
 /* 202:    */   {
-/* 203:199 */     ProtoBlock localatr = this.b.getBlock(paramdt).getProto();
+/* 203:199 */     ProtoBlock localatr = this.world.getBlock(paramdt).getProto();
 /* 204:200 */     if ((localatr instanceof avf)) {
 /* 205:201 */       return localatr.getMaterial() == Material.d;
 /* 206:    */     }
 /* 207:203 */     return false;
 /* 208:    */   }
 /* 209:    */   
-/* 210:    */   public void readFromNBT(NBTTagCompound paramfn)
+/* 210:    */   public void readFromNBT(NBTTagCompound tag)
 /* 211:    */   {
-/* 212:208 */     this.f = paramfn.getInteger("Tick");
-/* 213:209 */     fv localfv = paramfn.c("Villages", 10);
+/* 212:208 */     this.f = tag.getInteger("Tick");
+/* 213:209 */     fv localfv = tag.c("Villages", 10);
 /* 214:210 */     for (int i = 0; i < localfv.c(); i++)
 /* 215:    */     {
 /* 216:211 */       NBTTagCompound localfn = localfv.b(i);
-/* 217:212 */       abi localabi = new abi();
-/* 218:213 */       localabi.a(localfn);
-/* 219:214 */       this.e.add(localabi);
+/* 217:212 */       Village village = new Village();
+/* 218:213 */       village.readFromNBT(localfn);
+/* 219:214 */       this.villages.add(village);
 /* 220:    */     }
 /* 221:    */   }
 /* 222:    */   
-/* 223:    */   public void writeToNBT(NBTTagCompound paramfn)
+/* 223:    */   public void writeToNBT(NBTTagCompound tag)
 /* 224:    */   {
-/* 225:220 */     paramfn.setInt("Tick", this.f);
+/* 225:220 */     tag.setInt("Tick", this.f);
 /* 226:221 */     fv localfv = new fv();
-/* 227:222 */     for (abi localabi : this.e)
+/* 227:222 */     for (Village localabi : this.villages)
 /* 228:    */     {
 /* 229:223 */       NBTTagCompound localfn = new NBTTagCompound();
-/* 230:224 */       localabi.b(localfn);
+/* 230:224 */       localabi.writeToNBT(localfn);
 /* 231:225 */       localfv.a(localfn);
 /* 232:    */     }
-/* 233:227 */     paramfn.setNBT("Villages", localfv);
+/* 233:227 */     tag.setNBT("Villages", localfv);
 /* 234:    */   }
 /* 235:    */   
 /* 236:    */   public static String a(bgd parambgd)

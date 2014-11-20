@@ -14,7 +14,7 @@ package net.minecraft.src;
 /* 13:18 */     this.ap = 1.0F;
 /* 14:19 */     this.aq = 1.0F;
 /* 15:20 */     this.ar = 1.0F;
-/* 16:21 */     k(19 + this.random.nextInt(4));
+/* 16:21 */     k(19 + this.rng.nextInt(4));
 /* 17:22 */     a(0.01F, 0.01F);
 /* 18:23 */     this.i = 0.06F;
 /* 19:   */     

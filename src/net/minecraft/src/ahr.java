@@ -81,9 +81,9 @@ package net.minecraft.src;
 /*  81: 92 */     paramDouble2 /= f1;
 /*  82: 93 */     paramDouble3 /= f1;
 /*  83:    */     
-/*  84: 95 */     paramDouble1 += this.random.nextGaussian() * 0.007499999832361937D * paramFloat2;
-/*  85: 96 */     paramDouble2 += this.random.nextGaussian() * 0.007499999832361937D * paramFloat2;
-/*  86: 97 */     paramDouble3 += this.random.nextGaussian() * 0.007499999832361937D * paramFloat2;
+/*  84: 95 */     paramDouble1 += this.rng.nextGaussian() * 0.007499999832361937D * paramFloat2;
+/*  85: 96 */     paramDouble2 += this.rng.nextGaussian() * 0.007499999832361937D * paramFloat2;
+/*  86: 97 */     paramDouble3 += this.rng.nextGaussian() * 0.007499999832361937D * paramFloat2;
 /*  87:    */     
 /*  88: 99 */     paramDouble1 *= paramFloat1;
 /*  89:100 */     paramDouble2 *= paramFloat1;
@@ -134,9 +134,9 @@ package net.minecraft.src;
 /* 134:    */       }
 /* 135:145 */       this.a = false;
 /* 136:    */       
-/* 137:147 */       this.xVelocity *= this.random.nextFloat() * 0.2F;
-/* 138:148 */       this.yVelocity *= this.random.nextFloat() * 0.2F;
-/* 139:149 */       this.zVelocity *= this.random.nextFloat() * 0.2F;
+/* 137:147 */       this.xVelocity *= this.rng.nextFloat() * 0.2F;
+/* 138:148 */       this.yVelocity *= this.rng.nextFloat() * 0.2F;
+/* 139:149 */       this.zVelocity *= this.rng.nextFloat() * 0.2F;
 /* 140:150 */       this.i = 0;
 /* 141:151 */       this.ap = 0;
 /* 142:    */     }
@@ -218,7 +218,7 @@ package net.minecraft.src;
 /* 218:231 */       for (int j = 0; j < 4; j++)
 /* 219:    */       {
 /* 220:232 */         float f4 = 0.25F;
-/* 221:233 */         this.world.a(ew.e, this.xPos - this.xVelocity * f4, this.yPos - this.yVelocity * f4, this.zPos - this.zVelocity * f4, this.xVelocity, this.yVelocity, this.zVelocity, new int[0]);
+/* 221:233 */         this.world.a(EnumParticleEffect.e, this.xPos - this.xVelocity * f4, this.yPos - this.yVelocity * f4, this.zPos - this.zVelocity * f4, this.xVelocity, this.yVelocity, this.zVelocity, new int[0]);
 /* 222:    */       }
 /* 223:235 */       f2 = 0.8F;
 /* 224:    */     }

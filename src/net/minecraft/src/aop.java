@@ -647,7 +647,7 @@ package net.minecraft.src;
 /*  646:     */     
 /*  647:     */ 
 /*  648:     */ 
-/*  649: 655 */     a(new ItemStack(ItemList.P, 1), new Object[] { "###", Character.valueOf('#'), ItemList.O });
+/*  649: 655 */     a(new ItemStack(ItemList.bread, 1), new Object[] { "###", Character.valueOf('#'), ItemList.O });
 /*  650:     */     
 /*  651:     */ 
 /*  652:     */ 
@@ -1155,9 +1155,9 @@ package net.minecraft.src;
 /* 1154:1175 */         return localaoo.b(paramain);
 /* 1155:     */       }
 /* 1156:     */     }
-/* 1157:1179 */     ItemStack[] localObject = new ItemStack[paramain.n_()];
+/* 1157:1179 */     ItemStack[] localObject = new ItemStack[paramain.getSize()];
 /* 1158:1180 */     for (int i = 0; i < localObject.length; i++) {
-/* 1159:1181 */       localObject[i] = paramain.a(i);
+/* 1159:1181 */       localObject[i] = paramain.get(i);
 /* 1160:     */     }
 /* 1161:1183 */     return localObject;
 /* 1162:     */   }

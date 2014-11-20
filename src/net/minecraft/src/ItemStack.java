@@ -226,7 +226,7 @@ package net.minecraft.src;
 /* 227:260 */     if (!e()) {
 /* 228:261 */       return;
 /* 229:    */     }
-/* 230:264 */     if (a(paramInt, paramxm.bb()))
+/* 230:264 */     if (a(paramInt, paramxm.getRNG()))
 /* 231:    */     {
 /* 232:265 */       paramxm.b(this);
 /* 233:    */       

@@ -23,7 +23,7 @@ package net.minecraft.src;
 /*  22: 42 */     for (int i = 0; i < 4; i++)
 /*  23:    */     {
 /*  24: 43 */       j = i;
-/*  25: 44 */       a(new ajc(this, paramahb, paramahb.n_() - 1 - i, 8, 8 + i * 18, j));
+/*  25: 44 */       a(new ajc(this, paramahb, paramahb.getSize() - 1 - i, 8, 8 + i * 18, j));
 /*  26:    */     }
 /*  27: 71 */     for (int i = 0; i < 3; i++) {
 /*  28: 72 */       for (j = 0; j < 9; j++) {

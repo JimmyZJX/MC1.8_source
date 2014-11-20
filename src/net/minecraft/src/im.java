@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*  9:   */   
 /* 10:   */   public im() {}
 /* 11:   */   
-/* 12:   */   public im(xk paramxk)
+/* 12:   */   public im(EntityExperienceOrb paramxk)
 /* 13:   */   {
 /* 14:23 */     this.a = paramxk.getID();
 /* 15:24 */     this.b = MathUtils.floor(paramxk.xPos * 32.0D);

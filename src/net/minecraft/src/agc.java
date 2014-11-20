@@ -49,7 +49,7 @@ package net.minecraft.src;
 /*  48:    */         }
 /*  49:343 */         this.i.r().a();
 /*  50:344 */         if (this.i.cl()) {
-/*  51:345 */           this.i.a(this.i.ci(), this.i.bA(), ((this.i.bb().nextFloat() - this.i.bb().nextFloat()) * 0.2F + 1.0F) * 0.8F);
+/*  51:345 */           this.i.a(this.i.ci(), this.i.bA(), ((this.i.getRNG().nextFloat() - this.i.getRNG().nextFloat()) * 0.2F + 1.0F) * 0.8F);
 /*  52:    */         }
 /*  53:    */       }
 /*  54:    */       else

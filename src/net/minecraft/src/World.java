@@ -44,7 +44,7 @@ import net.minecraft.server.MinecraftServer;
 /*   41:     */   protected WorldInfo worldInfo;
 /*   42:     */   protected boolean y;
 /*   43:     */   protected brn z;
-/*   44:     */   protected abl A;
+/*   44:     */   protected VillageManager villageManager;
 /*   45:     */   public final Profiler profiler;
 /*   46: 115 */   private final Calendar J = Calendar.getInstance();
 /*   47: 116 */   protected bsd C = new bsd();
@@ -764,12 +764,12 @@ import net.minecraft.server.MinecraftServer;
 /*  761:     */     }
 /*  762:     */   }
 /*  763:     */   
-/*  764:     */   public void a(ew paramew, double paramDouble1, double paramDouble2, double paramDouble3, double paramDouble4, double paramDouble5, double paramDouble6, int... paramVarArgs)
+/*  764:     */   public void a(EnumParticleEffect paramew, double paramDouble1, double paramDouble2, double paramDouble3, double paramDouble4, double paramDouble5, double paramDouble6, int... paramVarArgs)
 /*  765:     */   {
 /*  766: 841 */     a(paramew.c(), paramew.e(), paramDouble1, paramDouble2, paramDouble3, paramDouble4, paramDouble5, paramDouble6, paramVarArgs);
 /*  767:     */   }
 /*  768:     */   
-/*  769:     */   public void a(ew paramew, boolean paramBoolean, double paramDouble1, double paramDouble2, double paramDouble3, double paramDouble4, double paramDouble5, double paramDouble6, int... paramVarArgs)
+/*  769:     */   public void a(EnumParticleEffect paramew, boolean paramBoolean, double paramDouble1, double paramDouble2, double paramDouble3, double paramDouble4, double paramDouble5, double paramDouble6, int... paramVarArgs)
 /*  770:     */   {
 /*  771: 845 */     a(paramew.c(), paramew.e() | paramBoolean, paramDouble1, paramDouble2, paramDouble3, paramDouble4, paramDouble5, paramDouble6, paramVarArgs);
 /*  772:     */   }
@@ -2279,7 +2279,7 @@ import net.minecraft.server.MinecraftServer;
 /* 2276:2268 */     return localArrayList;
 /* 2277:     */   }
 /* 2278:     */   
-/* 2279:     */   public <E extends Entity> E a(Class<E> paramClass, AABB parambrt, Entity paramwv)
+/* 2279:     */   public <E extends Entity> E getNearestEntity(Class<E> paramClass, AABB parambrt, Entity paramwv)
 /* 2280:     */   {
 /* 2281:2273 */     List<E> localList = a(paramClass, parambrt);
 /* 2282:2274 */     E localObject = null;
@@ -2585,7 +2585,7 @@ import net.minecraft.server.MinecraftServer;
 /* 2582:2614 */     return true;
 /* 2583:     */   }
 /* 2584:     */   
-/* 2585:     */   public void a(Entity paramwv, byte paramByte) {}
+/* 2585:     */   public void sendSignal(Entity paramwv, byte paramByte) {}
 /* 2586:     */   
 /* 2587:     */   public IChunkProvider N()
 /* 2588:     */   {
@@ -2877,9 +2877,9 @@ import net.minecraft.server.MinecraftServer;
 /* 2874:2874 */     return this.y;
 /* 2875:     */   }
 /* 2876:     */   
-/* 2877:     */   public abl ae()
+/* 2877:     */   public VillageManager getVillageManager()
 /* 2878:     */   {
-/* 2879:2878 */     return this.A;
+/* 2879:2878 */     return this.villageManager;
 /* 2880:     */   }
 /* 2881:     */   
 /* 2882:     */   public bfb af()

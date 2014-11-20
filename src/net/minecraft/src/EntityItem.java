@@ -74,9 +74,9 @@ package net.minecraft.src;
 /*  74: 92 */       if (this.world.getBlock(new BlockPosition(this)).getProto().getMaterial() == Material.lava)
 /*  75:    */       {
 /*  76: 93 */         this.yVelocity = 0.2000000029802322D;
-/*  77: 94 */         this.xVelocity = ((this.random.nextFloat() - this.random.nextFloat()) * 0.2F);
-/*  78: 95 */         this.zVelocity = ((this.random.nextFloat() - this.random.nextFloat()) * 0.2F);
-/*  79: 96 */         a("random.fizz", 0.4F, 2.0F + this.random.nextFloat() * 0.4F);
+/*  77: 94 */         this.xVelocity = ((this.rng.nextFloat() - this.rng.nextFloat()) * 0.2F);
+/*  78: 95 */         this.zVelocity = ((this.rng.nextFloat() - this.rng.nextFloat()) * 0.2F);
+/*  79: 96 */         a("random.fizz", 0.4F, 2.0F + this.rng.nextFloat() * 0.4F);
 /*  80:    */       }
 /*  81: 99 */       if (!this.world.isClient) {
 /*  82:100 */         w();
@@ -264,7 +264,7 @@ package net.minecraft.src;
 /* 264:    */         }
 /* 265:    */       }
 /* 266:286 */       if (!R()) {
-/* 267:287 */         this.world.a(player, "random.pop", 0.2F, ((this.random.nextFloat() - this.random.nextFloat()) * 0.7F + 1.0F) * 2.0F);
+/* 267:287 */         this.world.a(player, "random.pop", 0.2F, ((this.rng.nextFloat() - this.rng.nextFloat()) * 0.7F + 1.0F) * 2.0F);
 /* 268:    */       }
 /* 269:289 */       player.a(this, i);
 /* 270:290 */       if (stack.stackSize <= 0) {

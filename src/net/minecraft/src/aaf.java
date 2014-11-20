@@ -18,7 +18,7 @@ package net.minecraft.src;
 /* 17:   */   
 /* 18:   */   public boolean a()
 /* 19:   */   {
-/* 20:22 */     if (this.a.l() >= 0) {
+/* 20:22 */     if (this.a.getAge() >= 0) {
 /* 21:23 */       return false;
 /* 22:   */     }
 /* 23:25 */     if (!this.a.world.w()) {
@@ -45,7 +45,7 @@ package net.minecraft.src;
 /* 44:   */   
 /* 45:   */   public void c()
 /* 46:   */   {
-/* 47:50 */     this.c = this.a.bb().nextInt(320);
+/* 47:50 */     this.c = this.a.getRNG().nextInt(320);
 /* 48:51 */     this.d = false;
 /* 49:52 */     this.b.s().n();
 /* 50:   */   }

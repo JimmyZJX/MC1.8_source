@@ -21,7 +21,7 @@ package net.minecraft.src;
 /* 20:27 */       parambru.d.a(DamageSource.a(this, localxm), 0.0F);
 /* 21:   */     }
 /* 22:30 */     for (int i = 0; i < 32; i++) {
-/* 23:31 */       this.world.a(ew.y, this.xPos, this.yPos + this.random.nextDouble() * 2.0D, this.zPos, this.random.nextGaussian(), 0.0D, this.random.nextGaussian(), new int[0]);
+/* 23:31 */       this.world.a(EnumParticleEffect.y, this.xPos, this.yPos + this.rng.nextDouble() * 2.0D, this.zPos, this.rng.nextGaussian(), 0.0D, this.rng.nextGaussian(), new int[0]);
 /* 24:   */     }
 /* 25:34 */     if (!this.world.isClient)
 /* 26:   */     {
@@ -30,7 +30,7 @@ package net.minecraft.src;
 /* 29:36 */         qw localqw = (qw)localxm;
 /* 30:38 */         if ((localqw.a.a().g()) && (localqw.world == this.world) && (!localqw.bI()))
 /* 31:   */         {
-/* 32:39 */           if ((this.random.nextFloat() < 0.05F) && (this.world.getGameRules().getBoolean("doMobSpawning")))
+/* 32:39 */           if ((this.rng.nextFloat() < 0.05F) && (this.world.getGameRules().getBoolean("doMobSpawning")))
 /* 33:   */           {
 /* 34:40 */             EntityEndermite endermite = new EntityEndermite(this.world);
 /* 35:41 */             endermite.a(true);

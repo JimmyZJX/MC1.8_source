@@ -71,8 +71,8 @@ package net.minecraft.src;
 /*  72: 65 */       double d1 = localdt.getX() + a().rng.nextFloat();
 /*  73: 66 */       double d2 = localdt.getY() + a().rng.nextFloat();
 /*  74: 67 */       d3 = localdt.getZ() + a().rng.nextFloat();
-/*  75: 68 */       a().a(ew.l, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
-/*  76: 69 */       a().a(ew.A, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
+/*  75: 68 */       a().a(EnumParticleEffect.l, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
+/*  76: 69 */       a().a(EnumParticleEffect.A, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
 /*  77: 71 */       if (this.a > 0) {
 /*  78: 72 */         this.a -= 1;
 /*  79:    */       }

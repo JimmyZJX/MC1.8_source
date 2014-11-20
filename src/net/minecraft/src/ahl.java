@@ -57,9 +57,9 @@ package net.minecraft.src;
 /*  57:    */     
 /*  58: 71 */     this.xVelocity = (this.yVelocity = this.zVelocity = 0.0D);
 /*  59:    */     
-/*  60: 73 */     paramDouble1 += this.random.nextGaussian() * 0.4D;
-/*  61: 74 */     paramDouble2 += this.random.nextGaussian() * 0.4D;
-/*  62: 75 */     paramDouble3 += this.random.nextGaussian() * 0.4D;
+/*  60: 73 */     paramDouble1 += this.rng.nextGaussian() * 0.4D;
+/*  61: 74 */     paramDouble2 += this.rng.nextGaussian() * 0.4D;
+/*  62: 75 */     paramDouble3 += this.rng.nextGaussian() * 0.4D;
 /*  63: 76 */     double d1 = MathUtils.a(paramDouble1 * paramDouble1 + paramDouble2 * paramDouble2 + paramDouble3 * paramDouble3);
 /*  64: 77 */     this.b = (paramDouble1 / d1 * 0.1D);
 /*  65: 78 */     this.c = (paramDouble2 / d1 * 0.1D);
@@ -87,9 +87,9 @@ package net.minecraft.src;
 /*  87:    */       }
 /*  88:100 */       this.i = false;
 /*  89:    */       
-/*  90:102 */       this.xVelocity *= this.random.nextFloat() * 0.2F;
-/*  91:103 */       this.yVelocity *= this.random.nextFloat() * 0.2F;
-/*  92:104 */       this.zVelocity *= this.random.nextFloat() * 0.2F;
+/*  90:102 */       this.xVelocity *= this.rng.nextFloat() * 0.2F;
+/*  91:103 */       this.yVelocity *= this.rng.nextFloat() * 0.2F;
+/*  92:104 */       this.zVelocity *= this.rng.nextFloat() * 0.2F;
 /*  93:105 */       this.ap = 0;
 /*  94:106 */       this.aq = 0;
 /*  95:    */     }
@@ -162,7 +162,7 @@ package net.minecraft.src;
 /* 162:177 */       for (int k = 0; k < 4; k++)
 /* 163:    */       {
 /* 164:178 */         float f4 = 0.25F;
-/* 165:179 */         this.world.a(ew.e, this.xPos - this.xVelocity * f4, this.yPos - this.yVelocity * f4, this.zPos - this.zVelocity * f4, this.xVelocity, this.yVelocity, this.zVelocity, new int[0]);
+/* 165:179 */         this.world.a(EnumParticleEffect.e, this.xPos - this.xVelocity * f4, this.yPos - this.yVelocity * f4, this.zPos - this.zVelocity * f4, this.xVelocity, this.yVelocity, this.zVelocity, new int[0]);
 /* 166:    */       }
 /* 167:181 */       f2 = 0.8F;
 /* 168:    */     }
@@ -173,7 +173,7 @@ package net.minecraft.src;
 /* 173:188 */     this.yVelocity *= f2;
 /* 174:189 */     this.zVelocity *= f2;
 /* 175:    */     
-/* 176:191 */     this.world.a(ew.l, this.xPos, this.yPos + 0.5D, this.zPos, 0.0D, 0.0D, 0.0D, new int[0]);
+/* 176:191 */     this.world.a(EnumParticleEffect.l, this.xPos, this.yPos + 0.5D, this.zPos, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 177:    */     
 /* 178:193 */     b(this.xPos, this.yPos, this.zPos);
 /* 179:    */   }

@@ -14,7 +14,7 @@ package net.minecraft.src;
 /* 13:24 */     a(2.0F, 2.0F);
 /* 14:25 */     this.b = 5;
 /* 15:   */     
-/* 16:27 */     this.a = this.random.nextInt(100000);
+/* 16:27 */     this.a = this.rng.nextInt(100000);
 /* 17:   */   }
 /* 18:   */   
 /* 19:   */   public ada(World paramaqu, double paramDouble1, double paramDouble2, double paramDouble3)

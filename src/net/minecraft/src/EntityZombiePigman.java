@@ -60,7 +60,7 @@ package net.minecraft.src;
 /*  61:    */     }
 /*  62: 78 */     if ((this.bm > 0) && 
 /*  63: 79 */       (--this.bm == 0)) {
-/*  64: 80 */       a("mob.zombiepig.zpigangry", bA() * 2.0F, ((this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F) * 1.8F);
+/*  64: 80 */       a("mob.zombiepig.zpigangry", bA() * 2.0F, ((this.rng.nextFloat() - this.rng.nextFloat()) * 0.2F + 1.0F) * 1.8F);
 /*  65:    */     }
 /*  66: 84 */     if ((this.anger > 0) && 
 /*  67: 85 */       (this.bn != null) && (bc() == null))
@@ -127,8 +127,8 @@ package net.minecraft.src;
 /* 128:    */   
 /* 129:    */   private void enrage(Entity paramwv)
 /* 130:    */   {
-/* 131:147 */     this.anger = (400 + this.random.nextInt(400));
-/* 132:148 */     this.bm = this.random.nextInt(40);
+/* 131:147 */     this.anger = (400 + this.rng.nextInt(400));
+/* 132:148 */     this.bm = this.rng.nextInt(40);
 /* 133:149 */     if ((paramwv instanceof EntityLiving)) {
 /* 134:150 */       b((EntityLiving)paramwv);
 /* 135:    */     }
@@ -156,17 +156,17 @@ package net.minecraft.src;
 /* 157:    */   
 /* 158:    */   protected void b(boolean paramBoolean, int paramInt)
 /* 159:    */   {
-/* 160:175 */     int i = this.random.nextInt(2 + paramInt);
+/* 160:175 */     int i = this.rng.nextInt(2 + paramInt);
 /* 161:176 */     for (int j = 0; j < i; j++) {
 /* 162:177 */       a(ItemList.bt, 1);
 /* 163:    */     }
-/* 164:179 */     i = this.random.nextInt(2 + paramInt);
+/* 164:179 */     i = this.rng.nextInt(2 + paramInt);
 /* 165:180 */     for (j = 0; j < i; j++) {
 /* 166:181 */       a(ItemList.goldNugget, 1);
 /* 167:    */     }
 /* 168:    */   }
 /* 169:    */   
-/* 170:    */   public boolean a(EntityPlayer paramahd)
+/* 170:    */   public boolean onRightClick(EntityPlayer paramahd)
 /* 171:    */   {
 /* 172:187 */     return false;
 /* 173:    */   }

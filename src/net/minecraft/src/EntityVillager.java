@@ -8,19 +8,19 @@ package net.minecraft.src;
 /*    9:     */   private int bl;
 /*   10:     */   private boolean bm;
 /*   11:     */   private boolean bn;
-/*   12:     */   abi bk;
+/*   12:     */   Village bk;
 /*   13:     */   private EntityPlayer bo;
-/*   14:     */   private aqd bp;
+/*   14:     */   private aqd offers;
 /*   15:     */   private int bq;
 /*   16:     */   private boolean br;
-/*   17:     */   private boolean bs;
-/*   18:     */   private int bt;
+/*   17:     */   private boolean willing;
+/*   18:     */   private int riches;
 /*   19:     */   private String bu;
-/*   20:     */   private int bv;
-/*   21:     */   private int bw;
+/*   20:     */   private int career;
+/*   21:     */   private int careerLevel;
 /*   22:     */   private boolean bx;
 /*   23:     */   private boolean by;
-/*   24:  83 */   private wa bz = new wa("Items", false, 8);
+/*   24:  83 */   private wa inventory = new wa("Items", false, 8);
 /*   25:     */   
 /*   26:     */   public EntityVillager(World paramaqu)
 /*   27:     */   {
@@ -30,7 +30,7 @@ package net.minecraft.src;
 /*   31:     */   public EntityVillager(World paramaqu, int paramInt)
 /*   32:     */   {
 /*   33:  93 */     super(paramaqu);
-/*   34:  94 */     r(paramInt);
+/*   34:  94 */     setProfession(paramInt);
 /*   35:  95 */     a(0.6F, 1.8F);
 /*   36:     */     
 /*   37:  97 */     ((aay)s()).b(true);
@@ -49,7 +49,7 @@ package net.minecraft.src;
 /*   50: 110 */     this.i.a(3, new aaa(this));
 /*   51: 111 */     this.i.a(4, new zt(this, true));
 /*   52: 112 */     this.i.a(5, new zo(this, 0.6D));
-/*   53: 113 */     this.i.a(6, new zj(this));
+/*   53: 113 */     this.i.a(6, new VillagerProposal(this));
 /*   54: 114 */     this.i.a(7, new aaf(this));
 /*   55: 115 */     this.i.a(9, new zf(this, EntityPlayer.class, 3.0F, 1.0F));
 /*   56: 116 */     this.i.a(9, new aai(this));
@@ -67,14 +67,14 @@ package net.minecraft.src;
 /*   68: 130 */     this.by = true;
 /*   69: 132 */     if (i_()) {
 /*   70: 133 */       this.i.a(8, new zv(this, 0.32D));
-/*   71: 134 */     } else if (cj() == 0) {
+/*   71: 134 */     } else if (getProfession() == 0) {
 /*   72: 135 */       this.i.a(6, new ze(this, 0.6D));
 /*   73:     */     }
 /*   74:     */   }
 /*   75:     */   
 /*   76:     */   protected void n()
 /*   77:     */   {
-/*   78: 141 */     if (cj() == 0) {
+/*   78: 141 */     if (getProfession() == 0) {
 /*   79: 142 */       this.i.a(8, new ze(this, 0.6D));
 /*   80:     */     }
 /*   81: 145 */     super.n();
@@ -90,22 +90,22 @@ package net.minecraft.src;
 /*   91:     */   protected void E()
 /*   92:     */   {
 /*   93:     */     
-/*   94:     */     Object localObject2;
+/*   94:     */     
 /*   95: 157 */     if (--this.bl <= 0)
 /*   96:     */     {
-/*   97: 158 */       BlockPosition localObject1 = new BlockPosition(this);
-/*   98: 159 */       this.world.ae().a((BlockPosition)localObject1);
-/*   99: 160 */       this.bl = (70 + this.random.nextInt(50));
+/*   97: 158 */       BlockPosition pos = new BlockPosition(this);
+/*   98: 159 */       this.world.getVillageManager().a((BlockPosition)pos);
+/*   99: 160 */       this.bl = (70 + this.rng.nextInt(50));
 /*  100:     */       
-/*  101: 162 */       this.bk = this.world.ae().a((BlockPosition)localObject1, 32);
+/*  101: 162 */       this.bk = this.world.getVillageManager().getNearestVillage(pos, 32);
 /*  102: 163 */       if (this.bk == null)
 /*  103:     */       {
 /*  104: 164 */         ch();
 /*  105:     */       }
 /*  106:     */       else
 /*  107:     */       {
-/*  108: 166 */         localObject2 = this.bk.a();
-/*  109: 167 */         a((BlockPosition)localObject2, (int)(this.bk.b() * 1.0F));
+/*  108: 166 */         BlockPosition pos1 = this.bk.a();
+/*  109: 167 */         a(pos1, (int)(this.bk.b() * 1.0F));
 /*  110: 169 */         if (this.bx)
 /*  111:     */         {
 /*  112: 170 */           this.bx = false;
@@ -120,18 +120,18 @@ package net.minecraft.src;
 /*  121:     */       {
 /*  122: 178 */         if (this.br)
 /*  123:     */         {
-/*  124: 180 */           for (Iterator<aqc> localObject1 = this.bp.iterator(); localObject1.hasNext();)
+/*  124: 180 */           for (Iterator<TradeOffer> it = this.offers.iterator(); it.hasNext();)
 /*  125:     */           {
-/*  126: 180 */             localObject2 = localObject1.next();
-/*  127: 181 */             if (((aqc)localObject2).h()) {
-/*  128: 182 */               ((aqc)localObject2).a(this.random.nextInt(6) + this.random.nextInt(6) + 2);
+/*  126: 180 */             TradeOffer entry = it.next();
+/*  127: 181 */             if (entry.isBlocked()) {
+/*  128: 182 */               entry.extendUses(this.rng.nextInt(6) + this.rng.nextInt(6) + 2);
 /*  129:     */             }
 /*  130:     */           }
 /*  131: 186 */           cu();
 /*  132: 187 */           this.br = false;
 /*  133: 189 */           if ((this.bk != null) && (this.bu != null))
 /*  134:     */           {
-/*  135: 190 */             this.world.a(this, (byte)14);
+/*  135: 190 */             this.world.sendSignal(this, (byte)14);
 /*  136: 191 */             this.bk.a(this.bu, 1);
 /*  137:     */           }
 /*  138:     */         }
@@ -141,21 +141,21 @@ package net.minecraft.src;
 /*  142: 198 */     super.E();
 /*  143:     */   }
 /*  144:     */   
-/*  145:     */   public boolean a(EntityPlayer paramahd)
+/*  145:     */   public boolean onRightClick(EntityPlayer player)
 /*  146:     */   {
-/*  147: 204 */     ItemStack localamj = paramahd.bg.h();
-/*  148: 205 */     int i = (localamj != null) && (localamj.getItem() == ItemList.bJ) ? 1 : 0;
-/*  149: 207 */     if ((i == 0) && (ai()) && (!cm()) && (!i_()))
+/*  147: 204 */     ItemStack stack = player.bg.h();
+/*  148: 205 */     int usingEgg = (stack != null) && (stack.getItem() == ItemList.spawnEgg) ? 1 : 0;
+/*  149: 207 */     if ((usingEgg == 0) && (ai()) && (!cm()) && (!i_()))
 /*  150:     */     {
-/*  151: 208 */       if ((!this.world.isClient) && ((this.bp == null) || (this.bp.size() > 0)))
+/*  151: 208 */       if ((!this.world.isClient) && ((this.offers == null) || (this.offers.size() > 0)))
 /*  152:     */       {
-/*  153: 210 */         a_(paramahd);
-/*  154: 211 */         paramahd.a((aqb)this);
+/*  153: 210 */         a_(player);
+/*  154: 211 */         player.a((aqb)this);
 /*  155:     */       }
-/*  156: 213 */       paramahd.b(StatList.F);
+/*  156: 213 */       player.b(StatList.talkedToVillager);
 /*  157: 214 */       return true;
 /*  158:     */     }
-/*  159: 216 */     return super.a(paramahd);
+/*  159: 216 */     return super.onRightClick(player);
 /*  160:     */   }
 /*  161:     */   
 /*  162:     */   protected void h()
@@ -164,47 +164,47 @@ package net.minecraft.src;
 /*  165: 222 */     this.ac.a(16, Integer.valueOf(0));
 /*  166:     */   }
 /*  167:     */   
-/*  168:     */   public void writeEntityToNBT(NBTTagCompound paramfn)
+/*  168:     */   public void writeEntityToNBT(NBTTagCompound tag)
 /*  169:     */   {
-/*  170: 227 */     super.writeEntityToNBT(paramfn);
-/*  171: 228 */     paramfn.setInt("Profession", cj());
-/*  172: 229 */     paramfn.setInt("Riches", this.bt);
-/*  173: 230 */     paramfn.setInt("Career", this.bv);
-/*  174: 231 */     paramfn.setInt("CareerLevel", this.bw);
-/*  175: 232 */     paramfn.setBoolean("Willing", this.bs);
-/*  176: 233 */     if (this.bp != null) {
-/*  177: 234 */       paramfn.setNBT("Offers", this.bp.a());
+/*  170: 227 */     super.writeEntityToNBT(tag);
+/*  171: 228 */     tag.setInt("Profession", getProfession());
+/*  172: 229 */     tag.setInt("Riches", this.riches);
+/*  173: 230 */     tag.setInt("Career", this.career);
+/*  174: 231 */     tag.setInt("CareerLevel", this.careerLevel);
+/*  175: 232 */     tag.setBoolean("Willing", this.willing);
+/*  176: 233 */     if (this.offers != null) {
+/*  177: 234 */       tag.setNBT("Offers", this.offers.a());
 /*  178:     */     }
 /*  179: 236 */     fv localfv = new fv();
-/*  180: 237 */     for (int i = 0; i < this.bz.n_(); i++)
+/*  180: 237 */     for (int i = 0; i < this.inventory.getSize(); i++)
 /*  181:     */     {
-/*  182: 238 */       ItemStack localamj = this.bz.a(i);
+/*  182: 238 */       ItemStack localamj = this.inventory.get(i);
 /*  183: 239 */       if (localamj != null) {
 /*  184: 240 */         localfv.a(localamj.writeToNBT(new NBTTagCompound()));
 /*  185:     */       }
 /*  186:     */     }
-/*  187: 243 */     paramfn.setNBT("Inventory", localfv);
+/*  187: 243 */     tag.setNBT("Inventory", localfv);
 /*  188:     */   }
 /*  189:     */   
-/*  190:     */   public void readEntityFromNBT(NBTTagCompound paramfn)
+/*  190:     */   public void readEntityFromNBT(NBTTagCompound tag)
 /*  191:     */   {
-/*  192: 248 */     super.readEntityFromNBT(paramfn);
-/*  193: 249 */     r(paramfn.getInteger("Profession"));
-/*  194: 250 */     this.bt = paramfn.getInteger("Riches");
-/*  195: 251 */     this.bv = paramfn.getInteger("Career");
-/*  196: 252 */     this.bw = paramfn.getInteger("CareerLevel");
-/*  197: 253 */     this.bs = paramfn.getBoolean("Willing");
-/*  198: 254 */     if (paramfn.hasKey("Offers", 10))
+/*  192: 248 */     super.readEntityFromNBT(tag);
+/*  193: 249 */     setProfession(tag.getInteger("Profession"));
+/*  194: 250 */     this.riches = tag.getInteger("Riches");
+/*  195: 251 */     this.career = tag.getInteger("Career");
+/*  196: 252 */     this.careerLevel = tag.getInteger("CareerLevel");
+/*  197: 253 */     this.willing = tag.getBoolean("Willing");
+/*  198: 254 */     if (tag.hasKey("Offers", 10))
 /*  199:     */     {
-/*  200: 255 */       NBTTagCompound localObject = paramfn.getCompoundTag("Offers");
-/*  201: 256 */       this.bp = new aqd((NBTTagCompound)localObject);
+/*  200: 255 */       NBTTagCompound localObject = tag.getCompoundTag("Offers");
+/*  201: 256 */       this.offers = new aqd((NBTTagCompound)localObject);
 /*  202:     */     }
-/*  203: 258 */     Object localObject = paramfn.c("Inventory", 10);
-/*  204: 259 */     for (int i = 0; i < ((fv)localObject).c(); i++)
+/*  203: 258 */     fv localObject = tag.c("Inventory", 10);
+/*  204: 259 */     for (int i = 0; i < localObject.c(); i++)
 /*  205:     */     {
-/*  206: 260 */       ItemStack localamj = ItemStack.loadItemStackFromNBT(((fv)localObject).b(i));
-/*  207: 261 */       if (localamj != null) {
-/*  208: 262 */         this.bz.a(localamj);
+/*  206: 260 */       ItemStack stack = ItemStack.loadItemStackFromNBT(localObject.b(i));
+/*  207: 261 */       if (stack != null) {
+/*  208: 262 */         this.inventory.add(stack);
 /*  209:     */       }
 /*  210:     */     }
 /*  211: 266 */     j(true);
@@ -234,12 +234,12 @@ package net.minecraft.src;
 /*  235: 290 */     return "mob.villager.death";
 /*  236:     */   }
 /*  237:     */   
-/*  238:     */   public void r(int paramInt)
+/*  238:     */   public void setProfession(int paramInt)
 /*  239:     */   {
 /*  240: 294 */     this.ac.b(16, Integer.valueOf(paramInt));
 /*  241:     */   }
 /*  242:     */   
-/*  243:     */   public int cj()
+/*  243:     */   public int getProfession()
 /*  244:     */   {
 /*  245: 298 */     return Math.max(this.ac.c(16) % 5, 0);
 /*  246:     */   }
@@ -278,7 +278,7 @@ package net.minecraft.src;
 /*  279:     */         }
 /*  280: 328 */         this.bk.a(paramxm.getName(), i);
 /*  281: 329 */         if (ai()) {
-/*  282: 330 */           this.world.a(this, (byte)13);
+/*  282: 330 */           this.world.sendSignal(this, (byte)13);
 /*  283:     */         }
 /*  284:     */       }
 /*  285:     */     }
@@ -323,54 +323,54 @@ package net.minecraft.src;
 /*  324: 370 */     return this.bo != null;
 /*  325:     */   }
 /*  326:     */   
-/*  327:     */   public boolean n(boolean paramBoolean)
+/*  327:     */   public boolean testWilling(boolean paramBoolean)
 /*  328:     */   {
-/*  329: 374 */     if ((!this.bs) && (paramBoolean) && (cp()))
+/*  329: 374 */     if ((!this.willing) && (paramBoolean) && (cp()))
 /*  330:     */     {
-/*  331: 375 */       int i = 0;
-/*  332: 377 */       for (int j = 0; j < this.bz.n_(); j++)
+/*  331: 375 */       int flag = 0;
+/*  332: 377 */       for (int j = 0; j < this.inventory.getSize(); j++)
 /*  333:     */       {
-/*  334: 378 */         ItemStack localamj = this.bz.a(j);
-/*  335: 379 */         if (localamj != null) {
-/*  336: 380 */           if ((localamj.getItem() == ItemList.P) && (localamj.stackSize >= 3))
+/*  334: 378 */         ItemStack stack = this.inventory.get(j);
+/*  335: 379 */         if (stack != null) {
+/*  336: 380 */           if ((stack.getItem() == ItemList.bread) && (stack.stackSize >= 3))
 /*  337:     */           {
-/*  338: 381 */             i = 1;
-/*  339: 382 */             this.bz.a(j, 3);
+/*  338: 381 */             flag = 1;
+/*  339: 382 */             this.inventory.removeItems(j, 3);
 /*  340:     */           }
-/*  341: 383 */           else if (((localamj.getItem() == ItemList.bS) || (localamj.getItem() == ItemList.carrot)) && (localamj.stackSize >= 12))
+/*  341: 383 */           else if (((stack.getItem() == ItemList.potato) || (stack.getItem() == ItemList.carrot)) && (stack.stackSize >= 12))
 /*  342:     */           {
-/*  343: 384 */             i = 1;
-/*  344: 385 */             this.bz.a(j, 12);
+/*  343: 384 */             flag = 1;
+/*  344: 385 */             this.inventory.removeItems(j, 12);
 /*  345:     */           }
 /*  346:     */         }
-/*  347: 388 */         if (i != 0)
+/*  347: 388 */         if (flag != 0)
 /*  348:     */         {
-/*  349: 389 */           this.world.a(this, (byte)18);
-/*  350: 390 */           this.bs = true;
+/*  349: 389 */           this.world.sendSignal(this, (byte)18);
+/*  350: 390 */           this.willing = true;
 /*  351: 391 */           break;
 /*  352:     */         }
 /*  353:     */       }
 /*  354:     */     }
-/*  355: 396 */     return this.bs;
+/*  355: 396 */     return this.willing;
 /*  356:     */   }
 /*  357:     */   
-/*  358:     */   public void o(boolean paramBoolean)
+/*  358:     */   public void setWilling(boolean willing)
 /*  359:     */   {
-/*  360: 400 */     this.bs = paramBoolean;
+/*  360: 400 */     this.willing = willing;
 /*  361:     */   }
 /*  362:     */   
-/*  363:     */   public void a(aqc paramaqc)
+/*  363:     */   public void a(TradeOffer paramaqc)
 /*  364:     */   {
-/*  365: 405 */     paramaqc.g();
+/*  365: 405 */     paramaqc.onUse();
 /*  366: 406 */     this.a_ = (-w());
 /*  367: 407 */     a("mob.villager.yes", bA(), bB());
 /*  368:     */     
-/*  369: 409 */     int i = 3 + this.random.nextInt(4);
-/*  370: 412 */     if ((paramaqc.e() == 1) || (this.random.nextInt(5) == 0))
+/*  369: 409 */     int i = 3 + this.rng.nextInt(4);
+/*  370: 412 */     if ((paramaqc.getUses() == 1) || (this.rng.nextInt(5) == 0))
 /*  371:     */     {
 /*  372: 413 */       this.bq = 40;
 /*  373: 414 */       this.br = true;
-/*  374: 415 */       this.bs = true;
+/*  374: 415 */       this.willing = true;
 /*  375: 416 */       if (this.bo != null) {
 /*  376: 417 */         this.bu = this.bo.getName();
 /*  377:     */       } else {
@@ -378,11 +378,11 @@ package net.minecraft.src;
 /*  379:     */       }
 /*  380: 421 */       i += 5;
 /*  381:     */     }
-/*  382: 423 */     if (paramaqc.a().getItem() == ItemList.bO) {
-/*  383: 424 */       this.bt += paramaqc.a().stackSize;
+/*  382: 423 */     if (paramaqc.getItemBought().getItem() == ItemList.emerald) {
+/*  383: 424 */       this.riches += paramaqc.getItemBought().stackSize;
 /*  384:     */     }
-/*  385: 427 */     if (paramaqc.j()) {
-/*  386: 428 */       this.world.spawnEntity(new xk(this.world, this.xPos, this.yPos + 0.5D, this.zPos, i));
+/*  385: 427 */     if (paramaqc.getRewardExp()) {
+/*  386: 428 */       this.world.spawnEntity(new EntityExperienceOrb(this.world, this.xPos, this.yPos + 0.5D, this.zPos, i));
 /*  387:     */     }
 /*  388:     */   }
 /*  389:     */   
@@ -401,36 +401,36 @@ package net.minecraft.src;
 /*  402:     */   
 /*  403:     */   public aqd b_(EntityPlayer paramahd)
 /*  404:     */   {
-/*  405: 446 */     if (this.bp == null) {
+/*  405: 446 */     if (this.offers == null) {
 /*  406: 447 */       cu();
 /*  407:     */     }
-/*  408: 449 */     return this.bp;
+/*  408: 449 */     return this.offers;
 /*  409:     */   }
 /*  410:     */   
 /*  411:     */   private void cu()
 /*  412:     */   {
-/*  413: 453 */     agw[][][] arrayOfagw = bA[cj()];
-/*  414: 455 */     if ((this.bv == 0) || (this.bw == 0))
+/*  413: 453 */     agw[][][] arrayOfagw = bA[getProfession()];
+/*  414: 455 */     if ((this.career == 0) || (this.careerLevel == 0))
 /*  415:     */     {
-/*  416: 457 */       this.bv = (this.random.nextInt(arrayOfagw.length) + 1);
-/*  417: 458 */       this.bw = 1;
+/*  416: 457 */       this.career = (this.rng.nextInt(arrayOfagw.length) + 1);
+/*  417: 458 */       this.careerLevel = 1;
 /*  418:     */     }
 /*  419:     */     else
 /*  420:     */     {
-/*  421: 460 */       this.bw += 1;
+/*  421: 460 */       this.careerLevel += 1;
 /*  422:     */     }
-/*  423: 463 */     if (this.bp == null) {
-/*  424: 464 */       this.bp = new aqd();
+/*  423: 463 */     if (this.offers == null) {
+/*  424: 464 */       this.offers = new aqd();
 /*  425:     */     }
-/*  426: 467 */     int i = this.bv - 1;
-/*  427: 468 */     int j = this.bw - 1;
+/*  426: 467 */     int i = this.career - 1;
+/*  427: 468 */     int j = this.careerLevel - 1;
 /*  428:     */     
 /*  429: 470 */     agw[][] arrayOfagw1 = arrayOfagw[i];
 /*  430: 471 */     if (j < arrayOfagw1.length)
 /*  431:     */     {
 /*  432: 472 */       agw[] arrayOfagw2 = arrayOfagw1[j];
 /*  433: 473 */       for (agw localagw : arrayOfagw2) {
-/*  434: 474 */         localagw.a(this.bp, this.random);
+/*  434: 474 */         localagw.a(this.offers, this.rng);
 /*  435:     */       }
 /*  436:     */     }
 /*  437:     */   }
@@ -443,20 +443,20 @@ package net.minecraft.src;
 /*  444: 486 */     if ((str1 != null) && (str1.length() > 0)) {
 /*  445: 487 */       return new hy(str1);
 /*  446:     */     }
-/*  447: 490 */     if (this.bp == null) {
+/*  447: 490 */     if (this.offers == null) {
 /*  448: 492 */       cu();
 /*  449:     */     }
 /*  450: 495 */     String str2 = null;
-/*  451: 496 */     switch (cj())
+/*  451: 496 */     switch (getProfession())
 /*  452:     */     {
 /*  453:     */     case 0: 
-/*  454: 498 */       if (this.bv == 1) {
+/*  454: 498 */       if (this.career == 1) {
 /*  455: 499 */         str2 = "farmer";
-/*  456: 500 */       } else if (this.bv == 2) {
+/*  456: 500 */       } else if (this.career == 2) {
 /*  457: 501 */         str2 = "fisherman";
-/*  458: 502 */       } else if (this.bv == 3) {
+/*  458: 502 */       } else if (this.career == 3) {
 /*  459: 503 */         str2 = "shepherd";
-/*  460: 504 */       } else if (this.bv == 4) {
+/*  460: 504 */       } else if (this.career == 4) {
 /*  461: 505 */         str2 = "fletcher";
 /*  462:     */       }
 /*  463:     */       break;
@@ -469,18 +469,18 @@ package net.minecraft.src;
 /*  470:     */       
 /*  471: 516 */       break;
 /*  472:     */     case 3: 
-/*  473: 518 */       if (this.bv == 1) {
+/*  473: 518 */       if (this.career == 1) {
 /*  474: 519 */         str2 = "armor";
-/*  475: 520 */       } else if (this.bv == 2) {
+/*  475: 520 */       } else if (this.career == 2) {
 /*  476: 521 */         str2 = "weapon";
-/*  477: 522 */       } else if (this.bv == 3) {
+/*  477: 522 */       } else if (this.career == 3) {
 /*  478: 523 */         str2 = "tool";
 /*  479:     */       }
 /*  480:     */       break;
 /*  481:     */     case 4: 
-/*  482: 528 */       if (this.bv == 1) {
+/*  482: 528 */       if (this.career == 1) {
 /*  483: 529 */         str2 = "butcher";
-/*  484: 530 */       } else if (this.bv == 2) {
+/*  484: 530 */       } else if (this.career == 2) {
 /*  485: 531 */         str2 = "leather";
 /*  486:     */       }
 /*  487:     */       break;
@@ -504,29 +504,29 @@ package net.minecraft.src;
 /*  505: 553 */     return f;
 /*  506:     */   }
 /*  507:     */   
-/*  508: 557 */   private static final agw[][][][] bA = { { { { new agr(ItemList.O, new agx(18, 22)), new agr(ItemList.bS, new agx(15, 19)), new agr(ItemList.carrot, new agx(15, 19)), new agv(ItemList.P, new agx(-4, -2)) }, { new agr(Item.fromProtoBlock(BlockList.pumpkin), new agx(8, 13)), new agv(ItemList.ca, new agx(-3, -2)) }, { new agr(Item.fromProtoBlock(BlockList.bk), new agx(7, 12)), new agv(ItemList.apple, new agx(-5, -7)) }, { new agv(ItemList.bc, new agx(-6, -10)), new agv(ItemList.aZ, new agx(1, 1)) } }, { { new agr(ItemList.F, new agx(15, 20)), new agr(ItemList.h, new agx(16, 24)), new agu(ItemList.fish, new agx(6, 6), ItemList.aV, new agx(6, 6)) }, { new agt(ItemList.fishingRod, new agx(7, 8)) } }, { { new agr(Item.fromProtoBlock(BlockList.wool), new agx(16, 22)), new agv(ItemList.be, new agx(3, 4)) }, { new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 0), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 1), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 2), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 3), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 4), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 5), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 6), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 7), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 8), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 9), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 10), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 11), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 12), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 13), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 14), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 15), new agx(1, 2)) } }, { { new agr(ItemList.F, new agx(15, 20)), new agv(ItemList.g, new agx(-12, -8)) }, { new agv(ItemList.f, new agx(2, 3)), new agu(Item.fromProtoBlock(BlockList.gravel), new agx(10, 10), ItemList.ak, new agx(6, 10)) } } }, { { { new agr(ItemList.aK, new agx(24, 36)), new ags() }, { new agr(ItemList.book, new agx(8, 10)), new agv(ItemList.aQ, new agx(10, 12)), new agv(Item.fromProtoBlock(BlockList.bookshelf), new agx(3, 4)) }, { new agr(ItemList.bN, new agx(2, 2)), new agv(ItemList.aS, new agx(10, 12)), new agv(Item.fromProtoBlock(BlockList.w), new agx(-5, -3)) }, { new ags() }, { new ags() }, { new agv(ItemList.nameTag, new agx(20, 22)) } } }, { { { new agr(ItemList.bt, new agx(36, 40)), new agr(ItemList.k, new agx(8, 10)) }, { new agv(ItemList.aC, new agx(-4, -1)), new agv(new ItemStack(ItemList.dye, 1, EnumDyeColor.BLUE.b()), new agx(-2, -1)) }, { new agv(ItemList.bH, new agx(7, 11)), new agv(Item.fromProtoBlock(BlockList.glowstone), new agx(-3, -1)) }, { new agv(ItemList.bK, new agx(3, 11)) } } }, { { { new agr(ItemList.h, new agx(16, 24)), new agv(ItemList.Y, new agx(4, 6)) }, { new agr(ItemList.j, new agx(7, 9)), new agv(ItemList.Z, new agx(10, 14)) }, { new agr(ItemList.diamond, new agx(3, 4)), new agt(ItemList.ad, new agx(16, 19)) }, { new agv(ItemList.X, new agx(5, 7)), new agv(ItemList.W, new agx(9, 11)), new agv(ItemList.U, new agx(5, 7)), new agv(ItemList.V, new agx(11, 15)) } }, { { new agr(ItemList.h, new agx(16, 24)), new agv(ItemList.c, new agx(6, 8)) }, { new agr(ItemList.j, new agx(7, 9)), new agt(ItemList.l, new agx(9, 10)) }, { new agr(ItemList.diamond, new agx(3, 4)), new agt(ItemList.u, new agx(12, 15)), new agt(ItemList.x, new agx(9, 12)) } }, { { new agr(ItemList.h, new agx(16, 24)), new agt(ItemList.a, new agx(5, 7)) }, { new agr(ItemList.j, new agx(7, 9)), new agt(ItemList.b, new agx(9, 11)) }, { new agr(ItemList.diamond, new agx(3, 4)), new agt(ItemList.w, new agx(12, 15)) } } }, { { { new agr(ItemList.al, new agx(14, 18)), new agr(ItemList.bk, new agx(14, 18)) }, { new agr(ItemList.h, new agx(16, 24)), new agv(ItemList.am, new agx(-7, -5)), new agv(ItemList.bl, new agx(-8, -6)) } }, { { new agr(ItemList.leather, new agx(9, 12)), new agv(ItemList.S, new agx(2, 4)) }, { new agt(ItemList.R, new agx(7, 12)) }, { new agv(ItemList.saddle, new agx(8, 10)) } } } };
+/*  508: 557 */   private static final agw[][][][] bA = { { { { new agr(ItemList.O, new agx(18, 22)), new agr(ItemList.potato, new agx(15, 19)), new agr(ItemList.carrot, new agx(15, 19)), new agv(ItemList.bread, new agx(-4, -2)) }, { new agr(Item.fromProtoBlock(BlockList.pumpkin), new agx(8, 13)), new agv(ItemList.ca, new agx(-3, -2)) }, { new agr(Item.fromProtoBlock(BlockList.bk), new agx(7, 12)), new agv(ItemList.apple, new agx(-5, -7)) }, { new agv(ItemList.bc, new agx(-6, -10)), new agv(ItemList.aZ, new agx(1, 1)) } }, { { new agr(ItemList.F, new agx(15, 20)), new agr(ItemList.h, new agx(16, 24)), new agu(ItemList.fish, new agx(6, 6), ItemList.aV, new agx(6, 6)) }, { new agt(ItemList.fishingRod, new agx(7, 8)) } }, { { new agr(Item.fromProtoBlock(BlockList.wool), new agx(16, 22)), new agv(ItemList.be, new agx(3, 4)) }, { new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 0), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 1), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 2), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 3), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 4), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 5), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 6), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 7), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 8), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 9), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 10), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 11), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 12), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 13), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 14), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 15), new agx(1, 2)) } }, { { new agr(ItemList.F, new agx(15, 20)), new agv(ItemList.g, new agx(-12, -8)) }, { new agv(ItemList.f, new agx(2, 3)), new agu(Item.fromProtoBlock(BlockList.gravel), new agx(10, 10), ItemList.ak, new agx(6, 10)) } } }, { { { new agr(ItemList.aK, new agx(24, 36)), new ags() }, { new agr(ItemList.book, new agx(8, 10)), new agv(ItemList.aQ, new agx(10, 12)), new agv(Item.fromProtoBlock(BlockList.bookshelf), new agx(3, 4)) }, { new agr(ItemList.bN, new agx(2, 2)), new agv(ItemList.aS, new agx(10, 12)), new agv(Item.fromProtoBlock(BlockList.w), new agx(-5, -3)) }, { new ags() }, { new ags() }, { new agv(ItemList.nameTag, new agx(20, 22)) } } }, { { { new agr(ItemList.bt, new agx(36, 40)), new agr(ItemList.k, new agx(8, 10)) }, { new agv(ItemList.aC, new agx(-4, -1)), new agv(new ItemStack(ItemList.dye, 1, EnumDyeColor.BLUE.b()), new agx(-2, -1)) }, { new agv(ItemList.bH, new agx(7, 11)), new agv(Item.fromProtoBlock(BlockList.glowstone), new agx(-3, -1)) }, { new agv(ItemList.bK, new agx(3, 11)) } } }, { { { new agr(ItemList.h, new agx(16, 24)), new agv(ItemList.Y, new agx(4, 6)) }, { new agr(ItemList.j, new agx(7, 9)), new agv(ItemList.Z, new agx(10, 14)) }, { new agr(ItemList.diamond, new agx(3, 4)), new agt(ItemList.ad, new agx(16, 19)) }, { new agv(ItemList.X, new agx(5, 7)), new agv(ItemList.W, new agx(9, 11)), new agv(ItemList.U, new agx(5, 7)), new agv(ItemList.V, new agx(11, 15)) } }, { { new agr(ItemList.h, new agx(16, 24)), new agv(ItemList.c, new agx(6, 8)) }, { new agr(ItemList.j, new agx(7, 9)), new agt(ItemList.l, new agx(9, 10)) }, { new agr(ItemList.diamond, new agx(3, 4)), new agt(ItemList.u, new agx(12, 15)), new agt(ItemList.x, new agx(9, 12)) } }, { { new agr(ItemList.h, new agx(16, 24)), new agt(ItemList.a, new agx(5, 7)) }, { new agr(ItemList.j, new agx(7, 9)), new agt(ItemList.b, new agx(9, 11)) }, { new agr(ItemList.diamond, new agx(3, 4)), new agt(ItemList.w, new agx(12, 15)) } } }, { { { new agr(ItemList.al, new agx(14, 18)), new agr(ItemList.bk, new agx(14, 18)) }, { new agr(ItemList.h, new agx(16, 24)), new agv(ItemList.am, new agx(-7, -5)), new agv(ItemList.bl, new agx(-8, -6)) } }, { { new agr(ItemList.leather, new agx(9, 12)), new agv(ItemList.S, new agx(2, 4)) }, { new agt(ItemList.R, new agx(7, 12)) }, { new agv(ItemList.saddle, new agx(8, 10)) } } } };
 /*  509:     */   
-/*  510:     */   public void a(byte paramByte)
+/*  510:     */   public void onSignal(byte signal)
 /*  511:     */   {
-/*  512: 911 */     if (paramByte == 12) {
-/*  513: 912 */       a(ew.I);
-/*  514: 913 */     } else if (paramByte == 13) {
-/*  515: 914 */       a(ew.u);
-/*  516: 915 */     } else if (paramByte == 14) {
-/*  517: 916 */       a(ew.VILLAGER_HAPPY);
+/*  512: 911 */     if (signal == 12) {
+/*  513: 912 */       showParticle(EnumParticleEffect.HEART);
+/*  514: 913 */     } else if (signal == 13) {
+/*  515: 914 */       showParticle(EnumParticleEffect.VILLAGER_ANGRY);
+/*  516: 915 */     } else if (signal == 14) {
+/*  517: 916 */       showParticle(EnumParticleEffect.VILLAGER_HAPPY);
 /*  518:     */     } else {
-/*  519: 918 */       super.a(paramByte);
+/*  519: 918 */       super.onSignal(signal);
 /*  520:     */     }
 /*  521:     */   }
 /*  522:     */   
-/*  523:     */   private void a(ew paramew)
+/*  523:     */   private void showParticle(EnumParticleEffect paramew)
 /*  524:     */   {
 /*  525: 923 */     for (int i = 0; i < 5; i++)
 /*  526:     */     {
-/*  527: 924 */       double d1 = this.random.nextGaussian() * 0.02D;
-/*  528: 925 */       double d2 = this.random.nextGaussian() * 0.02D;
-/*  529: 926 */       double d3 = this.random.nextGaussian() * 0.02D;
-/*  530: 927 */       this.world.a(paramew, this.xPos + this.random.nextFloat() * this.J * 2.0F - this.J, this.yPos + 1.0D + this.random.nextFloat() * this.K, this.zPos + this.random.nextFloat() * this.J * 2.0F - this.J, d1, d2, d3, new int[0]);
+/*  527: 924 */       double d1 = this.rng.nextGaussian() * 0.02D;
+/*  528: 925 */       double d2 = this.rng.nextGaussian() * 0.02D;
+/*  529: 926 */       double d3 = this.rng.nextGaussian() * 0.02D;
+/*  530: 927 */       this.world.a(paramew, this.xPos + this.rng.nextFloat() * this.J * 2.0F - this.J, this.yPos + 1.0D + this.rng.nextFloat() * this.K, this.zPos + this.rng.nextFloat() * this.J * 2.0F - this.J, d1, d2, d3, new int[0]);
 /*  531:     */     }
 /*  532:     */   }
 /*  533:     */   
@@ -534,7 +534,7 @@ package net.minecraft.src;
 /*  535:     */   {
 /*  536: 934 */     paramxq = super.beforeSpawn(paramvu, paramxq);
 /*  537:     */     
-/*  538: 936 */     r(this.world.rng.nextInt(5));
+/*  538: 936 */     setProfession(this.world.rng.nextInt(5));
 /*  539:     */     
 /*  540: 938 */     ct();
 /*  541:     */     
@@ -546,11 +546,11 @@ package net.minecraft.src;
 /*  547: 944 */     this.bx = true;
 /*  548:     */   }
 /*  549:     */   
-/*  550:     */   public EntityVillager a(EntityPassiveMob paramws)
+/*  550:     */   public EntityVillager getBaby(EntityPassiveMob paramws)
 /*  551:     */   {
-/*  552: 949 */     EntityVillager localagp = new EntityVillager(this.world);
-/*  553: 950 */     localagp.beforeSpawn(this.world.E(new BlockPosition(localagp)), null);
-/*  554: 951 */     return localagp;
+/*  552: 949 */     EntityVillager baby = new EntityVillager(this.world);
+/*  553: 950 */     baby.beforeSpawn(this.world.E(new BlockPosition(baby)), null);
+/*  554: 951 */     return baby;
 /*  555:     */   }
 /*  556:     */   
 /*  557:     */   public boolean ca()
@@ -558,41 +558,41 @@ package net.minecraft.src;
 /*  559: 956 */     return false;
 /*  560:     */   }
 /*  561:     */   
-/*  562:     */   public void a(ads paramads)
+/*  562:     */   public void onStruck(ads paramads)
 /*  563:     */   {
 /*  564: 961 */     if (this.world.isClient) {
 /*  565: 962 */       return;
 /*  566:     */     }
-/*  567: 965 */     EntityWitch localagi = new EntityWitch(this.world);
-/*  568: 966 */     localagi.setPositionAndAngles(this.xPos, this.yPos, this.zPos, this.yaw, this.pitch);
-/*  569: 967 */     localagi.beforeSpawn(this.world.E(new BlockPosition(localagi)), null);
-/*  570: 968 */     this.world.spawnEntity(localagi);
+/*  567: 965 */     EntityWitch witch = new EntityWitch(this.world);
+/*  568: 966 */     witch.setPositionAndAngles(this.xPos, this.yPos, this.zPos, this.yaw, this.pitch);
+/*  569: 967 */     witch.beforeSpawn(this.world.E(new BlockPosition(witch)), null);
+/*  570: 968 */     this.world.spawnEntity(witch);
 /*  571: 969 */     setDead();
 /*  572:     */   }
 /*  573:     */   
-/*  574:     */   public wa co()
+/*  574:     */   public wa getInventory()
 /*  575:     */   {
-/*  576: 973 */     return this.bz;
+/*  576: 973 */     return this.inventory;
 /*  577:     */   }
 /*  578:     */   
-/*  579:     */   protected void a(EntityItem paramadw)
+/*  579:     */   protected void onPickup(EntityItem entityItem)
 /*  580:     */   {
-/*  581: 978 */     ItemStack localamj1 = paramadw.getItemStack();
-/*  582: 979 */     Item localalq = localamj1.getItem();
+/*  581: 978 */     ItemStack stack = entityItem.getItemStack();
+/*  582: 979 */     Item localalq = stack.getItem();
 /*  583: 981 */     if (a(localalq))
 /*  584:     */     {
-/*  585: 982 */       ItemStack localamj2 = this.bz.a(localamj1);
-/*  586: 983 */       if (localamj2 == null) {
-/*  587: 984 */         paramadw.setDead();
+/*  585: 982 */       ItemStack remainder = this.inventory.add(stack);
+/*  586: 983 */       if (remainder == null) {
+/*  587: 984 */         entityItem.setDead();
 /*  588:     */       } else {
-/*  589: 986 */         localamj1.stackSize = localamj2.stackSize;
+/*  589: 986 */         stack.stackSize = remainder.stackSize;
 /*  590:     */       }
 /*  591:     */     }
 /*  592:     */   }
 /*  593:     */   
 /*  594:     */   private boolean a(Item paramalq)
 /*  595:     */   {
-/*  596: 992 */     return (paramalq == ItemList.P) || (paramalq == ItemList.bS) || (paramalq == ItemList.carrot) || (paramalq == ItemList.O) || (paramalq == ItemList.N);
+/*  596: 992 */     return (paramalq == ItemList.bread) || (paramalq == ItemList.potato) || (paramalq == ItemList.carrot) || (paramalq == ItemList.O) || (paramalq == ItemList.N);
 /*  597:     */   }
 /*  598:     */   
 /*  599:     */   public boolean cp()
@@ -607,7 +607,7 @@ package net.minecraft.src;
 /*  608:     */   
 /*  609:     */   public boolean cr()
 /*  610:     */   {
-/*  611:1004 */     int i = cj() == 0 ? 1 : 0;
+/*  611:1004 */     int i = getProfession() == 0 ? 1 : 0;
 /*  612:1005 */     if (i != 0) {
 /*  613:1006 */       return !s(5);
 /*  614:     */     }
@@ -616,13 +616,13 @@ package net.minecraft.src;
 /*  617:     */   
 /*  618:     */   private boolean s(int paramInt)
 /*  619:     */   {
-/*  620:1012 */     int i = cj() == 0 ? 1 : 0;
-/*  621:1014 */     for (int j = 0; j < this.bz.n_(); j++)
+/*  620:1012 */     int i = getProfession() == 0 ? 1 : 0;
+/*  621:1014 */     for (int j = 0; j < this.inventory.getSize(); j++)
 /*  622:     */     {
-/*  623:1015 */       ItemStack localamj = this.bz.a(j);
+/*  623:1015 */       ItemStack localamj = this.inventory.get(j);
 /*  624:1016 */       if (localamj != null)
 /*  625:     */       {
-/*  626:1017 */         if (((localamj.getItem() == ItemList.P) && (localamj.stackSize >= 3 * paramInt)) || ((localamj.getItem() == ItemList.bS) && (localamj.stackSize >= 12 * paramInt)) || ((localamj.getItem() == ItemList.carrot) && (localamj.stackSize >= 12 * paramInt))) {
+/*  626:1017 */         if (((localamj.getItem() == ItemList.bread) && (localamj.stackSize >= 3 * paramInt)) || ((localamj.getItem() == ItemList.potato) && (localamj.stackSize >= 12 * paramInt)) || ((localamj.getItem() == ItemList.carrot) && (localamj.stackSize >= 12 * paramInt))) {
 /*  627:1019 */           return true;
 /*  628:     */         }
 /*  629:1021 */         if ((i != 0) && 
@@ -636,11 +636,11 @@ package net.minecraft.src;
 /*  637:     */   
 /*  638:     */   public boolean cs()
 /*  639:     */   {
-/*  640:1032 */     for (int i = 0; i < this.bz.n_(); i++)
+/*  640:1032 */     for (int i = 0; i < this.inventory.getSize(); i++)
 /*  641:     */     {
-/*  642:1033 */       ItemStack localamj = this.bz.a(i);
+/*  642:1033 */       ItemStack localamj = this.inventory.get(i);
 /*  643:1034 */       if ((localamj != null) && (
-/*  644:1035 */         (localamj.getItem() == ItemList.N) || (localamj.getItem() == ItemList.bS) || (localamj.getItem() == ItemList.carrot))) {
+/*  644:1035 */         (localamj.getItem() == ItemList.N) || (localamj.getItem() == ItemList.potato) || (localamj.getItem() == ItemList.carrot))) {
 /*  645:1036 */         return true;
 /*  646:     */       }
 /*  647:     */     }
@@ -653,9 +653,9 @@ package net.minecraft.src;
 /*  654:1046 */       return true;
 /*  655:     */     }
 /*  656:1048 */     int i = paramInt - 300;
-/*  657:1049 */     if ((i >= 0) && (i < this.bz.n_()))
+/*  657:1049 */     if ((i >= 0) && (i < this.inventory.getSize()))
 /*  658:     */     {
-/*  659:1050 */       this.bz.a(i, paramamj);
+/*  659:1050 */       this.inventory.a(i, paramamj);
 /*  660:1051 */       return true;
 /*  661:     */     }
 /*  662:1053 */     return false;

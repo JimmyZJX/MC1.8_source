@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*  3:   */   public EntityLiving a;
 /*  4:   */   public int b;
 /*  5:   */   
-/*  6:   */   abj(abi paramabi, EntityLiving paramxm, int paramInt)
+/*  6:   */   abj(Village paramabi, EntityLiving paramxm, int paramInt)
 /*  7:   */   {
 /*  8:45 */     this.a = paramxm;
 /*  9:46 */     this.b = paramInt;

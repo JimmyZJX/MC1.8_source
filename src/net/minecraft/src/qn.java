@@ -128,7 +128,7 @@ package net.minecraft.src;
 /* 127:    */     {
 /* 128: 97 */       a(paramwv, 160, 3, true);
 /* 129:    */     }
-/* 130: 98 */     else if ((paramwv instanceof xk))
+/* 130: 98 */     else if ((paramwv instanceof EntityExperienceOrb))
 /* 131:    */     {
 /* 132: 99 */       a(paramwv, 160, 20, true);
 /* 133:    */     }

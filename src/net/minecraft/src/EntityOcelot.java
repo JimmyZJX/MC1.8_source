@@ -95,7 +95,7 @@ package net.minecraft.src;
 /*  97:121 */       if (cp()) {
 /*  98:122 */         return "mob.cat.purr";
 /*  99:    */       }
-/* 100:124 */       if (this.random.nextInt(4) == 0) {
+/* 100:124 */       if (this.rng.nextInt(4) == 0) {
 /* 101:125 */         return "mob.cat.purreow";
 /* 102:    */       }
 /* 103:127 */       return "mob.cat.meow";
@@ -139,7 +139,7 @@ package net.minecraft.src;
 /* 141:    */   
 /* 142:    */   protected void b(boolean paramBoolean, int paramInt) {}
 /* 143:    */   
-/* 144:    */   public boolean a(EntityPlayer paramahd)
+/* 144:    */   public boolean onRightClick(EntityPlayer paramahd)
 /* 145:    */   {
 /* 146:173 */     ItemStack localamj = paramahd.bg.h();
 /* 147:174 */     if (cj())
@@ -158,27 +158,27 @@ package net.minecraft.src;
 /* 160:186 */         paramahd.bg.a(paramahd.bg.c, null);
 /* 161:    */       }
 /* 162:189 */       if (!this.world.isClient) {
-/* 163:190 */         if (this.random.nextInt(3) == 0)
+/* 163:190 */         if (this.rng.nextInt(3) == 0)
 /* 164:    */         {
 /* 165:191 */           m(true);
 /* 166:192 */           r(1 + this.world.rng.nextInt(3));
 /* 167:193 */           b(paramahd.getUUID().toString());
 /* 168:194 */           l(true);
 /* 169:195 */           this.bk.a(true);
-/* 170:196 */           this.world.a(this, (byte)7);
+/* 170:196 */           this.world.sendSignal(this, (byte)7);
 /* 171:    */         }
 /* 172:    */         else
 /* 173:    */         {
 /* 174:198 */           l(false);
-/* 175:199 */           this.world.a(this, (byte)6);
+/* 175:199 */           this.world.sendSignal(this, (byte)6);
 /* 176:    */         }
 /* 177:    */       }
 /* 178:202 */       return true;
 /* 179:    */     }
-/* 180:205 */     return super.a(paramahd);
+/* 180:205 */     return super.onRightClick(paramahd);
 /* 181:    */   }
 /* 182:    */   
-/* 183:    */   public EntityOcelot a(EntityPassiveMob paramws)
+/* 183:    */   public EntityOcelot getBaby(EntityPassiveMob paramws)
 /* 184:    */   {
 /* 185:210 */     EntityOcelot localaby = new EntityOcelot(this.world);
 /* 186:211 */     if (cj())
@@ -282,7 +282,7 @@ package net.minecraft.src;
 /* 284:    */       {
 /* 285:319 */         EntityOcelot localaby = new EntityOcelot(this.world);
 /* 286:320 */         localaby.setPositionAndAngles(this.xPos, this.yPos, this.zPos, this.yaw, 0.0F);
-/* 287:321 */         localaby.b(-24000);
+/* 287:321 */         localaby.setAge(-24000);
 /* 288:322 */         this.world.spawnEntity(localaby);
 /* 289:    */       }
 /* 290:    */     }

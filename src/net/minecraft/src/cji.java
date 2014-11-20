@@ -1272,7 +1272,7 @@ package net.minecraft.src;
 /* 1271:1384 */         float f3 = this.j.nextFloat();
 /* 1272:1385 */         if (localatr.getMaterial() == Material.lava)
 /* 1273:     */         {
-/* 1274:1386 */           this.h.f.a(ew.l, localdt2.getX() + f2, localdt2.getY() + 0.1F - localatr.B(), localdt2.getZ() + f3, 0.0D, 0.0D, 0.0D, new int[0]);
+/* 1274:1386 */           this.h.f.a(EnumParticleEffect.l, localdt2.getX() + f2, localdt2.getY() + 0.1F - localatr.B(), localdt2.getZ() + f3, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 1275:     */         }
 /* 1276:1387 */         else if (localatr.getMaterial() != Material.air)
 /* 1277:     */         {
@@ -1283,7 +1283,7 @@ package net.minecraft.src;
 /* 1282:1391 */             d2 = localdt3.getY() + 0.1F + localatr.C() - 1.0D;
 /* 1283:1392 */             d3 = localdt3.getZ() + f3;
 /* 1284:     */           }
-/* 1285:1394 */           this.h.f.a(ew.N, localdt3.getX() + f2, localdt3.getY() + 0.1F + localatr.C(), localdt3.getZ() + f3, 0.0D, 0.0D, 0.0D, new int[0]);
+/* 1285:1394 */           this.h.f.a(EnumParticleEffect.N, localdt3.getX() + f2, localdt3.getY() + 0.1F + localatr.C(), localdt3.getZ() + f3, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 1286:     */         }
 /* 1287:     */       }
 /* 1288:     */     }

@@ -44,31 +44,31 @@ package net.minecraft.src;
 /* 43:   */   {
 /* 44:49 */     c(paramamj);
 /* 45:   */     
-/* 46:51 */     aqc localaqc = this.a.i();
+/* 46:51 */     TradeOffer localaqc = this.a.i();
 /* 47:52 */     if (localaqc != null)
 /* 48:   */     {
-/* 49:53 */       ItemStack localamj1 = this.a.a(0);
-/* 50:54 */       ItemStack localamj2 = this.a.a(1);
-/* 51:57 */       if ((a(localaqc, localamj1, localamj2)) || (a(localaqc, localamj2, localamj1)))
+/* 49:53 */       ItemStack stack1 = this.a.get(0);
+/* 50:54 */       ItemStack stack2 = this.a.get(1);
+/* 51:57 */       if ((a(localaqc, stack1, stack2)) || (a(localaqc, stack2, stack1)))
 /* 52:   */       {
 /* 53:58 */         this.h.a(localaqc);
-/* 54:59 */         paramahd.b(StatList.G);
-/* 55:61 */         if ((localamj1 != null) && (localamj1.stackSize <= 0)) {
-/* 56:62 */           localamj1 = null;
+/* 54:59 */         paramahd.b(StatList.tradedWithVillager);
+/* 55:61 */         if ((stack1 != null) && (stack1.stackSize <= 0)) {
+/* 56:62 */           stack1 = null;
 /* 57:   */         }
-/* 58:64 */         if ((localamj2 != null) && (localamj2.stackSize <= 0)) {
-/* 59:65 */           localamj2 = null;
+/* 58:64 */         if ((stack2 != null) && (stack2.stackSize <= 0)) {
+/* 59:65 */           stack2 = null;
 /* 60:   */         }
-/* 61:67 */         this.a.a(0, localamj1);
-/* 62:68 */         this.a.a(1, localamj2);
+/* 61:67 */         this.a.a(0, stack1);
+/* 62:68 */         this.a.a(1, stack2);
 /* 63:   */       }
 /* 64:   */     }
 /* 65:   */   }
 /* 66:   */   
-/* 67:   */   private boolean a(aqc paramaqc, ItemStack paramamj1, ItemStack paramamj2)
+/* 67:   */   private boolean a(TradeOffer paramaqc, ItemStack paramamj1, ItemStack paramamj2)
 /* 68:   */   {
-/* 69:74 */     ItemStack localamj1 = paramaqc.a();
-/* 70:75 */     ItemStack localamj2 = paramaqc.b();
+/* 69:74 */     ItemStack localamj1 = paramaqc.getItemBought();
+/* 70:75 */     ItemStack localamj2 = paramaqc.getItemBoughtB();
 /* 71:77 */     if ((paramamj1 != null) && (paramamj1.getItem() == localamj1.getItem()))
 /* 72:   */     {
 /* 73:78 */       if ((localamj2 != null) && (paramamj2 != null) && (localamj2.getItem() == paramamj2.getItem()))

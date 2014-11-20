@@ -144,9 +144,9 @@ package net.minecraft.src;
 /* 143:    */   {
 /* 144:162 */     this.d.a(this.e, this.f, this.g, "random.explode", 4.0F, (1.0F + (this.d.rng.nextFloat() - this.d.rng.nextFloat()) * 0.2F) * 0.7F);
 /* 145:163 */     if ((this.i < 2.0F) || (!this.b)) {
-/* 146:164 */       this.d.a(ew.b, this.e, this.f, this.g, 1.0D, 0.0D, 0.0D, new int[0]);
+/* 146:164 */       this.d.a(EnumParticleEffect.EXPLOSION_LARGE, this.e, this.f, this.g, 1.0D, 0.0D, 0.0D, new int[0]);
 /* 147:    */     } else {
-/* 148:166 */       this.d.a(ew.c, this.e, this.f, this.g, 1.0D, 0.0D, 0.0D, new int[0]);
+/* 148:166 */       this.d.a(EnumParticleEffect.EXPLOSION_HUGE, this.e, this.f, this.g, 1.0D, 0.0D, 0.0D, new int[0]);
 /* 149:    */     }
 /* 150:    */     Iterator<BlockPosition> localIterator;
 /* 151:169 */     if (this.b) {
@@ -176,8 +176,8 @@ package net.minecraft.src;
 /* 175:191 */           d5 *= d8;
 /* 176:192 */           d6 *= d8;
 /* 177:    */           
-/* 178:194 */           this.d.a(ew.a, (d1 + this.e * 1.0D) / 2.0D, (d2 + this.f * 1.0D) / 2.0D, (d3 + this.g * 1.0D) / 2.0D, d4, d5, d6, new int[0]);
-/* 179:195 */           this.d.a(ew.l, d1, d2, d3, d4, d5, d6, new int[0]);
+/* 178:194 */           this.d.a(EnumParticleEffect.EXPLOSION_NORMAL, (d1 + this.e * 1.0D) / 2.0D, (d2 + this.f * 1.0D) / 2.0D, (d3 + this.g * 1.0D) / 2.0D, d4, d5, d6, new int[0]);
+/* 179:195 */           this.d.a(EnumParticleEffect.l, d1, d2, d3, d4, d5, d6, new int[0]);
 /* 180:    */         }
 /* 181:198 */         if (localatr.getMaterial() != Material.air)
 /* 182:    */         {

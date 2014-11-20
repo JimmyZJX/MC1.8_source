@@ -84,7 +84,7 @@ package net.minecraft.src;
 /*  85:102 */     if (paramBoolean) {
 /*  86:103 */       a(new ItemStack(ItemList.itemFrame), 0.0F);
 /*  87:    */     }
-/*  88:105 */     if ((localamj != null) && (this.random.nextFloat() < this.itemDropChance))
+/*  88:105 */     if ((localamj != null) && (this.rng.nextFloat() < this.itemDropChance))
 /*  89:    */     {
 /*  90:106 */       localamj = localamj.k();
 /*  91:107 */       b(localamj);

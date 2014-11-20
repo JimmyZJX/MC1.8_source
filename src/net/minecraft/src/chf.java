@@ -20,8 +20,8 @@ package net.minecraft.src;
 /* 19:18 */     this.ay = (this.yPos = paramDouble2);
 /* 20:19 */     this.az = (this.zPos = paramDouble3);
 /* 21:   */     
-/* 22:21 */     float f = this.random.nextFloat() * 0.6F + 0.4F;
-/* 23:22 */     this.a = (this.h = this.random.nextFloat() * 0.2F + 0.5F);
+/* 22:21 */     float f = this.rng.nextFloat() * 0.6F + 0.4F;
+/* 23:22 */     this.a = (this.h = this.rng.nextFloat() * 0.2F + 0.5F);
 /* 24:23 */     this.ap = (this.aq = this.ar = 1.0F * f);
 /* 25:24 */     this.aq *= 0.3F;
 /* 26:25 */     this.ap *= 0.9F;
