@@ -97,7 +97,7 @@ package net.minecraft.src;
 /*  96: 94 */     return this.d;
 /*  97:    */   }
 /*  98:    */   
-/*  99:    */   public void a(int paramInt)
+/*  99:    */   public void setAge(int paramInt)
 /* 100:    */   {
 /* 101: 98 */     this.d = paramInt;
 /* 102:    */   }

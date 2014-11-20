@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*   9: 25 */   private final List<BlockPosition> villagerPosQueue = Lists.newArrayList();
 /*  10: 26 */   private final List<VillageDoor> availableDoors = Lists.newArrayList();
 /*  11: 27 */   private final List<Village> villages = Lists.newArrayList();
-/*  12:    */   private int f;
+/*  12:    */   private int age;
 /*  13:    */   
 /*  14:    */   public VillageManager(String paramString)
 /*  15:    */   {
@@ -44,24 +44,24 @@ package net.minecraft.src;
 /*  43:    */   
 /*  44:    */   public void tick()
 /*  45:    */   {
-/*  46: 58 */     this.f += 1;
+/*  46: 58 */     this.age += 1;
 /*  47: 59 */     for (Village village : this.villages) {
-/*  48: 60 */       village.a(this.f);
+/*  48: 60 */       village.a(this.age);
 /*  49:    */     }
-/*  50: 62 */     e();
+/*  50: 62 */     removeDeadVillages();
 /*  51: 63 */     tickVillagerPosQueue();
-/*  52: 64 */     g();
-/*  53: 66 */     if (this.f % 400 == 0) {
+/*  52: 64 */     analyzeDoors();
+/*  53: 66 */     if (this.age % 400 == 0) {
 /*  54: 67 */       c();
 /*  55:    */     }
 /*  56:    */   }
 /*  57:    */   
-/*  58:    */   private void e()
+/*  58:    */   private void removeDeadVillages()
 /*  59:    */   {
 /*  60: 72 */     for (Iterator<Village> it = this.villages.iterator(); it.hasNext();)
 /*  61:    */     {
 /*  62: 73 */       Village village = it.next();
-/*  63: 74 */       if (village.g())
+/*  63: 74 */       if (village.isDead())
 /*  64:    */       {
 /*  65: 75 */         it.remove();
 /*  66: 76 */         c();
@@ -102,19 +102,19 @@ package net.minecraft.src;
 /* 101:109 */     checkVillager(this.villagerPosQueue.remove(0));
 /* 102:    */   }
 /* 103:    */   
-/* 104:    */   private void g()
+/* 104:    */   private void analyzeDoors()
 /* 105:    */   {
 /* 106:114 */     for (int i = 0; i < this.availableDoors.size(); i++)
 /* 107:    */     {
-/* 108:115 */       VillageDoor localabh = this.availableDoors.get(i);
-/* 109:116 */       Village village = getNearestVillage(localabh.d(), 32);
+/* 108:115 */       VillageDoor door = this.availableDoors.get(i);
+/* 109:116 */       Village village = getNearestVillage(door.d(), 32);
 /* 110:117 */       if (village == null)
 /* 111:    */       {
 /* 112:119 */         village = new Village(this.world);
 /* 113:120 */         this.villages.add(village);
 /* 114:121 */         c();
 /* 115:    */       }
-/* 116:123 */       village.a(localabh);
+/* 116:123 */       village.addDoor(door);
 /* 117:    */     }
 /* 118:126 */     this.availableDoors.clear();
 /* 119:    */   }
@@ -133,7 +133,7 @@ package net.minecraft.src;
 /* 132:137 */             if (door == null) {
 /* 133:138 */               addDoor(doorPos);
 /* 134:    */             } else {
-/* 135:140 */               door.a(this.f);
+/* 135:140 */               door.setAge(this.age);
 /* 136:    */             }
 /* 137:    */           }
 /* 138:    */         }
@@ -170,7 +170,7 @@ package net.minecraft.src;
 /* 169:167 */     int i = a(pos, dir, 5);
 /* 170:168 */     int j = a(pos, dir2, i + 1);
 /* 171:170 */     if (i != j) {
-/* 172:171 */       this.availableDoors.add(new VillageDoor(pos, i < j ? dir : dir2, this.f));
+/* 172:171 */       this.availableDoors.add(new VillageDoor(pos, i < j ? dir : dir2, this.age));
 /* 173:    */     }
 /* 174:    */   }
 /* 175:    */   
@@ -210,7 +210,7 @@ package net.minecraft.src;
 /* 209:    */   
 /* 210:    */   public void readFromNBT(NBTTagCompound tag)
 /* 211:    */   {
-/* 212:208 */     this.f = tag.getInteger("Tick");
+/* 212:208 */     this.age = tag.getInteger("Tick");
 /* 213:209 */     fv localfv = tag.c("Villages", 10);
 /* 214:210 */     for (int i = 0; i < localfv.c(); i++)
 /* 215:    */     {
@@ -223,7 +223,7 @@ package net.minecraft.src;
 /* 222:    */   
 /* 223:    */   public void writeToNBT(NBTTagCompound tag)
 /* 224:    */   {
-/* 225:220 */     tag.setInt("Tick", this.f);
+/* 225:220 */     tag.setInt("Tick", this.age);
 /* 226:221 */     fv localfv = new fv();
 /* 227:222 */     for (Village localabi : this.villages)
 /* 228:    */     {

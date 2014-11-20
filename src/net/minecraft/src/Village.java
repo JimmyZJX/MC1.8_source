@@ -189,7 +189,7 @@ package net.minecraft.src;
 /* 190:234 */     return null;
 /* 191:    */   }
 /* 192:    */   
-/* 193:    */   public void a(VillageDoor paramabh)
+/* 193:    */   public void addDoor(VillageDoor paramabh)
 /* 194:    */   {
 /* 195:238 */     this.doors.add(paramabh);
 /* 196:239 */     this.c = this.c.offset(paramabh.d());
@@ -197,7 +197,7 @@ package net.minecraft.src;
 /* 198:241 */     this.stable = paramabh.h();
 /* 199:    */   }
 /* 200:    */   
-/* 201:    */   public boolean g()
+/* 201:    */   public boolean isDead()
 /* 202:    */   {
 /* 203:245 */     return this.doors.isEmpty();
 /* 204:    */   }
