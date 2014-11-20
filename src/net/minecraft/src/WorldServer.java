@@ -138,7 +138,7 @@ package net.minecraft.src;
 /* 134:205 */     this.K.b();
 /* 135:    */     
 /* 136:207 */     this.profiler.c("village");
-/* 137:208 */     this.villageManager.a();
+/* 137:208 */     this.villageManager.tick();
 /* 138:209 */     this.d.a();
 /* 139:    */     
 /* 140:211 */     this.profiler.c("portalForcer");
@@ -156,7 +156,7 @@ package net.minecraft.src;
 /* 152:223 */     if ((localList == null) || (localList.isEmpty())) {
 /* 153:224 */       return null;
 /* 154:    */     }
-/* 155:227 */     return (SpawnListEntry)WeightedRandom.getRandomItem(this.rng, localList);
+/* 155:227 */     return WeightedRandom.getRandomItem(this.rng, localList);
 /* 156:    */   }
 /* 157:    */   
 /* 158:    */   public boolean a(EnumCreatureType paramxp, SpawnListEntry paramarq, BlockPosition paramdt)

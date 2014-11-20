@@ -290,8 +290,8 @@ package net.minecraft.src;
 /* 291:    */   private boolean f(BlockPosition paramdt)
 /* 292:    */   {
 /* 293:326 */     ProtoBlock localatr = this.world.getBlock(paramdt).getProto();
-/* 294:327 */     if ((localatr instanceof avf)) {
-/* 295:328 */       return localatr.getMaterial() == Material.d;
+/* 294:327 */     if ((localatr instanceof BlockDoor)) {
+/* 295:328 */       return localatr.getMaterial() == Material.wood;
 /* 296:    */     }
 /* 297:330 */     return false;
 /* 298:    */   }

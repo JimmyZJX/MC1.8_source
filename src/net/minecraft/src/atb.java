@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*   8:    */   
 /*   9:    */   protected atb()
 /*  10:    */   {
-/*  11: 30 */     super(Material.d);
+/*  11: 30 */     super(Material.wood);
 /*  12: 31 */     float f1 = 0.25F;
 /*  13: 32 */     float f2 = 1.0F;
 /*  14: 33 */     a(0.5F - f1, 0.0F, 0.5F - f1, 0.5F + f1, f2, 0.5F + f1);

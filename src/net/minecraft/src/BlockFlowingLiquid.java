@@ -194,7 +194,7 @@ package net.minecraft.src;
 /* 193:    */   private boolean g(World paramaqu, BlockPosition paramdt, Block parambec)
 /* 194:    */   {
 /* 195:191 */     ProtoBlock localatr = paramaqu.getBlock(paramdt).getProto();
-/* 196:192 */     if (((localatr instanceof avf)) || (localatr == BlockList.an) || (localatr == BlockList.au) || (localatr == BlockList.reeds)) {
+/* 196:192 */     if (((localatr instanceof BlockDoor)) || (localatr == BlockList.an) || (localatr == BlockList.au) || (localatr == BlockList.reeds)) {
 /* 197:193 */       return true;
 /* 198:    */     }
 /* 199:195 */     if (localatr.material == Material.E) {

@@ -146,7 +146,7 @@ package net.minecraft.src;
 /* 145:    */               }
 /* 146:161 */               k = 1;
 /* 147:    */             }
-/* 148:163 */             else if ((!paramBoolean3) && ((localatr instanceof avf)) && (localatr.getMaterial() == Material.d))
+/* 148:163 */             else if ((!paramBoolean3) && ((localatr instanceof BlockDoor)) && (localatr.getMaterial() == Material.wood))
 /* 149:    */             {
 /* 150:164 */               return 0;
 /* 151:    */             }
@@ -157,7 +157,7 @@ package net.minecraft.src;
 /* 156:    */               }
 /* 157:    */             }
 /* 158:175 */             else if (!localatr.b(paramard, localdt2)) {
-/* 159:178 */               if ((!paramBoolean2) || (!(localatr instanceof avf)) || (localatr.getMaterial() != Material.d))
+/* 159:178 */               if ((!paramBoolean2) || (!(localatr instanceof BlockDoor)) || (localatr.getMaterial() != Material.wood))
 /* 160:    */               {
 /* 161:182 */                 if (((localatr instanceof avv)) || ((localatr instanceof avw)) || ((localatr instanceof bbx))) {
 /* 162:183 */                   return -3;

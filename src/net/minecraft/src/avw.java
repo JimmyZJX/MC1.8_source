@@ -8,7 +8,7 @@ package net.minecraft.src;
 /*   7:    */   
 /*   8:    */   public avw()
 /*   9:    */   {
-/*  10: 24 */     super(Material.d);
+/*  10: 24 */     super(Material.wood);
 /*  11:    */     
 /*  12: 26 */     j(this.L.b().a(a, Boolean.valueOf(false)).a(b, Boolean.valueOf(false)).a(M, Boolean.valueOf(false)));
 /*  13: 27 */     setCreativeTab(CreativeTabs.tabRedstone);

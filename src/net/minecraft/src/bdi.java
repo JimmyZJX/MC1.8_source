@@ -41,7 +41,7 @@ package net.minecraft.src;
 /* 40:46 */     if (localbof == Material.s) {
 /* 41:47 */       i = 3;
 /* 42:   */     }
-/* 43:49 */     if (localbof == Material.d) {
+/* 43:49 */     if (localbof == Material.wood) {
 /* 44:50 */       i = 4;
 /* 45:   */     }
 /* 46:53 */     paramaqu.c(paramdt, BlockList.B, i, this.a);

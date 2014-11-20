@@ -49,9 +49,9 @@ package net.minecraft.src;
 /* 48:58 */       n = 1;
 /* 49:   */     }
 /* 50:61 */     BlockPosition localdt3 = paramdt.up();
-/* 51:62 */     Block localbec = paramatr.instance().a(avf.a, paramej).a(avf.M, n != 0 ? avh.b : avh.a);
-/* 52:63 */     paramaqu.setBlock(paramdt, localbec.a(avf.O, avg.b), 2);
-/* 53:64 */     paramaqu.setBlock(localdt3, localbec.a(avf.O, avg.a), 2);
+/* 51:62 */     Block localbec = paramatr.instance().a(BlockDoor.a, paramej).a(BlockDoor.M, n != 0 ? avh.b : avh.a);
+/* 52:63 */     paramaqu.setBlock(paramdt, localbec.a(BlockDoor.O, avg.b), 2);
+/* 53:64 */     paramaqu.setBlock(localdt3, localbec.a(BlockDoor.O, avg.a), 2);
 /* 54:65 */     paramaqu.c(paramdt, paramatr);
 /* 55:66 */     paramaqu.c(localdt3, paramatr);
 /* 56:   */   }

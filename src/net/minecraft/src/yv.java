@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*  3:   */ {
 /*  4:   */   protected EntityMob a;
 /*  5:14 */   protected BlockPosition b = BlockPosition.zero;
-/*  6:   */   protected avf c;
+/*  6:   */   protected BlockDoor c;
 /*  7:   */   boolean d;
 /*  8:   */   float e;
 /*  9:   */   float f;
@@ -66,11 +66,11 @@ package net.minecraft.src;
 /* 65:   */     }
 /* 66:   */   }
 /* 67:   */   
-/* 68:   */   private avf a(BlockPosition paramdt)
+/* 68:   */   private BlockDoor a(BlockPosition paramdt)
 /* 69:   */   {
 /* 70:78 */     ProtoBlock localatr = this.a.world.getBlock(paramdt).getProto();
-/* 71:79 */     if (((localatr instanceof avf)) && (localatr.getMaterial() == Material.d)) {
-/* 72:80 */       return (avf)localatr;
+/* 71:79 */     if (((localatr instanceof BlockDoor)) && (localatr.getMaterial() == Material.wood)) {
+/* 72:80 */       return (BlockDoor)localatr;
 /* 73:   */     }
 /* 74:82 */     return null;
 /* 75:   */   }

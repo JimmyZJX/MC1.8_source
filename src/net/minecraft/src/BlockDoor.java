@@ -1,16 +1,16 @@
 package net.minecraft.src;
 /*   1:    */ import java.util.Random;
 /*   2:    */ 
-/*   3:    */ public class avf
+/*   3:    */ public class BlockDoor
 /*   4:    */   extends ProtoBlock
 /*   5:    */ {
 /*   6: 26 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", en.HORIZONTAL);
 /*   7: 27 */   public static final BlockDataBoolean b = BlockDataBoolean.getInstance("open");
-/*   8: 28 */   public static final BlockDataEnum M = BlockDataEnum.getInstance("hinge", avh.class);
+/*   8: 28 */   public static final BlockDataEnum<avh> M = BlockDataEnum.getInstance("hinge", avh.class);
 /*   9: 29 */   public static final BlockDataBoolean N = BlockDataBoolean.getInstance("powered");
-/*  10: 30 */   public static final BlockDataEnum O = BlockDataEnum.getInstance("half", avg.class);
+/*  10: 30 */   public static final BlockDataEnum<avg> O = BlockDataEnum.getInstance("half", avg.class);
 /*  11:    */   
-/*  12:    */   protected avf(Material parambof)
+/*  12:    */   protected BlockDoor(Material parambof)
 /*  13:    */   {
 /*  14: 42 */     super(parambof);
 /*  15: 43 */     j(this.L.b().a(a, EnumDirection.NORTH).a(b, Boolean.valueOf(false)).a(M, avh.a).a(N, Boolean.valueOf(false)).a(O, avg.b));

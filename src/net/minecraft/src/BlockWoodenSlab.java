@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*   8:    */   
 /*   9:    */   public BlockWoodenSlab()
 /*  10:    */   {
-/*  11: 22 */     super(Material.d);
+/*  11: 22 */     super(Material.wood);
 /*  12: 23 */     Block localbec = this.L.b();
 /*  13: 24 */     if (!j()) {
 /*  14: 25 */       localbec = localbec.a(half, EnumSlabHalf.BOTTOM);

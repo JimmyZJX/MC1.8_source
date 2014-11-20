@@ -8,7 +8,7 @@ package net.minecraft.src;
 /*  7:   */   
 /*  8:   */   public ayw()
 /*  9:   */   {
-/* 10:18 */     super(Material.d);
+/* 10:18 */     super(Material.wood);
 /* 11:19 */     j(this.L.b().a(a, EnumWoodVariant.OAK));
 /* 12:20 */     setCreativeTab(CreativeTabs.tabBlock);
 /* 13:   */   }

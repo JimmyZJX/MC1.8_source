@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*  3:   */ {
 /*  4:   */   protected aus()
 /*  5:   */   {
-/*  6:19 */     super(Material.d);
+/*  6:19 */     super(Material.wood);
 /*  7:20 */     setCreativeTab(CreativeTabs.tabDeco);
 /*  8:   */   }
 /*  9:   */   

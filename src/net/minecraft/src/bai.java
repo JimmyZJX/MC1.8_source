@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*  5:   */ {
 /*  6:   */   protected bai()
 /*  7:   */   {
-/*  8:21 */     super(Material.d);
+/*  8:21 */     super(Material.wood);
 /*  9:22 */     float f1 = 0.25F;
 /* 10:23 */     float f2 = 1.0F;
 /* 11:24 */     a(0.5F - f1, 0.0F, 0.5F - f1, 0.5F + f1, f2, 0.5F + f1);

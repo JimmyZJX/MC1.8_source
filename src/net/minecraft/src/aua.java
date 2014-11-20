@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*  5:   */ {
 /*  6:   */   public aua()
 /*  7:   */   {
-/*  8:14 */     super(Material.d);
+/*  8:14 */     super(Material.wood);
 /*  9:15 */     setCreativeTab(CreativeTabs.tabBlock);
 /* 10:   */   }
 /* 11:   */   

@@ -175,7 +175,7 @@ package net.minecraft.src;
 /* 174:217 */         return 1;
 /* 175:    */       }
 /* 176:    */     }
-/* 177:220 */     else if ((paramatr instanceof avf))
+/* 177:220 */     else if ((paramatr instanceof BlockDoor))
 /* 178:    */     {
 /* 179:221 */       if (this.m == EnumDirection.SOUTH)
 /* 180:    */       {

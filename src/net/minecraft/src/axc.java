@@ -7,7 +7,7 @@ package net.minecraft.src;
 /*   7:    */   
 /*   8:    */   protected axc()
 /*   9:    */   {
-/*  10: 60 */     super(Material.d);
+/*  10: 60 */     super(Material.wood);
 /*  11: 61 */     j(this.L.b().a(a, Boolean.valueOf(false)));
 /*  12: 62 */     setCreativeTab(CreativeTabs.tabDeco);
 /*  13:    */   }

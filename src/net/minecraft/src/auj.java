@@ -11,7 +11,7 @@ package net.minecraft.src;
 /*  10:    */   
 /*  11:    */   protected auj(int paramInt)
 /*  12:    */   {
-/*  13: 42 */     super(Material.d);
+/*  13: 42 */     super(Material.wood);
 /*  14: 43 */     j(this.L.b().a(a, EnumDirection.NORTH));
 /*  15: 44 */     this.b = paramInt;
 /*  16: 45 */     setCreativeTab(CreativeTabs.tabDeco);

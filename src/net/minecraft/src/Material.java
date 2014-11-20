@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*   3:  4 */   public static final Material air = new bod(MapColor.b);
 /*   4:  5 */   public static final Material grass = new Material(MapColor.c);
 /*   5:  6 */   public static final Material dirt = new Material(MapColor.l);
-/*   6:  7 */   public static final Material d = new Material(MapColor.o).g();
+/*   6:  7 */   public static final Material wood = new Material(MapColor.o).g();
 /*   7:  8 */   public static final Material rock = new Material(MapColor.m).f();
 /*   8:  9 */   public static final Material f = new Material(MapColor.h).f();
 /*   9: 10 */   public static final Material g = new Material(MapColor.h).f().o();

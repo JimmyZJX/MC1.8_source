@@ -14,7 +14,7 @@ package net.minecraft.src;
 /* 13:   */   
 /* 14:   */   public float getStrVsBlock(ItemStack paramamj, ProtoBlock paramatr)
 /* 15:   */   {
-/* 16:29 */     if ((paramatr.getMaterial() == Material.d) || (paramatr.getMaterial() == Material.plants) || (paramatr.getMaterial() == Material.l)) {
+/* 16:29 */     if ((paramatr.getMaterial() == Material.wood) || (paramatr.getMaterial() == Material.plants) || (paramatr.getMaterial() == Material.l)) {
 /* 17:30 */       return this.efficiencyOnProperMaterial;
 /* 18:   */     }
 /* 19:32 */     return super.getStrVsBlock(paramamj, paramatr);

@@ -20,7 +20,7 @@ package net.minecraft.src;
 /* 19:25 */     if (!this.a.world.getGameRules().getBoolean("mobGriefing")) {
 /* 20:26 */       return false;
 /* 21:   */     }
-/* 22:28 */     return !avf.f((IBlockAccess)this.a.world, this.b);
+/* 22:28 */     return !BlockDoor.f((IBlockAccess)this.a.world, this.b);
 /* 23:   */   }
 /* 24:   */   
 /* 25:   */   public void c()
@@ -32,7 +32,7 @@ package net.minecraft.src;
 /* 31:   */   public boolean b()
 /* 32:   */   {
 /* 33:39 */     double d = this.a.b(this.b);
-/* 34:40 */     return (this.g <= 240) && (!avf.f((IBlockAccess)this.a.world, this.b)) && (d < 4.0D);
+/* 34:40 */     return (this.g <= 240) && (!BlockDoor.f((IBlockAccess)this.a.world, this.b)) && (d < 4.0D);
 /* 35:   */   }
 /* 36:   */   
 /* 37:   */   public void d()

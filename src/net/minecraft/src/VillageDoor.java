@@ -8,9 +8,9 @@ package net.minecraft.src;
 /*   7:    */   private boolean e;
 /*   8:    */   private int f;
 /*   9:    */   
-/*  10:    */   public VillageDoor(BlockPosition paramdt, int paramInt1, int paramInt2, int paramInt3)
+/*  10:    */   public VillageDoor(BlockPosition pos, int paramInt1, int paramInt2, int paramInt3)
 /*  11:    */   {
-/*  12: 21 */     this(paramdt, a(paramInt1, paramInt2), paramInt3);
+/*  12: 21 */     this(pos, a(paramInt1, paramInt2), paramInt3);
 /*  13:    */   }
 /*  14:    */   
 /*  15:    */   private static EnumDirection a(int paramInt1, int paramInt2)

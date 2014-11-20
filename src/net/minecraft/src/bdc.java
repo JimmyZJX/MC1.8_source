@@ -263,7 +263,7 @@ package net.minecraft.src;
 /* 262:305 */       if (localatr == BlockList.bM) {
 /* 263:306 */         return 150;
 /* 264:    */       }
-/* 265:309 */       if (localatr.getMaterial() == Material.d) {
+/* 265:309 */       if (localatr.getMaterial() == Material.wood) {
 /* 266:310 */         return 300;
 /* 267:    */       }
 /* 268:313 */       if (localatr == BlockList.cA) {

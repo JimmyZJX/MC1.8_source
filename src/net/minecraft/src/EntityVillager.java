@@ -94,7 +94,7 @@ package net.minecraft.src;
 /*   95: 157 */     if (--this.bl <= 0)
 /*   96:     */     {
 /*   97: 158 */       BlockPosition pos = new BlockPosition(this);
-/*   98: 159 */       this.world.getVillageManager().a((BlockPosition)pos);
+/*   98: 159 */       this.world.getVillageManager().queueVillager(pos);
 /*   99: 160 */       this.bl = (70 + this.rng.nextInt(50));
 /*  100:     */       
 /*  101: 162 */       this.bk = this.world.getVillageManager().getNearestVillage(pos, 32);

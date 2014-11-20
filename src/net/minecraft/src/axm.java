@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*  5:   */   
 /*  6:   */   public axm()
 /*  7:   */   {
-/*  8:21 */     super(Material.d);
+/*  8:21 */     super(Material.wood);
 /*  9:22 */     setCreativeTab(CreativeTabs.tabBlock);
 /* 10:23 */     c(2.0F);
 /* 11:24 */     a(f);

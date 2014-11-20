@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*  8:   */   
 /*  9:   */   public ayn()
 /* 10:   */   {
-/* 11:21 */     super(Material.d);
+/* 11:21 */     super(Material.wood);
 /* 12:22 */     setCreativeTab(CreativeTabs.tabRedstone);
 /* 13:   */   }
 /* 14:   */   

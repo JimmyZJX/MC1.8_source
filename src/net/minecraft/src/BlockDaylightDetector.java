@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*   9:    */   
 /*  10:    */   public BlockDaylightDetector(boolean paramBoolean)
 /*  11:    */   {
-/*  12: 32 */     super(Material.d);
+/*  12: 32 */     super(Material.wood);
 /*  13: 33 */     this.b = paramBoolean;
 /*  14:    */     
 /*  15: 35 */     j(this.L.b().a(a, Integer.valueOf(0)));
