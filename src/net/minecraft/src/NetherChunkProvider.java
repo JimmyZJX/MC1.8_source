@@ -190,21 +190,21 @@ package net.minecraft.src;
 /* 189:    */     }
 /* 190:    */   }
 /* 191:    */   
-/* 192:    */   public Chunk getChunk(int x, int y)
+/* 192:    */   public Chunk getChunk(int x, int z)
 /* 193:    */   {
-/* 194:209 */     this.rng.setSeed(x * 341873128712L + y * 132897987541L);
+/* 194:209 */     this.rng.setSeed(x * 341873128712L + z * 132897987541L);
 /* 195:    */     
 /* 196:211 */     bgk localbgk = new bgk();
 /* 197:    */     
-/* 198:213 */     a(x, y, localbgk);
-/* 199:214 */     b(x, y, localbgk);
+/* 198:213 */     a(x, z, localbgk);
+/* 199:214 */     b(x, z, localbgk);
 /* 200:    */     
-/* 201:216 */     this.C.a(this, this.world, x, y, localbgk);
+/* 201:216 */     this.C.a(this, this.world, x, z, localbgk);
 /* 202:217 */     if (this.i) {
-/* 203:218 */       this.B.a(this, this.world, x, y, localbgk);
+/* 203:218 */       this.B.a(this, this.world, x, z, localbgk);
 /* 204:    */     }
-/* 205:221 */     Chunk localbfh = new Chunk(this.world, localbgk, x, y);
-/* 206:222 */     arm[] arrayOfarm = this.world.v().b(null, x * 16, y * 16, 16, 16);
+/* 205:221 */     Chunk localbfh = new Chunk(this.world, localbgk, x, z);
+/* 206:222 */     arm[] arrayOfarm = this.world.v().b(null, x * 16, z * 16, 16, 16);
 /* 207:223 */     byte[] arrayOfByte = localbfh.k();
 /* 208:225 */     for (int i1 = 0; i1 < arrayOfByte.length; i1++) {
 /* 209:226 */       arrayOfByte[i1] = ((byte)arrayOfarm[i1].az);

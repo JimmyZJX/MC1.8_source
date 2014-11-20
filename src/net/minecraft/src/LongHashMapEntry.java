@@ -1,12 +1,12 @@
 package net.minecraft.src;
-/*   1:    */ class LongHashMapEntry
+/*   1:    */ class LongHashMapEntry<V>
 /*   2:    */ {
 /*   3:    */   final long key;
-/*   4:    */   Object value;
-/*   5:    */   LongHashMapEntry nextEntry;
+/*   4:    */   V value;
+/*   5:    */   LongHashMapEntry<V> nextEntry;
 /*   6:    */   final int hash;
 /*   7:    */   
-/*   8:    */   LongHashMapEntry(int paramInt, long paramLong, Object paramObject, LongHashMapEntry paramus)
+/*   8:    */   LongHashMapEntry(int paramInt, long paramLong, V paramObject, LongHashMapEntry<V> paramus)
 /*   9:    */   {
 /*  10:204 */     this.value = paramObject;
 /*  11:205 */     this.nextEntry = paramus;
@@ -29,7 +29,7 @@ package net.minecraft.src;
 /*  28:220 */     if (!(paramObject instanceof LongHashMapEntry)) {
 /*  29:221 */       return false;
 /*  30:    */     }
-/*  31:223 */     LongHashMapEntry localus = (LongHashMapEntry)paramObject;
+/*  31:223 */     LongHashMapEntry<?> localus = (LongHashMapEntry<?>)paramObject;
 /*  32:224 */     Long localLong1 = Long.valueOf(getKey());
 /*  33:225 */     Long localLong2 = Long.valueOf(localus.getKey());
 /*  34:226 */     if ((localLong1 == localLong2) || ((localLong1 != null) && (localLong1.equals(localLong2))))

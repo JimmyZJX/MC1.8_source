@@ -28,7 +28,7 @@ package net.minecraft.src;
 /*  27:    */   public void b(int paramInt1, int paramInt2)
 /*  28:    */   {
 /*  29: 39 */     Chunk localbfh = getChunk(paramInt1, paramInt2);
-/*  30: 40 */     if (!localbfh.f()) {
+/*  30: 40 */     if (!localbfh.loaded()) {
 /*  31: 41 */       localbfh.d();
 /*  32:    */     }
 /*  33: 44 */     this.c.remove(ChunkID.toLong(paramInt1, paramInt2));

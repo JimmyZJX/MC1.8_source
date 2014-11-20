@@ -764,7 +764,7 @@ package net.minecraft.src;
 /*  759:     */     }
 /*  760:     */   }
 /*  761:     */   
-/*  762:     */   public void e()
+/*  762:     */   public void onModify()
 /*  763:     */   {
 /*  764: 764 */     this.isModified = true;
 /*  765:     */   }
@@ -831,7 +831,7 @@ package net.minecraft.src;
 /*  826: 824 */     return new Random(this.world.J() + this.x * this.x * 4987142 + this.x * 5947611 + this.z * this.z * 4392871L + this.z * 389711 ^ paramLong);
 /*  827:     */   }
 /*  828:     */   
-/*  829:     */   public boolean f()
+/*  829:     */   public boolean loaded()
 /*  830:     */   {
 /*  831: 828 */     return false;
 /*  832:     */   }

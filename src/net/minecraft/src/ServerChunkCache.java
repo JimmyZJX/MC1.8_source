@@ -17,7 +17,7 @@ package net.minecraft.src;
 /*  17:    */   private IChunkProvider e;
 /*  18:    */   private bfq f;
 /*  19: 35 */   public boolean a = true;
-/*  20: 37 */   private LongHashMap g = new LongHashMap();
+/*  20: 37 */   private LongHashMap<Chunk> chunks = new LongHashMap<Chunk>();
 /*  21: 38 */   private List<Chunk> h = Lists.newArrayList();
 /*  22:    */   private WorldServer i;
 /*  23:    */   
@@ -32,7 +32,7 @@ package net.minecraft.src;
 /*  32:    */   
 /*  33:    */   public boolean chunkLoaded(int paramInt1, int paramInt2)
 /*  34:    */   {
-/*  35: 51 */     return this.g.containsItem(ChunkID.toLong(paramInt1, paramInt2));
+/*  35: 51 */     return this.chunks.containsItem(ChunkID.toLong(paramInt1, paramInt2));
 /*  36:    */   }
 /*  37:    */   
 /*  38:    */   public List<Chunk> a()
@@ -65,7 +65,7 @@ package net.minecraft.src;
 /*  65: 76 */     long l = ChunkID.toLong(paramInt1, paramInt2);
 /*  66: 77 */     this.c.remove(Long.valueOf(l));
 /*  67:    */     
-/*  68: 79 */     Chunk localbfh = (Chunk)this.g.getValueByKey(l);
+/*  68: 79 */     Chunk localbfh = (Chunk)this.chunks.getValueByKey(l);
 /*  69: 80 */     if (localbfh == null)
 /*  70:    */     {
 /*  71: 81 */       localbfh = e(paramInt1, paramInt2);
@@ -90,7 +90,7 @@ package net.minecraft.src;
 /*  90:    */           }
 /*  91:    */         }
 /*  92:    */       }
-/*  93:101 */       this.g.add(l, localbfh);
+/*  93:101 */       this.chunks.add(l, localbfh);
 /*  94:102 */       this.h.add(localbfh);
 /*  95:103 */       localbfh.c();
 /*  96:104 */       localbfh.a(this, this, paramInt1, paramInt2);
@@ -100,7 +100,7 @@ package net.minecraft.src;
 /* 100:    */   
 /* 101:    */   public Chunk getChunk(int paramInt1, int paramInt2)
 /* 102:    */   {
-/* 103:112 */     Chunk localbfh = (Chunk)this.g.getValueByKey(ChunkID.toLong(paramInt1, paramInt2));
+/* 103:112 */     Chunk localbfh = (Chunk)this.chunks.getValueByKey(ChunkID.toLong(paramInt1, paramInt2));
 /* 104:114 */     if (localbfh == null)
 /* 105:    */     {
 /* 106:115 */       if ((this.i.ad()) || (this.a)) {
@@ -179,7 +179,7 @@ package net.minecraft.src;
 /* 179:173 */       if (this.e != null)
 /* 180:    */       {
 /* 181:174 */         this.e.a(parambfe, paramInt1, paramInt2);
-/* 182:175 */         localbfh.e();
+/* 182:175 */         localbfh.onModify();
 /* 183:    */       }
 /* 184:    */     }
 /* 185:    */   }
@@ -190,7 +190,7 @@ package net.minecraft.src;
 /* 190:183 */       (this.e.a(parambfe, parambfh, paramInt1, paramInt2)))
 /* 191:    */     {
 /* 192:184 */       Chunk localbfh = getChunk(paramInt1, paramInt2);
-/* 193:185 */       localbfh.e();
+/* 193:185 */       localbfh.onModify();
 /* 194:186 */       return true;
 /* 195:    */     }
 /* 196:189 */     return false;
@@ -234,13 +234,13 @@ package net.minecraft.src;
 /* 234:    */         {
 /* 235:226 */           Long localLong = (Long)this.c.iterator().next();
 /* 236:    */           
-/* 237:228 */           Chunk localbfh = (Chunk)this.g.getValueByKey(localLong.longValue());
+/* 237:228 */           Chunk localbfh = (Chunk)this.chunks.getValueByKey(localLong.longValue());
 /* 238:229 */           if (localbfh != null)
 /* 239:    */           {
 /* 240:230 */             localbfh.d();
 /* 241:231 */             b(localbfh);
 /* 242:232 */             a(localbfh);
-/* 243:233 */             this.g.remove(localLong.longValue());
+/* 243:233 */             this.chunks.remove(localLong.longValue());
 /* 244:234 */             this.h.remove(localbfh);
 /* 245:    */           }
 /* 246:236 */           this.c.remove(localLong);
@@ -260,7 +260,7 @@ package net.minecraft.src;
 /* 260:    */   
 /* 261:    */   public String getName()
 /* 262:    */   {
-/* 263:255 */     return "ServerChunkCache: " + this.g.getNumHashElements() + " Drop: " + this.c.size();
+/* 263:255 */     return "ServerChunkCache: " + this.chunks.getNumHashElements() + " Drop: " + this.c.size();
 /* 264:    */   }
 /* 265:    */   
 /* 266:    */   public List<SpawnListEntry> getSpawnList(EnumCreatureType paramxp, BlockPosition paramdt)
@@ -275,7 +275,7 @@ package net.minecraft.src;
 /* 275:    */   
 /* 276:    */   public int g()
 /* 277:    */   {
-/* 278:270 */     return this.g.getNumHashElements();
+/* 278:270 */     return this.chunks.getNumHashElements();
 /* 279:    */   }
 /* 280:    */   
 /* 281:    */   public void a(Chunk parambfh, int paramInt1, int paramInt2) {}

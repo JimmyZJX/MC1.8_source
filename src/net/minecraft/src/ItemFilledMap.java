@@ -85,7 +85,7 @@ package net.minecraft.src;
 /*  84:109 */             HashMultiset localHashMultiset = HashMultiset.create();
 /*  85:    */             
 /*  86:111 */             Chunk localbfh = paramaqu.getChunk(new BlockPosition(i8, 0, i9));
-/*  87:112 */             if (!localbfh.f())
+/*  87:112 */             if (!localbfh.loaded())
 /*  88:    */             {
 /*  89:115 */               int i10 = i8 & 0xF;
 /*  90:116 */               int i11 = i9 & 0xF;

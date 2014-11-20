@@ -1,7 +1,7 @@
 package net.minecraft.src;
-/*   1:    */ public class LongHashMap
+/*   1:    */ public class LongHashMap<V>
 /*   2:    */ {
-/*   3:    */   private transient LongHashMapEntry[] hashArray;
+/*   3:    */   private transient LongHashMapEntry<V>[] hashArray;
 /*   4:    */   private transient int numHashElements;
 /*   5:    */   private int maxIndex;
 /*   6:    */   private int capacity;
@@ -37,10 +37,10 @@ package net.minecraft.src;
 /*  36: 40 */     return this.numHashElements;
 /*  37:    */   }
 /*  38:    */   
-/*  39:    */   public Object getValueByKey(long paramLong)
+/*  39:    */   public V getValueByKey(long paramLong)
 /*  40:    */   {
 /*  41: 48 */     int i = getHashedKey(paramLong);
-/*  42: 49 */     for (LongHashMapEntry localus = this.hashArray[getHashIndex(i, this.maxIndex)]; localus != null; localus = localus.nextEntry) {
+/*  42: 49 */     for (LongHashMapEntry<V> localus = this.hashArray[getHashIndex(i, this.maxIndex)]; localus != null; localus = localus.nextEntry) {
 /*  43: 50 */       if (localus.key == paramLong) {
 /*  44: 51 */         return localus.value;
 /*  45:    */       }
@@ -53,10 +53,10 @@ package net.minecraft.src;
 /*  52: 58 */     return getEntry(paramLong) != null;
 /*  53:    */   }
 /*  54:    */   
-/*  55:    */   final LongHashMapEntry getEntry(long paramLong)
+/*  55:    */   final LongHashMapEntry<V> getEntry(long paramLong)
 /*  56:    */   {
 /*  57: 62 */     int i = getHashedKey(paramLong);
-/*  58: 63 */     for (LongHashMapEntry localus = this.hashArray[getHashIndex(i, this.maxIndex)]; localus != null; localus = localus.nextEntry) {
+/*  58: 63 */     for (LongHashMapEntry<V> localus = this.hashArray[getHashIndex(i, this.maxIndex)]; localus != null; localus = localus.nextEntry) {
 /*  59: 64 */       if (localus.key == paramLong) {
 /*  60: 65 */         return localus;
 /*  61:    */       }
@@ -64,11 +64,11 @@ package net.minecraft.src;
 /*  63: 68 */     return null;
 /*  64:    */   }
 /*  65:    */   
-/*  66:    */   public void add(long paramLong, Object paramObject)
+/*  66:    */   public void add(long paramLong, V paramObject)
 /*  67:    */   {
 /*  68: 72 */     int i = getHashedKey(paramLong);
 /*  69: 73 */     int j = getHashIndex(i, this.maxIndex);
-/*  70: 74 */     for (LongHashMapEntry localus = this.hashArray[j]; localus != null; localus = localus.nextEntry) {
+/*  70: 74 */     for (LongHashMapEntry<V> localus = this.hashArray[j]; localus != null; localus = localus.nextEntry) {
 /*  71: 75 */       if (localus.key == paramLong)
 /*  72:    */       {
 /*  73: 76 */         localus.value = paramObject;
@@ -81,35 +81,35 @@ package net.minecraft.src;
 /*  80:    */   
 /*  81:    */   private void resizeTable(int paramInt)
 /*  82:    */   {
-/*  83: 87 */     LongHashMapEntry[] arrayOfus1 = this.hashArray;
+/*  83: 87 */     LongHashMapEntry<V>[] arrayOfus1 = this.hashArray;
 /*  84: 88 */     int i = arrayOfus1.length;
 /*  85: 89 */     if (i == 1073741824)
 /*  86:    */     {
 /*  87: 90 */       this.capacity = 2147483647;
 /*  88: 91 */       return;
 /*  89:    */     }
-/*  90: 94 */     LongHashMapEntry[] arrayOfus2 = new LongHashMapEntry[paramInt];
+/*  90: 94 */     LongHashMapEntry<V>[] arrayOfus2 = new LongHashMapEntry[paramInt];
 /*  91: 95 */     copyHashTableTo(arrayOfus2);
 /*  92: 96 */     this.hashArray = arrayOfus2;
 /*  93: 97 */     this.maxIndex = (this.hashArray.length - 1);
 /*  94: 98 */     this.capacity = ((int)(paramInt * this.percentUseable));
 /*  95:    */   }
 /*  96:    */   
-/*  97:    */   private void copyHashTableTo(LongHashMapEntry[] paramArrayOfus)
+/*  97:    */   private void copyHashTableTo(LongHashMapEntry<V>[] paramArrayOfus)
 /*  98:    */   {
-/*  99:102 */     LongHashMapEntry[] arrayOfus = this.hashArray;
+/*  99:102 */     LongHashMapEntry<V>[] arrayOfus = this.hashArray;
 /* 100:103 */     int i = paramArrayOfus.length;
 /* 101:104 */     for (int j = 0; j < arrayOfus.length; j++)
 /* 102:    */     {
-/* 103:105 */       LongHashMapEntry localObject = arrayOfus[j];
+/* 103:105 */       LongHashMapEntry<V> localObject = arrayOfus[j];
 /* 104:106 */       if (localObject != null)
 /* 105:    */       {
 /* 106:107 */         arrayOfus[j] = null;
 /* 107:    */         do
 /* 108:    */         {
-/* 109:109 */           LongHashMapEntry localus = ((LongHashMapEntry)localObject).nextEntry;
-/* 110:110 */           int k = getHashIndex(((LongHashMapEntry)localObject).hash, i - 1);
-/* 111:111 */           ((LongHashMapEntry)localObject).nextEntry = paramArrayOfus[k];
+/* 109:109 */           LongHashMapEntry<V> localus = localObject.nextEntry;
+/* 110:110 */           int k = getHashIndex(localObject.hash, i - 1);
+/* 111:111 */           localObject.nextEntry = paramArrayOfus[k];
 /* 112:112 */           paramArrayOfus[k] = localObject;
 /* 113:113 */           localObject = localus;
 /* 114:114 */         } while (localObject != null);
@@ -117,21 +117,21 @@ package net.minecraft.src;
 /* 116:    */     }
 /* 117:    */   }
 /* 118:    */   
-/* 119:    */   public Object remove(long paramLong)
+/* 119:    */   public V remove(long paramLong)
 /* 120:    */   {
-/* 121:120 */     LongHashMapEntry localus = removeKey(paramLong);
+/* 121:120 */     LongHashMapEntry<V> localus = removeKey(paramLong);
 /* 122:121 */     return localus == null ? null : localus.value;
 /* 123:    */   }
 /* 124:    */   
-/* 125:    */   final LongHashMapEntry removeKey(long paramLong)
+/* 125:    */   final LongHashMapEntry<V> removeKey(long paramLong)
 /* 126:    */   {
 /* 127:125 */     int i = getHashedKey(paramLong);
 /* 128:126 */     int j = getHashIndex(i, this.maxIndex);
-/* 129:127 */     LongHashMapEntry localObject1 = this.hashArray[j];
-/* 130:128 */     LongHashMapEntry localObject2 = localObject1;
+/* 129:127 */     LongHashMapEntry<V> localObject1 = this.hashArray[j];
+/* 130:128 */     LongHashMapEntry<V> localObject2 = localObject1;
 /* 131:130 */     while (localObject2 != null)
 /* 132:    */     {
-/* 133:131 */       LongHashMapEntry localus = localObject2.nextEntry;
+/* 133:131 */       LongHashMapEntry<V> localus = localObject2.nextEntry;
 /* 134:132 */       if (localObject2.key == paramLong)
 /* 135:    */       {
 /* 136:133 */         this.f += 1;
@@ -149,10 +149,10 @@ package net.minecraft.src;
 /* 148:146 */     return localObject2;
 /* 149:    */   }
 /* 150:    */   
-/* 151:    */   private void createKey(int paramInt1, long paramLong, Object paramObject, int paramInt2)
+/* 151:    */   private void createKey(int paramInt1, long paramLong, V paramObject, int paramInt2)
 /* 152:    */   {
-/* 153:246 */     LongHashMapEntry localus = this.hashArray[paramInt2];
-/* 154:247 */     this.hashArray[paramInt2] = new LongHashMapEntry(paramInt1, paramLong, paramObject, localus);
+/* 153:246 */     LongHashMapEntry<V> localus = this.hashArray[paramInt2];
+/* 154:247 */     this.hashArray[paramInt2] = new LongHashMapEntry<V>(paramInt1, paramLong, paramObject, localus);
 /* 155:248 */     if (this.numHashElements++ >= this.capacity) {
 /* 156:249 */       resizeTable(2 * this.hashArray.length);
 /* 157:    */     }

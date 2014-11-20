@@ -78,7 +78,7 @@ package net.minecraft.src;
 /*  77:    */   
 /*  78:    */   public void d() {}
 /*  79:    */   
-/*  80:    */   public void e() {}
+/*  80:    */   public void onModify() {}
 /*  81:    */   
 /*  82:    */   public void a(Entity paramwv, AABB parambrt, List paramList, Predicate paramPredicate) {}
 /*  83:    */   
@@ -94,7 +94,7 @@ package net.minecraft.src;
 /*  93:153 */     return new Random(p().J() + this.x * this.x * 4987142 + this.x * 5947611 + this.z * this.z * 4392871L + this.z * 389711 ^ paramLong);
 /*  94:    */   }
 /*  95:    */   
-/*  96:    */   public boolean f()
+/*  96:    */   public boolean loaded()
 /*  97:    */   {
 /*  98:158 */     return true;
 /*  99:    */   }
