@@ -65,7 +65,7 @@ package net.minecraft.src;
 /* 64:   */       }
 /* 65:   */     }
 /* 66:71 */     this.b = 0;
-/* 67:73 */     if (paramamj.getItem() == ItemList.j) {
+/* 67:73 */     if (paramamj.getItem() == ItemList.ironIngot) {
 /* 68:74 */       this.a.b(AchievementList.k);
 /* 69:   */     }
 /* 70:76 */     if (paramamj.getItem() == ItemList.aV) {

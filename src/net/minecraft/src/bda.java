@@ -88,7 +88,7 @@ package net.minecraft.src;
 /* 87:84 */     if (this.world.s(this.pos) != this) {
 /* 88:85 */       return false;
 /* 89:   */     }
-/* 90:87 */     if (paramahd.e(this.pos.getX() + 0.5D, this.pos.getY() + 0.5D, this.pos.getZ() + 0.5D) > 64.0D) {
+/* 90:87 */     if (paramahd.dist2(this.pos.getX() + 0.5D, this.pos.getY() + 0.5D, this.pos.getZ() + 0.5D) > 64.0D) {
 /* 91:88 */       return false;
 /* 92:   */     }
 /* 93:91 */     return true;

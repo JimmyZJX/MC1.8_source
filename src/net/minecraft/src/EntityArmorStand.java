@@ -52,22 +52,22 @@ package net.minecraft.src;
 /*  51: 95 */     this.ac.a(16, f);
 /*  52:    */   }
 /*  53:    */   
-/*  54:    */   public ItemStack bz()
+/*  54:    */   public ItemStack getHeldItemStack()
 /*  55:    */   {
 /*  56:100 */     return this.g[0];
 /*  57:    */   }
 /*  58:    */   
-/*  59:    */   public ItemStack p(int paramInt)
+/*  59:    */   public ItemStack getItemStack(int paramInt)
 /*  60:    */   {
 /*  61:105 */     return this.g[paramInt];
 /*  62:    */   }
 /*  63:    */   
-/*  64:    */   public ItemStack q(int paramInt)
+/*  64:    */   public ItemStack getArmor(int paramInt)
 /*  65:    */   {
 /*  66:110 */     return this.g[(paramInt + 1)];
 /*  67:    */   }
 /*  68:    */   
-/*  69:    */   public void c(int paramInt, ItemStack paramamj)
+/*  69:    */   public void setItemStack(int paramInt, ItemStack paramamj)
 /*  70:    */   {
 /*  71:115 */     this.g[paramInt] = paramamj;
 /*  72:    */   }
@@ -91,9 +91,9 @@ package net.minecraft.src;
 /*  90:131 */         return false;
 /*  91:    */       }
 /*  92:    */     }
-/*  93:134 */     if ((paramamj == null) || (EntityMob.c(paramamj) == j) || ((j == 4) && ((paramamj.getItem() instanceof aju))))
+/*  93:134 */     if ((paramamj == null) || (EntityMob.getSlot(paramamj) == j) || ((j == 4) && ((paramamj.getItem() instanceof aju))))
 /*  94:    */     {
-/*  95:135 */       c(j, paramamj);
+/*  95:135 */       setItemStack(j, paramamj);
 /*  96:136 */       return true;
 /*  97:    */     }
 /*  98:138 */     return false;
@@ -245,9 +245,9 @@ package net.minecraft.src;
 /* 244:291 */     int j = 0;
 /* 245:292 */     ItemStack localamj = paramahd.bY();
 /* 246:293 */     int k = localamj != null ? 1 : 0;
-/* 247:294 */     if ((k != 0) && ((localamj.getItem() instanceof ajn)))
+/* 247:294 */     if ((k != 0) && ((localamj.getItem() instanceof ItemArmor)))
 /* 248:    */     {
-/* 249:295 */       ajn localajn = (ajn)localamj.getItem();
+/* 249:295 */       ItemArmor localajn = (ItemArmor)localamj.getItem();
 /* 250:296 */       if (localajn.b == 3) {
 /* 251:297 */         j = 1;
 /* 252:298 */       } else if (localajn.b == 2) {
@@ -258,7 +258,7 @@ package net.minecraft.src;
 /* 257:303 */         j = 4;
 /* 258:    */       }
 /* 259:    */     }
-/* 260:306 */     if ((k != 0) && ((localamj.getItem() == ItemList.bX) || (localamj.getItem() == Item.fromProtoBlock(BlockList.pumpkin)))) {
+/* 260:306 */     if ((k != 0) && ((localamj.getItem() == ItemList.skull) || (localamj.getItem() == Item.fromProtoBlock(BlockList.pumpkin)))) {
 /* 261:307 */       j = 4;
 /* 262:    */     }
 /* 263:310 */     double d1 = 0.1D;
@@ -333,7 +333,7 @@ package net.minecraft.src;
 /* 332:    */     {
 /* 333:367 */       localamj3 = localamj2.k();
 /* 334:368 */       localamj3.stackSize = 1;
-/* 335:369 */       c(paramInt, localamj3);
+/* 335:369 */       setItemStack(paramInt, localamj3);
 /* 336:370 */       return;
 /* 337:    */     }
 /* 338:372 */     if ((localamj2 != null) && (localamj2.stackSize > 1))
@@ -343,11 +343,11 @@ package net.minecraft.src;
 /* 342:    */       }
 /* 343:376 */       localamj3 = localamj2.k();
 /* 344:377 */       localamj3.stackSize = 1;
-/* 345:378 */       c(paramInt, localamj3);
+/* 345:378 */       setItemStack(paramInt, localamj3);
 /* 346:379 */       localamj2.stackSize -= 1;
 /* 347:380 */       return;
 /* 348:    */     }
-/* 349:382 */     c(paramInt, localamj2);
+/* 349:382 */     setItemStack(paramInt, localamj2);
 /* 350:383 */     paramahd.bg.a(j, localamj1);
 /* 351:    */   }
 /* 352:    */   
@@ -463,7 +463,7 @@ package net.minecraft.src;
 /* 462:482 */     return 0.0F;
 /* 463:    */   }
 /* 464:    */   
-/* 465:    */   public float aR()
+/* 465:    */   public float getEyeHeight()
 /* 466:    */   {
 /* 467:487 */     return i_() ? this.height * 0.5F : this.height * 0.9F;
 /* 468:    */   }

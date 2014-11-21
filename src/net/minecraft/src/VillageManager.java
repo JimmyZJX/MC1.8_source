@@ -74,16 +74,16 @@ package net.minecraft.src;
 /*  73: 82 */     return this.villages;
 /*  74:    */   }
 /*  75:    */   
-/*  76:    */   public Village getNearestVillage(BlockPosition pos, int paramInt)
+/*  76:    */   public Village getNearestVillage(BlockPosition pos, int dist)
 /*  77:    */   {
 /*  78: 86 */     Village res = null;
 /*  79: 87 */     double min = 3.402823466385289E+038D;
 /*  80: 88 */     for (Village village : this.villages)
 /*  81:    */     {
-/*  82: 89 */       double dist2 = village.a().dist2(pos);
+/*  82: 89 */       double dist2 = village.getCenter().dist2(pos);
 /*  83: 90 */       if (dist2 < min)
 /*  84:    */       {
-/*  85: 94 */         float f1 = paramInt + village.b();
+/*  85: 94 */         float f1 = dist + village.getRadius();
 /*  86: 95 */         if (dist2 <= f1 * f1)
 /*  87:    */         {
 /*  88: 99 */           res = village;

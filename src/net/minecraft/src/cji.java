@@ -432,7 +432,7 @@ package net.minecraft.src;
 /*  431:     */   private void g(float paramFloat)
 /*  432:     */   {
 /*  433: 546 */     Entity localwv = this.h.aa();
-/*  434: 547 */     float f1 = localwv.aR();
+/*  434: 547 */     float f1 = localwv.getEyeHeight();
 /*  435:     */     
 /*  436: 549 */     double d1 = localwv.lastX + (localwv.xPos - localwv.lastX) * paramFloat;
 /*  437: 550 */     double d2 = localwv.lastY + (localwv.yPos - localwv.lastY) * paramFloat + f1;
@@ -974,7 +974,7 @@ package net.minecraft.src;
 /*  973:1091 */       cjm.glMatrixMode(5888);
 /*  974:1092 */       cjm.glLoadIdentity();
 /*  975:1093 */       g(paramFloat);
-/*  976:1094 */       cjm.glTranslatef(0.0F, localwv.aR(), 0.0F);
+/*  976:1094 */       cjm.glTranslatef(0.0F, localwv.getEyeHeight(), 0.0F);
 /*  977:1095 */       ckn.a(new AABB(0.0D, 0.0D, 0.0D, 0.005D, 0.0001D, 0.0001D), -65536);
 /*  978:1096 */       ckn.a(new AABB(0.0D, 0.0D, 0.0D, 0.0001D, 0.0001D, 0.005D), -16776961);
 /*  979:1097 */       ckn.a(new AABB(0.0D, 0.0D, 0.0D, 0.0001D, 0.0033D, 0.0001D), -16711936);
@@ -1068,7 +1068,7 @@ package net.minecraft.src;
 /* 1067:1181 */     a(0, paramFloat);
 /* 1068:     */     
 /* 1069:1183 */     cjm.j(7425);
-/* 1070:1185 */     if (localwv.yPos + localwv.aR() < 128.0D) {
+/* 1070:1185 */     if (localwv.yPos + localwv.getEyeHeight() < 128.0D) {
 /* 1071:1186 */       a(localckn, paramFloat, paramInt);
 /* 1072:     */     }
 /* 1073:1189 */     this.h.y.c("prepareterrain");
@@ -1190,7 +1190,7 @@ package net.minecraft.src;
 /* 1189:1305 */     cjm.o();
 /* 1190:1306 */     cjm.disableBlend();
 /* 1191:1307 */     cjm.n();
-/* 1192:1309 */     if (localwv.yPos + localwv.aR() >= 128.0D)
+/* 1192:1309 */     if (localwv.yPos + localwv.getEyeHeight() >= 128.0D)
 /* 1193:     */     {
 /* 1194:1310 */       this.h.y.c("aboveClouds");
 /* 1195:1311 */       a(localckn, paramFloat, paramInt);

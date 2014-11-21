@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ public class aob
 /*  2:   */ {
 /*  3: 8 */   private String[][] a = { { "XXX", "X X" }, { "X X", "XXX", "XXX" }, { "XXX", "X X", "X X" }, { "X X", "X X" } };
-/*  4:30 */   private Item[][] b = { { ItemList.leather, ItemList.j, ItemList.diamond, ItemList.k }, { ItemList.Q, ItemList.Y, ItemList.ac, ItemList.ag }, { ItemList.R, ItemList.Z, ItemList.ad, ItemList.ah }, { ItemList.S, ItemList.aa, ItemList.ae, ItemList.ai }, { ItemList.leatherBoots, ItemList.ab, ItemList.af, ItemList.aj } };
+/*  4:30 */   private Item[][] b = { { ItemList.leather, ItemList.ironIngot, ItemList.diamond, ItemList.goldIngot }, { ItemList.Q, ItemList.Y, ItemList.ac, ItemList.ag }, { ItemList.R, ItemList.Z, ItemList.ad, ItemList.ah }, { ItemList.S, ItemList.aa, ItemList.ae, ItemList.ai }, { ItemList.leatherBoots, ItemList.ab, ItemList.af, ItemList.aj } };
 /*  5:   */   
 /*  6:   */   public void a(aop paramaop)
 /*  7:   */   {

@@ -278,7 +278,7 @@ package net.minecraft.src;
 /* 276:344 */     float f2 = paramahd.lastYaw + (paramahd.yaw - paramahd.lastYaw);
 /* 277:    */     
 /* 278:346 */     double d1 = paramahd.lastX + (paramahd.xPos - paramahd.lastX);
-/* 279:347 */     double d2 = paramahd.lastY + (paramahd.yPos - paramahd.lastY) + paramahd.aR();
+/* 279:347 */     double d2 = paramahd.lastY + (paramahd.yPos - paramahd.lastY) + paramahd.getEyeHeight();
 /* 280:348 */     double d3 = paramahd.lastZ + (paramahd.zPos - paramahd.lastZ);
 /* 281:    */     
 /* 282:350 */     Vec3 localbrw1 = new Vec3(d1, d2, d3);
@@ -570,7 +570,7 @@ package net.minecraft.src;
 /* 568:    */ 
 /* 569:    */ 
 /* 570:632 */     a(BlockList.cG, new akx(BlockList.cG).b("stainedGlass"));
-/* 571:633 */     a(BlockList.stained_glass_pane, new akx(BlockList.stained_glass_pane).b("stainedGlassPane"));
+/* 571:633 */     a(BlockList.stainedGlassPane, new akx(BlockList.stainedGlassPane).b("stainedGlassPane"));
 /* 572:634 */     a(BlockList.cI, new amr(BlockList.cI, BlockList.cI, new aly()).b("prismarine"));
 /* 573:    */     
 /* 574:    */ 
@@ -578,7 +578,7 @@ package net.minecraft.src;
 /* 576:    */ 
 /* 577:    */ 
 /* 578:    */ 
-/* 579:641 */     c(BlockList.cJ);
+/* 579:641 */     c(BlockList.seaLantern);
 /* 580:642 */     a(BlockList.cM, new amr(BlockList.cM, BlockList.cM, new alz()).b("redSandStone"));
 /* 581:    */     
 /* 582:    */ 
@@ -595,7 +595,7 @@ package net.minecraft.src;
 /* 593:655 */     a(258, "iron_axe", new ItemAxe(EnumToolMaterial.IRON).setID("hatchetIron"));
 /* 594:656 */     a(259, "flint_and_steel", new alk().setID("flintAndSteel"));
 /* 595:657 */     a(260, "apple", new all(4, 0.3F, false).setID("apple"));
-/* 596:658 */     a(261, "bow", new ajz().setID("bow"));
+/* 596:658 */     a(261, "bow", new ItemBow().setID("bow"));
 /* 597:659 */     a(262, "arrow", new Item().setID("arrow").setTabToDisplayOn(CreativeTabs.tabCombat));
 /* 598:660 */     a(263, "coal", new akd().setID("coal"));
 /* 599:661 */     a(264, "diamond", new Item().setID("diamond").setTabToDisplayOn(CreativeTabs.tabMaterials));
@@ -632,26 +632,26 @@ package net.minecraft.src;
 /* 630:692 */     a(295, "wheat_seeds", new anc(BlockList.aj, BlockList.ak).setID("seeds"));
 /* 631:693 */     a(296, "wheat", new Item().setID("wheat").setTabToDisplayOn(CreativeTabs.tabMaterials));
 /* 632:694 */     a(297, "bread", new all(5, 0.6F, false).setID("bread"));
-/* 633:695 */     a(298, "leather_helmet", new ajn(EnumArmorMaterial.LEATHER, 0, 0).setID("helmetCloth"));
-/* 634:696 */     a(299, "leather_chestplate", new ajn(EnumArmorMaterial.LEATHER, 0, 1).setID("chestplateCloth"));
-/* 635:697 */     a(300, "leather_leggings", new ajn(EnumArmorMaterial.LEATHER, 0, 2).setID("leggingsCloth"));
-/* 636:698 */     a(301, "leather_boots", new ajn(EnumArmorMaterial.LEATHER, 0, 3).setID("bootsCloth"));
-/* 637:699 */     a(302, "chainmail_helmet", new ajn(EnumArmorMaterial.CHAIN, 1, 0).setID("helmetChain"));
-/* 638:700 */     a(303, "chainmail_chestplate", new ajn(EnumArmorMaterial.CHAIN, 1, 1).setID("chestplateChain"));
-/* 639:701 */     a(304, "chainmail_leggings", new ajn(EnumArmorMaterial.CHAIN, 1, 2).setID("leggingsChain"));
-/* 640:702 */     a(305, "chainmail_boots", new ajn(EnumArmorMaterial.CHAIN, 1, 3).setID("bootsChain"));
-/* 641:703 */     a(306, "iron_helmet", new ajn(EnumArmorMaterial.IRON, 2, 0).setID("helmetIron"));
-/* 642:704 */     a(307, "iron_chestplate", new ajn(EnumArmorMaterial.IRON, 2, 1).setID("chestplateIron"));
-/* 643:705 */     a(308, "iron_leggings", new ajn(EnumArmorMaterial.IRON, 2, 2).setID("leggingsIron"));
-/* 644:706 */     a(309, "iron_boots", new ajn(EnumArmorMaterial.IRON, 2, 3).setID("bootsIron"));
-/* 645:707 */     a(310, "diamond_helmet", new ajn(EnumArmorMaterial.e, 3, 0).setID("helmetDiamond"));
-/* 646:708 */     a(311, "diamond_chestplate", new ajn(EnumArmorMaterial.e, 3, 1).setID("chestplateDiamond"));
-/* 647:709 */     a(312, "diamond_leggings", new ajn(EnumArmorMaterial.e, 3, 2).setID("leggingsDiamond"));
-/* 648:710 */     a(313, "diamond_boots", new ajn(EnumArmorMaterial.e, 3, 3).setID("bootsDiamond"));
-/* 649:711 */     a(314, "golden_helmet", new ajn(EnumArmorMaterial.d, 4, 0).setID("helmetGold"));
-/* 650:712 */     a(315, "golden_chestplate", new ajn(EnumArmorMaterial.d, 4, 1).setID("chestplateGold"));
-/* 651:713 */     a(316, "golden_leggings", new ajn(EnumArmorMaterial.d, 4, 2).setID("leggingsGold"));
-/* 652:714 */     a(317, "golden_boots", new ajn(EnumArmorMaterial.d, 4, 3).setID("bootsGold"));
+/* 633:695 */     a(298, "leather_helmet", new ItemArmor(EnumArmorMaterial.LEATHER, 0, 0).setID("helmetCloth"));
+/* 634:696 */     a(299, "leather_chestplate", new ItemArmor(EnumArmorMaterial.LEATHER, 0, 1).setID("chestplateCloth"));
+/* 635:697 */     a(300, "leather_leggings", new ItemArmor(EnumArmorMaterial.LEATHER, 0, 2).setID("leggingsCloth"));
+/* 636:698 */     a(301, "leather_boots", new ItemArmor(EnumArmorMaterial.LEATHER, 0, 3).setID("bootsCloth"));
+/* 637:699 */     a(302, "chainmail_helmet", new ItemArmor(EnumArmorMaterial.CHAIN, 1, 0).setID("helmetChain"));
+/* 638:700 */     a(303, "chainmail_chestplate", new ItemArmor(EnumArmorMaterial.CHAIN, 1, 1).setID("chestplateChain"));
+/* 639:701 */     a(304, "chainmail_leggings", new ItemArmor(EnumArmorMaterial.CHAIN, 1, 2).setID("leggingsChain"));
+/* 640:702 */     a(305, "chainmail_boots", new ItemArmor(EnumArmorMaterial.CHAIN, 1, 3).setID("bootsChain"));
+/* 641:703 */     a(306, "iron_helmet", new ItemArmor(EnumArmorMaterial.IRON, 2, 0).setID("helmetIron"));
+/* 642:704 */     a(307, "iron_chestplate", new ItemArmor(EnumArmorMaterial.IRON, 2, 1).setID("chestplateIron"));
+/* 643:705 */     a(308, "iron_leggings", new ItemArmor(EnumArmorMaterial.IRON, 2, 2).setID("leggingsIron"));
+/* 644:706 */     a(309, "iron_boots", new ItemArmor(EnumArmorMaterial.IRON, 2, 3).setID("bootsIron"));
+/* 645:707 */     a(310, "diamond_helmet", new ItemArmor(EnumArmorMaterial.DIAMOND, 3, 0).setID("helmetDiamond"));
+/* 646:708 */     a(311, "diamond_chestplate", new ItemArmor(EnumArmorMaterial.DIAMOND, 3, 1).setID("chestplateDiamond"));
+/* 647:709 */     a(312, "diamond_leggings", new ItemArmor(EnumArmorMaterial.DIAMOND, 3, 2).setID("leggingsDiamond"));
+/* 648:710 */     a(313, "diamond_boots", new ItemArmor(EnumArmorMaterial.DIAMOND, 3, 3).setID("bootsDiamond"));
+/* 649:711 */     a(314, "golden_helmet", new ItemArmor(EnumArmorMaterial.GOLD, 4, 0).setID("helmetGold"));
+/* 650:712 */     a(315, "golden_chestplate", new ItemArmor(EnumArmorMaterial.GOLD, 4, 1).setID("chestplateGold"));
+/* 651:713 */     a(316, "golden_leggings", new ItemArmor(EnumArmorMaterial.GOLD, 4, 2).setID("leggingsGold"));
+/* 652:714 */     a(317, "golden_boots", new ItemArmor(EnumArmorMaterial.GOLD, 4, 3).setID("bootsGold"));
 /* 653:715 */     a(318, "flint", new Item().setID("flint").setTabToDisplayOn(CreativeTabs.tabMaterials));
 /* 654:716 */     a(319, "porkchop", new all(3, 0.3F, true).setID("porkchopRaw"));
 /* 655:717 */     a(320, "cooked_porkchop", new all(8, 0.8F, true).setID("porkchopCooked"));

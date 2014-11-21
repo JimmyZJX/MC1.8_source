@@ -635,7 +635,7 @@ package net.minecraft.src;
 /*  634: 689 */     this.h.y.c("culling");
 /*  635:     */     
 /*  636:     */ 
-/*  637: 692 */     Object localObject1 = new BlockPosition(d4, d5 + paramwv.aR(), d6);
+/*  637: 692 */     Object localObject1 = new BlockPosition(d4, d5 + paramwv.getEyeHeight(), d6);
 /*  638: 693 */     cop localcop1 = this.n.a((BlockPosition)localObject1);
 /*  639: 694 */     BlockPosition localdt = new BlockPosition(MathUtils.floor(d4) / 16 * 16, MathUtils.floor(d5) / 16 * 16, MathUtils.floor(d6) / 16 * 16);
 /*  640:     */     

@@ -17,7 +17,7 @@ package net.minecraft.src;
 /*  17: 34 */     bw();
 /*  18: 35 */     float f = c(1.0F);
 /*  19: 36 */     if (f > 0.5F) {
-/*  20: 37 */       this.aO += 2;
+/*  20: 37 */       this.despawnTimer += 2;
 /*  21:    */     }
 /*  22: 39 */     super.m();
 /*  23:    */   }
@@ -80,7 +80,7 @@ package net.minecraft.src;
 /*  80:103 */     int i = 0;
 /*  81:105 */     if ((paramwv instanceof EntityLiving))
 /*  82:    */     {
-/*  83:106 */       f += aph.a(bz(), ((EntityLiving)paramwv).by());
+/*  83:106 */       f += aph.a(getHeldItemStack(), ((EntityLiving)paramwv).by());
 /*  84:107 */       i += aph.a(this);
 /*  85:    */     }
 /*  86:110 */     boolean bool = paramwv.a(DamageSource.a(this), f);

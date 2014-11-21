@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*  3:   */   public zb a;
 /*  4:   */   public int b;
 /*  5:   */   
-/*  6:   */   public zd(zc paramzc, int paramInt, zb paramzb)
+/*  6:   */   public zd(TargetSelector paramzc, int paramInt, zb paramzb)
 /*  7:   */   {
 /*  8:17 */     this.b = paramInt;
 /*  9:18 */     this.a = paramzb;

@@ -2,13 +2,13 @@ package net.minecraft.src;
 public abstract interface bdd
   extends vq
 {
-  public abstract World z();
+  public abstract World getWorld();
   
-  public abstract double A();
+  public abstract double getX();
   
-  public abstract double B();
+  public abstract double getY();
   
-  public abstract double C();
+  public abstract double getZ();
 }
 
 

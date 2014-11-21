@@ -57,7 +57,7 @@ package net.minecraft.src;
 /* 56:   */           }
 /* 57:62 */           if (localamj2 != null)
 /* 58:   */           {
-/* 59:63 */             double d = this.f.yPos - 0.300000011920929D + this.f.aR();
+/* 59:63 */             double d = this.f.yPos - 0.300000011920929D + this.f.getEyeHeight();
 /* 60:64 */             EntityItem entityItem = new EntityItem(this.f.world, this.f.xPos, d, this.f.zPos, localamj2);
 /* 61:65 */             float f1 = 0.3F;
 /* 62:66 */             float f2 = this.f.aI;
@@ -65,7 +65,7 @@ package net.minecraft.src;
 /* 64:68 */             entityItem.xVelocity = (-MathUtils.sin(f2 / 180.0F * 3.141593F) * MathUtils.cos(f3 / 180.0F * 3.141593F) * f1);
 /* 65:69 */             entityItem.zVelocity = (MathUtils.cos(f2 / 180.0F * 3.141593F) * MathUtils.cos(f3 / 180.0F * 3.141593F) * f1);
 /* 66:70 */             entityItem.yVelocity = (-MathUtils.sin(f3 / 180.0F * 3.141593F) * f1 + 0.1F);
-/* 67:71 */             entityItem.p();
+/* 67:71 */             entityItem.initPickupDelay();
 /* 68:   */             
 /* 69:73 */             this.f.world.spawnEntity(entityItem);
 /* 70:   */             

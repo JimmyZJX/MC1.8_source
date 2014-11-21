@@ -9,12 +9,12 @@ package net.minecraft.src;
 /*  8:24 */     if ((this == j) && (paramalq.m())) {
 /*  9:25 */       return true;
 /* 10:   */     }
-/* 11:28 */     if ((paramalq instanceof ajn))
+/* 11:28 */     if ((paramalq instanceof ItemArmor))
 /* 12:   */     {
 /* 13:29 */       if (this == b) {
 /* 14:30 */         return true;
 /* 15:   */       }
-/* 16:32 */       ajn localajn = (ajn)paramalq;
+/* 16:32 */       ItemArmor localajn = (ItemArmor)paramalq;
 /* 17:33 */       if (localajn.b == 0) {
 /* 18:34 */         return this == f;
 /* 19:   */       }
@@ -35,7 +35,7 @@ package net.minecraft.src;
 /* 34:48 */     if ((paramalq instanceof ItemTool)) {
 /* 35:49 */       return this == h;
 /* 36:   */     }
-/* 37:50 */     if ((paramalq instanceof ajz)) {
+/* 37:50 */     if ((paramalq instanceof ItemBow)) {
 /* 38:51 */       return this == k;
 /* 39:   */     }
 /* 40:52 */     if ((paramalq instanceof ItemFishingRod)) {

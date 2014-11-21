@@ -14,9 +14,9 @@ package net.minecraft.src;
 /*  13:    */     {
 /*  14: 22 */       ItemStack localamj = paramain.get(i);
 /*  15: 23 */       if (localamj != null) {
-/*  16: 27 */         if ((localamj.getItem() instanceof ajn))
+/*  16: 27 */         if ((localamj.getItem() instanceof ItemArmor))
 /*  17:    */         {
-/*  18: 28 */           ajn localajn = (ajn)localamj.getItem();
+/*  18: 28 */           ItemArmor localajn = (ItemArmor)localamj.getItem();
 /*  19: 30 */           if ((localajn.w_() == EnumArmorMaterial.LEATHER) && (localObject == null)) {
 /*  20: 31 */             localObject = localamj;
 /*  21:    */           } else {
@@ -42,14 +42,14 @@ package net.minecraft.src;
 /*  41: 49 */     int[] arrayOfInt = new int[3];
 /*  42: 50 */     int i = 0;
 /*  43: 51 */     int j = 0;
-/*  44: 52 */     ajn localajn = null;
+/*  44: 52 */     ItemArmor localajn = null;
 /*  45: 54 */     for (int k = 0; k < paramain.getSize(); k++)
 /*  46:    */     {
 /*  47: 55 */       ItemStack localamj2 = paramain.get(k);
 /*  48: 56 */       if (localamj2 != null) {
-/*  49: 60 */         if ((localamj2.getItem() instanceof ajn))
+/*  49: 60 */         if ((localamj2.getItem() instanceof ItemArmor))
 /*  50:    */         {
-/*  51: 61 */           localajn = (ajn)localamj2.getItem();
+/*  51: 61 */           localajn = (ItemArmor)localamj2.getItem();
 /*  52: 63 */           if ((localajn.w_() == EnumArmorMaterial.LEATHER) && (localamj1 == null))
 /*  53:    */           {
 /*  54: 64 */             localamj1 = localamj2.k();

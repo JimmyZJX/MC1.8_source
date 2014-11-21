@@ -1,7 +1,7 @@
 package net.minecraft.src;
 /*  1:   */ public class aon
 /*  2:   */ {
-/*  3:12 */   private Object[][] a = { { BlockList.R, new ItemStack(ItemList.k, 9) }, { BlockList.S, new ItemStack(ItemList.j, 9) }, { BlockList.diamondBlock, new ItemStack(ItemList.diamond, 9) }, { BlockList.emeraldBlock, new ItemStack(ItemList.emerald, 9) }, { BlockList.y, new ItemStack(ItemList.dye, 9, EnumDyeColor.BLUE.b()) }, { BlockList.cn, new ItemStack(ItemList.aC, 9) }, { BlockList.cA, new ItemStack(ItemList.h, 9, 0) }, { BlockList.cx, new ItemStack(ItemList.O, 9) }, { BlockList.cE, new ItemStack(ItemList.aM, 9) } };
+/*  3:12 */   private Object[][] a = { { BlockList.R, new ItemStack(ItemList.goldIngot, 9) }, { BlockList.S, new ItemStack(ItemList.ironIngot, 9) }, { BlockList.diamondBlock, new ItemStack(ItemList.diamond, 9) }, { BlockList.emeraldBlock, new ItemStack(ItemList.emerald, 9) }, { BlockList.y, new ItemStack(ItemList.dye, 9, EnumDyeColor.BLUE.b()) }, { BlockList.cn, new ItemStack(ItemList.aC, 9) }, { BlockList.cA, new ItemStack(ItemList.h, 9, 0) }, { BlockList.cx, new ItemStack(ItemList.O, 9) }, { BlockList.cE, new ItemStack(ItemList.aM, 9) } };
 /*  4:   */   
 /*  5:   */   public void a(aop paramaop)
 /*  6:   */   {
@@ -19,14 +19,14 @@ package net.minecraft.src;
 /* 18:   */ 
 /* 19:36 */       paramaop.a(localamj, new Object[] { "#", Character.valueOf('#'), localatr });
 /* 20:   */     }
-/* 21:42 */     paramaop.a(new ItemStack(ItemList.k), new Object[] { "###", "###", "###", Character.valueOf('#'), ItemList.goldNugget });
+/* 21:42 */     paramaop.a(new ItemStack(ItemList.goldIngot), new Object[] { "###", "###", "###", Character.valueOf('#'), ItemList.goldNugget });
 /* 22:   */     
 /* 23:   */ 
 /* 24:   */ 
 /* 25:   */ 
 /* 26:   */ 
 /* 27:   */ 
-/* 28:49 */     paramaop.a(new ItemStack(ItemList.goldNugget, 9), new Object[] { "#", Character.valueOf('#'), ItemList.k });
+/* 28:49 */     paramaop.a(new ItemStack(ItemList.goldNugget, 9), new Object[] { "#", Character.valueOf('#'), ItemList.goldIngot });
 /* 29:   */   }
 /* 30:   */ }
 

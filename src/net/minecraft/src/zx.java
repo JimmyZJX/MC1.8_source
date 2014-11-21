@@ -36,7 +36,7 @@ package net.minecraft.src;
 /* 35:   */   public void e()
 /* 36:   */   {
 /* 37:36 */     this.d -= 1;
-/* 38:37 */     this.a.p().a(this.a.xPos + this.b, this.a.yPos + this.a.aR(), this.a.zPos + this.c, 10.0F, this.a.bP());
+/* 38:37 */     this.a.p().a(this.a.xPos + this.b, this.a.yPos + this.a.getEyeHeight(), this.a.zPos + this.c, 10.0F, this.a.bP());
 /* 39:   */   }
 /* 40:   */ }
 

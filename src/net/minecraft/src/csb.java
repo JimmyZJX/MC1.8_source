@@ -38,10 +38,10 @@ package net.minecraft.src;
 /*  37:    */   private void a(EntityLiving paramxm, float paramFloat1, float paramFloat2, float paramFloat3, float paramFloat4, float paramFloat5, float paramFloat6, float paramFloat7, int paramInt)
 /*  38:    */   {
 /*  39: 64 */     ItemStack localamj = a(paramxm, paramInt);
-/*  40: 65 */     if ((localamj == null) || (!(localamj.getItem() instanceof ajn))) {
+/*  40: 65 */     if ((localamj == null) || (!(localamj.getItem() instanceof ItemArmor))) {
 /*  41: 66 */       return;
 /*  42:    */     }
-/*  43: 69 */     ajn localajn = (ajn)localamj.getItem();
+/*  43: 69 */     ItemArmor localajn = (ItemArmor)localamj.getItem();
 /*  44:    */     
 /*  45: 71 */     T localccq = a(paramInt);
 /*  46:    */     
@@ -79,7 +79,7 @@ package net.minecraft.src;
 /*  78:    */   
 /*  79:    */   public ItemStack a(EntityLiving paramxm, int paramInt)
 /*  80:    */   {
-/*  81:113 */     return paramxm.q(paramInt - 1);
+/*  81:113 */     return paramxm.getArmor(paramInt - 1);
 /*  82:    */   }
 /*  83:    */   
 /*  84:    */   public T a(int paramInt)
@@ -136,14 +136,14 @@ package net.minecraft.src;
 /* 135:    */   
 /* 136:166 */   private static final Map<String,oa> j = Maps.newHashMap();
 /* 137:    */   
-/* 138:    */   private oa a(ajn paramajn, boolean paramBoolean)
+/* 138:    */   private oa a(ItemArmor paramajn, boolean paramBoolean)
 /* 139:    */   {
 /* 140:169 */     return a(paramajn, paramBoolean, null);
 /* 141:    */   }
 /* 142:    */   
-/* 143:    */   private oa a(ajn paramajn, boolean paramBoolean, String paramString)
+/* 143:    */   private oa a(ItemArmor paramajn, boolean paramBoolean, String paramString)
 /* 144:    */   {
-/* 145:173 */     String str = String.format("textures/models/armor/%s_layer_%d%s.png", new Object[] { paramajn.w_().c(), Integer.valueOf(paramBoolean ? 2 : 1), paramString == null ? "" : String.format("_%s", new Object[] { paramString }) });
+/* 145:173 */     String str = String.format("textures/models/armor/%s_layer_%d%s.png", new Object[] { paramajn.w_().getName(), Integer.valueOf(paramBoolean ? 2 : 1), paramString == null ? "" : String.format("_%s", new Object[] { paramString }) });
 /* 146:    */     
 /* 147:175 */     oa localoa = (oa)j.get(str);
 /* 148:176 */     if (localoa == null)

@@ -41,7 +41,7 @@ package net.minecraft.src;
 /*  40: 56 */           i1++;
 /*  41: 57 */         } else if (((ItemStack)localObject2).getItem() == ItemList.goldNugget) {
 /*  42: 59 */           i1++;
-/*  43: 60 */         } else if (((ItemStack)localObject2).getItem() == ItemList.bX) {
+/*  43: 60 */         } else if (((ItemStack)localObject2).getItem() == ItemList.skull) {
 /*  44: 62 */           i1++;
 /*  45:    */         } else {
 /*  46: 64 */           return false;
@@ -102,7 +102,7 @@ package net.minecraft.src;
 /* 101:125 */             b = 4;
 /* 102:126 */           } else if (localamj3.getItem() == ItemList.goldNugget) {
 /* 103:127 */             b = 2;
-/* 104:128 */           } else if (localamj3.getItem() == ItemList.bX) {
+/* 104:128 */           } else if (localamj3.getItem() == ItemList.skull) {
 /* 105:129 */             b = 3;
 /* 106:    */           }
 /* 107:    */         }

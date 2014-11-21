@@ -6,8 +6,8 @@ class csc {
 		try {a[EnumArmorMaterial.LEATHER.ordinal()] = 1;} catch (NoSuchFieldError e) { }
 		try {a[EnumArmorMaterial.CHAIN.ordinal()] = 2;} catch (NoSuchFieldError e) { }
 		try {a[EnumArmorMaterial.IRON.ordinal()] = 3;} catch (NoSuchFieldError e) { }
-		try {a[EnumArmorMaterial.d.ordinal()] = 4;} catch (NoSuchFieldError e) { }
-		try {a[EnumArmorMaterial.e.ordinal()] = 5;} catch (NoSuchFieldError e) { }
+		try {a[EnumArmorMaterial.GOLD.ordinal()] = 4;} catch (NoSuchFieldError e) { }
+		try {a[EnumArmorMaterial.DIAMOND.ordinal()] = 5;} catch (NoSuchFieldError e) { }
 	}
 }
 

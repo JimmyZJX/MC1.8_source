@@ -92,7 +92,7 @@ package net.minecraft.src;
 /*  91:105 */         this.rider.mount(this);
 /*  92:    */       }
 /*  93:107 */       if (j == 0) {
-/*  94:108 */         a(ItemList.aE, 1, 0.0F);
+/*  94:108 */         throwItem(ItemList.aE, 1, 0.0F);
 /*  95:    */       }
 /*  96:110 */       setDead();
 /*  97:    */     }
@@ -328,10 +328,10 @@ package net.minecraft.src;
 /* 327:    */       {
 /* 328:326 */         setDead();
 /* 329:327 */         for (int m = 0; m < 3; m++) {
-/* 330:328 */           a(Item.fromProtoBlock(BlockList.planks), 1, 0.0F);
+/* 330:328 */           throwItem(Item.fromProtoBlock(BlockList.planks), 1, 0.0F);
 /* 331:    */         }
 /* 332:330 */         for (int m = 0; m < 2; m++) {
-/* 333:331 */           a(ItemList.stick, 1, 0.0F);
+/* 333:331 */           throwItem(ItemList.stick, 1, 0.0F);
 /* 334:    */         }
 /* 335:    */       }
 /* 336:    */     }
@@ -412,10 +412,10 @@ package net.minecraft.src;
 /* 411:    */         {
 /* 412:417 */           setDead();
 /* 413:418 */           for (int j = 0; j < 3; j++) {
-/* 414:419 */             a(Item.fromProtoBlock(BlockList.planks), 1, 0.0F);
+/* 414:419 */             throwItem(Item.fromProtoBlock(BlockList.planks), 1, 0.0F);
 /* 415:    */           }
 /* 416:421 */           for (j = 0; j < 2; j++) {
-/* 417:422 */             a(ItemList.stick, 1, 0.0F);
+/* 417:422 */             throwItem(ItemList.stick, 1, 0.0F);
 /* 418:    */           }
 /* 419:    */         }
 /* 420:425 */         this.O = 0.0F;

@@ -57,8 +57,8 @@ package net.minecraft.src;
 /* 56:   */   
 /* 57:   */   public void e()
 /* 58:   */   {
-/* 59:63 */     double d1 = this.a.e(this.c.xPos, this.c.getAABB().minY, this.c.zPos);
-/* 60:64 */     boolean bool = this.a.t().a(this.c);
+/* 59:63 */     double d1 = this.a.dist2(this.c.xPos, this.c.getAABB().minY, this.c.zPos);
+/* 60:64 */     boolean bool = this.a.t().canSee(this.c);
 /* 61:66 */     if (bool) {
 /* 62:67 */       this.f += 1;
 /* 63:   */     } else {

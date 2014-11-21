@@ -487,9 +487,9 @@ package net.minecraft.src;
 /* 485:    */   {
 /* 486:497 */     int i = 0;
 /* 487:498 */     for (int j = 0; j < this.b.length; j++) {
-/* 488:499 */       if ((this.b[j] != null) && ((this.b[j].getItem() instanceof ajn)))
+/* 488:499 */       if ((this.b[j] != null) && ((this.b[j].getItem() instanceof ItemArmor)))
 /* 489:    */       {
-/* 490:500 */         int k = ((ajn)this.b[j].getItem()).c;
+/* 490:500 */         int k = ((ItemArmor)this.b[j].getItem()).c;
 /* 491:501 */         i += k;
 /* 492:    */       }
 /* 493:    */     }
@@ -503,7 +503,7 @@ package net.minecraft.src;
 /* 501:510 */       paramFloat = 1.0F;
 /* 502:    */     }
 /* 503:512 */     for (int i = 0; i < this.b.length; i++) {
-/* 504:513 */       if ((this.b[i] != null) && ((this.b[i].getItem() instanceof ajn)))
+/* 504:513 */       if ((this.b[i] != null) && ((this.b[i].getItem() instanceof ItemArmor)))
 /* 505:    */       {
 /* 506:514 */         this.b[i].a((int)paramFloat, this.d);
 /* 507:515 */         if (this.b[i].stackSize == 0) {

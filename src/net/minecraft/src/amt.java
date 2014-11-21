@@ -16,7 +16,7 @@ package net.minecraft.src;
 /* 15:   */     {
 /* 16:19 */       EntityMob localxn = (EntityMob)paramxm;
 /* 17:20 */       localxn.a(paramamj.q());
-/* 18:21 */       localxn.bW();
+/* 18:21 */       localxn.setPersistent();
 /* 19:22 */       paramamj.stackSize -= 1;
 /* 20:23 */       return true;
 /* 21:   */     }

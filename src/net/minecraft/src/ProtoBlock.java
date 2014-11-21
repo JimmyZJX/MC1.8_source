@@ -411,7 +411,7 @@ package net.minecraft.src;
 /*  411: 514 */     double d2 = world.rng.nextFloat() * f1 + (1.0F - f1) * 0.5D;
 /*  412: 515 */     double d3 = world.rng.nextFloat() * f1 + (1.0F - f1) * 0.5D;
 /*  413: 516 */     EntityItem entityItem = new EntityItem(world, pos.getX() + d1, pos.getY() + d2, pos.getZ() + d3, paramamj);
-/*  414: 517 */     entityItem.p();
+/*  414: 517 */     entityItem.initPickupDelay();
 /*  415: 518 */     world.spawnEntity(entityItem);
 /*  416:     */   }
 /*  417:     */   

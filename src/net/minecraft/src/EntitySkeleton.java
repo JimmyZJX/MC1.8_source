@@ -13,23 +13,23 @@ package net.minecraft.src;
 /*  12:    */   {
 /*  13: 44 */     super(paramaqu);
 /*  14:    */     
-/*  15: 46 */     this.i.a(1, new yy(this));
-/*  16: 47 */     this.i.a(2, new aab(this));
-/*  17: 48 */     this.i.a(2, this.a);
-/*  18: 49 */     this.i.a(3, new yx(this, 1.0D));
-/*  19: 50 */     this.i.a(3, new yp(this, new afx(this), 6.0F, 1.0D, 1.2D));
+/*  15: 46 */     this.goalSelector.a(1, new yy(this));
+/*  16: 47 */     this.goalSelector.a(2, new aab(this));
+/*  17: 48 */     this.goalSelector.a(2, this.a);
+/*  18: 49 */     this.goalSelector.a(3, new yx(this, 1.0D));
+/*  19: 50 */     this.goalSelector.a(3, new yp(this, new afx(this), 6.0F, 1.0D, 1.2D));
 /*  20:    */     
 /*  21:    */ 
 /*  22:    */ 
 /*  23:    */ 
 /*  24:    */ 
-/*  25: 56 */     this.i.a(4, new zy(this, 1.0D));
-/*  26: 57 */     this.i.a(6, new zh(this, EntityPlayer.class, 8.0F));
-/*  27: 58 */     this.i.a(6, new zx(this));
+/*  25: 56 */     this.goalSelector.a(4, new zy(this, 1.0D));
+/*  26: 57 */     this.goalSelector.a(6, new zh(this, EntityPlayer.class, 8.0F));
+/*  27: 58 */     this.goalSelector.a(6, new zx(this));
 /*  28:    */     
-/*  29: 60 */     this.bg.a(1, new aal(this, false, new Class[0]));
-/*  30: 61 */     this.bg.a(2, new aaq(this, EntityPlayer.class, true));
-/*  31: 62 */     this.bg.a(3, new aaq(this, EntityIronGolem.class, true));
+/*  29: 60 */     this.targetSelector.a(1, new aal(this, false, new Class[0]));
+/*  30: 61 */     this.targetSelector.a(2, new aaq(this, EntityPlayer.class, true));
+/*  31: 62 */     this.targetSelector.a(3, new aaq(this, EntityIronGolem.class, true));
 /*  32: 64 */     if ((paramaqu != null) && (!paramaqu.isClient)) {
 /*  33: 65 */       n();
 /*  34:    */     }
@@ -96,7 +96,7 @@ package net.minecraft.src;
 /*  95:    */       {
 /*  96:125 */         int i = 1;
 /*  97:    */         
-/*  98:127 */         ItemStack localamj = p(4);
+/*  98:127 */         ItemStack localamj = getItemStack(4);
 /*  99:128 */         if (localamj != null)
 /* 100:    */         {
 /* 101:129 */           if (localamj.e())
@@ -105,7 +105,7 @@ package net.minecraft.src;
 /* 104:131 */             if (localamj.getDamage() >= localamj.j())
 /* 105:    */             {
 /* 106:132 */               b(localamj);
-/* 107:133 */               c(4, null);
+/* 107:133 */               setItemStack(4, null);
 /* 108:    */             }
 /* 109:    */           }
 /* 110:137 */           i = 0;
@@ -148,7 +148,7 @@ package net.minecraft.src;
 /* 147:175 */       (((EntityCreeper)paramwh.j()).n()) && (((EntityCreeper)paramwh.j()).cn()))
 /* 148:    */     {
 /* 149:176 */       ((EntityCreeper)paramwh.j()).co();
-/* 150:177 */       a(new ItemStack(ItemList.bX, 1, ck() == 1 ? 1 : 0), 0.0F);
+/* 150:177 */       throwItem(new ItemStack(ItemList.skull, 1, ck() == 1 ? 1 : 0), 0.0F);
 /* 151:    */     }
 /* 152:    */   }
 /* 153:    */   
@@ -182,7 +182,7 @@ package net.minecraft.src;
 /* 181:    */   protected void bp()
 /* 182:    */   {
 /* 183:212 */     if (ck() == 1) {
-/* 184:213 */       a(new ItemStack(ItemList.bX, 1, 1), 0.0F);
+/* 184:213 */       throwItem(new ItemStack(ItemList.skull, 1, 1), 0.0F);
 /* 185:    */     }
 /* 186:    */   }
 /* 187:    */   
@@ -190,7 +190,7 @@ package net.minecraft.src;
 /* 189:    */   {
 /* 190:219 */     super.a(paramvu);
 /* 191:    */     
-/* 192:221 */     c(0, new ItemStack(ItemList.f));
+/* 192:221 */     setItemStack(0, new ItemStack(ItemList.bow));
 /* 193:    */   }
 /* 194:    */   
 /* 195:    */   public xq beforeSpawn(vu paramvu, xq paramxq)
@@ -198,27 +198,27 @@ package net.minecraft.src;
 /* 197:227 */     paramxq = super.beforeSpawn(paramvu, paramxq);
 /* 198:229 */     if (((this.world.t instanceof bge)) && (getRNG().nextInt(5) > 0))
 /* 199:    */     {
-/* 200:230 */       this.i.a(4, this.c);
+/* 200:230 */       this.goalSelector.a(4, this.c);
 /* 201:    */       
 /* 202:232 */       a(1);
-/* 203:233 */       c(0, new ItemStack(ItemList.q));
+/* 203:233 */       setItemStack(0, new ItemStack(ItemList.q));
 /* 204:234 */       a(afs.e).a(4.0D);
 /* 205:    */     }
 /* 206:    */     else
 /* 207:    */     {
-/* 208:236 */       this.i.a(4, this.b);
+/* 208:236 */       this.goalSelector.a(4, this.b);
 /* 209:    */       
 /* 210:238 */       a(paramvu);
 /* 211:239 */       b(paramvu);
 /* 212:    */     }
-/* 213:242 */     j(this.rng.nextFloat() < 0.55F * paramvu.c());
-/* 214:244 */     if (p(4) == null)
+/* 213:242 */     setCanPickUpLoot(this.rng.nextFloat() < 0.55F * paramvu.c());
+/* 214:244 */     if (getItemStack(4) == null)
 /* 215:    */     {
 /* 216:245 */       Calendar localCalendar = this.world.Y();
 /* 217:247 */       if ((localCalendar.get(2) + 1 == 10) && (localCalendar.get(5) == 31) && (this.rng.nextFloat() < 0.25F))
 /* 218:    */       {
-/* 219:249 */         c(4, new ItemStack(this.rng.nextFloat() < 0.1F ? BlockList.aZ : BlockList.pumpkin));
-/* 220:250 */         this.bh[4] = 0.0F;
+/* 219:249 */         setItemStack(4, new ItemStack(this.rng.nextFloat() < 0.1F ? BlockList.aZ : BlockList.pumpkin));
+/* 220:250 */         this.dropChances[4] = 0.0F;
 /* 221:    */       }
 /* 222:    */     }
 /* 223:253 */     return paramxq;
@@ -226,22 +226,22 @@ package net.minecraft.src;
 /* 225:    */   
 /* 226:    */   public void n()
 /* 227:    */   {
-/* 228:257 */     this.i.a(this.c);
-/* 229:258 */     this.i.a(this.b);
+/* 228:257 */     this.goalSelector.a(this.c);
+/* 229:258 */     this.goalSelector.a(this.b);
 /* 230:    */     
-/* 231:260 */     ItemStack localamj = bz();
-/* 232:262 */     if ((localamj != null) && (localamj.getItem() == ItemList.f)) {
-/* 233:263 */       this.i.a(4, this.b);
+/* 231:260 */     ItemStack localamj = getHeldItemStack();
+/* 232:262 */     if ((localamj != null) && (localamj.getItem() == ItemList.bow)) {
+/* 233:263 */       this.goalSelector.a(4, this.b);
 /* 234:    */     } else {
-/* 235:265 */       this.i.a(4, this.c);
+/* 235:265 */       this.goalSelector.a(4, this.c);
 /* 236:    */     }
 /* 237:    */   }
 /* 238:    */   
 /* 239:    */   public void a(EntityLiving paramxm, float paramFloat)
 /* 240:    */   {
 /* 241:271 */     ahj localahj = new ahj(this.world, this, paramxm, 1.6F, 14 - this.world.getDifficulty().a() * 4);
-/* 242:272 */     int i = aph.a(Enchantment.v.B, bz());
-/* 243:273 */     int j = aph.a(Enchantment.w.B, bz());
+/* 242:272 */     int i = aph.a(Enchantment.v.B, getHeldItemStack());
+/* 243:273 */     int j = aph.a(Enchantment.w.B, getHeldItemStack());
 /* 244:    */     
 /* 245:275 */     localahj.b(paramFloat * 2.0F + (this.rng.nextGaussian() * 0.25D + this.world.getDifficulty().a() * 0.11F));
 /* 246:277 */     if (i > 0) {
@@ -250,7 +250,7 @@ package net.minecraft.src;
 /* 249:280 */     if (j > 0) {
 /* 250:281 */       localahj.a(j);
 /* 251:    */     }
-/* 252:283 */     if ((aph.a(Enchantment.x.B, bz()) > 0) || (ck() == 1)) {
+/* 252:283 */     if ((aph.a(Enchantment.x.B, getHeldItemStack()) > 0) || (ck() == 1)) {
 /* 253:284 */       localahj.e(100);
 /* 254:    */     }
 /* 255:287 */     a("random.bow", 1.0F, 1.0F / (getRNG().nextFloat() * 0.4F + 0.8F));
@@ -291,18 +291,18 @@ package net.minecraft.src;
 /* 290:321 */     paramfn.setByte("SkeletonType", (byte)ck());
 /* 291:    */   }
 /* 292:    */   
-/* 293:    */   public void c(int paramInt, ItemStack paramamj)
+/* 293:    */   public void setItemStack(int paramInt, ItemStack paramamj)
 /* 294:    */   {
-/* 295:326 */     super.c(paramInt, paramamj);
+/* 295:326 */     super.setItemStack(paramInt, paramamj);
 /* 296:328 */     if ((!this.world.isClient) && (paramInt == 0)) {
 /* 297:329 */       n();
 /* 298:    */     }
 /* 299:    */   }
 /* 300:    */   
-/* 301:    */   public float aR()
+/* 301:    */   public float getEyeHeight()
 /* 302:    */   {
 /* 303:335 */     if (ck() == 1) {
-/* 304:336 */       return super.aR();
+/* 304:336 */       return super.getEyeHeight();
 /* 305:    */     }
 /* 306:339 */     return 1.74F;
 /* 307:    */   }

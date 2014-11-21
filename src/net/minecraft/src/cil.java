@@ -83,7 +83,7 @@ package net.minecraft.src;
 /*  82:112 */     if ((this.by.b() == 0.0F) || (Float.isNaN(f1)) || (Float.isInfinite(f1))) {
 /*  83:113 */       f1 = 1.0F;
 /*  84:    */     }
-/*  85:117 */     if ((bR()) && (bP().getItem() == ItemList.f))
+/*  85:117 */     if ((bR()) && (bP().getItem() == ItemList.bow))
 /*  86:    */     {
 /*  87:118 */       int i = bS();
 /*  88:119 */       float f2 = i / 20.0F;

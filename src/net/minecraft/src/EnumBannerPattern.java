@@ -122,7 +122,7 @@ package net.minecraft.src;
 						"# #",
 						"###"),
 				F("curly_border","cbo",new ItemStack(BlockList.vine)),
-				G("creeper","cre",new ItemStack(ItemList.bX,1,4)),
+				G("creeper","cre",new ItemStack(ItemList.skull,1,4)),
 				H("gradient","gra",
 						"# #",
 						" # ",
@@ -132,7 +132,7 @@ package net.minecraft.src;
 						" # ",
 						"# #"),
 				J("bricks","bri",new ItemStack(BlockList.V)),
-				K("skull","sku",new ItemStack(ItemList.bX,1,1)),
+				K("skull","sku",new ItemStack(ItemList.skull,1,1)),
 				L("flower","flo",new ItemStack(BlockList.redFlower,1,EnumFlowerVariant.j.b())),
 				M("mojang","moj",new ItemStack(ItemList.ao,1,1));
 /*   3:    */   private String N;

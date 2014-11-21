@@ -25,13 +25,13 @@ package net.minecraft.src;
 /*  24: 82 */     ((aay)s()).a(true);
 /*  25: 83 */     this.h.a(2.5F);
 /*  26:    */     
-/*  27: 85 */     this.i.a(1, new yy(this));
-/*  28: 86 */     this.i.a(1, new acj(this, 1.33D));
-/*  29: 87 */     this.i.a(2, new aag(this, 1.0D, ItemList.carrot, false));
-/*  30: 88 */     this.i.a(3, new yt(this, 0.8D));
-/*  31: 89 */     this.i.a(5, new ack(this));
-/*  32: 90 */     this.i.a(5, new zy(this, 0.6D));
-/*  33: 91 */     this.i.a(11, new zh(this, EntityPlayer.class, 10.0F));
+/*  27: 85 */     this.goalSelector.a(1, new yy(this));
+/*  28: 86 */     this.goalSelector.a(1, new acj(this, 1.33D));
+/*  29: 87 */     this.goalSelector.a(2, new aag(this, 1.0D, ItemList.carrot, false));
+/*  30: 88 */     this.goalSelector.a(3, new yt(this, 0.8D));
+/*  31: 89 */     this.goalSelector.a(5, new ack(this));
+/*  32: 90 */     this.goalSelector.a(5, new zy(this, 0.6D));
+/*  33: 91 */     this.goalSelector.a(11, new zh(this, EntityPlayer.class, 10.0F));
 /*  34:    */     
 /*  35: 93 */     this.bk = new acf(this, new acc(this), 16.0F, 1.33D, 1.33D);
 /*  36:    */     
@@ -40,7 +40,7 @@ package net.minecraft.src;
 /*  39:    */ 
 /*  40:    */ 
 /*  41:    */ 
-/*  42:100 */     this.i.a(4, this.bk);
+/*  42:100 */     this.goalSelector.a(4, this.bk);
 /*  43:    */     
 /*  44:102 */     b(0.0D);
 /*  45:    */   }
@@ -110,7 +110,7 @@ package net.minecraft.src;
 /* 109:    */   
 /* 110:159 */   private EntityPlayer bt = null;
 /* 111:    */   
-/* 112:    */   public void E()
+/* 112:    */   public void mobTick()
 /* 113:    */   {
 /* 114:163 */     if (this.f.b() > 0.8D) {
 /* 115:164 */       a(ace.d);
@@ -281,7 +281,7 @@ package net.minecraft.src;
 /* 280:    */   
 /* 281:    */   protected void bp()
 /* 282:    */   {
-/* 283:324 */     a(new ItemStack(ItemList.br, 1), 0.0F);
+/* 283:324 */     throwItem(new ItemStack(ItemList.br, 1), 0.0F);
 /* 284:    */   }
 /* 285:    */   
 /* 286:    */   protected void b(boolean paramBoolean, int paramInt)
@@ -328,11 +328,11 @@ package net.minecraft.src;
 /* 327:    */   {
 /* 328:369 */     if (paramInt == 99)
 /* 329:    */     {
-/* 330:370 */       this.i.a(this.bk);
-/* 331:371 */       this.i.a(4, new acd(this));
-/* 332:372 */       this.bg.a(1, new aal(this, false, new Class[0]));
-/* 333:373 */       this.bg.a(2, new aaq(this, EntityPlayer.class, true));
-/* 334:374 */       this.bg.a(2, new aaq(this, EntityWolf.class, true));
+/* 330:370 */       this.goalSelector.a(this.bk);
+/* 331:371 */       this.goalSelector.a(4, new acd(this));
+/* 332:372 */       this.targetSelector.a(1, new aal(this, false, new Class[0]));
+/* 333:373 */       this.targetSelector.a(2, new aaq(this, EntityPlayer.class, true));
+/* 334:374 */       this.targetSelector.a(2, new aaq(this, EntityWolf.class, true));
 /* 335:376 */       if (!k_()) {
 /* 336:377 */         a(fi.a("entity.KillerBunny.name"));
 /* 337:    */       }

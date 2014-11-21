@@ -225,7 +225,7 @@ package net.minecraft.src;
 /* 224:    */   {
 /* 225:265 */     if ((MathUtils.abs((float)paramxm.xPos - paramdt.getX()) < 2.0F) && (MathUtils.abs((float)paramxm.zPos - paramdt.getZ()) < 2.0F))
 /* 226:    */     {
-/* 227:267 */       double d = paramxm.yPos + paramxm.aR();
+/* 227:267 */       double d = paramxm.yPos + paramxm.getEyeHeight();
 /* 228:268 */       if (d - paramdt.getY() > 2.0D) {
 /* 229:269 */         return EnumDirection.UP;
 /* 230:    */       }

@@ -116,7 +116,7 @@ package net.minecraft.src;
 /* 115:    */   {
 /* 116:168 */     bsu localbsu = bsu.z();
 /* 117:169 */     if ((localbsu != null) && (localbsu.aa() != null) && 
-/* 118:170 */       (localbsu.aa().e(this.xPos, this.yPos, this.zPos) < 256.0D)) {
+/* 118:170 */       (localbsu.aa().dist2(this.xPos, this.yPos, this.zPos) < 256.0D)) {
 /* 119:171 */       return false;
 /* 120:    */     }
 /* 121:174 */     return true;

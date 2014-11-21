@@ -114,7 +114,7 @@ package net.minecraft.src;
 /* 113:    */     }
 /* 114:138 */     if ((!localahd.by.d) && (this.c >= this.b * 0.5F) && (this.a.getRNG().nextFloat() < 0.006F) && (!this.d))
 /* 115:    */     {
-/* 116:139 */       localObject = localahd.bz();
+/* 116:139 */       localObject = localahd.getHeldItemStack();
 /* 117:141 */       if ((localObject != null) && (((ItemStack)localObject).getItem() == ItemList.bY))
 /* 118:    */       {
 /* 119:142 */         ((ItemStack)localObject).a(1, localahd);

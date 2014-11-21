@@ -38,7 +38,7 @@ package net.minecraft.src;
 /* 37:39 */       this.b = this.a.u();
 /* 38:   */     }
 /* 39:40 */     if (this.d == EntityPlayer.class) {
-/* 40:41 */       this.b = this.a.world.a(this.a, (double)this.c);
+/* 40:41 */       this.b = this.a.world.getNearestPlayer(this.a, (double)this.c);
 /* 41:   */     } else {
 /* 42:43 */       this.b = this.a.world.getNearestEntity(this.d, this.a.getAABB().expand(this.c, 3.0D, this.c), this.a);
 /* 43:   */     }
@@ -68,7 +68,7 @@ package net.minecraft.src;
 /* 67:   */   
 /* 68:   */   public void e()
 /* 69:   */   {
-/* 70:72 */     this.a.p().a(this.b.xPos, this.b.yPos + this.b.aR(), this.b.zPos, 10.0F, this.a.bP());
+/* 70:72 */     this.a.p().a(this.b.xPos, this.b.yPos + this.b.getEyeHeight(), this.b.zPos, 10.0F, this.a.bP());
 /* 71:73 */     this.e -= 1;
 /* 72:   */   }
 /* 73:   */ }

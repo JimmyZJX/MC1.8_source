@@ -203,7 +203,7 @@ package net.minecraft.src;
 /* 203:    */   public boolean b(BlockPosition paramdt)
 /* 204:    */   {
 /* 205:196 */     if ((this.c.d()) && 
-/* 206:197 */       (this.b.bz() != null) && ((this.b.bz().getItem() instanceof ItemSword))) {
+/* 206:197 */       (this.b.getHeldItemStack() != null) && ((this.b.getHeldItemStack().getItem() instanceof ItemSword))) {
 /* 207:198 */       return false;
 /* 208:    */     }
 /* 209:202 */     Block localbec = this.a.getBlock(paramdt);
@@ -304,7 +304,7 @@ package net.minecraft.src;
 /* 304:    */       }
 /* 305:287 */       return false;
 /* 306:    */     }
-/* 307:290 */     if ((!paramahd.aw()) || (paramahd.bz() == null))
+/* 307:290 */     if ((!paramahd.aw()) || (paramahd.getHeldItemStack() == null))
 /* 308:    */     {
 /* 309:291 */       localObject = paramaqu.getBlock(paramdt);
 /* 310:292 */       if (((Block)localObject).getProto().a(paramaqu, paramdt, (Block)localObject, paramahd, paramej, paramFloat1, paramFloat2, paramFloat3)) {

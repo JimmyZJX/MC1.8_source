@@ -13,7 +13,7 @@ package net.minecraft.src;
 /* 12:   */   
 /* 13:   */   public void a(EntityWitch paramagi, double paramDouble1, double paramDouble2, double paramDouble3, float paramFloat1, float paramFloat2)
 /* 14:   */   {
-/* 15:20 */     ((cdm)this.f).g = (paramagi.bz() != null);
+/* 15:20 */     ((cdm)this.f).g = (paramagi.getHeldItemStack() != null);
 /* 16:   */     
 /* 17:22 */     super.a(paramagi, paramDouble1, paramDouble2, paramDouble3, paramFloat1, paramFloat2);
 /* 18:   */   }

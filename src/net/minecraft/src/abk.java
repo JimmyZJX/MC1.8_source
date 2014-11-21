@@ -85,8 +85,8 @@ package net.minecraft.src;
 /*  85:    */ 
 /*  86:105 */           (this.f.getPopulation() >= 20))
 /*  87:    */         {
-/*  88:110 */           BlockPosition localdt = this.f.a();
-/*  89:111 */           float f1 = this.f.b();
+/*  88:110 */           BlockPosition localdt = this.f.getCenter();
+/*  89:111 */           float f1 = this.f.getRadius();
 /*  90:    */           
 /*  91:113 */           int j = 0;
 /*  92:114 */           for (int k = 0; k < 10; k++)
@@ -145,8 +145,8 @@ package net.minecraft.src;
 /* 145:    */     }
 /* 146:164 */     zombie.setPositionAndAngles(localbrw.x, localbrw.y, localbrw.z, this.world.rng.nextFloat() * 360.0F, 0.0F);
 /* 147:165 */     this.world.spawnEntity(zombie);
-/* 148:166 */     BlockPosition localdt = this.f.a();
-/* 149:167 */     zombie.a(localdt, this.f.b());
+/* 148:166 */     BlockPosition localdt = this.f.getCenter();
+/* 149:167 */     zombie.a(localdt, this.f.getRadius());
 /* 150:168 */     return true;
 /* 151:    */   }
 /* 152:    */   

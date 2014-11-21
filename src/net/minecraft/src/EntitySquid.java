@@ -25,7 +25,7 @@ package net.minecraft.src;
 /*  25: 31 */     this.rng.setSeed(1 + getID());
 /*  26: 32 */     this.bo = (1.0F / (this.rng.nextFloat() + 1.0F) * 0.2F);
 /*  27:    */     
-/*  28: 34 */     this.i.a(0, new acp(this));
+/*  28: 34 */     this.goalSelector.a(0, new acp(this));
 /*  29:    */   }
 /*  30:    */   
 /*  31:    */   protected void aW()
@@ -35,7 +35,7 @@ package net.minecraft.src;
 /*  35: 41 */     a(afs.a).a(10.0D);
 /*  36:    */   }
 /*  37:    */   
-/*  38:    */   public float aR()
+/*  38:    */   public float getEyeHeight()
 /*  39:    */   {
 /*  40: 46 */     return this.height * 0.5F;
 /*  41:    */   }
@@ -74,7 +74,7 @@ package net.minecraft.src;
 /*  74:    */   {
 /*  75: 81 */     int i = this.rng.nextInt(3 + paramInt) + 1;
 /*  76: 82 */     for (int j = 0; j < i; j++) {
-/*  77: 83 */       a(new ItemStack(ItemList.dye, 1, EnumDyeColor.BLACK.b()), 0.0F);
+/*  77: 83 */       throwItem(new ItemStack(ItemList.dye, 1, EnumDyeColor.BLACK.b()), 0.0F);
 /*  78:    */     }
 /*  79:    */   }
 /*  80:    */   

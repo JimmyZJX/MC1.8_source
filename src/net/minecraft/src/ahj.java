@@ -44,7 +44,7 @@ package net.minecraft.src;
 /*  44: 75 */     if ((paramxm1 instanceof EntityPlayer)) {
 /*  45: 76 */       this.a = 1;
 /*  46:    */     }
-/*  47: 79 */     this.yPos = (paramxm1.yPos + paramxm1.aR() - 0.1000000014901161D);
+/*  47: 79 */     this.yPos = (paramxm1.yPos + paramxm1.getEyeHeight() - 0.1000000014901161D);
 /*  48:    */     
 /*  49: 81 */     double d1 = paramxm2.xPos - paramxm1.xPos;
 /*  50: 82 */     double d2 = paramxm2.getAABB().minY + paramxm2.height / 3.0F - this.yPos;
@@ -74,7 +74,7 @@ package net.minecraft.src;
 /*  74:    */     }
 /*  75:108 */     a(0.5F, 0.5F);
 /*  76:    */     
-/*  77:110 */     setPositionAndAngles(paramxm.xPos, paramxm.yPos + paramxm.aR(), paramxm.zPos, paramxm.yaw, paramxm.pitch);
+/*  77:110 */     setPositionAndAngles(paramxm.xPos, paramxm.yPos + paramxm.getEyeHeight(), paramxm.zPos, paramxm.yaw, paramxm.pitch);
 /*  78:    */     
 /*  79:112 */     this.xPos -= MathUtils.cos(this.yaw / 180.0F * 3.141593F) * 0.16F;
 /*  80:113 */     this.yPos -= 0.1000000014901161D;

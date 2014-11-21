@@ -66,7 +66,7 @@ package net.minecraft.src;
 /*  65:    */       }
 /*  66: 72 */       double d6 = Math.cos(d2);
 /*  67: 73 */       double d7 = a(localwv.lastX, localwv.xPos, paramFloat2) - d3 * 0.7D - d4 * 0.5D * d6;
-/*  68: 74 */       double d8 = a(localwv.lastY + localwv.aR() * 0.7D, localwv.yPos + localwv.aR() * 0.7D, paramFloat2) - d5 * 0.5D - 0.25D;
+/*  68: 74 */       double d8 = a(localwv.lastY + localwv.getEyeHeight() * 0.7D, localwv.yPos + localwv.getEyeHeight() * 0.7D, paramFloat2) - d5 * 0.5D - 0.25D;
 /*  69: 75 */       double d9 = a(localwv.lastZ, localwv.zPos, paramFloat2) - d4 * 0.7D + d3 * 0.5D * d6;
 /*  70:    */       
 /*  71: 77 */       double d10 = a(paramxn.aH, paramxn.aG, paramFloat2) * 0.0174532923847437D + 1.570796326794897D;

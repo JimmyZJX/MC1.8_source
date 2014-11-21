@@ -101,12 +101,12 @@ package net.minecraft.src;
 /* 100:    */       }
 /* 101:123 */       return true;
 /* 102:    */     }
-/* 103:126 */     if ((i > 0) && ((localalq instanceof ajn)))
+/* 103:126 */     if ((i > 0) && ((localalq instanceof ItemArmor)))
 /* 104:    */     {
-/* 105:127 */       localObject = (ajn)localalq;
-/* 106:128 */       if ((((ajn)localObject).w_() == EnumArmorMaterial.LEATHER) && (((ajn)localObject).d_(localamj)))
+/* 105:127 */       localObject = (ItemArmor)localalq;
+/* 106:128 */       if ((((ItemArmor)localObject).w_() == EnumArmorMaterial.LEATHER) && (((ItemArmor)localObject).d_(localamj)))
 /* 107:    */       {
-/* 108:129 */         ((ajn)localObject).c(localamj);
+/* 108:129 */         ((ItemArmor)localObject).c(localamj);
 /* 109:130 */         a(paramaqu, paramdt, parambec, i - 1);
 /* 110:131 */         return true;
 /* 111:    */       }

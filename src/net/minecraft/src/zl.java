@@ -24,7 +24,7 @@ package net.minecraft.src;
 /* 23:29 */     if (this.a.getRNG().nextInt(50) != 0) {
 /* 24:30 */       return false;
 /* 25:   */     }
-/* 26:32 */     if ((this.c != -1) && (this.a.e(this.c, this.a.yPos, this.d) < 4.0D)) {
+/* 26:32 */     if ((this.c != -1) && (this.a.dist2(this.c, this.a.yPos, this.d) < 4.0D)) {
 /* 27:33 */       return false;
 /* 28:   */     }
 /* 29:35 */     Village localabi = this.a.world.getVillageManager().getNearestVillage(localdt, 14);

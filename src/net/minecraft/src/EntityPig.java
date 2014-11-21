@@ -11,16 +11,16 @@ package net.minecraft.src;
 /*  11: 25 */     a(0.9F, 0.9F);
 /*  12:    */     
 /*  13: 27 */     ((aay)s()).a(true);
-/*  14: 28 */     this.i.a(0, new yy(this));
-/*  15: 29 */     this.i.a(1, new zu(this, 1.25D));
-/*  16: 30 */     this.i.a(2, this.bk = new yu(this, 0.3F));
-/*  17: 31 */     this.i.a(3, new yt(this, 1.0D));
-/*  18: 32 */     this.i.a(4, new aag(this, 1.2D, ItemList.bY, false));
-/*  19: 33 */     this.i.a(4, new aag(this, 1.2D, ItemList.carrot, false));
-/*  20: 34 */     this.i.a(5, new za(this, 1.1D));
-/*  21: 35 */     this.i.a(6, new zy(this, 1.0D));
-/*  22: 36 */     this.i.a(7, new zh(this, EntityPlayer.class, 6.0F));
-/*  23: 37 */     this.i.a(8, new zx(this));
+/*  14: 28 */     this.goalSelector.a(0, new yy(this));
+/*  15: 29 */     this.goalSelector.a(1, new zu(this, 1.25D));
+/*  16: 30 */     this.goalSelector.a(2, this.bk = new yu(this, 0.3F));
+/*  17: 31 */     this.goalSelector.a(3, new yt(this, 1.0D));
+/*  18: 32 */     this.goalSelector.a(4, new aag(this, 1.2D, ItemList.bY, false));
+/*  19: 33 */     this.goalSelector.a(4, new aag(this, 1.2D, ItemList.carrot, false));
+/*  20: 34 */     this.goalSelector.a(5, new za(this, 1.1D));
+/*  21: 35 */     this.goalSelector.a(6, new zy(this, 1.0D));
+/*  22: 36 */     this.goalSelector.a(7, new zh(this, EntityPlayer.class, 6.0F));
+/*  23: 37 */     this.goalSelector.a(8, new zx(this));
 /*  24:    */   }
 /*  25:    */   
 /*  26:    */   protected void aW()
@@ -33,7 +33,7 @@ package net.minecraft.src;
 /*  33:    */   
 /*  34:    */   public boolean bV()
 /*  35:    */   {
-/*  36: 50 */     ItemStack localamj = ((EntityPlayer)this.rider).bz();
+/*  36: 50 */     ItemStack localamj = ((EntityPlayer)this.rider).getHeldItemStack();
 /*  37:    */     
 /*  38: 52 */     return (localamj != null) && (localamj.getItem() == ItemList.bY);
 /*  39:    */   }
@@ -133,7 +133,7 @@ package net.minecraft.src;
 /* 133:145 */       return;
 /* 134:    */     }
 /* 135:148 */     EntityZombiePigman pigman = new EntityZombiePigman(this.world);
-/* 136:149 */     pigman.c(0, new ItemStack(ItemList.goldenSword));
+/* 136:149 */     pigman.setItemStack(0, new ItemStack(ItemList.goldenSword));
 /* 137:150 */     pigman.setPositionAndAngles(this.xPos, this.yPos, this.zPos, this.yaw, this.pitch);
 /* 138:151 */     this.world.spawnEntity(pigman);
 /* 139:152 */     setDead();

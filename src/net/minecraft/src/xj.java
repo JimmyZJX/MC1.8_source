@@ -20,11 +20,11 @@ package net.minecraft.src;
 /* 19:51 */       return false;
 /* 20:   */     }
 /* 21:53 */     EntityLiving localxm = (EntityLiving)paramwv;
-/* 22:54 */     if (localxm.p(EntityMob.c(this.a)) != null) {
+/* 22:54 */     if (localxm.getItemStack(EntityMob.getSlot(this.a)) != null) {
 /* 23:55 */       return false;
 /* 24:   */     }
 /* 25:58 */     if ((localxm instanceof EntityMob)) {
-/* 26:59 */       return ((EntityMob)localxm).bX();
+/* 26:59 */       return ((EntityMob)localxm).getCanPickUpLoot();
 /* 27:   */     }
 /* 28:60 */     if ((localxm instanceof EntityArmorStand)) {
 /* 29:61 */       return true;

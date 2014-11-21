@@ -28,7 +28,7 @@ package net.minecraft.src;
 /* 27:   */   
 /* 28:   */   public boolean a(ItemStack paramamj)
 /* 29:   */   {
-/* 30:38 */     if ((paramamj.getItem() instanceof ajn)) {
+/* 30:38 */     if ((paramamj.getItem() instanceof ItemArmor)) {
 /* 31:39 */       return true;
 /* 32:   */     }
 /* 33:41 */     return super.a(paramamj);

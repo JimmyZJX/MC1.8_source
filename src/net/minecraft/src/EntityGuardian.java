@@ -24,19 +24,19 @@ package net.minecraft.src;
 /*  23:    */     
 /*  24:    */ 
 /*  25:    */ 
-/*  26: 70 */     this.i.a(4, new afi(this));
+/*  26: 70 */     this.goalSelector.a(4, new afi(this));
 /*  27:    */     zo localzo;
-/*  28: 71 */     this.i.a(5, localzo = new zo(this, 1.0D));
-/*  29: 72 */     this.i.a(7, this.bq = new zy(this, 1.0D, 80));
-/*  30: 73 */     this.i.a(8, new zh(this, EntityPlayer.class, 8.0F));
-/*  31: 74 */     this.i.a(8, new zh(this, EntityGuardian.class, 12.0F, 0.01F));
-/*  32: 75 */     this.i.a(9, new zx(this));
+/*  28: 71 */     this.goalSelector.a(5, localzo = new zo(this, 1.0D));
+/*  29: 72 */     this.goalSelector.a(7, this.bq = new zy(this, 1.0D, 80));
+/*  30: 73 */     this.goalSelector.a(8, new zh(this, EntityPlayer.class, 8.0F));
+/*  31: 74 */     this.goalSelector.a(8, new zh(this, EntityGuardian.class, 12.0F, 0.01F));
+/*  32: 75 */     this.goalSelector.a(9, new zx(this));
 /*  33:    */     
 /*  34:    */ 
 /*  35: 78 */     this.bq.a(3);
 /*  36: 79 */     localzo.a(3);
 /*  37:    */     
-/*  38: 81 */     this.bg.a(1, new aaq(this, EntityLiving.class, 10, true, false, new afj(this)));
+/*  38: 81 */     this.targetSelector.a(1, new aaq(this, EntityLiving.class, 10, true, false, new afj(this)));
 /*  39:    */     
 /*  40: 83 */     this.f = new afk(this);
 /*  41:    */     
@@ -126,7 +126,7 @@ package net.minecraft.src;
 /* 125:161 */       a(afs.d).a(0.300000011920929D);
 /* 126:162 */       a(afs.e).a(8.0D);
 /* 127:163 */       a(afs.a).a(80.0D);
-/* 128:164 */       bW();
+/* 128:164 */       setPersistent();
 /* 129:    */       
 /* 130:    */ 
 /* 131:167 */       this.bq.b(400);
@@ -229,7 +229,7 @@ package net.minecraft.src;
 /* 228:257 */     return false;
 /* 229:    */   }
 /* 230:    */   
-/* 231:    */   public float aR()
+/* 231:    */   public float getEyeHeight()
 /* 232:    */   {
 /* 233:262 */     return this.height * 0.5F;
 /* 234:    */   }
@@ -299,7 +299,7 @@ package net.minecraft.src;
 /* 298:    */           
 /* 299:321 */           double d1 = p(0.0F);
 /* 300:322 */           double d2 = ((EntityLiving)localObject).xPos - this.xPos;
-/* 301:323 */           double d3 = ((EntityLiving)localObject).yPos + ((EntityLiving)localObject).height * 0.5F - (this.yPos + aR());
+/* 301:323 */           double d3 = ((EntityLiving)localObject).yPos + ((EntityLiving)localObject).height * 0.5F - (this.yPos + getEyeHeight());
 /* 302:324 */           double d4 = ((EntityLiving)localObject).zPos - this.zPos;
 /* 303:325 */           double d5 = Math.sqrt(d2 * d2 + d3 * d3 + d4 * d4);
 /* 304:326 */           d2 /= d5;
@@ -309,7 +309,7 @@ package net.minecraft.src;
 /* 308:330 */           while (d6 < d5)
 /* 309:    */           {
 /* 310:331 */             d6 += 1.8D - d1 + this.rng.nextDouble() * (1.7D - d1);
-/* 311:332 */             this.world.a(EnumParticleEffect.e, this.xPos + d2 * d6, this.yPos + d3 * d6 + aR(), this.zPos + d4 * d6, 0.0D, 0.0D, 0.0D, new int[0]);
+/* 311:332 */             this.world.a(EnumParticleEffect.e, this.xPos + d2 * d6, this.yPos + d3 * d6 + getEyeHeight(), this.zPos + d4 * d6, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 312:    */           }
 /* 313:    */         }
 /* 314:    */       }
@@ -348,9 +348,9 @@ package net.minecraft.src;
 /* 347:374 */     return (this.bo + paramFloat) / ck();
 /* 348:    */   }
 /* 349:    */   
-/* 350:    */   protected void E()
+/* 350:    */   protected void mobTick()
 /* 351:    */   {
-/* 352:379 */     super.E();
+/* 352:379 */     super.mobTick();
 /* 353:381 */     if (cl())
 /* 354:    */     {
 /* 355:383 */       int i = 1200;
@@ -381,23 +381,23 @@ package net.minecraft.src;
 /* 380:    */   {
 /* 381:413 */     int i = this.rng.nextInt(3) + this.rng.nextInt(paramInt + 1);
 /* 382:414 */     if (i > 0) {
-/* 383:415 */       a(new ItemStack(ItemList.cC, i, 0), 1.0F);
+/* 383:415 */       throwItem(new ItemStack(ItemList.cC, i, 0), 1.0F);
 /* 384:    */     }
 /* 385:417 */     if (this.rng.nextInt(3 + paramInt) > 1) {
-/* 386:418 */       a(new ItemStack(ItemList.fish, 1, ali.a.a()), 1.0F);
+/* 386:418 */       throwItem(new ItemStack(ItemList.fish, 1, ali.a.a()), 1.0F);
 /* 387:419 */     } else if (this.rng.nextInt(3 + paramInt) > 1) {
-/* 388:420 */       a(new ItemStack(ItemList.cD, 1, 0), 1.0F);
+/* 388:420 */       throwItem(new ItemStack(ItemList.cD, 1, 0), 1.0F);
 /* 389:    */     }
 /* 390:423 */     if ((paramBoolean) && 
 /* 391:424 */       (cl())) {
-/* 392:425 */       a(new ItemStack(BlockList.v, 1, 1), 1.0F);
+/* 392:425 */       throwItem(new ItemStack(BlockList.v, 1, 1), 1.0F);
 /* 393:    */     }
 /* 394:    */   }
 /* 395:    */   
 /* 396:    */   protected void bp()
 /* 397:    */   {
 /* 398:433 */     ItemStack localamj = ((adp)WeightedRandom.getRandomItem(this.rng, EntityFishHook.getFishes())).a(this.rng);
-/* 399:434 */     a(localamj, 1.0F);
+/* 399:434 */     throwItem(localamj, 1.0F);
 /* 400:    */   }
 /* 401:    */   
 /* 402:    */   protected boolean spawnLightCheck()

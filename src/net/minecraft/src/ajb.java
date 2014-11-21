@@ -86,9 +86,9 @@ package net.minecraft.src;
 /*  85:125 */           return null;
 /*  86:    */         }
 /*  87:    */       }
-/*  88:127 */       else if (((localamj1.getItem() instanceof ajn)) && (!((ajk)this.c.get(5 + ((ajn)localamj1.getItem()).b)).e()))
+/*  88:127 */       else if (((localamj1.getItem() instanceof ItemArmor)) && (!((ajk)this.c.get(5 + ((ItemArmor)localamj1.getItem()).b)).e()))
 /*  89:    */       {
-/*  90:128 */         int i = 5 + ((ajn)localamj1.getItem()).b;
+/*  90:128 */         int i = 5 + ((ItemArmor)localamj1.getItem()).b;
 /*  91:129 */         if (!a(localamj2, i, i + 1, false)) {
 /*  92:130 */           return null;
 /*  93:    */         }

@@ -54,10 +54,10 @@ package net.minecraft.src;
 /*  49:123 */       return Item.fromProtoBlock(BlockList.cobblestone);
 /*  50:    */     }
 /*  51:124 */     if (this == GOLD) {
-/*  52:125 */       return ItemList.k;
+/*  52:125 */       return ItemList.goldIngot;
 /*  53:    */     }
 /*  54:126 */     if (this == IRON) {
-/*  55:127 */       return ItemList.j;
+/*  55:127 */       return ItemList.ironIngot;
 /*  56:    */     }
 /*  57:128 */     if (this == DIAMOND) {
 /*  58:129 */       return ItemList.diamond;

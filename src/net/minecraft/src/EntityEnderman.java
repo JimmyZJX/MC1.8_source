@@ -37,19 +37,19 @@ package net.minecraft.src;
 /*  36: 65 */     a(0.6F, 2.9F);
 /*  37: 66 */     this.S = 1.0F;
 /*  38:    */     
-/*  39: 68 */     this.i.a(0, new yy(this));
-/*  40: 69 */     this.i.a(2, new zk(this, 1.0D, false));
+/*  39: 68 */     this.goalSelector.a(0, new yy(this));
+/*  40: 69 */     this.goalSelector.a(2, new zk(this, 1.0D, false));
 /*  41:    */     
-/*  42: 71 */     this.i.a(7, new zy(this, 1.0D));
-/*  43: 72 */     this.i.a(8, new zh(this, EntityPlayer.class, 8.0F));
-/*  44: 73 */     this.i.a(8, new zx(this));
+/*  42: 71 */     this.goalSelector.a(7, new zy(this, 1.0D));
+/*  43: 72 */     this.goalSelector.a(8, new zh(this, EntityPlayer.class, 8.0F));
+/*  44: 73 */     this.goalSelector.a(8, new zx(this));
 /*  45:    */     
-/*  46: 75 */     this.i.a(10, new aet(this));
-/*  47: 76 */     this.i.a(11, new aev(this));
+/*  46: 75 */     this.goalSelector.a(10, new aet(this));
+/*  47: 76 */     this.goalSelector.a(11, new aev(this));
 /*  48:    */     
-/*  49: 78 */     this.bg.a(1, new aal(this, false, new Class[0]));
-/*  50: 79 */     this.bg.a(2, new aeu(this));
-/*  51: 80 */     this.bg.a(3, new aaq(this, EntityEndermite.class, 10, true, false, new aes(this)));
+/*  49: 78 */     this.targetSelector.a(1, new aal(this, false, new Class[0]));
+/*  50: 79 */     this.targetSelector.a(2, new aeu(this));
+/*  51: 80 */     this.targetSelector.a(3, new aaq(this, EntityEndermite.class, 10, true, false, new aes(this)));
 /*  52:    */   }
 /*  53:    */   
 /*  54:    */   protected void aW()
@@ -98,17 +98,17 @@ package net.minecraft.src;
 /*  97:130 */       return false;
 /*  98:    */     }
 /*  99:133 */     Vec3 localbrw1 = paramahd.d(1.0F).normalize();
-/* 100:134 */     Vec3 localbrw2 = new Vec3(this.xPos - paramahd.xPos, getAABB().minY + this.height / 2.0F - (paramahd.yPos + paramahd.aR()), this.zPos - paramahd.zPos);
+/* 100:134 */     Vec3 localbrw2 = new Vec3(this.xPos - paramahd.xPos, getAABB().minY + this.height / 2.0F - (paramahd.yPos + paramahd.getEyeHeight()), this.zPos - paramahd.zPos);
 /* 101:135 */     double d1 = localbrw2.b();
 /* 102:136 */     localbrw2 = localbrw2.normalize();
 /* 103:137 */     double d2 = localbrw1.dot(localbrw2);
 /* 104:138 */     if (d2 > 1.0D - 0.025D / d1) {
-/* 105:139 */       return paramahd.t(this);
+/* 105:139 */       return paramahd.canSee(this);
 /* 106:    */     }
 /* 107:141 */     return false;
 /* 108:    */   }
 /* 109:    */   
-/* 110:    */   public float aR()
+/* 110:    */   public float getEyeHeight()
 /* 111:    */   {
 /* 112:146 */     return 2.55F;
 /* 113:    */   }
@@ -125,7 +125,7 @@ package net.minecraft.src;
 /* 124:159 */     super.m();
 /* 125:    */   }
 /* 126:    */   
-/* 127:    */   protected void E()
+/* 127:    */   protected void mobTick()
 /* 128:    */   {
 /* 129:164 */     if (U()) {
 /* 130:165 */       a(DamageSource.f, 1.0F);
@@ -145,7 +145,7 @@ package net.minecraft.src;
 /* 144:179 */         n();
 /* 145:    */       }
 /* 146:    */     }
-/* 147:184 */     super.E();
+/* 147:184 */     super.mobTick();
 /* 148:    */   }
 /* 149:    */   
 /* 150:    */   protected boolean n()
@@ -158,7 +158,7 @@ package net.minecraft.src;
 /* 157:    */   
 /* 158:    */   protected boolean b(Entity paramwv)
 /* 159:    */   {
-/* 160:195 */     Vec3 localbrw = new Vec3(this.xPos - paramwv.xPos, getAABB().minY + this.height / 2.0F - paramwv.yPos + paramwv.aR(), this.zPos - paramwv.zPos);
+/* 160:195 */     Vec3 localbrw = new Vec3(this.xPos - paramwv.xPos, getAABB().minY + this.height / 2.0F - paramwv.yPos + paramwv.getEyeHeight(), this.zPos - paramwv.zPos);
 /* 161:196 */     localbrw = localbrw.normalize();
 /* 162:197 */     double d1 = 16.0D;
 /* 163:198 */     double d2 = this.xPos + (this.rng.nextDouble() - 0.5D) * 8.0D - localbrw.x * d1;

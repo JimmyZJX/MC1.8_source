@@ -18,12 +18,12 @@ package net.minecraft.src;
 /* 17:   */     {
 /* 18:49 */       EntityLiving localxm = (EntityLiving)localList.get(0);
 /* 19:50 */       int m = (localxm instanceof EntityPlayer) ? 1 : 0;
-/* 20:51 */       int n = EntityMob.c(paramamj);
+/* 20:51 */       int n = EntityMob.getSlot(paramamj);
 /* 21:52 */       ItemStack localamj = paramamj.k();
 /* 22:53 */       localamj.stackSize = 1;
-/* 23:54 */       localxm.c(n - m, localamj);
+/* 23:54 */       localxm.setItemStack(n - m, localamj);
 /* 24:55 */       if ((localxm instanceof EntityMob)) {
-/* 25:56 */         ((EntityMob)localxm).a(n, 2.0F);
+/* 25:56 */         ((EntityMob)localxm).setDropChance(n, 2.0F);
 /* 26:   */       }
 /* 27:58 */       paramamj.stackSize -= 1;
 /* 28:59 */       return paramamj;

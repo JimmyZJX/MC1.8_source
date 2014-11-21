@@ -95,7 +95,7 @@ package net.minecraft.src;
 /*  94: 99 */     return this.b;
 /*  95:    */   }
 /*  96:    */   
-/*  97:    */   public float aR()
+/*  97:    */   public float getEyeHeight()
 /*  98:    */   {
 /*  99:104 */     return 0.0F;
 /* 100:    */   }

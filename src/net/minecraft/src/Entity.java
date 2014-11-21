@@ -824,7 +824,7 @@ package net.minecraft.src;
 /*  823:     */   
 /*  824:     */   public boolean a(Material parambof)
 /*  825:     */   {
-/*  826: 869 */     double d = this.yPos + aR();
+/*  826: 869 */     double d = this.yPos + getEyeHeight();
 /*  827: 870 */     BlockPosition localdt = new BlockPosition(this.xPos, d, this.zPos);
 /*  828: 871 */     Block localbec = this.world.getBlock(localdt);
 /*  829: 872 */     ProtoBlock localatr = localbec.getProto();
@@ -938,7 +938,7 @@ package net.minecraft.src;
 /*  937: 971 */     return MathUtils.sqrt(f1 * f1 + f2 * f2 + f3 * f3);
 /*  938:     */   }
 /*  939:     */   
-/*  940:     */   public double e(double paramDouble1, double paramDouble2, double paramDouble3)
+/*  940:     */   public double dist2(double paramDouble1, double paramDouble2, double paramDouble3)
 /*  941:     */   {
 /*  942: 975 */     double d1 = this.xPos - paramDouble1;
 /*  943: 976 */     double d2 = this.yPos - paramDouble2;
@@ -1058,10 +1058,10 @@ package net.minecraft.src;
 /* 1057:     */   public Vec3 e(float paramFloat)
 /* 1058:     */   {
 /* 1059:1088 */     if (paramFloat == 1.0F) {
-/* 1060:1089 */       return new Vec3(this.xPos, this.yPos + aR(), this.zPos);
+/* 1060:1089 */       return new Vec3(this.xPos, this.yPos + getEyeHeight(), this.zPos);
 /* 1061:     */     }
 /* 1062:1091 */     double d1 = this.lastX + (this.xPos - this.lastX) * paramFloat;
-/* 1063:1092 */     double d2 = this.lastY + (this.yPos - this.lastY) * paramFloat + aR();
+/* 1063:1092 */     double d2 = this.lastY + (this.yPos - this.lastY) * paramFloat + getEyeHeight();
 /* 1064:1093 */     double d3 = this.lastZ + (this.zPos - this.lastZ) * paramFloat;
 /* 1065:     */     
 /* 1066:1095 */     return new Vec3(d1, d2, d3);
@@ -1268,21 +1268,21 @@ package net.minecraft.src;
 /* 1267:     */   
 /* 1268:     */   public EntityItem a(Item paramalq, int paramInt)
 /* 1269:     */   {
-/* 1270:1293 */     return a(paramalq, paramInt, 0.0F);
+/* 1270:1293 */     return throwItem(paramalq, paramInt, 0.0F);
 /* 1271:     */   }
 /* 1272:     */   
-/* 1273:     */   public EntityItem a(Item paramalq, int paramInt, float paramFloat)
+/* 1273:     */   public EntityItem throwItem(Item paramalq, int paramInt, float paramFloat)
 /* 1274:     */   {
-/* 1275:1297 */     return a(new ItemStack(paramalq, paramInt, 0), paramFloat);
+/* 1275:1297 */     return throwItem(new ItemStack(paramalq, paramInt, 0), paramFloat);
 /* 1276:     */   }
 /* 1277:     */   
-/* 1278:     */   public EntityItem a(ItemStack paramamj, float paramFloat)
+/* 1278:     */   public EntityItem throwItem(ItemStack stack, float height)
 /* 1279:     */   {
-/* 1280:1301 */     if ((paramamj.stackSize == 0) || (paramamj.getItem() == null)) {
+/* 1280:1301 */     if ((stack.stackSize == 0) || (stack.getItem() == null)) {
 /* 1281:1302 */       return null;
 /* 1282:     */     }
-/* 1283:1305 */     EntityItem entityItem = new EntityItem(this.world, this.xPos, this.yPos + paramFloat, this.zPos, paramamj);
-/* 1284:1306 */     entityItem.p();
+/* 1283:1305 */     EntityItem entityItem = new EntityItem(this.world, this.xPos, this.yPos + height, this.zPos, stack);
+/* 1284:1306 */     entityItem.initPickupDelay();
 /* 1285:1307 */     this.world.spawnEntity(entityItem);
 /* 1286:1308 */     return entityItem;
 /* 1287:     */   }
@@ -1302,7 +1302,7 @@ package net.minecraft.src;
 /* 1301:1321 */       double d1 = this.xPos + ((i1 >> 0) % 2 - 0.5F) * this.width * 0.8F;
 /* 1302:1322 */       double d2 = this.yPos + ((i1 >> 1) % 2 - 0.5F) * 0.1F;
 /* 1303:1323 */       double d3 = this.zPos + ((i1 >> 2) % 2 - 0.5F) * this.width * 0.8F;
-/* 1304:1325 */       if (this.world.getBlock(new BlockPosition(d1, d2 + aR(), d3)).getProto().u()) {
+/* 1304:1325 */       if (this.world.getBlock(new BlockPosition(d1, d2 + getEyeHeight(), d3)).getProto().u()) {
 /* 1305:1326 */         return true;
 /* 1306:     */       }
 /* 1307:     */     }
@@ -1491,7 +1491,7 @@ package net.minecraft.src;
 /* 1490:1509 */     return null;
 /* 1491:     */   }
 /* 1492:     */   
-/* 1493:     */   public void c(int paramInt, ItemStack paramamj) {}
+/* 1493:     */   public void setItemStack(int paramInt, ItemStack paramamj) {}
 /* 1494:     */   
 /* 1495:     */   public boolean au()
 /* 1496:     */   {
@@ -1703,7 +1703,7 @@ package net.minecraft.src;
 /* 1702:1703 */     return (this.ar) && (paramwh != DamageSource.j) && (!paramwh.u());
 /* 1703:     */   }
 /* 1704:     */   
-/* 1705:     */   public void m(Entity paramwv)
+/* 1705:     */   public void setPositionAndAngles(Entity paramwv)
 /* 1706:     */   {
 /* 1707:1707 */     setPositionAndAngles(paramwv.xPos, paramwv.yPos, paramwv.zPos, paramwv.yaw, paramwv.pitch);
 /* 1708:     */   }
@@ -1904,7 +1904,7 @@ package net.minecraft.src;
 /* 1903:1889 */     this.aabb = parambrt;
 /* 1904:     */   }
 /* 1905:     */   
-/* 1906:     */   public float aR()
+/* 1906:     */   public float getEyeHeight()
 /* 1907:     */   {
 /* 1908:1893 */     return this.height * 0.85F;
 /* 1909:     */   }

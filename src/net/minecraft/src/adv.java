@@ -115,14 +115,14 @@ package net.minecraft.src;
 /* 115:    */           }
 /* 116:130 */           else if ((this.b) && (!this.e) && (this.world.getGameRules().getBoolean("doTileDrops")))
 /* 117:    */           {
-/* 118:131 */             a(new ItemStack(localatr, 1, localatr.a(this.d)), 0.0F);
+/* 118:131 */             throwItem(new ItemStack(localatr, 1, localatr.a(this.d)), 0.0F);
 /* 119:    */           }
 /* 120:    */         }
 /* 121:    */       }
 /* 122:135 */       else if (((this.a > 100) && (!this.world.isClient) && ((localdt.getY() < 1) || (localdt.getY() > 256))) || (this.a > 600))
 /* 123:    */       {
 /* 124:136 */         if ((this.b) && (this.world.getGameRules().getBoolean("doTileDrops"))) {
-/* 125:137 */           a(new ItemStack(localatr, 1, localatr.a(this.d)), 0.0F);
+/* 125:137 */           throwItem(new ItemStack(localatr, 1, localatr.a(this.d)), 0.0F);
 /* 126:    */         }
 /* 127:139 */         setDead();
 /* 128:    */       }

@@ -66,7 +66,7 @@ package net.minecraft.src;
 /*  65:    */     
 /*  66: 76 */     double d = this.xVelocity * this.xVelocity + this.zVelocity * this.zVelocity;
 /*  67: 78 */     if (!paramwh.c()) {
-/*  68: 79 */       a(new ItemStack(BlockList.W, 1), 0.0F);
+/*  68: 79 */       throwItem(new ItemStack(BlockList.W, 1), 0.0F);
 /*  69:    */     }
 /*  70: 82 */     if ((paramwh.o()) || (paramwh.c()) || (d >= 0.009999999776482582D)) {
 /*  71: 83 */       b(d);

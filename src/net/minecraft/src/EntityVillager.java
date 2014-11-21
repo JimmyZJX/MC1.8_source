@@ -36,27 +36,27 @@ package net.minecraft.src;
 /*   37:  97 */     ((aay)s()).b(true);
 /*   38:  98 */     ((aay)s()).a(true);
 /*   39:     */     
-/*   40: 100 */     this.i.a(0, new yy(this));
-/*   41: 101 */     this.i.a(1, new yp(this, new agq(this), 8.0F, 0.6D, 0.6D));
+/*   40: 100 */     this.goalSelector.a(0, new yy(this));
+/*   41: 101 */     this.goalSelector.a(1, new yp(this, new agq(this), 8.0F, 0.6D, 0.6D));
 /*   42:     */     
 /*   43:     */ 
 /*   44:     */ 
 /*   45:     */ 
 /*   46:     */ 
-/*   47: 107 */     this.i.a(1, new aah(this));
-/*   48: 108 */     this.i.a(1, new zi(this));
-/*   49: 109 */     this.i.a(2, new zl(this));
-/*   50: 110 */     this.i.a(3, new aaa(this));
-/*   51: 111 */     this.i.a(4, new zt(this, true));
-/*   52: 112 */     this.i.a(5, new zo(this, 0.6D));
-/*   53: 113 */     this.i.a(6, new VillagerProposal(this));
-/*   54: 114 */     this.i.a(7, new aaf(this));
-/*   55: 115 */     this.i.a(9, new zf(this, EntityPlayer.class, 3.0F, 1.0F));
-/*   56: 116 */     this.i.a(9, new aai(this));
-/*   57: 117 */     this.i.a(9, new zy(this, 0.6D));
-/*   58: 118 */     this.i.a(10, new zh(this, EntityMob.class, 8.0F));
+/*   47: 107 */     this.goalSelector.a(1, new aah(this));
+/*   48: 108 */     this.goalSelector.a(1, new zi(this));
+/*   49: 109 */     this.goalSelector.a(2, new zl(this));
+/*   50: 110 */     this.goalSelector.a(3, new aaa(this));
+/*   51: 111 */     this.goalSelector.a(4, new zt(this, true));
+/*   52: 112 */     this.goalSelector.a(5, new zo(this, 0.6D));
+/*   53: 113 */     this.goalSelector.a(6, new VillagerProposal(this));
+/*   54: 114 */     this.goalSelector.a(7, new aaf(this));
+/*   55: 115 */     this.goalSelector.a(9, new zf(this, EntityPlayer.class, 3.0F, 1.0F));
+/*   56: 116 */     this.goalSelector.a(9, new aai(this));
+/*   57: 117 */     this.goalSelector.a(9, new zy(this, 0.6D));
+/*   58: 118 */     this.goalSelector.a(10, new zh(this, EntityMob.class, 8.0F));
 /*   59:     */     
-/*   60: 120 */     j(true);
+/*   60: 120 */     setCanPickUpLoot(true);
 /*   61:     */   }
 /*   62:     */   
 /*   63:     */   private void ct()
@@ -66,16 +66,16 @@ package net.minecraft.src;
 /*   67:     */     }
 /*   68: 130 */     this.by = true;
 /*   69: 132 */     if (i_()) {
-/*   70: 133 */       this.i.a(8, new zv(this, 0.32D));
+/*   70: 133 */       this.goalSelector.a(8, new zv(this, 0.32D));
 /*   71: 134 */     } else if (getProfession() == 0) {
-/*   72: 135 */       this.i.a(6, new ze(this, 0.6D));
+/*   72: 135 */       this.goalSelector.a(6, new ze(this, 0.6D));
 /*   73:     */     }
 /*   74:     */   }
 /*   75:     */   
 /*   76:     */   protected void n()
 /*   77:     */   {
 /*   78: 141 */     if (getProfession() == 0) {
-/*   79: 142 */       this.i.a(8, new ze(this, 0.6D));
+/*   79: 142 */       this.goalSelector.a(8, new ze(this, 0.6D));
 /*   80:     */     }
 /*   81: 145 */     super.n();
 /*   82:     */   }
@@ -87,7 +87,7 @@ package net.minecraft.src;
 /*   88: 152 */     a(afs.d).a(0.5D);
 /*   89:     */   }
 /*   90:     */   
-/*   91:     */   protected void E()
+/*   91:     */   protected void mobTick()
 /*   92:     */   {
 /*   93:     */     
 /*   94:     */     
@@ -104,8 +104,8 @@ package net.minecraft.src;
 /*  105:     */       }
 /*  106:     */       else
 /*  107:     */       {
-/*  108: 166 */         BlockPosition pos1 = this.bk.a();
-/*  109: 167 */         a(pos1, (int)(this.bk.b() * 1.0F));
+/*  108: 166 */         BlockPosition pos1 = this.bk.getCenter();
+/*  109: 167 */         a(pos1, (int)(this.bk.getRadius() * 1.0F));
 /*  110: 169 */         if (this.bx)
 /*  111:     */         {
 /*  112: 170 */           this.bx = false;
@@ -138,7 +138,7 @@ package net.minecraft.src;
 /*  139: 194 */         c(new PotionEffect(Potion.regeneration.id, 200, 0));
 /*  140:     */       }
 /*  141:     */     }
-/*  142: 198 */     super.E();
+/*  142: 198 */     super.mobTick();
 /*  143:     */   }
 /*  144:     */   
 /*  145:     */   public boolean onRightClick(EntityPlayer player)
@@ -207,11 +207,11 @@ package net.minecraft.src;
 /*  208: 262 */         this.inventory.add(stack);
 /*  209:     */       }
 /*  210:     */     }
-/*  211: 266 */     j(true);
+/*  211: 266 */     setCanPickUpLoot(true);
 /*  212: 267 */     ct();
 /*  213:     */   }
 /*  214:     */   
-/*  215:     */   protected boolean C()
+/*  215:     */   protected boolean canDespawn()
 /*  216:     */   {
 /*  217: 272 */     return false;
 /*  218:     */   }
@@ -299,7 +299,7 @@ package net.minecraft.src;
 /*  300:     */       }
 /*  301:     */       else
 /*  302:     */       {
-/*  303: 349 */         EntityPlayer localahd = this.world.a(this, 16.0D);
+/*  303: 349 */         EntityPlayer localahd = this.world.getNearestPlayer(this, 16.0D);
 /*  304: 350 */         if (localahd != null) {
 /*  305: 351 */           this.bk.h();
 /*  306:     */         }
@@ -495,7 +495,7 @@ package net.minecraft.src;
 /*  496: 544 */     return super.e_();
 /*  497:     */   }
 /*  498:     */   
-/*  499:     */   public float aR()
+/*  499:     */   public float getEyeHeight()
 /*  500:     */   {
 /*  501: 549 */     float f = 1.62F;
 /*  502: 550 */     if (i_()) {
@@ -504,7 +504,7 @@ package net.minecraft.src;
 /*  505: 553 */     return f;
 /*  506:     */   }
 /*  507:     */   
-/*  508: 557 */   private static final agw[][][][] bA = { { { { new agr(ItemList.O, new agx(18, 22)), new agr(ItemList.potato, new agx(15, 19)), new agr(ItemList.carrot, new agx(15, 19)), new agv(ItemList.bread, new agx(-4, -2)) }, { new agr(Item.fromProtoBlock(BlockList.pumpkin), new agx(8, 13)), new agv(ItemList.ca, new agx(-3, -2)) }, { new agr(Item.fromProtoBlock(BlockList.bk), new agx(7, 12)), new agv(ItemList.apple, new agx(-5, -7)) }, { new agv(ItemList.bc, new agx(-6, -10)), new agv(ItemList.aZ, new agx(1, 1)) } }, { { new agr(ItemList.F, new agx(15, 20)), new agr(ItemList.h, new agx(16, 24)), new agu(ItemList.fish, new agx(6, 6), ItemList.aV, new agx(6, 6)) }, { new agt(ItemList.fishingRod, new agx(7, 8)) } }, { { new agr(Item.fromProtoBlock(BlockList.wool), new agx(16, 22)), new agv(ItemList.be, new agx(3, 4)) }, { new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 0), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 1), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 2), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 3), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 4), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 5), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 6), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 7), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 8), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 9), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 10), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 11), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 12), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 13), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 14), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 15), new agx(1, 2)) } }, { { new agr(ItemList.F, new agx(15, 20)), new agv(ItemList.g, new agx(-12, -8)) }, { new agv(ItemList.f, new agx(2, 3)), new agu(Item.fromProtoBlock(BlockList.gravel), new agx(10, 10), ItemList.ak, new agx(6, 10)) } } }, { { { new agr(ItemList.aK, new agx(24, 36)), new ags() }, { new agr(ItemList.book, new agx(8, 10)), new agv(ItemList.aQ, new agx(10, 12)), new agv(Item.fromProtoBlock(BlockList.bookshelf), new agx(3, 4)) }, { new agr(ItemList.bN, new agx(2, 2)), new agv(ItemList.aS, new agx(10, 12)), new agv(Item.fromProtoBlock(BlockList.w), new agx(-5, -3)) }, { new ags() }, { new ags() }, { new agv(ItemList.nameTag, new agx(20, 22)) } } }, { { { new agr(ItemList.bt, new agx(36, 40)), new agr(ItemList.k, new agx(8, 10)) }, { new agv(ItemList.aC, new agx(-4, -1)), new agv(new ItemStack(ItemList.dye, 1, EnumDyeColor.BLUE.b()), new agx(-2, -1)) }, { new agv(ItemList.bH, new agx(7, 11)), new agv(Item.fromProtoBlock(BlockList.glowstone), new agx(-3, -1)) }, { new agv(ItemList.bK, new agx(3, 11)) } } }, { { { new agr(ItemList.h, new agx(16, 24)), new agv(ItemList.Y, new agx(4, 6)) }, { new agr(ItemList.j, new agx(7, 9)), new agv(ItemList.Z, new agx(10, 14)) }, { new agr(ItemList.diamond, new agx(3, 4)), new agt(ItemList.ad, new agx(16, 19)) }, { new agv(ItemList.X, new agx(5, 7)), new agv(ItemList.W, new agx(9, 11)), new agv(ItemList.U, new agx(5, 7)), new agv(ItemList.V, new agx(11, 15)) } }, { { new agr(ItemList.h, new agx(16, 24)), new agv(ItemList.c, new agx(6, 8)) }, { new agr(ItemList.j, new agx(7, 9)), new agt(ItemList.l, new agx(9, 10)) }, { new agr(ItemList.diamond, new agx(3, 4)), new agt(ItemList.u, new agx(12, 15)), new agt(ItemList.x, new agx(9, 12)) } }, { { new agr(ItemList.h, new agx(16, 24)), new agt(ItemList.a, new agx(5, 7)) }, { new agr(ItemList.j, new agx(7, 9)), new agt(ItemList.b, new agx(9, 11)) }, { new agr(ItemList.diamond, new agx(3, 4)), new agt(ItemList.w, new agx(12, 15)) } } }, { { { new agr(ItemList.al, new agx(14, 18)), new agr(ItemList.bk, new agx(14, 18)) }, { new agr(ItemList.h, new agx(16, 24)), new agv(ItemList.am, new agx(-7, -5)), new agv(ItemList.bl, new agx(-8, -6)) } }, { { new agr(ItemList.leather, new agx(9, 12)), new agv(ItemList.S, new agx(2, 4)) }, { new agt(ItemList.R, new agx(7, 12)) }, { new agv(ItemList.saddle, new agx(8, 10)) } } } };
+/*  508: 557 */   private static final agw[][][][] bA = { { { { new agr(ItemList.O, new agx(18, 22)), new agr(ItemList.potato, new agx(15, 19)), new agr(ItemList.carrot, new agx(15, 19)), new agv(ItemList.bread, new agx(-4, -2)) }, { new agr(Item.fromProtoBlock(BlockList.pumpkin), new agx(8, 13)), new agv(ItemList.ca, new agx(-3, -2)) }, { new agr(Item.fromProtoBlock(BlockList.bk), new agx(7, 12)), new agv(ItemList.apple, new agx(-5, -7)) }, { new agv(ItemList.bc, new agx(-6, -10)), new agv(ItemList.aZ, new agx(1, 1)) } }, { { new agr(ItemList.F, new agx(15, 20)), new agr(ItemList.h, new agx(16, 24)), new agu(ItemList.fish, new agx(6, 6), ItemList.aV, new agx(6, 6)) }, { new agt(ItemList.fishingRod, new agx(7, 8)) } }, { { new agr(Item.fromProtoBlock(BlockList.wool), new agx(16, 22)), new agv(ItemList.be, new agx(3, 4)) }, { new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 0), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 1), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 2), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 3), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 4), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 5), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 6), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 7), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 8), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 9), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 10), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 11), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 12), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 13), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 14), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 15), new agx(1, 2)) } }, { { new agr(ItemList.F, new agx(15, 20)), new agv(ItemList.g, new agx(-12, -8)) }, { new agv(ItemList.bow, new agx(2, 3)), new agu(Item.fromProtoBlock(BlockList.gravel), new agx(10, 10), ItemList.ak, new agx(6, 10)) } } }, { { { new agr(ItemList.aK, new agx(24, 36)), new ags() }, { new agr(ItemList.book, new agx(8, 10)), new agv(ItemList.aQ, new agx(10, 12)), new agv(Item.fromProtoBlock(BlockList.bookshelf), new agx(3, 4)) }, { new agr(ItemList.bN, new agx(2, 2)), new agv(ItemList.aS, new agx(10, 12)), new agv(Item.fromProtoBlock(BlockList.w), new agx(-5, -3)) }, { new ags() }, { new ags() }, { new agv(ItemList.nameTag, new agx(20, 22)) } } }, { { { new agr(ItemList.bt, new agx(36, 40)), new agr(ItemList.goldIngot, new agx(8, 10)) }, { new agv(ItemList.aC, new agx(-4, -1)), new agv(new ItemStack(ItemList.dye, 1, EnumDyeColor.BLUE.b()), new agx(-2, -1)) }, { new agv(ItemList.bH, new agx(7, 11)), new agv(Item.fromProtoBlock(BlockList.glowstone), new agx(-3, -1)) }, { new agv(ItemList.bK, new agx(3, 11)) } } }, { { { new agr(ItemList.h, new agx(16, 24)), new agv(ItemList.Y, new agx(4, 6)) }, { new agr(ItemList.ironIngot, new agx(7, 9)), new agv(ItemList.Z, new agx(10, 14)) }, { new agr(ItemList.diamond, new agx(3, 4)), new agt(ItemList.ad, new agx(16, 19)) }, { new agv(ItemList.X, new agx(5, 7)), new agv(ItemList.W, new agx(9, 11)), new agv(ItemList.U, new agx(5, 7)), new agv(ItemList.V, new agx(11, 15)) } }, { { new agr(ItemList.h, new agx(16, 24)), new agv(ItemList.c, new agx(6, 8)) }, { new agr(ItemList.ironIngot, new agx(7, 9)), new agt(ItemList.l, new agx(9, 10)) }, { new agr(ItemList.diamond, new agx(3, 4)), new agt(ItemList.u, new agx(12, 15)), new agt(ItemList.x, new agx(9, 12)) } }, { { new agr(ItemList.h, new agx(16, 24)), new agt(ItemList.a, new agx(5, 7)) }, { new agr(ItemList.ironIngot, new agx(7, 9)), new agt(ItemList.b, new agx(9, 11)) }, { new agr(ItemList.diamond, new agx(3, 4)), new agt(ItemList.w, new agx(12, 15)) } } }, { { { new agr(ItemList.al, new agx(14, 18)), new agr(ItemList.bk, new agx(14, 18)) }, { new agr(ItemList.h, new agx(16, 24)), new agv(ItemList.am, new agx(-7, -5)), new agv(ItemList.bl, new agx(-8, -6)) } }, { { new agr(ItemList.leather, new agx(9, 12)), new agv(ItemList.S, new agx(2, 4)) }, { new agt(ItemList.R, new agx(7, 12)) }, { new agv(ItemList.saddle, new agx(8, 10)) } } } };
 /*  509:     */   
 /*  510:     */   public void onSignal(byte signal)
 /*  511:     */   {

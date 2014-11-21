@@ -58,7 +58,7 @@ package net.minecraft.src;
 /*  57:    */   
 /*  58:    */   private void a(cil paramcil)
 /*  59:    */   {
-/*  60:262 */     int j = this.c.f.b(new BlockPosition(paramcil.xPos, paramcil.yPos + paramcil.aR(), paramcil.zPos), 0);
+/*  60:262 */     int j = this.c.f.b(new BlockPosition(paramcil.xPos, paramcil.yPos + paramcil.getEyeHeight(), paramcil.zPos), 0);
 /*  61:263 */     float f1 = j & 0xFFFF;
 /*  62:264 */     float f2 = j >> 16;
 /*  63:265 */     dax.glMultiTexCoord2f(dax.q, f1, f2);
@@ -352,7 +352,7 @@ package net.minecraft.src;
 /* 351:533 */         double d2 = localcio.yPos + ((j >> 1) % 2 - 0.5F) * 0.1F;
 /* 352:534 */         double d3 = localcio.zPos + ((j >> 2) % 2 - 0.5F) * localcio.width * 0.8F;
 /* 353:    */         
-/* 354:536 */         BlockPosition localdt = new BlockPosition(d1, d2 + localcio.aR(), d3);
+/* 354:536 */         BlockPosition localdt = new BlockPosition(d1, d2 + localcio.getEyeHeight(), d3);
 /* 355:537 */         Block localbec = this.c.f.getBlock(localdt);
 /* 356:539 */         if (localbec.getProto().u()) {
 /* 357:540 */           localObject = localbec;

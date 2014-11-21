@@ -258,9 +258,9 @@ package net.minecraft.src;
 /* 258:    */       }
 /* 259:280 */       if ((stack.getItem() == ItemList.diamond) && (getThrower() != null))
 /* 260:    */       {
-/* 261:281 */         EntityPlayer thrower = this.world.a(getThrower());
+/* 261:281 */         EntityPlayer thrower = this.world.getPlayer(getThrower());
 /* 262:282 */         if ((thrower != null) && (thrower != player)) {
-/* 263:283 */           thrower.b(AchievementList.x);
+/* 263:283 */           thrower.b(AchievementList.diamondsToYou);
 /* 264:    */         }
 /* 265:    */       }
 /* 266:286 */       if (!R()) {
@@ -338,7 +338,7 @@ package net.minecraft.src;
 /* 338:354 */     return this.age;
 /* 339:    */   }
 /* 340:    */   
-/* 341:    */   public void p()
+/* 341:    */   public void initPickupDelay()
 /* 342:    */   {
 /* 343:358 */     this.pickUpdelay = 10;
 /* 344:    */   }

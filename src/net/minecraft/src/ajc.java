@@ -20,10 +20,10 @@ package net.minecraft.src;
 /* 16:52 */     if (paramamj == null) {
 /* 17:53 */       return false;
 /* 18:   */     }
-/* 19:55 */     if ((paramamj.getItem() instanceof ajn)) {
-/* 20:56 */       return ((ajn)paramamj.getItem()).b == this.a;
+/* 19:55 */     if ((paramamj.getItem() instanceof ItemArmor)) {
+/* 20:56 */       return ((ItemArmor)paramamj.getItem()).b == this.a;
 /* 21:   */     }
-/* 22:58 */     if ((paramamj.getItem() == Item.fromProtoBlock(BlockList.pumpkin)) || (paramamj.getItem() == ItemList.bX)) {
+/* 22:58 */     if ((paramamj.getItem() == Item.fromProtoBlock(BlockList.pumpkin)) || (paramamj.getItem() == ItemList.skull)) {
 /* 23:59 */       return this.a == 0;
 /* 24:   */     }
 /* 25:61 */     return false;
@@ -31,7 +31,7 @@ package net.minecraft.src;
 /* 27:   */   
 /* 28:   */   public String c()
 /* 29:   */   {
-/* 30:67 */     return ajn.a[this.a];
+/* 30:67 */     return ItemArmor.a[this.a];
 /* 31:   */   }
 /* 32:   */ }
 

@@ -77,7 +77,7 @@ package net.minecraft.src;
 /*  75: 70 */     paramcoa.a(b());
 /*  76:    */     
 /*  77: 72 */     float f1 = (float)localwv.xPos;
-/*  78: 73 */     float f2 = (float)localwv.yPos + localwv.aR();
+/*  78: 73 */     float f2 = (float)localwv.yPos + localwv.getEyeHeight();
 /*  79: 74 */     float f3 = (float)localwv.zPos;
 /*  80:    */     
 /*  81: 76 */     coc localcoc = paramcoa.g();

@@ -9,14 +9,14 @@ package net.minecraft.src;
 /*   9: 18 */     a(0.9F, 1.3F);
 /*  10:    */     
 /*  11: 20 */     ((aay)s()).a(true);
-/*  12: 21 */     this.i.a(0, new yy(this));
-/*  13: 22 */     this.i.a(1, new zu(this, 2.0D));
-/*  14: 23 */     this.i.a(2, new yt(this, 1.0D));
-/*  15: 24 */     this.i.a(3, new aag(this, 1.25D, ItemList.O, false));
-/*  16: 25 */     this.i.a(4, new za(this, 1.25D));
-/*  17: 26 */     this.i.a(5, new zy(this, 1.0D));
-/*  18: 27 */     this.i.a(6, new zh(this, EntityPlayer.class, 6.0F));
-/*  19: 28 */     this.i.a(7, new zx(this));
+/*  12: 21 */     this.goalSelector.a(0, new yy(this));
+/*  13: 22 */     this.goalSelector.a(1, new zu(this, 2.0D));
+/*  14: 23 */     this.goalSelector.a(2, new yt(this, 1.0D));
+/*  15: 24 */     this.goalSelector.a(3, new aag(this, 1.25D, ItemList.O, false));
+/*  16: 25 */     this.goalSelector.a(4, new za(this, 1.25D));
+/*  17: 26 */     this.goalSelector.a(5, new zy(this, 1.0D));
+/*  18: 27 */     this.goalSelector.a(6, new zh(this, EntityPlayer.class, 6.0F));
+/*  19: 28 */     this.goalSelector.a(7, new zx(this));
 /*  20:    */   }
 /*  21:    */   
 /*  22:    */   protected void aW()
@@ -93,7 +93,7 @@ package net.minecraft.src;
 /*  93:104 */     return new EntityCow(this.world);
 /*  94:    */   }
 /*  95:    */   
-/*  96:    */   public float aR()
+/*  96:    */   public float getEyeHeight()
 /*  97:    */   {
 /*  98:109 */     return this.height;
 /*  99:    */   }

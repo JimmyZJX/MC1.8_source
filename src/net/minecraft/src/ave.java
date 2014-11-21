@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*   5:    */ {
 /*   6: 25 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing");
 /*   7: 26 */   public static final BlockDataBoolean b = BlockDataBoolean.getInstance("triggered");
-/*   8: 28 */   public static final ei M = new ei(new eg());
+/*   8: 28 */   public static final ei<Item, eo> M = new ei<Item, eo>(new eg());
 /*   9: 30 */   protected Random N = new Random();
 /*  10:    */   
 /*  11:    */   protected ave()
@@ -93,7 +93,7 @@ package net.minecraft.src;
 /*  92:    */   
 /*  93:    */   protected eo a(ItemStack paramamj)
 /*  94:    */   {
-/*  95:112 */     return (eo)M.a(paramamj == null ? null : paramamj.getItem());
+/*  95:112 */     return M.a(paramamj == null ? null : paramamj.getItem());
 /*  96:    */   }
 /*  97:    */   
 /*  98:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)

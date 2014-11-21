@@ -384,7 +384,7 @@ import net.minecraft.server.MinecraftServer;
 /*  381:     */   
 /*  382:     */   public boolean hasDaylight(BlockPosition paramdt)
 /*  383:     */   {
-/*  384: 454 */     return getChunk(paramdt).d(paramdt);
+/*  384: 454 */     return getChunk(paramdt).hasDaylight(paramdt);
 /*  385:     */   }
 /*  386:     */   
 /*  387:     */   public boolean j(BlockPosition paramdt)
@@ -1951,8 +1951,8 @@ import net.minecraft.server.MinecraftServer;
 /* 1948:1956 */       i3 += paramInt2;
 /* 1949:1957 */       if ((localatr.getMaterial() == Material.air) && (k(localdt) <= this.rng.nextInt(8)) && (getLightLevel(EnumSkyBlock.SKY, localdt) <= 0))
 /* 1950:     */       {
-/* 1951:1958 */         EntityPlayer localahd = a(i2 + 0.5D, i4 + 0.5D, i3 + 0.5D, 8.0D);
-/* 1952:1959 */         if ((localahd != null) && (localahd.e(i2 + 0.5D, i4 + 0.5D, i3 + 0.5D) > 4.0D))
+/* 1951:1958 */         EntityPlayer localahd = getNearestPlayer(i2 + 0.5D, i4 + 0.5D, i3 + 0.5D, 8.0D);
+/* 1952:1959 */         if ((localahd != null) && (localahd.dist2(i2 + 0.5D, i4 + 0.5D, i3 + 0.5D) > 4.0D))
 /* 1953:     */         {
 /* 1954:1960 */           a(i2 + 0.5D, i4 + 0.5D, i3 + 0.5D, "ambient.cave.cave", 0.7F, 0.8F + this.rng.nextFloat() * 0.2F);
 /* 1955:1961 */           this.K = (this.rng.nextInt(12000) + 6000);
@@ -2323,7 +2323,7 @@ import net.minecraft.server.MinecraftServer;
 /* 2320:     */   {
 /* 2321:2311 */     int i1 = 0;
 /* 2322:2312 */     for (Entity localwv : this.entityList) {
-/* 2323:2313 */       if ((!(localwv instanceof EntityMob)) || (!((EntityMob)localwv).bY())) {
+/* 2323:2313 */       if ((!(localwv instanceof EntityMob)) || (!((EntityMob)localwv).isPersistent())) {
 /* 2324:2316 */         if (paramClass.isAssignableFrom(localwv.getClass())) {
 /* 2325:2317 */           i1++;
 /* 2326:     */         }
@@ -2454,29 +2454,29 @@ import net.minecraft.server.MinecraftServer;
 /* 2451:2444 */     return i1;
 /* 2452:     */   }
 /* 2453:     */   
-/* 2454:     */   public EntityPlayer a(Entity paramwv, double paramDouble)
+/* 2454:     */   public EntityPlayer getNearestPlayer(Entity paramwv, double paramDouble)
 /* 2455:     */   {
-/* 2456:2449 */     return a(paramwv.xPos, paramwv.yPos, paramwv.zPos, paramDouble);
+/* 2456:2449 */     return getNearestPlayer(paramwv.xPos, paramwv.yPos, paramwv.zPos, paramDouble);
 /* 2457:     */   }
 /* 2458:     */   
-/* 2459:     */   public EntityPlayer a(double paramDouble1, double paramDouble2, double paramDouble3, double paramDouble4)
+/* 2459:     */   public EntityPlayer getNearestPlayer(double x, double y, double z, double dist)
 /* 2460:     */   {
 /* 2461:2454 */     double d1 = -1.0D;
-/* 2462:2455 */     EntityPlayer localObject = null;
+/* 2462:2455 */     EntityPlayer res = null;
 /* 2463:2456 */     for (int i1 = 0; i1 < this.playerList.size(); i1++)
 /* 2464:     */     {
-/* 2465:2457 */       EntityPlayer localahd = this.playerList.get(i1);
-/* 2466:2458 */       if (xe.d.apply(localahd))
+/* 2465:2457 */       EntityPlayer player = this.playerList.get(i1);
+/* 2466:2458 */       if (xe.d.apply(player))
 /* 2467:     */       {
-/* 2468:2461 */         double d2 = localahd.e(paramDouble1, paramDouble2, paramDouble3);
-/* 2469:2462 */         if (((paramDouble4 < 0.0D) || (d2 < paramDouble4 * paramDouble4)) && ((d1 == -1.0D) || (d2 < d1)))
+/* 2468:2461 */         double d2 = player.dist2(x, y, z);
+/* 2469:2462 */         if (((dist < 0.0D) || (d2 < dist * dist)) && ((d1 == -1.0D) || (d2 < d1)))
 /* 2470:     */         {
 /* 2471:2463 */           d1 = d2;
-/* 2472:2464 */           localObject = localahd;
+/* 2472:2464 */           res = player;
 /* 2473:     */         }
 /* 2474:     */       }
 /* 2475:     */     }
-/* 2476:2467 */     return localObject;
+/* 2476:2467 */     return res;
 /* 2477:     */   }
 /* 2478:     */   
 /* 2479:     */   public boolean isWithinRangeOfAnyPlayer(double x, double y, double z, double range)
@@ -2486,7 +2486,7 @@ import net.minecraft.server.MinecraftServer;
 /* 2483:2472 */       EntityPlayer localahd = this.playerList.get(i1);
 /* 2484:2473 */       if (xe.d.apply(localahd))
 /* 2485:     */       {
-/* 2486:2476 */         double d1 = localahd.e(x, y, z);
+/* 2486:2476 */         double d1 = localahd.dist2(x, y, z);
 /* 2487:2477 */         if ((range < 0.0D) || (d1 < range * range)) {
 /* 2488:2478 */           return true;
 /* 2489:     */         }
@@ -2495,13 +2495,13 @@ import net.minecraft.server.MinecraftServer;
 /* 2492:2481 */     return false;
 /* 2493:     */   }
 /* 2494:     */   
-/* 2495:     */   public EntityPlayer a(String paramString)
+/* 2495:     */   public EntityPlayer getPlayer(String name)
 /* 2496:     */   {
 /* 2497:2539 */     for (int i1 = 0; i1 < this.playerList.size(); i1++)
 /* 2498:     */     {
-/* 2499:2540 */       EntityPlayer localahd = this.playerList.get(i1);
-/* 2500:2541 */       if (paramString.equals(localahd.getName())) {
-/* 2501:2542 */         return localahd;
+/* 2499:2540 */       EntityPlayer player = this.playerList.get(i1);
+/* 2500:2541 */       if (name.equals(player.getName())) {
+/* 2501:2542 */         return player;
 /* 2502:     */       }
 /* 2503:     */     }
 /* 2504:2545 */     return null;

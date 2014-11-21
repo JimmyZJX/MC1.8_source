@@ -20,10 +20,10 @@ package net.minecraft.src;
 /*  19:    */   
 /*  20:    */   public void a(bci parambci, double paramDouble1, double paramDouble2, double paramDouble3, float paramFloat, int paramInt)
 /*  21:    */   {
-/*  22: 33 */     int i = parambci.z() != null ? 1 : 0;
+/*  22: 33 */     int i = parambci.getWorld() != null ? 1 : 0;
 /*  23: 34 */     int j = (i == 0) || (parambci.w() == BlockList.cK) ? 1 : 0;
 /*  24: 35 */     int f1 = i != 0 ? parambci.getData() : 0;
-/*  25: 36 */     long l = i != 0 ? parambci.z().K() : 0L;
+/*  25: 36 */     long l = i != 0 ? parambci.getWorld().K() : 0L;
 /*  26:    */     
 /*  27: 38 */     cjm.glPushMatrix();
 /*  28: 39 */     float f2 = 0.6666667F;

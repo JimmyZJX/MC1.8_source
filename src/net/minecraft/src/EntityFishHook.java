@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*   6:    */   extends Entity
 /*   7:    */ {
 /*   8: 36 */   private static final List<adp> junks = Arrays.asList(new adp[] { new adp(new ItemStack(ItemList.leatherBoots), 10).a(0.9F), new adp(new ItemStack(ItemList.leather), 10), new adp(new ItemStack(ItemList.bone), 10), new adp(new ItemStack(ItemList.potion), 10), new adp(new ItemStack(ItemList.F), 5), new adp(new ItemStack(ItemList.fishingRod), 2).a(0.9F), new adp(new ItemStack(ItemList.z), 10), new adp(new ItemStack(ItemList.stick), 5), new adp(new ItemStack(ItemList.dye, 10, EnumDyeColor.BLACK.b()), 1), new adp(new ItemStack(BlockList.bR), 10), new adp(new ItemStack(ItemList.bt), 10) });
-/*   9: 49 */   private static final List<adp> treasures = Arrays.asList(new adp[] { new adp(new ItemStack(BlockList.waterLily), 1), new adp(new ItemStack(ItemList.nameTag), 1), new adp(new ItemStack(ItemList.saddle), 1), new adp(new ItemStack(ItemList.f), 1).a(0.25F).a(), new adp(new ItemStack(ItemList.fishingRod), 1).a(0.25F).a(), new adp(new ItemStack(ItemList.book), 1).a() });
+/*   9: 49 */   private static final List<adp> treasures = Arrays.asList(new adp[] { new adp(new ItemStack(BlockList.waterLily), 1), new adp(new ItemStack(ItemList.nameTag), 1), new adp(new ItemStack(ItemList.saddle), 1), new adp(new ItemStack(ItemList.bow), 1).a(0.25F).a(), new adp(new ItemStack(ItemList.fishingRod), 1).a(0.25F).a(), new adp(new ItemStack(ItemList.book), 1).a() });
 /*  10: 57 */   private static final List<adp> fishes = Arrays.asList(new adp[] { new adp(new ItemStack(ItemList.fish, 1, ali.a.a()), 60), new adp(new ItemStack(ItemList.fish, 1, ali.b.a()), 25), new adp(new ItemStack(ItemList.fish, 1, ali.c.a()), 2), new adp(new ItemStack(ItemList.fish, 1, ali.d.a()), 13) });
 /*  11:    */   
 /*  12:    */   public static List<adp> getFishes()
@@ -63,7 +63,7 @@ package net.minecraft.src;
 /*  63:    */     
 /*  64:104 */     a(0.25F, 0.25F);
 /*  65:    */     
-/*  66:106 */     setPositionAndAngles(paramahd.xPos, paramahd.yPos + paramahd.aR(), paramahd.zPos, paramahd.yaw, paramahd.pitch);
+/*  66:106 */     setPositionAndAngles(paramahd.xPos, paramahd.yPos + paramahd.getEyeHeight(), paramahd.zPos, paramahd.yaw, paramahd.pitch);
 /*  67:    */     
 /*  68:108 */     this.xPos -= MathUtils.cos(this.yaw / 180.0F * 3.141593F) * 0.16F;
 /*  69:109 */     this.yPos -= 0.1000000014901161D;

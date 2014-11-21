@@ -558,7 +558,7 @@ package net.minecraft.src;
 /* 557:564 */     this.world.setBlock(paramdt.up(4), BlockList.dragonEgg.instance());
 /* 558:    */   }
 /* 559:    */   
-/* 560:    */   protected void D() {}
+/* 560:    */   protected void checkDespawn() {}
 /* 561:    */   
 /* 562:    */   public Entity[] aC()
 /* 563:    */   {

@@ -396,7 +396,7 @@ package net.minecraft.src;
 /*  391:     */     }
 /*  392: 449 */     else if ((localdt.getY() < this.d.al() - 1) || ((localej != EnumDirection.UP) && (localdt.getY() < this.d.al())))
 /*  393:     */     {
-/*  394: 450 */       if ((this.r) && (this.b.e(localdt.getX() + 0.5D, localdt.getY() + 0.5D, localdt.getZ() + 0.5D) < 64.0D) && 
+/*  394: 450 */       if ((this.r) && (this.b.dist2(localdt.getX() + 0.5D, localdt.getY() + 0.5D, localdt.getZ() + 0.5D) < 64.0D) && 
 /*  395: 451 */         (!this.d.a(localqt, localdt, this.b)) && (localqt.af().a(localdt))) {
 /*  396: 452 */         this.b.c.a(this.b, localqt, localamj, localdt, localej, parammx.d(), parammx.e(), parammx.f());
 /*  397:     */       }
@@ -644,7 +644,7 @@ package net.minecraft.src;
 /*  639: 707 */     this.b.z();
 /*  640: 709 */     if (localwv != null)
 /*  641:     */     {
-/*  642: 710 */       boolean bool = this.b.t(localwv);
+/*  642: 710 */       boolean bool = this.b.canSee(localwv);
 /*  643: 711 */       double d1 = 36.0D;
 /*  644: 712 */       if (!bool) {
 /*  645: 713 */         d1 = 9.0D;

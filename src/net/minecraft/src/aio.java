@@ -56,7 +56,7 @@ package net.minecraft.src;
 /*  55: 74 */     if (this.g.getBlock(this.h).getProto() != BlockList.ai) {
 /*  56: 75 */       return false;
 /*  57:    */     }
-/*  58: 77 */     if (paramahd.e(this.h.getX() + 0.5D, this.h.getY() + 0.5D, this.h.getZ() + 0.5D) > 64.0D) {
+/*  58: 77 */     if (paramahd.dist2(this.h.getX() + 0.5D, this.h.getY() + 0.5D, this.h.getZ() + 0.5D) > 64.0D) {
 /*  59: 78 */       return false;
 /*  60:    */     }
 /*  61: 80 */     return true;

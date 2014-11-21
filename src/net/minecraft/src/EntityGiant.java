@@ -8,7 +8,7 @@ package net.minecraft.src;
 /*  7:11 */     a(this.width * 6.0F, this.height * 6.0F);
 /*  8:   */   }
 /*  9:   */   
-/* 10:   */   public float aR()
+/* 10:   */   public float getEyeHeight()
 /* 11:   */   {
 /* 12:16 */     return 10.440001F;
 /* 13:   */   }

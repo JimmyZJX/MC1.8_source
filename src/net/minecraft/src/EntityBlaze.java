@@ -14,14 +14,14 @@ package net.minecraft.src;
 /*  13: 29 */     this.ab = true;
 /*  14: 30 */     this.b_ = 10;
 /*  15:    */     
-/*  16: 32 */     this.i.a(4, new aen(this));
-/*  17: 33 */     this.i.a(5, new zo(this, 1.0D));
-/*  18: 34 */     this.i.a(7, new zy(this, 1.0D));
-/*  19: 35 */     this.i.a(8, new zh(this, EntityPlayer.class, 8.0F));
-/*  20: 36 */     this.i.a(8, new zx(this));
+/*  16: 32 */     this.goalSelector.a(4, new aen(this));
+/*  17: 33 */     this.goalSelector.a(5, new zo(this, 1.0D));
+/*  18: 34 */     this.goalSelector.a(7, new zy(this, 1.0D));
+/*  19: 35 */     this.goalSelector.a(8, new zh(this, EntityPlayer.class, 8.0F));
+/*  20: 36 */     this.goalSelector.a(8, new zx(this));
 /*  21:    */     
-/*  22: 38 */     this.bg.a(1, new aal(this, true, new Class[0]));
-/*  23: 39 */     this.bg.a(2, new aaq(this, EntityPlayer.class, true));
+/*  22: 38 */     this.targetSelector.a(1, new aal(this, true, new Class[0]));
+/*  23: 39 */     this.targetSelector.a(2, new aaq(this, EntityPlayer.class, true));
 /*  24:    */   }
 /*  25:    */   
 /*  26:    */   protected void aW()
@@ -81,7 +81,7 @@ package net.minecraft.src;
 /*  80: 98 */     super.m();
 /*  81:    */   }
 /*  82:    */   
-/*  83:    */   protected void E()
+/*  83:    */   protected void mobTick()
 /*  84:    */   {
 /*  85:103 */     if (U()) {
 /*  86:104 */       a(DamageSource.f, 1.0F);
@@ -93,12 +93,12 @@ package net.minecraft.src;
 /*  92:110 */       this.b = (0.5F + (float)this.rng.nextGaussian() * 3.0F);
 /*  93:    */     }
 /*  94:113 */     EntityLiving localxm = u();
-/*  95:114 */     if ((localxm != null) && (localxm.yPos + localxm.aR() > this.yPos + aR() + this.b))
+/*  95:114 */     if ((localxm != null) && (localxm.yPos + localxm.getEyeHeight() > this.yPos + getEyeHeight() + this.b))
 /*  96:    */     {
 /*  97:115 */       this.yVelocity += (0.300000011920929D - this.yVelocity) * 0.300000011920929D;
 /*  98:116 */       this.ai = true;
 /*  99:    */     }
-/* 100:119 */     super.E();
+/* 100:119 */     super.mobTick();
 /* 101:    */   }
 /* 102:    */   
 /* 103:    */   public void e(float paramFloat1, float paramFloat2) {}

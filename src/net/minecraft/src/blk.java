@@ -7,7 +7,7 @@ package net.minecraft.src;
 /*   6:    */   extends bln
 /*   7:    */ {
 /*   8: 98 */   private boolean[] e = new boolean[4];
-/*   9:101 */   private static final List<vl> f = Lists.newArrayList(new vl[] { new vl(ItemList.diamond, 0, 1, 3, 3), new vl(ItemList.j, 0, 1, 5, 10), new vl(ItemList.k, 0, 2, 7, 15), new vl(ItemList.emerald, 0, 1, 3, 2), new vl(ItemList.bone, 0, 4, 6, 20), new vl(ItemList.bt, 0, 3, 7, 16), new vl(ItemList.saddle, 0, 1, 1, 3), new vl(ItemList.ck, 0, 1, 1, 1), new vl(ItemList.cl, 0, 1, 1, 1), new vl(ItemList.cm, 0, 1, 1, 1) });
+/*   9:101 */   private static final List<vl> f = Lists.newArrayList(new vl[] { new vl(ItemList.diamond, 0, 1, 3, 3), new vl(ItemList.ironIngot, 0, 1, 5, 10), new vl(ItemList.goldIngot, 0, 2, 7, 15), new vl(ItemList.emerald, 0, 1, 3, 2), new vl(ItemList.bone, 0, 4, 6, 20), new vl(ItemList.bt, 0, 3, 7, 16), new vl(ItemList.saddle, 0, 1, 1, 3), new vl(ItemList.ck, 0, 1, 1, 1), new vl(ItemList.cl, 0, 1, 1, 1), new vl(ItemList.cm, 0, 1, 1, 1) });
 /*  10:    */   
 /*  11:    */   public blk() {}
 /*  12:    */   

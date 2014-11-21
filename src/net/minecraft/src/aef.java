@@ -65,22 +65,22 @@ package net.minecraft.src;
 /*  64: 77 */     this.a = paramBoolean;
 /*  65:    */   }
 /*  66:    */   
-/*  67:    */   public World z()
+/*  67:    */   public World getWorld()
 /*  68:    */   {
 /*  69: 82 */     return this.world;
 /*  70:    */   }
 /*  71:    */   
-/*  72:    */   public double A()
+/*  72:    */   public double getX()
 /*  73:    */   {
 /*  74: 87 */     return this.xPos;
 /*  75:    */   }
 /*  76:    */   
-/*  77:    */   public double B()
+/*  77:    */   public double getY()
 /*  78:    */   {
 /*  79: 92 */     return this.yPos;
 /*  80:    */   }
 /*  81:    */   
-/*  82:    */   public double C()
+/*  82:    */   public double getZ()
 /*  83:    */   {
 /*  84: 97 */     return this.zPos;
 /*  85:    */   }
@@ -124,7 +124,7 @@ package net.minecraft.src;
 /* 123:    */   {
 /* 124:139 */     super.a(paramwh);
 /* 125:    */     
-/* 126:141 */     a(Item.fromProtoBlock(BlockList.cp), 1, 0.0F);
+/* 126:141 */     throwItem(Item.fromProtoBlock(BlockList.cp), 1, 0.0F);
 /* 127:    */   }
 /* 128:    */   
 /* 129:    */   protected void writeEntityToNBT(NBTTagCompound paramfn)

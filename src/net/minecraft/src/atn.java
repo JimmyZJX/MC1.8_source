@@ -12,7 +12,7 @@ package net.minecraft.src;
 /*  9:91 */     for (int i = this.b.getY() - 1; i >= 0; i--)
 /* 10:   */     {
 /* 11:92 */       BlockPosition localdt = new BlockPosition(this.b.getX(), i, this.b.getZ());
-/* 12:93 */       if (!localbfh.d(localdt)) {
+/* 12:93 */       if (!localbfh.hasDaylight(localdt)) {
 /* 13:   */         break;
 /* 14:   */       }
 /* 15:94 */       Block localbec = this.a.getBlock(localdt);

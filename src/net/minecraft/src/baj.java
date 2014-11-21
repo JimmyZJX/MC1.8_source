@@ -68,7 +68,7 @@ package net.minecraft.src;
 /*  67:    */   
 /*  68:    */   public Item b(World paramaqu, BlockPosition paramdt)
 /*  69:    */   {
-/*  70:106 */     return ItemList.bX;
+/*  70:106 */     return ItemList.skull;
 /*  71:    */   }
 /*  72:    */   
 /*  73:    */   public int j(World paramaqu, BlockPosition paramdt)
@@ -103,7 +103,7 @@ package net.minecraft.src;
 /* 102:142 */       if ((localbcm instanceof bdm))
 /* 103:    */       {
 /* 104:143 */         bdm localbdm = (bdm)localbcm;
-/* 105:144 */         ItemStack localamj = new ItemStack(ItemList.bX, 1, j(paramaqu, paramdt));
+/* 105:144 */         ItemStack localamj = new ItemStack(ItemList.skull, 1, j(paramaqu, paramdt));
 /* 106:146 */         if ((localbdm.c() == 3) && (localbdm.b() != null))
 /* 107:    */         {
 /* 108:147 */           localamj.setTagCompound(new NBTTagCompound());
@@ -121,7 +121,7 @@ package net.minecraft.src;
 /* 120:    */   
 /* 121:    */   public Item a(Block parambec, Random paramRandom, int paramInt)
 /* 122:    */   {
-/* 123:164 */     return ItemList.bX;
+/* 123:164 */     return ItemList.skull;
 /* 124:    */   }
 /* 125:    */   
 /* 126:    */   public boolean b(World paramaqu, BlockPosition paramdt, ItemStack paramamj)

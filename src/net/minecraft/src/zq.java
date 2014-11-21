@@ -46,7 +46,7 @@ package net.minecraft.src;
 /* 45:52 */     this.b.p().a(this.c, 30.0F, 30.0F);
 /* 46:   */     
 /* 47:54 */     double d1 = this.b.width * 2.0F * (this.b.width * 2.0F);
-/* 48:55 */     double d2 = this.b.e(this.c.xPos, this.c.getAABB().minY, this.c.zPos);
+/* 48:55 */     double d2 = this.b.dist2(this.c.xPos, this.c.getAABB().minY, this.c.zPos);
 /* 49:   */     
 /* 50:57 */     double d3 = 0.8D;
 /* 51:58 */     if ((d2 > d1) && (d2 < 16.0D)) {

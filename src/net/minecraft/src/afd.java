@@ -30,7 +30,7 @@ package net.minecraft.src;
 /*  29:317 */     EntityLiving localxm = this.b.u();
 /*  30:    */     
 /*  31:319 */     double d1 = 64.0D;
-/*  32:320 */     if ((localxm.h(this.b) < d1 * d1) && (this.b.t(localxm)))
+/*  32:320 */     if ((localxm.h(this.b) < d1 * d1) && (this.b.canSee(localxm)))
 /*  33:    */     {
 /*  34:321 */       World localaqu = this.b.world;
 /*  35:    */       

@@ -25,7 +25,7 @@ package net.minecraft.src;
 /*  24:    */ 
 /*  25:    */ 
 /*  26:    */ 
-/*  27: 35 */       paramaop.a(new ItemStack(BlockList.stained_glass_pane, 16, i), new Object[] { "###", "###", Character.valueOf('#'), new ItemStack(BlockList.cG, 1, i) });
+/*  27: 35 */       paramaop.a(new ItemStack(BlockList.stainedGlassPane, 16, i), new Object[] { "###", "###", Character.valueOf('#'), new ItemStack(BlockList.cG, 1, i) });
 /*  28:    */     }
 /*  29: 44 */     paramaop.b(new ItemStack(ItemList.dye, 1, EnumDyeColor.YELLOW.b()), new Object[] { new ItemStack(BlockList.yellowFlower, 1, EnumFlowerVariant.a.b()) });
 /*  30:    */     

@@ -128,7 +128,7 @@ package net.minecraft.src;
 /* 128:153 */     if (this.world.s(this.pos) != this) {
 /* 129:154 */       return false;
 /* 130:    */     }
-/* 131:156 */     if (paramahd.e(this.pos.getX() + 0.5D, this.pos.getY() + 0.5D, this.pos.getZ() + 0.5D) > 64.0D) {
+/* 131:156 */     if (paramahd.dist2(this.pos.getX() + 0.5D, this.pos.getY() + 0.5D, this.pos.getZ() + 0.5D) > 64.0D) {
 /* 132:157 */       return false;
 /* 133:    */     }
 /* 134:159 */     return true;
@@ -310,7 +310,7 @@ package net.minecraft.src;
 /* 310:    */     }
 /* 311:    */     else
 /* 312:    */     {
-/* 313:336 */       localObject = a(parambdd.z(), parambdd.A(), parambdd.B() + 1.0D, parambdd.C());
+/* 313:336 */       localObject = a(parambdd.getWorld(), parambdd.getX(), parambdd.getY() + 1.0D, parambdd.getZ());
 /* 314:338 */       if (localObject != null) {
 /* 315:339 */         return a(parambdd, (EntityItem)localObject);
 /* 316:    */       }
@@ -438,12 +438,12 @@ package net.minecraft.src;
 /* 438:    */   private vq G()
 /* 439:    */   {
 /* 440:455 */     EnumDirection localej = BlockHopper.b(getData());
-/* 441:456 */     return b(z(), this.pos.getX() + localej.g(), this.pos.getY() + localej.h(), this.pos.getZ() + localej.i());
+/* 441:456 */     return b(getWorld(), this.pos.getX() + localej.g(), this.pos.getY() + localej.h(), this.pos.getZ() + localej.i());
 /* 442:    */   }
 /* 443:    */   
 /* 444:    */   public static vq b(bdd parambdd)
 /* 445:    */   {
-/* 446:460 */     return b(parambdd.z(), parambdd.A(), parambdd.B() + 1.0D, parambdd.C());
+/* 446:460 */     return b(parambdd.getWorld(), parambdd.getX(), parambdd.getY() + 1.0D, parambdd.getZ());
 /* 447:    */   }
 /* 448:    */   
 /* 449:    */   public static EntityItem a(World paramaqu, double paramDouble1, double paramDouble2, double paramDouble3)
@@ -503,17 +503,17 @@ package net.minecraft.src;
 /* 503:518 */     return true;
 /* 504:    */   }
 /* 505:    */   
-/* 506:    */   public double A()
+/* 506:    */   public double getX()
 /* 507:    */   {
 /* 508:523 */     return this.pos.getX();
 /* 509:    */   }
 /* 510:    */   
-/* 511:    */   public double B()
+/* 511:    */   public double getY()
 /* 512:    */   {
 /* 513:528 */     return this.pos.getY();
 /* 514:    */   }
 /* 515:    */   
-/* 516:    */   public double C()
+/* 516:    */   public double getZ()
 /* 517:    */   {
 /* 518:533 */     return this.pos.getZ();
 /* 519:    */   }

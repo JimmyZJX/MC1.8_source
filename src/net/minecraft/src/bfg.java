@@ -58,7 +58,7 @@ package net.minecraft.src;
 /*  57:    */   
 /*  58:    */   public void a(Entity paramwv, int paramInt) {}
 /*  59:    */   
-/*  60:    */   public boolean d(BlockPosition paramdt)
+/*  60:    */   public boolean hasDaylight(BlockPosition paramdt)
 /*  61:    */   {
 /*  62: 84 */     return false;
 /*  63:    */   }

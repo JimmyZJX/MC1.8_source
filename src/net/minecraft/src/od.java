@@ -331,7 +331,7 @@ package net.minecraft.src;
 /* 330:    */ 
 /* 331:    */ 
 /* 332:    */ 
-/* 333:355 */     ave.M.a(ItemList.bX, new ok());
+/* 333:355 */     ave.M.a(ItemList.skull, new ok());
 /* 334:    */     
 /* 335:    */ 
 /* 336:    */ 

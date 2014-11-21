@@ -786,7 +786,7 @@ package net.minecraft.src;
 /* 782:852 */       localaqo.d();
 /* 783:    */     }
 /* 784:855 */     for (EntityPlayer localahd : this.playerList) {
-/* 785:856 */       if (localahd.e(paramDouble1, paramDouble2, paramDouble3) < 4096.0D) {
+/* 785:856 */       if (localahd.dist2(paramDouble1, paramDouble2, paramDouble3) < 4096.0D) {
 /* 786:857 */         ((qw)localahd).a.a(new jm(paramDouble1, paramDouble2, paramDouble3, paramFloat, localaqo.e(), (Vec3)localaqo.b().get(localahd)));
 /* 787:    */       }
 /* 788:    */     }

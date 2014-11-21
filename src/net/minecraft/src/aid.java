@@ -276,7 +276,7 @@ package net.minecraft.src;
 /* 275:387 */     if (this.i.getBlock(this.j).getProto() != BlockList.cf) {
 /* 276:388 */       return false;
 /* 277:    */     }
-/* 278:390 */     if (paramahd.e(this.j.getX() + 0.5D, this.j.getY() + 0.5D, this.j.getZ() + 0.5D) > 64.0D) {
+/* 278:390 */     if (paramahd.dist2(this.j.getX() + 0.5D, this.j.getY() + 0.5D, this.j.getZ() + 0.5D) > 64.0D) {
 /* 279:391 */       return false;
 /* 280:    */     }
 /* 281:393 */     return true;

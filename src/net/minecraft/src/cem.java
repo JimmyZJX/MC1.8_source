@@ -71,7 +71,7 @@ package net.minecraft.src;
 /*  70:    */       }
 /*  71:    */     }
 /*  72: 90 */     if ((this.i.d()) && 
-/*  73: 91 */       (this.a.h.bz() != null) && ((this.a.h.bz().getItem() instanceof ItemSword))) {
+/*  73: 91 */       (this.a.h.getHeldItemStack() != null) && ((this.a.h.getHeldItemStack().getItem() instanceof ItemSword))) {
 /*  74: 92 */       return false;
 /*  75:    */     }
 /*  76: 96 */     Object localObject1 = this.a.f;
@@ -150,7 +150,7 @@ package net.minecraft.src;
 /* 149:    */       {
 /* 150:165 */         this.h = true;
 /* 151:166 */         this.c = paramdt;
-/* 152:167 */         this.d = this.a.h.bz();
+/* 152:167 */         this.d = this.a.h.getHeldItemStack();
 /* 153:168 */         this.e = 0.0F;
 /* 154:169 */         this.f = 0.0F;
 /* 155:170 */         this.a.f.c(this.a.h.getID(), this.c, (int)(this.e * 10.0F) - 1);
@@ -236,7 +236,7 @@ package net.minecraft.src;
 /* 235:    */   
 /* 236:    */   private boolean a(BlockPosition paramdt)
 /* 237:    */   {
-/* 238:254 */     ItemStack localamj = this.a.h.bz();
+/* 238:254 */     ItemStack localamj = this.a.h.getHeldItemStack();
 /* 239:255 */     int k = (this.d == null) && (localamj == null) ? 1 : 0;
 /* 240:256 */     if ((this.d != null) && (localamj != null)) {
 /* 241:257 */       k = (localamj.getItem() == this.d.getItem()) && (ItemStack.a(localamj, this.d)) && ((localamj.e()) || (localamj.getDamage2() == this.d.getDamage2())) ? 1 : 0;
@@ -268,7 +268,7 @@ package net.minecraft.src;
 /* 267:282 */     if (this.i != EnumGameType.e)
 /* 268:    */     {
 /* 269:283 */       Block localbec = paramcen.getBlock(paramdt);
-/* 270:284 */       if (((!paramcio.aw()) || (paramcio.bz() == null)) && 
+/* 270:284 */       if (((!paramcio.aw()) || (paramcio.getHeldItemStack() == null)) && 
 /* 271:285 */         (localbec.getProto().a(paramcen, paramdt, localbec, paramcio, paramej, f1, f2, f3))) {
 /* 272:286 */         k = 1;
 /* 273:    */       }

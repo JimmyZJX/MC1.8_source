@@ -42,7 +42,7 @@ package net.minecraft.src;
 /*  42: 61 */       return false;
 /*  43:    */     }
 /*  44: 63 */     if (this.f) {
-/*  45: 64 */       if (this.e.t().a(localxm)) {
+/*  45: 64 */       if (this.e.t().canSee(localxm)) {
 /*  46: 65 */         this.d = 0;
 /*  47: 67 */       } else if (++this.d > 60) {
 /*  48: 68 */         return false;
@@ -106,7 +106,7 @@ package net.minecraft.src;
 /* 106:    */     {
 /* 107:129 */       return false;
 /* 108:    */     }
-/* 109:133 */     if ((paramBoolean2) && (!paramxn.t().a(paramxm))) {
+/* 109:133 */     if ((paramBoolean2) && (!paramxn.t().canSee(paramxm))) {
 /* 110:134 */       return false;
 /* 111:    */     }
 /* 112:137 */     return true;

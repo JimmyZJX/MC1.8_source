@@ -14,12 +14,12 @@ package net.minecraft.src;
 /*  13: 25 */     super(paramaqu);
 /*  14:    */   }
 /*  15:    */   
-/*  16:    */   protected void E()
+/*  16:    */   protected void mobTick()
 /*  17:    */   {
 /*  18: 30 */     if (getAge() != 0) {
 /*  19: 31 */       this.bk = 0;
 /*  20:    */     }
-/*  21: 33 */     super.E();
+/*  21: 33 */     super.mobTick();
 /*  22:    */   }
 /*  23:    */   
 /*  24:    */   public void m()
@@ -84,7 +84,7 @@ package net.minecraft.src;
 /*  83: 95 */     return 120;
 /*  84:    */   }
 /*  85:    */   
-/*  86:    */   protected boolean C()
+/*  86:    */   protected boolean canDespawn()
 /*  87:    */   {
 /*  88:100 */     return false;
 /*  89:    */   }

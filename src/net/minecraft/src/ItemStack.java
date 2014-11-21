@@ -235,7 +235,7 @@ package net.minecraft.src;
 /* 236:    */       {
 /* 237:269 */         EntityPlayer localahd = (EntityPlayer)paramxm;
 /* 238:270 */         localahd.b(StatList.K[Item.b(this.item)]);
-/* 239:271 */         if ((this.stackSize == 0) && ((getItem() instanceof ajz))) {
+/* 239:271 */         if ((this.stackSize == 0) && ((getItem() instanceof ItemBow))) {
 /* 240:272 */           localahd.bZ();
 /* 241:    */         }
 /* 242:    */       }

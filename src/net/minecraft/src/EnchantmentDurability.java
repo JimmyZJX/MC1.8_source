@@ -36,7 +36,7 @@ package net.minecraft.src;
 /* 35:   */   
 /* 36:   */   public static boolean a(ItemStack paramamj, int paramInt, Random paramRandom)
 /* 37:   */   {
-/* 38:40 */     if (((paramamj.getItem() instanceof ajn)) && (paramRandom.nextFloat() < 0.6F)) {
+/* 38:40 */     if (((paramamj.getItem() instanceof ItemArmor)) && (paramRandom.nextFloat() < 0.6F)) {
 /* 39:41 */       return false;
 /* 40:   */     }
 /* 41:43 */     return paramRandom.nextInt(paramInt + 1) > 0;

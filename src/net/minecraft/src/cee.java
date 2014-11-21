@@ -843,7 +843,7 @@ package net.minecraft.src;
 /*  842: 858 */     ig.a(paramla, this, this.f);
 /*  843: 859 */     Entity localwv = this.g.a(paramla.b());
 /*  844: 860 */     if (localwv != null) {
-/*  845: 861 */       localwv.c(paramla.c(), paramla.a());
+/*  845: 861 */       localwv.setItemStack(paramla.c(), paramla.a());
 /*  846:     */     }
 /*  847:     */   }
 /*  848:     */   
@@ -931,7 +931,7 @@ package net.minecraft.src;
 /*  930:     */     }
 /*  931: 938 */     else if (m == 6)
 /*  932:     */     {
-/*  933: 939 */       this.g.a(localcio.xPos, localcio.yPos + localcio.aR(), localcio.zPos, "random.successful_hit", 0.18F, 0.45F, false);
+/*  933: 939 */       this.g.a(localcio.xPos, localcio.yPos + localcio.getEyeHeight(), localcio.zPos, "random.successful_hit", 0.18F, 0.45F, false);
 /*  934:     */     }
 /*  935: 940 */     else if (m == 7)
 /*  936:     */     {

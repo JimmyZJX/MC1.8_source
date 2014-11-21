@@ -82,13 +82,13 @@ package net.minecraft.src;
 /*  83:    */       }
 /*  84:    */     }
 /*  85:102 */     if (paramBoolean) {
-/*  86:103 */       a(new ItemStack(ItemList.itemFrame), 0.0F);
+/*  86:103 */       throwItem(new ItemStack(ItemList.itemFrame), 0.0F);
 /*  87:    */     }
 /*  88:105 */     if ((localamj != null) && (this.rng.nextFloat() < this.itemDropChance))
 /*  89:    */     {
 /*  90:106 */       localamj = localamj.k();
 /*  91:107 */       b(localamj);
-/*  92:108 */       a(localamj, 0.0F);
+/*  92:108 */       throwItem(localamj, 0.0F);
 /*  93:    */     }
 /*  94:    */   }
 /*  95:    */   
@@ -180,7 +180,7 @@ package net.minecraft.src;
 /* 181:    */   {
 /* 182:192 */     if (getItem() == null)
 /* 183:    */     {
-/* 184:193 */       ItemStack localamj = paramahd.bz();
+/* 184:193 */       ItemStack localamj = paramahd.getHeldItemStack();
 /* 185:194 */       if ((localamj != null) && 
 /* 186:195 */         (!this.world.isClient))
 /* 187:    */       {

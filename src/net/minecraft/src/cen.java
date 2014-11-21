@@ -210,7 +210,7 @@ package net.minecraft.src;
 /* 209:245 */     int i = 16;
 /* 210:246 */     Random localRandom = new Random();
 /* 211:    */     
-/* 212:248 */     ItemStack localamj = this.I.h.bz();
+/* 212:248 */     ItemStack localamj = this.I.h.getHeldItemStack();
 /* 213:249 */     int j = (this.I.c.l() == EnumGameType.CREATIVE) && (localamj != null) && (ProtoBlock.a(localamj.getItem()) == BlockList.barrier) ? 1 : 0;
 /* 214:251 */     for (int k = 0; k < 1000; k++)
 /* 215:    */     {
@@ -312,7 +312,7 @@ package net.minecraft.src;
 /* 311:    */   
 /* 312:    */   public void a(double paramDouble1, double paramDouble2, double paramDouble3, String paramString, float paramFloat1, float paramFloat2, boolean paramBoolean)
 /* 313:    */   {
-/* 314:347 */     double d1 = this.I.aa().e(paramDouble1, paramDouble2, paramDouble3);
+/* 314:347 */     double d1 = this.I.aa().dist2(paramDouble1, paramDouble2, paramDouble3);
 /* 315:348 */     cxy localcxy = new cxy(new oa(paramString), paramFloat1, paramFloat2, (float)paramDouble1, (float)paramDouble2, (float)paramDouble3);
 /* 316:350 */     if ((paramBoolean) && (d1 > 100.0D))
 /* 317:    */     {

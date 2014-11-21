@@ -19,7 +19,7 @@ package net.minecraft.src;
 /* 17:   */   
 /* 18:   */   public World e()
 /* 19:   */   {
-/* 20:28 */     return this.a.z();
+/* 20:28 */     return this.a.getWorld();
 /* 21:   */   }
 /* 22:   */   
 /* 23:   */   public void a(String paramString)
@@ -30,7 +30,7 @@ package net.minecraft.src;
 /* 28:   */   
 /* 29:   */   public void h()
 /* 30:   */   {
-/* 31:39 */     this.a.z().h(this.a.pos);
+/* 31:39 */     this.a.getWorld().h(this.a.pos);
 /* 32:   */   }
 /* 33:   */   
 /* 34:   */   public int i()

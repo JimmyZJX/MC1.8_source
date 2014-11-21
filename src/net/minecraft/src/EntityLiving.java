@@ -41,7 +41,7 @@ package net.minecraft.src;
 /*   41:     */   protected EntityPlayer aL;
 /*   42:     */   protected int aM;
 /*   43:     */   protected boolean aN;
-/*   44:     */   protected int aO;
+/*   44:     */   protected int despawnTimer;
 /*   45:     */   protected float aP;
 /*   46:     */   protected float aQ;
 /*   47:     */   protected float aR;
@@ -323,7 +323,7 @@ package net.minecraft.src;
 /*  323:     */   
 /*  324:     */   public int bg()
 /*  325:     */   {
-/*  326: 348 */     return this.aO;
+/*  326: 348 */     return this.despawnTimer;
 /*  327:     */   }
 /*  328:     */   
 /*  329:     */   public void writeEntityToNBT(NBTTagCompound tag)
@@ -602,16 +602,16 @@ package net.minecraft.src;
 /*  602: 604 */     if (this.world.isClient) {
 /*  603: 605 */       return false;
 /*  604:     */     }
-/*  605: 607 */     this.aO = 0;
+/*  605: 607 */     this.despawnTimer = 0;
 /*  606: 608 */     if (getHealth() <= 0.0F) {
 /*  607: 609 */       return false;
 /*  608:     */     }
 /*  609: 612 */     if ((paramwh.o()) && (a(Potion.fireResistance))) {
 /*  610: 613 */       return false;
 /*  611:     */     }
-/*  612: 616 */     if (((paramwh == DamageSource.n) || (paramwh == DamageSource.o)) && (p(4) != null))
+/*  612: 616 */     if (((paramwh == DamageSource.n) || (paramwh == DamageSource.o)) && (getItemStack(4) != null))
 /*  613:     */     {
-/*  614: 617 */       p(4).a((int)(paramFloat * 4.0F + this.rng.nextFloat() * paramFloat * 2.0F), this);
+/*  614: 617 */       getItemStack(4).a((int)(paramFloat * 4.0F + this.rng.nextFloat() * paramFloat * 2.0F), this);
 /*  615: 618 */       paramFloat *= 0.75F;
 /*  616:     */     }
 /*  617: 621 */     this.az = 1.5F;
@@ -711,7 +711,7 @@ package net.minecraft.src;
 /*  711: 700 */       Vec3 localbrw2 = new Vec3((this.rng.nextFloat() - 0.5D) * 0.3D, d, 0.6D);
 /*  712: 701 */       localbrw2 = localbrw2.a(-this.pitch * 3.141593F / 180.0F);
 /*  713: 702 */       localbrw2 = localbrw2.b(-this.yaw * 3.141593F / 180.0F);
-/*  714: 703 */       localbrw2 = localbrw2.b(this.xPos, this.yPos + aR(), this.zPos);
+/*  714: 703 */       localbrw2 = localbrw2.b(this.xPos, this.yPos + getEyeHeight(), this.zPos);
 /*  715: 704 */       this.world.a(EnumParticleEffect.K, localbrw2.x, localbrw2.y, localbrw2.z, localbrw1.x, localbrw1.y + 0.05D, localbrw1.z, new int[] { Item.b(paramamj.getItem()) });
 /*  716:     */     }
 /*  717:     */   }
@@ -841,9 +841,9 @@ package net.minecraft.src;
 /*  841:     */   {
 /*  842: 844 */     int j = 0;
 /*  843: 845 */     for (ItemStack localamj : at()) {
-/*  844: 846 */       if ((localamj != null) && ((localamj.getItem() instanceof ajn)))
+/*  844: 846 */       if ((localamj != null) && ((localamj.getItem() instanceof ItemArmor)))
 /*  845:     */       {
-/*  846: 847 */         int n = ((ajn)localamj.getItem()).c;
+/*  846: 847 */         int n = ((ItemArmor)localamj.getItem()).c;
 /*  847: 848 */         j += n;
 /*  848:     */       }
 /*  849:     */     }
@@ -1045,13 +1045,13 @@ package net.minecraft.src;
 /* 1045:1026 */     return xs.a;
 /* 1046:     */   }
 /* 1047:     */   
-/* 1048:     */   public abstract ItemStack bz();
+/* 1048:     */   public abstract ItemStack getHeldItemStack();
 /* 1049:     */   
-/* 1050:     */   public abstract ItemStack p(int paramInt);
+/* 1050:     */   public abstract ItemStack getItemStack(int paramInt);
 /* 1051:     */   
-/* 1052:     */   public abstract ItemStack q(int paramInt);
+/* 1052:     */   public abstract ItemStack getArmor(int paramInt);
 /* 1053:     */   
-/* 1054:     */   public abstract void c(int paramInt, ItemStack paramamj);
+/* 1054:     */   public abstract void setItemStack(int paramInt, ItemStack paramamj);
 /* 1055:     */   
 /* 1056:     */   public void d(boolean paramBoolean)
 /* 1057:     */   {
@@ -1305,7 +1305,7 @@ package net.minecraft.src;
 /* 1305:1275 */       for (int k = 0; k < 5; k++)
 /* 1306:     */       {
 /* 1307:1276 */         ItemStack localamj1 = this.h[k];
-/* 1308:1277 */         ItemStack localamj2 = p(k);
+/* 1308:1277 */         ItemStack localamj2 = getItemStack(k);
 /* 1309:1279 */         if (!ItemStack.b(localamj2, localamj1))
 /* 1310:     */         {
 /* 1311:1280 */           ((WorldServer)this.world).s().a(this, new la(getID(), k, localamj2));
@@ -1453,7 +1453,7 @@ package net.minecraft.src;
 /* 1453:1426 */     else if (bL())
 /* 1454:     */     {
 /* 1455:1427 */       this.world.profiler.a("newAi");
-/* 1456:1428 */       bJ();
+/* 1456:1428 */       aiTick();
 /* 1457:1429 */       this.world.profiler.b();
 /* 1458:     */     }
 /* 1459:1432 */     this.world.profiler.b();
@@ -1496,7 +1496,7 @@ package net.minecraft.src;
 /* 1496:1463 */     this.world.profiler.b();
 /* 1497:     */   }
 /* 1498:     */   
-/* 1499:     */   protected void bJ() {}
+/* 1499:     */   protected void aiTick() {}
 /* 1500:     */   
 /* 1501:     */   protected void bK()
 /* 1502:     */   {
@@ -1575,9 +1575,9 @@ package net.minecraft.src;
 /* 1575:     */     }
 /* 1576:     */   }
 /* 1577:     */   
-/* 1578:     */   public boolean t(Entity paramwv)
+/* 1578:     */   public boolean canSee(Entity paramwv)
 /* 1579:     */   {
-/* 1580:1541 */     return this.world.a(new Vec3(this.xPos, this.yPos + aR(), this.zPos), new Vec3(paramwv.xPos, paramwv.yPos + paramwv.aR(), paramwv.zPos)) == null;
+/* 1580:1541 */     return this.world.a(new Vec3(this.xPos, this.yPos + getEyeHeight(), this.zPos), new Vec3(paramwv.xPos, paramwv.yPos + paramwv.getEyeHeight(), paramwv.zPos)) == null;
 /* 1581:     */   }
 /* 1582:     */   
 /* 1583:     */   public Vec3 ap()

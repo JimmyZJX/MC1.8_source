@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*   9:    */   public float bo;
 /*  10: 22 */   public float bp = 1.0F;
 /*  11:    */   public int bq;
-/*  12:    */   public boolean br;
+/*  12:    */   public boolean isChickenJockey;
 /*  13:    */   
 /*  14:    */   public EntityChicken(World paramaqu)
 /*  15:    */   {
@@ -17,17 +17,17 @@ package net.minecraft.src;
 /*  17: 28 */     a(0.4F, 0.7F);
 /*  18: 29 */     this.bq = (this.rng.nextInt(6000) + 6000);
 /*  19:    */     
-/*  20: 31 */     this.i.a(0, new yy(this));
-/*  21: 32 */     this.i.a(1, new zu(this, 1.4D));
-/*  22: 33 */     this.i.a(2, new yt(this, 1.0D));
-/*  23: 34 */     this.i.a(3, new aag(this, 1.0D, ItemList.N, false));
-/*  24: 35 */     this.i.a(4, new za(this, 1.1D));
-/*  25: 36 */     this.i.a(5, new zy(this, 1.0D));
-/*  26: 37 */     this.i.a(6, new zh(this, EntityPlayer.class, 6.0F));
-/*  27: 38 */     this.i.a(7, new zx(this));
+/*  20: 31 */     this.goalSelector.a(0, new yy(this));
+/*  21: 32 */     this.goalSelector.a(1, new zu(this, 1.4D));
+/*  22: 33 */     this.goalSelector.a(2, new yt(this, 1.0D));
+/*  23: 34 */     this.goalSelector.a(3, new aag(this, 1.0D, ItemList.N, false));
+/*  24: 35 */     this.goalSelector.a(4, new za(this, 1.1D));
+/*  25: 36 */     this.goalSelector.a(5, new zy(this, 1.0D));
+/*  26: 37 */     this.goalSelector.a(6, new zh(this, EntityPlayer.class, 6.0F));
+/*  27: 38 */     this.goalSelector.a(7, new zx(this));
 /*  28:    */   }
 /*  29:    */   
-/*  30:    */   public float aR()
+/*  30:    */   public float getEyeHeight()
 /*  31:    */   {
 /*  32: 43 */     return this.height;
 /*  33:    */   }
@@ -57,7 +57,7 @@ package net.minecraft.src;
 /*  57: 70 */       this.yVelocity *= 0.6D;
 /*  58:    */     }
 /*  59: 73 */     this.bk += this.bp * 2.0F;
-/*  60: 75 */     if ((!this.world.isClient) && (!i_()) && (!cj()) && (--this.bq <= 0))
+/*  60: 75 */     if ((!this.world.isClient) && (!i_()) && (!getIsChickenJockey()) && (--this.bq <= 0))
 /*  61:    */     {
 /*  62: 76 */       a("mob.chicken.plop", 1.0F, (this.rng.nextFloat() - this.rng.nextFloat()) * 0.2F + 1.0F);
 /*  63: 77 */       a(ItemList.aP, 1);
@@ -118,7 +118,7 @@ package net.minecraft.src;
 /* 118:    */   public void readEntityFromNBT(NBTTagCompound paramfn)
 /* 119:    */   {
 /* 120:138 */     super.readEntityFromNBT(paramfn);
-/* 121:139 */     this.br = paramfn.getBoolean("IsChickenJockey");
+/* 121:139 */     this.isChickenJockey = paramfn.getBoolean("IsChickenJockey");
 /* 122:140 */     if (paramfn.c("EggLayTime")) {
 /* 123:141 */       this.bq = paramfn.getInteger("EggLayTime");
 /* 124:    */     }
@@ -126,7 +126,7 @@ package net.minecraft.src;
 /* 126:    */   
 /* 127:    */   protected int b(EntityPlayer paramahd)
 /* 128:    */   {
-/* 129:147 */     if (cj()) {
+/* 129:147 */     if (getIsChickenJockey()) {
 /* 130:148 */       return 10;
 /* 131:    */     }
 /* 132:150 */     return super.b(paramahd);
@@ -135,13 +135,13 @@ package net.minecraft.src;
 /* 135:    */   public void writeEntityToNBT(NBTTagCompound paramfn)
 /* 136:    */   {
 /* 137:155 */     super.writeEntityToNBT(paramfn);
-/* 138:156 */     paramfn.setBoolean("IsChickenJockey", this.br);
+/* 138:156 */     paramfn.setBoolean("IsChickenJockey", this.isChickenJockey);
 /* 139:157 */     paramfn.setInt("EggLayTime", this.bq);
 /* 140:    */   }
 /* 141:    */   
-/* 142:    */   protected boolean C()
+/* 142:    */   protected boolean canDespawn()
 /* 143:    */   {
-/* 144:162 */     return (cj()) && (this.rider == null);
+/* 144:162 */     return (getIsChickenJockey()) && (this.rider == null);
 /* 145:    */   }
 /* 146:    */   
 /* 147:    */   public void al()
@@ -158,14 +158,14 @@ package net.minecraft.src;
 /* 158:    */     }
 /* 159:    */   }
 /* 160:    */   
-/* 161:    */   public boolean cj()
+/* 161:    */   public boolean getIsChickenJockey()
 /* 162:    */   {
-/* 163:180 */     return this.br;
+/* 163:180 */     return this.isChickenJockey;
 /* 164:    */   }
 /* 165:    */   
 /* 166:    */   public void l(boolean paramBoolean)
 /* 167:    */   {
-/* 168:184 */     this.br = paramBoolean;
+/* 168:184 */     this.isChickenJockey = paramBoolean;
 /* 169:    */   }
 /* 170:    */ }
 

@@ -44,7 +44,7 @@ package net.minecraft.src;
 /*  43:    */     
 /*  44:629 */     ym localym = this.g.p();
 /*  45:630 */     double d8 = this.g.xPos + d1 / d4 * 2.0D;
-/*  46:631 */     double d9 = this.g.aR() + this.g.yPos + d2 / d4 * 1.0D;
+/*  46:631 */     double d9 = this.g.getEyeHeight() + this.g.yPos + d2 / d4 * 1.0D;
 /*  47:632 */     double d10 = this.g.zPos + d3 / d4 * 2.0D;
 /*  48:633 */     double d11 = localym.e();
 /*  49:634 */     double d12 = localym.f();

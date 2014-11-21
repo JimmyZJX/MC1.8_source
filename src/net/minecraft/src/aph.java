@@ -159,7 +159,7 @@ package net.minecraft.src;
 /* 158:202 */       a(d, paramxm.at());
 /* 159:    */     }
 /* 160:204 */     if ((paramwv instanceof EntityPlayer)) {
-/* 161:205 */       a(d, paramxm.bz());
+/* 161:205 */       a(d, paramxm.getHeldItemStack());
 /* 162:    */     }
 /* 163:    */   }
 /* 164:    */   
@@ -173,18 +173,18 @@ package net.minecraft.src;
 /* 172:225 */       a(e, paramxm.at());
 /* 173:    */     }
 /* 174:227 */     if ((paramxm instanceof EntityPlayer)) {
-/* 175:228 */       a(e, paramxm.bz());
+/* 175:228 */       a(e, paramxm.getHeldItemStack());
 /* 176:    */     }
 /* 177:    */   }
 /* 178:    */   
 /* 179:    */   public static int a(EntityLiving paramxm)
 /* 180:    */   {
-/* 181:233 */     return a(Enchantment.o.B, paramxm.bz());
+/* 181:233 */     return a(Enchantment.o.B, paramxm.getHeldItemStack());
 /* 182:    */   }
 /* 183:    */   
 /* 184:    */   public static int b(EntityLiving paramxm)
 /* 185:    */   {
-/* 186:237 */     return a(Enchantment.p.B, paramxm.bz());
+/* 186:237 */     return a(Enchantment.p.B, paramxm.getHeldItemStack());
 /* 187:    */   }
 /* 188:    */   
 /* 189:    */   public static int a(Entity paramwv)
@@ -199,32 +199,32 @@ package net.minecraft.src;
 /* 198:    */   
 /* 199:    */   public static int c(EntityLiving paramxm)
 /* 200:    */   {
-/* 201:249 */     return a(Enchantment.r.B, paramxm.bz());
+/* 201:249 */     return a(Enchantment.r.B, paramxm.getHeldItemStack());
 /* 202:    */   }
 /* 203:    */   
 /* 204:    */   public static boolean e(EntityLiving paramxm)
 /* 205:    */   {
-/* 206:257 */     return a(Enchantment.s.B, paramxm.bz()) > 0;
+/* 206:257 */     return a(Enchantment.s.B, paramxm.getHeldItemStack()) > 0;
 /* 207:    */   }
 /* 208:    */   
 /* 209:    */   public static int f(EntityLiving paramxm)
 /* 210:    */   {
-/* 211:261 */     return a(Enchantment.u.B, paramxm.bz());
+/* 211:261 */     return a(Enchantment.u.B, paramxm.getHeldItemStack());
 /* 212:    */   }
 /* 213:    */   
 /* 214:    */   public static int g(EntityLiving paramxm)
 /* 215:    */   {
-/* 216:265 */     return a(Enchantment.z.B, paramxm.bz());
+/* 216:265 */     return a(Enchantment.z.B, paramxm.getHeldItemStack());
 /* 217:    */   }
 /* 218:    */   
 /* 219:    */   public static int h(EntityLiving paramxm)
 /* 220:    */   {
-/* 221:269 */     return a(Enchantment.A.B, paramxm.bz());
+/* 221:269 */     return a(Enchantment.A.B, paramxm.getHeldItemStack());
 /* 222:    */   }
 /* 223:    */   
 /* 224:    */   public static int i(EntityLiving paramxm)
 /* 225:    */   {
-/* 226:273 */     return a(Enchantment.q.B, paramxm.bz());
+/* 226:273 */     return a(Enchantment.q.B, paramxm.getHeldItemStack());
 /* 227:    */   }
 /* 228:    */   
 /* 229:    */   public static boolean j(EntityLiving paramxm)

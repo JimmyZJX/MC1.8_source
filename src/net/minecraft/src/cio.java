@@ -438,9 +438,9 @@ package net.minecraft.src;
 /* 438:476 */     return j && (!this.bu);
 /* 439:    */   }
 /* 440:    */   
-/* 441:    */   public void bJ()
+/* 441:    */   public void aiTick()
 /* 442:    */   {
-/* 443:481 */     super.bJ();
+/* 443:481 */     super.aiTick();
 /* 444:483 */     if (A())
 /* 445:    */     {
 /* 446:484 */       this.aX = this.b.a;

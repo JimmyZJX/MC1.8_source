@@ -79,7 +79,7 @@ package net.minecraft.src;
 /*  78: 84 */         if ((localho2 != null) && ((localho1 == null) || (!localho2.equals(localho1))))
 /*  79:    */         {
 /*  80: 85 */           localwv2 = localwf1.a().j();
-/*  81: 86 */           ItemStack localObject2 = (localwv2 instanceof EntityLiving) ? ((EntityLiving)localwv2).bz() : null;
+/*  81: 86 */           ItemStack localObject2 = (localwv2 instanceof EntityLiving) ? ((EntityLiving)localwv2).getHeldItemStack() : null;
 /*  82: 88 */           if ((localObject2 != null) && (localObject2.s())) {
 /*  83: 89 */             localObject1 = new hz("death.fell.assist.item", new Object[] { this.b.e_(), localho2, localObject2.C() });
 /*  84:    */           } else {
@@ -88,7 +88,7 @@ package net.minecraft.src;
 /*  87:    */         }
 /*  88: 93 */         else if (localho1 != null)
 /*  89:    */         {
-/*  90: 94 */           ItemStack localwv21 = (localwv1 instanceof EntityLiving) ? ((EntityLiving)localwv1).bz() : null;
+/*  90: 94 */           ItemStack localwv21 = (localwv1 instanceof EntityLiving) ? ((EntityLiving)localwv1).getHeldItemStack() : null;
 /*  91: 95 */           if ((localwv21 != null) && (localwv21.s())) {
 /*  92: 96 */             localObject1 = new hz("death.fell.finish.item", new Object[] { this.b.e_(), localho1, localwv21.C() });
 /*  93:    */           } else {

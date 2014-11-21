@@ -561,7 +561,7 @@ package net.minecraft.src;
 /*  556: 574 */     ExtendedBlockStorage localbfm = this.storageArrays[(i2 >> 4)];
 /*  557: 575 */     if (localbfm == null)
 /*  558:     */     {
-/*  559: 576 */       if (d(paramdt)) {
+/*  559: 576 */       if (hasDaylight(paramdt)) {
 /*  560: 577 */         return paramarf.c;
 /*  561:     */       }
 /*  562: 579 */       return 0;
@@ -667,7 +667,7 @@ package net.minecraft.src;
 /*  662: 673 */     this.EntityLists[paramInt].remove(paramwv);
 /*  663:     */   }
 /*  664:     */   
-/*  665:     */   public boolean d(BlockPosition paramdt)
+/*  665:     */   public boolean hasDaylight(BlockPosition paramdt)
 /*  666:     */   {
 /*  667: 677 */     int i1 = paramdt.getX() & 0xF;
 /*  668: 678 */     int i2 = paramdt.getY();

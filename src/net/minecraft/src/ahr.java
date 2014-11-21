@@ -38,7 +38,7 @@ package net.minecraft.src;
 /*  38:    */     
 /*  39: 53 */     a(0.25F, 0.25F);
 /*  40:    */     
-/*  41: 55 */     setPositionAndAngles(paramxm.xPos, paramxm.yPos + paramxm.aR(), paramxm.zPos, paramxm.yaw, paramxm.pitch);
+/*  41: 55 */     setPositionAndAngles(paramxm.xPos, paramxm.yPos + paramxm.getEyeHeight(), paramxm.zPos, paramxm.yaw, paramxm.pitch);
 /*  42:    */     
 /*  43: 57 */     this.xPos -= MathUtils.cos(this.yaw / 180.0F * 3.141593F) * 0.16F;
 /*  44: 58 */     this.yPos -= 0.1000000014901161D;
@@ -273,7 +273,7 @@ package net.minecraft.src;
 /* 273:    */   public EntityLiving n()
 /* 274:    */   {
 /* 275:287 */     if ((this.g == null) && (this.h != null) && (this.h.length() > 0)) {
-/* 276:288 */       this.g = this.world.a(this.h);
+/* 276:288 */       this.g = this.world.getPlayer(this.h);
 /* 277:    */     }
 /* 278:290 */     return this.g;
 /* 279:    */   }

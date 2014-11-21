@@ -108,7 +108,7 @@ package net.minecraft.src;
 /* 107:112 */     this.aD += (f2 - this.aD) * 0.8F;
 /* 108:    */   }
 /* 109:    */   
-/* 110:    */   public void c(int paramInt, ItemStack paramamj)
+/* 110:    */   public void setItemStack(int paramInt, ItemStack paramamj)
 /* 111:    */   {
 /* 112:117 */     if (paramInt == 0) {
 /* 113:118 */       this.bg.a[this.bg.c] = paramamj;

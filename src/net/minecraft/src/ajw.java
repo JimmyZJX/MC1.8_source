@@ -18,7 +18,7 @@ package net.minecraft.src;
 /* 17:28 */     float f3 = paramahd.lastYaw + (paramahd.yaw - paramahd.lastYaw) * f1;
 /* 18:   */     
 /* 19:30 */     double d1 = paramahd.lastX + (paramahd.xPos - paramahd.lastX) * f1;
-/* 20:31 */     double d2 = paramahd.lastY + (paramahd.yPos - paramahd.lastY) * f1 + paramahd.aR();
+/* 20:31 */     double d2 = paramahd.lastY + (paramahd.yPos - paramahd.lastY) * f1 + paramahd.getEyeHeight();
 /* 21:32 */     double d3 = paramahd.lastZ + (paramahd.zPos - paramahd.lastZ) * f1;
 /* 22:   */     
 /* 23:34 */     Vec3 localbrw1 = new Vec3(d1, d2, d3);

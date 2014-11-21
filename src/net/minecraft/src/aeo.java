@@ -41,7 +41,7 @@ package net.minecraft.src;
 /* 40:53 */     return paramxq;
 /* 41:   */   }
 /* 42:   */   
-/* 43:   */   public float aR()
+/* 43:   */   public float getEyeHeight()
 /* 44:   */   {
 /* 45:58 */     return 0.45F;
 /* 46:   */   }

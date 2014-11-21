@@ -68,7 +68,7 @@ package net.minecraft.src;
 /*  67:    */   public void a(List<EntityPlayer> paramList)
 /*  68:    */   {
 /*  69: 87 */     this.n = false;
-/*  70: 88 */     if ((!this.t) || (this.a.e(this.q, this.r, this.s) > 16.0D))
+/*  70: 88 */     if ((!this.t) || (this.a.dist2(this.q, this.r, this.s) > 16.0D))
 /*  71:    */     {
 /*  72: 89 */       this.q = this.a.xPos;
 /*  73: 90 */       this.r = this.a.yPos;
@@ -304,7 +304,7 @@ package net.minecraft.src;
 /* 303:317 */         if ((this.a instanceof EntityLiving)) {
 /* 304:318 */           for (int i1 = 0; i1 < 5; i1++)
 /* 305:    */           {
-/* 306:319 */             localObject2 = ((EntityLiving)this.a).p(i1);
+/* 306:319 */             localObject2 = ((EntityLiving)this.a).getItemStack(i1);
 /* 307:320 */             if (localObject2 != null) {
 /* 308:321 */               paramqw.a.a(new la(this.a.getID(), i1, (ItemStack)localObject2));
 /* 309:    */             }

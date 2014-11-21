@@ -49,7 +49,7 @@ package net.minecraft.src;
 /* 48:55 */     this.xVelocity *= 0.9599999785423279D;
 /* 49:56 */     this.yVelocity *= 0.9599999785423279D;
 /* 50:57 */     this.zVelocity *= 0.9599999785423279D;
-/* 51:58 */     EntityPlayer localahd = this.world.a(this, 2.0D);
+/* 51:58 */     EntityPlayer localahd = this.world.getNearestPlayer(this, 2.0D);
 /* 52:59 */     if ((localahd != null) && 
 /* 53:60 */       (this.yPos > localahd.getAABB().minY))
 /* 54:   */     {

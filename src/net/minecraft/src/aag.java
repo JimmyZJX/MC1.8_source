@@ -35,7 +35,7 @@ package net.minecraft.src;
 /*  34: 35 */       this.i -= 1;
 /*  35: 36 */       return false;
 /*  36:    */     }
-/*  37: 38 */     this.h = this.a.world.a(this.a, 10.0D);
+/*  37: 38 */     this.h = this.a.world.getNearestPlayer(this.a, 10.0D);
 /*  38: 39 */     if (this.h == null) {
 /*  39: 40 */       return false;
 /*  40:    */     }
@@ -55,7 +55,7 @@ package net.minecraft.src;
 /*  54:    */     {
 /*  55: 55 */       if (this.a.h(this.h) < 36.0D)
 /*  56:    */       {
-/*  57: 56 */         if (this.h.e(this.c, this.d, this.e) > 0.01D) {
+/*  57: 56 */         if (this.h.dist2(this.c, this.d, this.e) > 0.01D) {
 /*  58: 57 */           return false;
 /*  59:    */         }
 /*  60: 59 */         if ((Math.abs(this.h.pitch - this.f) > 5.0D) || (Math.abs(this.h.yaw - this.g) > 5.0D)) {

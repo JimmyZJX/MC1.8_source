@@ -53,7 +53,7 @@ package net.minecraft.src;
 /*  52:    */   {
 /*  53: 66 */     super.a(paramwh);
 /*  54: 68 */     if (!paramwh.c()) {
-/*  55: 69 */       a(new ItemStack(BlockList.al, 1), 0.0F);
+/*  55: 69 */       throwItem(new ItemStack(BlockList.al, 1), 0.0F);
 /*  56:    */     }
 /*  57:    */   }
 /*  58:    */   

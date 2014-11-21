@@ -20,7 +20,7 @@ package net.minecraft.src;
 /* 19:   */     else
 /* 20:   */     {
 /* 21:   */       Object localObject;
-/* 22:33 */       if (paramamj.getItem() == ItemList.bX)
+/* 22:33 */       if (paramamj.getItem() == ItemList.skull)
 /* 23:   */       {
 /* 24:34 */         localObject = null;
 /* 25:35 */         if (paramamj.hasTagCompound())

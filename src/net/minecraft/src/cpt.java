@@ -330,7 +330,7 @@ package net.minecraft.src;
 /* 329:344 */     if ((paramwv instanceof EntityLiving))
 /* 330:    */     {
 /* 331:345 */       float f2 = 0.01F;
-/* 332:346 */       ckn.a(new AABB(paramDouble1 - f1, paramDouble2 + paramwv.aR() - 0.009999999776482582D, paramDouble3 - f1, paramDouble1 + f1, paramDouble2 + paramwv.aR() + 0.009999999776482582D, paramDouble3 + f1), 16711680);
+/* 332:346 */       ckn.a(new AABB(paramDouble1 - f1, paramDouble2 + paramwv.getEyeHeight() - 0.009999999776482582D, paramDouble3 - f1, paramDouble1 + f1, paramDouble2 + paramwv.getEyeHeight() + 0.009999999776482582D, paramDouble3 + f1), 16711680);
 /* 333:    */     }
 /* 334:349 */     ckx localckx = ckx.getInstance();
 /* 335:350 */     VertexBuffer localciv = localckx.getBuffer();
@@ -338,8 +338,8 @@ package net.minecraft.src;
 /* 337:352 */     Vec3 localbrw = paramwv.d(paramFloat2);
 /* 338:353 */     localciv.a(3);
 /* 339:354 */     localciv.setColor(255);
-/* 340:355 */     localciv.addVertex(paramDouble1, paramDouble2 + paramwv.aR(), paramDouble3);
-/* 341:356 */     localciv.addVertex(paramDouble1 + localbrw.x * 2.0D, paramDouble2 + paramwv.aR() + localbrw.y * 2.0D, paramDouble3 + localbrw.z * 2.0D);
+/* 340:355 */     localciv.addVertex(paramDouble1, paramDouble2 + paramwv.getEyeHeight(), paramDouble3);
+/* 341:356 */     localciv.addVertex(paramDouble1 + localbrw.x * 2.0D, paramDouble2 + paramwv.getEyeHeight() + localbrw.y * 2.0D, paramDouble3 + localbrw.z * 2.0D);
 /* 342:357 */     localckx.draw();
 /* 343:    */     
 /* 344:359 */     cjm.w();

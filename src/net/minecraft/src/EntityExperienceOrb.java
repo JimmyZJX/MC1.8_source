@@ -78,7 +78,7 @@ package net.minecraft.src;
 /*  78: 89 */     if (this.g < this.a - 20 + getID() % 100)
 /*  79:    */     {
 /*  80: 90 */       if ((this.f == null) || (this.f.h(this) > d1 * d1)) {
-/*  81: 91 */         this.f = this.world.a(this, d1);
+/*  81: 91 */         this.f = this.world.getNearestPlayer(this, d1);
 /*  82:    */       }
 /*  83: 93 */       this.g = this.a;
 /*  84:    */     }
@@ -88,7 +88,7 @@ package net.minecraft.src;
 /*  88:100 */     if (this.f != null)
 /*  89:    */     {
 /*  90:101 */       double d2 = (this.f.xPos - this.xPos) / d1;
-/*  91:102 */       double d3 = (this.f.yPos + this.f.aR() - this.yPos) / d1;
+/*  91:102 */       double d3 = (this.f.yPos + this.f.getEyeHeight() - this.yPos) / d1;
 /*  92:103 */       double d4 = (this.f.zPos - this.zPos) / d1;
 /*  93:104 */       double d5 = Math.sqrt(d2 * d2 + d3 * d3 + d4 * d4);
 /*  94:105 */       double d6 = 1.0D - d5;

@@ -37,7 +37,7 @@ package net.minecraft.src;
 /*  36: 53 */     return 9;
 /*  37:    */   }
 /*  38:    */   
-/*  39:    */   public float aR()
+/*  39:    */   public float getEyeHeight()
 /*  40:    */   {
 /*  41: 58 */     return -0.0625F;
 /*  42:    */   }
@@ -60,7 +60,7 @@ package net.minecraft.src;
 /*  59:    */   
 /*  60:    */   public boolean e(EntityPlayer paramahd)
 /*  61:    */   {
-/*  62: 86 */     ItemStack localamj = paramahd.bz();
+/*  62: 86 */     ItemStack localamj = paramahd.getHeldItemStack();
 /*  63:    */     
 /*  64: 88 */     int i = 0;
 /*  65:    */     double d;

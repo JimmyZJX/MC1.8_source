@@ -17,15 +17,15 @@ package net.minecraft.src;
 /*  16: 40 */     super(paramaqu);
 /*  17: 41 */     a(0.6F, 1.95F);
 /*  18:    */     
-/*  19: 43 */     this.i.a(1, new yy(this));
-/*  20: 44 */     this.i.a(2, new zz(this, 1.0D, 60, 10.0F));
-/*  21: 45 */     this.i.a(2, new zy(this, 1.0D));
-/*  22: 46 */     this.i.a(2, this.a);
-/*  23: 47 */     this.i.a(3, new zh(this, EntityPlayer.class, 8.0F));
-/*  24: 48 */     this.i.a(3, new zx(this));
+/*  19: 43 */     this.goalSelector.a(1, new yy(this));
+/*  20: 44 */     this.goalSelector.a(2, new zz(this, 1.0D, 60, 10.0F));
+/*  21: 45 */     this.goalSelector.a(2, new zy(this, 1.0D));
+/*  22: 46 */     this.goalSelector.a(2, this.a);
+/*  23: 47 */     this.goalSelector.a(3, new zh(this, EntityPlayer.class, 8.0F));
+/*  24: 48 */     this.goalSelector.a(3, new zx(this));
 /*  25:    */     
-/*  26: 50 */     this.bg.a(1, new aal(this, false, new Class[0]));
-/*  27: 51 */     this.bg.a(2, new aaq(this, EntityPlayer.class, true));
+/*  26: 50 */     this.targetSelector.a(1, new aal(this, false, new Class[0]));
+/*  27: 51 */     this.targetSelector.a(2, new aaq(this, EntityPlayer.class, true));
 /*  28:    */   }
 /*  29:    */   
 /*  30:    */   protected void h()
@@ -78,8 +78,8 @@ package net.minecraft.src;
 /*  77: 96 */         if (this.bl-- <= 0)
 /*  78:    */         {
 /*  79: 97 */           a(false);
-/*  80: 98 */           ItemStack localamj = bz();
-/*  81: 99 */           c(0, null);
+/*  80: 98 */           ItemStack localamj = getHeldItemStack();
+/*  81: 99 */           setItemStack(0, null);
 /*  82:101 */           if ((localamj != null) && (localamj.getItem() == ItemList.potion))
 /*  83:    */           {
 /*  84:102 */             localObject = ItemList.potion.h(localamj);
@@ -108,8 +108,8 @@ package net.minecraft.src;
 /* 107:    */         }
 /* 108:127 */         if (i > -1)
 /* 109:    */         {
-/* 110:128 */           c(0, new ItemStack(ItemList.potion, 1, i));
-/* 111:129 */           this.bl = bz().l();
+/* 110:128 */           setItemStack(0, new ItemStack(ItemList.potion, 1, i));
+/* 111:129 */           this.bl = getHeldItemStack().l();
 /* 112:130 */           a(true);
 /* 113:131 */           xz localObject1 = a(afs.d);
 /* 114:132 */           localObject1.c(c);
@@ -168,7 +168,7 @@ package net.minecraft.src;
 /* 167:189 */       return;
 /* 168:    */     }
 /* 169:192 */     ahv localahv = new ahv(this.world, this, 32732);
-/* 170:193 */     double d1 = paramxm.yPos + paramxm.aR() - 1.100000023841858D;
+/* 170:193 */     double d1 = paramxm.yPos + paramxm.getEyeHeight() - 1.100000023841858D;
 /* 171:194 */     localahv.pitch -= -20.0F;
 /* 172:195 */     double d2 = paramxm.xPos + paramxm.xVelocity - this.xPos;
 /* 173:196 */     double d3 = d1 - this.yPos;
@@ -186,7 +186,7 @@ package net.minecraft.src;
 /* 185:210 */     this.world.spawnEntity(localahv);
 /* 186:    */   }
 /* 187:    */   
-/* 188:    */   public float aR()
+/* 188:    */   public float getEyeHeight()
 /* 189:    */   {
 /* 190:215 */     return 1.62F;
 /* 191:    */   }

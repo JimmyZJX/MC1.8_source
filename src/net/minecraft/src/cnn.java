@@ -33,7 +33,7 @@ package net.minecraft.src;
 /*  32: 39 */         cjm.a(true);
 /*  33: 40 */         cjm.glBlendFuncSeparate(770, 1, 1, 0);
 /*  34:    */         
-/*  35: 42 */         float f2 = (float)parambck.z().K() + paramFloat;
+/*  35: 42 */         float f2 = (float)parambck.getWorld().K() + paramFloat;
 /*  36: 43 */         float f3 = -f2 * 0.2F - MathUtils.floor(-f2 * 0.1F);
 /*  37:    */         
 /*  38:    */ 

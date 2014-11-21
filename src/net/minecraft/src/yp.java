@@ -39,7 +39,7 @@ package net.minecraft.src;
 /* 38:51 */     if (localbrw == null) {
 /* 39:52 */       return false;
 /* 40:   */     }
-/* 41:54 */     if (this.c.e(localbrw.x, localbrw.y, localbrw.z) < this.c.h(this.b)) {
+/* 41:54 */     if (this.c.dist2(localbrw.x, localbrw.y, localbrw.z) < this.c.h(this.b)) {
 /* 42:55 */       return false;
 /* 43:   */     }
 /* 44:57 */     this.g = this.h.a(localbrw.x, localbrw.y, localbrw.z);

@@ -13,7 +13,7 @@ package net.minecraft.src;
 /* 12:   */   
 /* 13:   */   public void a(EntityLiving paramxm, float paramFloat1, float paramFloat2, float paramFloat3, float paramFloat4, float paramFloat5, float paramFloat6, float paramFloat7)
 /* 14:   */   {
-/* 15:31 */     ItemStack localamj = paramxm.q(3);
+/* 15:31 */     ItemStack localamj = paramxm.getArmor(3);
 /* 16:32 */     if ((localamj == null) || (localamj.getItem() == null)) {
 /* 17:33 */       return;
 /* 18:   */     }
@@ -47,7 +47,7 @@ package net.minecraft.src;
 /* 46:   */       }
 /* 47:67 */       localbsu.ag().a(paramxm, localamj, cmz.HEAD);
 /* 48:   */     }
-/* 49:68 */     else if (localalq == ItemList.bX)
+/* 49:68 */     else if (localalq == ItemList.skull)
 /* 50:   */     {
 /* 51:69 */       f1 = 1.1875F;
 /* 52:70 */       cjm.glScalef(f1, -f1, -f1);

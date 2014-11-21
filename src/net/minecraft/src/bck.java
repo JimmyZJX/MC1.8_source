@@ -98,7 +98,7 @@ package net.minecraft.src;
 /*  97:    */       {
 /*  98:123 */         arrayOfFloat = EntitySheep.a((EnumDyeColor)localbec.getProperty(bar.a));
 /*  99:    */       }
-/* 100:124 */       else if (localbec.getProto() == BlockList.stained_glass_pane)
+/* 100:124 */       else if (localbec.getProto() == BlockList.stainedGlassPane)
 /* 101:    */       {
 /* 102:125 */         arrayOfFloat = EntitySheep.a((EnumDyeColor)localbec.getProperty(bas.a));
 /* 103:    */       }
@@ -293,7 +293,7 @@ package net.minecraft.src;
 /* 292:363 */     if (this.world.s(this.pos) != this) {
 /* 293:364 */       return false;
 /* 294:    */     }
-/* 295:366 */     if (paramahd.e(this.pos.getX() + 0.5D, this.pos.getY() + 0.5D, this.pos.getZ() + 0.5D) > 64.0D) {
+/* 295:366 */     if (paramahd.dist2(this.pos.getX() + 0.5D, this.pos.getY() + 0.5D, this.pos.getZ() + 0.5D) > 64.0D) {
 /* 296:367 */       return false;
 /* 297:    */     }
 /* 298:369 */     return true;
@@ -305,7 +305,7 @@ package net.minecraft.src;
 /* 304:    */   
 /* 305:    */   public boolean b(int paramInt, ItemStack paramamj)
 /* 306:    */   {
-/* 307:382 */     return (paramamj.getItem() == ItemList.emerald) || (paramamj.getItem() == ItemList.diamond) || (paramamj.getItem() == ItemList.k) || (paramamj.getItem() == ItemList.j);
+/* 307:382 */     return (paramamj.getItem() == ItemList.emerald) || (paramamj.getItem() == ItemList.diamond) || (paramamj.getItem() == ItemList.goldIngot) || (paramamj.getItem() == ItemList.ironIngot);
 /* 308:    */   }
 /* 309:    */   
 /* 310:    */   public String k()

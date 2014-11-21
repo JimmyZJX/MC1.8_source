@@ -11,7 +11,7 @@ package net.minecraft.src;
 /* 10:   */   
 /* 11:   */   public void a(EntityWitch paramagi, float paramFloat1, float paramFloat2, float paramFloat3, float paramFloat4, float paramFloat5, float paramFloat6, float paramFloat7)
 /* 12:   */   {
-/* 13:25 */     ItemStack localamj = paramagi.bz();
+/* 13:25 */     ItemStack localamj = paramagi.getHeldItemStack();
 /* 14:27 */     if (localamj == null) {
 /* 15:28 */       return;
 /* 16:   */     }
@@ -40,7 +40,7 @@ package net.minecraft.src;
 /* 39:52 */       f2 = 0.375F;
 /* 40:53 */       cjm.glScalef(f2, -f2, f2);
 /* 41:   */     }
-/* 42:54 */     else if (localalq == ItemList.f)
+/* 42:54 */     else if (localalq == ItemList.bow)
 /* 43:   */     {
 /* 44:55 */       cjm.glTranslatef(0.0F, 0.125F, 0.3125F);
 /* 45:56 */       cjm.glRotatef(-20.0F, 0.0F, 1.0F, 0.0F);

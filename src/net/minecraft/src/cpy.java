@@ -58,7 +58,7 @@ package net.minecraft.src;
 /*  57: 67 */       double d1 = paramado.b.lastX + (paramado.b.xPos - paramado.b.lastX) * paramFloat2 + localbrw.x;
 /*  58: 68 */       double d2 = paramado.b.lastY + (paramado.b.yPos - paramado.b.lastY) * paramFloat2 + localbrw.y;
 /*  59: 69 */       double d3 = paramado.b.lastZ + (paramado.b.zPos - paramado.b.lastZ) * paramFloat2 + localbrw.z;
-/*  60: 70 */       double d4 = paramado.b.aR();
+/*  60: 70 */       double d4 = paramado.b.getEyeHeight();
 /*  61: 72 */       if (((this.b.g != null) && (this.b.g.ax > 0)) || (paramado.b != bsu.z().h))
 /*  62:    */       {
 /*  63: 73 */         float f10 = (paramado.b.aH + (paramado.b.aG - paramado.b.aH) * paramFloat2) * 3.141593F / 180.0F;

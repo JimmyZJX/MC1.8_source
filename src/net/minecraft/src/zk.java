@@ -83,12 +83,12 @@ package net.minecraft.src;
 /*  83:    */   {
 /*  84: 88 */     EntityLiving localxm = this.b.u();
 /*  85: 89 */     this.b.p().a(localxm, 30.0F, 30.0F);
-/*  86: 90 */     double d1 = this.b.e(localxm.xPos, localxm.getAABB().minY, localxm.zPos);
+/*  86: 90 */     double d1 = this.b.dist2(localxm.xPos, localxm.getAABB().minY, localxm.zPos);
 /*  87: 91 */     double d2 = a(localxm);
 /*  88: 92 */     this.h -= 1;
-/*  89: 94 */     if (((this.e) || (this.b.t().a(localxm))) && 
+/*  89: 94 */     if (((this.e) || (this.b.t().canSee(localxm))) && 
 /*  90: 95 */       (this.h <= 0) && (
-/*  91: 96 */       ((this.i == 0.0D) && (this.j == 0.0D) && (this.k == 0.0D)) || (localxm.e(this.i, this.j, this.k) >= 1.0D) || (this.b.getRNG().nextFloat() < 0.05F)))
+/*  91: 96 */       ((this.i == 0.0D) && (this.j == 0.0D) && (this.k == 0.0D)) || (localxm.dist2(this.i, this.j, this.k) >= 1.0D) || (this.b.getRNG().nextFloat() < 0.05F)))
 /*  92:    */     {
 /*  93: 97 */       this.i = localxm.xPos;
 /*  94: 98 */       this.j = localxm.getAABB().minY;
@@ -107,7 +107,7 @@ package net.minecraft.src;
 /* 107:117 */     if ((d1 <= d2) && (this.c <= 0))
 /* 108:    */     {
 /* 109:118 */       this.c = 20;
-/* 110:119 */       if (this.b.bz() != null) {
+/* 110:119 */       if (this.b.getHeldItemStack() != null) {
 /* 111:120 */         this.b.bv();
 /* 112:    */       }
 /* 113:122 */       this.b.r(localxm);

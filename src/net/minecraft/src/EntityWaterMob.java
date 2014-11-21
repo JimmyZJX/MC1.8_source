@@ -30,7 +30,7 @@ package net.minecraft.src;
 /* 29:41 */     return 120;
 /* 30:   */   }
 /* 31:   */   
-/* 32:   */   protected boolean C()
+/* 32:   */   protected boolean canDespawn()
 /* 33:   */   {
 /* 34:46 */     return true;
 /* 35:   */   }

@@ -43,24 +43,24 @@ package net.minecraft.src;
 /*  42: 73 */     a(0.9F, 1.3F);
 /*  43:    */     
 /*  44: 75 */     ((aay)s()).a(true);
-/*  45: 76 */     this.i.a(0, new yy(this));
-/*  46: 77 */     this.i.a(1, new zu(this, 1.25D));
-/*  47: 78 */     this.i.a(2, new yt(this, 1.0D));
-/*  48: 79 */     this.i.a(3, new aag(this, 1.1D, ItemList.O, false));
-/*  49: 80 */     this.i.a(4, new za(this, 1.1D));
-/*  50: 81 */     this.i.a(5, this.bo);
-/*  51: 82 */     this.i.a(6, new zy(this, 1.0D));
-/*  52: 83 */     this.i.a(7, new zh(this, EntityPlayer.class, 6.0F));
-/*  53: 84 */     this.i.a(8, new zx(this));
+/*  45: 76 */     this.goalSelector.a(0, new yy(this));
+/*  46: 77 */     this.goalSelector.a(1, new zu(this, 1.25D));
+/*  47: 78 */     this.goalSelector.a(2, new yt(this, 1.0D));
+/*  48: 79 */     this.goalSelector.a(3, new aag(this, 1.1D, ItemList.O, false));
+/*  49: 80 */     this.goalSelector.a(4, new za(this, 1.1D));
+/*  50: 81 */     this.goalSelector.a(5, this.bo);
+/*  51: 82 */     this.goalSelector.a(6, new zy(this, 1.0D));
+/*  52: 83 */     this.goalSelector.a(7, new zh(this, EntityPlayer.class, 6.0F));
+/*  53: 84 */     this.goalSelector.a(8, new zx(this));
 /*  54:    */     
 /*  55: 86 */     this.bk.a(0, new ItemStack(ItemList.dye, 1, 0));
 /*  56: 87 */     this.bk.a(1, new ItemStack(ItemList.dye, 1, 0));
 /*  57:    */   }
 /*  58:    */   
-/*  59:    */   protected void E()
+/*  59:    */   protected void mobTick()
 /*  60:    */   {
 /*  61: 92 */     this.bn = this.bo.f();
-/*  62: 93 */     super.E();
+/*  62: 93 */     super.mobTick();
 /*  63:    */   }
 /*  64:    */   
 /*  65:    */   public void m()
@@ -90,7 +90,7 @@ package net.minecraft.src;
 /*  89:    */   protected void b(boolean paramBoolean, int paramInt)
 /*  90:    */   {
 /*  91:122 */     if (!ck()) {
-/*  92:124 */       a(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, cj().a()), 0.0F);
+/*  92:124 */       throwItem(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, cj().a()), 0.0F);
 /*  93:    */     }
 /*  94:128 */     int i = this.rng.nextInt(2) + 1 + this.rng.nextInt(1 + paramInt);
 /*  95:129 */     for (int j = 0; j < i; j++) {
@@ -154,7 +154,7 @@ package net.minecraft.src;
 /* 153:183 */         int i = 1 + this.rng.nextInt(3);
 /* 154:184 */         for (int j = 0; j < i; j++)
 /* 155:    */         {
-/* 156:185 */           EntityItem localadw = a(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, cj().a()), 1.0F);
+/* 156:185 */           EntityItem localadw = throwItem(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, cj().a()), 1.0F);
 /* 157:186 */           localadw.yVelocity += this.rng.nextFloat() * 0.05F;
 /* 158:187 */           localadw.xVelocity += (this.rng.nextFloat() - this.rng.nextFloat()) * 0.1F;
 /* 159:188 */           localadw.zVelocity += (this.rng.nextFloat() - this.rng.nextFloat()) * 0.1F;
@@ -291,7 +291,7 @@ package net.minecraft.src;
 /* 290:317 */     return EnumDyeColor.fromIndex(k);
 /* 291:    */   }
 /* 292:    */   
-/* 293:    */   public float aR()
+/* 293:    */   public float getEyeHeight()
 /* 294:    */   {
 /* 295:322 */     return 0.95F * this.height;
 /* 296:    */   }

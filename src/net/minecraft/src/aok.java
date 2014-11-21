@@ -16,8 +16,8 @@ package net.minecraft.src;
 /* 15:   */   
 /* 16:   */   private aok()
 /* 17:   */   {
-/* 18:23 */     a(BlockList.ironOre, new ItemStack(ItemList.j), 0.7F);
-/* 19:24 */     a(BlockList.goldOre, new ItemStack(ItemList.k), 1.0F);
+/* 18:23 */     a(BlockList.ironOre, new ItemStack(ItemList.ironIngot), 0.7F);
+/* 19:24 */     a(BlockList.goldOre, new ItemStack(ItemList.goldIngot), 1.0F);
 /* 20:25 */     a(BlockList.diamondOre, new ItemStack(ItemList.diamond), 1.0F);
 /* 21:26 */     a(BlockList.sand, new ItemStack(BlockList.w), 0.1F);
 /* 22:   */     

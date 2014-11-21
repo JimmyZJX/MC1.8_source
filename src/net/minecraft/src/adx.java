@@ -122,7 +122,7 @@ package net.minecraft.src;
 /* 121:192 */     if (this.b != null) {
 /* 122:193 */       localamj.c(this.b);
 /* 123:    */     }
-/* 124:195 */     a(localamj, 0.0F);
+/* 124:195 */     throwItem(localamj, 0.0F);
 /* 125:    */   }
 /* 126:    */   
 /* 127:    */   public void as()

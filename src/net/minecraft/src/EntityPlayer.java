@@ -278,7 +278,7 @@ package net.minecraft.src;
 /*  277: 380 */         Vec3 localbrw2 = new Vec3((this.rng.nextFloat() - 0.5D) * 0.3D, d1, 0.6D);
 /*  278: 381 */         localbrw2 = localbrw2.a(-this.pitch * 3.141593F / 180.0F);
 /*  279: 382 */         localbrw2 = localbrw2.b(-this.yaw * 3.141593F / 180.0F);
-/*  280: 383 */         localbrw2 = localbrw2.b(this.xPos, this.yPos + aR(), this.zPos);
+/*  280: 383 */         localbrw2 = localbrw2.b(this.xPos, this.yPos + getEyeHeight(), this.zPos);
 /*  281: 384 */         if (paramamj.f()) {
 /*  282: 385 */           this.world.a(EnumParticleEffect.K, localbrw2.x, localbrw2.y, localbrw2.z, localbrw1.x, localbrw1.y + 0.05D, localbrw1.z, new int[] { Item.b(paramamj.getItem()), paramamj.getDamage2() });
 /*  283:     */         } else {
@@ -363,9 +363,9 @@ package net.minecraft.src;
 /*  362: 461 */     this.deathTime = 0;
 /*  363:     */   }
 /*  364:     */   
-/*  365:     */   protected void bJ()
+/*  365:     */   protected void aiTick()
 /*  366:     */   {
-/*  367: 466 */     super.bJ();
+/*  367: 466 */     super.aiTick();
 /*  368: 467 */     bw();
 /*  369:     */     
 /*  370: 469 */     this.aI = this.yaw;
@@ -554,7 +554,7 @@ package net.minecraft.src;
 /*  553: 652 */     if (paramamj.stackSize == 0) {
 /*  554: 653 */       return null;
 /*  555:     */     }
-/*  556: 656 */     double d1 = this.yPos - 0.300000011920929D + aR();
+/*  556: 656 */     double d1 = this.yPos - 0.300000011920929D + getEyeHeight();
 /*  557: 657 */     EntityItem localadw = new EntityItem(this.world, this.xPos, d1, this.zPos, paramamj);
 /*  558: 658 */     localadw.a(40);
 /*  559: 660 */     if (paramBoolean2) {
@@ -717,7 +717,7 @@ package net.minecraft.src;
 /*  716: 822 */     if ((this.by.a) && (!paramwh.g())) {
 /*  717: 823 */       return false;
 /*  718:     */     }
-/*  719: 826 */     this.aO = 0;
+/*  719: 826 */     this.despawnTimer = 0;
 /*  720: 827 */     if (getHealth() <= 0.0F) {
 /*  721: 828 */       return false;
 /*  722:     */     }
@@ -887,9 +887,9 @@ package net.minecraft.src;
 /*  886:1012 */     int j = 0;
 /*  887:1013 */     float f2 = 0.0F;
 /*  888:1014 */     if ((paramwv instanceof EntityLiving)) {
-/*  889:1015 */       f2 = aph.a(bz(), ((EntityLiving)paramwv).by());
+/*  889:1015 */       f2 = aph.a(getHeldItemStack(), ((EntityLiving)paramwv).by());
 /*  890:     */     } else {
-/*  891:1017 */       f2 = aph.a(bz(), xs.a);
+/*  891:1017 */       f2 = aph.a(getHeldItemStack(), xs.a);
 /*  892:     */     }
 /*  893:1019 */     j += aph.a(this);
 /*  894:1021 */     if (ax()) {
@@ -1382,7 +1382,7 @@ package net.minecraft.src;
 /* 1381:     */     }
 /* 1382:     */   }
 /* 1383:     */   
-/* 1384:     */   public ItemStack q(int paramInt)
+/* 1384:     */   public ItemStack getArmor(int paramInt)
 /* 1385:     */   {
 /* 1386:1537 */     return this.bg.e(paramInt);
 /* 1387:     */   }
@@ -1575,7 +1575,7 @@ package net.minecraft.src;
 /* 1574:1721 */     return this.a;
 /* 1575:     */   }
 /* 1576:     */   
-/* 1577:     */   public ItemStack p(int paramInt)
+/* 1577:     */   public ItemStack getItemStack(int paramInt)
 /* 1578:     */   {
 /* 1579:1726 */     if (paramInt == 0) {
 /* 1580:1727 */       return this.bg.h();
@@ -1583,12 +1583,12 @@ package net.minecraft.src;
 /* 1582:1729 */     return this.bg.b[(paramInt - 1)];
 /* 1583:     */   }
 /* 1584:     */   
-/* 1585:     */   public ItemStack bz()
+/* 1585:     */   public ItemStack getHeldItemStack()
 /* 1586:     */   {
 /* 1587:1734 */     return this.bg.h();
 /* 1588:     */   }
 /* 1589:     */   
-/* 1590:     */   public void c(int paramInt, ItemStack paramamj)
+/* 1590:     */   public void setItemStack(int paramInt, ItemStack paramamj)
 /* 1591:     */   {
 /* 1592:1739 */     this.bg.b[paramInt] = paramamj;
 /* 1593:     */   }
@@ -1639,7 +1639,7 @@ package net.minecraft.src;
 /* 1638:1787 */     return localhy;
 /* 1639:     */   }
 /* 1640:     */   
-/* 1641:     */   public float aR()
+/* 1641:     */   public float getEyeHeight()
 /* 1642:     */   {
 /* 1643:1792 */     float f1 = 1.62F;
 /* 1644:1793 */     if (bI()) {
@@ -1712,13 +1712,13 @@ package net.minecraft.src;
 /* 1711:     */     {
 /* 1712:1857 */       int k = j + 1;
 /* 1713:1858 */       if ((paramamj != null) && (paramamj.getItem() != null)) {
-/* 1714:1859 */         if ((paramamj.getItem() instanceof ajn))
+/* 1714:1859 */         if ((paramamj.getItem() instanceof ItemArmor))
 /* 1715:     */         {
-/* 1716:1860 */           if (EntityMob.c(paramamj) != k) {
+/* 1716:1860 */           if (EntityMob.getSlot(paramamj) != k) {
 /* 1717:1861 */             return false;
 /* 1718:     */           }
 /* 1719:     */         }
-/* 1720:1863 */         else if ((k != 4) || ((paramamj.getItem() != ItemList.bX) && (!(paramamj.getItem() instanceof aju)))) {
+/* 1720:1863 */         else if ((k != 4) || ((paramamj.getItem() != ItemList.skull) && (!(paramamj.getItem() instanceof aju)))) {
 /* 1721:1864 */           return false;
 /* 1722:     */         }
 /* 1723:     */       }

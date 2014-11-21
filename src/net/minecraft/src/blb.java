@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*   5: 38 */   protected static final Block b = BlockList.cI.a(azi.M);
 /*   6: 39 */   protected static final Block c = BlockList.cI.a(azi.N);
 /*   7: 41 */   protected static final Block d = b;
-/*   8: 43 */   protected static final Block e = BlockList.cJ.instance();
+/*   8: 43 */   protected static final Block e = BlockList.seaLantern.instance();
 /*   9: 46 */   protected static final Block f = BlockList.water.instance();
 /*  10: 57 */   protected static final int g = a(2, 0, 0);
 /*  11: 58 */   protected static final int h = a(2, 2, 0);

@@ -409,7 +409,7 @@ package net.minecraft.src;
 /*  408:     */ 
 /*  409:     */ 
 /*  410:     */ 
-/*  411: 417 */     a(new ItemStack(ItemList.aB, 3), new Object[] { "##", "##", "##", Character.valueOf('#'), ItemList.j });
+/*  411: 417 */     a(new ItemStack(ItemList.aB, 3), new Object[] { "##", "##", "##", Character.valueOf('#'), ItemList.ironIngot });
 /*  412:     */     
 /*  413:     */ 
 /*  414:     */ 
@@ -417,7 +417,7 @@ package net.minecraft.src;
 /*  416:     */ 
 /*  417:     */ 
 /*  418:     */ 
-/*  419: 425 */     a(new ItemStack(BlockList.cw, 1), new Object[] { "##", "##", Character.valueOf('#'), ItemList.j });
+/*  419: 425 */     a(new ItemStack(BlockList.cw, 1), new Object[] { "##", "##", Character.valueOf('#'), ItemList.ironIngot });
 /*  420:     */     
 /*  421:     */ 
 /*  422:     */ 
@@ -519,7 +519,7 @@ package net.minecraft.src;
 /*  518:     */ 
 /*  519:     */ 
 /*  520:     */ 
-/*  521: 527 */     a(new ItemStack(BlockList.av, 16), new Object[] { "X X", "X#X", "X X", Character.valueOf('X'), ItemList.j, Character.valueOf('#'), ItemList.stick });
+/*  521: 527 */     a(new ItemStack(BlockList.av, 16), new Object[] { "X X", "X#X", "X X", Character.valueOf('X'), ItemList.ironIngot, Character.valueOf('#'), ItemList.stick });
 /*  522:     */     
 /*  523:     */ 
 /*  524:     */ 
@@ -528,7 +528,7 @@ package net.minecraft.src;
 /*  527:     */ 
 /*  528:     */ 
 /*  529:     */ 
-/*  530: 536 */     a(new ItemStack(BlockList.D, 6), new Object[] { "X X", "X#X", "XRX", Character.valueOf('X'), ItemList.k, Character.valueOf('R'), ItemList.aC, Character.valueOf('#'), ItemList.stick });
+/*  530: 536 */     a(new ItemStack(BlockList.D, 6), new Object[] { "X X", "X#X", "XRX", Character.valueOf('X'), ItemList.goldIngot, Character.valueOf('R'), ItemList.aC, Character.valueOf('#'), ItemList.stick });
 /*  531:     */     
 /*  532:     */ 
 /*  533:     */ 
@@ -538,7 +538,7 @@ package net.minecraft.src;
 /*  537:     */ 
 /*  538:     */ 
 /*  539:     */ 
-/*  540: 546 */     a(new ItemStack(BlockList.activatorRail, 6), new Object[] { "XSX", "X#X", "XSX", Character.valueOf('X'), ItemList.j, Character.valueOf('#'), BlockList.aF, Character.valueOf('S'), ItemList.stick });
+/*  540: 546 */     a(new ItemStack(BlockList.activatorRail, 6), new Object[] { "XSX", "X#X", "XSX", Character.valueOf('X'), ItemList.ironIngot, Character.valueOf('#'), BlockList.aF, Character.valueOf('S'), ItemList.stick });
 /*  541:     */     
 /*  542:     */ 
 /*  543:     */ 
@@ -548,7 +548,7 @@ package net.minecraft.src;
 /*  547:     */ 
 /*  548:     */ 
 /*  549:     */ 
-/*  550: 556 */     a(new ItemStack(BlockList.detector_rail, 6), new Object[] { "X X", "X#X", "XRX", Character.valueOf('X'), ItemList.j, Character.valueOf('R'), ItemList.aC, Character.valueOf('#'), BlockList.az });
+/*  550: 556 */     a(new ItemStack(BlockList.detector_rail, 6), new Object[] { "X X", "X#X", "XRX", Character.valueOf('X'), ItemList.ironIngot, Character.valueOf('R'), ItemList.aC, Character.valueOf('#'), BlockList.az });
 /*  551:     */     
 /*  552:     */ 
 /*  553:     */ 
@@ -558,14 +558,14 @@ package net.minecraft.src;
 /*  557:     */ 
 /*  558:     */ 
 /*  559:     */ 
-/*  560: 566 */     a(new ItemStack(ItemList.az, 1), new Object[] { "# #", "###", Character.valueOf('#'), ItemList.j });
+/*  560: 566 */     a(new ItemStack(ItemList.az, 1), new Object[] { "# #", "###", Character.valueOf('#'), ItemList.ironIngot });
 /*  561:     */     
 /*  562:     */ 
 /*  563:     */ 
 /*  564:     */ 
 /*  565:     */ 
 /*  566:     */ 
-/*  567: 573 */     a(new ItemStack(ItemList.bG, 1), new Object[] { "# #", "# #", "###", Character.valueOf('#'), ItemList.j });
+/*  567: 573 */     a(new ItemStack(ItemList.bG, 1), new Object[] { "# #", "# #", "###", Character.valueOf('#'), ItemList.ironIngot });
 /*  568:     */     
 /*  569:     */ 
 /*  570:     */ 
@@ -628,7 +628,7 @@ package net.minecraft.src;
 /*  627:     */ 
 /*  628:     */ 
 /*  629:     */ 
-/*  630: 636 */     a(new ItemStack(ItemList.aw, 1), new Object[] { "# #", " # ", Character.valueOf('#'), ItemList.j });
+/*  630: 636 */     a(new ItemStack(ItemList.aw, 1), new Object[] { "# #", " # ", Character.valueOf('#'), ItemList.ironIngot });
 /*  631:     */     
 /*  632:     */ 
 /*  633:     */ 
@@ -643,7 +643,7 @@ package net.minecraft.src;
 /*  642:     */ 
 /*  643:     */ 
 /*  644:     */ 
-/*  645: 651 */     b(new ItemStack(ItemList.d, 1), new Object[] { new ItemStack(ItemList.j, 1), new ItemStack(ItemList.ak, 1) });
+/*  645: 651 */     b(new ItemStack(ItemList.d, 1), new Object[] { new ItemStack(ItemList.ironIngot, 1), new ItemStack(ItemList.ak, 1) });
 /*  646:     */     
 /*  647:     */ 
 /*  648:     */ 
@@ -792,7 +792,7 @@ package net.minecraft.src;
 /*  791:     */ 
 /*  792:     */ 
 /*  793:     */ 
-/*  794: 800 */     a(new ItemStack(ItemList.ao, 1, 0), new Object[] { "###", "#X#", "###", Character.valueOf('#'), ItemList.k, Character.valueOf('X'), ItemList.apple });
+/*  794: 800 */     a(new ItemStack(ItemList.ao, 1, 0), new Object[] { "###", "#X#", "###", Character.valueOf('#'), ItemList.goldIngot, Character.valueOf('X'), ItemList.apple });
 /*  795:     */     
 /*  796:     */ 
 /*  797:     */ 
@@ -836,7 +836,7 @@ package net.minecraft.src;
 /*  835:     */ 
 /*  836:     */ 
 /*  837:     */ 
-/*  838: 844 */     a(new ItemStack(BlockList.bR, 2), new Object[] { "I", "S", "#", Character.valueOf('#'), BlockList.planks, Character.valueOf('S'), ItemList.stick, Character.valueOf('I'), ItemList.j });
+/*  838: 844 */     a(new ItemStack(BlockList.bR, 2), new Object[] { "I", "S", "#", Character.valueOf('#'), BlockList.planks, Character.valueOf('S'), ItemList.stick, Character.valueOf('I'), ItemList.ironIngot });
 /*  839:     */     
 /*  840:     */ 
 /*  841:     */ 
@@ -873,7 +873,7 @@ package net.minecraft.src;
 /*  872:     */ 
 /*  873:     */ 
 /*  874:     */ 
-/*  875: 881 */     a(new ItemStack(ItemList.aS, 1), new Object[] { " # ", "#X#", " # ", Character.valueOf('#'), ItemList.k, Character.valueOf('X'), ItemList.aC });
+/*  875: 881 */     a(new ItemStack(ItemList.aS, 1), new Object[] { " # ", "#X#", " # ", Character.valueOf('#'), ItemList.goldIngot, Character.valueOf('X'), ItemList.aC });
 /*  876:     */     
 /*  877:     */ 
 /*  878:     */ 
@@ -882,7 +882,7 @@ package net.minecraft.src;
 /*  881:     */ 
 /*  882:     */ 
 /*  883:     */ 
-/*  884: 890 */     a(new ItemStack(ItemList.aQ, 1), new Object[] { " # ", "#X#", " # ", Character.valueOf('#'), ItemList.j, Character.valueOf('X'), ItemList.aC });
+/*  884: 890 */     a(new ItemStack(ItemList.aQ, 1), new Object[] { " # ", "#X#", " # ", Character.valueOf('#'), ItemList.ironIngot, Character.valueOf('X'), ItemList.aC });
 /*  885:     */     
 /*  886:     */ 
 /*  887:     */ 
@@ -924,19 +924,19 @@ package net.minecraft.src;
 /*  923:     */ 
 /*  924:     */ 
 /*  925:     */ 
-/*  926: 932 */     a(new ItemStack(BlockList.ci, 1), new Object[] { "##", Character.valueOf('#'), ItemList.j });
+/*  926: 932 */     a(new ItemStack(BlockList.ci, 1), new Object[] { "##", Character.valueOf('#'), ItemList.ironIngot });
 /*  927:     */     
 /*  928:     */ 
 /*  929:     */ 
 /*  930:     */ 
 /*  931:     */ 
-/*  932: 938 */     a(new ItemStack(BlockList.ch, 1), new Object[] { "##", Character.valueOf('#'), ItemList.k });
+/*  932: 938 */     a(new ItemStack(BlockList.ch, 1), new Object[] { "##", Character.valueOf('#'), ItemList.goldIngot });
 /*  933:     */     
 /*  934:     */ 
 /*  935:     */ 
 /*  936:     */ 
 /*  937:     */ 
-/*  938: 944 */     a(new ItemStack(BlockList.z, 1), new Object[] { "###", "#X#", "#R#", Character.valueOf('#'), BlockList.cobblestone, Character.valueOf('X'), ItemList.f, Character.valueOf('R'), ItemList.aC });
+/*  938: 944 */     a(new ItemStack(BlockList.z, 1), new Object[] { "###", "#X#", "#R#", Character.valueOf('#'), BlockList.cobblestone, Character.valueOf('X'), ItemList.bow, Character.valueOf('R'), ItemList.aC });
 /*  939:     */     
 /*  940:     */ 
 /*  941:     */ 
@@ -955,7 +955,7 @@ package net.minecraft.src;
 /*  954:     */ 
 /*  955:     */ 
 /*  956:     */ 
-/*  957: 963 */     a(new ItemStack(BlockList.J, 1), new Object[] { "TTT", "#X#", "#R#", Character.valueOf('#'), BlockList.cobblestone, Character.valueOf('X'), ItemList.j, Character.valueOf('R'), ItemList.aC, Character.valueOf('T'), BlockList.planks });
+/*  957: 963 */     a(new ItemStack(BlockList.J, 1), new Object[] { "TTT", "#X#", "#R#", Character.valueOf('#'), BlockList.cobblestone, Character.valueOf('X'), ItemList.ironIngot, Character.valueOf('R'), ItemList.aC, Character.valueOf('T'), BlockList.planks });
 /*  958:     */     
 /*  959:     */ 
 /*  960:     */ 
@@ -993,7 +993,7 @@ package net.minecraft.src;
 /*  992:     */ 
 /*  993:     */ 
 /*  994:     */ 
-/*  995:1001 */     a(new ItemStack(BlockList.cf, 1), new Object[] { "III", " i ", "iii", Character.valueOf('I'), BlockList.S, Character.valueOf('i'), ItemList.j });
+/*  995:1001 */     a(new ItemStack(BlockList.cf, 1), new Object[] { "III", " i ", "iii", Character.valueOf('I'), BlockList.S, Character.valueOf('i'), ItemList.ironIngot });
 /*  996:     */     
 /*  997:     */ 
 /*  998:     */ 
@@ -1035,7 +1035,7 @@ package net.minecraft.src;
 /* 1034:     */ 
 /* 1035:     */ 
 /* 1036:     */ 
-/* 1037:1043 */     a(new ItemStack(BlockList.cp), new Object[] { "I I", "ICI", " I ", Character.valueOf('I'), ItemList.j, Character.valueOf('C'), BlockList.ae });
+/* 1037:1043 */     a(new ItemStack(BlockList.cp), new Object[] { "I I", "ICI", " I ", Character.valueOf('I'), ItemList.ironIngot, Character.valueOf('C'), BlockList.ae });
 /* 1038:     */     
 /* 1039:     */ 
 /* 1040:     */ 

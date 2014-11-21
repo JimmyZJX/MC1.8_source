@@ -18,7 +18,7 @@ package net.minecraft.src;
 /*  17:    */   {
 /*  18: 19 */     this.e = paramwv.xPos;
 /*  19: 20 */     if ((paramwv instanceof EntityLiving)) {
-/*  20: 21 */       this.f = (paramwv.yPos + paramwv.aR());
+/*  20: 21 */       this.f = (paramwv.yPos + paramwv.getEyeHeight());
 /*  21:    */     } else {
 /*  22: 23 */       this.f = ((paramwv.getAABB().minY + paramwv.getAABB().maxY) / 2.0D);
 /*  23:    */     }
@@ -46,7 +46,7 @@ package net.minecraft.src;
 /*  45: 44 */       this.d = false;
 /*  46:    */       
 /*  47: 46 */       double d1 = this.e - this.a.xPos;
-/*  48: 47 */       double d2 = this.f - (this.a.yPos + this.a.aR());
+/*  48: 47 */       double d2 = this.f - (this.a.yPos + this.a.getEyeHeight());
 /*  49: 48 */       double d3 = this.g - this.a.zPos;
 /*  50: 49 */       double d4 = MathUtils.a(d1 * d1 + d3 * d3);
 /*  51:    */       

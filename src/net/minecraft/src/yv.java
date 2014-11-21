@@ -31,7 +31,7 @@ package net.minecraft.src;
 /* 30:   */     {
 /* 31:38 */       bpt localbpt = localbpv.a(i);
 /* 32:39 */       this.b = new BlockPosition(localbpt.a, localbpt.b + 1, localbpt.c);
-/* 33:40 */       if (this.a.e(this.b.getX(), this.a.yPos, this.b.getZ()) <= 2.25D)
+/* 33:40 */       if (this.a.dist2(this.b.getX(), this.a.yPos, this.b.getZ()) <= 2.25D)
 /* 34:   */       {
 /* 35:43 */         this.c = a(this.b);
 /* 36:44 */         if (this.c != null) {

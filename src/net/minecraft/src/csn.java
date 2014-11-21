@@ -11,7 +11,7 @@ package net.minecraft.src;
 /* 10:   */   
 /* 11:   */   public void a(EntityLiving paramxm, float paramFloat1, float paramFloat2, float paramFloat3, float paramFloat4, float paramFloat5, float paramFloat6, float paramFloat7)
 /* 12:   */   {
-/* 13:22 */     ItemStack localamj = paramxm.bz();
+/* 13:22 */     ItemStack localamj = paramxm.getHeldItemStack();
 /* 14:23 */     if (localamj == null) {
 /* 15:24 */       return;
 /* 16:   */     }

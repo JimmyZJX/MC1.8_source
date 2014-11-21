@@ -11,12 +11,12 @@ package net.minecraft.src;
 /*  10: 29 */     a(0.7F, 1.9F);
 /*  11:    */     
 /*  12: 31 */     ((aay)s()).a(true);
-/*  13: 32 */     this.i.a(1, new zz(this, 1.25D, 20, 10.0F));
-/*  14: 33 */     this.i.a(2, new zy(this, 1.0D));
-/*  15: 34 */     this.i.a(3, new zh(this, EntityPlayer.class, 6.0F));
-/*  16: 35 */     this.i.a(4, new zx(this));
+/*  13: 32 */     this.goalSelector.a(1, new zz(this, 1.25D, 20, 10.0F));
+/*  14: 33 */     this.goalSelector.a(2, new zy(this, 1.0D));
+/*  15: 34 */     this.goalSelector.a(3, new zh(this, EntityPlayer.class, 6.0F));
+/*  16: 35 */     this.goalSelector.a(4, new zx(this));
 /*  17:    */     
-/*  18: 37 */     this.bg.a(1, new aaq(this, EntityMob.class, 10, true, false, aex.d));
+/*  18: 37 */     this.targetSelector.a(1, new aaq(this, EntityMob.class, 10, true, false, aex.d));
 /*  19:    */   }
 /*  20:    */   
 /*  21:    */   protected void aW()
@@ -71,7 +71,7 @@ package net.minecraft.src;
 /*  70:    */   public void a(EntityLiving paramxm, float paramFloat)
 /*  71:    */   {
 /*  72: 96 */     ahq localahq = new ahq(this.world, this);
-/*  73: 97 */     double d1 = paramxm.yPos + paramxm.aR() - 1.100000023841858D;
+/*  73: 97 */     double d1 = paramxm.yPos + paramxm.getEyeHeight() - 1.100000023841858D;
 /*  74: 98 */     double d2 = paramxm.xPos - this.xPos;
 /*  75: 99 */     double d3 = d1 - localahq.yPos;
 /*  76:100 */     double d4 = paramxm.zPos - this.zPos;
@@ -82,7 +82,7 @@ package net.minecraft.src;
 /*  81:105 */     this.world.spawnEntity(localahq);
 /*  82:    */   }
 /*  83:    */   
-/*  84:    */   public float aR()
+/*  84:    */   public float getEyeHeight()
 /*  85:    */   {
 /*  86:110 */     return 1.7F;
 /*  87:    */   }

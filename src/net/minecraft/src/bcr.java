@@ -142,7 +142,7 @@ package net.minecraft.src;
 /* 141:161 */     if (this.world.s(this.pos) != this) {
 /* 142:162 */       return false;
 /* 143:    */     }
-/* 144:164 */     if (paramahd.e(this.pos.getX() + 0.5D, this.pos.getY() + 0.5D, this.pos.getZ() + 0.5D) > 64.0D) {
+/* 144:164 */     if (paramahd.dist2(this.pos.getX() + 0.5D, this.pos.getY() + 0.5D, this.pos.getZ() + 0.5D) > 64.0D) {
 /* 145:165 */       return false;
 /* 146:    */     }
 /* 147:167 */     return true;

@@ -16,15 +16,15 @@ package net.minecraft.src;
 /*  15:    */     
 /*  16: 44 */     this.f = new agc(this);
 /*  17:    */     
-/*  18: 46 */     this.i.a(1, new aga(this));
+/*  18: 46 */     this.goalSelector.a(1, new aga(this));
 /*  19:    */     
-/*  20: 48 */     this.i.a(2, new afz(this));
-/*  21: 49 */     this.i.a(3, new agd(this));
+/*  20: 48 */     this.goalSelector.a(2, new afz(this));
+/*  21: 49 */     this.goalSelector.a(3, new agd(this));
 /*  22:    */     
-/*  23: 51 */     this.i.a(5, new agb(this));
+/*  23: 51 */     this.goalSelector.a(5, new agb(this));
 /*  24:    */     
-/*  25: 53 */     this.bg.a(1, new aao(this));
-/*  26: 54 */     this.bg.a(3, new aam(this, EntityIronGolem.class));
+/*  25: 53 */     this.targetSelector.a(1, new aao(this));
+/*  26: 54 */     this.targetSelector.a(3, new aam(this, EntityIronGolem.class));
 /*  27:    */   }
 /*  28:    */   
 /*  29:    */   protected void h()
@@ -155,8 +155,8 @@ package net.minecraft.src;
 /* 154:174 */         if (k_()) {
 /* 155:175 */           localafy.a(aL());
 /* 156:    */         }
-/* 157:177 */         if (bY()) {
-/* 158:178 */           localafy.bW();
+/* 157:177 */         if (isPersistent()) {
+/* 158:178 */           localafy.setPersistent();
 /* 159:    */         }
 /* 160:180 */         localafy.a(i / 2);
 /* 161:181 */         localafy.setPositionAndAngles(this.xPos + f1, this.yPos + 0.5D, this.zPos + f2, this.rng.nextFloat() * 360.0F, 0.0F);
@@ -184,7 +184,7 @@ package net.minecraft.src;
 /* 183:    */   protected void e(EntityLiving paramxm)
 /* 184:    */   {
 /* 185:204 */     int i = ck();
-/* 186:205 */     if ((t(paramxm)) && (h(paramxm) < 0.6D * i * (0.6D * i)) && 
+/* 186:205 */     if ((canSee(paramxm)) && (h(paramxm) < 0.6D * i * (0.6D * i)) && 
 /* 187:206 */       (paramxm.a(DamageSource.a(this), ch())))
 /* 188:    */     {
 /* 189:207 */       a("mob.attack", 1.0F, (this.rng.nextFloat() - this.rng.nextFloat()) * 0.2F + 1.0F);
@@ -192,7 +192,7 @@ package net.minecraft.src;
 /* 191:    */     }
 /* 192:    */   }
 /* 193:    */   
-/* 194:    */   public float aR()
+/* 194:    */   public float getEyeHeight()
 /* 195:    */   {
 /* 196:215 */     return 0.625F * this.height;
 /* 197:    */   }

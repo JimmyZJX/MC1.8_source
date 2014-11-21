@@ -95,9 +95,9 @@ package net.minecraft.src;
 /*  94:    */     }
 /*  95:    */   }
 /*  96:    */   
-/*  97:    */   protected void E()
+/*  97:    */   protected void mobTick()
 /*  98:    */   {
-/*  99:113 */     super.E();
+/*  99:113 */     super.mobTick();
 /* 100:    */     
 /* 101:115 */     BlockPosition localdt1 = new BlockPosition(this);
 /* 102:116 */     BlockPosition localdt2 = localdt1.up();
@@ -113,7 +113,7 @@ package net.minecraft.src;
 /* 112:123 */         if (this.rng.nextInt(200) == 0) {
 /* 113:124 */           this.aI = this.rng.nextInt(360);
 /* 114:    */         }
-/* 115:127 */         if (this.world.a(this, 4.0D) != null)
+/* 115:127 */         if (this.world.getNearestPlayer(this, 4.0D) != null)
 /* 116:    */         {
 /* 117:128 */           a(false);
 /* 118:129 */           this.world.playLevelEvent(null, 1015, localdt1, 0);
@@ -210,7 +210,7 @@ package net.minecraft.src;
 /* 209:231 */     return ((paramCalendar.get(2) + 1 == 10) && (paramCalendar.get(5) >= 20)) || ((paramCalendar.get(2) + 1 == 11) && (paramCalendar.get(5) <= 3));
 /* 210:    */   }
 /* 211:    */   
-/* 212:    */   public float aR()
+/* 212:    */   public float getEyeHeight()
 /* 213:    */   {
 /* 214:236 */     return this.height / 2.0F;
 /* 215:    */   }

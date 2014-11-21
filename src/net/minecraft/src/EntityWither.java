@@ -32,15 +32,15 @@ package net.minecraft.src;
 /*  31:    */ 
 /*  32: 72 */     ((aay)s()).d(true);
 /*  33:    */     
-/*  34: 74 */     this.i.a(0, new yy(this));
-/*  35: 75 */     this.i.a(2, new zz(this, 1.0D, 40, 20.0F));
+/*  34: 74 */     this.goalSelector.a(0, new yy(this));
+/*  35: 75 */     this.goalSelector.a(2, new zz(this, 1.0D, 40, 20.0F));
 /*  36:    */     
-/*  37: 77 */     this.i.a(5, new zy(this, 1.0D));
-/*  38: 78 */     this.i.a(6, new zh(this, EntityPlayer.class, 8.0F));
-/*  39: 79 */     this.i.a(7, new zx(this));
+/*  37: 77 */     this.goalSelector.a(5, new zy(this, 1.0D));
+/*  38: 78 */     this.goalSelector.a(6, new zh(this, EntityPlayer.class, 8.0F));
+/*  39: 79 */     this.goalSelector.a(7, new zx(this));
 /*  40:    */     
-/*  41: 81 */     this.bg.a(1, new aal(this, false, new Class[0]));
-/*  42: 82 */     this.bg.a(2, new aaq(this, EntityMob.class, 0, false, false, bp));
+/*  41: 81 */     this.targetSelector.a(1, new aal(this, false, new Class[0]));
+/*  42: 82 */     this.targetSelector.a(2, new aaq(this, EntityMob.class, 0, false, false, bp));
 /*  43:    */     
 /*  44: 84 */     this.b_ = 50;
 /*  45:    */   }
@@ -136,7 +136,7 @@ package net.minecraft.src;
 /* 135:169 */         d7 = v(bool + 1);
 /* 136:    */         
 /* 137:171 */         double d8 = localwv2.xPos - d3;
-/* 138:172 */         double d9 = localwv2.yPos + localwv2.aR() - d5;
+/* 138:172 */         double d9 = localwv2.yPos + localwv2.getEyeHeight() - d5;
 /* 139:173 */         double d10 = localwv2.zPos - d7;
 /* 140:174 */         double d11 = MathUtils.a(d8 * d8 + d10 * d10);
 /* 141:    */         
@@ -169,14 +169,14 @@ package net.minecraft.src;
 /* 168:    */     }
 /* 169:    */   }
 /* 170:    */   
-/* 171:    */   protected void E()
+/* 171:    */   protected void mobTick()
 /* 172:    */   {
 /* 173:205 */     if (cj() > 0)
 /* 174:    */     {
 /* 175:206 */       int i = cj() - 1;
 /* 176:208 */       if (i <= 0)
 /* 177:    */       {
-/* 178:209 */         this.world.a(this, this.xPos, this.yPos + aR(), this.zPos, 7.0F, false, this.world.getGameRules().getBoolean("mobGriefing"));
+/* 178:209 */         this.world.a(this, this.xPos, this.yPos + getEyeHeight(), this.zPos, 7.0F, false, this.world.getGameRules().getBoolean("mobGriefing"));
 /* 179:210 */         this.world.a(1013, new BlockPosition(this), 0);
 /* 180:    */       }
 /* 181:213 */       r(i);
@@ -185,7 +185,7 @@ package net.minecraft.src;
 /* 184:    */       }
 /* 185:218 */       return;
 /* 186:    */     }
-/* 187:221 */     super.E();
+/* 187:221 */     super.mobTick();
 				  int i;
 /* 188:    */     int j;
 /* 189:    */     int m;
@@ -212,7 +212,7 @@ package net.minecraft.src;
 /* 210:238 */         if (j > 0)
 /* 211:    */         {
 /* 212:239 */           localObject = this.world.a(j);
-/* 213:240 */           if ((localObject == null) || (!((Entity)localObject).ai()) || (h((Entity)localObject) > 900.0D) || (!t((Entity)localObject)))
+/* 213:240 */           if ((localObject == null) || (!((Entity)localObject).ai()) || (h((Entity)localObject) > 900.0D) || (!canSee((Entity)localObject)))
 /* 214:    */           {
 /* 215:241 */             b(i, 0);
 /* 216:    */           }
@@ -229,7 +229,7 @@ package net.minecraft.src;
 /* 227:250 */           for (m = 0; (m < 10) && (!((List)localObject).isEmpty()); m++)
 /* 228:    */           {
 /* 229:251 */             EntityLiving localxm = (EntityLiving)((List)localObject).get(this.rng.nextInt(((List)localObject).size()));
-/* 230:253 */             if ((localxm != this) && (localxm.ai()) && (t(localxm)))
+/* 230:253 */             if ((localxm != this) && (localxm.ai()) && (canSee(localxm)))
 /* 231:    */             {
 /* 232:254 */               if ((localxm instanceof EntityPlayer))
 /* 233:    */               {
@@ -339,7 +339,7 @@ package net.minecraft.src;
 /* 337:    */   
 /* 338:    */   private void a(int paramInt, EntityLiving paramxm)
 /* 339:    */   {
-/* 340:364 */     a(paramInt, paramxm.xPos, paramxm.yPos + paramxm.aR() * 0.5D, paramxm.zPos, (paramInt == 0) && (this.rng.nextFloat() < 0.001F));
+/* 340:364 */     a(paramInt, paramxm.xPos, paramxm.yPos + paramxm.getEyeHeight() * 0.5D, paramxm.zPos, (paramInt == 0) && (this.rng.nextFloat() < 0.001F));
 /* 341:    */   }
 /* 342:    */   
 /* 343:    */   private void a(int paramInt, double paramDouble1, double paramDouble2, double paramDouble3, boolean paramBoolean)
@@ -415,9 +415,9 @@ package net.minecraft.src;
 /* 413:    */     }
 /* 414:    */   }
 /* 415:    */   
-/* 416:    */   protected void D()
+/* 416:    */   protected void checkDespawn()
 /* 417:    */   {
-/* 418:447 */     this.aO = 0;
+/* 418:447 */     this.despawnTimer = 0;
 /* 419:    */   }
 /* 420:    */   
 /* 421:    */   public int b(float paramFloat)

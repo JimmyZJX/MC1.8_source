@@ -113,7 +113,7 @@ package net.minecraft.src;
 /* 112:131 */         if (d5 <= 1.0D)
 /* 113:    */         {
 /* 114:132 */           double d7 = localwv.xPos - this.e;
-/* 115:133 */           double d9 = localwv.yPos + localwv.aR() - this.f;
+/* 115:133 */           double d9 = localwv.yPos + localwv.getEyeHeight() - this.f;
 /* 116:134 */           double d11 = localwv.zPos - this.g;
 /* 117:    */           
 /* 118:136 */           double d12 = MathUtils.a(d7 * d7 + d9 * d9 + d11 * d11);

@@ -43,14 +43,14 @@ package net.minecraft.src;
 /*   44: 155 */     o(false);
 /*   45:     */     
 /*   46: 157 */     ((aay)s()).a(true);
-/*   47: 158 */     this.i.a(0, new yy(this));
-/*   48: 159 */     this.i.a(1, new zu(this, 1.2D));
-/*   49: 160 */     this.i.a(1, new aac(this, 1.2D));
-/*   50: 161 */     this.i.a(2, new yt(this, 1.0D));
-/*   51: 162 */     this.i.a(4, new za(this, 1.0D));
-/*   52: 163 */     this.i.a(6, new zy(this, 0.7D));
-/*   53: 164 */     this.i.a(7, new zh(this, EntityPlayer.class, 6.0F));
-/*   54: 165 */     this.i.a(8, new zx(this));
+/*   47: 158 */     this.goalSelector.a(0, new yy(this));
+/*   48: 159 */     this.goalSelector.a(1, new zu(this, 1.2D));
+/*   49: 160 */     this.goalSelector.a(1, new aac(this, 1.2D));
+/*   50: 161 */     this.goalSelector.a(2, new yt(this, 1.0D));
+/*   51: 162 */     this.goalSelector.a(4, new za(this, 1.0D));
+/*   52: 163 */     this.goalSelector.a(6, new zy(this, 0.7D));
+/*   53: 164 */     this.goalSelector.a(7, new zh(this, EntityPlayer.class, 6.0F));
+/*   54: 165 */     this.goalSelector.a(8, new zx(this));
 /*   55:     */     
 /*   56: 167 */     cY();
 /*   57:     */   }
@@ -426,7 +426,7 @@ package net.minecraft.src;
 /*  427: 513 */     List<Entity> localList = this.world.a(paramwv, paramwv.getAABB().addCoord(paramDouble, paramDouble, paramDouble), bq);
 /*  428: 515 */     for (Entity localwv : localList)
 /*  429:     */     {
-/*  430: 516 */       double d2 = localwv.e(paramwv.xPos, paramwv.yPos, paramwv.zPos);
+/*  430: 516 */       double d2 = localwv.dist2(paramwv.xPos, paramwv.yPos, paramwv.zPos);
 /*  431: 518 */       if (d2 < d1)
 /*  432:     */       {
 /*  433: 519 */         localObject = localwv;
@@ -1071,7 +1071,7 @@ package net.minecraft.src;
 /* 1072:     */     {
 /* 1073:1171 */       ItemStack localamj = paramaic.get(i);
 /* 1074:1172 */       if (localamj != null) {
-/* 1075:1175 */         a(localamj, 0.0F);
+/* 1075:1175 */         throwItem(localamj, 0.0F);
 /* 1076:     */       }
 /* 1077:     */     }
 /* 1078:     */   }
@@ -1477,7 +1477,7 @@ package net.minecraft.src;
 /* 1478:1586 */     return false;
 /* 1479:     */   }
 /* 1480:     */   
-/* 1481:     */   public float aR()
+/* 1481:     */   public float getEyeHeight()
 /* 1482:     */   {
 /* 1483:1591 */     return this.height;
 /* 1484:     */   }

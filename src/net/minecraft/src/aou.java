@@ -121,7 +121,7 @@ package net.minecraft.src;
 /* 120:    */ 
 /* 121:    */ 
 /* 122:    */ 
-/* 123:128 */     paramaop.a(new ItemStack(BlockList.bi, 16), new Object[] { "###", "###", Character.valueOf('#'), ItemList.j });
+/* 123:128 */     paramaop.a(new ItemStack(BlockList.bi, 16), new Object[] { "###", "###", Character.valueOf('#'), ItemList.ironIngot });
 /* 124:    */     
 /* 125:    */ 
 /* 126:    */ 
@@ -229,7 +229,7 @@ package net.minecraft.src;
 /* 228:    */ 
 /* 229:    */ 
 /* 230:    */ 
-/* 231:236 */     paramaop.a(new ItemStack(BlockList.cJ, 1, 0), new Object[] { "SCS", "CCC", "SCS", Character.valueOf('S'), ItemList.cC, Character.valueOf('C'), ItemList.cD });
+/* 231:236 */     paramaop.a(new ItemStack(BlockList.seaLantern, 1, 0), new Object[] { "SCS", "CCC", "SCS", Character.valueOf('S'), ItemList.cC, Character.valueOf('C'), ItemList.cD });
 /* 232:    */   }
 /* 233:    */ }
 

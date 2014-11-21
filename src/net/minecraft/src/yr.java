@@ -19,7 +19,7 @@ package net.minecraft.src;
 /* 19:   */   
 /* 20:   */   public boolean a()
 /* 21:   */   {
-/* 22:26 */     this.b = this.c.a(this.a, (double)this.d);
+/* 22:26 */     this.b = this.c.getNearestPlayer(this.a, (double)this.d);
 /* 23:27 */     if (this.b == null) {
 /* 24:28 */       return false;
 /* 25:   */     }
@@ -51,7 +51,7 @@ package net.minecraft.src;
 /* 51:   */   
 /* 52:   */   public void e()
 /* 53:   */   {
-/* 54:58 */     this.a.p().a(this.b.xPos, this.b.yPos + this.b.aR(), this.b.zPos, 10.0F, this.a.bP());
+/* 54:58 */     this.a.p().a(this.b.xPos, this.b.yPos + this.b.getEyeHeight(), this.b.zPos, 10.0F, this.a.bP());
 /* 55:59 */     this.e -= 1;
 /* 56:   */   }
 /* 57:   */   

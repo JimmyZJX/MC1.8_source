@@ -40,7 +40,7 @@ package net.minecraft.src;
 /* 39:41 */       this.a.a(-1);
 /* 40:42 */       return;
 /* 41:   */     }
-/* 42:45 */     if (!this.a.t().a(this.b))
+/* 42:45 */     if (!this.a.t().canSee(this.b))
 /* 43:   */     {
 /* 44:46 */       this.a.a(-1);
 /* 45:47 */       return;

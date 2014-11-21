@@ -88,7 +88,7 @@ package net.minecraft.src;
 /*  87:140 */         return;
 /*  88:    */       }
 /*  89:    */     }
-/*  90:144 */     a(new ItemStack(ItemList.an), 0.0F);
+/*  90:144 */     throwItem(new ItemStack(ItemList.an), 0.0F);
 /*  91:    */   }
 /*  92:    */   
 /*  93:    */   public void setPositionAndAngles(double paramDouble1, double paramDouble2, double paramDouble3, float paramFloat1, float paramFloat2)

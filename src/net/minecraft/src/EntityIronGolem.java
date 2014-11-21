@@ -15,18 +15,18 @@ package net.minecraft.src;
 /*  15:    */     
 /*  16: 43 */     ((aay)s()).a(true);
 /*  17:    */     
-/*  18: 45 */     this.i.a(1, new zk(this, 1.0D, true));
-/*  19: 46 */     this.i.a(2, new zp(this, 0.9D, 32.0F));
-/*  20: 47 */     this.i.a(3, new zm(this, 0.6D, true));
-/*  21: 48 */     this.i.a(4, new zo(this, 1.0D));
-/*  22: 49 */     this.i.a(5, new zs(this));
-/*  23: 50 */     this.i.a(6, new zy(this, 0.6D));
-/*  24: 51 */     this.i.a(7, new zh(this, EntityPlayer.class, 6.0F));
-/*  25: 52 */     this.i.a(8, new zx(this));
+/*  18: 45 */     this.goalSelector.a(1, new zk(this, 1.0D, true));
+/*  19: 46 */     this.goalSelector.a(2, new zp(this, 0.9D, 32.0F));
+/*  20: 47 */     this.goalSelector.a(3, new zm(this, 0.6D, true));
+/*  21: 48 */     this.goalSelector.a(4, new zo(this, 1.0D));
+/*  22: 49 */     this.goalSelector.a(5, new zs(this));
+/*  23: 50 */     this.goalSelector.a(6, new zy(this, 0.6D));
+/*  24: 51 */     this.goalSelector.a(7, new zh(this, EntityPlayer.class, 6.0F));
+/*  25: 52 */     this.goalSelector.a(8, new zx(this));
 /*  26:    */     
-/*  27: 54 */     this.bg.a(1, new aak(this));
-/*  28: 55 */     this.bg.a(2, new aal(this, false, new Class[0]));
-/*  29: 56 */     this.bg.a(3, new acr(this, EntityMob.class, 10, false, true, aex.e));
+/*  27: 54 */     this.targetSelector.a(1, new aak(this));
+/*  28: 55 */     this.targetSelector.a(2, new aal(this, false, new Class[0]));
+/*  29: 56 */     this.targetSelector.a(3, new acr(this, EntityMob.class, 10, false, true, aex.e));
 /*  30:    */   }
 /*  31:    */   
 /*  32:    */   protected void h()
@@ -35,7 +35,7 @@ package net.minecraft.src;
 /*  35: 62 */     this.ac.a(16, Byte.valueOf((byte)0));
 /*  36:    */   }
 /*  37:    */   
-/*  38:    */   protected void E()
+/*  38:    */   protected void mobTick()
 /*  39:    */   {
 /*  40: 67 */     if (--this.b <= 0)
 /*  41:    */     {
@@ -47,11 +47,11 @@ package net.minecraft.src;
 /*  47:    */       }
 /*  48:    */       else
 /*  49:    */       {
-/*  50: 73 */         BlockPosition localdt = this.a.a();
-/*  51: 74 */         a(localdt, (int)(this.a.b() * 0.6F));
+/*  50: 73 */         BlockPosition localdt = this.a.getCenter();
+/*  51: 74 */         a(localdt, (int)(this.a.getRadius() * 0.6F));
 /*  52:    */       }
 /*  53:    */     }
-/*  54: 78 */     super.E();
+/*  54: 78 */     super.mobTick();
 /*  55:    */   }
 /*  56:    */   
 /*  57:    */   protected void aW()
@@ -184,11 +184,11 @@ package net.minecraft.src;
 /* 184:    */   {
 /* 185:203 */     int i = this.rng.nextInt(3);
 /* 186:204 */     for (int j = 0; j < i; j++) {
-/* 187:205 */       a(Item.fromProtoBlock(BlockList.redFlower), 1, EnumFlowerVariant.b.b());
+/* 187:205 */       throwItem(Item.fromProtoBlock(BlockList.redFlower), 1, EnumFlowerVariant.b.b());
 /* 188:    */     }
 /* 189:207 */     j = 3 + this.rng.nextInt(3);
 /* 190:208 */     for (int k = 0; k < j; k++) {
-/* 191:209 */       a(ItemList.j, 1);
+/* 191:209 */       a(ItemList.ironIngot, 1);
 /* 192:    */     }
 /* 193:    */   }
 /* 194:    */   

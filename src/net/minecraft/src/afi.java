@@ -50,7 +50,7 @@ package net.minecraft.src;
 /*  49:    */     
 /*  50:554 */     this.a.s().n();
 /*  51:555 */     this.a.p().a(localxm, 90.0F, 90.0F);
-/*  52:557 */     if (!this.a.t(localxm))
+/*  52:557 */     if (!this.a.canSee(localxm))
 /*  53:    */     {
 /*  54:558 */       this.a.d((EntityLiving)null);
 /*  55:559 */       return;

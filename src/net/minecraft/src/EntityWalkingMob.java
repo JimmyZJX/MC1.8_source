@@ -91,7 +91,7 @@ package net.minecraft.src;
 /*  90:    */       }
 /*  91: 91 */       if (!this.bk)
 /*  92:    */       {
-/*  93: 92 */         this.i.a(2, this.c);
+/*  93: 92 */         this.goalSelector.a(2, this.c);
 /*  94: 93 */         if ((s() instanceof aay)) {
 /*  95: 94 */           ((aay)s()).a(false);
 /*  96:    */         }
@@ -118,7 +118,7 @@ package net.minecraft.src;
 /* 117:118 */     else if ((!cb()) && (this.bk))
 /* 118:    */     {
 /* 119:119 */       this.bk = false;
-/* 120:120 */       this.i.a(this.c);
+/* 120:120 */       this.goalSelector.a(this.c);
 /* 121:121 */       if ((s() instanceof aay)) {
 /* 122:122 */         ((aay)s()).a(true);
 /* 123:    */       }

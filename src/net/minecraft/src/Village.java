@@ -8,8 +8,8 @@ package net.minecraft.src;
 /*   9:    */ {
 /*  10:    */   private World world;
 /*  11: 31 */   private final List<VillageDoor> doors = Lists.newArrayList();
-/*  12: 33 */   private BlockPosition c = BlockPosition.zero;
-/*  13: 34 */   private BlockPosition d = BlockPosition.zero;
+/*  12: 33 */   private BlockPosition totalDoorCoordinate = BlockPosition.zero;
+/*  13: 34 */   private BlockPosition center = BlockPosition.zero;
 /*  14:    */   private int radius;
 /*  15:    */   private int stable;
 /*  16:    */   private int tick;
@@ -45,7 +45,7 @@ package net.minecraft.src;
 /*  46: 80 */     int golemCap = this.population / 10;
 /*  47: 81 */     if ((this.golemCount < golemCap) && (this.doors.size() > 20) && (this.world.rng.nextInt(7000) == 0))
 /*  48:    */     {
-/*  49: 82 */       Vec3 pos = getGolemSpawnPoint(this.d, 2, 4, 2);
+/*  49: 82 */       Vec3 pos = getGolemSpawnPoint(this.center, 2, 4, 2);
 /*  50: 83 */       if (pos != null)
 /*  51:    */       {
 /*  52: 84 */         EntityIronGolem golem = new EntityIronGolem(this.world);
@@ -91,25 +91,25 @@ package net.minecraft.src;
 /*  92:    */   
 /*  93:    */   private void countGolem()
 /*  94:    */   {
-/*  95:147 */     List<EntityIronGolem> list = this.world.getEntityList(EntityIronGolem.class, new AABB(this.d.getX() - this.radius, this.d.getY() - 4, this.d.getZ() - this.radius, this.d.getX() + this.radius, this.d.getY() + 4, this.d.getZ() + this.radius));
+/*  95:147 */     List<EntityIronGolem> list = this.world.getEntityList(EntityIronGolem.class, new AABB(this.center.getX() - this.radius, this.center.getY() - 4, this.center.getZ() - this.radius, this.center.getX() + this.radius, this.center.getY() + 4, this.center.getZ() + this.radius));
 /*  96:148 */     this.golemCount = list.size();
 /*  97:    */   }
 /*  98:    */   
 /*  99:    */   private void countVillager()
 /* 100:    */   {
-/* 101:152 */     List<EntityVillager> list = this.world.getEntityList(EntityVillager.class, new AABB(this.d.getX() - this.radius, this.d.getY() - 4, this.d.getZ() - this.radius, this.d.getX() + this.radius, this.d.getY() + 4, this.d.getZ() + this.radius));
+/* 101:152 */     List<EntityVillager> list = this.world.getEntityList(EntityVillager.class, new AABB(this.center.getX() - this.radius, this.center.getY() - 4, this.center.getZ() - this.radius, this.center.getX() + this.radius, this.center.getY() + 4, this.center.getZ() + this.radius));
 /* 102:153 */     this.population = list.size();
 /* 103:155 */     if (this.population == 0) {
 /* 104:157 */       this.j.clear();
 /* 105:    */     }
 /* 106:    */   }
 /* 107:    */   
-/* 108:    */   public BlockPosition a()
+/* 108:    */   public BlockPosition getCenter()
 /* 109:    */   {
-/* 110:162 */     return this.d;
+/* 110:162 */     return this.center;
 /* 111:    */   }
 /* 112:    */   
-/* 113:    */   public int b()
+/* 113:    */   public int getRadius()
 /* 114:    */   {
 /* 115:166 */     return this.radius;
 /* 116:    */   }
@@ -131,7 +131,7 @@ package net.minecraft.src;
 /* 132:    */   
 /* 133:    */   public boolean a(BlockPosition paramdt)
 /* 134:    */   {
-/* 135:182 */     return this.d.dist2(paramdt) < this.radius * this.radius;
+/* 135:182 */     return this.center.dist2(paramdt) < this.radius * this.radius;
 /* 136:    */   }
 /* 137:    */   
 /* 138:    */   public List<VillageDoor> f()
@@ -178,7 +178,7 @@ package net.minecraft.src;
 /* 179:    */   
 /* 180:    */   public VillageDoor e(BlockPosition paramdt)
 /* 181:    */   {
-/* 182:226 */     if (this.d.dist2(paramdt) > this.radius * this.radius) {
+/* 182:226 */     if (this.center.dist2(paramdt) > this.radius * this.radius) {
 /* 183:227 */       return null;
 /* 184:    */     }
 /* 185:229 */     for (VillageDoor localabh : this.doors) {
@@ -189,12 +189,12 @@ package net.minecraft.src;
 /* 190:234 */     return null;
 /* 191:    */   }
 /* 192:    */   
-/* 193:    */   public void addDoor(VillageDoor paramabh)
+/* 193:    */   public void addDoor(VillageDoor door)
 /* 194:    */   {
-/* 195:238 */     this.doors.add(paramabh);
-/* 196:239 */     this.c = this.c.offset(paramabh.getPos());
-/* 197:240 */     n();
-/* 198:241 */     this.stable = paramabh.getLastConfirmed();
+/* 195:238 */     this.doors.add(door);
+/* 196:239 */     this.totalDoorCoordinate = this.totalDoorCoordinate.offset(door.getPos());
+/* 197:240 */     updateDoors();
+/* 198:241 */     this.stable = door.getLastConfirmed();
 /* 199:    */   }
 /* 200:    */   
 /* 201:    */   public boolean isDead()
@@ -238,7 +238,7 @@ package net.minecraft.src;
 /* 239:277 */     for (String str : this.j.keySet()) {
 /* 240:278 */       if (d(str))
 /* 241:    */       {
-/* 242:279 */         EntityPlayer localahd = this.world.a(str);
+/* 242:279 */         EntityPlayer localahd = this.world.getPlayer(str);
 /* 243:280 */         if (localahd != null)
 /* 244:    */         {
 /* 245:281 */           double d2 = localahd.h(paramxm);
@@ -276,14 +276,14 @@ package net.minecraft.src;
 /* 277:    */       }
 /* 278:312 */       if ((!isWoodenDoor(door.getPos())) || (Math.abs(this.tick - door.getLastConfirmed()) > 1200))
 /* 279:    */       {
-/* 280:313 */         this.c = this.c.offset(door.getPos().a(-1));
+/* 280:313 */         this.totalDoorCoordinate = this.totalDoorCoordinate.offset(door.getPos().a(-1));
 /* 281:314 */         flag = 1;
 /* 282:315 */         door.setDead(true);
 /* 283:316 */         it.remove();
 /* 284:    */       }
 /* 285:    */     }
 /* 286:320 */     if (flag != 0) {
-/* 287:321 */       n();
+/* 287:321 */       updateDoors();
 /* 288:    */     }
 /* 289:    */   }
 /* 290:    */   
@@ -296,21 +296,21 @@ package net.minecraft.src;
 /* 297:330 */     return false;
 /* 298:    */   }
 /* 299:    */   
-/* 300:    */   private void n()
+/* 300:    */   private void updateDoors()
 /* 301:    */   {
 /* 302:334 */     int m = this.doors.size();
 /* 303:335 */     if (m == 0)
 /* 304:    */     {
-/* 305:336 */       this.d = new BlockPosition(0, 0, 0);
+/* 305:336 */       this.center = new BlockPosition(0, 0, 0);
 /* 306:337 */       this.radius = 0;
 /* 307:338 */       return;
 /* 308:    */     }
-/* 309:340 */     this.d = new BlockPosition(this.c.getX() / m, this.c.getY() / m, this.c.getZ() / m);
-/* 310:341 */     int n = 0;
-/* 311:342 */     for (VillageDoor localabh : this.doors) {
-/* 312:343 */       n = Math.max(localabh.dist2(this.d), n);
+/* 309:340 */     this.center = new BlockPosition(this.totalDoorCoordinate.getX() / m, this.totalDoorCoordinate.getY() / m, this.totalDoorCoordinate.getZ() / m);
+/* 310:341 */     int radius2 = 0;
+/* 311:342 */     for (VillageDoor door : this.doors) {
+/* 312:343 */       radius2 = Math.max(door.dist2(this.center), radius2);
 /* 313:    */     }
-/* 314:345 */     this.radius = Math.max(32, (int)Math.sqrt(n) + 1);
+/* 314:345 */     this.radius = Math.max(32, (int)Math.sqrt(radius2) + 1);
 /* 315:    */   }
 /* 316:    */   
 /* 317:    */   public int a(String paramString)
@@ -343,8 +343,8 @@ package net.minecraft.src;
 /* 344:379 */     this.stable = paramfn.getInteger("Stable");
 /* 345:380 */     this.tick = paramfn.getInteger("Tick");
 /* 346:381 */     this.mtick = paramfn.getInteger("MTick");
-/* 347:382 */     this.d = new BlockPosition(paramfn.getInteger("CX"), paramfn.getInteger("CY"), paramfn.getInteger("CZ"));
-/* 348:383 */     this.c = new BlockPosition(paramfn.getInteger("ACX"), paramfn.getInteger("ACY"), paramfn.getInteger("ACZ"));
+/* 347:382 */     this.center = new BlockPosition(paramfn.getInteger("CX"), paramfn.getInteger("CY"), paramfn.getInteger("CZ"));
+/* 348:383 */     this.totalDoorCoordinate = new BlockPosition(paramfn.getInteger("ACX"), paramfn.getInteger("ACY"), paramfn.getInteger("ACZ"));
 /* 349:    */     
 /* 350:385 */     fv localfv1 = paramfn.c("Doors", 10);
 /* 351:    */     
@@ -371,12 +371,12 @@ package net.minecraft.src;
 /* 372:404 */     tag.setInt("Stable", this.stable);
 /* 373:405 */     tag.setInt("Tick", this.tick);
 /* 374:406 */     tag.setInt("MTick", this.mtick);
-/* 375:407 */     tag.setInt("CX", this.d.getX());
-/* 376:408 */     tag.setInt("CY", this.d.getY());
-/* 377:409 */     tag.setInt("CZ", this.d.getZ());
-/* 378:410 */     tag.setInt("ACX", this.c.getX());
-/* 379:411 */     tag.setInt("ACY", this.c.getY());
-/* 380:412 */     tag.setInt("ACZ", this.c.getZ());
+/* 375:407 */     tag.setInt("CX", this.center.getX());
+/* 376:408 */     tag.setInt("CY", this.center.getY());
+/* 377:409 */     tag.setInt("CZ", this.center.getZ());
+/* 378:410 */     tag.setInt("ACX", this.totalDoorCoordinate.getX());
+/* 379:411 */     tag.setInt("ACY", this.totalDoorCoordinate.getY());
+/* 380:412 */     tag.setInt("ACZ", this.totalDoorCoordinate.getZ());
 /* 381:    */     
 /* 382:414 */     fv localfv = new fv();
 /* 383:415 */     for (Iterator<VillageDoor> it = this.doors.iterator(); it.hasNext();)

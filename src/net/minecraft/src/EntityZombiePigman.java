@@ -26,8 +26,8 @@ package net.minecraft.src;
 /*  27:    */   
 /*  28:    */   protected void n()
 /*  29:    */   {
-/*  30: 48 */     this.bg.a(1, new afq(this));
-/*  31: 49 */     this.bg.a(2, new afp(this));
+/*  30: 48 */     this.targetSelector.a(1, new afq(this));
+/*  31: 49 */     this.targetSelector.a(2, new afp(this));
 /*  32:    */   }
 /*  33:    */   
 /*  34:    */   protected void aW()
@@ -44,7 +44,7 @@ package net.minecraft.src;
 /*  45: 63 */     super.onUpdate();
 /*  46:    */   }
 /*  47:    */   
-/*  48:    */   protected void E()
+/*  48:    */   protected void mobTick()
 /*  49:    */   {
 /*  50: 68 */     xz localxz = a(afs.d);
 /*  51: 69 */     if (ck())
@@ -70,7 +70,7 @@ package net.minecraft.src;
 /*  71: 88 */       this.aL = player;
 /*  72: 89 */       this.aM = bd();
 /*  73:    */     }
-/*  74: 93 */     super.E();
+/*  74: 93 */     super.mobTick();
 /*  75:    */   }
 /*  76:    */   
 /*  77:    */   public boolean canSpawn()
@@ -173,12 +173,12 @@ package net.minecraft.src;
 /* 174:    */   
 /* 175:    */   protected void bp()
 /* 176:    */   {
-/* 177:192 */     a(ItemList.k, 1);
+/* 177:192 */     a(ItemList.goldIngot, 1);
 /* 178:    */   }
 /* 179:    */   
 /* 180:    */   protected void a(vu paramvu)
 /* 181:    */   {
-/* 182:197 */     c(0, new ItemStack(ItemList.goldenSword));
+/* 182:197 */     setItemStack(0, new ItemStack(ItemList.goldenSword));
 /* 183:    */   }
 /* 184:    */   
 /* 185:    */   public xq beforeSpawn(vu paramvu, xq paramxq)

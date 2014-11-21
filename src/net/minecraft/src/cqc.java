@@ -27,7 +27,7 @@ package net.minecraft.src;
 /*  26: 38 */       if (localxm != null)
 /*  27:    */       {
 /*  28: 40 */         Vec3 localbrw1 = a(localxm, localxm.height * 0.5D, 1.0F);
-/*  29: 41 */         Vec3 localbrw2 = a(paramafg, (double)paramafg.aR(), 1.0F);
+/*  29: 41 */         Vec3 localbrw2 = a(paramafg, (double)paramafg.getEyeHeight(), 1.0F);
 /*  30: 43 */         if (paramcox.a(AABB.a(localbrw2.x, localbrw2.y, localbrw2.z, localbrw1.x, localbrw1.y, localbrw1.z))) {
 /*  31: 44 */           return true;
 /*  32:    */         }
@@ -74,7 +74,7 @@ package net.minecraft.src;
 /*  73:    */       
 /*  74: 85 */       float f3 = (float)paramafg.world.K() + paramFloat2;
 /*  75: 86 */       float f4 = f3 * 0.5F % 1.0F;
-/*  76: 87 */       float f5 = paramafg.aR();
+/*  76: 87 */       float f5 = paramafg.getEyeHeight();
 /*  77:    */       
 /*  78: 89 */       cjm.glPushMatrix();
 /*  79: 90 */       cjm.glTranslatef((float)paramDouble1, (float)paramDouble2 + f5, (float)paramDouble3);

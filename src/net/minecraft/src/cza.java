@@ -354,7 +354,7 @@ package net.minecraft.src;
 /* 353:424 */     float f2 = paramahd.lastYaw + (paramahd.yaw - paramahd.lastYaw) * paramFloat;
 /* 354:    */     
 /* 355:426 */     double d1 = paramahd.lastX + (paramahd.xPos - paramahd.lastX) * paramFloat;
-/* 356:427 */     double d2 = paramahd.lastY + (paramahd.yPos - paramahd.lastY) * paramFloat + paramahd.aR();
+/* 356:427 */     double d2 = paramahd.lastY + (paramahd.yPos - paramahd.lastY) * paramFloat + paramahd.getEyeHeight();
 /* 357:428 */     double d3 = paramahd.lastZ + (paramahd.zPos - paramahd.lastZ) * paramFloat;
 /* 358:    */     
 /* 359:430 */     float f3 = MathUtils.cos((f2 + 90.0F) * 0.01745329F);

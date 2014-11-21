@@ -64,7 +64,7 @@ package net.minecraft.src;
 /*  64:117 */     ItemStack localamj2 = localamj1.k();
 /*  65:    */     
 /*  66:119 */     EntityItem localadw = new EntityItem(paramaqu, paramdt.getX() + d1, paramdt.getY() + d2, paramdt.getZ() + d3, localamj2);
-/*  67:120 */     localadw.p();
+/*  67:120 */     localadw.initPickupDelay();
 /*  68:121 */     paramaqu.spawnEntity(localadw);
 /*  69:    */   }
 /*  70:    */   

@@ -16,27 +16,27 @@ package net.minecraft.src;
 /*  17: 43 */     a(0.6F, 0.8F);
 /*  18:    */     
 /*  19: 45 */     ((aay)s()).a(true);
-/*  20: 46 */     this.i.a(1, new yy(this));
-/*  21: 47 */     this.i.a(2, this.bk);
-/*  22: 48 */     this.i.a(3, new zg(this, 0.4F));
-/*  23: 49 */     this.i.a(4, new zk(this, 1.0D, true));
-/*  24: 50 */     this.i.a(5, new yz(this, 1.0D, 10.0F, 2.0F));
-/*  25: 51 */     this.i.a(6, new yt(this, 1.0D));
-/*  26: 52 */     this.i.a(7, new zy(this, 1.0D));
-/*  27: 53 */     this.i.a(8, new yr(this, 8.0F));
-/*  28: 54 */     this.i.a(9, new zh(this, EntityPlayer.class, 8.0F));
-/*  29: 55 */     this.i.a(9, new zx(this));
+/*  20: 46 */     this.goalSelector.a(1, new yy(this));
+/*  21: 47 */     this.goalSelector.a(2, this.bk);
+/*  22: 48 */     this.goalSelector.a(3, new zg(this, 0.4F));
+/*  23: 49 */     this.goalSelector.a(4, new zk(this, 1.0D, true));
+/*  24: 50 */     this.goalSelector.a(5, new yz(this, 1.0D, 10.0F, 2.0F));
+/*  25: 51 */     this.goalSelector.a(6, new yt(this, 1.0D));
+/*  26: 52 */     this.goalSelector.a(7, new zy(this, 1.0D));
+/*  27: 53 */     this.goalSelector.a(8, new yr(this, 8.0F));
+/*  28: 54 */     this.goalSelector.a(9, new zh(this, EntityPlayer.class, 8.0F));
+/*  29: 55 */     this.goalSelector.a(9, new zx(this));
 /*  30:    */     
-/*  31: 57 */     this.bg.a(1, new aau(this));
-/*  32: 58 */     this.bg.a(2, new aav(this));
-/*  33: 59 */     this.bg.a(3, new aal(this, true, new Class[0]));
-/*  34: 60 */     this.bg.a(4, new aat(this, EntityAnimal.class, false, new acv(this)));
+/*  31: 57 */     this.targetSelector.a(1, new aau(this));
+/*  32: 58 */     this.targetSelector.a(2, new aav(this));
+/*  33: 59 */     this.targetSelector.a(3, new aal(this, true, new Class[0]));
+/*  34: 60 */     this.targetSelector.a(4, new aat(this, EntityAnimal.class, false, new acv(this)));
 /*  35:    */     
 /*  36:    */ 
 /*  37:    */ 
 /*  38:    */ 
 /*  39:    */ 
-/*  40: 66 */     this.bg.a(5, new aaq(this, EntitySkeleton.class, false));
+/*  40: 66 */     this.targetSelector.a(5, new aaq(this, EntitySkeleton.class, false));
 /*  41:    */     
 /*  42: 68 */     m(false);
 /*  43:    */   }
@@ -65,7 +65,7 @@ package net.minecraft.src;
 /*  66:    */     }
 /*  67:    */   }
 /*  68:    */   
-/*  69:    */   protected void E()
+/*  69:    */   protected void mobTick()
 /*  70:    */   {
 /*  71: 99 */     this.ac.b(18, Float.valueOf(getHealth()));
 /*  72:    */   }
@@ -223,7 +223,7 @@ package net.minecraft.src;
 /* 224:246 */     return (this.bn + (this.bm - this.bn) * paramFloat) * 0.15F * 3.141593F;
 /* 225:    */   }
 /* 226:    */   
-/* 227:    */   public float aR()
+/* 227:    */   public float getEyeHeight()
 /* 228:    */   {
 /* 229:251 */     return this.height * 0.8F;
 /* 230:    */   }
@@ -460,7 +460,7 @@ package net.minecraft.src;
 /* 461:469 */     return this.ac.a(19) == 1;
 /* 462:    */   }
 /* 463:    */   
-/* 464:    */   protected boolean C()
+/* 464:    */   protected boolean canDespawn()
 /* 465:    */   {
 /* 466:474 */     return (!cj()) && (this.W > 2400);
 /* 467:    */   }

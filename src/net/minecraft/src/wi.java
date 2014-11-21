@@ -29,7 +29,7 @@ package net.minecraft.src;
 /* 28:   */   
 /* 29:   */   public ho b(EntityLiving paramxm)
 /* 30:   */   {
-/* 31:36 */     ItemStack localObject = (this.q instanceof EntityLiving) ? ((EntityLiving)this.q).bz() : null;
+/* 31:36 */     ItemStack localObject = (this.q instanceof EntityLiving) ? ((EntityLiving)this.q).getHeldItemStack() : null;
 /* 32:37 */     String str1 = "death.attack." + this.p;
 /* 33:38 */     String str2 = str1 + ".item";
 /* 34:40 */     if ((localObject != null) && (localObject.s()) && (fi.c(str2))) {

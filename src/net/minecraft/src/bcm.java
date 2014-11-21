@@ -50,7 +50,7 @@ package net.minecraft.src;
 /*  49: 61 */   private int data = -1;
 /*  50:    */   protected ProtoBlock e;
 /*  51:    */   
-/*  52:    */   public World z()
+/*  52:    */   public World getWorld()
 /*  53:    */   {
 /*  54: 65 */     return this.world;
 /*  55:    */   }

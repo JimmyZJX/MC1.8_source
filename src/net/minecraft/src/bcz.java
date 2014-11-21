@@ -39,7 +39,7 @@ package net.minecraft.src;
 /*  38: 46 */     this.k = this.j;
 /*  39: 47 */     this.m = this.l;
 /*  40:    */     
-/*  41: 49 */     EntityPlayer localahd = this.world.a(this.pos.getX() + 0.5F, this.pos.getY() + 0.5F, this.pos.getZ() + 0.5F, 3.0D);
+/*  41: 49 */     EntityPlayer localahd = this.world.getNearestPlayer(this.pos.getX() + 0.5F, this.pos.getY() + 0.5F, this.pos.getZ() + 0.5F, 3.0D);
 /*  42: 50 */     if (localahd != null)
 /*  43:    */     {
 /*  44: 51 */       double d1 = localahd.xPos - (this.pos.getX() + 0.5F);
