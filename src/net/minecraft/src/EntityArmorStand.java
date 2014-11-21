@@ -32,7 +32,7 @@ package net.minecraft.src;
 /*  31:    */   public EntityArmorStand(World paramaqu, double paramDouble1, double paramDouble2, double paramDouble3)
 /*  32:    */   {
 /*  33: 77 */     this(paramaqu);
-/*  34: 78 */     b(paramDouble1, paramDouble2, paramDouble3);
+/*  34: 78 */     setPos(paramDouble1, paramDouble2, paramDouble3);
 /*  35:    */   }
 /*  36:    */   
 /*  37:    */   public boolean bL()
@@ -418,7 +418,7 @@ package net.minecraft.src;
 /* 417:    */   private void z()
 /* 418:    */   {
 /* 419:446 */     if ((this.world instanceof WorldServer)) {
-/* 420:447 */       ((WorldServer)this.world).a(EnumParticleEffect.M, this.xPos, this.yPos + this.K / 1.5D, this.zPos, 10, this.J / 4.0F, this.K / 4.0F, this.J / 4.0F, 0.05D, new int[] { ProtoBlock.f(BlockList.planks.instance()) });
+/* 420:447 */       ((WorldServer)this.world).a(EnumParticleEffect.M, this.xPos, this.yPos + this.height / 1.5D, this.zPos, 10, this.width / 4.0F, this.height / 4.0F, this.width / 4.0F, 0.05D, new int[] { ProtoBlock.f(BlockList.planks.instance()) });
 /* 421:    */     }
 /* 422:    */   }
 /* 423:    */   
@@ -465,7 +465,7 @@ package net.minecraft.src;
 /* 464:    */   
 /* 465:    */   public float aR()
 /* 466:    */   {
-/* 467:487 */     return i_() ? this.K * 0.5F : this.K * 0.9F;
+/* 467:487 */     return i_() ? this.height * 0.5F : this.height * 0.9F;
 /* 468:    */   }
 /* 469:    */   
 /* 470:    */   public void g(float paramFloat1, float paramFloat2)

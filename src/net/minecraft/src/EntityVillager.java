@@ -526,7 +526,7 @@ package net.minecraft.src;
 /*  527: 924 */       double d1 = this.rng.nextGaussian() * 0.02D;
 /*  528: 925 */       double d2 = this.rng.nextGaussian() * 0.02D;
 /*  529: 926 */       double d3 = this.rng.nextGaussian() * 0.02D;
-/*  530: 927 */       this.world.a(paramew, this.xPos + this.rng.nextFloat() * this.J * 2.0F - this.J, this.yPos + 1.0D + this.rng.nextFloat() * this.K, this.zPos + this.rng.nextFloat() * this.J * 2.0F - this.J, d1, d2, d3, new int[0]);
+/*  530: 927 */       this.world.a(paramew, this.xPos + this.rng.nextFloat() * this.width * 2.0F - this.width, this.yPos + 1.0D + this.rng.nextFloat() * this.height, this.zPos + this.rng.nextFloat() * this.width * 2.0F - this.width, d1, d2, d3, new int[0]);
 /*  531:     */     }
 /*  532:     */   }
 /*  533:     */   

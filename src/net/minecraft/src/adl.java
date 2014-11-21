@@ -13,7 +13,7 @@ package net.minecraft.src;
 /*  12:    */   public adl(World paramaqu, BlockPosition paramdt)
 /*  13:    */   {
 /*  14: 28 */     super(paramaqu, paramdt);
-/*  15: 29 */     b(paramdt.getX() + 0.5D, paramdt.getY() + 0.5D, paramdt.getZ() + 0.5D);
+/*  15: 29 */     setPos(paramdt.getX() + 0.5D, paramdt.getY() + 0.5D, paramdt.getZ() + 0.5D);
 /*  16: 30 */     float f1 = 0.125F;
 /*  17: 31 */     float f2 = 0.1875F;
 /*  18: 32 */     float f3 = 0.25F;
@@ -70,7 +70,7 @@ package net.minecraft.src;
 /*  69: 90 */       (!this.world.isClient))
 /*  70:    */     {
 /*  71: 92 */       d = 7.0D;
-/*  72: 93 */       localList = this.world.a(EntityMob.class, new AABB(this.xPos - d, this.yPos - d, this.zPos - d, this.xPos + d, this.yPos + d, this.zPos + d));
+/*  72: 93 */       localList = this.world.getEntityList(EntityMob.class, new AABB(this.xPos - d, this.yPos - d, this.zPos - d, this.xPos + d, this.yPos + d, this.zPos + d));
 /*  73: 94 */       for (localIterator = localList.iterator(); localIterator.hasNext();)
 /*  74:    */       {
 /*  75: 94 */         EntityMob localxn = (EntityMob)localIterator.next();
@@ -88,7 +88,7 @@ package net.minecraft.src;
 /*  87:105 */       if (paramahd.by.d)
 /*  88:    */       {
 /*  89:107 */         d = 7.0D;
-/*  90:108 */         localList = this.world.a(EntityMob.class, new AABB(this.xPos - d, this.yPos - d, this.zPos - d, this.xPos + d, this.yPos + d, this.zPos + d));
+/*  90:108 */         localList = this.world.getEntityList(EntityMob.class, new AABB(this.xPos - d, this.yPos - d, this.zPos - d, this.xPos + d, this.yPos + d, this.zPos + d));
 /*  91:109 */         for (localIterator = localList.iterator(); localIterator.hasNext();)
 /*  92:    */         {
 /*  93:109 */           localxn = (EntityMob)localIterator.next();
@@ -120,7 +120,7 @@ package net.minecraft.src;
 /* 119:134 */     int j = paramdt.getY();
 /* 120:135 */     int k = paramdt.getZ();
 /* 121:    */     
-/* 122:137 */     List<adl> localList = paramaqu.a(adl.class, new AABB(i - 1.0D, j - 1.0D, k - 1.0D, i + 1.0D, j + 1.0D, k + 1.0D));
+/* 122:137 */     List<adl> localList = paramaqu.getEntityList(adl.class, new AABB(i - 1.0D, j - 1.0D, k - 1.0D, i + 1.0D, j + 1.0D, k + 1.0D));
 /* 123:138 */     for (adl localadl : localList) {
 /* 124:139 */       if (localadl.n().equals(paramdt)) {
 /* 125:140 */         return localadl;

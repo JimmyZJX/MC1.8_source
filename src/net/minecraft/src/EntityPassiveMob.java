@@ -123,7 +123,7 @@ package net.minecraft.src;
 /* 123:129 */       if (this.c > 0)
 /* 124:    */       {
 /* 125:130 */         if (this.c % 4 == 0) {
-/* 126:131 */           this.world.a(EnumParticleEffect.VILLAGER_HAPPY, this.xPos + this.rng.nextFloat() * this.J * 2.0F - this.J, this.yPos + 0.5D + this.rng.nextFloat() * this.K, this.zPos + this.rng.nextFloat() * this.J * 2.0F - this.J, 0.0D, 0.0D, 0.0D, new int[0]);
+/* 126:131 */           this.world.a(EnumParticleEffect.VILLAGER_HAPPY, this.xPos + this.rng.nextFloat() * this.width * 2.0F - this.width, this.yPos + 0.5D + this.rng.nextFloat() * this.height, this.zPos + this.rng.nextFloat() * this.width * 2.0F - this.width, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 127:    */         }
 /* 128:133 */         this.c -= 1;
 /* 129:    */       }

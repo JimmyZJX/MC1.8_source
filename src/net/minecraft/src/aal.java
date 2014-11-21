@@ -29,7 +29,7 @@ package net.minecraft.src;
 /* 28:32 */     if (this.a)
 /* 29:   */     {
 /* 30:33 */       double d = f();
-/* 31:34 */       List<? extends EntityWalkingMob> localList = this.e.world.a(this.e.getClass(), new AABB(this.e.xPos, this.e.yPos, this.e.zPos, this.e.xPos + 1.0D, this.e.yPos + 1.0D, this.e.zPos + 1.0D).expand(d, 10.0D, d));
+/* 31:34 */       List<? extends EntityWalkingMob> localList = this.e.world.getEntityList(this.e.getClass(), new AABB(this.e.xPos, this.e.yPos, this.e.zPos, this.e.xPos + 1.0D, this.e.yPos + 1.0D, this.e.zPos + 1.0D).expand(d, 10.0D, d));
 /* 32:35 */       for (EntityWalkingMob localxu : localList) {
 /* 33:36 */         if ((this.e != localxu) && 
 /* 34:   */         

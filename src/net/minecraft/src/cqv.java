@@ -379,7 +379,7 @@ package net.minecraft.src;
 /* 378:391 */       if ((str != null) && ((str.equals("Dinnerbone")) || (str.equals("Grumm"))) && (
 /* 379:392 */         (!(paramxm instanceof EntityPlayer)) || (((EntityPlayer)paramxm).a(ahh.a))))
 /* 380:    */       {
-/* 381:393 */         cjm.glTranslatef(0.0F, paramxm.K + 0.1F, 0.0F);
+/* 381:393 */         cjm.glTranslatef(0.0F, paramxm.height + 0.1F, 0.0F);
 /* 382:394 */         cjm.glRotatef(180.0F, 0.0F, 0.0F, 1.0F);
 /* 383:    */       }
 /* 384:    */     }
@@ -436,7 +436,7 @@ package net.minecraft.src;
 /* 435:446 */       bty localbty = c();
 /* 436:447 */       cjm.glPushMatrix();
 /* 437:    */       
-/* 438:449 */       cjm.glTranslatef((float)paramDouble1, (float)paramDouble2 + paramxm.K + 0.5F - (paramxm.i_() ? paramxm.K / 2.0F : 0.0F), (float)paramDouble3);
+/* 438:449 */       cjm.glTranslatef((float)paramDouble1, (float)paramDouble2 + paramxm.height + 0.5F - (paramxm.i_() ? paramxm.height / 2.0F : 0.0F), (float)paramDouble3);
 /* 439:450 */       GL11.glNormal3f(0.0F, 1.0F, 0.0F);
 /* 440:    */       
 /* 441:452 */       cjm.glRotatef(-this.b.e, 0.0F, 1.0F, 0.0F);
@@ -475,7 +475,7 @@ package net.minecraft.src;
 /* 474:    */     }
 /* 475:    */     else
 /* 476:    */     {
-/* 477:486 */       a(paramxm, paramDouble1, paramDouble2 - (paramxm.i_() ? paramxm.K / 2.0F : 0.0D), paramDouble3, str, 0.02666667F, d);
+/* 477:486 */       a(paramxm, paramDouble1, paramDouble2 - (paramxm.i_() ? paramxm.height / 2.0F : 0.0D), paramDouble3, str, 0.02666667F, d);
 /* 478:    */     }
 /* 479:    */   }
 /* 480:    */   

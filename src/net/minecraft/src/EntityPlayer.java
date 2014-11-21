@@ -232,7 +232,7 @@ package net.minecraft.src;
 /*  231: 335 */     double d5 = MathUtils.clamp(this.xPos, -29999999.0D, 29999999.0D);
 /*  232: 336 */     double d6 = MathUtils.clamp(this.zPos, -29999999.0D, 29999999.0D);
 /*  233: 337 */     if ((d5 != this.xPos) || (d6 != this.zPos)) {
-/*  234: 338 */       b(d5, this.yPos, d6);
+/*  234: 338 */       setPos(d5, this.yPos, d6);
 /*  235:     */     }
 /*  236:     */   }
 /*  237:     */   
@@ -459,7 +459,7 @@ package net.minecraft.src;
 /*  458:     */   {
 /*  459: 559 */     super.a(paramwh);
 /*  460: 560 */     a(0.2F, 0.2F);
-/*  461: 561 */     b(this.xPos, this.yPos, this.zPos);
+/*  461: 561 */     setPos(this.xPos, this.yPos, this.zPos);
 /*  462: 562 */     this.yVelocity = 0.1000000014901161D;
 /*  463: 564 */     if (getName().equals("Notch")) {
 /*  464: 565 */       a(new ItemStack(ItemList.apple, 1), true, false);
@@ -1029,7 +1029,7 @@ package net.minecraft.src;
 /* 1028:     */       }
 /* 1029:1171 */       double d1 = 8.0D;
 /* 1030:1172 */       double d2 = 5.0D;
-/* 1031:1173 */       List<EntityHostileMob> localList = this.world.a(EntityHostileMob.class, new AABB(paramdt.getX() - d1, paramdt.getY() - d2, paramdt.getZ() - d1, paramdt.getX() + d1, paramdt.getY() + d2, paramdt.getZ() + d1));
+/* 1031:1173 */       List<EntityHostileMob> localList = this.world.getEntityList(EntityHostileMob.class, new AABB(paramdt.getX() - d1, paramdt.getY() - d2, paramdt.getZ() - d1, paramdt.getX() + d1, paramdt.getY() + d2, paramdt.getZ() + d1));
 /* 1032:1174 */       if (!localList.isEmpty()) {
 /* 1033:1175 */         return ahf.f;
 /* 1034:     */       }
@@ -1057,11 +1057,11 @@ package net.minecraft.src;
 /* 1056:1199 */         f1 = 0.9F;
 /* 1057:     */       }
 /* 1058:1202 */       a(localej);
-/* 1059:1203 */       b(paramdt.getX() + f1, paramdt.getY() + 0.6875F, paramdt.getZ() + f2);
+/* 1059:1203 */       setPos(paramdt.getX() + f1, paramdt.getY() + 0.6875F, paramdt.getZ() + f2);
 /* 1060:     */     }
 /* 1061:     */     else
 /* 1062:     */     {
-/* 1063:1205 */       b(paramdt.getX() + 0.5F, paramdt.getY() + 0.6875F, paramdt.getZ() + 0.5F);
+/* 1063:1205 */       setPos(paramdt.getX() + 0.5F, paramdt.getY() + 0.6875F, paramdt.getZ() + 0.5F);
 /* 1064:     */     }
 /* 1065:1207 */     this.bu = true;
 /* 1066:1208 */     this.b = 0;
@@ -1106,7 +1106,7 @@ package net.minecraft.src;
 /* 1105:1261 */       if (localdt == null) {
 /* 1106:1262 */         localdt = this.bv.up();
 /* 1107:     */       }
-/* 1108:1264 */       b(localdt.getX() + 0.5F, localdt.getY() + 0.1F, localdt.getZ() + 0.5F);
+/* 1108:1264 */       setPos(localdt.getX() + 0.5F, localdt.getY() + 0.1F, localdt.getZ() + 0.5F);
 /* 1109:     */     }
 /* 1110:1267 */     this.bu = false;
 /* 1111:1268 */     if ((!this.world.isClient) && (paramBoolean2)) {

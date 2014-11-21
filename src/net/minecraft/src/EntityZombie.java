@@ -133,7 +133,7 @@ package net.minecraft.src;
 /* 133:    */     {
 /* 134:177 */       float f = c(1.0F);
 /* 135:178 */       BlockPosition localdt = new BlockPosition(this.xPos, Math.round(this.yPos), this.zPos);
-/* 136:179 */       if ((f > 0.5F) && (this.rng.nextFloat() * 30.0F < (f - 0.4F) * 2.0F) && (this.world.i(localdt)))
+/* 136:179 */       if ((f > 0.5F) && (this.rng.nextFloat() * 30.0F < (f - 0.4F) * 2.0F) && (this.world.hasDaylight(localdt)))
 /* 137:    */       {
 /* 138:180 */         int i = 1;
 /* 139:    */         
@@ -183,7 +183,7 @@ package net.minecraft.src;
 /* 183:223 */           int i2 = k + MathUtils.nextInt(this.rng, 7, 40) * MathUtils.nextInt(this.rng, -1, 1);
 /* 184:225 */           if ((World.isFlatSurface(this.world, new BlockPosition(n, i1 - 1, i2))) && (this.world.l(new BlockPosition(n, i1, i2)) < 10))
 /* 185:    */           {
-/* 186:226 */             localagj.b(n, i1, i2);
+/* 186:226 */             localagj.setPos(n, i1, i2);
 /* 187:228 */             if ((!this.world.isWithinRangeOfAnyPlayer(n, i1, i2, 7.0D)) && (this.world.isCollisionFree(localagj.getAABB(), localagj)) && (this.world.getCollidingAABBs(localagj, localagj.getAABB()).isEmpty()) && (!this.world.isInLiquid(localagj.getAABB())))
 /* 188:    */             {
 /* 189:229 */               this.world.spawnEntity(localagj);

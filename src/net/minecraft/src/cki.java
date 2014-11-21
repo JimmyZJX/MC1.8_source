@@ -348,9 +348,9 @@ package net.minecraft.src;
 /* 347:530 */       cio localcio = this.c.h;
 /* 348:531 */       for (int j = 0; j < 8; j++)
 /* 349:    */       {
-/* 350:532 */         double d1 = localcio.xPos + ((j >> 0) % 2 - 0.5F) * localcio.J * 0.8F;
+/* 350:532 */         double d1 = localcio.xPos + ((j >> 0) % 2 - 0.5F) * localcio.width * 0.8F;
 /* 351:533 */         double d2 = localcio.yPos + ((j >> 1) % 2 - 0.5F) * 0.1F;
-/* 352:534 */         double d3 = localcio.zPos + ((j >> 2) % 2 - 0.5F) * localcio.J * 0.8F;
+/* 352:534 */         double d3 = localcio.zPos + ((j >> 2) % 2 - 0.5F) * localcio.width * 0.8F;
 /* 353:    */         
 /* 354:536 */         BlockPosition localdt = new BlockPosition(d1, d2 + localcio.aR(), d3);
 /* 355:537 */         Block localbec = this.c.f.getBlock(localdt);

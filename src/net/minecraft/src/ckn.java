@@ -809,7 +809,7 @@ package net.minecraft.src;
 /*  808:     */   
 /*  809:     */   private cop a(BlockPosition paramdt1, BlockPosition paramdt2, EnumDirection paramej)
 /*  810:     */   {
-/*  811: 867 */     BlockPosition localdt = paramdt2.a(paramej, 16);
+/*  811: 867 */     BlockPosition localdt = paramdt2.offset(paramej, 16);
 /*  812: 870 */     if (MathUtils.abs(paramdt1.getX() - localdt.getX()) > this.O * 16) {
 /*  813: 871 */       return null;
 /*  814:     */     }

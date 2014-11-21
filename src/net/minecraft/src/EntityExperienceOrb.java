@@ -15,7 +15,7 @@ package net.minecraft.src;
 /*  15:    */   {
 /*  16: 25 */     super(paramaqu);
 /*  17: 26 */     a(0.5F, 0.5F);
-/*  18: 27 */     b(paramDouble1, paramDouble2, paramDouble3);
+/*  18: 27 */     setPos(paramDouble1, paramDouble2, paramDouble3);
 /*  19:    */     
 /*  20: 29 */     this.yaw = ((float)(Math.random() * 360.0D));
 /*  21:    */     

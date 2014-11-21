@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*   7:    */   
 /*   8:    */   public boolean apply(EntityLiving paramxm)
 /*   9:    */   {
-/*  10:401 */     return (paramxm != null) && (paramxm.ai()) && (this.a.i(paramxm.c()));
+/*  10:401 */     return (paramxm != null) && (paramxm.ai()) && (this.a.hasDaylight(paramxm.c()));
 /*  11:    */   }
 /*  12:    */ }
 

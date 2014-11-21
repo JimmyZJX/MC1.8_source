@@ -98,7 +98,7 @@ package net.minecraft.src;
 /*  97:130 */       return false;
 /*  98:    */     }
 /*  99:133 */     Vec3 localbrw1 = paramahd.d(1.0F).normalize();
-/* 100:134 */     Vec3 localbrw2 = new Vec3(this.xPos - paramahd.xPos, getAABB().minY + this.K / 2.0F - (paramahd.yPos + paramahd.aR()), this.zPos - paramahd.zPos);
+/* 100:134 */     Vec3 localbrw2 = new Vec3(this.xPos - paramahd.xPos, getAABB().minY + this.height / 2.0F - (paramahd.yPos + paramahd.aR()), this.zPos - paramahd.zPos);
 /* 101:135 */     double d1 = localbrw2.b();
 /* 102:136 */     localbrw2 = localbrw2.normalize();
 /* 103:137 */     double d2 = localbrw1.dot(localbrw2);
@@ -117,7 +117,7 @@ package net.minecraft.src;
 /* 116:    */   {
 /* 117:151 */     if (this.world.isClient) {
 /* 118:152 */       for (int i = 0; i < 2; i++) {
-/* 119:153 */         this.world.a(EnumParticleEffect.y, this.xPos + (this.rng.nextDouble() - 0.5D) * this.J, this.yPos + this.rng.nextDouble() * this.K - 0.25D, this.zPos + (this.rng.nextDouble() - 0.5D) * this.J, (this.rng.nextDouble() - 0.5D) * 2.0D, -this.rng.nextDouble(), (this.rng.nextDouble() - 0.5D) * 2.0D, new int[0]);
+/* 119:153 */         this.world.a(EnumParticleEffect.y, this.xPos + (this.rng.nextDouble() - 0.5D) * this.width, this.yPos + this.rng.nextDouble() * this.height - 0.25D, this.zPos + (this.rng.nextDouble() - 0.5D) * this.width, (this.rng.nextDouble() - 0.5D) * 2.0D, -this.rng.nextDouble(), (this.rng.nextDouble() - 0.5D) * 2.0D, new int[0]);
 /* 120:    */       }
 /* 121:    */     }
 /* 122:157 */     this.aW = false;
@@ -137,7 +137,7 @@ package net.minecraft.src;
 /* 136:    */     {
 /* 137:173 */       float f = c(1.0F);
 /* 138:174 */       if ((f > 0.5F) && 
-/* 139:175 */         (this.world.i(new BlockPosition(this))) && (this.rng.nextFloat() * 30.0F < (f - 0.4F) * 2.0F))
+/* 139:175 */         (this.world.hasDaylight(new BlockPosition(this))) && (this.rng.nextFloat() * 30.0F < (f - 0.4F) * 2.0F))
 /* 140:    */       {
 /* 141:176 */         d((EntityLiving)null);
 /* 142:177 */         a(false);
@@ -158,7 +158,7 @@ package net.minecraft.src;
 /* 157:    */   
 /* 158:    */   protected boolean b(Entity paramwv)
 /* 159:    */   {
-/* 160:195 */     Vec3 localbrw = new Vec3(this.xPos - paramwv.xPos, getAABB().minY + this.K / 2.0F - paramwv.yPos + paramwv.aR(), this.zPos - paramwv.zPos);
+/* 160:195 */     Vec3 localbrw = new Vec3(this.xPos - paramwv.xPos, getAABB().minY + this.height / 2.0F - paramwv.yPos + paramwv.aR(), this.zPos - paramwv.zPos);
 /* 161:196 */     localbrw = localbrw.normalize();
 /* 162:197 */     double d1 = 16.0D;
 /* 163:198 */     double d2 = this.xPos + (this.rng.nextDouble() - 0.5D) * 8.0D - localbrw.x * d1;
@@ -214,9 +214,9 @@ package net.minecraft.src;
 /* 213:242 */         float f2 = (this.rng.nextFloat() - 0.5F) * 0.2F;
 /* 214:243 */         float f3 = (this.rng.nextFloat() - 0.5F) * 0.2F;
 /* 215:    */         
-/* 216:245 */         double d5 = d1 + (this.xPos - d1) * d4 + (this.rng.nextDouble() - 0.5D) * this.J * 2.0D;
-/* 217:246 */         double d6 = d2 + (this.yPos - d2) * d4 + this.rng.nextDouble() * this.K;
-/* 218:247 */         double d7 = d3 + (this.zPos - d3) * d4 + (this.rng.nextDouble() - 0.5D) * this.J * 2.0D;
+/* 216:245 */         double d5 = d1 + (this.xPos - d1) * d4 + (this.rng.nextDouble() - 0.5D) * this.width * 2.0D;
+/* 217:246 */         double d6 = d2 + (this.yPos - d2) * d4 + this.rng.nextDouble() * this.height;
+/* 218:247 */         double d7 = d3 + (this.zPos - d3) * d4 + (this.rng.nextDouble() - 0.5D) * this.width * 2.0D;
 /* 219:248 */         this.world.a(EnumParticleEffect.y, d5, d6, d7, f1, f2, f3, new int[0]);
 /* 220:    */       }
 /* 221:251 */       this.world.a(d1, d2, d3, "mob.endermen.portal", 1.0F, 1.0F);
@@ -224,7 +224,7 @@ package net.minecraft.src;
 /* 223:    */       
 /* 224:254 */       return true;
 /* 225:    */     }
-/* 226:256 */     b(d1, d2, d3);
+/* 226:256 */     setPos(d1, d2, d3);
 /* 227:257 */     return false;
 /* 228:    */   }
 /* 229:    */   

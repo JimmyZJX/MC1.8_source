@@ -30,7 +30,7 @@ package net.minecraft.src;
 /*  29:    */     
 /*  30: 40 */     a(0.25F, 0.25F);
 /*  31:    */     
-/*  32: 42 */     b(paramDouble1, paramDouble2, paramDouble3);
+/*  32: 42 */     setPos(paramDouble1, paramDouble2, paramDouble3);
 /*  33:    */     
 /*  34: 44 */     int i = 1;
 /*  35: 45 */     if ((paramamj != null) && (paramamj.hasTagCompound()))

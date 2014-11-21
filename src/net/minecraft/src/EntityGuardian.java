@@ -175,7 +175,7 @@ package net.minecraft.src;
 /* 174:205 */     super.i(paramInt);
 /* 175:207 */     if (paramInt == 16)
 /* 176:    */     {
-/* 177:208 */       if ((cl()) && (this.J < 1.0F)) {
+/* 177:208 */       if ((cl()) && (this.width < 1.0F)) {
 /* 178:209 */         a(1.9975F, 1.9975F);
 /* 179:    */       }
 /* 180:    */     }
@@ -231,7 +231,7 @@ package net.minecraft.src;
 /* 230:    */   
 /* 231:    */   public float aR()
 /* 232:    */   {
-/* 233:262 */     return this.K * 0.5F;
+/* 233:262 */     return this.height * 0.5F;
 /* 234:    */   }
 /* 235:    */   
 /* 236:    */   public float a(BlockPosition paramdt)
@@ -283,7 +283,7 @@ package net.minecraft.src;
 /* 282:    */       {
 /* 283:306 */         localObject = d(0.0F);
 /* 284:307 */         for (int i = 0; i < 2; i++) {
-/* 285:308 */           this.world.a(EnumParticleEffect.e, this.xPos + (this.rng.nextDouble() - 0.5D) * this.J - ((Vec3)localObject).x * 1.5D, this.yPos + this.rng.nextDouble() * this.K - ((Vec3)localObject).y * 1.5D, this.zPos + (this.rng.nextDouble() - 0.5D) * this.J - ((Vec3)localObject).z * 1.5D, 0.0D, 0.0D, 0.0D, new int[0]);
+/* 285:308 */           this.world.a(EnumParticleEffect.e, this.xPos + (this.rng.nextDouble() - 0.5D) * this.width - ((Vec3)localObject).x * 1.5D, this.yPos + this.rng.nextDouble() * this.height - ((Vec3)localObject).y * 1.5D, this.zPos + (this.rng.nextDouble() - 0.5D) * this.width - ((Vec3)localObject).z * 1.5D, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 286:    */         }
 /* 287:    */       }
 /* 288:312 */       if (cn())
@@ -299,7 +299,7 @@ package net.minecraft.src;
 /* 298:    */           
 /* 299:321 */           double d1 = p(0.0F);
 /* 300:322 */           double d2 = ((EntityLiving)localObject).xPos - this.xPos;
-/* 301:323 */           double d3 = ((EntityLiving)localObject).yPos + ((EntityLiving)localObject).K * 0.5F - (this.yPos + aR());
+/* 301:323 */           double d3 = ((EntityLiving)localObject).yPos + ((EntityLiving)localObject).height * 0.5F - (this.yPos + aR());
 /* 302:324 */           double d4 = ((EntityLiving)localObject).zPos - this.zPos;
 /* 303:325 */           double d5 = Math.sqrt(d2 * d2 + d3 * d3 + d4 * d4);
 /* 304:326 */           d2 /= d5;

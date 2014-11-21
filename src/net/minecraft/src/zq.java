@@ -45,7 +45,7 @@ package net.minecraft.src;
 /* 44:   */   {
 /* 45:52 */     this.b.p().a(this.c, 30.0F, 30.0F);
 /* 46:   */     
-/* 47:54 */     double d1 = this.b.J * 2.0F * (this.b.J * 2.0F);
+/* 47:54 */     double d1 = this.b.width * 2.0F * (this.b.width * 2.0F);
 /* 48:55 */     double d2 = this.b.e(this.c.xPos, this.c.getAABB().minY, this.c.zPos);
 /* 49:   */     
 /* 50:57 */     double d3 = 0.8D;

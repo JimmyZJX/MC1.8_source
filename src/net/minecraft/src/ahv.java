@@ -75,7 +75,7 @@ package net.minecraft.src;
 /*  74: 82 */       if ((localList1 != null) && (!localList1.isEmpty()))
 /*  75:    */       {
 /*  76: 83 */         AABB localbrt = getAABB().expand(4.0D, 2.0D, 4.0D);
-/*  77: 84 */         List localList2 = this.world.a(EntityLiving.class, localbrt);
+/*  77: 84 */         List localList2 = this.world.getEntityList(EntityLiving.class, localbrt);
 /*  78: 86 */         if (!localList2.isEmpty()) {
 /*  79: 87 */           for (localIterator1 = localList2.iterator(); localIterator1.hasNext();)
 /*  80:    */           {

@@ -17,7 +17,7 @@ package net.minecraft.src;
 /*  17:    */   {
 /*  18: 39 */     super(paramaqu);
 /*  19: 40 */     a(0.25F, 0.25F);
-/*  20: 41 */     b(paramDouble1, paramDouble2, paramDouble3);
+/*  20: 41 */     setPos(paramDouble1, paramDouble2, paramDouble3);
 /*  21:    */     
 /*  22: 43 */     this.yaw = ((float)(Math.random() * 360.0D));
 /*  23:    */     
@@ -103,7 +103,7 @@ package net.minecraft.src;
 /* 103:    */   
 /* 104:    */   private void w()
 /* 105:    */   {
-/* 106:129 */     for (EntityItem localadw : this.world.a(EntityItem.class, getAABB().expand(0.5D, 0.0D, 0.5D))) {
+/* 106:129 */     for (EntityItem localadw : this.world.getEntityList(EntityItem.class, getAABB().expand(0.5D, 0.0D, 0.5D))) {
 /* 107:130 */       a(localadw);
 /* 108:    */     }
 /* 109:    */   }

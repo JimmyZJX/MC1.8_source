@@ -29,7 +29,7 @@ package net.minecraft.src;
 /*  29:    */   
 /*  30:    */   public float aR()
 /*  31:    */   {
-/*  32: 43 */     return this.K;
+/*  32: 43 */     return this.height;
 /*  33:    */   }
 /*  34:    */   
 /*  35:    */   protected void aW()
@@ -152,7 +152,7 @@ package net.minecraft.src;
 /* 152:170 */     float f3 = 0.1F;
 /* 153:171 */     float f4 = 0.0F;
 /* 154:    */     
-/* 155:173 */     this.rider.b(this.xPos + f3 * f1, this.yPos + this.K * 0.5F + this.rider.am() + f4, this.zPos - f3 * f2);
+/* 155:173 */     this.rider.setPos(this.xPos + f3 * f1, this.yPos + this.height * 0.5F + this.rider.am() + f4, this.zPos - f3 * f2);
 /* 156:174 */     if ((this.rider instanceof EntityLiving)) {
 /* 157:175 */       ((EntityLiving)this.rider).aG = this.aG;
 /* 158:    */     }

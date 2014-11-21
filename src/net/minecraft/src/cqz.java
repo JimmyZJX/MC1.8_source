@@ -50,7 +50,7 @@ package net.minecraft.src;
 /*  49: 57 */     Entity localwv = paramxn.cc();
 /*  50: 58 */     if (localwv != null)
 /*  51:    */     {
-/*  52: 59 */       paramDouble2 -= (1.6D - paramxn.K) * 0.5D;
+/*  52: 59 */       paramDouble2 -= (1.6D - paramxn.height) * 0.5D;
 /*  53: 60 */       ckx localckx = ckx.getInstance();
 /*  54: 61 */       VertexBuffer localciv = localckx.getBuffer();
 /*  55: 62 */       double d1 = a(localwv.lastYaw, localwv.yaw, paramFloat2 * 0.5F) * 0.0174532923847437D;
@@ -70,8 +70,8 @@ package net.minecraft.src;
 /*  69: 75 */       double d9 = a(localwv.lastZ, localwv.zPos, paramFloat2) - d4 * 0.7D + d3 * 0.5D * d6;
 /*  70:    */       
 /*  71: 77 */       double d10 = a(paramxn.aH, paramxn.aG, paramFloat2) * 0.0174532923847437D + 1.570796326794897D;
-/*  72: 78 */       d3 = Math.cos(d10) * paramxn.J * 0.4D;
-/*  73: 79 */       d4 = Math.sin(d10) * paramxn.J * 0.4D;
+/*  72: 78 */       d3 = Math.cos(d10) * paramxn.width * 0.4D;
+/*  73: 79 */       d4 = Math.sin(d10) * paramxn.width * 0.4D;
 /*  74: 80 */       double d11 = a(paramxn.lastX, paramxn.xPos, paramFloat2) + d3;
 /*  75: 81 */       double d12 = a(paramxn.lastY, paramxn.yPos, paramFloat2);
 /*  76: 82 */       double d13 = a(paramxn.lastZ, paramxn.zPos, paramFloat2) + d4;

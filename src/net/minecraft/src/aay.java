@@ -52,13 +52,13 @@ package net.minecraft.src;
 /*  51: 63 */     super.d();
 /*  52: 64 */     if (this.f)
 /*  53:    */     {
-/*  54: 65 */       if (this.c.i(new BlockPosition(MathUtils.floor(this.b.xPos), (int)(this.b.getAABB().minY + 0.5D), MathUtils.floor(this.b.zPos)))) {
+/*  54: 65 */       if (this.c.hasDaylight(new BlockPosition(MathUtils.floor(this.b.xPos), (int)(this.b.getAABB().minY + 0.5D), MathUtils.floor(this.b.zPos)))) {
 /*  55: 66 */         return;
 /*  56:    */       }
 /*  57: 69 */       for (int i = 0; i < this.d.d(); i++)
 /*  58:    */       {
 /*  59: 70 */         bpt localbpt = this.d.a(i);
-/*  60: 71 */         if (this.c.i(new BlockPosition(localbpt.a, localbpt.b, localbpt.c)))
+/*  60: 71 */         if (this.c.hasDaylight(new BlockPosition(localbpt.a, localbpt.b, localbpt.c)))
 /*  61:    */         {
 /*  62: 72 */           this.d.b(i - 1);
 /*  63: 73 */           return;

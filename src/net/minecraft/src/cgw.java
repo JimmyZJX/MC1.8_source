@@ -26,7 +26,7 @@ package net.minecraft.src;
 /*  25: 25 */     super(paramaqu);
 /*  26:    */     
 /*  27: 27 */     a(0.2F, 0.2F);
-/*  28: 28 */     b(paramDouble1, paramDouble2, paramDouble3);
+/*  28: 28 */     setPos(paramDouble1, paramDouble2, paramDouble3);
 /*  29: 29 */     this.P = paramDouble1;
 /*  30: 30 */     this.Q = paramDouble2;
 /*  31: 31 */     this.R = paramDouble3;

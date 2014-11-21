@@ -31,7 +31,7 @@ package net.minecraft.src;
 /*  31:    */     
 /*  32: 41 */     a(0.25F, 0.25F);
 /*  33:    */     
-/*  34: 43 */     b(paramDouble1, paramDouble2, paramDouble3);
+/*  34: 43 */     setPos(paramDouble1, paramDouble2, paramDouble3);
 /*  35:    */   }
 /*  36:    */   
 /*  37:    */   public void a(BlockPosition paramdt)
@@ -128,7 +128,7 @@ package net.minecraft.src;
 /* 128:    */     }
 /* 129:140 */     if (!this.world.isClient)
 /* 130:    */     {
-/* 131:141 */       b(this.xPos, this.yPos, this.zPos);
+/* 131:141 */       setPos(this.xPos, this.yPos, this.zPos);
 /* 132:    */       
 /* 133:143 */       this.d += 1;
 /* 134:144 */       if ((this.d > 80) && (!this.world.isClient))

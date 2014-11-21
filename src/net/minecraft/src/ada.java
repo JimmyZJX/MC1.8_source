@@ -20,7 +20,7 @@ package net.minecraft.src;
 /* 19:   */   public ada(World paramaqu, double paramDouble1, double paramDouble2, double paramDouble3)
 /* 20:   */   {
 /* 21:31 */     this(paramaqu);
-/* 22:32 */     b(paramDouble1, paramDouble2, paramDouble3);
+/* 22:32 */     setPos(paramDouble1, paramDouble2, paramDouble3);
 /* 23:   */   }
 /* 24:   */   
 /* 25:   */   protected boolean r_()

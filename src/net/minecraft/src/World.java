@@ -382,7 +382,7 @@ import net.minecraft.server.MinecraftServer;
 /*  379: 450 */     return false;
 /*  380:     */   }
 /*  381:     */   
-/*  382:     */   public boolean i(BlockPosition paramdt)
+/*  382:     */   public boolean hasDaylight(BlockPosition paramdt)
 /*  383:     */   {
 /*  384: 454 */     return getChunk(paramdt).d(paramdt);
 /*  385:     */   }
@@ -390,10 +390,10 @@ import net.minecraft.server.MinecraftServer;
 /*  387:     */   public boolean j(BlockPosition paramdt)
 /*  388:     */   {
 /*  389: 458 */     if (paramdt.getY() >= 63) {
-/*  390: 459 */       return i(paramdt);
+/*  390: 459 */       return hasDaylight(paramdt);
 /*  391:     */     }
 /*  392: 461 */     BlockPosition localdt = new BlockPosition(paramdt.getX(), 63, paramdt.getZ());
-/*  393: 462 */     if (!i(localdt)) {
+/*  393: 462 */     if (!hasDaylight(localdt)) {
 /*  394: 463 */       return false;
 /*  395:     */     }
 /*  396: 465 */     localdt = localdt.down();
@@ -2049,7 +2049,7 @@ import net.minecraft.server.MinecraftServer;
 /* 2046:     */   
 /* 2047:     */   private int a(BlockPosition paramdt, EnumSkyBlock paramarf)
 /* 2048:     */   {
-/* 2049:2050 */     if ((paramarf == EnumSkyBlock.SKY) && (i(paramdt))) {
+/* 2049:2050 */     if ((paramarf == EnumSkyBlock.SKY) && (hasDaylight(paramdt))) {
 /* 2050:2051 */       return 15;
 /* 2051:     */     }
 /* 2052:2053 */     ProtoBlock localatr = getBlock(paramdt).getProto();
@@ -2257,7 +2257,7 @@ import net.minecraft.server.MinecraftServer;
 /* 2254:2246 */     return localArrayList;
 /* 2255:     */   }
 /* 2256:     */   
-/* 2257:     */   public <E extends Entity> List<E> a(Class<E> paramClass, AABB parambrt)
+/* 2257:     */   public <E extends Entity> List<E> getEntityList(Class<E> paramClass, AABB parambrt)
 /* 2258:     */   {
 /* 2259:2250 */     return a(paramClass, parambrt, xe.d);
 /* 2260:     */   }
@@ -2281,7 +2281,7 @@ import net.minecraft.server.MinecraftServer;
 /* 2278:     */   
 /* 2279:     */   public <E extends Entity> E getNearestEntity(Class<E> paramClass, AABB parambrt, Entity paramwv)
 /* 2280:     */   {
-/* 2281:2273 */     List<E> localList = a(paramClass, parambrt);
+/* 2281:2273 */     List<E> localList = getEntityList(paramClass, parambrt);
 /* 2282:2274 */     E localObject = null;
 /* 2283:2275 */     double d1 = 1.7976931348623157E+308D;
 /* 2284:2276 */     for (int i1 = 0; i1 < localList.size(); i1++)
@@ -2651,7 +2651,7 @@ import net.minecraft.server.MinecraftServer;
 /* 2648:2670 */     if (!S()) {
 /* 2649:2671 */       return false;
 /* 2650:     */     }
-/* 2651:2673 */     if (!i(paramdt)) {
+/* 2651:2673 */     if (!hasDaylight(paramdt)) {
 /* 2652:2674 */       return false;
 /* 2653:     */     }
 /* 2654:2676 */     if (q(paramdt).getY() > paramdt.getY()) {

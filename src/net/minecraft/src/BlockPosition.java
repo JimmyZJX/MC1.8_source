@@ -69,7 +69,7 @@ package net.minecraft.src;
 /*  68:    */   
 /*  69:    */   public BlockPosition up(int paramInt)
 /*  70:    */   {
-/*  71: 77 */     return a(EnumDirection.UP, paramInt);
+/*  71: 77 */     return offset(EnumDirection.UP, paramInt);
 /*  72:    */   }
 /*  73:    */   
 /*  74:    */   public BlockPosition down()
@@ -79,7 +79,7 @@ package net.minecraft.src;
 /*  78:    */   
 /*  79:    */   public BlockPosition down(int paramInt)
 /*  80:    */   {
-/*  81: 87 */     return a(EnumDirection.DOWN, paramInt);
+/*  81: 87 */     return offset(EnumDirection.DOWN, paramInt);
 /*  82:    */   }
 /*  83:    */   
 /*  84:    */   public BlockPosition north()
@@ -89,7 +89,7 @@ package net.minecraft.src;
 /*  88:    */   
 /*  89:    */   public BlockPosition north(int paramInt)
 /*  90:    */   {
-/*  91: 97 */     return a(EnumDirection.NORTH, paramInt);
+/*  91: 97 */     return offset(EnumDirection.NORTH, paramInt);
 /*  92:    */   }
 /*  93:    */   
 /*  94:    */   public BlockPosition south()
@@ -99,7 +99,7 @@ package net.minecraft.src;
 /*  98:    */   
 /*  99:    */   public BlockPosition south(int paramInt)
 /* 100:    */   {
-/* 101:107 */     return a(EnumDirection.SOUTH, paramInt);
+/* 101:107 */     return offset(EnumDirection.SOUTH, paramInt);
 /* 102:    */   }
 /* 103:    */   
 /* 104:    */   public BlockPosition west()
@@ -109,7 +109,7 @@ package net.minecraft.src;
 /* 108:    */   
 /* 109:    */   public BlockPosition west(int paramInt)
 /* 110:    */   {
-/* 111:117 */     return a(EnumDirection.WEST, paramInt);
+/* 111:117 */     return offset(EnumDirection.WEST, paramInt);
 /* 112:    */   }
 /* 113:    */   
 /* 114:    */   public BlockPosition east()
@@ -119,15 +119,15 @@ package net.minecraft.src;
 /* 118:    */   
 /* 119:    */   public BlockPosition east(int paramInt)
 /* 120:    */   {
-/* 121:127 */     return a(EnumDirection.EAST, paramInt);
+/* 121:127 */     return offset(EnumDirection.EAST, paramInt);
 /* 122:    */   }
 /* 123:    */   
 /* 124:    */   public BlockPosition a(EnumDirection paramej)
 /* 125:    */   {
-/* 126:132 */     return a(paramej, 1);
+/* 126:132 */     return offset(paramej, 1);
 /* 127:    */   }
 /* 128:    */   
-/* 129:    */   public BlockPosition a(EnumDirection paramej, int paramInt)
+/* 129:    */   public BlockPosition offset(EnumDirection paramej, int paramInt)
 /* 130:    */   {
 /* 131:137 */     return new BlockPosition(getX() + paramej.g() * paramInt, getY() + paramej.h() * paramInt, getZ() + paramej.i() * paramInt);
 /* 132:    */   }

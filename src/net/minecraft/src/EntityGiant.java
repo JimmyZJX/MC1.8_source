@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*  4:   */   public EntityGiant(World paramaqu)
 /*  5:   */   {
 /*  6:10 */     super(paramaqu);
-/*  7:11 */     a(this.J * 6.0F, this.K * 6.0F);
+/*  7:11 */     a(this.width * 6.0F, this.height * 6.0F);
 /*  8:   */   }
 /*  9:   */   
 /* 10:   */   public float aR()

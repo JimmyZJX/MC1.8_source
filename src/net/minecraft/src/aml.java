@@ -34,7 +34,7 @@ package net.minecraft.src;
 /* 33:42 */     int j = paramdt.getY();
 /* 34:43 */     int k = paramdt.getZ();
 /* 35:   */     
-/* 36:45 */     List<EntityMob> localList = paramaqu.a(EntityMob.class, new AABB(i - d, j - d, k - d, i + d, j + d, k + d));
+/* 36:45 */     List<EntityMob> localList = paramaqu.getEntityList(EntityMob.class, new AABB(i - d, j - d, k - d, i + d, j + d, k + d));
 /* 37:46 */     for (EntityMob localxn : localList) {
 /* 38:47 */       if ((localxn.cb()) && (localxn.cc() == paramahd))
 /* 39:   */       {

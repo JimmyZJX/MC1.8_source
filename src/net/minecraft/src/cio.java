@@ -516,10 +516,10 @@ package net.minecraft.src;
 /* 516:551 */       this.b.b *= 0.2F;
 /* 517:552 */       this.d = 0;
 /* 518:    */     }
-/* 519:555 */     j(this.xPos - this.J * 0.35D, getAABB().minY + 0.5D, this.zPos + this.J * 0.35D);
-/* 520:556 */     j(this.xPos - this.J * 0.35D, getAABB().minY + 0.5D, this.zPos - this.J * 0.35D);
-/* 521:557 */     j(this.xPos + this.J * 0.35D, getAABB().minY + 0.5D, this.zPos - this.J * 0.35D);
-/* 522:558 */     j(this.xPos + this.J * 0.35D, getAABB().minY + 0.5D, this.zPos + this.J * 0.35D);
+/* 519:555 */     j(this.xPos - this.width * 0.35D, getAABB().minY + 0.5D, this.zPos + this.width * 0.35D);
+/* 520:556 */     j(this.xPos - this.width * 0.35D, getAABB().minY + 0.5D, this.zPos - this.width * 0.35D);
+/* 521:557 */     j(this.xPos + this.width * 0.35D, getAABB().minY + 0.5D, this.zPos - this.width * 0.35D);
+/* 522:558 */     j(this.xPos + this.width * 0.35D, getAABB().minY + 0.5D, this.zPos + this.width * 0.35D);
 /* 523:    */     
 /* 524:560 */     int k = (ck().a() > 6.0F) || (this.by.c) ? 1 : 0;
 /* 525:561 */     if ((this.C) && (!bool2) && (j == 0) && (this.b.b >= f1) && (!ax()) && (k != 0) && (!bR()) && (!a(Potion.blindness))) {

@@ -26,7 +26,7 @@ package net.minecraft.src;
 /*  25: 37 */       EntityLiving localxm = paramafg.co();
 /*  26: 38 */       if (localxm != null)
 /*  27:    */       {
-/*  28: 40 */         Vec3 localbrw1 = a(localxm, localxm.K * 0.5D, 1.0F);
+/*  28: 40 */         Vec3 localbrw1 = a(localxm, localxm.height * 0.5D, 1.0F);
 /*  29: 41 */         Vec3 localbrw2 = a(paramafg, (double)paramafg.aR(), 1.0F);
 /*  30: 43 */         if (paramcox.a(AABB.a(localbrw2.x, localbrw2.y, localbrw2.z, localbrw1.x, localbrw1.y, localbrw1.z))) {
 /*  31: 44 */           return true;
@@ -79,7 +79,7 @@ package net.minecraft.src;
 /*  78: 89 */       cjm.glPushMatrix();
 /*  79: 90 */       cjm.glTranslatef((float)paramDouble1, (float)paramDouble2 + f5, (float)paramDouble3);
 /*  80:    */       
-/*  81: 92 */       Vec3 localbrw1 = a(localxm, localxm.K * 0.5D, paramFloat2);
+/*  81: 92 */       Vec3 localbrw1 = a(localxm, localxm.height * 0.5D, paramFloat2);
 /*  82: 93 */       Vec3 localbrw2 = a(paramafg, (double)f5, paramFloat2);
 /*  83:    */       
 /*  84: 95 */       Vec3 localbrw3 = localbrw1.d(localbrw2);

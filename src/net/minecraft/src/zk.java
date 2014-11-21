@@ -116,7 +116,7 @@ package net.minecraft.src;
 /* 116:    */   
 /* 117:    */   protected double a(EntityLiving paramxm)
 /* 118:    */   {
-/* 119:127 */     return this.b.J * 2.0F * (this.b.J * 2.0F) + paramxm.J;
+/* 119:127 */     return this.b.width * 2.0F * (this.b.width * 2.0F) + paramxm.width;
 /* 120:    */   }
 /* 121:    */ }
 

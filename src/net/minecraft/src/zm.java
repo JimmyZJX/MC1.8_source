@@ -40,12 +40,12 @@ package net.minecraft.src;
 /*  39: 54 */     aay localaay = (aay)this.a.s();
 /*  40: 55 */     boolean bool = localaay.g();
 /*  41: 56 */     localaay.b(false);
-/*  42: 57 */     this.c = localaay.a(this.d.d());
+/*  42: 57 */     this.c = localaay.a(this.d.getPos());
 /*  43: 58 */     localaay.b(bool);
 /*  44: 59 */     if (this.c != null) {
 /*  45: 60 */       return true;
 /*  46:    */     }
-/*  47: 63 */     Vec3 localbrw = abf.a(this.a, 10, 7, new Vec3(this.d.d().getX(), this.d.d().getY(), this.d.d().getZ()));
+/*  47: 63 */     Vec3 localbrw = abf.a(this.a, 10, 7, new Vec3(this.d.getPos().getX(), this.d.getPos().getY(), this.d.getPos().getZ()));
 /*  48: 64 */     if (localbrw == null) {
 /*  49: 65 */       return false;
 /*  50:    */     }
@@ -60,8 +60,8 @@ package net.minecraft.src;
 /*  59: 75 */     if (this.a.s().m()) {
 /*  60: 76 */       return false;
 /*  61:    */     }
-/*  62: 78 */     float f1 = this.a.J + 4.0F;
-/*  63: 79 */     return this.a.b(this.d.d()) > f1 * f1;
+/*  62: 78 */     float f1 = this.a.width + 4.0F;
+/*  63: 79 */     return this.a.b(this.d.getPos()) > f1 * f1;
 /*  64:    */   }
 /*  65:    */   
 /*  66:    */   public void c()
@@ -71,7 +71,7 @@ package net.minecraft.src;
 /*  70:    */   
 /*  71:    */   public void d()
 /*  72:    */   {
-/*  73: 89 */     if ((this.a.s().m()) || (this.a.b(this.d.d()) < 16.0D)) {
+/*  73: 89 */     if ((this.a.s().m()) || (this.a.b(this.d.getPos()) < 16.0D)) {
 /*  74: 90 */       this.f.add(this.d);
 /*  75:    */     }
 /*  76:    */   }
@@ -98,7 +98,7 @@ package net.minecraft.src;
 /*  97:    */   private boolean a(VillageDoor paramabh)
 /*  98:    */   {
 /*  99:112 */     for (VillageDoor localabh : this.f) {
-/* 100:113 */       if (paramabh.d().equals(localabh.d())) {
+/* 100:113 */       if (paramabh.getPos().equals(localabh.getPos())) {
 /* 101:114 */         return true;
 /* 102:    */       }
 /* 103:    */     }

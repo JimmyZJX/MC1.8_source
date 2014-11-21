@@ -43,7 +43,7 @@ package net.minecraft.src;
 /* 42:   */   public void c()
 /* 43:   */   {
 /* 44:50 */     this.c = -1;
-/* 45:51 */     BlockPosition localdt = this.b.e();
+/* 45:51 */     BlockPosition localdt = this.b.getInsidePos();
 /* 46:52 */     int i = localdt.getX();
 /* 47:53 */     int j = localdt.getY();
 /* 48:54 */     int k = localdt.getZ();
@@ -62,8 +62,8 @@ package net.minecraft.src;
 /* 61:   */   
 /* 62:   */   public void d()
 /* 63:   */   {
-/* 64:68 */     this.c = this.b.e().getX();
-/* 65:69 */     this.d = this.b.e().getZ();
+/* 64:68 */     this.c = this.b.getInsidePos().getX();
+/* 65:69 */     this.d = this.b.getInsidePos().getZ();
 /* 66:70 */     this.b = null;
 /* 67:   */   }
 /* 68:   */ }

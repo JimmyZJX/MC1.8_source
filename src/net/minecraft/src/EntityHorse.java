@@ -1420,7 +1420,7 @@ package net.minecraft.src;
 /* 1421:1521 */       double d1 = this.rng.nextGaussian() * 0.02D;
 /* 1422:1522 */       double d2 = this.rng.nextGaussian() * 0.02D;
 /* 1423:1523 */       double d3 = this.rng.nextGaussian() * 0.02D;
-/* 1424:1524 */       this.world.a(localew, this.xPos + this.rng.nextFloat() * this.J * 2.0F - this.J, this.yPos + 0.5D + this.rng.nextFloat() * this.K, this.zPos + this.rng.nextFloat() * this.J * 2.0F - this.J, d1, d2, d3, new int[0]);
+/* 1424:1524 */       this.world.a(localew, this.xPos + this.rng.nextFloat() * this.width * 2.0F - this.width, this.yPos + 0.5D + this.rng.nextFloat() * this.height, this.zPos + this.rng.nextFloat() * this.width * 2.0F - this.width, d1, d2, d3, new int[0]);
 /* 1425:     */     }
 /* 1426:     */   }
 /* 1427:     */   
@@ -1445,7 +1445,7 @@ package net.minecraft.src;
 /* 1446:1546 */       float f3 = 0.7F * this.bI;
 /* 1447:1547 */       float f4 = 0.15F * this.bI;
 /* 1448:     */       
-/* 1449:1549 */       this.rider.b(this.xPos + f3 * f1, this.yPos + an() + this.rider.am() + f4, this.zPos - f3 * f2);
+/* 1449:1549 */       this.rider.setPos(this.xPos + f3 * f1, this.yPos + an() + this.rider.am() + f4, this.zPos - f3 * f2);
 /* 1450:1550 */       if ((this.rider instanceof EntityLiving)) {
 /* 1451:1551 */         ((EntityLiving)this.rider).aG = this.aG;
 /* 1452:     */       }
@@ -1479,7 +1479,7 @@ package net.minecraft.src;
 /* 1480:     */   
 /* 1481:     */   public float aR()
 /* 1482:     */   {
-/* 1483:1591 */     return this.K;
+/* 1483:1591 */     return this.height;
 /* 1484:     */   }
 /* 1485:     */   
 /* 1486:     */   public boolean d(int paramInt, ItemStack paramamj)

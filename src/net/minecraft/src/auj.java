@@ -394,7 +394,7 @@ package net.minecraft.src;
 /* 393:    */   
 /* 394:    */   private boolean o(World paramaqu, BlockPosition paramdt)
 /* 395:    */   {
-/* 396:423 */     for (Entity localwv : paramaqu.a(EntityOcelot.class, new AABB(paramdt.getX(), paramdt.getY() + 1, paramdt.getZ(), paramdt.getX() + 1, paramdt.getY() + 2, paramdt.getZ() + 1)))
+/* 396:423 */     for (Entity localwv : paramaqu.getEntityList(EntityOcelot.class, new AABB(paramdt.getX(), paramdt.getY() + 1, paramdt.getZ(), paramdt.getX() + 1, paramdt.getY() + 2, paramdt.getZ() + 1)))
 /* 397:    */     {
 /* 398:424 */       EntityOcelot localaby = (EntityOcelot)localwv;
 /* 399:425 */       if (localaby.cl()) {

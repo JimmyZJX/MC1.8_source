@@ -69,7 +69,7 @@ package net.minecraft.src;
 /*  68:    */     
 /*  69:108 */     setPositionAndAngles(localdt, 0.0F, 0.0F);
 /*  70:109 */     while ((!paramqt.getCollidingAABBs(this, getAABB()).isEmpty()) && (this.yPos < 255.0D)) {
-/*  71:110 */       b(this.xPos, this.yPos + 1.0D, this.zPos);
+/*  71:110 */       setPos(this.xPos, this.yPos + 1.0D, this.zPos);
 /*  72:    */     }
 /*  73:    */   }
 /*  74:    */   

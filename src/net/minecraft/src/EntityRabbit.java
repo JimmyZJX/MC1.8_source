@@ -374,7 +374,7 @@ package net.minecraft.src;
 /* 373:    */   
 /* 374:    */   protected void cn()
 /* 375:    */   {
-/* 376:425 */     this.world.a(EnumParticleEffect.M, this.xPos + this.rng.nextFloat() * this.J * 2.0F - this.J, this.yPos + 0.5D + this.rng.nextFloat() * this.K, this.zPos + this.rng.nextFloat() * this.J * 2.0F - this.J, 0.0D, 0.0D, 0.0D, new int[] { ProtoBlock.f(BlockList.cb.a(7)) });
+/* 376:425 */     this.world.a(EnumParticleEffect.M, this.xPos + this.rng.nextFloat() * this.width * 2.0F - this.width, this.yPos + 0.5D + this.rng.nextFloat() * this.height, this.zPos + this.rng.nextFloat() * this.width * 2.0F - this.width, 0.0D, 0.0D, 0.0D, new int[] { ProtoBlock.f(BlockList.cb.a(7)) });
 /* 377:426 */     this.bs = 100;
 /* 378:    */   }
 /* 379:    */   

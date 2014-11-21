@@ -26,7 +26,7 @@ package net.minecraft.src;
 /* 25:28 */     if (this.a.getRNG().nextInt(400) != 0) {
 /* 26:29 */       return false;
 /* 27:   */     }
-/* 28:32 */     List localList = this.a.world.a(EntityVillager.class, this.a.getAABB().expand(6.0D, 3.0D, 6.0D));
+/* 28:32 */     List localList = this.a.world.getEntityList(EntityVillager.class, this.a.getAABB().expand(6.0D, 3.0D, 6.0D));
 /* 29:33 */     double d1 = 1.7976931348623157E+308D;
 /* 30:34 */     for (Object localObject = localList.iterator(); ((Iterator)localObject).hasNext();)
 /* 31:   */     {

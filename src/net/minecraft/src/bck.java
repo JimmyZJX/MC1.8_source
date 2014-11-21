@@ -58,7 +58,7 @@ package net.minecraft.src;
 /*  57: 87 */       int i3 = this.pos.getY();
 /*  58: 88 */       int i4 = this.pos.getZ();
 /*  59: 89 */       AABB localbrt = new AABB(i2, i3, i4, i2 + 1, i3 + 1, i4 + 1).expand(d, d, d).addCoord(0.0D, this.world.U(), 0.0D);
-/*  60: 90 */       List<EntityPlayer> localList = this.world.a(EntityPlayer.class, localbrt);
+/*  60: 90 */       List<EntityPlayer> localList = this.world.getEntityList(EntityPlayer.class, localbrt);
 /*  61: 91 */       for (localIterator = localList.iterator(); localIterator.hasNext();)
 /*  62:    */       {
 /*  63: 91 */         localahd = (EntityPlayer)localIterator.next();
@@ -158,7 +158,7 @@ package net.minecraft.src;
 /* 157:    */     }
 /* 158:182 */     if ((!this.world.isClient) && 
 /* 159:183 */       (this.j == 4) && (i1 < this.j)) {
-/* 160:184 */       for (EntityPlayer localahd : this.world.a(EntityPlayer.class, new AABB(i2, i3, i4, i2, i3 - 4, i4).expand(10.0D, 5.0D, 10.0D))) {
+/* 160:184 */       for (EntityPlayer localahd : this.world.getEntityList(EntityPlayer.class, new AABB(i2, i3, i4, i2, i3 - 4, i4).expand(10.0D, 5.0D, 10.0D))) {
 /* 161:185 */         localahd.b(AchievementList.K);
 /* 162:    */       }
 /* 163:    */     }

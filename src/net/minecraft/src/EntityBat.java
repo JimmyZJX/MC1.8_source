@@ -87,7 +87,7 @@ package net.minecraft.src;
 /*  86:103 */     if (n())
 /*  87:    */     {
 /*  88:104 */       this.xVelocity = (this.yVelocity = this.zVelocity = 0.0D);
-/*  89:105 */       this.yPos = (MathUtils.floor(this.yPos) + 1.0D - this.K);
+/*  89:105 */       this.yPos = (MathUtils.floor(this.yPos) + 1.0D - this.height);
 /*  90:    */     }
 /*  91:    */     else
 /*  92:    */     {
@@ -212,7 +212,7 @@ package net.minecraft.src;
 /* 211:    */   
 /* 212:    */   public float aR()
 /* 213:    */   {
-/* 214:236 */     return this.K / 2.0F;
+/* 214:236 */     return this.height / 2.0F;
 /* 215:    */   }
 /* 216:    */ }
 

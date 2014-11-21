@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*   9: 25 */   private final List<BlockPosition> villagerPosQueue = Lists.newArrayList();
 /*  10: 26 */   private final List<VillageDoor> availableDoors = Lists.newArrayList();
 /*  11: 27 */   private final List<Village> villages = Lists.newArrayList();
-/*  12:    */   private int age;
+/*  12:    */   private int tick;
 /*  13:    */   
 /*  14:    */   public VillageManager(String paramString)
 /*  15:    */   {
@@ -37,21 +37,21 @@ package net.minecraft.src;
 /*  36: 49 */     if (this.villagerPosQueue.size() > 64) {
 /*  37: 50 */       return;
 /*  38:    */     }
-/*  39: 52 */     if (!e(paramdt)) {
+/*  39: 52 */     if (!isInQueue(paramdt)) {
 /*  40: 53 */       this.villagerPosQueue.add(paramdt);
 /*  41:    */     }
 /*  42:    */   }
 /*  43:    */   
 /*  44:    */   public void tick()
 /*  45:    */   {
-/*  46: 58 */     this.age += 1;
+/*  46: 58 */     this.tick += 1;
 /*  47: 59 */     for (Village village : this.villages) {
-/*  48: 60 */       village.a(this.age);
+/*  48: 60 */       village.tick(this.tick);
 /*  49:    */     }
 /*  50: 62 */     removeDeadVillages();
 /*  51: 63 */     tickVillagerPosQueue();
 /*  52: 64 */     analyzeDoors();
-/*  53: 66 */     if (this.age % 400 == 0) {
+/*  53: 66 */     if (this.tick % 400 == 0) {
 /*  54: 67 */       c();
 /*  55:    */     }
 /*  56:    */   }
@@ -107,7 +107,7 @@ package net.minecraft.src;
 /* 106:114 */     for (int i = 0; i < this.availableDoors.size(); i++)
 /* 107:    */     {
 /* 108:115 */       VillageDoor door = this.availableDoors.get(i);
-/* 109:116 */       Village village = getNearestVillage(door.d(), 32);
+/* 109:116 */       Village village = getNearestVillage(door.getPos(), 32);
 /* 110:117 */       if (village == null)
 /* 111:    */       {
 /* 112:119 */         village = new Village(this.world);
@@ -131,9 +131,9 @@ package net.minecraft.src;
 /* 130:    */           {
 /* 131:136 */             VillageDoor door = findDoor(doorPos);
 /* 132:137 */             if (door == null) {
-/* 133:138 */               addDoor(doorPos);
+/* 133:138 */               tryAddDoor(doorPos);
 /* 134:    */             } else {
-/* 135:140 */               door.setAge(this.age);
+/* 135:140 */               door.confirm(this.tick);
 /* 136:    */             }
 /* 137:    */           }
 /* 138:    */         }
@@ -146,7 +146,7 @@ package net.minecraft.src;
 /* 145:149 */     for (Iterator<VillageDoor> it = this.availableDoors.iterator(); it.hasNext();)
 /* 146:    */     {
 /* 147:149 */       VillageDoor door = it.next();
-/* 148:150 */       if ((door.d().getX() == pos.getX()) && (door.d().getZ() == pos.getZ()) && (Math.abs(door.d().getY() - pos.getY()) <= 1)) {
+/* 148:150 */       if ((door.getPos().getX() == pos.getX()) && (door.getPos().getZ() == pos.getZ()) && (Math.abs(door.getPos().getY() - pos.getY()) <= 1)) {
 /* 149:151 */         return door;
 /* 150:    */       }
 /* 151:    */     }
@@ -162,26 +162,26 @@ package net.minecraft.src;
 /* 161:160 */     return null;
 /* 162:    */   }
 /* 163:    */   
-/* 164:    */   private void addDoor(BlockPosition pos)
+/* 164:    */   private void tryAddDoor(BlockPosition pos)
 /* 165:    */   {
 /* 166:164 */     EnumDirection dir = BlockDoor.h(this.world, pos);
 /* 167:165 */     EnumDirection dir2 = dir.d();
 /* 168:    */     
-/* 169:167 */     int i = a(pos, dir, 5);
-/* 170:168 */     int j = a(pos, dir2, i + 1);
+/* 169:167 */     int i = countOutsideBlocks(pos, dir, 5);
+/* 170:168 */     int j = countOutsideBlocks(pos, dir2, i + 1);
 /* 171:170 */     if (i != j) {
-/* 172:171 */       this.availableDoors.add(new VillageDoor(pos, i < j ? dir : dir2, this.age));
+/* 172:171 */       this.availableDoors.add(new VillageDoor(pos, i < j ? dir : dir2, this.tick));
 /* 173:    */     }
 /* 174:    */   }
 /* 175:    */   
-/* 176:    */   private int a(BlockPosition pos, EnumDirection paramej, int paramInt)
+/* 176:    */   private int countOutsideBlocks(BlockPosition pos, EnumDirection dir, int max)
 /* 177:    */   {
 /* 178:176 */     int i = 0;
 /* 179:177 */     for (int j = 1; j <= 5; j++) {
-/* 180:178 */       if (this.world.i(pos.a(paramej, j)))
+/* 180:178 */       if (this.world.hasDaylight(pos.offset(dir, j)))
 /* 181:    */       {
 /* 182:180 */         i++;
-/* 183:180 */         if (i >= paramInt) {
+/* 183:180 */         if (i >= max) {
 /* 184:181 */           return i;
 /* 185:    */         }
 /* 186:    */       }
@@ -189,10 +189,10 @@ package net.minecraft.src;
 /* 188:186 */     return i;
 /* 189:    */   }
 /* 190:    */   
-/* 191:    */   private boolean e(BlockPosition paramdt)
+/* 191:    */   private boolean isInQueue(BlockPosition pos)
 /* 192:    */   {
-/* 193:190 */     for (BlockPosition localdt : this.villagerPosQueue) {
-/* 194:191 */       if (localdt.equals(paramdt)) {
+/* 193:190 */     for (BlockPosition pos1 : this.villagerPosQueue) {
+/* 194:191 */       if (pos1.equals(pos)) {
 /* 195:192 */         return true;
 /* 196:    */       }
 /* 197:    */     }
@@ -210,7 +210,7 @@ package net.minecraft.src;
 /* 209:    */   
 /* 210:    */   public void readFromNBT(NBTTagCompound tag)
 /* 211:    */   {
-/* 212:208 */     this.age = tag.getInteger("Tick");
+/* 212:208 */     this.tick = tag.getInteger("Tick");
 /* 213:209 */     fv localfv = tag.c("Villages", 10);
 /* 214:210 */     for (int i = 0; i < localfv.c(); i++)
 /* 215:    */     {
@@ -223,7 +223,7 @@ package net.minecraft.src;
 /* 222:    */   
 /* 223:    */   public void writeToNBT(NBTTagCompound tag)
 /* 224:    */   {
-/* 225:220 */     tag.setInt("Tick", this.age);
+/* 225:220 */     tag.setInt("Tick", this.tick);
 /* 226:221 */     fv localfv = new fv();
 /* 227:222 */     for (Village localabi : this.villages)
 /* 228:    */     {

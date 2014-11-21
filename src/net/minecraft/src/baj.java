@@ -161,7 +161,7 @@ package net.minecraft.src;
 /* 160:201 */     localadf.setPositionAndAngles(((BlockPosition)localObject).getX() + 0.5D, ((BlockPosition)localObject).getY() + 0.55D, ((BlockPosition)localObject).getZ() + 0.5D, localbem.b().k() == EnumAxis.X ? 0.0F : 90.0F, 0.0F);
 /* 161:202 */     localadf.aG = (localbem.b().k() == EnumAxis.X ? 0.0F : 90.0F);
 /* 162:203 */     localadf.n();
-/* 163:205 */     for (EntityPlayer localahd : paramaqu.a(EntityPlayer.class, localadf.getAABB().expand(50.0D, 50.0D, 50.0D))) {
+/* 163:205 */     for (EntityPlayer localahd : paramaqu.getEntityList(EntityPlayer.class, localadf.getAABB().expand(50.0D, 50.0D, 50.0D))) {
 /* 164:206 */       localahd.b(AchievementList.I);
 /* 165:    */     }
 /* 166:209 */     paramaqu.spawnEntity(localadf);

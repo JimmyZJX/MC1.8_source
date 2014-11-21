@@ -43,7 +43,7 @@ package net.minecraft.src;
 /*  43: 57 */     this.xPos -= MathUtils.cos(this.yaw / 180.0F * 3.141593F) * 0.16F;
 /*  44: 58 */     this.yPos -= 0.1000000014901161D;
 /*  45: 59 */     this.zPos -= MathUtils.sin(this.yaw / 180.0F * 3.141593F) * 0.16F;
-/*  46: 60 */     b(this.xPos, this.yPos, this.zPos);
+/*  46: 60 */     setPos(this.xPos, this.yPos, this.zPos);
 /*  47:    */     
 /*  48: 62 */     float f1 = 0.4F;
 /*  49: 63 */     this.xVelocity = (-MathUtils.sin(this.yaw / 180.0F * 3.141593F) * MathUtils.cos(this.pitch / 180.0F * 3.141593F) * f1);
@@ -60,7 +60,7 @@ package net.minecraft.src;
 /*  60:    */     
 /*  61: 74 */     a(0.25F, 0.25F);
 /*  62:    */     
-/*  63: 76 */     b(paramDouble1, paramDouble2, paramDouble3);
+/*  63: 76 */     setPos(paramDouble1, paramDouble2, paramDouble3);
 /*  64:    */   }
 /*  65:    */   
 /*  66:    */   protected float j()
@@ -227,7 +227,7 @@ package net.minecraft.src;
 /* 227:240 */     this.zVelocity *= f2;
 /* 228:241 */     this.yVelocity -= f3;
 /* 229:    */     
-/* 230:243 */     b(this.xPos, this.yPos, this.zPos);
+/* 230:243 */     setPos(this.xPos, this.yPos, this.zPos);
 /* 231:    */   }
 /* 232:    */   
 /* 233:    */   protected float m()

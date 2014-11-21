@@ -56,9 +56,9 @@ package net.minecraft.src;
 /* 55:   */   
 /* 56:   */   public Vec3 a(Entity paramwv, int paramInt)
 /* 57:   */   {
-/* 58:52 */     double d1 = this.a[paramInt].a + (int)(paramwv.J + 1.0F) * 0.5D;
+/* 58:52 */     double d1 = this.a[paramInt].a + (int)(paramwv.width + 1.0F) * 0.5D;
 /* 59:53 */     double d2 = this.a[paramInt].b;
-/* 60:54 */     double d3 = this.a[paramInt].c + (int)(paramwv.J + 1.0F) * 0.5D;
+/* 60:54 */     double d3 = this.a[paramInt].c + (int)(paramwv.width + 1.0F) * 0.5D;
 /* 61:55 */     return new Vec3(d1, d2, d3);
 /* 62:   */   }
 /* 63:   */   

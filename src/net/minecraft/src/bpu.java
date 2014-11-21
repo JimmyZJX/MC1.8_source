@@ -12,9 +12,9 @@ package net.minecraft.src;
 /* 11:21 */     this.a = paramard;
 /* 12:22 */     this.b.c();
 /* 13:   */     
-/* 14:24 */     this.c = MathUtils.floor(paramwv.J + 1.0F);
-/* 15:25 */     this.d = MathUtils.floor(paramwv.K + 1.0F);
-/* 16:26 */     this.e = MathUtils.floor(paramwv.J + 1.0F);
+/* 14:24 */     this.c = MathUtils.floor(paramwv.width + 1.0F);
+/* 15:25 */     this.d = MathUtils.floor(paramwv.height + 1.0F);
+/* 16:26 */     this.e = MathUtils.floor(paramwv.width + 1.0F);
 /* 17:   */   }
 /* 18:   */   
 /* 19:   */   public void a() {}

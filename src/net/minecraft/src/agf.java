@@ -21,7 +21,7 @@ package net.minecraft.src;
 /*  21:    */   
 /*  22:    */   protected double a(EntityLiving paramxm)
 /*  23:    */   {
-/*  24:227 */     return 4.0F + paramxm.J;
+/*  24:227 */     return 4.0F + paramxm.width;
 /*  25:    */   }
 /*  26:    */ }
 

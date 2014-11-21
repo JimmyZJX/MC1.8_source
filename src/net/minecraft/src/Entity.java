@@ -39,8 +39,8 @@ package net.minecraft.src;
 /*   38:     */   protected boolean H;
 /*   39:     */   private boolean g;
 /*   40:     */   public boolean isDead;
-/*   41:  76 */   public float J = 0.6F;
-/*   42:  77 */   public float K = 1.8F;
+/*   41:  76 */   public float width = 0.6F;
+/*   42:  77 */   public float height = 1.8F;
 /*   43:     */   public float L;
 /*   44:     */   public float M;
 /*   45:     */   public float N;
@@ -99,7 +99,7 @@ package net.minecraft.src;
 /*   98:     */   public Entity(World world)
 /*   99:     */   {
 /*  100: 146 */     this.world = world;
-/*  101: 147 */     b(0.0D, 0.0D, 0.0D);
+/*  101: 147 */     setPos(0.0D, 0.0D, 0.0D);
 /*  102: 149 */     if (world != null) {
 /*  103: 150 */       this.dimension = world.t.q();
 /*  104:     */     }
@@ -139,7 +139,7 @@ package net.minecraft.src;
 /*  138:     */     }
 /*  139: 185 */     while ((this.yPos > 0.0D) && (this.yPos < 256.0D))
 /*  140:     */     {
-/*  141: 186 */       b(this.xPos, this.yPos, this.zPos);
+/*  141: 186 */       setPos(this.xPos, this.yPos, this.zPos);
 /*  142: 187 */       if (this.world.getCollidingAABBs(this, getAABB()).isEmpty()) {
 /*  143:     */         break;
 /*  144:     */       }
@@ -156,15 +156,15 @@ package net.minecraft.src;
 /*  155:     */   
 /*  156:     */   protected void a(float paramFloat1, float paramFloat2)
 /*  157:     */   {
-/*  158: 202 */     if ((paramFloat1 != this.J) || (paramFloat2 != this.K))
+/*  158: 202 */     if ((paramFloat1 != this.width) || (paramFloat2 != this.height))
 /*  159:     */     {
-/*  160: 203 */       float f1 = this.J;
+/*  160: 203 */       float f1 = this.width;
 /*  161:     */       
-/*  162: 205 */       this.J = paramFloat1;
-/*  163: 206 */       this.K = paramFloat2;
-/*  164: 207 */       setAABB(new AABB(getAABB().minX, getAABB().minY, getAABB().minZ, getAABB().minX + this.J, getAABB().minY + this.K, getAABB().minZ + this.J));
-/*  165: 209 */       if ((this.J > f1) && (!this.aa) && (!this.world.isClient)) {
-/*  166: 210 */         d(f1 - this.J, 0.0D, f1 - this.J);
+/*  162: 205 */       this.width = paramFloat1;
+/*  163: 206 */       this.height = paramFloat2;
+/*  164: 207 */       setAABB(new AABB(getAABB().minX, getAABB().minY, getAABB().minZ, getAABB().minX + this.width, getAABB().minY + this.height, getAABB().minZ + this.width));
+/*  165: 209 */       if ((this.width > f1) && (!this.aa) && (!this.world.isClient)) {
+/*  166: 210 */         d(f1 - this.width, 0.0D, f1 - this.width);
 /*  167:     */       }
 /*  168:     */     }
 /*  169:     */   }
@@ -175,14 +175,14 @@ package net.minecraft.src;
 /*  174: 231 */     this.pitch = (paramFloat2 % 360.0F);
 /*  175:     */   }
 /*  176:     */   
-/*  177:     */   public void b(double paramDouble1, double paramDouble2, double paramDouble3)
+/*  177:     */   public void setPos(double x, double y, double z)
 /*  178:     */   {
-/*  179: 236 */     this.xPos = paramDouble1;
-/*  180: 237 */     this.yPos = paramDouble2;
-/*  181: 238 */     this.zPos = paramDouble3;
-/*  182: 239 */     float f1 = this.J / 2.0F;
-/*  183: 240 */     float f2 = this.K;
-/*  184: 241 */     setAABB(new AABB(paramDouble1 - f1, paramDouble2, paramDouble3 - f1, paramDouble1 + f1, paramDouble2 + f2, paramDouble3 + f1));
+/*  179: 236 */     this.xPos = x;
+/*  180: 237 */     this.yPos = y;
+/*  181: 238 */     this.zPos = z;
+/*  182: 239 */     float f1 = this.width / 2.0F;
+/*  183: 240 */     float f2 = this.height;
+/*  184: 241 */     setAABB(new AABB(x - f1, y, z - f1, x + f1, y + f2, z + f1));
 /*  185:     */   }
 /*  186:     */   
 /*  187:     */   public void c(float paramFloat1, float paramFloat2)
@@ -747,7 +747,7 @@ package net.minecraft.src;
 /*  746:     */   
 /*  747:     */   public boolean U()
 /*  748:     */   {
-/*  749: 805 */     return (this.Y) || (this.world.C(new BlockPosition(this.xPos, this.yPos, this.zPos))) || (this.world.C(new BlockPosition(this.xPos, this.yPos + this.K, this.zPos)));
+/*  749: 805 */     return (this.Y) || (this.world.C(new BlockPosition(this.xPos, this.yPos, this.zPos))) || (this.world.C(new BlockPosition(this.xPos, this.yPos + this.height, this.zPos)));
 /*  750:     */   }
 /*  751:     */   
 /*  752:     */   public boolean V()
@@ -783,16 +783,16 @@ package net.minecraft.src;
 /*  782: 832 */     float f2 = MathUtils.floor(getAABB().minY);
 /*  783:     */     float f3;
 /*  784:     */     float f4;
-/*  785: 833 */     for (int i1 = 0; i1 < 1.0F + this.J * 20.0F; i1++)
+/*  785: 833 */     for (int i1 = 0; i1 < 1.0F + this.width * 20.0F; i1++)
 /*  786:     */     {
-/*  787: 834 */       f3 = (this.rng.nextFloat() * 2.0F - 1.0F) * this.J;
-/*  788: 835 */       f4 = (this.rng.nextFloat() * 2.0F - 1.0F) * this.J;
+/*  787: 834 */       f3 = (this.rng.nextFloat() * 2.0F - 1.0F) * this.width;
+/*  788: 835 */       f4 = (this.rng.nextFloat() * 2.0F - 1.0F) * this.width;
 /*  789: 836 */       this.world.a(EnumParticleEffect.e, this.xPos + f3, f2 + 1.0F, this.zPos + f4, this.xVelocity, this.yVelocity - this.rng.nextFloat() * 0.2F, this.zVelocity, new int[0]);
 /*  790:     */     }
-/*  791: 838 */     for (int i1 = 0; i1 < 1.0F + this.J * 20.0F; i1++)
+/*  791: 838 */     for (int i1 = 0; i1 < 1.0F + this.width * 20.0F; i1++)
 /*  792:     */     {
-/*  793: 839 */       f3 = (this.rng.nextFloat() * 2.0F - 1.0F) * this.J;
-/*  794: 840 */       f4 = (this.rng.nextFloat() * 2.0F - 1.0F) * this.J;
+/*  793: 839 */       f3 = (this.rng.nextFloat() * 2.0F - 1.0F) * this.width;
+/*  794: 840 */       f4 = (this.rng.nextFloat() * 2.0F - 1.0F) * this.width;
 /*  795: 841 */       this.world.a(EnumParticleEffect.f, this.xPos + f3, f2 + 1.0F, this.zPos + f4, this.xVelocity, this.yVelocity, this.zVelocity, new int[0]);
 /*  796:     */     }
 /*  797:     */   }
@@ -813,7 +813,7 @@ package net.minecraft.src;
 /*  812: 856 */     Block localbec = this.world.getBlock(localdt);
 /*  813: 857 */     ProtoBlock localatr = localbec.getProto();
 /*  814: 859 */     if (localatr.b() != -1) {
-/*  815: 860 */       this.world.a(EnumParticleEffect.L, this.xPos + (this.rng.nextFloat() - 0.5D) * this.J, getAABB().minY + 0.1D, this.zPos + (this.rng.nextFloat() - 0.5D) * this.J, -this.xVelocity * 4.0D, 1.5D, -this.zVelocity * 4.0D, new int[] { ProtoBlock.f(localbec) });
+/*  815: 860 */       this.world.a(EnumParticleEffect.L, this.xPos + (this.rng.nextFloat() - 0.5D) * this.width, getAABB().minY + 0.1D, this.zPos + (this.rng.nextFloat() - 0.5D) * this.width, -this.xVelocity * 4.0D, 1.5D, -this.zVelocity * 4.0D, new int[] { ProtoBlock.f(localbec) });
 /*  816:     */     }
 /*  817:     */   }
 /*  818:     */   
@@ -911,7 +911,7 @@ package net.minecraft.src;
 /*  910: 947 */     if (d >= 180.0D) {
 /*  911: 948 */       this.lastYaw -= 360.0F;
 /*  912:     */     }
-/*  913: 950 */     b(this.xPos, this.yPos, this.zPos);
+/*  913: 950 */     setPos(this.xPos, this.yPos, this.zPos);
 /*  914: 951 */     b(paramFloat1, paramFloat2);
 /*  915:     */   }
 /*  916:     */   
@@ -927,7 +927,7 @@ package net.minecraft.src;
 /*  926: 961 */     this.R = (this.lastZ = this.zPos = paramDouble3);
 /*  927: 962 */     this.yaw = paramFloat1;
 /*  928: 963 */     this.pitch = paramFloat2;
-/*  929: 964 */     b(this.xPos, this.yPos, this.zPos);
+/*  929: 964 */     setPos(this.xPos, this.yPos, this.zPos);
 /*  930:     */   }
 /*  931:     */   
 /*  932:     */   public float g(Entity paramwv)
@@ -1209,7 +1209,7 @@ package net.minecraft.src;
 /* 1208:1230 */       } else if (paramfn.hasKey("UUID", 8)) {
 /* 1209:1231 */         this.uuid = UUID.fromString(paramfn.getString("UUID"));
 /* 1210:     */       }
-/* 1211:1234 */       b(this.xPos, this.yPos, this.zPos);
+/* 1211:1234 */       setPos(this.xPos, this.yPos, this.zPos);
 /* 1212:1235 */       b(this.yaw, this.pitch);
 /* 1213:1237 */       if ((paramfn.hasKey("CustomName", 8)) && (paramfn.getString("CustomName").length() > 0)) {
 /* 1214:1238 */         a(paramfn.getString("CustomName"));
@@ -1220,7 +1220,7 @@ package net.minecraft.src;
 /* 1219:     */       
 /* 1220:1244 */       readEntityFromNBT(paramfn);
 /* 1221:1246 */       if (af()) {
-/* 1222:1247 */         b(this.xPos, this.yPos, this.zPos);
+/* 1222:1247 */         setPos(this.xPos, this.yPos, this.zPos);
 /* 1223:     */       }
 /* 1224:     */     }
 /* 1225:     */     catch (Throwable localThrowable)
@@ -1299,9 +1299,9 @@ package net.minecraft.src;
 /* 1298:     */     }
 /* 1299:1320 */     for (int i1 = 0; i1 < 8; i1++)
 /* 1300:     */     {
-/* 1301:1321 */       double d1 = this.xPos + ((i1 >> 0) % 2 - 0.5F) * this.J * 0.8F;
+/* 1301:1321 */       double d1 = this.xPos + ((i1 >> 0) % 2 - 0.5F) * this.width * 0.8F;
 /* 1302:1322 */       double d2 = this.yPos + ((i1 >> 1) % 2 - 0.5F) * 0.1F;
-/* 1303:1323 */       double d3 = this.zPos + ((i1 >> 2) % 2 - 0.5F) * this.J * 0.8F;
+/* 1303:1323 */       double d3 = this.zPos + ((i1 >> 2) % 2 - 0.5F) * this.width * 0.8F;
 /* 1304:1325 */       if (this.world.getBlock(new BlockPosition(d1, d2 + aR(), d3)).getProto().u()) {
 /* 1305:1326 */         return true;
 /* 1306:     */       }
@@ -1374,7 +1374,7 @@ package net.minecraft.src;
 /* 1373:1399 */     if (this.rider == null) {
 /* 1374:1400 */       return;
 /* 1375:     */     }
-/* 1376:1402 */     this.rider.b(this.xPos, this.yPos + an() + this.rider.am(), this.zPos);
+/* 1376:1402 */     this.rider.setPos(this.xPos, this.yPos + an() + this.rider.am(), this.zPos);
 /* 1377:     */   }
 /* 1378:     */   
 /* 1379:     */   public double am()
@@ -1384,7 +1384,7 @@ package net.minecraft.src;
 /* 1383:     */   
 /* 1384:     */   public double an()
 /* 1385:     */   {
-/* 1386:1410 */     return this.K * 0.75D;
+/* 1386:1410 */     return this.height * 0.75D;
 /* 1387:     */   }
 /* 1388:     */   
 /* 1389:     */   public void mount(Entity vehicle)
@@ -1395,7 +1395,7 @@ package net.minecraft.src;
 /* 1394:     */     {
 /* 1395:1418 */       if (this.vehicle != null)
 /* 1396:     */       {
-/* 1397:1419 */         setPositionAndAngles(this.vehicle.xPos, this.vehicle.getAABB().minY + this.vehicle.K, this.vehicle.zPos, this.yaw, this.pitch);
+/* 1397:1419 */         setPositionAndAngles(this.vehicle.xPos, this.vehicle.getAABB().minY + this.vehicle.height, this.vehicle.zPos, this.yaw, this.pitch);
 /* 1398:1420 */         this.vehicle.rider = null;
 /* 1399:     */       }
 /* 1400:1422 */       this.vehicle = null;
@@ -1421,7 +1421,7 @@ package net.minecraft.src;
 /* 1420:     */   
 /* 1421:     */   public void a(double paramDouble1, double paramDouble2, double paramDouble3, float paramFloat1, float paramFloat2, int paramInt, boolean paramBoolean)
 /* 1422:     */   {
-/* 1423:1445 */     b(paramDouble1, paramDouble2, paramDouble3);
+/* 1423:1445 */     setPos(paramDouble1, paramDouble2, paramDouble3);
 /* 1424:1446 */     b(paramFloat1, paramFloat2);
 /* 1425:     */     
 /* 1426:1448 */     List<AABB> localList = this.world.getCollidingAABBs(this, getAABB().d(0.03125D, 0.0D, 0.03125D));
@@ -1434,7 +1434,7 @@ package net.minecraft.src;
 /* 1433:     */         }
 /* 1434:     */       }
 /* 1435:1457 */       paramDouble2 += d - getAABB().minY;
-/* 1436:1458 */       b(paramDouble1, paramDouble2, paramDouble3);
+/* 1436:1458 */       setPos(paramDouble1, paramDouble2, paramDouble3);
 /* 1437:     */     }
 /* 1438:     */   }
 /* 1439:     */   
@@ -1906,7 +1906,7 @@ package net.minecraft.src;
 /* 1905:     */   
 /* 1906:     */   public float aR()
 /* 1907:     */   {
-/* 1908:1893 */     return this.K * 0.85F;
+/* 1908:1893 */     return this.height * 0.85F;
 /* 1909:     */   }
 /* 1910:     */   
 /* 1911:     */   public boolean aS()

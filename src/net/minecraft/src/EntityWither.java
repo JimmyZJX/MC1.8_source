@@ -409,7 +409,7 @@ package net.minecraft.src;
 /* 407:435 */       localadw.u();
 /* 408:    */     }
 /* 409:438 */     if (!this.world.isClient) {
-/* 410:439 */       for (EntityPlayer localahd : this.world.a(EntityPlayer.class, getAABB().expand(50.0D, 100.0D, 50.0D))) {
+/* 410:439 */       for (EntityPlayer localahd : this.world.getEntityList(EntityPlayer.class, getAABB().expand(50.0D, 100.0D, 50.0D))) {
 /* 411:440 */         localahd.b(AchievementList.J);
 /* 412:    */       }
 /* 413:    */     }

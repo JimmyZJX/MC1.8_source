@@ -38,7 +38,7 @@ package net.minecraft.src;
 /* 37:   */     {
 /* 38:54 */       if (this.f != null)
 /* 39:   */       {
-/* 40:55 */         double d = this.b.J * this.b.J;
+/* 40:55 */         double d = this.b.width * this.b.width;
 /* 41:57 */         if ((this.b.c(this.f) < d) || ((this.b.yPos > this.f.getY()) && (this.b.c(new BlockPosition(this.f.getX(), MathUtils.floor(this.b.yPos), this.f.getZ())) < d))) {
 /* 42:58 */           this.f = null;
 /* 43:   */         } else {

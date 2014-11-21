@@ -48,7 +48,7 @@ package net.minecraft.src;
 /*  48:    */   public EntityFishHook(World paramaqu, double paramDouble1, double paramDouble2, double paramDouble3, EntityPlayer paramahd)
 /*  49:    */   {
 /*  50: 91 */     this(paramaqu);
-/*  51: 92 */     b(paramDouble1, paramDouble2, paramDouble3);
+/*  51: 92 */     setPos(paramDouble1, paramDouble2, paramDouble3);
 /*  52: 93 */     this.ah = true;
 /*  53: 94 */     this.b = paramahd;
 /*  54: 95 */     paramahd.bE = this;
@@ -68,7 +68,7 @@ package net.minecraft.src;
 /*  68:108 */     this.xPos -= MathUtils.cos(this.yaw / 180.0F * 3.141593F) * 0.16F;
 /*  69:109 */     this.yPos -= 0.1000000014901161D;
 /*  70:110 */     this.zPos -= MathUtils.sin(this.yaw / 180.0F * 3.141593F) * 0.16F;
-/*  71:111 */     b(this.xPos, this.yPos, this.zPos);
+/*  71:111 */     setPos(this.xPos, this.yPos, this.zPos);
 /*  72:    */     
 /*  73:113 */     float f1 = 0.4F;
 /*  74:114 */     this.xVelocity = (-MathUtils.sin(this.yaw / 180.0F * 3.141593F) * MathUtils.cos(this.pitch / 180.0F * 3.141593F) * f1);
@@ -151,7 +151,7 @@ package net.minecraft.src;
 /* 151:196 */       this.pitch = ((float)(this.pitch + (this.aC - this.pitch) / this.ax));
 /* 152:    */       
 /* 153:198 */       this.ax -= 1;
-/* 154:199 */       b(d1, d2, d3);
+/* 154:199 */       setPos(d1, d2, d3);
 /* 155:200 */       b(this.yaw, this.pitch);
 /* 156:201 */       return;
 /* 157:    */     }
@@ -172,7 +172,7 @@ package net.minecraft.src;
 /* 172:    */         else
 /* 173:    */         {
 /* 174:216 */           this.xPos = this.c.xPos;
-/* 175:217 */           this.yPos = (this.c.getAABB().minY + this.c.K * 0.8D);
+/* 175:217 */           this.yPos = (this.c.getAABB().minY + this.c.height * 0.8D);
 /* 176:218 */           this.zPos = this.c.zPos;
 /* 177:219 */           return;
 /* 178:    */         }
@@ -298,7 +298,7 @@ package net.minecraft.src;
 /* 298:343 */       if ((this.rng.nextFloat() < 0.25F) && (this.world.C(localdt))) {
 /* 299:344 */         n = 2;
 /* 300:    */       }
-/* 301:346 */       if ((this.rng.nextFloat() < 0.5F) && (!this.world.i(localdt))) {
+/* 301:346 */       if ((this.rng.nextFloat() < 0.5F) && (!this.world.hasDaylight(localdt))) {
 /* 302:347 */         n--;
 /* 303:    */       }
 /* 304:350 */       if (this.at > 0)
@@ -325,8 +325,8 @@ package net.minecraft.src;
 /* 325:361 */             this.yVelocity -= 0.2000000029802322D;
 /* 326:362 */             a("random.splash", 0.25F, 1.0F + (this.rng.nextFloat() - this.rng.nextFloat()) * 0.4F);
 /* 327:363 */             f4 = MathUtils.floor(getAABB().minY);
-/* 328:364 */             localqt.a(EnumParticleEffect.e, this.xPos, f4 + 1.0F, this.zPos, (int)(1.0F + this.J * 20.0F), this.J, 0.0D, this.J, 0.2000000029802322D, new int[0]);
-/* 329:365 */             localqt.a(EnumParticleEffect.g, this.xPos, f4 + 1.0F, this.zPos, (int)(1.0F + this.J * 20.0F), this.J, 0.0D, this.J, 0.2000000029802322D, new int[0]);
+/* 328:364 */             localqt.a(EnumParticleEffect.e, this.xPos, f4 + 1.0F, this.zPos, (int)(1.0F + this.width * 20.0F), this.width, 0.0D, this.width, 0.2000000029802322D, new int[0]);
+/* 329:365 */             localqt.a(EnumParticleEffect.g, this.xPos, f4 + 1.0F, this.zPos, (int)(1.0F + this.width * 20.0F), this.width, 0.0D, this.width, 0.2000000029802322D, new int[0]);
 /* 330:    */             
 /* 331:367 */             this.at = MathUtils.nextInt(this.rng, 10, 30);
 /* 332:    */           }
@@ -399,7 +399,7 @@ package net.minecraft.src;
 /* 399:433 */     this.yVelocity *= f2;
 /* 400:434 */     this.zVelocity *= f2;
 /* 401:    */     
-/* 402:436 */     b(this.xPos, this.yPos, this.zPos);
+/* 402:436 */     setPos(this.xPos, this.yPos, this.zPos);
 /* 403:    */   }
 /* 404:    */   
 /* 405:    */   public void writeEntityToNBT(NBTTagCompound paramfn)

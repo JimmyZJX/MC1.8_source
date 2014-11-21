@@ -96,7 +96,7 @@ package net.minecraft.src;
 /*  97: 90 */         if (localwv == null) {
 /*  98: 91 */           return;
 /*  99:    */         }
-/* 100: 94 */         int i2 = a().a(localwv.getClass(), new AABB(localdt.getX(), localdt.getY(), localdt.getZ(), localdt.getX() + 1, localdt.getY() + 1, localdt.getZ() + 1).expand(this.m, this.m, this.m)).size();
+/* 100: 94 */         int i2 = a().getEntityList(localwv.getClass(), new AABB(localdt.getX(), localdt.getY(), localdt.getZ(), localdt.getX() + 1, localdt.getY() + 1, localdt.getZ() + 1).expand(this.m, this.m, this.m)).size();
 /* 101: 95 */         if (i2 >= this.k)
 /* 102:    */         {
 /* 103: 96 */           h();

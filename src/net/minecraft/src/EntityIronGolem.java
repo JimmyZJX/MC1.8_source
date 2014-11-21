@@ -93,7 +93,7 @@ package net.minecraft.src;
 /*  93:120 */       Block localbec = this.world.getBlock(new BlockPosition(i, j, k));
 /*  94:121 */       ProtoBlock localatr = localbec.getProto();
 /*  95:122 */       if (localatr.getMaterial() != Material.air) {
-/*  96:123 */         this.world.a(EnumParticleEffect.L, this.xPos + (this.rng.nextFloat() - 0.5D) * this.J, getAABB().minY + 0.1D, this.zPos + (this.rng.nextFloat() - 0.5D) * this.J, 4.0D * (this.rng.nextFloat() - 0.5D), 0.5D, (this.rng.nextFloat() - 0.5D) * 4.0D, new int[] { ProtoBlock.f(localbec) });
+/*  96:123 */         this.world.a(EnumParticleEffect.L, this.xPos + (this.rng.nextFloat() - 0.5D) * this.width, getAABB().minY + 0.1D, this.zPos + (this.rng.nextFloat() - 0.5D) * this.width, 4.0D * (this.rng.nextFloat() - 0.5D), 0.5D, (this.rng.nextFloat() - 0.5D) * 4.0D, new int[] { ProtoBlock.f(localbec) });
 /*  97:    */       }
 /*  98:    */     }
 /*  99:    */   }

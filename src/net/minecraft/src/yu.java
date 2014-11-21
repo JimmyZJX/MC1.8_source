@@ -80,10 +80,10 @@ package net.minecraft.src;
 /*  79: 98 */     if (MathUtils.abs(f10) > MathUtils.abs(f11))
 /*  80:    */     {
 /*  81: 99 */       if (f10 < 0.0F) {
-/*  82:100 */         f10 -= this.a.J / 2.0F;
+/*  82:100 */         f10 -= this.a.width / 2.0F;
 /*  83:    */       }
 /*  84:102 */       if (f10 > 0.0F) {
-/*  85:103 */         f10 += this.a.J / 2.0F;
+/*  85:103 */         f10 += this.a.width / 2.0F;
 /*  86:    */       }
 /*  87:105 */       f11 = 0.0F;
 /*  88:    */     }
@@ -91,18 +91,18 @@ package net.minecraft.src;
 /*  90:    */     {
 /*  91:107 */       f10 = 0.0F;
 /*  92:108 */       if (f11 < 0.0F) {
-/*  93:109 */         f11 -= this.a.J / 2.0F;
+/*  93:109 */         f11 -= this.a.width / 2.0F;
 /*  94:    */       }
 /*  95:111 */       if (f11 > 0.0F) {
-/*  96:112 */         f11 += this.a.J / 2.0F;
+/*  96:112 */         f11 += this.a.width / 2.0F;
 /*  97:    */       }
 /*  98:    */     }
 /*  99:116 */     int m = MathUtils.floor(this.a.xPos + f10);
 /* 100:117 */     int n = MathUtils.floor(this.a.zPos + f11);
 /* 101:    */     
-/* 102:119 */     int i1 = MathUtils.floor(this.a.J + 1.0F);
-/* 103:120 */     int i2 = MathUtils.floor(this.a.K + localahd.K + 1.0F);
-/* 104:121 */     int i3 = MathUtils.floor(this.a.J + 1.0F);
+/* 102:119 */     int i1 = MathUtils.floor(this.a.width + 1.0F);
+/* 103:120 */     int i2 = MathUtils.floor(this.a.height + localahd.height + 1.0F);
+/* 104:121 */     int i3 = MathUtils.floor(this.a.width + 1.0F);
 /* 105:    */     Object localObject;
 /* 106:123 */     if ((i != m) || (k != n))
 /* 107:    */     {

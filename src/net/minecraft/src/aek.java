@@ -16,7 +16,7 @@ package net.minecraft.src;
 /*  15:    */   {
 /*  16: 23 */     this(paramaqu);
 /*  17:    */     
-/*  18: 25 */     b(paramDouble1, paramDouble2, paramDouble3);
+/*  18: 25 */     setPos(paramDouble1, paramDouble2, paramDouble3);
 /*  19:    */     
 /*  20: 27 */     float f = (float)(Math.random() * 3.141592741012573D * 2.0D);
 /*  21: 28 */     this.xVelocity = (-(float)Math.sin(f) * 0.02F);
@@ -77,7 +77,7 @@ package net.minecraft.src;
 /*  76:    */   private void l()
 /*  77:    */   {
 /*  78: 84 */     float f = 4.0F;
-/*  79: 85 */     this.world.a(this, this.xPos, this.yPos + this.K / 2.0F, this.zPos, f, true);
+/*  79: 85 */     this.world.a(this, this.xPos, this.yPos + this.height / 2.0F, this.zPos, f, true);
 /*  80:    */   }
 /*  81:    */   
 /*  82:    */   protected void writeEntityToNBT(NBTTagCompound paramfn)

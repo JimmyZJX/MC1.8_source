@@ -109,7 +109,7 @@ package net.minecraft.src;
 /* 108:117 */     for (int k = 0; k < i; k++) {
 /* 109:118 */       for (int m = 0; m < j; m++)
 /* 110:    */       {
-/* 111:119 */         localObject = localdt.a(localej, k).up(m);
+/* 111:119 */         localObject = localdt.offset(localej, k).up(m);
 /* 112:    */         
 /* 113:121 */         ProtoBlock localatr = this.world.getBlock((BlockPosition)localObject).getProto();
 /* 114:122 */         if ((!localatr.getMaterial().a()) && (!ava.d(localatr))) {
@@ -217,7 +217,7 @@ package net.minecraft.src;
 /* 216:218 */     return false;
 /* 217:    */   }
 /* 218:    */   
-/* 219:    */   public void b(double paramDouble1, double paramDouble2, double paramDouble3)
+/* 219:    */   public void setPos(double paramDouble1, double paramDouble2, double paramDouble3)
 /* 220:    */   {
 /* 221:223 */     this.xPos = paramDouble1;
 /* 222:224 */     this.yPos = paramDouble2;

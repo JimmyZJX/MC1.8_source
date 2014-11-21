@@ -16,7 +16,7 @@ package net.minecraft.src;
 /* 15:   */   
 /* 16:   */   protected int e(World paramaqu, BlockPosition paramdt)
 /* 17:   */   {
-/* 18:27 */     int i = Math.min(paramaqu.a(Entity.class, a(paramdt)).size(), this.b);
+/* 18:27 */     int i = Math.min(paramaqu.getEntityList(Entity.class, a(paramdt)).size(), this.b);
 /* 19:28 */     if (i > 0)
 /* 20:   */     {
 /* 21:29 */       float f = Math.min(this.b, i) / this.b;

@@ -28,7 +28,7 @@ package net.minecraft.src;
 /* 27:33 */     if ((localamj != null) && (localamj.getItem() == ItemList.be) && (getAge() >= 0))
 /* 28:   */     {
 /* 29:34 */       setDead();
-/* 30:35 */       this.world.a(EnumParticleEffect.EXPLOSION_LARGE, this.xPos, this.yPos + this.K / 2.0F, this.zPos, 0.0D, 0.0D, 0.0D, new int[0]);
+/* 30:35 */       this.world.a(EnumParticleEffect.EXPLOSION_LARGE, this.xPos, this.yPos + this.height / 2.0F, this.zPos, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 31:36 */       if (!this.world.isClient)
 /* 32:   */       {
 /* 33:37 */         EntityCow localabs = new EntityCow(this.world);
@@ -40,7 +40,7 @@ package net.minecraft.src;
 /* 39:   */         }
 /* 40:44 */         this.world.spawnEntity(localabs);
 /* 41:45 */         for (int i = 0; i < 5; i++) {
-/* 42:46 */           this.world.spawnEntity(new EntityItem(this.world, this.xPos, this.yPos + this.K, this.zPos, new ItemStack(BlockList.redMushroom)));
+/* 42:46 */           this.world.spawnEntity(new EntityItem(this.world, this.xPos, this.yPos + this.height, this.zPos, new ItemStack(BlockList.redMushroom)));
 /* 43:   */         }
 /* 44:48 */         localamj.a(1, paramahd);
 /* 45:49 */         a("mob.sheep.shear", 1.0F, 1.0F);

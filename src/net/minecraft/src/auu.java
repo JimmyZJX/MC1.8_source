@@ -96,7 +96,7 @@ package net.minecraft.src;
 /*  95:    */   
 /*  96:    */   public boolean f(World paramaqu, BlockPosition paramdt, Block parambec)
 /*  97:    */   {
-/*  98:110 */     return ((paramaqu.k(paramdt) >= 8) || (paramaqu.i(paramdt))) && (c(paramaqu.getBlock(paramdt.down()).getProto()));
+/*  98:110 */     return ((paramaqu.k(paramdt) >= 8) || (paramaqu.hasDaylight(paramdt))) && (c(paramaqu.getBlock(paramdt.down()).getProto()));
 /*  99:    */   }
 /* 100:    */   
 /* 101:    */   protected Item j()

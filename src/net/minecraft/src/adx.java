@@ -72,7 +72,7 @@ package net.minecraft.src;
 /*  71:    */   public adx(World paramaqu, double paramDouble1, double paramDouble2, double paramDouble3)
 /*  72:    */   {
 /*  73:144 */     this(paramaqu);
-/*  74:145 */     b(paramDouble1, paramDouble2, paramDouble3);
+/*  74:145 */     setPos(paramDouble1, paramDouble2, paramDouble3);
 /*  75:    */     
 /*  76:147 */     this.xVelocity = 0.0D;
 /*  77:148 */     this.yVelocity = 0.0D;
@@ -85,7 +85,7 @@ package net.minecraft.src;
 /*  84:    */   
 /*  85:    */   public double an()
 /*  86:    */   {
-/*  87:158 */     return this.K * 0.5D - 0.2000000029802322D;
+/*  87:158 */     return this.height * 0.5D - 0.2000000029802322D;
 /*  88:    */   }
 /*  89:    */   
 /*  90:    */   public boolean a(DamageSource paramwh, float paramFloat)
@@ -217,12 +217,12 @@ package net.minecraft.src;
 /* 216:290 */         this.pitch = ((float)(this.pitch + (this.i - this.pitch) / this.d));
 /* 217:    */         
 /* 218:292 */         this.d -= 1;
-/* 219:293 */         b(d1, d2, d3);
+/* 219:293 */         setPos(d1, d2, d3);
 /* 220:294 */         b(this.yaw, this.pitch);
 /* 221:    */       }
 /* 222:    */       else
 /* 223:    */       {
-/* 224:296 */         b(this.xPos, this.yPos, this.zPos);
+/* 224:296 */         setPos(this.xPos, this.yPos, this.zPos);
 /* 225:297 */         b(this.yaw, this.pitch);
 /* 226:    */       }
 /* 227:300 */       return;
@@ -429,7 +429,7 @@ package net.minecraft.src;
 /* 428:499 */     this.xPos = (d8 + d2 * d7);
 /* 429:500 */     this.zPos = (d9 + d3 * d7);
 /* 430:    */     
-/* 431:502 */     b(this.xPos, this.yPos, this.zPos);
+/* 431:502 */     setPos(this.xPos, this.yPos, this.zPos);
 /* 432:    */     
 /* 433:504 */     double d12 = this.xVelocity;
 /* 434:505 */     double d13 = this.zVelocity;
@@ -444,9 +444,9 @@ package net.minecraft.src;
 /* 443:    */     
 /* 444:515 */     d(d12, 0.0D, d13);
 /* 445:517 */     if ((arrayOfInt[0][1] != 0) && (MathUtils.floor(this.xPos) - paramdt.getX() == arrayOfInt[0][0]) && (MathUtils.floor(this.zPos) - paramdt.getZ() == arrayOfInt[0][2])) {
-/* 446:518 */       b(this.xPos, this.yPos + arrayOfInt[0][1], this.zPos);
+/* 446:518 */       setPos(this.xPos, this.yPos + arrayOfInt[0][1], this.zPos);
 /* 447:519 */     } else if ((arrayOfInt[1][1] != 0) && (MathUtils.floor(this.xPos) - paramdt.getX() == arrayOfInt[1][0]) && (MathUtils.floor(this.zPos) - paramdt.getZ() == arrayOfInt[1][2])) {
-/* 448:520 */       b(this.xPos, this.yPos + arrayOfInt[1][1], this.zPos);
+/* 448:520 */       setPos(this.xPos, this.yPos + arrayOfInt[1][1], this.zPos);
 /* 449:    */     }
 /* 450:523 */     o();
 /* 451:    */     
@@ -461,7 +461,7 @@ package net.minecraft.src;
 /* 460:531 */         this.xVelocity = (this.xVelocity / d6 * (d6 + d15));
 /* 461:532 */         this.zVelocity = (this.zVelocity / d6 * (d6 + d15));
 /* 462:    */       }
-/* 463:534 */       b(this.xPos, localbrw2.y, this.zPos);
+/* 463:534 */       setPos(this.xPos, localbrw2.y, this.zPos);
 /* 464:    */     }
 /* 465:537 */     int k = MathUtils.floor(this.xPos);
 /* 466:538 */     int m = MathUtils.floor(this.zPos);
@@ -516,13 +516,13 @@ package net.minecraft.src;
 /* 515:    */     }
 /* 516:    */   }
 /* 517:    */   
-/* 518:    */   public void b(double paramDouble1, double paramDouble2, double paramDouble3)
+/* 518:    */   public void setPos(double paramDouble1, double paramDouble2, double paramDouble3)
 /* 519:    */   {
 /* 520:587 */     this.xPos = paramDouble1;
 /* 521:588 */     this.yPos = paramDouble2;
 /* 522:589 */     this.zPos = paramDouble3;
-/* 523:590 */     float f1 = this.J / 2.0F;
-/* 524:591 */     float f2 = this.K;
+/* 523:590 */     float f1 = this.width / 2.0F;
+/* 524:591 */     float f2 = this.height;
 /* 525:592 */     setAABB(new AABB(paramDouble1 - f1, paramDouble2, paramDouble3 - f1, paramDouble1 + f1, paramDouble2 + f2, paramDouble3 + f1));
 /* 526:    */   }
 /* 527:    */   

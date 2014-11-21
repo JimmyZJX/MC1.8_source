@@ -156,7 +156,7 @@ package net.minecraft.src;
 /* 155:182 */         break;
 /* 156:    */       }
 /* 157:    */     }
-/* 158:188 */     float f1 = this.b.J * this.b.J * this.i;
+/* 158:188 */     float f1 = this.b.width * this.b.width * this.i;
 /* 159:189 */     for (int n = this.d.e(); n < k; n++)
 /* 160:    */     {
 /* 161:190 */       Vec3 localbrw2 = this.d.a(this.b, n);
@@ -164,8 +164,8 @@ package net.minecraft.src;
 /* 163:192 */         this.d.c(n + 1);
 /* 164:    */       }
 /* 165:    */     }
-/* 166:197 */     int n = MathUtils.ceil(this.b.J);
-/* 167:198 */     int i1 = (int)this.b.K + 1;
+/* 166:197 */     int n = MathUtils.ceil(this.b.width);
+/* 167:198 */     int i1 = (int)this.b.height + 1;
 /* 168:199 */     int i2 = n;
 /* 169:200 */     for (int i3 = k - 1; i3 >= this.d.e(); i3--) {
 /* 170:201 */       if (a(localbrw1, this.d.a(this.b, i3), n, i1, i2))

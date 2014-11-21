@@ -109,7 +109,7 @@ package net.minecraft.src;
 /* 108:130 */     for (EnumDirection localej : new EnumDirection[] { EnumDirection.SOUTH, EnumDirection.WEST }) {
 /* 109:131 */       for (int k = 1; k < 42; k++)
 /* 110:    */       {
-/* 111:132 */         BlockPosition localdt = paramdt.a(localej, k);
+/* 111:132 */         BlockPosition localdt = paramdt.offset(localej, k);
 /* 112:133 */         Block localbec = paramaqu.getBlock(localdt);
 /* 113:135 */         if (localbec.getProto() == BlockList.bR)
 /* 114:    */         {

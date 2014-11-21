@@ -92,7 +92,7 @@ package net.minecraft.src;
 /*  91:    */     {
 /*  92:122 */       float f = c(1.0F);
 /*  93:123 */       BlockPosition localdt = new BlockPosition(this.xPos, Math.round(this.yPos), this.zPos);
-/*  94:124 */       if ((f > 0.5F) && (this.rng.nextFloat() * 30.0F < (f - 0.4F) * 2.0F) && (this.world.i(localdt)))
+/*  94:124 */       if ((f > 0.5F) && (this.rng.nextFloat() * 30.0F < (f - 0.4F) * 2.0F) && (this.world.hasDaylight(localdt)))
 /*  95:    */       {
 /*  96:125 */         int i = 1;
 /*  97:    */         

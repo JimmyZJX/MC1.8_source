@@ -44,14 +44,14 @@ package net.minecraft.src;
 /*  43:329 */         Vec3 localbrw = this.b.d(1.0F);
 /*  44:    */         
 /*  45:331 */         double d3 = localxm.xPos - (this.b.xPos + localbrw.x * d2);
-/*  46:332 */         double d4 = localxm.getAABB().minY + localxm.K / 2.0F - (0.5D + this.b.yPos + this.b.K / 2.0F);
+/*  46:332 */         double d4 = localxm.getAABB().minY + localxm.height / 2.0F - (0.5D + this.b.yPos + this.b.height / 2.0F);
 /*  47:333 */         double d5 = localxm.zPos - (this.b.zPos + localbrw.z * d2);
 /*  48:    */         
 /*  49:335 */         localaqu.playLevelEvent(null, 1008, new BlockPosition(this.b), 0);
 /*  50:336 */         ahn localahn = new ahn(localaqu, this.b, d3, d4, d5);
 /*  51:337 */         localahn.e = this.b.cd();
 /*  52:338 */         localahn.xPos = (this.b.xPos + localbrw.x * d2);
-/*  53:339 */         localahn.yPos = (this.b.yPos + this.b.K / 2.0F + 0.5D);
+/*  53:339 */         localahn.yPos = (this.b.yPos + this.b.height / 2.0F + 0.5D);
 /*  54:340 */         localahn.zPos = (this.b.zPos + localbrw.z * d2);
 /*  55:341 */         localaqu.spawnEntity(localahn);
 /*  56:342 */         this.a = -40;

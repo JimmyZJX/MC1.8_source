@@ -218,7 +218,7 @@ package net.minecraft.src;
 /* 217:    */   private void f(World paramaqu, BlockPosition paramdt, Block parambec)
 /* 218:    */   {
 /* 219:239 */     d(parambec);
-/* 220:240 */     List<ahj> localList = paramaqu.a(ahj.class, new AABB(paramdt.getX() + this.B, paramdt.getY() + this.C, paramdt.getZ() + this.D, paramdt.getX() + this.E, paramdt.getY() + this.F, paramdt.getZ() + this.G));
+/* 220:240 */     List<ahj> localList = paramaqu.getEntityList(ahj.class, new AABB(paramdt.getX() + this.B, paramdt.getY() + this.C, paramdt.getZ() + this.D, paramdt.getX() + this.E, paramdt.getY() + this.F, paramdt.getZ() + this.G));
 /* 221:241 */     int i = !localList.isEmpty() ? 1 : 0;
 /* 222:242 */     boolean bool = ((Boolean)parambec.getProperty(b)).booleanValue();
 /* 223:244 */     if ((i != 0) && (!bool))

@@ -348,7 +348,7 @@ package net.minecraft.src;
 /* 342:    */     }
 /* 343:406 */     localqt.b.c((int)localqw.xPos >> 4, (int)localqw.zPos >> 4);
 /* 344:408 */     while ((!localqt.getCollidingAABBs(localqw, localqw.getAABB()).isEmpty()) && (localqw.yPos < 256.0D)) {
-/* 345:409 */       localqw.b(localqw.xPos, localqw.yPos + 1.0D, localqw.zPos);
+/* 345:409 */       localqw.setPos(localqw.xPos, localqw.yPos + 1.0D, localqw.zPos);
 /* 346:    */     }
 /* 347:412 */     localqw.a.a(new kp(localqw.dimension, localqw.world.getDifficulty(), localqw.world.getWorldInfo().u(), localqw.c.b()));
 /* 348:413 */     BlockPosition localdt2 = localqt.getWorldSpawn();

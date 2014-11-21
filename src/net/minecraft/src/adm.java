@@ -95,14 +95,14 @@ package net.minecraft.src;
 /*  94:    */   {
 /*  95:149 */     BlockPosition localdt1 = new BlockPosition(paramDouble1 - this.xPos, paramDouble2 - this.yPos, paramDouble3 - this.zPos);
 /*  96:150 */     BlockPosition localdt2 = this.a.offset(localdt1);
-/*  97:151 */     b(localdt2.getX(), localdt2.getY(), localdt2.getZ());
+/*  97:151 */     setPos(localdt2.getX(), localdt2.getY(), localdt2.getZ());
 /*  98:    */   }
 /*  99:    */   
 /* 100:    */   public void a(double paramDouble1, double paramDouble2, double paramDouble3, float paramFloat1, float paramFloat2, int paramInt, boolean paramBoolean)
 /* 101:    */   {
 /* 102:156 */     BlockPosition localdt1 = new BlockPosition(paramDouble1 - this.xPos, paramDouble2 - this.yPos, paramDouble3 - this.zPos);
 /* 103:157 */     BlockPosition localdt2 = this.a.offset(localdt1);
-/* 104:158 */     b(localdt2.getX(), localdt2.getY(), localdt2.getZ());
+/* 104:158 */     setPos(localdt2.getX(), localdt2.getY(), localdt2.getZ());
 /* 105:    */   }
 /* 106:    */ }
 

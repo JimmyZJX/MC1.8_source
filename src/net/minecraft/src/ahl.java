@@ -37,7 +37,7 @@ package net.minecraft.src;
 /*  37: 51 */     a(1.0F, 1.0F);
 /*  38:    */     
 /*  39: 53 */     setPositionAndAngles(paramDouble1, paramDouble2, paramDouble3, this.yaw, this.pitch);
-/*  40: 54 */     b(paramDouble1, paramDouble2, paramDouble3);
+/*  40: 54 */     setPos(paramDouble1, paramDouble2, paramDouble3);
 /*  41:    */     
 /*  42: 56 */     double d1 = MathUtils.a(paramDouble4 * paramDouble4 + paramDouble5 * paramDouble5 + paramDouble6 * paramDouble6);
 /*  43: 57 */     this.b = (paramDouble4 / d1 * 0.1D);
@@ -53,7 +53,7 @@ package net.minecraft.src;
 /*  53: 66 */     a(1.0F, 1.0F);
 /*  54:    */     
 /*  55: 68 */     setPositionAndAngles(paramxm.xPos, paramxm.yPos, paramxm.zPos, paramxm.yaw, paramxm.pitch);
-/*  56: 69 */     b(this.xPos, this.yPos, this.zPos);
+/*  56: 69 */     setPos(this.xPos, this.yPos, this.zPos);
 /*  57:    */     
 /*  58: 71 */     this.xVelocity = (this.yVelocity = this.zVelocity = 0.0D);
 /*  59:    */     
@@ -175,7 +175,7 @@ package net.minecraft.src;
 /* 175:    */     
 /* 176:191 */     this.world.a(EnumParticleEffect.l, this.xPos, this.yPos + 0.5D, this.zPos, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 177:    */     
-/* 178:193 */     b(this.xPos, this.yPos, this.zPos);
+/* 178:193 */     setPos(this.xPos, this.yPos, this.zPos);
 /* 179:    */   }
 /* 180:    */   
 /* 181:    */   protected float j()

@@ -99,7 +99,7 @@ package net.minecraft.src;
 /*  98:    */     Block localObject;
 /*  99:114 */     for (int j = 1; j < 42; j++)
 /* 100:    */     {
-/* 101:115 */       localdt = paramdt.a(localej, j);
+/* 101:115 */       localdt = paramdt.offset(localej, j);
 /* 102:116 */       localObject = paramaqu.getBlock(localdt);
 /* 103:118 */       if (((Block)localObject).getProto() == BlockList.bR)
 /* 104:    */       {
@@ -137,7 +137,7 @@ package net.minecraft.src;
 /* 136:148 */     Block localbec1 = instance().a(M, Boolean.valueOf(bool4)).a(b, Boolean.valueOf(bool5));
 /* 137:150 */     if (i > 0)
 /* 138:    */     {
-/* 139:151 */       localdt = paramdt.a(localej, i);
+/* 139:151 */       localdt = paramdt.offset(localej, i);
 /* 140:152 */       EnumDirection localObject1 = localej.d();
 /* 141:153 */       paramaqu.setBlock(localdt, localbec1.a(a, (Comparable)localObject1), 3);
 /* 142:154 */       b(paramaqu, localdt, (EnumDirection)localObject1);
@@ -155,7 +155,7 @@ package net.minecraft.src;
 /* 154:168 */     if (bool1 != bool4) {
 /* 155:169 */       for (int k = 1; k < i; k++)
 /* 156:    */       {
-/* 157:170 */         BlockPosition localObject1 = paramdt.a(localej, k);
+/* 157:170 */         BlockPosition localObject1 = paramdt.offset(localej, k);
 /* 158:171 */         Block localbec2 = arrayOfbec[k];
 /* 159:172 */         if (localbec2 != null) {
 /* 160:176 */           if (paramaqu.getBlock((BlockPosition)localObject1).getProto() != BlockList.air) {

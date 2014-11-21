@@ -86,7 +86,7 @@ package net.minecraft.src;
 /*  85: 90 */       this.pitch = ((float)(this.pitch + (this.g - this.pitch) / this.b));
 /*  86:    */       
 /*  87: 92 */       this.b -= 1;
-/*  88: 93 */       b(d1, d2, d3);
+/*  88: 93 */       setPos(d1, d2, d3);
 /*  89: 94 */       b(this.yaw, this.pitch);
 /*  90:    */     }
 /*  91: 96 */     this.bl = this.bm;

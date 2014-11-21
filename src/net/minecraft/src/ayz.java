@@ -31,7 +31,7 @@ package net.minecraft.src;
 /*  30:264 */     int i = a(paramdt, this.d) - 1;
 /*  31:266 */     if (i >= 0)
 /*  32:    */     {
-/*  33:267 */       this.f = paramdt.a(this.d, i);
+/*  33:267 */       this.f = paramdt.offset(this.d, i);
 /*  34:    */       
 /*  35:269 */       this.h = a(this.f, this.c);
 /*  36:271 */       if ((this.h < 2) || (this.h > 21))
@@ -50,7 +50,7 @@ package net.minecraft.src;
 				  int i;
 /*  49:284 */     for (i = 0; i < 22; i++)
 /*  50:    */     {
-/*  51:285 */       BlockPosition localObject = paramdt.a(paramej, i);
+/*  51:285 */       BlockPosition localObject = paramdt.offset(paramej, i);
 /*  52:286 */       if (!a(this.a.getBlock((BlockPosition)localObject).getProto())) {
 /*  53:    */         break;
 /*  54:    */       }
@@ -58,7 +58,7 @@ package net.minecraft.src;
 /*  56:    */         break;
 /*  57:    */       }
 /*  58:    */     }
-/*  59:295 */     Object localObject = this.a.getBlock(paramdt.a(paramej, i)).getProto();
+/*  59:295 */     Object localObject = this.a.getBlock(paramdt.offset(paramej, i)).getProto();
 /*  60:296 */     if (localObject == BlockList.obsidian) {
 /*  61:297 */       return i;
 /*  62:    */     }
@@ -71,7 +71,7 @@ package net.minecraft.src;
 /*  68:304 */     for (this.g = 0; this.g < 21; this.g += 1) {
 /*  69:305 */       for (int i = 0; i < this.h; i++)
 /*  70:    */       {
-/*  71:306 */         BlockPosition localdt = this.f.a(this.c, i).up(this.g);
+/*  71:306 */         BlockPosition localdt = this.f.offset(this.c, i).up(this.g);
 /*  72:    */         
 /*  73:308 */         ProtoBlock localatr = this.a.getBlock(localdt).getProto();
 /*  74:309 */         if (!a(localatr)) {
@@ -98,7 +98,7 @@ package net.minecraft.src;
 /*  95:    */     }
 /*  96:    */     
 /*  97:331 */     for (int i = 0; i < this.h; i++) {
-/*  98:332 */       if (this.a.getBlock(this.f.a(this.c, i).up(this.g)).getProto() != BlockList.obsidian)
+/*  98:332 */       if (this.a.getBlock(this.f.offset(this.c, i).up(this.g)).getProto() != BlockList.obsidian)
 /*  99:    */       {
 /* 100:333 */         this.g = 0;
 /* 101:334 */         break;
@@ -128,7 +128,7 @@ package net.minecraft.src;
 /* 125:    */   {
 /* 126:357 */     for (int i = 0; i < this.h; i++)
 /* 127:    */     {
-/* 128:358 */       BlockPosition localdt = this.f.a(this.c, i);
+/* 128:358 */       BlockPosition localdt = this.f.offset(this.c, i);
 /* 129:359 */       for (int j = 0; j < this.g; j++) {
 /* 130:360 */         this.a.setBlock(localdt.up(j), BlockList.aY.instance().a(ayy.a, this.b), 2);
 /* 131:    */       }

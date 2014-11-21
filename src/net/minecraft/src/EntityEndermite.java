@@ -105,7 +105,7 @@ package net.minecraft.src;
 /* 104:116 */     if (this.world.isClient)
 /* 105:    */     {
 /* 106:117 */       for (int i = 0; i < 2; i++) {
-/* 107:118 */         this.world.a(EnumParticleEffect.y, this.xPos + (this.rng.nextDouble() - 0.5D) * this.J, this.yPos + this.rng.nextDouble() * this.K, this.zPos + (this.rng.nextDouble() - 0.5D) * this.J, (this.rng.nextDouble() - 0.5D) * 2.0D, -this.rng.nextDouble(), (this.rng.nextDouble() - 0.5D) * 2.0D, new int[0]);
+/* 107:118 */         this.world.a(EnumParticleEffect.y, this.xPos + (this.rng.nextDouble() - 0.5D) * this.width, this.yPos + this.rng.nextDouble() * this.height, this.zPos + (this.rng.nextDouble() - 0.5D) * this.width, (this.rng.nextDouble() - 0.5D) * 2.0D, -this.rng.nextDouble(), (this.rng.nextDouble() - 0.5D) * 2.0D, new int[0]);
 /* 108:    */       }
 /* 109:    */     }
 /* 110:    */     else

@@ -19,7 +19,7 @@ package net.minecraft.src;
 /* 18:   */   
 /* 19:   */   public bpt a(Entity paramwv, double paramDouble1, double paramDouble2, double paramDouble3)
 /* 20:   */   {
-/* 21:35 */     return a(MathUtils.floor(paramDouble1 - paramwv.J / 2.0F), MathUtils.floor(paramDouble2 + 0.5D), MathUtils.floor(paramDouble3 - paramwv.J / 2.0F));
+/* 21:35 */     return a(MathUtils.floor(paramDouble1 - paramwv.width / 2.0F), MathUtils.floor(paramDouble2 + 0.5D), MathUtils.floor(paramDouble3 - paramwv.width / 2.0F));
 /* 22:   */   }
 /* 23:   */   
 /* 24:   */   public int a(bpt[] paramArrayOfbpt, Entity paramwv, bpt parambpt1, bpt parambpt2, float paramFloat)

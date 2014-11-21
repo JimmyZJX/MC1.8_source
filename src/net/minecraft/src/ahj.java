@@ -33,7 +33,7 @@ package net.minecraft.src;
 /*  33:    */     
 /*  34: 66 */     a(0.5F, 0.5F);
 /*  35:    */     
-/*  36: 68 */     b(paramDouble1, paramDouble2, paramDouble3);
+/*  36: 68 */     setPos(paramDouble1, paramDouble2, paramDouble3);
 /*  37:    */   }
 /*  38:    */   
 /*  39:    */   public ahj(World paramaqu, EntityLiving paramxm1, EntityLiving paramxm2, float paramFloat1, float paramFloat2)
@@ -47,7 +47,7 @@ package net.minecraft.src;
 /*  47: 79 */     this.yPos = (paramxm1.yPos + paramxm1.aR() - 0.1000000014901161D);
 /*  48:    */     
 /*  49: 81 */     double d1 = paramxm2.xPos - paramxm1.xPos;
-/*  50: 82 */     double d2 = paramxm2.getAABB().minY + paramxm2.K / 3.0F - this.yPos;
+/*  50: 82 */     double d2 = paramxm2.getAABB().minY + paramxm2.height / 3.0F - this.yPos;
 /*  51: 83 */     double d3 = paramxm2.zPos - paramxm1.zPos;
 /*  52: 84 */     double d4 = MathUtils.a(d1 * d1 + d3 * d3);
 /*  53: 85 */     if (d4 < 1.0E-007D) {
@@ -79,7 +79,7 @@ package net.minecraft.src;
 /*  79:112 */     this.xPos -= MathUtils.cos(this.yaw / 180.0F * 3.141593F) * 0.16F;
 /*  80:113 */     this.yPos -= 0.1000000014901161D;
 /*  81:114 */     this.zPos -= MathUtils.sin(this.yaw / 180.0F * 3.141593F) * 0.16F;
-/*  82:115 */     b(this.xPos, this.yPos, this.zPos);
+/*  82:115 */     setPos(this.xPos, this.yPos, this.zPos);
 /*  83:    */     
 /*  84:117 */     this.xVelocity = (-MathUtils.sin(this.yaw / 180.0F * 3.141593F) * MathUtils.cos(this.pitch / 180.0F * 3.141593F));
 /*  85:118 */     this.zVelocity = (MathUtils.cos(this.yaw / 180.0F * 3.141593F) * MathUtils.cos(this.pitch / 180.0F * 3.141593F));
@@ -122,7 +122,7 @@ package net.minecraft.src;
 /* 122:    */   
 /* 123:    */   public void a(double paramDouble1, double paramDouble2, double paramDouble3, float paramFloat1, float paramFloat2, int paramInt, boolean paramBoolean)
 /* 124:    */   {
-/* 125:158 */     b(paramDouble1, paramDouble2, paramDouble3);
+/* 125:158 */     setPos(paramDouble1, paramDouble2, paramDouble3);
 /* 126:159 */     b(paramFloat1, paramFloat2);
 /* 127:    */   }
 /* 128:    */   
@@ -360,7 +360,7 @@ package net.minecraft.src;
 /* 360:398 */     this.zVelocity *= f4;
 /* 361:399 */     this.yVelocity -= f6;
 /* 362:    */     
-/* 363:401 */     b(this.xPos, this.yPos, this.zPos);
+/* 363:401 */     setPos(this.xPos, this.yPos, this.zPos);
 /* 364:    */     
 /* 365:403 */     Q();
 /* 366:    */   }

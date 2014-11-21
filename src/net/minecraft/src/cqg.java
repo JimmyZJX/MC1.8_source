@@ -146,7 +146,7 @@ package net.minecraft.src;
 /* 145:    */         {
 /* 146:168 */           bty localbty = c();
 /* 147:169 */           cjm.glPushMatrix();
-/* 148:170 */           cjm.glTranslatef((float)paramDouble1 + 0.0F, (float)paramDouble2 + paramadk.K + 0.5F, (float)paramDouble3);
+/* 148:170 */           cjm.glTranslatef((float)paramDouble1 + 0.0F, (float)paramDouble2 + paramadk.height + 0.5F, (float)paramDouble3);
 /* 149:171 */           GL11.glNormal3f(0.0F, 1.0F, 0.0F);
 /* 150:    */           
 /* 151:173 */           cjm.glRotatef(-this.b.e, 0.0F, 1.0F, 0.0F);

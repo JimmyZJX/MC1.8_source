@@ -25,7 +25,7 @@ package net.minecraft.src;
 /*  25: 41 */     this.d = parambec;
 /*  26: 42 */     this.k = true;
 /*  27: 43 */     a(0.98F, 0.98F);
-/*  28: 44 */     b(paramDouble1, paramDouble2, paramDouble3);
+/*  28: 44 */     setPos(paramDouble1, paramDouble2, paramDouble3);
 /*  29:    */     
 /*  30: 46 */     this.xVelocity = 0.0D;
 /*  31: 47 */     this.yVelocity = 0.0D;

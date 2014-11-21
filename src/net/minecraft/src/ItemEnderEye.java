@@ -43,7 +43,7 @@ package net.minecraft.src;
 /*  42:    */       Object localObject1;
 /*  43: 55 */       for (int l1 = -2; l1 <= 2; l1++)
 /*  44:    */       {
-/*  45: 56 */         localdt5 = paramdt.a(localej2, l1);
+/*  45: 56 */         localdt5 = paramdt.offset(localej2, l1);
 /*  46: 57 */         localObject1 = world.getBlock(localdt5);
 /*  47: 59 */         if (((Block)localObject1).getProto() == BlockList.endPortalFrame)
 /*  48:    */         {
@@ -62,11 +62,11 @@ package net.minecraft.src;
 /*  61:    */       }
 /*  62: 73 */       if ((k != 0) && (j1 == i1 + 2))
 /*  63:    */       {
-/*  64: 75 */         BlockPosition localdt4 = paramdt.a(localej1, 4);
+/*  64: 75 */         BlockPosition localdt4 = paramdt.offset(localej1, 4);
 /*  65:    */         Object localObject2;
 /*  66: 76 */         for (int localdt51 = i1; localdt51 <= j1; localdt51++)
 /*  67:    */         {
-/*  68: 77 */           localObject1 = localdt4.a(localej2, localdt51);
+/*  68: 77 */           localObject1 = localdt4.offset(localej2, localdt51);
 /*  69: 78 */           localObject2 = world.getBlock((BlockPosition)localObject1);
 /*  70: 80 */           if ((((Block)localObject2).getProto() != BlockList.endPortalFrame) || (!((Boolean)((Block)localObject2).getProperty(avq.b)).booleanValue()))
 /*  71:    */           {
@@ -77,10 +77,10 @@ package net.minecraft.src;
 /*  76:    */         int m;
 /*  77: 87 */         for (int localdt6 = i1 - 1; localdt6 <= j1 + 1; localdt6 += 4)
 /*  78:    */         {
-/*  79: 88 */           localdt4 = paramdt.a(localej2, localdt6);
+/*  79: 88 */           localdt4 = paramdt.offset(localej2, localdt6);
 /*  80: 89 */           for (m = 1; m <= 3; m++)
 /*  81:    */           {
-/*  82: 90 */             localObject2 = localdt4.a(localej1, m);
+/*  82: 90 */             localObject2 = localdt4.offset(localej1, m);
 /*  83: 91 */             Block localbec2 = world.getBlock((BlockPosition)localObject2);
 /*  84: 93 */             if ((localbec2.getProto() != BlockList.endPortalFrame) || (!((Boolean)localbec2.getProperty(avq.b)).booleanValue()))
 /*  85:    */             {
@@ -92,10 +92,10 @@ package net.minecraft.src;
 /*  91: 99 */         if (k != 0) {
 /*  92:101 */           for (int localdt6 = i1; localdt6 <= j1; localdt6++)
 /*  93:    */           {
-/*  94:102 */             localdt4 = paramdt.a(localej2, localdt6);
+/*  94:102 */             localdt4 = paramdt.offset(localej2, localdt6);
 /*  95:103 */             for (m = 1; m <= 3; m++)
 /*  96:    */             {
-/*  97:104 */               localObject2 = localdt4.a(localej1, m);
+/*  97:104 */               localObject2 = localdt4.offset(localej1, m);
 /*  98:    */               
 /*  99:106 */               world.setBlock((BlockPosition)localObject2, BlockList.endPortal.instance(), 2);
 /* 100:    */             }

@@ -189,8 +189,8 @@ package net.minecraft.src;
 /* 190:216 */         int i = (int)(MathUtils.sin((this.bq - 0.4F) * 3.141593F) * 7.0F);
 /* 191:217 */         for (int j = 0; j < i; j++)
 /* 192:    */         {
-/* 193:218 */           float f2 = (this.rng.nextFloat() * 2.0F - 1.0F) * this.J * 0.5F;
-/* 194:219 */           float f3 = (this.rng.nextFloat() * 2.0F - 1.0F) * this.J * 0.5F;
+/* 193:218 */           float f2 = (this.rng.nextFloat() * 2.0F - 1.0F) * this.width * 0.5F;
+/* 194:219 */           float f3 = (this.rng.nextFloat() * 2.0F - 1.0F) * this.width * 0.5F;
 /* 195:220 */           this.world.a(EnumParticleEffect.f, this.xPos + f2, f1 + 0.8F, this.zPos + f3, this.xVelocity, this.yVelocity, this.zVelocity, new int[0]);
 /* 196:    */         }
 /* 197:    */       }
@@ -225,7 +225,7 @@ package net.minecraft.src;
 /* 226:    */   
 /* 227:    */   public float aR()
 /* 228:    */   {
-/* 229:251 */     return this.K * 0.8F;
+/* 229:251 */     return this.height * 0.8F;
 /* 230:    */   }
 /* 231:    */   
 /* 232:    */   public int bP()

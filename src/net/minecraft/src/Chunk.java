@@ -1131,7 +1131,7 @@ package net.minecraft.src;
 /* 1125:1096 */           for (EnumDirection localej : en.HORIZONTAL)
 /* 1126:     */           {
 /* 1127:1097 */             int i3 = localej.c() == em.a ? 16 : 1;
-/* 1128:1098 */             this.world.getChunk(localdt.a(localej, i3)).a(localej.d());
+/* 1128:1098 */             this.world.getChunk(localdt.offset(localej, i3)).a(localej.d());
 /* 1129:     */           }
 /* 1130:1100 */           y();
 /* 1131:     */         }

@@ -24,7 +24,7 @@ package net.minecraft.src;
 /* 23:25 */     if (!this.a.world.w()) {
 /* 24:26 */       return false;
 /* 25:   */     }
-/* 26:29 */     List<EntityIronGolem> localList = this.a.world.a(EntityIronGolem.class, this.a.getAABB().expand(6.0D, 2.0D, 6.0D));
+/* 26:29 */     List<EntityIronGolem> localList = this.a.world.getEntityList(EntityIronGolem.class, this.a.getAABB().expand(6.0D, 2.0D, 6.0D));
 /* 27:30 */     if (localList.isEmpty()) {
 /* 28:31 */       return false;
 /* 29:   */     }

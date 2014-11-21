@@ -53,7 +53,7 @@ package net.minecraft.src;
 /*  52:211 */     else if (d1 < 256.0D)
 /*  53:    */     {
 /*  54:212 */       double d2 = localxm.xPos - this.a.xPos;
-/*  55:213 */       double d3 = localxm.getAABB().minY + localxm.K / 2.0F - (this.a.yPos + this.a.K / 2.0F);
+/*  55:213 */       double d3 = localxm.getAABB().minY + localxm.height / 2.0F - (this.a.yPos + this.a.height / 2.0F);
 /*  56:214 */       double d4 = localxm.zPos - this.a.zPos;
 /*  57:216 */       if (this.c <= 0)
 /*  58:    */       {
@@ -81,7 +81,7 @@ package net.minecraft.src;
 /*  80:233 */           for (int i = 0; i < 1; i++)
 /*  81:    */           {
 /*  82:234 */             ahp localahp = new ahp(this.a.world, this.a, d2 + this.a.getRNG().nextGaussian() * f, d3, d4 + this.a.getRNG().nextGaussian() * f);
-/*  83:235 */             localahp.yPos = (this.a.yPos + this.a.K / 2.0F + 0.5D);
+/*  83:235 */             localahp.yPos = (this.a.yPos + this.a.height / 2.0F + 0.5D);
 /*  84:236 */             this.a.world.spawnEntity(localahp);
 /*  85:    */           }
 /*  86:    */         }

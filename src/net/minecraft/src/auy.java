@@ -125,7 +125,7 @@ package net.minecraft.src;
 /* 124:    */   {
 /* 125:157 */     AABB localbrt = a(paramdt);
 /* 126:159 */     if (paramVarArgs.length != 1) {
-/* 127:160 */       return paramaqu.a(paramClass, localbrt);
+/* 127:160 */       return paramaqu.getEntityList(paramClass, localbrt);
 /* 128:    */     }
 /* 129:162 */     return paramaqu.a(paramClass, localbrt, paramVarArgs[0]);
 /* 130:    */   }

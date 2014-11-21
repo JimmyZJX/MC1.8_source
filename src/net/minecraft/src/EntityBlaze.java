@@ -75,7 +75,7 @@ package net.minecraft.src;
 /*  74: 91 */         this.world.a(this.xPos + 0.5D, this.yPos + 0.5D, this.zPos + 0.5D, "fire.fire", 1.0F + this.rng.nextFloat(), this.rng.nextFloat() * 0.7F + 0.3F, false);
 /*  75:    */       }
 /*  76: 93 */       for (int i = 0; i < 2; i++) {
-/*  77: 94 */         this.world.a(EnumParticleEffect.m, this.xPos + (this.rng.nextDouble() - 0.5D) * this.J, this.yPos + this.rng.nextDouble() * this.K, this.zPos + (this.rng.nextDouble() - 0.5D) * this.J, 0.0D, 0.0D, 0.0D, new int[0]);
+/*  77: 94 */         this.world.a(EnumParticleEffect.m, this.xPos + (this.rng.nextDouble() - 0.5D) * this.width, this.yPos + this.rng.nextDouble() * this.height, this.zPos + (this.rng.nextDouble() - 0.5D) * this.width, 0.0D, 0.0D, 0.0D, new int[0]);
 /*  78:    */       }
 /*  79:    */     }
 /*  80: 98 */     super.m();

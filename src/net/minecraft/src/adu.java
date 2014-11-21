@@ -54,7 +54,7 @@ package net.minecraft.src;
 /*  53:    */   public adu(World paramaqu, double paramDouble1, double paramDouble2, double paramDouble3)
 /*  54:    */   {
 /*  55: 70 */     this(paramaqu);
-/*  56: 71 */     b(paramDouble1, paramDouble2, paramDouble3);
+/*  56: 71 */     setPos(paramDouble1, paramDouble2, paramDouble3);
 /*  57:    */     
 /*  58: 73 */     this.xVelocity = 0.0D;
 /*  59: 74 */     this.yVelocity = 0.0D;
@@ -67,7 +67,7 @@ package net.minecraft.src;
 /*  66:    */   
 /*  67:    */   public double an()
 /*  68:    */   {
-/*  69: 84 */     return this.K * 0.0D - 0.300000011920929D;
+/*  69: 84 */     return this.height * 0.0D - 0.300000011920929D;
 /*  70:    */   }
 /*  71:    */   
 /*  72:    */   public boolean a(DamageSource paramwh, float paramFloat)
@@ -121,7 +121,7 @@ package net.minecraft.src;
 /* 120:138 */       this.yaw = paramFloat1;
 /* 121:139 */       this.pitch = paramFloat2;
 /* 122:140 */       this.c = 0;
-/* 123:141 */       b(paramDouble1, paramDouble2, paramDouble3);
+/* 123:141 */       setPos(paramDouble1, paramDouble2, paramDouble3);
 /* 124:    */       
 /* 125:143 */       this.xVelocity = (this.i = 0.0D);
 /* 126:144 */       this.yVelocity = (this.ap = 0.0D);
@@ -230,7 +230,7 @@ package net.minecraft.src;
 /* 229:236 */         this.pitch = ((float)(this.pitch + (this.h - this.pitch) / this.c));
 /* 230:    */         
 /* 231:238 */         this.c -= 1;
-/* 232:239 */         b(d4, d7, d9);
+/* 232:239 */         setPos(d4, d7, d9);
 /* 233:240 */         b(this.yaw, this.pitch);
 /* 234:    */       }
 /* 235:    */       else
@@ -238,7 +238,7 @@ package net.minecraft.src;
 /* 237:242 */         d4 = this.xPos + this.xVelocity;
 /* 238:243 */         d7 = this.yPos + this.yVelocity;
 /* 239:244 */         d9 = this.zPos + this.zVelocity;
-/* 240:245 */         b(d4, d7, d9);
+/* 240:245 */         setPos(d4, d7, d9);
 /* 241:246 */         if (this.C)
 /* 242:    */         {
 /* 243:247 */           this.xVelocity *= 0.5D;
@@ -383,7 +383,7 @@ package net.minecraft.src;
 /* 382:    */     }
 /* 383:387 */     double d1 = Math.cos(this.yaw * 3.141592653589793D / 180.0D) * 0.4D;
 /* 384:388 */     double d2 = Math.sin(this.yaw * 3.141592653589793D / 180.0D) * 0.4D;
-/* 385:389 */     this.rider.b(this.xPos + d1, this.yPos + an() + this.rider.am(), this.zPos + d2);
+/* 385:389 */     this.rider.setPos(this.xPos + d1, this.yPos + an() + this.rider.am(), this.zPos + d2);
 /* 386:    */   }
 /* 387:    */   
 /* 388:    */   protected void writeEntityToNBT(NBTTagCompound paramfn) {}

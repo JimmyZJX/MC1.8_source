@@ -20,7 +20,7 @@ package net.minecraft.src;
 /* 19:20 */     if (this.a.getAge() >= 0) {
 /* 20:21 */       return false;
 /* 21:   */     }
-/* 22:24 */     List<? extends EntityAnimal> localList = this.a.world.a(this.a.getClass(), this.a.getAABB().expand(8.0D, 4.0D, 8.0D));
+/* 22:24 */     List<? extends EntityAnimal> localList = this.a.world.getEntityList(this.a.getClass(), this.a.getAABB().expand(8.0D, 4.0D, 8.0D));
 /* 23:   */     
 /* 24:26 */     EntityAnimal localObject = null;
 /* 25:27 */     double d1 = 1.7976931348623157E+308D;

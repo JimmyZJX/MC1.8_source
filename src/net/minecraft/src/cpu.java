@@ -71,7 +71,7 @@ package net.minecraft.src;
 /*  69: 81 */     cjm.glPushMatrix();
 /*  70: 82 */     cjm.glTranslatef((float)paramDouble1, (float)paramDouble2, (float)paramDouble3);
 /*  71:    */     
-/*  72: 84 */     float f1 = paramwv.J * 1.4F;
+/*  72: 84 */     float f1 = paramwv.width * 1.4F;
 /*  73: 85 */     cjm.glScalef(f1, f1, f1);
 /*  74: 86 */     ckx localckx = ckx.getInstance();
 /*  75: 87 */     VertexBuffer localciv = localckx.getBuffer();
@@ -79,7 +79,7 @@ package net.minecraft.src;
 /*  77: 89 */     float f2 = 0.5F;
 /*  78: 90 */     float f3 = 0.0F;
 /*  79:    */     
-/*  80: 92 */     float f4 = paramwv.K / f1;
+/*  80: 92 */     float f4 = paramwv.height / f1;
 /*  81: 93 */     float f5 = (float)(paramwv.yPos - paramwv.getAABB().minY);
 /*  82:    */     
 /*  83: 95 */     cjm.glRotatef(-this.b.e, 0.0F, 1.0F, 0.0F);
@@ -293,7 +293,7 @@ package net.minecraft.src;
 /* 291:328 */     float f2 = 0.01666667F * f1;
 /* 292:    */     
 /* 293:330 */     cjm.glPushMatrix();
-/* 294:331 */     cjm.glTranslatef((float)paramDouble1 + 0.0F, (float)paramDouble2 + paramwv.K + 0.5F, (float)paramDouble3);
+/* 294:331 */     cjm.glTranslatef((float)paramDouble1 + 0.0F, (float)paramDouble2 + paramwv.height + 0.5F, (float)paramDouble3);
 /* 295:332 */     GL11.glNormal3f(0.0F, 1.0F, 0.0F);
 /* 296:    */     
 /* 297:334 */     cjm.glRotatef(-this.b.e, 0.0F, 1.0F, 0.0F);

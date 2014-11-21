@@ -64,7 +64,7 @@ package net.minecraft.src;
 /*  64: 70 */       double d1 = this.rng.nextGaussian() * 0.02D;
 /*  65: 71 */       double d2 = this.rng.nextGaussian() * 0.02D;
 /*  66: 72 */       double d3 = this.rng.nextGaussian() * 0.02D;
-/*  67: 73 */       this.world.a(localew, this.xPos + this.rng.nextFloat() * this.J * 2.0F - this.J, this.yPos + 0.5D + this.rng.nextFloat() * this.K, this.zPos + this.rng.nextFloat() * this.J * 2.0F - this.J, d1, d2, d3, new int[0]);
+/*  67: 73 */       this.world.a(localew, this.xPos + this.rng.nextFloat() * this.width * 2.0F - this.width, this.yPos + 0.5D + this.rng.nextFloat() * this.height, this.zPos + this.rng.nextFloat() * this.width * 2.0F - this.width, d1, d2, d3, new int[0]);
 /*  68:    */     }
 /*  69:    */   }
 /*  70:    */   

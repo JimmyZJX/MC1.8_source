@@ -323,7 +323,7 @@ package net.minecraft.src;
 /* 322:337 */     cjm.p();
 /* 323:338 */     cjm.disableBlend();
 /* 324:    */     
-/* 325:340 */     float f1 = paramwv.J / 2.0F;
+/* 325:340 */     float f1 = paramwv.width / 2.0F;
 /* 326:341 */     AABB localbrt1 = paramwv.getAABB();
 /* 327:342 */     AABB localbrt2 = new AABB(localbrt1.minX - paramwv.xPos + paramDouble1, localbrt1.minY - paramwv.yPos + paramDouble2, localbrt1.minZ - paramwv.zPos + paramDouble3, localbrt1.maxX - paramwv.xPos + paramDouble1, localbrt1.maxY - paramwv.yPos + paramDouble2, localbrt1.maxZ - paramwv.zPos + paramDouble3);
 /* 328:343 */     ckn.a(localbrt2, 16777215);

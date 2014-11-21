@@ -293,7 +293,7 @@ package net.minecraft.src;
 /* 292:    */   
 /* 293:    */   public float aR()
 /* 294:    */   {
-/* 295:322 */     return 0.95F * this.K;
+/* 295:322 */     return 0.95F * this.height;
 /* 296:    */   }
 /* 297:    */ }
 

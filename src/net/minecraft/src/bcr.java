@@ -238,7 +238,7 @@ package net.minecraft.src;
 /* 237:254 */       this.l = 0;
 /* 238:    */       
 /* 239:256 */       float f1 = 5.0F;
-/* 240:257 */       List<EntityPlayer> localList = this.world.a(EntityPlayer.class, new AABB(i1 - f1, i2 - f1, i3 - f1, i1 + 1 + f1, i2 + 1 + f1, i3 + 1 + f1));
+/* 240:257 */       List<EntityPlayer> localList = this.world.getEntityList(EntityPlayer.class, new AABB(i1 - f1, i2 - f1, i3 - f1, i1 + 1 + f1, i2 + 1 + f1, i3 + 1 + f1));
 /* 241:258 */       for (EntityPlayer localahd : localList) {
 /* 242:259 */         if ((localahd.bi instanceof aim))
 /* 243:    */         {

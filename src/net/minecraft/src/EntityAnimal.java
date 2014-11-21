@@ -36,7 +36,7 @@ package net.minecraft.src;
 /*  35: 47 */         double d1 = this.rng.nextGaussian() * 0.02D;
 /*  36: 48 */         double d2 = this.rng.nextGaussian() * 0.02D;
 /*  37: 49 */         double d3 = this.rng.nextGaussian() * 0.02D;
-/*  38: 50 */         this.world.a(EnumParticleEffect.HEART, this.xPos + this.rng.nextFloat() * this.J * 2.0F - this.J, this.yPos + 0.5D + this.rng.nextFloat() * this.K, this.zPos + this.rng.nextFloat() * this.J * 2.0F - this.J, d1, d2, d3, new int[0]);
+/*  38: 50 */         this.world.a(EnumParticleEffect.HEART, this.xPos + this.rng.nextFloat() * this.width * 2.0F - this.width, this.yPos + 0.5D + this.rng.nextFloat() * this.height, this.zPos + this.rng.nextFloat() * this.width * 2.0F - this.width, d1, d2, d3, new int[0]);
 /*  39:    */       }
 /*  40:    */     }
 /*  41:    */   }
@@ -176,7 +176,7 @@ package net.minecraft.src;
 /* 175:174 */         double d1 = this.rng.nextGaussian() * 0.02D;
 /* 176:175 */         double d2 = this.rng.nextGaussian() * 0.02D;
 /* 177:176 */         double d3 = this.rng.nextGaussian() * 0.02D;
-/* 178:177 */         this.world.a(EnumParticleEffect.HEART, this.xPos + this.rng.nextFloat() * this.J * 2.0F - this.J, this.yPos + 0.5D + this.rng.nextFloat() * this.K, this.zPos + this.rng.nextFloat() * this.J * 2.0F - this.J, d1, d2, d3, new int[0]);
+/* 178:177 */         this.world.a(EnumParticleEffect.HEART, this.xPos + this.rng.nextFloat() * this.width * 2.0F - this.width, this.yPos + 0.5D + this.rng.nextFloat() * this.height, this.zPos + this.rng.nextFloat() * this.width * 2.0F - this.width, d1, d2, d3, new int[0]);
 /* 179:    */       }
 /* 180:    */     } else {
 /* 181:180 */       super.onSignal(paramByte);

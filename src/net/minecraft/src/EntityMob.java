@@ -153,7 +153,7 @@ package net.minecraft.src;
 /* 153:189 */         double d2 = this.rng.nextGaussian() * 0.02D;
 /* 154:190 */         double d3 = this.rng.nextGaussian() * 0.02D;
 /* 155:191 */         double d4 = 10.0D;
-/* 156:192 */         this.world.a(EnumParticleEffect.EXPLOSION_NORMAL, this.xPos + this.rng.nextFloat() * this.J * 2.0F - this.J - d1 * d4, this.yPos + this.rng.nextFloat() * this.K - d2 * d4, this.zPos + this.rng.nextFloat() * this.J * 2.0F - this.J - d3 * d4, d1, d2, d3, new int[0]);
+/* 156:192 */         this.world.a(EnumParticleEffect.EXPLOSION_NORMAL, this.xPos + this.rng.nextFloat() * this.width * 2.0F - this.width - d1 * d4, this.yPos + this.rng.nextFloat() * this.height - d2 * d4, this.zPos + this.rng.nextFloat() * this.width * 2.0F - this.width - d3 * d4, d1, d2, d3, new int[0]);
 /* 157:    */       }
 /* 158:    */     } else {
 /* 159:196 */       this.world.sendSignal(this, (byte)20);
@@ -303,7 +303,7 @@ package net.minecraft.src;
 /* 303:341 */     this.world.profiler.a("looting");
 /* 304:342 */     if ((!this.world.isClient) && (bX()) && (!this.aN) && (this.world.getGameRules().getBoolean("mobGriefing")))
 /* 305:    */     {
-/* 306:343 */       List<EntityItem> localList = this.world.a(EntityItem.class, getAABB().expand(1.0D, 0.0D, 1.0D));
+/* 306:343 */       List<EntityItem> localList = this.world.getEntityList(EntityItem.class, getAABB().expand(1.0D, 0.0D, 1.0D));
 /* 307:344 */       for (EntityItem localadw : localList) {
 /* 308:345 */         if ((!localadw.isDead) && (localadw.getItemStack() != null) && (!localadw.s())) {
 /* 309:348 */           onPickup(localadw);
@@ -871,7 +871,7 @@ package net.minecraft.src;
 /* 871:890 */       if ((this.bo.hasKey("UUIDMost", 4)) && (this.bo.hasKey("UUIDLeast", 4)))
 /* 872:    */       {
 /* 873:891 */         UUID localObject1 = new UUID(this.bo.getLong("UUIDMost"), this.bo.getLong("UUIDLeast"));
-/* 874:892 */         List<EntityLiving> localObject2 = this.world.a(EntityLiving.class, getAABB().expand(10.0D, 10.0D, 10.0D));
+/* 874:892 */         List<EntityLiving> localObject2 = this.world.getEntityList(EntityLiving.class, getAABB().expand(10.0D, 10.0D, 10.0D));
 /* 875:893 */         for (EntityLiving localxm : localObject2) {
 /* 876:894 */           if (localxm.getUUID().equals(localObject1))
 /* 877:    */           {

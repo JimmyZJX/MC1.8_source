@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*   8:    */   
 /*   9:    */   protected double a(EntityLiving paramxm)
 /*  10:    */   {
-/*  11:610 */     return 4.0F + paramxm.J;
+/*  11:610 */     return 4.0F + paramxm.width;
 /*  12:    */   }
 /*  13:    */ }
 

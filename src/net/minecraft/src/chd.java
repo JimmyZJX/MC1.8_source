@@ -55,7 +55,7 @@ package net.minecraft.src;
 /* 54:   */     {
 /* 55:61 */       this.yPos += (localahd.getAABB().minY - this.yPos) * 0.2D;
 /* 56:62 */       this.yVelocity += (localahd.yVelocity - this.yVelocity) * 0.2D;
-/* 57:63 */       b(this.xPos, this.yPos, this.zPos);
+/* 57:63 */       setPos(this.xPos, this.yPos, this.zPos);
 /* 58:   */     }
 /* 59:67 */     if (this.C)
 /* 60:   */     {

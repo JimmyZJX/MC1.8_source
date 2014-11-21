@@ -37,7 +37,7 @@ package net.minecraft.src;
 /*  37:    */   
 /*  38:    */   public float aR()
 /*  39:    */   {
-/*  40: 46 */     return this.K * 0.5F;
+/*  40: 46 */     return this.height * 0.5F;
 /*  41:    */   }
 /*  42:    */   
 /*  43:    */   protected String z()

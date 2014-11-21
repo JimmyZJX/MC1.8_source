@@ -95,7 +95,7 @@ package net.minecraft.src;
 /*  95:    */   
 /*  96:    */   public float aR()
 /*  97:    */   {
-/*  98:109 */     return this.K;
+/*  98:109 */     return this.height;
 /*  99:    */   }
 /* 100:    */ }
 

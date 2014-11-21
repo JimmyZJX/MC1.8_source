@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*  11: 31 */   private final List<VillageDoor> doors = Lists.newArrayList();
 /*  12: 33 */   private BlockPosition c = BlockPosition.zero;
 /*  13: 34 */   private BlockPosition d = BlockPosition.zero;
-/*  14:    */   private int raduis;
+/*  14:    */   private int radius;
 /*  15:    */   private int stable;
 /*  16:    */   private int tick;
 /*  17:    */   private int population;
@@ -31,56 +31,56 @@ package net.minecraft.src;
 /*  32: 64 */     this.world = world;
 /*  33:    */   }
 /*  34:    */   
-/*  35:    */   public void a(int paramInt)
+/*  35:    */   public void tick(int tick)
 /*  36:    */   {
-/*  37: 68 */     this.tick = paramInt;
-/*  38: 69 */     m();
+/*  37: 68 */     this.tick = tick;
+/*  38: 69 */     checkDoors();
 /*  39: 70 */     l();
-/*  40: 72 */     if (paramInt % 20 == 0) {
-/*  41: 73 */       k();
+/*  40: 72 */     if (tick % 20 == 0) {
+/*  41: 73 */       countVillager();
 /*  42:    */     }
-/*  43: 76 */     if (paramInt % 30 == 0) {
-/*  44: 77 */       j();
+/*  43: 76 */     if (tick % 30 == 0) {
+/*  44: 77 */       countGolem();
 /*  45:    */     }
-/*  46: 80 */     int m = this.population / 10;
-/*  47: 81 */     if ((this.golemCount < m) && (this.doors.size() > 20) && (this.world.rng.nextInt(7000) == 0))
+/*  46: 80 */     int golemCap = this.population / 10;
+/*  47: 81 */     if ((this.golemCount < golemCap) && (this.doors.size() > 20) && (this.world.rng.nextInt(7000) == 0))
 /*  48:    */     {
-/*  49: 82 */       Vec3 localbrw = a(this.d, 2, 4, 2);
-/*  50: 83 */       if (localbrw != null)
+/*  49: 82 */       Vec3 pos = getGolemSpawnPoint(this.d, 2, 4, 2);
+/*  50: 83 */       if (pos != null)
 /*  51:    */       {
 /*  52: 84 */         EntityIronGolem golem = new EntityIronGolem(this.world);
-/*  53: 85 */         golem.b(localbrw.x, localbrw.y, localbrw.z);
+/*  53: 85 */         golem.setPos(pos.x, pos.y, pos.z);
 /*  54: 86 */         this.world.spawnEntity(golem);
 /*  55: 87 */         this.golemCount += 1;
 /*  56:    */       }
 /*  57:    */     }
 /*  58:    */   }
 /*  59:    */   
-/*  60:    */   private Vec3 a(BlockPosition paramdt, int paramInt1, int paramInt2, int paramInt3)
+/*  60:    */   private Vec3 getGolemSpawnPoint(BlockPosition pos0, int sizeX, int sizeY, int sizeZ)
 /*  61:    */   {
 /*  62:113 */     for (int m = 0; m < 10; m++)
 /*  63:    */     {
-/*  64:114 */       BlockPosition localdt = paramdt.offset(this.world.rng.nextInt(16) - 8, this.world.rng.nextInt(6) - 3, this.world.rng.nextInt(16) - 8);
-/*  65:115 */       if (a(localdt)) {
-/*  66:118 */         if (a(new BlockPosition(paramInt1, paramInt2, paramInt3), localdt)) {
-/*  67:119 */           return new Vec3(localdt.getX(), localdt.getY(), localdt.getZ());
+/*  64:114 */       BlockPosition pos = pos0.offset(this.world.rng.nextInt(16) - 8, this.world.rng.nextInt(6) - 3, this.world.rng.nextInt(16) - 8);
+/*  65:115 */       if (a(pos)) {
+/*  66:118 */         if (canSpawn(new BlockPosition(sizeX, sizeY, sizeZ), pos)) {
+/*  67:119 */           return new Vec3(pos.getX(), pos.getY(), pos.getZ());
 /*  68:    */         }
 /*  69:    */       }
 /*  70:    */     }
 /*  71:122 */     return null;
 /*  72:    */   }
 /*  73:    */   
-/*  74:    */   private boolean a(BlockPosition paramdt1, BlockPosition paramdt2)
+/*  74:    */   private boolean canSpawn(BlockPosition size, BlockPosition pos)
 /*  75:    */   {
-/*  76:126 */     if (!World.isFlatSurface(this.world, paramdt2.down())) {
+/*  76:126 */     if (!World.isFlatSurface(this.world, pos.down())) {
 /*  77:127 */       return false;
 /*  78:    */     }
-/*  79:130 */     int m = paramdt2.getX() - paramdt1.getX() / 2;
-/*  80:131 */     int n = paramdt2.getZ() - paramdt1.getZ() / 2;
-/*  81:132 */     for (int i1 = m; i1 < m + paramdt1.getX(); i1++) {
-/*  82:133 */       for (int i2 = paramdt2.getY(); i2 < paramdt2.getY() + paramdt1.getY(); i2++) {
-/*  83:134 */         for (int i3 = n; i3 < n + paramdt1.getZ(); i3++) {
-/*  84:135 */           if (this.world.getBlock(new BlockPosition(i1, i2, i3)).getProto().blocksMovement()) {
+/*  79:130 */     int x0 = pos.getX() - size.getX() / 2;
+/*  80:131 */     int z0 = pos.getZ() - size.getZ() / 2;
+/*  81:132 */     for (int x = x0; x < x0 + size.getX(); x++) {
+/*  82:133 */       for (int y = pos.getY(); y < pos.getY() + size.getY(); y++) {
+/*  83:134 */         for (int z = z0; z < z0 + size.getZ(); z++) {
+/*  84:135 */           if (this.world.getBlock(new BlockPosition(x, y, z)).getProto().blocksMovement()) {
 /*  85:136 */             return false;
 /*  86:    */           }
 /*  87:    */         }
@@ -89,16 +89,16 @@ package net.minecraft.src;
 /*  90:142 */     return true;
 /*  91:    */   }
 /*  92:    */   
-/*  93:    */   private void j()
+/*  93:    */   private void countGolem()
 /*  94:    */   {
-/*  95:147 */     List<EntityIronGolem> localList = this.world.a(EntityIronGolem.class, new AABB(this.d.getX() - this.raduis, this.d.getY() - 4, this.d.getZ() - this.raduis, this.d.getX() + this.raduis, this.d.getY() + 4, this.d.getZ() + this.raduis));
-/*  96:148 */     this.golemCount = localList.size();
+/*  95:147 */     List<EntityIronGolem> list = this.world.getEntityList(EntityIronGolem.class, new AABB(this.d.getX() - this.radius, this.d.getY() - 4, this.d.getZ() - this.radius, this.d.getX() + this.radius, this.d.getY() + 4, this.d.getZ() + this.radius));
+/*  96:148 */     this.golemCount = list.size();
 /*  97:    */   }
 /*  98:    */   
-/*  99:    */   private void k()
+/*  99:    */   private void countVillager()
 /* 100:    */   {
-/* 101:152 */     List<EntityVillager> localList = this.world.a(EntityVillager.class, new AABB(this.d.getX() - this.raduis, this.d.getY() - 4, this.d.getZ() - this.raduis, this.d.getX() + this.raduis, this.d.getY() + 4, this.d.getZ() + this.raduis));
-/* 102:153 */     this.population = localList.size();
+/* 101:152 */     List<EntityVillager> list = this.world.getEntityList(EntityVillager.class, new AABB(this.d.getX() - this.radius, this.d.getY() - 4, this.d.getZ() - this.radius, this.d.getX() + this.radius, this.d.getY() + 4, this.d.getZ() + this.radius));
+/* 102:153 */     this.population = list.size();
 /* 103:155 */     if (this.population == 0) {
 /* 104:157 */       this.j.clear();
 /* 105:    */     }
@@ -111,7 +111,7 @@ package net.minecraft.src;
 /* 112:    */   
 /* 113:    */   public int b()
 /* 114:    */   {
-/* 115:166 */     return this.raduis;
+/* 115:166 */     return this.radius;
 /* 116:    */   }
 /* 117:    */   
 /* 118:    */   public int countDoors()
@@ -131,7 +131,7 @@ package net.minecraft.src;
 /* 132:    */   
 /* 133:    */   public boolean a(BlockPosition paramdt)
 /* 134:    */   {
-/* 135:182 */     return this.d.dist2(paramdt) < this.raduis * this.raduis;
+/* 135:182 */     return this.d.dist2(paramdt) < this.radius * this.radius;
 /* 136:    */   }
 /* 137:    */   
 /* 138:    */   public List<VillageDoor> f()
@@ -139,20 +139,20 @@ package net.minecraft.src;
 /* 140:186 */     return this.doors;
 /* 141:    */   }
 /* 142:    */   
-/* 143:    */   public VillageDoor b(BlockPosition paramdt)
+/* 143:    */   public VillageDoor getNearestDoor(BlockPosition paramdt)
 /* 144:    */   {
-/* 145:190 */     VillageDoor localObject = null;
+/* 145:190 */     VillageDoor res = null;
 /* 146:191 */     int m = 2147483647;
-/* 147:192 */     for (VillageDoor localabh : this.doors)
+/* 147:192 */     for (VillageDoor door : this.doors)
 /* 148:    */     {
-/* 149:193 */       int n = localabh.a(paramdt);
+/* 149:193 */       int n = door.dist2(paramdt);
 /* 150:194 */       if (n < m)
 /* 151:    */       {
-/* 152:195 */         localObject = localabh;
+/* 152:195 */         res = door;
 /* 153:196 */         m = n;
 /* 154:    */       }
 /* 155:    */     }
-/* 156:199 */     return localObject;
+/* 156:199 */     return res;
 /* 157:    */   }
 /* 158:    */   
 /* 159:    */   public VillageDoor c(BlockPosition paramdt)
@@ -161,7 +161,7 @@ package net.minecraft.src;
 /* 162:204 */     int m = 2147483647;
 /* 163:205 */     for (VillageDoor localabh : this.doors)
 /* 164:    */     {
-/* 165:206 */       int n = localabh.a(paramdt);
+/* 165:206 */       int n = localabh.dist2(paramdt);
 /* 166:207 */       if (n > 256) {
 /* 167:208 */         n *= 1000;
 /* 168:    */       } else {
@@ -178,11 +178,11 @@ package net.minecraft.src;
 /* 179:    */   
 /* 180:    */   public VillageDoor e(BlockPosition paramdt)
 /* 181:    */   {
-/* 182:226 */     if (this.d.dist2(paramdt) > this.raduis * this.raduis) {
+/* 182:226 */     if (this.d.dist2(paramdt) > this.radius * this.radius) {
 /* 183:227 */       return null;
 /* 184:    */     }
 /* 185:229 */     for (VillageDoor localabh : this.doors) {
-/* 186:230 */       if ((localabh.d().getX() == paramdt.getX()) && (localabh.d().getZ() == paramdt.getZ()) && (Math.abs(localabh.d().getY() - paramdt.getY()) <= 1)) {
+/* 186:230 */       if ((localabh.getPos().getX() == paramdt.getX()) && (localabh.getPos().getZ() == paramdt.getZ()) && (Math.abs(localabh.getPos().getY() - paramdt.getY()) <= 1)) {
 /* 187:231 */         return localabh;
 /* 188:    */       }
 /* 189:    */     }
@@ -192,9 +192,9 @@ package net.minecraft.src;
 /* 193:    */   public void addDoor(VillageDoor paramabh)
 /* 194:    */   {
 /* 195:238 */     this.doors.add(paramabh);
-/* 196:239 */     this.c = this.c.offset(paramabh.d());
+/* 196:239 */     this.c = this.c.offset(paramabh.getPos());
 /* 197:240 */     n();
-/* 198:241 */     this.stable = paramabh.h();
+/* 198:241 */     this.stable = paramabh.getLastConfirmed();
 /* 199:    */   }
 /* 200:    */   
 /* 201:    */   public boolean isDead()
@@ -264,34 +264,34 @@ package net.minecraft.src;
 /* 265:    */     }
 /* 266:    */   }
 /* 267:    */   
-/* 268:    */   private void m()
+/* 268:    */   private void checkDoors()
 /* 269:    */   {
-/* 270:304 */     int m = 0;
+/* 270:304 */     int flag = 0;
 /* 271:305 */     int n = this.world.rng.nextInt(50) == 0 ? 1 : 0;
-/* 272:307 */     for (Iterator<VillageDoor> localIterator = this.doors.iterator(); localIterator.hasNext();)
+/* 272:307 */     for (Iterator<VillageDoor> it = this.doors.iterator(); it.hasNext();)
 /* 273:    */     {
-/* 274:308 */       VillageDoor localabh = (VillageDoor)localIterator.next();
+/* 274:308 */       VillageDoor door = it.next();
 /* 275:309 */       if (n != 0) {
-/* 276:310 */         localabh.a();
+/* 276:310 */         door.a();
 /* 277:    */       }
-/* 278:312 */       if ((!f(localabh.d())) || (Math.abs(this.tick - localabh.h()) > 1200))
+/* 278:312 */       if ((!isWoodenDoor(door.getPos())) || (Math.abs(this.tick - door.getLastConfirmed()) > 1200))
 /* 279:    */       {
-/* 280:313 */         this.c = this.c.offset(localabh.d().a(-1));
-/* 281:314 */         m = 1;
-/* 282:315 */         localabh.a(true);
-/* 283:316 */         localIterator.remove();
+/* 280:313 */         this.c = this.c.offset(door.getPos().a(-1));
+/* 281:314 */         flag = 1;
+/* 282:315 */         door.setDead(true);
+/* 283:316 */         it.remove();
 /* 284:    */       }
 /* 285:    */     }
-/* 286:320 */     if (m != 0) {
+/* 286:320 */     if (flag != 0) {
 /* 287:321 */       n();
 /* 288:    */     }
 /* 289:    */   }
 /* 290:    */   
-/* 291:    */   private boolean f(BlockPosition paramdt)
+/* 291:    */   private boolean isWoodenDoor(BlockPosition pos)
 /* 292:    */   {
-/* 293:326 */     ProtoBlock localatr = this.world.getBlock(paramdt).getProto();
-/* 294:327 */     if ((localatr instanceof BlockDoor)) {
-/* 295:328 */       return localatr.getMaterial() == Material.wood;
+/* 293:326 */     ProtoBlock block = this.world.getBlock(pos).getProto();
+/* 294:327 */     if ((block instanceof BlockDoor)) {
+/* 295:328 */       return block.getMaterial() == Material.wood;
 /* 296:    */     }
 /* 297:330 */     return false;
 /* 298:    */   }
@@ -302,15 +302,15 @@ package net.minecraft.src;
 /* 303:335 */     if (m == 0)
 /* 304:    */     {
 /* 305:336 */       this.d = new BlockPosition(0, 0, 0);
-/* 306:337 */       this.raduis = 0;
+/* 306:337 */       this.radius = 0;
 /* 307:338 */       return;
 /* 308:    */     }
 /* 309:340 */     this.d = new BlockPosition(this.c.getX() / m, this.c.getY() / m, this.c.getZ() / m);
 /* 310:341 */     int n = 0;
 /* 311:342 */     for (VillageDoor localabh : this.doors) {
-/* 312:343 */       n = Math.max(localabh.a(this.d), n);
+/* 312:343 */       n = Math.max(localabh.dist2(this.d), n);
 /* 313:    */     }
-/* 314:345 */     this.raduis = Math.max(32, (int)Math.sqrt(n) + 1);
+/* 314:345 */     this.radius = Math.max(32, (int)Math.sqrt(n) + 1);
 /* 315:    */   }
 /* 316:    */   
 /* 317:    */   public int a(String paramString)
@@ -338,7 +338,7 @@ package net.minecraft.src;
 /* 339:    */   public void readFromNBT(NBTTagCompound paramfn)
 /* 340:    */   {
 /* 341:376 */     this.population = paramfn.getInteger("PopSize");
-/* 342:377 */     this.raduis = paramfn.getInteger("Radius");
+/* 342:377 */     this.radius = paramfn.getInteger("Radius");
 /* 343:378 */     this.golemCount = paramfn.getInteger("Golems");
 /* 344:379 */     this.stable = paramfn.getInteger("Stable");
 /* 345:380 */     this.tick = paramfn.getInteger("Tick");
@@ -366,7 +366,7 @@ package net.minecraft.src;
 /* 367:    */   public void writeToNBT(NBTTagCompound tag)
 /* 368:    */   {
 /* 369:401 */     tag.setInt("PopSize", this.population);
-/* 370:402 */     tag.setInt("Radius", this.raduis);
+/* 370:402 */     tag.setInt("Radius", this.radius);
 /* 371:403 */     tag.setInt("Golems", this.golemCount);
 /* 372:404 */     tag.setInt("Stable", this.stable);
 /* 373:405 */     tag.setInt("Tick", this.tick);
@@ -383,12 +383,12 @@ package net.minecraft.src;
 /* 384:    */     {
 /* 385:415 */       VillageDoor door = it.next();
 /* 386:416 */       NBTTagCompound houseTag = new NBTTagCompound();
-/* 387:417 */       houseTag.setInt("X", door.d().getX());
-/* 388:418 */       houseTag.setInt("Y", door.d().getY());
-/* 389:419 */       houseTag.setInt("Z", door.d().getZ());
+/* 387:417 */       houseTag.setInt("X", door.getPos().getX());
+/* 388:418 */       houseTag.setInt("Y", door.getPos().getY());
+/* 389:419 */       houseTag.setInt("Z", door.getPos().getZ());
 /* 390:420 */       houseTag.setInt("IDX", door.f());
 /* 391:421 */       houseTag.setInt("IDZ", door.g());
-/* 392:422 */       houseTag.setInt("TS", door.h());
+/* 392:422 */       houseTag.setInt("TS", door.getLastConfirmed());
 /* 393:423 */       localfv.a(houseTag);
 /* 394:    */     }
 /* 395:    */     

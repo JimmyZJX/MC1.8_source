@@ -38,7 +38,7 @@ package net.minecraft.src;
 /*  37:    */   {
 /*  38: 65 */     this.ac.b(16, Byte.valueOf((byte)paramInt));
 /*  39: 66 */     a(0.5100001F * paramInt, 0.5100001F * paramInt);
-/*  40: 67 */     b(this.xPos, this.yPos, this.zPos);
+/*  40: 67 */     setPos(this.xPos, this.yPos, this.zPos);
 /*  41: 68 */     a(afs.a).a(paramInt * paramInt);
 /*  42: 69 */     a(afs.d).a(0.2F + 0.1F * paramInt);
 /*  43: 70 */     h(bt());
@@ -194,7 +194,7 @@ package net.minecraft.src;
 /* 193:    */   
 /* 194:    */   public float aR()
 /* 195:    */   {
-/* 196:215 */     return 0.625F * this.K;
+/* 196:215 */     return 0.625F * this.height;
 /* 197:    */   }
 /* 198:    */   
 /* 199:    */   protected boolean cg()

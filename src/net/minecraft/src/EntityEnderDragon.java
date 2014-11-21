@@ -150,7 +150,7 @@ package net.minecraft.src;
 /* 149:170 */         this.pitch = ((float)(this.pitch + (this.bf - this.pitch) / this.ba));
 /* 150:    */         
 /* 151:172 */         this.ba -= 1;
-/* 152:173 */         b(d1, d2, d3);
+/* 152:173 */         setPos(d1, d2, d3);
 /* 153:174 */         b(this.yaw, this.pitch);
 /* 154:    */       }
 /* 155:    */     }
@@ -232,16 +232,16 @@ package net.minecraft.src;
 /* 231:    */     }
 /* 232:253 */     this.aG = this.yaw;
 /* 233:    */     
-/* 234:255 */     this.bl.J = (this.bl.K = 3.0F);
-/* 235:256 */     this.bn.J = (this.bn.K = 2.0F);
-/* 236:257 */     this.bo.J = (this.bo.K = 2.0F);
-/* 237:258 */     this.bp.J = (this.bp.K = 2.0F);
-/* 238:259 */     this.bm.K = 3.0F;
-/* 239:260 */     this.bm.J = 5.0F;
-/* 240:261 */     this.bq.K = 2.0F;
-/* 241:262 */     this.bq.J = 4.0F;
-/* 242:263 */     this.br.K = 3.0F;
-/* 243:264 */     this.br.J = 4.0F;
+/* 234:255 */     this.bl.width = (this.bl.height = 3.0F);
+/* 235:256 */     this.bn.width = (this.bn.height = 2.0F);
+/* 236:257 */     this.bo.width = (this.bo.height = 2.0F);
+/* 237:258 */     this.bp.width = (this.bp.height = 2.0F);
+/* 238:259 */     this.bm.height = 3.0F;
+/* 239:260 */     this.bm.width = 5.0F;
+/* 240:261 */     this.bq.height = 2.0F;
+/* 241:262 */     this.bq.width = 4.0F;
+/* 242:263 */     this.br.height = 3.0F;
+/* 243:264 */     this.br.width = 4.0F;
 /* 244:    */     
 /* 245:266 */     float f3 = (float)(b(5, 1.0F)[1] - b(10, 1.0F)[1]) * 10.0F / 180.0F * 3.141593F;
 /* 246:267 */     float f4 = MathUtils.cos(f3);
@@ -317,7 +317,7 @@ package net.minecraft.src;
 /* 316:341 */     if (this.rng.nextInt(10) == 0)
 /* 317:    */     {
 /* 318:342 */       float f = 32.0F;
-/* 319:343 */       List<ada> localList = this.world.a(ada.class, getAABB().expand(f, f, f));
+/* 319:343 */       List<ada> localList = this.world.getEntityList(ada.class, getAABB().expand(f, f, f));
 /* 320:    */       
 /* 321:345 */       ada localObject = null;
 /* 322:346 */       double d1 = 1.7976931348623157E+308D;

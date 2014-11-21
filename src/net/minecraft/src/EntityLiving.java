@@ -82,7 +82,7 @@ package net.minecraft.src;
 /*   82:     */     
 /*   83: 120 */     this.k = true;
 /*   84: 121 */     this.aF = ((float)((Math.random() + 1.0D) * 0.009999999776482582D));
-/*   85: 122 */     b(this.xPos, this.yPos, this.zPos);
+/*   85: 122 */     setPos(this.xPos, this.yPos, this.zPos);
 /*   86: 123 */     this.aE = ((float)Math.random() * 12398.0F);
 /*   87: 124 */     this.yaw = ((float)(Math.random() * 3.141592741012573D * 2.0D));
 /*   88: 125 */     this.aI = this.yaw;
@@ -250,7 +250,7 @@ package net.minecraft.src;
 /*  250: 282 */         double d1 = this.rng.nextGaussian() * 0.02D;
 /*  251: 283 */         double d2 = this.rng.nextGaussian() * 0.02D;
 /*  252: 284 */         double d3 = this.rng.nextGaussian() * 0.02D;
-/*  253: 285 */         this.world.a(EnumParticleEffect.EXPLOSION_NORMAL, this.xPos + this.rng.nextFloat() * this.J * 2.0F - this.J, this.yPos + this.rng.nextFloat() * this.K, this.zPos + this.rng.nextFloat() * this.J * 2.0F - this.J, d1, d2, d3, new int[0]);
+/*  253: 285 */         this.world.a(EnumParticleEffect.EXPLOSION_NORMAL, this.xPos + this.rng.nextFloat() * this.width * 2.0F - this.width, this.yPos + this.rng.nextFloat() * this.height, this.zPos + this.rng.nextFloat() * this.width * 2.0F - this.width, d1, d2, d3, new int[0]);
 /*  254:     */       }
 /*  255:     */     }
 /*  256:     */   }
@@ -441,7 +441,7 @@ package net.minecraft.src;
 /*  441: 466 */         double d2 = (j >> 8 & 0xFF) / 255.0D;
 /*  442: 467 */         double d3 = (j >> 0 & 0xFF) / 255.0D;
 /*  443:     */         
-/*  444: 469 */         this.world.a(k != 0 ? EnumParticleEffect.q : EnumParticleEffect.p, this.xPos + (this.rng.nextDouble() - 0.5D) * this.J, this.yPos + this.rng.nextDouble() * this.K, this.zPos + (this.rng.nextDouble() - 0.5D) * this.J, d1, d2, d3, new int[0]);
+/*  444: 469 */         this.world.a(k != 0 ? EnumParticleEffect.q : EnumParticleEffect.p, this.xPos + (this.rng.nextDouble() - 0.5D) * this.width, this.yPos + this.rng.nextDouble() * this.height, this.zPos + (this.rng.nextDouble() - 0.5D) * this.width, d1, d2, d3, new int[0]);
 /*  445:     */       }
 /*  446:     */     }
 /*  447:     */   }
@@ -1089,7 +1089,7 @@ package net.minecraft.src;
 /* 1089:     */   public void q(Entity paramwv)
 /* 1090:     */   {
 /* 1091:1071 */     double d1 = paramwv.xPos;
-/* 1092:1072 */     double d2 = paramwv.getAABB().minY + paramwv.K;
+/* 1092:1072 */     double d2 = paramwv.getAABB().minY + paramwv.height;
 /* 1093:1073 */     double d3 = paramwv.zPos;
 /* 1094:1074 */     int j = 1;
 /* 1095:1076 */     for (int k = -j; k <= j; k++) {
@@ -1424,7 +1424,7 @@ package net.minecraft.src;
 /* 1424:1396 */       this.pitch = ((float)(this.pitch + (this.bf - this.pitch) / this.ba));
 /* 1425:     */       
 /* 1426:1398 */       this.ba -= 1;
-/* 1427:1399 */       b(d1, d2, d3);
+/* 1427:1399 */       setPos(d1, d2, d3);
 /* 1428:1400 */       b(this.yaw, this.pitch);
 /* 1429:     */     }
 /* 1430:1401 */     else if (!bL())

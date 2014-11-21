@@ -52,7 +52,7 @@ package net.minecraft.src;
 /*  51:    */   private EntityAnimal f()
 /*  52:    */   {
 /*  53: 63 */     float f = 8.0F;
-/*  54: 64 */     List<? extends EntityAnimal> localList = this.a.a(this.d.getClass(), this.d.getAABB().expand(f, f, f));
+/*  54: 64 */     List<? extends EntityAnimal> localList = this.a.getEntityList(this.d.getClass(), this.d.getAABB().expand(f, f, f));
 /*  55: 65 */     double d1 = 1.7976931348623157E+308D;
 /*  56: 66 */     EntityAnimal localObject = null;
 /*  57: 67 */     for (EntityAnimal localabq : localList) {
@@ -96,7 +96,7 @@ package net.minecraft.src;
 /*  95:105 */       double d1 = localRandom.nextGaussian() * 0.02D;
 /*  96:106 */       double d2 = localRandom.nextGaussian() * 0.02D;
 /*  97:107 */       double d3 = localRandom.nextGaussian() * 0.02D;
-/*  98:108 */       this.a.a(EnumParticleEffect.HEART, this.d.xPos + localRandom.nextFloat() * this.d.J * 2.0F - this.d.J, this.d.yPos + 0.5D + localRandom.nextFloat() * this.d.K, this.d.zPos + localRandom.nextFloat() * this.d.J * 2.0F - this.d.J, d1, d2, d3, new int[0]);
+/*  98:108 */       this.a.a(EnumParticleEffect.HEART, this.d.xPos + localRandom.nextFloat() * this.d.width * 2.0F - this.d.width, this.d.yPos + 0.5D + localRandom.nextFloat() * this.d.height, this.d.zPos + localRandom.nextFloat() * this.d.width * 2.0F - this.d.width, d1, d2, d3, new int[0]);
 /*  99:    */     }
 /* 100:111 */     if (this.a.getGameRules().getBoolean("doMobLoot")) {
 /* 101:112 */       this.a.spawnEntity(new EntityExperienceOrb(this.a, this.d.xPos, this.d.yPos, this.d.zPos, localRandom.nextInt(7) + 1));

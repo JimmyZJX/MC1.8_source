@@ -34,7 +34,7 @@ package net.minecraft.src;
 /* 33:53 */       localList = paramaqu.b(null, localbrt);
 /* 34:54 */       break;
 /* 35:   */     case 2: 
-/* 36:56 */       localList = paramaqu.a(EntityLiving.class, localbrt);
+/* 36:56 */       localList = paramaqu.getEntityList(EntityLiving.class, localbrt);
 /* 37:57 */       break;
 /* 38:   */     default: 
 /* 39:59 */       return 0;
