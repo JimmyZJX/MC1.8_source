@@ -14,14 +14,14 @@ package net.minecraft.src;
 /*  13: 29 */     this.ab = true;
 /*  14: 30 */     this.b_ = 10;
 /*  15:    */     
-/*  16: 32 */     this.goalSelector.a(4, new aen(this));
-/*  17: 33 */     this.goalSelector.a(5, new zo(this, 1.0D));
-/*  18: 34 */     this.goalSelector.a(7, new zy(this, 1.0D));
-/*  19: 35 */     this.goalSelector.a(8, new zh(this, EntityPlayer.class, 8.0F));
-/*  20: 36 */     this.goalSelector.a(8, new zx(this));
+/*  16: 32 */     this.goalSelector.addGoal(4, new aen(this));
+/*  17: 33 */     this.goalSelector.addGoal(5, new zo(this, 1.0D));
+/*  18: 34 */     this.goalSelector.addGoal(7, new zy(this, 1.0D));
+/*  19: 35 */     this.goalSelector.addGoal(8, new zh(this, EntityPlayer.class, 8.0F));
+/*  20: 36 */     this.goalSelector.addGoal(8, new zx(this));
 /*  21:    */     
-/*  22: 38 */     this.targetSelector.a(1, new aal(this, true, new Class[0]));
-/*  23: 39 */     this.targetSelector.a(2, new aaq(this, EntityPlayer.class, true));
+/*  22: 38 */     this.targetSelector.addGoal(1, new aal(this, true, new Class[0]));
+/*  23: 39 */     this.targetSelector.addGoal(2, new aaq(this, EntityPlayer.class, true));
 /*  24:    */   }
 /*  25:    */   
 /*  26:    */   protected void aW()

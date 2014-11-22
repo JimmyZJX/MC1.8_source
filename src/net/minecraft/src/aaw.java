@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   2:    */ import org.apache.commons.lang3.StringUtils;
 /*   3:    */ 
 /*   4:    */ public abstract class aaw
-/*   5:    */   extends zb
+/*   5:    */   extends GoalType
 /*   6:    */ {
 /*   7:    */   protected final EntityWalkingMob e;
 /*   8:    */   protected boolean f;
@@ -23,7 +23,7 @@ package net.minecraft.src;
 /*  23: 40 */     this.a = paramBoolean2;
 /*  24:    */   }
 /*  25:    */   
-/*  26:    */   public boolean b()
+/*  26:    */   public boolean canContinue()
 /*  27:    */   {
 /*  28: 45 */     EntityLiving localxm = this.e.u();
 /*  29: 46 */     if (localxm == null) {
@@ -42,7 +42,7 @@ package net.minecraft.src;
 /*  42: 61 */       return false;
 /*  43:    */     }
 /*  44: 63 */     if (this.f) {
-/*  45: 64 */       if (this.e.t().canSee(localxm)) {
+/*  45: 64 */       if (this.e.getSensor().canSee(localxm)) {
 /*  46: 65 */         this.d = 0;
 /*  47: 67 */       } else if (++this.d > 60) {
 /*  48: 68 */         return false;
@@ -61,14 +61,14 @@ package net.minecraft.src;
 /*  61: 82 */     return localxz == null ? 16.0D : localxz.e();
 /*  62:    */   }
 /*  63:    */   
-/*  64:    */   public void c()
+/*  64:    */   public void start()
 /*  65:    */   {
 /*  66: 87 */     this.b = 0;
 /*  67: 88 */     this.c = 0;
 /*  68: 89 */     this.d = 0;
 /*  69:    */   }
 /*  70:    */   
-/*  71:    */   public void d()
+/*  71:    */   public void stop()
 /*  72:    */   {
 /*  73: 94 */     this.e.d((EntityLiving)null);
 /*  74:    */   }
@@ -106,7 +106,7 @@ package net.minecraft.src;
 /* 106:    */     {
 /* 107:129 */       return false;
 /* 108:    */     }
-/* 109:133 */     if ((paramBoolean2) && (!paramxn.t().canSee(paramxm))) {
+/* 109:133 */     if ((paramBoolean2) && (!paramxn.getSensor().canSee(paramxm))) {
 /* 110:134 */       return false;
 /* 111:    */     }
 /* 112:137 */     return true;
@@ -138,7 +138,7 @@ package net.minecraft.src;
 /* 138:    */   private boolean a(EntityLiving paramxm)
 /* 139:    */   {
 /* 140:165 */     this.c = (10 + this.e.getRNG().nextInt(5));
-/* 141:166 */     bpv localbpv = this.e.s().a(paramxm);
+/* 141:166 */     bpv localbpv = this.e.getNavigator().a(paramxm);
 /* 142:167 */     if (localbpv == null) {
 /* 143:168 */       return false;
 /* 144:    */     }

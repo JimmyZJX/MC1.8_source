@@ -1,6 +1,6 @@
 package net.minecraft.src;
 /*  1:   */ public class zz
-/*  2:   */   extends zb
+/*  2:   */   extends GoalType
 /*  3:   */ {
 /*  4:   */   private final EntityMob a;
 /*  5:   */   private final afr b;
@@ -33,7 +33,7 @@ package net.minecraft.src;
 /* 32:36 */     a(3);
 /* 33:   */   }
 /* 34:   */   
-/* 35:   */   public boolean a()
+/* 35:   */   public boolean canStart()
 /* 36:   */   {
 /* 37:41 */     EntityLiving localxm = this.a.u();
 /* 38:42 */     if (localxm == null) {
@@ -43,31 +43,31 @@ package net.minecraft.src;
 /* 42:46 */     return true;
 /* 43:   */   }
 /* 44:   */   
-/* 45:   */   public boolean b()
+/* 45:   */   public boolean canContinue()
 /* 46:   */   {
-/* 47:51 */     return (a()) || (!this.a.s().m());
+/* 47:51 */     return (canStart()) || (!this.a.getNavigator().m());
 /* 48:   */   }
 /* 49:   */   
-/* 50:   */   public void d()
+/* 50:   */   public void stop()
 /* 51:   */   {
 /* 52:56 */     this.c = null;
 /* 53:57 */     this.f = 0;
 /* 54:58 */     this.d = -1;
 /* 55:   */   }
 /* 56:   */   
-/* 57:   */   public void e()
+/* 57:   */   public void tick()
 /* 58:   */   {
 /* 59:63 */     double d1 = this.a.dist2(this.c.xPos, this.c.getAABB().minY, this.c.zPos);
-/* 60:64 */     boolean bool = this.a.t().canSee(this.c);
+/* 60:64 */     boolean bool = this.a.getSensor().canSee(this.c);
 /* 61:66 */     if (bool) {
 /* 62:67 */       this.f += 1;
 /* 63:   */     } else {
 /* 64:69 */       this.f = 0;
 /* 65:   */     }
 /* 66:72 */     if ((d1 > this.j) || (this.f < 20)) {
-/* 67:73 */       this.a.s().a(this.c, this.e);
+/* 67:73 */       this.a.getNavigator().a(this.c, this.e);
 /* 68:   */     } else {
-/* 69:75 */       this.a.s().n();
+/* 69:75 */       this.a.getNavigator().n();
 /* 70:   */     }
 /* 71:78 */     this.a.p().a(this.c, 30.0F, 30.0F);
 /* 72:   */     float f1;

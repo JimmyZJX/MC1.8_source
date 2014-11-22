@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ import java.util.Random;
 /*  2:   */ 
 /*  3:   */ public abstract class zn
-/*  4:   */   extends zb
+/*  4:   */   extends GoalType
 /*  5:   */ {
 /*  6:   */   private final EntityWalkingMob c;
 /*  7:   */   private final double d;
@@ -21,7 +21,7 @@ package net.minecraft.src;
 /* 20:28 */     a(5);
 /* 21:   */   }
 /* 22:   */   
-/* 23:   */   public boolean a()
+/* 23:   */   public boolean canStart()
 /* 24:   */   {
 /* 25:33 */     if (this.a > 0)
 /* 26:   */     {
@@ -32,28 +32,28 @@ package net.minecraft.src;
 /* 31:38 */     return g();
 /* 32:   */   }
 /* 33:   */   
-/* 34:   */   public boolean b()
+/* 34:   */   public boolean canContinue()
 /* 35:   */   {
 /* 36:43 */     return (this.e >= -this.f) && (this.e <= 1200) && (a(this.c.world, this.b));
 /* 37:   */   }
 /* 38:   */   
-/* 39:   */   public void c()
+/* 39:   */   public void start()
 /* 40:   */   {
-/* 41:48 */     this.c.s().a(this.b.getX() + 0.5D, this.b.getY() + 1, this.b.getZ() + 0.5D, this.d);
+/* 41:48 */     this.c.getNavigator().a(this.b.getX() + 0.5D, this.b.getY() + 1, this.b.getZ() + 0.5D, this.d);
 /* 42:49 */     this.e = 0;
 /* 43:50 */     this.f = (this.c.getRNG().nextInt(this.c.getRNG().nextInt(1200) + 1200) + 1200);
 /* 44:   */   }
 /* 45:   */   
-/* 46:   */   public void d() {}
+/* 46:   */   public void stop() {}
 /* 47:   */   
-/* 48:   */   public void e()
+/* 48:   */   public void tick()
 /* 49:   */   {
 /* 50:59 */     if (this.c.c(this.b.up()) > 1.0D)
 /* 51:   */     {
 /* 52:60 */       this.g = false;
 /* 53:61 */       this.e += 1;
 /* 54:62 */       if (this.e % 40 == 0) {
-/* 55:63 */         this.c.s().a(this.b.getX() + 0.5D, this.b.getY() + 1, this.b.getZ() + 0.5D, this.d);
+/* 55:63 */         this.c.getNavigator().a(this.b.getX() + 0.5D, this.b.getY() + 1, this.b.getZ() + 0.5D, this.d);
 /* 56:   */       }
 /* 57:   */     }
 /* 58:   */     else

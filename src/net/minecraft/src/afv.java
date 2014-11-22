@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ import java.util.Random;
 /*   2:    */ 
 /*   3:    */ class afv
-/*   4:    */   extends zb
+/*   4:    */   extends GoalType
 /*   5:    */ {
 /*   6:    */   private EntitySilverfish a;
 /*   7:    */   private int b;
@@ -19,12 +19,12 @@ package net.minecraft.src;
 /*  18:    */     }
 /*  19:    */   }
 /*  20:    */   
-/*  21:    */   public boolean a()
+/*  21:    */   public boolean canStart()
 /*  22:    */   {
 /*  23:152 */     return this.b > 0;
 /*  24:    */   }
 /*  25:    */   
-/*  26:    */   public void e()
+/*  26:    */   public void tick()
 /*  27:    */   {
 /*  28:157 */     this.b -= 1;
 /*  29:158 */     if (this.b <= 0)

@@ -10,13 +10,13 @@ package net.minecraft.src;
 /*   9: 28 */     super(paramaqu);
 /*  10: 29 */     a(0.7F, 1.9F);
 /*  11:    */     
-/*  12: 31 */     ((aay)s()).a(true);
-/*  13: 32 */     this.goalSelector.a(1, new zz(this, 1.25D, 20, 10.0F));
-/*  14: 33 */     this.goalSelector.a(2, new zy(this, 1.0D));
-/*  15: 34 */     this.goalSelector.a(3, new zh(this, EntityPlayer.class, 6.0F));
-/*  16: 35 */     this.goalSelector.a(4, new zx(this));
+/*  12: 31 */     ((aay)getNavigator()).a(true);
+/*  13: 32 */     this.goalSelector.addGoal(1, new zz(this, 1.25D, 20, 10.0F));
+/*  14: 33 */     this.goalSelector.addGoal(2, new zy(this, 1.0D));
+/*  15: 34 */     this.goalSelector.addGoal(3, new zh(this, EntityPlayer.class, 6.0F));
+/*  16: 35 */     this.goalSelector.addGoal(4, new zx(this));
 /*  17:    */     
-/*  18: 37 */     this.targetSelector.a(1, new aaq(this, EntityMob.class, 10, true, false, aex.d));
+/*  18: 37 */     this.targetSelector.addGoal(1, new aaq(this, EntityMob.class, 10, true, false, aex.d));
 /*  19:    */   }
 /*  20:    */   
 /*  21:    */   protected void aW()

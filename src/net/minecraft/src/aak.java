@@ -14,7 +14,7 @@ package net.minecraft.src;
 /* 13:14 */     a(1);
 /* 14:   */   }
 /* 15:   */   
-/* 16:   */   public boolean a()
+/* 16:   */   public boolean canStart()
 /* 17:   */   {
 /* 18:19 */     Village localabi = this.a.n();
 /* 19:20 */     if (localabi == null) {
@@ -33,10 +33,10 @@ package net.minecraft.src;
 /* 32:32 */     return true;
 /* 33:   */   }
 /* 34:   */   
-/* 35:   */   public void c()
+/* 35:   */   public void start()
 /* 36:   */   {
 /* 37:38 */     this.a.d(this.b);
-/* 38:39 */     super.c();
+/* 38:39 */     super.start();
 /* 39:   */   }
 /* 40:   */ }
 

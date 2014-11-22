@@ -12,7 +12,7 @@ package net.minecraft.src;
 /*  11:    */   
 /*  12:    */   public void c()
 /*  13:    */   {
-/*  14:598 */     if ((!this.f) || (this.g.s().m()))
+/*  14:598 */     if ((!this.f) || (this.g.getNavigator().m()))
 /*  15:    */     {
 /*  16:600 */       this.g.j(0.0F);
 /*  17:601 */       EntityGuardian.a(this.g, false);

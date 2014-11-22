@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ import java.util.Random;
 /*   2:    */ 
 /*   3:    */ class agd
-/*   4:    */   extends zb
+/*   4:    */   extends GoalType
 /*   5:    */ {
 /*   6:    */   private EntitySlime a;
 /*   7:    */   private float b;
@@ -14,12 +14,12 @@ package net.minecraft.src;
 /*  13:418 */     a(2);
 /*  14:    */   }
 /*  15:    */   
-/*  16:    */   public boolean a()
+/*  16:    */   public boolean canStart()
 /*  17:    */   {
 /*  18:423 */     return (this.a.u() == null) && ((this.a.C) || (this.a.V()) || (this.a.ab()));
 /*  19:    */   }
 /*  20:    */   
-/*  21:    */   public void e()
+/*  21:    */   public void tick()
 /*  22:    */   {
 /*  23:428 */     if (--this.c <= 0)
 /*  24:    */     {

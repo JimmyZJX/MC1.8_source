@@ -8,7 +8,7 @@ package net.minecraft.src;
 /*   8:212 */     super(paramage, paramClass, 1.0D, true);
 /*   9:    */   }
 /*  10:    */   
-/*  11:    */   public boolean b()
+/*  11:    */   public boolean canContinue()
 /*  12:    */   {
 /*  13:217 */     float f = this.b.c(1.0F);
 /*  14:218 */     if ((f >= 0.5F) && (this.b.getRNG().nextInt(100) == 0))
@@ -16,7 +16,7 @@ package net.minecraft.src;
 /*  16:219 */       this.b.d((EntityLiving)null);
 /*  17:220 */       return false;
 /*  18:    */     }
-/*  19:222 */     return super.b();
+/*  19:222 */     return super.canContinue();
 /*  20:    */   }
 /*  21:    */   
 /*  22:    */   protected double a(EntityLiving paramxm)

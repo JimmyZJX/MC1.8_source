@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*   4:    */   extends EntityWalkingMob
 /*   5:    */   implements aex
 /*   6:    */ {
-/*   7: 20 */   protected final zb a = new yp(this, new afn(this), 4.0F, 1.0D, 2.0D);
+/*   7: 20 */   protected final GoalType a = new yp(this, new afn(this), 4.0F, 1.0D, 2.0D);
 /*   8:    */   
 /*   9:    */   public EntityHostileMob(World paramaqu)
 /*  10:    */   {

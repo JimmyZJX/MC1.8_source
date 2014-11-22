@@ -15,7 +15,7 @@ package net.minecraft.src;
 /*  16:    */   private int tick;
 /*  17:    */   private int population;
 /*  18:    */   private int mtick;
-/*  19: 41 */   private TreeMap<String,Integer> j = new TreeMap<String,Integer>();
+/*  19: 41 */   private TreeMap<String,Integer> friendship = new TreeMap<String,Integer>();
 /*  20: 53 */   private List<abj> k = Lists.newArrayList();
 /*  21:    */   private int golemCount;
 /*  22:    */   
@@ -100,7 +100,7 @@ package net.minecraft.src;
 /* 101:152 */     List<EntityVillager> list = this.world.getEntityList(EntityVillager.class, new AABB(this.center.getX() - this.radius, this.center.getY() - 4, this.center.getZ() - this.radius, this.center.getX() + this.radius, this.center.getY() + 4, this.center.getZ() + this.radius));
 /* 102:153 */     this.population = list.size();
 /* 103:155 */     if (this.population == 0) {
-/* 104:157 */       this.j.clear();
+/* 104:157 */       this.friendship.clear();
 /* 105:    */     }
 /* 106:    */   }
 /* 107:    */   
@@ -176,14 +176,14 @@ package net.minecraft.src;
 /* 177:218 */     return localObject;
 /* 178:    */   }
 /* 179:    */   
-/* 180:    */   public VillageDoor e(BlockPosition paramdt)
+/* 180:    */   public VillageDoor getDoor(BlockPosition pos)
 /* 181:    */   {
-/* 182:226 */     if (this.center.dist2(paramdt) > this.radius * this.radius) {
+/* 182:226 */     if (this.center.dist2(pos) > this.radius * this.radius) {
 /* 183:227 */       return null;
 /* 184:    */     }
-/* 185:229 */     for (VillageDoor localabh : this.doors) {
-/* 186:230 */       if ((localabh.getPos().getX() == paramdt.getX()) && (localabh.getPos().getZ() == paramdt.getZ()) && (Math.abs(localabh.getPos().getY() - paramdt.getY()) <= 1)) {
-/* 187:231 */         return localabh;
+/* 185:229 */     for (VillageDoor door : this.doors) {
+/* 186:230 */       if ((door.getPos().getX() == pos.getX()) && (door.getPos().getZ() == pos.getZ()) && (Math.abs(door.getPos().getY() - pos.getY()) <= 1)) {
+/* 187:231 */         return door;
 /* 188:    */       }
 /* 189:    */     }
 /* 190:234 */     return null;
@@ -235,16 +235,16 @@ package net.minecraft.src;
 /* 236:    */   {
 /* 237:274 */     double d1 = 1.7976931348623157E+308D;
 /* 238:275 */     EntityPlayer localObject = null;
-/* 239:277 */     for (String str : this.j.keySet()) {
-/* 240:278 */       if (d(str))
+/* 239:277 */     for (String name : this.friendship.keySet()) {
+/* 240:278 */       if (d(name))
 /* 241:    */       {
-/* 242:279 */         EntityPlayer localahd = this.world.getPlayer(str);
-/* 243:280 */         if (localahd != null)
+/* 242:279 */         EntityPlayer plater = this.world.getPlayer(name);
+/* 243:280 */         if (plater != null)
 /* 244:    */         {
-/* 245:281 */           double d2 = localahd.h(paramxm);
+/* 245:281 */           double d2 = plater.h(paramxm);
 /* 246:282 */           if (d2 <= d1)
 /* 247:    */           {
-/* 248:285 */             localObject = localahd;
+/* 248:285 */             localObject = plater;
 /* 249:286 */             d1 = d2;
 /* 250:    */           }
 /* 251:    */         }
@@ -313,40 +313,40 @@ package net.minecraft.src;
 /* 314:345 */     this.radius = Math.max(32, (int)Math.sqrt(radius2) + 1);
 /* 315:    */   }
 /* 316:    */   
-/* 317:    */   public int a(String paramString)
+/* 317:    */   public int getFriendShip(String paramString)
 /* 318:    */   {
-/* 319:349 */     Integer localInteger = (Integer)this.j.get(paramString);
+/* 319:349 */     Integer localInteger = (Integer)this.friendship.get(paramString);
 /* 320:350 */     if (localInteger != null) {
 /* 321:351 */       return localInteger.intValue();
 /* 322:    */     }
 /* 323:353 */     return 0;
 /* 324:    */   }
 /* 325:    */   
-/* 326:    */   public int a(String paramString, int paramInt)
+/* 326:    */   public int incrementFriendShip(String name, int value)
 /* 327:    */   {
-/* 328:357 */     int m = a(paramString);
-/* 329:358 */     int n = MathUtils.clamp(m + paramInt, -30, 10);
-/* 330:359 */     this.j.put(paramString, Integer.valueOf(n));
+/* 328:357 */     int m = getFriendShip(name);
+/* 329:358 */     int n = MathUtils.clamp(m + value, -30, 10);
+/* 330:359 */     this.friendship.put(name, Integer.valueOf(n));
 /* 331:360 */     return n;
 /* 332:    */   }
 /* 333:    */   
 /* 334:    */   public boolean d(String paramString)
 /* 335:    */   {
-/* 336:372 */     return a(paramString) <= -15;
+/* 336:372 */     return getFriendShip(paramString) <= -15;
 /* 337:    */   }
 /* 338:    */   
-/* 339:    */   public void readFromNBT(NBTTagCompound paramfn)
+/* 339:    */   public void readFromNBT(NBTTagCompound tag)
 /* 340:    */   {
-/* 341:376 */     this.population = paramfn.getInteger("PopSize");
-/* 342:377 */     this.radius = paramfn.getInteger("Radius");
-/* 343:378 */     this.golemCount = paramfn.getInteger("Golems");
-/* 344:379 */     this.stable = paramfn.getInteger("Stable");
-/* 345:380 */     this.tick = paramfn.getInteger("Tick");
-/* 346:381 */     this.mtick = paramfn.getInteger("MTick");
-/* 347:382 */     this.center = new BlockPosition(paramfn.getInteger("CX"), paramfn.getInteger("CY"), paramfn.getInteger("CZ"));
-/* 348:383 */     this.totalDoorCoordinate = new BlockPosition(paramfn.getInteger("ACX"), paramfn.getInteger("ACY"), paramfn.getInteger("ACZ"));
+/* 341:376 */     this.population = tag.getInteger("PopSize");
+/* 342:377 */     this.radius = tag.getInteger("Radius");
+/* 343:378 */     this.golemCount = tag.getInteger("Golems");
+/* 344:379 */     this.stable = tag.getInteger("Stable");
+/* 345:380 */     this.tick = tag.getInteger("Tick");
+/* 346:381 */     this.mtick = tag.getInteger("MTick");
+/* 347:382 */     this.center = new BlockPosition(tag.getInteger("CX"), tag.getInteger("CY"), tag.getInteger("CZ"));
+/* 348:383 */     this.totalDoorCoordinate = new BlockPosition(tag.getInteger("ACX"), tag.getInteger("ACY"), tag.getInteger("ACZ"));
 /* 349:    */     
-/* 350:385 */     fv localfv1 = paramfn.c("Doors", 10);
+/* 350:385 */     fv localfv1 = tag.c("Doors", 10);
 /* 351:    */     
 /* 352:386 */     for (int m = 0; m < localfv1.c(); m++)
 /* 353:    */     {
@@ -355,11 +355,11 @@ package net.minecraft.src;
 /* 356:389 */       VillageDoor localObject = new VillageDoor(new BlockPosition(localfn.getInteger("X"), localfn.getInteger("Y"), localfn.getInteger("Z")), localfn.getInteger("IDX"), localfn.getInteger("IDZ"), localfn.getInteger("TS"));
 /* 357:390 */       this.doors.add(localObject);
 /* 358:    */     }
-/* 359:393 */     fv localfv2 = paramfn.c("Players", 10);
+/* 359:393 */     fv localfv2 = tag.c("Players", 10);
 /* 360:394 */     for (int n = 0; n < localfv2.c(); n++)
 /* 361:    */     {
 /* 362:395 */       NBTTagCompound localObject = localfv2.b(n);
-/* 363:396 */       this.j.put(((NBTTagCompound)localObject).getString("Name"), Integer.valueOf(((NBTTagCompound)localObject).getInteger("S")));
+/* 363:396 */       this.friendship.put(((NBTTagCompound)localObject).getString("Name"), Integer.valueOf(((NBTTagCompound)localObject).getInteger("S")));
 /* 364:    */     }
 /* 365:    */   }
 /* 366:    */   
@@ -395,12 +395,12 @@ package net.minecraft.src;
 /* 396:425 */     tag.setNBT("Doors", localfv);
 /* 397:    */     
 /* 398:427 */     fv localObject1 = new fv();
-/* 399:428 */     for (Iterator<String> localObject2 = this.j.keySet().iterator(); localObject2.hasNext();)
+/* 399:428 */     for (Iterator<String> localObject2 = this.friendship.keySet().iterator(); localObject2.hasNext();)
 /* 400:    */     {
 /* 401:428 */       String localObject3 = localObject2.next();
 /* 402:429 */       NBTTagCompound localfn = new NBTTagCompound();
 /* 403:430 */       localfn.setString("Name", localObject3);
-/* 404:431 */       localfn.setInt("S", this.j.get(localObject3).intValue());
+/* 404:431 */       localfn.setInt("S", this.friendship.get(localObject3).intValue());
 /* 405:432 */       localObject1.a(localfn);
 /* 406:    */     }
 /* 407:434 */     tag.setNBT("Players", localObject1);
@@ -418,8 +418,8 @@ package net.minecraft.src;
 /* 419:    */   
 /* 420:    */   public void b(int paramInt)
 /* 421:    */   {
-/* 422:447 */     for (String str : this.j.keySet()) {
-/* 423:448 */       a(str, paramInt);
+/* 422:447 */     for (String str : this.friendship.keySet()) {
+/* 423:448 */       incrementFriendShip(str, paramInt);
 /* 424:    */     }
 /* 425:    */   }
 /* 426:    */ }

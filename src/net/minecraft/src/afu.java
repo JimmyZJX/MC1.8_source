@@ -16,12 +16,12 @@ package net.minecraft.src;
 /*  15:197 */     a(1);
 /*  16:    */   }
 /*  17:    */   
-/*  18:    */   public boolean a()
+/*  18:    */   public boolean canStart()
 /*  19:    */   {
 /*  20:202 */     if (this.a.u() != null) {
 /*  21:203 */       return false;
 /*  22:    */     }
-/*  23:205 */     if (!this.a.s().m()) {
+/*  23:205 */     if (!this.a.getNavigator().m()) {
 /*  24:206 */       return false;
 /*  25:    */     }
 /*  26:209 */     Random localRandom = this.a.getRNG();
@@ -38,22 +38,22 @@ package net.minecraft.src;
 /*  37:    */       }
 /*  38:    */     }
 /*  39:221 */     this.c = false;
-/*  40:222 */     return super.a();
+/*  40:222 */     return super.canStart();
 /*  41:    */   }
 /*  42:    */   
-/*  43:    */   public boolean b()
+/*  43:    */   public boolean canContinue()
 /*  44:    */   {
 /*  45:227 */     if (this.c) {
 /*  46:228 */       return false;
 /*  47:    */     }
-/*  48:230 */     return super.b();
+/*  48:230 */     return super.canContinue();
 /*  49:    */   }
 /*  50:    */   
-/*  51:    */   public void c()
+/*  51:    */   public void start()
 /*  52:    */   {
 /*  53:235 */     if (!this.c)
 /*  54:    */     {
-/*  55:236 */       super.c();
+/*  55:236 */       super.start();
 /*  56:237 */       return;
 /*  57:    */     }
 /*  58:240 */     World localaqu = this.a.world;

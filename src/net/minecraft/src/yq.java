@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*  7:   */   
 /*  8:   */   public boolean apply(Entity paramwv)
 /*  9:   */   {
-/* 10:20 */     return (paramwv.ai()) && (this.a.b.t().canSee(paramwv));
+/* 10:20 */     return (paramwv.ai()) && (this.a.b.getSensor().canSee(paramwv));
 /* 11:   */   }
 /* 12:   */ }
 

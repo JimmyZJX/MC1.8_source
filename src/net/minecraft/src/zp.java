@@ -1,6 +1,6 @@
 package net.minecraft.src;
 /*  1:   */ public class zp
-/*  2:   */   extends zb
+/*  2:   */   extends GoalType
 /*  3:   */ {
 /*  4:   */   private EntityWalkingMob a;
 /*  5:   */   private EntityLiving b;
@@ -18,7 +18,7 @@ package net.minecraft.src;
 /* 17:20 */     a(1);
 /* 18:   */   }
 /* 19:   */   
-/* 20:   */   public boolean a()
+/* 20:   */   public boolean canStart()
 /* 21:   */   {
 /* 22:25 */     this.b = this.a.u();
 /* 23:26 */     if (this.b == null) {
@@ -37,19 +37,19 @@ package net.minecraft.src;
 /* 36:39 */     return true;
 /* 37:   */   }
 /* 38:   */   
-/* 39:   */   public boolean b()
+/* 39:   */   public boolean canContinue()
 /* 40:   */   {
-/* 41:44 */     return (!this.a.s().m()) && (this.b.ai()) && (this.b.h(this.a) < this.g * this.g);
+/* 41:44 */     return (!this.a.getNavigator().m()) && (this.b.ai()) && (this.b.h(this.a) < this.g * this.g);
 /* 42:   */   }
 /* 43:   */   
-/* 44:   */   public void d()
+/* 44:   */   public void stop()
 /* 45:   */   {
 /* 46:49 */     this.b = null;
 /* 47:   */   }
 /* 48:   */   
-/* 49:   */   public void c()
+/* 49:   */   public void start()
 /* 50:   */   {
-/* 51:54 */     this.a.s().a(this.c, this.d, this.e, this.f);
+/* 51:54 */     this.a.getNavigator().a(this.c, this.d, this.e, this.f);
 /* 52:   */   }
 /* 53:   */ }
 

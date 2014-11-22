@@ -1,7 +1,7 @@
 package net.minecraft.src;
 /*  2:   */ 
 /*  3:   */ public class yr
-/*  4:   */   extends zb
+/*  4:   */   extends GoalType
 /*  5:   */ {
 /*  6:   */   private EntityWolf a;
 /*  7:   */   private EntityPlayer b;
@@ -17,7 +17,7 @@ package net.minecraft.src;
 /* 17:21 */     a(2);
 /* 18:   */   }
 /* 19:   */   
-/* 20:   */   public boolean a()
+/* 20:   */   public boolean canStart()
 /* 21:   */   {
 /* 22:26 */     this.b = this.c.getNearestPlayer(this.a, (double)this.d);
 /* 23:27 */     if (this.b == null) {
@@ -26,7 +26,7 @@ package net.minecraft.src;
 /* 26:30 */     return a(this.b);
 /* 27:   */   }
 /* 28:   */   
-/* 29:   */   public boolean b()
+/* 29:   */   public boolean canContinue()
 /* 30:   */   {
 /* 31:35 */     if (!this.b.ai()) {
 /* 32:36 */       return false;
@@ -37,19 +37,19 @@ package net.minecraft.src;
 /* 37:41 */     return (this.e > 0) && (a(this.b));
 /* 38:   */   }
 /* 39:   */   
-/* 40:   */   public void c()
+/* 40:   */   public void start()
 /* 41:   */   {
 /* 42:46 */     this.a.p(true);
 /* 43:47 */     this.e = (40 + this.a.getRNG().nextInt(40));
 /* 44:   */   }
 /* 45:   */   
-/* 46:   */   public void d()
+/* 46:   */   public void stop()
 /* 47:   */   {
 /* 48:52 */     this.a.p(false);
 /* 49:53 */     this.b = null;
 /* 50:   */   }
 /* 51:   */   
-/* 52:   */   public void e()
+/* 52:   */   public void tick()
 /* 53:   */   {
 /* 54:58 */     this.a.p().a(this.b.xPos, this.b.yPos + this.b.getEyeHeight(), this.b.zPos, 10.0F, this.a.bP());
 /* 55:59 */     this.e -= 1;

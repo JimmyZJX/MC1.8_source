@@ -7,9 +7,9 @@ package net.minecraft.src;
 /*   6:225 */     super(paramafo, EntityPlayer.class, true);
 /*   7:    */   }
 /*   8:    */   
-/*   9:    */   public boolean a()
+/*   9:    */   public boolean canStart()
 /*  10:    */   {
-/*  11:230 */     return (((EntityZombiePigman)this.e).ck()) && (super.a());
+/*  11:230 */     return (((EntityZombiePigman)this.e).ck()) && (super.canStart());
 /*  12:    */   }
 /*  13:    */ }
 

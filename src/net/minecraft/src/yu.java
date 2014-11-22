@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ import java.util.Random;
 /*   2:    */ 
 /*   3:    */ public class yu
-/*   4:    */   extends zb
+/*   4:    */   extends GoalType
 /*   5:    */ {
 /*   6:    */   private final EntityMob a;
 /*   7:    */   private final float b;
@@ -18,23 +18,23 @@ package net.minecraft.src;
 /*  17: 33 */     a(7);
 /*  18:    */   }
 /*  19:    */   
-/*  20:    */   public void c()
+/*  20:    */   public void start()
 /*  21:    */   {
 /*  22: 38 */     this.c = 0.0F;
 /*  23:    */   }
 /*  24:    */   
-/*  25:    */   public void d()
+/*  25:    */   public void stop()
 /*  26:    */   {
 /*  27: 43 */     this.d = false;
 /*  28: 44 */     this.c = 0.0F;
 /*  29:    */   }
 /*  30:    */   
-/*  31:    */   public boolean a()
+/*  31:    */   public boolean canStart()
 /*  32:    */   {
 /*  33: 49 */     return (this.a.ai()) && (this.a.rider != null) && ((this.a.rider instanceof EntityPlayer)) && ((this.d) || (this.a.bV()));
 /*  34:    */   }
 /*  35:    */   
-/*  36:    */   public void e()
+/*  36:    */   public void tick()
 /*  37:    */   {
 /*  38: 54 */     EntityPlayer localahd = (EntityPlayer)this.a.rider;
 /*  39: 55 */     EntityWalkingMob localxu = (EntityWalkingMob)this.a;

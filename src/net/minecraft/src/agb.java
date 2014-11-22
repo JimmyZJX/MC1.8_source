@@ -1,6 +1,6 @@
 package net.minecraft.src;
 /*   1:    */ class agb
-/*   2:    */   extends zb
+/*   2:    */   extends GoalType
 /*   3:    */ {
 /*   4:    */   private EntitySlime a;
 /*   5:    */   
@@ -10,12 +10,12 @@ package net.minecraft.src;
 /*   9:464 */     a(5);
 /*  10:    */   }
 /*  11:    */   
-/*  12:    */   public boolean a()
+/*  12:    */   public boolean canStart()
 /*  13:    */   {
 /*  14:469 */     return true;
 /*  15:    */   }
 /*  16:    */   
-/*  17:    */   public void e()
+/*  17:    */   public void tick()
 /*  18:    */   {
 /*  19:474 */     ((agc)this.a.q()).a(1.0D);
 /*  20:    */   }

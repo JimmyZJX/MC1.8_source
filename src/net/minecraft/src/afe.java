@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ import java.util.Random;
 /*   2:    */ 
 /*   3:    */ class afe
-/*   4:    */   extends zb
+/*   4:    */   extends GoalType
 /*   5:    */ {
 /*   6:    */   private EntityGhast a;
 /*   7:    */   
@@ -13,7 +13,7 @@ package net.minecraft.src;
 /*  12:223 */     a(1);
 /*  13:    */   }
 /*  14:    */   
-/*  15:    */   public boolean a()
+/*  15:    */   public boolean canStart()
 /*  16:    */   {
 /*  17:228 */     yn localyn = this.a.q();
 /*  18:229 */     if (!localyn.a()) {
@@ -30,12 +30,12 @@ package net.minecraft.src;
 /*  29:243 */     return false;
 /*  30:    */   }
 /*  31:    */   
-/*  32:    */   public boolean b()
+/*  32:    */   public boolean canContinue()
 /*  33:    */   {
 /*  34:248 */     return false;
 /*  35:    */   }
 /*  36:    */   
-/*  37:    */   public void c()
+/*  37:    */   public void start()
 /*  38:    */   {
 /*  39:253 */     Random localRandom = this.a.getRNG();
 /*  40:254 */     double d1 = this.a.xPos + (localRandom.nextFloat() * 2.0F - 1.0F) * 16.0F;

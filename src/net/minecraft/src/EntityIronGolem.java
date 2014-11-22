@@ -13,20 +13,20 @@ package net.minecraft.src;
 /*  13: 40 */     super(paramaqu);
 /*  14: 41 */     a(1.4F, 2.9F);
 /*  15:    */     
-/*  16: 43 */     ((aay)s()).a(true);
+/*  16: 43 */     ((aay)getNavigator()).a(true);
 /*  17:    */     
-/*  18: 45 */     this.goalSelector.a(1, new zk(this, 1.0D, true));
-/*  19: 46 */     this.goalSelector.a(2, new zp(this, 0.9D, 32.0F));
-/*  20: 47 */     this.goalSelector.a(3, new zm(this, 0.6D, true));
-/*  21: 48 */     this.goalSelector.a(4, new zo(this, 1.0D));
-/*  22: 49 */     this.goalSelector.a(5, new zs(this));
-/*  23: 50 */     this.goalSelector.a(6, new zy(this, 0.6D));
-/*  24: 51 */     this.goalSelector.a(7, new zh(this, EntityPlayer.class, 6.0F));
-/*  25: 52 */     this.goalSelector.a(8, new zx(this));
+/*  18: 45 */     this.goalSelector.addGoal(1, new zk(this, 1.0D, true));
+/*  19: 46 */     this.goalSelector.addGoal(2, new zp(this, 0.9D, 32.0F));
+/*  20: 47 */     this.goalSelector.addGoal(3, new zm(this, 0.6D, true));
+/*  21: 48 */     this.goalSelector.addGoal(4, new zo(this, 1.0D));
+/*  22: 49 */     this.goalSelector.addGoal(5, new zs(this));
+/*  23: 50 */     this.goalSelector.addGoal(6, new zy(this, 0.6D));
+/*  24: 51 */     this.goalSelector.addGoal(7, new zh(this, EntityPlayer.class, 6.0F));
+/*  25: 52 */     this.goalSelector.addGoal(8, new zx(this));
 /*  26:    */     
-/*  27: 54 */     this.targetSelector.a(1, new aak(this));
-/*  28: 55 */     this.targetSelector.a(2, new aal(this, false, new Class[0]));
-/*  29: 56 */     this.targetSelector.a(3, new acr(this, EntityMob.class, 10, false, true, aex.e));
+/*  27: 54 */     this.targetSelector.addGoal(1, new aak(this));
+/*  28: 55 */     this.targetSelector.addGoal(2, new aal(this, false, new Class[0]));
+/*  29: 56 */     this.targetSelector.addGoal(3, new acr(this, EntityMob.class, 10, false, true, aex.e));
 /*  30:    */   }
 /*  31:    */   
 /*  32:    */   protected void h()
@@ -215,7 +215,7 @@ package net.minecraft.src;
 /* 215:    */   public void a(DamageSource paramwh)
 /* 216:    */   {
 /* 217:232 */     if ((!cl()) && (this.aL != null) && (this.a != null)) {
-/* 218:233 */       this.a.a(this.aL.getName(), -5);
+/* 218:233 */       this.a.incrementFriendShip(this.aL.getName(), -5);
 /* 219:    */     }
 /* 220:235 */     super.a(paramwh);
 /* 221:    */   }

@@ -22,39 +22,39 @@ package net.minecraft.src;
 /*   23:     */   private boolean by;
 /*   24:  83 */   private wa inventory = new wa("Items", false, 8);
 /*   25:     */   
-/*   26:     */   public EntityVillager(World paramaqu)
+/*   26:     */   public EntityVillager(World world)
 /*   27:     */   {
-/*   28:  89 */     this(paramaqu, 0);
+/*   28:  89 */     this(world, 0);
 /*   29:     */   }
 /*   30:     */   
-/*   31:     */   public EntityVillager(World paramaqu, int paramInt)
+/*   31:     */   public EntityVillager(World world, int paramInt)
 /*   32:     */   {
-/*   33:  93 */     super(paramaqu);
+/*   33:  93 */     super(world);
 /*   34:  94 */     setProfession(paramInt);
 /*   35:  95 */     a(0.6F, 1.8F);
 /*   36:     */     
-/*   37:  97 */     ((aay)s()).b(true);
-/*   38:  98 */     ((aay)s()).a(true);
+/*   37:  97 */     ((aay)getNavigator()).b(true);
+/*   38:  98 */     ((aay)getNavigator()).a(true);
 /*   39:     */     
-/*   40: 100 */     this.goalSelector.a(0, new yy(this));
-/*   41: 101 */     this.goalSelector.a(1, new yp(this, new agq(this), 8.0F, 0.6D, 0.6D));
+/*   40: 100 */     this.goalSelector.addGoal(0, new yy(this));
+/*   41: 101 */     this.goalSelector.addGoal(1, new yp(this, new agq(this), 8.0F, 0.6D, 0.6D));
 /*   42:     */     
 /*   43:     */ 
 /*   44:     */ 
 /*   45:     */ 
 /*   46:     */ 
-/*   47: 107 */     this.goalSelector.a(1, new aah(this));
-/*   48: 108 */     this.goalSelector.a(1, new zi(this));
-/*   49: 109 */     this.goalSelector.a(2, new zl(this));
-/*   50: 110 */     this.goalSelector.a(3, new aaa(this));
-/*   51: 111 */     this.goalSelector.a(4, new zt(this, true));
-/*   52: 112 */     this.goalSelector.a(5, new zo(this, 0.6D));
-/*   53: 113 */     this.goalSelector.a(6, new VillagerProposal(this));
-/*   54: 114 */     this.goalSelector.a(7, new aaf(this));
-/*   55: 115 */     this.goalSelector.a(9, new zf(this, EntityPlayer.class, 3.0F, 1.0F));
-/*   56: 116 */     this.goalSelector.a(9, new aai(this));
-/*   57: 117 */     this.goalSelector.a(9, new zy(this, 0.6D));
-/*   58: 118 */     this.goalSelector.a(10, new zh(this, EntityMob.class, 8.0F));
+/*   47: 107 */     this.goalSelector.addGoal(1, new aah(this));
+/*   48: 108 */     this.goalSelector.addGoal(1, new zi(this));
+/*   49: 109 */     this.goalSelector.addGoal(2, new zl(this));
+/*   50: 110 */     this.goalSelector.addGoal(3, new GoalOpenVillageDoor(this));
+/*   51: 111 */     this.goalSelector.addGoal(4, new zt(this, true));
+/*   52: 112 */     this.goalSelector.addGoal(5, new zo(this, 0.6D));
+/*   53: 113 */     this.goalSelector.addGoal(6, new GoalVillagerProposal(this));
+/*   54: 114 */     this.goalSelector.addGoal(7, new aaf(this));
+/*   55: 115 */     this.goalSelector.addGoal(9, new zf(this, EntityPlayer.class, 3.0F, 1.0F));
+/*   56: 116 */     this.goalSelector.addGoal(9, new aai(this));
+/*   57: 117 */     this.goalSelector.addGoal(9, new zy(this, 0.6D));
+/*   58: 118 */     this.goalSelector.addGoal(10, new zh(this, EntityMob.class, 8.0F));
 /*   59:     */     
 /*   60: 120 */     setCanPickUpLoot(true);
 /*   61:     */   }
@@ -66,16 +66,16 @@ package net.minecraft.src;
 /*   67:     */     }
 /*   68: 130 */     this.by = true;
 /*   69: 132 */     if (i_()) {
-/*   70: 133 */       this.goalSelector.a(8, new zv(this, 0.32D));
+/*   70: 133 */       this.goalSelector.addGoal(8, new zv(this, 0.32D));
 /*   71: 134 */     } else if (getProfession() == 0) {
-/*   72: 135 */       this.goalSelector.a(6, new ze(this, 0.6D));
+/*   72: 135 */       this.goalSelector.addGoal(6, new ze(this, 0.6D));
 /*   73:     */     }
 /*   74:     */   }
 /*   75:     */   
 /*   76:     */   protected void n()
 /*   77:     */   {
 /*   78: 141 */     if (getProfession() == 0) {
-/*   79: 142 */       this.goalSelector.a(8, new ze(this, 0.6D));
+/*   79: 142 */       this.goalSelector.addGoal(8, new ze(this, 0.6D));
 /*   80:     */     }
 /*   81: 145 */     super.n();
 /*   82:     */   }
@@ -132,7 +132,7 @@ package net.minecraft.src;
 /*  133: 189 */           if ((this.bk != null) && (this.bu != null))
 /*  134:     */           {
 /*  135: 190 */             this.world.sendSignal(this, (byte)14);
-/*  136: 191 */             this.bk.a(this.bu, 1);
+/*  136: 191 */             this.bk.incrementFriendShip(this.bu, 1);
 /*  137:     */           }
 /*  138:     */         }
 /*  139: 194 */         c(new PotionEffect(Potion.regeneration.id, 200, 0));
@@ -276,7 +276,7 @@ package net.minecraft.src;
 /*  277: 325 */         if (i_()) {
 /*  278: 326 */           i = -3;
 /*  279:     */         }
-/*  280: 328 */         this.bk.a(paramxm.getName(), i);
+/*  280: 328 */         this.bk.incrementFriendShip(paramxm.getName(), i);
 /*  281: 329 */         if (ai()) {
 /*  282: 330 */           this.world.sendSignal(this, (byte)13);
 /*  283:     */         }
@@ -292,7 +292,7 @@ package net.minecraft.src;
 /*  293: 340 */       if (localwv != null)
 /*  294:     */       {
 /*  295: 341 */         if ((localwv instanceof EntityPlayer)) {
-/*  296: 342 */           this.bk.a(localwv.getName(), -2);
+/*  296: 342 */           this.bk.incrementFriendShip(localwv.getName(), -2);
 /*  297: 343 */         } else if ((localwv instanceof aex)) {
 /*  298: 344 */           this.bk.h();
 /*  299:     */         }

@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*   5:    */ import org.apache.logging.log4j.Logger;
 /*   6:    */ 
 /*   7:    */ public class aao
-/*   8:    */   extends zb
+/*   8:    */   extends GoalType
 /*   9:    */ {
 /*  10: 27 */   private static final Logger a = LogManager.getLogger();
 /*  11:    */   private EntityMob b;
@@ -48,7 +48,7 @@ package net.minecraft.src;
 /*  47: 66 */     this.d = new aas(paramxn);
 /*  48:    */   }
 /*  49:    */   
-/*  50:    */   public boolean a()
+/*  50:    */   public boolean canStart()
 /*  51:    */   {
 /*  52: 71 */     double d1 = f();
 /*  53: 72 */     List<EntityPlayer> localList = this.b.world.a(EntityPlayer.class, this.b.getAABB().expand(d1, 4.0D, d1), this.c);
@@ -60,7 +60,7 @@ package net.minecraft.src;
 /*  59: 79 */     return true;
 /*  60:    */   }
 /*  61:    */   
-/*  62:    */   public boolean b()
+/*  62:    */   public boolean canContinue()
 /*  63:    */   {
 /*  64: 85 */     EntityLiving localxm = this.b.u();
 /*  65: 86 */     if (localxm == null) {
@@ -85,16 +85,16 @@ package net.minecraft.src;
 /*  84:108 */     return true;
 /*  85:    */   }
 /*  86:    */   
-/*  87:    */   public void c()
+/*  87:    */   public void start()
 /*  88:    */   {
 /*  89:113 */     this.b.d(this.e);
-/*  90:114 */     super.c();
+/*  90:114 */     super.start();
 /*  91:    */   }
 /*  92:    */   
-/*  93:    */   public void d()
+/*  93:    */   public void stop()
 /*  94:    */   {
 /*  95:119 */     this.b.d((EntityLiving)null);
-/*  96:120 */     super.c();
+/*  96:120 */     super.start();
 /*  97:    */   }
 /*  98:    */   
 /*  99:    */   protected double f()

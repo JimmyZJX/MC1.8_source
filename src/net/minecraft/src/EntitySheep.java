@@ -42,16 +42,16 @@ package net.minecraft.src;
 /*  41: 72 */     super(paramaqu);
 /*  42: 73 */     a(0.9F, 1.3F);
 /*  43:    */     
-/*  44: 75 */     ((aay)s()).a(true);
-/*  45: 76 */     this.goalSelector.a(0, new yy(this));
-/*  46: 77 */     this.goalSelector.a(1, new zu(this, 1.25D));
-/*  47: 78 */     this.goalSelector.a(2, new yt(this, 1.0D));
-/*  48: 79 */     this.goalSelector.a(3, new aag(this, 1.1D, ItemList.O, false));
-/*  49: 80 */     this.goalSelector.a(4, new za(this, 1.1D));
-/*  50: 81 */     this.goalSelector.a(5, this.bo);
-/*  51: 82 */     this.goalSelector.a(6, new zy(this, 1.0D));
-/*  52: 83 */     this.goalSelector.a(7, new zh(this, EntityPlayer.class, 6.0F));
-/*  53: 84 */     this.goalSelector.a(8, new zx(this));
+/*  44: 75 */     ((aay)getNavigator()).a(true);
+/*  45: 76 */     this.goalSelector.addGoal(0, new yy(this));
+/*  46: 77 */     this.goalSelector.addGoal(1, new zu(this, 1.25D));
+/*  47: 78 */     this.goalSelector.addGoal(2, new yt(this, 1.0D));
+/*  48: 79 */     this.goalSelector.addGoal(3, new aag(this, 1.1D, ItemList.O, false));
+/*  49: 80 */     this.goalSelector.addGoal(4, new za(this, 1.1D));
+/*  50: 81 */     this.goalSelector.addGoal(5, this.bo);
+/*  51: 82 */     this.goalSelector.addGoal(6, new zy(this, 1.0D));
+/*  52: 83 */     this.goalSelector.addGoal(7, new zh(this, EntityPlayer.class, 6.0F));
+/*  53: 84 */     this.goalSelector.addGoal(8, new zx(this));
 /*  54:    */     
 /*  55: 86 */     this.bk.a(0, new ItemStack(ItemList.dye, 1, 0));
 /*  56: 87 */     this.bk.a(1, new ItemStack(ItemList.dye, 1, 0));

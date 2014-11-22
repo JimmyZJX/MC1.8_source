@@ -154,7 +154,7 @@ package net.minecraft.src;
 /* 153:154 */     for (Iterator<Village> it = this.villages.iterator(); it.hasNext();)
 /* 154:    */     {
 /* 155:154 */       Village village = it.next();
-/* 156:155 */       VillageDoor door = village.e(pos);
+/* 156:155 */       VillageDoor door = village.getDoor(pos);
 /* 157:156 */       if (door != null) {
 /* 158:157 */         return door;
 /* 159:    */       }

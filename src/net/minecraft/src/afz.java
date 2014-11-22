@@ -1,6 +1,6 @@
 package net.minecraft.src;
 /*   1:    */ class afz
-/*   2:    */   extends zb
+/*   2:    */   extends GoalType
 /*   3:    */ {
 /*   4:    */   private EntitySlime a;
 /*   5:    */   private int b;
@@ -11,7 +11,7 @@ package net.minecraft.src;
 /*  10:363 */     a(2);
 /*  11:    */   }
 /*  12:    */   
-/*  13:    */   public boolean a()
+/*  13:    */   public boolean canStart()
 /*  14:    */   {
 /*  15:368 */     EntityLiving localxm = this.a.u();
 /*  16:370 */     if (localxm == null) {
@@ -23,13 +23,13 @@ package net.minecraft.src;
 /*  22:377 */     return true;
 /*  23:    */   }
 /*  24:    */   
-/*  25:    */   public void c()
+/*  25:    */   public void start()
 /*  26:    */   {
 /*  27:382 */     this.b = 300;
-/*  28:383 */     super.c();
+/*  28:383 */     super.start();
 /*  29:    */   }
 /*  30:    */   
-/*  31:    */   public boolean b()
+/*  31:    */   public boolean canContinue()
 /*  32:    */   {
 /*  33:388 */     EntityLiving localxm = this.a.u();
 /*  34:390 */     if (localxm == null) {
@@ -44,7 +44,7 @@ package net.minecraft.src;
 /*  43:400 */     return true;
 /*  44:    */   }
 /*  45:    */   
-/*  46:    */   public void e()
+/*  46:    */   public void tick()
 /*  47:    */   {
 /*  48:405 */     this.a.a(this.a.u(), 10.0F, 10.0F);
 /*  49:406 */     ((agc)this.a.q()).a(this.a.yaw, this.a.cg());

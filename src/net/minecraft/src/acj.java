@@ -10,9 +10,9 @@ package net.minecraft.src;
 /*   9:592 */     this.b = paramacb;
 /*  10:    */   }
 /*  11:    */   
-/*  12:    */   public void e()
+/*  12:    */   public void tick()
 /*  13:    */   {
-/*  14:597 */     super.e();
+/*  14:597 */     super.tick();
 /*  15:    */     
 /*  16:599 */     this.b.b(this.a);
 /*  17:    */   }

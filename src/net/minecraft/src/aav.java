@@ -13,7 +13,7 @@ package net.minecraft.src;
 /* 12:14 */     a(1);
 /* 13:   */   }
 /* 14:   */   
-/* 15:   */   public boolean a()
+/* 15:   */   public boolean canStart()
 /* 16:   */   {
 /* 17:19 */     if (!this.a.cj()) {
 /* 18:20 */       return false;
@@ -27,7 +27,7 @@ package net.minecraft.src;
 /* 26:28 */     return (i != this.c) && (a(this.b, false)) && (this.a.a(this.b, localxm));
 /* 27:   */   }
 /* 28:   */   
-/* 29:   */   public void c()
+/* 29:   */   public void start()
 /* 30:   */   {
 /* 31:33 */     this.e.d(this.b);
 /* 32:   */     
@@ -35,7 +35,7 @@ package net.minecraft.src;
 /* 34:36 */     if (localxm != null) {
 /* 35:37 */       this.c = localxm.bf();
 /* 36:   */     }
-/* 37:40 */     super.c();
+/* 37:40 */     super.start();
 /* 38:   */   }
 /* 39:   */ }
 

@@ -1,6 +1,6 @@
 package net.minecraft.src;
 /*   1:    */ class afb
-/*   2:    */   extends zb
+/*   2:    */   extends GoalType
 /*   3:    */ {
 /*   4:    */   private EntityGhast a;
 /*   5:    */   
@@ -11,12 +11,12 @@ package net.minecraft.src;
 /*  10:267 */     a(2);
 /*  11:    */   }
 /*  12:    */   
-/*  13:    */   public boolean a()
+/*  13:    */   public boolean canStart()
 /*  14:    */   {
 /*  15:272 */     return true;
 /*  16:    */   }
 /*  17:    */   
-/*  18:    */   public void e()
+/*  18:    */   public void tick()
 /*  19:    */   {
 /*  20:277 */     if (this.a.u() == null)
 /*  21:    */     {

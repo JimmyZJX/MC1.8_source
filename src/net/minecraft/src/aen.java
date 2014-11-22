@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ import java.util.Random;
 /*   2:    */ 
 /*   3:    */ class aen
-/*   4:    */   extends zb
+/*   4:    */   extends GoalType
 /*   5:    */ {
 /*   6:    */   private EntityBlaze a;
 /*   7:    */   private int b;
@@ -15,7 +15,7 @@ package net.minecraft.src;
 /*  14:173 */     a(3);
 /*  15:    */   }
 /*  16:    */   
-/*  17:    */   public boolean a()
+/*  17:    */   public boolean canStart()
 /*  18:    */   {
 /*  19:178 */     EntityLiving localxm = this.a.u();
 /*  20:179 */     if ((localxm == null) || (!localxm.ai())) {
@@ -24,17 +24,17 @@ package net.minecraft.src;
 /*  23:183 */     return true;
 /*  24:    */   }
 /*  25:    */   
-/*  26:    */   public void c()
+/*  26:    */   public void start()
 /*  27:    */   {
 /*  28:188 */     this.b = 0;
 /*  29:    */   }
 /*  30:    */   
-/*  31:    */   public void d()
+/*  31:    */   public void stop()
 /*  32:    */   {
 /*  33:193 */     this.a.a(false);
 /*  34:    */   }
 /*  35:    */   
-/*  36:    */   public void e()
+/*  36:    */   public void tick()
 /*  37:    */   {
 /*  38:198 */     this.c -= 1;
 /*  39:    */     
@@ -90,10 +90,10 @@ package net.minecraft.src;
 /*  89:    */     }
 /*  90:    */     else
 /*  91:    */     {
-/*  92:242 */       this.a.s().n();
+/*  92:242 */       this.a.getNavigator().n();
 /*  93:243 */       this.a.q().a(localxm.xPos, localxm.yPos, localxm.zPos, 1.0D);
 /*  94:    */     }
-/*  95:246 */     super.e();
+/*  95:246 */     super.tick();
 /*  96:    */   }
 /*  97:    */ }
 

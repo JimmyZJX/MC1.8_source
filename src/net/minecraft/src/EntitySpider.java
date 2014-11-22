@@ -9,23 +9,23 @@ package net.minecraft.src;
 /*   8: 31 */     super(paramaqu);
 /*   9: 32 */     a(1.4F, 0.9F);
 /*  10:    */     
-/*  11: 34 */     this.goalSelector.a(1, new yy(this));
+/*  11: 34 */     this.goalSelector.addGoal(1, new yy(this));
 /*  12:    */     
-/*  13: 36 */     this.goalSelector.a(2, this.a);
-/*  14: 37 */     this.goalSelector.a(3, new zg(this, 0.4F));
-/*  15: 38 */     this.goalSelector.a(4, new agf(this, EntityPlayer.class));
-/*  16: 39 */     this.goalSelector.a(4, new agf(this, EntityIronGolem.class));
+/*  13: 36 */     this.goalSelector.addGoal(2, this.a);
+/*  14: 37 */     this.goalSelector.addGoal(3, new zg(this, 0.4F));
+/*  15: 38 */     this.goalSelector.addGoal(4, new agf(this, EntityPlayer.class));
+/*  16: 39 */     this.goalSelector.addGoal(4, new agf(this, EntityIronGolem.class));
 /*  17:    */     
-/*  18: 41 */     this.goalSelector.a(5, new zy(this, 0.8D));
-/*  19: 42 */     this.goalSelector.a(6, new zh(this, EntityPlayer.class, 8.0F));
-/*  20: 43 */     this.goalSelector.a(6, new zx(this));
+/*  18: 41 */     this.goalSelector.addGoal(5, new zy(this, 0.8D));
+/*  19: 42 */     this.goalSelector.addGoal(6, new zh(this, EntityPlayer.class, 8.0F));
+/*  20: 43 */     this.goalSelector.addGoal(6, new zx(this));
 /*  21:    */     
-/*  22: 45 */     this.targetSelector.a(1, new aal(this, false, new Class[0]));
-/*  23: 46 */     this.targetSelector.a(2, new agh(this, EntityPlayer.class));
-/*  24: 47 */     this.targetSelector.a(3, new agh(this, EntityIronGolem.class));
+/*  22: 45 */     this.targetSelector.addGoal(1, new aal(this, false, new Class[0]));
+/*  23: 46 */     this.targetSelector.addGoal(2, new agh(this, EntityPlayer.class));
+/*  24: 47 */     this.targetSelector.addGoal(3, new agh(this, EntityIronGolem.class));
 /*  25:    */   }
 /*  26:    */   
-/*  27:    */   protected aaz b(World paramaqu)
+/*  27:    */   protected Navigator b(World paramaqu)
 /*  28:    */   {
 /*  29: 52 */     return new aba(this, paramaqu);
 /*  30:    */   }

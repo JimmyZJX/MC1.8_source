@@ -16,7 +16,7 @@ package net.minecraft.src;
 /*  15:    */   
 /*  16: 22 */   private BlockPosition a = BlockPosition.zero;
 /*  17: 23 */   private float b = -1.0F;
-/*  18:    */   private zb c;
+/*  18:    */   private GoalType c;
 /*  19:    */   private boolean bk;
 /*  20:    */   
 /*  21:    */   public float a(BlockPosition paramdt)
@@ -31,7 +31,7 @@ package net.minecraft.src;
 /*  30:    */   
 /*  31:    */   public boolean cd()
 /*  32:    */   {
-/*  33: 37 */     return !this.h.m();
+/*  33: 37 */     return !this.navigator.m();
 /*  34:    */   }
 /*  35:    */   
 /*  36:    */   public boolean ce()
@@ -91,15 +91,15 @@ package net.minecraft.src;
 /*  90:    */       }
 /*  91: 91 */       if (!this.bk)
 /*  92:    */       {
-/*  93: 92 */         this.goalSelector.a(2, this.c);
-/*  94: 93 */         if ((s() instanceof aay)) {
-/*  95: 94 */           ((aay)s()).a(false);
+/*  93: 92 */         this.goalSelector.addGoal(2, this.c);
+/*  94: 93 */         if ((getNavigator() instanceof aay)) {
+/*  95: 94 */           ((aay)getNavigator()).a(false);
 /*  96:    */         }
 /*  97: 96 */         this.bk = true;
 /*  98:    */       }
 /*  99: 99 */       n(f);
 /* 100:101 */       if (f > 4.0F) {
-/* 101:103 */         s().a(localwv, 1.0D);
+/* 101:103 */         getNavigator().a(localwv, 1.0D);
 /* 102:    */       }
 /* 103:105 */       if (f > 6.0F)
 /* 104:    */       {
@@ -118,9 +118,9 @@ package net.minecraft.src;
 /* 117:118 */     else if ((!cb()) && (this.bk))
 /* 118:    */     {
 /* 119:119 */       this.bk = false;
-/* 120:120 */       this.goalSelector.a(this.c);
-/* 121:121 */       if ((s() instanceof aay)) {
-/* 122:122 */         ((aay)s()).a(true);
+/* 120:120 */       this.goalSelector.removeGoal(this.c);
+/* 121:121 */       if ((getNavigator() instanceof aay)) {
+/* 122:122 */         ((aay)getNavigator()).a(true);
 /* 123:    */       }
 /* 124:124 */       ch();
 /* 125:    */     }

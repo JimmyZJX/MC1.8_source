@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*  3:   */ import java.util.Random;
 /*  4:   */ 
 /*  5:   */ public class zv
-/*  6:   */   extends zb
+/*  6:   */   extends GoalType
 /*  7:   */ {
 /*  8:   */   private EntityVillager a;
 /*  9:   */   private EntityLiving b;
@@ -18,7 +18,7 @@ package net.minecraft.src;
 /* 17:20 */     a(1);
 /* 18:   */   }
 /* 19:   */   
-/* 20:   */   public boolean a()
+/* 20:   */   public boolean canStart()
 /* 21:   */   {
 /* 22:25 */     if (this.a.getAge() >= 0) {
 /* 23:26 */       return false;
@@ -57,12 +57,12 @@ package net.minecraft.src;
 /* 56:58 */     return true;
 /* 57:   */   }
 /* 58:   */   
-/* 59:   */   public boolean b()
+/* 59:   */   public boolean canContinue()
 /* 60:   */   {
 /* 61:63 */     return this.d > 0;
 /* 62:   */   }
 /* 63:   */   
-/* 64:   */   public void c()
+/* 64:   */   public void start()
 /* 65:   */   {
 /* 66:68 */     if (this.b != null) {
 /* 67:69 */       this.a.m(true);
@@ -70,28 +70,28 @@ package net.minecraft.src;
 /* 69:71 */     this.d = 1000;
 /* 70:   */   }
 /* 71:   */   
-/* 72:   */   public void d()
+/* 72:   */   public void stop()
 /* 73:   */   {
 /* 74:76 */     this.a.m(false);
 /* 75:77 */     this.b = null;
 /* 76:   */   }
 /* 77:   */   
-/* 78:   */   public void e()
+/* 78:   */   public void tick()
 /* 79:   */   {
 /* 80:82 */     this.d -= 1;
 /* 81:83 */     if (this.b != null)
 /* 82:   */     {
 /* 83:84 */       if (this.a.h(this.b) > 4.0D) {
-/* 84:85 */         this.a.s().a(this.b, this.c);
+/* 84:85 */         this.a.getNavigator().a(this.b, this.c);
 /* 85:   */       }
 /* 86:   */     }
-/* 87:88 */     else if (this.a.s().m())
+/* 87:88 */     else if (this.a.getNavigator().m())
 /* 88:   */     {
 /* 89:89 */       Vec3 localbrw = abf.a(this.a, 16, 3);
 /* 90:90 */       if (localbrw == null) {
 /* 91:91 */         return;
 /* 92:   */       }
-/* 93:93 */       this.a.s().a(localbrw.x, localbrw.y, localbrw.z, this.c);
+/* 93:93 */       this.a.getNavigator().a(localbrw.x, localbrw.y, localbrw.z, this.c);
 /* 94:   */     }
 /* 95:   */   }
 /* 96:   */ }

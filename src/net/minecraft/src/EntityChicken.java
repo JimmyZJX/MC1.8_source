@@ -17,14 +17,14 @@ package net.minecraft.src;
 /*  17: 28 */     a(0.4F, 0.7F);
 /*  18: 29 */     this.bq = (this.rng.nextInt(6000) + 6000);
 /*  19:    */     
-/*  20: 31 */     this.goalSelector.a(0, new yy(this));
-/*  21: 32 */     this.goalSelector.a(1, new zu(this, 1.4D));
-/*  22: 33 */     this.goalSelector.a(2, new yt(this, 1.0D));
-/*  23: 34 */     this.goalSelector.a(3, new aag(this, 1.0D, ItemList.N, false));
-/*  24: 35 */     this.goalSelector.a(4, new za(this, 1.1D));
-/*  25: 36 */     this.goalSelector.a(5, new zy(this, 1.0D));
-/*  26: 37 */     this.goalSelector.a(6, new zh(this, EntityPlayer.class, 6.0F));
-/*  27: 38 */     this.goalSelector.a(7, new zx(this));
+/*  20: 31 */     this.goalSelector.addGoal(0, new yy(this));
+/*  21: 32 */     this.goalSelector.addGoal(1, new zu(this, 1.4D));
+/*  22: 33 */     this.goalSelector.addGoal(2, new yt(this, 1.0D));
+/*  23: 34 */     this.goalSelector.addGoal(3, new aag(this, 1.0D, ItemList.N, false));
+/*  24: 35 */     this.goalSelector.addGoal(4, new za(this, 1.1D));
+/*  25: 36 */     this.goalSelector.addGoal(5, new zy(this, 1.0D));
+/*  26: 37 */     this.goalSelector.addGoal(6, new zh(this, EntityPlayer.class, 6.0F));
+/*  27: 38 */     this.goalSelector.addGoal(7, new zx(this));
 /*  28:    */   }
 /*  29:    */   
 /*  30:    */   public float getEyeHeight()

@@ -12,9 +12,9 @@ package net.minecraft.src;
 /* 11:12 */     this.g = paramxx;
 /* 12:   */   }
 /* 13:   */   
-/* 14:   */   public boolean a()
+/* 14:   */   public boolean canStart()
 /* 15:   */   {
-/* 16:17 */     return (!this.g.cj()) && (super.a());
+/* 16:17 */     return (!this.g.cj()) && (super.canStart());
 /* 17:   */   }
 /* 18:   */ }
 

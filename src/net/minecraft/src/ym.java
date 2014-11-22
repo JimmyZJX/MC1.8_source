@@ -60,7 +60,7 @@ package net.minecraft.src;
 /*  59: 56 */       this.a.aI = a(this.a.aI, this.a.aG, 10.0F);
 /*  60:    */     }
 /*  61: 59 */     float f1 = MathUtils.wrapDegrees(this.a.aI - this.a.aG);
-/*  62: 61 */     if (!this.a.s().m())
+/*  62: 61 */     if (!this.a.getNavigator().m())
 /*  63:    */     {
 /*  64: 63 */       if (f1 < -75.0F) {
 /*  65: 64 */         this.a.aI = (this.a.aG - 75.0F);

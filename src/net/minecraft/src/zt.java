@@ -12,28 +12,28 @@ package net.minecraft.src;
 /* 11:12 */     this.g = paramBoolean;
 /* 12:   */   }
 /* 13:   */   
-/* 14:   */   public boolean b()
+/* 14:   */   public boolean canContinue()
 /* 15:   */   {
-/* 16:17 */     return (this.g) && (this.h > 0) && (super.b());
+/* 16:17 */     return (this.g) && (this.h > 0) && (super.canContinue());
 /* 17:   */   }
 /* 18:   */   
-/* 19:   */   public void c()
+/* 19:   */   public void start()
 /* 20:   */   {
 /* 21:22 */     this.h = 20;
 /* 22:23 */     this.c.a(this.a.world, this.b, true);
 /* 23:   */   }
 /* 24:   */   
-/* 25:   */   public void d()
+/* 25:   */   public void stop()
 /* 26:   */   {
 /* 27:28 */     if (this.g) {
 /* 28:29 */       this.c.a(this.a.world, this.b, false);
 /* 29:   */     }
 /* 30:   */   }
 /* 31:   */   
-/* 32:   */   public void e()
+/* 32:   */   public void tick()
 /* 33:   */   {
 /* 34:35 */     this.h -= 1;
-/* 35:36 */     super.e();
+/* 35:36 */     super.tick();
 /* 36:   */   }
 /* 37:   */ }
 

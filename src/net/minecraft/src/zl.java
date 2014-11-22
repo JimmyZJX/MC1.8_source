@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ import java.util.Random;
 /*  2:   */ 
 /*  3:   */ public class zl
-/*  4:   */   extends zb
+/*  4:   */   extends GoalType
 /*  5:   */ {
 /*  6:16 */   private int d = -1;
 /*  7:16 */   private int c = -1;
@@ -15,7 +15,7 @@ package net.minecraft.src;
 /* 14:20 */     a(1);
 /* 15:   */   }
 /* 16:   */   
-/* 17:   */   public boolean a()
+/* 17:   */   public boolean canStart()
 /* 18:   */   {
 /* 19:25 */     BlockPosition localdt = new BlockPosition(this.a);
 /* 20:26 */     if (((this.a.world.w()) && ((!this.a.world.S()) || (this.a.world.b(localdt).e()))) || (this.a.world.t.o())) {
@@ -35,12 +35,12 @@ package net.minecraft.src;
 /* 34:40 */     return this.b != null;
 /* 35:   */   }
 /* 36:   */   
-/* 37:   */   public boolean b()
+/* 37:   */   public boolean canContinue()
 /* 38:   */   {
-/* 39:45 */     return !this.a.s().m();
+/* 39:45 */     return !this.a.getNavigator().m();
 /* 40:   */   }
 /* 41:   */   
-/* 42:   */   public void c()
+/* 42:   */   public void start()
 /* 43:   */   {
 /* 44:50 */     this.c = -1;
 /* 45:51 */     BlockPosition localdt = this.b.getInsidePos();
@@ -51,16 +51,16 @@ package net.minecraft.src;
 /* 50:   */     {
 /* 51:57 */       Vec3 localbrw = abf.a(this.a, 14, 3, new Vec3(i + 0.5D, j, k + 0.5D));
 /* 52:58 */       if (localbrw != null) {
-/* 53:59 */         this.a.s().a(localbrw.x, localbrw.y, localbrw.z, 1.0D);
+/* 53:59 */         this.a.getNavigator().a(localbrw.x, localbrw.y, localbrw.z, 1.0D);
 /* 54:   */       }
 /* 55:   */     }
 /* 56:   */     else
 /* 57:   */     {
-/* 58:62 */       this.a.s().a(i + 0.5D, j, k + 0.5D, 1.0D);
+/* 58:62 */       this.a.getNavigator().a(i + 0.5D, j, k + 0.5D, 1.0D);
 /* 59:   */     }
 /* 60:   */   }
 /* 61:   */   
-/* 62:   */   public void d()
+/* 62:   */   public void stop()
 /* 63:   */   {
 /* 64:68 */     this.c = this.b.getInsidePos().getX();
 /* 65:69 */     this.d = this.b.getInsidePos().getZ();

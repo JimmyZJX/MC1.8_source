@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ import java.util.Random;
 /*  2:   */ 
 /*  3:   */ public class yx
-/*  4:   */   extends zb
+/*  4:   */   extends GoalType
 /*  5:   */ {
 /*  6:   */   private EntityWalkingMob a;
 /*  7:   */   private double b;
@@ -19,7 +19,7 @@ package net.minecraft.src;
 /* 18:21 */     a(1);
 /* 19:   */   }
 /* 20:   */   
-/* 21:   */   public boolean a()
+/* 21:   */   public boolean canStart()
 /* 22:   */   {
 /* 23:26 */     if (!this.f.w()) {
 /* 24:27 */       return false;
@@ -40,14 +40,14 @@ package net.minecraft.src;
 /* 39:43 */     return true;
 /* 40:   */   }
 /* 41:   */   
-/* 42:   */   public boolean b()
+/* 42:   */   public boolean canContinue()
 /* 43:   */   {
-/* 44:48 */     return !this.a.s().m();
+/* 44:48 */     return !this.a.getNavigator().m();
 /* 45:   */   }
 /* 46:   */   
-/* 47:   */   public void c()
+/* 47:   */   public void start()
 /* 48:   */   {
-/* 49:53 */     this.a.s().a(this.b, this.c, this.d, this.e);
+/* 49:53 */     this.a.getNavigator().a(this.b, this.c, this.d, this.e);
 /* 50:   */   }
 /* 51:   */   
 /* 52:   */   private Vec3 f()

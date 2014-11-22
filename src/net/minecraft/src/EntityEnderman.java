@@ -37,19 +37,19 @@ package net.minecraft.src;
 /*  36: 65 */     a(0.6F, 2.9F);
 /*  37: 66 */     this.S = 1.0F;
 /*  38:    */     
-/*  39: 68 */     this.goalSelector.a(0, new yy(this));
-/*  40: 69 */     this.goalSelector.a(2, new zk(this, 1.0D, false));
+/*  39: 68 */     this.goalSelector.addGoal(0, new yy(this));
+/*  40: 69 */     this.goalSelector.addGoal(2, new zk(this, 1.0D, false));
 /*  41:    */     
-/*  42: 71 */     this.goalSelector.a(7, new zy(this, 1.0D));
-/*  43: 72 */     this.goalSelector.a(8, new zh(this, EntityPlayer.class, 8.0F));
-/*  44: 73 */     this.goalSelector.a(8, new zx(this));
+/*  42: 71 */     this.goalSelector.addGoal(7, new zy(this, 1.0D));
+/*  43: 72 */     this.goalSelector.addGoal(8, new zh(this, EntityPlayer.class, 8.0F));
+/*  44: 73 */     this.goalSelector.addGoal(8, new zx(this));
 /*  45:    */     
-/*  46: 75 */     this.goalSelector.a(10, new aet(this));
-/*  47: 76 */     this.goalSelector.a(11, new aev(this));
+/*  46: 75 */     this.goalSelector.addGoal(10, new aet(this));
+/*  47: 76 */     this.goalSelector.addGoal(11, new aev(this));
 /*  48:    */     
-/*  49: 78 */     this.targetSelector.a(1, new aal(this, false, new Class[0]));
-/*  50: 79 */     this.targetSelector.a(2, new aeu(this));
-/*  51: 80 */     this.targetSelector.a(3, new aaq(this, EntityEndermite.class, 10, true, false, new aes(this)));
+/*  49: 78 */     this.targetSelector.addGoal(1, new aal(this, false, new Class[0]));
+/*  50: 79 */     this.targetSelector.addGoal(2, new aeu(this));
+/*  51: 80 */     this.targetSelector.addGoal(3, new aaq(this, EntityEndermite.class, 10, true, false, new aes(this)));
 /*  52:    */   }
 /*  53:    */   
 /*  54:    */   protected void aW()

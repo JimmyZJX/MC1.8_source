@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*  3:   */ import java.util.Random;
 /*  4:   */ 
 /*  5:   */ public class yw
-/*  6:   */   extends zb
+/*  6:   */   extends GoalType
 /*  7:   */ {
 /*  8:22 */   private static final Predicate b = beq.a(BlockList.tallgrass).a(bbh.a, Predicates.<Comparable>equalTo(bbi.b));
 /*  9:   */   private EntityMob c;
@@ -18,7 +18,7 @@ package net.minecraft.src;
 /* 17:31 */     a(7);
 /* 18:   */   }
 /* 19:   */   
-/* 20:   */   public boolean a()
+/* 20:   */   public boolean canStart()
 /* 21:   */   {
 /* 22:36 */     if (this.c.getRNG().nextInt(this.c.i_() ? 50 : 1000) != 0) {
 /* 23:37 */       return false;
@@ -33,19 +33,19 @@ package net.minecraft.src;
 /* 32:47 */     return false;
 /* 33:   */   }
 /* 34:   */   
-/* 35:   */   public void c()
+/* 35:   */   public void start()
 /* 36:   */   {
 /* 37:52 */     this.a = 40;
 /* 38:53 */     this.d.sendSignal(this.c, (byte)10);
-/* 39:54 */     this.c.s().n();
+/* 39:54 */     this.c.getNavigator().n();
 /* 40:   */   }
 /* 41:   */   
-/* 42:   */   public void d()
+/* 42:   */   public void stop()
 /* 43:   */   {
 /* 44:59 */     this.a = 0;
 /* 45:   */   }
 /* 46:   */   
-/* 47:   */   public boolean b()
+/* 47:   */   public boolean canContinue()
 /* 48:   */   {
 /* 49:64 */     return this.a > 0;
 /* 50:   */   }
@@ -55,7 +55,7 @@ package net.minecraft.src;
 /* 54:68 */     return this.a;
 /* 55:   */   }
 /* 56:   */   
-/* 57:   */   public void e()
+/* 57:   */   public void tick()
 /* 58:   */   {
 /* 59:73 */     this.a = Math.max(0, this.a - 1);
 /* 60:74 */     if (this.a != 4) {

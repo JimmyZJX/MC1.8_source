@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ import java.util.Random;
 /*  2:   */ 
 /*  3:   */ public class zh
-/*  4:   */   extends zb
+/*  4:   */   extends GoalType
 /*  5:   */ {
 /*  6:   */   protected EntityMob a;
 /*  7:   */   protected Entity b;
@@ -29,7 +29,7 @@ package net.minecraft.src;
 /* 28:29 */     a(2);
 /* 29:   */   }
 /* 30:   */   
-/* 31:   */   public boolean a()
+/* 31:   */   public boolean canStart()
 /* 32:   */   {
 /* 33:34 */     if (this.a.getRNG().nextFloat() >= this.f) {
 /* 34:35 */       return false;
@@ -45,7 +45,7 @@ package net.minecraft.src;
 /* 44:46 */     return this.b != null;
 /* 45:   */   }
 /* 46:   */   
-/* 47:   */   public boolean b()
+/* 47:   */   public boolean canContinue()
 /* 48:   */   {
 /* 49:51 */     if (!this.b.ai()) {
 /* 50:52 */       return false;
@@ -56,17 +56,17 @@ package net.minecraft.src;
 /* 55:57 */     return this.e > 0;
 /* 56:   */   }
 /* 57:   */   
-/* 58:   */   public void c()
+/* 58:   */   public void start()
 /* 59:   */   {
 /* 60:62 */     this.e = (40 + this.a.getRNG().nextInt(40));
 /* 61:   */   }
 /* 62:   */   
-/* 63:   */   public void d()
+/* 63:   */   public void stop()
 /* 64:   */   {
 /* 65:67 */     this.b = null;
 /* 66:   */   }
 /* 67:   */   
-/* 68:   */   public void e()
+/* 68:   */   public void tick()
 /* 69:   */   {
 /* 70:72 */     this.a.p().a(this.b.xPos, this.b.yPos + this.b.getEyeHeight(), this.b.zPos, 10.0F, this.a.bP());
 /* 71:73 */     this.e -= 1;

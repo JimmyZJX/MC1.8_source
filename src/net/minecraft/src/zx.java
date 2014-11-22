@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ import java.util.Random;
 /*  2:   */ 
 /*  3:   */ public class zx
-/*  4:   */   extends zb
+/*  4:   */   extends GoalType
 /*  5:   */ {
 /*  6:   */   private EntityMob a;
 /*  7:   */   private double b;
@@ -15,17 +15,17 @@ package net.minecraft.src;
 /* 14:13 */     a(3);
 /* 15:   */   }
 /* 16:   */   
-/* 17:   */   public boolean a()
+/* 17:   */   public boolean canStart()
 /* 18:   */   {
 /* 19:18 */     return this.a.getRNG().nextFloat() < 0.02F;
 /* 20:   */   }
 /* 21:   */   
-/* 22:   */   public boolean b()
+/* 22:   */   public boolean canContinue()
 /* 23:   */   {
 /* 24:23 */     return this.d >= 0;
 /* 25:   */   }
 /* 26:   */   
-/* 27:   */   public void c()
+/* 27:   */   public void start()
 /* 28:   */   {
 /* 29:28 */     double d1 = 6.283185307179586D * this.a.getRNG().nextDouble();
 /* 30:29 */     this.b = Math.cos(d1);
@@ -33,7 +33,7 @@ package net.minecraft.src;
 /* 32:31 */     this.d = (20 + this.a.getRNG().nextInt(20));
 /* 33:   */   }
 /* 34:   */   
-/* 35:   */   public void e()
+/* 35:   */   public void tick()
 /* 36:   */   {
 /* 37:36 */     this.d -= 1;
 /* 38:37 */     this.a.p().a(this.a.xPos + this.b, this.a.yPos + this.a.getEyeHeight(), this.a.zPos + this.c, 10.0F, this.a.bP());

@@ -25,7 +25,7 @@ package net.minecraft.src;
 /*  25: 31 */     this.rng.setSeed(1 + getID());
 /*  26: 32 */     this.bo = (1.0F / (this.rng.nextFloat() + 1.0F) * 0.2F);
 /*  27:    */     
-/*  28: 34 */     this.goalSelector.a(0, new acp(this));
+/*  28: 34 */     this.goalSelector.addGoal(0, new acp(this));
 /*  29:    */   }
 /*  30:    */   
 /*  31:    */   protected void aW()

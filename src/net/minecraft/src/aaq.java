@@ -35,7 +35,7 @@ package net.minecraft.src;
 /* 34:37 */     this.c = new aar(this, paramPredicate);
 /* 35:   */   }
 /* 36:   */   
-/* 37:   */   public boolean a()
+/* 37:   */   public boolean canStart()
 /* 38:   */   {
 /* 39:67 */     if ((this.g > 0) && (this.e.getRNG().nextInt(this.g) != 0)) {
 /* 40:68 */       return false;
@@ -50,10 +50,10 @@ package net.minecraft.src;
 /* 49:79 */     return true;
 /* 50:   */   }
 /* 51:   */   
-/* 52:   */   public void c()
+/* 52:   */   public void start()
 /* 53:   */   {
 /* 54:85 */     this.e.d(this.d);
-/* 55:86 */     super.c();
+/* 55:86 */     super.start();
 /* 56:   */   }
 /* 57:   */ }
 

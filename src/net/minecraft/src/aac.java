@@ -1,7 +1,7 @@
 package net.minecraft.src;
 /*  2:   */ 
 /*  3:   */ public class aac
-/*  4:   */   extends zb
+/*  4:   */   extends GoalType
 /*  5:   */ {
 /*  6:   */   private EntityHorse a;
 /*  7:   */   private double b;
@@ -16,7 +16,7 @@ package net.minecraft.src;
 /* 16:18 */     a(1);
 /* 17:   */   }
 /* 18:   */   
-/* 19:   */   public boolean a()
+/* 19:   */   public boolean canStart()
 /* 20:   */   {
 /* 21:23 */     if ((this.a.cm()) || (this.a.rider == null)) {
 /* 22:24 */       return false;
@@ -31,17 +31,17 @@ package net.minecraft.src;
 /* 31:33 */     return true;
 /* 32:   */   }
 /* 33:   */   
-/* 34:   */   public void c()
+/* 34:   */   public void start()
 /* 35:   */   {
-/* 36:38 */     this.a.s().a(this.c, this.d, this.e, this.b);
+/* 36:38 */     this.a.getNavigator().a(this.c, this.d, this.e, this.b);
 /* 37:   */   }
 /* 38:   */   
-/* 39:   */   public boolean b()
+/* 39:   */   public boolean canContinue()
 /* 40:   */   {
-/* 41:43 */     return (!this.a.s().m()) && (this.a.rider != null);
+/* 41:43 */     return (!this.a.getNavigator().m()) && (this.a.rider != null);
 /* 42:   */   }
 /* 43:   */   
-/* 44:   */   public void e()
+/* 44:   */   public void tick()
 /* 45:   */   {
 /* 46:48 */     if (this.a.getRNG().nextInt(50) == 0)
 /* 47:   */     {

@@ -11,9 +11,9 @@ package net.minecraft.src;
 /*  11:    */   protected yn f;
 /*  12:    */   protected yl g;
 /*  13:    */   private yj b;
-/*  14:    */   protected aaz h;
-/*  15:    */   protected final TargetSelector goalSelector;
-/*  16:    */   protected final TargetSelector targetSelector;
+/*  14:    */   protected Navigator navigator;
+/*  15:    */   protected final GoalSelector goalSelector;
+/*  16:    */   protected final GoalSelector targetSelector;
 /*  17:    */   private EntityLiving c;
 /*  18:    */   private Sensor sensor;
 /*  19: 69 */   private ItemStack[] inventory = new ItemStack[5];
@@ -24,17 +24,17 @@ package net.minecraft.src;
 /*  24:    */   private Entity bn;
 /*  25:    */   private NBTTagCompound leash;
 /*  26:    */   
-/*  27:    */   public EntityMob(World paramaqu)
+/*  27:    */   public EntityMob(World world)
 /*  28:    */   {
-/*  29: 75 */     super(paramaqu);
+/*  29: 75 */     super(world);
 /*  30:    */     
-/*  31: 77 */     this.goalSelector = new TargetSelector((paramaqu == null) || (paramaqu.profiler == null) ? null : paramaqu.profiler);
-/*  32: 78 */     this.targetSelector = new TargetSelector((paramaqu == null) || (paramaqu.profiler == null) ? null : paramaqu.profiler);
+/*  31: 77 */     this.goalSelector = new GoalSelector((world == null) || (world.profiler == null) ? null : world.profiler);
+/*  32: 78 */     this.targetSelector = new GoalSelector((world == null) || (world.profiler == null) ? null : world.profiler);
 /*  33: 79 */     this.a = new ym(this);
 /*  34: 80 */     this.f = new yn(this);
 /*  35: 81 */     this.g = new yl(this);
 /*  36: 82 */     this.b = new yj(this);
-/*  37: 83 */     this.h = b(paramaqu);
+/*  37: 83 */     this.navigator = b(world);
 /*  38: 84 */     this.sensor = new Sensor(this);
 /*  39: 86 */     for (int j = 0; j < this.dropChances.length; j++) {
 /*  40: 87 */       this.dropChances[j] = 0.085F;
@@ -48,7 +48,7 @@ package net.minecraft.src;
 /*  48: 95 */     bx().b(afs.b).a(16.0D);
 /*  49:    */   }
 /*  50:    */   
-/*  51:    */   protected aaz b(World paramaqu)
+/*  51:    */   protected Navigator b(World paramaqu)
 /*  52:    */   {
 /*  53: 99 */     return new aay(this, paramaqu);
 /*  54:    */   }
@@ -68,12 +68,12 @@ package net.minecraft.src;
 /*  68:111 */     return this.g;
 /*  69:    */   }
 /*  70:    */   
-/*  71:    */   public aaz s()
+/*  71:    */   public Navigator getNavigator()
 /*  72:    */   {
-/*  73:115 */     return this.h;
+/*  73:115 */     return this.navigator;
 /*  74:    */   }
 /*  75:    */   
-/*  76:    */   public Sensor t()
+/*  76:    */   public Sensor getSensor()
 /*  77:    */   {
 /*  78:119 */     return this.sensor;
 /*  79:    */   }
@@ -445,7 +445,7 @@ package net.minecraft.src;
 /* 445:470 */     this.world.profiler.b();
 /* 446:    */     
 /* 447:472 */     this.world.profiler.a("navigation");
-/* 448:473 */     this.h.k();
+/* 448:473 */     this.navigator.k();
 /* 449:474 */     this.world.profiler.b();
 /* 450:    */     
 /* 451:476 */     this.world.profiler.a("mob tick");

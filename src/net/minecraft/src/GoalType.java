@@ -1,25 +1,25 @@
 package net.minecraft.src;
-/*  1:   */ public abstract class zb
+/*  1:   */ public abstract class GoalType
 /*  2:   */ {
 /*  3:   */   private int a;
 /*  4:   */   
-/*  5:   */   public abstract boolean a();
+/*  5:   */   public abstract boolean canStart();
 /*  6:   */   
-/*  7:   */   public boolean b()
+/*  7:   */   public boolean canContinue()
 /*  8:   */   {
-/*  9: 9 */     return a();
+/*  9: 9 */     return canStart();
 /* 10:   */   }
 /* 11:   */   
-/* 12:   */   public boolean i()
+/* 12:   */   public boolean inhibitsOtherGoal()
 /* 13:   */   {
 /* 14:13 */     return true;
 /* 15:   */   }
 /* 16:   */   
-/* 17:   */   public void c() {}
+/* 17:   */   public void start() {}
 /* 18:   */   
-/* 19:   */   public void d() {}
+/* 19:   */   public void stop() {}
 /* 20:   */   
-/* 21:   */   public void e() {}
+/* 21:   */   public void tick() {}
 /* 22:   */   
 /* 23:   */   public void a(int paramInt)
 /* 24:   */   {

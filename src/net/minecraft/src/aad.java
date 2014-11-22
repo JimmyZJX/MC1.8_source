@@ -1,6 +1,6 @@
 package net.minecraft.src;
 /*  1:   */ public class aad
-/*  2:   */   extends zb
+/*  2:   */   extends GoalType
 /*  3:   */ {
 /*  4:   */   private EntityPet a;
 /*  5:   */   private boolean b;
@@ -11,7 +11,7 @@ package net.minecraft.src;
 /* 10:13 */     a(5);
 /* 11:   */   }
 /* 12:   */   
-/* 13:   */   public boolean a()
+/* 13:   */   public boolean canStart()
 /* 14:   */   {
 /* 15:18 */     if (!this.a.cj()) {
 /* 16:19 */       return false;
@@ -32,13 +32,13 @@ package net.minecraft.src;
 /* 31:37 */     return this.b;
 /* 32:   */   }
 /* 33:   */   
-/* 34:   */   public void c()
+/* 34:   */   public void start()
 /* 35:   */   {
-/* 36:42 */     this.a.s().n();
+/* 36:42 */     this.a.getNavigator().n();
 /* 37:43 */     this.a.n(true);
 /* 38:   */   }
 /* 39:   */   
-/* 40:   */   public void d()
+/* 40:   */   public void stop()
 /* 41:   */   {
 /* 42:48 */     this.a.n(false);
 /* 43:   */   }

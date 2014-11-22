@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ import java.util.Random;
 /*   2:    */ 
 /*   3:    */ class aga
-/*   4:    */   extends zb
+/*   4:    */   extends GoalType
 /*   5:    */ {
 /*   6:    */   private EntitySlime a;
 /*   7:    */   
@@ -10,15 +10,15 @@ package net.minecraft.src;
 /*   9:    */   {
 /*  10:440 */     this.a = paramafy;
 /*  11:441 */     a(5);
-/*  12:442 */     ((aay)paramafy.s()).d(true);
+/*  12:442 */     ((aay)paramafy.getNavigator()).d(true);
 /*  13:    */   }
 /*  14:    */   
-/*  15:    */   public boolean a()
+/*  15:    */   public boolean canStart()
 /*  16:    */   {
 /*  17:447 */     return (this.a.V()) || (this.a.ab());
 /*  18:    */   }
 /*  19:    */   
-/*  20:    */   public void e()
+/*  20:    */   public void tick()
 /*  21:    */   {
 /*  22:452 */     if (this.a.getRNG().nextFloat() < 0.8F) {
 /*  23:453 */       this.a.r().a();

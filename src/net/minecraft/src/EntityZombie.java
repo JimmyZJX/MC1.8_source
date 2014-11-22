@@ -17,14 +17,14 @@ package net.minecraft.src;
 /*  17:    */   {
 /*  18: 63 */     super(paramaqu);
 /*  19:    */     
-/*  20: 65 */     ((aay)s()).b(true);
-/*  21: 66 */     this.goalSelector.a(0, new yy(this));
-/*  22: 67 */     this.goalSelector.a(2, new zk(this, EntityPlayer.class, 1.0D, false));
-/*  23: 68 */     this.goalSelector.a(2, this.a);
-/*  24: 69 */     this.goalSelector.a(5, new zo(this, 1.0D));
-/*  25: 70 */     this.goalSelector.a(7, new zy(this, 1.0D));
-/*  26: 71 */     this.goalSelector.a(8, new zh(this, EntityPlayer.class, 8.0F));
-/*  27: 72 */     this.goalSelector.a(8, new zx(this));
+/*  20: 65 */     ((aay)getNavigator()).b(true);
+/*  21: 66 */     this.goalSelector.addGoal(0, new yy(this));
+/*  22: 67 */     this.goalSelector.addGoal(2, new zk(this, EntityPlayer.class, 1.0D, false));
+/*  23: 68 */     this.goalSelector.addGoal(2, this.a);
+/*  24: 69 */     this.goalSelector.addGoal(5, new zo(this, 1.0D));
+/*  25: 70 */     this.goalSelector.addGoal(7, new zy(this, 1.0D));
+/*  26: 71 */     this.goalSelector.addGoal(8, new zh(this, EntityPlayer.class, 8.0F));
+/*  27: 72 */     this.goalSelector.addGoal(8, new zx(this));
 /*  28:    */     
 /*  29: 74 */     n();
 /*  30:    */     
@@ -33,14 +33,14 @@ package net.minecraft.src;
 /*  33:    */   
 /*  34:    */   protected void n()
 /*  35:    */   {
-/*  36: 83 */     this.goalSelector.a(4, new zk(this, EntityVillager.class, 1.0D, true));
-/*  37: 84 */     this.goalSelector.a(4, new zk(this, EntityIronGolem.class, 1.0D, true));
-/*  38: 85 */     this.goalSelector.a(6, new zm(this, 1.0D, false));
+/*  36: 83 */     this.goalSelector.addGoal(4, new zk(this, EntityVillager.class, 1.0D, true));
+/*  37: 84 */     this.goalSelector.addGoal(4, new zk(this, EntityIronGolem.class, 1.0D, true));
+/*  38: 85 */     this.goalSelector.addGoal(6, new zm(this, 1.0D, false));
 /*  39:    */     
-/*  40: 87 */     this.targetSelector.a(1, new aal(this, true, new Class[] { EntityZombiePigman.class }));
-/*  41: 88 */     this.targetSelector.a(2, new aaq(this, EntityPlayer.class, true));
-/*  42: 89 */     this.targetSelector.a(2, new aaq(this, EntityVillager.class, false));
-/*  43: 90 */     this.targetSelector.a(2, new aaq(this, EntityIronGolem.class, true));
+/*  40: 87 */     this.targetSelector.addGoal(1, new aal(this, true, new Class[] { EntityZombiePigman.class }));
+/*  41: 88 */     this.targetSelector.addGoal(2, new aaq(this, EntityPlayer.class, true));
+/*  42: 89 */     this.targetSelector.addGoal(2, new aaq(this, EntityVillager.class, false));
+/*  43: 90 */     this.targetSelector.addGoal(2, new aaq(this, EntityIronGolem.class, true));
 /*  44:    */   }
 /*  45:    */   
 /*  46:    */   protected void aW()
@@ -83,9 +83,9 @@ package net.minecraft.src;
 /*  83:    */     {
 /*  84:128 */       this.bn = paramBoolean;
 /*  85:130 */       if (paramBoolean) {
-/*  86:131 */         this.goalSelector.a(1, this.bl);
+/*  86:131 */         this.goalSelector.addGoal(1, this.bl);
 /*  87:    */       } else {
-/*  88:133 */         this.goalSelector.a(this.bl);
+/*  88:133 */         this.goalSelector.removeGoal(this.bl);
 /*  89:    */       }
 /*  90:    */     }
 /*  91:    */   }
@@ -157,7 +157,7 @@ package net.minecraft.src;
 /* 157:    */       }
 /* 158:    */     }
 /* 159:200 */     if ((av()) && (u() != null) && ((this.vehicle instanceof EntityChicken))) {
-/* 160:201 */       ((EntityMob)this.vehicle).s().a(s().j(), 1.5D);
+/* 160:201 */       ((EntityMob)this.vehicle).getNavigator().a(getNavigator().j(), 1.5D);
 /* 161:    */     }
 /* 162:203 */     super.m();
 /* 163:    */   }

@@ -16,15 +16,15 @@ package net.minecraft.src;
 /*  15:    */     
 /*  16: 44 */     this.f = new agc(this);
 /*  17:    */     
-/*  18: 46 */     this.goalSelector.a(1, new aga(this));
+/*  18: 46 */     this.goalSelector.addGoal(1, new aga(this));
 /*  19:    */     
-/*  20: 48 */     this.goalSelector.a(2, new afz(this));
-/*  21: 49 */     this.goalSelector.a(3, new agd(this));
+/*  20: 48 */     this.goalSelector.addGoal(2, new afz(this));
+/*  21: 49 */     this.goalSelector.addGoal(3, new agd(this));
 /*  22:    */     
-/*  23: 51 */     this.goalSelector.a(5, new agb(this));
+/*  23: 51 */     this.goalSelector.addGoal(5, new agb(this));
 /*  24:    */     
-/*  25: 53 */     this.targetSelector.a(1, new aao(this));
-/*  26: 54 */     this.targetSelector.a(3, new aam(this, EntityIronGolem.class));
+/*  25: 53 */     this.targetSelector.addGoal(1, new aao(this));
+/*  26: 54 */     this.targetSelector.addGoal(3, new aam(this, EntityIronGolem.class));
 /*  27:    */   }
 /*  28:    */   
 /*  29:    */   protected void h()

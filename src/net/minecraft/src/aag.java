@@ -1,6 +1,6 @@
 package net.minecraft.src;
 /*   1:    */ public class aag
-/*   2:    */   extends zb
+/*   2:    */   extends GoalType
 /*   3:    */ {
 /*   4:    */   private EntityWalkingMob a;
 /*   5:    */   private double b;
@@ -23,12 +23,12 @@ package net.minecraft.src;
 /*  22: 24 */     this.k = paramalq;
 /*  23: 25 */     this.l = paramBoolean;
 /*  24: 26 */     a(3);
-/*  25: 27 */     if (!(paramxu.s() instanceof aay)) {
+/*  25: 27 */     if (!(paramxu.getNavigator() instanceof aay)) {
 /*  26: 28 */       throw new IllegalArgumentException("Unsupported mob type for TemptGoal");
 /*  27:    */     }
 /*  28:    */   }
 /*  29:    */   
-/*  30:    */   public boolean a()
+/*  30:    */   public boolean canStart()
 /*  31:    */   {
 /*  32: 34 */     if (this.i > 0)
 /*  33:    */     {
@@ -49,7 +49,7 @@ package net.minecraft.src;
 /*  48: 49 */     return true;
 /*  49:    */   }
 /*  50:    */   
-/*  51:    */   public boolean b()
+/*  51:    */   public boolean canContinue()
 /*  52:    */   {
 /*  53: 54 */     if (this.l)
 /*  54:    */     {
@@ -71,35 +71,35 @@ package net.minecraft.src;
 /*  70: 67 */       this.f = this.h.pitch;
 /*  71: 68 */       this.g = this.h.yaw;
 /*  72:    */     }
-/*  73: 70 */     return a();
+/*  73: 70 */     return canStart();
 /*  74:    */   }
 /*  75:    */   
-/*  76:    */   public void c()
+/*  76:    */   public void start()
 /*  77:    */   {
 /*  78: 75 */     this.c = this.h.xPos;
 /*  79: 76 */     this.d = this.h.yPos;
 /*  80: 77 */     this.e = this.h.zPos;
 /*  81: 78 */     this.j = true;
-/*  82: 79 */     this.m = ((aay)this.a.s()).e();
-/*  83: 80 */     ((aay)this.a.s()).a(false);
+/*  82: 79 */     this.m = ((aay)this.a.getNavigator()).e();
+/*  83: 80 */     ((aay)this.a.getNavigator()).a(false);
 /*  84:    */   }
 /*  85:    */   
-/*  86:    */   public void d()
+/*  86:    */   public void stop()
 /*  87:    */   {
 /*  88: 85 */     this.h = null;
-/*  89: 86 */     this.a.s().n();
+/*  89: 86 */     this.a.getNavigator().n();
 /*  90: 87 */     this.i = 100;
 /*  91: 88 */     this.j = false;
-/*  92: 89 */     ((aay)this.a.s()).a(this.m);
+/*  92: 89 */     ((aay)this.a.getNavigator()).a(this.m);
 /*  93:    */   }
 /*  94:    */   
-/*  95:    */   public void e()
+/*  95:    */   public void tick()
 /*  96:    */   {
 /*  97: 94 */     this.a.p().a(this.h, 30.0F, this.a.bP());
 /*  98: 95 */     if (this.a.h(this.h) < 6.25D) {
-/*  99: 96 */       this.a.s().n();
+/*  99: 96 */       this.a.getNavigator().n();
 /* 100:    */     } else {
-/* 101: 98 */       this.a.s().a(this.h, this.b);
+/* 101: 98 */       this.a.getNavigator().a(this.h, this.b);
 /* 102:    */     }
 /* 103:    */   }
 /* 104:    */   

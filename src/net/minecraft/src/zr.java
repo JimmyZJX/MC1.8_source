@@ -10,31 +10,31 @@ package net.minecraft.src;
 /*  9:18 */     this.c = paramaby;
 /* 10:   */   }
 /* 11:   */   
-/* 12:   */   public boolean a()
+/* 12:   */   public boolean canStart()
 /* 13:   */   {
-/* 14:23 */     return (this.c.cj()) && (!this.c.cl()) && (super.a());
+/* 14:23 */     return (this.c.cj()) && (!this.c.cl()) && (super.canStart());
 /* 15:   */   }
 /* 16:   */   
-/* 17:   */   public boolean b()
+/* 17:   */   public boolean canContinue()
 /* 18:   */   {
-/* 19:28 */     return super.b();
+/* 19:28 */     return super.canContinue();
 /* 20:   */   }
 /* 21:   */   
-/* 22:   */   public void c()
+/* 22:   */   public void start()
 /* 23:   */   {
-/* 24:33 */     super.c();
+/* 24:33 */     super.start();
 /* 25:34 */     this.c.cn().a(false);
 /* 26:   */   }
 /* 27:   */   
-/* 28:   */   public void d()
+/* 28:   */   public void stop()
 /* 29:   */   {
-/* 30:39 */     super.d();
+/* 30:39 */     super.stop();
 /* 31:40 */     this.c.n(false);
 /* 32:   */   }
 /* 33:   */   
-/* 34:   */   public void e()
+/* 34:   */   public void tick()
 /* 35:   */   {
-/* 36:45 */     super.e();
+/* 36:45 */     super.tick();
 /* 37:   */     
 /* 38:47 */     this.c.cn().a(false);
 /* 39:48 */     if (!f()) {

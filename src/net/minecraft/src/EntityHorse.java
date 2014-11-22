@@ -42,15 +42,15 @@ package net.minecraft.src;
 /*   43: 154 */     this.ab = false;
 /*   44: 155 */     o(false);
 /*   45:     */     
-/*   46: 157 */     ((aay)s()).a(true);
-/*   47: 158 */     this.goalSelector.a(0, new yy(this));
-/*   48: 159 */     this.goalSelector.a(1, new zu(this, 1.2D));
-/*   49: 160 */     this.goalSelector.a(1, new aac(this, 1.2D));
-/*   50: 161 */     this.goalSelector.a(2, new yt(this, 1.0D));
-/*   51: 162 */     this.goalSelector.a(4, new za(this, 1.0D));
-/*   52: 163 */     this.goalSelector.a(6, new zy(this, 0.7D));
-/*   53: 164 */     this.goalSelector.a(7, new zh(this, EntityPlayer.class, 6.0F));
-/*   54: 165 */     this.goalSelector.a(8, new zx(this));
+/*   46: 157 */     ((aay)getNavigator()).a(true);
+/*   47: 158 */     this.goalSelector.addGoal(0, new yy(this));
+/*   48: 159 */     this.goalSelector.addGoal(1, new zu(this, 1.2D));
+/*   49: 160 */     this.goalSelector.addGoal(1, new aac(this, 1.2D));
+/*   50: 161 */     this.goalSelector.addGoal(2, new yt(this, 1.0D));
+/*   51: 162 */     this.goalSelector.addGoal(4, new za(this, 1.0D));
+/*   52: 163 */     this.goalSelector.addGoal(6, new zy(this, 0.7D));
+/*   53: 164 */     this.goalSelector.addGoal(7, new zh(this, EntityPlayer.class, 6.0F));
+/*   54: 165 */     this.goalSelector.addGoal(8, new zx(this));
 /*   55:     */     
 /*   56: 167 */     cY();
 /*   57:     */   }
@@ -921,7 +921,7 @@ package net.minecraft.src;
 /*  922:     */       {
 /*  923:1026 */         EntityHorse localabt = a(this, 16.0D);
 /*  924:1027 */         if ((localabt != null) && (h(localabt) > 4.0D)) {
-/*  925:1028 */           this.h.a(localabt);
+/*  925:1028 */           this.navigator.a(localabt);
 /*  926:     */         }
 /*  927:     */       }
 /*  928:     */     }

@@ -1,6 +1,6 @@
 package net.minecraft.src;
 /*  1:   */ public class aab
-/*  2:   */   extends zb
+/*  2:   */   extends GoalType
 /*  3:   */ {
 /*  4:   */   private EntityWalkingMob a;
 /*  5:   */   
@@ -9,19 +9,19 @@ package net.minecraft.src;
 /*  8:10 */     this.a = paramxu;
 /*  9:   */   }
 /* 10:   */   
-/* 11:   */   public boolean a()
+/* 11:   */   public boolean canStart()
 /* 12:   */   {
 /* 13:15 */     return this.a.world.w();
 /* 14:   */   }
 /* 15:   */   
-/* 16:   */   public void c()
+/* 16:   */   public void start()
 /* 17:   */   {
-/* 18:20 */     ((aay)this.a.s()).e(true);
+/* 18:20 */     ((aay)this.a.getNavigator()).e(true);
 /* 19:   */   }
 /* 20:   */   
-/* 21:   */   public void d()
+/* 21:   */   public void stop()
 /* 22:   */   {
-/* 23:25 */     ((aay)this.a.s()).e(false);
+/* 23:25 */     ((aay)this.a.getNavigator()).e(false);
 /* 24:   */   }
 /* 25:   */ }
 

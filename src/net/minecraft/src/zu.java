@@ -1,6 +1,6 @@
 package net.minecraft.src;
 /*  1:   */ public class zu
-/*  2:   */   extends zb
+/*  2:   */   extends GoalType
 /*  3:   */ {
 /*  4:   */   private EntityWalkingMob b;
 /*  5:   */   protected double a;
@@ -15,7 +15,7 @@ package net.minecraft.src;
 /* 14:16 */     a(1);
 /* 15:   */   }
 /* 16:   */   
-/* 17:   */   public boolean a()
+/* 17:   */   public boolean canStart()
 /* 18:   */   {
 /* 19:21 */     if ((this.b.bc() == null) && (!this.b.au())) {
 /* 20:22 */       return false;
@@ -30,14 +30,14 @@ package net.minecraft.src;
 /* 29:31 */     return true;
 /* 30:   */   }
 /* 31:   */   
-/* 32:   */   public void c()
+/* 32:   */   public void start()
 /* 33:   */   {
-/* 34:36 */     this.b.s().a(this.c, this.d, this.e, this.a);
+/* 34:36 */     this.b.getNavigator().a(this.c, this.d, this.e, this.a);
 /* 35:   */   }
 /* 36:   */   
-/* 37:   */   public boolean b()
+/* 37:   */   public boolean canContinue()
 /* 38:   */   {
-/* 39:41 */     return !this.b.s().m();
+/* 39:41 */     return !this.b.getNavigator().m();
 /* 40:   */   }
 /* 41:   */ }
 

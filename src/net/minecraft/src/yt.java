@@ -3,7 +3,7 @@ package net.minecraft.src;
 /*   2:    */ import java.util.Random;
 /*   3:    */ 
 /*   4:    */ public class yt
-/*   5:    */   extends zb
+/*   5:    */   extends GoalType
 /*   6:    */ {
 /*   7:    */   private EntityAnimal d;
 /*   8:    */   World a;
@@ -19,7 +19,7 @@ package net.minecraft.src;
 /*  18: 29 */     a(3);
 /*  19:    */   }
 /*  20:    */   
-/*  21:    */   public boolean a()
+/*  21:    */   public boolean canStart()
 /*  22:    */   {
 /*  23: 34 */     if (!this.d.cp()) {
 /*  24: 35 */       return false;
@@ -28,21 +28,21 @@ package net.minecraft.src;
 /*  27: 38 */     return this.e != null;
 /*  28:    */   }
 /*  29:    */   
-/*  30:    */   public boolean b()
+/*  30:    */   public boolean canContinue()
 /*  31:    */   {
 /*  32: 43 */     return (this.e.ai()) && (this.e.cp()) && (this.b < 60);
 /*  33:    */   }
 /*  34:    */   
-/*  35:    */   public void d()
+/*  35:    */   public void stop()
 /*  36:    */   {
 /*  37: 48 */     this.e = null;
 /*  38: 49 */     this.b = 0;
 /*  39:    */   }
 /*  40:    */   
-/*  41:    */   public void e()
+/*  41:    */   public void tick()
 /*  42:    */   {
 /*  43: 54 */     this.d.p().a(this.e, 10.0F, this.d.bP());
-/*  44: 55 */     this.d.s().a(this.e, this.c);
+/*  44: 55 */     this.d.getNavigator().a(this.e, this.c);
 /*  45: 56 */     this.b += 1;
 /*  46: 57 */     if ((this.b >= 60) && (this.d.h(this.e) < 9.0D)) {
 /*  47: 58 */       g();

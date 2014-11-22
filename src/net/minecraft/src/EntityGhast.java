@@ -16,12 +16,12 @@ package net.minecraft.src;
 /*  15:    */     
 /*  16: 39 */     this.f = new afc(this);
 /*  17:    */     
-/*  18: 41 */     this.goalSelector.a(5, new afe(this));
+/*  18: 41 */     this.goalSelector.addGoal(5, new afe(this));
 /*  19:    */     
-/*  20: 43 */     this.goalSelector.a(7, new afb(this));
-/*  21: 44 */     this.goalSelector.a(7, new afd(this));
+/*  20: 43 */     this.goalSelector.addGoal(7, new afb(this));
+/*  21: 44 */     this.goalSelector.addGoal(7, new afd(this));
 /*  22:    */     
-/*  23: 46 */     this.targetSelector.a(1, new aao(this));
+/*  23: 46 */     this.targetSelector.addGoal(1, new aao(this));
 /*  24:    */   }
 /*  25:    */   
 /*  26:    */   public boolean n()

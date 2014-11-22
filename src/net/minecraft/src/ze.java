@@ -13,7 +13,7 @@ package net.minecraft.src;
 /*  12: 28 */     this.c = paramagp;
 /*  13:    */   }
 /*  14:    */   
-/*  15:    */   public boolean a()
+/*  15:    */   public boolean canStart()
 /*  16:    */   {
 /*  17: 33 */     if (this.a <= 0)
 /*  18:    */     {
@@ -24,27 +24,27 @@ package net.minecraft.src;
 /*  23: 40 */       this.d = this.c.cs();
 /*  24: 41 */       this.e = this.c.cr();
 /*  25:    */     }
-/*  26: 44 */     return super.a();
+/*  26: 44 */     return super.canStart();
 /*  27:    */   }
 /*  28:    */   
-/*  29:    */   public boolean b()
+/*  29:    */   public boolean canContinue()
 /*  30:    */   {
-/*  31: 49 */     return (this.f >= 0) && (super.b());
+/*  31: 49 */     return (this.f >= 0) && (super.canContinue());
 /*  32:    */   }
 /*  33:    */   
-/*  34:    */   public void c()
+/*  34:    */   public void start()
 /*  35:    */   {
-/*  36: 54 */     super.c();
+/*  36: 54 */     super.start();
 /*  37:    */   }
 /*  38:    */   
-/*  39:    */   public void d()
+/*  39:    */   public void stop()
 /*  40:    */   {
-/*  41: 59 */     super.d();
+/*  41: 59 */     super.stop();
 /*  42:    */   }
 /*  43:    */   
-/*  44:    */   public void e()
+/*  44:    */   public void tick()
 /*  45:    */   {
-/*  46: 64 */     super.e();
+/*  46: 64 */     super.tick();
 /*  47:    */     
 /*  48: 66 */     this.c.p().a(this.b.getX() + 0.5D, this.b.getY() + 1, this.b.getZ() + 0.5D, 10.0F, this.c.bP());
 /*  49: 68 */     if (f())

@@ -16,13 +16,13 @@ package net.minecraft.src;
 /* 15:18 */     a(1);
 /* 16:   */   }
 /* 17:   */   
-/* 18:   */   public boolean a()
+/* 18:   */   public boolean canStart()
 /* 19:   */   {
 /* 20:23 */     int i = this.e.bd();
 /* 21:24 */     return (i != this.b) && (a(this.e.bc(), false));
 /* 22:   */   }
 /* 23:   */   
-/* 24:   */   public void c()
+/* 24:   */   public void start()
 /* 25:   */   {
 /* 26:29 */     this.e.d(this.e.bc());
 /* 27:30 */     this.b = this.e.bd();
@@ -53,7 +53,7 @@ package net.minecraft.src;
 /* 52:   */         }
 /* 53:   */       }
 /* 54:   */     }
-/* 55:60 */     super.c();
+/* 55:60 */     super.start();
 /* 56:   */   }
 /* 57:   */   
 /* 58:   */   protected void a(EntityWalkingMob paramxu, EntityLiving paramxm)

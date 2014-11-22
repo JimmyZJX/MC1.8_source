@@ -1,6 +1,6 @@
 package net.minecraft.src;
 /*   1:    */ class afi
-/*   2:    */   extends zb
+/*   2:    */   extends GoalType
 /*   3:    */ {
 /*   4:    */   private EntityGuardian a;
 /*   5:    */   private int b;
@@ -12,7 +12,7 @@ package net.minecraft.src;
 /*  11:514 */     a(3);
 /*  12:    */   }
 /*  13:    */   
-/*  14:    */   public boolean a()
+/*  14:    */   public boolean canStart()
 /*  15:    */   {
 /*  16:519 */     EntityLiving localxm = this.a.u();
 /*  17:520 */     if ((localxm == null) || (!localxm.ai())) {
@@ -21,22 +21,22 @@ package net.minecraft.src;
 /*  20:524 */     return true;
 /*  21:    */   }
 /*  22:    */   
-/*  23:    */   public boolean b()
+/*  23:    */   public boolean canContinue()
 /*  24:    */   {
-/*  25:529 */     return (super.b()) && ((this.a.cl()) || (this.a.h(this.a.u()) > 9.0D));
+/*  25:529 */     return (super.canContinue()) && ((this.a.cl()) || (this.a.h(this.a.u()) > 9.0D));
 /*  26:    */   }
 /*  27:    */   
-/*  28:    */   public void c()
+/*  28:    */   public void start()
 /*  29:    */   {
 /*  30:534 */     this.b = -10;
-/*  31:535 */     this.a.s().n();
+/*  31:535 */     this.a.getNavigator().n();
 /*  32:536 */     this.a.p().a(this.a.u(), 90.0F, 90.0F);
 /*  33:    */     
 /*  34:    */ 
 /*  35:539 */     this.a.ai = true;
 /*  36:    */   }
 /*  37:    */   
-/*  38:    */   public void d()
+/*  38:    */   public void stop()
 /*  39:    */   {
 /*  40:544 */     EntityGuardian.a(this.a, 0);
 /*  41:545 */     this.a.d((EntityLiving)null);
@@ -44,11 +44,11 @@ package net.minecraft.src;
 /*  43:547 */     EntityGuardian.a(this.a).f();
 /*  44:    */   }
 /*  45:    */   
-/*  46:    */   public void e()
+/*  46:    */   public void tick()
 /*  47:    */   {
 /*  48:552 */     EntityLiving localxm = this.a.u();
 /*  49:    */     
-/*  50:554 */     this.a.s().n();
+/*  50:554 */     this.a.getNavigator().n();
 /*  51:555 */     this.a.p().a(localxm, 90.0F, 90.0F);
 /*  52:557 */     if (!this.a.canSee(localxm))
 /*  53:    */     {
@@ -75,7 +75,7 @@ package net.minecraft.src;
 /*  74:578 */       this.a.d((EntityLiving)null);
 /*  75:    */     }
 /*  76:579 */     else if ((this.b < 60) || (this.b % 20 != 0)) {}
-/*  77:584 */     super.e();
+/*  77:584 */     super.tick();
 /*  78:    */   }
 /*  79:    */ }
 

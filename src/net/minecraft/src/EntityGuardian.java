@@ -24,19 +24,19 @@ package net.minecraft.src;
 /*  23:    */     
 /*  24:    */ 
 /*  25:    */ 
-/*  26: 70 */     this.goalSelector.a(4, new afi(this));
+/*  26: 70 */     this.goalSelector.addGoal(4, new afi(this));
 /*  27:    */     zo localzo;
-/*  28: 71 */     this.goalSelector.a(5, localzo = new zo(this, 1.0D));
-/*  29: 72 */     this.goalSelector.a(7, this.bq = new zy(this, 1.0D, 80));
-/*  30: 73 */     this.goalSelector.a(8, new zh(this, EntityPlayer.class, 8.0F));
-/*  31: 74 */     this.goalSelector.a(8, new zh(this, EntityGuardian.class, 12.0F, 0.01F));
-/*  32: 75 */     this.goalSelector.a(9, new zx(this));
+/*  28: 71 */     this.goalSelector.addGoal(5, localzo = new zo(this, 1.0D));
+/*  29: 72 */     this.goalSelector.addGoal(7, this.bq = new zy(this, 1.0D, 80));
+/*  30: 73 */     this.goalSelector.addGoal(8, new zh(this, EntityPlayer.class, 8.0F));
+/*  31: 74 */     this.goalSelector.addGoal(8, new zh(this, EntityGuardian.class, 12.0F, 0.01F));
+/*  32: 75 */     this.goalSelector.addGoal(9, new zx(this));
 /*  33:    */     
 /*  34:    */ 
 /*  35: 78 */     this.bq.a(3);
 /*  36: 79 */     localzo.a(3);
 /*  37:    */     
-/*  38: 81 */     this.targetSelector.a(1, new aaq(this, EntityLiving.class, 10, true, false, new afj(this)));
+/*  38: 81 */     this.targetSelector.addGoal(1, new aaq(this, EntityLiving.class, 10, true, false, new afj(this)));
 /*  39:    */     
 /*  40: 83 */     this.f = new afk(this);
 /*  41:    */     
@@ -66,7 +66,7 @@ package net.minecraft.src;
 /*  65:108 */     paramfn.setBoolean("Elder", cl());
 /*  66:    */   }
 /*  67:    */   
-/*  68:    */   protected aaz b(World paramaqu)
+/*  68:    */   protected Navigator b(World paramaqu)
 /*  69:    */   {
 /*  70:113 */     return new abb(this, paramaqu);
 /*  71:    */   }

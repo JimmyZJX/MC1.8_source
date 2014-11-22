@@ -1,6 +1,6 @@
 package net.minecraft.src;
 /*   1:    */ public class aay
-/*   2:    */   extends aaz
+/*   2:    */   extends Navigator
 /*   3:    */ {
 /*   4:    */   protected bpy a;
 /*   5:    */   private boolean f;

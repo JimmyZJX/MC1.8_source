@@ -1,6 +1,6 @@
 package net.minecraft.src;
 /*  1:   */ public class aah
-/*  2:   */   extends zb
+/*  2:   */   extends GoalType
 /*  3:   */ {
 /*  4:   */   private EntityVillager a;
 /*  5:   */   
@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*  9:13 */     a(5);
 /* 10:   */   }
 /* 11:   */   
-/* 12:   */   public boolean a()
+/* 12:   */   public boolean canStart()
 /* 13:   */   {
 /* 14:18 */     if (!this.a.ai()) {
 /* 15:19 */       return false;
@@ -37,12 +37,12 @@ package net.minecraft.src;
 /* 36:47 */     return true;
 /* 37:   */   }
 /* 38:   */   
-/* 39:   */   public void c()
+/* 39:   */   public void start()
 /* 40:   */   {
-/* 41:52 */     this.a.s().n();
+/* 41:52 */     this.a.getNavigator().n();
 /* 42:   */   }
 /* 43:   */   
-/* 44:   */   public void d()
+/* 44:   */   public void stop()
 /* 45:   */   {
 /* 46:57 */     this.a.a_((EntityPlayer)null);
 /* 47:   */   }

@@ -1,12 +1,12 @@
 package net.minecraft.src;
 /*   1:    */ public class yz
-/*   2:    */   extends zb
+/*   2:    */   extends GoalType
 /*   3:    */ {
 /*   4:    */   private EntityPet d;
 /*   5:    */   private EntityLiving e;
 /*   6:    */   World a;
 /*   7:    */   private double f;
-/*   8:    */   private aaz g;
+/*   8:    */   private Navigator g;
 /*   9:    */   private int h;
 /*  10:    */   float b;
 /*  11:    */   float c;
@@ -17,16 +17,16 @@ package net.minecraft.src;
 /*  16: 25 */     this.d = paramxx;
 /*  17: 26 */     this.a = paramxx.world;
 /*  18: 27 */     this.f = paramDouble;
-/*  19: 28 */     this.g = paramxx.s();
+/*  19: 28 */     this.g = paramxx.getNavigator();
 /*  20: 29 */     this.c = paramFloat1;
 /*  21: 30 */     this.b = paramFloat2;
 /*  22: 31 */     a(3);
-/*  23: 33 */     if (!(paramxx.s() instanceof aay)) {
+/*  23: 33 */     if (!(paramxx.getNavigator() instanceof aay)) {
 /*  24: 34 */       throw new IllegalArgumentException("Unsupported mob type for FollowOwnerGoal");
 /*  25:    */     }
 /*  26:    */   }
 /*  27:    */   
-/*  28:    */   public boolean a()
+/*  28:    */   public boolean canStart()
 /*  29:    */   {
 /*  30: 40 */     EntityLiving localxm = this.d.l_();
 /*  31: 41 */     if (localxm == null) {
@@ -42,26 +42,26 @@ package net.minecraft.src;
 /*  41: 51 */     return true;
 /*  42:    */   }
 /*  43:    */   
-/*  44:    */   public boolean b()
+/*  44:    */   public boolean canContinue()
 /*  45:    */   {
 /*  46: 56 */     return (!this.g.m()) && (this.d.h(this.e) > this.b * this.b) && (!this.d.cl());
 /*  47:    */   }
 /*  48:    */   
-/*  49:    */   public void c()
+/*  49:    */   public void start()
 /*  50:    */   {
 /*  51: 61 */     this.h = 0;
-/*  52: 62 */     this.i = ((aay)this.d.s()).e();
-/*  53: 63 */     ((aay)this.d.s()).a(false);
+/*  52: 62 */     this.i = ((aay)this.d.getNavigator()).e();
+/*  53: 63 */     ((aay)this.d.getNavigator()).a(false);
 /*  54:    */   }
 /*  55:    */   
-/*  56:    */   public void d()
+/*  56:    */   public void stop()
 /*  57:    */   {
 /*  58: 68 */     this.e = null;
 /*  59: 69 */     this.g.n();
-/*  60: 70 */     ((aay)this.d.s()).a(true);
+/*  60: 70 */     ((aay)this.d.getNavigator()).a(true);
 /*  61:    */   }
 /*  62:    */   
-/*  63:    */   public void e()
+/*  63:    */   public void tick()
 /*  64:    */   {
 /*  65: 75 */     this.d.p().a(this.e, 10.0F, this.d.bP());
 /*  66: 76 */     if (this.d.cl()) {

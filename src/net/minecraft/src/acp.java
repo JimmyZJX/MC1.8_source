@@ -1,7 +1,7 @@
 package net.minecraft.src;
 /*   2:    */ 
 /*   3:    */ class acp
-/*   4:    */   extends zb
+/*   4:    */   extends GoalType
 /*   5:    */ {
 /*   6:    */   private EntitySquid a;
 /*   7:    */   
@@ -10,12 +10,12 @@ package net.minecraft.src;
 /*  10:193 */     this.a = paramaco;
 /*  11:    */   }
 /*  12:    */   
-/*  13:    */   public boolean a()
+/*  13:    */   public boolean canStart()
 /*  14:    */   {
 /*  15:198 */     return true;
 /*  16:    */   }
 /*  17:    */   
-/*  18:    */   public void e()
+/*  18:    */   public void tick()
 /*  19:    */   {
 /*  20:203 */     int i = this.a.bg();
 /*  21:205 */     if (i > 100)

@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*  3:   */ import java.util.List;
 /*  4:   */ 
 /*  5:   */ public class yp
-/*  6:   */   extends zb
+/*  6:   */   extends GoalType
 /*  7:   */ {
 /*  8:17 */   public final Predicate<Entity> a = new yq(this);
 /*  9:   */   protected EntityWalkingMob b;
@@ -13,7 +13,7 @@ package net.minecraft.src;
 /* 12:   */   protected Entity c;
 /* 13:   */   private float f;
 /* 14:   */   private bpv g;
-/* 15:   */   private aaz h;
+/* 15:   */   private Navigator h;
 /* 16:   */   private Predicate i;
 /* 17:   */   
 /* 18:   */   public yp(EntityWalkingMob paramxu, Predicate paramPredicate, float paramFloat, double paramDouble1, double paramDouble2)
@@ -23,11 +23,11 @@ package net.minecraft.src;
 /* 22:35 */     this.f = paramFloat;
 /* 23:36 */     this.d = paramDouble1;
 /* 24:37 */     this.e = paramDouble2;
-/* 25:38 */     this.h = paramxu.s();
+/* 25:38 */     this.h = paramxu.getNavigator();
 /* 26:39 */     a(1);
 /* 27:   */   }
 /* 28:   */   
-/* 29:   */   public boolean a()
+/* 29:   */   public boolean canStart()
 /* 30:   */   {
 /* 31:44 */     List localList = this.b.world.a(this.b, this.b.getAABB().expand(this.f, 3.0D, this.f), Predicates.and(new Predicate[] { xe.d, this.a, this.i }));
 /* 32:45 */     if (localList.isEmpty()) {
@@ -52,27 +52,27 @@ package net.minecraft.src;
 /* 51:64 */     return true;
 /* 52:   */   }
 /* 53:   */   
-/* 54:   */   public boolean b()
+/* 54:   */   public boolean canContinue()
 /* 55:   */   {
 /* 56:69 */     return !this.h.m();
 /* 57:   */   }
 /* 58:   */   
-/* 59:   */   public void c()
+/* 59:   */   public void start()
 /* 60:   */   {
 /* 61:74 */     this.h.a(this.g, this.d);
 /* 62:   */   }
 /* 63:   */   
-/* 64:   */   public void d()
+/* 64:   */   public void stop()
 /* 65:   */   {
 /* 66:79 */     this.c = null;
 /* 67:   */   }
 /* 68:   */   
-/* 69:   */   public void e()
+/* 69:   */   public void tick()
 /* 70:   */   {
 /* 71:84 */     if (this.b.h(this.c) < 49.0D) {
-/* 72:85 */       this.b.s().a(this.e);
+/* 72:85 */       this.b.getNavigator().a(this.e);
 /* 73:   */     } else {
-/* 74:87 */       this.b.s().a(this.d);
+/* 74:87 */       this.b.getNavigator().a(this.d);
 /* 75:   */     }
 /* 76:   */   }
 /* 77:   */ }

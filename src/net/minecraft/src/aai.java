@@ -11,9 +11,9 @@ package net.minecraft.src;
 /* 10:17 */     this.f = paramagp;
 /* 11:   */   }
 /* 12:   */   
-/* 13:   */   public void c()
+/* 13:   */   public void start()
 /* 14:   */   {
-/* 15:22 */     super.c();
+/* 15:22 */     super.start();
 /* 16:24 */     if ((this.f.cq()) && ((this.b instanceof EntityVillager)) && (((EntityVillager)this.b).cr())) {
 /* 17:25 */       this.e = 10;
 /* 18:   */     } else {
@@ -21,9 +21,9 @@ package net.minecraft.src;
 /* 20:   */     }
 /* 21:   */   }
 /* 22:   */   
-/* 23:   */   public void e()
+/* 23:   */   public void tick()
 /* 24:   */   {
-/* 25:33 */     super.e();
+/* 25:33 */     super.tick();
 /* 26:35 */     if (this.e > 0)
 /* 27:   */     {
 /* 28:36 */       this.e -= 1;

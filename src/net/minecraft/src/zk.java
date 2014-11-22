@@ -1,7 +1,7 @@
 package net.minecraft.src;
 /*   2:    */ 
 /*   3:    */ public class zk
-/*   4:    */   extends zb
+/*   4:    */   extends GoalType
 /*   5:    */ {
 /*   6:    */   World a;
 /*   7:    */   protected EntityWalkingMob b;
@@ -30,7 +30,7 @@ package net.minecraft.src;
 /*  30: 34 */     a(3);
 /*  31:    */   }
 /*  32:    */   
-/*  33:    */   public boolean a()
+/*  33:    */   public boolean canStart()
 /*  34:    */   {
 /*  35: 39 */     EntityLiving localxm = this.b.u();
 /*  36: 40 */     if (localxm == null) {
@@ -42,11 +42,11 @@ package net.minecraft.src;
 /*  42: 46 */     if ((this.g != null) && (!this.g.isAssignableFrom(localxm.getClass()))) {
 /*  43: 47 */       return false;
 /*  44:    */     }
-/*  45: 49 */     this.f = this.b.s().a(localxm);
+/*  45: 49 */     this.f = this.b.getNavigator().a(localxm);
 /*  46: 50 */     return this.f != null;
 /*  47:    */   }
 /*  48:    */   
-/*  49:    */   public boolean b()
+/*  49:    */   public boolean canContinue()
 /*  50:    */   {
 /*  51: 55 */     EntityLiving localxm = this.b.u();
 /*  52: 56 */     if (localxm == null) {
@@ -57,7 +57,7 @@ package net.minecraft.src;
 /*  57:    */     }
 /*  58: 62 */     if (!this.e)
 /*  59:    */     {
-/*  60: 63 */       if (this.b.s().m()) {
+/*  60: 63 */       if (this.b.getNavigator().m()) {
 /*  61: 64 */         return false;
 /*  62:    */       }
 /*  63: 66 */       return true;
@@ -68,25 +68,25 @@ package net.minecraft.src;
 /*  68: 72 */     return true;
 /*  69:    */   }
 /*  70:    */   
-/*  71:    */   public void c()
+/*  71:    */   public void start()
 /*  72:    */   {
-/*  73: 77 */     this.b.s().a(this.f, this.d);
+/*  73: 77 */     this.b.getNavigator().a(this.f, this.d);
 /*  74: 78 */     this.h = 0;
 /*  75:    */   }
 /*  76:    */   
-/*  77:    */   public void d()
+/*  77:    */   public void stop()
 /*  78:    */   {
-/*  79: 83 */     this.b.s().n();
+/*  79: 83 */     this.b.getNavigator().n();
 /*  80:    */   }
 /*  81:    */   
-/*  82:    */   public void e()
+/*  82:    */   public void tick()
 /*  83:    */   {
 /*  84: 88 */     EntityLiving localxm = this.b.u();
 /*  85: 89 */     this.b.p().a(localxm, 30.0F, 30.0F);
 /*  86: 90 */     double d1 = this.b.dist2(localxm.xPos, localxm.getAABB().minY, localxm.zPos);
 /*  87: 91 */     double d2 = a(localxm);
 /*  88: 92 */     this.h -= 1;
-/*  89: 94 */     if (((this.e) || (this.b.t().canSee(localxm))) && 
+/*  89: 94 */     if (((this.e) || (this.b.getSensor().canSee(localxm))) && 
 /*  90: 95 */       (this.h <= 0) && (
 /*  91: 96 */       ((this.i == 0.0D) && (this.j == 0.0D) && (this.k == 0.0D)) || (localxm.dist2(this.i, this.j, this.k) >= 1.0D) || (this.b.getRNG().nextFloat() < 0.05F)))
 /*  92:    */     {
@@ -99,7 +99,7 @@ package net.minecraft.src;
 /*  99:104 */       } else if (d1 > 256.0D) {
 /* 100:105 */         this.h += 5;
 /* 101:    */       }
-/* 102:108 */       if (!this.b.s().a(localxm, this.d)) {
+/* 102:108 */       if (!this.b.getNavigator().a(localxm, this.d)) {
 /* 103:109 */         this.h += 15;
 /* 104:    */       }
 /* 105:    */     }

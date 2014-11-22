@@ -12,7 +12,7 @@ package net.minecraft.src;
 /*  11:510 */     this.c = paramacb;
 /*  12:    */   }
 /*  13:    */   
-/*  14:    */   public boolean a()
+/*  14:    */   public boolean canStart()
 /*  15:    */   {
 /*  16:515 */     if (this.a <= 0)
 /*  17:    */     {
@@ -22,27 +22,27 @@ package net.minecraft.src;
 /*  21:521 */       this.e = false;
 /*  22:522 */       this.d = EntityRabbit.a(this.c);
 /*  23:    */     }
-/*  24:525 */     return super.a();
+/*  24:525 */     return super.canStart();
 /*  25:    */   }
 /*  26:    */   
-/*  27:    */   public boolean b()
+/*  27:    */   public boolean canContinue()
 /*  28:    */   {
-/*  29:530 */     return (this.e) && (super.b());
+/*  29:530 */     return (this.e) && (super.canContinue());
 /*  30:    */   }
 /*  31:    */   
-/*  32:    */   public void c()
+/*  32:    */   public void start()
 /*  33:    */   {
-/*  34:535 */     super.c();
+/*  34:535 */     super.start();
 /*  35:    */   }
 /*  36:    */   
-/*  37:    */   public void d()
+/*  37:    */   public void stop()
 /*  38:    */   {
-/*  39:540 */     super.d();
+/*  39:540 */     super.stop();
 /*  40:    */   }
 /*  41:    */   
-/*  42:    */   public void e()
+/*  42:    */   public void tick()
 /*  43:    */   {
-/*  44:545 */     super.e();
+/*  44:545 */     super.tick();
 /*  45:    */     
 /*  46:547 */     this.c.p().a(this.b.getX() + 0.5D, this.b.getY() + 1, this.b.getZ() + 0.5D, 10.0F, this.c.bP());
 /*  47:549 */     if (f())

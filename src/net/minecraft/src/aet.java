@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ import java.util.Random;
 /*   2:    */ 
 /*   3:    */ class aet
-/*   4:    */   extends zb
+/*   4:    */   extends GoalType
 /*   5:    */ {
 /*   6:    */   private EntityEnderman a;
 /*   7:    */   
@@ -11,7 +11,7 @@ package net.minecraft.src;
 /*  10:449 */     this.a = paramaer;
 /*  11:    */   }
 /*  12:    */   
-/*  13:    */   public boolean a()
+/*  13:    */   public boolean canStart()
 /*  14:    */   {
 /*  15:454 */     if (!this.a.world.getGameRules().getBoolean("mobGriefing")) {
 /*  16:455 */       return false;
@@ -25,7 +25,7 @@ package net.minecraft.src;
 /*  24:463 */     return true;
 /*  25:    */   }
 /*  26:    */   
-/*  27:    */   public void e()
+/*  27:    */   public void tick()
 /*  28:    */   {
 /*  29:468 */     Random localRandom = this.a.getRNG();
 /*  30:469 */     World localaqu = this.a.world;

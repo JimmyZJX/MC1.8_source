@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ import java.util.Random;
 /*  2:   */ 
 /*  3:   */ public class zg
-/*  4:   */   extends zb
+/*  4:   */   extends GoalType
 /*  5:   */ {
 /*  6:   */   EntityMob a;
 /*  7:   */   EntityLiving b;
@@ -15,7 +15,7 @@ package net.minecraft.src;
 /* 14:16 */     a(5);
 /* 15:   */   }
 /* 16:   */   
-/* 17:   */   public boolean a()
+/* 17:   */   public boolean canStart()
 /* 18:   */   {
 /* 19:21 */     this.b = this.a.u();
 /* 20:22 */     if (this.b == null) {
@@ -34,12 +34,12 @@ package net.minecraft.src;
 /* 33:35 */     return true;
 /* 34:   */   }
 /* 35:   */   
-/* 36:   */   public boolean b()
+/* 36:   */   public boolean canContinue()
 /* 37:   */   {
 /* 38:40 */     return !this.a.C;
 /* 39:   */   }
 /* 40:   */   
-/* 41:   */   public void c()
+/* 41:   */   public void start()
 /* 42:   */   {
 /* 43:46 */     double d1 = this.b.xPos - this.a.xPos;
 /* 44:47 */     double d2 = this.b.zPos - this.a.zPos;

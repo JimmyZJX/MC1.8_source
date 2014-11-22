@@ -12,9 +12,9 @@ package net.minecraft.src;
 /* 11:17 */     super(paramxn);
 /* 12:   */   }
 /* 13:   */   
-/* 14:   */   public boolean a()
+/* 14:   */   public boolean canStart()
 /* 15:   */   {
-/* 16:22 */     if (!super.a()) {
+/* 16:22 */     if (!super.canStart()) {
 /* 17:23 */       return false;
 /* 18:   */     }
 /* 19:25 */     if (!this.a.world.getGameRules().getBoolean("mobGriefing")) {
@@ -23,27 +23,27 @@ package net.minecraft.src;
 /* 22:28 */     return !BlockDoor.f((IBlockAccess)this.a.world, this.b);
 /* 23:   */   }
 /* 24:   */   
-/* 25:   */   public void c()
+/* 25:   */   public void start()
 /* 26:   */   {
-/* 27:33 */     super.c();
+/* 27:33 */     super.start();
 /* 28:34 */     this.g = 0;
 /* 29:   */   }
 /* 30:   */   
-/* 31:   */   public boolean b()
+/* 31:   */   public boolean canContinue()
 /* 32:   */   {
 /* 33:39 */     double d = this.a.b(this.b);
 /* 34:40 */     return (this.g <= 240) && (!BlockDoor.f((IBlockAccess)this.a.world, this.b)) && (d < 4.0D);
 /* 35:   */   }
 /* 36:   */   
-/* 37:   */   public void d()
+/* 37:   */   public void stop()
 /* 38:   */   {
-/* 39:45 */     super.d();
+/* 39:45 */     super.stop();
 /* 40:46 */     this.a.world.c(this.a.getID(), this.b, -1);
 /* 41:   */   }
 /* 42:   */   
-/* 43:   */   public void e()
+/* 43:   */   public void tick()
 /* 44:   */   {
-/* 45:51 */     super.e();
+/* 45:51 */     super.tick();
 /* 46:52 */     if (this.a.getRNG().nextInt(20) == 0) {
 /* 47:53 */       this.a.world.playLevelEvent(1010, this.b, 0);
 /* 48:   */     }

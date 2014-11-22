@@ -1,5 +1,5 @@
 package net.minecraft.src;
-/*   1:    */ public abstract class aaz
+/*   1:    */ public abstract class Navigator
 /*   2:    */ {
 /*   3:    */   protected EntityMob b;
 /*   4:    */   protected World c;
@@ -12,7 +12,7 @@ package net.minecraft.src;
 /*  11: 31 */   private float i = 1.0F;
 /*  12:    */   private final bpw j;
 /*  13:    */   
-/*  14:    */   public aaz(EntityMob paramxn, World paramaqu)
+/*  14:    */   public Navigator(EntityMob paramxn, World paramaqu)
 /*  15:    */   {
 /*  16: 36 */     this.b = paramxn;
 /*  17: 37 */     this.c = paramaqu;

@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ import java.util.List;
 /*  2:   */ 
 /*  3:   */ public class za
-/*  4:   */   extends zb
+/*  4:   */   extends GoalType
 /*  5:   */ {
 /*  6:   */   EntityAnimal a;
 /*  7:   */   EntityAnimal b;
@@ -15,7 +15,7 @@ package net.minecraft.src;
 /* 14:15 */     this.c = paramDouble;
 /* 15:   */   }
 /* 16:   */   
-/* 17:   */   public boolean a()
+/* 17:   */   public boolean canStart()
 /* 18:   */   {
 /* 19:20 */     if (this.a.getAge() >= 0) {
 /* 20:21 */       return false;
@@ -45,7 +45,7 @@ package net.minecraft.src;
 /* 44:47 */     return true;
 /* 45:   */   }
 /* 46:   */   
-/* 47:   */   public boolean b()
+/* 47:   */   public boolean canContinue()
 /* 48:   */   {
 /* 49:52 */     if (this.a.getAge() >= 0) {
 /* 50:53 */       return false;
@@ -60,23 +60,23 @@ package net.minecraft.src;
 /* 59:62 */     return true;
 /* 60:   */   }
 /* 61:   */   
-/* 62:   */   public void c()
+/* 62:   */   public void start()
 /* 63:   */   {
 /* 64:67 */     this.d = 0;
 /* 65:   */   }
 /* 66:   */   
-/* 67:   */   public void d()
+/* 67:   */   public void stop()
 /* 68:   */   {
 /* 69:72 */     this.b = null;
 /* 70:   */   }
 /* 71:   */   
-/* 72:   */   public void e()
+/* 72:   */   public void tick()
 /* 73:   */   {
 /* 74:77 */     if (--this.d > 0) {
 /* 75:78 */       return;
 /* 76:   */     }
 /* 77:80 */     this.d = 10;
-/* 78:81 */     this.a.s().a(this.b, this.c);
+/* 78:81 */     this.a.getNavigator().a(this.b, this.c);
 /* 79:   */   }
 /* 80:   */ }
 

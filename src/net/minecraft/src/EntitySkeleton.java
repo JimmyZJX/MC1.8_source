@@ -13,23 +13,23 @@ package net.minecraft.src;
 /*  12:    */   {
 /*  13: 44 */     super(paramaqu);
 /*  14:    */     
-/*  15: 46 */     this.goalSelector.a(1, new yy(this));
-/*  16: 47 */     this.goalSelector.a(2, new aab(this));
-/*  17: 48 */     this.goalSelector.a(2, this.a);
-/*  18: 49 */     this.goalSelector.a(3, new yx(this, 1.0D));
-/*  19: 50 */     this.goalSelector.a(3, new yp(this, new afx(this), 6.0F, 1.0D, 1.2D));
+/*  15: 46 */     this.goalSelector.addGoal(1, new yy(this));
+/*  16: 47 */     this.goalSelector.addGoal(2, new aab(this));
+/*  17: 48 */     this.goalSelector.addGoal(2, this.a);
+/*  18: 49 */     this.goalSelector.addGoal(3, new yx(this, 1.0D));
+/*  19: 50 */     this.goalSelector.addGoal(3, new yp(this, new afx(this), 6.0F, 1.0D, 1.2D));
 /*  20:    */     
 /*  21:    */ 
 /*  22:    */ 
 /*  23:    */ 
 /*  24:    */ 
-/*  25: 56 */     this.goalSelector.a(4, new zy(this, 1.0D));
-/*  26: 57 */     this.goalSelector.a(6, new zh(this, EntityPlayer.class, 8.0F));
-/*  27: 58 */     this.goalSelector.a(6, new zx(this));
+/*  25: 56 */     this.goalSelector.addGoal(4, new zy(this, 1.0D));
+/*  26: 57 */     this.goalSelector.addGoal(6, new zh(this, EntityPlayer.class, 8.0F));
+/*  27: 58 */     this.goalSelector.addGoal(6, new zx(this));
 /*  28:    */     
-/*  29: 60 */     this.targetSelector.a(1, new aal(this, false, new Class[0]));
-/*  30: 61 */     this.targetSelector.a(2, new aaq(this, EntityPlayer.class, true));
-/*  31: 62 */     this.targetSelector.a(3, new aaq(this, EntityIronGolem.class, true));
+/*  29: 60 */     this.targetSelector.addGoal(1, new aal(this, false, new Class[0]));
+/*  30: 61 */     this.targetSelector.addGoal(2, new aaq(this, EntityPlayer.class, true));
+/*  31: 62 */     this.targetSelector.addGoal(3, new aaq(this, EntityIronGolem.class, true));
 /*  32: 64 */     if ((paramaqu != null) && (!paramaqu.isClient)) {
 /*  33: 65 */       n();
 /*  34:    */     }
@@ -198,7 +198,7 @@ package net.minecraft.src;
 /* 197:227 */     paramxq = super.beforeSpawn(paramvu, paramxq);
 /* 198:229 */     if (((this.world.t instanceof bge)) && (getRNG().nextInt(5) > 0))
 /* 199:    */     {
-/* 200:230 */       this.goalSelector.a(4, this.c);
+/* 200:230 */       this.goalSelector.addGoal(4, this.c);
 /* 201:    */       
 /* 202:232 */       a(1);
 /* 203:233 */       setItemStack(0, new ItemStack(ItemList.q));
@@ -206,7 +206,7 @@ package net.minecraft.src;
 /* 205:    */     }
 /* 206:    */     else
 /* 207:    */     {
-/* 208:236 */       this.goalSelector.a(4, this.b);
+/* 208:236 */       this.goalSelector.addGoal(4, this.b);
 /* 209:    */       
 /* 210:238 */       a(paramvu);
 /* 211:239 */       b(paramvu);
@@ -226,14 +226,14 @@ package net.minecraft.src;
 /* 225:    */   
 /* 226:    */   public void n()
 /* 227:    */   {
-/* 228:257 */     this.goalSelector.a(this.c);
-/* 229:258 */     this.goalSelector.a(this.b);
+/* 228:257 */     this.goalSelector.removeGoal(this.c);
+/* 229:258 */     this.goalSelector.removeGoal(this.b);
 /* 230:    */     
 /* 231:260 */     ItemStack localamj = getHeldItemStack();
 /* 232:262 */     if ((localamj != null) && (localamj.getItem() == ItemList.bow)) {
-/* 233:263 */       this.goalSelector.a(4, this.b);
+/* 233:263 */       this.goalSelector.addGoal(4, this.b);
 /* 234:    */     } else {
-/* 235:265 */       this.goalSelector.a(4, this.c);
+/* 235:265 */       this.goalSelector.addGoal(4, this.c);
 /* 236:    */     }
 /* 237:    */   }
 /* 238:    */   

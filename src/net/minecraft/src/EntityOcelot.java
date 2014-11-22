@@ -11,19 +11,19 @@ package net.minecraft.src;
 /*  13: 43 */     super(paramaqu);
 /*  14: 44 */     a(0.6F, 0.7F);
 /*  15:    */     
-/*  16: 46 */     ((aay)s()).a(true);
-/*  17: 47 */     this.goalSelector.a(1, new yy(this));
-/*  18: 48 */     this.goalSelector.a(2, this.bk);
-/*  19: 49 */     this.goalSelector.a(3, this.bn = new aag(this, 0.6D, ItemList.fish, true));
-/*  20: 50 */     this.goalSelector.a(5, new yz(this, 1.0D, 10.0F, 5.0F));
-/*  21: 51 */     this.goalSelector.a(6, new zr(this, 0.8D));
-/*  22: 52 */     this.goalSelector.a(7, new zg(this, 0.3F));
-/*  23: 53 */     this.goalSelector.a(8, new zq(this));
-/*  24: 54 */     this.goalSelector.a(9, new yt(this, 0.8D));
-/*  25: 55 */     this.goalSelector.a(10, new zy(this, 0.8D));
-/*  26: 56 */     this.goalSelector.a(11, new zh(this, EntityPlayer.class, 10.0F));
+/*  16: 46 */     ((aay)getNavigator()).a(true);
+/*  17: 47 */     this.goalSelector.addGoal(1, new yy(this));
+/*  18: 48 */     this.goalSelector.addGoal(2, this.bk);
+/*  19: 49 */     this.goalSelector.addGoal(3, this.bn = new aag(this, 0.6D, ItemList.fish, true));
+/*  20: 50 */     this.goalSelector.addGoal(5, new yz(this, 1.0D, 10.0F, 5.0F));
+/*  21: 51 */     this.goalSelector.addGoal(6, new zr(this, 0.8D));
+/*  22: 52 */     this.goalSelector.addGoal(7, new zg(this, 0.3F));
+/*  23: 53 */     this.goalSelector.addGoal(8, new zq(this));
+/*  24: 54 */     this.goalSelector.addGoal(9, new yt(this, 0.8D));
+/*  25: 55 */     this.goalSelector.addGoal(10, new zy(this, 0.8D));
+/*  26: 56 */     this.goalSelector.addGoal(11, new zh(this, EntityPlayer.class, 10.0F));
 /*  27:    */     
-/*  28: 58 */     this.targetSelector.a(1, new aat(this, EntityChicken.class, false, null));
+/*  28: 58 */     this.targetSelector.addGoal(1, new aat(this, EntityChicken.class, false, null));
 /*  29:    */   }
 /*  30:    */   
 /*  31:    */   protected void h()
@@ -268,9 +268,9 @@ package net.minecraft.src;
 /* 270:296 */     if (this.bm == null) {
 /* 271:297 */       this.bm = new yp(this, new abz(this), 16.0F, 0.8D, 1.33D);
 /* 272:    */     }
-/* 273:305 */     this.goalSelector.a(this.bm);
+/* 273:305 */     this.goalSelector.removeGoal(this.bm);
 /* 274:307 */     if (!cj()) {
-/* 275:308 */       this.goalSelector.a(4, this.bm);
+/* 275:308 */       this.goalSelector.addGoal(4, this.bm);
 /* 276:    */     }
 /* 277:    */   }
 /* 278:    */   

@@ -26,8 +26,8 @@ package net.minecraft.src;
 /*  27:    */   
 /*  28:    */   protected void n()
 /*  29:    */   {
-/*  30: 48 */     this.targetSelector.a(1, new afq(this));
-/*  31: 49 */     this.targetSelector.a(2, new afp(this));
+/*  30: 48 */     this.targetSelector.addGoal(1, new afq(this));
+/*  31: 49 */     this.targetSelector.addGoal(2, new afp(this));
 /*  32:    */   }
 /*  33:    */   
 /*  34:    */   protected void aW()

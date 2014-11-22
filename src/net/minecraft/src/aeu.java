@@ -16,7 +16,7 @@ package net.minecraft.src;
 /*  15:362 */     this.j = paramaer;
 /*  16:    */   }
 /*  17:    */   
-/*  18:    */   public boolean a()
+/*  18:    */   public boolean canStart()
 /*  19:    */   {
 /*  20:367 */     double d = f();
 /*  21:368 */     List localList = this.e.world.a(EntityPlayer.class, this.e.getAABB().expand(d, 4.0D, d), this.c);
@@ -28,13 +28,13 @@ package net.minecraft.src;
 /*  27:375 */     return true;
 /*  28:    */   }
 /*  29:    */   
-/*  30:    */   public void c()
+/*  30:    */   public void start()
 /*  31:    */   {
 /*  32:381 */     this.h = 5;
 /*  33:382 */     this.i = 0;
 /*  34:    */   }
 /*  35:    */   
-/*  36:    */   public void d()
+/*  36:    */   public void stop()
 /*  37:    */   {
 /*  38:388 */     this.g = null;
 /*  39:389 */     this.j.a(false);
@@ -42,10 +42,10 @@ package net.minecraft.src;
 /*  41:391 */     xz localxz = this.j.a(afs.d);
 /*  42:392 */     localxz.c(EntityEnderman.cn());
 /*  43:    */     
-/*  44:394 */     super.d();
+/*  44:394 */     super.stop();
 /*  45:    */   }
 /*  46:    */   
-/*  47:    */   public boolean b()
+/*  47:    */   public boolean canContinue()
 /*  48:    */   {
 /*  49:399 */     if (this.g != null)
 /*  50:    */     {
@@ -56,10 +56,10 @@ package net.minecraft.src;
 /*  55:404 */       this.j.a(this.g, 10.0F, 10.0F);
 /*  56:405 */       return true;
 /*  57:    */     }
-/*  58:407 */     return super.b();
+/*  58:407 */     return super.canContinue();
 /*  59:    */   }
 /*  60:    */   
-/*  61:    */   public void e()
+/*  61:    */   public void tick()
 /*  62:    */   {
 /*  63:412 */     if (this.g != null)
 /*  64:    */     {
@@ -67,7 +67,7 @@ package net.minecraft.src;
 /*  66:    */       {
 /*  67:414 */         this.d = this.g;
 /*  68:415 */         this.g = null;
-/*  69:416 */         super.c();
+/*  69:416 */         super.start();
 /*  70:    */         
 /*  71:418 */         this.j.a("mob.endermen.stare", 1.0F, 1.0F);
 /*  72:419 */         this.j.a(true);
@@ -93,7 +93,7 @@ package net.minecraft.src;
 /*  92:434 */           this.i = 0;
 /*  93:    */         }
 /*  94:    */       }
-/*  95:440 */       super.e();
+/*  95:440 */       super.tick();
 /*  96:    */     }
 /*  97:    */   }
 /*  98:    */ }

@@ -3,7 +3,7 @@ package net.minecraft.src;
 /*   2:    */ import java.util.List;
 /*   3:    */ 
 /*   4:    */ public class zm
-/*   5:    */   extends zb
+/*   5:    */   extends GoalType
 /*   6:    */ {
 /*   7:    */   private EntityWalkingMob a;
 /*   8:    */   private double b;
@@ -18,12 +18,12 @@ package net.minecraft.src;
 /*  17: 27 */     this.b = paramDouble;
 /*  18: 28 */     this.e = paramBoolean;
 /*  19: 29 */     a(1);
-/*  20: 31 */     if (!(paramxu.s() instanceof aay)) {
+/*  20: 31 */     if (!(paramxu.getNavigator() instanceof aay)) {
 /*  21: 32 */       throw new IllegalArgumentException("Unsupported mob for MoveThroughVillageGoal");
 /*  22:    */     }
 /*  23:    */   }
 /*  24:    */   
-/*  25:    */   public boolean a()
+/*  25:    */   public boolean canStart()
 /*  26:    */   {
 /*  27: 38 */     f();
 /*  28: 40 */     if ((this.e) && (this.a.world.w())) {
@@ -37,7 +37,7 @@ package net.minecraft.src;
 /*  36: 50 */     if (this.d == null) {
 /*  37: 51 */       return false;
 /*  38:    */     }
-/*  39: 54 */     aay localaay = (aay)this.a.s();
+/*  39: 54 */     aay localaay = (aay)this.a.getNavigator();
 /*  40: 55 */     boolean bool = localaay.g();
 /*  41: 56 */     localaay.b(false);
 /*  42: 57 */     this.c = localaay.a(this.d.getPos());
@@ -50,28 +50,28 @@ package net.minecraft.src;
 /*  49: 65 */       return false;
 /*  50:    */     }
 /*  51: 67 */     localaay.b(false);
-/*  52: 68 */     this.c = this.a.s().a(localbrw.x, localbrw.y, localbrw.z);
+/*  52: 68 */     this.c = this.a.getNavigator().a(localbrw.x, localbrw.y, localbrw.z);
 /*  53: 69 */     localaay.b(bool);
 /*  54: 70 */     return this.c != null;
 /*  55:    */   }
 /*  56:    */   
-/*  57:    */   public boolean b()
+/*  57:    */   public boolean canContinue()
 /*  58:    */   {
-/*  59: 75 */     if (this.a.s().m()) {
+/*  59: 75 */     if (this.a.getNavigator().m()) {
 /*  60: 76 */       return false;
 /*  61:    */     }
 /*  62: 78 */     float f1 = this.a.width + 4.0F;
 /*  63: 79 */     return this.a.b(this.d.getPos()) > f1 * f1;
 /*  64:    */   }
 /*  65:    */   
-/*  66:    */   public void c()
+/*  66:    */   public void start()
 /*  67:    */   {
-/*  68: 84 */     this.a.s().a(this.c, this.b);
+/*  68: 84 */     this.a.getNavigator().a(this.c, this.b);
 /*  69:    */   }
 /*  70:    */   
-/*  71:    */   public void d()
+/*  71:    */   public void stop()
 /*  72:    */   {
-/*  73: 89 */     if ((this.a.s().m()) || (this.a.b(this.d.getPos()) < 16.0D)) {
+/*  73: 89 */     if ((this.a.getNavigator().m()) || (this.a.b(this.d.getPos()) < 16.0D)) {
 /*  74: 90 */       this.f.add(this.d);
 /*  75:    */     }
 /*  76:    */   }

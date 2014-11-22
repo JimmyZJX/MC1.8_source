@@ -3,7 +3,7 @@ package net.minecraft.src;
 /*  2:   */ import java.util.Random;
 /*  3:   */ 
 /*  4:   */ public class aaf
-/*  5:   */   extends zb
+/*  5:   */   extends GoalType
 /*  6:   */ {
 /*  7:   */   private EntityVillager a;
 /*  8:   */   private EntityIronGolem b;
@@ -16,7 +16,7 @@ package net.minecraft.src;
 /* 15:17 */     a(3);
 /* 16:   */   }
 /* 17:   */   
-/* 18:   */   public boolean a()
+/* 18:   */   public boolean canStart()
 /* 19:   */   {
 /* 20:22 */     if (this.a.getAge() >= 0) {
 /* 21:23 */       return false;
@@ -38,37 +38,37 @@ package net.minecraft.src;
 /* 37:40 */     return this.b != null;
 /* 38:   */   }
 /* 39:   */   
-/* 40:   */   public boolean b()
+/* 40:   */   public boolean canContinue()
 /* 41:   */   {
 /* 42:45 */     return this.b.ck() > 0;
 /* 43:   */   }
 /* 44:   */   
-/* 45:   */   public void c()
+/* 45:   */   public void start()
 /* 46:   */   {
 /* 47:50 */     this.c = this.a.getRNG().nextInt(320);
 /* 48:51 */     this.d = false;
-/* 49:52 */     this.b.s().n();
+/* 49:52 */     this.b.getNavigator().n();
 /* 50:   */   }
 /* 51:   */   
-/* 52:   */   public void d()
+/* 52:   */   public void stop()
 /* 53:   */   {
 /* 54:57 */     this.b = null;
-/* 55:58 */     this.a.s().n();
+/* 55:58 */     this.a.getNavigator().n();
 /* 56:   */   }
 /* 57:   */   
-/* 58:   */   public void e()
+/* 58:   */   public void tick()
 /* 59:   */   {
 /* 60:63 */     this.a.p().a(this.b, 30.0F, 30.0F);
 /* 61:64 */     if (this.b.ck() == this.c)
 /* 62:   */     {
-/* 63:65 */       this.a.s().a(this.b, 0.5D);
+/* 63:65 */       this.a.getNavigator().a(this.b, 0.5D);
 /* 64:66 */       this.d = true;
 /* 65:   */     }
 /* 66:69 */     if ((this.d) && 
 /* 67:70 */       (this.a.h(this.b) < 4.0D))
 /* 68:   */     {
 /* 69:71 */       this.b.a(false);
-/* 70:72 */       this.a.s().n();
+/* 70:72 */       this.a.getNavigator().n();
 /* 71:   */     }
 /* 72:   */   }
 /* 73:   */ }

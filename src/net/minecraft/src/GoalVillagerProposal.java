@@ -1,7 +1,7 @@
 package net.minecraft.src;
 /*   2:    */ 
-/*   3:    */ public class VillagerProposal
-/*   4:    */   extends zb
+/*   3:    */ public class GoalVillagerProposal
+/*   4:    */   extends GoalType
 /*   5:    */ {
 /*   6:    */   private EntityVillager villager;
 /*   7:    */   private EntityVillager mate;
@@ -9,14 +9,14 @@ package net.minecraft.src;
 /*   9:    */   private int countDown;
 /*  10:    */   Village village;
 /*  11:    */   
-/*  12:    */   public VillagerProposal(EntityVillager villager)
+/*  12:    */   public GoalVillagerProposal(EntityVillager villager)
 /*  13:    */   {
 /*  14: 18 */     this.villager = villager;
 /*  15: 19 */     this.world = villager.world;
 /*  16: 20 */     a(3);
 /*  17:    */   }
 /*  18:    */   
-/*  19:    */   public boolean a()
+/*  19:    */   public boolean canStart()
 /*  20:    */   {
 /*  21: 25 */     if (this.villager.getAge() != 0) {
 /*  22: 26 */       return false;
@@ -42,30 +42,30 @@ package net.minecraft.src;
 /*  42: 50 */     return true;
 /*  43:    */   }
 /*  44:    */   
-/*  45:    */   public void c()
+/*  45:    */   public void start()
 /*  46:    */   {
 /*  47: 55 */     this.countDown = 300;
 /*  48: 56 */     this.villager.l(true);
 /*  49:    */   }
 /*  50:    */   
-/*  51:    */   public void d()
+/*  51:    */   public void stop()
 /*  52:    */   {
 /*  53: 61 */     this.village = null;
 /*  54: 62 */     this.mate = null;
 /*  55: 63 */     this.villager.l(false);
 /*  56:    */   }
 /*  57:    */   
-/*  58:    */   public boolean b()
+/*  58:    */   public boolean canContinue()
 /*  59:    */   {
 /*  60: 68 */     return (this.countDown >= 0) && (checkPopulation()) && (this.villager.getAge() == 0) && (this.villager.testWilling(false));
 /*  61:    */   }
 /*  62:    */   
-/*  63:    */   public void e()
+/*  63:    */   public void tick()
 /*  64:    */   {
 /*  65: 73 */     this.countDown -= 1;
 /*  66: 74 */     this.villager.p().a(this.mate, 10.0F, 30.0F);
 /*  67: 76 */     if (this.villager.h(this.mate) > 2.25D) {
-/*  68: 77 */       this.villager.s().a(this.mate, 0.25D);
+/*  68: 77 */       this.villager.getNavigator().a(this.mate, 0.25D);
 /*  69: 79 */     } else if ((this.countDown == 0) && (this.mate.ck())) {
 /*  70: 80 */       mate();
 /*  71:    */     }

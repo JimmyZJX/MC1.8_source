@@ -1,6 +1,6 @@
 package net.minecraft.src;
 /*  1:   */ public class abb
-/*  2:   */   extends aaz
+/*  2:   */   extends Navigator
 /*  3:   */ {
 /*  4:   */   public abb(EntityMob paramxn, World paramaqu)
 /*  5:   */   {

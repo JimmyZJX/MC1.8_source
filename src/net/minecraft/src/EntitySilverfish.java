@@ -9,15 +9,15 @@ package net.minecraft.src;
 /*   8: 31 */     super(paramaqu);
 /*   9: 32 */     a(0.4F, 0.3F);
 /*  10:    */     
-/*  11: 34 */     this.goalSelector.a(1, new yy(this));
+/*  11: 34 */     this.goalSelector.addGoal(1, new yy(this));
 /*  12:    */     
-/*  13: 36 */     this.goalSelector.a(3, this.b = new afv(this));
+/*  13: 36 */     this.goalSelector.addGoal(3, this.b = new afv(this));
 /*  14:    */     
-/*  15: 38 */     this.goalSelector.a(4, new zk(this, EntityPlayer.class, 1.0D, false));
-/*  16: 39 */     this.goalSelector.a(5, new afu(this));
+/*  15: 38 */     this.goalSelector.addGoal(4, new zk(this, EntityPlayer.class, 1.0D, false));
+/*  16: 39 */     this.goalSelector.addGoal(5, new afu(this));
 /*  17:    */     
-/*  18: 41 */     this.targetSelector.a(1, new aal(this, true, new Class[0]));
-/*  19: 42 */     this.targetSelector.a(2, new aaq(this, EntityPlayer.class, true));
+/*  18: 41 */     this.targetSelector.addGoal(1, new aal(this, true, new Class[0]));
+/*  19: 42 */     this.targetSelector.addGoal(2, new aaq(this, EntityPlayer.class, true));
 /*  20:    */   }
 /*  21:    */   
 /*  22:    */   public float getEyeHeight()

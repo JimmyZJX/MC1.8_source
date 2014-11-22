@@ -1,6 +1,6 @@
 package net.minecraft.src;
 /*   1:    */ class afd
-/*   2:    */   extends zb
+/*   2:    */   extends GoalType
 /*   3:    */ {
 /*   4:    */   private EntityGhast b;
 /*   5:    */   public int a;
@@ -10,22 +10,22 @@ package net.minecraft.src;
 /*   9:297 */     this.b = paramafa;
 /*  10:    */   }
 /*  11:    */   
-/*  12:    */   public boolean a()
+/*  12:    */   public boolean canStart()
 /*  13:    */   {
 /*  14:302 */     return this.b.u() != null;
 /*  15:    */   }
 /*  16:    */   
-/*  17:    */   public void c()
+/*  17:    */   public void start()
 /*  18:    */   {
 /*  19:307 */     this.a = 0;
 /*  20:    */   }
 /*  21:    */   
-/*  22:    */   public void d()
+/*  22:    */   public void stop()
 /*  23:    */   {
 /*  24:312 */     this.b.a(false);
 /*  25:    */   }
 /*  26:    */   
-/*  27:    */   public void e()
+/*  27:    */   public void tick()
 /*  28:    */   {
 /*  29:317 */     EntityLiving localxm = this.b.u();
 /*  30:    */     

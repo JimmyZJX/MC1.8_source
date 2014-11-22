@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*  9:11 */     this.e = paramagp;
 /* 10:   */   }
 /* 11:   */   
-/* 12:   */   public boolean a()
+/* 12:   */   public boolean canStart()
 /* 13:   */   {
 /* 14:16 */     if (this.e.cm())
 /* 15:   */     {

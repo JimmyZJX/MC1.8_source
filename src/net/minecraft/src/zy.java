@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ import java.util.Random;
 /*  2:   */ 
 /*  3:   */ public class zy
-/*  4:   */   extends zb
+/*  4:   */   extends GoalType
 /*  5:   */ {
 /*  6:   */   private EntityWalkingMob a;
 /*  7:   */   private double b;
@@ -25,7 +25,7 @@ package net.minecraft.src;
 /* 24:24 */     a(1);
 /* 25:   */   }
 /* 26:   */   
-/* 27:   */   public boolean a()
+/* 27:   */   public boolean canStart()
 /* 28:   */   {
 /* 29:29 */     if (!this.g)
 /* 30:   */     {
@@ -47,14 +47,14 @@ package net.minecraft.src;
 /* 46:46 */     return true;
 /* 47:   */   }
 /* 48:   */   
-/* 49:   */   public boolean b()
+/* 49:   */   public boolean canContinue()
 /* 50:   */   {
-/* 51:51 */     return !this.a.s().m();
+/* 51:51 */     return !this.a.getNavigator().m();
 /* 52:   */   }
 /* 53:   */   
-/* 54:   */   public void c()
+/* 54:   */   public void start()
 /* 55:   */   {
-/* 56:56 */     this.a.s().a(this.b, this.c, this.d, this.e);
+/* 56:56 */     this.a.getNavigator().a(this.b, this.c, this.d, this.e);
 /* 57:   */   }
 /* 58:   */   
 /* 59:   */   public void f()
