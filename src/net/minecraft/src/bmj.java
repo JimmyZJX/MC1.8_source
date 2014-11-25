@@ -45,14 +45,14 @@ package net.minecraft.src;
 /*  44:805 */     int i = a(BlockList.aw, 2);
 /*  45:806 */     for (int j = 0; j < 6; j++)
 /*  46:    */     {
-/*  47:807 */       a(paramaqu, BlockList.aw.a(i), 1, 6 - j, 1 + j, parambjb);
-/*  48:808 */       a(paramaqu, BlockList.aw.a(i), 2, 6 - j, 1 + j, parambjb);
-/*  49:809 */       a(paramaqu, BlockList.aw.a(i), 3, 6 - j, 1 + j, parambjb);
+/*  47:807 */       a(paramaqu, BlockList.aw.instance(i), 1, 6 - j, 1 + j, parambjb);
+/*  48:808 */       a(paramaqu, BlockList.aw.instance(i), 2, 6 - j, 1 + j, parambjb);
+/*  49:809 */       a(paramaqu, BlockList.aw.instance(i), 3, 6 - j, 1 + j, parambjb);
 /*  50:810 */       if (j < 5)
 /*  51:    */       {
-/*  52:811 */         a(paramaqu, BlockList.bf.instance(), 1, 5 - j, 1 + j, parambjb);
-/*  53:812 */         a(paramaqu, BlockList.bf.instance(), 2, 5 - j, 1 + j, parambjb);
-/*  54:813 */         a(paramaqu, BlockList.bf.instance(), 3, 5 - j, 1 + j, parambjb);
+/*  52:811 */         a(paramaqu, BlockList.stoneBrick.instance(), 1, 5 - j, 1 + j, parambjb);
+/*  53:812 */         a(paramaqu, BlockList.stoneBrick.instance(), 2, 5 - j, 1 + j, parambjb);
+/*  54:813 */         a(paramaqu, BlockList.stoneBrick.instance(), 3, 5 - j, 1 + j, parambjb);
 /*  55:    */       }
 /*  56:    */     }
 /*  57:817 */     return true;

@@ -30,15 +30,15 @@ package net.minecraft.src;
 /*  29:637 */     if (!a(paramaqu, parambjb, 0)) {
 /*  30:638 */       return false;
 /*  31:    */     }
-/*  32:642 */     a(paramaqu, parambjb, 1, 1, 1, 5, 1, 7, BlockList.planks.a(EnumWoodVariant.SPRUCE.getIndex()), BlockList.planks.a(EnumWoodVariant.SPRUCE.getIndex()), false);
-/*  33:643 */     a(paramaqu, parambjb, 1, 4, 2, 5, 4, 7, BlockList.planks.a(EnumWoodVariant.SPRUCE.getIndex()), BlockList.planks.a(EnumWoodVariant.SPRUCE.getIndex()), false);
-/*  34:644 */     a(paramaqu, parambjb, 2, 1, 0, 4, 1, 0, BlockList.planks.a(EnumWoodVariant.SPRUCE.getIndex()), BlockList.planks.a(EnumWoodVariant.SPRUCE.getIndex()), false);
+/*  32:642 */     a(paramaqu, parambjb, 1, 1, 1, 5, 1, 7, BlockList.planks.instance(EnumWoodVariant.SPRUCE.getIndex()), BlockList.planks.instance(EnumWoodVariant.SPRUCE.getIndex()), false);
+/*  33:643 */     a(paramaqu, parambjb, 1, 4, 2, 5, 4, 7, BlockList.planks.instance(EnumWoodVariant.SPRUCE.getIndex()), BlockList.planks.instance(EnumWoodVariant.SPRUCE.getIndex()), false);
+/*  34:644 */     a(paramaqu, parambjb, 2, 1, 0, 4, 1, 0, BlockList.planks.instance(EnumWoodVariant.SPRUCE.getIndex()), BlockList.planks.instance(EnumWoodVariant.SPRUCE.getIndex()), false);
 /*  35:    */     
 /*  36:    */ 
-/*  37:647 */     a(paramaqu, parambjb, 2, 2, 2, 3, 3, 2, BlockList.planks.a(EnumWoodVariant.SPRUCE.getIndex()), BlockList.planks.a(EnumWoodVariant.SPRUCE.getIndex()), false);
-/*  38:648 */     a(paramaqu, parambjb, 1, 2, 3, 1, 3, 6, BlockList.planks.a(EnumWoodVariant.SPRUCE.getIndex()), BlockList.planks.a(EnumWoodVariant.SPRUCE.getIndex()), false);
-/*  39:649 */     a(paramaqu, parambjb, 5, 2, 3, 5, 3, 6, BlockList.planks.a(EnumWoodVariant.SPRUCE.getIndex()), BlockList.planks.a(EnumWoodVariant.SPRUCE.getIndex()), false);
-/*  40:650 */     a(paramaqu, parambjb, 2, 2, 7, 4, 3, 7, BlockList.planks.a(EnumWoodVariant.SPRUCE.getIndex()), BlockList.planks.a(EnumWoodVariant.SPRUCE.getIndex()), false);
+/*  37:647 */     a(paramaqu, parambjb, 2, 2, 2, 3, 3, 2, BlockList.planks.instance(EnumWoodVariant.SPRUCE.getIndex()), BlockList.planks.instance(EnumWoodVariant.SPRUCE.getIndex()), false);
+/*  38:648 */     a(paramaqu, parambjb, 1, 2, 3, 1, 3, 6, BlockList.planks.instance(EnumWoodVariant.SPRUCE.getIndex()), BlockList.planks.instance(EnumWoodVariant.SPRUCE.getIndex()), false);
+/*  39:649 */     a(paramaqu, parambjb, 5, 2, 3, 5, 3, 6, BlockList.planks.instance(EnumWoodVariant.SPRUCE.getIndex()), BlockList.planks.instance(EnumWoodVariant.SPRUCE.getIndex()), false);
+/*  40:650 */     a(paramaqu, parambjb, 2, 2, 7, 4, 3, 7, BlockList.planks.instance(EnumWoodVariant.SPRUCE.getIndex()), BlockList.planks.instance(EnumWoodVariant.SPRUCE.getIndex()), false);
 /*  41:    */     
 /*  42:    */ 
 /*  43:653 */     a(paramaqu, parambjb, 1, 0, 2, 1, 3, 2, BlockList.log.instance(), BlockList.log.instance(), false);
@@ -68,10 +68,10 @@ package net.minecraft.src;
 /*  67:677 */     int k = a(BlockList.ad, 0);
 /*  68:678 */     int m = a(BlockList.ad, 2);
 /*  69:    */     
-/*  70:680 */     a(paramaqu, parambjb, 0, 4, 1, 6, 4, 1, BlockList.bU.a(i), BlockList.bU.a(i), false);
-/*  71:681 */     a(paramaqu, parambjb, 0, 4, 2, 0, 4, 7, BlockList.bU.a(k), BlockList.bU.a(k), false);
-/*  72:682 */     a(paramaqu, parambjb, 6, 4, 2, 6, 4, 7, BlockList.bU.a(j), BlockList.bU.a(j), false);
-/*  73:683 */     a(paramaqu, parambjb, 0, 4, 8, 6, 4, 8, BlockList.bU.a(m), BlockList.bU.a(m), false);
+/*  70:680 */     a(paramaqu, parambjb, 0, 4, 1, 6, 4, 1, BlockList.bU.instance(i), BlockList.bU.instance(i), false);
+/*  71:681 */     a(paramaqu, parambjb, 0, 4, 2, 0, 4, 7, BlockList.bU.instance(k), BlockList.bU.instance(k), false);
+/*  72:682 */     a(paramaqu, parambjb, 6, 4, 2, 6, 4, 7, BlockList.bU.instance(j), BlockList.bU.instance(j), false);
+/*  73:683 */     a(paramaqu, parambjb, 0, 4, 8, 6, 4, 8, BlockList.bU.instance(m), BlockList.bU.instance(m), false);
 /*  74:    */     int i1;
 /*  75:686 */     for (int n = 2; n <= 7; n += 5) {
 /*  76:687 */       for (i1 = 1; i1 <= 5; i1 += 4) {

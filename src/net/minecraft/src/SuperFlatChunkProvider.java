@@ -141,7 +141,7 @@ package net.minecraft.src;
 /* 140:    */     }
 /* 141:169 */     if (this.g) {
 /* 142:170 */       for (int m = 0; m < 8; m++) {
-/* 143:171 */         new bie().generate(this.a, this.b, localdt.offset(this.b.nextInt(16) + 8, this.b.nextInt(256), this.b.nextInt(16) + 8));
+/* 143:171 */         new DungeonGenerator().generate(this.a, this.b, localdt.offset(this.b.nextInt(16) + 8, this.b.nextInt(256), this.b.nextInt(16) + 8));
 /* 144:    */       }
 /* 145:    */     }
 /* 146:175 */     if (this.f) {

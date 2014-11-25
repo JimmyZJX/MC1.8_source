@@ -248,7 +248,7 @@ package net.minecraft.src;
 /* 247:266 */     paramaqu.c(paramdt.a(paramej.d()), this);
 /* 248:    */   }
 /* 249:    */   
-/* 250:    */   public Block a(int paramInt)
+/* 250:    */   public Block instance(int paramInt)
 /* 251:    */   {
 /* 252:    */     EnumDirection localej;
 /* 253:272 */     switch (paramInt & 0x7)

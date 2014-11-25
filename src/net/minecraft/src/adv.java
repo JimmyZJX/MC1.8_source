@@ -178,11 +178,11 @@ package net.minecraft.src;
 /* 178:    */   {
 /* 179:189 */     int i = paramfn.d("Data") & 0xFF;
 /* 180:190 */     if (paramfn.hasKey("Block", 8)) {
-/* 181:191 */       this.d = ProtoBlock.b(paramfn.getString("Block")).a(i);
+/* 181:191 */       this.d = ProtoBlock.b(paramfn.getString("Block")).instance(i);
 /* 182:192 */     } else if (paramfn.hasKey("TileID", 99)) {
-/* 183:193 */       this.d = ProtoBlock.c(paramfn.getInteger("TileID")).a(i);
+/* 183:193 */       this.d = ProtoBlock.c(paramfn.getInteger("TileID")).instance(i);
 /* 184:    */     } else {
-/* 185:195 */       this.d = ProtoBlock.c(paramfn.d("Tile") & 0xFF).a(i);
+/* 185:195 */       this.d = ProtoBlock.c(paramfn.d("Tile") & 0xFF).instance(i);
 /* 186:    */     }
 /* 187:198 */     this.a = (paramfn.d("Time") & 0xFF);
 /* 188:    */     

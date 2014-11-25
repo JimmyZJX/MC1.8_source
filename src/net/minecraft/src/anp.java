@@ -38,7 +38,7 @@ package net.minecraft.src;
 /* 37:   */   
 /* 38:   */   public int a(ItemStack paramamj, int paramInt)
 /* 39:   */   {
-/* 40:51 */     return BlockList.waterLily.h(BlockList.waterLily.a(paramamj.getDamage2()));
+/* 40:51 */     return BlockList.waterLily.h(BlockList.waterLily.instance(paramamj.getDamage2()));
 /* 41:   */   }
 /* 42:   */ }
 

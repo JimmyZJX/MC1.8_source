@@ -19,7 +19,7 @@ package net.minecraft.src;
 /* 18:   */   
 /* 19:   */   protected Vec3 c()
 /* 20:   */   {
-/* 21:27 */     return new Vec3(this.b.xPos, this.b.yPos + this.b.height * 0.5D, this.b.zPos);
+/* 21:27 */     return new Vec3(this.mob.xPos, this.mob.yPos + this.mob.height * 0.5D, this.mob.zPos);
 /* 22:   */   }
 /* 23:   */   
 /* 24:   */   protected void l()
@@ -27,14 +27,14 @@ package net.minecraft.src;
 /* 26:32 */     Vec3 localbrw1 = c();
 /* 27:   */     
 /* 28:   */ 
-/* 29:35 */     float f = this.b.width * this.b.width;
+/* 29:35 */     float f = this.mob.width * this.mob.width;
 /* 30:36 */     int i = 6;
-/* 31:37 */     if (localbrw1.g(this.d.a(this.b, this.d.e())) < f) {
+/* 31:37 */     if (localbrw1.g(this.d.a(this.mob, this.d.e())) < f) {
 /* 32:38 */       this.d.a();
 /* 33:   */     }
 /* 34:41 */     for (int j = Math.min(this.d.e() + i, this.d.d() - 1); j > this.d.e(); j--)
 /* 35:   */     {
-/* 36:42 */       Vec3 localbrw2 = this.d.a(this.b, j);
+/* 36:42 */       Vec3 localbrw2 = this.d.a(this.mob, j);
 /* 37:43 */       if (localbrw2.g(localbrw1) <= 36.0D) {
 /* 38:46 */         if (a(localbrw1, localbrw2, 0, 0, 0))
 /* 39:   */         {
@@ -53,7 +53,7 @@ package net.minecraft.src;
 /* 52:   */   
 /* 53:   */   protected boolean a(Vec3 parambrw1, Vec3 parambrw2, int paramInt1, int paramInt2, int paramInt3)
 /* 54:   */   {
-/* 55:62 */     HitResult localbru = this.c.a(parambrw1, new Vec3(parambrw2.x, parambrw2.y + this.b.height * 0.5D, parambrw2.z), false, true, false);
+/* 55:62 */     HitResult localbru = this.world.a(parambrw1, new Vec3(parambrw2.x, parambrw2.y + this.mob.height * 0.5D, parambrw2.z), false, true, false);
 /* 56:63 */     return (localbru == null) || (localbru.a == brv.MISS);
 /* 57:   */   }
 /* 58:   */ }

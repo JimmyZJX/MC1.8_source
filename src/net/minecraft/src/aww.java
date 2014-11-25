@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*  8:18 */     setCreativeTab(CreativeTabs.tabBlock);
 /*  9:   */   }
 /* 10:   */   
-/* 11:   */   public Block a(int paramInt)
+/* 11:   */   public Block instance(int paramInt)
 /* 12:   */   {
 /* 13:23 */     EnumAxis localel = EnumAxis.Y;
 /* 14:24 */     int i = paramInt & 0xC;

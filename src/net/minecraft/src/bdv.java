@@ -162,7 +162,7 @@ import java.util.List;
 /* 160:    */   {
 /* 161:163 */     super.readFromNBT(paramfn);
 /* 162:    */     
-/* 163:165 */     this.a = ProtoBlock.c(paramfn.getInteger("blockId")).a(paramfn.getInteger("blockData"));
+/* 163:165 */     this.a = ProtoBlock.c(paramfn.getInteger("blockId")).instance(paramfn.getInteger("blockData"));
 /* 164:166 */     this.f = EnumDirection.a(paramfn.getInteger("facing"));
 /* 165:167 */     this.j = (this.i = paramfn.getFloat("progress"));
 /* 166:168 */     this.g = paramfn.getBoolean("extending");

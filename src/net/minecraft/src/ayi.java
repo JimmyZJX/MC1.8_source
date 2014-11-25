@@ -17,7 +17,7 @@ package net.minecraft.src;
 /* 16:28 */     paramList.add(new ItemStack(paramalq, 1, EnumWoodVariant.DARK_OAK.getIndex() - 4));
 /* 17:   */   }
 /* 18:   */   
-/* 19:   */   public Block a(int paramInt)
+/* 19:   */   public Block instance(int paramInt)
 /* 20:   */   {
 /* 21:33 */     Block localbec = instance().a(b, EnumWoodVariant.fromIndex((paramInt & 0x3) + 4));
 /* 22:36 */     switch (paramInt & 0xC)

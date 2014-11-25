@@ -2,14 +2,14 @@ package net.minecraft.src;
 /*   1:    */ import java.util.Iterator;
 /*   2:    */ import java.util.Random;
 /*   3:    */ 
-/*   4:    */ public class auj
+/*   4:    */ public class BlockChest
 /*   5:    */   extends atg
 /*   6:    */ {
 /*   7: 32 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", en.HORIZONTAL);
 /*   8: 38 */   private final Random M = new Random();
 /*   9:    */   public final int b;
 /*  10:    */   
-/*  11:    */   protected auj(int paramInt)
+/*  11:    */   protected BlockChest(int paramInt)
 /*  12:    */   {
 /*  13: 42 */     super(Material.wood);
 /*  14: 43 */     j(this.L.b().a(a, EnumDirection.NORTH));
@@ -414,7 +414,7 @@ package net.minecraft.src;
 /* 413:439 */     return aib.b(d(paramaqu, paramdt));
 /* 414:    */   }
 /* 415:    */   
-/* 416:    */   public Block a(int paramInt)
+/* 416:    */   public Block instance(int paramInt)
 /* 417:    */   {
 /* 418:444 */     EnumDirection localej = EnumDirection.a(paramInt);
 /* 419:445 */     if (localej.k() == EnumAxis.Y) {

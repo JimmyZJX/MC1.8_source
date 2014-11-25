@@ -56,7 +56,7 @@ package net.minecraft.src;
 /*  55:    */     }
 /*  56:    */   }
 /*  57:    */   
-/*  58:    */   public Block a(int paramInt)
+/*  58:    */   public Block instance(int paramInt)
 /*  59:    */   {
 /*  60: 75 */     Block localbec = instance().a(M, aym.a(paramInt & 0x7));
 /*  61: 77 */     if (j()) {

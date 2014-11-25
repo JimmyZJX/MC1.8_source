@@ -77,7 +77,7 @@ package net.minecraft.src;
 /*   76:     */     {
 /*   77:1027 */       int k = j + 4;
 /*   78:1028 */       for (int m = 5; m <= 7; m++) {
-/*   79:1029 */         a(paramaqu, BlockList.bA.a(i), m, 5 + j, k, parambjb);
+/*   79:1029 */         a(paramaqu, BlockList.bA.instance(i), m, 5 + j, k, parambjb);
 /*   80:     */       }
 /*   81:1031 */       if ((k >= 5) && (k <= 8)) {
 /*   82:1032 */         a(paramaqu, parambjb, 5, 5, k, 7, j + 4, k, BlockList.netherBrick.instance(), BlockList.netherBrick.instance(), false);
@@ -89,7 +89,7 @@ package net.minecraft.src;
 /*   88:     */       }
 /*   89:     */     }
 /*   90:1040 */     for (int j = 5; j <= 7; j++) {
-/*   91:1041 */       a(paramaqu, BlockList.bA.a(i), j, 12, 11, parambjb);
+/*   91:1041 */       a(paramaqu, BlockList.bA.instance(i), j, 12, 11, parambjb);
 /*   92:     */     }
 /*   93:1043 */     a(paramaqu, parambjb, 5, 6, 7, 5, 7, 7, BlockList.bz.instance(), BlockList.bz.instance(), false);
 /*   94:1044 */     a(paramaqu, parambjb, 7, 6, 7, 7, 7, 7, BlockList.bz.instance(), BlockList.bz.instance(), false);
@@ -104,14 +104,14 @@ package net.minecraft.src;
 /*  103:1053 */     a(paramaqu, parambjb, 10, 5, 4, 10, 5, 8, BlockList.netherBrick.instance(), BlockList.netherBrick.instance(), false);
 /*  104:1054 */     int j = a(BlockList.bA, 0);
 /*  105:1055 */     int k = a(BlockList.bA, 1);
-/*  106:1056 */     a(paramaqu, BlockList.bA.a(k), 4, 5, 2, parambjb);
-/*  107:1057 */     a(paramaqu, BlockList.bA.a(k), 4, 5, 3, parambjb);
-/*  108:1058 */     a(paramaqu, BlockList.bA.a(k), 4, 5, 9, parambjb);
-/*  109:1059 */     a(paramaqu, BlockList.bA.a(k), 4, 5, 10, parambjb);
-/*  110:1060 */     a(paramaqu, BlockList.bA.a(j), 8, 5, 2, parambjb);
-/*  111:1061 */     a(paramaqu, BlockList.bA.a(j), 8, 5, 3, parambjb);
-/*  112:1062 */     a(paramaqu, BlockList.bA.a(j), 8, 5, 9, parambjb);
-/*  113:1063 */     a(paramaqu, BlockList.bA.a(j), 8, 5, 10, parambjb);
+/*  106:1056 */     a(paramaqu, BlockList.bA.instance(k), 4, 5, 2, parambjb);
+/*  107:1057 */     a(paramaqu, BlockList.bA.instance(k), 4, 5, 3, parambjb);
+/*  108:1058 */     a(paramaqu, BlockList.bA.instance(k), 4, 5, 9, parambjb);
+/*  109:1059 */     a(paramaqu, BlockList.bA.instance(k), 4, 5, 10, parambjb);
+/*  110:1060 */     a(paramaqu, BlockList.bA.instance(j), 8, 5, 2, parambjb);
+/*  111:1061 */     a(paramaqu, BlockList.bA.instance(j), 8, 5, 3, parambjb);
+/*  112:1062 */     a(paramaqu, BlockList.bA.instance(j), 8, 5, 9, parambjb);
+/*  113:1063 */     a(paramaqu, BlockList.bA.instance(j), 8, 5, 10, parambjb);
 /*  114:     */     
 /*  115:     */ 
 /*  116:1066 */     a(paramaqu, parambjb, 3, 4, 4, 4, 4, 8, BlockList.soulSand.instance(), BlockList.soulSand.instance(), false);

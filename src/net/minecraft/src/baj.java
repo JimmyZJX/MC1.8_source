@@ -177,7 +177,7 @@ package net.minecraft.src;
 /* 176:    */     }
 /* 177:    */   }
 /* 178:    */   
-/* 179:    */   public Block a(int paramInt)
+/* 179:    */   public Block instance(int paramInt)
 /* 180:    */   {
 /* 181:225 */     return instance().a(a, EnumDirection.a(paramInt & 0x7)).a(b, Boolean.valueOf((paramInt & 0x8) > 0));
 /* 182:    */   }

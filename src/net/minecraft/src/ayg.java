@@ -41,7 +41,7 @@ package net.minecraft.src;
 /*  40: 60 */     return new ItemStack(Item.fromProtoBlock(this), 1, ((EnumWoodVariant)parambec.getProperty(P)).getIndex() - 4);
 /*  41:    */   }
 /*  42:    */   
-/*  43:    */   public Block a(int paramInt)
+/*  43:    */   public Block instance(int paramInt)
 /*  44:    */   {
 /*  45: 65 */     return instance().a(P, b(paramInt)).a(a, Boolean.valueOf((paramInt & 0x4) == 0)).a(b, Boolean.valueOf((paramInt & 0x8) > 0));
 /*  46:    */   }

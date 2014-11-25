@@ -117,13 +117,13 @@ package net.minecraft.src;
 /*  116:     */       
 /*  117:     */ 
 /*  118:1272 */       int m = a(BlockList.au, 3);
-/*  119:1273 */       a(paramaqu, BlockList.au.a(m), 10, 1, 13, parambjb);
-/*  120:1274 */       a(paramaqu, BlockList.au.a(m), 10, 2, 13, parambjb);
-/*  121:1275 */       a(paramaqu, BlockList.au.a(m), 10, 3, 13, parambjb);
-/*  122:1276 */       a(paramaqu, BlockList.au.a(m), 10, 4, 13, parambjb);
-/*  123:1277 */       a(paramaqu, BlockList.au.a(m), 10, 5, 13, parambjb);
-/*  124:1278 */       a(paramaqu, BlockList.au.a(m), 10, 6, 13, parambjb);
-/*  125:1279 */       a(paramaqu, BlockList.au.a(m), 10, 7, 13, parambjb);
+/*  119:1273 */       a(paramaqu, BlockList.au.instance(m), 10, 1, 13, parambjb);
+/*  120:1274 */       a(paramaqu, BlockList.au.instance(m), 10, 2, 13, parambjb);
+/*  121:1275 */       a(paramaqu, BlockList.au.instance(m), 10, 3, 13, parambjb);
+/*  122:1276 */       a(paramaqu, BlockList.au.instance(m), 10, 4, 13, parambjb);
+/*  123:1277 */       a(paramaqu, BlockList.au.instance(m), 10, 5, 13, parambjb);
+/*  124:1278 */       a(paramaqu, BlockList.au.instance(m), 10, 6, 13, parambjb);
+/*  125:1279 */       a(paramaqu, BlockList.au.instance(m), 10, 7, 13, parambjb);
 /*  126:     */       
 /*  127:     */ 
 /*  128:1282 */       int n = 7;

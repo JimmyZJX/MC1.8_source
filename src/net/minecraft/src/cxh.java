@@ -318,7 +318,7 @@ package net.minecraft.src;
 /* 318:317 */     this.u.put(Item.fromProtoBlock(BlockList.cP), Lists.newArrayList(new String[] { "red_sandstone_slab" }));
 /* 319:318 */     this.u.put(Item.fromProtoBlock(BlockList.cG), Lists.newArrayList(new String[] { "black_stained_glass", "red_stained_glass", "green_stained_glass", "brown_stained_glass", "blue_stained_glass", "purple_stained_glass", "cyan_stained_glass", "silver_stained_glass", "gray_stained_glass", "pink_stained_glass", "lime_stained_glass", "yellow_stained_glass", "light_blue_stained_glass", "magenta_stained_glass", "orange_stained_glass", "white_stained_glass" }));
 /* 320:319 */     this.u.put(Item.fromProtoBlock(BlockList.monsterEgg), Lists.newArrayList(new String[] { "stone_monster_egg", "cobblestone_monster_egg", "stone_brick_monster_egg", "mossy_brick_monster_egg", "cracked_brick_monster_egg", "chiseled_brick_monster_egg" }));
-/* 321:320 */     this.u.put(Item.fromProtoBlock(BlockList.bf), Lists.newArrayList(new String[] { "stonebrick", "mossy_stonebrick", "cracked_stonebrick", "chiseled_stonebrick" }));
+/* 321:320 */     this.u.put(Item.fromProtoBlock(BlockList.stoneBrick), Lists.newArrayList(new String[] { "stonebrick", "mossy_stonebrick", "cracked_stonebrick", "chiseled_stonebrick" }));
 /* 322:321 */     this.u.put(Item.fromProtoBlock(BlockList.bM), Lists.newArrayList(new String[] { "oak_slab", "spruce_slab", "birch_slab", "jungle_slab", "acacia_slab", "dark_oak_slab" }));
 /* 323:322 */     this.u.put(Item.fromProtoBlock(BlockList.bZ), Lists.newArrayList(new String[] { "cobblestone_wall", "mossy_cobblestone_wall" }));
 /* 324:323 */     this.u.put(Item.fromProtoBlock(BlockList.cf), Lists.newArrayList(new String[] { "anvil_intact", "anvil_slightly_damaged", "anvil_very_damaged" }));

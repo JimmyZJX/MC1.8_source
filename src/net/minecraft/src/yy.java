@@ -5,11 +5,11 @@ package net.minecraft.src;
 /*  5:   */ {
 /*  6:   */   private EntityMob mob;
 /*  7:   */   
-/*  8:   */   public yy(EntityMob paramxn)
+/*  8:   */   public yy(EntityMob mob)
 /*  9:   */   {
-/* 10:11 */     this.mob = paramxn;
+/* 10:11 */     this.mob = mob;
 /* 11:12 */     a(4);
-/* 12:13 */     ((aay)paramxn.getNavigator()).d(true);
+/* 12:13 */     ((aay)mob.getNavigator()).d(true);
 /* 13:   */   }
 /* 14:   */   
 /* 15:   */   public boolean canStart()

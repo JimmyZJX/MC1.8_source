@@ -21,7 +21,7 @@ package net.minecraft.src;
 /* 20:   */   public biw(int paramInt1, int paramInt2, ProtoBlock paramatr, int paramInt3)
 /* 21:   */   {
 /* 22:24 */     this(paramInt1, paramInt2, paramatr);
-/* 23:25 */     this.b = paramatr.a(paramInt3);
+/* 23:25 */     this.b = paramatr.instance(paramInt3);
 /* 24:   */   }
 /* 25:   */   
 /* 26:   */   public int b()

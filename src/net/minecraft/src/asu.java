@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*   8: 17 */   private static final bio aE = new bio(false);
 /*   9: 18 */   private static final bib aF = new bib(false, false);
 /*  10: 19 */   private static final bib aG = new bib(false, true);
-/*  11: 20 */   private static final bhg aH = new bhg(BlockList.Y, 0);
+/*  11: 20 */   private static final bhg aH = new bhg(BlockList.mossyCobblestone, 0);
 /*  12:    */   private int aI;
 /*  13:    */   
 /*  14:    */   public asu(int paramInt1, int paramInt2)

@@ -220,7 +220,7 @@ package net.minecraft.src;
 /* 219:256 */     return new bcv();
 /* 220:    */   }
 /* 221:    */   
-/* 222:    */   public Block a(int paramInt)
+/* 222:    */   public Block instance(int paramInt)
 /* 223:    */   {
 /* 224:261 */     return instance().a(N, EnumDirection.b(paramInt)).a(a, Boolean.valueOf((paramInt & 0x8) > 0)).a(b, (paramInt & 0x4) > 0 ? aur.b : aur.a);
 /* 225:    */   }

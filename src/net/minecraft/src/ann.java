@@ -18,7 +18,7 @@ package net.minecraft.src;
 /* 17:   */   
 /* 18:   */   public int a(ItemStack paramamj, int paramInt)
 /* 19:   */   {
-/* 20:21 */     return this.b.h(this.b.a(paramamj.getDamage2()));
+/* 20:21 */     return this.b.h(this.b.instance(paramamj.getDamage2()));
 /* 21:   */   }
 /* 22:   */   
 /* 23:   */   public int a(int paramInt)

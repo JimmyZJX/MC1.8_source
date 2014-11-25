@@ -99,7 +99,7 @@ package net.minecraft.src;
 /*  98:114 */     return 3;
 /*  99:    */   }
 /* 100:    */   
-/* 101:    */   public Block a(int paramInt)
+/* 101:    */   public Block instance(int paramInt)
 /* 102:    */   {
 /* 103:119 */     return instance().a(a, Boolean.valueOf((paramInt & 0x1) > 0));
 /* 104:    */   }

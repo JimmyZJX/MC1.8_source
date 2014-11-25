@@ -117,7 +117,7 @@ package net.minecraft.src;
 /* 116:136 */     return true;
 /* 117:    */   }
 /* 118:    */   
-/* 119:    */   public Block a(int paramInt)
+/* 119:    */   public Block instance(int paramInt)
 /* 120:    */   {
 /* 121:141 */     return instance().a(P, EnumCobblestoneVariant.a(paramInt));
 /* 122:    */   }

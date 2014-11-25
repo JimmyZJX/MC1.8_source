@@ -122,7 +122,7 @@ package net.minecraft.src;
 /* 121:156 */         ((bdv)localbcm1).h();
 /* 122:    */       }
 /* 123:159 */       paramaqu.setBlock(paramdt, BlockList.M.instance().a(bdx.a, localej).a(bdx.b, this.M ? bdu.b : bdu.a), 3);
-/* 124:160 */       paramaqu.a(paramdt, bdx.a(a(paramInt2), localej, false, true));
+/* 124:160 */       paramaqu.a(paramdt, bdx.a(instance(paramInt2), localej, false, true));
 /* 125:163 */       if (this.M)
 /* 126:    */       {
 /* 127:164 */         BlockPosition localdt = paramdt.offset(localej.g() * 2, localej.h() * 2, localej.i() * 2);
@@ -351,7 +351,7 @@ package net.minecraft.src;
 /* 350:404 */     return instance().a(a, EnumDirection.UP);
 /* 351:    */   }
 /* 352:    */   
-/* 353:    */   public Block a(int paramInt)
+/* 353:    */   public Block instance(int paramInt)
 /* 354:    */   {
 /* 355:409 */     return instance().a(a, b(paramInt)).a(b, Boolean.valueOf((paramInt & 0x8) > 0));
 /* 356:    */   }

@@ -159,7 +159,7 @@ package net.minecraft.src;
 /* 158:353 */       (paramaqu.getBlock(localdt).getProto().getMaterial() == Material.air))
 /* 159:    */     {
 /* 160:354 */       int i = paramRandom.nextBoolean() ? 1 : 0;
-/* 161:355 */       paramaqu.setBlock(localdt, BlockList.av.a(a(BlockList.av, i)), 2);
+/* 161:355 */       paramaqu.setBlock(localdt, BlockList.av.instance(a(BlockList.av, i)), 2);
 /* 162:356 */       aea localaea = new aea(paramaqu, localdt.getX() + 0.5F, localdt.getY() + 0.5F, localdt.getZ() + 0.5F);
 /* 163:357 */       vl.a(paramRandom, paramList, localaea, paramInt4);
 /* 164:358 */       paramaqu.spawnEntity(localaea);
@@ -212,8 +212,8 @@ package net.minecraft.src;
 /* 211:404 */       a(paramaqu, parambjb, paramRandom, 0.05F, 0, 2, i2 + 2, BlockList.web.instance());
 /* 212:405 */       a(paramaqu, parambjb, paramRandom, 0.05F, 2, 2, i2 + 2, BlockList.web.instance());
 /* 213:    */       
-/* 214:407 */       a(paramaqu, parambjb, paramRandom, 0.05F, 1, 2, i2 - 1, BlockList.torch.a(EnumDirection.UP.a()));
-/* 215:408 */       a(paramaqu, parambjb, paramRandom, 0.05F, 1, 2, i2 + 1, BlockList.torch.a(EnumDirection.UP.a()));
+/* 214:407 */       a(paramaqu, parambjb, paramRandom, 0.05F, 1, 2, i2 - 1, BlockList.torch.instance(EnumDirection.UP.a()));
+/* 215:408 */       a(paramaqu, parambjb, paramRandom, 0.05F, 1, 2, i2 + 1, BlockList.torch.instance(EnumDirection.UP.a()));
 /* 216:410 */       if (paramRandom.nextInt(100) == 0) {
 /* 217:411 */         a(paramaqu, parambjb, paramRandom, 2, 0, i2 - 1, vl.a(bje.b(), new vl[] { ItemList.cd.b(paramRandom) }), 3 + paramRandom.nextInt(4));
 /* 218:    */       }
@@ -255,7 +255,7 @@ package net.minecraft.src;
 /* 254:    */       {
 /* 255:447 */         Block localbec1 = a(paramaqu, 1, -1, i1, parambjb);
 /* 256:448 */         if ((localbec1.getProto().getMaterial() != Material.air) && (localbec1.getProto().m())) {
-/* 257:449 */           a(paramaqu, parambjb, paramRandom, 0.7F, 1, 0, i1, BlockList.av.a(a(BlockList.av, 0)));
+/* 257:449 */           a(paramaqu, parambjb, paramRandom, 0.7F, 1, 0, i1, BlockList.av.instance(a(BlockList.av, 0)));
 /* 258:    */         }
 /* 259:    */       }
 /* 260:    */     }

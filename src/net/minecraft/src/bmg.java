@@ -78,23 +78,23 @@ package net.minecraft.src;
 /*  77:518 */     a(paramaqu, paramRandom, parambjb, bml.a, 1, 1, 4);
 /*  78:    */     
 /*  79:    */ 
-/*  80:521 */     a(paramaqu, BlockList.bf.instance(), 2, 6, 1, parambjb);
-/*  81:522 */     a(paramaqu, BlockList.bf.instance(), 1, 5, 1, parambjb);
-/*  82:523 */     a(paramaqu, BlockList.U.a(bbg.a.a()), 1, 6, 1, parambjb);
-/*  83:524 */     a(paramaqu, BlockList.bf.instance(), 1, 5, 2, parambjb);
-/*  84:525 */     a(paramaqu, BlockList.bf.instance(), 1, 4, 3, parambjb);
-/*  85:526 */     a(paramaqu, BlockList.U.a(bbg.a.a()), 1, 5, 3, parambjb);
-/*  86:527 */     a(paramaqu, BlockList.bf.instance(), 2, 4, 3, parambjb);
-/*  87:528 */     a(paramaqu, BlockList.bf.instance(), 3, 3, 3, parambjb);
-/*  88:529 */     a(paramaqu, BlockList.U.a(bbg.a.a()), 3, 4, 3, parambjb);
-/*  89:530 */     a(paramaqu, BlockList.bf.instance(), 3, 3, 2, parambjb);
-/*  90:531 */     a(paramaqu, BlockList.bf.instance(), 3, 2, 1, parambjb);
-/*  91:532 */     a(paramaqu, BlockList.U.a(bbg.a.a()), 3, 3, 1, parambjb);
-/*  92:533 */     a(paramaqu, BlockList.bf.instance(), 2, 2, 1, parambjb);
-/*  93:534 */     a(paramaqu, BlockList.bf.instance(), 1, 1, 1, parambjb);
-/*  94:535 */     a(paramaqu, BlockList.U.a(bbg.a.a()), 1, 2, 1, parambjb);
-/*  95:536 */     a(paramaqu, BlockList.bf.instance(), 1, 1, 2, parambjb);
-/*  96:537 */     a(paramaqu, BlockList.U.a(bbg.a.a()), 1, 1, 3, parambjb);
+/*  80:521 */     a(paramaqu, BlockList.stoneBrick.instance(), 2, 6, 1, parambjb);
+/*  81:522 */     a(paramaqu, BlockList.stoneBrick.instance(), 1, 5, 1, parambjb);
+/*  82:523 */     a(paramaqu, BlockList.U.instance(bbg.a.a()), 1, 6, 1, parambjb);
+/*  83:524 */     a(paramaqu, BlockList.stoneBrick.instance(), 1, 5, 2, parambjb);
+/*  84:525 */     a(paramaqu, BlockList.stoneBrick.instance(), 1, 4, 3, parambjb);
+/*  85:526 */     a(paramaqu, BlockList.U.instance(bbg.a.a()), 1, 5, 3, parambjb);
+/*  86:527 */     a(paramaqu, BlockList.stoneBrick.instance(), 2, 4, 3, parambjb);
+/*  87:528 */     a(paramaqu, BlockList.stoneBrick.instance(), 3, 3, 3, parambjb);
+/*  88:529 */     a(paramaqu, BlockList.U.instance(bbg.a.a()), 3, 4, 3, parambjb);
+/*  89:530 */     a(paramaqu, BlockList.stoneBrick.instance(), 3, 3, 2, parambjb);
+/*  90:531 */     a(paramaqu, BlockList.stoneBrick.instance(), 3, 2, 1, parambjb);
+/*  91:532 */     a(paramaqu, BlockList.U.instance(bbg.a.a()), 3, 3, 1, parambjb);
+/*  92:533 */     a(paramaqu, BlockList.stoneBrick.instance(), 2, 2, 1, parambjb);
+/*  93:534 */     a(paramaqu, BlockList.stoneBrick.instance(), 1, 1, 1, parambjb);
+/*  94:535 */     a(paramaqu, BlockList.U.instance(bbg.a.a()), 1, 2, 1, parambjb);
+/*  95:536 */     a(paramaqu, BlockList.stoneBrick.instance(), 1, 1, 2, parambjb);
+/*  96:537 */     a(paramaqu, BlockList.U.instance(bbg.a.a()), 1, 1, 3, parambjb);
 /*  97:    */     
 /*  98:539 */     return true;
 /*  99:    */   }

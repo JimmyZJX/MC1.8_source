@@ -321,7 +321,7 @@ package net.minecraft.src;
 /* 320:    */     }
 /* 321:    */   }
 /* 322:    */   
-/* 323:    */   public Block a(int paramInt)
+/* 323:    */   public Block instance(int paramInt)
 /* 324:    */   {
 /* 325:316 */     return instance().a(level, Integer.valueOf(paramInt));
 /* 326:    */   }

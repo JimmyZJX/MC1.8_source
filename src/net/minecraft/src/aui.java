@@ -177,7 +177,7 @@ package net.minecraft.src;
 /* 176:201 */     return ((Integer)paramaqu.getBlock(paramdt).getProperty(a)).intValue();
 /* 177:    */   }
 /* 178:    */   
-/* 179:    */   public Block a(int paramInt)
+/* 179:    */   public Block instance(int paramInt)
 /* 180:    */   {
 /* 181:206 */     return instance().a(a, Integer.valueOf(paramInt));
 /* 182:    */   }

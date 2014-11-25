@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*  4:   */ public class ItemAxe
 /*  5:   */   extends ItemTool
 /*  6:   */ {
-/*  7:11 */   private static final Set<ProtoBlock> blocksEffectiveAgainst = Sets.newHashSet(new ProtoBlock[] { BlockList.planks, BlockList.bookshelf, BlockList.log, BlockList.log2, BlockList.ae, BlockList.pumpkin, BlockList.aZ, BlockList.bk, BlockList.au });
+/*  7:11 */   private static final Set<ProtoBlock> blocksEffectiveAgainst = Sets.newHashSet(new ProtoBlock[] { BlockList.planks, BlockList.bookshelf, BlockList.log, BlockList.log2, BlockList.chest, BlockList.pumpkin, BlockList.aZ, BlockList.bk, BlockList.au });
 /*  8:   */   
 /*  9:   */   protected ItemAxe(EnumToolMaterial material)
 /* 10:   */   {

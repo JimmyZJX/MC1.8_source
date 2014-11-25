@@ -10,13 +10,13 @@ package net.minecraft.src;
 /*    9:     */     {
 /*   10:1600 */       float f = paramRandom.nextFloat();
 /*   11:1601 */       if (f < 0.2F) {
-/*   12:1602 */         this.a = BlockList.bf.a(bbc.N);
+/*   12:1602 */         this.a = BlockList.stoneBrick.instance(bbc.N);
 /*   13:1603 */       } else if (f < 0.5F) {
-/*   14:1604 */         this.a = BlockList.bf.a(bbc.M);
+/*   14:1604 */         this.a = BlockList.stoneBrick.instance(bbc.M);
 /*   15:1605 */       } else if (f < 0.55F) {
-/*   16:1606 */         this.a = BlockList.monsterEgg.a(EnumMonsterEggVariants.c.a());
+/*   16:1606 */         this.a = BlockList.monsterEgg.instance(EnumMonsterEggVariants.c.a());
 /*   17:     */       } else {
-/*   18:1608 */         this.a = BlockList.bf.instance();
+/*   18:1608 */         this.a = BlockList.stoneBrick.instance();
 /*   19:     */       }
 /*   20:     */     }
 /*   21:     */     else

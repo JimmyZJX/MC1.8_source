@@ -30,7 +30,7 @@ package net.minecraft.src;
 /* 29:38 */     return ((EnumDyeColor)parambec.getProperty(a)).e();
 /* 30:   */   }
 /* 31:   */   
-/* 32:   */   public Block a(int paramInt)
+/* 32:   */   public Block instance(int paramInt)
 /* 33:   */   {
 /* 34:43 */     return instance().a(a, EnumDyeColor.b(paramInt));
 /* 35:   */   }

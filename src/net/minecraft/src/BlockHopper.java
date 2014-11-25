@@ -150,7 +150,7 @@ package net.minecraft.src;
 /* 149:173 */     return aql.b;
 /* 150:    */   }
 /* 151:    */   
-/* 152:    */   public Block a(int paramInt)
+/* 152:    */   public Block instance(int paramInt)
 /* 153:    */   {
 /* 154:178 */     return instance().a(a, b(paramInt)).a(b, Boolean.valueOf(f(paramInt)));
 /* 155:    */   }

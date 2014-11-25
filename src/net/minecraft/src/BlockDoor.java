@@ -243,7 +243,7 @@ package net.minecraft.src;
 /* 242:    */   
 /* 243:    */   private Item j()
 /* 244:    */   {
-/* 245:263 */     if (this == BlockList.aA) {
+/* 245:263 */     if (this == BlockList.ironDoor) {
 /* 246:264 */       return ItemList.aB;
 /* 247:    */     }
 /* 248:265 */     if (this == BlockList.ap) {
@@ -297,7 +297,7 @@ package net.minecraft.src;
 /* 296:311 */     return parambec;
 /* 297:    */   }
 /* 298:    */   
-/* 299:    */   public Block a(int paramInt)
+/* 299:    */   public Block instance(int paramInt)
 /* 300:    */   {
 /* 301:316 */     if ((paramInt & 0x8) > 0) {
 /* 302:317 */       return instance().a(O, avg.a).a(M, (paramInt & 0x1) > 0 ? avh.b : avh.a).a(N, Boolean.valueOf((paramInt & 0x2) > 0));

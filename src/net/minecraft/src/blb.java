@@ -2,9 +2,9 @@ package net.minecraft.src;
 /*   1:    */ public abstract class blb
 /*   2:    */   extends bms
 /*   3:    */ {
-/*   4: 37 */   protected static final Block a = BlockList.cI.a(azi.b);
-/*   5: 38 */   protected static final Block b = BlockList.cI.a(azi.M);
-/*   6: 39 */   protected static final Block c = BlockList.cI.a(azi.N);
+/*   4: 37 */   protected static final Block a = BlockList.cI.instance(azi.b);
+/*   5: 38 */   protected static final Block b = BlockList.cI.instance(azi.M);
+/*   6: 39 */   protected static final Block c = BlockList.cI.instance(azi.N);
 /*   7: 41 */   protected static final Block d = b;
 /*   8: 43 */   protected static final Block e = BlockList.seaLantern.instance();
 /*   9: 46 */   protected static final Block f = BlockList.water.instance();

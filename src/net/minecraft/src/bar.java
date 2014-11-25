@@ -51,7 +51,7 @@ package net.minecraft.src;
 /* 50:62 */     return false;
 /* 51:   */   }
 /* 52:   */   
-/* 53:   */   public Block a(int paramInt)
+/* 53:   */   public Block instance(int paramInt)
 /* 54:   */   {
 /* 55:67 */     return instance().a(a, EnumDyeColor.b(paramInt));
 /* 56:   */   }

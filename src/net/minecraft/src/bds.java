@@ -182,7 +182,7 @@ package net.minecraft.src;
 /* 181:200 */     return Item.fromProtoBlock(BlockList.J);
 /* 182:    */   }
 /* 183:    */   
-/* 184:    */   public Block a(int paramInt)
+/* 184:    */   public Block instance(int paramInt)
 /* 185:    */   {
 /* 186:205 */     return instance().a(a, b(paramInt)).a(b, (paramInt & 0x8) > 0 ? bdu.b : bdu.a);
 /* 187:    */   }

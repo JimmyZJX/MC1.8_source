@@ -568,7 +568,7 @@ package net.minecraft.src;
 /*  567:     */         }
 /*  568:     */       }
 /*  569: 617 */       localObject4 = this.k.getBlock((BlockPosition)localObject2).getProto();
-/*  570: 618 */       if ((localObject3 != null) && (((localObject4 instanceof auj)) || ((localObject4 instanceof avr)) || ((localObject4 instanceof bai)) || ((localObject4 instanceof baj)))) {
+/*  570: 618 */       if ((localObject3 != null) && (((localObject4 instanceof BlockChest)) || ((localObject4 instanceof avr)) || ((localObject4 instanceof bai)) || ((localObject4 instanceof baj)))) {
 /*  571: 619 */         cno.a.a((bcm)localObject3, paramFloat, ((qi)localObject1).c());
 /*  572:     */       }
 /*  573:     */     }
@@ -1669,7 +1669,7 @@ package net.minecraft.src;
 /* 1668:1972 */         double d5 = localdt.getY() - d2;
 /* 1669:1973 */         double d6 = localdt.getZ() - d3;
 /* 1670:1974 */         ProtoBlock localatr = this.k.getBlock(localdt).getProto();
-/* 1671:1975 */         if ((!(localatr instanceof auj)) && (!(localatr instanceof avr)) && (!(localatr instanceof bai)) && (!(localatr instanceof baj))) {
+/* 1671:1975 */         if ((!(localatr instanceof BlockChest)) && (!(localatr instanceof avr)) && (!(localatr instanceof bai)) && (!(localatr instanceof baj))) {
 /* 1672:1978 */           if (d4 * d4 + d5 * d5 + d6 * d6 > 1024.0D)
 /* 1673:     */           {
 /* 1674:1980 */             localIterator.remove();
@@ -2001,7 +2001,7 @@ package net.minecraft.src;
 /* 2000:2307 */       if (localatr.getMaterial() != Material.air) {
 /* 2001:2308 */         this.h.U().a(new cxy(new oa(localatr.H.a()), (localatr.H.d() + 1.0F) / 2.0F, localatr.H.e() * 0.8F, paramdt.getX() + 0.5F, paramdt.getY() + 0.5F, paramdt.getZ() + 0.5F));
 /* 2002:     */       }
-/* 2003:2310 */       this.h.j.a(paramdt, localatr.a(paramInt2 >> 12 & 0xFF));
+/* 2003:2310 */       this.h.j.a(paramdt, localatr.instance(paramInt2 >> 12 & 0xFF));
 /* 2004:2311 */       break;
 /* 2005:     */     case 2004: 
 /* 2006:2313 */       for (i6 = 0; i6 < 20; i6++)

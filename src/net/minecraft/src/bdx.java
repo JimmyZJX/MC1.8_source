@@ -191,7 +191,7 @@ package net.minecraft.src;
 /* 190:220 */     return null;
 /* 191:    */   }
 /* 192:    */   
-/* 193:    */   public Block a(int paramInt)
+/* 193:    */   public Block instance(int paramInt)
 /* 194:    */   {
 /* 195:225 */     return instance().a(a, bds.b(paramInt)).a(b, (paramInt & 0x8) > 0 ? bdu.b : bdu.a);
 /* 196:    */   }

@@ -44,9 +44,9 @@ package net.minecraft.src;
 /*   43:1436 */       a(paramaqu, parambjb, 1, k + 1, n, 3, m - 1, n, BlockList.air.instance(), BlockList.air.instance(), false);
 /*   44:1437 */       if (j <= 6)
 /*   45:     */       {
-/*   46:1438 */         a(paramaqu, BlockList.bA.a(i), 1, k + 1, n, parambjb);
-/*   47:1439 */         a(paramaqu, BlockList.bA.a(i), 2, k + 1, n, parambjb);
-/*   48:1440 */         a(paramaqu, BlockList.bA.a(i), 3, k + 1, n, parambjb);
+/*   46:1438 */         a(paramaqu, BlockList.bA.instance(i), 1, k + 1, n, parambjb);
+/*   47:1439 */         a(paramaqu, BlockList.bA.instance(i), 2, k + 1, n, parambjb);
+/*   48:1440 */         a(paramaqu, BlockList.bA.instance(i), 3, k + 1, n, parambjb);
 /*   49:     */       }
 /*   50:1443 */       a(paramaqu, parambjb, 0, m, n, 4, m, n, BlockList.netherBrick.instance(), BlockList.netherBrick.instance(), false);
 /*   51:     */       

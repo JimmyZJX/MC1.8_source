@@ -24,7 +24,7 @@ package net.minecraft.src;
 /*  23:    */     }
 /*  24:    */   }
 /*  25:    */   
-/*  26:    */   public Block a(int paramInt)
+/*  26:    */   public Block instance(int paramInt)
 /*  27:    */   {
 /*  28: 41 */     return instance().a(l(), EnumFlowerVariant.a(j(), paramInt));
 /*  29:    */   }

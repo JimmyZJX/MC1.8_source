@@ -31,7 +31,7 @@ package net.minecraft.src;
 /* 30:38 */     return new bed(this, new IBlockData[] { a });
 /* 31:   */   }
 /* 32:   */   
-/* 33:   */   public Block a(int paramInt)
+/* 33:   */   public Block instance(int paramInt)
 /* 34:   */   {
 /* 35:43 */     return instance().a(a, azj.a(paramInt));
 /* 36:   */   }

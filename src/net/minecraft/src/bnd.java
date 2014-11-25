@@ -42,7 +42,7 @@ package net.minecraft.src;
 /*   41:1877 */     a(paramaqu, BlockList.fence.instance(), 1, 2, 0, parambjb);
 /*   42:     */     
 /*   43:     */ 
-/*   44:1880 */     a(paramaqu, BlockList.wool.a(EnumDyeColor.WHITE.b()), 1, 3, 0, parambjb);
+/*   44:1880 */     a(paramaqu, BlockList.wool.instance(EnumDyeColor.WHITE.b()), 1, 3, 0, parambjb);
 /*   45:     */     
 /*   46:     */ 
 /*   47:1883 */     int i = (this.m == EnumDirection.EAST) || (this.m == EnumDirection.NORTH) ? 1 : 0;

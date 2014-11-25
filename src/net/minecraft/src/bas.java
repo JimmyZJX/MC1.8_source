@@ -30,7 +30,7 @@ package net.minecraft.src;
 /* 29:40 */     return aql.d;
 /* 30:   */   }
 /* 31:   */   
-/* 32:   */   public Block a(int paramInt)
+/* 32:   */   public Block instance(int paramInt)
 /* 33:   */   {
 /* 34:45 */     return instance().a(a, EnumDyeColor.b(paramInt));
 /* 35:   */   }

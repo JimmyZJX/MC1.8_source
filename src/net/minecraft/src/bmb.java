@@ -45,45 +45,45 @@ package net.minecraft.src;
 /*   44:1492 */     return new bmb(paramInt4, paramRandom, localbjb, paramej);
 /*   45:     */   }
 /*   46:     */   
-/*   47:     */   public boolean a(World paramaqu, Random paramRandom, bjb parambjb)
+/*   47:     */   public boolean a(World world, Random paramRandom, bjb parambjb)
 /*   48:     */   {
-/*   49:1498 */     a(paramaqu, parambjb, 0, 0, 0, 10, 7, 15, false, paramRandom, blr.c());
+/*   49:1498 */     a(world, parambjb, 0, 0, 0, 10, 7, 15, false, paramRandom, blr.c());
 /*   50:     */     
-/*   51:1500 */     a(paramaqu, paramRandom, parambjb, bml.c, 4, 1, 0);
+/*   51:1500 */     a(world, paramRandom, parambjb, bml.c, 4, 1, 0);
 /*   52:     */     
 /*   53:     */ 
 /*   54:1503 */     int i = 6;
-/*   55:1504 */     a(paramaqu, parambjb, 1, i, 1, 1, i, 14, false, paramRandom, blr.c());
-/*   56:1505 */     a(paramaqu, parambjb, 9, i, 1, 9, i, 14, false, paramRandom, blr.c());
-/*   57:1506 */     a(paramaqu, parambjb, 2, i, 1, 8, i, 2, false, paramRandom, blr.c());
-/*   58:1507 */     a(paramaqu, parambjb, 2, i, 14, 8, i, 14, false, paramRandom, blr.c());
+/*   55:1504 */     a(world, parambjb, 1, i, 1, 1, i, 14, false, paramRandom, blr.c());
+/*   56:1505 */     a(world, parambjb, 9, i, 1, 9, i, 14, false, paramRandom, blr.c());
+/*   57:1506 */     a(world, parambjb, 2, i, 1, 8, i, 2, false, paramRandom, blr.c());
+/*   58:1507 */     a(world, parambjb, 2, i, 14, 8, i, 14, false, paramRandom, blr.c());
 /*   59:     */     
 /*   60:     */ 
-/*   61:1510 */     a(paramaqu, parambjb, 1, 1, 1, 2, 1, 4, false, paramRandom, blr.c());
-/*   62:1511 */     a(paramaqu, parambjb, 8, 1, 1, 9, 1, 4, false, paramRandom, blr.c());
-/*   63:1512 */     a(paramaqu, parambjb, 1, 1, 1, 1, 1, 3, BlockList.flowingLava.instance(), BlockList.flowingLava.instance(), false);
-/*   64:1513 */     a(paramaqu, parambjb, 9, 1, 1, 9, 1, 3, BlockList.flowingLava.instance(), BlockList.flowingLava.instance(), false);
+/*   61:1510 */     a(world, parambjb, 1, 1, 1, 2, 1, 4, false, paramRandom, blr.c());
+/*   62:1511 */     a(world, parambjb, 8, 1, 1, 9, 1, 4, false, paramRandom, blr.c());
+/*   63:1512 */     a(world, parambjb, 1, 1, 1, 1, 1, 3, BlockList.flowingLava.instance(), BlockList.flowingLava.instance(), false);
+/*   64:1513 */     a(world, parambjb, 9, 1, 1, 9, 1, 3, BlockList.flowingLava.instance(), BlockList.flowingLava.instance(), false);
 /*   65:     */     
 /*   66:     */ 
-/*   67:1516 */     a(paramaqu, parambjb, 3, 1, 8, 7, 1, 12, false, paramRandom, blr.c());
-/*   68:1517 */     a(paramaqu, parambjb, 4, 1, 9, 6, 1, 11, BlockList.flowingLava.instance(), BlockList.flowingLava.instance(), false);
+/*   67:1516 */     a(world, parambjb, 3, 1, 8, 7, 1, 12, false, paramRandom, blr.c());
+/*   68:1517 */     a(world, parambjb, 4, 1, 9, 6, 1, 11, BlockList.flowingLava.instance(), BlockList.flowingLava.instance(), false);
 /*   69:1520 */     for (int j = 3; j < 14; j += 2)
 /*   70:     */     {
-/*   71:1521 */       a(paramaqu, parambjb, 0, 3, j, 0, 4, j, BlockList.bi.instance(), BlockList.bi.instance(), false);
-/*   72:1522 */       a(paramaqu, parambjb, 10, 3, j, 10, 4, j, BlockList.bi.instance(), BlockList.bi.instance(), false);
+/*   71:1521 */       a(world, parambjb, 0, 3, j, 0, 4, j, BlockList.ironBars.instance(), BlockList.ironBars.instance(), false);
+/*   72:1522 */       a(world, parambjb, 10, 3, j, 10, 4, j, BlockList.ironBars.instance(), BlockList.ironBars.instance(), false);
 /*   73:     */     }
 /*   74:1524 */     for (int j = 2; j < 9; j += 2) {
-/*   75:1525 */       a(paramaqu, parambjb, j, 3, 15, j, 4, 15, BlockList.bi.instance(), BlockList.bi.instance(), false);
+/*   75:1525 */       a(world, parambjb, j, 3, 15, j, 4, 15, BlockList.ironBars.instance(), BlockList.ironBars.instance(), false);
 /*   76:     */     }
 /*   77:1529 */     int j = a(BlockList.bv, 3);
-/*   78:1530 */     a(paramaqu, parambjb, 4, 1, 5, 6, 1, 7, false, paramRandom, blr.c());
-/*   79:1531 */     a(paramaqu, parambjb, 4, 2, 6, 6, 2, 7, false, paramRandom, blr.c());
-/*   80:1532 */     a(paramaqu, parambjb, 4, 3, 7, 6, 3, 7, false, paramRandom, blr.c());
+/*   78:1530 */     a(world, parambjb, 4, 1, 5, 6, 1, 7, false, paramRandom, blr.c());
+/*   79:1531 */     a(world, parambjb, 4, 2, 6, 6, 2, 7, false, paramRandom, blr.c());
+/*   80:1532 */     a(world, parambjb, 4, 3, 7, 6, 3, 7, false, paramRandom, blr.c());
 /*   81:1533 */     for (int k = 4; k <= 6; k++)
 /*   82:     */     {
-/*   83:1534 */       a(paramaqu, BlockList.bv.a(j), k, 1, 4, parambjb);
-/*   84:1535 */       a(paramaqu, BlockList.bv.a(j), k, 2, 5, parambjb);
-/*   85:1536 */       a(paramaqu, BlockList.bv.a(j), k, 3, 6, parambjb);
+/*   83:1534 */       a(world, BlockList.bv.instance(j), k, 1, 4, parambjb);
+/*   84:1535 */       a(world, BlockList.bv.instance(j), k, 2, 5, parambjb);
+/*   85:1536 */       a(world, BlockList.bv.instance(j), k, 3, 6, parambjb);
 /*   86:     */     }
 /*   87:1539 */     int k = EnumDirection.NORTH.b();
 /*   88:1540 */     int m = EnumDirection.SOUTH.b();
@@ -109,18 +109,18 @@ package net.minecraft.src;
 /*  108:1560 */         i1 = EnumDirection.NORTH.b();
 /*  109:     */       }
 /*  110:     */     }
-/*  111:1565 */     a(paramaqu, BlockList.endPortalFrame.a(k).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 4, 3, 8, parambjb);
-/*  112:1566 */     a(paramaqu, BlockList.endPortalFrame.a(k).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 5, 3, 8, parambjb);
-/*  113:1567 */     a(paramaqu, BlockList.endPortalFrame.a(k).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 6, 3, 8, parambjb);
-/*  114:1568 */     a(paramaqu, BlockList.endPortalFrame.a(m).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 4, 3, 12, parambjb);
-/*  115:1569 */     a(paramaqu, BlockList.endPortalFrame.a(m).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 5, 3, 12, parambjb);
-/*  116:1570 */     a(paramaqu, BlockList.endPortalFrame.a(m).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 6, 3, 12, parambjb);
-/*  117:1571 */     a(paramaqu, BlockList.endPortalFrame.a(n).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 3, 3, 9, parambjb);
-/*  118:1572 */     a(paramaqu, BlockList.endPortalFrame.a(n).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 3, 3, 10, parambjb);
-/*  119:1573 */     a(paramaqu, BlockList.endPortalFrame.a(n).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 3, 3, 11, parambjb);
-/*  120:1574 */     a(paramaqu, BlockList.endPortalFrame.a(i1).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 7, 3, 9, parambjb);
-/*  121:1575 */     a(paramaqu, BlockList.endPortalFrame.a(i1).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 7, 3, 10, parambjb);
-/*  122:1576 */     a(paramaqu, BlockList.endPortalFrame.a(i1).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 7, 3, 11, parambjb);
+/*  111:1565 */     a(world, BlockList.endPortalFrame.instance(k).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 4, 3, 8, parambjb);
+/*  112:1566 */     a(world, BlockList.endPortalFrame.instance(k).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 5, 3, 8, parambjb);
+/*  113:1567 */     a(world, BlockList.endPortalFrame.instance(k).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 6, 3, 8, parambjb);
+/*  114:1568 */     a(world, BlockList.endPortalFrame.instance(m).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 4, 3, 12, parambjb);
+/*  115:1569 */     a(world, BlockList.endPortalFrame.instance(m).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 5, 3, 12, parambjb);
+/*  116:1570 */     a(world, BlockList.endPortalFrame.instance(m).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 6, 3, 12, parambjb);
+/*  117:1571 */     a(world, BlockList.endPortalFrame.instance(n).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 3, 3, 9, parambjb);
+/*  118:1572 */     a(world, BlockList.endPortalFrame.instance(n).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 3, 3, 10, parambjb);
+/*  119:1573 */     a(world, BlockList.endPortalFrame.instance(n).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 3, 3, 11, parambjb);
+/*  120:1574 */     a(world, BlockList.endPortalFrame.instance(i1).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 7, 3, 9, parambjb);
+/*  121:1575 */     a(world, BlockList.endPortalFrame.instance(i1).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 7, 3, 10, parambjb);
+/*  122:1576 */     a(world, BlockList.endPortalFrame.instance(i1).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 7, 3, 11, parambjb);
 /*  123:1578 */     if (!this.a)
 /*  124:     */     {
 /*  125:1579 */       i = d(3);
@@ -128,9 +128,9 @@ package net.minecraft.src;
 /*  127:1581 */       if (parambjb.b(localdt))
 /*  128:     */       {
 /*  129:1582 */         this.a = true;
-/*  130:1583 */         paramaqu.setBlock(localdt, BlockList.mobSpawner.instance(), 2);
+/*  130:1583 */         world.setBlock(localdt, BlockList.mobSpawner.instance(), 2);
 /*  131:     */         
-/*  132:1585 */         bcm localbcm = paramaqu.s(localdt);
+/*  132:1585 */         bcm localbcm = world.s(localdt);
 /*  133:1586 */         if ((localbcm instanceof bdg)) {
 /*  134:1587 */           ((bdg)localbcm).b().a("Silverfish");
 /*  135:     */         }

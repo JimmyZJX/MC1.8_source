@@ -108,7 +108,7 @@ package net.minecraft.src;
 /*  107:     */ 
 /*  108:     */ 
 /*  109:     */ 
-/*  110: 116 */     a(new ItemStack(BlockList.bZ, 6, EnumCobblestoneVariant.b.a()), new Object[] { "###", "###", Character.valueOf('#'), BlockList.Y });
+/*  110: 116 */     a(new ItemStack(BlockList.bZ, 6, EnumCobblestoneVariant.b.a()), new Object[] { "###", "###", Character.valueOf('#'), BlockList.mossyCobblestone });
 /*  111:     */     
 /*  112:     */ 
 /*  113:     */ 
@@ -286,7 +286,7 @@ package net.minecraft.src;
 /*  285:     */ 
 /*  286:     */ 
 /*  287:     */ 
-/*  288: 294 */     a(new ItemStack(BlockList.U, 6, bbg.f.a()), new Object[] { "###", Character.valueOf('#'), BlockList.bf });
+/*  288: 294 */     a(new ItemStack(BlockList.U, 6, bbg.f.a()), new Object[] { "###", Character.valueOf('#'), BlockList.stoneBrick });
 /*  289:     */     
 /*  290:     */ 
 /*  291:     */ 
@@ -589,7 +589,7 @@ package net.minecraft.src;
 /*  588:     */ 
 /*  589:     */ 
 /*  590:     */ 
-/*  591: 597 */     a(new ItemStack(ItemList.aN, 1), new Object[] { "A", "B", Character.valueOf('A'), BlockList.ae, Character.valueOf('B'), ItemList.az });
+/*  591: 597 */     a(new ItemStack(ItemList.aN, 1), new Object[] { "A", "B", Character.valueOf('A'), BlockList.chest, Character.valueOf('B'), ItemList.az });
 /*  592:     */     
 /*  593:     */ 
 /*  594:     */ 
@@ -734,7 +734,7 @@ package net.minecraft.src;
 /*  733:     */ 
 /*  734:     */ 
 /*  735:     */ 
-/*  736: 742 */     a(new ItemStack(BlockList.bv, 4), new Object[] { "#  ", "## ", "###", Character.valueOf('#'), BlockList.bf });
+/*  736: 742 */     a(new ItemStack(BlockList.bv, 4), new Object[] { "#  ", "## ", "###", Character.valueOf('#'), BlockList.stoneBrick });
 /*  737:     */     
 /*  738:     */ 
 /*  739:     */ 
@@ -900,7 +900,7 @@ package net.minecraft.src;
 /*  899:     */ 
 /*  900:     */ 
 /*  901:     */ 
-/*  902: 908 */     a(new ItemStack(BlockList.aG, 1), new Object[] { "#", Character.valueOf('#'), new ItemStack(BlockList.stone, 1, EnumStoneVariants.STONE.a()) });
+/*  902: 908 */     a(new ItemStack(BlockList.stoneButton, 1), new Object[] { "#", Character.valueOf('#'), new ItemStack(BlockList.stone, 1, EnumStoneVariants.STONE.a()) });
 /*  903:     */     
 /*  904:     */ 
 /*  905:     */ 
@@ -1035,7 +1035,7 @@ package net.minecraft.src;
 /* 1034:     */ 
 /* 1035:     */ 
 /* 1036:     */ 
-/* 1037:1043 */     a(new ItemStack(BlockList.cp), new Object[] { "I I", "ICI", " I ", Character.valueOf('I'), ItemList.ironIngot, Character.valueOf('C'), BlockList.ae });
+/* 1037:1043 */     a(new ItemStack(BlockList.cp), new Object[] { "I I", "ICI", " I ", Character.valueOf('I'), ItemList.ironIngot, Character.valueOf('C'), BlockList.chest });
 /* 1038:     */     
 /* 1039:     */ 
 /* 1040:     */ 

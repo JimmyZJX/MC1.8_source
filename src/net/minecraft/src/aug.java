@@ -116,7 +116,7 @@ package net.minecraft.src;
 /* 115:134 */     return aql.c;
 /* 116:    */   }
 /* 117:    */   
-/* 118:    */   public Block a(int paramInt)
+/* 118:    */   public Block instance(int paramInt)
 /* 119:    */   {
 /* 120:139 */     return instance().a(a, Integer.valueOf(paramInt));
 /* 121:    */   }

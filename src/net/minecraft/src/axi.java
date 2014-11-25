@@ -200,7 +200,7 @@ package net.minecraft.src;
 /* 199:215 */     return true;
 /* 200:    */   }
 /* 201:    */   
-/* 202:    */   public Block a(int paramInt)
+/* 202:    */   public Block instance(int paramInt)
 /* 203:    */   {
 /* 204:220 */     return instance().a(a, axk.a(paramInt & 0x7)).a(b, Boolean.valueOf((paramInt & 0x8) > 0));
 /* 205:    */   }

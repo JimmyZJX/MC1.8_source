@@ -122,7 +122,7 @@ package net.minecraft.src;
 /* 121:138 */     return true;
 /* 122:    */   }
 /* 123:    */   
-/* 124:    */   public Block a(int paramInt)
+/* 124:    */   public Block instance(int paramInt)
 /* 125:    */   {
 /* 126:143 */     return instance().a(N, EnumDirection.b(paramInt)).a(a, Boolean.valueOf((paramInt & 0x4) != 0)).a(b, Boolean.valueOf((paramInt & 0x8) != 0));
 /* 127:    */   }

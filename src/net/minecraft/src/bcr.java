@@ -221,7 +221,7 @@ package net.minecraft.src;
 /* 220:    */     }
 /* 221:239 */     ProtoBlock localatr = this.world.getBlock(paramdt).getProto();
 /* 222:    */     
-/* 223:241 */     return ((localatr instanceof auj)) && (((auj)localatr).b == n());
+/* 223:241 */     return ((localatr instanceof BlockChest)) && (((BlockChest)localatr).b == n());
 /* 224:    */   }
 /* 225:    */   
 /* 226:    */   public void c()
@@ -324,7 +324,7 @@ package net.minecraft.src;
 /* 323:    */   public void c(EntityPlayer paramahd)
 /* 324:    */   {
 /* 325:340 */     if ((!paramahd.v()) && 
-/* 326:341 */       ((w() instanceof auj)))
+/* 326:341 */       ((w() instanceof BlockChest)))
 /* 327:    */     {
 /* 328:342 */       this.l -= 1;
 /* 329:343 */       this.world.c(this.pos, w(), 1, this.l);
@@ -348,8 +348,8 @@ package net.minecraft.src;
 /* 347:    */   public int n()
 /* 348:    */   {
 /* 349:363 */     if (this.o == -1) {
-/* 350:364 */       if ((this.world != null) && ((w() instanceof auj))) {
-/* 351:365 */         this.o = ((auj)w()).b;
+/* 350:364 */       if ((this.world != null) && ((w() instanceof BlockChest))) {
+/* 351:365 */         this.o = ((BlockChest)w()).b;
 /* 352:    */       } else {
 /* 353:367 */         return 0;
 /* 354:    */       }

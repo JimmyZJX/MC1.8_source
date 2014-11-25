@@ -196,7 +196,7 @@ package net.minecraft.src;
 /* 195:220 */     return false;
 /* 196:    */   }
 /* 197:    */   
-/* 198:    */   public Block a(int paramInt)
+/* 198:    */   public Block instance(int paramInt)
 /* 199:    */   {
 /* 200:225 */     return instance().a(a, Boolean.valueOf((paramInt & 0x1) > 0)).a(b, Boolean.valueOf((paramInt & 0x2) > 0)).a(M, Boolean.valueOf((paramInt & 0x4) > 0)).a(N, Boolean.valueOf((paramInt & 0x8) > 0));
 /* 201:    */   }

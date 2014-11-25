@@ -72,11 +72,11 @@ package net.minecraft.src;
 /*  71:852 */     a(paramaqu, BlockList.cobblestone.instance(), 2, 1, 7, parambjb);
 /*  72:853 */     a(paramaqu, BlockList.cobblestone.instance(), 3, 1, 6, parambjb);
 /*  73:854 */     a(paramaqu, BlockList.cobblestone.instance(), 3, 1, 7, parambjb);
-/*  74:855 */     a(paramaqu, BlockList.aw.a(a(BlockList.aw, 3)), 1, 1, 5, parambjb);
-/*  75:856 */     a(paramaqu, BlockList.aw.a(a(BlockList.aw, 3)), 2, 1, 6, parambjb);
-/*  76:857 */     a(paramaqu, BlockList.aw.a(a(BlockList.aw, 3)), 3, 1, 5, parambjb);
-/*  77:858 */     a(paramaqu, BlockList.aw.a(a(BlockList.aw, 1)), 1, 2, 7, parambjb);
-/*  78:859 */     a(paramaqu, BlockList.aw.a(a(BlockList.aw, 0)), 3, 2, 7, parambjb);
+/*  74:855 */     a(paramaqu, BlockList.aw.instance(a(BlockList.aw, 3)), 1, 1, 5, parambjb);
+/*  75:856 */     a(paramaqu, BlockList.aw.instance(a(BlockList.aw, 3)), 2, 1, 6, parambjb);
+/*  76:857 */     a(paramaqu, BlockList.aw.instance(a(BlockList.aw, 3)), 3, 1, 5, parambjb);
+/*  77:858 */     a(paramaqu, BlockList.aw.instance(a(BlockList.aw, 1)), 1, 2, 7, parambjb);
+/*  78:859 */     a(paramaqu, BlockList.aw.instance(a(BlockList.aw, 0)), 3, 2, 7, parambjb);
 /*  79:    */     
 /*  80:    */ 
 /*  81:862 */     a(paramaqu, BlockList.bj.instance(), 0, 2, 2, parambjb);
@@ -104,13 +104,13 @@ package net.minecraft.src;
 /* 103:    */ 
 /* 104:885 */     int i = a(BlockList.au, 4);
 /* 105:886 */     for (int j = 1; j <= 9; j++) {
-/* 106:887 */       a(paramaqu, BlockList.au.a(i), 3, j, 3, parambjb);
+/* 106:887 */       a(paramaqu, BlockList.au.instance(i), 3, j, 3, parambjb);
 /* 107:    */     }
 /* 108:891 */     a(paramaqu, BlockList.air.instance(), 2, 1, 0, parambjb);
 /* 109:892 */     a(paramaqu, BlockList.air.instance(), 2, 2, 0, parambjb);
-/* 110:893 */     a(paramaqu, parambjb, paramRandom, 2, 1, 0, EnumDirection.b(a(BlockList.ao, 1)));
+/* 110:893 */     a(paramaqu, parambjb, paramRandom, 2, 1, 0, EnumDirection.b(a(BlockList.woodenDoor, 1)));
 /* 111:894 */     if ((a(paramaqu, 2, 0, -1, parambjb).getProto().getMaterial() == Material.air) && (a(paramaqu, 2, -1, -1, parambjb).getProto().getMaterial() != Material.air)) {
-/* 112:895 */       a(paramaqu, BlockList.aw.a(a(BlockList.aw, 3)), 2, 0, -1, parambjb);
+/* 112:895 */       a(paramaqu, BlockList.aw.instance(a(BlockList.aw, 3)), 2, 0, -1, parambjb);
 /* 113:    */     }
 /* 114:898 */     for (int j = 0; j < 9; j++) {
 /* 115:899 */       for (int k = 0; k < 5; k++)

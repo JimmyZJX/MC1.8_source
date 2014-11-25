@@ -167,7 +167,7 @@ package net.minecraft.src;
 /* 166:180 */     d(paramaqu, paramdt, parambec, paramRandom);
 /* 167:    */   }
 /* 168:    */   
-/* 169:    */   public Block a(int paramInt)
+/* 169:    */   public Block instance(int paramInt)
 /* 170:    */   {
 /* 171:185 */     return instance().a(a, EnumWoodVariant.fromIndex(paramInt & 0x7)).a(b, Integer.valueOf((paramInt & 0x8) >> 3));
 /* 172:    */   }

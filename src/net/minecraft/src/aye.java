@@ -69,7 +69,7 @@ package net.minecraft.src;
 /*  68: 84 */     return ItemList.by;
 /*  69:    */   }
 /*  70:    */   
-/*  71:    */   public Block a(int paramInt)
+/*  71:    */   public Block instance(int paramInt)
 /*  72:    */   {
 /*  73: 89 */     return instance().a(a, Integer.valueOf(paramInt));
 /*  74:    */   }

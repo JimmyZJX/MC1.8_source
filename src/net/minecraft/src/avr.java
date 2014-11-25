@@ -96,7 +96,7 @@ package net.minecraft.src;
 /*  95:    */     }
 /*  96:    */   }
 /*  97:    */   
-/*  98:    */   public Block a(int paramInt)
+/*  98:    */   public Block instance(int paramInt)
 /*  99:    */   {
 /* 100:125 */     EnumDirection localej = EnumDirection.a(paramInt);
 /* 101:126 */     if (localej.k() == EnumAxis.Y) {

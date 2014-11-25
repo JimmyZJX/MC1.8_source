@@ -51,7 +51,7 @@ package net.minecraft.src;
 /* 50:   */     }
 /* 51:61 */     Block localbec = paramaqu.getBlock(paramdt);
 /* 52:62 */     ProtoBlock localatr = localbec.getProto();
-/* 53:64 */     if (localatr == BlockList.ae)
+/* 53:64 */     if (localatr == BlockList.chest)
 /* 54:   */     {
 /* 55:65 */       bcm localbcm = paramaqu.s(paramdt);
 /* 56:66 */       if (((localbcm instanceof bcr)) && (((bcr)localbcm).l < 1)) {

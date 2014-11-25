@@ -471,8 +471,8 @@ package net.minecraft.src;
 /* 471:485 */       if ((localObject1 instanceof bcr))
 /* 472:    */       {
 /* 473:486 */         ProtoBlock localObject2 = paramaqu.getBlock(new BlockPosition(i, j, k)).getProto();
-/* 474:488 */         if ((localObject2 instanceof auj)) {
-/* 475:489 */           localObject1 = ((auj)localObject2).d(paramaqu, localdt);
+/* 474:488 */         if ((localObject2 instanceof BlockChest)) {
+/* 475:489 */           localObject1 = ((BlockChest)localObject2).d(paramaqu, localdt);
 /* 476:    */         }
 /* 477:    */       }
 /* 478:    */     }

@@ -40,7 +40,7 @@ package net.minecraft.src;
 /* 39:50 */     return ((avd)localbec.getProperty(a)).a();
 /* 40:   */   }
 /* 41:   */   
-/* 42:   */   public Block a(int paramInt)
+/* 42:   */   public Block instance(int paramInt)
 /* 43:   */   {
 /* 44:55 */     return instance().a(a, avd.a(paramInt));
 /* 45:   */   }

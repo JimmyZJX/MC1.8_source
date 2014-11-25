@@ -164,7 +164,7 @@ package net.minecraft.src;
 /* 163:188 */     g(paramaqu, paramdt, parambec);
 /* 164:    */   }
 /* 165:    */   
-/* 166:    */   public Block a(int paramInt)
+/* 166:    */   public Block instance(int paramInt)
 /* 167:    */   {
 /* 168:193 */     return instance().a(a, Integer.valueOf(paramInt));
 /* 169:    */   }

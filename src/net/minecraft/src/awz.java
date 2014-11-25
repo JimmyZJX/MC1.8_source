@@ -34,7 +34,7 @@ package net.minecraft.src;
 /* 33:46 */     return instance();
 /* 34:   */   }
 /* 35:   */   
-/* 36:   */   public Block a(int paramInt)
+/* 36:   */   public Block instance(int paramInt)
 /* 37:   */   {
 /* 38:51 */     return instance().a(a, axa.a(paramInt));
 /* 39:   */   }

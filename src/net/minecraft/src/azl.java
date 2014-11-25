@@ -62,7 +62,7 @@ package net.minecraft.src;
 /* 61:77 */     return MapColor.p;
 /* 62:   */   }
 /* 63:   */   
-/* 64:   */   public Block a(int paramInt)
+/* 64:   */   public Block instance(int paramInt)
 /* 65:   */   {
 /* 66:82 */     return instance().a(a, azn.a(paramInt));
 /* 67:   */   }

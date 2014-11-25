@@ -110,7 +110,7 @@ package net.minecraft.src;
 /* 110:167 */     return 3;
 /* 111:    */   }
 /* 112:    */   
-/* 113:    */   public Block a(int paramInt)
+/* 113:    */   public Block instance(int paramInt)
 /* 114:    */   {
 /* 115:172 */     return instance().a(a, Boolean.valueOf(paramInt > 0));
 /* 116:    */   }

@@ -131,10 +131,10 @@ package net.minecraft.src;
 /* 130:353 */         return BlockList.A.instance();
 /* 131:    */       }
 /* 132:354 */       if (parambec.getProto() == BlockList.cobblestone) {
-/* 133:355 */         return BlockList.A.a(bae.a.a());
+/* 133:355 */         return BlockList.A.instance(bae.a.a());
 /* 134:    */       }
 /* 135:356 */       if (parambec.getProto() == BlockList.planks) {
-/* 136:357 */         return BlockList.A.a(bae.c.a());
+/* 136:357 */         return BlockList.A.instance(bae.c.a());
 /* 137:    */       }
 /* 138:358 */       if (parambec.getProto() == BlockList.ad) {
 /* 139:359 */         return BlockList.bO.instance().a(BlockStairs.a, parambec.getProperty(BlockStairs.a));

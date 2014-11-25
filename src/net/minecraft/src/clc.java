@@ -27,7 +27,7 @@ package net.minecraft.src;
 /*  26: 43 */     cxe localcxe = b(parambec);
 /*  27: 44 */     if ((localcxe == null) || (localcxe == this.c.a()))
 /*  28:    */     {
-/*  29: 47 */       if ((localatr == BlockList.ax) || (localatr == BlockList.an) || (localatr == BlockList.ae) || (localatr == BlockList.cg) || (localatr == BlockList.cK) || (localatr == BlockList.cL)) {
+/*  29: 47 */       if ((localatr == BlockList.ax) || (localatr == BlockList.an) || (localatr == BlockList.chest) || (localatr == BlockList.cg) || (localatr == BlockList.cK) || (localatr == BlockList.cL)) {
 /*  30: 48 */         return this.c.b().a("minecraft:blocks/planks_oak");
 /*  31:    */       }
 /*  32: 49 */       if (localatr == BlockList.bQ) {
@@ -86,7 +86,7 @@ package net.minecraft.src;
 /*  85:    */   
 /*  86:    */   private void d()
 /*  87:    */   {
-/*  88: 96 */     a(new ProtoBlock[] { BlockList.air, BlockList.flowingWater, BlockList.water, BlockList.flowingLava, BlockList.lava, BlockList.M, BlockList.ae, BlockList.bQ, BlockList.cg, BlockList.an, BlockList.ce, BlockList.endPortal, BlockList.barrier, BlockList.ax, BlockList.cL, BlockList.cK });
+/*  88: 96 */     a(new ProtoBlock[] { BlockList.air, BlockList.flowingWater, BlockList.water, BlockList.flowingLava, BlockList.lava, BlockList.M, BlockList.chest, BlockList.bQ, BlockList.cg, BlockList.an, BlockList.ce, BlockList.endPortal, BlockList.barrier, BlockList.ax, BlockList.cL, BlockList.cK });
 /*  89:    */     
 /*  90:    */ 
 /*  91:    */ 
@@ -127,13 +127,13 @@ package net.minecraft.src;
 /* 126:134 */     a(BlockList.W, new cnh().a(new IBlockData[] { bbk.a }).a());
 /* 127:135 */     a(BlockList.fire, new cnh().a(new IBlockData[] { BlockFire.age }).a());
 /* 128:136 */     a(BlockList.af, new cnh().a(new IBlockData[] { azt.O }).a());
-/* 129:137 */     a(BlockList.ao, new cnh().a(new IBlockData[] { BlockDoor.N }).a());
+/* 129:137 */     a(BlockList.woodenDoor, new cnh().a(new IBlockData[] { BlockDoor.N }).a());
 /* 130:138 */     a(BlockList.ap, new cnh().a(new IBlockData[] { BlockDoor.N }).a());
 /* 131:139 */     a(BlockList.aq, new cnh().a(new IBlockData[] { BlockDoor.N }).a());
 /* 132:140 */     a(BlockList.ar, new cnh().a(new IBlockData[] { BlockDoor.N }).a());
 /* 133:141 */     a(BlockList.as, new cnh().a(new IBlockData[] { BlockDoor.N }).a());
 /* 134:142 */     a(BlockList.at, new cnh().a(new IBlockData[] { BlockDoor.N }).a());
-/* 135:143 */     a(BlockList.aA, new cnh().a(new IBlockData[] { BlockDoor.N }).a());
+/* 135:143 */     a(BlockList.ironDoor, new cnh().a(new IBlockData[] { BlockDoor.N }).a());
 /* 136:144 */     a(BlockList.wool, new cnh().a(aun.a).a("_wool").a());
 /* 137:145 */     a(BlockList.cy, new cnh().a(aun.a).a("_carpet").a());
 /* 138:146 */     a(BlockList.cu, new cnh().a(aun.a).a("_stained_hardened_clay").a());
@@ -148,7 +148,7 @@ package net.minecraft.src;
 /* 147:155 */     a(BlockList.U, new cnh().a(bbf.M).a("_slab").a());
 /* 148:156 */     a(BlockList.cP, new cnh().a(ayl.M).a("_slab").a());
 /* 149:157 */     a(BlockList.monsterEgg, new cnh().a(axs.a).a("_monster_egg").a());
-/* 150:158 */     a(BlockList.bf, new cnh().a(bbc.a).a());
+/* 150:158 */     a(BlockList.stoneBrick, new cnh().a(bbc.a).a());
 /* 151:159 */     a(BlockList.z, new cnh().a(new IBlockData[] { ave.b }).a());
 /* 152:160 */     a(BlockList.ct, new cnh().a(new IBlockData[] { avm.b }).a());
 /* 153:161 */     a(BlockList.log, new cnh().a(ayr.b).a("_log").a());

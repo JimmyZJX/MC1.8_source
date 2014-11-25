@@ -318,7 +318,7 @@ package net.minecraft.src;
 /*  319: 402 */     if ((this.world.isClient) || (!cu())) {
 /*  320: 403 */       return;
 /*  321:     */     }
-/*  322: 406 */     a(Item.fromProtoBlock(BlockList.ae), 1);
+/*  322: 406 */     a(Item.fromProtoBlock(BlockList.chest), 1);
 /*  323: 407 */     o(false);
 /*  324:     */   }
 /*  325:     */   
@@ -804,7 +804,7 @@ package net.minecraft.src;
 /*  805: 869 */         return true;
 /*  806:     */       }
 /*  807: 872 */       if ((i == 0) && (cN()) && (!cu()) && 
-/*  808: 873 */         (localamj.getItem() == Item.fromProtoBlock(BlockList.ae)))
+/*  808: 873 */         (localamj.getItem() == Item.fromProtoBlock(BlockList.chest)))
 /*  809:     */       {
 /*  810: 874 */         o(true);
 /*  811: 875 */         a("mob.chickenplop", 1.0F, (this.rng.nextFloat() - this.rng.nextFloat()) * 0.2F + 1.0F);
@@ -1492,7 +1492,7 @@ package net.minecraft.src;
 /* 1493:1599 */         cY();
 /* 1494:1600 */         return true;
 /* 1495:     */       }
-/* 1496:1601 */       if ((paramamj != null) && (paramamj.getItem() == Item.fromProtoBlock(BlockList.ae)) && (!cu()))
+/* 1496:1601 */       if ((paramamj != null) && (paramamj.getItem() == Item.fromProtoBlock(BlockList.chest)) && (!cu()))
 /* 1497:     */       {
 /* 1498:1602 */         o(true);
 /* 1499:1603 */         cY();

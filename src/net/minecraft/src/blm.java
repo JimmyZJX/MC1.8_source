@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*   8:601 */     if (paramRandom.nextFloat() < 0.4F) {
 /*   9:602 */       this.a = BlockList.cobblestone.instance();
 /*  10:    */     } else {
-/*  11:604 */       this.a = BlockList.Y.instance();
+/*  11:604 */       this.a = BlockList.mossyCobblestone.instance();
 /*  12:    */     }
 /*  13:    */   }
 				blm(blj arg0) {}

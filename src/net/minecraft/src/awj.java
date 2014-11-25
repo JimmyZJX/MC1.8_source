@@ -178,7 +178,7 @@ package net.minecraft.src;
 /* 177:197 */     return instance().a(a, EnumDirection.SOUTH);
 /* 178:    */   }
 /* 179:    */   
-/* 180:    */   public Block a(int paramInt)
+/* 180:    */   public Block instance(int paramInt)
 /* 181:    */   {
 /* 182:202 */     EnumDirection localej = EnumDirection.a(paramInt);
 /* 183:203 */     if (localej.k() == EnumAxis.Y) {

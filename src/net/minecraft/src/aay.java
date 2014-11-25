@@ -19,29 +19,29 @@ package net.minecraft.src;
 /*  18:    */   
 /*  19:    */   protected boolean b()
 /*  20:    */   {
-/*  21: 35 */     return (this.b.C) || ((h()) && (o())) || ((this.b.av()) && ((this.b instanceof EntityZombie)) && ((this.b.vehicle instanceof EntityChicken)));
+/*  21: 35 */     return (this.mob.C) || ((h()) && (o())) || ((this.mob.av()) && ((this.mob instanceof EntityZombie)) && ((this.mob.vehicle instanceof EntityChicken)));
 /*  22:    */   }
 /*  23:    */   
 /*  24:    */   protected Vec3 c()
 /*  25:    */   {
-/*  26: 40 */     return new Vec3(this.b.xPos, p(), this.b.zPos);
+/*  26: 40 */     return new Vec3(this.mob.xPos, p(), this.mob.zPos);
 /*  27:    */   }
 /*  28:    */   
 /*  29:    */   private int p()
 /*  30:    */   {
-/*  31: 44 */     if ((!this.b.V()) || (!h())) {
-/*  32: 45 */       return (int)(this.b.getAABB().minY + 0.5D);
+/*  31: 44 */     if ((!this.mob.V()) || (!h())) {
+/*  32: 45 */       return (int)(this.mob.getAABB().minY + 0.5D);
 /*  33:    */     }
-/*  34: 48 */     int i = (int)this.b.getAABB().minY;
-/*  35: 49 */     ProtoBlock localatr = this.c.getBlock(new BlockPosition(MathUtils.floor(this.b.xPos), i, MathUtils.floor(this.b.zPos))).getProto();
+/*  34: 48 */     int i = (int)this.mob.getAABB().minY;
+/*  35: 49 */     ProtoBlock localatr = this.world.getBlock(new BlockPosition(MathUtils.floor(this.mob.xPos), i, MathUtils.floor(this.mob.zPos))).getProto();
 /*  36: 50 */     int j = 0;
 /*  37: 51 */     while ((localatr == BlockList.flowingWater) || (localatr == BlockList.water))
 /*  38:    */     {
 /*  39: 52 */       i++;
-/*  40: 53 */       localatr = this.c.getBlock(new BlockPosition(MathUtils.floor(this.b.xPos), i, MathUtils.floor(this.b.zPos))).getProto();
+/*  40: 53 */       localatr = this.world.getBlock(new BlockPosition(MathUtils.floor(this.mob.xPos), i, MathUtils.floor(this.mob.zPos))).getProto();
 /*  41: 54 */       j++;
 /*  42: 54 */       if (j > 16) {
-/*  43: 55 */         return (int)this.b.getAABB().minY;
+/*  43: 55 */         return (int)this.mob.getAABB().minY;
 /*  44:    */       }
 /*  45:    */     }
 /*  46: 58 */     return i;
@@ -52,13 +52,13 @@ package net.minecraft.src;
 /*  51: 63 */     super.d();
 /*  52: 64 */     if (this.f)
 /*  53:    */     {
-/*  54: 65 */       if (this.c.hasDaylight(new BlockPosition(MathUtils.floor(this.b.xPos), (int)(this.b.getAABB().minY + 0.5D), MathUtils.floor(this.b.zPos)))) {
+/*  54: 65 */       if (this.world.hasDaylight(new BlockPosition(MathUtils.floor(this.mob.xPos), (int)(this.mob.getAABB().minY + 0.5D), MathUtils.floor(this.mob.zPos)))) {
 /*  55: 66 */         return;
 /*  56:    */       }
 /*  57: 69 */       for (int i = 0; i < this.d.d(); i++)
 /*  58:    */       {
 /*  59: 70 */         bpt localbpt = this.d.a(i);
-/*  60: 71 */         if (this.c.hasDaylight(new BlockPosition(localbpt.a, localbpt.b, localbpt.c)))
+/*  60: 71 */         if (this.world.hasDaylight(new BlockPosition(localbpt.a, localbpt.b, localbpt.c)))
 /*  61:    */         {
 /*  62: 72 */           this.d.b(i - 1);
 /*  63: 73 */           return;
@@ -145,12 +145,12 @@ package net.minecraft.src;
 /* 144:153 */         double d2 = m + 0.5D - parambrw.z;
 /* 145:154 */         if (d1 * paramDouble1 + d2 * paramDouble2 >= 0.0D)
 /* 146:    */         {
-/* 147:157 */           ProtoBlock localatr = this.c.getBlock(new BlockPosition(k, paramInt2 - 1, m)).getProto();
+/* 147:157 */           ProtoBlock localatr = this.world.getBlock(new BlockPosition(k, paramInt2 - 1, m)).getProto();
 /* 148:158 */           Material localbof = localatr.getMaterial();
 /* 149:159 */           if (localbof == Material.air) {
 /* 150:160 */             return false;
 /* 151:    */           }
-/* 152:162 */           if ((localbof == Material.water) && (!this.b.V())) {
+/* 152:162 */           if ((localbof == Material.water) && (!this.mob.V())) {
 /* 153:163 */             return false;
 /* 154:    */           }
 /* 155:165 */           if (localbof == Material.lava) {
@@ -170,8 +170,8 @@ package net.minecraft.src;
 /* 169:177 */       double d2 = localdt.getZ() + 0.5D - parambrw.z;
 /* 170:178 */       if (d1 * paramDouble1 + d2 * paramDouble2 >= 0.0D)
 /* 171:    */       {
-/* 172:181 */         ProtoBlock localatr = this.c.getBlock(localdt).getProto();
-/* 173:182 */         if (!localatr.b((IBlockAccess)this.c, localdt)) {
+/* 172:181 */         ProtoBlock localatr = this.world.getBlock(localdt).getProto();
+/* 173:182 */         if (!localatr.b((IBlockAccess)this.world, localdt)) {
 /* 174:183 */           return false;
 /* 175:    */         }
 /* 176:    */       }

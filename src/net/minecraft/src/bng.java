@@ -83,7 +83,7 @@ package net.minecraft.src;
 /*  82:726 */     a(paramaqu, BlockList.planks.instance(), 3, 2, 0, parambjb);
 /*  83:727 */     a(paramaqu, BlockList.planks.instance(), 3, 1, 0, parambjb);
 /*  84:728 */     if ((a(paramaqu, 2, 0, -1, parambjb).getProto().getMaterial() == Material.air) && (a(paramaqu, 2, -1, -1, parambjb).getProto().getMaterial() != Material.air)) {
-/*  85:729 */       a(paramaqu, BlockList.aw.a(a(BlockList.aw, 3)), 2, 0, -1, parambjb);
+/*  85:729 */       a(paramaqu, BlockList.aw.instance(a(BlockList.aw, 3)), 2, 0, -1, parambjb);
 /*  86:    */     }
 /*  87:733 */     a(paramaqu, parambjb, 1, 1, 1, 3, 3, 3, BlockList.air.instance(), BlockList.air.instance(), false);
 /*  88:736 */     if (this.a)
@@ -108,10 +108,10 @@ package net.minecraft.src;
 /* 107:756 */     if (this.a)
 /* 108:    */     {
 /* 109:757 */       int i = a(BlockList.au, 3);
-/* 110:758 */       a(paramaqu, BlockList.au.a(i), 3, 1, 3, parambjb);
-/* 111:759 */       a(paramaqu, BlockList.au.a(i), 3, 2, 3, parambjb);
-/* 112:760 */       a(paramaqu, BlockList.au.a(i), 3, 3, 3, parambjb);
-/* 113:761 */       a(paramaqu, BlockList.au.a(i), 3, 4, 3, parambjb);
+/* 110:758 */       a(paramaqu, BlockList.au.instance(i), 3, 1, 3, parambjb);
+/* 111:759 */       a(paramaqu, BlockList.au.instance(i), 3, 2, 3, parambjb);
+/* 112:760 */       a(paramaqu, BlockList.au.instance(i), 3, 3, 3, parambjb);
+/* 113:761 */       a(paramaqu, BlockList.au.instance(i), 3, 4, 3, parambjb);
 /* 114:    */     }
 /* 115:765 */     a(paramaqu, BlockList.torch.instance().a(bbl.a, this.m), 2, 3, 1, parambjb);
 /* 116:767 */     for (int i = 0; i < 5; i++) {

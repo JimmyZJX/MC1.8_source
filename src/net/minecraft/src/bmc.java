@@ -48,16 +48,16 @@ package net.minecraft.src;
 /*   47:1122 */     a(paramaqu, parambjb, 4, 1, 9, 4, 3, 9, false, paramRandom, blr.c());
 /*   48:     */     
 /*   49:     */ 
-/*   50:1125 */     a(paramaqu, parambjb, 4, 1, 4, 4, 3, 6, BlockList.bi.instance(), BlockList.bi.instance(), false);
-/*   51:1126 */     a(paramaqu, parambjb, 5, 1, 5, 7, 3, 5, BlockList.bi.instance(), BlockList.bi.instance(), false);
+/*   50:1125 */     a(paramaqu, parambjb, 4, 1, 4, 4, 3, 6, BlockList.ironBars.instance(), BlockList.ironBars.instance(), false);
+/*   51:1126 */     a(paramaqu, parambjb, 5, 1, 5, 7, 3, 5, BlockList.ironBars.instance(), BlockList.ironBars.instance(), false);
 /*   52:     */     
 /*   53:     */ 
-/*   54:1129 */     a(paramaqu, BlockList.bi.instance(), 4, 3, 2, parambjb);
-/*   55:1130 */     a(paramaqu, BlockList.bi.instance(), 4, 3, 8, parambjb);
-/*   56:1131 */     a(paramaqu, BlockList.aA.a(a(BlockList.aA, 3)), 4, 1, 2, parambjb);
-/*   57:1132 */     a(paramaqu, BlockList.aA.a(a(BlockList.aA, 3) + 8), 4, 2, 2, parambjb);
-/*   58:1133 */     a(paramaqu, BlockList.aA.a(a(BlockList.aA, 3)), 4, 1, 8, parambjb);
-/*   59:1134 */     a(paramaqu, BlockList.aA.a(a(BlockList.aA, 3) + 8), 4, 2, 8, parambjb);
+/*   54:1129 */     a(paramaqu, BlockList.ironBars.instance(), 4, 3, 2, parambjb);
+/*   55:1130 */     a(paramaqu, BlockList.ironBars.instance(), 4, 3, 8, parambjb);
+/*   56:1131 */     a(paramaqu, BlockList.ironDoor.instance(a(BlockList.ironDoor, 3)), 4, 1, 2, parambjb);
+/*   57:1132 */     a(paramaqu, BlockList.ironDoor.instance(a(BlockList.ironDoor, 3) + 8), 4, 2, 2, parambjb);
+/*   58:1133 */     a(paramaqu, BlockList.ironDoor.instance(a(BlockList.ironDoor, 3)), 4, 1, 8, parambjb);
+/*   59:1134 */     a(paramaqu, BlockList.ironDoor.instance(a(BlockList.ironDoor, 3) + 8), 4, 2, 8, parambjb);
 /*   60:     */     
 /*   61:1136 */     return true;
 /*   62:     */   }

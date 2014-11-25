@@ -47,8 +47,8 @@ package net.minecraft.src;
 /*   46: 963 */     for (int k = -1; k <= 2; k++) {
 /*   47: 964 */       for (int m = 0; m <= 8; m++)
 /*   48:     */       {
-/*   49: 965 */         a(paramaqu, BlockList.ad.a(i), m, 6 + k, k, parambjb);
-/*   50: 966 */         a(paramaqu, BlockList.ad.a(j), m, 6 + k, 5 - k, parambjb);
+/*   49: 965 */         a(paramaqu, BlockList.ad.instance(i), m, 6 + k, k, parambjb);
+/*   50: 966 */         a(paramaqu, BlockList.ad.instance(j), m, 6 + k, 5 - k, parambjb);
 /*   51:     */       }
 /*   52:     */     }
 /*   53: 971 */     a(paramaqu, parambjb, 0, 1, 0, 0, 1, 5, BlockList.cobblestone.instance(), BlockList.cobblestone.instance(), false);
@@ -93,12 +93,12 @@ package net.minecraft.src;
 /*   92:     */     
 /*   93:     */ 
 /*   94:1012 */     a(paramaqu, BlockList.planks.instance(), 7, 1, 4, parambjb);
-/*   95:1013 */     a(paramaqu, BlockList.ad.a(a(BlockList.ad, 0)), 7, 1, 3, parambjb);
+/*   95:1013 */     a(paramaqu, BlockList.ad.instance(a(BlockList.ad, 0)), 7, 1, 3, parambjb);
 /*   96:1014 */     int k = a(BlockList.ad, 3);
-/*   97:1015 */     a(paramaqu, BlockList.ad.a(k), 6, 1, 4, parambjb);
-/*   98:1016 */     a(paramaqu, BlockList.ad.a(k), 5, 1, 4, parambjb);
-/*   99:1017 */     a(paramaqu, BlockList.ad.a(k), 4, 1, 4, parambjb);
-/*  100:1018 */     a(paramaqu, BlockList.ad.a(k), 3, 1, 4, parambjb);
+/*   97:1015 */     a(paramaqu, BlockList.ad.instance(k), 6, 1, 4, parambjb);
+/*   98:1016 */     a(paramaqu, BlockList.ad.instance(k), 5, 1, 4, parambjb);
+/*   99:1017 */     a(paramaqu, BlockList.ad.instance(k), 4, 1, 4, parambjb);
+/*  100:1018 */     a(paramaqu, BlockList.ad.instance(k), 3, 1, 4, parambjb);
 /*  101:     */     
 /*  102:     */ 
 /*  103:1021 */     a(paramaqu, BlockList.fence.instance(), 6, 1, 3, parambjb);
@@ -110,9 +110,9 @@ package net.minecraft.src;
 /*  109:     */ 
 /*  110:1028 */     a(paramaqu, BlockList.air.instance(), 1, 1, 0, parambjb);
 /*  111:1029 */     a(paramaqu, BlockList.air.instance(), 1, 2, 0, parambjb);
-/*  112:1030 */     a(paramaqu, parambjb, paramRandom, 1, 1, 0, EnumDirection.b(a(BlockList.ao, 1)));
+/*  112:1030 */     a(paramaqu, parambjb, paramRandom, 1, 1, 0, EnumDirection.b(a(BlockList.woodenDoor, 1)));
 /*  113:1031 */     if ((a(paramaqu, 1, 0, -1, parambjb).getProto().getMaterial() == Material.air) && (a(paramaqu, 1, -1, -1, parambjb).getProto().getMaterial() != Material.air)) {
-/*  114:1032 */       a(paramaqu, BlockList.aw.a(a(BlockList.aw, 3)), 1, 0, -1, parambjb);
+/*  114:1032 */       a(paramaqu, BlockList.aw.instance(a(BlockList.aw, 3)), 1, 0, -1, parambjb);
 /*  115:     */     }
 /*  116:1035 */     for (int m = 0; m < 6; m++) {
 /*  117:1036 */       for (int n = 0; n < 9; n++)

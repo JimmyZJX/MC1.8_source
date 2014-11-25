@@ -74,7 +74,7 @@ package net.minecraft.src;
 /*  73:    */       }
 /*  74: 89 */       localaqu.setBlock(localdt, BlockList.air.instance(), localatr == BlockList.air ? 2 : 4);
 /*  75:    */     }
-/*  76: 92 */     Block localbec = localatr.a(i);
+/*  76: 92 */     Block localbec = localatr.instance(i);
 /*  77: 93 */     if (!localaqu.setBlock(localdt, localbec, 2)) {
 /*  78: 94 */       throw new CommandException("commands.setblock.noChange", new Object[0]);
 /*  79:    */     }

@@ -92,14 +92,14 @@ package net.minecraft.src;
 /*   91:1811 */     a(paramaqu, parambjb, 9, 0, 1, 9, 0, 7, BlockList.water.instance(), BlockList.water.instance(), false);
 /*   92:1813 */     for (int i = 1; i <= 7; i++)
 /*   93:     */     {
-/*   94:1814 */       a(paramaqu, this.a.a(MathUtils.nextInt(paramRandom, 2, 7)), 1, 1, i, parambjb);
-/*   95:1815 */       a(paramaqu, this.a.a(MathUtils.nextInt(paramRandom, 2, 7)), 2, 1, i, parambjb);
-/*   96:1816 */       a(paramaqu, this.b.a(MathUtils.nextInt(paramRandom, 2, 7)), 4, 1, i, parambjb);
-/*   97:1817 */       a(paramaqu, this.b.a(MathUtils.nextInt(paramRandom, 2, 7)), 5, 1, i, parambjb);
-/*   98:1818 */       a(paramaqu, this.c.a(MathUtils.nextInt(paramRandom, 2, 7)), 7, 1, i, parambjb);
-/*   99:1819 */       a(paramaqu, this.c.a(MathUtils.nextInt(paramRandom, 2, 7)), 8, 1, i, parambjb);
-/*  100:1820 */       a(paramaqu, this.d.a(MathUtils.nextInt(paramRandom, 2, 7)), 10, 1, i, parambjb);
-/*  101:1821 */       a(paramaqu, this.d.a(MathUtils.nextInt(paramRandom, 2, 7)), 11, 1, i, parambjb);
+/*   94:1814 */       a(paramaqu, this.a.instance(MathUtils.nextInt(paramRandom, 2, 7)), 1, 1, i, parambjb);
+/*   95:1815 */       a(paramaqu, this.a.instance(MathUtils.nextInt(paramRandom, 2, 7)), 2, 1, i, parambjb);
+/*   96:1816 */       a(paramaqu, this.b.instance(MathUtils.nextInt(paramRandom, 2, 7)), 4, 1, i, parambjb);
+/*   97:1817 */       a(paramaqu, this.b.instance(MathUtils.nextInt(paramRandom, 2, 7)), 5, 1, i, parambjb);
+/*   98:1818 */       a(paramaqu, this.c.instance(MathUtils.nextInt(paramRandom, 2, 7)), 7, 1, i, parambjb);
+/*   99:1819 */       a(paramaqu, this.c.instance(MathUtils.nextInt(paramRandom, 2, 7)), 8, 1, i, parambjb);
+/*  100:1820 */       a(paramaqu, this.d.instance(MathUtils.nextInt(paramRandom, 2, 7)), 10, 1, i, parambjb);
+/*  101:1821 */       a(paramaqu, this.d.instance(MathUtils.nextInt(paramRandom, 2, 7)), 11, 1, i, parambjb);
 /*  102:     */     }
 /*  103:1824 */     for (int i = 0; i < 9; i++) {
 /*  104:1825 */       for (int j = 0; j < 13; j++)

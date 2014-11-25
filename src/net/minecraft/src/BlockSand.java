@@ -28,7 +28,7 @@ package net.minecraft.src;
 /* 27:35 */     return ((bac)parambec.getProperty(a)).c();
 /* 28:   */   }
 /* 29:   */   
-/* 30:   */   public Block a(int paramInt)
+/* 30:   */   public Block instance(int paramInt)
 /* 31:   */   {
 /* 32:40 */     return instance().a(a, bac.a(paramInt));
 /* 33:   */   }

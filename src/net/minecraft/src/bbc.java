@@ -29,7 +29,7 @@ package net.minecraft.src;
 /* 28:   */     }
 /* 29:   */   }
 /* 30:   */   
-/* 31:   */   public Block a(int paramInt)
+/* 31:   */   public Block instance(int paramInt)
 /* 32:   */   {
 /* 33:42 */     return instance().a(a, bbd.a(paramInt));
 /* 34:   */   }

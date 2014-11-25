@@ -97,7 +97,7 @@ package net.minecraft.src;
 /*  96:112 */     h(paramaqu, paramdt, parambec);
 /*  97:    */   }
 /*  98:    */   
-/*  99:    */   public Block a(int paramInt)
+/*  99:    */   public Block instance(int paramInt)
 /* 100:    */   {
 /* 101:117 */     return instance().a(N, EnumDirection.b(paramInt)).a(a, Boolean.valueOf(false)).a(b, Integer.valueOf(1 + (paramInt >> 2)));
 /* 102:    */   }

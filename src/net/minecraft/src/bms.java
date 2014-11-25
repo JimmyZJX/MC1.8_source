@@ -280,7 +280,7 @@ package net.minecraft.src;
 /* 279:    */         }
 /* 280:    */       }
 /* 281:    */     }
-/* 282:312 */     else if (paramatr == BlockList.aG)
+/* 282:312 */     else if (paramatr == BlockList.stoneButton)
 /* 283:    */     {
 /* 284:313 */       if (this.m == EnumDirection.SOUTH)
 /* 285:    */       {
@@ -553,10 +553,10 @@ package net.minecraft.src;
 /* 552:    */   {
 /* 553:585 */     BlockPosition localdt = new BlockPosition(a(paramInt1, paramInt3), d(paramInt2), b(paramInt1, paramInt3));
 /* 554:587 */     if ((parambjb.b(localdt)) && 
-/* 555:588 */       (paramaqu.getBlock(localdt).getProto() != BlockList.ae))
+/* 555:588 */       (paramaqu.getBlock(localdt).getProto() != BlockList.chest))
 /* 556:    */     {
-/* 557:589 */       Block localbec = BlockList.ae.instance();
-/* 558:590 */       paramaqu.setBlock(localdt, BlockList.ae.f(paramaqu, localdt, localbec), 2);
+/* 557:589 */       Block localbec = BlockList.chest.instance();
+/* 558:590 */       paramaqu.setBlock(localdt, BlockList.chest.f(paramaqu, localdt, localbec), 2);
 /* 559:    */       
 /* 560:592 */       bcm localbcm = paramaqu.s(localdt);
 /* 561:593 */       if ((localbcm instanceof bcr)) {
@@ -573,7 +573,7 @@ package net.minecraft.src;
 /* 572:605 */     if ((parambjb.b(localdt)) && 
 /* 573:606 */       (paramaqu.getBlock(localdt).getProto() != BlockList.z))
 /* 574:    */     {
-/* 575:607 */       paramaqu.setBlock(localdt, BlockList.z.a(a(BlockList.z, paramInt4)), 2);
+/* 575:607 */       paramaqu.setBlock(localdt, BlockList.z.instance(a(BlockList.z, paramInt4)), 2);
 /* 576:    */       
 /* 577:609 */       bcm localbcm = paramaqu.s(localdt);
 /* 578:610 */       if ((localbcm instanceof bcx)) {
@@ -588,7 +588,7 @@ package net.minecraft.src;
 /* 587:    */   {
 /* 588:620 */     BlockPosition localdt = new BlockPosition(a(paramInt1, paramInt3), d(paramInt2), b(paramInt1, paramInt3));
 /* 589:622 */     if (parambjb.b(localdt)) {
-/* 590:623 */       akt.a(paramaqu, localdt, paramej.f(), BlockList.ao);
+/* 590:623 */       akt.a(paramaqu, localdt, paramej.f(), BlockList.woodenDoor);
 /* 591:    */     }
 /* 592:    */   }
 /* 593:    */ }

@@ -20,7 +20,7 @@ package net.minecraft.src;
 /* 19:   */   
 /* 20:   */   public int a(ItemStack paramamj, int paramInt)
 /* 21:   */   {
-/* 22:23 */     return this.b.h(this.b.a(paramamj.getDamage2()));
+/* 22:23 */     return this.b.h(this.b.instance(paramamj.getDamage2()));
 /* 23:   */   }
 /* 24:   */   
 /* 25:   */   public String e_(ItemStack paramamj)

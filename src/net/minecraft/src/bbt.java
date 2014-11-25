@@ -263,7 +263,7 @@ package net.minecraft.src;
 /* 262:281 */     return aql.b;
 /* 263:    */   }
 /* 264:    */   
-/* 265:    */   public Block a(int paramInt)
+/* 265:    */   public Block instance(int paramInt)
 /* 266:    */   {
 /* 267:286 */     return instance().a(a, EnumDirection.b(paramInt & 0x3)).a(b, Boolean.valueOf((paramInt & 0x8) > 0)).a(M, Boolean.valueOf((paramInt & 0x4) > 0));
 /* 268:    */   }

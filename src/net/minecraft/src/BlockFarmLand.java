@@ -95,7 +95,7 @@ package net.minecraft.src;
 /*  94:108 */     return Item.fromProtoBlock(BlockList.dirt);
 /*  95:    */   }
 /*  96:    */   
-/*  97:    */   public Block a(int paramInt)
+/*  97:    */   public Block instance(int paramInt)
 /*  98:    */   {
 /*  99:113 */     return instance().a(a, Integer.valueOf(paramInt & 0x7));
 /* 100:    */   }

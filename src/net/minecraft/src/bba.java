@@ -34,7 +34,7 @@ package net.minecraft.src;
 /* 33:   */     }
 /* 34:   */   }
 /* 35:   */   
-/* 36:   */   public Block a(int paramInt)
+/* 36:   */   public Block instance(int paramInt)
 /* 37:   */   {
 /* 38:48 */     return instance().a(a, EnumStoneVariants.a(paramInt));
 /* 39:   */   }

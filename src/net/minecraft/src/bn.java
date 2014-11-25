@@ -121,7 +121,7 @@ package net.minecraft.src;
 /* 119:    */             }
 /* 120:136 */             localaqu.setBlock(localdt6, BlockList.barrier.instance(), localatr1 == BlockList.barrier ? 2 : 4);
 /* 121:    */           }
-/* 122:139 */           Block localbec = localatr1.a(i);
+/* 122:139 */           Block localbec = localatr1.instance(i);
 /* 123:140 */           if (localaqu.setBlock(localdt6, localbec, 2))
 /* 124:    */           {
 /* 125:143 */             ((List)localObject).add(localdt6);

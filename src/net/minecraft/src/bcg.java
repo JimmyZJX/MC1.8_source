@@ -89,7 +89,7 @@ package net.minecraft.src;
 /*  88:    */     }
 /*  89:    */   }
 /*  90:    */   
-/*  91:    */   public Block a(int paramInt)
+/*  91:    */   public Block instance(int paramInt)
 /*  92:    */   {
 /*  93:101 */     return instance().a(a, EnumDyeColor.b(paramInt));
 /*  94:    */   }

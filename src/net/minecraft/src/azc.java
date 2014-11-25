@@ -145,7 +145,7 @@ package net.minecraft.src;
 /* 144:153 */     return b;
 /* 145:    */   }
 /* 146:    */   
-/* 147:    */   public Block a(int paramInt)
+/* 147:    */   public Block instance(int paramInt)
 /* 148:    */   {
 /* 149:158 */     return instance().a(b, EnumRailState.a(paramInt & 0x7)).a(M, Boolean.valueOf((paramInt & 0x8) > 0));
 /* 150:    */   }

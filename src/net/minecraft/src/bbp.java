@@ -182,7 +182,7 @@ package net.minecraft.src;
 /* 181:201 */     return aql.c;
 /* 182:    */   }
 /* 183:    */   
-/* 184:    */   public Block a(int paramInt)
+/* 184:    */   public Block instance(int paramInt)
 /* 185:    */   {
 /* 186:206 */     return instance().a(a, b(paramInt)).a(b, Boolean.valueOf((paramInt & 0x4) != 0)).a(M, (paramInt & 0x8) == 0 ? bbr.b : bbr.a);
 /* 187:    */   }

@@ -40,7 +40,7 @@ package net.minecraft.src;
 /* 39:53 */     return 10;
 /* 40:   */   }
 /* 41:   */   
-/* 42:   */   public Block a(int paramInt)
+/* 42:   */   public Block instance(int paramInt)
 /* 43:   */   {
 /* 44:58 */     return instance().a(a, Integer.valueOf(paramInt));
 /* 45:   */   }

@@ -84,9 +84,9 @@ package net.minecraft.src;
 /*  83:117 */     super.readEntityFromNBT(paramfn);
 /*  84:    */     Block localbec;
 /*  85:119 */     if (paramfn.hasKey("carried", 8)) {
-/*  86:120 */       localbec = ProtoBlock.b(paramfn.getString("carried")).a(paramfn.e("carriedData") & 0xFFFF);
+/*  86:120 */       localbec = ProtoBlock.b(paramfn.getString("carried")).instance(paramfn.e("carriedData") & 0xFFFF);
 /*  87:    */     } else {
-/*  88:122 */       localbec = ProtoBlock.c(paramfn.e("carried")).a(paramfn.e("carriedData") & 0xFFFF);
+/*  88:122 */       localbec = ProtoBlock.c(paramfn.e("carried")).instance(paramfn.e("carriedData") & 0xFFFF);
 /*  89:    */     }
 /*  90:124 */     a(localbec);
 /*  91:    */   }

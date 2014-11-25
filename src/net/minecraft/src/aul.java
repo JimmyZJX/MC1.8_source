@@ -154,7 +154,7 @@ package net.minecraft.src;
 /* 153:166 */     return aql.c;
 /* 154:    */   }
 /* 155:    */   
-/* 156:    */   public Block a(int paramInt)
+/* 156:    */   public Block instance(int paramInt)
 /* 157:    */   {
 /* 158:171 */     return instance().a(N, EnumDirection.b(paramInt)).a(a, Integer.valueOf((paramInt & 0xF) >> 2));
 /* 159:    */   }

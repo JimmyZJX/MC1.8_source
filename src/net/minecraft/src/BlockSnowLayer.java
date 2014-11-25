@@ -121,7 +121,7 @@ package net.minecraft.src;
 /* 120:150 */     return super.a(paramard, paramdt, paramej);
 /* 121:    */   }
 /* 122:    */   
-/* 123:    */   public Block a(int paramInt)
+/* 123:    */   public Block instance(int paramInt)
 /* 124:    */   {
 /* 125:155 */     return instance().a(a, Integer.valueOf((paramInt & 0x7) + 1));
 /* 126:    */   }

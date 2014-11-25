@@ -112,7 +112,7 @@ package net.minecraft.src;
 /* 111:134 */     return new bcw();
 /* 112:    */   }
 /* 113:    */   
-/* 114:    */   public Block a(int paramInt)
+/* 114:    */   public Block instance(int paramInt)
 /* 115:    */   {
 /* 116:139 */     return instance().a(a, Integer.valueOf(paramInt));
 /* 117:    */   }

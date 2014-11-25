@@ -503,7 +503,7 @@ package net.minecraft.src;
 /* 503:552 */           for (int n = (int)this.zPos - 4; (n < (int)this.zPos + 4) && (j < 14); n++)
 /* 504:    */           {
 /* 505:553 */             ProtoBlock localatr = this.world.getBlock(new BlockPosition(k, m, n)).getProto();
-/* 506:554 */             if ((localatr == BlockList.bi) || (localatr == BlockList.C))
+/* 506:554 */             if ((localatr == BlockList.ironBars) || (localatr == BlockList.C))
 /* 507:    */             {
 /* 508:555 */               if (this.rng.nextFloat() < 0.3F) {
 /* 509:556 */                 i++;

@@ -3,7 +3,7 @@ package net.minecraft.src;
 /*   2:    */ {
 /*   3:    */   public void a(aop paramaop)
 /*   4:    */   {
-/*   5: 10 */     paramaop.a(new ItemStack(BlockList.ae), new Object[] { "###", "# #", "###", Character.valueOf('#'), BlockList.planks });
+/*   5: 10 */     paramaop.a(new ItemStack(BlockList.chest), new Object[] { "###", "# #", "###", Character.valueOf('#'), BlockList.planks });
 /*   6:    */     
 /*   7:    */ 
 /*   8:    */ 
@@ -11,7 +11,7 @@ package net.minecraft.src;
 /*  10:    */ 
 /*  11:    */ 
 /*  12:    */ 
-/*  13: 18 */     paramaop.a(new ItemStack(BlockList.cg), new Object[] { "#-", Character.valueOf('#'), BlockList.ae, Character.valueOf('-'), BlockList.bR });
+/*  13: 18 */     paramaop.a(new ItemStack(BlockList.cg), new Object[] { "#-", Character.valueOf('#'), BlockList.chest, Character.valueOf('-'), BlockList.bR });
 /*  14:    */     
 /*  15:    */ 
 /*  16:    */ 
@@ -98,30 +98,30 @@ package net.minecraft.src;
 /*  97:    */ 
 /*  98:    */ 
 /*  99:    */ 
-/* 100:105 */     paramaop.a(new ItemStack(BlockList.bf, 4), new Object[] { "##", "##", Character.valueOf('#'), new ItemStack(BlockList.stone, 1, EnumStoneVariants.STONE.a()) });
+/* 100:105 */     paramaop.a(new ItemStack(BlockList.stoneBrick, 4), new Object[] { "##", "##", Character.valueOf('#'), new ItemStack(BlockList.stone, 1, EnumStoneVariants.STONE.a()) });
 /* 101:    */     
 /* 102:    */ 
 /* 103:    */ 
 /* 104:    */ 
 /* 105:    */ 
 /* 106:    */ 
-/* 107:112 */     paramaop.a(new ItemStack(BlockList.bf, 1, bbc.O), new Object[] { "#", "#", Character.valueOf('#'), new ItemStack(BlockList.U, 1, bbg.f.a()) });
+/* 107:112 */     paramaop.a(new ItemStack(BlockList.stoneBrick, 1, bbc.O), new Object[] { "#", "#", Character.valueOf('#'), new ItemStack(BlockList.U, 1, bbg.f.a()) });
 /* 108:    */     
 /* 109:    */ 
 /* 110:    */ 
 /* 111:    */ 
 /* 112:    */ 
 /* 113:    */ 
-/* 114:119 */     paramaop.b(new ItemStack(BlockList.bf, 1, bbc.M), new Object[] { BlockList.bf, BlockList.vine });
+/* 114:119 */     paramaop.b(new ItemStack(BlockList.stoneBrick, 1, bbc.M), new Object[] { BlockList.stoneBrick, BlockList.vine });
 /* 115:    */     
 /* 116:    */ 
 /* 117:    */ 
-/* 118:123 */     paramaop.b(new ItemStack(BlockList.Y, 1), new Object[] { BlockList.cobblestone, BlockList.vine });
+/* 118:123 */     paramaop.b(new ItemStack(BlockList.mossyCobblestone, 1), new Object[] { BlockList.cobblestone, BlockList.vine });
 /* 119:    */     
 /* 120:    */ 
 /* 121:    */ 
 /* 122:    */ 
-/* 123:128 */     paramaop.a(new ItemStack(BlockList.bi, 16), new Object[] { "###", "###", Character.valueOf('#'), ItemList.ironIngot });
+/* 123:128 */     paramaop.a(new ItemStack(BlockList.ironBars, 16), new Object[] { "###", "###", Character.valueOf('#'), ItemList.ironIngot });
 /* 124:    */     
 /* 125:    */ 
 /* 126:    */ 

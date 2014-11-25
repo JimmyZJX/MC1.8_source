@@ -288,8 +288,8 @@ package net.minecraft.src;
 /* 288:    */       {
 /* 289:272 */         ProtoBlock localatr = paramaqu.getBlock(paramdt).getProto();
 /* 290:273 */         vy localvy = (vy)localObject;
-/* 291:275 */         if (((localvy instanceof bcr)) && ((localatr instanceof auj))) {
-/* 292:276 */           localvy = ((auj)localatr).d(paramaqu, paramdt);
+/* 291:275 */         if (((localvy instanceof bcr)) && ((localatr instanceof BlockChest))) {
+/* 292:276 */           localvy = ((BlockChest)localatr).d(paramaqu, paramdt);
 /* 293:    */         }
 /* 294:279 */         if (localvy != null)
 /* 295:    */         {

@@ -81,7 +81,7 @@ package net.minecraft.src;
 /*  80:140 */     return instance().a(a, EnumDirection.SOUTH);
 /*  81:    */   }
 /*  82:    */   
-/*  83:    */   public Block a(int paramInt)
+/*  83:    */   public Block instance(int paramInt)
 /*  84:    */   {
 /*  85:145 */     return instance().a(a, EnumDirection.b(paramInt & 0x3)).a(b, Integer.valueOf((paramInt & 0xF) >> 2));
 /*  86:    */   }

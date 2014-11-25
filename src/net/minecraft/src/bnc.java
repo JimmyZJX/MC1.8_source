@@ -80,10 +80,10 @@ package net.minecraft.src;
 /*   79:1700 */     a(paramaqu, parambjb, 3, 0, 1, 3, 0, 7, BlockList.water.instance(), BlockList.water.instance(), false);
 /*   80:1702 */     for (int i = 1; i <= 7; i++)
 /*   81:     */     {
-/*   82:1703 */       a(paramaqu, this.a.a(MathUtils.nextInt(paramRandom, 2, 7)), 1, 1, i, parambjb);
-/*   83:1704 */       a(paramaqu, this.a.a(MathUtils.nextInt(paramRandom, 2, 7)), 2, 1, i, parambjb);
-/*   84:1705 */       a(paramaqu, this.b.a(MathUtils.nextInt(paramRandom, 2, 7)), 4, 1, i, parambjb);
-/*   85:1706 */       a(paramaqu, this.b.a(MathUtils.nextInt(paramRandom, 2, 7)), 5, 1, i, parambjb);
+/*   82:1703 */       a(paramaqu, this.a.instance(MathUtils.nextInt(paramRandom, 2, 7)), 1, 1, i, parambjb);
+/*   83:1704 */       a(paramaqu, this.a.instance(MathUtils.nextInt(paramRandom, 2, 7)), 2, 1, i, parambjb);
+/*   84:1705 */       a(paramaqu, this.b.instance(MathUtils.nextInt(paramRandom, 2, 7)), 4, 1, i, parambjb);
+/*   85:1706 */       a(paramaqu, this.b.instance(MathUtils.nextInt(paramRandom, 2, 7)), 5, 1, i, parambjb);
 /*   86:     */     }
 /*   87:1709 */     for (int i = 0; i < 9; i++) {
 /*   88:1710 */       for (int j = 0; j < 7; j++)

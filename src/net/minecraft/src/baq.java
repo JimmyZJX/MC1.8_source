@@ -88,7 +88,7 @@ package net.minecraft.src;
 /*  87: 97 */     paramList.add(new ItemStack(paramalq, 1, 1));
 /*  88:    */   }
 /*  89:    */   
-/*  90:    */   public Block a(int paramInt)
+/*  90:    */   public Block instance(int paramInt)
 /*  91:    */   {
 /*  92:102 */     return instance().a(a, Boolean.valueOf((paramInt & 0x1) == 1));
 /*  93:    */   }

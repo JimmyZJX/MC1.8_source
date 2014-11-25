@@ -23,7 +23,7 @@ package net.minecraft.src;
 /* 22:29 */     return b;
 /* 23:   */   }
 /* 24:   */   
-/* 25:   */   public Block a(int paramInt)
+/* 25:   */   public Block instance(int paramInt)
 /* 26:   */   {
 /* 27:34 */     return instance().a(b, EnumRailState.a(paramInt));
 /* 28:   */   }

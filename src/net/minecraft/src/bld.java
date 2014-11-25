@@ -24,7 +24,7 @@ package net.minecraft.src;
 /*   23:1079 */         if (paramRandom.nextInt(3) != 0)
 /*   24:     */         {
 /*   25:1080 */           int k = 2 + (paramRandom.nextInt(4) == 0 ? 0 : 1);
-/*   26:1081 */           a(paramaqu, parambjb, i, k, j, i, 3, j, BlockList.v.a(1), BlockList.v.a(1), false);
+/*   26:1081 */           a(paramaqu, parambjb, i, k, j, i, 3, j, BlockList.v.instance(1), BlockList.v.instance(1), false);
 /*   27:     */         }
 /*   28:     */       }
 /*   29:     */     }

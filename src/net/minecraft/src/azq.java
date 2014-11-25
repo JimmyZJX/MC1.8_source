@@ -25,7 +25,7 @@ package net.minecraft.src;
 /* 24:   */     }
 /* 25:   */   }
 /* 26:   */   
-/* 27:   */   public Block a(int paramInt)
+/* 27:   */   public Block instance(int paramInt)
 /* 28:   */   {
 /* 29:37 */     return instance().a(a, azr.a(paramInt));
 /* 30:   */   }

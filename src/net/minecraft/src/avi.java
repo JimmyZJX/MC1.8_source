@@ -226,7 +226,7 @@ package net.minecraft.src;
 /* 225:238 */     a(paramaqu, paramdt, new ItemStack(this, 1, e(paramaqu, paramdt).a()));
 /* 226:    */   }
 /* 227:    */   
-/* 228:    */   public Block a(int paramInt)
+/* 228:    */   public Block instance(int paramInt)
 /* 229:    */   {
 /* 230:247 */     if ((paramInt & 0x8) > 0) {
 /* 231:248 */       return instance().a(b, avj.a);

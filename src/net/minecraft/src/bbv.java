@@ -356,7 +356,7 @@ package net.minecraft.src;
 /* 352:363 */     return aql.c;
 /* 353:    */   }
 /* 354:    */   
-/* 355:    */   public Block a(int paramInt)
+/* 355:    */   public Block instance(int paramInt)
 /* 356:    */   {
 /* 357:368 */     return instance().a(b, Boolean.valueOf((paramInt & R) > 0)).a(M, Boolean.valueOf((paramInt & S) > 0)).a(N, Boolean.valueOf((paramInt & Q) > 0)).a(O, Boolean.valueOf((paramInt & T) > 0));
 /* 358:    */   }

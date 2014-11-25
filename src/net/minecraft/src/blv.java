@@ -58,13 +58,13 @@ package net.minecraft.src;
 /*  57:736 */     a(paramaqu, paramRandom, parambjb, bml.a, 1, 1, 6);
 /*  58:    */     
 /*  59:    */ 
-/*  60:739 */     a(paramaqu, parambjb, 3, 1, 2, 3, 1, 4, BlockList.bf.instance(), BlockList.bf.instance(), false);
-/*  61:740 */     a(paramaqu, BlockList.U.a(bbg.f.a()), 3, 1, 1, parambjb);
-/*  62:741 */     a(paramaqu, BlockList.U.a(bbg.f.a()), 3, 1, 5, parambjb);
-/*  63:742 */     a(paramaqu, BlockList.U.a(bbg.f.a()), 3, 2, 2, parambjb);
-/*  64:743 */     a(paramaqu, BlockList.U.a(bbg.f.a()), 3, 2, 4, parambjb);
+/*  60:739 */     a(paramaqu, parambjb, 3, 1, 2, 3, 1, 4, BlockList.stoneBrick.instance(), BlockList.stoneBrick.instance(), false);
+/*  61:740 */     a(paramaqu, BlockList.U.instance(bbg.f.a()), 3, 1, 1, parambjb);
+/*  62:741 */     a(paramaqu, BlockList.U.instance(bbg.f.a()), 3, 1, 5, parambjb);
+/*  63:742 */     a(paramaqu, BlockList.U.instance(bbg.f.a()), 3, 2, 2, parambjb);
+/*  64:743 */     a(paramaqu, BlockList.U.instance(bbg.f.a()), 3, 2, 4, parambjb);
 /*  65:744 */     for (int i = 2; i <= 4; i++) {
-/*  66:745 */       a(paramaqu, BlockList.U.a(bbg.f.a()), 2, 1, i, parambjb);
+/*  66:745 */       a(paramaqu, BlockList.U.instance(bbg.f.a()), 2, 1, i, parambjb);
 /*  67:    */     }
 /*  68:748 */     if ((!this.b) && 
 /*  69:749 */       (parambjb.b(new BlockPosition(a(3, 3), d(2), b(3, 3)))))

@@ -113,7 +113,7 @@ package net.minecraft.src;
 /* 112:140 */     return aql.c;
 /* 113:    */   }
 /* 114:    */   
-/* 115:    */   public Block a(int paramInt)
+/* 115:    */   public Block instance(int paramInt)
 /* 116:    */   {
 /* 117:145 */     Block localbec = instance();
 /* 118:147 */     for (int i = 0; i < 3; i++) {

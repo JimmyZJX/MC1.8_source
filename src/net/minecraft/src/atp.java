@@ -194,7 +194,7 @@ package net.minecraft.src;
 /* 193:    */     }
 /* 194:    */   }
 /* 195:    */   
-/* 196:    */   public Block a(int paramInt)
+/* 196:    */   public Block instance(int paramInt)
 /* 197:    */   {
 /* 198:223 */     EnumDirection localej = EnumDirection.b(paramInt);
 /* 199:224 */     if ((paramInt & 0x8) > 0) {

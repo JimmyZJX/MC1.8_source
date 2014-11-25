@@ -16,25 +16,25 @@ package net.minecraft.src;
 				c(2,"stone_brick","brick") {
 					@Override
 					public Block d() {
-						return BlockList.bf.instance().a(bbc.a, bbd.a);
+						return BlockList.stoneBrick.instance().a(bbc.a, bbd.a);
 					}
 				},
 				d(3,"mossy_brick","mossybrick") {
 					@Override
 					public Block d() {
-						return BlockList.bf.instance().a(bbc.a, bbd.b);
+						return BlockList.stoneBrick.instance().a(bbc.a, bbd.b);
 					}
 				},
 				e(4,"cracked_brick","crackedbrick") {
 					@Override
 					public Block d() {
-						return BlockList.bf.instance().a(bbc.a, bbd.c);
+						return BlockList.stoneBrick.instance().a(bbc.a, bbd.c);
 					}
 				},
 				f(5,"chiseled_brick","chiseledbrick") {
 					@Override
 					public Block d() {
-						return BlockList.bf.instance().a(bbc.a, bbd.d);
+						return BlockList.stoneBrick.instance().a(bbc.a, bbd.d);
 					}
 				};
 /*   4:    */   private static final EnumMonsterEggVariants[] g;

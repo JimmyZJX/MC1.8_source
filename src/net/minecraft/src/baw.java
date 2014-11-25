@@ -19,7 +19,7 @@ package net.minecraft.src;
 /* 18:23 */     super.a(paramaqu, paramdt, parambec, paramatr);
 /* 19:   */   }
 /* 20:   */   
-/* 21:   */   public Block a(int paramInt)
+/* 21:   */   public Block instance(int paramInt)
 /* 22:   */   {
 /* 23:28 */     return instance().a(a, Integer.valueOf(paramInt));
 /* 24:   */   }

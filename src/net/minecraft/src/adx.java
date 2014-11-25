@@ -630,7 +630,7 @@ package net.minecraft.src;
 /* 629:691 */         if (localatr == null) {
 /* 630:692 */           a(BlockList.air.instance());
 /* 631:    */         } else {
-/* 632:694 */           a(localatr.a(j));
+/* 632:694 */           a(localatr.instance(j));
 /* 633:    */         }
 /* 634:    */       }
 /* 635:    */       else
@@ -639,7 +639,7 @@ package net.minecraft.src;
 /* 638:698 */         if (localatr == null) {
 /* 639:699 */           a(BlockList.air.instance());
 /* 640:    */         } else {
-/* 641:701 */           a(localatr.a(j));
+/* 641:701 */           a(localatr.instance(j));
 /* 642:    */         }
 /* 643:    */       }
 /* 644:704 */       l(paramfn.getInteger("DisplayOffset"));

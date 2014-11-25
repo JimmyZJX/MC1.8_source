@@ -110,36 +110,36 @@ package net.minecraft.src;
 /* 109:472 */     a(paramaqu, parambjb, 4, 9, 10, 4, 9, 10, false, paramRandom, k);
 /* 110:473 */     a(paramaqu, parambjb, 7, 9, 10, 7, 9, 10, false, paramRandom, k);
 /* 111:474 */     a(paramaqu, parambjb, 5, 9, 7, 6, 9, 7, false, paramRandom, k);
-/* 112:475 */     a(paramaqu, BlockList.aw.a(m), 5, 9, 6, parambjb);
-/* 113:476 */     a(paramaqu, BlockList.aw.a(m), 6, 9, 6, parambjb);
-/* 114:477 */     a(paramaqu, BlockList.aw.a(n), 5, 9, 8, parambjb);
-/* 115:478 */     a(paramaqu, BlockList.aw.a(n), 6, 9, 8, parambjb);
+/* 112:475 */     a(paramaqu, BlockList.aw.instance(m), 5, 9, 6, parambjb);
+/* 113:476 */     a(paramaqu, BlockList.aw.instance(m), 6, 9, 6, parambjb);
+/* 114:477 */     a(paramaqu, BlockList.aw.instance(n), 5, 9, 8, parambjb);
+/* 115:478 */     a(paramaqu, BlockList.aw.instance(n), 6, 9, 8, parambjb);
 /* 116:    */     
 /* 117:    */ 
-/* 118:481 */     a(paramaqu, BlockList.aw.a(m), 4, 0, 0, parambjb);
-/* 119:482 */     a(paramaqu, BlockList.aw.a(m), 5, 0, 0, parambjb);
-/* 120:483 */     a(paramaqu, BlockList.aw.a(m), 6, 0, 0, parambjb);
-/* 121:484 */     a(paramaqu, BlockList.aw.a(m), 7, 0, 0, parambjb);
+/* 118:481 */     a(paramaqu, BlockList.aw.instance(m), 4, 0, 0, parambjb);
+/* 119:482 */     a(paramaqu, BlockList.aw.instance(m), 5, 0, 0, parambjb);
+/* 120:483 */     a(paramaqu, BlockList.aw.instance(m), 6, 0, 0, parambjb);
+/* 121:484 */     a(paramaqu, BlockList.aw.instance(m), 7, 0, 0, parambjb);
 /* 122:    */     
 /* 123:    */ 
-/* 124:487 */     a(paramaqu, BlockList.aw.a(m), 4, 1, 8, parambjb);
-/* 125:488 */     a(paramaqu, BlockList.aw.a(m), 4, 2, 9, parambjb);
-/* 126:489 */     a(paramaqu, BlockList.aw.a(m), 4, 3, 10, parambjb);
-/* 127:490 */     a(paramaqu, BlockList.aw.a(m), 7, 1, 8, parambjb);
-/* 128:491 */     a(paramaqu, BlockList.aw.a(m), 7, 2, 9, parambjb);
-/* 129:492 */     a(paramaqu, BlockList.aw.a(m), 7, 3, 10, parambjb);
+/* 124:487 */     a(paramaqu, BlockList.aw.instance(m), 4, 1, 8, parambjb);
+/* 125:488 */     a(paramaqu, BlockList.aw.instance(m), 4, 2, 9, parambjb);
+/* 126:489 */     a(paramaqu, BlockList.aw.instance(m), 4, 3, 10, parambjb);
+/* 127:490 */     a(paramaqu, BlockList.aw.instance(m), 7, 1, 8, parambjb);
+/* 128:491 */     a(paramaqu, BlockList.aw.instance(m), 7, 2, 9, parambjb);
+/* 129:492 */     a(paramaqu, BlockList.aw.instance(m), 7, 3, 10, parambjb);
 /* 130:493 */     a(paramaqu, parambjb, 4, 1, 9, 4, 1, 9, false, paramRandom, k);
 /* 131:494 */     a(paramaqu, parambjb, 7, 1, 9, 7, 1, 9, false, paramRandom, k);
 /* 132:495 */     a(paramaqu, parambjb, 4, 1, 10, 7, 2, 10, false, paramRandom, k);
 /* 133:    */     
 /* 134:    */ 
 /* 135:498 */     a(paramaqu, parambjb, 5, 4, 5, 6, 4, 5, false, paramRandom, k);
-/* 136:499 */     a(paramaqu, BlockList.aw.a(i1), 4, 4, 5, parambjb);
-/* 137:500 */     a(paramaqu, BlockList.aw.a(i2), 7, 4, 5, parambjb);
+/* 136:499 */     a(paramaqu, BlockList.aw.instance(i1), 4, 4, 5, parambjb);
+/* 137:500 */     a(paramaqu, BlockList.aw.instance(i2), 7, 4, 5, parambjb);
 /* 138:503 */     for (int i3 = 0; i3 < 4; i3++)
 /* 139:    */     {
-/* 140:504 */       a(paramaqu, BlockList.aw.a(n), 5, 0 - i3, 6 + i3, parambjb);
-/* 141:505 */       a(paramaqu, BlockList.aw.a(n), 6, 0 - i3, 6 + i3, parambjb);
+/* 140:504 */       a(paramaqu, BlockList.aw.instance(n), 5, 0 - i3, 6 + i3, parambjb);
+/* 141:505 */       a(paramaqu, BlockList.aw.instance(n), 6, 0 - i3, 6 + i3, parambjb);
 /* 142:506 */       a(paramaqu, parambjb, 5, 0 - i3, 7 + i3, 6, 0 - i3, 9 + i3);
 /* 143:    */     }
 /* 144:510 */     a(paramaqu, parambjb, 1, -3, 12, 10, -1, 13);
@@ -157,8 +157,8 @@ package net.minecraft.src;
 /* 156:522 */     a(paramaqu, parambjb, 6, -1, 1, 6, -1, 1, false, paramRandom, k);
 /* 157:    */     
 /* 158:    */ 
-/* 159:525 */     a(paramaqu, BlockList.bR.a(a(BlockList.bR, EnumDirection.EAST.b())).a(bbt.M, Boolean.valueOf(true)), 1, -3, 8, parambjb);
-/* 160:526 */     a(paramaqu, BlockList.bR.a(a(BlockList.bR, EnumDirection.WEST.b())).a(bbt.M, Boolean.valueOf(true)), 4, -3, 8, parambjb);
+/* 159:525 */     a(paramaqu, BlockList.bR.instance(a(BlockList.bR, EnumDirection.EAST.b())).a(bbt.M, Boolean.valueOf(true)), 1, -3, 8, parambjb);
+/* 160:526 */     a(paramaqu, BlockList.bR.instance(a(BlockList.bR, EnumDirection.WEST.b())).a(bbt.M, Boolean.valueOf(true)), 4, -3, 8, parambjb);
 /* 161:527 */     a(paramaqu, BlockList.tripwire.instance().a(bbs.M, Boolean.valueOf(true)), 2, -3, 8, parambjb);
 /* 162:528 */     a(paramaqu, BlockList.tripwire.instance().a(bbs.M, Boolean.valueOf(true)), 3, -3, 8, parambjb);
 /* 163:529 */     a(paramaqu, BlockList.af.instance(), 5, -3, 7, parambjb);
@@ -169,60 +169,60 @@ package net.minecraft.src;
 /* 168:534 */     a(paramaqu, BlockList.af.instance(), 5, -3, 2, parambjb);
 /* 169:535 */     a(paramaqu, BlockList.af.instance(), 5, -3, 1, parambjb);
 /* 170:536 */     a(paramaqu, BlockList.af.instance(), 4, -3, 1, parambjb);
-/* 171:537 */     a(paramaqu, BlockList.Y.instance(), 3, -3, 1, parambjb);
+/* 171:537 */     a(paramaqu, BlockList.mossyCobblestone.instance(), 3, -3, 1, parambjb);
 /* 172:538 */     if (!this.g) {
 /* 173:539 */       this.g = a(paramaqu, parambjb, paramRandom, 3, -2, 1, EnumDirection.NORTH.a(), j, 2);
 /* 174:    */     }
-/* 175:541 */     a(paramaqu, BlockList.vine.a(15), 3, -2, 2, parambjb);
+/* 175:541 */     a(paramaqu, BlockList.vine.instance(15), 3, -2, 2, parambjb);
 /* 176:    */     
 /* 177:    */ 
-/* 178:544 */     a(paramaqu, BlockList.bR.a(a(BlockList.bR, EnumDirection.NORTH.b())).a(bbt.M, Boolean.valueOf(true)), 7, -3, 1, parambjb);
-/* 179:545 */     a(paramaqu, BlockList.bR.a(a(BlockList.bR, EnumDirection.SOUTH.b())).a(bbt.M, Boolean.valueOf(true)), 7, -3, 5, parambjb);
+/* 178:544 */     a(paramaqu, BlockList.bR.instance(a(BlockList.bR, EnumDirection.NORTH.b())).a(bbt.M, Boolean.valueOf(true)), 7, -3, 1, parambjb);
+/* 179:545 */     a(paramaqu, BlockList.bR.instance(a(BlockList.bR, EnumDirection.SOUTH.b())).a(bbt.M, Boolean.valueOf(true)), 7, -3, 5, parambjb);
 /* 180:546 */     a(paramaqu, BlockList.tripwire.instance().a(bbs.M, Boolean.valueOf(true)), 7, -3, 2, parambjb);
 /* 181:547 */     a(paramaqu, BlockList.tripwire.instance().a(bbs.M, Boolean.valueOf(true)), 7, -3, 3, parambjb);
 /* 182:548 */     a(paramaqu, BlockList.tripwire.instance().a(bbs.M, Boolean.valueOf(true)), 7, -3, 4, parambjb);
 /* 183:549 */     a(paramaqu, BlockList.af.instance(), 8, -3, 6, parambjb);
 /* 184:550 */     a(paramaqu, BlockList.af.instance(), 9, -3, 6, parambjb);
 /* 185:551 */     a(paramaqu, BlockList.af.instance(), 9, -3, 5, parambjb);
-/* 186:552 */     a(paramaqu, BlockList.Y.instance(), 9, -3, 4, parambjb);
+/* 186:552 */     a(paramaqu, BlockList.mossyCobblestone.instance(), 9, -3, 4, parambjb);
 /* 187:553 */     a(paramaqu, BlockList.af.instance(), 9, -2, 4, parambjb);
 /* 188:554 */     if (!this.h) {
 /* 189:555 */       this.h = a(paramaqu, parambjb, paramRandom, 9, -2, 3, EnumDirection.WEST.a(), j, 2);
 /* 190:    */     }
-/* 191:557 */     a(paramaqu, BlockList.vine.a(15), 8, -1, 3, parambjb);
-/* 192:558 */     a(paramaqu, BlockList.vine.a(15), 8, -2, 3, parambjb);
+/* 191:557 */     a(paramaqu, BlockList.vine.instance(15), 8, -1, 3, parambjb);
+/* 192:558 */     a(paramaqu, BlockList.vine.instance(15), 8, -2, 3, parambjb);
 /* 193:559 */     if (!this.e) {
 /* 194:560 */       this.e = a(paramaqu, parambjb, paramRandom, 8, -3, 3, vl.a(i, new vl[] { ItemList.cd.b(paramRandom) }), 2 + paramRandom.nextInt(5));
 /* 195:    */     }
-/* 196:562 */     a(paramaqu, BlockList.Y.instance(), 9, -3, 2, parambjb);
-/* 197:563 */     a(paramaqu, BlockList.Y.instance(), 8, -3, 1, parambjb);
-/* 198:564 */     a(paramaqu, BlockList.Y.instance(), 4, -3, 5, parambjb);
-/* 199:565 */     a(paramaqu, BlockList.Y.instance(), 5, -2, 5, parambjb);
-/* 200:566 */     a(paramaqu, BlockList.Y.instance(), 5, -1, 5, parambjb);
-/* 201:567 */     a(paramaqu, BlockList.Y.instance(), 6, -3, 5, parambjb);
-/* 202:568 */     a(paramaqu, BlockList.Y.instance(), 7, -2, 5, parambjb);
-/* 203:569 */     a(paramaqu, BlockList.Y.instance(), 7, -1, 5, parambjb);
-/* 204:570 */     a(paramaqu, BlockList.Y.instance(), 8, -3, 5, parambjb);
+/* 196:562 */     a(paramaqu, BlockList.mossyCobblestone.instance(), 9, -3, 2, parambjb);
+/* 197:563 */     a(paramaqu, BlockList.mossyCobblestone.instance(), 8, -3, 1, parambjb);
+/* 198:564 */     a(paramaqu, BlockList.mossyCobblestone.instance(), 4, -3, 5, parambjb);
+/* 199:565 */     a(paramaqu, BlockList.mossyCobblestone.instance(), 5, -2, 5, parambjb);
+/* 200:566 */     a(paramaqu, BlockList.mossyCobblestone.instance(), 5, -1, 5, parambjb);
+/* 201:567 */     a(paramaqu, BlockList.mossyCobblestone.instance(), 6, -3, 5, parambjb);
+/* 202:568 */     a(paramaqu, BlockList.mossyCobblestone.instance(), 7, -2, 5, parambjb);
+/* 203:569 */     a(paramaqu, BlockList.mossyCobblestone.instance(), 7, -1, 5, parambjb);
+/* 204:570 */     a(paramaqu, BlockList.mossyCobblestone.instance(), 8, -3, 5, parambjb);
 /* 205:571 */     a(paramaqu, parambjb, 9, -1, 1, 9, -1, 5, false, paramRandom, k);
 /* 206:    */     
 /* 207:    */ 
 /* 208:574 */     a(paramaqu, parambjb, 8, -3, 8, 10, -1, 10);
-/* 209:575 */     a(paramaqu, BlockList.bf.a(bbc.O), 8, -2, 11, parambjb);
-/* 210:576 */     a(paramaqu, BlockList.bf.a(bbc.O), 9, -2, 11, parambjb);
-/* 211:577 */     a(paramaqu, BlockList.bf.a(bbc.O), 10, -2, 11, parambjb);
-/* 212:578 */     a(paramaqu, BlockList.ay.a(axi.a(EnumDirection.a(a(BlockList.ay, EnumDirection.NORTH.a())))), 8, -2, 12, parambjb);
-/* 213:579 */     a(paramaqu, BlockList.ay.a(axi.a(EnumDirection.a(a(BlockList.ay, EnumDirection.NORTH.a())))), 9, -2, 12, parambjb);
-/* 214:580 */     a(paramaqu, BlockList.ay.a(axi.a(EnumDirection.a(a(BlockList.ay, EnumDirection.NORTH.a())))), 10, -2, 12, parambjb);
+/* 209:575 */     a(paramaqu, BlockList.stoneBrick.instance(bbc.O), 8, -2, 11, parambjb);
+/* 210:576 */     a(paramaqu, BlockList.stoneBrick.instance(bbc.O), 9, -2, 11, parambjb);
+/* 211:577 */     a(paramaqu, BlockList.stoneBrick.instance(bbc.O), 10, -2, 11, parambjb);
+/* 212:578 */     a(paramaqu, BlockList.ay.instance(axi.a(EnumDirection.a(a(BlockList.ay, EnumDirection.NORTH.a())))), 8, -2, 12, parambjb);
+/* 213:579 */     a(paramaqu, BlockList.ay.instance(axi.a(EnumDirection.a(a(BlockList.ay, EnumDirection.NORTH.a())))), 9, -2, 12, parambjb);
+/* 214:580 */     a(paramaqu, BlockList.ay.instance(axi.a(EnumDirection.a(a(BlockList.ay, EnumDirection.NORTH.a())))), 10, -2, 12, parambjb);
 /* 215:581 */     a(paramaqu, parambjb, 8, -3, 8, 8, -3, 10, false, paramRandom, k);
 /* 216:582 */     a(paramaqu, parambjb, 10, -3, 8, 10, -3, 10, false, paramRandom, k);
-/* 217:583 */     a(paramaqu, BlockList.Y.instance(), 10, -2, 9, parambjb);
+/* 217:583 */     a(paramaqu, BlockList.mossyCobblestone.instance(), 10, -2, 9, parambjb);
 /* 218:584 */     a(paramaqu, BlockList.af.instance(), 8, -2, 9, parambjb);
 /* 219:585 */     a(paramaqu, BlockList.af.instance(), 8, -2, 10, parambjb);
 /* 220:586 */     a(paramaqu, BlockList.af.instance(), 10, -1, 9, parambjb);
-/* 221:587 */     a(paramaqu, BlockList.F.a(EnumDirection.UP.a()), 9, -2, 8, parambjb);
-/* 222:588 */     a(paramaqu, BlockList.F.a(a(BlockList.F, EnumDirection.WEST.a())), 10, -2, 8, parambjb);
-/* 223:589 */     a(paramaqu, BlockList.F.a(a(BlockList.F, EnumDirection.WEST.a())), 10, -1, 8, parambjb);
-/* 224:590 */     a(paramaqu, BlockList.bb.a(a(BlockList.bb, EnumDirection.NORTH.b())), 10, -2, 10, parambjb);
+/* 221:587 */     a(paramaqu, BlockList.F.instance(EnumDirection.UP.a()), 9, -2, 8, parambjb);
+/* 222:588 */     a(paramaqu, BlockList.F.instance(a(BlockList.F, EnumDirection.WEST.a())), 10, -2, 8, parambjb);
+/* 223:589 */     a(paramaqu, BlockList.F.instance(a(BlockList.F, EnumDirection.WEST.a())), 10, -1, 8, parambjb);
+/* 224:590 */     a(paramaqu, BlockList.bb.instance(a(BlockList.bb, EnumDirection.NORTH.b())), 10, -2, 10, parambjb);
 /* 225:591 */     if (!this.f) {
 /* 226:592 */       this.f = a(paramaqu, parambjb, paramRandom, 9, -3, 10, vl.a(i, new vl[] { ItemList.cd.b(paramRandom) }), 2 + paramRandom.nextInt(5));
 /* 227:    */     }

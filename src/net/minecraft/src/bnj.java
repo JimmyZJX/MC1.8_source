@@ -79,8 +79,8 @@ package net.minecraft.src;
 /*   78:1565 */     a(paramaqu, parambjb, 6, 1, 4, 9, 4, 6, BlockList.cobblestone.instance(), BlockList.cobblestone.instance(), false);
 /*   79:1566 */     a(paramaqu, BlockList.flowingLava.instance(), 7, 1, 5, parambjb);
 /*   80:1567 */     a(paramaqu, BlockList.flowingLava.instance(), 8, 1, 5, parambjb);
-/*   81:1568 */     a(paramaqu, BlockList.bi.instance(), 9, 2, 5, parambjb);
-/*   82:1569 */     a(paramaqu, BlockList.bi.instance(), 9, 2, 4, parambjb);
+/*   81:1568 */     a(paramaqu, BlockList.ironBars.instance(), 9, 2, 5, parambjb);
+/*   82:1569 */     a(paramaqu, BlockList.ironBars.instance(), 9, 2, 4, parambjb);
 /*   83:1570 */     a(paramaqu, parambjb, 7, 2, 4, 8, 2, 5, BlockList.air.instance(), BlockList.air.instance(), false);
 /*   84:1571 */     a(paramaqu, BlockList.cobblestone.instance(), 6, 1, 3, parambjb);
 /*   85:1572 */     a(paramaqu, BlockList.al.instance(), 6, 2, 3, parambjb);
@@ -97,8 +97,8 @@ package net.minecraft.src;
 /*   96:1583 */     a(paramaqu, BlockList.fence.instance(), 2, 1, 4, parambjb);
 /*   97:1584 */     a(paramaqu, BlockList.aB.instance(), 2, 2, 4, parambjb);
 /*   98:1585 */     a(paramaqu, BlockList.planks.instance(), 1, 1, 5, parambjb);
-/*   99:1586 */     a(paramaqu, BlockList.ad.a(a(BlockList.ad, 3)), 2, 1, 5, parambjb);
-/*  100:1587 */     a(paramaqu, BlockList.ad.a(a(BlockList.ad, 1)), 1, 1, 4, parambjb);
+/*   99:1586 */     a(paramaqu, BlockList.ad.instance(a(BlockList.ad, 3)), 2, 1, 5, parambjb);
+/*  100:1587 */     a(paramaqu, BlockList.ad.instance(a(BlockList.ad, 1)), 1, 1, 4, parambjb);
 /*  101:1589 */     if ((!this.b) && 
 /*  102:1590 */       (parambjb.b(new BlockPosition(a(5, 5), d(1), b(5, 5)))))
 /*  103:     */     {
@@ -107,7 +107,7 @@ package net.minecraft.src;
 /*  106:     */     }
 /*  107:1597 */     for (int i = 6; i <= 8; i++) {
 /*  108:1598 */       if ((a(paramaqu, i, 0, -1, parambjb).getProto().getMaterial() == Material.air) && (a(paramaqu, i, -1, -1, parambjb).getProto().getMaterial() != Material.air)) {
-/*  109:1599 */         a(paramaqu, BlockList.aw.a(a(BlockList.aw, 3)), i, 0, -1, parambjb);
+/*  109:1599 */         a(paramaqu, BlockList.aw.instance(a(BlockList.aw, 3)), i, 0, -1, parambjb);
 /*  110:     */       }
 /*  111:     */     }
 /*  112:1603 */     for (int i = 0; i < 7; i++) {

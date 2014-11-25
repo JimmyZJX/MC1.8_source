@@ -108,7 +108,7 @@ package net.minecraft.src;
 /* 107:121 */     return aql.c;
 /* 108:    */   }
 /* 109:    */   
-/* 110:    */   public Block a(int paramInt)
+/* 110:    */   public Block instance(int paramInt)
 /* 111:    */   {
 /* 112:126 */     EnumDirection localej = EnumDirection.a(paramInt);
 /* 113:127 */     if (localej.k() == EnumAxis.Y) {

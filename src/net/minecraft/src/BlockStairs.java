@@ -597,7 +597,7 @@ package net.minecraft.src;
 /* 596:579 */     return result;
 /* 597:    */   }
 /* 598:    */   
-/* 599:    */   public Block a(int paramInt)
+/* 599:    */   public Block instance(int paramInt)
 /* 600:    */   {
 /* 601:584 */     Block localbec = instance().a(half, (paramInt & 0x4) > 0 ? EnumStairsHalf.TOP : EnumStairsHalf.BOTTOM);
 /* 602:    */     

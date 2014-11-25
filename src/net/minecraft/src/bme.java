@@ -67,9 +67,9 @@ package net.minecraft.src;
 /*   66:     */     default: 
 /*   67:     */       break;
 /*   68:     */     case 0: 
-/*   69: 998 */       a(paramaqu, BlockList.bf.instance(), 5, 1, 5, parambjb);
-/*   70: 999 */       a(paramaqu, BlockList.bf.instance(), 5, 2, 5, parambjb);
-/*   71:1000 */       a(paramaqu, BlockList.bf.instance(), 5, 3, 5, parambjb);
+/*   69: 998 */       a(paramaqu, BlockList.stoneBrick.instance(), 5, 1, 5, parambjb);
+/*   70: 999 */       a(paramaqu, BlockList.stoneBrick.instance(), 5, 2, 5, parambjb);
+/*   71:1000 */       a(paramaqu, BlockList.stoneBrick.instance(), 5, 3, 5, parambjb);
 /*   72:1001 */       a(paramaqu, BlockList.torch.instance(), 4, 3, 5, parambjb);
 /*   73:1002 */       a(paramaqu, BlockList.torch.instance(), 6, 3, 5, parambjb);
 /*   74:1003 */       a(paramaqu, BlockList.torch.instance(), 5, 3, 4, parambjb);
@@ -86,14 +86,14 @@ package net.minecraft.src;
 /*   85:     */     case 1: 
 /*   86:1015 */       for (i = 0; i < 5; i++)
 /*   87:     */       {
-/*   88:1016 */         a(paramaqu, BlockList.bf.instance(), 3, 1, 3 + i, parambjb);
-/*   89:1017 */         a(paramaqu, BlockList.bf.instance(), 7, 1, 3 + i, parambjb);
-/*   90:1018 */         a(paramaqu, BlockList.bf.instance(), 3 + i, 1, 3, parambjb);
-/*   91:1019 */         a(paramaqu, BlockList.bf.instance(), 3 + i, 1, 7, parambjb);
+/*   88:1016 */         a(paramaqu, BlockList.stoneBrick.instance(), 3, 1, 3 + i, parambjb);
+/*   89:1017 */         a(paramaqu, BlockList.stoneBrick.instance(), 7, 1, 3 + i, parambjb);
+/*   90:1018 */         a(paramaqu, BlockList.stoneBrick.instance(), 3 + i, 1, 3, parambjb);
+/*   91:1019 */         a(paramaqu, BlockList.stoneBrick.instance(), 3 + i, 1, 7, parambjb);
 /*   92:     */       }
-/*   93:1021 */       a(paramaqu, BlockList.bf.instance(), 5, 1, 5, parambjb);
-/*   94:1022 */       a(paramaqu, BlockList.bf.instance(), 5, 2, 5, parambjb);
-/*   95:1023 */       a(paramaqu, BlockList.bf.instance(), 5, 3, 5, parambjb);
+/*   93:1021 */       a(paramaqu, BlockList.stoneBrick.instance(), 5, 1, 5, parambjb);
+/*   94:1022 */       a(paramaqu, BlockList.stoneBrick.instance(), 5, 2, 5, parambjb);
+/*   95:1023 */       a(paramaqu, BlockList.stoneBrick.instance(), 5, 3, 5, parambjb);
 /*   96:1024 */       a(paramaqu, BlockList.flowingWater.instance(), 5, 4, 5, parambjb);
 /*   97:1025 */       break;
 /*   98:     */     case 2: 
@@ -136,9 +136,9 @@ package net.minecraft.src;
 /*  135:1058 */         a(paramaqu, BlockList.planks.instance(), 7, 3, i, parambjb);
 /*  136:1059 */         a(paramaqu, BlockList.planks.instance(), 8, 3, i, parambjb);
 /*  137:     */       }
-/*  138:1061 */       a(paramaqu, BlockList.au.a(a(BlockList.au, EnumDirection.WEST.a())), 9, 1, 3, parambjb);
-/*  139:1062 */       a(paramaqu, BlockList.au.a(a(BlockList.au, EnumDirection.WEST.a())), 9, 2, 3, parambjb);
-/*  140:1063 */       a(paramaqu, BlockList.au.a(a(BlockList.au, EnumDirection.WEST.a())), 9, 3, 3, parambjb);
+/*  138:1061 */       a(paramaqu, BlockList.au.instance(a(BlockList.au, EnumDirection.WEST.a())), 9, 1, 3, parambjb);
+/*  139:1062 */       a(paramaqu, BlockList.au.instance(a(BlockList.au, EnumDirection.WEST.a())), 9, 2, 3, parambjb);
+/*  140:1063 */       a(paramaqu, BlockList.au.instance(a(BlockList.au, EnumDirection.WEST.a())), 9, 3, 3, parambjb);
 /*  141:     */       
 /*  142:1065 */       a(paramaqu, parambjb, paramRandom, 3, 4, 8, vl.a(b, new vl[] { ItemList.cd.b(paramRandom) }), 1 + paramRandom.nextInt(4));
 /*  143:     */     }

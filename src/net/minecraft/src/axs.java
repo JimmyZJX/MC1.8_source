@@ -24,7 +24,7 @@ package net.minecraft.src;
 /* 23:   */   {
 /* 24:35 */     ProtoBlock localatr = parambec.getProto();
 /* 25:   */     
-/* 26:37 */     return (parambec == BlockList.stone.instance().a(bba.a, EnumStoneVariants.STONE)) || (localatr == BlockList.cobblestone) || (localatr == BlockList.bf);
+/* 26:37 */     return (parambec == BlockList.stone.instance().a(bba.a, EnumStoneVariants.STONE)) || (localatr == BlockList.cobblestone) || (localatr == BlockList.stoneBrick);
 /* 27:   */   }
 /* 28:   */   
 /* 29:   */   protected ItemStack i(Block parambec)
@@ -34,13 +34,13 @@ package net.minecraft.src;
 /* 33:   */     case 1: 
 /* 34:44 */       return new ItemStack(BlockList.cobblestone);
 /* 35:   */     case 2: 
-/* 36:46 */       return new ItemStack(BlockList.bf);
+/* 36:46 */       return new ItemStack(BlockList.stoneBrick);
 /* 37:   */     case 3: 
-/* 38:48 */       return new ItemStack(BlockList.bf, 1, bbd.b.a());
+/* 38:48 */       return new ItemStack(BlockList.stoneBrick, 1, bbd.b.a());
 /* 39:   */     case 4: 
-/* 40:50 */       return new ItemStack(BlockList.bf, 1, bbd.c.a());
+/* 40:50 */       return new ItemStack(BlockList.stoneBrick, 1, bbd.c.a());
 /* 41:   */     case 5: 
-/* 42:52 */       return new ItemStack(BlockList.bf, 1, bbd.d.a());
+/* 42:52 */       return new ItemStack(BlockList.stoneBrick, 1, bbd.d.a());
 /* 43:   */     }
 /* 44:54 */     return new ItemStack(BlockList.stone);
 /* 45:   */   }
@@ -70,7 +70,7 @@ package net.minecraft.src;
 /* 69:   */     }
 /* 70:   */   }
 /* 71:   */   
-/* 72:   */   public Block a(int paramInt)
+/* 72:   */   public Block instance(int paramInt)
 /* 73:   */   {
 /* 74:84 */     return instance().a(a, EnumMonsterEggVariants.a(paramInt));
 /* 75:   */   }

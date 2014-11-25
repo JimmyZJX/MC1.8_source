@@ -49,7 +49,7 @@ package net.minecraft.src;
 /* 48:70 */     return 0;
 /* 49:   */   }
 /* 50:   */   
-/* 51:   */   public Block a(int paramInt)
+/* 51:   */   public Block instance(int paramInt)
 /* 52:   */   {
 /* 53:75 */     return instance().a(a, Boolean.valueOf(paramInt == 1));
 /* 54:   */   }

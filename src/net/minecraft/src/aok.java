@@ -28,7 +28,7 @@ package net.minecraft.src;
 /* 27:32 */     a(ItemList.bo, new ItemStack(ItemList.bp), 0.35F);
 /* 28:33 */     a(ItemList.bm, new ItemStack(ItemList.bn), 0.35F);
 /* 29:34 */     a(BlockList.cobblestone, new ItemStack(BlockList.stone), 0.1F);
-/* 30:35 */     a(new ItemStack(BlockList.bf, 1, bbc.b), new ItemStack(BlockList.bf, 1, bbc.N), 0.1F);
+/* 30:35 */     a(new ItemStack(BlockList.stoneBrick, 1, bbc.b), new ItemStack(BlockList.stoneBrick, 1, bbc.N), 0.1F);
 /* 31:36 */     a(ItemList.aI, new ItemStack(ItemList.aH), 0.3F);
 /* 32:37 */     a(BlockList.aL, new ItemStack(BlockList.cz), 0.35F);
 /* 33:38 */     a(BlockList.cactus, new ItemStack(ItemList.dye, 1, EnumDyeColor.GREEN.b()), 0.2F);

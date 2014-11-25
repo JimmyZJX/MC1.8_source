@@ -76,9 +76,9 @@ package net.minecraft.src;
 /* 75:   */     }
 /* 76:   */   }
 /* 77:   */   
-/* 78:   */   public static List a(List paramList, vl... paramVarArgs)
+/* 78:   */   public static List<vl> a(List<vl> paramList, vl... paramVarArgs)
 /* 79:   */   {
-/* 80:73 */     ArrayList localArrayList = Lists.newArrayList(paramList);
+/* 80:73 */     ArrayList<vl> localArrayList = Lists.newArrayList(paramList);
 /* 81:74 */     Collections.addAll(localArrayList, paramVarArgs);
 /* 82:   */     
 /* 83:76 */     return localArrayList;

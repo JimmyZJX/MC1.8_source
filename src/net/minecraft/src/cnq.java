@@ -34,9 +34,9 @@ package net.minecraft.src;
 /*  33:    */     {
 /*  34: 43 */       localObject = parambcr.w();
 /*  35: 44 */       m = parambcr.getData();
-/*  36: 46 */       if (((localObject instanceof auj)) && (m == 0))
+/*  36: 46 */       if (((localObject instanceof BlockChest)) && (m == 0))
 /*  37:    */       {
-/*  38: 47 */         ((auj)localObject).e(parambcr.getWorld(), parambcr.v(), parambcr.getWorld().getBlock(parambcr.v()));
+/*  38: 47 */         ((BlockChest)localObject).e(parambcr.getWorld(), parambcr.v(), parambcr.getWorld().getBlock(parambcr.v()));
 /*  39: 48 */         m = parambcr.getData();
 /*  40:    */       }
 /*  41: 51 */       parambcr.m();

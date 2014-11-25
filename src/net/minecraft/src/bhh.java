@@ -29,7 +29,7 @@ package net.minecraft.src;
 /* 28:37 */       BlockPosition localdt1 = paramdt.offset(paramRandom.nextInt(4) - paramRandom.nextInt(4), paramRandom.nextInt(3) - paramRandom.nextInt(3), paramRandom.nextInt(4) - paramRandom.nextInt(4));
 /* 29:39 */       if ((paramaqu.isEmpty(localdt1)) && (World.isFlatSurface(paramaqu, localdt1.down())))
 /* 30:   */       {
-/* 31:40 */         paramaqu.setBlock(localdt1, BlockList.ae.instance(), 2);
+/* 31:40 */         paramaqu.setBlock(localdt1, BlockList.chest.instance(), 2);
 /* 32:   */         
 /* 33:42 */         bcm localbcm = paramaqu.s(localdt1);
 /* 34:43 */         if ((localbcm instanceof bcr)) {

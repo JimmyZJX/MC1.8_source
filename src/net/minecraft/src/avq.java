@@ -59,7 +59,7 @@ package net.minecraft.src;
 /* 58:74 */     return 0;
 /* 59:   */   }
 /* 60:   */   
-/* 61:   */   public Block a(int paramInt)
+/* 61:   */   public Block instance(int paramInt)
 /* 62:   */   {
 /* 63:79 */     return instance().a(b, Boolean.valueOf((paramInt & 0x4) != 0)).a(a, EnumDirection.b(paramInt & 0x3));
 /* 64:   */   }

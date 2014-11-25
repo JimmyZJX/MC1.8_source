@@ -19,7 +19,7 @@ package net.minecraft.src;
 /* 18:30 */     paramList.add(new ItemStack(paramalq, 1, EnumWoodVariant.JUNGLE.getIndex()));
 /* 19:   */   }
 /* 20:   */   
-/* 21:   */   public Block a(int paramInt)
+/* 21:   */   public Block instance(int paramInt)
 /* 22:   */   {
 /* 23:35 */     Block localbec = instance().a(b, EnumWoodVariant.fromIndex((paramInt & 0x3) % 4));
 /* 24:38 */     switch (paramInt & 0xC)

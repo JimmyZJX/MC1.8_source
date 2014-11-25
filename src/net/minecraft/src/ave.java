@@ -188,7 +188,7 @@ package net.minecraft.src;
 /* 187:199 */     return instance().a(a, EnumDirection.SOUTH);
 /* 188:    */   }
 /* 189:    */   
-/* 190:    */   public Block a(int paramInt)
+/* 190:    */   public Block instance(int paramInt)
 /* 191:    */   {
 /* 192:204 */     return instance().a(a, b(paramInt)).a(b, Boolean.valueOf((paramInt & 0x8) > 0));
 /* 193:    */   }

@@ -47,7 +47,7 @@ package net.minecraft.src;
 /*  46:162 */     super.a(paramaqu, paramdt, parambec, paramatr);
 /*  47:    */   }
 /*  48:    */   
-/*  49:    */   public Block a(int paramInt)
+/*  49:    */   public Block instance(int paramInt)
 /*  50:    */   {
 /*  51:167 */     EnumDirection localej = EnumDirection.a(paramInt);
 /*  52:168 */     if (localej.k() == EnumAxis.Y) {

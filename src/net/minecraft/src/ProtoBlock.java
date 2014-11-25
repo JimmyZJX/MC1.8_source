@@ -29,7 +29,7 @@ package net.minecraft.src;
 /*   29:     */   {
 /*   30:  77 */     int i1 = paramInt & 0xFFF;
 /*   31:  78 */     int i2 = paramInt >> 12 & 0xF;
-/*   32:  79 */     return c(i1).a(i2);
+/*   32:  79 */     return c(i1).instance(i2);
 /*   33:     */   }
 /*   34:     */   
 /*   35:     */   public static ProtoBlock a(Item paramalq)
@@ -89,7 +89,7 @@ package net.minecraft.src;
 /*   89: 130 */     return getMaterial().r();
 /*   90:     */   }
 /*   91:     */   
-/*   92:     */   public Block a(int paramInt)
+/*   92:     */   public Block instance(int paramInt)
 /*   93:     */   {
 /*   94: 136 */     return instance();
 /*   95:     */   }
@@ -569,7 +569,7 @@ package net.minecraft.src;
 /*  569:     */   
 /*  570:     */   public Block a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3, int paramInt, EntityLiving paramxm)
 /*  571:     */   {
-/*  572: 678 */     return a(paramInt);
+/*  572: 678 */     return instance(paramInt);
 /*  573:     */   }
 /*  574:     */   
 /*  575:     */   public void a(World paramaqu, BlockPosition paramdt, EntityPlayer paramahd) {}
@@ -905,7 +905,7 @@ package net.minecraft.src;
 /*  905: 981 */     a(51, "fire", new BlockFire().c(0.0F).a(1.0F).a(l).setName("fire").J());
 /*  906: 982 */     a(52, "mob_spawner", new axr().c(5.0F).a(j).setName("mobSpawner").J());
 /*  907: 983 */     a(53, "oak_stairs", new BlockStairs(localatr2.instance().a(ayw.a, EnumWoodVariant.OAK)).setName("stairsWood"));
-/*  908: 984 */     a(54, "chest", new auj(0).c(2.5F).a(f).setName("chest"));
+/*  908: 984 */     a(54, "chest", new BlockChest(0).c(2.5F).a(f).setName("chest"));
 /*  909: 985 */     a(55, "redstone_wire", new azt().c(0.0F).a(e).setName("redstoneDust").J());
 /*  910: 986 */     a(56, "diamond_ore", new ayu().c(3.0F).b(5.0F).a(i).setName("oreDiamond"));
 /*  911: 987 */     a(57, "diamond_block", new BlockMineral(MapColor.G).c(5.0F).b(10.0F).a(j).setName("blockDiamond"));
@@ -1002,7 +1002,7 @@ package net.minecraft.src;
 /* 1002:1078 */     a(143, "wooden_button", new bce().c(0.5F).a(f).setName("button"));
 /* 1003:1079 */     a(144, "skull", new baj().c(1.0F).a(i).setName("skull"));
 /* 1004:1080 */     a(145, "anvil", new BlockAnvil().c(5.0F).a(p).b(2000.0F).setName("anvil"));
-/* 1005:1081 */     a(146, "trapped_chest", new auj(1).c(2.5F).a(f).setName("chestTrap"));
+/* 1005:1081 */     a(146, "trapped_chest", new BlockChest(1).c(2.5F).a(f).setName("chestTrap"));
 /* 1006:1082 */     a(147, "light_weighted_pressure_plate", new bcd("gold_block", Material.f, 15).c(0.5F).a(f).setName("weightedPlate_light"));
 /* 1007:1083 */     a(148, "heavy_weighted_pressure_plate", new bcd("iron_block", Material.f, 150).c(0.5F).a(f).setName("weightedPlate_heavy"));
 /* 1008:1084 */     a(149, "unpowered_comparator", new BlockComparator(false).c(0.0F).a(f).setName("comparator").J());

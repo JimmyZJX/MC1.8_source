@@ -388,7 +388,7 @@ package net.minecraft.src;
 /* 385:412 */     return aql.c;
 /* 386:    */   }
 /* 387:    */   
-/* 388:    */   public Block a(int paramInt)
+/* 388:    */   public Block instance(int paramInt)
 /* 389:    */   {
 /* 390:417 */     return instance().a(O, Integer.valueOf(paramInt));
 /* 391:    */   }

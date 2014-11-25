@@ -10,7 +10,7 @@ package net.minecraft.src;
 				BlockList.diamondBlock, BlockList.diamondOre, BlockList.T, BlockList.D,
 				BlockList.R, BlockList.goldOre, BlockList.aI, BlockList.S,
 				BlockList.ironOre, BlockList.y, BlockList.lapisOre, BlockList.aD,
-				BlockList.Y, BlockList.netherrack, BlockList.cB, BlockList.av,
+				BlockList.mossyCobblestone, BlockList.netherrack, BlockList.cB, BlockList.av,
 				BlockList.redstoneOre, BlockList.A, BlockList.cM, BlockList.stone,
 				BlockList.U 
 			});

@@ -443,12 +443,12 @@ package net.minecraft.src;
 /* 441:503 */     c(BlockList.V);
 /* 442:504 */     c(BlockList.W);
 /* 443:505 */     c(BlockList.bookshelf);
-/* 444:506 */     c(BlockList.Y);
+/* 444:506 */     c(BlockList.mossyCobblestone);
 /* 445:507 */     c(BlockList.obsidian);
 /* 446:508 */     c(BlockList.torch);
 /* 447:509 */     c(BlockList.mobSpawner);
 /* 448:510 */     c(BlockList.ad);
-/* 449:511 */     c(BlockList.ae);
+/* 449:511 */     c(BlockList.chest);
 /* 450:512 */     c(BlockList.diamondOre);
 /* 451:513 */     c(BlockList.diamondBlock);
 /* 452:514 */     c(BlockList.ai);
@@ -463,7 +463,7 @@ package net.minecraft.src;
 /* 461:523 */     c(BlockList.aB);
 /* 462:524 */     c(BlockList.redstoneOre);
 /* 463:525 */     c(BlockList.aF);
-/* 464:526 */     c(BlockList.aG);
+/* 464:526 */     c(BlockList.stoneButton);
 /* 465:527 */     a(BlockList.aH, new anj(BlockList.aH));
 /* 466:528 */     c(BlockList.aI);
 /* 467:529 */     c(BlockList.aJ);
@@ -489,7 +489,7 @@ package net.minecraft.src;
 /* 487:    */ 
 /* 488:    */ 
 /* 489:    */ 
-/* 490:552 */     a(BlockList.bf, new amr(BlockList.bf, BlockList.bf, new alv()).b("stonebricksmooth"));
+/* 490:552 */     a(BlockList.stoneBrick, new amr(BlockList.stoneBrick, BlockList.stoneBrick, new alv()).b("stonebricksmooth"));
 /* 491:    */     
 /* 492:    */ 
 /* 493:    */ 
@@ -498,7 +498,7 @@ package net.minecraft.src;
 /* 496:    */ 
 /* 497:559 */     c(BlockList.bg);
 /* 498:560 */     c(BlockList.bh);
-/* 499:561 */     c(BlockList.bi);
+/* 499:561 */     c(BlockList.ironBars);
 /* 500:562 */     c(BlockList.bj);
 /* 501:563 */     c(BlockList.bk);
 /* 502:564 */     a(BlockList.vine, new ann(BlockList.vine, false));
@@ -658,14 +658,14 @@ package net.minecraft.src;
 /* 656:718 */     a(321, "painting", new ItemFrame(adm.class).setID("painting"));
 /* 657:719 */     a(322, "golden_apple", new alm(4, 1.2F, false).h().a(Potion.regeneration.id, 5, 1, 1.0F).setID("appleGold"));
 /* 658:720 */     a(323, "sign", new anf().setID("sign"));
-/* 659:721 */     a(324, "wooden_door", new akt(BlockList.ao).setID("doorOak"));
+/* 659:721 */     a(324, "wooden_door", new akt(BlockList.woodenDoor).setID("doorOak"));
 /* 660:722 */     Item localalq = new akb(BlockList.air).setID("bucket").setStackLimit(16);
 /* 661:723 */     a(325, "bucket", localalq);
 /* 662:724 */     a(326, "water_bucket", new akb(BlockList.flowingWater).setID("bucketWater").c(localalq));
 /* 663:725 */     a(327, "lava_bucket", new akb(BlockList.flowingLava).setID("bucketLava").c(localalq));
 /* 664:726 */     a(328, "minecart", new amp(EnumMinecartVariant.a).setID("minecart"));
 /* 665:727 */     a(329, "saddle", new ana().setID("saddle"));
-/* 666:728 */     a(330, "iron_door", new akt(BlockList.aA).setID("doorIron"));
+/* 666:728 */     a(330, "iron_door", new akt(BlockList.ironDoor).setID("doorIron"));
 /* 667:729 */     a(331, "redstone", new amz().setID("redstone").setPotionEffect(PotionHelper.redStoneEffect));
 /* 668:730 */     a(332, "snowball", new ank().setID("snowball"));
 /* 669:731 */     a(333, "boat", new ajw().setID("boat"));

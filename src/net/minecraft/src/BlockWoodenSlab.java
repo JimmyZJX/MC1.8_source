@@ -53,7 +53,7 @@ package net.minecraft.src;
 /*  52:    */     }
 /*  53:    */   }
 /*  54:    */   
-/*  55:    */   public Block a(int paramInt)
+/*  55:    */   public Block instance(int paramInt)
 /*  56:    */   {
 /*  57: 70 */     Block localbec = instance().a(b, EnumWoodVariant.fromIndex(paramInt & 0x7));
 /*  58: 72 */     if (!j()) {

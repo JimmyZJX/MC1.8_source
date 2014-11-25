@@ -357,7 +357,7 @@ package net.minecraft.src;
 /* 356:465 */         i4 = this.h.nextInt(16) + 8;
 /* 357:466 */         i5 = this.h.nextInt(256);
 /* 358:467 */         int i6 = this.h.nextInt(16) + 8;
-/* 359:468 */         new bie().generate(this.m, this.h, localdt1.offset(i4, i5, i6));
+/* 359:468 */         new DungeonGenerator().generate(this.m, this.h, localdt1.offset(i4, i5, i6));
 /* 360:    */       }
 /* 361:    */     }
 /* 362:472 */     localarm.a(this.m, this.h, new BlockPosition(i1, 0, i2));

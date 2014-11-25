@@ -137,7 +137,7 @@ package net.minecraft.src;
 /* 136:168 */     return new AABB(paramdt.getX() + 0.2F, paramdt.getY(), paramdt.getZ() + 0.2F, paramdt.getX() + 1 - 0.2F, paramdt.getY() + 1 - 0.2F, paramdt.getZ() + 1 - 0.2F);
 /* 137:    */   }
 /* 138:    */   
-/* 139:    */   public Block a(int paramInt)
+/* 139:    */   public Block instance(int paramInt)
 /* 140:    */   {
 /* 141:173 */     return instance().a(b, EnumRailState.a(paramInt & 0x7)).a(M, Boolean.valueOf((paramInt & 0x8) > 0));
 /* 142:    */   }

@@ -172,7 +172,7 @@ package net.minecraft.src;
 /* 171:186 */     return aql.c;
 /* 172:    */   }
 /* 173:    */   
-/* 174:    */   public Block a(int paramInt)
+/* 174:    */   public Block instance(int paramInt)
 /* 175:    */   {
 /* 176:191 */     Block localbec = instance();
 /* 177:192 */     switch (paramInt)

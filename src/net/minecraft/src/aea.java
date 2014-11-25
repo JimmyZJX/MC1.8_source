@@ -16,7 +16,7 @@ package net.minecraft.src;
 /* 15:   */   {
 /* 16:27 */     super.a(paramwh);
 /* 17:   */     
-/* 18:29 */     throwItem(Item.fromProtoBlock(BlockList.ae), 1, 0.0F);
+/* 18:29 */     throwItem(Item.fromProtoBlock(BlockList.chest), 1, 0.0F);
 /* 19:   */   }
 /* 20:   */   
 /* 21:   */   public int getSize()
@@ -31,7 +31,7 @@ package net.minecraft.src;
 /* 30:   */   
 /* 31:   */   public Block u()
 /* 32:   */   {
-/* 33:44 */     return BlockList.ae.instance().a(auj.a, EnumDirection.NORTH);
+/* 33:44 */     return BlockList.chest.instance().a(BlockChest.a, EnumDirection.NORTH);
 /* 34:   */   }
 /* 35:   */   
 /* 36:   */   public int w()

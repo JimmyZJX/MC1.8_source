@@ -197,7 +197,7 @@ package net.minecraft.src;
 /* 196:218 */     return null;
 /* 197:    */   }
 /* 198:    */   
-/* 199:    */   public Block a(int paramInt)
+/* 199:    */   public Block instance(int paramInt)
 /* 200:    */   {
 /* 201:223 */     return instance().a(a, (paramInt & 0x3) == 2 ? EnumAxis.Z : EnumAxis.X);
 /* 202:    */   }
