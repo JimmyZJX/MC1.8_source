@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*   8:    */   protected aug()
 /*   9:    */   {
 /*  10: 27 */     super(Material.F);
-/*  11: 28 */     j(this.L.b().a(a, Integer.valueOf(0)));
+/*  11: 28 */     j(this.L.b().setData(a, Integer.valueOf(0)));
 /*  12: 29 */     a(true);
 /*  13:    */   }
 /*  14:    */   
@@ -70,7 +70,7 @@ package net.minecraft.src;
 /*  69: 87 */     paramahd.ck().a(2, 0.1F);
 /*  70: 88 */     int i = ((Integer)parambec.getProperty(a)).intValue();
 /*  71: 89 */     if (i < 6) {
-/*  72: 90 */       paramaqu.setBlock(paramdt, parambec.a(a, Integer.valueOf(i + 1)), 3);
+/*  72: 90 */       paramaqu.setBlock(paramdt, parambec.setData(a, Integer.valueOf(i + 1)), 3);
 /*  73:    */     } else {
 /*  74: 92 */       paramaqu.g(paramdt);
 /*  75:    */     }
@@ -118,7 +118,7 @@ package net.minecraft.src;
 /* 117:    */   
 /* 118:    */   public Block instance(int paramInt)
 /* 119:    */   {
-/* 120:139 */     return instance().a(a, Integer.valueOf(paramInt));
+/* 120:139 */     return instance().setData(a, Integer.valueOf(paramInt));
 /* 121:    */   }
 /* 122:    */   
 /* 123:    */   public int c(Block parambec)

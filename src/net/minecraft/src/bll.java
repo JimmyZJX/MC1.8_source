@@ -157,18 +157,18 @@ package net.minecraft.src;
 /* 156:522 */     a(paramaqu, parambjb, 6, -1, 1, 6, -1, 1, false, paramRandom, k);
 /* 157:    */     
 /* 158:    */ 
-/* 159:525 */     a(paramaqu, BlockList.bR.instance(a(BlockList.bR, EnumDirection.EAST.b())).a(bbt.M, Boolean.valueOf(true)), 1, -3, 8, parambjb);
-/* 160:526 */     a(paramaqu, BlockList.bR.instance(a(BlockList.bR, EnumDirection.WEST.b())).a(bbt.M, Boolean.valueOf(true)), 4, -3, 8, parambjb);
-/* 161:527 */     a(paramaqu, BlockList.tripwire.instance().a(bbs.M, Boolean.valueOf(true)), 2, -3, 8, parambjb);
-/* 162:528 */     a(paramaqu, BlockList.tripwire.instance().a(bbs.M, Boolean.valueOf(true)), 3, -3, 8, parambjb);
-/* 163:529 */     a(paramaqu, BlockList.af.instance(), 5, -3, 7, parambjb);
-/* 164:530 */     a(paramaqu, BlockList.af.instance(), 5, -3, 6, parambjb);
-/* 165:531 */     a(paramaqu, BlockList.af.instance(), 5, -3, 5, parambjb);
-/* 166:532 */     a(paramaqu, BlockList.af.instance(), 5, -3, 4, parambjb);
-/* 167:533 */     a(paramaqu, BlockList.af.instance(), 5, -3, 3, parambjb);
-/* 168:534 */     a(paramaqu, BlockList.af.instance(), 5, -3, 2, parambjb);
-/* 169:535 */     a(paramaqu, BlockList.af.instance(), 5, -3, 1, parambjb);
-/* 170:536 */     a(paramaqu, BlockList.af.instance(), 4, -3, 1, parambjb);
+/* 159:525 */     a(paramaqu, BlockList.bR.instance(a(BlockList.bR, EnumDirection.EAST.b())).setData(bbt.M, Boolean.valueOf(true)), 1, -3, 8, parambjb);
+/* 160:526 */     a(paramaqu, BlockList.bR.instance(a(BlockList.bR, EnumDirection.WEST.b())).setData(bbt.M, Boolean.valueOf(true)), 4, -3, 8, parambjb);
+/* 161:527 */     a(paramaqu, BlockList.tripwire.instance().setData(bbs.M, Boolean.valueOf(true)), 2, -3, 8, parambjb);
+/* 162:528 */     a(paramaqu, BlockList.tripwire.instance().setData(bbs.M, Boolean.valueOf(true)), 3, -3, 8, parambjb);
+/* 163:529 */     a(paramaqu, BlockList.redstoneWire.instance(), 5, -3, 7, parambjb);
+/* 164:530 */     a(paramaqu, BlockList.redstoneWire.instance(), 5, -3, 6, parambjb);
+/* 165:531 */     a(paramaqu, BlockList.redstoneWire.instance(), 5, -3, 5, parambjb);
+/* 166:532 */     a(paramaqu, BlockList.redstoneWire.instance(), 5, -3, 4, parambjb);
+/* 167:533 */     a(paramaqu, BlockList.redstoneWire.instance(), 5, -3, 3, parambjb);
+/* 168:534 */     a(paramaqu, BlockList.redstoneWire.instance(), 5, -3, 2, parambjb);
+/* 169:535 */     a(paramaqu, BlockList.redstoneWire.instance(), 5, -3, 1, parambjb);
+/* 170:536 */     a(paramaqu, BlockList.redstoneWire.instance(), 4, -3, 1, parambjb);
 /* 171:537 */     a(paramaqu, BlockList.mossyCobblestone.instance(), 3, -3, 1, parambjb);
 /* 172:538 */     if (!this.g) {
 /* 173:539 */       this.g = a(paramaqu, parambjb, paramRandom, 3, -2, 1, EnumDirection.NORTH.a(), j, 2);
@@ -176,16 +176,16 @@ package net.minecraft.src;
 /* 175:541 */     a(paramaqu, BlockList.vine.instance(15), 3, -2, 2, parambjb);
 /* 176:    */     
 /* 177:    */ 
-/* 178:544 */     a(paramaqu, BlockList.bR.instance(a(BlockList.bR, EnumDirection.NORTH.b())).a(bbt.M, Boolean.valueOf(true)), 7, -3, 1, parambjb);
-/* 179:545 */     a(paramaqu, BlockList.bR.instance(a(BlockList.bR, EnumDirection.SOUTH.b())).a(bbt.M, Boolean.valueOf(true)), 7, -3, 5, parambjb);
-/* 180:546 */     a(paramaqu, BlockList.tripwire.instance().a(bbs.M, Boolean.valueOf(true)), 7, -3, 2, parambjb);
-/* 181:547 */     a(paramaqu, BlockList.tripwire.instance().a(bbs.M, Boolean.valueOf(true)), 7, -3, 3, parambjb);
-/* 182:548 */     a(paramaqu, BlockList.tripwire.instance().a(bbs.M, Boolean.valueOf(true)), 7, -3, 4, parambjb);
-/* 183:549 */     a(paramaqu, BlockList.af.instance(), 8, -3, 6, parambjb);
-/* 184:550 */     a(paramaqu, BlockList.af.instance(), 9, -3, 6, parambjb);
-/* 185:551 */     a(paramaqu, BlockList.af.instance(), 9, -3, 5, parambjb);
+/* 178:544 */     a(paramaqu, BlockList.bR.instance(a(BlockList.bR, EnumDirection.NORTH.b())).setData(bbt.M, Boolean.valueOf(true)), 7, -3, 1, parambjb);
+/* 179:545 */     a(paramaqu, BlockList.bR.instance(a(BlockList.bR, EnumDirection.SOUTH.b())).setData(bbt.M, Boolean.valueOf(true)), 7, -3, 5, parambjb);
+/* 180:546 */     a(paramaqu, BlockList.tripwire.instance().setData(bbs.M, Boolean.valueOf(true)), 7, -3, 2, parambjb);
+/* 181:547 */     a(paramaqu, BlockList.tripwire.instance().setData(bbs.M, Boolean.valueOf(true)), 7, -3, 3, parambjb);
+/* 182:548 */     a(paramaqu, BlockList.tripwire.instance().setData(bbs.M, Boolean.valueOf(true)), 7, -3, 4, parambjb);
+/* 183:549 */     a(paramaqu, BlockList.redstoneWire.instance(), 8, -3, 6, parambjb);
+/* 184:550 */     a(paramaqu, BlockList.redstoneWire.instance(), 9, -3, 6, parambjb);
+/* 185:551 */     a(paramaqu, BlockList.redstoneWire.instance(), 9, -3, 5, parambjb);
 /* 186:552 */     a(paramaqu, BlockList.mossyCobblestone.instance(), 9, -3, 4, parambjb);
-/* 187:553 */     a(paramaqu, BlockList.af.instance(), 9, -2, 4, parambjb);
+/* 187:553 */     a(paramaqu, BlockList.redstoneWire.instance(), 9, -2, 4, parambjb);
 /* 188:554 */     if (!this.h) {
 /* 189:555 */       this.h = a(paramaqu, parambjb, paramRandom, 9, -2, 3, EnumDirection.WEST.a(), j, 2);
 /* 190:    */     }
@@ -216,13 +216,13 @@ package net.minecraft.src;
 /* 215:581 */     a(paramaqu, parambjb, 8, -3, 8, 8, -3, 10, false, paramRandom, k);
 /* 216:582 */     a(paramaqu, parambjb, 10, -3, 8, 10, -3, 10, false, paramRandom, k);
 /* 217:583 */     a(paramaqu, BlockList.mossyCobblestone.instance(), 10, -2, 9, parambjb);
-/* 218:584 */     a(paramaqu, BlockList.af.instance(), 8, -2, 9, parambjb);
-/* 219:585 */     a(paramaqu, BlockList.af.instance(), 8, -2, 10, parambjb);
-/* 220:586 */     a(paramaqu, BlockList.af.instance(), 10, -1, 9, parambjb);
+/* 218:584 */     a(paramaqu, BlockList.redstoneWire.instance(), 8, -2, 9, parambjb);
+/* 219:585 */     a(paramaqu, BlockList.redstoneWire.instance(), 8, -2, 10, parambjb);
+/* 220:586 */     a(paramaqu, BlockList.redstoneWire.instance(), 10, -1, 9, parambjb);
 /* 221:587 */     a(paramaqu, BlockList.F.instance(EnumDirection.UP.a()), 9, -2, 8, parambjb);
 /* 222:588 */     a(paramaqu, BlockList.F.instance(a(BlockList.F, EnumDirection.WEST.a())), 10, -2, 8, parambjb);
 /* 223:589 */     a(paramaqu, BlockList.F.instance(a(BlockList.F, EnumDirection.WEST.a())), 10, -1, 8, parambjb);
-/* 224:590 */     a(paramaqu, BlockList.bb.instance(a(BlockList.bb, EnumDirection.NORTH.b())), 10, -2, 10, parambjb);
+/* 224:590 */     a(paramaqu, BlockList.unpoweredRepeater.instance(a(BlockList.unpoweredRepeater, EnumDirection.NORTH.b())), 10, -2, 10, parambjb);
 /* 225:591 */     if (!this.f) {
 /* 226:592 */       this.f = a(paramaqu, parambjb, paramRandom, 9, -3, 10, vl.a(i, new vl[] { ItemList.cd.b(paramRandom) }), 2 + paramRandom.nextInt(5));
 /* 227:    */     }

@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*   9:    */   protected BlockGrass()
 /*  10:    */   {
 /*  11: 25 */     super(Material.grass);
-/*  12: 26 */     j(this.L.b().a(a, Boolean.valueOf(false)));
+/*  12: 26 */     j(this.L.b().setData(a, Boolean.valueOf(false)));
 /*  13: 27 */     a(true);
 /*  14: 28 */     setCreativeTab(CreativeTabs.tabBlock);
 /*  15:    */   }
@@ -18,7 +18,7 @@ package net.minecraft.src;
 /*  17:    */   public Block a(Block parambec, IBlockAccess paramard, BlockPosition paramdt)
 /*  18:    */   {
 /*  19: 33 */     ProtoBlock localatr = paramard.getBlock(paramdt.up()).getProto();
-/*  20: 34 */     return parambec.a(a, Boolean.valueOf((localatr == BlockList.aJ) || (localatr == BlockList.aH)));
+/*  20: 34 */     return parambec.setData(a, Boolean.valueOf((localatr == BlockList.aJ) || (localatr == BlockList.aH)));
 /*  21:    */   }
 /*  22:    */   
 /*  23:    */   public int F()
@@ -61,7 +61,7 @@ package net.minecraft.src;
 /*  60:    */   
 /*  61:    */   public Item a(Block parambec, Random paramRandom, int paramInt)
 /*  62:    */   {
-/*  63: 78 */     return BlockList.dirt.a(BlockList.dirt.instance().a(BlockDirt.a, avd.a), paramRandom, paramInt);
+/*  63: 78 */     return BlockList.dirt.a(BlockList.dirt.instance().setData(BlockDirt.a, avd.a), paramRandom, paramInt);
 /*  64:    */   }
 /*  65:    */   
 /*  66:    */   public boolean a(World paramaqu, BlockPosition paramdt, Block parambec, boolean paramBoolean)
@@ -95,14 +95,14 @@ package net.minecraft.src;
 /*  94:    */         {
 /*  95:109 */           localObject = paramaqu.b(localdt2).a(paramRandom, localdt2);
 /*  96:110 */           avy localavy = ((EnumFlowerVariant)localObject).a().a();
-/*  97:111 */           Block localbec = localavy.instance().a(localavy.l(), (Comparable)localObject);
+/*  97:111 */           Block localbec = localavy.instance().setData(localavy.l(), (Comparable)localObject);
 /*  98:112 */           if (localavy.f(paramaqu, localdt2, localbec)) {
 /*  99:113 */             paramaqu.setBlock(localdt2, localbec, 3);
 /* 100:    */           }
 /* 101:    */         }
 /* 102:    */         else
 /* 103:    */         {
-/* 104:116 */           localObject = BlockList.tallgrass.instance().a(bbh.a, bbi.b);
+/* 104:116 */           localObject = BlockList.tallgrass.instance().setData(bbh.a, bbi.b);
 /* 105:117 */           if (BlockList.tallgrass.f(paramaqu, localdt2, (Block)localObject)) {
 /* 106:118 */             paramaqu.setBlock(localdt2, (Block)localObject, 3);
 /* 107:    */           }

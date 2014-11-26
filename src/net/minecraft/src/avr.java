@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*   8:    */   protected avr()
 /*   9:    */   {
 /*  10: 32 */     super(Material.rock);
-/*  11: 33 */     j(this.L.b().a(a, EnumDirection.NORTH));
+/*  11: 33 */     j(this.L.b().setData(a, EnumDirection.NORTH));
 /*  12: 34 */     setCreativeTab(CreativeTabs.tabDeco);
 /*  13: 35 */     a(0.0625F, 0.0F, 0.0625F, 0.9375F, 0.875F, 0.9375F);
 /*  14:    */   }
@@ -46,12 +46,12 @@ package net.minecraft.src;
 /*  45:    */   
 /*  46:    */   public Block a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3, int paramInt, EntityLiving paramxm)
 /*  47:    */   {
-/*  48: 71 */     return instance().a(a, paramxm.aO().d());
+/*  48: 71 */     return instance().setData(a, paramxm.aO().d());
 /*  49:    */   }
 /*  50:    */   
 /*  51:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, EntityLiving paramxm, ItemStack paramamj)
 /*  52:    */   {
-/*  53: 76 */     paramaqu.setBlock(paramdt, parambec.a(a, paramxm.aO().d()), 2);
+/*  53: 76 */     paramaqu.setBlock(paramdt, parambec.setData(a, paramxm.aO().d()), 2);
 /*  54:    */   }
 /*  55:    */   
 /*  56:    */   public boolean a(World paramaqu, BlockPosition paramdt, Block parambec, EntityPlayer paramahd, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3)
@@ -102,7 +102,7 @@ package net.minecraft.src;
 /* 101:126 */     if (localej.k() == EnumAxis.Y) {
 /* 102:127 */       localej = EnumDirection.NORTH;
 /* 103:    */     }
-/* 104:129 */     return instance().a(a, localej);
+/* 104:129 */     return instance().setData(a, localej);
 /* 105:    */   }
 /* 106:    */   
 /* 107:    */   public int c(Block parambec)

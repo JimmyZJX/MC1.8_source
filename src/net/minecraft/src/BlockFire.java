@@ -30,7 +30,7 @@ package net.minecraft.src;
 /*  29: 48 */     if (e(paramard, paramdt.up())) {
 /*  30: 49 */       m = bool1 ? 1 : 2;
 /*  31:    */     }
-/*  32: 52 */     return parambec.a(north, Boolean.valueOf(e(paramard, paramdt.north()))).a(east, Boolean.valueOf(e(paramard, paramdt.east()))).a(south, Boolean.valueOf(e(paramard, paramdt.south()))).a(west, Boolean.valueOf(e(paramard, paramdt.west()))).a(upper, Integer.valueOf(m)).a(flip, Boolean.valueOf(bool2)).a(alt, Boolean.valueOf(bool1));
+/*  32: 52 */     return parambec.setData(north, Boolean.valueOf(e(paramard, paramdt.north()))).setData(east, Boolean.valueOf(e(paramard, paramdt.east()))).setData(south, Boolean.valueOf(e(paramard, paramdt.south()))).setData(west, Boolean.valueOf(e(paramard, paramdt.west()))).setData(upper, Integer.valueOf(m)).setData(flip, Boolean.valueOf(bool2)).setData(alt, Boolean.valueOf(bool1));
 /*  33:    */   }
 /*  34:    */   
 /*  35: 72 */   private final Map S = Maps.newIdentityHashMap();
@@ -39,7 +39,7 @@ package net.minecraft.src;
 /*  38:    */   protected BlockFire()
 /*  39:    */   {
 /*  40: 76 */     super(Material.o);
-/*  41: 77 */     j(this.L.b().a(age, Integer.valueOf(0)).a(flip, Boolean.valueOf(false)).a(alt, Boolean.valueOf(false)).a(north, Boolean.valueOf(false)).a(east, Boolean.valueOf(false)).a(south, Boolean.valueOf(false)).a(west, Boolean.valueOf(false)).a(upper, Integer.valueOf(0)));
+/*  41: 77 */     j(this.L.b().setData(age, Integer.valueOf(0)).setData(flip, Boolean.valueOf(false)).setData(alt, Boolean.valueOf(false)).setData(north, Boolean.valueOf(false)).setData(east, Boolean.valueOf(false)).setData(south, Boolean.valueOf(false)).setData(west, Boolean.valueOf(false)).setData(upper, Integer.valueOf(0)));
 /*  42: 78 */     a(true);
 /*  43:    */   }
 /*  44:    */   
@@ -134,7 +134,7 @@ package net.minecraft.src;
 /* 133:171 */     int j = ((Integer)parambec.getProperty(age)).intValue();
 /* 134:172 */     if (j < 15)
 /* 135:    */     {
-/* 136:173 */       parambec = parambec.a(age, Integer.valueOf(j + paramRandom.nextInt(3) / 2));
+/* 136:173 */       parambec = parambec.setData(age, Integer.valueOf(j + paramRandom.nextInt(3) / 2));
 /* 137:174 */       paramaqu.setBlock(paramdt, parambec, 4);
 /* 138:    */     }
 /* 139:177 */     paramaqu.a(paramdt, this, a(paramaqu) + paramRandom.nextInt(10));
@@ -188,7 +188,7 @@ package net.minecraft.src;
 /* 187:233 */                 if (i5 > 15) {
 /* 188:234 */                   i5 = 15;
 /* 189:    */                 }
-/* 190:236 */                 paramaqu.setBlock(localdt, parambec.a(age, Integer.valueOf(i5)), 3);
+/* 190:236 */                 paramaqu.setBlock(localdt, parambec.setData(age, Integer.valueOf(i5)), 3);
 /* 191:    */               }
 /* 192:    */             }
 /* 193:    */           }
@@ -231,14 +231,14 @@ package net.minecraft.src;
 /* 230:269 */         if (j > 15) {
 /* 231:270 */           j = 15;
 /* 232:    */         }
-/* 233:272 */         paramaqu.setBlock(paramdt, instance().a(age, Integer.valueOf(j)), 3);
+/* 233:272 */         paramaqu.setBlock(paramdt, instance().setData(age, Integer.valueOf(j)), 3);
 /* 234:    */       }
 /* 235:    */       else
 /* 236:    */       {
 /* 237:274 */         paramaqu.g(paramdt);
 /* 238:    */       }
 /* 239:277 */       if (localbec.getProto() == BlockList.W) {
-/* 240:278 */         BlockList.W.d(paramaqu, paramdt, localbec.a(bbk.a, Boolean.valueOf(true)));
+/* 240:278 */         BlockList.W.d(paramaqu, paramdt, localbec.setData(bbk.a, Boolean.valueOf(true)));
 /* 241:    */       }
 /* 242:    */     }
 /* 243:    */   }
@@ -246,7 +246,7 @@ package net.minecraft.src;
 /* 245:    */   private boolean e(World paramaqu, BlockPosition paramdt)
 /* 246:    */   {
 /* 247:284 */     for (EnumDirection localej : EnumDirection.values()) {
-/* 248:285 */       if (e(paramaqu, paramdt.a(localej))) {
+/* 248:285 */       if (e(paramaqu, paramdt.offset(localej))) {
 /* 249:286 */         return true;
 /* 250:    */       }
 /* 251:    */     }
@@ -260,7 +260,7 @@ package net.minecraft.src;
 /* 259:    */     }
 /* 260:298 */     int i = 0;
 /* 261:299 */     for (EnumDirection localej : EnumDirection.values()) {
-/* 262:300 */       i = Math.max(d(paramaqu.getBlock(paramdt.a(localej)).getProto()), i);
+/* 262:300 */       i = Math.max(d(paramaqu.getBlock(paramdt.offset(localej)).getProto()), i);
 /* 263:    */     }
 /* 264:303 */     return i;
 /* 265:    */   }
@@ -382,7 +382,7 @@ package net.minecraft.src;
 /* 381:    */   
 /* 382:    */   public Block instance(int paramInt)
 /* 383:    */   {
-/* 384:411 */     return instance().a(age, Integer.valueOf(paramInt));
+/* 384:411 */     return instance().setData(age, Integer.valueOf(paramInt));
 /* 385:    */   }
 /* 386:    */   
 /* 387:    */   public int c(Block parambec)

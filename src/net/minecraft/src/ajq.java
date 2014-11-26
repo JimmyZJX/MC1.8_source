@@ -16,7 +16,7 @@ package net.minecraft.src;
 /* 15:26 */       return false;
 /* 16:   */     }
 /* 17:29 */     boolean bool = paramaqu.getBlock(paramdt).getProto().f(paramaqu, paramdt);
-/* 18:30 */     BlockPosition localdt1 = bool ? paramdt : paramdt.a(paramej);
+/* 18:30 */     BlockPosition localdt1 = bool ? paramdt : paramdt.offset(paramej);
 /* 19:31 */     if (!paramahd.a(localdt1, paramej, paramamj)) {
 /* 20:32 */       return false;
 /* 21:   */     }

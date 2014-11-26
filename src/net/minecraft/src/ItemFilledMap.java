@@ -99,9 +99,9 @@ package net.minecraft.src;
 /*  98:121 */                 i13 = i8 + i9 * 231871;
 /*  99:122 */                 i13 = i13 * i13 * 31287121 + i13 * 11;
 /* 100:124 */                 if ((i13 >> 20 & 0x1) == 0) {
-/* 101:125 */                   localHashMultiset.add(BlockList.dirt.g(BlockList.dirt.instance().a(BlockDirt.a, avd.a)), 10);
+/* 101:125 */                   localHashMultiset.add(BlockList.dirt.g(BlockList.dirt.instance().setData(BlockDirt.a, avd.a)), 10);
 /* 102:    */                 } else {
-/* 103:127 */                   localHashMultiset.add(BlockList.stone.g(BlockList.stone.instance().a(bba.a, EnumStoneVariants.STONE)), 100);
+/* 103:127 */                   localHashMultiset.add(BlockList.stone.g(BlockList.stone.instance().setData(bba.a, EnumStoneVariants.STONE)), 100);
 /* 104:    */                 }
 /* 105:130 */                 d2 = 100.0D;
 /* 106:    */               }

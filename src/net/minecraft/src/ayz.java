@@ -82,14 +82,14 @@ package net.minecraft.src;
 /*  79:    */         }
 /*  80:317 */         if (i == 0)
 /*  81:    */         {
-/*  82:318 */           localatr = this.a.getBlock(localdt.a(this.d)).getProto();
+/*  82:318 */           localatr = this.a.getBlock(localdt.offset(this.d)).getProto();
 /*  83:319 */           if (localatr != BlockList.obsidian) {
 /*  84:    */             break label181;
 /*  85:    */           }
 /*  86:    */         }
 /*  87:322 */         else if (i == this.h - 1)
 /*  88:    */         {
-/*  89:323 */           localatr = this.a.getBlock(localdt.a(this.c)).getProto();
+/*  89:323 */           localatr = this.a.getBlock(localdt.offset(this.c)).getProto();
 /*  90:324 */           if (localatr != BlockList.obsidian) {
 /*  91:    */             break label181;
 /*  92:    */           }
@@ -130,7 +130,7 @@ package net.minecraft.src;
 /* 127:    */     {
 /* 128:358 */       BlockPosition localdt = this.f.offset(this.c, i);
 /* 129:359 */       for (int j = 0; j < this.g; j++) {
-/* 130:360 */         this.a.setBlock(localdt.up(j), BlockList.aY.instance().a(ayy.a, this.b), 2);
+/* 130:360 */         this.a.setBlock(localdt.up(j), BlockList.aY.instance().setData(ayy.a, this.b), 2);
 /* 131:    */       }
 /* 132:    */     }
 /* 133:    */   }

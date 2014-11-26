@@ -46,10 +46,10 @@ package net.minecraft.src;
 /*   45:     */     
 /*   46:     */ 
 /*   47:1883 */     int i = (this.m == EnumDirection.EAST) || (this.m == EnumDirection.NORTH) ? 1 : 0;
-/*   48:1884 */     a(paramaqu, BlockList.torch.instance().a(bbl.a, this.m.e()), i != 0 ? 2 : 0, 3, 0, parambjb);
-/*   49:1885 */     a(paramaqu, BlockList.torch.instance().a(bbl.a, this.m), 1, 3, 1, parambjb);
-/*   50:1886 */     a(paramaqu, BlockList.torch.instance().a(bbl.a, this.m.f()), i != 0 ? 0 : 2, 3, 0, parambjb);
-/*   51:1887 */     a(paramaqu, BlockList.torch.instance().a(bbl.a, this.m.d()), 1, 3, -1, parambjb);
+/*   48:1884 */     a(paramaqu, BlockList.torch.instance().setData(bbl.a, this.m.e()), i != 0 ? 2 : 0, 3, 0, parambjb);
+/*   49:1885 */     a(paramaqu, BlockList.torch.instance().setData(bbl.a, this.m), 1, 3, 1, parambjb);
+/*   50:1886 */     a(paramaqu, BlockList.torch.instance().setData(bbl.a, this.m.f()), i != 0 ? 0 : 2, 3, 0, parambjb);
+/*   51:1887 */     a(paramaqu, BlockList.torch.instance().setData(bbl.a, this.m.d()), 1, 3, -1, parambjb);
 /*   52:     */     
 /*   53:1889 */     return true;
 /*   54:     */   }

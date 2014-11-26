@@ -8,7 +8,7 @@ package net.minecraft.src;
 /*   8:    */   protected axc()
 /*   9:    */   {
 /*  10: 60 */     super(Material.wood);
-/*  11: 61 */     j(this.L.b().a(a, Boolean.valueOf(false)));
+/*  11: 61 */     j(this.L.b().setData(a, Boolean.valueOf(false)));
 /*  12: 62 */     setCreativeTab(CreativeTabs.tabDeco);
 /*  13:    */   }
 /*  14:    */   
@@ -18,7 +18,7 @@ package net.minecraft.src;
 /*  18:    */     {
 /*  19: 68 */       e(paramaqu, paramdt, parambec);
 /*  20:    */       
-/*  21: 70 */       parambec = parambec.a(a, Boolean.valueOf(false));
+/*  21: 70 */       parambec = parambec.setData(a, Boolean.valueOf(false));
 /*  22: 71 */       paramaqu.setBlock(paramdt, parambec, 2);
 /*  23: 72 */       return true;
 /*  24:    */     }
@@ -35,7 +35,7 @@ package net.minecraft.src;
 /*  35: 85 */       return;
 /*  36:    */     }
 /*  37: 88 */     ((axd)localbcm).a(new ItemStack(paramamj.getItem(), 1, paramamj.getDamage2()));
-/*  38: 89 */     paramaqu.setBlock(paramdt, parambec.a(a, Boolean.valueOf(true)), 2);
+/*  38: 89 */     paramaqu.setBlock(paramdt, parambec.setData(a, Boolean.valueOf(true)), 2);
 /*  39:    */   }
 /*  40:    */   
 /*  41:    */   private void e(World paramaqu, BlockPosition paramdt, Block parambec)
@@ -112,7 +112,7 @@ package net.minecraft.src;
 /* 112:    */   
 /* 113:    */   public Block instance(int paramInt)
 /* 114:    */   {
-/* 115:172 */     return instance().a(a, Boolean.valueOf(paramInt > 0));
+/* 115:172 */     return instance().setData(a, Boolean.valueOf(paramInt > 0));
 /* 116:    */   }
 /* 117:    */   
 /* 118:    */   public int c(Block parambec)

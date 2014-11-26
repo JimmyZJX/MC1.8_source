@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*   8:    */   
 /*   9:    */   public ayp()
 /*  10:    */   {
-/*  11: 30 */     j(this.L.b().a(P, EnumWoodVariant.OAK).a(b, Boolean.valueOf(true)).a(a, Boolean.valueOf(true)));
+/*  11: 30 */     j(this.L.b().setData(P, EnumWoodVariant.OAK).setData(b, Boolean.valueOf(true)).setData(a, Boolean.valueOf(true)));
 /*  12:    */   }
 /*  13:    */   
 /*  14:    */   public int h(Block parambec)
@@ -73,7 +73,7 @@ package net.minecraft.src;
 /*  72:    */   
 /*  73:    */   public Block instance(int paramInt)
 /*  74:    */   {
-/*  75: 98 */     return instance().a(P, b(paramInt)).a(a, Boolean.valueOf((paramInt & 0x4) == 0)).a(b, Boolean.valueOf((paramInt & 0x8) > 0));
+/*  75: 98 */     return instance().setData(P, b(paramInt)).setData(a, Boolean.valueOf((paramInt & 0x4) == 0)).setData(b, Boolean.valueOf((paramInt & 0x8) > 0));
 /*  76:    */   }
 /*  77:    */   
 /*  78:    */   public int c(Block parambec)

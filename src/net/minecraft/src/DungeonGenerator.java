@@ -91,7 +91,7 @@ package net.minecraft.src;
 /*  90:125 */           for (Iterator<EnumDirection> localObject1 = en.HORIZONTAL.iterator(); localObject1.hasNext();)
 /*  91:    */           {
 /*  92:125 */             EnumDirection localObject2 = localObject1.next();
-/*  93:126 */             if (world.getBlock(localdt2.a(localObject2)).getProto().getMaterial().a()) {
+/*  93:126 */             if (world.getBlock(localdt2.offset(localObject2)).getProto().getMaterial().a()) {
 /*  94:127 */               i11++;
 /*  95:    */             }
 /*  96:    */           }

@@ -10,13 +10,13 @@ package net.minecraft.src;
 /*   9:    */   {
 /*  10:360 */     World localaqu = paramdz.i();
 /*  11:361 */     EnumDirection localej = ave.b(paramdz.f());
-/*  12:362 */     BlockPosition localdt = paramdz.d().a(localej);
+/*  12:362 */     BlockPosition localdt = paramdz.d().offset(localej);
 /*  13:363 */     baj localbaj = BlockList.ce;
 /*  14:365 */     if ((localaqu.isEmpty(localdt)) && (localbaj.b(localaqu, localdt, paramamj)))
 /*  15:    */     {
 /*  16:366 */       if (!localaqu.isClient)
 /*  17:    */       {
-/*  18:367 */         localaqu.setBlock(localdt, localbaj.instance().a(baj.a, EnumDirection.UP), 3);
+/*  18:367 */         localaqu.setBlock(localdt, localbaj.instance().setData(baj.a, EnumDirection.UP), 3);
 /*  19:368 */         bcm localbcm = localaqu.s(localdt);
 /*  20:369 */         if ((localbcm instanceof bdm))
 /*  21:    */         {

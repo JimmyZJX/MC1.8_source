@@ -14,14 +14,14 @@ package net.minecraft.src;
 /*  13:    */   protected bbj(Material parambof, boolean paramBoolean)
 /*  14:    */   {
 /*  15: 30 */     super(parambof);
-/*  16: 31 */     j(this.L.b().a(b, Boolean.valueOf(false)).a(M, Boolean.valueOf(false)).a(N, Boolean.valueOf(false)).a(O, Boolean.valueOf(false)));
+/*  16: 31 */     j(this.L.b().setData(b, Boolean.valueOf(false)).setData(M, Boolean.valueOf(false)).setData(N, Boolean.valueOf(false)).setData(O, Boolean.valueOf(false)));
 /*  17: 32 */     this.a = paramBoolean;
 /*  18: 33 */     setCreativeTab(CreativeTabs.tabDeco);
 /*  19:    */   }
 /*  20:    */   
 /*  21:    */   public Block a(Block parambec, IBlockAccess paramard, BlockPosition paramdt)
 /*  22:    */   {
-/*  23: 38 */     return parambec.a(b, Boolean.valueOf(c(paramard.getBlock(paramdt.north()).getProto()))).a(N, Boolean.valueOf(c(paramard.getBlock(paramdt.south()).getProto()))).a(O, Boolean.valueOf(c(paramard.getBlock(paramdt.west()).getProto()))).a(M, Boolean.valueOf(c(paramard.getBlock(paramdt.east()).getProto())));
+/*  23: 38 */     return parambec.setData(b, Boolean.valueOf(c(paramard.getBlock(paramdt.north()).getProto()))).setData(N, Boolean.valueOf(c(paramard.getBlock(paramdt.south()).getProto()))).setData(O, Boolean.valueOf(c(paramard.getBlock(paramdt.west()).getProto()))).setData(M, Boolean.valueOf(c(paramard.getBlock(paramdt.east()).getProto())));
 /*  24:    */   }
 /*  25:    */   
 /*  26:    */   public Item a(Block parambec, Random paramRandom, int paramInt)

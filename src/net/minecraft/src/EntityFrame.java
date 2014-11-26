@@ -103,7 +103,7 @@ package net.minecraft.src;
 /* 102:111 */     int i = Math.max(1, l() / 16);
 /* 103:112 */     int j = Math.max(1, m() / 16);
 /* 104:    */     
-/* 105:114 */     BlockPosition localdt = this.a.a(this.b.d());
+/* 105:114 */     BlockPosition localdt = this.a.offset(this.b.d());
 /* 106:115 */     EnumDirection localej = this.b.f();
 /* 107:    */     Object localObject;
 /* 108:117 */     for (int k = 0; k < i; k++) {
@@ -193,7 +193,7 @@ package net.minecraft.src;
 /* 192:198 */     if (paramfn.hasKey("Direction", 99))
 /* 193:    */     {
 /* 194:199 */       localej = EnumDirection.b(paramfn.d("Direction"));
-/* 195:200 */       this.a = this.a.a(localej);
+/* 195:200 */       this.a = this.a.offset(localej);
 /* 196:    */     }
 /* 197:201 */     else if (paramfn.hasKey("Facing", 99))
 /* 198:    */     {

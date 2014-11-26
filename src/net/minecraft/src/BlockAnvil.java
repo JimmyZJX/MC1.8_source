@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*   9:    */   protected BlockAnvil()
 /*  10:    */   {
 /*  11: 33 */     super(Material.g);
-/*  12: 34 */     j(this.L.b().a(a, EnumDirection.NORTH).a(b, Integer.valueOf(0)));
+/*  12: 34 */     j(this.L.b().setData(a, EnumDirection.NORTH).setData(b, Integer.valueOf(0)));
 /*  13: 35 */     e(0);
 /*  14: 36 */     setCreativeTab(CreativeTabs.tabDeco);
 /*  15:    */   }
@@ -28,7 +28,7 @@ package net.minecraft.src;
 /*  27:    */   public Block a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3, int paramInt, EntityLiving paramxm)
 /*  28:    */   {
 /*  29: 51 */     EnumDirection localej = paramxm.aO().e();
-/*  30: 52 */     return super.a(paramaqu, paramdt, paramej, paramFloat1, paramFloat2, paramFloat3, paramInt, paramxm).a(a, localej).a(b, Integer.valueOf(paramInt >> 2));
+/*  30: 52 */     return super.a(paramaqu, paramdt, paramej, paramFloat1, paramFloat2, paramFloat3, paramInt, paramxm).setData(a, localej).setData(b, Integer.valueOf(paramInt >> 2));
 /*  31:    */   }
 /*  32:    */   
 /*  33:    */   public boolean a(World paramaqu, BlockPosition paramdt, Block parambec, EntityPlayer paramahd, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3)
@@ -78,12 +78,12 @@ package net.minecraft.src;
 /*  77:    */   
 /*  78:    */   public Block b(Block parambec)
 /*  79:    */   {
-/*  80:140 */     return instance().a(a, EnumDirection.SOUTH);
+/*  80:140 */     return instance().setData(a, EnumDirection.SOUTH);
 /*  81:    */   }
 /*  82:    */   
 /*  83:    */   public Block instance(int paramInt)
 /*  84:    */   {
-/*  85:145 */     return instance().a(a, EnumDirection.b(paramInt & 0x3)).a(b, Integer.valueOf((paramInt & 0xF) >> 2));
+/*  85:145 */     return instance().setData(a, EnumDirection.b(paramInt & 0x3)).setData(b, Integer.valueOf((paramInt & 0xF) >> 2));
 /*  86:    */   }
 /*  87:    */   
 /*  88:    */   public int c(Block parambec)

@@ -550,10 +550,10 @@ package net.minecraft.src;
 /* 549:556 */     this.world.setBlock(paramdt.up(), BlockList.bedrock.instance());
 /* 550:557 */     BlockPosition localdt1 = paramdt.up(2);
 /* 551:558 */     this.world.setBlock(localdt1, BlockList.bedrock.instance());
-/* 552:559 */     this.world.setBlock(localdt1.west(), BlockList.torch.instance().a(bbl.a, EnumDirection.EAST));
-/* 553:560 */     this.world.setBlock(localdt1.east(), BlockList.torch.instance().a(bbl.a, EnumDirection.WEST));
-/* 554:561 */     this.world.setBlock(localdt1.north(), BlockList.torch.instance().a(bbl.a, EnumDirection.SOUTH));
-/* 555:562 */     this.world.setBlock(localdt1.south(), BlockList.torch.instance().a(bbl.a, EnumDirection.NORTH));
+/* 552:559 */     this.world.setBlock(localdt1.west(), BlockList.torch.instance().setData(bbl.a, EnumDirection.EAST));
+/* 553:560 */     this.world.setBlock(localdt1.east(), BlockList.torch.instance().setData(bbl.a, EnumDirection.WEST));
+/* 554:561 */     this.world.setBlock(localdt1.north(), BlockList.torch.instance().setData(bbl.a, EnumDirection.SOUTH));
+/* 555:562 */     this.world.setBlock(localdt1.south(), BlockList.torch.instance().setData(bbl.a, EnumDirection.NORTH));
 /* 556:563 */     this.world.setBlock(paramdt.up(3), BlockList.bedrock.instance());
 /* 557:564 */     this.world.setBlock(paramdt.up(4), BlockList.dragonEgg.instance());
 /* 558:    */   }

@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*   9:    */   protected auf()
 /*  10:    */   {
 /*  11: 23 */     super(Material.A);
-/*  12: 24 */     j(this.L.b().a(a, Integer.valueOf(0)));
+/*  12: 24 */     j(this.L.b().setData(a, Integer.valueOf(0)));
 /*  13: 25 */     a(true);
 /*  14: 26 */     setCreativeTab(CreativeTabs.tabDeco);
 /*  15:    */   }
@@ -32,13 +32,13 @@ package net.minecraft.src;
 /*  31: 46 */     if (j == 15)
 /*  32:    */     {
 /*  33: 47 */       paramaqu.setBlock(localdt, instance());
-/*  34: 48 */       Block localbec = parambec.a(a, Integer.valueOf(0));
+/*  34: 48 */       Block localbec = parambec.setData(a, Integer.valueOf(0));
 /*  35: 49 */       paramaqu.setBlock(paramdt, localbec, 4);
 /*  36: 50 */       a(paramaqu, localdt, localbec, this);
 /*  37:    */     }
 /*  38:    */     else
 /*  39:    */     {
-/*  40: 52 */       paramaqu.setBlock(paramdt, parambec.a(a, Integer.valueOf(j + 1)), 4);
+/*  40: 52 */       paramaqu.setBlock(paramdt, parambec.setData(a, Integer.valueOf(j + 1)), 4);
 /*  41:    */     }
 /*  42:    */   }
 /*  43:    */   
@@ -84,7 +84,7 @@ package net.minecraft.src;
 /*  83: 96 */     for (Iterator<EnumDirection> localObject = en.HORIZONTAL.iterator(); (localObject).hasNext();)
 /*  84:    */     {
 /*  85: 96 */       EnumDirection localej = (EnumDirection)(localObject).next();
-/*  86: 97 */       if (paramaqu.getBlock(paramdt.a(localej)).getProto().getMaterial().a()) {
+/*  86: 97 */       if (paramaqu.getBlock(paramdt.offset(localej)).getProto().getMaterial().a()) {
 /*  87: 98 */         return false;
 /*  88:    */       }
 /*  89:    */     }
@@ -104,7 +104,7 @@ package net.minecraft.src;
 /* 103:    */   
 /* 104:    */   public Block instance(int paramInt)
 /* 105:    */   {
-/* 106:117 */     return instance().a(a, Integer.valueOf(paramInt));
+/* 106:117 */     return instance().setData(a, Integer.valueOf(paramInt));
 /* 107:    */   }
 /* 108:    */   
 /* 109:    */   public int c(Block parambec)

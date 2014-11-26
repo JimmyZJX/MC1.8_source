@@ -24,7 +24,7 @@ package net.minecraft.src;
 /* 23:   */     }
 /* 24:75 */     else if (paramDouble > -0.5D)
 /* 25:   */     {
-/* 26:76 */       this.ak = BlockList.dirt.instance().a(BlockDirt.a, avd.b);
+/* 26:76 */       this.ak = BlockList.dirt.instance().setData(BlockDirt.a, avd.b);
 /* 27:   */     }
 /* 28:78 */     b(paramaqu, paramRandom, parambgk, paramInt1, paramInt2, paramDouble);
 /* 29:   */   }

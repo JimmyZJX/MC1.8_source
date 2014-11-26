@@ -29,7 +29,7 @@ package net.minecraft.src;
 /*  28:    */     {
 /*  29:211 */       this.b = EnumDirection.a(localRandom);
 /*  30:    */       
-/*  31:213 */       BlockPosition localdt = new BlockPosition(this.a.xPos, this.a.yPos + 0.5D, this.a.zPos).a(this.b);
+/*  31:213 */       BlockPosition localdt = new BlockPosition(this.a.xPos, this.a.yPos + 0.5D, this.a.zPos).offset(this.b);
 /*  32:214 */       Block localbec = this.a.world.getBlock(localdt);
 /*  33:215 */       if (axs.d(localbec))
 /*  34:    */       {
@@ -57,11 +57,11 @@ package net.minecraft.src;
 /*  56:237 */       return;
 /*  57:    */     }
 /*  58:240 */     World localaqu = this.a.world;
-/*  59:241 */     BlockPosition localdt = new BlockPosition(this.a.xPos, this.a.yPos + 0.5D, this.a.zPos).a(this.b);
+/*  59:241 */     BlockPosition localdt = new BlockPosition(this.a.xPos, this.a.yPos + 0.5D, this.a.zPos).offset(this.b);
 /*  60:242 */     Block localbec = localaqu.getBlock(localdt);
 /*  61:244 */     if (axs.d(localbec))
 /*  62:    */     {
-/*  63:245 */       localaqu.setBlock(localdt, BlockList.monsterEgg.instance().a(axs.a, EnumMonsterEggVariants.a(localbec)), 3);
+/*  63:245 */       localaqu.setBlock(localdt, BlockList.monsterEgg.instance().setData(axs.a, EnumMonsterEggVariants.a(localbec)), 3);
 /*  64:246 */       this.a.y();
 /*  65:247 */       this.a.setDead();
 /*  66:    */     }

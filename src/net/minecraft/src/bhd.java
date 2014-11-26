@@ -140,7 +140,7 @@ package net.minecraft.src;
 /* 139:176 */       BlockPosition localdt2 = paramdt1.a(0.5F + i1 * f1, 0.5F + i1 * f2, 0.5F + i1 * f3);
 /* 140:177 */       axo localaxo = b(paramdt1, localdt2);
 /* 141:    */       
-/* 142:179 */       setBlock(this.world, localdt2, block.instance().a(axm.a, localaxo));
+/* 142:179 */       setBlock(this.world, localdt2, block.instance().setData(axm.a, localaxo));
 /* 143:    */     }
 /* 144:    */   }
 /* 145:    */   

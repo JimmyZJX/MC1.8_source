@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*   9:    */     {
 /*  10:313 */       World world = paramdz.i();
 /*  11:    */       
-/*  12:315 */       BlockPosition pos = paramdz.d().a(ave.b(paramdz.f()));
+/*  12:315 */       BlockPosition pos = paramdz.d().offset(ave.b(paramdz.f()));
 /*  13:316 */       if (akw.a(paramamj, world, pos))
 /*  14:    */       {
 /*  15:317 */         if (!world.isClient) {

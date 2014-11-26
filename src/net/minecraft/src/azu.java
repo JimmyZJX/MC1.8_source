@@ -1,7 +1,7 @@
 package net.minecraft.src;
 /*   1:    */  enum azu
 /*   2:    */   implements va
-/*   3:    */ { a("up"),b("side"),c("none");
+/*   3:    */ { UP("up"),SIDE("side"),NONE("none");
 /*   4:    */   private final String d;
 /*   5:    */   
 /*   6:    */   private azu(String paramString)

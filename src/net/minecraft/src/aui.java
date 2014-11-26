@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*   9:    */   public aui()
 /*  10:    */   {
 /*  11: 33 */     super(Material.f);
-/*  12: 34 */     j(this.L.b().a(a, Integer.valueOf(0)));
+/*  12: 34 */     j(this.L.b().setData(a, Integer.valueOf(0)));
 /*  13:    */   }
 /*  14:    */   
 /*  15:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, AABB parambrt, List<AABB> paramList, Entity paramwv)
@@ -142,7 +142,7 @@ package net.minecraft.src;
 /* 141:    */   
 /* 142:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, int paramInt)
 /* 143:    */   {
-/* 144:167 */     paramaqu.setBlock(paramdt, parambec.a(a, Integer.valueOf(MathUtils.clamp(paramInt, 0, 3))), 2);
+/* 144:167 */     paramaqu.setBlock(paramdt, parambec.setData(a, Integer.valueOf(MathUtils.clamp(paramInt, 0, 3))), 2);
 /* 145:168 */     paramaqu.e(paramdt, this);
 /* 146:    */   }
 /* 147:    */   
@@ -179,7 +179,7 @@ package net.minecraft.src;
 /* 178:    */   
 /* 179:    */   public Block instance(int paramInt)
 /* 180:    */   {
-/* 181:206 */     return instance().a(a, Integer.valueOf(paramInt));
+/* 181:206 */     return instance().setData(a, Integer.valueOf(paramInt));
 /* 182:    */   }
 /* 183:    */   
 /* 184:    */   public int c(Block parambec)

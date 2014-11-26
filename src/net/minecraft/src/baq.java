@@ -15,7 +15,7 @@ package net.minecraft.src;
 /*  14:    */   protected baq()
 /*  15:    */   {
 /*  16: 33 */     super(Material.m);
-/*  17: 34 */     j(this.L.b().a(a, Boolean.valueOf(false)));
+/*  17: 34 */     j(this.L.b().setData(a, Boolean.valueOf(false)));
 /*  18: 35 */     setCreativeTab(CreativeTabs.tabBlock);
 /*  19:    */   }
 /*  20:    */   
@@ -39,7 +39,7 @@ package net.minecraft.src;
 /*  38:    */   {
 /*  39: 55 */     if ((!((Boolean)parambec.getProperty(a)).booleanValue()) && (d(paramaqu, paramdt)))
 /*  40:    */     {
-/*  41: 57 */       paramaqu.setBlock(paramdt, parambec.a(a, Boolean.valueOf(true)), 2);
+/*  41: 57 */       paramaqu.setBlock(paramdt, parambec.setData(a, Boolean.valueOf(true)), 2);
 /*  42: 58 */       paramaqu.playLevelEvent(2001, paramdt, ProtoBlock.a(BlockList.water));
 /*  43:    */     }
 /*  44:    */   }
@@ -59,7 +59,7 @@ package net.minecraft.src;
 /*  58: 71 */       int j = ((Integer)((vi)localObject).b()).intValue();
 /*  59: 73 */       for (EnumDirection localej : EnumDirection.values())
 /*  60:    */       {
-/*  61: 74 */         BlockPosition localdt2 = localdt1.a(localej);
+/*  61: 74 */         BlockPosition localdt2 = localdt1.offset(localej);
 /*  62: 75 */         if (paramaqu.getBlock(localdt2).getProto().getMaterial() == Material.water)
 /*  63:    */         {
 /*  64: 76 */           paramaqu.setBlock(localdt2, BlockList.air.instance(), 2);
@@ -90,7 +90,7 @@ package net.minecraft.src;
 /*  89:    */   
 /*  90:    */   public Block instance(int paramInt)
 /*  91:    */   {
-/*  92:102 */     return instance().a(a, Boolean.valueOf((paramInt & 0x1) == 1));
+/*  92:102 */     return instance().setData(a, Boolean.valueOf((paramInt & 0x1) == 1));
 /*  93:    */   }
 /*  94:    */   
 /*  95:    */   public int c(Block parambec)
@@ -109,7 +109,7 @@ package net.minecraft.src;
 /* 108:118 */       return;
 /* 109:    */     }
 /* 110:121 */     EnumDirection localej = EnumDirection.a(paramRandom);
-/* 111:122 */     if ((localej == EnumDirection.UP) || (World.isFlatSurface(paramaqu, paramdt.a(localej)))) {
+/* 111:122 */     if ((localej == EnumDirection.UP) || (World.isFlatSurface(paramaqu, paramdt.offset(localej)))) {
 /* 112:123 */       return;
 /* 113:    */     }
 /* 114:126 */     double d1 = paramdt.getX();

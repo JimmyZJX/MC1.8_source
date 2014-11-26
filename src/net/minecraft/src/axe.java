@@ -7,7 +7,7 @@ package net.minecraft.src;
 /*   6:    */   protected axe()
 /*   7:    */   {
 /*   8: 22 */     super(Material.q);
-/*   9: 23 */     j(this.L.b().a(a, EnumDirection.NORTH));
+/*   9: 23 */     j(this.L.b().setData(a, EnumDirection.NORTH));
 /*  10: 24 */     setCreativeTab(CreativeTabs.tabDeco);
 /*  11:    */   }
 /*  12:    */   
@@ -77,11 +77,11 @@ package net.minecraft.src;
 /*  76:    */   public Block a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3, int paramInt, EntityLiving paramxm)
 /*  77:    */   {
 /*  78: 91 */     if ((paramej.k().c()) && (b(paramaqu, paramdt, paramej))) {
-/*  79: 92 */       return instance().a(a, paramej);
+/*  79: 92 */       return instance().setData(a, paramej);
 /*  80:    */     }
 /*  81: 95 */     for (EnumDirection localej : en.HORIZONTAL) {
 /*  82: 96 */       if (b(paramaqu, paramdt, localej)) {
-/*  83: 97 */         return instance().a(a, localej);
+/*  83: 97 */         return instance().setData(a, localej);
 /*  84:    */       }
 /*  85:    */     }
 /*  86:101 */     return instance();
@@ -100,7 +100,7 @@ package net.minecraft.src;
 /*  99:    */   
 /* 100:    */   protected boolean b(World paramaqu, BlockPosition paramdt, EnumDirection paramej)
 /* 101:    */   {
-/* 102:116 */     return paramaqu.getBlock(paramdt.a(paramej.d())).getProto().blocksMovement();
+/* 102:116 */     return paramaqu.getBlock(paramdt.offset(paramej.d())).getProto().blocksMovement();
 /* 103:    */   }
 /* 104:    */   
 /* 105:    */   public aql k()
@@ -114,7 +114,7 @@ package net.minecraft.src;
 /* 113:127 */     if (localej.k() == EnumAxis.Y) {
 /* 114:128 */       localej = EnumDirection.NORTH;
 /* 115:    */     }
-/* 116:130 */     return instance().a(a, localej);
+/* 116:130 */     return instance().setData(a, localej);
 /* 117:    */   }
 /* 118:    */   
 /* 119:    */   public int c(Block parambec)

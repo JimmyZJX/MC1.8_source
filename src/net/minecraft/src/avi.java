@@ -12,7 +12,7 @@ package net.minecraft.src;
 /*  11:    */   public avi()
 /*  12:    */   {
 /*  13: 30 */     super(Material.l);
-/*  14: 31 */     j(this.L.b().a(a, avk.a).a(b, avj.b));
+/*  14: 31 */     j(this.L.b().setData(a, avk.a).setData(b, avj.b));
 /*  15: 32 */     c(0.0F);
 /*  16: 33 */     a(h);
 /*  17: 34 */     setName("doublePlant");
@@ -120,13 +120,13 @@ package net.minecraft.src;
 /* 119:    */   
 /* 120:    */   public void a(World paramaqu, BlockPosition paramdt, avk paramavk, int paramInt)
 /* 121:    */   {
-/* 122:141 */     paramaqu.setBlock(paramdt, instance().a(b, avj.b).a(a, paramavk), paramInt);
-/* 123:142 */     paramaqu.setBlock(paramdt.up(), instance().a(b, avj.a), paramInt);
+/* 122:141 */     paramaqu.setBlock(paramdt, instance().setData(b, avj.b).setData(a, paramavk), paramInt);
+/* 123:142 */     paramaqu.setBlock(paramdt.up(), instance().setData(b, avj.a), paramInt);
 /* 124:    */   }
 /* 125:    */   
 /* 126:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, EntityLiving paramxm, ItemStack paramamj)
 /* 127:    */   {
-/* 128:147 */     paramaqu.setBlock(paramdt.up(), instance().a(b, avj.a), 2);
+/* 128:147 */     paramaqu.setBlock(paramdt.up(), instance().setData(b, avj.a), 2);
 /* 129:    */   }
 /* 130:    */   
 /* 131:    */   public void a(World paramaqu, EntityPlayer paramahd, BlockPosition paramdt, Block parambec, bcm parambcm)
@@ -229,9 +229,9 @@ package net.minecraft.src;
 /* 228:    */   public Block instance(int paramInt)
 /* 229:    */   {
 /* 230:247 */     if ((paramInt & 0x8) > 0) {
-/* 231:248 */       return instance().a(b, avj.a);
+/* 231:248 */       return instance().setData(b, avj.a);
 /* 232:    */     }
-/* 233:251 */     return instance().a(b, avj.b).a(a, avk.a(paramInt & 0x7));
+/* 233:251 */     return instance().setData(b, avj.b).setData(a, avk.a(paramInt & 0x7));
 /* 234:    */   }
 /* 235:    */   
 /* 236:    */   public Block a(Block parambec, IBlockAccess paramard, BlockPosition paramdt)
@@ -240,7 +240,7 @@ package net.minecraft.src;
 /* 239:    */     {
 /* 240:260 */       Block localbec = paramard.getBlock(paramdt.down());
 /* 241:261 */       if (localbec.getProto() == this) {
-/* 242:262 */         parambec = parambec.a(a, localbec.getProperty(a));
+/* 242:262 */         parambec = parambec.setData(a, localbec.getProperty(a));
 /* 243:    */       }
 /* 244:    */     }
 /* 245:266 */     return parambec;

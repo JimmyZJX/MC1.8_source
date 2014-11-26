@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*   9:    */   protected BlockLiquid(Material parambof)
 /*  10:    */   {
 /*  11: 26 */     super(parambof);
-/*  12: 27 */     j(this.L.b().a(level, Integer.valueOf(0)));
+/*  12: 27 */     j(this.L.b().setData(level, Integer.valueOf(0)));
 /*  13: 28 */     a(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
 /*  14: 29 */     a(true);
 /*  15:    */   }
@@ -135,7 +135,7 @@ package net.minecraft.src;
 /* 134:147 */     for (Iterator<EnumDirection> localIterator = en.HORIZONTAL.iterator(); localIterator.hasNext();)
 /* 135:    */     {
 /* 136:147 */       EnumDirection localej = (EnumDirection)localIterator.next();
-/* 137:148 */       BlockPosition localdt = paramdt.a(localej);
+/* 137:148 */       BlockPosition localdt = paramdt.offset(localej);
 /* 138:    */       
 /* 139:150 */       int j = f(paramard, localdt);
 /* 140:    */       int k;
@@ -163,7 +163,7 @@ package net.minecraft.src;
 /* 162:165 */       for (Iterator<EnumDirection> localIterator = en.HORIZONTAL.iterator(); localIterator.hasNext();)
 /* 163:    */       {
 /* 164:165 */         localej = (EnumDirection)localIterator.next();
-/* 165:166 */         localdt = paramdt.a(localej);
+/* 165:166 */         localdt = paramdt.offset(localej);
 /* 166:167 */         if ((b(paramard, localdt, localej)) || (b(paramard, localdt.up(), localej)))
 /* 167:    */         {
 /* 168:168 */           localbrw = localbrw.normalize().b(0.0D, -6.0D, 0.0D);
@@ -283,7 +283,7 @@ package net.minecraft.src;
 /* 282:    */     {
 /* 283:279 */       int i = 0;
 /* 284:280 */       for (EnumDirection localej : EnumDirection.values()) {
-/* 285:281 */         if ((localej != EnumDirection.DOWN) && (paramaqu.getBlock(paramdt.a(localej)).getProto().getMaterial() == Material.water))
+/* 285:281 */         if ((localej != EnumDirection.DOWN) && (paramaqu.getBlock(paramdt.offset(localej)).getProto().getMaterial() == Material.water))
 /* 286:    */         {
 /* 287:282 */           i = 1;
 /* 288:283 */           break;
@@ -323,7 +323,7 @@ package net.minecraft.src;
 /* 322:    */   
 /* 323:    */   public Block instance(int paramInt)
 /* 324:    */   {
-/* 325:316 */     return instance().a(level, Integer.valueOf(paramInt));
+/* 325:316 */     return instance().setData(level, Integer.valueOf(paramInt));
 /* 326:    */   }
 /* 327:    */   
 /* 328:    */   public int c(Block parambec)

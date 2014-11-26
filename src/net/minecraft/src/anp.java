@@ -19,7 +19,7 @@ package net.minecraft.src;
 /* 18:29 */       if (!paramaqu.a(paramahd, localdt1)) {
 /* 19:30 */         return paramamj;
 /* 20:   */       }
-/* 21:32 */       if (!paramahd.a(localdt1.a(localbru.b), localbru.b, paramamj)) {
+/* 21:32 */       if (!paramahd.a(localdt1.offset(localbru.b), localbru.b, paramamj)) {
 /* 22:33 */         return paramamj;
 /* 23:   */       }
 /* 24:36 */       BlockPosition localdt2 = localdt1.up();

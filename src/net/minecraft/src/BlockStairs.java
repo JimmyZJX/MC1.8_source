@@ -18,7 +18,7 @@ package net.minecraft.src;
 /*  17:    */   protected BlockStairs(Block parambec)
 /*  18:    */   {
 /*  19: 49 */     super(parambec.getProto().material);
-/*  20: 50 */     j(this.L.b().a(a, EnumDirection.NORTH).a(half, EnumStairsHalf.BOTTOM).a(M, bav.a));
+/*  20: 50 */     j(this.L.b().setData(a, EnumDirection.NORTH).setData(half, EnumStairsHalf.BOTTOM).setData(M, bav.a));
 /*  21: 51 */     this.O = parambec.getProto();
 /*  22: 52 */     this.P = parambec;
 /*  23: 53 */     c(this.O.w);
@@ -555,11 +555,11 @@ package net.minecraft.src;
 /* 554:    */   {
 /* 555:528 */     Block localbec = super.a(paramaqu, paramdt, paramej, paramFloat1, paramFloat2, paramFloat3, paramInt, paramxm);
 /* 556:    */     
-/* 557:530 */     localbec = localbec.a(a, paramxm.aO()).a(M, bav.a);
+/* 557:530 */     localbec = localbec.setData(a, paramxm.aO()).setData(M, bav.a);
 /* 558:532 */     if ((paramej == EnumDirection.DOWN) || ((paramej != EnumDirection.UP) && (paramFloat2 > 0.5D))) {
-/* 559:533 */       return localbec.a(half, EnumStairsHalf.TOP);
+/* 559:533 */       return localbec.setData(half, EnumStairsHalf.TOP);
 /* 560:    */     }
-/* 561:536 */     return localbec.a(half, EnumStairsHalf.BOTTOM);
+/* 561:536 */     return localbec.setData(half, EnumStairsHalf.BOTTOM);
 /* 562:    */   }
 /* 563:    */   
 /* 564:    */   public HitResult a(World paramaqu, BlockPosition paramdt, Vec3 parambrw1, Vec3 parambrw2)
@@ -599,10 +599,10 @@ package net.minecraft.src;
 /* 598:    */   
 /* 599:    */   public Block instance(int paramInt)
 /* 600:    */   {
-/* 601:584 */     Block localbec = instance().a(half, (paramInt & 0x4) > 0 ? EnumStairsHalf.TOP : EnumStairsHalf.BOTTOM);
+/* 601:584 */     Block localbec = instance().setData(half, (paramInt & 0x4) > 0 ? EnumStairsHalf.TOP : EnumStairsHalf.BOTTOM);
 /* 602:    */     
 /* 603:    */ 
-/* 604:587 */     localbec = localbec.a(a, EnumDirection.a(5 - (paramInt & 0x3)));
+/* 604:587 */     localbec = localbec.setData(a, EnumDirection.a(5 - (paramInt & 0x3)));
 /* 605:    */     
 /* 606:589 */     return localbec;
 /* 607:    */   }
@@ -624,25 +624,25 @@ package net.minecraft.src;
 /* 623:608 */       switch (g(paramard, paramdt))
 /* 624:    */       {
 /* 625:    */       case 0: 
-/* 626:610 */         parambec = parambec.a(M, bav.a);
+/* 626:610 */         parambec = parambec.setData(M, bav.a);
 /* 627:611 */         break;
 /* 628:    */       case 1: 
-/* 629:613 */         parambec = parambec.a(M, bav.c);
+/* 629:613 */         parambec = parambec.setData(M, bav.c);
 /* 630:614 */         break;
 /* 631:    */       case 2: 
-/* 632:616 */         parambec = parambec.a(M, bav.b);
+/* 632:616 */         parambec = parambec.setData(M, bav.b);
 /* 633:    */       }
 /* 634:    */     } else {
 /* 635:620 */       switch (f(paramard, paramdt))
 /* 636:    */       {
 /* 637:    */       case 0: 
-/* 638:622 */         parambec = parambec.a(M, bav.a);
+/* 638:622 */         parambec = parambec.setData(M, bav.a);
 /* 639:623 */         break;
 /* 640:    */       case 1: 
-/* 641:625 */         parambec = parambec.a(M, bav.e);
+/* 641:625 */         parambec = parambec.setData(M, bav.e);
 /* 642:626 */         break;
 /* 643:    */       case 2: 
-/* 644:628 */         parambec = parambec.a(M, bav.d);
+/* 644:628 */         parambec = parambec.setData(M, bav.d);
 /* 645:    */       }
 /* 646:    */     }
 /* 647:633 */     return parambec;

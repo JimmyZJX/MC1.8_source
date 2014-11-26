@@ -97,7 +97,7 @@ package net.minecraft.src;
 /*  96:170 */       int i = 0;
 /*  97:171 */       for (EnumDirection localej : EnumDirection.values())
 /*  98:    */       {
-/*  99:172 */         int n = b(paramarf, paramdt.a(localej));
+/*  99:172 */         int n = b(paramarf, paramdt.offset(localej));
 /* 100:173 */         if (n > i) {
 /* 101:174 */           i = n;
 /* 102:    */         }

@@ -60,7 +60,7 @@ package net.minecraft.src;
 /*  55:    */       }
 /*  56:    */       else
 /*  57:    */       {
-/*  58:104 */         this.a.setBlock(this.b, ((Block)localObject).a(BlockAnvil.b, Integer.valueOf(i)), 2);
+/*  58:104 */         this.a.setBlock(this.b, ((Block)localObject).setData(BlockAnvil.b, Integer.valueOf(i)), 2);
 /*  59:105 */         this.a.playLevelEvent(1021, this.b, 0);
 /*  60:    */       }
 /*  61:    */     }

@@ -126,7 +126,7 @@ package net.minecraft.src;
 /* 125:133 */     a(BlockList.bM, new cnh().a(ayw.a).a("_slab").a());
 /* 126:134 */     a(BlockList.W, new cnh().a(new IBlockData[] { bbk.a }).a());
 /* 127:135 */     a(BlockList.fire, new cnh().a(new IBlockData[] { BlockFire.age }).a());
-/* 128:136 */     a(BlockList.af, new cnh().a(new IBlockData[] { azt.O }).a());
+/* 128:136 */     a(BlockList.redstoneWire, new cnh().a(new IBlockData[] { BlockRedstoneWire.power }).a());
 /* 129:137 */     a(BlockList.woodenDoor, new cnh().a(new IBlockData[] { BlockDoor.N }).a());
 /* 130:138 */     a(BlockList.ap, new cnh().a(new IBlockData[] { BlockDoor.N }).a());
 /* 131:139 */     a(BlockList.aq, new cnh().a(new IBlockData[] { BlockDoor.N }).a());

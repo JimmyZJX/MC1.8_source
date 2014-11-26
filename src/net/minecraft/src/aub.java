@@ -11,7 +11,7 @@ package net.minecraft.src;
 /*  10:    */   public aub()
 /*  11:    */   {
 /*  12: 38 */     super(Material.f);
-/*  13: 39 */     j(this.L.b().a(a[0], Boolean.valueOf(false)).a(a[1], Boolean.valueOf(false)).a(a[2], Boolean.valueOf(false)));
+/*  13: 39 */     j(this.L.b().setData(a[0], Boolean.valueOf(false)).setData(a[1], Boolean.valueOf(false)).setData(a[2], Boolean.valueOf(false)));
 /*  14:    */   }
 /*  15:    */   
 /*  16:    */   public boolean c()
@@ -117,7 +117,7 @@ package net.minecraft.src;
 /* 116:    */   {
 /* 117:145 */     Block localbec = instance();
 /* 118:147 */     for (int i = 0; i < 3; i++) {
-/* 119:148 */       localbec = localbec.a(a[i], Boolean.valueOf((paramInt & 1 << i) > 0));
+/* 119:148 */       localbec = localbec.setData(a[i], Boolean.valueOf((paramInt & 1 << i) > 0));
 /* 120:    */     }
 /* 121:151 */     return localbec;
 /* 122:    */   }

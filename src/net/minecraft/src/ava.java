@@ -91,7 +91,7 @@ package net.minecraft.src;
 /*  90:107 */     b(paramaqu, paramdt, parambec, 0);
 /*  91:108 */     paramaqu.g(paramdt);
 /*  92:109 */     for (EnumDirection localej : EnumDirection.values()) {
-/*  93:110 */       paramaqu.c(paramdt.a(localej), this);
+/*  93:110 */       paramaqu.c(paramdt.offset(localej), this);
 /*  94:    */     }
 /*  95:    */   }
 /*  96:    */   
@@ -127,13 +127,13 @@ package net.minecraft.src;
 /* 126:    */   {
 /* 127:143 */     EnumDirection localej = (EnumDirection)parambec.getProperty(N);
 /* 128:    */     
-/* 129:145 */     BlockPosition localdt = paramdt.a(localej);
+/* 129:145 */     BlockPosition localdt = paramdt.offset(localej);
 /* 130:146 */     int i = paramaqu.c(localdt, localej);
 /* 131:147 */     if (i >= 15) {
 /* 132:148 */       return i;
 /* 133:    */     }
 /* 134:151 */     Block localbec = paramaqu.getBlock(localdt);
-/* 135:152 */     return Math.max(i, localbec.getProto() == BlockList.af ? ((Integer)localbec.getProperty(azt.O)).intValue() : 0);
+/* 135:152 */     return Math.max(i, localbec.getProto() == BlockList.redstoneWire ? ((Integer)localbec.getProperty(BlockRedstoneWire.power)).intValue() : 0);
 /* 136:    */   }
 /* 137:    */   
 /* 138:    */   protected int c(IBlockAccess paramard, BlockPosition paramdt, Block parambec)
@@ -141,7 +141,7 @@ package net.minecraft.src;
 /* 140:156 */     EnumDirection localej1 = (EnumDirection)parambec.getProperty(N);
 /* 141:157 */     EnumDirection localej2 = localej1.e();
 /* 142:158 */     EnumDirection localej3 = localej1.f();
-/* 143:159 */     return Math.max(c(paramard, paramdt.a(localej2), localej2), c(paramard, paramdt.a(localej3), localej3));
+/* 143:159 */     return Math.max(c(paramard, paramdt.offset(localej2), localej2), c(paramard, paramdt.offset(localej3), localej3));
 /* 144:    */   }
 /* 145:    */   
 /* 146:    */   protected int c(IBlockAccess paramard, BlockPosition paramdt, EnumDirection paramej)
@@ -150,8 +150,8 @@ package net.minecraft.src;
 /* 149:164 */     ProtoBlock localatr = localbec.getProto();
 /* 150:165 */     if (c(localatr))
 /* 151:    */     {
-/* 152:166 */       if (localatr == BlockList.af) {
-/* 153:167 */         return ((Integer)localbec.getProperty(azt.O)).intValue();
+/* 152:166 */       if (localatr == BlockList.redstoneWire) {
+/* 153:167 */         return ((Integer)localbec.getProperty(BlockRedstoneWire.power)).intValue();
 /* 154:    */       }
 /* 155:169 */       return paramard.a(paramdt, paramej);
 /* 156:    */     }
@@ -165,7 +165,7 @@ package net.minecraft.src;
 /* 164:    */   
 /* 165:    */   public Block a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3, int paramInt, EntityLiving paramxm)
 /* 166:    */   {
-/* 167:182 */     return instance().a(N, paramxm.aO().d());
+/* 167:182 */     return instance().setData(N, paramxm.aO().d());
 /* 168:    */   }
 /* 169:    */   
 /* 170:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, EntityLiving paramxm, ItemStack paramamj)
@@ -183,7 +183,7 @@ package net.minecraft.src;
 /* 182:    */   protected void h(World paramaqu, BlockPosition paramdt, Block parambec)
 /* 183:    */   {
 /* 184:198 */     EnumDirection localej = (EnumDirection)parambec.getProperty(N);
-/* 185:199 */     BlockPosition localdt = paramdt.a(localej.d());
+/* 185:199 */     BlockPosition localdt = paramdt.offset(localej.d());
 /* 186:    */     
 /* 187:201 */     paramaqu.d(localdt, this);
 /* 188:202 */     paramaqu.a(localdt, this, localej);
@@ -193,7 +193,7 @@ package net.minecraft.src;
 /* 192:    */   {
 /* 193:207 */     if (this.M) {
 /* 194:208 */       for (EnumDirection localej : EnumDirection.values()) {
-/* 195:209 */         paramaqu.c(paramdt.a(localej), this);
+/* 195:209 */         paramaqu.c(paramdt.offset(localej), this);
 /* 196:    */       }
 /* 197:    */     }
 /* 198:212 */     super.d(paramaqu, paramdt, parambec);
@@ -216,7 +216,7 @@ package net.minecraft.src;
 /* 215:    */   
 /* 216:    */   public static boolean d(ProtoBlock paramatr)
 /* 217:    */   {
-/* 218:236 */     return (BlockList.bb.e(paramatr)) || (BlockList.cj.e(paramatr));
+/* 218:236 */     return (BlockList.unpoweredRepeater.e(paramatr)) || (BlockList.cj.e(paramatr));
 /* 219:    */   }
 /* 220:    */   
 /* 221:    */   public boolean e(ProtoBlock paramatr)
@@ -227,7 +227,7 @@ package net.minecraft.src;
 /* 226:    */   public boolean i(World paramaqu, BlockPosition paramdt, Block parambec)
 /* 227:    */   {
 /* 228:244 */     EnumDirection localej = ((EnumDirection)parambec.getProperty(N)).d();
-/* 229:245 */     BlockPosition localdt = paramdt.a(localej);
+/* 229:245 */     BlockPosition localdt = paramdt.offset(localej);
 /* 230:247 */     if (d(paramaqu.getBlock(localdt).getProto())) {
 /* 231:248 */       return paramaqu.getBlock(localdt).getProperty(N) != localej;
 /* 232:    */     }

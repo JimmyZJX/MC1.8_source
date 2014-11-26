@@ -412,7 +412,7 @@ package net.minecraft.src;
 /*  407: 464 */     if (i1 != 0)
 /*  408:     */     {
 /*  409: 465 */       this.b.a.a(new iw(localqt, localdt));
-/*  410: 466 */       this.b.a.a(new iw(localqt, localdt.a(localej)));
+/*  410: 466 */       this.b.a.a(new iw(localqt, localdt.offset(localej)));
 /*  411:     */     }
 /*  412: 469 */     localamj = this.b.bg.h();
 /*  413: 470 */     if ((localamj != null) && (localamj.stackSize == 0))

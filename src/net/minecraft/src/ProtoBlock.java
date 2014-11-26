@@ -180,7 +180,7 @@ package net.minecraft.src;
 /*  180: 293 */     return this;
 /*  181:     */   }
 /*  182:     */   
-/*  183:     */   public boolean s()
+/*  183:     */   public boolean cutsRedstone()
 /*  184:     */   {
 /*  185: 301 */     return (this.material.c()) && (isOpaqueCube());
 /*  186:     */   }
@@ -729,7 +729,7 @@ package net.minecraft.src;
 /*  729:     */   
 /*  730:     */   public float f()
 /*  731:     */   {
-/*  732: 820 */     return s() ? 0.2F : 1.0F;
+/*  732: 820 */     return cutsRedstone() ? 0.2F : 1.0F;
 /*  733:     */   }
 /*  734:     */   
 /*  735:     */   public void a(World paramaqu, BlockPosition paramdt, Entity paramwv, float paramFloat)
@@ -904,9 +904,9 @@ package net.minecraft.src;
 /*  904: 980 */     a(50, "torch", new bbl().c(0.0F).a(0.9375F).a(f).setName("torch"));
 /*  905: 981 */     a(51, "fire", new BlockFire().c(0.0F).a(1.0F).a(l).setName("fire").J());
 /*  906: 982 */     a(52, "mob_spawner", new axr().c(5.0F).a(j).setName("mobSpawner").J());
-/*  907: 983 */     a(53, "oak_stairs", new BlockStairs(localatr2.instance().a(ayw.a, EnumWoodVariant.OAK)).setName("stairsWood"));
+/*  907: 983 */     a(53, "oak_stairs", new BlockStairs(localatr2.instance().setData(ayw.a, EnumWoodVariant.OAK)).setName("stairsWood"));
 /*  908: 984 */     a(54, "chest", new BlockChest(0).c(2.5F).a(f).setName("chest"));
-/*  909: 985 */     a(55, "redstone_wire", new azt().c(0.0F).a(e).setName("redstoneDust").J());
+/*  909: 985 */     a(55, "redstone_wire", new BlockRedstoneWire().c(0.0F).a(e).setName("redstoneDust").J());
 /*  910: 986 */     a(56, "diamond_ore", new ayu().c(3.0F).b(5.0F).a(i).setName("oreDiamond"));
 /*  911: 987 */     a(57, "diamond_block", new BlockMineral(MapColor.G).c(5.0F).b(10.0F).a(j).setName("blockDiamond"));
 /*  912: 988 */     a(58, "crafting_table", new aus().c(2.5F).a(f).setName("workbench"));
@@ -946,8 +946,8 @@ package net.minecraft.src;
 /*  946:1022 */     a(90, "portal", new ayy().c(-1.0F).a(k).a(0.75F).setName("portal"));
 /*  947:1023 */     a(91, "lit_pumpkin", new azk().c(1.0F).a(f).a(1.0F).setName("litpumpkin"));
 /*  948:1024 */     a(92, "cake", new aug().c(0.5F).a(l).setName("cake").J());
-/*  949:1025 */     a(93, "unpowered_repeater", new azz(false).c(0.0F).a(f).setName("diode").J());
-/*  950:1026 */     a(94, "powered_repeater", new azz(true).c(0.0F).a(f).setName("diode").J());
+/*  949:1025 */     a(93, "unpowered_repeater", new BlockRepeater(false).c(0.0F).a(f).setName("diode").J());
+/*  950:1026 */     a(94, "powered_repeater", new BlockRepeater(true).c(0.0F).a(f).setName("diode").J());
 /*  951:1027 */     a(95, "stained_glass", new bar(Material.s).c(0.3F).a(k).setName("stainedGlass"));
 /*  952:1028 */     a(96, "trapdoor", new bbp(Material.wood).c(3.0F).a(f).setName("trapdoor").J());
 /*  953:1029 */     a(97, "monster_egg", new axs().c(0.75F).setName("monsterStoneEgg"));
@@ -964,7 +964,7 @@ package net.minecraft.src;
 /*  964:1040 */     a(106, "vine", new bbv().c(0.2F).a(h).setName("vine"));
 /*  965:1041 */     a(107, "fence_gate", new avw().c(2.0F).b(5.0F).a(f).setName("fenceGate"));
 /*  966:1042 */     a(108, "brick_stairs", new BlockStairs(localatr6.instance()).setName("stairsBrick"));
-/*  967:1043 */     a(109, "stone_brick_stairs", new BlockStairs(localatr9.instance().a(bbc.a, bbd.a)).setName("stairsStoneBrickSmooth"));
+/*  967:1043 */     a(109, "stone_brick_stairs", new BlockStairs(localatr9.instance().setData(bbc.a, bbd.a)).setName("stairsStoneBrickSmooth"));
 /*  968:1044 */     a(110, "mycelium", new ayc().c(0.6F).a(h).setName("mycel"));
 /*  969:1045 */     a(111, "waterlily", new bcb().c(0.0F).a(h).setName("waterlily"));
 /*  970:1046 */     ProtoBlock localatr11 = new ayd().c(2.0F).b(10.0F).a(i).setName("netherBrick").setCreativeTab(CreativeTabs.tabBlock);
@@ -984,15 +984,15 @@ package net.minecraft.src;
 /*  984:1060 */     a(125, "double_wooden_slab", new BlockDoubleWoodenSlab().c(2.0F).b(5.0F).a(f).setName("woodSlab"));
 /*  985:1061 */     a(126, "wooden_slab", new BlockSingleWoodenSlab().c(2.0F).b(5.0F).a(f).setName("woodSlab"));
 /*  986:1062 */     a(127, "cocoa", new aul().c(0.2F).b(5.0F).a(f).setName("cocoa"));
-/*  987:1063 */     a(128, "sandstone_stairs", new BlockStairs(localatr3.instance().a(bad.a, bae.c)).setName("stairsSandStone"));
+/*  987:1063 */     a(128, "sandstone_stairs", new BlockStairs(localatr3.instance().setData(bad.a, bae.c)).setName("stairsSandStone"));
 /*  988:1064 */     a(129, "emerald_ore", new ayu().c(3.0F).b(5.0F).a(i).setName("oreEmerald"));
 /*  989:1065 */     a(130, "ender_chest", new avr().c(22.5F).b(1000.0F).a(i).setName("enderChest").a(0.5F));
 /*  990:1066 */     a(131, "tripwire_hook", new bbt().setName("tripWireSource"));
 /*  991:1067 */     a(132, "tripwire", new bbs().setName("tripWire"));
 /*  992:1068 */     a(133, "emerald_block", new BlockMineral(MapColor.I).c(5.0F).b(10.0F).a(j).setName("blockEmerald"));
-/*  993:1069 */     a(134, "spruce_stairs", new BlockStairs(localatr2.instance().a(ayw.a, EnumWoodVariant.SPRUCE)).setName("stairsWoodSpruce"));
-/*  994:1070 */     a(135, "birch_stairs", new BlockStairs(localatr2.instance().a(ayw.a, EnumWoodVariant.BIRCH)).setName("stairsWoodBirch"));
-/*  995:1071 */     a(136, "jungle_stairs", new BlockStairs(localatr2.instance().a(ayw.a, EnumWoodVariant.JUNGLE)).setName("stairsWoodJungle"));
+/*  993:1069 */     a(134, "spruce_stairs", new BlockStairs(localatr2.instance().setData(ayw.a, EnumWoodVariant.SPRUCE)).setName("stairsWoodSpruce"));
+/*  994:1070 */     a(135, "birch_stairs", new BlockStairs(localatr2.instance().setData(ayw.a, EnumWoodVariant.BIRCH)).setName("stairsWoodBirch"));
+/*  995:1071 */     a(136, "jungle_stairs", new BlockStairs(localatr2.instance().setData(ayw.a, EnumWoodVariant.JUNGLE)).setName("stairsWoodJungle"));
 /*  996:1072 */     a(137, "command_block", new auo().v().b(6000000.0F).setName("commandBlock"));
 /*  997:1073 */     a(138, "beacon", new BlockBeacon().setName("beacon").a(1.0F));
 /*  998:1074 */     a(139, "cobblestone_wall", new bbx(localatr1).setName("cobbleWall"));
@@ -1013,15 +1013,15 @@ package net.minecraft.src;
 /* 1013:1089 */     a(154, "hopper", new BlockHopper().c(3.0F).b(8.0F).a(j).setName("hopper"));
 /* 1014:1090 */     ProtoBlock localatr12 = new azl().a(i).c(0.8F).setName("quartzBlock");
 /* 1015:1091 */     a(155, "quartz_block", localatr12);
-/* 1016:1092 */     a(156, "quartz_stairs", new BlockStairs(localatr12.instance().a(azl.a, azn.a)).setName("stairsQuartz"));
+/* 1016:1092 */     a(156, "quartz_stairs", new BlockStairs(localatr12.instance().setData(azl.a, azn.a)).setName("stairsQuartz"));
 /* 1017:1093 */     a(157, "activator_rail", new azc().c(0.7F).a(j).setName("activatorRail"));
 /* 1018:1094 */     a(158, "dropper", new avm().c(3.5F).a(i).setName("dropper"));
 /* 1019:1095 */     a(159, "stained_hardened_clay", new aun(Material.rock).c(1.25F).b(7.0F).a(i).setName("clayHardenedStained"));
 /* 1020:1096 */     a(160, "stained_glass_pane", new bas().c(0.3F).a(k).setName("thinStainedGlass"));
 /* 1021:1097 */     a(161, "leaves2", new ayg().setName("leaves"));
 /* 1022:1098 */     a(162, "log2", new ayi().setName("log"));
-/* 1023:1099 */     a(163, "acacia_stairs", new BlockStairs(localatr2.instance().a(ayw.a, EnumWoodVariant.ACACIA)).setName("stairsWoodAcacia"));
-/* 1024:1100 */     a(164, "dark_oak_stairs", new BlockStairs(localatr2.instance().a(ayw.a, EnumWoodVariant.DARK_OAK)).setName("stairsWoodDarkOak"));
+/* 1023:1099 */     a(163, "acacia_stairs", new BlockStairs(localatr2.instance().setData(ayw.a, EnumWoodVariant.ACACIA)).setName("stairsWoodAcacia"));
+/* 1024:1100 */     a(164, "dark_oak_stairs", new BlockStairs(localatr2.instance().setData(ayw.a, EnumWoodVariant.DARK_OAK)).setName("stairsWoodDarkOak"));
 /* 1025:1101 */     a(165, "slime", new bam().setName("slime").a(q));
 /* 1026:1102 */     a(166, "barrier", new atf().setName("barrier"));
 /* 1027:1103 */     a(167, "iron_trapdoor", new bbp(Material.f).c(5.0F).a(j).setName("ironTrapdoor").J());
@@ -1038,7 +1038,7 @@ package net.minecraft.src;
 /* 1038:1114 */     a(178, "daylight_detector_inverted", new BlockDaylightDetector(true));
 /* 1039:1115 */     ProtoBlock localatr13 = new azq().a(i).c(0.8F).setName("redSandStone");
 /* 1040:1116 */     a(179, "red_sandstone", localatr13);
-/* 1041:1117 */     a(180, "red_sandstone_stairs", new BlockStairs(localatr13.instance().a(azq.a, azr.c)).setName("stairsRedSandStone"));
+/* 1041:1117 */     a(180, "red_sandstone_stairs", new BlockStairs(localatr13.instance().setData(azq.a, azr.c)).setName("stairsRedSandStone"));
 /* 1042:1118 */     a(181, "double_stone_slab2", new awg().c(2.0F).b(10.0F).a(i).setName("stoneSlab2"));
 /* 1043:1119 */     a(182, "stone_slab2", new awp().c(2.0F).b(10.0F).a(i).setName("stoneSlab2"));
 /* 1044:1120 */     a(183, "spruce_fence_gate", new avw().c(2.0F).b(5.0F).a(f).setName("spruceFenceGate"));

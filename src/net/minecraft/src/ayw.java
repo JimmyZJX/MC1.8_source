@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*  8:   */   public ayw()
 /*  9:   */   {
 /* 10:18 */     super(Material.wood);
-/* 11:19 */     j(this.L.b().a(a, EnumWoodVariant.OAK));
+/* 11:19 */     j(this.L.b().setData(a, EnumWoodVariant.OAK));
 /* 12:20 */     setCreativeTab(CreativeTabs.tabBlock);
 /* 13:   */   }
 /* 14:   */   
@@ -27,7 +27,7 @@ package net.minecraft.src;
 /* 26:   */   
 /* 27:   */   public Block instance(int paramInt)
 /* 28:   */   {
-/* 29:37 */     return instance().a(a, EnumWoodVariant.fromIndex(paramInt));
+/* 29:37 */     return instance().setData(a, EnumWoodVariant.fromIndex(paramInt));
 /* 30:   */   }
 /* 31:   */   
 /* 32:   */   public int c(Block parambec)

@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*  9:   */   protected BlockDirt()
 /* 10:   */   {
 /* 11:23 */     super(Material.dirt);
-/* 12:24 */     j(this.L.b().a(a, avd.a).a(b, Boolean.valueOf(false)));
+/* 12:24 */     j(this.L.b().setData(a, avd.a).setData(b, Boolean.valueOf(false)));
 /* 13:25 */     setCreativeTab(CreativeTabs.tabBlock);
 /* 14:   */   }
 /* 15:   */   
@@ -19,7 +19,7 @@ package net.minecraft.src;
 /* 18:30 */     if (parambec.getProperty(a) == avd.c)
 /* 19:   */     {
 /* 20:31 */       ProtoBlock localatr = paramard.getBlock(paramdt.up()).getProto();
-/* 21:32 */       parambec = parambec.a(b, Boolean.valueOf((localatr == BlockList.aJ) || (localatr == BlockList.aH)));
+/* 21:32 */       parambec = parambec.setData(b, Boolean.valueOf((localatr == BlockList.aJ) || (localatr == BlockList.aH)));
 /* 22:   */     }
 /* 23:34 */     return parambec;
 /* 24:   */   }
@@ -42,7 +42,7 @@ package net.minecraft.src;
 /* 41:   */   
 /* 42:   */   public Block instance(int paramInt)
 /* 43:   */   {
-/* 44:55 */     return instance().a(a, avd.a(paramInt));
+/* 44:55 */     return instance().setData(a, avd.a(paramInt));
 /* 45:   */   }
 /* 46:   */   
 /* 47:   */   public int c(Block parambec)

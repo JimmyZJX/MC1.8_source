@@ -37,7 +37,7 @@ package net.minecraft.src;
 /*  36:115 */     return (Comparable)property.getType().cast(this.b.get(property));
 /*  37:    */   }
 /*  38:    */   
-/*  39:    */   public Block a(IBlockData parambex, Comparable paramComparable)
+/*  39:    */   public Block setData(IBlockData parambex, Comparable paramComparable)
 /*  40:    */   {
 /*  41:120 */     if (!this.b.containsKey(parambex)) {
 /*  42:121 */       throw new IllegalArgumentException("Cannot set property " + parambex + " as it does not exist in " + this.a.O());

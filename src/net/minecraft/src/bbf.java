@@ -13,11 +13,11 @@ package net.minecraft.src;
 /*  12: 25 */     super(Material.rock);
 /*  13: 26 */     Block localbec = this.L.b();
 /*  14: 27 */     if (j()) {
-/*  15: 28 */       localbec = localbec.a(b, Boolean.valueOf(false));
+/*  15: 28 */       localbec = localbec.setData(b, Boolean.valueOf(false));
 /*  16:    */     } else {
-/*  17: 30 */       localbec = localbec.a(half, EnumSlabHalf.BOTTOM);
+/*  17: 30 */       localbec = localbec.setData(half, EnumSlabHalf.BOTTOM);
 /*  18:    */     }
-/*  19: 32 */     j(localbec.a(M, bbg.a));
+/*  19: 32 */     j(localbec.setData(M, bbg.a));
 /*  20: 33 */     setCreativeTab(CreativeTabs.tabBlock);
 /*  21:    */   }
 /*  22:    */   
@@ -60,11 +60,11 @@ package net.minecraft.src;
 /*  59:    */   
 /*  60:    */   public Block instance(int paramInt)
 /*  61:    */   {
-/*  62: 78 */     Block localbec = instance().a(M, bbg.a(paramInt & 0x7));
+/*  62: 78 */     Block localbec = instance().setData(M, bbg.a(paramInt & 0x7));
 /*  63: 80 */     if (j()) {
-/*  64: 81 */       localbec = localbec.a(b, Boolean.valueOf((paramInt & 0x8) != 0));
+/*  64: 81 */       localbec = localbec.setData(b, Boolean.valueOf((paramInt & 0x8) != 0));
 /*  65:    */     } else {
-/*  66: 83 */       localbec = localbec.a(half, (paramInt & 0x8) == 0 ? EnumSlabHalf.BOTTOM : EnumSlabHalf.TOP);
+/*  66: 83 */       localbec = localbec.setData(half, (paramInt & 0x8) == 0 ? EnumSlabHalf.BOTTOM : EnumSlabHalf.TOP);
 /*  67:    */     }
 /*  68: 86 */     return localbec;
 /*  69:    */   }

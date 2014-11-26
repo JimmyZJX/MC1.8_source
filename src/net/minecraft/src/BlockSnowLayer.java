@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*   8:    */   protected BlockSnowLayer()
 /*   9:    */   {
 /*  10: 33 */     super(Material.y);
-/*  11: 34 */     j(this.L.b().a(a, Integer.valueOf(1)));
+/*  11: 34 */     j(this.L.b().setData(a, Integer.valueOf(1)));
 /*  12: 35 */     a(0.0F, 0.0F, 0.0F, 1.0F, 0.125F, 1.0F);
 /*  13: 36 */     a(true);
 /*  14: 37 */     setCreativeTab(CreativeTabs.tabDeco);
@@ -123,7 +123,7 @@ package net.minecraft.src;
 /* 122:    */   
 /* 123:    */   public Block instance(int paramInt)
 /* 124:    */   {
-/* 125:155 */     return instance().a(a, Integer.valueOf((paramInt & 0x7) + 1));
+/* 125:155 */     return instance().setData(a, Integer.valueOf((paramInt & 0x7) + 1));
 /* 126:    */   }
 /* 127:    */   
 /* 128:    */   public boolean f(World paramaqu, BlockPosition paramdt)

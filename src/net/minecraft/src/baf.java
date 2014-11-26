@@ -11,7 +11,7 @@ package net.minecraft.src;
 /*  10:    */   
 /*  11:    */   protected baf()
 /*  12:    */   {
-/*  13: 24 */     j(this.L.b().a(a, EnumWoodVariant.OAK).a(b, Integer.valueOf(0)));
+/*  13: 24 */     j(this.L.b().setData(a, EnumWoodVariant.OAK).setData(b, Integer.valueOf(0)));
 /*  14: 25 */     float f = 0.4F;
 /*  15: 26 */     a(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f * 2.0F, 0.5F + f);
 /*  16: 27 */     setCreativeTab(CreativeTabs.tabDeco);
@@ -169,7 +169,7 @@ package net.minecraft.src;
 /* 168:    */   
 /* 169:    */   public Block instance(int paramInt)
 /* 170:    */   {
-/* 171:185 */     return instance().a(a, EnumWoodVariant.fromIndex(paramInt & 0x7)).a(b, Integer.valueOf((paramInt & 0x8) >> 3));
+/* 171:185 */     return instance().setData(a, EnumWoodVariant.fromIndex(paramInt & 0x7)).setData(b, Integer.valueOf((paramInt & 0x8) >> 3));
 /* 172:    */   }
 /* 173:    */   
 /* 174:    */   public int c(Block parambec)

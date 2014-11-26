@@ -8,7 +8,7 @@ package net.minecraft.src;
 /*   7:    */   protected azc()
 /*   8:    */   {
 /*   9: 27 */     super(true);
-/*  10: 28 */     j(this.L.b().a(b, EnumRailState.a).a(M, Boolean.valueOf(false)));
+/*  10: 28 */     j(this.L.b().setData(b, EnumRailState.a).setData(M, Boolean.valueOf(false)));
 /*  11:    */   }
 /*  12:    */   
 /*  13:    */   protected boolean a(World paramaqu, BlockPosition paramdt, Block parambec, boolean paramBoolean, int paramInt)
@@ -128,7 +128,7 @@ package net.minecraft.src;
 /* 127:136 */     boolean bool2 = (paramaqu.z(paramdt)) || (a(paramaqu, paramdt, parambec, true, 0)) || (a(paramaqu, paramdt, parambec, false, 0));
 /* 128:138 */     if (bool2 != bool1)
 /* 129:    */     {
-/* 130:139 */       paramaqu.setBlock(paramdt, parambec.a(M, Boolean.valueOf(bool2)), 3);
+/* 130:139 */       paramaqu.setBlock(paramdt, parambec.setData(M, Boolean.valueOf(bool2)), 3);
 /* 131:    */       
 /* 132:    */ 
 /* 133:    */ 
@@ -147,7 +147,7 @@ package net.minecraft.src;
 /* 146:    */   
 /* 147:    */   public Block instance(int paramInt)
 /* 148:    */   {
-/* 149:158 */     return instance().a(b, EnumRailState.a(paramInt & 0x7)).a(M, Boolean.valueOf((paramInt & 0x8) > 0));
+/* 149:158 */     return instance().setData(b, EnumRailState.a(paramInt & 0x7)).setData(M, Boolean.valueOf((paramInt & 0x8) > 0));
 /* 150:    */   }
 /* 151:    */   
 /* 152:    */   public int c(Block parambec)

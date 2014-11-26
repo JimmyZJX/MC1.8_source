@@ -12,7 +12,7 @@ package net.minecraft.src;
 /*  11:    */   protected BlockChest(int paramInt)
 /*  12:    */   {
 /*  13: 42 */     super(Material.wood);
-/*  14: 43 */     j(this.L.b().a(a, EnumDirection.NORTH));
+/*  14: 43 */     j(this.L.b().setData(a, EnumDirection.NORTH));
 /*  15: 44 */     this.b = paramInt;
 /*  16: 45 */     setCreativeTab(CreativeTabs.tabDeco);
 /*  17: 46 */     a(0.0625F, 0.0F, 0.0625F, 0.9375F, 0.875F, 0.9375F);
@@ -53,7 +53,7 @@ package net.minecraft.src;
 /*  52: 81 */     e(paramaqu, paramdt, parambec);
 /*  53: 83 */     for (EnumDirection localej : en.HORIZONTAL)
 /*  54:    */     {
-/*  55: 84 */       BlockPosition localdt = paramdt.a(localej);
+/*  55: 84 */       BlockPosition localdt = paramdt.offset(localej);
 /*  56: 85 */       Block localbec = paramaqu.getBlock(localdt);
 /*  57: 86 */       if (localbec.getProto() == this) {
 /*  58: 87 */         e(paramaqu, localdt, localbec);
@@ -63,13 +63,13 @@ package net.minecraft.src;
 /*  62:    */   
 /*  63:    */   public Block a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3, int paramInt, EntityLiving paramxm)
 /*  64:    */   {
-/*  65: 94 */     return instance().a(a, paramxm.aO());
+/*  65: 94 */     return instance().setData(a, paramxm.aO());
 /*  66:    */   }
 /*  67:    */   
 /*  68:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, EntityLiving paramxm, ItemStack paramamj)
 /*  69:    */   {
 /*  70: 99 */     EnumDirection localej = EnumDirection.b(MathUtils.floor(paramxm.yaw * 4.0F / 360.0F + 0.5D) & 0x3).d();
-/*  71:100 */     parambec = parambec.a(a, localej);
+/*  71:100 */     parambec = parambec.setData(a, localej);
 /*  72:    */     
 /*  73:102 */     BlockPosition localdt1 = paramdt.north();
 /*  74:103 */     BlockPosition localdt2 = paramdt.south();
@@ -187,7 +187,7 @@ package net.minecraft.src;
 /* 186:    */         }
 /* 187:    */       }
 /* 188:    */     }
-/* 189:213 */     parambec = parambec.a(a, localej);
+/* 189:213 */     parambec = parambec.setData(a, localej);
 /* 190:214 */     paramaqu.setBlock(paramdt, parambec, 3);
 /* 191:215 */     return parambec;
 /* 192:    */   }
@@ -198,7 +198,7 @@ package net.minecraft.src;
 /* 197:221 */     for (Iterator<EnumDirection> localObject2 = en.HORIZONTAL.iterator(); localObject2.hasNext();)
 /* 198:    */     {
 /* 199:221 */       EnumDirection localej = localObject2.next();
-/* 200:222 */       Block localbec = paramaqu.getBlock(paramdt.a(localej));
+/* 200:222 */       Block localbec = paramaqu.getBlock(paramdt.offset(localej));
 /* 201:223 */       if (localbec.getProto() == this) {
 /* 202:224 */         return parambec;
 /* 203:    */       }
@@ -215,19 +215,19 @@ package net.minecraft.src;
 /* 214:    */       }
 /* 215:    */     }
 /* 216:235 */     if (localObject1 != null) {
-/* 217:236 */       return parambec.a(a, localObject1.d());
+/* 217:236 */       return parambec.setData(a, localObject1.d());
 /* 218:    */     }
 /* 219:240 */     EnumDirection localObject2 = (EnumDirection)parambec.getProperty(a);
-/* 220:241 */     if (paramaqu.getBlock(paramdt.a((EnumDirection)localObject2)).getProto().m()) {
+/* 220:241 */     if (paramaqu.getBlock(paramdt.offset((EnumDirection)localObject2)).getProto().m()) {
 /* 221:242 */       localObject2 = ((EnumDirection)localObject2).d();
 /* 222:    */     }
-/* 223:244 */     if (paramaqu.getBlock(paramdt.a((EnumDirection)localObject2)).getProto().m()) {
+/* 223:244 */     if (paramaqu.getBlock(paramdt.offset((EnumDirection)localObject2)).getProto().m()) {
 /* 224:245 */       localObject2 = ((EnumDirection)localObject2).e();
 /* 225:    */     }
-/* 226:247 */     if (paramaqu.getBlock(paramdt.a((EnumDirection)localObject2)).getProto().m()) {
+/* 226:247 */     if (paramaqu.getBlock(paramdt.offset((EnumDirection)localObject2)).getProto().m()) {
 /* 227:248 */       localObject2 = ((EnumDirection)localObject2).d();
 /* 228:    */     }
-/* 229:251 */     return parambec.a(a, (Comparable)localObject2);
+/* 229:251 */     return parambec.setData(a, (Comparable)localObject2);
 /* 230:    */   }
 /* 231:    */   
 /* 232:    */   public boolean c(World paramaqu, BlockPosition paramdt)
@@ -278,7 +278,7 @@ package net.minecraft.src;
 /* 277:298 */       return false;
 /* 278:    */     }
 /* 279:301 */     for (EnumDirection localej : en.HORIZONTAL) {
-/* 280:302 */       if (paramaqu.getBlock(paramdt.a(localej)).getProto() == this) {
+/* 280:302 */       if (paramaqu.getBlock(paramdt.offset(localej)).getProto() == this) {
 /* 281:303 */         return true;
 /* 282:    */       }
 /* 283:    */     }
@@ -331,7 +331,7 @@ package net.minecraft.src;
 /* 330:    */     }
 /* 331:358 */     for (EnumDirection localej : en.HORIZONTAL)
 /* 332:    */     {
-/* 333:359 */       BlockPosition localdt = paramdt.a(localej);
+/* 333:359 */       BlockPosition localdt = paramdt.offset(localej);
 /* 334:360 */       ProtoBlock localatr = paramaqu.getBlock(localdt).getProto();
 /* 335:362 */       if (localatr == this)
 /* 336:    */       {
@@ -420,7 +420,7 @@ package net.minecraft.src;
 /* 419:445 */     if (localej.k() == EnumAxis.Y) {
 /* 420:446 */       localej = EnumDirection.NORTH;
 /* 421:    */     }
-/* 422:448 */     return instance().a(a, localej);
+/* 422:448 */     return instance().setData(a, localej);
 /* 423:    */   }
 /* 424:    */   
 /* 425:    */   public int c(Block parambec)

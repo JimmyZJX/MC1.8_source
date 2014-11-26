@@ -11,7 +11,7 @@ package net.minecraft.src;
 /*  10:    */   protected awj(boolean paramBoolean)
 /*  11:    */   {
 /*  12: 30 */     super(Material.rock);
-/*  13: 31 */     j(this.L.b().a(a, EnumDirection.NORTH));
+/*  13: 31 */     j(this.L.b().setData(a, EnumDirection.NORTH));
 /*  14: 32 */     this.b = paramBoolean;
 /*  15:    */   }
 /*  16:    */   
@@ -45,7 +45,7 @@ package net.minecraft.src;
 /*  44: 64 */     } else if ((localej == EnumDirection.EAST) && (localatr4.m()) && (!localatr3.m())) {
 /*  45: 65 */       localej = EnumDirection.WEST;
 /*  46:    */     }
-/*  47: 68 */     paramaqu.setBlock(paramdt, parambec.a(a, localej), 2);
+/*  47: 68 */     paramaqu.setBlock(paramdt, parambec.setData(a, localej), 2);
 /*  48:    */   }
 /*  49:    */   
 /*  50:    */   public void c(World paramaqu, BlockPosition paramdt, Block parambec, Random paramRandom)
@@ -100,13 +100,13 @@ package net.minecraft.src;
 /*  99:123 */     M = true;
 /* 100:125 */     if (paramBoolean)
 /* 101:    */     {
-/* 102:126 */       paramaqu.setBlock(paramdt, BlockList.am.instance().a(a, localbec.getProperty(a)), 3);
-/* 103:127 */       paramaqu.setBlock(paramdt, BlockList.am.instance().a(a, localbec.getProperty(a)), 3);
+/* 102:126 */       paramaqu.setBlock(paramdt, BlockList.am.instance().setData(a, localbec.getProperty(a)), 3);
+/* 103:127 */       paramaqu.setBlock(paramdt, BlockList.am.instance().setData(a, localbec.getProperty(a)), 3);
 /* 104:    */     }
 /* 105:    */     else
 /* 106:    */     {
-/* 107:129 */       paramaqu.setBlock(paramdt, BlockList.al.instance().a(a, localbec.getProperty(a)), 3);
-/* 108:130 */       paramaqu.setBlock(paramdt, BlockList.al.instance().a(a, localbec.getProperty(a)), 3);
+/* 107:129 */       paramaqu.setBlock(paramdt, BlockList.al.instance().setData(a, localbec.getProperty(a)), 3);
+/* 108:130 */       paramaqu.setBlock(paramdt, BlockList.al.instance().setData(a, localbec.getProperty(a)), 3);
 /* 109:    */     }
 /* 110:132 */     M = false;
 /* 111:134 */     if (localbcm != null)
@@ -123,12 +123,12 @@ package net.minecraft.src;
 /* 122:    */   
 /* 123:    */   public Block a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3, int paramInt, EntityLiving paramxm)
 /* 124:    */   {
-/* 125:147 */     return instance().a(a, paramxm.aO().d());
+/* 125:147 */     return instance().setData(a, paramxm.aO().d());
 /* 126:    */   }
 /* 127:    */   
 /* 128:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, EntityLiving paramxm, ItemStack paramamj)
 /* 129:    */   {
-/* 130:152 */     paramaqu.setBlock(paramdt, parambec.a(a, paramxm.aO().d()), 2);
+/* 130:152 */     paramaqu.setBlock(paramdt, parambec.setData(a, paramxm.aO().d()), 2);
 /* 131:154 */     if (paramamj.s())
 /* 132:    */     {
 /* 133:155 */       bcm localbcm = paramaqu.s(paramdt);
@@ -175,7 +175,7 @@ package net.minecraft.src;
 /* 174:    */   
 /* 175:    */   public Block b(Block parambec)
 /* 176:    */   {
-/* 177:197 */     return instance().a(a, EnumDirection.SOUTH);
+/* 177:197 */     return instance().setData(a, EnumDirection.SOUTH);
 /* 178:    */   }
 /* 179:    */   
 /* 180:    */   public Block instance(int paramInt)
@@ -184,7 +184,7 @@ package net.minecraft.src;
 /* 183:203 */     if (localej.k() == EnumAxis.Y) {
 /* 184:204 */       localej = EnumDirection.NORTH;
 /* 185:    */     }
-/* 186:206 */     return instance().a(a, localej);
+/* 186:206 */     return instance().setData(a, localej);
 /* 187:    */   }
 /* 188:    */   
 /* 189:    */   public int c(Block parambec)

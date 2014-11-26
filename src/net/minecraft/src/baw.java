@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*  5:   */   
 /*  6:   */   public baw()
 /*  7:   */   {
-/*  8:13 */     j(this.L.b().a(a, Integer.valueOf(0)));
+/*  8:13 */     j(this.L.b().setData(a, Integer.valueOf(0)));
 /*  9:   */   }
 /* 10:   */   
 /* 11:   */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
@@ -21,7 +21,7 @@ package net.minecraft.src;
 /* 20:   */   
 /* 21:   */   public Block instance(int paramInt)
 /* 22:   */   {
-/* 23:28 */     return instance().a(a, Integer.valueOf(paramInt));
+/* 23:28 */     return instance().setData(a, Integer.valueOf(paramInt));
 /* 24:   */   }
 /* 25:   */   
 /* 26:   */   public int c(Block parambec)

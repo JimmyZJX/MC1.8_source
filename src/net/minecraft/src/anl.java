@@ -41,7 +41,7 @@ package net.minecraft.src;
 /*  40: 60 */     if (paramaqu.isClient) {
 /*  41: 61 */       return true;
 /*  42:    */     }
-/*  43: 63 */     if (!paramahd.a(paramdt.a(paramej), paramej, paramamj)) {
+/*  43: 63 */     if (!paramahd.a(paramdt.offset(paramej), paramej, paramamj)) {
 /*  44: 64 */       return false;
 /*  45:    */     }
 /*  46: 67 */     Block localbec = paramaqu.getBlock(paramdt);
@@ -60,7 +60,7 @@ package net.minecraft.src;
 /*  59: 78 */         return true;
 /*  60:    */       }
 /*  61:    */     }
-/*  62: 82 */     paramdt = paramdt.a(paramej);
+/*  62: 82 */     paramdt = paramdt.offset(paramej);
 /*  63:    */     
 /*  64: 84 */     double d = 0.0D;
 /*  65: 85 */     if ((paramej == EnumDirection.UP) && ((localbec instanceof avv))) {

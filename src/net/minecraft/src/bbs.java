@@ -17,14 +17,14 @@ package net.minecraft.src;
 /*  16:    */   public bbs()
 /*  17:    */   {
 /*  18: 33 */     super(Material.q);
-/*  19: 34 */     j(this.L.b().a(a, Boolean.valueOf(false)).a(b, Boolean.valueOf(false)).a(M, Boolean.valueOf(false)).a(N, Boolean.valueOf(false)).a(O, Boolean.valueOf(false)).a(P, Boolean.valueOf(false)).a(Q, Boolean.valueOf(false)).a(R, Boolean.valueOf(false)));
+/*  19: 34 */     j(this.L.b().setData(a, Boolean.valueOf(false)).setData(b, Boolean.valueOf(false)).setData(M, Boolean.valueOf(false)).setData(N, Boolean.valueOf(false)).setData(O, Boolean.valueOf(false)).setData(P, Boolean.valueOf(false)).setData(Q, Boolean.valueOf(false)).setData(R, Boolean.valueOf(false)));
 /*  20: 35 */     a(0.0F, 0.0F, 0.0F, 1.0F, 0.15625F, 1.0F);
 /*  21: 36 */     a(true);
 /*  22:    */   }
 /*  23:    */   
 /*  24:    */   public Block a(Block parambec, IBlockAccess paramard, BlockPosition paramdt)
 /*  25:    */   {
-/*  26: 41 */     return parambec.a(O, Boolean.valueOf(c(paramard, paramdt, parambec, EnumDirection.NORTH))).a(P, Boolean.valueOf(c(paramard, paramdt, parambec, EnumDirection.EAST))).a(Q, Boolean.valueOf(c(paramard, paramdt, parambec, EnumDirection.SOUTH))).a(R, Boolean.valueOf(c(paramard, paramdt, parambec, EnumDirection.WEST)));
+/*  26: 41 */     return parambec.setData(O, Boolean.valueOf(c(paramard, paramdt, parambec, EnumDirection.NORTH))).setData(P, Boolean.valueOf(c(paramard, paramdt, parambec, EnumDirection.EAST))).setData(Q, Boolean.valueOf(c(paramard, paramdt, parambec, EnumDirection.SOUTH))).setData(R, Boolean.valueOf(c(paramard, paramdt, parambec, EnumDirection.WEST)));
 /*  27:    */   }
 /*  28:    */   
 /*  29:    */   public AABB a(World paramaqu, BlockPosition paramdt, Block parambec)
@@ -84,14 +84,14 @@ package net.minecraft.src;
 /*  83:    */   
 /*  84:    */   public void c(World paramaqu, BlockPosition paramdt, Block parambec)
 /*  85:    */   {
-/*  86:108 */     parambec = parambec.a(b, Boolean.valueOf(!World.isFlatSurface(paramaqu, paramdt.down())));
+/*  86:108 */     parambec = parambec.setData(b, Boolean.valueOf(!World.isFlatSurface(paramaqu, paramdt.down())));
 /*  87:109 */     paramaqu.setBlock(paramdt, parambec, 3);
 /*  88:110 */     e(paramaqu, paramdt, parambec);
 /*  89:    */   }
 /*  90:    */   
 /*  91:    */   public void b(World paramaqu, BlockPosition paramdt, Block parambec)
 /*  92:    */   {
-/*  93:115 */     e(paramaqu, paramdt, parambec.a(a, Boolean.valueOf(true)));
+/*  93:115 */     e(paramaqu, paramdt, parambec.setData(a, Boolean.valueOf(true)));
 /*  94:    */   }
 /*  95:    */   
 /*  96:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, EntityPlayer paramahd)
@@ -100,7 +100,7 @@ package net.minecraft.src;
 /*  99:121 */       return;
 /* 100:    */     }
 /* 101:124 */     if ((paramahd.bY() != null) && (paramahd.bY().getItem() == ItemList.be)) {
-/* 102:125 */       paramaqu.setBlock(paramdt, parambec.a(N, Boolean.valueOf(true)), 4);
+/* 102:125 */       paramaqu.setBlock(paramdt, parambec.setData(N, Boolean.valueOf(true)), 4);
 /* 103:    */     }
 /* 104:    */   }
 /* 105:    */   
@@ -168,7 +168,7 @@ package net.minecraft.src;
 /* 167:    */     }
 /* 168:193 */     if (bool2 != bool1)
 /* 169:    */     {
-/* 170:194 */       localbec = localbec.a(a, Boolean.valueOf(bool2));
+/* 170:194 */       localbec = localbec.setData(a, Boolean.valueOf(bool2));
 /* 171:195 */       paramaqu.setBlock(paramdt, localbec, 3);
 /* 172:196 */       e(paramaqu, paramdt, localbec);
 /* 173:    */     }
@@ -179,7 +179,7 @@ package net.minecraft.src;
 /* 178:    */   
 /* 179:    */   public static boolean c(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
 /* 180:    */   {
-/* 181:205 */     BlockPosition localdt = paramdt.a(paramej);
+/* 181:205 */     BlockPosition localdt = paramdt.offset(paramej);
 /* 182:206 */     Block localbec = paramard.getBlock(localdt);
 /* 183:207 */     ProtoBlock localatr = localbec.getProto();
 /* 184:209 */     if (localatr == BlockList.bR)
@@ -198,7 +198,7 @@ package net.minecraft.src;
 /* 197:    */   
 /* 198:    */   public Block instance(int paramInt)
 /* 199:    */   {
-/* 200:225 */     return instance().a(a, Boolean.valueOf((paramInt & 0x1) > 0)).a(b, Boolean.valueOf((paramInt & 0x2) > 0)).a(M, Boolean.valueOf((paramInt & 0x4) > 0)).a(N, Boolean.valueOf((paramInt & 0x8) > 0));
+/* 200:225 */     return instance().setData(a, Boolean.valueOf((paramInt & 0x1) > 0)).setData(b, Boolean.valueOf((paramInt & 0x2) > 0)).setData(M, Boolean.valueOf((paramInt & 0x4) > 0)).setData(N, Boolean.valueOf((paramInt & 0x8) > 0));
 /* 201:    */   }
 /* 202:    */   
 /* 203:    */   public int c(Block parambec)

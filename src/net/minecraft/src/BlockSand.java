@@ -8,7 +8,7 @@ package net.minecraft.src;
 /*  7:   */   
 /*  8:   */   public BlockSand()
 /*  9:   */   {
-/* 10:18 */     j(this.L.b().a(a, bac.a));
+/* 10:18 */     j(this.L.b().setData(a, bac.a));
 /* 11:   */   }
 /* 12:   */   
 /* 13:   */   public int a(Block parambec)
@@ -30,7 +30,7 @@ package net.minecraft.src;
 /* 29:   */   
 /* 30:   */   public Block instance(int paramInt)
 /* 31:   */   {
-/* 32:40 */     return instance().a(a, bac.a(paramInt));
+/* 32:40 */     return instance().setData(a, bac.a(paramInt));
 /* 33:   */   }
 /* 34:   */   
 /* 35:   */   public int c(Block parambec)

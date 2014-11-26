@@ -71,7 +71,7 @@ package net.minecraft.src;
 /*  70: 95 */           return;
 /*  71:    */         }
 /*  72: 97 */         for (int m = 0; m < aub.a.length; m++) {
-/*  73: 98 */           localbec = localbec.a(aub.a[m], Boolean.valueOf(arrayOfBoolean[m]));
+/*  73: 98 */           localbec = localbec.setData(aub.a[m], Boolean.valueOf(arrayOfBoolean[m]));
 /*  74:    */         }
 /*  75:100 */         this.world.setBlock(this.pos, localbec, 2);
 /*  76:    */       }

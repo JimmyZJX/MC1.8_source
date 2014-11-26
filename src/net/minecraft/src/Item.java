@@ -691,7 +691,7 @@ package net.minecraft.src;
 /* 689:751 */     a(353, "sugar", new Item().setID("sugar").setPotionEffect(PotionHelper.sugarEffect).setTabToDisplayOn(CreativeTabs.tabMaterials));
 /* 690:752 */     a(354, "cake", new ajv(BlockList.ba).setStackLimit(1).setID("cake").setTabToDisplayOn(CreativeTabs.tabFood));
 /* 691:753 */     a(355, "bed", new ajt().setStackLimit(1).setID("bed"));
-/* 692:754 */     a(356, "repeater", new ajv(BlockList.bb).setID("diode").setTabToDisplayOn(CreativeTabs.tabRedstone));
+/* 692:754 */     a(356, "repeater", new ajv(BlockList.unpoweredRepeater).setID("diode").setTabToDisplayOn(CreativeTabs.tabRedstone));
 /* 693:755 */     a(357, "cookie", new all(2, 0.1F, false).setID("cookie"));
 /* 694:756 */     a(358, "filled_map", new ItemFilledMap().setID("map"));
 /* 695:757 */     a(359, "shears", new and().setID("shears"));

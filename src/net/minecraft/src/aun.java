@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*  8:   */   public aun(Material parambof)
 /*  9:   */   {
 /* 10:19 */     super(parambof);
-/* 11:20 */     j(this.L.b().a(a, EnumDyeColor.WHITE));
+/* 11:20 */     j(this.L.b().setData(a, EnumDyeColor.WHITE));
 /* 12:21 */     setCreativeTab(CreativeTabs.tabBlock);
 /* 13:   */   }
 /* 14:   */   
@@ -32,7 +32,7 @@ package net.minecraft.src;
 /* 31:   */   
 /* 32:   */   public Block instance(int paramInt)
 /* 33:   */   {
-/* 34:43 */     return instance().a(a, EnumDyeColor.b(paramInt));
+/* 34:43 */     return instance().setData(a, EnumDyeColor.b(paramInt));
 /* 35:   */   }
 /* 36:   */   
 /* 37:   */   public int c(Block parambec)

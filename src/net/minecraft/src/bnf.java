@@ -101,14 +101,14 @@ package net.minecraft.src;
 /*  100:     */ 
 /*  101:1276 */     a(paramaqu, BlockList.air.instance(), 2, 1, 0, parambjb);
 /*  102:1277 */     a(paramaqu, BlockList.air.instance(), 2, 2, 0, parambjb);
-/*  103:1278 */     a(paramaqu, BlockList.torch.instance().a(bbl.a, this.m), 2, 3, 1, parambjb);
+/*  103:1278 */     a(paramaqu, BlockList.torch.instance().setData(bbl.a, this.m), 2, 3, 1, parambjb);
 /*  104:1279 */     a(paramaqu, parambjb, paramRandom, 2, 1, 0, EnumDirection.b(a(BlockList.woodenDoor, 1)));
 /*  105:1280 */     if ((a(paramaqu, 2, 0, -1, parambjb).getProto().getMaterial() == Material.air) && (a(paramaqu, 2, -1, -1, parambjb).getProto().getMaterial() != Material.air)) {
 /*  106:1281 */       a(paramaqu, BlockList.aw.instance(a(BlockList.aw, 3)), 2, 0, -1, parambjb);
 /*  107:     */     }
 /*  108:1285 */     a(paramaqu, BlockList.air.instance(), 6, 1, 5, parambjb);
 /*  109:1286 */     a(paramaqu, BlockList.air.instance(), 6, 2, 5, parambjb);
-/*  110:1287 */     a(paramaqu, BlockList.torch.instance().a(bbl.a, this.m.d()), 6, 3, 4, parambjb);
+/*  110:1287 */     a(paramaqu, BlockList.torch.instance().setData(bbl.a, this.m.d()), 6, 3, 4, parambjb);
 /*  111:1288 */     a(paramaqu, parambjb, paramRandom, 6, 1, 5, EnumDirection.b(a(BlockList.woodenDoor, 1)));
 /*  112:1290 */     for (int k = 0; k < 5; k++) {
 /*  113:1291 */       for (m = 0; m < 9; m++)

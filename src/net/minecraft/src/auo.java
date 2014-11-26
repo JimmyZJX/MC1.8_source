@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*   8:    */   public auo()
 /*   9:    */   {
 /*  10: 25 */     super(Material.f);
-/*  11: 26 */     j(this.L.b().a(a, Boolean.valueOf(false)));
+/*  11: 26 */     j(this.L.b().setData(a, Boolean.valueOf(false)));
 /*  12:    */   }
 /*  13:    */   
 /*  14:    */   public bcm a(World paramaqu, int paramInt)
@@ -25,12 +25,12 @@ package net.minecraft.src;
 /*  24: 38 */       boolean bool2 = ((Boolean)parambec.getProperty(a)).booleanValue();
 /*  25: 40 */       if ((bool1) && (!bool2))
 /*  26:    */       {
-/*  27: 41 */         paramaqu.setBlock(paramdt, parambec.a(a, Boolean.valueOf(true)), 4);
+/*  27: 41 */         paramaqu.setBlock(paramdt, parambec.setData(a, Boolean.valueOf(true)), 4);
 /*  28: 42 */         paramaqu.a(paramdt, this, a(paramaqu));
 /*  29:    */       }
 /*  30: 43 */       else if ((!bool1) && (bool2))
 /*  31:    */       {
-/*  32: 44 */         paramaqu.setBlock(paramdt, parambec.a(a, Boolean.valueOf(false)), 4);
+/*  32: 44 */         paramaqu.setBlock(paramdt, parambec.setData(a, Boolean.valueOf(false)), 4);
 /*  33:    */       }
 /*  34:    */     }
 /*  35:    */   }
@@ -101,7 +101,7 @@ package net.minecraft.src;
 /* 100:    */   
 /* 101:    */   public Block instance(int paramInt)
 /* 102:    */   {
-/* 103:119 */     return instance().a(a, Boolean.valueOf((paramInt & 0x1) > 0));
+/* 103:119 */     return instance().setData(a, Boolean.valueOf((paramInt & 0x1) > 0));
 /* 104:    */   }
 /* 105:    */   
 /* 106:    */   public int c(Block parambec)
@@ -120,7 +120,7 @@ package net.minecraft.src;
 /* 119:    */   
 /* 120:    */   public Block a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3, int paramInt, EntityLiving paramxm)
 /* 121:    */   {
-/* 122:141 */     return instance().a(a, Boolean.valueOf(false));
+/* 122:141 */     return instance().setData(a, Boolean.valueOf(false));
 /* 123:    */   }
 /* 124:    */ }
 

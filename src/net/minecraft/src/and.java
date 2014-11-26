@@ -21,7 +21,7 @@ package net.minecraft.src;
 /* 20:   */   
 /* 21:   */   public boolean canHarvestBlock(ProtoBlock paramatr)
 /* 22:   */   {
-/* 23:29 */     return (paramatr == BlockList.web) || (paramatr == BlockList.af) || (paramatr == BlockList.tripwire);
+/* 23:29 */     return (paramatr == BlockList.web) || (paramatr == BlockList.redstoneWire) || (paramatr == BlockList.tripwire);
 /* 24:   */   }
 /* 25:   */   
 /* 26:   */   public float getStrVsBlock(ItemStack paramamj, ProtoBlock paramatr)

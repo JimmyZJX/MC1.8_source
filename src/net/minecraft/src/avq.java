@@ -11,7 +11,7 @@ package net.minecraft.src;
 /* 10:   */   public avq()
 /* 11:   */   {
 /* 12:26 */     super(Material.rock);
-/* 13:27 */     j(this.L.b().a(a, EnumDirection.NORTH).a(b, Boolean.valueOf(false)));
+/* 13:27 */     j(this.L.b().setData(a, EnumDirection.NORTH).setData(b, Boolean.valueOf(false)));
 /* 14:   */   }
 /* 15:   */   
 /* 16:   */   public boolean c()
@@ -43,7 +43,7 @@ package net.minecraft.src;
 /* 42:   */   
 /* 43:   */   public Block a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3, int paramInt, EntityLiving paramxm)
 /* 44:   */   {
-/* 45:60 */     return instance().a(a, paramxm.aO().d()).a(b, Boolean.valueOf(false));
+/* 45:60 */     return instance().setData(a, paramxm.aO().d()).setData(b, Boolean.valueOf(false));
 /* 46:   */   }
 /* 47:   */   
 /* 48:   */   public boolean N()
@@ -61,7 +61,7 @@ package net.minecraft.src;
 /* 60:   */   
 /* 61:   */   public Block instance(int paramInt)
 /* 62:   */   {
-/* 63:79 */     return instance().a(b, Boolean.valueOf((paramInt & 0x4) != 0)).a(a, EnumDirection.b(paramInt & 0x3));
+/* 63:79 */     return instance().setData(b, Boolean.valueOf((paramInt & 0x4) != 0)).setData(a, EnumDirection.b(paramInt & 0x3));
 /* 64:   */   }
 /* 65:   */   
 /* 66:   */   public int c(Block parambec)

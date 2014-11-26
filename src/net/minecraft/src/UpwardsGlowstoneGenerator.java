@@ -21,7 +21,7 @@ package net.minecraft.src;
 /* 20:29 */         int j = 0;
 /* 21:30 */         for (EnumDirection localej : EnumDirection.values())
 /* 22:   */         {
-/* 23:31 */           if (world.getBlock(pos1.a(localej)).getProto() == BlockList.glowstone) {
+/* 23:31 */           if (world.getBlock(pos1.offset(localej)).getProto() == BlockList.glowstone) {
 /* 24:32 */             j++;
 /* 25:   */           }
 /* 26:35 */           if (j > 1) {

@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*  5:   */   extends TerrainGenerator
 /*  6:   */ {
 /*  7:15 */   private static final beq a = beq.a(BlockList.sand).a(BlockSand.a, Predicates.<Comparable>equalTo(bac.a));
-/*  8:16 */   private final Block b = BlockList.U.instance().a(bbf.M, bbg.b).a(BlockSlab.half, EnumSlabHalf.BOTTOM);
+/*  8:16 */   private final Block b = BlockList.U.instance().setData(bbf.M, bbg.b).setData(BlockSlab.half, EnumSlabHalf.BOTTOM);
 /*  9:17 */   private final Block c = BlockList.A.instance();
 /* 10:18 */   private final Block d = BlockList.flowingWater.instance();
 /* 11:   */   
@@ -35,7 +35,7 @@ package net.minecraft.src;
 /* 34:   */     }
 /* 35:49 */     paramaqu.setBlock(paramdt, this.d, 2);
 /* 36:50 */     for (EnumDirection localej : en.HORIZONTAL) {
-/* 37:51 */       paramaqu.setBlock(paramdt.a(localej), this.d, 2);
+/* 37:51 */       paramaqu.setBlock(paramdt.offset(localej), this.d, 2);
 /* 38:   */     }
 /* 39:   */     int m;
 /* 40:55 */     for (int j = -2; j <= 2; j++) {

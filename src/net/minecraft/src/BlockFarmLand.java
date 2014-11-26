@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*   8:    */   protected BlockFarmLand()
 /*   9:    */   {
 /*  10: 25 */     super(Material.dirt);
-/*  11: 26 */     j(this.L.b().a(a, Integer.valueOf(0)));
+/*  11: 26 */     j(this.L.b().setData(a, Integer.valueOf(0)));
 /*  12: 27 */     a(true);
 /*  13: 28 */     a(0.0F, 0.0F, 0.0F, 1.0F, 0.9375F, 1.0F);
 /*  14: 29 */     e(255);
@@ -36,11 +36,11 @@ package net.minecraft.src;
 /*  35: 52 */     if ((e(paramaqu, paramdt)) || (paramaqu.C(paramdt.up())))
 /*  36:    */     {
 /*  37: 53 */       if (i < 7) {
-/*  38: 54 */         paramaqu.setBlock(paramdt, parambec.a(a, Integer.valueOf(7)), 2);
+/*  38: 54 */         paramaqu.setBlock(paramdt, parambec.setData(a, Integer.valueOf(7)), 2);
 /*  39:    */       }
 /*  40:    */     }
 /*  41: 56 */     else if (i > 0) {
-/*  42: 57 */       paramaqu.setBlock(paramdt, parambec.a(a, Integer.valueOf(i - 1)), 2);
+/*  42: 57 */       paramaqu.setBlock(paramdt, parambec.setData(a, Integer.valueOf(i - 1)), 2);
 /*  43: 58 */     } else if (!d(paramaqu, paramdt)) {
 /*  44: 59 */       paramaqu.setBlock(paramdt, BlockList.dirt.instance());
 /*  45:    */     }
@@ -87,7 +87,7 @@ package net.minecraft.src;
 /*  86:    */   
 /*  87:    */   public Item a(Block parambec, Random paramRandom, int paramInt)
 /*  88:    */   {
-/*  89:103 */     return BlockList.dirt.a(BlockList.dirt.instance().a(BlockDirt.a, avd.a), paramRandom, paramInt);
+/*  89:103 */     return BlockList.dirt.a(BlockList.dirt.instance().setData(BlockDirt.a, avd.a), paramRandom, paramInt);
 /*  90:    */   }
 /*  91:    */   
 /*  92:    */   public Item b(World paramaqu, BlockPosition paramdt)
@@ -97,7 +97,7 @@ package net.minecraft.src;
 /*  96:    */   
 /*  97:    */   public Block instance(int paramInt)
 /*  98:    */   {
-/*  99:113 */     return instance().a(a, Integer.valueOf(paramInt & 0x7));
+/*  99:113 */     return instance().setData(a, Integer.valueOf(paramInt & 0x7));
 /* 100:    */   }
 /* 101:    */   
 /* 102:    */   public int c(Block parambec)

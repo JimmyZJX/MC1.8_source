@@ -18,7 +18,7 @@ package net.minecraft.src;
 /* 17:24 */     if (paramej == EnumDirection.UP) {
 /* 18:25 */       return false;
 /* 19:   */     }
-/* 20:28 */     BlockPosition localdt = paramdt.a(paramej);
+/* 20:28 */     BlockPosition localdt = paramdt.offset(paramej);
 /* 21:30 */     if (!paramahd.a(localdt, paramej, paramamj)) {
 /* 22:31 */       return false;
 /* 23:   */     }

@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*   8:    */   public ayy()
 /*   9:    */   {
 /*  10: 31 */     super(Material.E, false);
-/*  11: 32 */     j(this.L.b().a(a, EnumAxis.X));
+/*  11: 32 */     j(this.L.b().setData(a, EnumAxis.X));
 /*  12: 33 */     a(true);
 /*  13:    */   }
 /*  14:    */   
@@ -199,7 +199,7 @@ package net.minecraft.src;
 /* 198:    */   
 /* 199:    */   public Block instance(int paramInt)
 /* 200:    */   {
-/* 201:223 */     return instance().a(a, (paramInt & 0x3) == 2 ? EnumAxis.Z : EnumAxis.X);
+/* 201:223 */     return instance().setData(a, (paramInt & 0x3) == 2 ? EnumAxis.Z : EnumAxis.X);
 /* 202:    */   }
 /* 203:    */   
 /* 204:    */   public int c(Block parambec)

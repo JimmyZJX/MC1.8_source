@@ -25,7 +25,7 @@ package net.minecraft.src;
 /*  24:    */     
 /*  25:    */ 
 /*  26: 37 */     this.au.clear();
-/*  27: 38 */     this.ak = BlockList.sand.instance().a(BlockSand.a, bac.b);
+/*  27: 38 */     this.ak = BlockList.sand.instance().setData(BlockSand.a, bac.b);
 /*  28: 39 */     this.al = BlockList.cu.instance();
 /*  29:    */     
 /*  30: 41 */     this.as.A = -999;
@@ -145,7 +145,7 @@ package net.minecraft.src;
 /* 144:146 */               if ((this.aJ) && (i3 > 86 + m * 2))
 /* 145:    */               {
 /* 146:147 */                 if (n != 0) {
-/* 147:148 */                   parambgk.a(j, i3, i, BlockList.dirt.instance().a(BlockDirt.a, avd.b));
+/* 147:148 */                   parambgk.a(j, i3, i, BlockList.dirt.instance().setData(BlockDirt.a, avd.b));
 /* 148:    */                 } else {
 /* 149:150 */                   parambgk.a(j, i3, i, BlockList.grass.instance());
 /* 150:    */                 }
@@ -153,7 +153,7 @@ package net.minecraft.src;
 /* 152:152 */               else if (i3 > 66 + m)
 /* 153:    */               {
 /* 154:154 */                 if ((i3 < 64) || (i3 > 127)) {
-/* 155:155 */                   localbec4 = BlockList.cu.instance().a(aun.a, EnumDyeColor.ORANGE);
+/* 155:155 */                   localbec4 = BlockList.cu.instance().setData(aun.a, EnumDyeColor.ORANGE);
 /* 156:156 */                 } else if (n != 0) {
 /* 157:157 */                   localbec4 = BlockList.cz.instance();
 /* 158:    */                 } else {
@@ -171,7 +171,7 @@ package net.minecraft.src;
 /* 170:    */             {
 /* 171:167 */               parambgk.a(j, i3, i, localbec2);
 /* 172:168 */               if (localbec2.getProto() == BlockList.cu) {
-/* 173:169 */                 parambgk.a(j, i3, i, localbec2.getProto().instance().a(aun.a, EnumDyeColor.ORANGE));
+/* 173:169 */                 parambgk.a(j, i3, i, localbec2.getProto().instance().setData(aun.a, EnumDyeColor.ORANGE));
 /* 174:    */               }
 /* 175:    */             }
 /* 176:    */           }
@@ -180,7 +180,7 @@ package net.minecraft.src;
 /* 179:173 */             i1--;
 /* 180:175 */             if (i2 != 0)
 /* 181:    */             {
-/* 182:176 */               parambgk.a(j, i3, i, BlockList.cu.instance().a(aun.a, EnumDyeColor.ORANGE));
+/* 182:176 */               parambgk.a(j, i3, i, BlockList.cu.instance().setData(aun.a, EnumDyeColor.ORANGE));
 /* 183:    */             }
 /* 184:    */             else
 /* 185:    */             {
@@ -211,7 +211,7 @@ package net.minecraft.src;
 /* 203:    */     {
 /* 204:195 */       i += localRandom.nextInt(5) + 1;
 /* 205:196 */       if (i < 64) {
-/* 206:197 */         this.aD[i] = BlockList.cu.instance().a(aun.a, EnumDyeColor.ORANGE);
+/* 206:197 */         this.aD[i] = BlockList.cu.instance().setData(aun.a, EnumDyeColor.ORANGE);
 /* 207:    */       }
 /* 208:    */     }
 /* 209:201 */     i = localRandom.nextInt(4) + 2;
@@ -220,7 +220,7 @@ package net.minecraft.src;
 /* 212:203 */       k = localRandom.nextInt(3) + 1;
 /* 213:204 */       m = localRandom.nextInt(64);
 /* 214:206 */       for (n = 0; (m + n < 64) && (n < k); n++) {
-/* 215:207 */         this.aD[(m + n)] = BlockList.cu.instance().a(aun.a, EnumDyeColor.YELLOW);
+/* 215:207 */         this.aD[(m + n)] = BlockList.cu.instance().setData(aun.a, EnumDyeColor.YELLOW);
 /* 216:    */       }
 /* 217:    */     }
 /* 218:210 */     j = localRandom.nextInt(4) + 2;
@@ -229,7 +229,7 @@ package net.minecraft.src;
 /* 221:212 */       m = localRandom.nextInt(3) + 2;
 /* 222:213 */       n = localRandom.nextInt(64);
 /* 223:215 */       for (i1 = 0; (n + i1 < 64) && (i1 < m); i1++) {
-/* 224:216 */         this.aD[(n + i1)] = BlockList.cu.instance().a(aun.a, EnumDyeColor.BROWN);
+/* 224:216 */         this.aD[(n + i1)] = BlockList.cu.instance().setData(aun.a, EnumDyeColor.BROWN);
 /* 225:    */       }
 /* 226:    */     }
 /* 227:219 */     k = localRandom.nextInt(4) + 2;
@@ -238,7 +238,7 @@ package net.minecraft.src;
 /* 231:221 */       n = localRandom.nextInt(3) + 1;
 /* 232:222 */       i1 = localRandom.nextInt(64);
 /* 233:224 */       for (i2 = 0; (i1 + i2 < 64) && (i2 < n); i2++) {
-/* 234:225 */         this.aD[(i1 + i2)] = BlockList.cu.instance().a(aun.a, EnumDyeColor.RED);
+/* 234:225 */         this.aD[(i1 + i2)] = BlockList.cu.instance().setData(aun.a, EnumDyeColor.RED);
 /* 235:    */       }
 /* 236:    */     }
 /* 237:228 */     m = localRandom.nextInt(3) + 3;
@@ -249,12 +249,12 @@ package net.minecraft.src;
 /* 242:232 */       n += localRandom.nextInt(16) + 4;
 /* 243:234 */       for (int i3 = 0; (n + i3 < 64) && (i3 < i2); i3++)
 /* 244:    */       {
-/* 245:235 */         this.aD[(n + i3)] = BlockList.cu.instance().a(aun.a, EnumDyeColor.WHITE);
+/* 245:235 */         this.aD[(n + i3)] = BlockList.cu.instance().setData(aun.a, EnumDyeColor.WHITE);
 /* 246:236 */         if ((n + i3 > 1) && (localRandom.nextBoolean())) {
-/* 247:237 */           this.aD[(n + i3 - 1)] = BlockList.cu.instance().a(aun.a, EnumDyeColor.SILVER);
+/* 247:237 */           this.aD[(n + i3 - 1)] = BlockList.cu.instance().setData(aun.a, EnumDyeColor.SILVER);
 /* 248:    */         }
 /* 249:239 */         if ((n + i3 < 63) && (localRandom.nextBoolean())) {
-/* 250:240 */           this.aD[(n + i3 + 1)] = BlockList.cu.instance().a(aun.a, EnumDyeColor.SILVER);
+/* 250:240 */           this.aD[(n + i3 + 1)] = BlockList.cu.instance().setData(aun.a, EnumDyeColor.SILVER);
 /* 251:    */         }
 /* 252:    */       }
 /* 253:    */     }

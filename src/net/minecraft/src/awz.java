@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*  9:   */   public awz(Material parambof, ProtoBlock paramatr)
 /* 10:   */   {
 /* 11:23 */     super(parambof);
-/* 12:24 */     j(this.L.b().a(a, axa.l));
+/* 12:24 */     j(this.L.b().setData(a, axa.l));
 /* 13:25 */     this.b = paramatr;
 /* 14:   */   }
 /* 15:   */   
@@ -36,7 +36,7 @@ package net.minecraft.src;
 /* 35:   */   
 /* 36:   */   public Block instance(int paramInt)
 /* 37:   */   {
-/* 38:51 */     return instance().a(a, axa.a(paramInt));
+/* 38:51 */     return instance().setData(a, axa.a(paramInt));
 /* 39:   */   }
 /* 40:   */   
 /* 41:   */   public int c(Block parambec)

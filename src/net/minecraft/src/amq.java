@@ -15,7 +15,7 @@ package net.minecraft.src;
 /* 14:25 */     double d2 = Math.floor(paramdz.b()) + localej.h();
 /* 15:26 */     double d3 = paramdz.c() + localej.i() * 1.125D;
 /* 16:   */     
-/* 17:28 */     BlockPosition localdt = paramdz.d().a(localej);
+/* 17:28 */     BlockPosition localdt = paramdz.d().offset(localej);
 /* 18:29 */     Block localbec = localaqu.getBlock(localdt);
 /* 19:30 */     EnumRailState localatl1 = (localbec.getProto() instanceof ati) ? (EnumRailState)localbec.getProperty(((ati)localbec.getProto()).l()) : EnumRailState.a;
 /* 20:   */     double d4;

@@ -1643,7 +1643,7 @@ import net.minecraft.server.MinecraftServer;
 /* 1640:     */   
 /* 1641:     */   public boolean a(EntityPlayer paramahd, BlockPosition paramdt, EnumDirection paramej)
 /* 1642:     */   {
-/* 1643:1668 */     paramdt = paramdt.a(paramej);
+/* 1643:1668 */     paramdt = paramdt.offset(paramej);
 /* 1644:1670 */     if (getBlock(paramdt).getProto() == BlockList.fire)
 /* 1645:     */     {
 /* 1646:1671 */       playLevelEvent(paramahd, 1004, paramdt, 0);
@@ -2069,7 +2069,7 @@ import net.minecraft.server.MinecraftServer;
 /* 2066:     */     }
 /* 2067:2070 */     for (EnumDirection localej : EnumDirection.values())
 /* 2068:     */     {
-/* 2069:2071 */       BlockPosition localdt = paramdt.a(localej);
+/* 2069:2071 */       BlockPosition localdt = paramdt.offset(localej);
 /* 2070:2072 */       int i5 = getLightLevel(paramarf, localdt) - i2;
 /* 2071:2074 */       if (i5 > i1) {
 /* 2072:2075 */         i1 = i5;
@@ -2443,7 +2443,7 @@ import net.minecraft.server.MinecraftServer;
 /* 2440:2431 */     int i1 = 0;
 /* 2441:2433 */     for (EnumDirection localej : EnumDirection.values())
 /* 2442:     */     {
-/* 2443:2434 */       int i4 = c(paramdt.a(localej), localej);
+/* 2443:2434 */       int i4 = c(paramdt.offset(localej), localej);
 /* 2444:2436 */       if (i4 >= 15) {
 /* 2445:2437 */         return 15;
 /* 2446:     */       }
@@ -2815,7 +2815,7 @@ import net.minecraft.server.MinecraftServer;
 /* 2812:     */   {
 /* 2813:2823 */     for (EnumDirection localej : en.HORIZONTAL)
 /* 2814:     */     {
-/* 2815:2824 */       BlockPosition localdt = paramdt.a(localej);
+/* 2815:2824 */       BlockPosition localdt = paramdt.offset(localej);
 /* 2816:2826 */       if (e(localdt))
 /* 2817:     */       {
 /* 2818:2827 */         Block localbec = getBlock(localdt);
@@ -2825,7 +2825,7 @@ import net.minecraft.server.MinecraftServer;
 /* 2822:     */         }
 /* 2823:2830 */         else if (localbec.getProto().blocksMovement())
 /* 2824:     */         {
-/* 2825:2831 */           localdt = localdt.a(localej);
+/* 2825:2831 */           localdt = localdt.offset(localej);
 /* 2826:2832 */           localbec = getBlock(localdt);
 /* 2827:2834 */           if (BlockList.cj.e(localbec.getProto())) {
 /* 2828:2835 */             localbec.getProto().a(this, localdt, localbec, paramatr);

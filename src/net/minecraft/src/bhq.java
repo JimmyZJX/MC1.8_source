@@ -15,7 +15,7 @@ package net.minecraft.src;
 /* 14:   */   public void a(avy paramavy, EnumFlowerVariant paramawa)
 /* 15:   */   {
 /* 16:20 */     this.a = paramavy;
-/* 17:21 */     this.b = paramavy.instance().a(paramavy.l(), paramawa);
+/* 17:21 */     this.b = paramavy.instance().setData(paramavy.l(), paramawa);
 /* 18:   */   }
 /* 19:   */   
 /* 20:   */   public boolean generate(World paramaqu, Random paramRandom, BlockPosition paramdt)

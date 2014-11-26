@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*   9:    */   public awd()
 /*  10:    */   {
 /*  11: 30 */     super(Material.q);
-/*  12: 31 */     j(this.L.b().a(b, awf.EMPTY).a(a, Integer.valueOf(0)));
+/*  12: 31 */     j(this.L.b().setData(b, awf.EMPTY).setData(a, Integer.valueOf(0)));
 /*  13: 32 */     h();
 /*  14:    */   }
 /*  15:    */   
@@ -324,7 +324,7 @@ package net.minecraft.src;
 /* 323:    */         }
 /* 324:    */       }
 /* 325:    */     }
-/* 326:354 */     return parambec.a(b, localawf);
+/* 326:354 */     return parambec.setData(b, localawf);
 /* 327:    */   }
 /* 328:    */   
 /* 329:    */   public aql k()

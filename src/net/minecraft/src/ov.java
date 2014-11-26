@@ -14,7 +14,7 @@ package net.minecraft.src;
 /*  13:188 */     double d2 = paramdz.b() + localej.h() * 1.125F;
 /*  14:189 */     double d3 = paramdz.c() + localej.i() * 1.125F;
 /*  15:    */     
-/*  16:191 */     BlockPosition localdt = paramdz.d().a(localej);
+/*  16:191 */     BlockPosition localdt = paramdz.d().offset(localej);
 /*  17:192 */     Material localbof = localaqu.getBlock(localdt).getProto().getMaterial();
 /*  18:    */     double d4;
 /*  19:195 */     if (Material.water.equals(localbof)) {

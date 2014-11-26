@@ -12,7 +12,7 @@ package net.minecraft.src;
 /*  11:    */   public bds()
 /*  12:    */   {
 /*  13: 34 */     super(Material.H);
-/*  14: 35 */     j(this.L.b().a(a, EnumDirection.NORTH).a(b, bdu.a).a(M, Boolean.valueOf(false)));
+/*  14: 35 */     j(this.L.b().setData(a, EnumDirection.NORTH).setData(b, bdu.a).setData(M, Boolean.valueOf(false)));
 /*  15: 36 */     a(i);
 /*  16: 37 */     c(0.5F);
 /*  17:    */   }
@@ -24,7 +24,7 @@ package net.minecraft.src;
 /*  23: 43 */       EnumDirection localej = (EnumDirection)parambec.getProperty(a);
 /*  24: 44 */       if (localej != null)
 /*  25:    */       {
-/*  26: 45 */         BlockPosition localdt = paramdt.a(localej.d());
+/*  26: 45 */         BlockPosition localdt = paramdt.offset(localej.d());
 /*  27: 46 */         ProtoBlock localatr = paramaqu.getBlock(localdt).getProto();
 /*  28: 47 */         if ((localatr == BlockList.J) || (localatr == BlockList.F)) {
 /*  29: 48 */           paramaqu.g(localdt);
@@ -38,7 +38,7 @@ package net.minecraft.src;
 /*  37:    */   {
 /*  38: 57 */     super.b(paramaqu, paramdt, parambec);
 /*  39: 58 */     EnumDirection localej = ((EnumDirection)parambec.getProperty(a)).d();
-/*  40: 59 */     paramdt = paramdt.a(localej);
+/*  40: 59 */     paramdt = paramdt.offset(localej);
 /*  41:    */     
 /*  42: 61 */     Block localbec = paramaqu.getBlock(paramdt);
 /*  43: 62 */     if (((localbec.getProto() == BlockList.J) || (localbec.getProto() == BlockList.F)) && 
@@ -151,7 +151,7 @@ package net.minecraft.src;
 /* 150:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
 /* 151:    */   {
 /* 152:171 */     EnumDirection localej = (EnumDirection)parambec.getProperty(a);
-/* 153:172 */     BlockPosition localdt = paramdt.a(localej.d());
+/* 153:172 */     BlockPosition localdt = paramdt.offset(localej.d());
 /* 154:173 */     Block localbec = paramaqu.getBlock(localdt);
 /* 155:174 */     if ((localbec.getProto() != BlockList.J) && (localbec.getProto() != BlockList.F)) {
 /* 156:175 */       paramaqu.g(paramdt);
@@ -184,7 +184,7 @@ package net.minecraft.src;
 /* 183:    */   
 /* 184:    */   public Block instance(int paramInt)
 /* 185:    */   {
-/* 186:205 */     return instance().a(a, b(paramInt)).a(b, (paramInt & 0x8) > 0 ? bdu.b : bdu.a);
+/* 186:205 */     return instance().setData(a, b(paramInt)).setData(b, (paramInt & 0x8) > 0 ? bdu.b : bdu.a);
 /* 187:    */   }
 /* 188:    */   
 /* 189:    */   public int c(Block parambec)

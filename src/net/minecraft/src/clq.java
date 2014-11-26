@@ -10,13 +10,13 @@ package net.minecraft.src;
 /*   9:    */   
 /*  10:    */   public void a(IBlockAccess paramard, ProtoBlock paramatr, BlockPosition paramdt, EnumDirection paramej, float[] paramArrayOfFloat, BitSet paramBitSet)
 /*  11:    */   {
-/*  12:361 */     BlockPosition localdt1 = paramBitSet.get(0) ? paramdt.a(paramej) : paramdt;
+/*  12:361 */     BlockPosition localdt1 = paramBitSet.get(0) ? paramdt.offset(paramej) : paramdt;
 /*  13:    */     
 /*  14:363 */     clp localclp = clp.a(paramej);
-/*  15:364 */     BlockPosition localdt2 = localdt1.a(localclp.g[0]);
-/*  16:365 */     BlockPosition localdt3 = localdt1.a(localclp.g[1]);
-/*  17:366 */     BlockPosition localdt4 = localdt1.a(localclp.g[2]);
-/*  18:367 */     BlockPosition localdt5 = localdt1.a(localclp.g[3]);
+/*  15:364 */     BlockPosition localdt2 = localdt1.offset(localclp.g[0]);
+/*  16:365 */     BlockPosition localdt3 = localdt1.offset(localclp.g[1]);
+/*  17:366 */     BlockPosition localdt4 = localdt1.offset(localclp.g[2]);
+/*  18:367 */     BlockPosition localdt5 = localdt1.offset(localclp.g[3]);
 /*  19:    */     
 /*  20:369 */     int i = paramatr.c(paramard, localdt2);
 /*  21:370 */     int j = paramatr.c(paramard, localdt3);
@@ -28,16 +28,16 @@ package net.minecraft.src;
 /*  27:376 */     float f3 = paramard.getBlock(localdt4).getProto().f();
 /*  28:377 */     float f4 = paramard.getBlock(localdt5).getProto().f();
 /*  29:    */     
-/*  30:379 */     boolean bool1 = paramard.getBlock(localdt2.a(paramej)).getProto().o();
-/*  31:380 */     boolean bool2 = paramard.getBlock(localdt3.a(paramej)).getProto().o();
-/*  32:381 */     boolean bool3 = paramard.getBlock(localdt4.a(paramej)).getProto().o();
-/*  33:382 */     boolean bool4 = paramard.getBlock(localdt5.a(paramej)).getProto().o();
+/*  30:379 */     boolean bool1 = paramard.getBlock(localdt2.offset(paramej)).getProto().o();
+/*  31:380 */     boolean bool2 = paramard.getBlock(localdt3.offset(paramej)).getProto().o();
+/*  32:381 */     boolean bool3 = paramard.getBlock(localdt4.offset(paramej)).getProto().o();
+/*  33:382 */     boolean bool4 = paramard.getBlock(localdt5.offset(paramej)).getProto().o();
 /*  34:    */     BlockPosition localdt6;
 /*  35:    */     float f5;
 /*  36:    */     int n;
 /*  37:387 */     if ((bool3) || (bool1))
 /*  38:    */     {
-/*  39:388 */       localdt6 = localdt2.a(localclp.g[2]);
+/*  39:388 */       localdt6 = localdt2.offset(localclp.g[2]);
 /*  40:389 */       f5 = paramard.getBlock(localdt6).getProto().f();
 /*  41:390 */       n = paramatr.c(paramard, localdt6);
 /*  42:    */     }
@@ -50,7 +50,7 @@ package net.minecraft.src;
 /*  49:    */     int i1;
 /*  50:395 */     if ((bool4) || (bool1))
 /*  51:    */     {
-/*  52:396 */       localdt6 = localdt2.a(localclp.g[3]);
+/*  52:396 */       localdt6 = localdt2.offset(localclp.g[3]);
 /*  53:397 */       f6 = paramard.getBlock(localdt6).getProto().f();
 /*  54:398 */       i1 = paramatr.c(paramard, localdt6);
 /*  55:    */     }
@@ -63,7 +63,7 @@ package net.minecraft.src;
 /*  62:    */     int i2;
 /*  63:403 */     if ((bool3) || (bool2))
 /*  64:    */     {
-/*  65:404 */       localdt6 = localdt3.a(localclp.g[2]);
+/*  65:404 */       localdt6 = localdt3.offset(localclp.g[2]);
 /*  66:405 */       f7 = paramard.getBlock(localdt6).getProto().f();
 /*  67:406 */       i2 = paramatr.c(paramard, localdt6);
 /*  68:    */     }
@@ -76,7 +76,7 @@ package net.minecraft.src;
 /*  75:    */     int i3;
 /*  76:411 */     if ((bool4) || (bool2))
 /*  77:    */     {
-/*  78:412 */       localdt6 = localdt3.a(localclp.g[3]);
+/*  78:412 */       localdt6 = localdt3.offset(localclp.g[3]);
 /*  79:413 */       f8 = paramard.getBlock(localdt6).getProto().f();
 /*  80:414 */       i3 = paramatr.c(paramard, localdt6);
 /*  81:    */     }
@@ -86,8 +86,8 @@ package net.minecraft.src;
 /*  85:417 */       i3 = j;
 /*  86:    */     }
 /*  87:420 */     int i4 = paramatr.c(paramard, paramdt);
-/*  88:421 */     if ((paramBitSet.get(0)) || (!paramard.getBlock(paramdt.a(paramej)).getProto().c())) {
-/*  89:422 */       i4 = paramatr.c(paramard, paramdt.a(paramej));
+/*  88:421 */     if ((paramBitSet.get(0)) || (!paramard.getBlock(paramdt.offset(paramej)).getProto().c())) {
+/*  89:422 */       i4 = paramatr.c(paramard, paramdt.offset(paramej));
 /*  90:    */     }
 /*  91:425 */     float f9 = paramBitSet.get(0) ? paramard.getBlock(localdt1).getProto().f() : paramard.getBlock(paramdt).getProto().f();
 /*  92:    */     

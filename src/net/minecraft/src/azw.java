@@ -51,7 +51,7 @@ package net.minecraft.src;
 /*  50:    */   {
 /*  51: 74 */     if (this.M) {
 /*  52: 75 */       for (EnumDirection localej : EnumDirection.values()) {
-/*  53: 76 */         paramaqu.c(paramdt.a(localej), this);
+/*  53: 76 */         paramaqu.c(paramdt.offset(localej), this);
 /*  54:    */       }
 /*  55:    */     }
 /*  56:    */   }
@@ -60,7 +60,7 @@ package net.minecraft.src;
 /*  59:    */   {
 /*  60: 83 */     if (this.M) {
 /*  61: 84 */       for (EnumDirection localej : EnumDirection.values()) {
-/*  62: 85 */         paramaqu.c(paramdt.a(localej), this);
+/*  62: 85 */         paramaqu.c(paramdt.offset(localej), this);
 /*  63:    */       }
 /*  64:    */     }
 /*  65:    */   }
@@ -77,7 +77,7 @@ package net.minecraft.src;
 /*  76:    */   {
 /*  77:100 */     EnumDirection localej = ((EnumDirection)parambec.getProperty(a)).d();
 /*  78:    */     
-/*  79:102 */     return paramaqu.b(paramdt.a(localej), localej);
+/*  79:102 */     return paramaqu.b(paramdt.offset(localej), localej);
 /*  80:    */   }
 /*  81:    */   
 /*  82:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, Random paramRandom) {}
@@ -95,7 +95,7 @@ package net.minecraft.src;
 /*  94:    */     {
 /*  95:120 */       if (bool)
 /*  96:    */       {
-/*  97:121 */         paramaqu.setBlock(paramdt, BlockList.aE.instance().a(a, parambec.getProperty(a)), 3);
+/*  97:121 */         paramaqu.setBlock(paramdt, BlockList.aE.instance().setData(a, parambec.getProperty(a)), 3);
 /*  98:123 */         if (a(paramaqu, paramdt, true))
 /*  99:    */         {
 /* 100:124 */           paramaqu.a(paramdt.getX() + 0.5F, paramdt.getY() + 0.5F, paramdt.getZ() + 0.5F, "random.fizz", 0.5F, 2.6F + (paramaqu.rng.nextFloat() - paramaqu.rng.nextFloat()) * 0.8F);
@@ -113,7 +113,7 @@ package net.minecraft.src;
 /* 112:    */     }
 /* 113:137 */     else if ((!bool) && 
 /* 114:138 */       (!a(paramaqu, paramdt, false))) {
-/* 115:139 */       paramaqu.setBlock(paramdt, BlockList.aF.instance().a(a, parambec.getProperty(a)), 3);
+/* 115:139 */       paramaqu.setBlock(paramdt, BlockList.aF.instance().setData(a, parambec.getProperty(a)), 3);
 /* 116:    */     }
 /* 117:    */   }
 /* 118:    */   

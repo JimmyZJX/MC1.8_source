@@ -51,7 +51,7 @@ package net.minecraft.src;
 /*  50: 70 */             Block localbec = paramaqu.getBlock(localdt);
 /*  51: 71 */             if ((localbec.getProto().getMaterial() == Material.leaves) && 
 /*  52: 72 */               (!((Boolean)localbec.getProperty(b)).booleanValue())) {
-/*  53: 73 */               paramaqu.setBlock(localdt, localbec.a(b, Boolean.valueOf(true)), 4);
+/*  53: 73 */               paramaqu.setBlock(localdt, localbec.setData(b, Boolean.valueOf(true)), 4);
 /*  54:    */             }
 /*  55:    */           }
 /*  56:    */         }
@@ -129,7 +129,7 @@ package net.minecraft.src;
 /* 128:    */       }
 /* 129:148 */       int i4 = this.M[(i3 * i2 + i3 * i1 + i3)];
 /* 130:149 */       if (i4 >= 0) {
-/* 131:150 */         paramaqu.setBlock(paramdt, parambec.a(b, Boolean.valueOf(false)), 4);
+/* 131:150 */         paramaqu.setBlock(paramdt, parambec.setData(b, Boolean.valueOf(false)), 4);
 /* 132:    */       } else {
 /* 133:152 */         d(paramaqu, paramdt);
 /* 134:    */       }

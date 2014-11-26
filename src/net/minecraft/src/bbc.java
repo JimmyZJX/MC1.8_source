@@ -13,7 +13,7 @@ package net.minecraft.src;
 /* 12:   */   public bbc()
 /* 13:   */   {
 /* 14:23 */     super(Material.rock);
-/* 15:24 */     j(this.L.b().a(a, bbd.a));
+/* 15:24 */     j(this.L.b().setData(a, bbd.a));
 /* 16:25 */     setCreativeTab(CreativeTabs.tabBlock);
 /* 17:   */   }
 /* 18:   */   
@@ -31,7 +31,7 @@ package net.minecraft.src;
 /* 30:   */   
 /* 31:   */   public Block instance(int paramInt)
 /* 32:   */   {
-/* 33:42 */     return instance().a(a, bbd.a(paramInt));
+/* 33:42 */     return instance().setData(a, bbd.a(paramInt));
 /* 34:   */   }
 /* 35:   */   
 /* 36:   */   public int c(Block parambec)

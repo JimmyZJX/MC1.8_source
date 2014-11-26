@@ -31,7 +31,7 @@ package net.minecraft.src;
 /* 30:   */   
 /* 31:   */   public Block u()
 /* 32:   */   {
-/* 33:44 */     return BlockList.chest.instance().a(BlockChest.a, EnumDirection.NORTH);
+/* 33:44 */     return BlockList.chest.instance().setData(BlockChest.a, EnumDirection.NORTH);
 /* 34:   */   }
 /* 35:   */   
 /* 36:   */   public int w()

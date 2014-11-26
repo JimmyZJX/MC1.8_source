@@ -8,7 +8,7 @@ package net.minecraft.src;
 /*   7:    */   {
 /*   8:242 */     World localaqu = paramdz.i();
 /*   9:    */     
-/*  10:244 */     BlockPosition localdt = paramdz.d().a(ave.b(paramdz.f()));
+/*  10:244 */     BlockPosition localdt = paramdz.d().offset(ave.b(paramdz.f()));
 /*  11:    */     
 /*  12:246 */     Block localbec = localaqu.getBlock(localdt);
 /*  13:247 */     ProtoBlock localatr = localbec.getProto();

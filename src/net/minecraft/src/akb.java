@@ -30,7 +30,7 @@ package net.minecraft.src;
 /*  29:    */       Object localObject;
 /*  30: 40 */       if (bool)
 /*  31:    */       {
-/*  32: 41 */         if (!paramahd.a(localdt.a(localbru.b), localbru.b, paramamj)) {
+/*  32: 41 */         if (!paramahd.a(localdt.offset(localbru.b), localbru.b, paramamj)) {
 /*  33: 42 */           return paramamj;
 /*  34:    */         }
 /*  35: 44 */         localObject = paramaqu.getBlock(localdt);
@@ -53,7 +53,7 @@ package net.minecraft.src;
 /*  52: 58 */         if (this.a == BlockList.air) {
 /*  53: 59 */           return new ItemStack(ItemList.aw);
 /*  54:    */         }
-/*  55: 61 */         localObject = localdt.a(localbru.b);
+/*  55: 61 */         localObject = localdt.offset(localbru.b);
 /*  56: 63 */         if (!paramahd.a((BlockPosition)localObject, localbru.b, paramamj)) {
 /*  57: 64 */           return paramamj;
 /*  58:    */         }

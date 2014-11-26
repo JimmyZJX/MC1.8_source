@@ -8,7 +8,7 @@ package net.minecraft.src;
 /*   8:    */   public bbk()
 /*   9:    */   {
 /*  10: 24 */     super(Material.u);
-/*  11: 25 */     j(this.L.b().a(a, Boolean.valueOf(false)));
+/*  11: 25 */     j(this.L.b().setData(a, Boolean.valueOf(false)));
 /*  12: 26 */     setCreativeTab(CreativeTabs.tabRedstone);
 /*  13:    */   }
 /*  14:    */   
@@ -17,7 +17,7 @@ package net.minecraft.src;
 /*  17: 31 */     super.c(paramaqu, paramdt, parambec);
 /*  18: 33 */     if (paramaqu.z(paramdt))
 /*  19:    */     {
-/*  20: 34 */       d(paramaqu, paramdt, parambec.a(a, Boolean.valueOf(true)));
+/*  20: 34 */       d(paramaqu, paramdt, parambec.setData(a, Boolean.valueOf(true)));
 /*  21: 35 */       paramaqu.g(paramdt);
 /*  22:    */     }
 /*  23:    */   }
@@ -26,7 +26,7 @@ package net.minecraft.src;
 /*  26:    */   {
 /*  27: 41 */     if (paramaqu.z(paramdt))
 /*  28:    */     {
-/*  29: 42 */       d(paramaqu, paramdt, parambec.a(a, Boolean.valueOf(true)));
+/*  29: 42 */       d(paramaqu, paramdt, parambec.setData(a, Boolean.valueOf(true)));
 /*  30: 43 */       paramaqu.g(paramdt);
 /*  31:    */     }
 /*  32:    */   }
@@ -66,7 +66,7 @@ package net.minecraft.src;
 /*  66: 78 */       Item localalq = paramahd.bY().getItem();
 /*  67: 79 */       if ((localalq == ItemList.d) || (localalq == ItemList.bL))
 /*  68:    */       {
-/*  69: 80 */         a(paramaqu, paramdt, parambec.a(a, Boolean.valueOf(true)), paramahd);
+/*  69: 80 */         a(paramaqu, paramdt, parambec.setData(a, Boolean.valueOf(true)), paramahd);
 /*  70: 81 */         paramaqu.g(paramdt);
 /*  71: 83 */         if (localalq == ItemList.d) {
 /*  72: 84 */           paramahd.bY().a(1, paramahd);
@@ -86,7 +86,7 @@ package net.minecraft.src;
 /*  86: 97 */       ahj localahj = (ahj)paramwv;
 /*  87: 98 */       if (localahj.au())
 /*  88:    */       {
-/*  89: 99 */         a(paramaqu, paramdt, paramaqu.getBlock(paramdt).a(a, Boolean.valueOf(true)), (localahj.c instanceof EntityLiving) ? (EntityLiving)localahj.c : null);
+/*  89: 99 */         a(paramaqu, paramdt, paramaqu.getBlock(paramdt).setData(a, Boolean.valueOf(true)), (localahj.c instanceof EntityLiving) ? (EntityLiving)localahj.c : null);
 /*  90:100 */         paramaqu.g(paramdt);
 /*  91:    */       }
 /*  92:    */     }
@@ -99,7 +99,7 @@ package net.minecraft.src;
 /*  99:    */   
 /* 100:    */   public Block instance(int paramInt)
 /* 101:    */   {
-/* 102:112 */     return instance().a(a, Boolean.valueOf((paramInt & 0x1) > 0));
+/* 102:112 */     return instance().setData(a, Boolean.valueOf((paramInt & 0x1) > 0));
 /* 103:    */   }
 /* 104:    */   
 /* 105:    */   public int c(Block parambec)

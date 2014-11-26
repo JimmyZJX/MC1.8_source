@@ -12,7 +12,7 @@ package net.minecraft.src;
 /*  11:    */   protected azk()
 /*  12:    */   {
 /*  13: 26 */     super(Material.C);
-/*  14: 27 */     j(this.L.b().a(N, EnumDirection.NORTH));
+/*  14: 27 */     j(this.L.b().setData(N, EnumDirection.NORTH));
 /*  15: 28 */     a(true);
 /*  16: 29 */     setCreativeTab(CreativeTabs.tabBlock);
 /*  17:    */   }
@@ -85,12 +85,12 @@ package net.minecraft.src;
 /*  84:    */   
 /*  85:    */   public Block a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3, int paramInt, EntityLiving paramxm)
 /*  86:    */   {
-/*  87: 98 */     return instance().a(N, paramxm.aO().d());
+/*  87: 98 */     return instance().setData(N, paramxm.aO().d());
 /*  88:    */   }
 /*  89:    */   
 /*  90:    */   public Block instance(int paramInt)
 /*  91:    */   {
-/*  92:103 */     return instance().a(N, EnumDirection.b(paramInt));
+/*  92:103 */     return instance().setData(N, EnumDirection.b(paramInt));
 /*  93:    */   }
 /*  94:    */   
 /*  95:    */   public int c(Block parambec)

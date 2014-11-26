@@ -12,7 +12,7 @@ package net.minecraft.src;
 /* 11:   */   public azi()
 /* 12:   */   {
 /* 13:21 */     super(Material.rock);
-/* 14:22 */     j(this.L.b().a(a, azj.a));
+/* 14:22 */     j(this.L.b().setData(a, azj.a));
 /* 15:23 */     setCreativeTab(CreativeTabs.tabBlock);
 /* 16:   */   }
 /* 17:   */   
@@ -33,7 +33,7 @@ package net.minecraft.src;
 /* 32:   */   
 /* 33:   */   public Block instance(int paramInt)
 /* 34:   */   {
-/* 35:43 */     return instance().a(a, azj.a(paramInt));
+/* 35:43 */     return instance().setData(a, azj.a(paramInt));
 /* 36:   */   }
 /* 37:   */   
 /* 38:   */   public void a(Item paramalq, CreativeTabs paramakf, List paramList)

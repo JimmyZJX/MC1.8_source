@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*   8:    */   protected azy()
 /*   9:    */   {
 /*  10: 23 */     super(Material.plants);
-/*  11: 24 */     j(this.L.b().a(a, Integer.valueOf(0)));
+/*  11: 24 */     j(this.L.b().setData(a, Integer.valueOf(0)));
 /*  12: 25 */     float f = 0.375F;
 /*  13: 26 */     a(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, 1.0F, 0.5F + f);
 /*  14: 27 */     a(true);
@@ -32,11 +32,11 @@ package net.minecraft.src;
 /*  31: 43 */         if (j == 15)
 /*  32:    */         {
 /*  33: 44 */           paramaqu.setBlock(paramdt.up(), instance());
-/*  34: 45 */           paramaqu.setBlock(paramdt, parambec.a(a, Integer.valueOf(0)), 4);
+/*  34: 45 */           paramaqu.setBlock(paramdt, parambec.setData(a, Integer.valueOf(0)), 4);
 /*  35:    */         }
 /*  36:    */         else
 /*  37:    */         {
-/*  38: 47 */           paramaqu.setBlock(paramdt, parambec.a(a, Integer.valueOf(j + 1)), 4);
+/*  38: 47 */           paramaqu.setBlock(paramdt, parambec.setData(a, Integer.valueOf(j + 1)), 4);
 /*  39:    */         }
 /*  40:    */       }
 /*  41:    */     }
@@ -51,7 +51,7 @@ package net.minecraft.src;
 /*  50: 60 */     if ((localatr == BlockList.grass) || (localatr == BlockList.dirt) || (localatr == BlockList.sand))
 /*  51:    */     {
 /*  52: 61 */       for (EnumDirection localej : en.HORIZONTAL) {
-/*  53: 62 */         if (paramaqu.getBlock(paramdt.a(localej).down()).getProto().getMaterial() == Material.water) {
+/*  53: 62 */         if (paramaqu.getBlock(paramdt.offset(localej).down()).getProto().getMaterial() == Material.water) {
 /*  54: 63 */           return true;
 /*  55:    */         }
 /*  56:    */       }
@@ -117,7 +117,7 @@ package net.minecraft.src;
 /* 116:    */   
 /* 117:    */   public Block instance(int paramInt)
 /* 118:    */   {
-/* 119:130 */     return instance().a(a, Integer.valueOf(paramInt));
+/* 119:130 */     return instance().setData(a, Integer.valueOf(paramInt));
 /* 120:    */   }
 /* 121:    */   
 /* 122:    */   public int c(Block parambec)

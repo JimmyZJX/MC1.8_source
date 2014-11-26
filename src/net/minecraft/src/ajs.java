@@ -21,7 +21,7 @@ package net.minecraft.src;
 /*  20: 39 */     if (!paramaqu.getBlock(paramdt).getProto().getMaterial().a()) {
 /*  21: 40 */       return false;
 /*  22:    */     }
-/*  23: 43 */     paramdt = paramdt.a(paramej);
+/*  23: 43 */     paramdt = paramdt.offset(paramej);
 /*  24: 45 */     if (!paramahd.a(paramdt, paramej, paramamj)) {
 /*  25: 46 */       return false;
 /*  26:    */     }
@@ -34,11 +34,11 @@ package net.minecraft.src;
 /*  33: 56 */     if (paramej == EnumDirection.UP)
 /*  34:    */     {
 /*  35: 57 */       int i = MathUtils.floor((paramahd.yaw + 180.0F) * 16.0F / 360.0F + 0.5D) & 0xF;
-/*  36: 58 */       paramaqu.setBlock(paramdt, BlockList.cK.instance().a(baw.a, Integer.valueOf(i)), 3);
+/*  36: 58 */       paramaqu.setBlock(paramdt, BlockList.cK.instance().setData(baw.a, Integer.valueOf(i)), 3);
 /*  37:    */     }
 /*  38:    */     else
 /*  39:    */     {
-/*  40: 60 */       paramaqu.setBlock(paramdt, BlockList.cL.instance().a(bbz.a, paramej), 3);
+/*  40: 60 */       paramaqu.setBlock(paramdt, BlockList.cL.instance().setData(bbz.a, paramej), 3);
 /*  41:    */     }
 /*  42: 63 */     paramamj.stackSize -= 1;
 /*  43: 64 */     bcm localbcm = paramaqu.s(paramdt);

@@ -23,7 +23,7 @@ package net.minecraft.src;
 /* 22:   */     }
 /* 23:37 */     int i = MathUtils.floor(paramahd.yaw * 4.0F / 360.0F + 0.5D) & 0x3;
 /* 24:38 */     EnumDirection localej = EnumDirection.b(i);
-/* 25:39 */     BlockPosition localdt = paramdt.a(localej);
+/* 25:39 */     BlockPosition localdt = paramdt.offset(localej);
 /* 26:40 */     boolean bool2 = localatr.f(paramaqu, localdt);
 /* 27:   */     
 /* 28:42 */     int j = (paramaqu.isEmpty(paramdt)) || (bool1) ? 1 : 0;
@@ -36,10 +36,10 @@ package net.minecraft.src;
 /* 35:50 */       int m = localej.b();
 /* 36:   */       
 /* 37:   */ 
-/* 38:53 */       Block localbec2 = BlockList.C.instance().a(atp.b, Boolean.valueOf(false)).a(atp.N, localej).a(atp.a, atq.FOOT);
+/* 38:53 */       Block localbec2 = BlockList.C.instance().setData(atp.b, Boolean.valueOf(false)).setData(atp.N, localej).setData(atp.a, atq.FOOT);
 /* 39:54 */       if (paramaqu.setBlock(paramdt, localbec2, 3))
 /* 40:   */       {
-/* 41:55 */         Block localbec3 = localbec2.a(atp.a, atq.HEAD);
+/* 41:55 */         Block localbec3 = localbec2.setData(atp.a, atq.HEAD);
 /* 42:56 */         paramaqu.setBlock(localdt, localbec3, 3);
 /* 43:   */       }
 /* 44:59 */       paramamj.stackSize -= 1;

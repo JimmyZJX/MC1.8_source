@@ -12,9 +12,9 @@ package net.minecraft.src;
 /*  11: 22 */     super(Material.wood);
 /*  12: 23 */     Block localbec = this.L.b();
 /*  13: 24 */     if (!j()) {
-/*  14: 25 */       localbec = localbec.a(half, EnumSlabHalf.BOTTOM);
+/*  14: 25 */       localbec = localbec.setData(half, EnumSlabHalf.BOTTOM);
 /*  15:    */     }
-/*  16: 27 */     j(localbec.a(b, EnumWoodVariant.OAK));
+/*  16: 27 */     j(localbec.setData(b, EnumWoodVariant.OAK));
 /*  17: 28 */     setCreativeTab(CreativeTabs.tabBlock);
 /*  18:    */   }
 /*  19:    */   
@@ -55,9 +55,9 @@ package net.minecraft.src;
 /*  54:    */   
 /*  55:    */   public Block instance(int paramInt)
 /*  56:    */   {
-/*  57: 70 */     Block localbec = instance().a(b, EnumWoodVariant.fromIndex(paramInt & 0x7));
+/*  57: 70 */     Block localbec = instance().setData(b, EnumWoodVariant.fromIndex(paramInt & 0x7));
 /*  58: 72 */     if (!j()) {
-/*  59: 73 */       localbec = localbec.a(half, (paramInt & 0x8) == 0 ? EnumSlabHalf.BOTTOM : EnumSlabHalf.TOP);
+/*  59: 73 */       localbec = localbec.setData(half, (paramInt & 0x8) == 0 ? EnumSlabHalf.BOTTOM : EnumSlabHalf.TOP);
 /*  60:    */     }
 /*  61: 76 */     return localbec;
 /*  62:    */   }

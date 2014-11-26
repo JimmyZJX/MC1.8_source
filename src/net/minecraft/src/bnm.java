@@ -124,7 +124,7 @@ package net.minecraft.src;
 /*  123:     */ 
 /*  124:1437 */     a(paramaqu, BlockList.air.instance(), 2, 1, 0, parambjb);
 /*  125:1438 */     a(paramaqu, BlockList.air.instance(), 2, 2, 0, parambjb);
-/*  126:1439 */     a(paramaqu, BlockList.torch.instance().a(bbl.a, this.m), 2, 3, 1, parambjb);
+/*  126:1439 */     a(paramaqu, BlockList.torch.instance().setData(bbl.a, this.m), 2, 3, 1, parambjb);
 /*  127:1440 */     a(paramaqu, parambjb, paramRandom, 2, 1, 0, EnumDirection.b(a(BlockList.woodenDoor, 1)));
 /*  128:1441 */     a(paramaqu, parambjb, 1, 0, -1, 3, 2, -1, BlockList.air.instance(), BlockList.air.instance(), false);
 /*  129:1442 */     if ((a(paramaqu, 2, 0, -1, parambjb).getProto().getMaterial() == Material.air) && (a(paramaqu, 2, -1, -1, parambjb).getProto().getMaterial() != Material.air)) {

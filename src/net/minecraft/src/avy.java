@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*   8:    */   protected avy()
 /*   9:    */   {
 /*  10: 23 */     super(Material.plants);
-/*  11: 24 */     j(this.L.b().a(l(), j() == awc.b ? EnumFlowerVariant.b : EnumFlowerVariant.a));
+/*  11: 24 */     j(this.L.b().setData(l(), j() == awc.b ? EnumFlowerVariant.b : EnumFlowerVariant.a));
 /*  12:    */   }
 /*  13:    */   
 /*  14:    */   public int a(Block parambec)
@@ -26,7 +26,7 @@ package net.minecraft.src;
 /*  25:    */   
 /*  26:    */   public Block instance(int paramInt)
 /*  27:    */   {
-/*  28: 41 */     return instance().a(l(), EnumFlowerVariant.a(j(), paramInt));
+/*  28: 41 */     return instance().setData(l(), EnumFlowerVariant.a(j(), paramInt));
 /*  29:    */   }
 /*  30:    */   
 /*  31:    */   public abstract awc j();

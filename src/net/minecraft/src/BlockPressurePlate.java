@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*  9:   */   protected BlockPressurePlate(Material parambof, azh paramazh)
 /* 10:   */   {
 /* 11:26 */     super(parambof);
-/* 12:27 */     j(this.L.b().a(a, Boolean.valueOf(false)));
+/* 12:27 */     j(this.L.b().setData(a, Boolean.valueOf(false)));
 /* 13:28 */     this.b = paramazh;
 /* 14:   */   }
 /* 15:   */   
@@ -21,7 +21,7 @@ package net.minecraft.src;
 /* 20:   */   
 /* 21:   */   protected Block a(Block parambec, int paramInt)
 /* 22:   */   {
-/* 23:43 */     return parambec.a(a, Boolean.valueOf(paramInt > 0));
+/* 23:43 */     return parambec.setData(a, Boolean.valueOf(paramInt > 0));
 /* 24:   */   }
 /* 25:   */   
 /* 26:   */   protected int e(World paramaqu, BlockPosition paramdt)
@@ -51,7 +51,7 @@ package net.minecraft.src;
 /* 50:   */   
 /* 51:   */   public Block instance(int paramInt)
 /* 52:   */   {
-/* 53:75 */     return instance().a(a, Boolean.valueOf(paramInt == 1));
+/* 53:75 */     return instance().setData(a, Boolean.valueOf(paramInt == 1));
 /* 54:   */   }
 /* 55:   */   
 /* 56:   */   public int c(Block parambec)

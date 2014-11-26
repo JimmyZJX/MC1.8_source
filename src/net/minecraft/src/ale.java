@@ -14,7 +14,7 @@ package net.minecraft.src;
 /* 13:17 */     if (paramaqu.isClient) {
 /* 14:18 */       return true;
 /* 15:   */     }
-/* 16:21 */     paramdt = paramdt.a(paramej);
+/* 16:21 */     paramdt = paramdt.offset(paramej);
 /* 17:23 */     if (!paramahd.a(paramdt, paramej, paramamj)) {
 /* 18:24 */       return false;
 /* 19:   */     }

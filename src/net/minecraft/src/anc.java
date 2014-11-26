@@ -17,7 +17,7 @@ package net.minecraft.src;
 /* 16:21 */     if (paramej != EnumDirection.UP) {
 /* 17:22 */       return false;
 /* 18:   */     }
-/* 19:25 */     if (!paramahd.a(paramdt.a(paramej), paramej, paramamj)) {
+/* 19:25 */     if (!paramahd.a(paramdt.offset(paramej), paramej, paramamj)) {
 /* 20:26 */       return false;
 /* 21:   */     }
 /* 22:29 */     if ((paramaqu.getBlock(paramdt).getProto() == this.b) && (paramaqu.isEmpty(paramdt.up())))

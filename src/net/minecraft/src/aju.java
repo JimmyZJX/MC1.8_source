@@ -24,7 +24,7 @@ package net.minecraft.src;
 /*  23: 37 */     if ((localatr == BlockList.aH) && (((Integer)localbec1.getProperty(BlockSnowLayer.a)).intValue() < 1)) {
 /*  24: 38 */       paramej = EnumDirection.UP;
 /*  25: 39 */     } else if (!localatr.f(paramaqu, paramdt)) {
-/*  26: 40 */       paramdt = paramdt.a(paramej);
+/*  26: 40 */       paramdt = paramdt.offset(paramej);
 /*  27:    */     }
 /*  28: 43 */     if (paramamj.stackSize == 0) {
 /*  29: 44 */       return false;
@@ -88,7 +88,7 @@ package net.minecraft.src;
 /*  87:100 */     if (localatr == BlockList.aH) {
 /*  88:101 */       paramej = EnumDirection.UP;
 /*  89:102 */     } else if (!localatr.f(paramaqu, paramdt)) {
-/*  90:103 */       paramdt = paramdt.a(paramej);
+/*  90:103 */       paramdt = paramdt.offset(paramej);
 /*  91:    */     }
 /*  92:106 */     return paramaqu.a(this.a, paramdt, false, paramej, null, paramamj);
 /*  93:    */   }

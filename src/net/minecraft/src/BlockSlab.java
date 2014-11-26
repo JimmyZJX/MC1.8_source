@@ -62,12 +62,12 @@ package net.minecraft.src;
 /*  61:    */   
 /*  62:    */   public Block a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3, int paramInt, EntityLiving paramxm)
 /*  63:    */   {
-/*  64: 81 */     Block localbec = super.a(paramaqu, paramdt, paramej, paramFloat1, paramFloat2, paramFloat3, paramInt, paramxm).a(half, EnumSlabHalf.BOTTOM);
+/*  64: 81 */     Block localbec = super.a(paramaqu, paramdt, paramej, paramFloat1, paramFloat2, paramFloat3, paramInt, paramxm).setData(half, EnumSlabHalf.BOTTOM);
 /*  65: 83 */     if (j()) {
 /*  66: 84 */       return localbec;
 /*  67:    */     }
 /*  68: 87 */     if ((paramej == EnumDirection.DOWN) || ((paramej != EnumDirection.UP) && (paramFloat2 > 0.5D))) {
-/*  69: 88 */       return localbec.a(half, EnumSlabHalf.TOP);
+/*  69: 88 */       return localbec.setData(half, EnumSlabHalf.TOP);
 /*  70:    */     }
 /*  71: 90 */     return localbec;
 /*  72:    */   }
@@ -93,7 +93,7 @@ package net.minecraft.src;
 /*  92:112 */     if ((paramej != EnumDirection.UP) && (paramej != EnumDirection.DOWN) && (!super.a(paramard, paramdt, paramej))) {
 /*  93:113 */       return false;
 /*  94:    */     }
-/*  95:116 */     BlockPosition localdt = paramdt.a(paramej.d());
+/*  95:116 */     BlockPosition localdt = paramdt.offset(paramej.d());
 /*  96:    */     
 /*  97:118 */     Block localbec1 = paramard.getBlock(paramdt);
 /*  98:119 */     Block localbec2 = paramard.getBlock(localdt);

@@ -5,12 +5,12 @@ package net.minecraft.src;
 /*   4:    */   protected ItemStack b(dz paramdz, ItemStack paramamj)
 /*   5:    */   {
 /*   6:442 */     World localaqu = paramdz.i();
-/*   7:443 */     BlockPosition localdt = paramdz.d().a(ave.b(paramdz.f()));
+/*   7:443 */     BlockPosition localdt = paramdz.d().offset(ave.b(paramdz.f()));
 /*   8:445 */     if (localaqu.isEmpty(localdt))
 /*   9:    */     {
 /*  10:446 */       if (!localaqu.isClient)
 /*  11:    */       {
-/*  12:447 */         Block localbec = BlockList.bX.instance().a(auo.a, Boolean.valueOf(false));
+/*  12:447 */         Block localbec = BlockList.bX.instance().setData(auo.a, Boolean.valueOf(false));
 /*  13:448 */         localaqu.setBlock(localdt, localbec, 3);
 /*  14:449 */         aju.a(localaqu, localdt, paramamj);
 /*  15:450 */         localaqu.c(paramdz.d(), paramdz.e());

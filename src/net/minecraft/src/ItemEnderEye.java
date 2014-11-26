@@ -12,12 +12,12 @@ package net.minecraft.src;
 /*  11:    */   public boolean a(ItemStack itemStack, EntityPlayer player, World world, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3)
 /*  12:    */   {
 /*  13: 25 */     Block localbec1 = world.getBlock(paramdt);
-/*  14: 27 */     if ((player.a(paramdt.a(paramej), paramej, itemStack)) && (localbec1.getProto() == BlockList.endPortalFrame) && (!((Boolean)localbec1.getProperty(avq.b)).booleanValue()))
+/*  14: 27 */     if ((player.a(paramdt.offset(paramej), paramej, itemStack)) && (localbec1.getProto() == BlockList.endPortalFrame) && (!((Boolean)localbec1.getProperty(avq.b)).booleanValue()))
 /*  15:    */     {
 /*  16: 28 */       if (world.isClient) {
 /*  17: 29 */         return true;
 /*  18:    */       }
-/*  19: 31 */       world.setBlock(paramdt, localbec1.a(avq.b, Boolean.valueOf(true)), 2);
+/*  19: 31 */       world.setBlock(paramdt, localbec1.setData(avq.b, Boolean.valueOf(true)), 2);
 /*  20: 32 */       world.e(paramdt, BlockList.endPortalFrame);
 /*  21: 33 */       itemStack.stackSize -= 1;
 /*  22: 35 */       for (int i = 0; i < 16; i++)

@@ -132,19 +132,19 @@ package net.minecraft.src;
 /* 131:    */       {
 /* 132:139 */         EnumDirection localej3 = localej1.f();
 /* 133:    */         
-/* 134:141 */         BlockPosition localdt2 = ((BlockPosition)localObject1).a(localej1);
+/* 134:141 */         BlockPosition localdt2 = ((BlockPosition)localObject1).offset(localej1);
 /* 135:142 */         boolean bool1 = a(localdt2);
-/* 136:143 */         boolean bool2 = a(localdt2.a(localej3));
+/* 136:143 */         boolean bool2 = a(localdt2.offset(localej3));
 /* 137:145 */         if ((bool2) && (bool1))
 /* 138:    */         {
-/* 139:146 */           localObject1 = ((BlockPosition)localObject1).a(localej3);
+/* 139:146 */           localObject1 = ((BlockPosition)localObject1).offset(localej3);
 /* 140:    */           
 /* 141:148 */           localej1 = localej1.d();
 /* 142:149 */           localej3 = localej3.d();
 /* 143:    */           
-/* 144:151 */           BlockPosition localdt3 = ((BlockPosition)localObject1).a(localej1);
+/* 144:151 */           BlockPosition localdt3 = ((BlockPosition)localObject1).offset(localej1);
 /* 145:152 */           bool1 = a(localdt3);
-/* 146:153 */           bool2 = a(localdt3.a(localej3));
+/* 146:153 */           bool2 = a(localdt3.offset(localej3));
 /* 147:    */         }
 /* 148:156 */         float f1 = 0.5F;
 /* 149:157 */         float f2 = 0.5F;
@@ -365,7 +365,7 @@ package net.minecraft.src;
 /* 364:    */         }
 /* 365:    */       }
 /* 366:    */     }
-/* 367:358 */     Block localbec = BlockList.aY.instance().a(ayy.a, i4 != 0 ? EnumAxis.X : EnumAxis.Z);
+/* 367:358 */     Block localbec = BlockList.aY.instance().setData(ayy.a, i4 != 0 ? EnumAxis.X : EnumAxis.Z);
 /* 368:359 */     for (int i7 = 0; i7 < 4; i7++)
 /* 369:    */     {
 /* 370:360 */       for (i8 = 0; i8 < 4; i8++) {

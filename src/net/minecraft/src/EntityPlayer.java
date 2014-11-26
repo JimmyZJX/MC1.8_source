@@ -1100,7 +1100,7 @@ package net.minecraft.src;
 /* 1099:1254 */     Block localbec = this.world.getBlock(this.bv);
 /* 1100:1257 */     if ((this.bv != null) && (localbec.getProto() == BlockList.C))
 /* 1101:     */     {
-/* 1102:1258 */       this.world.setBlock(this.bv, localbec.a(atp.b, Boolean.valueOf(false)), 4);
+/* 1102:1258 */       this.world.setBlock(this.bv, localbec.setData(atp.b, Boolean.valueOf(false)), 4);
 /* 1103:     */       
 /* 1104:1260 */       BlockPosition localdt = atp.a(this.world, this.bv, 0);
 /* 1105:1261 */       if (localdt == null) {
@@ -1499,7 +1499,7 @@ package net.minecraft.src;
 /* 1498:1645 */     if (paramamj == null) {
 /* 1499:1646 */       return false;
 /* 1500:     */     }
-/* 1501:1649 */     BlockPosition localdt = paramdt.a(paramej.d());
+/* 1501:1649 */     BlockPosition localdt = paramdt.offset(paramej.d());
 /* 1502:1650 */     ProtoBlock localatr = this.world.getBlock(localdt).getProto();
 /* 1503:     */     
 /* 1504:1652 */     return (paramamj.d(localatr)) || (paramamj.x());

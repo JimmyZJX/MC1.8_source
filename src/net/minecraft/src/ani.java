@@ -30,7 +30,7 @@ package net.minecraft.src;
 /*  29: 37 */     if (paramamj.stackSize == 0) {
 /*  30: 38 */       return false;
 /*  31:    */     }
-/*  32: 40 */     if (!paramahd.a(paramdt.a(paramej), paramej, paramamj)) {
+/*  32: 40 */     if (!paramahd.a(paramdt.offset(paramej), paramej, paramamj)) {
 /*  33: 41 */       return false;
 /*  34:    */     }
 /*  35: 44 */     Object localObject = this.b.a(paramamj);
@@ -42,7 +42,7 @@ package net.minecraft.src;
 /*  41: 50 */       EnumSlabHalf localawr = (EnumSlabHalf)localbec1.getProperty(BlockSlab.half);
 /*  42: 52 */       if (((paramej == EnumDirection.UP) && (localawr == EnumSlabHalf.BOTTOM)) || ((paramej == EnumDirection.DOWN) && (localawr == EnumSlabHalf.TOP) && (localComparable == localObject)))
 /*  43:    */       {
-/*  44: 53 */         Block localbec2 = this.c.instance().a(localbex, localComparable);
+/*  44: 53 */         Block localbec2 = this.c.instance().setData(localbex, localComparable);
 /*  45: 55 */         if ((paramaqu.isCollisionFree(this.c.a(paramaqu, paramdt, localbec2))) && (paramaqu.setBlock(paramdt, localbec2, 3)))
 /*  46:    */         {
 /*  47: 56 */           paramaqu.a(paramdt.getX() + 0.5F, paramdt.getY() + 0.5F, paramdt.getZ() + 0.5F, this.c.H.b(), (this.c.H.d() + 1.0F) / 2.0F, this.c.H.e() * 0.8F);
@@ -51,7 +51,7 @@ package net.minecraft.src;
 /*  50: 59 */         return true;
 /*  51:    */       }
 /*  52:    */     }
-/*  53: 63 */     if (a(paramamj, paramaqu, paramdt.a(paramej), localObject)) {
+/*  53: 63 */     if (a(paramamj, paramaqu, paramdt.offset(paramej), localObject)) {
 /*  54: 64 */       return true;
 /*  55:    */     }
 /*  56: 67 */     return super.a(paramamj, paramahd, paramaqu, paramdt, paramej, paramFloat1, paramFloat2, paramFloat3);
@@ -72,7 +72,7 @@ package net.minecraft.src;
 /*  71: 83 */         return true;
 /*  72:    */       }
 /*  73:    */     }
-/*  74: 87 */     paramdt = paramdt.a(paramej);
+/*  74: 87 */     paramdt = paramdt.offset(paramej);
 /*  75: 88 */     Block localbec2 = paramaqu.getBlock(paramdt);
 /*  76: 89 */     if ((localbec2.getProto() == this.b) && (localObject == localbec2.getProperty(localbex))) {
 /*  77: 90 */       return true;
@@ -88,7 +88,7 @@ package net.minecraft.src;
 /*  87: 99 */       Comparable localComparable = localbec1.getProperty(this.b.l());
 /*  88:101 */       if (localComparable == paramObject)
 /*  89:    */       {
-/*  90:102 */         Block localbec2 = this.c.instance().a(this.b.l(), localComparable);
+/*  90:102 */         Block localbec2 = this.c.instance().setData(this.b.l(), localComparable);
 /*  91:104 */         if ((paramaqu.isCollisionFree(this.c.a(paramaqu, paramdt, localbec2))) && (paramaqu.setBlock(paramdt, localbec2, 3)))
 /*  92:    */         {
 /*  93:105 */           paramaqu.a(paramdt.getX() + 0.5F, paramdt.getY() + 0.5F, paramdt.getZ() + 0.5F, this.c.H.b(), (this.c.H.d() + 1.0F) / 2.0F, this.c.H.e() * 0.8F);

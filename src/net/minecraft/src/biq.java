@@ -8,7 +8,7 @@ package net.minecraft.src;
 /*  7:   */   
 /*  8:   */   public biq(bbi parambbi)
 /*  9:   */   {
-/* 10:17 */     this.a = BlockList.tallgrass.instance().a(bbh.a, parambbi);
+/* 10:17 */     this.a = BlockList.tallgrass.instance().setData(bbh.a, parambbi);
 /* 11:   */   }
 /* 12:   */   
 /* 13:   */   public boolean generate(World paramaqu, Random paramRandom, BlockPosition paramdt)

@@ -14,7 +14,7 @@ package net.minecraft.src;
 /* 13:   */   
 /* 14:   */   public boolean a(ItemStack paramamj, EntityPlayer paramahd, World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3)
 /* 15:   */   {
-/* 16:25 */     if (!paramahd.a(paramdt.a(paramej), paramej, paramamj)) {
+/* 16:25 */     if (!paramahd.a(paramdt.offset(paramej), paramej, paramamj)) {
 /* 17:26 */       return false;
 /* 18:   */     }
 /* 19:29 */     Block localbec = paramaqu.getBlock(paramdt);
@@ -30,7 +30,7 @@ package net.minecraft.src;
 /* 29:   */         case 1: 
 /* 30:38 */           return a(paramamj, paramahd, paramaqu, paramdt, BlockList.ak.instance());
 /* 31:   */         case 2: 
-/* 32:40 */           return a(paramamj, paramahd, paramaqu, paramdt, BlockList.dirt.instance().a(BlockDirt.a, avd.a));
+/* 32:40 */           return a(paramamj, paramahd, paramaqu, paramdt, BlockList.dirt.instance().setData(BlockDirt.a, avd.a));
 /* 33:   */         }
 /* 34:   */       }
 /* 35:   */     }

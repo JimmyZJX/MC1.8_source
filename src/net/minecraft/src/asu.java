@@ -90,9 +90,9 @@ package net.minecraft.src;
 /*  89: 92 */       this.ak = BlockList.grass.instance();
 /*  90: 93 */       this.al = BlockList.dirt.instance();
 /*  91: 94 */       if (paramDouble > 1.75D) {
-/*  92: 95 */         this.ak = BlockList.dirt.instance().a(BlockDirt.a, avd.b);
+/*  92: 95 */         this.ak = BlockList.dirt.instance().setData(BlockDirt.a, avd.b);
 /*  93: 96 */       } else if (paramDouble > -0.95D) {
-/*  94: 97 */         this.ak = BlockList.dirt.instance().a(BlockDirt.a, avd.c);
+/*  94: 97 */         this.ak = BlockList.dirt.instance().setData(BlockDirt.a, avd.c);
 /*  95:    */       }
 /*  96:    */     }
 /*  97:100 */     b(paramaqu, paramRandom, parambgk, paramInt1, paramInt2, paramDouble);

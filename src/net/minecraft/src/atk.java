@@ -130,7 +130,7 @@ package net.minecraft.src;
 /* 127:    */   {
 /* 128:153 */     int i = 0;
 /* 129:155 */     for (EnumDirection localej : en.HORIZONTAL) {
-/* 130:156 */       if (a(this.c.a(localej))) {
+/* 130:156 */       if (a(this.c.offset(localej))) {
 /* 131:157 */         i++;
 /* 132:    */       }
 /* 133:    */     }
@@ -199,7 +199,7 @@ package net.minecraft.src;
 /* 196:220 */     if (localatl == null) {
 /* 197:221 */       localatl = EnumRailState.a;
 /* 198:    */     }
-/* 199:224 */     this.e = this.e.a(this.d.l(), localatl);
+/* 199:224 */     this.e = this.e.setData(this.d.l(), localatl);
 /* 200:225 */     this.b.setBlock(this.c, this.e, 3);
 /* 201:    */   }
 /* 202:    */   
@@ -310,7 +310,7 @@ package net.minecraft.src;
 /* 307:329 */       localatl = EnumRailState.a;
 /* 308:    */     }
 /* 309:332 */     a(localatl);
-/* 310:333 */     this.e = this.e.a(this.d.l(), localatl);
+/* 310:333 */     this.e = this.e.setData(this.d.l(), localatl);
 /* 311:335 */     if ((paramBoolean2) || (this.b.getBlock(this.c) != this.e))
 /* 312:    */     {
 /* 313:336 */       this.b.setBlock(this.c, this.e, 3);

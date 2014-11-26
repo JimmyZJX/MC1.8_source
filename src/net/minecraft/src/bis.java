@@ -12,7 +12,7 @@ package net.minecraft.src;
 /* 11:19 */         for (EnumDirection localej : en.HORIZONTAL.getDirectionList()) {
 /* 12:20 */           if (BlockList.vine.a(paramaqu, paramdt, localej))
 /* 13:   */           {
-/* 14:21 */             Block localbec = BlockList.vine.instance().a(bbv.b, Boolean.valueOf(localej == EnumDirection.NORTH)).a(bbv.M, Boolean.valueOf(localej == EnumDirection.EAST)).a(bbv.N, Boolean.valueOf(localej == EnumDirection.SOUTH)).a(bbv.O, Boolean.valueOf(localej == EnumDirection.WEST));
+/* 14:21 */             Block localbec = BlockList.vine.instance().setData(bbv.b, Boolean.valueOf(localej == EnumDirection.NORTH)).setData(bbv.M, Boolean.valueOf(localej == EnumDirection.EAST)).setData(bbv.N, Boolean.valueOf(localej == EnumDirection.SOUTH)).setData(bbv.O, Boolean.valueOf(localej == EnumDirection.WEST));
 /* 15:   */             
 /* 16:   */ 
 /* 17:   */ 

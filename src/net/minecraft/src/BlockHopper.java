@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*   9:    */   public BlockHopper()
 /*  10:    */   {
 /*  11: 37 */     super(Material.f);
-/*  12: 38 */     j(this.L.b().a(a, EnumDirection.DOWN).a(b, Boolean.valueOf(true)));
+/*  12: 38 */     j(this.L.b().setData(a, EnumDirection.DOWN).setData(b, Boolean.valueOf(true)));
 /*  13: 39 */     setCreativeTab(CreativeTabs.tabRedstone);
 /*  14: 40 */     a(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
 /*  15:    */   }
@@ -43,7 +43,7 @@ package net.minecraft.src;
 /*  42: 68 */     if (localej == EnumDirection.UP) {
 /*  43: 69 */       localej = EnumDirection.DOWN;
 /*  44:    */     }
-/*  45: 71 */     return instance().a(a, localej).a(b, Boolean.valueOf(true));
+/*  45: 71 */     return instance().setData(a, localej).setData(b, Boolean.valueOf(true));
 /*  46:    */   }
 /*  47:    */   
 /*  48:    */   public bcm a(World paramaqu, int paramInt)
@@ -89,7 +89,7 @@ package net.minecraft.src;
 /*  88:    */   {
 /*  89:115 */     boolean bool = !paramaqu.z(paramdt);
 /*  90:116 */     if (bool != ((Boolean)parambec.getProperty(b)).booleanValue()) {
-/*  91:117 */       paramaqu.setBlock(paramdt, parambec.a(b, Boolean.valueOf(bool)), 4);
+/*  91:117 */       paramaqu.setBlock(paramdt, parambec.setData(b, Boolean.valueOf(bool)), 4);
 /*  92:    */     }
 /*  93:    */   }
 /*  94:    */   
@@ -152,7 +152,7 @@ package net.minecraft.src;
 /* 151:    */   
 /* 152:    */   public Block instance(int paramInt)
 /* 153:    */   {
-/* 154:178 */     return instance().a(a, b(paramInt)).a(b, Boolean.valueOf(f(paramInt)));
+/* 154:178 */     return instance().setData(a, b(paramInt)).setData(b, Boolean.valueOf(f(paramInt)));
 /* 155:    */   }
 /* 156:    */   
 /* 157:    */   public int c(Block parambec)

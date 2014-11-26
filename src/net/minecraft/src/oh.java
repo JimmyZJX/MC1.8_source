@@ -8,7 +8,7 @@ package net.minecraft.src;
 /*   7:    */   {
 /*   8:275 */     World localaqu = paramdz.i();
 /*   9:    */     
-/*  10:277 */     BlockPosition localdt = paramdz.d().a(ave.b(paramdz.f()));
+/*  10:277 */     BlockPosition localdt = paramdz.d().offset(ave.b(paramdz.f()));
 /*  11:278 */     if (localaqu.isEmpty(localdt))
 /*  12:    */     {
 /*  13:279 */       localaqu.setBlock(localdt, BlockList.fire.instance());
@@ -18,7 +18,7 @@ package net.minecraft.src;
 /*  17:    */     }
 /*  18:285 */     else if (localaqu.getBlock(localdt).getProto() == BlockList.W)
 /*  19:    */     {
-/*  20:286 */       BlockList.W.d(localaqu, localdt, BlockList.W.instance().a(bbk.a, Boolean.valueOf(true)));
+/*  20:286 */       BlockList.W.d(localaqu, localdt, BlockList.W.instance().setData(bbk.a, Boolean.valueOf(true)));
 /*  21:287 */       localaqu.g(localdt);
 /*  22:    */     }
 /*  23:    */     else

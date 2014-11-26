@@ -19,7 +19,7 @@ package net.minecraft.src;
 /*  18: 27 */     if (paramBoolean)
 /*  19:    */     {
 /*  20: 28 */       this.d = paramej;
-/*  21: 29 */       this.c = paramdt.a(paramej);
+/*  21: 29 */       this.c = paramdt.offset(paramej);
 /*  22:    */     }
 /*  23:    */     else
 /*  24:    */     {
@@ -151,7 +151,7 @@ package net.minecraft.src;
 /* 150:    */   {
 /* 151:182 */     for (EnumDirection localej : EnumDirection.values()) {
 /* 152:183 */       if ((localej.k() != this.d.k()) && 
-/* 153:184 */         (!a(paramdt.a(localej)))) {
+/* 153:184 */         (!a(paramdt.offset(localej)))) {
 /* 154:185 */         return false;
 /* 155:    */       }
 /* 156:    */     }

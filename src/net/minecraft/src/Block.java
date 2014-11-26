@@ -9,7 +9,7 @@ public abstract interface Block
   
   public abstract Comparable getProperty(IBlockData parambex);
   
-  public abstract Block a(IBlockData parambex, Comparable paramComparable);
+  public abstract Block setData(IBlockData parambex, Comparable paramComparable);
   
   public abstract Block a(IBlockData parambex);
   

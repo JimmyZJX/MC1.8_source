@@ -558,12 +558,12 @@ package net.minecraft.src;
 /*  557: 608 */         localObject4 = (bcr)localObject3;
 /*  558: 609 */         if (((bcr)localObject4).h != null)
 /*  559:     */         {
-/*  560: 610 */           localObject2 = ((BlockPosition)localObject2).a(EnumDirection.WEST);
+/*  560: 610 */           localObject2 = ((BlockPosition)localObject2).offset(EnumDirection.WEST);
 /*  561: 611 */           localObject3 = this.k.s((BlockPosition)localObject2);
 /*  562:     */         }
 /*  563: 612 */         else if (((bcr)localObject4).f != null)
 /*  564:     */         {
-/*  565: 613 */           localObject2 = ((BlockPosition)localObject2).a(EnumDirection.NORTH);
+/*  565: 613 */           localObject2 = ((BlockPosition)localObject2).offset(EnumDirection.NORTH);
 /*  566: 614 */           localObject3 = this.k.s((BlockPosition)localObject2);
 /*  567:     */         }
 /*  568:     */       }

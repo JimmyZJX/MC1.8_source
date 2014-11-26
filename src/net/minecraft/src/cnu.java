@@ -34,19 +34,19 @@ package net.minecraft.src;
 /* 33:55 */     World localaqu = a();
 /* 34:56 */     if ((localatr == BlockList.K) && (parambdv.a(paramFloat) < 0.5F))
 /* 35:   */     {
-/* 36:58 */       localbec1 = localbec1.a(bds.M, Boolean.valueOf(true));
+/* 36:58 */       localbec1 = localbec1.setData(bds.M, Boolean.valueOf(true));
 /* 37:59 */       this.c.b().a(localaqu, this.c.a(localbec1, localaqu, localdt), localbec1, localdt, localciv, true);
 /* 38:   */     }
 /* 39:60 */     else if ((parambdv.g()) && (!parambdv.d()))
 /* 40:   */     {
 /* 41:62 */       bdu localbdu = localatr == BlockList.F ? bdu.b : bdu.a;
-/* 42:63 */       Block localbec2 = BlockList.K.instance().a(bds.b, localbdu).a(bds.a, localbec1.getProperty(bdq.a));
-/* 43:64 */       localbec2 = localbec2.a(bds.M, Boolean.valueOf(parambdv.a(paramFloat) >= 0.5F));
+/* 42:63 */       Block localbec2 = BlockList.K.instance().setData(bds.b, localbdu).setData(bds.a, localbec1.getProperty(bdq.a));
+/* 43:64 */       localbec2 = localbec2.setData(bds.M, Boolean.valueOf(parambdv.a(paramFloat) >= 0.5F));
 /* 44:65 */       this.c.b().a(localaqu, this.c.a(localbec2, localaqu, localdt), localbec2, localdt, localciv, true);
 /* 45:   */       
 /* 46:   */ 
 /* 47:68 */       localciv.c((float)paramDouble1 - localdt.getX(), (float)paramDouble2 - localdt.getY(), (float)paramDouble3 - localdt.getZ());
-/* 48:69 */       localbec1.a(bdq.b, Boolean.valueOf(true));
+/* 48:69 */       localbec1.setData(bdq.b, Boolean.valueOf(true));
 /* 49:70 */       this.c.b().a(localaqu, this.c.a(localbec1, localaqu, localdt), localbec1, localdt, localciv, true);
 /* 50:   */     }
 /* 51:   */     else

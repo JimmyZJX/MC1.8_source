@@ -27,7 +27,7 @@ package net.minecraft.src;
 /*  26: 44 */       if (!paramaqu.getBlock(paramdt).getProto().getMaterial().a()) {
 /*  27: 45 */         return false;
 /*  28:    */       }
-/*  29: 47 */       paramdt = paramdt.a(paramej);
+/*  29: 47 */       paramdt = paramdt.offset(paramej);
 /*  30:    */     }
 /*  31: 50 */     if (!paramahd.a(paramdt, paramej, paramamj)) {
 /*  32: 51 */       return false;
@@ -37,7 +37,7 @@ package net.minecraft.src;
 /*  36:    */     }
 /*  37: 57 */     if (!paramaqu.isClient)
 /*  38:    */     {
-/*  39: 58 */       paramaqu.setBlock(paramdt, BlockList.ce.instance().a(baj.a, paramej), 3);
+/*  39: 58 */       paramaqu.setBlock(paramdt, BlockList.ce.instance().setData(baj.a, paramej), 3);
 /*  40:    */       
 /*  41: 60 */       int i = 0;
 /*  42: 61 */       if (paramej == EnumDirection.UP) {

@@ -25,9 +25,9 @@ package net.minecraft.src;
 /*  24:    */     
 /*  25: 37 */     this.dirtGenerator = new OreGenerator(BlockList.dirt.instance(), this.d.dirtRadius);
 /*  26: 38 */     this.gravelGenerator = new OreGenerator(BlockList.gravel.instance(), this.d.gravelRadius);
-/*  27: 39 */     this.graniteGenerator = new OreGenerator(BlockList.stone.instance().a(bba.a, EnumStoneVariants.GRANITE), this.d.graniteRadius);
-/*  28: 40 */     this.dioriteGenerator = new OreGenerator(BlockList.stone.instance().a(bba.a, EnumStoneVariants.DIORITE), this.d.dioriteRadius);
-/*  29: 41 */     this.andesiteGenerator = new OreGenerator(BlockList.stone.instance().a(bba.a, EnumStoneVariants.ANDESITE), this.d.andesiteRadius);
+/*  27: 39 */     this.graniteGenerator = new OreGenerator(BlockList.stone.instance().setData(bba.a, EnumStoneVariants.GRANITE), this.d.graniteRadius);
+/*  28: 40 */     this.dioriteGenerator = new OreGenerator(BlockList.stone.instance().setData(bba.a, EnumStoneVariants.DIORITE), this.d.dioriteRadius);
+/*  29: 41 */     this.andesiteGenerator = new OreGenerator(BlockList.stone.instance().setData(bba.a, EnumStoneVariants.ANDESITE), this.d.andesiteRadius);
 /*  30: 42 */     this.coalGenerator = new OreGenerator(BlockList.coalOre.instance(), this.d.coalRadius);
 /*  31: 43 */     this.ironGenerator = new OreGenerator(BlockList.ironOre.instance(), this.d.ironRadius);
 /*  32: 44 */     this.goldGenerator = new OreGenerator(BlockList.goldOre.instance(), this.d.goldRadius);

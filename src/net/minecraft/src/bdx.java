@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*   9:    */   public bdx()
 /*  10:    */   {
 /*  11: 30 */     super(Material.H);
-/*  12: 31 */     j(this.L.b().a(a, EnumDirection.NORTH).a(b, bdu.a));
+/*  12: 31 */     j(this.L.b().setData(a, EnumDirection.NORTH).setData(b, bdu.a));
 /*  13: 32 */     c(-1.0F);
 /*  14:    */   }
 /*  15:    */   
@@ -46,7 +46,7 @@ package net.minecraft.src;
 /*  45:    */   
 /*  46:    */   public void d(World paramaqu, BlockPosition paramdt, Block parambec)
 /*  47:    */   {
-/*  48: 68 */     BlockPosition localdt = paramdt.a(((EnumDirection)parambec.getProperty(a)).d());
+/*  48: 68 */     BlockPosition localdt = paramdt.offset(((EnumDirection)parambec.getProperty(a)).d());
 /*  49: 69 */     Block localbec = paramaqu.getBlock(localdt);
 /*  50: 70 */     if (((localbec.getProto() instanceof bdq)) && (((Boolean)localbec.getProperty(bdq.b)).booleanValue())) {
 /*  51: 71 */       paramaqu.g(localdt);
@@ -193,7 +193,7 @@ package net.minecraft.src;
 /* 192:    */   
 /* 193:    */   public Block instance(int paramInt)
 /* 194:    */   {
-/* 195:225 */     return instance().a(a, bds.b(paramInt)).a(b, (paramInt & 0x8) > 0 ? bdu.b : bdu.a);
+/* 195:225 */     return instance().setData(a, bds.b(paramInt)).setData(b, (paramInt & 0x8) > 0 ? bdu.b : bdu.a);
 /* 196:    */   }
 /* 197:    */   
 /* 198:    */   public int c(Block parambec)

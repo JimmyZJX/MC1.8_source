@@ -7,7 +7,7 @@ package net.minecraft.src;
 /*  6:   */ {
 /*  7:   */   protected ItemStack b(dz paramdz, ItemStack paramamj)
 /*  8:   */   {
-/*  9:40 */     BlockPosition localdt = paramdz.d().a(ave.b(paramdz.f()));
+/*  9:40 */     BlockPosition localdt = paramdz.d().offset(ave.b(paramdz.f()));
 /* 10:   */     
 /* 11:42 */     int i = localdt.getX();
 /* 12:43 */     int j = localdt.getY();

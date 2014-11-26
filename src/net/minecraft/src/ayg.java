@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*   8:    */   
 /*   9:    */   public ayg()
 /*  10:    */   {
-/*  11: 31 */     j(this.L.b().a(P, EnumWoodVariant.ACACIA).a(b, Boolean.valueOf(true)).a(a, Boolean.valueOf(true)));
+/*  11: 31 */     j(this.L.b().setData(P, EnumWoodVariant.ACACIA).setData(b, Boolean.valueOf(true)).setData(a, Boolean.valueOf(true)));
 /*  12:    */   }
 /*  13:    */   
 /*  14:    */   protected void a(World paramaqu, BlockPosition paramdt, Block parambec, int paramInt)
@@ -43,7 +43,7 @@ package net.minecraft.src;
 /*  42:    */   
 /*  43:    */   public Block instance(int paramInt)
 /*  44:    */   {
-/*  45: 65 */     return instance().a(P, b(paramInt)).a(a, Boolean.valueOf((paramInt & 0x4) == 0)).a(b, Boolean.valueOf((paramInt & 0x8) > 0));
+/*  45: 65 */     return instance().setData(P, b(paramInt)).setData(a, Boolean.valueOf((paramInt & 0x4) == 0)).setData(b, Boolean.valueOf((paramInt & 0x8) > 0));
 /*  46:    */   }
 /*  47:    */   
 /*  48:    */   public int c(Block parambec)

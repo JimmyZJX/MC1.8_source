@@ -7,7 +7,7 @@ package net.minecraft.src;
 /*  6:   */   protected azo()
 /*  7:   */   {
 /*  8:14 */     super(false);
-/*  9:15 */     j(this.L.b().a(b, EnumRailState.a));
+/*  9:15 */     j(this.L.b().setData(b, EnumRailState.a));
 /* 10:   */   }
 /* 11:   */   
 /* 12:   */   protected void b(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
@@ -25,7 +25,7 @@ package net.minecraft.src;
 /* 24:   */   
 /* 25:   */   public Block instance(int paramInt)
 /* 26:   */   {
-/* 27:34 */     return instance().a(b, EnumRailState.a(paramInt));
+/* 27:34 */     return instance().setData(b, EnumRailState.a(paramInt));
 /* 28:   */   }
 /* 29:   */   
 /* 30:   */   public int c(Block parambec)

@@ -19,7 +19,7 @@ package net.minecraft.src;
 /* 18:25 */       if (!paramaqu.a(paramahd, localdt)) {
 /* 19:26 */         return paramamj;
 /* 20:   */       }
-/* 21:28 */       if (!paramahd.a(localdt.a(localbru.b), localbru.b, paramamj)) {
+/* 21:28 */       if (!paramahd.a(localdt.offset(localbru.b), localbru.b, paramamj)) {
 /* 22:29 */         return paramamj;
 /* 23:   */       }
 /* 24:31 */       if (paramaqu.getBlock(localdt).getProto().getMaterial() == Material.water)

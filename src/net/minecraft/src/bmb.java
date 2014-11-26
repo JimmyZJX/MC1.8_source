@@ -109,18 +109,18 @@ package net.minecraft.src;
 /*  108:1560 */         i1 = EnumDirection.NORTH.b();
 /*  109:     */       }
 /*  110:     */     }
-/*  111:1565 */     a(world, BlockList.endPortalFrame.instance(k).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 4, 3, 8, parambjb);
-/*  112:1566 */     a(world, BlockList.endPortalFrame.instance(k).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 5, 3, 8, parambjb);
-/*  113:1567 */     a(world, BlockList.endPortalFrame.instance(k).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 6, 3, 8, parambjb);
-/*  114:1568 */     a(world, BlockList.endPortalFrame.instance(m).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 4, 3, 12, parambjb);
-/*  115:1569 */     a(world, BlockList.endPortalFrame.instance(m).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 5, 3, 12, parambjb);
-/*  116:1570 */     a(world, BlockList.endPortalFrame.instance(m).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 6, 3, 12, parambjb);
-/*  117:1571 */     a(world, BlockList.endPortalFrame.instance(n).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 3, 3, 9, parambjb);
-/*  118:1572 */     a(world, BlockList.endPortalFrame.instance(n).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 3, 3, 10, parambjb);
-/*  119:1573 */     a(world, BlockList.endPortalFrame.instance(n).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 3, 3, 11, parambjb);
-/*  120:1574 */     a(world, BlockList.endPortalFrame.instance(i1).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 7, 3, 9, parambjb);
-/*  121:1575 */     a(world, BlockList.endPortalFrame.instance(i1).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 7, 3, 10, parambjb);
-/*  122:1576 */     a(world, BlockList.endPortalFrame.instance(i1).a(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 7, 3, 11, parambjb);
+/*  111:1565 */     a(world, BlockList.endPortalFrame.instance(k).setData(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 4, 3, 8, parambjb);
+/*  112:1566 */     a(world, BlockList.endPortalFrame.instance(k).setData(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 5, 3, 8, parambjb);
+/*  113:1567 */     a(world, BlockList.endPortalFrame.instance(k).setData(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 6, 3, 8, parambjb);
+/*  114:1568 */     a(world, BlockList.endPortalFrame.instance(m).setData(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 4, 3, 12, parambjb);
+/*  115:1569 */     a(world, BlockList.endPortalFrame.instance(m).setData(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 5, 3, 12, parambjb);
+/*  116:1570 */     a(world, BlockList.endPortalFrame.instance(m).setData(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 6, 3, 12, parambjb);
+/*  117:1571 */     a(world, BlockList.endPortalFrame.instance(n).setData(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 3, 3, 9, parambjb);
+/*  118:1572 */     a(world, BlockList.endPortalFrame.instance(n).setData(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 3, 3, 10, parambjb);
+/*  119:1573 */     a(world, BlockList.endPortalFrame.instance(n).setData(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 3, 3, 11, parambjb);
+/*  120:1574 */     a(world, BlockList.endPortalFrame.instance(i1).setData(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 7, 3, 9, parambjb);
+/*  121:1575 */     a(world, BlockList.endPortalFrame.instance(i1).setData(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 7, 3, 10, parambjb);
+/*  122:1576 */     a(world, BlockList.endPortalFrame.instance(i1).setData(avq.b, Boolean.valueOf(paramRandom.nextFloat() > 0.9F)), 7, 3, 11, parambjb);
 /*  123:1578 */     if (!this.a)
 /*  124:     */     {
 /*  125:1579 */       i = d(3);

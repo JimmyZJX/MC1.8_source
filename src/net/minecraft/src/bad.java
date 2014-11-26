@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*  8:   */   public bad()
 /*  9:   */   {
 /* 10:18 */     super(Material.rock);
-/* 11:19 */     j(this.L.b().a(a, bae.a));
+/* 11:19 */     j(this.L.b().setData(a, bae.a));
 /* 12:20 */     setCreativeTab(CreativeTabs.tabBlock);
 /* 13:   */   }
 /* 14:   */   
@@ -27,7 +27,7 @@ package net.minecraft.src;
 /* 26:   */   
 /* 27:   */   public Block instance(int paramInt)
 /* 28:   */   {
-/* 29:37 */     return instance().a(a, bae.a(paramInt));
+/* 29:37 */     return instance().setData(a, bae.a(paramInt));
 /* 30:   */   }
 /* 31:   */   
 /* 32:   */   public int c(Block parambec)

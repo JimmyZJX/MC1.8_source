@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*  9:   */   public bba()
 /* 10:   */   {
 /* 11:20 */     super(Material.rock);
-/* 12:21 */     j(this.L.b().a(a, EnumStoneVariants.STONE));
+/* 12:21 */     j(this.L.b().setData(a, EnumStoneVariants.STONE));
 /* 13:22 */     setCreativeTab(CreativeTabs.tabBlock);
 /* 14:   */   }
 /* 15:   */   
@@ -36,7 +36,7 @@ package net.minecraft.src;
 /* 35:   */   
 /* 36:   */   public Block instance(int paramInt)
 /* 37:   */   {
-/* 38:48 */     return instance().a(a, EnumStoneVariants.a(paramInt));
+/* 38:48 */     return instance().setData(a, EnumStoneVariants.a(paramInt));
 /* 39:   */   }
 /* 40:   */   
 /* 41:   */   public int c(Block parambec)

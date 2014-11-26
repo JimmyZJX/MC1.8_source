@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*  8:   */   public azl()
 /*  9:   */   {
 /* 10:23 */     super(Material.rock);
-/* 11:24 */     j(this.L.b().a(a, azn.a));
+/* 11:24 */     j(this.L.b().setData(a, azn.a));
 /* 12:25 */     setCreativeTab(CreativeTabs.tabBlock);
 /* 13:   */   }
 /* 14:   */   
@@ -20,16 +20,16 @@ package net.minecraft.src;
 /* 19:31 */       switch (azm.a[paramej.k().ordinal()])
 /* 20:   */       {
 /* 21:   */       case 1: 
-/* 22:33 */         return instance().a(a, azn.e);
+/* 22:33 */         return instance().setData(a, azn.e);
 /* 23:   */       case 2: 
-/* 24:35 */         return instance().a(a, azn.d);
+/* 24:35 */         return instance().setData(a, azn.d);
 /* 25:   */       }
-/* 26:38 */       return instance().a(a, azn.c);
+/* 26:38 */       return instance().setData(a, azn.c);
 /* 27:   */     }
 /* 28:42 */     if (paramInt == azn.b.a()) {
-/* 29:43 */       return instance().a(a, azn.b);
+/* 29:43 */       return instance().setData(a, azn.b);
 /* 30:   */     }
-/* 31:46 */     return instance().a(a, azn.a);
+/* 31:46 */     return instance().setData(a, azn.a);
 /* 32:   */   }
 /* 33:   */   
 /* 34:   */   public int a(Block parambec)
@@ -64,7 +64,7 @@ package net.minecraft.src;
 /* 63:   */   
 /* 64:   */   public Block instance(int paramInt)
 /* 65:   */   {
-/* 66:82 */     return instance().a(a, azn.a(paramInt));
+/* 66:82 */     return instance().setData(a, azn.a(paramInt));
 /* 67:   */   }
 /* 68:   */   
 /* 69:   */   public int c(Block parambec)

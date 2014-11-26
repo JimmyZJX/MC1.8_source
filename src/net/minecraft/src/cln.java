@@ -47,7 +47,7 @@ package net.minecraft.src;
 /*  46: 67 */       List localList = paramcxe.a(localej);
 /*  47: 68 */       if (!localList.isEmpty())
 /*  48:    */       {
-/*  49: 72 */         BlockPosition localdt = paramdt.a(localej);
+/*  49: 72 */         BlockPosition localdt = paramdt.offset(localej);
 /*  50: 73 */         if ((!paramBoolean) || (paramatr.a(paramard, localdt, localej)))
 /*  51:    */         {
 /*  52: 74 */           a(paramard, paramatr, paramdt, paramciv, localList, arrayOfFloat, localBitSet, localclq);
@@ -74,7 +74,7 @@ package net.minecraft.src;
 /*  73: 93 */       List localList = paramcxe.a(localej);
 /*  74: 94 */       if (!localList.isEmpty())
 /*  75:    */       {
-/*  76: 98 */         BlockPosition localdt = paramdt.a(localej);
+/*  76: 98 */         BlockPosition localdt = paramdt.offset(localej);
 /*  77: 99 */         if ((!paramBoolean) || (paramatr.a(paramard, localdt, localej)))
 /*  78:    */         {
 /*  79:103 */           int k = paramatr.c(paramard, localdt);
@@ -235,7 +235,7 @@ package net.minecraft.src;
 /* 234:    */       {
 /* 235:249 */         a(paramatr, localclt.a(), localclt.d(), null, paramBitSet);
 /* 236:    */         
-/* 237:251 */         paramInt = paramBitSet.get(0) ? paramatr.c(paramard, paramdt.a(localclt.d())) : paramatr.c(paramard, paramdt);
+/* 237:251 */         paramInt = paramBitSet.get(0) ? paramatr.c(paramard, paramdt.offset(localclt.d())) : paramatr.c(paramard, paramdt);
 /* 238:    */       }
 /* 239:253 */       paramciv.a(localclt.a());
 /* 240:254 */       paramciv.a(paramInt, paramInt, paramInt, paramInt);

@@ -12,7 +12,7 @@ package net.minecraft.src;
 /*  11:    */   public auy()
 /*  12:    */   {
 /*  13: 39 */     super(true);
-/*  14: 40 */     j(this.L.b().a(M, Boolean.valueOf(false)).a(b, EnumRailState.a));
+/*  14: 40 */     j(this.L.b().setData(M, Boolean.valueOf(false)).setData(b, EnumRailState.a));
 /*  15: 41 */     a(true);
 /*  16:    */   }
 /*  17:    */   
@@ -71,14 +71,14 @@ package net.minecraft.src;
 /*  70:    */     }
 /*  71:102 */     if ((i != 0) && (!bool))
 /*  72:    */     {
-/*  73:103 */       paramaqu.setBlock(paramdt, parambec.a(M, Boolean.valueOf(true)), 3);
+/*  73:103 */       paramaqu.setBlock(paramdt, parambec.setData(M, Boolean.valueOf(true)), 3);
 /*  74:104 */       paramaqu.c(paramdt, this);
 /*  75:105 */       paramaqu.c(paramdt.down(), this);
 /*  76:106 */       paramaqu.b(paramdt, paramdt);
 /*  77:    */     }
 /*  78:109 */     if ((i == 0) && (bool))
 /*  79:    */     {
-/*  80:110 */       paramaqu.setBlock(paramdt, parambec.a(M, Boolean.valueOf(false)), 3);
+/*  80:110 */       paramaqu.setBlock(paramdt, parambec.setData(M, Boolean.valueOf(false)), 3);
 /*  81:111 */       paramaqu.c(paramdt, this);
 /*  82:112 */       paramaqu.c(paramdt.down(), this);
 /*  83:113 */       paramaqu.b(paramdt, paramdt);
@@ -139,7 +139,7 @@ package net.minecraft.src;
 /* 138:    */   
 /* 139:    */   public Block instance(int paramInt)
 /* 140:    */   {
-/* 141:173 */     return instance().a(b, EnumRailState.a(paramInt & 0x7)).a(M, Boolean.valueOf((paramInt & 0x8) > 0));
+/* 141:173 */     return instance().setData(b, EnumRailState.a(paramInt & 0x7)).setData(M, Boolean.valueOf((paramInt & 0x8) > 0));
 /* 142:    */   }
 /* 143:    */   
 /* 144:    */   public int c(Block parambec)

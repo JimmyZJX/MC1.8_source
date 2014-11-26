@@ -22,7 +22,7 @@ package net.minecraft.src;
 /*  21:    */   
 /*  22:    */   public boolean a(ItemStack paramamj, EntityPlayer paramahd, World world, BlockPosition pos, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3)
 /*  23:    */   {
-/*  24: 35 */     if (!paramahd.a(pos.a(paramej), paramej, paramamj)) {
+/*  24: 35 */     if (!paramahd.a(pos.offset(paramej), paramej, paramamj)) {
 /*  25: 36 */       return false;
 /*  26:    */     }
 /*  27: 39 */     EnumDyeColor localakv = EnumDyeColor.fromIndex(paramamj.getDamage2());
@@ -48,7 +48,7 @@ package net.minecraft.src;
 /*  47: 59 */         if (paramej == EnumDirection.UP) {
 /*  48: 60 */           return false;
 /*  49:    */         }
-/*  50: 62 */         pos = pos.a(paramej);
+/*  50: 62 */         pos = pos.offset(paramej);
 /*  51: 64 */         if (world.isEmpty(pos))
 /*  52:    */         {
 /*  53: 65 */           Block localbec2 = BlockList.bN.a(world, pos, paramej, paramFloat1, paramFloat2, paramFloat3, 0, paramahd);

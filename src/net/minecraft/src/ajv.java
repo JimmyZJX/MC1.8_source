@@ -16,7 +16,7 @@ package net.minecraft.src;
 /* 15:23 */     if ((localatr == BlockList.aH) && (((Integer)localbec1.getProperty(BlockSnowLayer.a)).intValue() < 1)) {
 /* 16:24 */       paramej = EnumDirection.UP;
 /* 17:25 */     } else if (!localatr.f(paramaqu, paramdt)) {
-/* 18:26 */       paramdt = paramdt.a(paramej);
+/* 18:26 */       paramdt = paramdt.offset(paramej);
 /* 19:   */     }
 /* 20:29 */     if (!paramahd.a(paramdt, paramej, paramamj)) {
 /* 21:30 */       return false;

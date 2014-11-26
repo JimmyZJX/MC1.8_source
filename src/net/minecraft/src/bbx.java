@@ -14,7 +14,7 @@ package net.minecraft.src;
 /*  13:    */   public bbx(ProtoBlock paramatr)
 /*  14:    */   {
 /*  15: 35 */     super(paramatr.material);
-/*  16: 36 */     j(this.L.b().a(a, Boolean.valueOf(false)).a(b, Boolean.valueOf(false)).a(M, Boolean.valueOf(false)).a(N, Boolean.valueOf(false)).a(O, Boolean.valueOf(false)).a(P, EnumCobblestoneVariant.a));
+/*  16: 36 */     j(this.L.b().setData(a, Boolean.valueOf(false)).setData(b, Boolean.valueOf(false)).setData(M, Boolean.valueOf(false)).setData(N, Boolean.valueOf(false)).setData(O, Boolean.valueOf(false)).setData(P, EnumCobblestoneVariant.a));
 /*  17: 37 */     c(paramatr.w);
 /*  18: 38 */     b(paramatr.x / 3.0F);
 /*  19: 39 */     a(paramatr.H);
@@ -119,7 +119,7 @@ package net.minecraft.src;
 /* 118:    */   
 /* 119:    */   public Block instance(int paramInt)
 /* 120:    */   {
-/* 121:141 */     return instance().a(P, EnumCobblestoneVariant.a(paramInt));
+/* 121:141 */     return instance().setData(P, EnumCobblestoneVariant.a(paramInt));
 /* 122:    */   }
 /* 123:    */   
 /* 124:    */   public int c(Block parambec)
@@ -129,7 +129,7 @@ package net.minecraft.src;
 /* 128:    */   
 /* 129:    */   public Block a(Block parambec, IBlockAccess paramard, BlockPosition paramdt)
 /* 130:    */   {
-/* 131:152 */     return parambec.a(a, Boolean.valueOf(!paramard.isEmpty(paramdt.up()))).a(b, Boolean.valueOf(e(paramard, paramdt.north()))).a(M, Boolean.valueOf(e(paramard, paramdt.east()))).a(N, Boolean.valueOf(e(paramard, paramdt.south()))).a(O, Boolean.valueOf(e(paramard, paramdt.west())));
+/* 131:152 */     return parambec.setData(a, Boolean.valueOf(!paramard.isEmpty(paramdt.up()))).setData(b, Boolean.valueOf(e(paramard, paramdt.north()))).setData(M, Boolean.valueOf(e(paramard, paramdt.east()))).setData(N, Boolean.valueOf(e(paramard, paramdt.south()))).setData(O, Boolean.valueOf(e(paramard, paramdt.west())));
 /* 132:    */   }
 /* 133:    */   
 /* 134:    */   protected bed e()

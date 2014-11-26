@@ -11,7 +11,7 @@ package net.minecraft.src;
 /*  10:    */   protected bbh()
 /*  11:    */   {
 /*  12: 28 */     super(Material.l);
-/*  13: 29 */     j(this.L.b().a(a, bbi.a));
+/*  13: 29 */     j(this.L.b().setData(a, bbi.a));
 /*  14: 30 */     float f = 0.4F;
 /*  15: 31 */     a(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, 0.8F, 0.5F + f);
 /*  16:    */   }
@@ -112,7 +112,7 @@ package net.minecraft.src;
 /* 111:    */   
 /* 112:    */   public Block instance(int paramInt)
 /* 113:    */   {
-/* 114:131 */     return instance().a(a, bbi.a(paramInt));
+/* 114:131 */     return instance().setData(a, bbi.a(paramInt));
 /* 115:    */   }
 /* 116:    */   
 /* 117:    */   public int c(Block parambec)

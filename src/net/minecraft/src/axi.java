@@ -8,7 +8,7 @@ package net.minecraft.src;
 /*   7:    */   protected axi()
 /*   8:    */   {
 /*   9: 26 */     super(Material.q);
-/*  10: 27 */     j(this.L.b().a(a, axk.e).a(b, Boolean.valueOf(false)));
+/*  10: 27 */     j(this.L.b().setData(a, axk.e).setData(b, Boolean.valueOf(false)));
 /*  11: 28 */     setCreativeTab(CreativeTabs.tabRedstone);
 /*  12:    */   }
 /*  13:    */   
@@ -32,7 +32,7 @@ package net.minecraft.src;
 /*  31: 49 */     if ((paramej == EnumDirection.UP) && (World.isFlatSurface(paramaqu, paramdt.down()))) {
 /*  32: 50 */       return true;
 /*  33:    */     }
-/*  34: 51 */     if (d(paramaqu, paramdt.a(paramej.d()))) {
+/*  34: 51 */     if (d(paramaqu, paramdt.offset(paramej.d()))) {
 /*  35: 52 */       return true;
 /*  36:    */     }
 /*  37: 54 */     return false;
@@ -68,17 +68,17 @@ package net.minecraft.src;
 /*  67:    */   
 /*  68:    */   public Block a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3, int paramInt, EntityLiving paramxm)
 /*  69:    */   {
-/*  70: 81 */     Block localbec = instance().a(b, Boolean.valueOf(false));
-/*  71: 83 */     if (d(paramaqu, paramdt.a(paramej.d()))) {
-/*  72: 84 */       return localbec.a(a, axk.a(paramej, paramxm.aO()));
+/*  70: 81 */     Block localbec = instance().setData(b, Boolean.valueOf(false));
+/*  71: 83 */     if (d(paramaqu, paramdt.offset(paramej.d()))) {
+/*  72: 84 */       return localbec.setData(a, axk.a(paramej, paramxm.aO()));
 /*  73:    */     }
 /*  74: 87 */     for (EnumDirection localej : en.HORIZONTAL) {
-/*  75: 88 */       if ((localej != paramej) && (d(paramaqu, paramdt.a(localej.d())))) {
-/*  76: 89 */         return localbec.a(a, axk.a(localej, paramxm.aO()));
+/*  75: 88 */       if ((localej != paramej) && (d(paramaqu, paramdt.offset(localej.d())))) {
+/*  76: 89 */         return localbec.setData(a, axk.a(localej, paramxm.aO()));
 /*  77:    */       }
 /*  78:    */     }
 /*  79: 93 */     if (World.isFlatSurface(paramaqu, paramdt.down())) {
-/*  80: 94 */       return localbec.a(a, axk.a(EnumDirection.UP, paramxm.aO()));
+/*  80: 94 */       return localbec.setData(a, axk.a(EnumDirection.UP, paramxm.aO()));
 /*  81:    */     }
 /*  82: 97 */     return localbec;
 /*  83:    */   }
@@ -106,7 +106,7 @@ package net.minecraft.src;
 /* 105:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
 /* 106:    */   {
 /* 107:121 */     if ((e(paramaqu, paramdt)) && 
-/* 108:122 */       (!d(paramaqu, paramdt.a(((axk)parambec.getProperty(a)).c().d()))))
+/* 108:122 */       (!d(paramaqu, paramdt.offset(((axk)parambec.getProperty(a)).c().d()))))
 /* 109:    */     {
 /* 110:123 */       b(paramaqu, paramdt, parambec, 0);
 /* 111:124 */       paramaqu.g(paramdt);
@@ -163,7 +163,7 @@ package net.minecraft.src;
 /* 162:177 */     paramaqu.c(paramdt, this);
 /* 163:    */     
 /* 164:179 */     EnumDirection localej = ((axk)parambec.getProperty(a)).c();
-/* 165:180 */     paramaqu.c(paramdt.a(localej.d()), this);
+/* 165:180 */     paramaqu.c(paramdt.offset(localej.d()), this);
 /* 166:    */     
 /* 167:182 */     return true;
 /* 168:    */   }
@@ -174,7 +174,7 @@ package net.minecraft.src;
 /* 173:    */     {
 /* 174:188 */       paramaqu.c(paramdt, this);
 /* 175:189 */       EnumDirection localej = ((axk)parambec.getProperty(a)).c();
-/* 176:190 */       paramaqu.c(paramdt.a(localej.d()), this);
+/* 176:190 */       paramaqu.c(paramdt.offset(localej.d()), this);
 /* 177:    */     }
 /* 178:192 */     super.b(paramaqu, paramdt, parambec);
 /* 179:    */   }
@@ -202,7 +202,7 @@ package net.minecraft.src;
 /* 201:    */   
 /* 202:    */   public Block instance(int paramInt)
 /* 203:    */   {
-/* 204:220 */     return instance().a(a, axk.a(paramInt & 0x7)).a(b, Boolean.valueOf((paramInt & 0x8) > 0));
+/* 204:220 */     return instance().setData(a, axk.a(paramInt & 0x7)).setData(b, Boolean.valueOf((paramInt & 0x8) > 0));
 /* 205:    */   }
 /* 206:    */   
 /* 207:    */   public int c(Block parambec)

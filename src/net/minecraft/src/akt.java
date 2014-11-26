@@ -18,7 +18,7 @@ package net.minecraft.src;
 /* 17:25 */     Block localbec = paramaqu.getBlock(paramdt);
 /* 18:26 */     ProtoBlock localatr = localbec.getProto();
 /* 19:28 */     if (!localatr.f(paramaqu, paramdt)) {
-/* 20:29 */       paramdt = paramdt.a(paramej);
+/* 20:29 */       paramdt = paramdt.offset(paramej);
 /* 21:   */     }
 /* 22:32 */     if (!paramahd.a(paramdt, paramej, paramamj)) {
 /* 23:33 */       return false;
@@ -34,8 +34,8 @@ package net.minecraft.src;
 /* 33:   */   
 /* 34:   */   public static void a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, ProtoBlock paramatr)
 /* 35:   */   {
-/* 36:46 */     BlockPosition localdt1 = paramdt.a(paramej.e());
-/* 37:47 */     BlockPosition localdt2 = paramdt.a(paramej.f());
+/* 36:46 */     BlockPosition localdt1 = paramdt.offset(paramej.e());
+/* 37:47 */     BlockPosition localdt2 = paramdt.offset(paramej.f());
 /* 38:   */     
 /* 39:49 */     int i = (paramaqu.getBlock(localdt2).getProto().blocksMovement() ? 1 : 0) + (paramaqu.getBlock(localdt2.up()).getProto().blocksMovement() ? 1 : 0);
 /* 40:50 */     int j = (paramaqu.getBlock(localdt1).getProto().blocksMovement() ? 1 : 0) + (paramaqu.getBlock(localdt1.up()).getProto().blocksMovement() ? 1 : 0);
@@ -49,9 +49,9 @@ package net.minecraft.src;
 /* 48:58 */       n = 1;
 /* 49:   */     }
 /* 50:61 */     BlockPosition localdt3 = paramdt.up();
-/* 51:62 */     Block localbec = paramatr.instance().a(BlockDoor.a, paramej).a(BlockDoor.M, n != 0 ? avh.b : avh.a);
-/* 52:63 */     paramaqu.setBlock(paramdt, localbec.a(BlockDoor.O, avg.b), 2);
-/* 53:64 */     paramaqu.setBlock(localdt3, localbec.a(BlockDoor.O, avg.a), 2);
+/* 51:62 */     Block localbec = paramatr.instance().setData(BlockDoor.a, paramej).setData(BlockDoor.M, n != 0 ? avh.b : avh.a);
+/* 52:63 */     paramaqu.setBlock(paramdt, localbec.setData(BlockDoor.O, avg.b), 2);
+/* 53:64 */     paramaqu.setBlock(localdt3, localbec.setData(BlockDoor.O, avg.a), 2);
 /* 54:65 */     paramaqu.c(paramdt, paramatr);
 /* 55:66 */     paramaqu.c(localdt3, paramatr);
 /* 56:   */   }

@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*  8:   */   protected ayc()
 /*  9:   */   {
 /* 10:23 */     super(Material.grass);
-/* 11:24 */     j(this.L.b().a(a, Boolean.valueOf(false)));
+/* 11:24 */     j(this.L.b().setData(a, Boolean.valueOf(false)));
 /* 12:25 */     a(true);
 /* 13:26 */     setCreativeTab(CreativeTabs.tabBlock);
 /* 14:   */   }
@@ -17,7 +17,7 @@ package net.minecraft.src;
 /* 16:   */   public Block a(Block parambec, IBlockAccess paramard, BlockPosition paramdt)
 /* 17:   */   {
 /* 18:31 */     ProtoBlock localatr = paramard.getBlock(paramdt.up()).getProto();
-/* 19:32 */     return parambec.a(a, Boolean.valueOf((localatr == BlockList.aJ) || (localatr == BlockList.aH)));
+/* 19:32 */     return parambec.setData(a, Boolean.valueOf((localatr == BlockList.aJ) || (localatr == BlockList.aH)));
 /* 20:   */   }
 /* 21:   */   
 /* 22:   */   public void b(World paramaqu, BlockPosition paramdt, Block parambec, Random paramRandom)
@@ -27,7 +27,7 @@ package net.minecraft.src;
 /* 26:   */     }
 /* 27:41 */     if ((paramaqu.l(paramdt.up()) < 4) && (paramaqu.getBlock(paramdt.up()).getProto().getLightOpacity() > 2))
 /* 28:   */     {
-/* 29:42 */       paramaqu.setBlock(paramdt, BlockList.dirt.instance().a(BlockDirt.a, avd.a));
+/* 29:42 */       paramaqu.setBlock(paramdt, BlockList.dirt.instance().setData(BlockDirt.a, avd.a));
 /* 30:43 */       return;
 /* 31:   */     }
 /* 32:46 */     if (paramaqu.l(paramdt.up()) >= 9) {
@@ -53,7 +53,7 @@ package net.minecraft.src;
 /* 52:   */   
 /* 53:   */   public Item a(Block parambec, Random paramRandom, int paramInt)
 /* 54:   */   {
-/* 55:69 */     return BlockList.dirt.a(BlockList.dirt.instance().a(BlockDirt.a, avd.a), paramRandom, paramInt);
+/* 55:69 */     return BlockList.dirt.a(BlockList.dirt.instance().setData(BlockDirt.a, avd.a), paramRandom, paramInt);
 /* 56:   */   }
 /* 57:   */   
 /* 58:   */   public int c(Block parambec)

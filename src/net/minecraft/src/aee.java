@@ -155,7 +155,7 @@ package net.minecraft.src;
 /* 154:    */   
 /* 155:    */   public Block u()
 /* 156:    */   {
-/* 157:162 */     return (j() ? BlockList.am : BlockList.al).instance().a(awj.a, EnumDirection.NORTH);
+/* 157:162 */     return (j() ? BlockList.am : BlockList.al).instance().setData(awj.a, EnumDirection.NORTH);
 /* 158:    */   }
 /* 159:    */ }
 

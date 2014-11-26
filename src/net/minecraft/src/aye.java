@@ -8,7 +8,7 @@ package net.minecraft.src;
 /*   7:    */   
 /*   8:    */   protected aye()
 /*   9:    */   {
-/*  10: 20 */     j(this.L.b().a(a, Integer.valueOf(0)));
+/*  10: 20 */     j(this.L.b().setData(a, Integer.valueOf(0)));
 /*  11: 21 */     a(true);
 /*  12: 22 */     float f = 0.5F;
 /*  13: 23 */     a(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, 0.25F, 0.5F + f);
@@ -30,7 +30,7 @@ package net.minecraft.src;
 /*  29: 39 */     int i = ((Integer)parambec.getProperty(a)).intValue();
 /*  30: 40 */     if ((i < 3) && (paramRandom.nextInt(10) == 0))
 /*  31:    */     {
-/*  32: 41 */       parambec = parambec.a(a, Integer.valueOf(i + 1));
+/*  32: 41 */       parambec = parambec.setData(a, Integer.valueOf(i + 1));
 /*  33: 42 */       paramaqu.setBlock(paramdt, parambec, 2);
 /*  34:    */     }
 /*  35: 45 */     super.b(paramaqu, paramdt, parambec, paramRandom);
@@ -71,7 +71,7 @@ package net.minecraft.src;
 /*  70:    */   
 /*  71:    */   public Block instance(int paramInt)
 /*  72:    */   {
-/*  73: 89 */     return instance().a(a, Integer.valueOf(paramInt));
+/*  73: 89 */     return instance().setData(a, Integer.valueOf(paramInt));
 /*  74:    */   }
 /*  75:    */   
 /*  76:    */   public int c(Block parambec)

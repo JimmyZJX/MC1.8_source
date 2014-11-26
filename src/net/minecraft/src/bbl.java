@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*   8:    */   protected bbl()
 /*   9:    */   {
 /*  10: 31 */     super(Material.q);
-/*  11: 32 */     j(this.L.b().a(a, EnumDirection.UP));
+/*  11: 32 */     j(this.L.b().setData(a, EnumDirection.UP));
 /*  12: 33 */     a(true);
 /*  13: 34 */     setCreativeTab(CreativeTabs.tabDeco);
 /*  14:    */   }
@@ -50,7 +50,7 @@ package net.minecraft.src;
 /*  49:    */   
 /*  50:    */   private boolean b(World paramaqu, BlockPosition paramdt, EnumDirection paramej)
 /*  51:    */   {
-/*  52: 73 */     BlockPosition localdt = paramdt.a(paramej.d());
+/*  52: 73 */     BlockPosition localdt = paramdt.offset(paramej.d());
 /*  53:    */     
 /*  54: 75 */     boolean bool = paramej.k().c();
 /*  55: 76 */     return ((bool) && (paramaqu.d(localdt, true))) || ((paramej.equals(EnumDirection.UP)) && (d(paramaqu, localdt)));
@@ -59,11 +59,11 @@ package net.minecraft.src;
 /*  58:    */   public Block a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3, int paramInt, EntityLiving paramxm)
 /*  59:    */   {
 /*  60: 81 */     if (b(paramaqu, paramdt, paramej)) {
-/*  61: 82 */       return instance().a(a, paramej);
+/*  61: 82 */       return instance().setData(a, paramej);
 /*  62:    */     }
 /*  63: 85 */     for (EnumDirection localej : en.HORIZONTAL) {
-/*  64: 86 */       if (paramaqu.d(paramdt.a(localej.d()), true)) {
-/*  65: 87 */         return instance().a(a, localej);
+/*  64: 86 */       if (paramaqu.d(paramdt.offset(localej.d()), true)) {
+/*  65: 87 */         return instance().setData(a, localej);
 /*  66:    */       }
 /*  67:    */     }
 /*  68: 91 */     return instance();
@@ -89,9 +89,9 @@ package net.minecraft.src;
 /*  88:111 */     EnumDirection localej2 = localej1.d();
 /*  89:    */     
 /*  90:113 */     int i = 0;
-/*  91:114 */     if ((localel.c()) && (!paramaqu.d(paramdt.a(localej2), true))) {
+/*  91:114 */     if ((localel.c()) && (!paramaqu.d(paramdt.offset(localej2), true))) {
 /*  92:115 */       i = 1;
-/*  93:116 */     } else if ((localel.b()) && (!d(paramaqu, paramdt.a(localej2)))) {
+/*  93:116 */     } else if ((localel.b()) && (!d(paramaqu, paramdt.offset(localej2)))) {
 /*  94:117 */       i = 1;
 /*  95:    */     }
 /*  96:120 */     if (i != 0)
@@ -178,20 +178,20 @@ package net.minecraft.src;
 /* 177:192 */     switch (paramInt)
 /* 178:    */     {
 /* 179:    */     case 1: 
-/* 180:194 */       localbec = localbec.a(a, EnumDirection.EAST);
+/* 180:194 */       localbec = localbec.setData(a, EnumDirection.EAST);
 /* 181:195 */       break;
 /* 182:    */     case 2: 
-/* 183:197 */       localbec = localbec.a(a, EnumDirection.WEST);
+/* 183:197 */       localbec = localbec.setData(a, EnumDirection.WEST);
 /* 184:198 */       break;
 /* 185:    */     case 3: 
-/* 186:200 */       localbec = localbec.a(a, EnumDirection.SOUTH);
+/* 186:200 */       localbec = localbec.setData(a, EnumDirection.SOUTH);
 /* 187:201 */       break;
 /* 188:    */     case 4: 
-/* 189:203 */       localbec = localbec.a(a, EnumDirection.NORTH);
+/* 189:203 */       localbec = localbec.setData(a, EnumDirection.NORTH);
 /* 190:204 */       break;
 /* 191:    */     case 5: 
 /* 192:    */     default: 
-/* 193:207 */       localbec = localbec.a(a, EnumDirection.UP);
+/* 193:207 */       localbec = localbec.setData(a, EnumDirection.UP);
 /* 194:    */     }
 /* 195:211 */     return localbec;
 /* 196:    */   }

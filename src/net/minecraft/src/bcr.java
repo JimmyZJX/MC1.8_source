@@ -199,7 +199,7 @@ package net.minecraft.src;
 /* 198:    */   
 /* 199:    */   protected bcr a(EnumDirection paramej)
 /* 200:    */   {
-/* 201:219 */     BlockPosition localdt = this.pos.a(paramej);
+/* 201:219 */     BlockPosition localdt = this.pos.offset(paramej);
 /* 202:221 */     if (b(localdt))
 /* 203:    */     {
 /* 204:222 */       bcm localbcm = this.world.s(localdt);

@@ -1095,7 +1095,7 @@ package net.minecraft.src;
 /* 1090:     */         {
 /* 1091:1067 */           for (EnumDirection localej : EnumDirection.values())
 /* 1092:     */           {
-/* 1093:1068 */             BlockPosition localdt3 = localdt2.a(localej);
+/* 1093:1068 */             BlockPosition localdt3 = localdt2.offset(localej);
 /* 1094:1069 */             if (this.world.getBlock(localdt3).getProto().p() > 0) {
 /* 1095:1070 */               this.world.x(localdt3);
 /* 1096:     */             }

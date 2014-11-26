@@ -13,7 +13,7 @@ package net.minecraft.src;
 /*  12: 32 */     super(Material.wood);
 /*  13: 33 */     this.b = paramBoolean;
 /*  14:    */     
-/*  15: 35 */     j(this.L.b().a(a, Integer.valueOf(0)));
+/*  15: 35 */     j(this.L.b().setData(a, Integer.valueOf(0)));
 /*  16: 36 */     a(0.0F, 0.0F, 0.0F, 1.0F, 0.375F, 1.0F);
 /*  17: 37 */     setCreativeTab(CreativeTabs.tabRedstone);
 /*  18:    */     
@@ -51,7 +51,7 @@ package net.minecraft.src;
 /*  50: 71 */       i = 15 - i;
 /*  51:    */     }
 /*  52: 74 */     if (((Integer)localbec.getProperty(a)).intValue() != i) {
-/*  53: 75 */       paramaqu.setBlock(paramdt, localbec.a(a, Integer.valueOf(i)), 3);
+/*  53: 75 */       paramaqu.setBlock(paramdt, localbec.setData(a, Integer.valueOf(i)), 3);
 /*  54:    */     }
 /*  55:    */   }
 /*  56:    */   
@@ -64,12 +64,12 @@ package net.minecraft.src;
 /*  63:    */       }
 /*  64: 85 */       if (this.b)
 /*  65:    */       {
-/*  66: 86 */         paramaqu.setBlock(paramdt, BlockList.cl.instance().a(a, parambec.getProperty(a)), 4);
+/*  66: 86 */         paramaqu.setBlock(paramdt, BlockList.cl.instance().setData(a, parambec.getProperty(a)), 4);
 /*  67: 87 */         BlockList.cl.d(paramaqu, paramdt);
 /*  68:    */       }
 /*  69:    */       else
 /*  70:    */       {
-/*  71: 89 */         paramaqu.setBlock(paramdt, BlockList.cm.instance().a(a, parambec.getProperty(a)), 4);
+/*  71: 89 */         paramaqu.setBlock(paramdt, BlockList.cm.instance().setData(a, parambec.getProperty(a)), 4);
 /*  72: 90 */         BlockList.cm.d(paramaqu, paramdt);
 /*  73:    */       }
 /*  74: 92 */       return true;
@@ -114,7 +114,7 @@ package net.minecraft.src;
 /* 113:    */   
 /* 114:    */   public Block instance(int paramInt)
 /* 115:    */   {
-/* 116:139 */     return instance().a(a, Integer.valueOf(paramInt));
+/* 116:139 */     return instance().setData(a, Integer.valueOf(paramInt));
 /* 117:    */   }
 /* 118:    */   
 /* 119:    */   public int c(Block parambec)

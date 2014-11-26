@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*  9:   */   protected bcd(String paramString, Material parambof, int paramInt)
 /* 10:   */   {
 /* 11:20 */     super(parambof);
-/* 12:21 */     j(this.L.b().a(a, Integer.valueOf(0)));
+/* 12:21 */     j(this.L.b().setData(a, Integer.valueOf(0)));
 /* 13:22 */     this.b = paramInt;
 /* 14:   */   }
 /* 15:   */   
@@ -32,7 +32,7 @@ package net.minecraft.src;
 /* 31:   */   
 /* 32:   */   protected Block a(Block parambec, int paramInt)
 /* 33:   */   {
-/* 34:43 */     return parambec.a(a, Integer.valueOf(paramInt));
+/* 34:43 */     return parambec.setData(a, Integer.valueOf(paramInt));
 /* 35:   */   }
 /* 36:   */   
 /* 37:   */   public int a(World paramaqu)
@@ -42,7 +42,7 @@ package net.minecraft.src;
 /* 41:   */   
 /* 42:   */   public Block instance(int paramInt)
 /* 43:   */   {
-/* 44:58 */     return instance().a(a, Integer.valueOf(paramInt));
+/* 44:58 */     return instance().setData(a, Integer.valueOf(paramInt));
 /* 45:   */   }
 /* 46:   */   
 /* 47:   */   public int c(Block parambec)

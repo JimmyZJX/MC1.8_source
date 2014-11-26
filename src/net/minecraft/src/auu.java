@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*   8:    */   
 /*   9:    */   protected auu()
 /*  10:    */   {
-/*  11: 21 */     j(this.L.b().a(a, Integer.valueOf(0)));
+/*  11: 21 */     j(this.L.b().setData(a, Integer.valueOf(0)));
 /*  12: 22 */     a(true);
 /*  13: 23 */     float f = 0.5F;
 /*  14: 24 */     a(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, 0.25F, 0.5F + f);
@@ -34,7 +34,7 @@ package net.minecraft.src;
 /*  33:    */       {
 /*  34: 42 */         float f = a(this, paramaqu, paramdt);
 /*  35: 44 */         if (paramRandom.nextInt((int)(25.0F / f) + 1) == 0) {
-/*  36: 45 */           paramaqu.setBlock(paramdt, parambec.a(a, Integer.valueOf(i + 1)), 2);
+/*  36: 45 */           paramaqu.setBlock(paramdt, parambec.setData(a, Integer.valueOf(i + 1)), 2);
 /*  37:    */         }
 /*  38:    */       }
 /*  39:    */     }
@@ -46,7 +46,7 @@ package net.minecraft.src;
 /*  45: 53 */     if (i > 7) {
 /*  46: 54 */       i = 7;
 /*  47:    */     }
-/*  48: 56 */     paramaqu.setBlock(paramdt, parambec.a(a, Integer.valueOf(i)), 2);
+/*  48: 56 */     paramaqu.setBlock(paramdt, parambec.setData(a, Integer.valueOf(i)), 2);
 /*  49:    */   }
 /*  50:    */   
 /*  51:    */   protected static float a(ProtoBlock paramatr, World paramaqu, BlockPosition paramdt)
@@ -157,7 +157,7 @@ package net.minecraft.src;
 /* 156:    */   
 /* 157:    */   public Block instance(int paramInt)
 /* 158:    */   {
-/* 159:179 */     return instance().a(a, Integer.valueOf(paramInt));
+/* 159:179 */     return instance().setData(a, Integer.valueOf(paramInt));
 /* 160:    */   }
 /* 161:    */   
 /* 162:    */   public int c(Block parambec)

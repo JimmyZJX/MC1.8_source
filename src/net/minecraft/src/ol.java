@@ -7,7 +7,7 @@ package net.minecraft.src;
 /*   6:    */   protected ItemStack b(dz paramdz, ItemStack paramamj)
 /*   7:    */   {
 /*   8:413 */     World localaqu = paramdz.i();
-/*   9:414 */     BlockPosition localdt = paramdz.d().a(ave.b(paramdz.f()));
+/*   9:414 */     BlockPosition localdt = paramdz.d().offset(ave.b(paramdz.f()));
 /*  10:415 */     azk localazk = (azk)BlockList.pumpkin;
 /*  11:417 */     if ((localaqu.isEmpty(localdt)) && (localazk.d(localaqu, localdt)))
 /*  12:    */     {

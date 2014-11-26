@@ -8,7 +8,7 @@ package net.minecraft.src;
 /*  7:   */   
 /*  8:   */   public ayr()
 /*  9:   */   {
-/* 10:22 */     j(this.L.b().a(b, EnumWoodVariant.OAK).a(a, axo.Y));
+/* 10:22 */     j(this.L.b().setData(b, EnumWoodVariant.OAK).setData(a, axo.Y));
 /* 11:   */   }
 /* 12:   */   
 /* 13:   */   public void a(Item paramalq, CreativeTabs paramakf, List<ItemStack> paramList)
@@ -21,20 +21,20 @@ package net.minecraft.src;
 /* 20:   */   
 /* 21:   */   public Block instance(int paramInt)
 /* 22:   */   {
-/* 23:35 */     Block localbec = instance().a(b, EnumWoodVariant.fromIndex((paramInt & 0x3) % 4));
+/* 23:35 */     Block localbec = instance().setData(b, EnumWoodVariant.fromIndex((paramInt & 0x3) % 4));
 /* 24:38 */     switch (paramInt & 0xC)
 /* 25:   */     {
 /* 26:   */     case 0: 
-/* 27:40 */       localbec = localbec.a(a, axo.Y);
+/* 27:40 */       localbec = localbec.setData(a, axo.Y);
 /* 28:41 */       break;
 /* 29:   */     case 4: 
-/* 30:43 */       localbec = localbec.a(a, axo.X);
+/* 30:43 */       localbec = localbec.setData(a, axo.X);
 /* 31:44 */       break;
 /* 32:   */     case 8: 
-/* 33:46 */       localbec = localbec.a(a, axo.Z);
+/* 33:46 */       localbec = localbec.setData(a, axo.Z);
 /* 34:47 */       break;
 /* 35:   */     default: 
-/* 36:49 */       localbec = localbec.a(a, axo.NONE);
+/* 36:49 */       localbec = localbec.setData(a, axo.NONE);
 /* 37:   */     }
 /* 38:53 */     return localbec;
 /* 39:   */   }

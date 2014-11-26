@@ -12,7 +12,7 @@ package net.minecraft.src;
 /*  11:    */   public avv(Material parambof)
 /*  12:    */   {
 /*  13: 26 */     super(parambof);
-/*  14: 27 */     j(this.L.b().a(a, Boolean.valueOf(false)).a(b, Boolean.valueOf(false)).a(M, Boolean.valueOf(false)).a(N, Boolean.valueOf(false)));
+/*  14: 27 */     j(this.L.b().setData(a, Boolean.valueOf(false)).setData(b, Boolean.valueOf(false)).setData(M, Boolean.valueOf(false)).setData(N, Boolean.valueOf(false)));
 /*  15: 28 */     setCreativeTab(CreativeTabs.tabDeco);
 /*  16:    */   }
 /*  17:    */   
@@ -136,7 +136,7 @@ package net.minecraft.src;
 /* 135:    */   
 /* 136:    */   public Block a(Block parambec, IBlockAccess paramard, BlockPosition paramdt)
 /* 137:    */   {
-/* 138:154 */     return parambec.a(a, Boolean.valueOf(e(paramard, paramdt.north()))).a(b, Boolean.valueOf(e(paramard, paramdt.east()))).a(M, Boolean.valueOf(e(paramard, paramdt.south()))).a(N, Boolean.valueOf(e(paramard, paramdt.west())));
+/* 138:154 */     return parambec.setData(a, Boolean.valueOf(e(paramard, paramdt.north()))).setData(b, Boolean.valueOf(e(paramard, paramdt.east()))).setData(M, Boolean.valueOf(e(paramard, paramdt.south()))).setData(N, Boolean.valueOf(e(paramard, paramdt.west())));
 /* 139:    */   }
 /* 140:    */   
 /* 141:    */   protected bed e()

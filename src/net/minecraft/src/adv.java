@@ -151,7 +151,7 @@ package net.minecraft.src;
 /* 151:161 */           if (k > 2) {
 /* 152:162 */             this.e = true;
 /* 153:    */           } else {
-/* 154:164 */             this.d = this.d.a(BlockAnvil.b, Integer.valueOf(k));
+/* 154:164 */             this.d = this.d.setData(BlockAnvil.b, Integer.valueOf(k));
 /* 155:    */           }
 /* 156:    */         }
 /* 157:    */       }

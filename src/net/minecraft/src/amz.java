@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*  9:   */   public boolean a(ItemStack paramamj, EntityPlayer paramahd, World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3)
 /* 10:   */   {
 /* 11:17 */     boolean bool = paramaqu.getBlock(paramdt).getProto().f(paramaqu, paramdt);
-/* 12:18 */     BlockPosition localdt = bool ? paramdt : paramdt.a(paramej);
+/* 12:18 */     BlockPosition localdt = bool ? paramdt : paramdt.offset(paramej);
 /* 13:20 */     if (!paramahd.a(localdt, paramej, paramamj)) {
 /* 14:21 */       return false;
 /* 15:   */     }
@@ -18,10 +18,10 @@ package net.minecraft.src;
 /* 17:25 */     if (!paramaqu.a(localatr, localdt, false, paramej, null, paramamj)) {
 /* 18:26 */       return false;
 /* 19:   */     }
-/* 20:29 */     if (BlockList.af.c(paramaqu, localdt))
+/* 20:29 */     if (BlockList.redstoneWire.c(paramaqu, localdt))
 /* 21:   */     {
 /* 22:30 */       paramamj.stackSize -= 1;
-/* 23:31 */       paramaqu.setBlock(localdt, BlockList.af.instance());
+/* 23:31 */       paramaqu.setBlock(localdt, BlockList.redstoneWire.instance());
 /* 24:32 */       return true;
 /* 25:   */     }
 /* 26:35 */     return false;

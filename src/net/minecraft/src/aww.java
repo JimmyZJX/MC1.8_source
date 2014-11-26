@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*  4:   */   public aww()
 /*  5:   */   {
 /*  6:16 */     super(Material.grass);
-/*  7:17 */     j(this.L.b().a(M, EnumAxis.Y));
+/*  7:17 */     j(this.L.b().setData(M, EnumAxis.Y));
 /*  8:18 */     setCreativeTab(CreativeTabs.tabBlock);
 /*  9:   */   }
 /* 10:   */   
@@ -18,7 +18,7 @@ package net.minecraft.src;
 /* 17:27 */     } else if (i == 8) {
 /* 18:28 */       localel = EnumAxis.Z;
 /* 19:   */     }
-/* 20:30 */     return instance().a(M, localel);
+/* 20:30 */     return instance().setData(M, localel);
 /* 21:   */   }
 /* 22:   */   
 /* 23:   */   public int c(Block parambec)
@@ -46,7 +46,7 @@ package net.minecraft.src;
 /* 45:   */   
 /* 46:   */   public Block a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3, int paramInt, EntityLiving paramxm)
 /* 47:   */   {
-/* 48:60 */     return super.a(paramaqu, paramdt, paramej, paramFloat1, paramFloat2, paramFloat3, paramInt, paramxm).a(M, paramej.k());
+/* 48:60 */     return super.a(paramaqu, paramdt, paramej, paramFloat1, paramFloat2, paramFloat3, paramInt, paramxm).setData(M, paramej.k());
 /* 49:   */   }
 /* 50:   */ }
 

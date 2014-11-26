@@ -1,21 +1,21 @@
 package net.minecraft.src;
 /*   1:    */ import java.util.Random;
 /*   2:    */ 
-/*   3:    */ public class azz
+/*   3:    */ public class BlockRepeater
 /*   4:    */   extends ava
 /*   5:    */ {
 /*   6: 21 */   public static final BlockDataBoolean a = BlockDataBoolean.getInstance("locked");
 /*   7: 22 */   public static final BlockDataInteger b = BlockDataInteger.getInstance("delay", 1, 4);
 /*   8:    */   
-/*   9:    */   protected azz(boolean paramBoolean)
+/*   9:    */   protected BlockRepeater(boolean paramBoolean)
 /*  10:    */   {
 /*  11: 25 */     super(paramBoolean);
-/*  12: 26 */     j(this.L.b().a(N, EnumDirection.NORTH).a(b, Integer.valueOf(1)).a(a, Boolean.valueOf(false)));
+/*  12: 26 */     j(this.L.b().setData(N, EnumDirection.NORTH).setData(b, Integer.valueOf(1)).setData(a, Boolean.valueOf(false)));
 /*  13:    */   }
 /*  14:    */   
 /*  15:    */   public Block a(Block parambec, IBlockAccess paramard, BlockPosition paramdt)
 /*  16:    */   {
-/*  17: 31 */     return parambec.a(a, Boolean.valueOf(b(paramard, paramdt, parambec)));
+/*  17: 31 */     return parambec.setData(a, Boolean.valueOf(b(paramard, paramdt, parambec)));
 /*  18:    */   }
 /*  19:    */   
 /*  20:    */   public boolean a(World paramaqu, BlockPosition paramdt, Block parambec, EntityPlayer paramahd, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3)
@@ -37,7 +37,7 @@ package net.minecraft.src;
 /*  36: 51 */     Integer localInteger = (Integer)parambec.getProperty(b);
 /*  37: 52 */     Boolean localBoolean = (Boolean)parambec.getProperty(a);
 /*  38: 53 */     EnumDirection localej = (EnumDirection)parambec.getProperty(N);
-/*  39: 54 */     return BlockList.bc.instance().a(N, localej).a(b, localInteger).a(a, localBoolean);
+/*  39: 54 */     return BlockList.poweredRepeater.instance().setData(N, localej).setData(b, localInteger).setData(a, localBoolean);
 /*  40:    */   }
 /*  41:    */   
 /*  42:    */   protected Block k(Block parambec)
@@ -45,7 +45,7 @@ package net.minecraft.src;
 /*  44: 59 */     Integer localInteger = (Integer)parambec.getProperty(b);
 /*  45: 60 */     Boolean localBoolean = (Boolean)parambec.getProperty(a);
 /*  46: 61 */     EnumDirection localej = (EnumDirection)parambec.getProperty(N);
-/*  47: 62 */     return BlockList.bb.instance().a(N, localej).a(b, localInteger).a(a, localBoolean);
+/*  47: 62 */     return BlockList.unpoweredRepeater.instance().setData(N, localej).setData(b, localInteger).setData(a, localBoolean);
 /*  48:    */   }
 /*  49:    */   
 /*  50:    */   public Item a(Block parambec, Random paramRandom, int paramInt)
@@ -99,7 +99,7 @@ package net.minecraft.src;
 /*  98:    */   
 /*  99:    */   public Block instance(int paramInt)
 /* 100:    */   {
-/* 101:117 */     return instance().a(N, EnumDirection.b(paramInt)).a(a, Boolean.valueOf(false)).a(b, Integer.valueOf(1 + (paramInt >> 2)));
+/* 101:117 */     return instance().setData(N, EnumDirection.b(paramInt)).setData(a, Boolean.valueOf(false)).setData(b, Integer.valueOf(1 + (paramInt >> 2)));
 /* 102:    */   }
 /* 103:    */   
 /* 104:    */   public int c(Block parambec)

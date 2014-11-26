@@ -13,7 +13,7 @@ package net.minecraft.src;
 /*  12:    */   protected BlockDoor(Material parambof)
 /*  13:    */   {
 /*  14: 42 */     super(parambof);
-/*  15: 43 */     j(this.L.b().a(a, EnumDirection.NORTH).a(b, Boolean.valueOf(false)).a(M, avh.a).a(N, Boolean.valueOf(false)).a(O, avg.b));
+/*  15: 43 */     j(this.L.b().setData(a, EnumDirection.NORTH).setData(b, Boolean.valueOf(false)).setData(M, avh.a).setData(N, Boolean.valueOf(false)).setData(O, avg.b));
 /*  16:    */   }
 /*  17:    */   
 /*  18:    */   public boolean c()
@@ -128,7 +128,7 @@ package net.minecraft.src;
 /* 127:150 */     Block localbec2 = paramdt == localdt ? localbec1 : paramaqu.getBlock(localdt);
 /* 128:152 */     if ((localbec2.getProto() == this) && (((Boolean)localbec2.getProperty(b)).booleanValue() != paramBoolean))
 /* 129:    */     {
-/* 130:153 */       paramaqu.setBlock(localdt, localbec2.a(b, Boolean.valueOf(paramBoolean)), 2);
+/* 130:153 */       paramaqu.setBlock(localdt, localbec2.setData(b, Boolean.valueOf(paramBoolean)), 2);
 /* 131:154 */       paramaqu.b(localdt, paramdt);
 /* 132:    */       
 /* 133:156 */       paramaqu.playLevelEvent(null, paramBoolean ? 1003 : 1006, paramdt, 0);
@@ -178,10 +178,10 @@ package net.minecraft.src;
 /* 177:194 */         if (((bool) || (paramatr.protoBlock_g())) && (paramatr != this) && 
 /* 178:195 */           (bool != ((Boolean)localbec.getProperty(N)).booleanValue()))
 /* 179:    */         {
-/* 180:196 */           paramaqu.setBlock((BlockPosition)localObject, localbec.a(N, Boolean.valueOf(bool)), 2);
+/* 180:196 */           paramaqu.setBlock((BlockPosition)localObject, localbec.setData(N, Boolean.valueOf(bool)), 2);
 /* 181:198 */           if (bool != ((Boolean)parambec.getProperty(b)).booleanValue())
 /* 182:    */           {
-/* 183:199 */             paramaqu.setBlock(paramdt, parambec.a(b, Boolean.valueOf(bool)), 2);
+/* 183:199 */             paramaqu.setBlock(paramdt, parambec.setData(b, Boolean.valueOf(bool)), 2);
 /* 184:200 */             paramaqu.b(paramdt, paramdt);
 /* 185:201 */             paramaqu.playLevelEvent(null, bool ? 1003 : 1006, paramdt, 0);
 /* 186:    */           }
@@ -284,14 +284,14 @@ package net.minecraft.src;
 /* 283:    */     {
 /* 284:296 */       localbec = paramard.getBlock(paramdt.up());
 /* 285:297 */       if (localbec.getProto() == this) {
-/* 286:298 */         parambec = parambec.a(M, localbec.getProperty(M)).a(N, localbec.getProperty(N));
+/* 286:298 */         parambec = parambec.setData(M, localbec.getProperty(M)).setData(N, localbec.getProperty(N));
 /* 287:    */       }
 /* 288:    */     }
 /* 289:    */     else
 /* 290:    */     {
 /* 291:303 */       localbec = paramard.getBlock(paramdt.down());
 /* 292:304 */       if (localbec.getProto() == this) {
-/* 293:305 */         parambec = parambec.a(a, localbec.getProperty(a)).a(b, localbec.getProperty(b));
+/* 293:305 */         parambec = parambec.setData(a, localbec.getProperty(a)).setData(b, localbec.getProperty(b));
 /* 294:    */       }
 /* 295:    */     }
 /* 296:311 */     return parambec;
@@ -300,9 +300,9 @@ package net.minecraft.src;
 /* 299:    */   public Block instance(int paramInt)
 /* 300:    */   {
 /* 301:316 */     if ((paramInt & 0x8) > 0) {
-/* 302:317 */       return instance().a(O, avg.a).a(M, (paramInt & 0x1) > 0 ? avh.b : avh.a).a(N, Boolean.valueOf((paramInt & 0x2) > 0));
+/* 302:317 */       return instance().setData(O, avg.a).setData(M, (paramInt & 0x1) > 0 ? avh.b : avh.a).setData(N, Boolean.valueOf((paramInt & 0x2) > 0));
 /* 303:    */     }
-/* 304:322 */     return instance().a(O, avg.b).a(a, EnumDirection.b(paramInt & 0x3).f()).a(b, Boolean.valueOf((paramInt & 0x4) > 0));
+/* 304:322 */     return instance().setData(O, avg.b).setData(a, EnumDirection.b(paramInt & 0x3).f()).setData(b, Boolean.valueOf((paramInt & 0x4) > 0));
 /* 305:    */   }
 /* 306:    */   
 /* 307:    */   public int c(Block parambec)

@@ -22,7 +22,7 @@ package net.minecraft.src;
 /* 21:29 */     ProtoBlock localatr = localbec1.getProto();
 /* 22:31 */     if ((localatr != this.a) && (paramej != EnumDirection.UP))
 /* 23:   */     {
-/* 24:32 */       paramdt = paramdt.a(paramej);
+/* 24:32 */       paramdt = paramdt.offset(paramej);
 /* 25:33 */       localbec1 = paramaqu.getBlock(paramdt);
 /* 26:34 */       localatr = localbec1.getProto();
 /* 27:   */     }
@@ -31,7 +31,7 @@ package net.minecraft.src;
 /* 30:38 */       int i = ((Integer)localbec1.getProperty(BlockSnowLayer.a)).intValue();
 /* 31:40 */       if (i <= 7)
 /* 32:   */       {
-/* 33:41 */         Block localbec2 = localbec1.a(BlockSnowLayer.a, Integer.valueOf(i + 1));
+/* 33:41 */         Block localbec2 = localbec1.setData(BlockSnowLayer.a, Integer.valueOf(i + 1));
 /* 34:42 */         if ((paramaqu.isCollisionFree(this.a.a(paramaqu, paramdt, localbec2))) && (paramaqu.setBlock(paramdt, localbec2, 2)))
 /* 35:   */         {
 /* 36:43 */           paramaqu.a(paramdt.getX() + 0.5F, paramdt.getY() + 0.5F, paramdt.getZ() + 0.5F, this.a.H.b(), (this.a.H.d() + 1.0F) / 2.0F, this.a.H.e() * 0.8F);

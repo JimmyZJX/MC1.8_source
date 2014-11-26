@@ -21,7 +21,7 @@ package net.minecraft.src;
 /* 20:25 */     ProtoBlock localatr = localbec.getProto();
 /* 21:27 */     if ((this == BlockList.w) || (this == BlockList.cG))
 /* 22:   */     {
-/* 23:28 */       if (paramard.getBlock(paramdt.a(paramej.d())) != localbec) {
+/* 23:28 */       if (paramard.getBlock(paramdt.offset(paramej.d())) != localbec) {
 /* 24:29 */         return true;
 /* 25:   */       }
 /* 26:31 */       if (localatr == this) {

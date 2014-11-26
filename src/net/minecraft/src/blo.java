@@ -52,7 +52,7 @@ package net.minecraft.src;
 /*  51:661 */     a(paramaqu, BlockList.air.instance(), 1, 3, 4, parambjb);
 /*  52:662 */     a(paramaqu, BlockList.air.instance(), 5, 3, 4, parambjb);
 /*  53:663 */     a(paramaqu, BlockList.air.instance(), 5, 3, 5, parambjb);
-/*  54:664 */     a(paramaqu, BlockList.ca.instance().a(awd.b, awf.MUSHROOM_RED), 1, 3, 5, parambjb);
+/*  54:664 */     a(paramaqu, BlockList.ca.instance().setData(awd.b, awf.MUSHROOM_RED), 1, 3, 5, parambjb);
 /*  55:    */     
 /*  56:    */ 
 /*  57:667 */     a(paramaqu, BlockList.ai.instance(), 3, 2, 6, parambjb);

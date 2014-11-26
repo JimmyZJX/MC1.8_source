@@ -13,7 +13,7 @@ package net.minecraft.src;
 /* 12:   */   
 /* 13:   */   public boolean a(ItemStack paramamj, EntityPlayer paramahd, World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3)
 /* 14:   */   {
-/* 15:19 */     paramdt = paramdt.a(paramej);
+/* 15:19 */     paramdt = paramdt.offset(paramej);
 /* 16:21 */     if (!paramahd.a(paramdt, paramej, paramamj)) {
 /* 17:22 */       return false;
 /* 18:   */     }

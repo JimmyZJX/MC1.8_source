@@ -7,7 +7,7 @@ package net.minecraft.src;
 /*   6:    */   public ItemStack b(dz paramdz, ItemStack paramamj)
 /*   7:    */   {
 /*   8:221 */     akb localakb = (akb)paramamj.getItem();
-/*   9:222 */     BlockPosition localdt = paramdz.d().a(ave.b(paramdz.f()));
+/*   9:222 */     BlockPosition localdt = paramdz.d().offset(ave.b(paramdz.f()));
 /*  10:224 */     if (localakb.a(paramdz.i(), localdt))
 /*  11:    */     {
 /*  12:225 */       paramamj.a(ItemList.aw);

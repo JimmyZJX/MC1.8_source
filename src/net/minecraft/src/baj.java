@@ -14,7 +14,7 @@ package net.minecraft.src;
 /*  13:    */   protected baj()
 /*  14:    */   {
 /*  15: 50 */     super(Material.q);
-/*  16: 51 */     j(this.L.b().a(a, EnumDirection.NORTH).a(b, Boolean.valueOf(false)));
+/*  16: 51 */     j(this.L.b().setData(a, EnumDirection.NORTH).setData(b, Boolean.valueOf(false)));
 /*  17: 52 */     a(0.25F, 0.0F, 0.25F, 0.75F, 0.5F, 0.75F);
 /*  18:    */   }
 /*  19:    */   
@@ -58,7 +58,7 @@ package net.minecraft.src;
 /*  57:    */   
 /*  58:    */   public Block a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3, int paramInt, EntityLiving paramxm)
 /*  59:    */   {
-/*  60: 96 */     return instance().a(a, paramxm.aO()).a(b, Boolean.valueOf(false));
+/*  60: 96 */     return instance().setData(a, paramxm.aO()).setData(b, Boolean.valueOf(false));
 /*  61:    */   }
 /*  62:    */   
 /*  63:    */   public bcm a(World paramaqu, int paramInt)
@@ -86,7 +86,7 @@ package net.minecraft.src;
 /*  85:    */   {
 /*  86:126 */     if (paramahd.by.d)
 /*  87:    */     {
-/*  88:128 */       parambec = parambec.a(b, Boolean.valueOf(true));
+/*  88:128 */       parambec = parambec.setData(b, Boolean.valueOf(true));
 /*  89:129 */       paramaqu.setBlock(paramdt, parambec, 4);
 /*  90:    */     }
 /*  91:131 */     super.a(paramaqu, paramdt, parambec, paramahd);
@@ -145,7 +145,7 @@ package net.minecraft.src;
 /* 144:186 */     for (int i = 0; i < 3; i++)
 /* 145:    */     {
 /* 146:187 */       bei localbei1 = localbem.a(i, 0, 0);
-/* 147:188 */       paramaqu.setBlock(localbei1.d(), localbei1.a().a(b, Boolean.valueOf(true)), 2);
+/* 147:188 */       paramaqu.setBlock(localbei1.d(), localbei1.a().setData(b, Boolean.valueOf(true)), 2);
 /* 148:    */     }
 /* 149:190 */     for (int i = 0; i < localbek.c(); i++) {
 /* 150:191 */       for (int j = 0; j < localbek.b(); j++)
@@ -179,7 +179,7 @@ package net.minecraft.src;
 /* 178:    */   
 /* 179:    */   public Block instance(int paramInt)
 /* 180:    */   {
-/* 181:225 */     return instance().a(a, EnumDirection.a(paramInt & 0x7)).a(b, Boolean.valueOf((paramInt & 0x8) > 0));
+/* 181:225 */     return instance().setData(a, EnumDirection.a(paramInt & 0x7)).setData(b, Boolean.valueOf((paramInt & 0x8) > 0));
 /* 182:    */   }
 /* 183:    */   
 /* 184:    */   public int c(Block parambec)

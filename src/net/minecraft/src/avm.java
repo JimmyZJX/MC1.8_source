@@ -32,7 +32,7 @@ package net.minecraft.src;
 /* 31:41 */       return;
 /* 32:   */     }
 /* 33:44 */     EnumDirection localej = (EnumDirection)paramaqu.getBlock(paramdt).getProperty(a);
-/* 34:45 */     BlockPosition localdt = paramdt.a(localej);
+/* 34:45 */     BlockPosition localdt = paramdt.offset(localej);
 /* 35:46 */     vq localvq = bde.b(paramaqu, localdt.getX(), localdt.getY(), localdt.getZ());
 /* 36:   */     ItemStack localamj2;
 /* 37:49 */     if (localvq == null)

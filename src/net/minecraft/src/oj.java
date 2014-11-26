@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*   4:    */   protected ItemStack b(dz paramdz, ItemStack paramamj)
 /*   5:    */   {
 /*   6:343 */     World localaqu = paramdz.i();
-/*   7:344 */     BlockPosition localdt = paramdz.d().a(ave.b(paramdz.f()));
+/*   7:344 */     BlockPosition localdt = paramdz.d().offset(ave.b(paramdz.f()));
 /*   8:    */     
 /*   9:346 */     aek localaek = new aek(localaqu, localdt.getX() + 0.5D, localdt.getY(), localdt.getZ() + 0.5D, null);
 /*  10:347 */     localaqu.spawnEntity(localaek);

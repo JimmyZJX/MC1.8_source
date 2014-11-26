@@ -163,7 +163,7 @@ package net.minecraft.src;
 /* 161:173 */     a(paramArrayOftq, BlockList.am, BlockList.al);
 /* 162:174 */     a(paramArrayOftq, BlockList.aD, BlockList.redstoneOre);
 /* 163:    */     
-/* 164:176 */     a(paramArrayOftq, BlockList.bc, BlockList.bb);
+/* 164:176 */     a(paramArrayOftq, BlockList.poweredRepeater, BlockList.unpoweredRepeater);
 /* 165:177 */     a(paramArrayOftq, BlockList.ck, BlockList.cj);
 /* 166:178 */     a(paramArrayOftq, BlockList.aF, BlockList.aE);
 /* 167:179 */     a(paramArrayOftq, BlockList.bK, BlockList.bJ);

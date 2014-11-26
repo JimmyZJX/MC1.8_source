@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*   3:    */ {
 /*   4:    */   public BlockBanner()
 /*   5:    */   {
-/*   6:187 */     j(this.L.b().a(b, Integer.valueOf(0)));
+/*   6:187 */     j(this.L.b().setData(b, Integer.valueOf(0)));
 /*   7:    */   }
 /*   8:    */   
 /*   9:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
@@ -19,7 +19,7 @@ package net.minecraft.src;
 /*  18:    */   
 /*  19:    */   public Block instance(int paramInt)
 /*  20:    */   {
-/*  21:202 */     return instance().a(b, Integer.valueOf(paramInt));
+/*  21:202 */     return instance().setData(b, Integer.valueOf(paramInt));
 /*  22:    */   }
 /*  23:    */   
 /*  24:    */   public int c(Block parambec)

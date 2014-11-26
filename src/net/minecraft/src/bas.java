@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*  8:   */   public bas()
 /*  9:   */   {
 /* 10:21 */     super(Material.s, false);
-/* 11:22 */     j(this.L.b().a(b, Boolean.valueOf(false)).a(M, Boolean.valueOf(false)).a(N, Boolean.valueOf(false)).a(O, Boolean.valueOf(false)).a(a, EnumDyeColor.WHITE));
+/* 11:22 */     j(this.L.b().setData(b, Boolean.valueOf(false)).setData(M, Boolean.valueOf(false)).setData(N, Boolean.valueOf(false)).setData(O, Boolean.valueOf(false)).setData(a, EnumDyeColor.WHITE));
 /* 12:23 */     setCreativeTab(CreativeTabs.tabDeco);
 /* 13:   */   }
 /* 14:   */   
@@ -32,7 +32,7 @@ package net.minecraft.src;
 /* 31:   */   
 /* 32:   */   public Block instance(int paramInt)
 /* 33:   */   {
-/* 34:45 */     return instance().a(a, EnumDyeColor.b(paramInt));
+/* 34:45 */     return instance().setData(a, EnumDyeColor.b(paramInt));
 /* 35:   */   }
 /* 36:   */   
 /* 37:   */   public int c(Block parambec)

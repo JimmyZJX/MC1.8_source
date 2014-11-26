@@ -122,7 +122,7 @@ package net.minecraft.src;
 /* 121:127 */     return offset(EnumDirection.EAST, paramInt);
 /* 122:    */   }
 /* 123:    */   
-/* 124:    */   public BlockPosition a(EnumDirection paramej)
+/* 124:    */   public BlockPosition offset(EnumDirection paramej)
 /* 125:    */   {
 /* 126:132 */     return offset(paramej, 1);
 /* 127:    */   }

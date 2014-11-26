@@ -113,7 +113,7 @@ package net.minecraft.src;
 /* 112:760 */       a(paramaqu, BlockList.au.instance(i), 3, 3, 3, parambjb);
 /* 113:761 */       a(paramaqu, BlockList.au.instance(i), 3, 4, 3, parambjb);
 /* 114:    */     }
-/* 115:765 */     a(paramaqu, BlockList.torch.instance().a(bbl.a, this.m), 2, 3, 1, parambjb);
+/* 115:765 */     a(paramaqu, BlockList.torch.instance().setData(bbl.a, this.m), 2, 3, 1, parambjb);
 /* 116:767 */     for (int i = 0; i < 5; i++) {
 /* 117:768 */       for (int j = 0; j < 5; j++)
 /* 118:    */       {
