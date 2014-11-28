@@ -19,12 +19,12 @@ package net.minecraft.src;
 /* 18:23 */     a(BlockList.ironOre, new ItemStack(ItemList.ironIngot), 0.7F);
 /* 19:24 */     a(BlockList.goldOre, new ItemStack(ItemList.goldIngot), 1.0F);
 /* 20:25 */     a(BlockList.diamondOre, new ItemStack(ItemList.diamond), 1.0F);
-/* 21:26 */     a(BlockList.sand, new ItemStack(BlockList.w), 0.1F);
+/* 21:26 */     a(BlockList.sand, new ItemStack(BlockList.glass), 0.1F);
 /* 22:   */     
 /* 23:   */ 
-/* 24:29 */     a(ItemList.al, new ItemStack(ItemList.am), 0.35F);
+/* 24:29 */     a(ItemList.porkchop, new ItemStack(ItemList.cookedPorkchop), 0.35F);
 /* 25:30 */     a(ItemList.bi, new ItemStack(ItemList.bj), 0.35F);
-/* 26:31 */     a(ItemList.bk, new ItemStack(ItemList.bl), 0.35F);
+/* 26:31 */     a(ItemList.chicken, new ItemStack(ItemList.cookedChicken), 0.35F);
 /* 27:32 */     a(ItemList.bo, new ItemStack(ItemList.bp), 0.35F);
 /* 28:33 */     a(ItemList.bm, new ItemStack(ItemList.bn), 0.35F);
 /* 29:34 */     a(BlockList.cobblestone, new ItemStack(BlockList.stone), 0.1F);
@@ -32,8 +32,8 @@ package net.minecraft.src;
 /* 31:36 */     a(ItemList.aI, new ItemStack(ItemList.aH), 0.3F);
 /* 32:37 */     a(BlockList.aL, new ItemStack(BlockList.cz), 0.35F);
 /* 33:38 */     a(BlockList.cactus, new ItemStack(ItemList.dye, 1, EnumDyeColor.GREEN.b()), 0.2F);
-/* 34:39 */     a(BlockList.log, new ItemStack(ItemList.h, 1, 1), 0.15F);
-/* 35:40 */     a(BlockList.log2, new ItemStack(ItemList.h, 1, 1), 0.15F);
+/* 34:39 */     a(BlockList.log, new ItemStack(ItemList.coal, 1, 1), 0.15F);
+/* 35:40 */     a(BlockList.log2, new ItemStack(ItemList.coal, 1, 1), 0.15F);
 /* 36:41 */     a(BlockList.bP, new ItemStack(ItemList.emerald), 1.0F);
 /* 37:42 */     a(ItemList.potato, new ItemStack(ItemList.bT), 0.35F);
 /* 38:43 */     a(BlockList.netherrack, new ItemStack(ItemList.cf), 0.1F);
@@ -43,8 +43,8 @@ package net.minecraft.src;
 /* 42:48 */         a(new ItemStack(ItemList.fish, 1, localali.a()), new ItemStack(ItemList.aV, 1, localali.a()), 0.35F);
 /* 43:   */       }
 /* 44:   */     }
-/* 45:54 */     a(BlockList.coalOre, new ItemStack(ItemList.h), 0.1F);
-/* 46:55 */     a(BlockList.redstoneOre, new ItemStack(ItemList.aC), 0.7F);
+/* 45:54 */     a(BlockList.coalOre, new ItemStack(ItemList.coal), 0.1F);
+/* 46:55 */     a(BlockList.redstoneOre, new ItemStack(ItemList.redstone), 0.7F);
 /* 47:   */     
 /* 48:57 */     a(BlockList.lapisOre, new ItemStack(ItemList.dye, 1, EnumDyeColor.BLUE.b()), 0.2F);
 /* 49:58 */     a(BlockList.quartzOre, new ItemStack(ItemList.cg), 0.2F);

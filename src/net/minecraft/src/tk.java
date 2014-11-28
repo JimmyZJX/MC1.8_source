@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ import java.util.List;
 /*   2:    */ 
 /*   3:    */ public class tk
-/*   4:    */   extends tq
+/*   4:    */   extends PlayerStat
 /*   5:    */ {
 /*   6:    */   public final int a;
 /*   7:    */   public final int b;

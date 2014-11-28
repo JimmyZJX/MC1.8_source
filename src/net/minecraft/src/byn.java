@@ -13,7 +13,7 @@ package net.minecraft.src;
 /*  12:    */   private byp x;
 /*  13:    */   private boolean y;
 /*  14:    */   
-/*  15:    */   public byn(ahb paramahb, vq paramvq)
+/*  15:    */   public byn(Inventory paramahb, vq paramvq)
 /*  16:    */   {
 /*  17: 34 */     super(new aig(paramahb, paramvq));
 /*  18: 35 */     this.w = paramvq;

@@ -166,7 +166,7 @@ package net.minecraft.src;
 /* 165:198 */     return "minecraft:dispenser";
 /* 166:    */   }
 /* 167:    */   
-/* 168:    */   public aib a(ahb paramahb, EntityPlayer paramahd)
+/* 168:    */   public aib a(Inventory paramahb, EntityPlayer paramahd)
 /* 169:    */   {
 /* 170:203 */     return new aip(paramahb, this);
 /* 171:    */   }

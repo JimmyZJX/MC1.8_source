@@ -11,16 +11,16 @@ package net.minecraft.src;
 /* 11:73 */     double d4 = d3 / 24.0D;
 /* 12:74 */     double d5 = d4 / 365.0D;
 /* 13:76 */     if (d5 > 0.5D) {
-/* 14:77 */       return tq.n().format(d5) + " y";
+/* 14:77 */       return PlayerStat.n().format(d5) + " y";
 /* 15:   */     }
 /* 16:78 */     if (d4 > 0.5D) {
-/* 17:79 */       return tq.n().format(d4) + " d";
+/* 17:79 */       return PlayerStat.n().format(d4) + " d";
 /* 18:   */     }
 /* 19:80 */     if (d3 > 0.5D) {
-/* 20:81 */       return tq.n().format(d3) + " h";
+/* 20:81 */       return PlayerStat.n().format(d3) + " h";
 /* 21:   */     }
 /* 22:82 */     if (d2 > 0.5D) {
-/* 23:83 */       return tq.n().format(d2) + " m";
+/* 23:83 */       return PlayerStat.n().format(d2) + " m";
 /* 24:   */     }
 /* 25:85 */     return d1 + " s";
 /* 26:   */   }

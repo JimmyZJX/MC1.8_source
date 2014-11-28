@@ -126,7 +126,7 @@ package net.minecraft.src;
 /* 125:    */   {
 /* 126:156 */     int i = 0;
 /* 127:158 */     for (int j = 0; j < 3; j++) {
-/* 128:159 */       if (((Boolean)parambec.getProperty(a[j])).booleanValue()) {
+/* 128:159 */       if (((Boolean)parambec.getData(a[j])).booleanValue()) {
 /* 129:160 */         i |= 1 << j;
 /* 130:    */       }
 /* 131:    */     }

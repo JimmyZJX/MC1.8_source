@@ -14,7 +14,7 @@ package net.minecraft.src;
 /*  13:    */     
 /*  14: 26 */     a(0.4F, 0.3F);
 /*  15:    */     
-/*  16: 28 */     this.goalSelector.addGoal(1, new yy(this));
+/*  16: 28 */     this.goalSelector.addGoal(1, new GoalSwim(this));
 /*  17: 29 */     this.goalSelector.addGoal(2, new zk(this, EntityPlayer.class, 1.0D, false));
 /*  18: 30 */     this.goalSelector.addGoal(3, new zy(this, 1.0D));
 /*  19: 31 */     this.goalSelector.addGoal(7, new zh(this, EntityPlayer.class, 8.0F));
@@ -33,9 +33,9 @@ package net.minecraft.src;
 /*  32:    */   {
 /*  33: 45 */     super.aW();
 /*  34:    */     
-/*  35: 47 */     a(afs.a).a(8.0D);
-/*  36: 48 */     a(afs.d).a(0.25D);
-/*  37: 49 */     a(afs.e).a(2.0D);
+/*  35: 47 */     getAttribute(MobAttribute.maxHealth).a(8.0D);
+/*  36: 48 */     getAttribute(MobAttribute.movementSpeed).a(0.25D);
+/*  37: 49 */     getAttribute(MobAttribute.attackDamage).a(2.0D);
 /*  38:    */   }
 /*  39:    */   
 /*  40:    */   protected boolean r_()

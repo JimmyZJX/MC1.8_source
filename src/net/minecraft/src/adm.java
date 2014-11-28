@@ -84,7 +84,7 @@ package net.minecraft.src;
 /*  83:136 */     if ((paramwv instanceof EntityPlayer))
 /*  84:    */     {
 /*  85:137 */       EntityPlayer localahd = (EntityPlayer)paramwv;
-/*  86:139 */       if (localahd.by.d) {
+/*  86:139 */       if (localahd.abilities.instabuild) {
 /*  87:140 */         return;
 /*  88:    */       }
 /*  89:    */     }

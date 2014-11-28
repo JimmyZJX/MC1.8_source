@@ -28,7 +28,7 @@ package net.minecraft.src;
 /* 27:32 */     this.lastZ = this.zPos;
 /* 28:   */     
 /* 29:34 */     this.yVelocity -= this.i;
-/* 30:35 */     d(this.xVelocity, this.yVelocity, this.zVelocity);
+/* 30:35 */     move(this.xVelocity, this.yVelocity, this.zVelocity);
 /* 31:36 */     this.xVelocity *= 0.9800000190734863D;
 /* 32:37 */     this.yVelocity *= 0.9800000190734863D;
 /* 33:38 */     this.zVelocity *= 0.9800000190734863D;
@@ -52,7 +52,7 @@ package net.minecraft.src;
 /* 51:   */     {
 /* 52:58 */       double d1 = 0.0D;
 /* 53:59 */       if ((localbec.getProto() instanceof BlockLiquid)) {
-/* 54:60 */         d1 = 1.0F - BlockLiquid.b(((Integer)localbec.getProperty(BlockLiquid.level)).intValue());
+/* 54:60 */         d1 = 1.0F - BlockLiquid.b(((Integer)localbec.getData(BlockLiquid.level)).intValue());
 /* 55:   */       } else {
 /* 56:62 */         d1 = localatr.C();
 /* 57:   */       }

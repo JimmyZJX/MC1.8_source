@@ -17,9 +17,9 @@ package net.minecraft.src;
 /* 16:   */   {
 /* 17:21 */     super.aW();
 /* 18:   */     
-/* 19:23 */     a(afs.a).a(100.0D);
-/* 20:24 */     a(afs.d).a(0.5D);
-/* 21:25 */     a(afs.e).a(50.0D);
+/* 19:23 */     getAttribute(MobAttribute.maxHealth).a(100.0D);
+/* 20:24 */     getAttribute(MobAttribute.movementSpeed).a(0.5D);
+/* 21:25 */     getAttribute(MobAttribute.attackDamage).a(50.0D);
 /* 22:   */   }
 /* 23:   */   
 /* 24:   */   public float a(BlockPosition paramdt)

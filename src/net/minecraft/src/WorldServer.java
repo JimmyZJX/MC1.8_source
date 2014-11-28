@@ -610,7 +610,7 @@ package net.minecraft.src;
 /* 606:678 */     this.worldInfo.a(false);
 /* 607:679 */     this.worldInfo.i(1000000000);
 /* 608:680 */     this.worldInfo.setTime(6000L);
-/* 609:681 */     this.worldInfo.a(EnumGameType.e);
+/* 609:681 */     this.worldInfo.a(EnumGameMode.SPECTATOR);
 /* 610:682 */     this.worldInfo.g(false);
 /* 611:683 */     this.worldInfo.setDifficulty(EnumDifficulty.PEACEFUL);
 /* 612:684 */     this.worldInfo.e(true);

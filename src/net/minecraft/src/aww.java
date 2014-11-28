@@ -25,7 +25,7 @@ package net.minecraft.src;
 /* 24:   */   {
 /* 25:36 */     int i = 0;
 /* 26:   */     
-/* 27:38 */     EnumAxis localel = (EnumAxis)parambec.getProperty(M);
+/* 27:38 */     EnumAxis localel = (EnumAxis)parambec.getData(M);
 /* 28:39 */     if (localel == EnumAxis.X) {
 /* 29:40 */       i |= 0x4;
 /* 30:41 */     } else if (localel == EnumAxis.Z) {

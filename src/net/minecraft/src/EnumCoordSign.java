@@ -1,10 +1,10 @@
 package net.minecraft.src;
-/*   1:    */ public enum em
-/*   2:    */ { a(1,"Towards positive"),b(-1,"Towards negative");
+/*   1:    */ public enum EnumCoordSign
+/*   2:    */ { POSITIVE(1,"Towards positive"),NEGATIVE(-1,"Towards negative");
 /*   3:    */   private final int c;
 /*   4:    */   private final String d;
 /*   5:    */   
-/*   6:    */   private em(int paramInt, String paramString)
+/*   6:    */   private EnumCoordSign(int paramInt, String paramString)
 /*   7:    */   {
 /*   8:377 */     this.c = paramInt;
 /*   9:378 */     this.d = paramString;

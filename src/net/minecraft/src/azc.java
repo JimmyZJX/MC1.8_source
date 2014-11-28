@@ -21,7 +21,7 @@ package net.minecraft.src;
 /*  20: 38 */     int k = paramdt.getZ();
 /*  21:    */     
 /*  22: 40 */     int m = 1;
-/*  23: 41 */     EnumRailState localatl = (EnumRailState)parambec.getProperty(b);
+/*  23: 41 */     EnumRailState localatl = (EnumRailState)parambec.getData(b);
 /*  24: 42 */     switch (aze.a[localatl.ordinal()])
 /*  25:    */     {
 /*  26:    */     case 1: 
@@ -105,14 +105,14 @@ package net.minecraft.src;
 /* 104:111 */     if (localbec.getProto() != this) {
 /* 105:112 */       return false;
 /* 106:    */     }
-/* 107:115 */     EnumRailState localatl = (EnumRailState)localbec.getProperty(b);
+/* 107:115 */     EnumRailState localatl = (EnumRailState)localbec.getData(b);
 /* 108:116 */     if ((paramatl == EnumRailState.b) && ((localatl == EnumRailState.a) || (localatl == EnumRailState.e) || (localatl == EnumRailState.f))) {
 /* 109:117 */       return false;
 /* 110:    */     }
 /* 111:119 */     if ((paramatl == EnumRailState.a) && ((localatl == EnumRailState.b) || (localatl == EnumRailState.c) || (localatl == EnumRailState.d))) {
 /* 112:120 */       return false;
 /* 113:    */     }
-/* 114:123 */     if (((Boolean)localbec.getProperty(M)).booleanValue())
+/* 114:123 */     if (((Boolean)localbec.getData(M)).booleanValue())
 /* 115:    */     {
 /* 116:124 */       if (paramaqu.z(paramdt)) {
 /* 117:125 */         return true;
@@ -124,7 +124,7 @@ package net.minecraft.src;
 /* 123:    */   
 /* 124:    */   protected void b(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
 /* 125:    */   {
-/* 126:135 */     boolean bool1 = ((Boolean)parambec.getProperty(M)).booleanValue();
+/* 126:135 */     boolean bool1 = ((Boolean)parambec.getData(M)).booleanValue();
 /* 127:136 */     boolean bool2 = (paramaqu.z(paramdt)) || (a(paramaqu, paramdt, parambec, true, 0)) || (a(paramaqu, paramdt, parambec, false, 0));
 /* 128:138 */     if (bool2 != bool1)
 /* 129:    */     {
@@ -134,7 +134,7 @@ package net.minecraft.src;
 /* 133:    */ 
 /* 134:    */ 
 /* 135:144 */       paramaqu.c(paramdt.down(), this);
-/* 136:145 */       if (((EnumRailState)parambec.getProperty(b)).c()) {
+/* 136:145 */       if (((EnumRailState)parambec.getData(b)).c()) {
 /* 137:146 */         paramaqu.c(paramdt.up(), this);
 /* 138:    */       }
 /* 139:    */     }
@@ -154,8 +154,8 @@ package net.minecraft.src;
 /* 153:    */   {
 /* 154:165 */     int i = 0;
 /* 155:    */     
-/* 156:167 */     i |= ((EnumRailState)parambec.getProperty(b)).a();
-/* 157:169 */     if (((Boolean)parambec.getProperty(M)).booleanValue()) {
+/* 156:167 */     i |= ((EnumRailState)parambec.getData(b)).a();
+/* 157:169 */     if (((Boolean)parambec.getData(M)).booleanValue()) {
 /* 158:170 */       i |= 0x8;
 /* 159:    */     }
 /* 160:173 */     return i;

@@ -13,7 +13,7 @@ package net.minecraft.src;
 /*  12:    */   {
 /*  13: 44 */     super(paramaqu);
 /*  14:    */     
-/*  15: 46 */     this.goalSelector.addGoal(1, new yy(this));
+/*  15: 46 */     this.goalSelector.addGoal(1, new GoalSwim(this));
 /*  16: 47 */     this.goalSelector.addGoal(2, new aab(this));
 /*  17: 48 */     this.goalSelector.addGoal(2, this.a);
 /*  18: 49 */     this.goalSelector.addGoal(3, new yx(this, 1.0D));
@@ -39,7 +39,7 @@ package net.minecraft.src;
 /*  38:    */   {
 /*  39: 71 */     super.aW();
 /*  40:    */     
-/*  41: 73 */     a(afs.d).a(0.25D);
+/*  41: 73 */     getAttribute(MobAttribute.movementSpeed).a(0.25D);
 /*  42:    */   }
 /*  43:    */   
 /*  44:    */   protected void h()
@@ -135,26 +135,26 @@ package net.minecraft.src;
 /* 134:    */   public void a(DamageSource paramwh)
 /* 135:    */   {
 /* 136:166 */     super.a(paramwh);
-/* 137:167 */     if (((paramwh.i() instanceof ahj)) && ((paramwh.j() instanceof EntityPlayer)))
+/* 137:167 */     if (((paramwh.getEntity() instanceof EntityArrow)) && ((paramwh.getAttacker() instanceof EntityPlayer)))
 /* 138:    */     {
-/* 139:168 */       EntityPlayer localahd = (EntityPlayer)paramwh.j();
+/* 139:168 */       EntityPlayer localahd = (EntityPlayer)paramwh.getAttacker();
 /* 140:169 */       double d1 = localahd.xPos - this.xPos;
 /* 141:170 */       double d2 = localahd.zPos - this.zPos;
 /* 142:171 */       if (d1 * d1 + d2 * d2 >= 2500.0D) {
-/* 143:172 */         localahd.b(AchievementList.v);
+/* 143:172 */         localahd.increaseStat(AchievementList.v);
 /* 144:    */       }
 /* 145:    */     }
-/* 146:174 */     else if (((paramwh.j() instanceof EntityCreeper)) && 
-/* 147:175 */       (((EntityCreeper)paramwh.j()).n()) && (((EntityCreeper)paramwh.j()).cn()))
+/* 146:174 */     else if (((paramwh.getAttacker() instanceof EntityCreeper)) && 
+/* 147:175 */       (((EntityCreeper)paramwh.getAttacker()).n()) && (((EntityCreeper)paramwh.getAttacker()).cn()))
 /* 148:    */     {
-/* 149:176 */       ((EntityCreeper)paramwh.j()).co();
+/* 149:176 */       ((EntityCreeper)paramwh.getAttacker()).co();
 /* 150:177 */       throwItem(new ItemStack(ItemList.skull, 1, ck() == 1 ? 1 : 0), 0.0F);
 /* 151:    */     }
 /* 152:    */   }
 /* 153:    */   
 /* 154:    */   protected Item A()
 /* 155:    */   {
-/* 156:184 */     return ItemList.g;
+/* 156:184 */     return ItemList.arrow;
 /* 157:    */   }
 /* 158:    */   
 /* 159:    */   protected void b(boolean paramBoolean, int paramInt)
@@ -163,14 +163,14 @@ package net.minecraft.src;
 /* 162:    */     {
 /* 163:191 */       int i = this.rng.nextInt(3 + paramInt) - 1;
 /* 164:192 */       for (int j = 0; j < i; j++) {
-/* 165:193 */         a(ItemList.h, 1);
+/* 165:193 */         a(ItemList.coal, 1);
 /* 166:    */       }
 /* 167:    */     }
 /* 168:    */     else
 /* 169:    */     {
 /* 170:197 */       int i = this.rng.nextInt(3 + paramInt);
 /* 171:198 */       for (int j = 0; j < i; j++) {
-/* 172:199 */         a(ItemList.g, 1);
+/* 172:199 */         a(ItemList.arrow, 1);
 /* 173:    */       }
 /* 174:    */     }
 /* 175:204 */     int i = this.rng.nextInt(3 + paramInt);
@@ -202,7 +202,7 @@ package net.minecraft.src;
 /* 201:    */       
 /* 202:232 */       a(1);
 /* 203:233 */       setItemStack(0, new ItemStack(ItemList.q));
-/* 204:234 */       a(afs.e).a(4.0D);
+/* 204:234 */       getAttribute(MobAttribute.attackDamage).a(4.0D);
 /* 205:    */     }
 /* 206:    */     else
 /* 207:    */     {
@@ -239,9 +239,9 @@ package net.minecraft.src;
 /* 238:    */   
 /* 239:    */   public void a(EntityLiving paramxm, float paramFloat)
 /* 240:    */   {
-/* 241:271 */     ahj localahj = new ahj(this.world, this, paramxm, 1.6F, 14 - this.world.getDifficulty().a() * 4);
-/* 242:272 */     int i = aph.a(Enchantment.v.B, getHeldItemStack());
-/* 243:273 */     int j = aph.a(Enchantment.w.B, getHeldItemStack());
+/* 241:271 */     EntityArrow localahj = new EntityArrow(this.world, this, paramxm, 1.6F, 14 - this.world.getDifficulty().a() * 4);
+/* 242:272 */     int i = aph.a(Enchantment.v.id, getHeldItemStack());
+/* 243:273 */     int j = aph.a(Enchantment.w.id, getHeldItemStack());
 /* 244:    */     
 /* 245:275 */     localahj.b(paramFloat * 2.0F + (this.rng.nextGaussian() * 0.25D + this.world.getDifficulty().a() * 0.11F));
 /* 246:277 */     if (i > 0) {
@@ -250,7 +250,7 @@ package net.minecraft.src;
 /* 249:280 */     if (j > 0) {
 /* 250:281 */       localahj.a(j);
 /* 251:    */     }
-/* 252:283 */     if ((aph.a(Enchantment.x.B, getHeldItemStack()) > 0) || (ck() == 1)) {
+/* 252:283 */     if ((aph.a(Enchantment.x.id, getHeldItemStack()) > 0) || (ck() == 1)) {
 /* 253:284 */       localahj.e(100);
 /* 254:    */     }
 /* 255:287 */     a("random.bow", 1.0F, 1.0F / (getRNG().nextFloat() * 0.4F + 0.8F));

@@ -43,7 +43,7 @@ package net.minecraft.src;
 /*  42:    */   
 /*  43:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /*  44:    */   {
-/*  45: 57 */     if (b(paramwh)) {
+/*  45: 57 */     if (isImmuneTo(paramwh)) {
 /*  46: 58 */       return false;
 /*  47:    */     }
 /*  48: 60 */     this.bk = 0;
@@ -99,7 +99,7 @@ package net.minecraft.src;
 /*  98:109 */     if (paramamj == null) {
 /*  99:110 */       return false;
 /* 100:    */     }
-/* 101:112 */     return paramamj.getItem() == ItemList.O;
+/* 101:112 */     return paramamj.getItem() == ItemList.wheat;
 /* 102:    */   }
 /* 103:    */   
 /* 104:    */   public boolean onRightClick(EntityPlayer paramahd)
@@ -125,7 +125,7 @@ package net.minecraft.src;
 /* 124:    */   
 /* 125:    */   protected void a(EntityPlayer paramahd, ItemStack paramamj)
 /* 126:    */   {
-/* 127:133 */     if (!paramahd.by.d)
+/* 127:133 */     if (!paramahd.abilities.instabuild)
 /* 128:    */     {
 /* 129:134 */       paramamj.stackSize -= 1;
 /* 130:135 */       if (paramamj.stackSize <= 0) {

@@ -19,7 +19,7 @@ package net.minecraft.src;
 /* 18:   */   
 /* 19:   */   public int a(Block parambec)
 /* 20:   */   {
-/* 21:30 */     return ((bbd)parambec.getProperty(a)).a();
+/* 21:30 */     return ((bbd)parambec.getData(a)).a();
 /* 22:   */   }
 /* 23:   */   
 /* 24:   */   public void a(Item paramalq, CreativeTabs paramakf, List<ItemStack> paramList)
@@ -36,7 +36,7 @@ package net.minecraft.src;
 /* 35:   */   
 /* 36:   */   public int c(Block parambec)
 /* 37:   */   {
-/* 38:48 */     return ((bbd)parambec.getProperty(a)).a();
+/* 38:48 */     return ((bbd)parambec.getData(a)).a();
 /* 39:   */   }
 /* 40:   */   
 /* 41:   */   protected bed e()

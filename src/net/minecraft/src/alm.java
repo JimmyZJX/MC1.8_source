@@ -16,12 +16,12 @@ package net.minecraft.src;
 /* 15:20 */     return paramamj.getDamage2() > 0;
 /* 16:   */   }
 /* 17:   */   
-/* 18:   */   public amx g(ItemStack paramamj)
+/* 18:   */   public EnumRarity getRarity(ItemStack paramamj)
 /* 19:   */   {
 /* 20:25 */     if (paramamj.getDamage2() == 0) {
-/* 21:26 */       return amx.c;
+/* 21:26 */       return EnumRarity.RARE;
 /* 22:   */     }
-/* 23:28 */     return amx.d;
+/* 23:28 */     return EnumRarity.EPIC;
 /* 24:   */   }
 /* 25:   */   
 /* 26:   */   protected void c(ItemStack paramamj, World paramaqu, EntityPlayer paramahd)

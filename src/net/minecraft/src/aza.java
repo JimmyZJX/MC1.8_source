@@ -20,7 +20,7 @@ package net.minecraft.src;
 /* 19:25 */     if (paramaqu.isClient) {
 /* 20:26 */       return;
 /* 21:   */     }
-/* 22:29 */     if ((((Integer)parambec.getProperty(a)).intValue() >= 7) && (paramaqu.rng.nextInt(50) == 0)) {
+/* 22:29 */     if ((((Integer)parambec.getData(a)).intValue() >= 7) && (paramaqu.rng.nextInt(50) == 0)) {
 /* 23:30 */       a(paramaqu, paramdt, new ItemStack(ItemList.bU));
 /* 24:   */     }
 /* 25:   */   }

@@ -39,37 +39,37 @@ package net.minecraft.src;
 /*  38:    */     }
 /*  39: 45 */     this.c = 0;
 /*  40: 47 */     if (paramamj.getItem() == Item.fromProtoBlock(BlockList.ai)) {
-/*  41: 48 */       this.b.b(AchievementList.h);
+/*  41: 48 */       this.b.increaseStat(AchievementList.h);
 /*  42:    */     }
 /*  43: 50 */     if ((paramamj.getItem() instanceof ItemPickaxe)) {
-/*  44: 51 */       this.b.b(AchievementList.i);
+/*  44: 51 */       this.b.increaseStat(AchievementList.i);
 /*  45:    */     }
 /*  46: 53 */     if (paramamj.getItem() == Item.fromProtoBlock(BlockList.al)) {
-/*  47: 54 */       this.b.b(AchievementList.j);
+/*  47: 54 */       this.b.increaseStat(AchievementList.j);
 /*  48:    */     }
 /*  49: 56 */     if ((paramamj.getItem() instanceof alo)) {
-/*  50: 57 */       this.b.b(AchievementList.l);
+/*  50: 57 */       this.b.increaseStat(AchievementList.l);
 /*  51:    */     }
 /*  52: 59 */     if (paramamj.getItem() == ItemList.bread) {
-/*  53: 60 */       this.b.b(AchievementList.m);
+/*  53: 60 */       this.b.increaseStat(AchievementList.m);
 /*  54:    */     }
-/*  55: 62 */     if (paramamj.getItem() == ItemList.aZ) {
-/*  56: 63 */       this.b.b(AchievementList.n);
+/*  55: 62 */     if (paramamj.getItem() == ItemList.cake) {
+/*  56: 63 */       this.b.increaseStat(AchievementList.n);
 /*  57:    */     }
 /*  58: 65 */     if (((paramamj.getItem() instanceof ItemPickaxe)) && (((ItemPickaxe)paramamj.getItem()).g() != EnumToolMaterial.WOOD)) {
-/*  59: 66 */       this.b.b(AchievementList.o);
+/*  59: 66 */       this.b.increaseStat(AchievementList.o);
 /*  60:    */     }
 /*  61: 68 */     if ((paramamj.getItem() instanceof ItemSword)) {
-/*  62: 69 */       this.b.b(AchievementList.r);
+/*  62: 69 */       this.b.increaseStat(AchievementList.r);
 /*  63:    */     }
 /*  64: 71 */     if (paramamj.getItem() == Item.fromProtoBlock(BlockList.bC)) {
-/*  65: 72 */       this.b.b(AchievementList.E);
+/*  65: 72 */       this.b.increaseStat(AchievementList.E);
 /*  66:    */     }
 /*  67: 74 */     if (paramamj.getItem() == Item.fromProtoBlock(BlockList.bookshelf)) {
-/*  68: 75 */       this.b.b(AchievementList.G);
+/*  68: 75 */       this.b.increaseStat(AchievementList.G);
 /*  69:    */     }
 /*  70: 77 */     if ((paramamj.getItem() == ItemList.ao) && (paramamj.getDamage2() == 1)) {
-/*  71: 78 */       this.b.b(AchievementList.M);
+/*  71: 78 */       this.b.increaseStat(AchievementList.M);
 /*  72:    */     }
 /*  73:    */   }
 /*  74:    */   

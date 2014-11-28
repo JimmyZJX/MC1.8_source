@@ -259,12 +259,12 @@ package net.minecraft.src;
 /* 257:328 */     return false;
 /* 258:    */   }
 /* 259:    */   
-/* 260:    */   public amx g(ItemStack paramamj)
+/* 260:    */   public EnumRarity getRarity(ItemStack paramamj)
 /* 261:    */   {
 /* 262:332 */     if (paramamj.hasEnchantment()) {
-/* 263:333 */       return amx.c;
+/* 263:333 */       return EnumRarity.RARE;
 /* 264:    */     }
-/* 265:335 */     return amx.a;
+/* 265:335 */     return EnumRarity.COMMON;
 /* 266:    */   }
 /* 267:    */   
 /* 268:    */   public boolean f_(ItemStack paramamj)
@@ -293,7 +293,7 @@ package net.minecraft.src;
 /* 291:359 */     float f9 = f3 * f5;
 /* 292:    */     
 /* 293:361 */     double d4 = 5.0D;
-/* 294:362 */     Vec3 localbrw2 = localbrw1.b(f7 * d4, f8 * d4, f9 * d4);
+/* 294:362 */     Vec3 localbrw2 = localbrw1.add(f7 * d4, f8 * d4, f9 * d4);
 /* 295:    */     
 /* 296:364 */     return paramaqu.a(localbrw1, localbrw2, paramBoolean, !paramBoolean, false);
 /* 297:    */   }
@@ -401,7 +401,7 @@ package net.minecraft.src;
 /* 399:    */ 
 /* 400:    */ 
 /* 401:    */ 
-/* 402:464 */     c(BlockList.w);
+/* 402:464 */     c(BlockList.glass);
 /* 403:465 */     c(BlockList.lapisOre);
 /* 404:466 */     c(BlockList.y);
 /* 405:467 */     c(BlockList.z);
@@ -500,7 +500,7 @@ package net.minecraft.src;
 /* 498:560 */     c(BlockList.bh);
 /* 499:561 */     c(BlockList.ironBars);
 /* 500:562 */     c(BlockList.bj);
-/* 501:563 */     c(BlockList.bk);
+/* 501:563 */     c(BlockList.melonBlock);
 /* 502:564 */     a(BlockList.vine, new ann(BlockList.vine, false));
 /* 503:565 */     c(BlockList.bo);
 /* 504:566 */     c(BlockList.bp);
@@ -694,7 +694,7 @@ package net.minecraft.src;
 /* 692:754 */     a(356, "repeater", new ajv(BlockList.unpoweredRepeater).setID("diode").setTabToDisplayOn(CreativeTabs.tabRedstone));
 /* 693:755 */     a(357, "cookie", new all(2, 0.1F, false).setID("cookie"));
 /* 694:756 */     a(358, "filled_map", new ItemFilledMap().setID("map"));
-/* 695:757 */     a(359, "shears", new and().setID("shears"));
+/* 695:757 */     a(359, "shears", new ItemShears().setID("shears"));
 /* 696:758 */     a(360, "melon", new all(2, 0.3F, false).setID("melon"));
 /* 697:759 */     a(361, "pumpkin_seeds", new anc(BlockList.bl, BlockList.ak).setID("seeds_pumpkin"));
 /* 698:760 */     a(362, "melon_seeds", new anc(BlockList.bm, BlockList.ak).setID("seeds_melon"));
@@ -738,7 +738,7 @@ package net.minecraft.src;
 /* 736:798 */     a(400, "pumpkin_pie", new all(8, 0.3F, false).setID("pumpkinPie").setTabToDisplayOn(CreativeTabs.tabFood));
 /* 737:799 */     a(401, "fireworks", new alg().setID("fireworks"));
 /* 738:800 */     a(402, "firework_charge", new alf().setID("fireworksCharge").setTabToDisplayOn(CreativeTabs.tabMisc));
-/* 739:801 */     a(403, "enchanted_book", new ala().setStackLimit(1).setID("enchantedBook"));
+/* 739:801 */     a(403, "enchanted_book", new ItemEnchantedBook().setStackLimit(1).setID("enchantedBook"));
 /* 740:802 */     a(404, "comparator", new ajv(BlockList.cj).setID("comparator").setTabToDisplayOn(CreativeTabs.tabRedstone));
 /* 741:803 */     a(405, "netherbrick", new Item().setID("netherbrick").setTabToDisplayOn(CreativeTabs.tabMaterials));
 /* 742:804 */     a(406, "quartz", new Item().setID("netherquartz").setTabToDisplayOn(CreativeTabs.tabMaterials));
@@ -768,18 +768,18 @@ package net.minecraft.src;
 /* 766:828 */     a(431, "dark_oak_door", new akt(BlockList.at).setID("doorDarkOak"));
 /* 767:    */     
 /* 768:    */ 
-/* 769:831 */     a(2256, "record_13", new amy("13").setID("record"));
-/* 770:832 */     a(2257, "record_cat", new amy("cat").setID("record"));
-/* 771:833 */     a(2258, "record_blocks", new amy("blocks").setID("record"));
-/* 772:834 */     a(2259, "record_chirp", new amy("chirp").setID("record"));
-/* 773:835 */     a(2260, "record_far", new amy("far").setID("record"));
-/* 774:836 */     a(2261, "record_mall", new amy("mall").setID("record"));
-/* 775:837 */     a(2262, "record_mellohi", new amy("mellohi").setID("record"));
-/* 776:838 */     a(2263, "record_stal", new amy("stal").setID("record"));
-/* 777:839 */     a(2264, "record_strad", new amy("strad").setID("record"));
-/* 778:840 */     a(2265, "record_ward", new amy("ward").setID("record"));
-/* 779:841 */     a(2266, "record_11", new amy("11").setID("record"));
-/* 780:842 */     a(2267, "record_wait", new amy("wait").setID("record"));
+/* 769:831 */     a(2256, "record_13", new ItemDisc("13").setID("record"));
+/* 770:832 */     a(2257, "record_cat", new ItemDisc("cat").setID("record"));
+/* 771:833 */     a(2258, "record_blocks", new ItemDisc("blocks").setID("record"));
+/* 772:834 */     a(2259, "record_chirp", new ItemDisc("chirp").setID("record"));
+/* 773:835 */     a(2260, "record_far", new ItemDisc("far").setID("record"));
+/* 774:836 */     a(2261, "record_mall", new ItemDisc("mall").setID("record"));
+/* 775:837 */     a(2262, "record_mellohi", new ItemDisc("mellohi").setID("record"));
+/* 776:838 */     a(2263, "record_stal", new ItemDisc("stal").setID("record"));
+/* 777:839 */     a(2264, "record_strad", new ItemDisc("strad").setID("record"));
+/* 778:840 */     a(2265, "record_ward", new ItemDisc("ward").setID("record"));
+/* 779:841 */     a(2266, "record_11", new ItemDisc("11").setID("record"));
+/* 780:842 */     a(2267, "record_wait", new ItemDisc("wait").setID("record"));
 /* 781:    */   }
 /* 782:    */   
 /* 783:    */   private static void c(ProtoBlock paramatr)

@@ -15,7 +15,7 @@ package net.minecraft.src;
 /* 14:   */   
 /* 15:   */   public int a(Block parambec)
 /* 16:   */   {
-/* 17:25 */     return ((EnumWoodVariant)parambec.getProperty(a)).getIndex();
+/* 17:25 */     return ((EnumWoodVariant)parambec.getData(a)).getIndex();
 /* 18:   */   }
 /* 19:   */   
 /* 20:   */   public void a(Item paramalq, CreativeTabs paramakf, List paramList)
@@ -32,7 +32,7 @@ package net.minecraft.src;
 /* 31:   */   
 /* 32:   */   public int c(Block parambec)
 /* 33:   */   {
-/* 34:43 */     return ((EnumWoodVariant)parambec.getProperty(a)).getIndex();
+/* 34:43 */     return ((EnumWoodVariant)parambec.getData(a)).getIndex();
 /* 35:   */   }
 /* 36:   */   
 /* 37:   */   protected bed e()

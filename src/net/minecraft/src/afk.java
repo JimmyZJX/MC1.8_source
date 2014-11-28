@@ -1,6 +1,6 @@
 package net.minecraft.src;
 /*   1:    */ class afk
-/*   2:    */   extends yn
+/*   2:    */   extends MoveManager
 /*   3:    */ {
 /*   4:    */   private EntityGuardian g;
 /*   5:    */   
@@ -10,27 +10,27 @@ package net.minecraft.src;
 /*   9:593 */     this.g = paramafg;
 /*  10:    */   }
 /*  11:    */   
-/*  12:    */   public void c()
+/*  12:    */   public void tick()
 /*  13:    */   {
-/*  14:598 */     if ((!this.f) || (this.g.getNavigator().m()))
+/*  14:598 */     if ((!this.active) || (this.g.getNavigator().m()))
 /*  15:    */     {
 /*  16:600 */       this.g.j(0.0F);
 /*  17:601 */       EntityGuardian.a(this.g, false);
 /*  18:602 */       return;
 /*  19:    */     }
-/*  20:605 */     double d1 = this.b - this.g.xPos;
-/*  21:606 */     double d2 = this.c - this.g.yPos;
-/*  22:607 */     double d3 = this.d - this.g.zPos;
+/*  20:605 */     double d1 = this.targetX - this.g.xPos;
+/*  21:606 */     double d2 = this.targetY - this.g.yPos;
+/*  22:607 */     double d3 = this.targetZ - this.g.zPos;
 /*  23:608 */     double d4 = d1 * d1 + d2 * d2 + d3 * d3;
-/*  24:609 */     d4 = MathUtils.a(d4);
+/*  24:609 */     d4 = MathUtils.sqrt(d4);
 /*  25:610 */     d2 /= d4;
 /*  26:    */     
 /*  27:612 */     float f1 = (float)(Math.atan2(d3, d1) * 180.0D / 3.141592741012573D) - 90.0F;
 /*  28:    */     
-/*  29:614 */     this.g.yaw = a(this.g.yaw, f1, 30.0F);
+/*  29:614 */     this.g.yaw = turnWithLimit(this.g.yaw, f1, 30.0F);
 /*  30:615 */     this.g.aG = this.g.yaw;
 /*  31:    */     
-/*  32:617 */     float f2 = (float)(this.e * this.g.a(afs.d).e());
+/*  32:617 */     float f2 = (float)(this.speed * this.g.getAttribute(MobAttribute.movementSpeed).e());
 /*  33:618 */     this.g.j(this.g.bH() + (f2 - this.g.bH()) * 0.125F);
 /*  34:619 */     double d5 = Math.sin((this.g.W + this.g.getID()) * 0.5D) * 0.05D;
 /*  35:620 */     double d6 = Math.cos(this.g.yaw * 3.141593F / 180.0F);

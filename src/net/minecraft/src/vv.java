@@ -2,7 +2,7 @@ package net.minecraft.src;
 public abstract interface vv
   extends vz
 {
-  public abstract aib a(ahb paramahb, EntityPlayer paramahd);
+  public abstract aib a(Inventory paramahb, EntityPlayer paramahd);
   
   public abstract String k();
 }

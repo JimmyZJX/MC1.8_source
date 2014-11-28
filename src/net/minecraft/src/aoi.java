@@ -29,7 +29,7 @@ package net.minecraft.src;
 /*  28: 40 */           m++;
 /*  29: 41 */         } else if (((ItemStack)localObject2).getItem() == ItemList.dye) {
 /*  30: 42 */           k++;
-/*  31: 43 */         } else if (((ItemStack)localObject2).getItem() == ItemList.aK) {
+/*  31: 43 */         } else if (((ItemStack)localObject2).getItem() == ItemList.paper) {
 /*  32: 44 */           i++;
 /*  33: 45 */         } else if (((ItemStack)localObject2).getItem() == ItemList.aT) {
 /*  34: 47 */           n++;

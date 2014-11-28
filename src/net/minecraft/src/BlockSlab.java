@@ -32,7 +32,7 @@ package net.minecraft.src;
 /*  31:    */     }
 /*  32: 49 */     Block localbec = paramard.getBlock(paramdt);
 /*  33: 50 */     if (localbec.getProto() == this) {
-/*  34: 51 */       if (localbec.getProperty(half) == EnumSlabHalf.TOP) {
+/*  34: 51 */       if (localbec.getData(half) == EnumSlabHalf.TOP) {
 /*  35: 52 */         a(0.0F, 0.5F, 0.0F, 1.0F, 1.0F, 1.0F);
 /*  36:    */       } else {
 /*  37: 54 */         a(0.0F, 0.0F, 0.0F, 1.0F, 0.5F, 1.0F);
@@ -93,13 +93,13 @@ package net.minecraft.src;
 /*  92:112 */     if ((paramej != EnumDirection.UP) && (paramej != EnumDirection.DOWN) && (!super.a(paramard, paramdt, paramej))) {
 /*  93:113 */       return false;
 /*  94:    */     }
-/*  95:116 */     BlockPosition localdt = paramdt.offset(paramej.d());
+/*  95:116 */     BlockPosition localdt = paramdt.offset(paramej.opposite());
 /*  96:    */     
 /*  97:118 */     Block localbec1 = paramard.getBlock(paramdt);
 /*  98:119 */     Block localbec2 = paramard.getBlock(localdt);
 /*  99:    */     
-/* 100:121 */     int i = (c(localbec1.getProto())) && (localbec1.getProperty(half) == EnumSlabHalf.TOP) ? 1 : 0;
-/* 101:122 */     int j = (c(localbec2.getProto())) && (localbec2.getProperty(half) == EnumSlabHalf.TOP) ? 1 : 0;
+/* 100:121 */     int i = (c(localbec1.getProto())) && (localbec1.getData(half) == EnumSlabHalf.TOP) ? 1 : 0;
+/* 101:122 */     int j = (c(localbec2.getProto())) && (localbec2.getData(half) == EnumSlabHalf.TOP) ? 1 : 0;
 /* 102:123 */     if (j != 0)
 /* 103:    */     {
 /* 104:124 */       if (paramej == EnumDirection.DOWN) {

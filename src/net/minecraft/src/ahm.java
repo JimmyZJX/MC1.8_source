@@ -57,7 +57,7 @@ package net.minecraft.src;
 /*  56: 65 */     this.zVelocity = paramDouble3;
 /*  57: 66 */     if ((this.lastPitch == 0.0F) && (this.lastYaw == 0.0F))
 /*  58:    */     {
-/*  59: 67 */       float f = MathUtils.a(paramDouble1 * paramDouble1 + paramDouble3 * paramDouble3);
+/*  59: 67 */       float f = MathUtils.sqrt(paramDouble1 * paramDouble1 + paramDouble3 * paramDouble3);
 /*  60: 68 */       this.lastYaw = (this.yaw = (float)(Math.atan2(paramDouble1, paramDouble3) * 180.0D / 3.141592741012573D));
 /*  61: 69 */       this.lastPitch = (this.pitch = (float)(Math.atan2(paramDouble2, f) * 180.0D / 3.141592741012573D));
 /*  62:    */     }
@@ -73,9 +73,9 @@ package net.minecraft.src;
 /*  72: 80 */     this.xVelocity *= 1.15D;
 /*  73: 81 */     this.zVelocity *= 1.15D;
 /*  74: 82 */     this.yVelocity += 0.04D;
-/*  75: 83 */     d(this.xVelocity, this.yVelocity, this.zVelocity);
+/*  75: 83 */     move(this.xVelocity, this.yVelocity, this.zVelocity);
 /*  76:    */     
-/*  77: 85 */     float f = MathUtils.a(this.xVelocity * this.xVelocity + this.zVelocity * this.zVelocity);
+/*  77: 85 */     float f = MathUtils.sqrt(this.xVelocity * this.xVelocity + this.zVelocity * this.zVelocity);
 /*  78: 86 */     this.yaw = ((float)(Math.atan2(this.xVelocity, this.zVelocity) * 180.0D / 3.141592741012573D));
 /*  79: 87 */     this.pitch = ((float)(Math.atan2(this.yVelocity, f) * 180.0D / 3.141592741012573D));
 /*  80: 89 */     while (this.pitch - this.lastPitch < -180.0F) {

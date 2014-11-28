@@ -108,7 +108,7 @@ package net.minecraft.src;
 /*  107:     */     }
 /*  108:1285 */     a(paramaqu, BlockList.air.instance(), 6, 1, 5, parambjb);
 /*  109:1286 */     a(paramaqu, BlockList.air.instance(), 6, 2, 5, parambjb);
-/*  110:1287 */     a(paramaqu, BlockList.torch.instance().setData(bbl.a, this.m.d()), 6, 3, 4, parambjb);
+/*  110:1287 */     a(paramaqu, BlockList.torch.instance().setData(bbl.a, this.m.opposite()), 6, 3, 4, parambjb);
 /*  111:1288 */     a(paramaqu, parambjb, paramRandom, 6, 1, 5, EnumDirection.b(a(BlockList.woodenDoor, 1)));
 /*  112:1290 */     for (int k = 0; k < 5; k++) {
 /*  113:1291 */       for (m = 0; m < 9; m++)

@@ -34,7 +34,7 @@ package net.minecraft.src;
 /* 33:   */       }
 /* 34:   */     }
 /* 35:49 */     paramaqu.setBlock(paramdt, this.d, 2);
-/* 36:50 */     for (EnumDirection localej : en.HORIZONTAL) {
+/* 36:50 */     for (EnumDirection localej : EnumHorizontalVertical.HORIZONTAL) {
 /* 37:51 */       paramaqu.setBlock(paramdt.offset(localej), this.d, 2);
 /* 38:   */     }
 /* 39:   */     int m;

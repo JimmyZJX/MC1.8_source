@@ -10,9 +10,9 @@ package net.minecraft.src;
 /*   11:     */   private boolean bn;
 /*   12:     */   Village bk;
 /*   13:     */   private EntityPlayer bo;
-/*   14:     */   private aqd offers;
+/*   14:     */   private TradeOfferList offers;
 /*   15:     */   private int bq;
-/*   16:     */   private boolean br;
+/*   16:     */   private boolean unlockingTrades;
 /*   17:     */   private boolean willing;
 /*   18:     */   private int riches;
 /*   19:     */   private String bu;
@@ -36,7 +36,7 @@ package net.minecraft.src;
 /*   37:  97 */     ((aay)getNavigator()).b(true);
 /*   38:  98 */     ((aay)getNavigator()).a(true);
 /*   39:     */     
-/*   40: 100 */     this.goalSelector.addGoal(0, new yy(this));
+/*   40: 100 */     this.goalSelector.addGoal(0, new GoalSwim(this));
 /*   41: 101 */     this.goalSelector.addGoal(1, new yp(this, new agq(this), 8.0F, 0.6D, 0.6D));
 /*   42:     */     
 /*   43:     */ 
@@ -84,7 +84,7 @@ package net.minecraft.src;
 /*   85:     */   {
 /*   86: 150 */     super.aW();
 /*   87:     */     
-/*   88: 152 */     a(afs.d).a(0.5D);
+/*   88: 152 */     getAttribute(MobAttribute.movementSpeed).a(0.5D);
 /*   89:     */   }
 /*   90:     */   
 /*   91:     */   protected void mobTick()
@@ -118,7 +118,7 @@ package net.minecraft.src;
 /*  119: 176 */       this.bq -= 1;
 /*  120: 177 */       if (this.bq <= 0)
 /*  121:     */       {
-/*  122: 178 */         if (this.br)
+/*  122: 178 */         if (this.unlockingTrades)
 /*  123:     */         {
 /*  124: 180 */           for (Iterator<TradeOffer> it = this.offers.iterator(); it.hasNext();)
 /*  125:     */           {
@@ -128,7 +128,7 @@ package net.minecraft.src;
 /*  129:     */             }
 /*  130:     */           }
 /*  131: 186 */           cu();
-/*  132: 187 */           this.br = false;
+/*  132: 187 */           this.unlockingTrades = false;
 /*  133: 189 */           if ((this.bk != null) && (this.bu != null))
 /*  134:     */           {
 /*  135: 190 */             this.world.sendSignal(this, (byte)14);
@@ -152,7 +152,7 @@ package net.minecraft.src;
 /*  153: 210 */         a_(player);
 /*  154: 211 */         player.a((aqb)this);
 /*  155:     */       }
-/*  156: 213 */       player.b(StatList.talkedToVillager);
+/*  156: 213 */       player.increaseStat(StatList.talkedToVillager);
 /*  157: 214 */       return true;
 /*  158:     */     }
 /*  159: 216 */     return super.onRightClick(player);
@@ -197,7 +197,7 @@ package net.minecraft.src;
 /*  198: 254 */     if (tag.hasKey("Offers", 10))
 /*  199:     */     {
 /*  200: 255 */       NBTTagCompound localObject = tag.getCompoundTag("Offers");
-/*  201: 256 */       this.offers = new aqd((NBTTagCompound)localObject);
+/*  201: 256 */       this.offers = new TradeOfferList((NBTTagCompound)localObject);
 /*  202:     */     }
 /*  203: 258 */     fv localObject = tag.c("Inventory", 10);
 /*  204: 259 */     for (int i = 0; i < localObject.c(); i++)
@@ -288,7 +288,7 @@ package net.minecraft.src;
 /*  289:     */   {
 /*  290: 338 */     if (this.bk != null)
 /*  291:     */     {
-/*  292: 339 */       Entity localwv = paramwh.j();
+/*  292: 339 */       Entity localwv = paramwh.getAttacker();
 /*  293: 340 */       if (localwv != null)
 /*  294:     */       {
 /*  295: 341 */         if ((localwv instanceof EntityPlayer)) {
@@ -359,17 +359,17 @@ package net.minecraft.src;
 /*  360: 400 */     this.willing = willing;
 /*  361:     */   }
 /*  362:     */   
-/*  363:     */   public void a(TradeOffer paramaqc)
+/*  363:     */   public void trade(TradeOffer offer)
 /*  364:     */   {
-/*  365: 405 */     paramaqc.onUse();
+/*  365: 405 */     offer.onUse();
 /*  366: 406 */     this.a_ = (-w());
 /*  367: 407 */     a("mob.villager.yes", bA(), bB());
 /*  368:     */     
 /*  369: 409 */     int i = 3 + this.rng.nextInt(4);
-/*  370: 412 */     if ((paramaqc.getUses() == 1) || (this.rng.nextInt(5) == 0))
+/*  370: 412 */     if ((offer.getUses() == 1) || (this.rng.nextInt(5) == 0))
 /*  371:     */     {
 /*  372: 413 */       this.bq = 40;
-/*  373: 414 */       this.br = true;
+/*  373: 414 */       this.unlockingTrades = true;
 /*  374: 415 */       this.willing = true;
 /*  375: 416 */       if (this.bo != null) {
 /*  376: 417 */         this.bu = this.bo.getName();
@@ -378,10 +378,10 @@ package net.minecraft.src;
 /*  379:     */       }
 /*  380: 421 */       i += 5;
 /*  381:     */     }
-/*  382: 423 */     if (paramaqc.getItemBought().getItem() == ItemList.emerald) {
-/*  383: 424 */       this.riches += paramaqc.getItemBought().stackSize;
+/*  382: 423 */     if (offer.getItemBought().getItem() == ItemList.emerald) {
+/*  383: 424 */       this.riches += offer.getItemBought().stackSize;
 /*  384:     */     }
-/*  385: 427 */     if (paramaqc.getRewardExp()) {
+/*  385: 427 */     if (offer.getRewardExp()) {
 /*  386: 428 */       this.world.spawnEntity(new EntityExperienceOrb(this.world, this.xPos, this.yPos + 0.5D, this.zPos, i));
 /*  387:     */     }
 /*  388:     */   }
@@ -399,7 +399,7 @@ package net.minecraft.src;
 /*  400:     */     }
 /*  401:     */   }
 /*  402:     */   
-/*  403:     */   public aqd b_(EntityPlayer paramahd)
+/*  403:     */   public TradeOfferList b_(EntityPlayer paramahd)
 /*  404:     */   {
 /*  405: 446 */     if (this.offers == null) {
 /*  406: 447 */       cu();
@@ -409,7 +409,7 @@ package net.minecraft.src;
 /*  410:     */   
 /*  411:     */   private void cu()
 /*  412:     */   {
-/*  413: 453 */     agw[][][] arrayOfagw = bA[getProfession()];
+/*  413: 453 */     TradeOfferGenerator[][][] arrayOfagw = offerGens[getProfession()];
 /*  414: 455 */     if ((this.career == 0) || (this.careerLevel == 0))
 /*  415:     */     {
 /*  416: 457 */       this.career = (this.rng.nextInt(arrayOfagw.length) + 1);
@@ -420,22 +420,22 @@ package net.minecraft.src;
 /*  421: 460 */       this.careerLevel += 1;
 /*  422:     */     }
 /*  423: 463 */     if (this.offers == null) {
-/*  424: 464 */       this.offers = new aqd();
+/*  424: 464 */       this.offers = new TradeOfferList();
 /*  425:     */     }
 /*  426: 467 */     int i = this.career - 1;
 /*  427: 468 */     int j = this.careerLevel - 1;
 /*  428:     */     
-/*  429: 470 */     agw[][] arrayOfagw1 = arrayOfagw[i];
+/*  429: 470 */     TradeOfferGenerator[][] arrayOfagw1 = arrayOfagw[i];
 /*  430: 471 */     if (j < arrayOfagw1.length)
 /*  431:     */     {
-/*  432: 472 */       agw[] arrayOfagw2 = arrayOfagw1[j];
-/*  433: 473 */       for (agw localagw : arrayOfagw2) {
-/*  434: 474 */         localagw.a(this.offers, this.rng);
+/*  432: 472 */       TradeOfferGenerator[] arrayOfagw2 = arrayOfagw1[j];
+/*  433: 473 */       for (TradeOfferGenerator localagw : arrayOfagw2) {
+/*  434: 474 */         localagw.generate(this.offers, this.rng);
 /*  435:     */       }
 /*  436:     */     }
 /*  437:     */   }
 /*  438:     */   
-/*  439:     */   public void a(aqd paramaqd) {}
+/*  439:     */   public void a(TradeOfferList paramaqd) {}
 /*  440:     */   
 /*  441:     */   public ho e_()
 /*  442:     */   {
@@ -504,7 +504,197 @@ package net.minecraft.src;
 /*  505: 553 */     return f;
 /*  506:     */   }
 /*  507:     */   
-/*  508: 557 */   private static final agw[][][][] bA = { { { { new agr(ItemList.O, new agx(18, 22)), new agr(ItemList.potato, new agx(15, 19)), new agr(ItemList.carrot, new agx(15, 19)), new agv(ItemList.bread, new agx(-4, -2)) }, { new agr(Item.fromProtoBlock(BlockList.pumpkin), new agx(8, 13)), new agv(ItemList.ca, new agx(-3, -2)) }, { new agr(Item.fromProtoBlock(BlockList.bk), new agx(7, 12)), new agv(ItemList.apple, new agx(-5, -7)) }, { new agv(ItemList.bc, new agx(-6, -10)), new agv(ItemList.aZ, new agx(1, 1)) } }, { { new agr(ItemList.F, new agx(15, 20)), new agr(ItemList.h, new agx(16, 24)), new agu(ItemList.fish, new agx(6, 6), ItemList.aV, new agx(6, 6)) }, { new agt(ItemList.fishingRod, new agx(7, 8)) } }, { { new agr(Item.fromProtoBlock(BlockList.wool), new agx(16, 22)), new agv(ItemList.be, new agx(3, 4)) }, { new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 0), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 1), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 2), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 3), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 4), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 5), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 6), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 7), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 8), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 9), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 10), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 11), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 12), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 13), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 14), new agx(1, 2)), new agv(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 15), new agx(1, 2)) } }, { { new agr(ItemList.F, new agx(15, 20)), new agv(ItemList.g, new agx(-12, -8)) }, { new agv(ItemList.bow, new agx(2, 3)), new agu(Item.fromProtoBlock(BlockList.gravel), new agx(10, 10), ItemList.ak, new agx(6, 10)) } } }, { { { new agr(ItemList.aK, new agx(24, 36)), new ags() }, { new agr(ItemList.book, new agx(8, 10)), new agv(ItemList.aQ, new agx(10, 12)), new agv(Item.fromProtoBlock(BlockList.bookshelf), new agx(3, 4)) }, { new agr(ItemList.bN, new agx(2, 2)), new agv(ItemList.aS, new agx(10, 12)), new agv(Item.fromProtoBlock(BlockList.w), new agx(-5, -3)) }, { new ags() }, { new ags() }, { new agv(ItemList.nameTag, new agx(20, 22)) } } }, { { { new agr(ItemList.bt, new agx(36, 40)), new agr(ItemList.goldIngot, new agx(8, 10)) }, { new agv(ItemList.aC, new agx(-4, -1)), new agv(new ItemStack(ItemList.dye, 1, EnumDyeColor.BLUE.b()), new agx(-2, -1)) }, { new agv(ItemList.bH, new agx(7, 11)), new agv(Item.fromProtoBlock(BlockList.glowstone), new agx(-3, -1)) }, { new agv(ItemList.bK, new agx(3, 11)) } } }, { { { new agr(ItemList.h, new agx(16, 24)), new agv(ItemList.Y, new agx(4, 6)) }, { new agr(ItemList.ironIngot, new agx(7, 9)), new agv(ItemList.Z, new agx(10, 14)) }, { new agr(ItemList.diamond, new agx(3, 4)), new agt(ItemList.ad, new agx(16, 19)) }, { new agv(ItemList.X, new agx(5, 7)), new agv(ItemList.W, new agx(9, 11)), new agv(ItemList.U, new agx(5, 7)), new agv(ItemList.V, new agx(11, 15)) } }, { { new agr(ItemList.h, new agx(16, 24)), new agv(ItemList.c, new agx(6, 8)) }, { new agr(ItemList.ironIngot, new agx(7, 9)), new agt(ItemList.l, new agx(9, 10)) }, { new agr(ItemList.diamond, new agx(3, 4)), new agt(ItemList.u, new agx(12, 15)), new agt(ItemList.x, new agx(9, 12)) } }, { { new agr(ItemList.h, new agx(16, 24)), new agt(ItemList.a, new agx(5, 7)) }, { new agr(ItemList.ironIngot, new agx(7, 9)), new agt(ItemList.b, new agx(9, 11)) }, { new agr(ItemList.diamond, new agx(3, 4)), new agt(ItemList.w, new agx(12, 15)) } } }, { { { new agr(ItemList.al, new agx(14, 18)), new agr(ItemList.bk, new agx(14, 18)) }, { new agr(ItemList.h, new agx(16, 24)), new agv(ItemList.am, new agx(-7, -5)), new agv(ItemList.bl, new agx(-8, -6)) } }, { { new agr(ItemList.leather, new agx(9, 12)), new agv(ItemList.S, new agx(2, 4)) }, { new agt(ItemList.R, new agx(7, 12)) }, { new agv(ItemList.saddle, new agx(8, 10)) } } } };
+/*  508: 557 */   private static final TradeOfferGenerator[][][][] offerGens =
+				  {
+					  {
+						  {
+							  {
+								  new BuyOfferGenerator(ItemList.wheat, new IntervalRandomVarible(18, 22)),
+								  new BuyOfferGenerator(ItemList.potato, new IntervalRandomVarible(15, 19)),
+								  new BuyOfferGenerator(ItemList.carrot, new IntervalRandomVarible(15, 19)),
+								  new SellOfferGenerator(ItemList.bread, new IntervalRandomVarible(-4, -2))
+							  },
+							  {
+								  new BuyOfferGenerator(Item.fromProtoBlock(BlockList.pumpkin), new IntervalRandomVarible(8, 13)),
+								  new SellOfferGenerator(ItemList.pumpkinPie, new IntervalRandomVarible(-3, -2))
+							  },
+							  {
+								  new BuyOfferGenerator(Item.fromProtoBlock(BlockList.melonBlock), new IntervalRandomVarible(7, 12)),
+								  new SellOfferGenerator(ItemList.apple, new IntervalRandomVarible(-5, -7))
+							  },
+							  {
+								  new SellOfferGenerator(ItemList.cookie, new IntervalRandomVarible(-6, -10)),
+								  new SellOfferGenerator(ItemList.cake, new IntervalRandomVarible(1, 1))
+							  }
+						  },
+						  {
+							  {
+								  new BuyOfferGenerator(ItemList.string, new IntervalRandomVarible(15, 20)),
+								  new BuyOfferGenerator(ItemList.coal, new IntervalRandomVarible(16, 24)),
+								  new ServiceOfferGenerator(ItemList.fish, new IntervalRandomVarible(6, 6), ItemList.aV, new IntervalRandomVarible(6, 6))
+							  },
+							  {
+								  new EnchantOfferGenerator(ItemList.fishingRod, new IntervalRandomVarible(7, 8)) 
+							  }
+						  },
+						  {
+							  {
+								  new BuyOfferGenerator(Item.fromProtoBlock(BlockList.wool), new IntervalRandomVarible(16, 22)),
+								  new SellOfferGenerator(ItemList.shears, new IntervalRandomVarible(3, 4))
+							  },
+							  {
+								  new SellOfferGenerator(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 0), new IntervalRandomVarible(1, 2)),
+								  new SellOfferGenerator(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 1), new IntervalRandomVarible(1, 2)),
+								  new SellOfferGenerator(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 2), new IntervalRandomVarible(1, 2)),
+								  new SellOfferGenerator(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 3), new IntervalRandomVarible(1, 2)),
+								  new SellOfferGenerator(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 4), new IntervalRandomVarible(1, 2)),
+								  new SellOfferGenerator(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 5), new IntervalRandomVarible(1, 2)),
+								  new SellOfferGenerator(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 6), new IntervalRandomVarible(1, 2)),
+								  new SellOfferGenerator(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 7), new IntervalRandomVarible(1, 2)),
+								  new SellOfferGenerator(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 8), new IntervalRandomVarible(1, 2)),
+								  new SellOfferGenerator(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 9), new IntervalRandomVarible(1, 2)),
+								  new SellOfferGenerator(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 10), new IntervalRandomVarible(1, 2)),
+								  new SellOfferGenerator(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 11), new IntervalRandomVarible(1, 2)),
+								  new SellOfferGenerator(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 12), new IntervalRandomVarible(1, 2)),
+								  new SellOfferGenerator(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 13), new IntervalRandomVarible(1, 2)),
+								  new SellOfferGenerator(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 14), new IntervalRandomVarible(1, 2)),
+								  new SellOfferGenerator(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 15), new IntervalRandomVarible(1, 2))
+						      }
+						  },
+						  {
+							  {
+								  new BuyOfferGenerator(ItemList.string, new IntervalRandomVarible(15, 20)),
+								  new SellOfferGenerator(ItemList.arrow, new IntervalRandomVarible(-12, -8))
+							  },
+							  {
+								  new SellOfferGenerator(ItemList.bow, new IntervalRandomVarible(2, 3)),
+								  new ServiceOfferGenerator(Item.fromProtoBlock(BlockList.gravel), new IntervalRandomVarible(10, 10), ItemList.flint, new IntervalRandomVarible(6, 10))
+							  }
+						  }
+					  },
+					  {
+						  {
+							  {
+								  new BuyOfferGenerator(ItemList.paper, new IntervalRandomVarible(24, 36)),
+								  new EnchantBookOfferGenerator()
+							  },
+							  {
+								  new BuyOfferGenerator(ItemList.book, new IntervalRandomVarible(8, 10)),
+								  new SellOfferGenerator(ItemList.compass, new IntervalRandomVarible(10, 12)),
+								  new SellOfferGenerator(Item.fromProtoBlock(BlockList.bookshelf), new IntervalRandomVarible(3, 4))
+							  },
+							  {
+								  new BuyOfferGenerator(ItemList.writtenBook, new IntervalRandomVarible(2, 2)),
+								  new SellOfferGenerator(ItemList.clock, new IntervalRandomVarible(10, 12)),
+								  new SellOfferGenerator(Item.fromProtoBlock(BlockList.glass), new IntervalRandomVarible(-5, -3))
+							  },
+							  {
+								  new EnchantBookOfferGenerator()
+							  },
+							  {
+								  new EnchantBookOfferGenerator()
+							  },
+							  {
+								  new SellOfferGenerator(ItemList.nameTag, new IntervalRandomVarible(20, 22))
+							  }
+						  }
+					  },
+					  {
+						  {
+							  {
+								  new BuyOfferGenerator(ItemList.rottenFlesh, new IntervalRandomVarible(36, 40)),
+								  new BuyOfferGenerator(ItemList.goldIngot, new IntervalRandomVarible(8, 10))
+							  },
+							  {
+								  new SellOfferGenerator(ItemList.redstone, new IntervalRandomVarible(-4, -1)),
+								  new SellOfferGenerator(new ItemStack(ItemList.dye, 1, EnumDyeColor.BLUE.b()), new IntervalRandomVarible(-2, -1)) 
+							  }, 
+							  { 
+								  new SellOfferGenerator(ItemList.enderEye, new IntervalRandomVarible(7, 11)), 
+								  new SellOfferGenerator(Item.fromProtoBlock(BlockList.glowstone), new IntervalRandomVarible(-3, -1)) 
+							  }, 
+							  { 
+								  new SellOfferGenerator(ItemList.experienceBottle, new IntervalRandomVarible(3, 11)) 
+							  } 
+						  } 
+					  }, 
+					  { 
+						  {
+							  { 
+								  new BuyOfferGenerator(ItemList.coal, new IntervalRandomVarible(16, 24)), 
+								  new SellOfferGenerator(ItemList.ironHelmet, new IntervalRandomVarible(4, 6)) 
+							  }, 
+							  { 
+								  new BuyOfferGenerator(ItemList.ironIngot, new IntervalRandomVarible(7, 9)), 
+								  new SellOfferGenerator(ItemList.ironChestplate, new IntervalRandomVarible(10, 14)) 
+							  }, 
+							  { 
+								  new BuyOfferGenerator(ItemList.diamond, new IntervalRandomVarible(3, 4)), 
+								  new EnchantOfferGenerator(ItemList.diamondChestplate, new IntervalRandomVarible(16, 19)) 
+							  }, 
+							  { 
+								  new SellOfferGenerator(ItemList.chainmailBoots, new IntervalRandomVarible(5, 7)), 
+								  new SellOfferGenerator(ItemList.chainmailLeggings, new IntervalRandomVarible(9, 11)), 
+								  new SellOfferGenerator(ItemList.chainmailHelmet, new IntervalRandomVarible(5, 7)), 
+								  new SellOfferGenerator(ItemList.chainmailChestplate, new IntervalRandomVarible(11, 15)) 
+							  } 
+						  }, 
+						  { 
+							  { 
+								  new BuyOfferGenerator(ItemList.coal, new IntervalRandomVarible(16, 24)), 
+								  new SellOfferGenerator(ItemList.ironAxe, new IntervalRandomVarible(6, 8)) 
+							  }, 
+							  { 
+								  new BuyOfferGenerator(ItemList.ironIngot, new IntervalRandomVarible(7, 9)), 
+								  new EnchantOfferGenerator(ItemList.ironSword, new IntervalRandomVarible(9, 10)) 
+							  }, 
+							  { 
+								  new BuyOfferGenerator(ItemList.diamond, new IntervalRandomVarible(3, 4)), 
+								  new EnchantOfferGenerator(ItemList.diamondSword, new IntervalRandomVarible(12, 15)), 
+								  new EnchantOfferGenerator(ItemList.diamondAxe, new IntervalRandomVarible(9, 12)) 
+							  } 
+						  }, 
+						  { 
+							  { 
+								  new BuyOfferGenerator(ItemList.coal, new IntervalRandomVarible(16, 24)), 
+								  new EnchantOfferGenerator(ItemList.ironShovel, new IntervalRandomVarible(5, 7)) 
+							  }, 
+							  { 
+								  new BuyOfferGenerator(ItemList.ironIngot, new IntervalRandomVarible(7, 9)), 
+								  new EnchantOfferGenerator(ItemList.ironPickaxe, new IntervalRandomVarible(9, 11)) 
+							  }, 
+							  { 
+								  new BuyOfferGenerator(ItemList.diamond, new IntervalRandomVarible(3, 4)), 
+								  new EnchantOfferGenerator(ItemList.diamondPickaxe, new IntervalRandomVarible(12, 15)) 
+							  } 
+						  } 
+					  }, 
+					  { 
+						  { 
+							  { 
+								  new BuyOfferGenerator(ItemList.porkchop, new IntervalRandomVarible(14, 18)), 
+								  new BuyOfferGenerator(ItemList.chicken, new IntervalRandomVarible(14, 18)) 
+							  }, 
+							  { 
+								  new BuyOfferGenerator(ItemList.coal, new IntervalRandomVarible(16, 24)), 
+								  new SellOfferGenerator(ItemList.cookedPorkchop, new IntervalRandomVarible(-7, -5)), 
+								  new SellOfferGenerator(ItemList.cookedChicken, new IntervalRandomVarible(-8, -6)) 
+							  } 
+						  }, 
+					  { 
+						  { 
+							  new BuyOfferGenerator(ItemList.leather, new IntervalRandomVarible(9, 12)), 
+							  new SellOfferGenerator(ItemList.leatherLeggings, new IntervalRandomVarible(2, 4)) 
+						  }, 
+						  { 
+							  new EnchantOfferGenerator(ItemList.leatherChestplate, new IntervalRandomVarible(7, 12)) 
+						  }, 
+						  { 
+							  new SellOfferGenerator(ItemList.saddle, new IntervalRandomVarible(8, 10)) 
+						  } 
+					  } 
+				  } 
+			  };
 /*  509:     */   
 /*  510:     */   public void onSignal(byte signal)
 /*  511:     */   {
@@ -592,7 +782,7 @@ package net.minecraft.src;
 /*  593:     */   
 /*  594:     */   private boolean a(Item paramalq)
 /*  595:     */   {
-/*  596: 992 */     return (paramalq == ItemList.bread) || (paramalq == ItemList.potato) || (paramalq == ItemList.carrot) || (paramalq == ItemList.O) || (paramalq == ItemList.N);
+/*  596: 992 */     return (paramalq == ItemList.bread) || (paramalq == ItemList.potato) || (paramalq == ItemList.carrot) || (paramalq == ItemList.wheat) || (paramalq == ItemList.N);
 /*  597:     */   }
 /*  598:     */   
 /*  599:     */   public boolean cp()
@@ -626,7 +816,7 @@ package net.minecraft.src;
 /*  627:1019 */           return true;
 /*  628:     */         }
 /*  629:1021 */         if ((i != 0) && 
-/*  630:1022 */           (localamj.getItem() == ItemList.O) && (localamj.stackSize >= 9 * paramInt)) {
+/*  630:1022 */           (localamj.getItem() == ItemList.wheat) && (localamj.stackSize >= 9 * paramInt)) {
 /*  631:1023 */           return true;
 /*  632:     */         }
 /*  633:     */       }

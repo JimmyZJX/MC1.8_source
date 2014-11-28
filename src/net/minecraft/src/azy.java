@@ -28,7 +28,7 @@ package net.minecraft.src;
 /*  27:    */       }
 /*  28: 41 */       if (i < 3)
 /*  29:    */       {
-/*  30: 42 */         int j = ((Integer)parambec.getProperty(a)).intValue();
+/*  30: 42 */         int j = ((Integer)parambec.getData(a)).intValue();
 /*  31: 43 */         if (j == 15)
 /*  32:    */         {
 /*  33: 44 */           paramaqu.setBlock(paramdt.up(), instance());
@@ -50,7 +50,7 @@ package net.minecraft.src;
 /*  49:    */     }
 /*  50: 60 */     if ((localatr == BlockList.grass) || (localatr == BlockList.dirt) || (localatr == BlockList.sand))
 /*  51:    */     {
-/*  52: 61 */       for (EnumDirection localej : en.HORIZONTAL) {
+/*  52: 61 */       for (EnumDirection localej : EnumHorizontalVertical.HORIZONTAL) {
 /*  53: 62 */         if (paramaqu.getBlock(paramdt.offset(localej).down()).getProto().getMaterial() == Material.water) {
 /*  54: 63 */           return true;
 /*  55:    */         }
@@ -122,7 +122,7 @@ package net.minecraft.src;
 /* 121:    */   
 /* 122:    */   public int c(Block parambec)
 /* 123:    */   {
-/* 124:136 */     return ((Integer)parambec.getProperty(a)).intValue();
+/* 124:136 */     return ((Integer)parambec.getData(a)).intValue();
 /* 125:    */   }
 /* 126:    */   
 /* 127:    */   protected bed e()

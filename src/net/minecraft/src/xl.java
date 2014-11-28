@@ -13,19 +13,19 @@ package net.minecraft.src;
 /* 12:   */   
 /* 13:   */   public void g(float paramFloat1, float paramFloat2)
 /* 14:   */   {
-/* 15:25 */     if (V())
+/* 15:25 */     if (isInWater())
 /* 16:   */     {
 /* 17:26 */       a(paramFloat1, paramFloat2, 0.02F);
-/* 18:27 */       d(this.xVelocity, this.yVelocity, this.zVelocity);
+/* 18:27 */       move(this.xVelocity, this.yVelocity, this.zVelocity);
 /* 19:   */       
 /* 20:29 */       this.xVelocity *= 0.800000011920929D;
 /* 21:30 */       this.yVelocity *= 0.800000011920929D;
 /* 22:31 */       this.zVelocity *= 0.800000011920929D;
 /* 23:   */     }
-/* 24:32 */     else if (ab())
+/* 24:32 */     else if (isInLava())
 /* 25:   */     {
 /* 26:33 */       a(paramFloat1, paramFloat2, 0.02F);
-/* 27:34 */       d(this.xVelocity, this.yVelocity, this.zVelocity);
+/* 27:34 */       move(this.xVelocity, this.yVelocity, this.zVelocity);
 /* 28:35 */       this.xVelocity *= 0.5D;
 /* 29:36 */       this.yVelocity *= 0.5D;
 /* 30:37 */       this.zVelocity *= 0.5D;
@@ -43,7 +43,7 @@ package net.minecraft.src;
 /* 42:48 */       if (this.C) {
 /* 43:49 */         f1 = this.world.getBlock(new BlockPosition(MathUtils.floor(this.xPos), MathUtils.floor(getAABB().minY) - 1, MathUtils.floor(this.zPos))).getProto().K * 0.91F;
 /* 44:   */       }
-/* 45:52 */       d(this.xVelocity, this.yVelocity, this.zVelocity);
+/* 45:52 */       move(this.xVelocity, this.yVelocity, this.zVelocity);
 /* 46:   */       
 /* 47:54 */       this.xVelocity *= f1;
 /* 48:55 */       this.yVelocity *= f1;
@@ -52,7 +52,7 @@ package net.minecraft.src;
 /* 51:58 */     this.ay = this.az;
 /* 52:59 */     double d1 = this.xPos - this.lastX;
 /* 53:60 */     double d2 = this.zPos - this.lastZ;
-/* 54:61 */     float f3 = MathUtils.a(d1 * d1 + d2 * d2) * 4.0F;
+/* 54:61 */     float f3 = MathUtils.sqrt(d1 * d1 + d2 * d2) * 4.0F;
 /* 55:62 */     if (f3 > 1.0F) {
 /* 56:63 */       f3 = 1.0F;
 /* 57:   */     }

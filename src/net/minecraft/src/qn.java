@@ -40,7 +40,7 @@ package net.minecraft.src;
 /*  39:    */     {
 /*  40: 53 */       a(paramwv, 64, 5, true);
 /*  41:    */     }
-/*  42: 54 */     else if ((paramwv instanceof ahj))
+/*  42: 54 */     else if ((paramwv instanceof EntityArrow))
 /*  43:    */     {
 /*  44: 55 */       a(paramwv, 64, 20, false);
 /*  45:    */     }

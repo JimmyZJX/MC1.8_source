@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ import java.util.List;
 /*   2:    */ import java.util.Random;
 /*   3:    */ 
-/*   4:    */ public class ala
+/*   4:    */ public class ItemEnchantedBook
 /*   5:    */   extends Item
 /*   6:    */ {
 /*   7:    */   public boolean f(ItemStack paramamj)
@@ -15,12 +15,12 @@ package net.minecraft.src;
 /*  14: 26 */     return false;
 /*  15:    */   }
 /*  16:    */   
-/*  17:    */   public amx g(ItemStack paramamj)
+/*  17:    */   public EnumRarity getRarity(ItemStack paramamj)
 /*  18:    */   {
 /*  19: 31 */     if (h(paramamj).c() > 0) {
-/*  20: 32 */       return amx.b;
+/*  20: 32 */       return EnumRarity.UNCOMMON;
 /*  21:    */     }
-/*  22: 34 */     return super.g(paramamj);
+/*  22: 34 */     return super.getRarity(paramamj);
 /*  23:    */   }
 /*  24:    */   
 /*  25:    */   public fv h(ItemStack paramamj)
@@ -32,7 +32,7 @@ package net.minecraft.src;
 /*  31: 44 */     return (fv)localfn.a("StoredEnchantments");
 /*  32:    */   }
 /*  33:    */   
-/*  34:    */   public void a(ItemStack paramamj, EntityPlayer paramahd, List paramList, boolean paramBoolean)
+/*  34:    */   public void a(ItemStack paramamj, EntityPlayer paramahd, List<String> paramList, boolean paramBoolean)
 /*  35:    */   {
 /*  36: 49 */     super.a(paramamj, paramahd, paramList, paramBoolean);
 /*  37:    */     
@@ -49,17 +49,17 @@ package net.minecraft.src;
 /*  48:    */     }
 /*  49:    */   }
 /*  50:    */   
-/*  51:    */   public void a(ItemStack paramamj, apo paramapo)
+/*  51:    */   public void addEnchantment(ItemStack paramamj, WeightedRandomItemEnchantment paramapo)
 /*  52:    */   {
 /*  53: 66 */     fv localfv = h(paramamj);
 /*  54: 67 */     int i = 1;
 /*  55: 69 */     for (int j = 0; j < localfv.c(); j++)
 /*  56:    */     {
 /*  57: 70 */       NBTTagCompound localfn2 = localfv.b(j);
-/*  58: 72 */       if (localfn2.e("id") == paramapo.b.B)
+/*  58: 72 */       if (localfn2.e("id") == paramapo.enchantment.id)
 /*  59:    */       {
-/*  60: 73 */         if (localfn2.e("lvl") < paramapo.c) {
-/*  61: 74 */           localfn2.setShort("lvl", (short)paramapo.c);
+/*  60: 73 */         if (localfn2.e("lvl") < paramapo.level) {
+/*  61: 74 */           localfn2.setShort("lvl", (short)paramapo.level);
 /*  62:    */         }
 /*  63: 77 */         i = 0;
 /*  64: 78 */         break;
@@ -69,8 +69,8 @@ package net.minecraft.src;
 /*  68:    */     {
 /*  69: 83 */       NBTTagCompound localfn1 = new NBTTagCompound();
 /*  70:    */       
-/*  71: 85 */       localfn1.setShort("id", (short)paramapo.b.B);
-/*  72: 86 */       localfn1.setShort("lvl", (short)paramapo.c);
+/*  71: 85 */       localfn1.setShort("id", (short)paramapo.enchantment.id);
+/*  72: 86 */       localfn1.setShort("lvl", (short)paramapo.level);
 /*  73:    */       
 /*  74: 88 */       localfv.a(localfn1);
 /*  75:    */     }
@@ -80,17 +80,17 @@ package net.minecraft.src;
 /*  79: 94 */     paramamj.getTagCompound().setNBT("StoredEnchantments", localfv);
 /*  80:    */   }
 /*  81:    */   
-/*  82:    */   public ItemStack a(apo paramapo)
+/*  82:    */   public ItemStack addEnchantment(WeightedRandomItemEnchantment paramapo)
 /*  83:    */   {
-/*  84: 98 */     ItemStack localamj = new ItemStack(this);
-/*  85: 99 */     a(localamj, paramapo);
-/*  86:100 */     return localamj;
+/*  84: 98 */     ItemStack stack = new ItemStack(this);
+/*  85: 99 */     addEnchantment(stack, paramapo);
+/*  86:100 */     return stack;
 /*  87:    */   }
 /*  88:    */   
-/*  89:    */   public void a(Enchantment paramapf, List paramList)
+/*  89:    */   public void a(Enchantment paramapf, List<ItemStack> paramList)
 /*  90:    */   {
-/*  91:104 */     for (int i = paramapf.e(); i <= paramapf.b(); i++) {
-/*  92:105 */       paramList.add(a(new apo(paramapf, i)));
+/*  91:104 */     for (int i = paramapf.getLowestLevel(); i <= paramapf.getHighestLevel(); i++) {
+/*  92:105 */       paramList.add(addEnchantment(new WeightedRandomItemEnchantment(paramapf, i)));
 /*  93:    */     }
 /*  94:    */   }
 /*  95:    */   
@@ -102,7 +102,7 @@ package net.minecraft.src;
 /* 101:    */   public vl a(Random paramRandom, int paramInt1, int paramInt2, int paramInt3)
 /* 102:    */   {
 /* 103:124 */     ItemStack localamj = new ItemStack(ItemList.book, 1, 0);
-/* 104:125 */     aph.a(paramRandom, localamj, 30);
+/* 104:125 */     aph.randomEnchant(paramRandom, localamj, 30);
 /* 105:    */     
 /* 106:127 */     return new vl(localamj, paramInt1, paramInt2, paramInt3);
 /* 107:    */   }

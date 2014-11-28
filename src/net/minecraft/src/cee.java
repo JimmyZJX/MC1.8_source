@@ -87,7 +87,7 @@ package net.minecraft.src;
 /*   86:     */     }
 /*   87: 157 */     else if (paramil.j() == 60)
 /*   88:     */     {
-/*   89: 158 */       localObject1 = new ahj(this.g, d1, d2, d3);
+/*   89: 158 */       localObject1 = new EntityArrow(this.g, d1, d2, d3);
 /*   90:     */     }
 /*   91: 159 */     else if (paramil.j() == 61)
 /*   92:     */     {
@@ -191,8 +191,8 @@ package net.minecraft.src;
 /*  190: 221 */         if (paramil.j() == 60)
 /*  191:     */         {
 /*  192: 222 */           Entity localwv = this.g.a(paramil.k());
-/*  193: 223 */           if (((localwv instanceof EntityLiving)) && ((localObject1 instanceof ahj))) {
-/*  194: 224 */             ((ahj)localObject1).c = localwv;
+/*  193: 223 */           if (((localwv instanceof EntityLiving)) && ((localObject1 instanceof EntityArrow))) {
+/*  194: 224 */             ((EntityArrow)localObject1).c = localwv;
 /*  195:     */           }
 /*  196:     */         }
 /*  197: 228 */         ((Entity)localObject1).i(paramil.e() / 8000.0D, paramil.f() / 8000.0D, paramil.g() / 8000.0D);
@@ -276,9 +276,9 @@ package net.minecraft.src;
 /*  275:     */     
 /*  276: 306 */     int m = paramiq.i();
 /*  277: 307 */     if (m == 0) {
-/*  278: 308 */       localcip.bg.a[localcip.bg.c] = null;
+/*  278: 308 */       localcip.bg.items[localcip.bg.c] = null;
 /*  279:     */     } else {
-/*  280: 310 */       localcip.bg.a[localcip.bg.c] = new ItemStack(Item.b(m), 1, 0);
+/*  280: 310 */       localcip.bg.items[localcip.bg.c] = new ItemStack(Item.b(m), 1, 0);
 /*  281:     */     }
 /*  282: 312 */     localcip.a(d1, d2, d3, f1, f2);
 /*  283: 313 */     this.g.a(paramiq.b(), localcip);
@@ -315,7 +315,7 @@ package net.minecraft.src;
 /*  314:     */   public void a(kv paramkv)
 /*  315:     */   {
 /*  316: 346 */     ig.a(paramkv, this, this.f);
-/*  317: 347 */     if ((paramkv.a() >= 0) && (paramkv.a() < ahb.i())) {
+/*  317: 347 */     if ((paramkv.a() >= 0) && (paramkv.a() < Inventory.i())) {
 /*  318: 348 */       this.f.h.bg.c = paramkv.a();
 /*  319:     */     }
 /*  320:     */   }
@@ -910,7 +910,7 @@ package net.minecraft.src;
 /*  909:     */     }
 /*  910: 923 */     else if (m == 3)
 /*  911:     */     {
-/*  912: 924 */       this.f.c.a(EnumGameType.a(n));
+/*  912: 924 */       this.f.c.a(EnumGameMode.a(n));
 /*  913:     */     }
 /*  914: 925 */     else if (m == 4)
 /*  915:     */     {
@@ -972,7 +972,7 @@ package net.minecraft.src;
 /*  971: 971 */     int m = 0;
 /*  972: 973 */     for (Map.Entry localEntry : paramis.a().entrySet())
 /*  973:     */     {
-/*  974: 974 */       tq localtq = (tq)localEntry.getKey();
+/*  974: 974 */       PlayerStat localtq = (PlayerStat)localEntry.getKey();
 /*  975: 975 */       int n = ((Integer)localEntry.getValue()).intValue();
 /*  976: 977 */       if ((localtq.d()) && (n > 0))
 /*  977:     */       {
@@ -1148,12 +1148,12 @@ package net.minecraft.src;
 /* 1147:     */   {
 /* 1148:1149 */     ig.a(paramkd, this, this.f);
 /* 1149:1150 */     cio localcio = this.f.h;
-/* 1150:1151 */     localcio.by.b = paramkd.b();
-/* 1151:1152 */     localcio.by.d = paramkd.d();
-/* 1152:1153 */     localcio.by.a = paramkd.a();
-/* 1153:1154 */     localcio.by.c = paramkd.c();
-/* 1154:1155 */     localcio.by.a(paramkd.e());
-/* 1155:1156 */     localcio.by.b(paramkd.f());
+/* 1150:1151 */     localcio.abilities.flying = paramkd.b();
+/* 1151:1152 */     localcio.abilities.instabuild = paramkd.d();
+/* 1152:1153 */     localcio.abilities.invulnerable = paramkd.a();
+/* 1153:1154 */     localcio.abilities.mayfly = paramkd.c();
+/* 1154:1155 */     localcio.abilities.setFlySpeed(paramkd.e());
+/* 1155:1156 */     localcio.abilities.setWalkSpeed(paramkd.f());
 /* 1156:     */   }
 /* 1157:     */   
 /* 1158:     */   public void a(iy paramiy)
@@ -1232,7 +1232,7 @@ package net.minecraft.src;
 /* 1231:1280 */         if ((localbxf != null) && ((localbxf instanceof bzk)) && (m == this.f.h.bi.d))
 /* 1232:     */         {
 /* 1233:1281 */           aqb localaqb = ((bzk)localbxf).a();
-/* 1234:1282 */           aqd localaqd = aqd.b((ByteBufWrapper)localObject1);
+/* 1234:1282 */           TradeOfferList localaqd = TradeOfferList.b((ByteBufWrapper)localObject1);
 /* 1235:1283 */           localaqb.a(localaqd);
 /* 1236:     */         }
 /* 1237:     */       }
@@ -1252,7 +1252,7 @@ package net.minecraft.src;
 /* 1251:1292 */     else if ("MC|BOpen".equals(paramji.a()))
 /* 1252:     */     {
 /* 1253:1293 */       localObject1 = this.f.h.bY();
-/* 1254:1294 */       if ((localObject1 != null) && (((ItemStack)localObject1).getItem() == ItemList.bN)) {
+/* 1254:1294 */       if ((localObject1 != null) && (((ItemStack)localObject1).getItem() == ItemList.writtenBook)) {
 /* 1255:1295 */         this.f.a(new bys(this.f.h, (ItemStack)localObject1, false));
 /* 1256:     */       }
 /* 1257:     */     }

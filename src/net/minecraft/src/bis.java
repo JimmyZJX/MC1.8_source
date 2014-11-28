@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*  8:16 */     while (paramdt.getY() < 128)
 /*  9:   */     {
 /* 10:17 */       if (paramaqu.isEmpty(paramdt)) {
-/* 11:19 */         for (EnumDirection localej : en.HORIZONTAL.getDirectionList()) {
+/* 11:19 */         for (EnumDirection localej : EnumHorizontalVertical.HORIZONTAL.getDirectionList()) {
 /* 12:20 */           if (BlockList.vine.a(paramaqu, paramdt, localej))
 /* 13:   */           {
 /* 14:21 */             Block localbec = BlockList.vine.instance().setData(bbv.b, Boolean.valueOf(localej == EnumDirection.NORTH)).setData(bbv.M, Boolean.valueOf(localej == EnumDirection.EAST)).setData(bbv.N, Boolean.valueOf(localej == EnumDirection.SOUTH)).setData(bbv.O, Boolean.valueOf(localej == EnumDirection.WEST));

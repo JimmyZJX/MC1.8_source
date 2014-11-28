@@ -31,7 +31,7 @@ package net.minecraft.src;
 /* 30:40 */     if (localamj1 == null) {
 /* 31:41 */       return;
 /* 32:   */     }
-/* 33:44 */     EnumDirection localej = (EnumDirection)paramaqu.getBlock(paramdt).getProperty(a);
+/* 33:44 */     EnumDirection localej = (EnumDirection)paramaqu.getBlock(paramdt).getData(a);
 /* 34:45 */     BlockPosition localdt = paramdt.offset(localej);
 /* 35:46 */     vq localvq = bde.b(paramaqu, localdt.getX(), localdt.getY(), localdt.getZ());
 /* 36:   */     ItemStack localamj2;
@@ -44,7 +44,7 @@ package net.minecraft.src;
 /* 43:   */     }
 /* 44:   */     else
 /* 45:   */     {
-/* 46:55 */       localamj2 = bde.a(localvq, localamj1.k().split(1), localej.d());
+/* 46:55 */       localamj2 = bde.a(localvq, localamj1.k().split(1), localej.opposite());
 /* 47:57 */       if (localamj2 == null)
 /* 48:   */       {
 /* 49:58 */         localamj2 = localamj1.k();

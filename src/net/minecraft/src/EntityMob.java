@@ -8,8 +8,8 @@ package net.minecraft.src;
 /*   8:    */   public int a_;
 /*   9:    */   protected int b_;
 /*  10:    */   private ym a;
-/*  11:    */   protected yn f;
-/*  12:    */   protected yl g;
+/*  11:    */   protected MoveManager moveManager;
+/*  12:    */   protected JumpManager jumpManager;
 /*  13:    */   private yj b;
 /*  14:    */   protected Navigator navigator;
 /*  15:    */   protected final GoalSelector goalSelector;
@@ -31,8 +31,8 @@ package net.minecraft.src;
 /*  31: 77 */     this.goalSelector = new GoalSelector((world == null) || (world.profiler == null) ? null : world.profiler);
 /*  32: 78 */     this.targetSelector = new GoalSelector((world == null) || (world.profiler == null) ? null : world.profiler);
 /*  33: 79 */     this.a = new ym(this);
-/*  34: 80 */     this.f = new yn(this);
-/*  35: 81 */     this.g = new yl(this);
+/*  34: 80 */     this.moveManager = new MoveManager(this);
+/*  35: 81 */     this.jumpManager = new JumpManager(this);
 /*  36: 82 */     this.b = new yj(this);
 /*  37: 83 */     this.navigator = b(world);
 /*  38: 84 */     this.sensor = new Sensor(this);
@@ -45,7 +45,7 @@ package net.minecraft.src;
 /*  45:    */   {
 /*  46: 93 */     super.aW();
 /*  47:    */     
-/*  48: 95 */     bx().b(afs.b).a(16.0D);
+/*  48: 95 */     bx().b(MobAttribute.followRange).a(16.0D);
 /*  49:    */   }
 /*  50:    */   
 /*  51:    */   protected Navigator b(World paramaqu)
@@ -58,14 +58,14 @@ package net.minecraft.src;
 /*  58:103 */     return this.a;
 /*  59:    */   }
 /*  60:    */   
-/*  61:    */   public yn q()
+/*  61:    */   public MoveManager q()
 /*  62:    */   {
-/*  63:107 */     return this.f;
+/*  63:107 */     return this.moveManager;
 /*  64:    */   }
 /*  65:    */   
-/*  66:    */   public yl r()
+/*  66:    */   public JumpManager getJumpManager()
 /*  67:    */   {
-/*  68:111 */     return this.g;
+/*  68:111 */     return this.jumpManager;
 /*  69:    */   }
 /*  70:    */   
 /*  71:    */   public Navigator getNavigator()
@@ -303,10 +303,10 @@ package net.minecraft.src;
 /* 303:341 */     this.world.profiler.a("looting");
 /* 304:342 */     if ((!this.world.isClient) && (getCanPickUpLoot()) && (!this.aN) && (this.world.getGameRules().getBoolean("mobGriefing")))
 /* 305:    */     {
-/* 306:343 */       List<EntityItem> localList = this.world.getEntityList(EntityItem.class, getAABB().expand(1.0D, 0.0D, 1.0D));
-/* 307:344 */       for (EntityItem localadw : localList) {
-/* 308:345 */         if ((!localadw.isDead) && (localadw.getItemStack() != null) && (!localadw.s())) {
-/* 309:348 */           onPickup(localadw);
+/* 306:343 */       List<EntityItem> items = this.world.getEntityList(EntityItem.class, getAABB().expand(1.0D, 0.0D, 1.0D));
+/* 307:344 */       for (EntityItem item : items) {
+/* 308:345 */         if ((!item.isDead) && (item.getItemStack() != null) && (!item.isUnpickable())) {
+/* 309:348 */           onPickup(item);
 /* 310:    */         }
 /* 311:    */       }
 /* 312:    */     }
@@ -378,7 +378,7 @@ package net.minecraft.src;
 /* 378:    */         {
 /* 379:404 */           EntityPlayer thrower = this.world.getPlayer(entityItem.getThrower());
 /* 380:405 */           if (thrower != null) {
-/* 381:406 */             (thrower).b(AchievementList.diamondsToYou);
+/* 381:406 */             (thrower).increaseStat(AchievementList.diamondsToYou);
 /* 382:    */           }
 /* 383:    */         }
 /* 384:410 */         setItemStack(slot, stack);
@@ -445,7 +445,7 @@ package net.minecraft.src;
 /* 445:470 */     this.world.profiler.b();
 /* 446:    */     
 /* 447:472 */     this.world.profiler.a("navigation");
-/* 448:473 */     this.navigator.k();
+/* 448:473 */     this.navigator.tick();
 /* 449:474 */     this.world.profiler.b();
 /* 450:    */     
 /* 451:476 */     this.world.profiler.a("mob tick");
@@ -454,11 +454,11 @@ package net.minecraft.src;
 /* 454:    */     
 /* 455:480 */     this.world.profiler.a("controls");
 /* 456:481 */     this.world.profiler.a("move");
-/* 457:482 */     this.f.c();
+/* 457:482 */     this.moveManager.tick();
 /* 458:483 */     this.world.profiler.c("look");
-/* 459:484 */     this.a.a();
+/* 459:484 */     this.a.tick();
 /* 460:485 */     this.world.profiler.c("jump");
-/* 461:486 */     this.g.b();
+/* 461:486 */     this.jumpManager.tick();
 /* 462:487 */     this.world.profiler.b();
 /* 463:488 */     this.world.profiler.b();
 /* 464:    */   }
@@ -485,7 +485,7 @@ package net.minecraft.src;
 /* 485:    */     {
 /* 486:507 */       d2 = (paramwv.getAABB().minY + paramwv.getAABB().maxY) / 2.0D - (this.yPos + getEyeHeight());
 /* 487:    */     }
-/* 488:510 */     double d4 = MathUtils.a(d1 * d1 + d3 * d3);
+/* 488:510 */     double d4 = MathUtils.sqrt(d1 * d1 + d3 * d3);
 /* 489:    */     
 /* 490:512 */     float f1 = (float)(Math.atan2(d3, d1) * 180.0D / 3.141592741012573D) - 90.0F;
 /* 491:513 */     float f2 = (float)-(Math.atan2(d2, d4) * 180.0D / 3.141592741012573D);
@@ -653,39 +653,39 @@ package net.minecraft.src;
 /* 653:668 */         return ItemList.ag;
 /* 654:    */       }
 /* 655:670 */       if (paramInt2 == 2) {
-/* 656:671 */         return ItemList.U;
+/* 656:671 */         return ItemList.chainmailHelmet;
 /* 657:    */       }
 /* 658:673 */       if (paramInt2 == 3) {
-/* 659:674 */         return ItemList.Y;
+/* 659:674 */         return ItemList.ironHelmet;
 /* 660:    */       }
 /* 661:676 */       if (paramInt2 == 4) {
 /* 662:677 */         return ItemList.ac;
 /* 663:    */       }
 /* 664:    */     case 3: 
 /* 665:680 */       if (paramInt2 == 0) {
-/* 666:681 */         return ItemList.R;
+/* 666:681 */         return ItemList.leatherChestplate;
 /* 667:    */       }
 /* 668:683 */       if (paramInt2 == 1) {
 /* 669:684 */         return ItemList.ah;
 /* 670:    */       }
 /* 671:686 */       if (paramInt2 == 2) {
-/* 672:687 */         return ItemList.V;
+/* 672:687 */         return ItemList.chainmailChestplate;
 /* 673:    */       }
 /* 674:689 */       if (paramInt2 == 3) {
-/* 675:690 */         return ItemList.Z;
+/* 675:690 */         return ItemList.ironChestplate;
 /* 676:    */       }
 /* 677:692 */       if (paramInt2 == 4) {
-/* 678:693 */         return ItemList.ad;
+/* 678:693 */         return ItemList.diamondChestplate;
 /* 679:    */       }
 /* 680:    */     case 2: 
 /* 681:696 */       if (paramInt2 == 0) {
-/* 682:697 */         return ItemList.S;
+/* 682:697 */         return ItemList.leatherLeggings;
 /* 683:    */       }
 /* 684:699 */       if (paramInt2 == 1) {
 /* 685:700 */         return ItemList.ai;
 /* 686:    */       }
 /* 687:702 */       if (paramInt2 == 2) {
-/* 688:703 */         return ItemList.W;
+/* 688:703 */         return ItemList.chainmailLeggings;
 /* 689:    */       }
 /* 690:705 */       if (paramInt2 == 3) {
 /* 691:706 */         return ItemList.aa;
@@ -701,7 +701,7 @@ package net.minecraft.src;
 /* 701:716 */         return ItemList.aj;
 /* 702:    */       }
 /* 703:718 */       if (paramInt2 == 2) {
-/* 704:719 */         return ItemList.X;
+/* 704:719 */         return ItemList.chainmailBoots;
 /* 705:    */       }
 /* 706:721 */       if (paramInt2 == 3) {
 /* 707:722 */         return ItemList.ab;
@@ -718,20 +718,20 @@ package net.minecraft.src;
 /* 718:    */   {
 /* 719:733 */     float f1 = paramvu.c();
 /* 720:735 */     if ((getHeldItemStack() != null) && (this.rng.nextFloat() < 0.25F * f1)) {
-/* 721:736 */       aph.a(this.rng, getHeldItemStack(), (int)(5.0F + f1 * this.rng.nextInt(18)));
+/* 721:736 */       aph.randomEnchant(this.rng, getHeldItemStack(), (int)(5.0F + f1 * this.rng.nextInt(18)));
 /* 722:    */     }
 /* 723:739 */     for (int j = 0; j < 4; j++)
 /* 724:    */     {
 /* 725:740 */       ItemStack localamj = getArmor(j);
 /* 726:741 */       if ((localamj != null) && (this.rng.nextFloat() < 0.5F * f1)) {
-/* 727:742 */         aph.a(this.rng, localamj, (int)(5.0F + f1 * this.rng.nextInt(18)));
+/* 727:742 */         aph.randomEnchant(this.rng, localamj, (int)(5.0F + f1 * this.rng.nextInt(18)));
 /* 728:    */       }
 /* 729:    */     }
 /* 730:    */   }
 /* 731:    */   
 /* 732:    */   public xq beforeSpawn(vu paramvu, xq paramxq)
 /* 733:    */   {
-/* 734:760 */     a(afs.b).b(new ya("Random spawn bonus", this.rng.nextGaussian() * 0.05D, 1));
+/* 734:760 */     getAttribute(MobAttribute.followRange).b(new ya("Random spawn bonus", this.rng.nextGaussian() * 0.05D, 1));
 /* 735:    */     
 /* 736:762 */     return paramxq;
 /* 737:    */   }
@@ -770,7 +770,7 @@ package net.minecraft.src;
 /* 770:    */   {
 /* 771:791 */     if ((cb()) && (cc() == paramahd))
 /* 772:    */     {
-/* 773:792 */       a(true, !paramahd.by.d);
+/* 773:792 */       a(true, !paramahd.abilities.instabuild);
 /* 774:793 */       return true;
 /* 775:    */     }
 /* 776:796 */     ItemStack localamj = paramahd.bg.h();

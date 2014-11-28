@@ -96,7 +96,7 @@ package net.minecraft.src;
 /*  95:    */   {
 /*  96:106 */     Multimap<String,ya> localMultimap = super.i();
 /*  97:    */     
-/*  98:108 */     localMultimap.put(afs.e.a(), new ya(f, "Weapon modifier", this.a, 0));
+/*  98:108 */     localMultimap.put(MobAttribute.attackDamage.a(), new ya(f, "Weapon modifier", this.a, 0));
 /*  99:    */     
 /* 100:110 */     return localMultimap;
 /* 101:    */   }

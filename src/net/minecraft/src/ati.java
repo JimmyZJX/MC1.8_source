@@ -42,7 +42,7 @@ package net.minecraft.src;
 /*  41:    */   public void a(IBlockAccess paramard, BlockPosition paramdt)
 /*  42:    */   {
 /*  43:398 */     Block localbec = paramard.getBlock(paramdt);
-/*  44:399 */     EnumRailState localObject = localbec.getProto() == this ? (EnumRailState)localbec.getProperty(l()) : null;
+/*  44:399 */     EnumRailState localObject = localbec.getProto() == this ? (EnumRailState)localbec.getData(l()) : null;
 /*  45:400 */     if ((localObject != null) && (localObject.c())) {
 /*  46:401 */       a(0.0F, 0.0F, 0.0F, 1.0F, 0.625F, 1.0F);
 /*  47:    */     } else {
@@ -79,7 +79,7 @@ package net.minecraft.src;
 /*  78:433 */     if (paramaqu.isClient) {
 /*  79:434 */       return;
 /*  80:    */     }
-/*  81:437 */     EnumRailState localatl = (EnumRailState)parambec.getProperty(l());
+/*  81:437 */     EnumRailState localatl = (EnumRailState)parambec.getData(l());
 /*  82:438 */     int i = 0;
 /*  83:440 */     if (!World.isFlatSurface(paramaqu, paramdt.down())) {
 /*  84:441 */       i = 1;
@@ -127,7 +127,7 @@ package net.minecraft.src;
 /* 126:    */   public void b(World paramaqu, BlockPosition paramdt, Block parambec)
 /* 127:    */   {
 /* 128:483 */     super.b(paramaqu, paramdt, parambec);
-/* 129:485 */     if (((EnumRailState)parambec.getProperty(l())).c()) {
+/* 129:485 */     if (((EnumRailState)parambec.getData(l())).c()) {
 /* 130:486 */       paramaqu.c(paramdt.up(), this);
 /* 131:    */     }
 /* 132:489 */     if (this.a)

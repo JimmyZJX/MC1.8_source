@@ -28,7 +28,7 @@ package net.minecraft.src;
 /* 27:31 */     if (!paramahd.bg.a(localamj.k())) {
 /* 28:32 */       paramahd.a(localamj, false);
 /* 29:   */     }
-/* 30:35 */     paramahd.b(StatList.J[Item.b(this)]);
+/* 30:35 */     paramahd.increaseStat(StatList.J[Item.b(this)]);
 /* 31:   */     
 /* 32:37 */     return paramamj;
 /* 33:   */   }

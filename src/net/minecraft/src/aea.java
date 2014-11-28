@@ -44,7 +44,7 @@ package net.minecraft.src;
 /* 43:54 */     return "minecraft:chest";
 /* 44:   */   }
 /* 45:   */   
-/* 46:   */   public aib a(ahb paramahb, EntityPlayer paramahd)
+/* 46:   */   public aib a(Inventory paramahb, EntityPlayer paramahd)
 /* 47:   */   {
 /* 48:59 */     return new aim(paramahb, this, paramahd);
 /* 49:   */   }

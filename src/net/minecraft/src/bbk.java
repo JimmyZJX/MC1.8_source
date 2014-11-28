@@ -51,7 +51,7 @@ package net.minecraft.src;
 /*  51: 64 */     if (paramaqu.isClient) {
 /*  52: 65 */       return;
 /*  53:    */     }
-/*  54: 68 */     if (((Boolean)parambec.getProperty(a)).booleanValue())
+/*  54: 68 */     if (((Boolean)parambec.getData(a)).booleanValue())
 /*  55:    */     {
 /*  56: 69 */       aek localaek = new aek(paramaqu, paramdt.getX() + 0.5F, paramdt.getY() + 0.5F, paramdt.getZ() + 0.5F, paramxm);
 /*  57: 70 */       paramaqu.spawnEntity(localaek);
@@ -70,7 +70,7 @@ package net.minecraft.src;
 /*  70: 81 */         paramaqu.g(paramdt);
 /*  71: 83 */         if (localalq == ItemList.d) {
 /*  72: 84 */           paramahd.bY().a(1, paramahd);
-/*  73: 85 */         } else if (!paramahd.by.d) {
+/*  73: 85 */         } else if (!paramahd.abilities.instabuild) {
 /*  74: 86 */           paramahd.bY().stackSize -= 1;
 /*  75:    */         }
 /*  76: 88 */         return true;
@@ -81,9 +81,9 @@ package net.minecraft.src;
 /*  81:    */   
 /*  82:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, Entity paramwv)
 /*  83:    */   {
-/*  84: 96 */     if ((!paramaqu.isClient) && ((paramwv instanceof ahj)))
+/*  84: 96 */     if ((!paramaqu.isClient) && ((paramwv instanceof EntityArrow)))
 /*  85:    */     {
-/*  86: 97 */       ahj localahj = (ahj)paramwv;
+/*  86: 97 */       EntityArrow localahj = (EntityArrow)paramwv;
 /*  87: 98 */       if (localahj.au())
 /*  88:    */       {
 /*  89: 99 */         a(paramaqu, paramdt, paramaqu.getBlock(paramdt).setData(a, Boolean.valueOf(true)), (localahj.c instanceof EntityLiving) ? (EntityLiving)localahj.c : null);
@@ -104,7 +104,7 @@ package net.minecraft.src;
 /* 104:    */   
 /* 105:    */   public int c(Block parambec)
 /* 106:    */   {
-/* 107:117 */     return ((Boolean)parambec.getProperty(a)).booleanValue() ? 1 : 0;
+/* 107:117 */     return ((Boolean)parambec.getData(a)).booleanValue() ? 1 : 0;
 /* 108:    */   }
 /* 109:    */   
 /* 110:    */   protected bed e()

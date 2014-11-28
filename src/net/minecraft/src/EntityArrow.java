@@ -1,7 +1,7 @@
 package net.minecraft.src;
 /*   1:    */ import java.util.List;
 /*   3:    */ 
-/*   4:    */ public class ahj
+/*   4:    */ public class EntityArrow
 /*   5:    */   extends Entity
 /*   6:    */   implements aho
 /*   7:    */ {
@@ -19,14 +19,14 @@ package net.minecraft.src;
 /*  19: 52 */   private double ar = 2.0D;
 /*  20:    */   private int as;
 /*  21:    */   
-/*  22:    */   public ahj(World paramaqu)
+/*  22:    */   public EntityArrow(World paramaqu)
 /*  23:    */   {
 /*  24: 57 */     super(paramaqu);
 /*  25: 58 */     this.j = 10.0D;
 /*  26: 59 */     a(0.5F, 0.5F);
 /*  27:    */   }
 /*  28:    */   
-/*  29:    */   public ahj(World paramaqu, double paramDouble1, double paramDouble2, double paramDouble3)
+/*  29:    */   public EntityArrow(World paramaqu, double paramDouble1, double paramDouble2, double paramDouble3)
 /*  30:    */   {
 /*  31: 63 */     super(paramaqu);
 /*  32: 64 */     this.j = 10.0D;
@@ -36,7 +36,7 @@ package net.minecraft.src;
 /*  36: 68 */     setPos(paramDouble1, paramDouble2, paramDouble3);
 /*  37:    */   }
 /*  38:    */   
-/*  39:    */   public ahj(World paramaqu, EntityLiving paramxm1, EntityLiving paramxm2, float paramFloat1, float paramFloat2)
+/*  39:    */   public EntityArrow(World paramaqu, EntityLiving paramxm1, EntityLiving paramxm2, float paramFloat1, float paramFloat2)
 /*  40:    */   {
 /*  41: 72 */     super(paramaqu);
 /*  42: 73 */     this.j = 10.0D;
@@ -49,7 +49,7 @@ package net.minecraft.src;
 /*  49: 81 */     double d1 = paramxm2.xPos - paramxm1.xPos;
 /*  50: 82 */     double d2 = paramxm2.getAABB().minY + paramxm2.height / 3.0F - this.yPos;
 /*  51: 83 */     double d3 = paramxm2.zPos - paramxm1.zPos;
-/*  52: 84 */     double d4 = MathUtils.a(d1 * d1 + d3 * d3);
+/*  52: 84 */     double d4 = MathUtils.sqrt(d1 * d1 + d3 * d3);
 /*  53: 85 */     if (d4 < 1.0E-007D) {
 /*  54: 86 */       return;
 /*  55:    */     }
@@ -64,7 +64,7 @@ package net.minecraft.src;
 /*  64: 97 */     c(d1, d2 + f3, d3, paramFloat1, paramFloat2);
 /*  65:    */   }
 /*  66:    */   
-/*  67:    */   public ahj(World paramaqu, EntityLiving paramxm, float paramFloat)
+/*  67:    */   public EntityArrow(World paramaqu, EntityLiving paramxm, float paramFloat)
 /*  68:    */   {
 /*  69:101 */     super(paramaqu);
 /*  70:102 */     this.j = 10.0D;
@@ -95,7 +95,7 @@ package net.minecraft.src;
 /*  95:    */   
 /*  96:    */   public void c(double paramDouble1, double paramDouble2, double paramDouble3, float paramFloat1, float paramFloat2)
 /*  97:    */   {
-/*  98:131 */     float f1 = MathUtils.a(paramDouble1 * paramDouble1 + paramDouble2 * paramDouble2 + paramDouble3 * paramDouble3);
+/*  98:131 */     float f1 = MathUtils.sqrt(paramDouble1 * paramDouble1 + paramDouble2 * paramDouble2 + paramDouble3 * paramDouble3);
 /*  99:    */     
 /* 100:133 */     paramDouble1 /= f1;
 /* 101:134 */     paramDouble2 /= f1;
@@ -113,7 +113,7 @@ package net.minecraft.src;
 /* 113:146 */     this.yVelocity = paramDouble2;
 /* 114:147 */     this.zVelocity = paramDouble3;
 /* 115:    */     
-/* 116:149 */     float f2 = MathUtils.a(paramDouble1 * paramDouble1 + paramDouble3 * paramDouble3);
+/* 116:149 */     float f2 = MathUtils.sqrt(paramDouble1 * paramDouble1 + paramDouble3 * paramDouble3);
 /* 117:    */     
 /* 118:151 */     this.lastYaw = (this.yaw = (float)(Math.atan2(paramDouble1, paramDouble3) * 180.0D / 3.141592741012573D));
 /* 119:152 */     this.lastPitch = (this.pitch = (float)(Math.atan2(paramDouble2, f2) * 180.0D / 3.141592741012573D));
@@ -133,7 +133,7 @@ package net.minecraft.src;
 /* 133:166 */     this.zVelocity = paramDouble3;
 /* 134:167 */     if ((this.lastPitch == 0.0F) && (this.lastYaw == 0.0F))
 /* 135:    */     {
-/* 136:168 */       float f1 = MathUtils.a(paramDouble1 * paramDouble1 + paramDouble3 * paramDouble3);
+/* 136:168 */       float f1 = MathUtils.sqrt(paramDouble1 * paramDouble1 + paramDouble3 * paramDouble3);
 /* 137:169 */       this.lastYaw = (this.yaw = (float)(Math.atan2(paramDouble1, paramDouble3) * 180.0D / 3.141592741012573D));
 /* 138:170 */       this.lastPitch = (this.pitch = (float)(Math.atan2(paramDouble2, f1) * 180.0D / 3.141592741012573D));
 /* 139:171 */       this.lastPitch = this.pitch;
@@ -148,7 +148,7 @@ package net.minecraft.src;
 /* 148:180 */     super.onUpdate();
 /* 149:182 */     if ((this.lastPitch == 0.0F) && (this.lastYaw == 0.0F))
 /* 150:    */     {
-/* 151:183 */       float f1 = MathUtils.a(this.xVelocity * this.xVelocity + this.zVelocity * this.zVelocity);
+/* 151:183 */       float f1 = MathUtils.sqrt(this.xVelocity * this.xVelocity + this.zVelocity * this.zVelocity);
 /* 152:184 */       this.lastYaw = (this.yaw = (float)(Math.atan2(this.xVelocity, this.zVelocity) * 180.0D / 3.141592741012573D));
 /* 153:185 */       this.lastPitch = (this.pitch = (float)(Math.atan2(this.yVelocity, f1) * 180.0D / 3.141592741012573D));
 /* 154:    */     }
@@ -212,7 +212,7 @@ package net.minecraft.src;
 /* 212:245 */         HitResult localbru2 = ((AABB)localObject2).a(localbrw1, localbrw2);
 /* 213:246 */         if (localbru2 != null)
 /* 214:    */         {
-/* 215:247 */           double d2 = localbrw1.f(localbru2.c);
+/* 215:247 */           double d2 = localbrw1.dist(localbru2.c);
 /* 216:248 */           if ((d2 < d1) || (d1 == 0.0D))
 /* 217:    */           {
 /* 218:249 */             localObject1 = localwv;
@@ -227,7 +227,7 @@ package net.minecraft.src;
 /* 227:259 */     if ((localbru1 != null) && (localbru1.d != null) && ((localbru1.d instanceof EntityPlayer)))
 /* 228:    */     {
 /* 229:260 */       EntityPlayer localahd = (EntityPlayer)localbru1.d;
-/* 230:261 */       if ((localahd.by.a) || (((this.c instanceof EntityPlayer)) && (!((EntityPlayer)this.c).a(localahd)))) {
+/* 230:261 */       if ((localahd.abilities.invulnerable) || (((this.c instanceof EntityPlayer)) && (!((EntityPlayer)this.c).a(localahd)))) {
 /* 231:262 */         localbru1 = null;
 /* 232:    */       }
 /* 233:    */     }
@@ -235,16 +235,16 @@ package net.minecraft.src;
 /* 235:266 */     if (localbru1 != null) {
 /* 236:267 */       if (localbru1.d != null)
 /* 237:    */       {
-/* 238:268 */         float f2 = MathUtils.a(this.xVelocity * this.xVelocity + this.yVelocity * this.yVelocity + this.zVelocity * this.zVelocity);
+/* 238:268 */         float f2 = MathUtils.sqrt(this.xVelocity * this.xVelocity + this.yVelocity * this.yVelocity + this.zVelocity * this.zVelocity);
 /* 239:269 */         int n = MathUtils.ceil(f2 * this.ar);
 /* 240:271 */         if (l()) {
 /* 241:272 */           n += this.rng.nextInt(n / 2 + 2);
 /* 242:    */         }
 /* 243:    */         DamageSource localwh;
 /* 244:276 */         if (this.c == null) {
-/* 245:277 */           localwh = DamageSource.a(this, this);
+/* 245:277 */           localwh = DamageSource.fromArrow(this, this);
 /* 246:    */         } else {
-/* 247:279 */           localwh = DamageSource.a(this, this.c);
+/* 247:279 */           localwh = DamageSource.fromArrow(this, this.c);
 /* 248:    */         }
 /* 249:284 */         if ((au()) && (!(localbru1.d instanceof EntityEnderman))) {
 /* 250:285 */           localbru1.d.e(5);
@@ -259,7 +259,7 @@ package net.minecraft.src;
 /* 259:    */             }
 /* 260:295 */             if (this.as > 0)
 /* 261:    */             {
-/* 262:296 */               f7 = MathUtils.a(this.xVelocity * this.xVelocity + this.zVelocity * this.zVelocity);
+/* 262:296 */               f7 = MathUtils.sqrt(this.xVelocity * this.xVelocity + this.zVelocity * this.zVelocity);
 /* 263:297 */               if (f7 > 0.0F) {
 /* 264:298 */                 localbru1.d.g(this.xVelocity * this.as * 0.6000000238418579D / f7, 0.1D, this.zVelocity * this.as * 0.6000000238418579D / f7);
 /* 265:    */               }
@@ -300,7 +300,7 @@ package net.minecraft.src;
 /* 300:331 */         this.xVelocity = ((float)(localbru1.c.x - this.xPos));
 /* 301:332 */         this.yVelocity = ((float)(localbru1.c.y - this.yPos));
 /* 302:333 */         this.zVelocity = ((float)(localbru1.c.z - this.zPos));
-/* 303:334 */         float f4 = MathUtils.a(this.xVelocity * this.xVelocity + this.yVelocity * this.yVelocity + this.zVelocity * this.zVelocity);
+/* 303:334 */         float f4 = MathUtils.sqrt(this.xVelocity * this.xVelocity + this.yVelocity * this.yVelocity + this.zVelocity * this.zVelocity);
 /* 304:335 */         this.xPos -= this.xVelocity / f4 * 0.0500000007450581D;
 /* 305:336 */         this.yPos -= this.yVelocity / f4 * 0.0500000007450581D;
 /* 306:337 */         this.zPos -= this.zVelocity / f4 * 0.0500000007450581D;
@@ -323,7 +323,7 @@ package net.minecraft.src;
 /* 323:357 */     this.yPos += this.yVelocity;
 /* 324:358 */     this.zPos += this.zVelocity;
 /* 325:    */     
-/* 326:360 */     float f3 = MathUtils.a(this.xVelocity * this.xVelocity + this.zVelocity * this.zVelocity);
+/* 326:360 */     float f3 = MathUtils.sqrt(this.xVelocity * this.xVelocity + this.zVelocity * this.zVelocity);
 /* 327:361 */     this.yaw = ((float)(Math.atan2(this.xVelocity, this.zVelocity) * 180.0D / 3.141592741012573D));
 /* 328:362 */     this.pitch = ((float)(Math.atan2(this.yVelocity, f3) * 180.0D / 3.141592741012573D));
 /* 329:364 */     while (this.pitch - this.lastPitch < -180.0F) {
@@ -343,7 +343,7 @@ package net.minecraft.src;
 /* 343:    */     
 /* 344:381 */     float f4 = 0.99F;
 /* 345:382 */     float f6 = 0.05F;
-/* 346:384 */     if (V())
+/* 346:384 */     if (isInWater())
 /* 347:    */     {
 /* 348:385 */       for (int i1 = 0; i1 < 4; i1++)
 /* 349:    */       {
@@ -404,14 +404,14 @@ package net.minecraft.src;
 /* 404:    */     }
 /* 405:    */   }
 /* 406:    */   
-/* 407:    */   public void d(EntityPlayer paramahd)
+/* 407:    */   public void onPickedUp(EntityPlayer paramahd)
 /* 408:    */   {
 /* 409:448 */     if ((this.world.isClient) || (!this.i) || (this.b > 0)) {
 /* 410:449 */       return;
 /* 411:    */     }
-/* 412:452 */     int j = (this.a == 1) || ((this.a == 2) && (paramahd.by.d)) ? 1 : 0;
+/* 412:452 */     int j = (this.a == 1) || ((this.a == 2) && (paramahd.abilities.instabuild)) ? 1 : 0;
 /* 413:454 */     if ((this.a == 1) && 
-/* 414:455 */       (!paramahd.bg.a(new ItemStack(ItemList.g, 1)))) {
+/* 414:455 */       (!paramahd.bg.a(new ItemStack(ItemList.arrow, 1)))) {
 /* 415:456 */       j = 0;
 /* 416:    */     }
 /* 417:460 */     if (j != 0)

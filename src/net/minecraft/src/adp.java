@@ -30,7 +30,7 @@ package net.minecraft.src;
 /* 29:31 */       localamj.b(j);
 /* 30:   */     }
 /* 31:34 */     if (this.d) {
-/* 32:35 */       aph.a(paramRandom, localamj, 30);
+/* 32:35 */       aph.randomEnchant(paramRandom, localamj, 30);
 /* 33:   */     }
 /* 34:38 */     return localamj;
 /* 35:   */   }

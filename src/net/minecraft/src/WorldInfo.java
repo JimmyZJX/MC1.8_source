@@ -23,7 +23,7 @@ package net.minecraft.src;
 /*  22:    */   private int rainTime;
 /*  23:    */   private boolean thundering;
 /*  24:    */   private int thunderTime;
-/*  25:    */   private EnumGameType gameType;
+/*  25:    */   private EnumGameMode gameType;
 /*  26:    */   private boolean mapFeaturesEnabled;
 /*  27:    */   private boolean hardcore;
 /*  28:    */   private boolean allowCommands;
@@ -66,7 +66,7 @@ package net.minecraft.src;
 /*  65: 77 */         this.generatorOptions = tag.getString("generatorOptions");
 /*  66:    */       }
 /*  67:    */     }
-/*  68: 80 */     this.gameType = EnumGameType.a(tag.getInteger("GameType"));
+/*  68: 80 */     this.gameType = EnumGameMode.a(tag.getInteger("GameType"));
 /*  69: 81 */     if (tag.hasKey("MapFeatures", 99)) {
 /*  70: 82 */       this.mapFeaturesEnabled = tag.getBoolean("MapFeatures");
 /*  71:    */     } else {
@@ -99,7 +99,7 @@ package net.minecraft.src;
 /*  98:112 */     if (tag.hasKey("allowCommands", 99)) {
 /*  99:113 */       this.allowCommands = tag.getBoolean("allowCommands");
 /* 100:    */     } else {
-/* 101:115 */       this.allowCommands = (this.gameType == EnumGameType.CREATIVE);
+/* 101:115 */       this.allowCommands = (this.gameType == EnumGameMode.CREATIVE);
 /* 102:    */     }
 /* 103:118 */     if (tag.hasKey("Player", 10))
 /* 104:    */     {
@@ -410,7 +410,7 @@ package net.minecraft.src;
 /* 409:421 */     this.rainTime = paramInt;
 /* 410:    */   }
 /* 411:    */   
-/* 412:    */   public EnumGameType r()
+/* 412:    */   public EnumGameMode r()
 /* 413:    */   {
 /* 414:425 */     return this.gameType;
 /* 415:    */   }
@@ -425,7 +425,7 @@ package net.minecraft.src;
 /* 424:433 */     this.mapFeaturesEnabled = paramBoolean;
 /* 425:    */   }
 /* 426:    */   
-/* 427:    */   public void a(EnumGameType paramarc)
+/* 427:    */   public void a(EnumGameMode paramarc)
 /* 428:    */   {
 /* 429:437 */     this.gameType = paramarc;
 /* 430:    */   }
@@ -678,7 +678,7 @@ package net.minecraft.src;
 				static boolean l(WorldInfo arg0) {return arg0.raining;}
 				static int m(WorldInfo arg0) {return arg0.thunderTime;}
 				static boolean n(WorldInfo arg0) {return arg0.thundering;}
-				static EnumGameType o(WorldInfo arg0) {return arg0.gameType;}
+				static EnumGameMode o(WorldInfo arg0) {return arg0.gameType;}
 				static boolean p(WorldInfo arg0) {return arg0.hardcore;}
 				static boolean q(WorldInfo arg0) {return arg0.allowCommands;}
 /* 666:    */ }

@@ -44,7 +44,7 @@ package net.minecraft.src;
 /* 43:50 */               localamj1.stackSize -= j;
 /* 44:51 */               localamj2 = new ItemStack(localalq, j, localamj1.getDamage2());
 /* 45:   */             }
-/* 46:52 */             else if ((localalq == ItemList.O) && (localamj1.stackSize > 5))
+/* 46:52 */             else if ((localalq == ItemList.wheat) && (localamj1.stackSize > 5))
 /* 47:   */             {
 /* 48:53 */               j = localamj1.stackSize / 2 / 3 * 3;
 /* 49:54 */               int k = j / 3;

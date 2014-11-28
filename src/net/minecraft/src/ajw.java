@@ -33,7 +33,7 @@ package net.minecraft.src;
 /* 32:43 */     float f10 = f4 * f6;
 /* 33:   */     
 /* 34:45 */     double d4 = 5.0D;
-/* 35:46 */     Vec3 localbrw2 = localbrw1.b(f8 * d4, f9 * d4, f10 * d4);
+/* 35:46 */     Vec3 localbrw2 = localbrw1.add(f8 * d4, f9 * d4, f10 * d4);
 /* 36:47 */     HitResult localbru = paramaqu.a(localbrw1, localbrw2, true);
 /* 37:48 */     if (localbru == null) {
 /* 38:49 */       return paramamj;
@@ -72,10 +72,10 @@ package net.minecraft.src;
 /* 71:84 */       if (!paramaqu.isClient) {
 /* 72:85 */         paramaqu.spawnEntity((Entity)localObject);
 /* 73:   */       }
-/* 74:87 */       if (!paramahd.by.d) {
+/* 74:87 */       if (!paramahd.abilities.instabuild) {
 /* 75:88 */         paramamj.stackSize -= 1;
 /* 76:   */       }
-/* 77:90 */       paramahd.b(StatList.J[Item.b(this)]);
+/* 77:90 */       paramahd.increaseStat(StatList.J[Item.b(this)]);
 /* 78:   */     }
 /* 79:93 */     return paramamj;
 /* 80:   */   }

@@ -29,7 +29,7 @@ package net.minecraft.src;
 /*  28: 39 */     if (paramArrayOfString.length < 2) {
 /*  29: 40 */       throw new WrongUsageException("commands.achievement.usage", new Object[0]);
 /*  30:    */     }
-/*  31: 43 */     tq localtq = StatList.a(paramArrayOfString[1]);
+/*  31: 43 */     PlayerStat localtq = StatList.a(paramArrayOfString[1]);
 /*  32: 44 */     if ((localtq == null) && (!paramArrayOfString[1].equals("*"))) {
 /*  33: 45 */       throw new CommandException("commands.achievement.unknownAchievement", new Object[] { paramArrayOfString[1] });
 /*  34:    */     }
@@ -48,7 +48,7 @@ package net.minecraft.src;
 /*  47: 57 */         for (localObject1 = AchievementList.e.iterator(); ((Iterator)localObject1).hasNext();)
 /*  48:    */         {
 /*  49: 57 */           localObject2 = (tk)((Iterator)localObject1).next();
-/*  50: 58 */           localqw.b((tq)localObject2);
+/*  50: 58 */           localqw.increaseStat((PlayerStat)localObject2);
 /*  51:    */         }
 /*  52: 60 */         a(paramae, this, "commands.achievement.give.success.all", new Object[] { localqw.getName() });
 /*  53:    */       }
@@ -57,7 +57,7 @@ package net.minecraft.src;
 /*  56: 62 */         for (localObject1 = Lists.reverse(AchievementList.e).iterator(); ((Iterator)localObject1).hasNext();)
 /*  57:    */         {
 /*  58: 62 */           localObject2 = (tk)((Iterator)localObject1).next();
-/*  59: 63 */           localqw.a((tq)localObject2);
+/*  59: 63 */           localqw.a((PlayerStat)localObject2);
 /*  60:    */         }
 /*  61: 65 */         a(paramae, this, "commands.achievement.take.success.all", new Object[] { localqw.getName() });
 /*  62:    */       }
@@ -82,7 +82,7 @@ package net.minecraft.src;
 /*  81: 83 */         for (localIterator = Lists.reverse((List)localObject2).iterator(); localIterator.hasNext();)
 /*  82:    */         {
 /*  83: 83 */           localtk = (tk)localIterator.next();
-/*  84: 84 */           localqw.b(localtk);
+/*  84: 84 */           localqw.increaseStat(localtk);
 /*  85:    */         }
 /*  86:    */       }
 /*  87: 86 */       else if (bool2)
@@ -105,7 +105,7 @@ package net.minecraft.src;
 /* 104:    */     }
 /* 105:107 */     if (bool1)
 /* 106:    */     {
-/* 107:108 */       localqw.b(localtq);
+/* 107:108 */       localqw.increaseStat(localtq);
 /* 108:109 */       a(paramae, this, "commands.achievement.give.success.one", new Object[] { localqw.getName(), localtq.j() });
 /* 109:    */     }
 /* 110:110 */     else if (bool2)
@@ -123,7 +123,7 @@ package net.minecraft.src;
 /* 122:123 */     if (paramArrayOfString.length == 2)
 /* 123:    */     {
 /* 124:124 */       ArrayList localArrayList = Lists.newArrayList();
-/* 125:125 */       for (tq localtq : StatList.b) {
+/* 125:125 */       for (PlayerStat localtq : StatList.b) {
 /* 126:126 */         localArrayList.add(localtq.e);
 /* 127:    */       }
 /* 128:129 */       return a(paramArrayOfString, localArrayList);

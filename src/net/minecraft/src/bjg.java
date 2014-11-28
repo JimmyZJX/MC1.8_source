@@ -215,10 +215,10 @@ package net.minecraft.src;
 /* 214:407 */       a(paramaqu, parambjb, paramRandom, 0.05F, 1, 2, i2 - 1, BlockList.torch.instance(EnumDirection.UP.a()));
 /* 215:408 */       a(paramaqu, parambjb, paramRandom, 0.05F, 1, 2, i2 + 1, BlockList.torch.instance(EnumDirection.UP.a()));
 /* 216:410 */       if (paramRandom.nextInt(100) == 0) {
-/* 217:411 */         a(paramaqu, parambjb, paramRandom, 2, 0, i2 - 1, vl.a(bje.b(), new vl[] { ItemList.cd.b(paramRandom) }), 3 + paramRandom.nextInt(4));
+/* 217:411 */         a(paramaqu, parambjb, paramRandom, 2, 0, i2 - 1, vl.a(bje.b(), new vl[] { ItemList.enchantedBook.b(paramRandom) }), 3 + paramRandom.nextInt(4));
 /* 218:    */       }
 /* 219:413 */       if (paramRandom.nextInt(100) == 0) {
-/* 220:414 */         a(paramaqu, parambjb, paramRandom, 0, 0, i2 + 1, vl.a(bje.b(), new vl[] { ItemList.cd.b(paramRandom) }), 3 + paramRandom.nextInt(4));
+/* 220:414 */         a(paramaqu, parambjb, paramRandom, 0, 0, i2 + 1, vl.a(bje.b(), new vl[] { ItemList.enchantedBook.b(paramRandom) }), 3 + paramRandom.nextInt(4));
 /* 221:    */       }
 /* 222:416 */       if ((this.b) && (!this.c))
 /* 223:    */       {

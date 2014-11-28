@@ -39,7 +39,7 @@ package net.minecraft.src;
 /*  38:    */   protected int e(IBlockAccess paramard, BlockPosition paramdt)
 /*  39:    */   {
 /*  40: 53 */     if (paramard.getBlock(paramdt).getProto().getMaterial() == this.material) {
-/*  41: 54 */       return ((Integer)paramard.getBlock(paramdt).getProperty(level)).intValue();
+/*  41: 54 */       return ((Integer)paramard.getBlock(paramdt).getData(level)).intValue();
 /*  42:    */     }
 /*  43: 57 */     return -1;
 /*  44:    */   }
@@ -63,7 +63,7 @@ package net.minecraft.src;
 /*  62:    */   
 /*  63:    */   public boolean a(Block parambec, boolean paramBoolean)
 /*  64:    */   {
-/*  65: 78 */     return (paramBoolean) && (((Integer)parambec.getProperty(level)).intValue() == 0);
+/*  65: 78 */     return (paramBoolean) && (((Integer)parambec.getData(level)).intValue() == 0);
 /*  66:    */   }
 /*  67:    */   
 /*  68:    */   public boolean b(IBlockAccess paramard, BlockPosition paramdt, EnumDirection paramej)
@@ -128,45 +128,45 @@ package net.minecraft.src;
 /* 127:141 */     return 0;
 /* 128:    */   }
 /* 129:    */   
-/* 130:    */   protected Vec3 h(IBlockAccess paramard, BlockPosition paramdt)
+/* 130:    */   protected Vec3 h(IBlockAccess world, BlockPosition pos)
 /* 131:    */   {
 /* 132:145 */     Vec3 localbrw = new Vec3(0.0D, 0.0D, 0.0D);
-/* 133:146 */     int i = f(paramard, paramdt);
-/* 134:147 */     for (Iterator<EnumDirection> localIterator = en.HORIZONTAL.iterator(); localIterator.hasNext();)
+/* 133:146 */     int i = f(world, pos);
+/* 134:147 */     for (Iterator<EnumDirection> it = EnumHorizontalVertical.HORIZONTAL.iterator(); it.hasNext();)
 /* 135:    */     {
-/* 136:147 */       EnumDirection localej = (EnumDirection)localIterator.next();
-/* 137:148 */       BlockPosition localdt = paramdt.offset(localej);
+/* 136:147 */       EnumDirection dir = it.next();
+/* 137:148 */       BlockPosition pos1 = pos.offset(dir);
 /* 138:    */       
-/* 139:150 */       int j = f(paramard, localdt);
+/* 139:150 */       int j = f(world, pos1);
 /* 140:    */       int k;
 /* 141:151 */       if (j < 0)
 /* 142:    */       {
-/* 143:152 */         if (!paramard.getBlock(localdt).getProto().getMaterial().c())
+/* 143:152 */         if (!world.getBlock(pos1).getProto().getMaterial().material_c())
 /* 144:    */         {
-/* 145:153 */           j = f(paramard, localdt.down());
+/* 145:153 */           j = f(world, pos1.down());
 /* 146:154 */           if (j >= 0)
 /* 147:    */           {
 /* 148:155 */             k = j - (i - 8);
-/* 149:156 */             localbrw = localbrw.b((localdt.getX() - paramdt.getX()) * k, (localdt.getY() - paramdt.getY()) * k, (localdt.getZ() - paramdt.getZ()) * k);
+/* 149:156 */             localbrw = localbrw.add((pos1.getX() - pos.getX()) * k, (pos1.getY() - pos.getY()) * k, (pos1.getZ() - pos.getZ()) * k);
 /* 150:    */           }
 /* 151:    */         }
 /* 152:    */       }
 /* 153:159 */       else if (j >= 0)
 /* 154:    */       {
 /* 155:160 */         k = j - i;
-/* 156:161 */         localbrw = localbrw.b((localdt.getX() - paramdt.getX()) * k, (localdt.getY() - paramdt.getY()) * k, (localdt.getZ() - paramdt.getZ()) * k);
+/* 156:161 */         localbrw = localbrw.add((pos1.getX() - pos.getX()) * k, (pos1.getY() - pos.getY()) * k, (pos1.getZ() - pos.getZ()) * k);
 /* 157:    */       }
 /* 158:    */     }
-/* 159:    */     EnumDirection localej;
-/* 160:    */     BlockPosition localdt;
-/* 161:164 */     if (((Integer)paramard.getBlock(paramdt).getProperty(level)).intValue() >= 8) {
-/* 162:165 */       for (Iterator<EnumDirection> localIterator = en.HORIZONTAL.iterator(); localIterator.hasNext();)
+/* 159:    */     EnumDirection dir;
+/* 160:    */     BlockPosition pos1;
+/* 161:164 */     if (((Integer)world.getBlock(pos).getData(level)).intValue() >= 8) {
+/* 162:165 */       for (Iterator<EnumDirection> it = EnumHorizontalVertical.HORIZONTAL.iterator(); it.hasNext();)
 /* 163:    */       {
-/* 164:165 */         localej = (EnumDirection)localIterator.next();
-/* 165:166 */         localdt = paramdt.offset(localej);
-/* 166:167 */         if ((b(paramard, localdt, localej)) || (b(paramard, localdt.up(), localej)))
+/* 164:165 */         dir = it.next();
+/* 165:166 */         pos1 = pos.offset(dir);
+/* 166:167 */         if ((b(world, pos1, dir)) || (b(world, pos1.up(), dir)))
 /* 167:    */         {
-/* 168:168 */           localbrw = localbrw.normalize().b(0.0D, -6.0D, 0.0D);
+/* 168:168 */           localbrw = localbrw.normalize().add(0.0D, -6.0D, 0.0D);
 /* 169:169 */           break;
 /* 170:    */         }
 /* 171:    */       }
@@ -174,9 +174,9 @@ package net.minecraft.src;
 /* 173:173 */     return localbrw.normalize();
 /* 174:    */   }
 /* 175:    */   
-/* 176:    */   public Vec3 a(World paramaqu, BlockPosition paramdt, Entity paramwv, Vec3 parambrw)
+/* 176:    */   public Vec3 alterAcceleration(World world, BlockPosition pos, Entity entity, Vec3 acceleration)
 /* 177:    */   {
-/* 178:178 */     return parambrw.e(h(paramaqu, paramdt));
+/* 178:178 */     return acceleration.add(h(world, pos));
 /* 179:    */   }
 /* 180:    */   
 /* 181:    */   public int a(World paramaqu)
@@ -215,7 +215,7 @@ package net.minecraft.src;
 /* 214:214 */     double d3 = paramdt.getZ();
 /* 215:216 */     if (this.material == Material.water)
 /* 216:    */     {
-/* 217:217 */       int i = ((Integer)parambec.getProperty(level)).intValue();
+/* 217:217 */       int i = ((Integer)parambec.getData(level)).intValue();
 /* 218:218 */       if ((i > 0) && (i < 8))
 /* 219:    */       {
 /* 220:219 */         if (paramRandom.nextInt(64) == 0) {
@@ -244,7 +244,7 @@ package net.minecraft.src;
 /* 243:242 */     if ((paramRandom.nextInt(10) == 0) && (World.isFlatSurface(paramaqu, paramdt.down())))
 /* 244:    */     {
 /* 245:243 */       Material localbof = paramaqu.getBlock(paramdt.down(2)).getProto().getMaterial();
-/* 246:244 */       if ((!localbof.c()) && (!localbof.isLiquid()))
+/* 246:244 */       if ((!localbof.material_c()) && (!localbof.isLiquid()))
 /* 247:    */       {
 /* 248:245 */         double d5 = d1 + paramRandom.nextFloat();
 /* 249:246 */         double d7 = d2 - 1.05D;
@@ -291,7 +291,7 @@ package net.minecraft.src;
 /* 290:    */       }
 /* 291:286 */       if (i != 0)
 /* 292:    */       {
-/* 293:287 */         Integer localInteger = (Integer)parambec.getProperty(level);
+/* 293:287 */         Integer localInteger = (Integer)parambec.getData(level);
 /* 294:288 */         if (localInteger.intValue() == 0)
 /* 295:    */         {
 /* 296:289 */           paramaqu.setBlock(paramdt, BlockList.obsidian.instance());
@@ -328,7 +328,7 @@ package net.minecraft.src;
 /* 327:    */   
 /* 328:    */   public int c(Block parambec)
 /* 329:    */   {
-/* 330:321 */     return ((Integer)parambec.getProperty(level)).intValue();
+/* 330:321 */     return ((Integer)parambec.getData(level)).intValue();
 /* 331:    */   }
 /* 332:    */   
 /* 333:    */   protected bed e()

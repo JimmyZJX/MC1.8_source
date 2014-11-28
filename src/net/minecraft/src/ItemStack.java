@@ -83,7 +83,7 @@ package net.minecraft.src;
 /*  84:    */   {
 /*  85:127 */     boolean bool = getItem().a(this, paramahd, paramaqu, paramdt, paramej, paramFloat1, paramFloat2, paramFloat3);
 /*  86:128 */     if (bool) {
-/*  87:129 */       paramahd.b(StatList.J[Item.b(this.item)]);
+/*  87:129 */       paramahd.increaseStat(StatList.J[Item.b(this.item)]);
 /*  88:    */     }
 /*  89:131 */     return bool;
 /*  90:    */   }
@@ -200,7 +200,7 @@ package net.minecraft.src;
 /* 201:    */     }
 /* 202:235 */     if (paramInt > 0)
 /* 203:    */     {
-/* 204:236 */       int m = aph.a(Enchantment.t.B, this);
+/* 204:236 */       int m = aph.a(Enchantment.t.id, this);
 /* 205:    */       
 /* 206:238 */       int n = 0;
 /* 207:239 */       for (int i1 = 0; (m > 0) && (i1 < paramInt); i1++) {
@@ -220,7 +220,7 @@ package net.minecraft.src;
 /* 221:    */   
 /* 222:    */   public void a(int paramInt, EntityLiving paramxm)
 /* 223:    */   {
-/* 224:257 */     if (((paramxm instanceof EntityPlayer)) && (((EntityPlayer)paramxm).by.d)) {
+/* 224:257 */     if (((paramxm instanceof EntityPlayer)) && (((EntityPlayer)paramxm).abilities.instabuild)) {
 /* 225:258 */       return;
 /* 226:    */     }
 /* 227:260 */     if (!e()) {
@@ -234,7 +234,7 @@ package net.minecraft.src;
 /* 235:268 */       if ((paramxm instanceof EntityPlayer))
 /* 236:    */       {
 /* 237:269 */         EntityPlayer localahd = (EntityPlayer)paramxm;
-/* 238:270 */         localahd.b(StatList.K[Item.b(this.item)]);
+/* 238:270 */         localahd.increaseStat(StatList.K[Item.b(this.item)]);
 /* 239:271 */         if ((this.stackSize == 0) && ((getItem() instanceof ItemBow))) {
 /* 240:272 */           localahd.bZ();
 /* 241:    */         }
@@ -250,7 +250,7 @@ package net.minecraft.src;
 /* 251:    */   {
 /* 252:283 */     boolean bool = this.item.a(this, paramxm, paramahd);
 /* 253:284 */     if (bool) {
-/* 254:285 */       paramahd.b(StatList.J[Item.b(this.item)]);
+/* 254:285 */       paramahd.increaseStat(StatList.J[Item.b(this.item)]);
 /* 255:    */     }
 /* 256:    */   }
 /* 257:    */   
@@ -258,7 +258,7 @@ package net.minecraft.src;
 /* 259:    */   {
 /* 260:290 */     boolean bool = this.item.a(this, paramaqu, paramatr, paramdt, paramahd);
 /* 261:291 */     if (bool) {
-/* 262:292 */       paramahd.b(StatList.J[Item.b(this.item)]);
+/* 262:292 */       paramahd.increaseStat(StatList.J[Item.b(this.item)]);
 /* 263:    */     }
 /* 264:    */   }
 /* 265:    */   
@@ -370,7 +370,7 @@ package net.minecraft.src;
 /* 371:    */   
 /* 372:    */   public void a(World paramaqu, EntityPlayer paramahd, int paramInt)
 /* 373:    */   {
-/* 374:406 */     paramahd.a(StatList.I[Item.b(this.item)], paramInt);
+/* 374:406 */     paramahd.increaseStat(StatList.I[Item.b(this.item)], paramInt);
 /* 375:407 */     this.item.d(this, paramaqu, paramahd);
 /* 376:    */   }
 /* 377:    */   
@@ -653,9 +653,9 @@ package net.minecraft.src;
 /* 654:666 */     return getItem().f(this);
 /* 655:    */   }
 /* 656:    */   
-/* 657:    */   public amx u()
+/* 657:    */   public EnumRarity u()
 /* 658:    */   {
-/* 659:670 */     return getItem().g(this);
+/* 659:670 */     return getItem().getRarity(this);
 /* 660:    */   }
 /* 661:    */   
 /* 662:    */   public boolean v()
@@ -679,7 +679,7 @@ package net.minecraft.src;
 /* 680:    */     }
 /* 681:690 */     fv localfv = this.stackTagCompound.c("ench", 10);
 /* 682:691 */     NBTTagCompound localfn = new NBTTagCompound();
-/* 683:692 */     localfn.setShort("id", (short)paramapf.B);
+/* 683:692 */     localfn.setShort("id", (short)paramapf.id);
 /* 684:693 */     localfn.setShort("lvl", (short)(byte)paramInt);
 /* 685:694 */     localfv.a(localfn);
 /* 686:    */   }
@@ -746,7 +746,7 @@ package net.minecraft.src;
 /* 747:749 */       for (int m = 0; m < localfv.c(); m++)
 /* 748:    */       {
 /* 749:750 */         NBTTagCompound localfn = localfv.b(m);
-/* 750:751 */         ya localya = afs.a(localfn);
+/* 750:751 */         ya localya = MobAttribute.a(localfn);
 /* 751:752 */         if (localya != null) {
 /* 752:756 */           if ((localya.a().getLeastSignificantBits() != 0L) && (localya.a().getMostSignificantBits() != 0L)) {
 /* 753:757 */             localObject.put(localfn.getString("AttributeName"), localya);

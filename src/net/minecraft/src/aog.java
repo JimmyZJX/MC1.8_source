@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*  9:   */     {
 /* 10:19 */       ItemStack localamj = paramain.get(j);
 /* 11:20 */       if (localamj != null) {
-/* 12:24 */         if (localamj.getItem() == ItemList.bN)
+/* 12:24 */         if (localamj.getItem() == ItemList.writtenBook)
 /* 13:   */         {
 /* 14:25 */           if (localObject != null) {
 /* 15:26 */             return false;
@@ -38,7 +38,7 @@ package net.minecraft.src;
 /* 37:   */     {
 /* 38:46 */       ItemStack localamj2 = paramain.get(j);
 /* 39:47 */       if (localamj2 != null) {
-/* 40:51 */         if (localamj2.getItem() == ItemList.bN)
+/* 40:51 */         if (localamj2.getItem() == ItemList.writtenBook)
 /* 41:   */         {
 /* 42:52 */           if (localObject != null) {
 /* 43:53 */             return null;
@@ -58,7 +58,7 @@ package net.minecraft.src;
 /* 57:63 */     if ((localObject == null) || (i < 1) || (anr.h(localObject) >= 2)) {
 /* 58:64 */       return null;
 /* 59:   */     }
-/* 60:67 */     ItemStack localamj1 = new ItemStack(ItemList.bN, i);
+/* 60:67 */     ItemStack localamj1 = new ItemStack(ItemList.writtenBook, i);
 /* 61:68 */     localamj1.setTagCompound((NBTTagCompound)localObject.getTagCompound().b());
 /* 62:69 */     localamj1.getTagCompound().setInt("generation", anr.h(localObject) + 1);
 /* 63:70 */     if (localObject.s()) {

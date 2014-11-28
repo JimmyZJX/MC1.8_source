@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ public class aow
 /*  2:   */ {
 /*  3: 9 */   private String[][] a = { { "X", "X", "#" } };
-/*  4:17 */   private Object[][] b = { { BlockList.planks, BlockList.cobblestone, ItemList.ironIngot, ItemList.diamond, ItemList.goldIngot }, { ItemList.m, ItemList.q, ItemList.l, ItemList.u, ItemList.goldenSword } };
+/*  4:17 */   private Object[][] b = { { BlockList.planks, BlockList.cobblestone, ItemList.ironIngot, ItemList.diamond, ItemList.goldIngot }, { ItemList.m, ItemList.q, ItemList.ironSword, ItemList.diamondSword, ItemList.goldenSword } };
 /*  5:   */   
 /*  6:   */   public void a(aop paramaop)
 /*  7:   */   {
@@ -15,7 +15,7 @@ package net.minecraft.src;
 /* 14:28 */         paramaop.a(new ItemStack(localalq), new Object[] { this.a[j], Character.valueOf('#'), ItemList.stick, Character.valueOf('X'), localObject });
 /* 15:   */       }
 /* 16:   */     }
-/* 17:37 */     paramaop.a(new ItemStack(ItemList.bow, 1), new Object[] { " #X", "# X", " #X", Character.valueOf('X'), ItemList.F, Character.valueOf('#'), ItemList.stick });
+/* 17:37 */     paramaop.a(new ItemStack(ItemList.bow, 1), new Object[] { " #X", "# X", " #X", Character.valueOf('X'), ItemList.string, Character.valueOf('#'), ItemList.stick });
 /* 18:   */     
 /* 19:   */ 
 /* 20:   */ 
@@ -24,7 +24,7 @@ package net.minecraft.src;
 /* 23:   */ 
 /* 24:   */ 
 /* 25:   */ 
-/* 26:46 */     paramaop.a(new ItemStack(ItemList.g, 4), new Object[] { "X", "#", "Y", Character.valueOf('Y'), ItemList.G, Character.valueOf('X'), ItemList.ak, Character.valueOf('#'), ItemList.stick });
+/* 26:46 */     paramaop.a(new ItemStack(ItemList.arrow, 4), new Object[] { "X", "#", "Y", Character.valueOf('Y'), ItemList.G, Character.valueOf('X'), ItemList.flint, Character.valueOf('#'), ItemList.stick });
 /* 27:   */   }
 /* 28:   */ }
 

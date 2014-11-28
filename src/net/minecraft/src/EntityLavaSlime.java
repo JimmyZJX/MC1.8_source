@@ -15,7 +15,7 @@ package net.minecraft.src;
 /*  14:    */   {
 /*  15: 17 */     super.aW();
 /*  16:    */     
-/*  17: 19 */     a(afs.d).a(0.2000000029802322D);
+/*  17: 19 */     getAttribute(MobAttribute.movementSpeed).a(0.2000000029802322D);
 /*  18:    */   }
 /*  19:    */   
 /*  20:    */   public boolean canSpawn()
@@ -28,7 +28,7 @@ package net.minecraft.src;
 /*  27: 29 */     return (this.world.isCollisionFree(getAABB(), this)) && (this.world.getCollidingAABBs(this, getAABB()).isEmpty()) && (!this.world.isInLiquid(getAABB()));
 /*  28:    */   }
 /*  29:    */   
-/*  30:    */   public int bq()
+/*  30:    */   public int getArmorValue()
 /*  31:    */   {
 /*  32: 34 */     return ck() * 3;
 /*  33:    */   }
@@ -88,13 +88,13 @@ package net.minecraft.src;
 /*  87: 88 */     this.a *= 0.9F;
 /*  88:    */   }
 /*  89:    */   
-/*  90:    */   protected void bE()
+/*  90:    */   protected void jump()
 /*  91:    */   {
 /*  92: 93 */     this.yVelocity = (0.42F + ck() * 0.1F);
 /*  93: 94 */     this.ai = true;
 /*  94:    */   }
 /*  95:    */   
-/*  96:    */   protected void bG()
+/*  96:    */   protected void swimInLava()
 /*  97:    */   {
 /*  98: 99 */     this.yVelocity = (0.22F + ck() * 0.05F);
 /*  99:100 */     this.ai = true;

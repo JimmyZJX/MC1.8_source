@@ -10,8 +10,8 @@ package net.minecraft.src;
 /*   9:    */   private boolean f;
 /*  10:    */   private boolean g;
 /*  11:    */   private boolean h;
-/*  12:357 */   private static final List i = Lists.newArrayList(new vl[] { new vl(ItemList.diamond, 0, 1, 3, 3), new vl(ItemList.ironIngot, 0, 1, 5, 10), new vl(ItemList.goldIngot, 0, 2, 7, 15), new vl(ItemList.emerald, 0, 1, 3, 2), new vl(ItemList.bone, 0, 4, 6, 20), new vl(ItemList.bt, 0, 3, 7, 16), new vl(ItemList.saddle, 0, 1, 1, 3), new vl(ItemList.ck, 0, 1, 1, 1), new vl(ItemList.cl, 0, 1, 1, 1), new vl(ItemList.cm, 0, 1, 1, 1) });
-/*  13:370 */   private static final List j = Lists.newArrayList(new vl[] { new vl(ItemList.g, 0, 2, 7, 30) });
+/*  12:357 */   private static final List i = Lists.newArrayList(new vl[] { new vl(ItemList.diamond, 0, 1, 3, 3), new vl(ItemList.ironIngot, 0, 1, 5, 10), new vl(ItemList.goldIngot, 0, 2, 7, 15), new vl(ItemList.emerald, 0, 1, 3, 2), new vl(ItemList.bone, 0, 4, 6, 20), new vl(ItemList.rottenFlesh, 0, 3, 7, 16), new vl(ItemList.saddle, 0, 1, 1, 3), new vl(ItemList.ck, 0, 1, 1, 1), new vl(ItemList.cl, 0, 1, 1, 1), new vl(ItemList.cm, 0, 1, 1, 1) });
+/*  13:370 */   private static final List j = Lists.newArrayList(new vl[] { new vl(ItemList.arrow, 0, 2, 7, 30) });
 /*  14:    */   
 /*  15:    */   public bll() {}
 /*  16:    */   
@@ -192,7 +192,7 @@ package net.minecraft.src;
 /* 191:557 */     a(paramaqu, BlockList.vine.instance(15), 8, -1, 3, parambjb);
 /* 192:558 */     a(paramaqu, BlockList.vine.instance(15), 8, -2, 3, parambjb);
 /* 193:559 */     if (!this.e) {
-/* 194:560 */       this.e = a(paramaqu, parambjb, paramRandom, 8, -3, 3, vl.a(i, new vl[] { ItemList.cd.b(paramRandom) }), 2 + paramRandom.nextInt(5));
+/* 194:560 */       this.e = a(paramaqu, parambjb, paramRandom, 8, -3, 3, vl.a(i, new vl[] { ItemList.enchantedBook.b(paramRandom) }), 2 + paramRandom.nextInt(5));
 /* 195:    */     }
 /* 196:562 */     a(paramaqu, BlockList.mossyCobblestone.instance(), 9, -3, 2, parambjb);
 /* 197:563 */     a(paramaqu, BlockList.mossyCobblestone.instance(), 8, -3, 1, parambjb);
@@ -224,7 +224,7 @@ package net.minecraft.src;
 /* 223:589 */     a(paramaqu, BlockList.F.instance(a(BlockList.F, EnumDirection.WEST.a())), 10, -1, 8, parambjb);
 /* 224:590 */     a(paramaqu, BlockList.unpoweredRepeater.instance(a(BlockList.unpoweredRepeater, EnumDirection.NORTH.b())), 10, -2, 10, parambjb);
 /* 225:591 */     if (!this.f) {
-/* 226:592 */       this.f = a(paramaqu, parambjb, paramRandom, 9, -3, 10, vl.a(i, new vl[] { ItemList.cd.b(paramRandom) }), 2 + paramRandom.nextInt(5));
+/* 226:592 */       this.f = a(paramaqu, parambjb, paramRandom, 9, -3, 10, vl.a(i, new vl[] { ItemList.enchantedBook.b(paramRandom) }), 2 + paramRandom.nextInt(5));
 /* 227:    */     }
 /* 228:595 */     return true;
 /* 229:    */   }

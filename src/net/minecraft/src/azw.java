@@ -67,7 +67,7 @@ package net.minecraft.src;
 /*  66:    */   
 /*  67:    */   public int a(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
 /*  68:    */   {
-/*  69: 92 */     if ((this.M) && (parambec.getProperty(a) != paramej)) {
+/*  69: 92 */     if ((this.M) && (parambec.getData(a) != paramej)) {
 /*  70: 93 */       return 15;
 /*  71:    */     }
 /*  72: 96 */     return 0;
@@ -75,7 +75,7 @@ package net.minecraft.src;
 /*  74:    */   
 /*  75:    */   private boolean g(World paramaqu, BlockPosition paramdt, Block parambec)
 /*  76:    */   {
-/*  77:100 */     EnumDirection localej = ((EnumDirection)parambec.getProperty(a)).d();
+/*  77:100 */     EnumDirection localej = ((EnumDirection)parambec.getData(a)).opposite();
 /*  78:    */     
 /*  79:102 */     return paramaqu.b(paramdt.offset(localej), localej);
 /*  80:    */   }
@@ -95,7 +95,7 @@ package net.minecraft.src;
 /*  94:    */     {
 /*  95:120 */       if (bool)
 /*  96:    */       {
-/*  97:121 */         paramaqu.setBlock(paramdt, BlockList.aE.instance().setData(a, parambec.getProperty(a)), 3);
+/*  97:121 */         paramaqu.setBlock(paramdt, BlockList.aE.instance().setData(a, parambec.getData(a)), 3);
 /*  98:123 */         if (a(paramaqu, paramdt, true))
 /*  99:    */         {
 /* 100:124 */           paramaqu.a(paramdt.getX() + 0.5F, paramdt.getY() + 0.5F, paramdt.getZ() + 0.5F, "random.fizz", 0.5F, 2.6F + (paramaqu.rng.nextFloat() - paramaqu.rng.nextFloat()) * 0.8F);
@@ -113,7 +113,7 @@ package net.minecraft.src;
 /* 112:    */     }
 /* 113:137 */     else if ((!bool) && 
 /* 114:138 */       (!a(paramaqu, paramdt, false))) {
-/* 115:139 */       paramaqu.setBlock(paramdt, BlockList.aF.instance().setData(a, parambec.getProperty(a)), 3);
+/* 115:139 */       paramaqu.setBlock(paramdt, BlockList.aF.instance().setData(a, parambec.getData(a)), 3);
 /* 116:    */     }
 /* 117:    */   }
 /* 118:    */   
@@ -154,10 +154,10 @@ package net.minecraft.src;
 /* 153:181 */     double d2 = paramdt.getY() + 0.7F + (paramRandom.nextFloat() - 0.5F) * 0.2D;
 /* 154:182 */     double d3 = paramdt.getZ() + 0.5F + (paramRandom.nextFloat() - 0.5F) * 0.2D;
 /* 155:    */     
-/* 156:184 */     EnumDirection localej1 = (EnumDirection)parambec.getProperty(a);
+/* 156:184 */     EnumDirection localej1 = (EnumDirection)parambec.getData(a);
 /* 157:185 */     if (localej1.k().c())
 /* 158:    */     {
-/* 159:186 */       EnumDirection localej2 = localej1.d();
+/* 159:186 */       EnumDirection localej2 = localej1.opposite();
 /* 160:    */       
 /* 161:188 */       double d4 = 0.2700000107288361D;
 /* 162:    */       

@@ -27,9 +27,9 @@ package net.minecraft.src;
 /*  26:    */   protected void aW()
 /*  27:    */   {
 /*  28: 44 */     super.aW();
-/*  29: 45 */     a(afs.e).a(6.0D);
-/*  30: 46 */     a(afs.d).a(0.2300000041723251D);
-/*  31: 47 */     a(afs.b).a(48.0D);
+/*  29: 45 */     getAttribute(MobAttribute.attackDamage).a(6.0D);
+/*  30: 46 */     getAttribute(MobAttribute.movementSpeed).a(0.2300000041723251D);
+/*  31: 47 */     getAttribute(MobAttribute.followRange).a(48.0D);
 /*  32:    */   }
 /*  33:    */   
 /*  34:    */   protected void h()
@@ -84,7 +84,7 @@ package net.minecraft.src;
 /*  83:    */   protected void mobTick()
 /*  84:    */   {
 /*  85:103 */     if (U()) {
-/*  86:104 */       a(DamageSource.f, 1.0F);
+/*  86:104 */       a(DamageSource.drown, 1.0F);
 /*  87:    */     }
 /*  88:107 */     this.c -= 1;
 /*  89:108 */     if (this.c <= 0)
@@ -105,7 +105,7 @@ package net.minecraft.src;
 /* 104:    */   
 /* 105:    */   protected Item A()
 /* 106:    */   {
-/* 107:128 */     return ItemList.bv;
+/* 107:128 */     return ItemList.blazeRod;
 /* 108:    */   }
 /* 109:    */   
 /* 110:    */   public boolean au()
@@ -119,7 +119,7 @@ package net.minecraft.src;
 /* 118:    */     {
 /* 119:139 */       int i = this.rng.nextInt(2 + paramInt);
 /* 120:140 */       for (int j = 0; j < i; j++) {
-/* 121:141 */         a(ItemList.bv, 1);
+/* 121:141 */         a(ItemList.blazeRod, 1);
 /* 122:    */       }
 /* 123:    */     }
 /* 124:    */   }

@@ -18,12 +18,12 @@ package net.minecraft.src;
 /* 17:   */   
 /* 18:   */   public int a(Block parambec)
 /* 19:   */   {
-/* 20:28 */     return ((azj)parambec.getProperty(a)).a();
+/* 20:28 */     return ((azj)parambec.getData(a)).a();
 /* 21:   */   }
 /* 22:   */   
 /* 23:   */   public int c(Block parambec)
 /* 24:   */   {
-/* 25:33 */     return ((azj)parambec.getProperty(a)).a();
+/* 25:33 */     return ((azj)parambec.getData(a)).a();
 /* 26:   */   }
 /* 27:   */   
 /* 28:   */   protected bed e()

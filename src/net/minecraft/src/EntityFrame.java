@@ -52,7 +52,7 @@ package net.minecraft.src;
 /*  51: 61 */     d3 -= this.b.i() * 0.46875D;
 /*  52: 62 */     d2 += d6;
 /*  53:    */     
-/*  54: 64 */     EnumDirection localej = this.b.f();
+/*  54: 64 */     EnumDirection localej = this.b.ccw();
 /*  55: 65 */     d1 += d5 * localej.g();
 /*  56: 66 */     d3 += d5 * localej.i();
 /*  57:    */     
@@ -103,8 +103,8 @@ package net.minecraft.src;
 /* 102:111 */     int i = Math.max(1, l() / 16);
 /* 103:112 */     int j = Math.max(1, m() / 16);
 /* 104:    */     
-/* 105:114 */     BlockPosition localdt = this.a.offset(this.b.d());
-/* 106:115 */     EnumDirection localej = this.b.f();
+/* 105:114 */     BlockPosition localdt = this.a.offset(this.b.opposite());
+/* 106:115 */     EnumDirection localej = this.b.ccw();
 /* 107:    */     Object localObject;
 /* 108:117 */     for (int k = 0; k < i; k++) {
 /* 109:118 */       for (int m = 0; m < j; m++)
@@ -136,7 +136,7 @@ package net.minecraft.src;
 /* 135:    */   public boolean l(Entity paramwv)
 /* 136:    */   {
 /* 137:145 */     if ((paramwv instanceof EntityPlayer)) {
-/* 138:146 */       return a(DamageSource.a((EntityPlayer)paramwv), 0.0F);
+/* 138:146 */       return a(DamageSource.fromPlayer((EntityPlayer)paramwv), 0.0F);
 /* 139:    */     }
 /* 140:148 */     return false;
 /* 141:    */   }
@@ -148,19 +148,19 @@ package net.minecraft.src;
 /* 147:    */   
 /* 148:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /* 149:    */   {
-/* 150:158 */     if (b(paramwh)) {
+/* 150:158 */     if (isImmuneTo(paramwh)) {
 /* 151:159 */       return false;
 /* 152:    */     }
 /* 153:161 */     if ((!this.isDead) && (!this.world.isClient))
 /* 154:    */     {
 /* 155:162 */       setDead();
 /* 156:163 */       ac();
-/* 157:164 */       b(paramwh.j());
+/* 157:164 */       b(paramwh.getAttacker());
 /* 158:    */     }
 /* 159:166 */     return true;
 /* 160:    */   }
 /* 161:    */   
-/* 162:    */   public void d(double paramDouble1, double paramDouble2, double paramDouble3)
+/* 162:    */   public void move(double paramDouble1, double paramDouble2, double paramDouble3)
 /* 163:    */   {
 /* 164:171 */     if ((!this.world.isClient) && (!this.isDead) && (paramDouble1 * paramDouble1 + paramDouble2 * paramDouble2 + paramDouble3 * paramDouble3 > 0.0D))
 /* 165:    */     {

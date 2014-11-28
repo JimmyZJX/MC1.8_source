@@ -27,7 +27,7 @@ package net.minecraft.src;
 /*  26: 50 */     bk.add(BlockList.cactus);
 /*  27: 51 */     bk.add(BlockList.aL);
 /*  28: 52 */     bk.add(BlockList.pumpkin);
-/*  29: 53 */     bk.add(BlockList.bk);
+/*  29: 53 */     bk.add(BlockList.melonBlock);
 /*  30: 54 */     bk.add(BlockList.bw);
 /*  31:    */   }
 /*  32:    */   
@@ -37,7 +37,7 @@ package net.minecraft.src;
 /*  36: 65 */     a(0.6F, 2.9F);
 /*  37: 66 */     this.S = 1.0F;
 /*  38:    */     
-/*  39: 68 */     this.goalSelector.addGoal(0, new yy(this));
+/*  39: 68 */     this.goalSelector.addGoal(0, new GoalSwim(this));
 /*  40: 69 */     this.goalSelector.addGoal(2, new zk(this, 1.0D, false));
 /*  41:    */     
 /*  42: 71 */     this.goalSelector.addGoal(7, new zy(this, 1.0D));
@@ -56,10 +56,10 @@ package net.minecraft.src;
 /*  55:    */   {
 /*  56: 90 */     super.aW();
 /*  57:    */     
-/*  58: 92 */     a(afs.a).a(40.0D);
-/*  59: 93 */     a(afs.d).a(0.300000011920929D);
-/*  60: 94 */     a(afs.e).a(7.0D);
-/*  61: 95 */     a(afs.b).a(64.0D);
+/*  58: 92 */     getAttribute(MobAttribute.maxHealth).a(40.0D);
+/*  59: 93 */     getAttribute(MobAttribute.movementSpeed).a(0.300000011920929D);
+/*  60: 94 */     getAttribute(MobAttribute.attackDamage).a(7.0D);
+/*  61: 95 */     getAttribute(MobAttribute.followRange).a(64.0D);
 /*  62:    */   }
 /*  63:    */   
 /*  64:    */   protected void h()
@@ -93,13 +93,13 @@ package net.minecraft.src;
 /*  92:    */   
 /*  93:    */   private boolean c(EntityPlayer paramahd)
 /*  94:    */   {
-/*  95:128 */     ItemStack localamj = paramahd.bg.b[3];
+/*  95:128 */     ItemStack localamj = paramahd.bg.armors[3];
 /*  96:129 */     if ((localamj != null) && (localamj.getItem() == Item.fromProtoBlock(BlockList.pumpkin))) {
 /*  97:130 */       return false;
 /*  98:    */     }
 /*  99:133 */     Vec3 localbrw1 = paramahd.d(1.0F).normalize();
 /* 100:134 */     Vec3 localbrw2 = new Vec3(this.xPos - paramahd.xPos, getAABB().minY + this.height / 2.0F - (paramahd.yPos + paramahd.getEyeHeight()), this.zPos - paramahd.zPos);
-/* 101:135 */     double d1 = localbrw2.b();
+/* 101:135 */     double d1 = localbrw2.norm();
 /* 102:136 */     localbrw2 = localbrw2.normalize();
 /* 103:137 */     double d2 = localbrw1.dot(localbrw2);
 /* 104:138 */     if (d2 > 1.0D - 0.025D / d1) {
@@ -120,7 +120,7 @@ package net.minecraft.src;
 /* 119:153 */         this.world.a(EnumParticleEffect.y, this.xPos + (this.rng.nextDouble() - 0.5D) * this.width, this.yPos + this.rng.nextDouble() * this.height - 0.25D, this.zPos + (this.rng.nextDouble() - 0.5D) * this.width, (this.rng.nextDouble() - 0.5D) * 2.0D, -this.rng.nextDouble(), (this.rng.nextDouble() - 0.5D) * 2.0D, new int[0]);
 /* 120:    */       }
 /* 121:    */     }
-/* 122:157 */     this.aW = false;
+/* 122:157 */     this.jumping = false;
 /* 123:    */     
 /* 124:159 */     super.m();
 /* 125:    */   }
@@ -128,7 +128,7 @@ package net.minecraft.src;
 /* 127:    */   protected void mobTick()
 /* 128:    */   {
 /* 129:164 */     if (U()) {
-/* 130:165 */       a(DamageSource.f, 1.0F);
+/* 130:165 */       a(DamageSource.drown, 1.0F);
 /* 131:    */     }
 /* 132:168 */     if ((cm()) && (!this.bl) && (this.rng.nextInt(100) == 0)) {
 /* 133:169 */       a(false);
@@ -186,7 +186,7 @@ package net.minecraft.src;
 /* 185:    */       {
 /* 186:218 */         BlockPosition localdt = ((BlockPosition)localObject).down();
 /* 187:219 */         ProtoBlock localatr = this.world.getBlock(localdt).getProto();
-/* 188:220 */         if (localatr.getMaterial().c())
+/* 188:220 */         if (localatr.getMaterial().material_c())
 /* 189:    */         {
 /* 190:221 */           j = 1;
 /* 191:    */         }
@@ -272,22 +272,22 @@ package net.minecraft.src;
 /* 271:    */   
 /* 272:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /* 273:    */   {
-/* 274:310 */     if (b(paramwh)) {
+/* 274:310 */     if (isImmuneTo(paramwh)) {
 /* 275:311 */       return false;
 /* 276:    */     }
-/* 277:314 */     if ((paramwh.j() == null) || (!(paramwh.j() instanceof EntityEndermite)))
+/* 277:314 */     if ((paramwh.getAttacker() == null) || (!(paramwh.getAttacker() instanceof EntityEndermite)))
 /* 278:    */     {
 /* 279:315 */       if (!this.world.isClient) {
 /* 280:316 */         a(true);
 /* 281:    */       }
-/* 282:319 */       if (((paramwh instanceof wi)) && ((paramwh.j() instanceof EntityPlayer))) {
-/* 283:321 */         if (((paramwh.j() instanceof qw)) && (((qw)paramwh.j()).c.d())) {
+/* 282:319 */       if (((paramwh instanceof DamageSourceEntity)) && ((paramwh.getAttacker() instanceof EntityPlayer))) {
+/* 283:321 */         if (((paramwh.getAttacker() instanceof qw)) && (((qw)paramwh.getAttacker()).c.d())) {
 /* 284:322 */           a(false);
 /* 285:    */         } else {
 /* 286:324 */           this.bl = true;
 /* 287:    */         }
 /* 288:    */       }
-/* 289:328 */       if ((paramwh instanceof wj))
+/* 289:328 */       if ((paramwh instanceof DamageSourceProjectile))
 /* 290:    */       {
 /* 291:329 */         this.bl = false;
 /* 292:330 */         for (int i = 0; i < 64; i++) {
@@ -299,7 +299,7 @@ package net.minecraft.src;
 /* 298:    */       }
 /* 299:    */     }
 /* 300:339 */     boolean bool = super.a(paramwh, paramFloat);
-/* 301:340 */     if ((paramwh.e()) && (this.rng.nextInt(10) != 0)) {
+/* 301:340 */     if ((paramwh.getBypassArmor()) && (this.rng.nextInt(10) != 0)) {
 /* 302:341 */       n();
 /* 303:    */     }
 /* 304:343 */     return bool;

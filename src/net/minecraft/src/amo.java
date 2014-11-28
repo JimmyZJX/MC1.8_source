@@ -10,13 +10,13 @@ package net.minecraft.src;
 /*  9:   */   
 /* 10:   */   public ItemStack b(ItemStack paramamj, World paramaqu, EntityPlayer paramahd)
 /* 11:   */   {
-/* 12:17 */     if (!paramahd.by.d) {
+/* 12:17 */     if (!paramahd.abilities.instabuild) {
 /* 13:18 */       paramamj.stackSize -= 1;
 /* 14:   */     }
 /* 15:21 */     if (!paramaqu.isClient) {
 /* 16:22 */       paramahd.bj();
 /* 17:   */     }
-/* 18:25 */     paramahd.b(StatList.J[Item.b(this)]);
+/* 18:25 */     paramahd.increaseStat(StatList.J[Item.b(this)]);
 /* 19:26 */     if (paramamj.stackSize <= 0) {
 /* 20:27 */       return new ItemStack(ItemList.aw);
 /* 21:   */     }

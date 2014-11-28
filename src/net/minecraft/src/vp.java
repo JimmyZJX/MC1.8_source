@@ -157,7 +157,7 @@ package net.minecraft.src;
 /* 156:179 */     return this.b.k();
 /* 157:    */   }
 /* 158:    */   
-/* 159:    */   public aib a(ahb paramahb, EntityPlayer paramahd)
+/* 159:    */   public aib a(Inventory paramahb, EntityPlayer paramahd)
 /* 160:    */   {
 /* 161:184 */     return new aim(paramahb, this, paramahd);
 /* 162:    */   }

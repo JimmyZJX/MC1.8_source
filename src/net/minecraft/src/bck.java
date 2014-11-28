@@ -96,11 +96,11 @@ package net.minecraft.src;
 /*  95:    */       float[] arrayOfFloat;
 /*  96:122 */       if (localbec.getProto() == BlockList.cG)
 /*  97:    */       {
-/*  98:123 */         arrayOfFloat = EntitySheep.a((EnumDyeColor)localbec.getProperty(bar.a));
+/*  98:123 */         arrayOfFloat = EntitySheep.a((EnumDyeColor)localbec.getData(bar.a));
 /*  99:    */       }
 /* 100:124 */       else if (localbec.getProto() == BlockList.stainedGlassPane)
 /* 101:    */       {
-/* 102:125 */         arrayOfFloat = EntitySheep.a((EnumDyeColor)localbec.getProperty(bas.a));
+/* 102:125 */         arrayOfFloat = EntitySheep.a((EnumDyeColor)localbec.getData(bas.a));
 /* 103:    */       }
 /* 104:    */       else
 /* 105:    */       {
@@ -159,7 +159,7 @@ package net.minecraft.src;
 /* 158:182 */     if ((!this.world.isClient) && 
 /* 159:183 */       (this.j == 4) && (i1 < this.j)) {
 /* 160:184 */       for (EntityPlayer localahd : this.world.getEntityList(EntityPlayer.class, new AABB(i2, i3, i4, i2, i3 - 4, i4).expand(10.0D, 5.0D, 10.0D))) {
-/* 161:185 */         localahd.b(AchievementList.K);
+/* 161:185 */         localahd.increaseStat(AchievementList.K);
 /* 162:    */       }
 /* 163:    */     }
 /* 164:    */   }
@@ -313,7 +313,7 @@ package net.minecraft.src;
 /* 312:387 */     return "minecraft:beacon";
 /* 313:    */   }
 /* 314:    */   
-/* 315:    */   public aib a(ahb paramahb, EntityPlayer paramahd)
+/* 315:    */   public aib a(Inventory paramahb, EntityPlayer paramahd)
 /* 316:    */   {
 /* 317:392 */     return new aig(paramahb, this);
 /* 318:    */   }

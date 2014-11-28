@@ -14,7 +14,7 @@ package net.minecraft.src;
 /* 13:   */   
 /* 14:   */   public Block a(IBlockData parambex)
 /* 15:   */   {
-/* 16:31 */     return setData(parambex, (Comparable)a(parambex.getValues(), getProperty(parambex)));
+/* 16:31 */     return setData(parambex, (Comparable)a(parambex.getValues(), getData(parambex)));
 /* 17:   */   }
 /* 18:   */   
 /* 19:   */   protected static Object a(Collection paramCollection, Object paramObject)

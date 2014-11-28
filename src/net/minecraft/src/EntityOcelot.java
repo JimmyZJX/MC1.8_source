@@ -12,7 +12,7 @@ package net.minecraft.src;
 /*  14: 44 */     a(0.6F, 0.7F);
 /*  15:    */     
 /*  16: 46 */     ((aay)getNavigator()).a(true);
-/*  17: 47 */     this.goalSelector.addGoal(1, new yy(this));
+/*  17: 47 */     this.goalSelector.addGoal(1, new GoalSwim(this));
 /*  18: 48 */     this.goalSelector.addGoal(2, this.bk);
 /*  19: 49 */     this.goalSelector.addGoal(3, this.bn = new aag(this, 0.6D, ItemList.fish, true));
 /*  20: 50 */     this.goalSelector.addGoal(5, new yz(this, 1.0D, 10.0F, 5.0F));
@@ -35,9 +35,9 @@ package net.minecraft.src;
 /*  37:    */   
 /*  38:    */   public void mobTick()
 /*  39:    */   {
-/*  40: 70 */     if (q().a())
+/*  40: 70 */     if (q().isActive())
 /*  41:    */     {
-/*  42: 71 */       double d = q().b();
+/*  42: 71 */       double d = q().getSpeed();
 /*  43: 72 */       if (d == 0.6D)
 /*  44:    */       {
 /*  45: 73 */         c(true);
@@ -70,8 +70,8 @@ package net.minecraft.src;
 /*  72:    */   {
 /*  73: 95 */     super.aW();
 /*  74:    */     
-/*  75: 97 */     a(afs.a).a(10.0D);
-/*  76: 98 */     a(afs.d).a(0.300000011920929D);
+/*  75: 97 */     getAttribute(MobAttribute.maxHealth).a(10.0D);
+/*  76: 98 */     getAttribute(MobAttribute.movementSpeed).a(0.300000011920929D);
 /*  77:    */   }
 /*  78:    */   
 /*  79:    */   public void e(float paramFloat1, float paramFloat2) {}
@@ -125,12 +125,12 @@ package net.minecraft.src;
 /* 127:    */   
 /* 128:    */   public boolean r(Entity paramwv)
 /* 129:    */   {
-/* 130:155 */     return paramwv.a(DamageSource.a(this), 3.0F);
+/* 130:155 */     return paramwv.a(DamageSource.fromMob(this), 3.0F);
 /* 131:    */   }
 /* 132:    */   
 /* 133:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /* 134:    */   {
-/* 135:160 */     if (b(paramwh)) {
+/* 135:160 */     if (isImmuneTo(paramwh)) {
 /* 136:161 */       return false;
 /* 137:    */     }
 /* 138:163 */     this.bk.a(false);
@@ -151,7 +151,7 @@ package net.minecraft.src;
 /* 153:    */     }
 /* 154:181 */     else if ((this.bn.f()) && (localamj != null) && (localamj.getItem() == ItemList.fish) && (paramahd.h(this) < 9.0D))
 /* 155:    */     {
-/* 156:182 */       if (!paramahd.by.d) {
+/* 156:182 */       if (!paramahd.abilities.instabuild) {
 /* 157:183 */         localamj.stackSize -= 1;
 /* 158:    */       }
 /* 159:185 */       if (localamj.stackSize <= 0) {

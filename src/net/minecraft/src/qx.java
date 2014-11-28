@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*   4:    */ {
 /*   5:    */   public World a;
 /*   6:    */   public qw b;
-/*   7: 26 */   private EnumGameType c = EnumGameType.a;
+/*   7: 26 */   private EnumGameMode c = EnumGameMode.NOT_SET;
 /*   8:    */   private boolean d;
 /*   9:    */   private int e;
 /*  10: 30 */   private BlockPosition f = BlockPosition.zero;
@@ -19,17 +19,17 @@ package net.minecraft.src;
 /*  19: 39 */     this.a = paramaqu;
 /*  20:    */   }
 /*  21:    */   
-/*  22:    */   public void a(EnumGameType paramarc)
+/*  22:    */   public void a(EnumGameMode paramarc)
 /*  23:    */   {
 /*  24: 43 */     this.c = paramarc;
 /*  25:    */     
-/*  26: 45 */     paramarc.a(this.b.by);
+/*  26: 45 */     paramarc.setPlayerAbilities(this.b.abilities);
 /*  27:    */     
 /*  28: 47 */     this.b.t();
 /*  29: 48 */     this.b.b.an().a(new kh(kj.b, new qw[] { this.b }));
 /*  30:    */   }
 /*  31:    */   
-/*  32:    */   public EnumGameType b()
+/*  32:    */   public EnumGameMode b()
 /*  33:    */   {
 /*  34: 52 */     return this.c;
 /*  35:    */   }
@@ -44,9 +44,9 @@ package net.minecraft.src;
 /*  44: 60 */     return this.c.d();
 /*  45:    */   }
 /*  46:    */   
-/*  47:    */   public void b(EnumGameType paramarc)
+/*  47:    */   public void b(EnumGameMode paramarc)
 /*  48:    */   {
-/*  49: 64 */     if (this.c == EnumGameType.a) {
+/*  49: 64 */     if (this.c == EnumGameMode.NOT_SET) {
 /*  50: 65 */       this.c = paramarc;
 /*  51:    */     }
 /*  52: 67 */     a(this.c);
@@ -114,9 +114,9 @@ package net.minecraft.src;
 /* 114:117 */       return;
 /* 115:    */     }
 /* 116:120 */     ProtoBlock localatr = this.a.getBlock(paramdt).getProto();
-/* 117:121 */     if (this.c.c())
+/* 117:121 */     if (this.c.noBuild())
 /* 118:    */     {
-/* 119:122 */       if (this.c == EnumGameType.e) {
+/* 119:122 */       if (this.c == EnumGameMode.SPECTATOR) {
 /* 120:123 */         return;
 /* 121:    */       }
 /* 122:125 */       if (!this.b.cm())
@@ -208,9 +208,9 @@ package net.minecraft.src;
 /* 208:    */     }
 /* 209:202 */     Block localbec = this.a.getBlock(paramdt);
 /* 210:203 */     bcm localbcm = this.a.s(paramdt);
-/* 211:205 */     if (this.c.c())
+/* 211:205 */     if (this.c.noBuild())
 /* 212:    */     {
-/* 213:206 */       if (this.c == EnumGameType.e) {
+/* 213:206 */       if (this.c == EnumGameMode.SPECTATOR) {
 /* 214:207 */         return false;
 /* 215:    */       }
 /* 216:209 */       if (!this.b.cm())
@@ -251,7 +251,7 @@ package net.minecraft.src;
 /* 251:    */   
 /* 252:    */   public boolean a(EntityPlayer paramahd, World paramaqu, ItemStack paramamj)
 /* 253:    */   {
-/* 254:243 */     if (this.c == EnumGameType.e) {
+/* 254:243 */     if (this.c == EnumGameMode.SPECTATOR) {
 /* 255:244 */       return false;
 /* 256:    */     }
 /* 257:246 */     int m = paramamj.stackSize;
@@ -259,7 +259,7 @@ package net.minecraft.src;
 /* 259:248 */     ItemStack localamj = paramamj.a(paramaqu, paramahd);
 /* 260:249 */     if ((localamj != paramamj) || ((localamj != null) && ((localamj.stackSize != m) || (localamj.l() > 0) || (localamj.getDamage2() != n))))
 /* 261:    */     {
-/* 262:250 */       paramahd.bg.a[paramahd.bg.c] = localamj;
+/* 262:250 */       paramahd.bg.items[paramahd.bg.c] = localamj;
 /* 263:251 */       if (d())
 /* 264:    */       {
 /* 265:252 */         localamj.stackSize = m;
@@ -268,7 +268,7 @@ package net.minecraft.src;
 /* 268:    */         }
 /* 269:    */       }
 /* 270:257 */       if (localamj.stackSize == 0) {
-/* 271:258 */         paramahd.bg.a[paramahd.bg.c] = null;
+/* 271:258 */         paramahd.bg.items[paramahd.bg.c] = null;
 /* 272:    */       }
 /* 273:260 */       if (!paramahd.bR()) {
 /* 274:261 */         ((qw)paramahd).a(paramahd.bh);
@@ -281,7 +281,7 @@ package net.minecraft.src;
 /* 281:    */   public boolean a(EntityPlayer paramahd, World paramaqu, ItemStack paramamj, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3)
 /* 282:    */   {
 /* 283:    */     Object localObject;
-/* 284:269 */     if (this.c == EnumGameType.e)
+/* 284:269 */     if (this.c == EnumGameMode.SPECTATOR)
 /* 285:    */     {
 /* 286:270 */       localObject = paramaqu.s(paramdt);
 /* 287:271 */       if ((localObject instanceof vy))

@@ -34,7 +34,7 @@ package net.minecraft.src;
 /* 33:38 */     paramaqu.a(paramahd, "random.burp", 0.5F, paramaqu.rng.nextFloat() * 0.1F + 0.9F);
 /* 34:   */     
 /* 35:40 */     c(paramamj, paramaqu, paramahd);
-/* 36:41 */     paramahd.b(StatList.J[Item.b(this)]);
+/* 36:41 */     paramahd.increaseStat(StatList.J[Item.b(this)]);
 /* 37:   */     
 /* 38:43 */     return paramamj;
 /* 39:   */   }

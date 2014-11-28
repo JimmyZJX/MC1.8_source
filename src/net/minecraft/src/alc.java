@@ -12,7 +12,7 @@ package net.minecraft.src;
 /* 11:   */   
 /* 12:   */   public ItemStack a(ItemStack paramamj, World paramaqu, EntityPlayer paramahd)
 /* 13:   */   {
-/* 14:16 */     if (paramahd.by.d) {
+/* 14:16 */     if (paramahd.abilities.instabuild) {
 /* 15:17 */       return paramamj;
 /* 16:   */     }
 /* 17:20 */     paramamj.stackSize -= 1;
@@ -20,7 +20,7 @@ package net.minecraft.src;
 /* 19:22 */     if (!paramaqu.isClient) {
 /* 20:23 */       paramaqu.spawnEntity(new aht(paramaqu, paramahd));
 /* 21:   */     }
-/* 22:25 */     paramahd.b(StatList.J[Item.b(this)]);
+/* 22:25 */     paramahd.increaseStat(StatList.J[Item.b(this)]);
 /* 23:26 */     return paramamj;
 /* 24:   */   }
 /* 25:   */ }

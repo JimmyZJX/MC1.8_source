@@ -5,11 +5,11 @@ public abstract interface aqb
   
   public abstract EntityPlayer u_();
   
-  public abstract aqd b_(EntityPlayer paramahd);
+  public abstract TradeOfferList b_(EntityPlayer paramahd);
   
-  public abstract void a(aqd paramaqd);
+  public abstract void a(TradeOfferList paramaqd);
   
-  public abstract void a(TradeOffer paramaqc);
+  public abstract void trade(TradeOffer paramaqc);
   
   public abstract void a_(ItemStack paramamj);
   

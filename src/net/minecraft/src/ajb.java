@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*   8:    */   public boolean g;
 /*   9:    */   private final EntityPlayer h;
 /*  10:    */   
-/*  11:    */   public ajb(ahb paramahb, boolean paramBoolean, EntityPlayer paramahd)
+/*  11:    */   public ajb(Inventory paramahb, boolean paramBoolean, EntityPlayer paramahd)
 /*  12:    */   {
 /*  13: 32 */     this.g = paramBoolean;
 /*  14: 33 */     this.h = paramahd;

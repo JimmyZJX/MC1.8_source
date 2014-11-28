@@ -29,7 +29,7 @@ package net.minecraft.src;
 /*  28: 50 */     return (float)Math.sqrt(paramFloat);
 /*  29:    */   }
 /*  30:    */   
-/*  31:    */   public static float a(double paramDouble)
+/*  31:    */   public static float sqrt(double paramDouble)
 /*  32:    */   {
 /*  33: 54 */     return (float)Math.sqrt(paramDouble);
 /*  34:    */   }

@@ -2,12 +2,12 @@ package net.minecraft.src;
 import java.io.IOException;
 /*   1:    */ import java.util.ArrayList;
 /*   2:    */ 
-/*   3:    */ public class aqd
+/*   3:    */ public class TradeOfferList
 /*   4:    */   extends ArrayList<TradeOffer>
 /*   5:    */ {
-/*   6:    */   public aqd() {}
+/*   6:    */   public TradeOfferList() {}
 /*   7:    */   
-/*   8:    */   public aqd(NBTTagCompound paramfn)
+/*   8:    */   public TradeOfferList(NBTTagCompound paramfn)
 /*   9:    */   {
 /*  10: 22 */     a(paramfn);
 /*  11:    */   }
@@ -53,9 +53,9 @@ import java.io.IOException;
 /*  51:    */     }
 /*  52:    */   }
 /*  53:    */   
-/*  54:    */   public static aqd b(ByteBufWrapper paramhd) throws IOException
+/*  54:    */   public static TradeOfferList b(ByteBufWrapper paramhd) throws IOException
 /*  55:    */   {
-/*  56: 90 */     aqd localaqd = new aqd();
+/*  56: 90 */     TradeOfferList localaqd = new TradeOfferList();
 /*  57:    */     
 /*  58: 92 */     int i = paramhd.readByte() & 0xFF;
 /*  59: 93 */     for (int j = 0; j < i; j++)

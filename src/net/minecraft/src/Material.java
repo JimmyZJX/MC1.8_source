@@ -64,7 +64,7 @@ package net.minecraft.src;
 /*  63: 73 */     return true;
 /*  64:    */   }
 /*  65:    */   
-/*  66:    */   public boolean c()
+/*  66:    */   public boolean material_c()
 /*  67:    */   {
 /*  68: 77 */     return true;
 /*  69:    */   }
@@ -108,7 +108,7 @@ package net.minecraft.src;
 /* 107:109 */     if (this.isTranslucent) {
 /* 108:110 */       return false;
 /* 109:    */     }
-/* 110:112 */     return c();
+/* 110:112 */     return material_c();
 /* 111:    */   }
 /* 112:    */   
 /* 113:    */   public boolean l()

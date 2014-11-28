@@ -34,8 +34,8 @@ package net.minecraft.src;
 /* 33:   */   
 /* 34:   */   public static void a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, ProtoBlock paramatr)
 /* 35:   */   {
-/* 36:46 */     BlockPosition localdt1 = paramdt.offset(paramej.e());
-/* 37:47 */     BlockPosition localdt2 = paramdt.offset(paramej.f());
+/* 36:46 */     BlockPosition localdt1 = paramdt.offset(paramej.yRotate());
+/* 37:47 */     BlockPosition localdt2 = paramdt.offset(paramej.ccw());
 /* 38:   */     
 /* 39:49 */     int i = (paramaqu.getBlock(localdt2).getProto().blocksMovement() ? 1 : 0) + (paramaqu.getBlock(localdt2.up()).getProto().blocksMovement() ? 1 : 0);
 /* 40:50 */     int j = (paramaqu.getBlock(localdt1).getProto().blocksMovement() ? 1 : 0) + (paramaqu.getBlock(localdt1.up()).getProto().blocksMovement() ? 1 : 0);

@@ -1,15 +1,15 @@
 package net.minecraft.src;
-/*  1:   */ public class apo
+/*  1:   */ public class WeightedRandomItemEnchantment
 /*  2:   */   extends WeightedRandomItem
 /*  3:   */ {
-/*  4:   */   public final Enchantment b;
-/*  5:   */   public final int c;
+/*  4:   */   public final Enchantment enchantment;
+/*  5:   */   public final int level;
 /*  6:   */   
-/*  7:   */   public apo(Enchantment paramapf, int paramInt)
+/*  7:   */   public WeightedRandomItemEnchantment(Enchantment paramapf, int paramInt)
 /*  8:   */   {
 /*  9:10 */     super(paramapf.d());
-/* 10:11 */     this.b = paramapf;
-/* 11:12 */     this.c = paramInt;
+/* 10:11 */     this.enchantment = paramapf;
+/* 11:12 */     this.level = paramInt;
 /* 12:   */   }
 /* 13:   */ }
 

@@ -49,7 +49,7 @@ package net.minecraft.src;
 /*  48:    */     }
 /*  49: 58 */     makeDirt(paramaqu, paramdt.down());
 /*  50:    */     
-/*  51: 60 */     EnumDirection localej = en.HORIZONTAL.getRandomDirection(paramRandom);
+/*  51: 60 */     EnumDirection localej = EnumHorizontalVertical.HORIZONTAL.getRandomDirection(paramRandom);
 /*  52: 61 */     int m = localbof1 - paramRandom.nextInt(4) - 1;
 /*  53: 62 */     int n = 3 - paramRandom.nextInt(3);
 /*  54:    */     
@@ -96,7 +96,7 @@ package net.minecraft.src;
 /*  95:    */ 
 /*  96:105 */     i1 = paramdt.getX();
 /*  97:106 */     i2 = paramdt.getZ();
-/*  98:107 */     localObject1 = en.HORIZONTAL.getRandomDirection(paramRandom);
+/*  98:107 */     localObject1 = EnumHorizontalVertical.HORIZONTAL.getRandomDirection(paramRandom);
 /*  99:108 */     if (localObject1 != localej)
 /* 100:    */     {
 /* 101:109 */       int localObject2 = m - paramRandom.nextInt(2) - 1;

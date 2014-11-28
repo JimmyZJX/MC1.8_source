@@ -18,14 +18,14 @@ package net.minecraft.src;
 /*  17: 75 */     super(paramaqu);
 /*  18: 76 */     a(0.6F, 0.7F);
 /*  19:    */     
-/*  20: 78 */     this.g = new ach(this, this);
+/*  20: 78 */     this.jumpManager = new ach(this, this);
 /*  21:    */     
-/*  22: 80 */     this.f = new aci(this);
+/*  22: 80 */     this.moveManager = new aci(this);
 /*  23:    */     
 /*  24: 82 */     ((aay)getNavigator()).a(true);
 /*  25: 83 */     this.navigator.a(2.5F);
 /*  26:    */     
-/*  27: 85 */     this.goalSelector.addGoal(1, new yy(this));
+/*  27: 85 */     this.goalSelector.addGoal(1, new GoalSwim(this));
 /*  28: 86 */     this.goalSelector.addGoal(1, new acj(this, 1.33D));
 /*  29: 87 */     this.goalSelector.addGoal(2, new aag(this, 1.0D, ItemList.carrot, false));
 /*  30: 88 */     this.goalSelector.addGoal(3, new yt(this, 0.8D));
@@ -45,9 +45,9 @@ package net.minecraft.src;
 /*  44:102 */     b(0.0D);
 /*  45:    */   }
 /*  46:    */   
-/*  47:    */   protected float bD()
+/*  47:    */   protected float getJumpVelocity()
 /*  48:    */   {
-/*  49:107 */     if ((this.f.a()) && (this.f.e() > this.yPos + 0.5D)) {
+/*  49:107 */     if ((this.moveManager.isActive()) && (this.moveManager.getTargetY() > this.yPos + 0.5D)) {
 /*  50:108 */       return 0.5F;
 /*  51:    */     }
 /*  52:110 */     return this.br.b();
@@ -69,12 +69,12 @@ package net.minecraft.src;
 /*  68:    */   public void b(double paramDouble)
 /*  69:    */   {
 /*  70:125 */     getNavigator().a(paramDouble);
-/*  71:126 */     this.f.a(this.f.d(), this.f.e(), this.f.f(), paramDouble);
+/*  71:126 */     this.moveManager.setTarget(this.moveManager.getTargetX(), this.moveManager.getTargetY(), this.moveManager.getTargetZ(), paramDouble);
 /*  72:    */   }
 /*  73:    */   
 /*  74:    */   public void a(boolean paramBoolean, ace paramace)
 /*  75:    */   {
-/*  76:130 */     super.i(paramBoolean);
+/*  76:130 */     super.setJumping(paramBoolean);
 /*  77:131 */     if (!paramBoolean)
 /*  78:    */     {
 /*  79:132 */       if (this.br == ace.e) {
@@ -112,7 +112,7 @@ package net.minecraft.src;
 /* 111:    */   
 /* 112:    */   public void mobTick()
 /* 113:    */   {
-/* 114:163 */     if (this.f.b() > 0.8D) {
+/* 114:163 */     if (this.moveManager.getSpeed() > 0.8D) {
 /* 115:164 */       a(ace.d);
 /* 116:166 */     } else if (this.br != ace.e) {
 /* 117:167 */       a(ace.b);
@@ -140,18 +140,18 @@ package net.minecraft.src;
 /* 139:189 */         if ((localObject != null) && (h((Entity)localObject) < 16.0D))
 /* 140:    */         {
 /* 141:190 */           a(((EntityLiving)localObject).xPos, ((EntityLiving)localObject).zPos);
-/* 142:191 */           this.f.a(((EntityLiving)localObject).xPos, ((EntityLiving)localObject).yPos, ((EntityLiving)localObject).zPos, this.f.b());
+/* 142:191 */           this.moveManager.setTarget(((EntityLiving)localObject).xPos, ((EntityLiving)localObject).yPos, ((EntityLiving)localObject).zPos, this.moveManager.getSpeed());
 /* 143:192 */           b(ace.e);
 /* 144:193 */           this.bp = true;
 /* 145:    */         }
 /* 146:    */       }
-/* 147:197 */       Object localObject = (ach)this.g;
+/* 147:197 */       Object localObject = (ach)this.jumpManager;
 /* 148:198 */       if (!((ach)localObject).c())
 /* 149:    */       {
-/* 150:199 */         if ((this.f.a()) && (this.bq == 0))
+/* 150:199 */         if ((this.moveManager.isActive()) && (this.bq == 0))
 /* 151:    */         {
 /* 152:200 */           bpv localbpv = this.navigator.j();
-/* 153:201 */           Vec3 localbrw = new Vec3(this.f.d(), this.f.e(), this.f.f());
+/* 153:201 */           Vec3 localbrw = new Vec3(this.moveManager.getTargetX(), this.moveManager.getTargetY(), this.moveManager.getTargetZ());
 /* 154:202 */           if ((localbpv != null) && (localbpv.e() < localbpv.d())) {
 /* 155:203 */             localbrw = localbpv.a(this);
 /* 156:    */           }
@@ -175,12 +175,12 @@ package net.minecraft.src;
 /* 174:    */   
 /* 175:    */   private void cr()
 /* 176:    */   {
-/* 177:226 */     ((ach)this.g).a(true);
+/* 177:226 */     ((ach)this.jumpManager).a(true);
 /* 178:    */   }
 /* 179:    */   
 /* 180:    */   private void cs()
 /* 181:    */   {
-/* 182:230 */     ((ach)this.g).a(false);
+/* 182:230 */     ((ach)this.jumpManager).a(false);
 /* 183:    */   }
 /* 184:    */   
 /* 185:    */   private void ct()
@@ -215,8 +215,8 @@ package net.minecraft.src;
 /* 214:    */   {
 /* 215:258 */     super.aW();
 /* 216:    */     
-/* 217:260 */     a(afs.a).a(10.0D);
-/* 218:261 */     a(afs.d).a(0.300000011920929D);
+/* 217:260 */     getAttribute(MobAttribute.maxHealth).a(10.0D);
+/* 218:261 */     getAttribute(MobAttribute.movementSpeed).a(0.300000011920929D);
 /* 219:    */   }
 /* 220:    */   
 /* 221:    */   public void writeEntityToNBT(NBTTagCompound paramfn)
@@ -258,22 +258,22 @@ package net.minecraft.src;
 /* 257:299 */     if (cl() == 99)
 /* 258:    */     {
 /* 259:300 */       a("mob.attack", 1.0F, (this.rng.nextFloat() - this.rng.nextFloat()) * 0.2F + 1.0F);
-/* 260:301 */       return paramwv.a(DamageSource.a(this), 8.0F);
+/* 260:301 */       return paramwv.a(DamageSource.fromMob(this), 8.0F);
 /* 261:    */     }
-/* 262:303 */     return paramwv.a(DamageSource.a(this), 3.0F);
+/* 262:303 */     return paramwv.a(DamageSource.fromMob(this), 3.0F);
 /* 263:    */   }
 /* 264:    */   
-/* 265:    */   public int bq()
+/* 265:    */   public int getArmorValue()
 /* 266:    */   {
 /* 267:308 */     if (cl() == 99) {
 /* 268:309 */       return 8;
 /* 269:    */     }
-/* 270:311 */     return super.bq();
+/* 270:311 */     return super.getArmorValue();
 /* 271:    */   }
 /* 272:    */   
 /* 273:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /* 274:    */   {
-/* 275:316 */     if (b(paramwh)) {
+/* 275:316 */     if (isImmuneTo(paramwh)) {
 /* 276:317 */       return false;
 /* 277:    */     }
 /* 278:319 */     return super.a(paramwh, paramFloat);

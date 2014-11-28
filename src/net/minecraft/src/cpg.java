@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ import org.lwjgl.opengl.GL11;
 /*  2:   */ 
 /*  3:   */ public class cpg
-/*  4:   */   extends cpu<ahj>
+/*  4:   */   extends cpu<EntityArrow>
 /*  5:   */ {
 /*  6:13 */   private static final oa a = new oa("textures/entity/arrow.png");
 /*  7:   */   
@@ -11,7 +11,7 @@ package net.minecraft.src;
 /* 10:16 */     super(paramcpt);
 /* 11:   */   }
 /* 12:   */   
-/* 13:   */   public void a(ahj paramahj, double paramDouble1, double paramDouble2, double paramDouble3, float paramFloat1, float paramFloat2)
+/* 13:   */   public void a(EntityArrow paramahj, double paramDouble1, double paramDouble2, double paramDouble3, float paramFloat1, float paramFloat2)
 /* 14:   */   {
 /* 15:21 */     c(paramahj);
 /* 16:   */     
@@ -81,7 +81,7 @@ package net.minecraft.src;
 /* 80:86 */     super.a(paramahj, paramDouble1, paramDouble2, paramDouble3, paramFloat1, paramFloat2);
 /* 81:   */   }
 /* 82:   */   
-/* 83:   */   protected oa a(ahj paramahj)
+/* 83:   */   protected oa a(EntityArrow paramahj)
 /* 84:   */   {
 /* 85:91 */     return a;
 /* 86:   */   }

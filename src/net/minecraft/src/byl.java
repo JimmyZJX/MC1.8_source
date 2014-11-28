@@ -107,7 +107,7 @@ package net.minecraft.src;
 /* 107:126 */     b(paramInt1, paramInt2);
 /* 108:127 */     bss.c();
 /* 109:    */     
-/* 110:129 */     ahb localahb = this.j.h.bg;
+/* 110:129 */     Inventory localahb = this.j.h.bg;
 /* 111:130 */     Object localObject = this.x == null ? localahb.p() : this.x;
 /* 112:132 */     if (localObject != null)
 /* 113:    */     {

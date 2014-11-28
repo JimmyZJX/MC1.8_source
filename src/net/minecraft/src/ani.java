@@ -38,8 +38,8 @@ package net.minecraft.src;
 /*  37: 47 */     if (localbec1.getProto() == this.b)
 /*  38:    */     {
 /*  39: 48 */       IBlockData localbex = this.b.l();
-/*  40: 49 */       Comparable localComparable = localbec1.getProperty(localbex);
-/*  41: 50 */       EnumSlabHalf localawr = (EnumSlabHalf)localbec1.getProperty(BlockSlab.half);
+/*  40: 49 */       Comparable localComparable = localbec1.getData(localbex);
+/*  41: 50 */       EnumSlabHalf localawr = (EnumSlabHalf)localbec1.getData(BlockSlab.half);
 /*  42: 52 */       if (((paramej == EnumDirection.UP) && (localawr == EnumSlabHalf.BOTTOM)) || ((paramej == EnumDirection.DOWN) && (localawr == EnumSlabHalf.TOP) && (localComparable == localObject)))
 /*  43:    */       {
 /*  44: 53 */         Block localbec2 = this.c.instance().setData(localbex, localComparable);
@@ -67,14 +67,14 @@ package net.minecraft.src;
 /*  66: 77 */     Block localbec1 = paramaqu.getBlock(paramdt);
 /*  67: 79 */     if (localbec1.getProto() == this.b)
 /*  68:    */     {
-/*  69: 80 */       int i = localbec1.getProperty(BlockSlab.half) == EnumSlabHalf.TOP ? 1 : 0;
-/*  70: 82 */       if (((paramej == EnumDirection.UP) && (i == 0)) || ((paramej == EnumDirection.DOWN) && (i != 0) && (localObject == localbec1.getProperty(localbex)))) {
+/*  69: 80 */       int i = localbec1.getData(BlockSlab.half) == EnumSlabHalf.TOP ? 1 : 0;
+/*  70: 82 */       if (((paramej == EnumDirection.UP) && (i == 0)) || ((paramej == EnumDirection.DOWN) && (i != 0) && (localObject == localbec1.getData(localbex)))) {
 /*  71: 83 */         return true;
 /*  72:    */       }
 /*  73:    */     }
 /*  74: 87 */     paramdt = paramdt.offset(paramej);
 /*  75: 88 */     Block localbec2 = paramaqu.getBlock(paramdt);
-/*  76: 89 */     if ((localbec2.getProto() == this.b) && (localObject == localbec2.getProperty(localbex))) {
+/*  76: 89 */     if ((localbec2.getProto() == this.b) && (localObject == localbec2.getData(localbex))) {
 /*  77: 90 */       return true;
 /*  78:    */     }
 /*  79: 93 */     return super.a(paramaqu, localdt, paramej, paramahd, paramamj);
@@ -85,7 +85,7 @@ package net.minecraft.src;
 /*  84: 97 */     Block localbec1 = paramaqu.getBlock(paramdt);
 /*  85: 98 */     if (localbec1.getProto() == this.b)
 /*  86:    */     {
-/*  87: 99 */       Comparable localComparable = localbec1.getProperty(this.b.l());
+/*  87: 99 */       Comparable localComparable = localbec1.getData(this.b.l());
 /*  88:101 */       if (localComparable == paramObject)
 /*  89:    */       {
 /*  90:102 */         Block localbec2 = this.c.instance().setData(this.b.l(), localComparable);

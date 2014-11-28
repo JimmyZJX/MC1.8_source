@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*   3:    */ public class avr
 /*   4:    */   extends atg
 /*   5:    */ {
-/*   6: 29 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", en.HORIZONTAL);
+/*   6: 29 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", EnumHorizontalVertical.HORIZONTAL);
 /*   7:    */   
 /*   8:    */   protected avr()
 /*   9:    */   {
@@ -46,12 +46,12 @@ package net.minecraft.src;
 /*  45:    */   
 /*  46:    */   public Block a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3, int paramInt, EntityLiving paramxm)
 /*  47:    */   {
-/*  48: 71 */     return instance().setData(a, paramxm.aO().d());
+/*  48: 71 */     return instance().setData(a, paramxm.aO().opposite());
 /*  49:    */   }
 /*  50:    */   
 /*  51:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, EntityLiving paramxm, ItemStack paramamj)
 /*  52:    */   {
-/*  53: 76 */     paramaqu.setBlock(paramdt, parambec.setData(a, paramxm.aO().d()), 2);
+/*  53: 76 */     paramaqu.setBlock(paramdt, parambec.setData(a, paramxm.aO().opposite()), 2);
 /*  54:    */   }
 /*  55:    */   
 /*  56:    */   public boolean a(World paramaqu, BlockPosition paramdt, Block parambec, EntityPlayer paramahd, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3)
@@ -107,7 +107,7 @@ package net.minecraft.src;
 /* 106:    */   
 /* 107:    */   public int c(Block parambec)
 /* 108:    */   {
-/* 109:135 */     return ((EnumDirection)parambec.getProperty(a)).a();
+/* 109:135 */     return ((EnumDirection)parambec.getData(a)).a();
 /* 110:    */   }
 /* 111:    */   
 /* 112:    */   protected bed e()

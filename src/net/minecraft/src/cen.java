@@ -211,7 +211,7 @@ package net.minecraft.src;
 /* 210:246 */     Random localRandom = new Random();
 /* 211:    */     
 /* 212:248 */     ItemStack localamj = this.I.h.getHeldItemStack();
-/* 213:249 */     int j = (this.I.c.l() == EnumGameType.CREATIVE) && (localamj != null) && (ProtoBlock.a(localamj.getItem()) == BlockList.barrier) ? 1 : 0;
+/* 213:249 */     int j = (this.I.c.l() == EnumGameMode.CREATIVE) && (localamj != null) && (ProtoBlock.a(localamj.getItem()) == BlockList.barrier) ? 1 : 0;
 /* 214:251 */     for (int k = 0; k < 1000; k++)
 /* 215:    */     {
 /* 216:252 */       int m = paramInt1 + this.rng.nextInt(i) - this.rng.nextInt(i);

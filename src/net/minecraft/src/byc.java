@@ -99,7 +99,7 @@ package net.minecraft.src;
 /*  97:    */   
 /*  98:    */   protected abstract String b(int paramInt);
 /*  99:    */   
-/* 100:    */   protected void a(tq paramtq, int paramInt1, int paramInt2, boolean paramBoolean)
+/* 100:    */   protected void a(PlayerStat paramtq, int paramInt1, int paramInt2, boolean paramBoolean)
 /* 101:    */   {
 /* 102:    */     String str;
 /* 103:344 */     if (paramtq != null)

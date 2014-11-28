@@ -1,13 +1,13 @@
 package net.minecraft.src;
-/*  1:   */ public enum amx
-/*  2:   */ { a(net.minecraft.src.a.p,"Common"),
-			  b(net.minecraft.src.a.o,"Uncommon"),
-			  c(net.minecraft.src.a.l,"Rare"),
-			  d(net.minecraft.src.a.n,"Epic");
+/*  1:   */ public enum EnumRarity
+/*  2:   */ { COMMON(net.minecraft.src.a.p,"Common"),
+			  UNCOMMON(net.minecraft.src.a.o,"Uncommon"),
+			  RARE(net.minecraft.src.a.l,"Rare"),
+			  EPIC(net.minecraft.src.a.n,"Epic");
 /*  3:   */   public final a e;
 /*  4:   */   public final String f;
 /*  5:   */   
-/*  6:   */   private amx(a parama, String paramString)
+/*  6:   */   private EnumRarity(a parama, String paramString)
 /*  7:   */   {
 /*  8:15 */     this.e = parama;
 /*  9:16 */     this.f = paramString;

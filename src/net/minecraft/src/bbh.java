@@ -36,7 +36,7 @@ package net.minecraft.src;
 /*  35: 51 */     if (parambec.getProto() != this) {
 /*  36: 52 */       return super.h(parambec);
 /*  37:    */     }
-/*  38: 55 */     bbi localbbi = (bbi)parambec.getProperty(a);
+/*  38: 55 */     bbi localbbi = (bbi)parambec.getData(a);
 /*  39: 56 */     if (localbbi == bbi.a) {
 /*  40: 57 */       return 16777215;
 /*  41:    */     }
@@ -63,12 +63,12 @@ package net.minecraft.src;
 /*  62:    */   
 /*  63:    */   public void a(World paramaqu, EntityPlayer paramahd, BlockPosition paramdt, Block parambec, bcm parambcm)
 /*  64:    */   {
-/*  65: 85 */     if ((!paramaqu.isClient) && (paramahd.bY() != null) && (paramahd.bY().getItem() == ItemList.be))
+/*  65: 85 */     if ((!paramaqu.isClient) && (paramahd.bY() != null) && (paramahd.bY().getItem() == ItemList.shears))
 /*  66:    */     {
-/*  67: 86 */       paramahd.b(StatList.H[ProtoBlock.a(this)]);
+/*  67: 86 */       paramahd.increaseStat(StatList.H[ProtoBlock.a(this)]);
 /*  68:    */       
 /*  69:    */ 
-/*  70: 89 */       a(paramaqu, paramdt, new ItemStack(BlockList.tallgrass, 1, ((bbi)parambec.getProperty(a)).a()));
+/*  70: 89 */       a(paramaqu, paramdt, new ItemStack(BlockList.tallgrass, 1, ((bbi)parambec.getData(a)).a()));
 /*  71:    */     }
 /*  72:    */     else
 /*  73:    */     {
@@ -91,7 +91,7 @@ package net.minecraft.src;
 /*  90:    */   
 /*  91:    */   public boolean a(World paramaqu, BlockPosition paramdt, Block parambec, boolean paramBoolean)
 /*  92:    */   {
-/*  93:110 */     return parambec.getProperty(a) != bbi.a;
+/*  93:110 */     return parambec.getData(a) != bbi.a;
 /*  94:    */   }
 /*  95:    */   
 /*  96:    */   public boolean a(World paramaqu, Random paramRandom, BlockPosition paramdt, Block parambec)
@@ -102,7 +102,7 @@ package net.minecraft.src;
 /* 101:    */   public void b(World paramaqu, Random paramRandom, BlockPosition paramdt, Block parambec)
 /* 102:    */   {
 /* 103:120 */     avk localavk = avk.c;
-/* 104:121 */     if (parambec.getProperty(a) == bbi.c) {
+/* 104:121 */     if (parambec.getData(a) == bbi.c) {
 /* 105:122 */       localavk = avk.d;
 /* 106:    */     }
 /* 107:124 */     if (BlockList.cF.c(paramaqu, paramdt)) {
@@ -117,7 +117,7 @@ package net.minecraft.src;
 /* 116:    */   
 /* 117:    */   public int c(Block parambec)
 /* 118:    */   {
-/* 119:137 */     return ((bbi)parambec.getProperty(a)).a();
+/* 119:137 */     return ((bbi)parambec.getData(a)).a();
 /* 120:    */   }
 /* 121:    */   
 /* 122:    */   protected bed e()

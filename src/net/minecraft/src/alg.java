@@ -12,7 +12,7 @@ package net.minecraft.src;
 /* 11:   */     {
 /* 12:39 */       ahm localahm = new ahm(paramaqu, paramdt.getX() + paramFloat1, paramdt.getY() + paramFloat2, paramdt.getZ() + paramFloat3, paramamj);
 /* 13:40 */       paramaqu.spawnEntity(localahm);
-/* 14:42 */       if (!paramahd.by.d) {
+/* 14:42 */       if (!paramahd.abilities.instabuild) {
 /* 15:43 */         paramamj.stackSize -= 1;
 /* 16:   */       }
 /* 17:45 */       return true;

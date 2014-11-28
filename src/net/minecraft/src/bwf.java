@@ -174,7 +174,7 @@ package net.minecraft.src;
 /* 174:197 */           l1 = str.hashCode();
 /* 175:    */         }
 /* 176:    */       }
-/* 177:201 */       EnumGameType localarc = EnumGameType.a(this.r);
+/* 177:201 */       EnumGameMode localarc = EnumGameMode.a(this.r);
 /* 178:202 */       WorldSettings localarb = new WorldSettings(l1, localarc, this.t, this.x, WorldType.a[this.L]);
 /* 179:203 */       localarb.a(this.a);
 /* 180:204 */       if ((this.w) && (!this.x)) {

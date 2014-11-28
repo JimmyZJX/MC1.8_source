@@ -14,14 +14,14 @@ package net.minecraft.src;
 /*  13:    */   
 /*  14:    */   protected void a(World paramaqu, BlockPosition paramdt, Block parambec, int paramInt)
 /*  15:    */   {
-/*  16: 36 */     if ((parambec.getProperty(P) == EnumWoodVariant.DARK_OAK) && (paramaqu.rng.nextInt(paramInt) == 0)) {
+/*  16: 36 */     if ((parambec.getData(P) == EnumWoodVariant.DARK_OAK) && (paramaqu.rng.nextInt(paramInt) == 0)) {
 /*  17: 37 */       a(paramaqu, paramdt, new ItemStack(ItemList.apple, 1, 0));
 /*  18:    */     }
 /*  19:    */   }
 /*  20:    */   
 /*  21:    */   public int a(Block parambec)
 /*  22:    */   {
-/*  23: 43 */     return ((EnumWoodVariant)parambec.getProperty(P)).getIndex();
+/*  23: 43 */     return ((EnumWoodVariant)parambec.getData(P)).getIndex();
 /*  24:    */   }
 /*  25:    */   
 /*  26:    */   public int j(World paramaqu, BlockPosition paramdt)
@@ -38,7 +38,7 @@ package net.minecraft.src;
 /*  37:    */   
 /*  38:    */   protected ItemStack i(Block parambec)
 /*  39:    */   {
-/*  40: 60 */     return new ItemStack(Item.fromProtoBlock(this), 1, ((EnumWoodVariant)parambec.getProperty(P)).getIndex() - 4);
+/*  40: 60 */     return new ItemStack(Item.fromProtoBlock(this), 1, ((EnumWoodVariant)parambec.getData(P)).getIndex() - 4);
 /*  41:    */   }
 /*  42:    */   
 /*  43:    */   public Block instance(int paramInt)
@@ -50,11 +50,11 @@ package net.minecraft.src;
 /*  49:    */   {
 /*  50: 73 */     int i = 0;
 /*  51:    */     
-/*  52: 75 */     i |= ((EnumWoodVariant)parambec.getProperty(P)).getIndex() - 4;
-/*  53: 77 */     if (!((Boolean)parambec.getProperty(a)).booleanValue()) {
+/*  52: 75 */     i |= ((EnumWoodVariant)parambec.getData(P)).getIndex() - 4;
+/*  53: 77 */     if (!((Boolean)parambec.getData(a)).booleanValue()) {
 /*  54: 78 */       i |= 0x4;
 /*  55:    */     }
-/*  56: 81 */     if (((Boolean)parambec.getProperty(b)).booleanValue()) {
+/*  56: 81 */     if (((Boolean)parambec.getData(b)).booleanValue()) {
 /*  57: 82 */       i |= 0x8;
 /*  58:    */     }
 /*  59: 85 */     return i;
@@ -72,12 +72,12 @@ package net.minecraft.src;
 /*  71:    */   
 /*  72:    */   public void a(World paramaqu, EntityPlayer paramahd, BlockPosition paramdt, Block parambec, bcm parambcm)
 /*  73:    */   {
-/*  74:100 */     if ((!paramaqu.isClient) && (paramahd.bY() != null) && (paramahd.bY().getItem() == ItemList.be))
+/*  74:100 */     if ((!paramaqu.isClient) && (paramahd.bY() != null) && (paramahd.bY().getItem() == ItemList.shears))
 /*  75:    */     {
-/*  76:101 */       paramahd.b(StatList.H[ProtoBlock.a(this)]);
+/*  76:101 */       paramahd.increaseStat(StatList.H[ProtoBlock.a(this)]);
 /*  77:    */       
 /*  78:    */ 
-/*  79:104 */       a(paramaqu, paramdt, new ItemStack(Item.fromProtoBlock(this), 1, ((EnumWoodVariant)parambec.getProperty(P)).getIndex() - 4));
+/*  79:104 */       a(paramaqu, paramdt, new ItemStack(Item.fromProtoBlock(this), 1, ((EnumWoodVariant)parambec.getData(P)).getIndex() - 4));
 /*  80:105 */       return;
 /*  81:    */     }
 /*  82:108 */     super.a(paramaqu, paramahd, paramdt, parambec, parambcm);

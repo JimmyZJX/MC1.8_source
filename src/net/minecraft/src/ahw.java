@@ -48,7 +48,7 @@ package net.minecraft.src;
 /*  47:    */       {
 /*  48: 61 */         if (this.a != null)
 /*  49:    */         {
-/*  50: 62 */           if (parambru.d.a(DamageSource.a(this.a), 8.0F)) {
+/*  50: 62 */           if (parambru.d.a(DamageSource.fromMob(this.a), 8.0F)) {
 /*  51: 63 */             if (!parambru.d.ai()) {
 /*  52: 64 */               this.a.g(5.0F);
 /*  53:    */             } else {
@@ -57,7 +57,7 @@ package net.minecraft.src;
 /*  56:    */           }
 /*  57:    */         }
 /*  58:    */         else {
-/*  59: 70 */           parambru.d.a(DamageSource.l, 5.0F);
+/*  59: 70 */           parambru.d.a(DamageSource.magic, 5.0F);
 /*  60:    */         }
 /*  61: 72 */         if ((parambru.d instanceof EntityLiving))
 /*  62:    */         {

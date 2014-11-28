@@ -131,7 +131,7 @@ package net.minecraft.src;
 /* 130:327 */                 int i7 = a(i4, i5, i6);
 /* 131:328 */                 if (arrayOfblf[i7] != null) {
 /* 132:331 */                   if (i6 != j) {
-/* 133:332 */                     arrayOfblf[m].a(localej.d(), arrayOfblf[i7]);
+/* 133:332 */                     arrayOfblf[m].a(localej.opposite(), arrayOfblf[i7]);
 /* 134:    */                   } else {
 /* 135:334 */                     arrayOfblf[m].a(localej, arrayOfblf[i7]);
 /* 136:    */                   }
@@ -187,7 +187,7 @@ package net.minecraft.src;
 /* 186:380 */         i5 = paramRandom.nextInt(6);
 /* 187:381 */         if (localblf4.c[i5])
 /* 188:    */         {
-/* 189:382 */           i6 = EnumDirection.a(i5).d().a();
+/* 189:382 */           i6 = EnumDirection.a(i5).opposite().a();
 /* 190:    */           
 /* 191:    */ 
 /* 192:385 */           localblf4.c[i5] = false;

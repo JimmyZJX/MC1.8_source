@@ -29,7 +29,7 @@ package net.minecraft.src;
 /*  28:    */   
 /*  29:    */   public int a(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
 /*  30:    */   {
-/*  31: 51 */     return ((Integer)parambec.getProperty(a)).intValue();
+/*  31: 51 */     return ((Integer)parambec.getData(a)).intValue();
 /*  32:    */   }
 /*  33:    */   
 /*  34:    */   public void d(World paramaqu, BlockPosition paramdt)
@@ -50,7 +50,7 @@ package net.minecraft.src;
 /*  49: 70 */     if (this.b) {
 /*  50: 71 */       i = 15 - i;
 /*  51:    */     }
-/*  52: 74 */     if (((Integer)localbec.getProperty(a)).intValue() != i) {
+/*  52: 74 */     if (((Integer)localbec.getData(a)).intValue() != i) {
 /*  53: 75 */       paramaqu.setBlock(paramdt, localbec.setData(a, Integer.valueOf(i)), 3);
 /*  54:    */     }
 /*  55:    */   }
@@ -64,12 +64,12 @@ package net.minecraft.src;
 /*  63:    */       }
 /*  64: 85 */       if (this.b)
 /*  65:    */       {
-/*  66: 86 */         paramaqu.setBlock(paramdt, BlockList.cl.instance().setData(a, parambec.getProperty(a)), 4);
+/*  66: 86 */         paramaqu.setBlock(paramdt, BlockList.cl.instance().setData(a, parambec.getData(a)), 4);
 /*  67: 87 */         BlockList.cl.d(paramaqu, paramdt);
 /*  68:    */       }
 /*  69:    */       else
 /*  70:    */       {
-/*  71: 89 */         paramaqu.setBlock(paramdt, BlockList.cm.instance().setData(a, parambec.getProperty(a)), 4);
+/*  71: 89 */         paramaqu.setBlock(paramdt, BlockList.cm.instance().setData(a, parambec.getData(a)), 4);
 /*  72: 90 */         BlockList.cm.d(paramaqu, paramdt);
 /*  73:    */       }
 /*  74: 92 */       return true;
@@ -119,7 +119,7 @@ package net.minecraft.src;
 /* 118:    */   
 /* 119:    */   public int c(Block parambec)
 /* 120:    */   {
-/* 121:144 */     return ((Integer)parambec.getProperty(a)).intValue();
+/* 121:144 */     return ((Integer)parambec.getData(a)).intValue();
 /* 122:    */   }
 /* 123:    */   
 /* 124:    */   protected bed e()

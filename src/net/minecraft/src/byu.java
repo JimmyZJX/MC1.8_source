@@ -3,10 +3,10 @@ package net.minecraft.src;
 /*  2:   */   extends byl
 /*  3:   */ {
 /*  4:13 */   private static final oa u = new oa("textures/gui/container/brewing_stand.png");
-/*  5:   */   private final ahb v;
+/*  5:   */   private final Inventory v;
 /*  6:   */   private vq w;
 /*  7:   */   
-/*  8:   */   public byu(ahb paramahb, vq paramvq)
+/*  8:   */   public byu(Inventory paramahb, vq paramvq)
 /*  9:   */   {
 /* 10:18 */     super(new aii(paramahb, paramvq));
 /* 11:19 */     this.v = paramahb;

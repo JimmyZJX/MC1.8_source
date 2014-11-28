@@ -24,7 +24,7 @@ package net.minecraft.src;
 /*  23:    */   
 /*  24:    */   public int c(Block parambec)
 /*  25:    */   {
-/*  26:207 */     return ((Integer)parambec.getProperty(b)).intValue();
+/*  26:207 */     return ((Integer)parambec.getData(b)).intValue();
 /*  27:    */   }
 /*  28:    */   
 /*  29:    */   protected bed e()

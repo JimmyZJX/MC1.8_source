@@ -182,7 +182,7 @@ package net.minecraft.src;
 /*  182:     */   
 /*  183:     */   public boolean cutsRedstone()
 /*  184:     */   {
-/*  185: 301 */     return (this.material.c()) && (isOpaqueCube());
+/*  185: 301 */     return (this.material.material_c()) && (isOpaqueCube());
 /*  186:     */   }
 /*  187:     */   
 /*  188:     */   public boolean blocksMovement()
@@ -192,7 +192,7 @@ package net.minecraft.src;
 /*  192:     */   
 /*  193:     */   public boolean u()
 /*  194:     */   {
-/*  195: 309 */     return (this.material.c()) && (isOpaqueCube());
+/*  195: 309 */     return (this.material.material_c()) && (isOpaqueCube());
 /*  196:     */   }
 /*  197:     */   
 /*  198:     */   public boolean isOpaqueCube()
@@ -202,7 +202,7 @@ package net.minecraft.src;
 /*  202:     */   
 /*  203:     */   public boolean b(IBlockAccess paramard, BlockPosition paramdt)
 /*  204:     */   {
-/*  205: 318 */     return !this.material.c();
+/*  205: 318 */     return !this.material.material_c();
 /*  206:     */   }
 /*  207:     */   
 /*  208:     */   public int b()
@@ -441,8 +441,8 @@ package net.minecraft.src;
 /*  441:     */   {
 /*  442: 548 */     a(paramaqu, paramdt);
 /*  443:     */     
-/*  444: 550 */     parambrw1 = parambrw1.b(-paramdt.getX(), -paramdt.getY(), -paramdt.getZ());
-/*  445: 551 */     parambrw2 = parambrw2.b(-paramdt.getX(), -paramdt.getY(), -paramdt.getZ());
+/*  444: 550 */     parambrw1 = parambrw1.add(-paramdt.getX(), -paramdt.getY(), -paramdt.getZ());
+/*  445: 551 */     parambrw2 = parambrw2.add(-paramdt.getX(), -paramdt.getY(), -paramdt.getZ());
 /*  446:     */     
 /*  447: 553 */     Vec3 localbrw1 = parambrw1.a(parambrw2, this.B);
 /*  448: 554 */     Vec3 localbrw2 = parambrw1.a(parambrw2, this.E);
@@ -471,22 +471,22 @@ package net.minecraft.src;
 /*  471: 578 */       localbrw6 = null;
 /*  472:     */     }
 /*  473: 581 */     Vec3 localbrw7 = null;
-/*  474: 583 */     if ((localbrw1 != null) && ((localbrw7 == null) || (parambrw1.g(localbrw1) < parambrw1.g(localbrw7)))) {
+/*  474: 583 */     if ((localbrw1 != null) && ((localbrw7 == null) || (parambrw1.dist2(localbrw1) < parambrw1.dist2(localbrw7)))) {
 /*  475: 584 */       localbrw7 = localbrw1;
 /*  476:     */     }
-/*  477: 586 */     if ((localbrw2 != null) && ((localbrw7 == null) || (parambrw1.g(localbrw2) < parambrw1.g(localbrw7)))) {
+/*  477: 586 */     if ((localbrw2 != null) && ((localbrw7 == null) || (parambrw1.dist2(localbrw2) < parambrw1.dist2(localbrw7)))) {
 /*  478: 587 */       localbrw7 = localbrw2;
 /*  479:     */     }
-/*  480: 589 */     if ((localbrw3 != null) && ((localbrw7 == null) || (parambrw1.g(localbrw3) < parambrw1.g(localbrw7)))) {
+/*  480: 589 */     if ((localbrw3 != null) && ((localbrw7 == null) || (parambrw1.dist2(localbrw3) < parambrw1.dist2(localbrw7)))) {
 /*  481: 590 */       localbrw7 = localbrw3;
 /*  482:     */     }
-/*  483: 592 */     if ((localbrw4 != null) && ((localbrw7 == null) || (parambrw1.g(localbrw4) < parambrw1.g(localbrw7)))) {
+/*  483: 592 */     if ((localbrw4 != null) && ((localbrw7 == null) || (parambrw1.dist2(localbrw4) < parambrw1.dist2(localbrw7)))) {
 /*  484: 593 */       localbrw7 = localbrw4;
 /*  485:     */     }
-/*  486: 595 */     if ((localbrw5 != null) && ((localbrw7 == null) || (parambrw1.g(localbrw5) < parambrw1.g(localbrw7)))) {
+/*  486: 595 */     if ((localbrw5 != null) && ((localbrw7 == null) || (parambrw1.dist2(localbrw5) < parambrw1.dist2(localbrw7)))) {
 /*  487: 596 */       localbrw7 = localbrw5;
 /*  488:     */     }
-/*  489: 598 */     if ((localbrw6 != null) && ((localbrw7 == null) || (parambrw1.g(localbrw6) < parambrw1.g(localbrw7)))) {
+/*  489: 598 */     if ((localbrw6 != null) && ((localbrw7 == null) || (parambrw1.dist2(localbrw6) < parambrw1.dist2(localbrw7)))) {
 /*  490: 599 */       localbrw7 = localbrw6;
 /*  491:     */     }
 /*  492: 602 */     if (localbrw7 == null) {
@@ -511,7 +511,7 @@ package net.minecraft.src;
 /*  511: 623 */     if (localbrw7 == localbrw6) {
 /*  512: 624 */       localej = EnumDirection.SOUTH;
 /*  513:     */     }
-/*  514: 627 */     return new HitResult(localbrw7.b(paramdt.getX(), paramdt.getY(), paramdt.getZ()), localej, paramdt);
+/*  514: 627 */     return new HitResult(localbrw7.add(paramdt.getX(), paramdt.getY(), paramdt.getZ()), localej, paramdt);
 /*  515:     */   }
 /*  516:     */   
 /*  517:     */   private boolean a(Vec3 parambrw)
@@ -574,7 +574,7 @@ package net.minecraft.src;
 /*  574:     */   
 /*  575:     */   public void a(World paramaqu, BlockPosition paramdt, EntityPlayer paramahd) {}
 /*  576:     */   
-/*  577:     */   public Vec3 a(World paramaqu, BlockPosition paramdt, Entity paramwv, Vec3 parambrw)
+/*  577:     */   public Vec3 alterAcceleration(World paramaqu, BlockPosition paramdt, Entity paramwv, Vec3 parambrw)
 /*  578:     */   {
 /*  579: 688 */     return parambrw;
 /*  580:     */   }
@@ -652,7 +652,7 @@ package net.minecraft.src;
 /*  652:     */   
 /*  653:     */   public void a(World paramaqu, EntityPlayer paramahd, BlockPosition paramdt, Block parambec, bcm parambcm)
 /*  654:     */   {
-/*  655: 753 */     paramahd.b(StatList.H[a(this)]);
+/*  655: 753 */     paramahd.increaseStat(StatList.H[a(this)]);
 /*  656: 754 */     paramahd.a(0.025F);
 /*  657: 756 */     if ((G()) && (aph.e(paramahd)))
 /*  658:     */     {

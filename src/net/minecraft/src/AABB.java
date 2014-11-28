@@ -200,7 +200,7 @@ package net.minecraft.src;
 /* 199:216 */     return (d1 + d2 + d3) / 3.0D;
 /* 200:    */   }
 /* 201:    */   
-/* 202:    */   public AABB d(double paramDouble1, double paramDouble2, double paramDouble3)
+/* 202:    */   public AABB contract(double paramDouble1, double paramDouble2, double paramDouble3)
 /* 203:    */   {
 /* 204:220 */     double d1 = this.minX + paramDouble1;
 /* 205:221 */     double d2 = this.minY + paramDouble2;
@@ -244,19 +244,19 @@ package net.minecraft.src;
 /* 243:261 */     if (localbrw1 != null) {
 /* 244:262 */       localbrw7 = localbrw1;
 /* 245:    */     }
-/* 246:264 */     if ((localbrw2 != null) && ((localbrw7 == null) || (parambrw1.g(localbrw2) < parambrw1.g(localbrw7)))) {
+/* 246:264 */     if ((localbrw2 != null) && ((localbrw7 == null) || (parambrw1.dist2(localbrw2) < parambrw1.dist2(localbrw7)))) {
 /* 247:265 */       localbrw7 = localbrw2;
 /* 248:    */     }
-/* 249:267 */     if ((localbrw3 != null) && ((localbrw7 == null) || (parambrw1.g(localbrw3) < parambrw1.g(localbrw7)))) {
+/* 249:267 */     if ((localbrw3 != null) && ((localbrw7 == null) || (parambrw1.dist2(localbrw3) < parambrw1.dist2(localbrw7)))) {
 /* 250:268 */       localbrw7 = localbrw3;
 /* 251:    */     }
-/* 252:270 */     if ((localbrw4 != null) && ((localbrw7 == null) || (parambrw1.g(localbrw4) < parambrw1.g(localbrw7)))) {
+/* 252:270 */     if ((localbrw4 != null) && ((localbrw7 == null) || (parambrw1.dist2(localbrw4) < parambrw1.dist2(localbrw7)))) {
 /* 253:271 */       localbrw7 = localbrw4;
 /* 254:    */     }
-/* 255:273 */     if ((localbrw5 != null) && ((localbrw7 == null) || (parambrw1.g(localbrw5) < parambrw1.g(localbrw7)))) {
+/* 255:273 */     if ((localbrw5 != null) && ((localbrw7 == null) || (parambrw1.dist2(localbrw5) < parambrw1.dist2(localbrw7)))) {
 /* 256:274 */       localbrw7 = localbrw5;
 /* 257:    */     }
-/* 258:276 */     if ((localbrw6 != null) && ((localbrw7 == null) || (parambrw1.g(localbrw6) < parambrw1.g(localbrw7)))) {
+/* 258:276 */     if ((localbrw6 != null) && ((localbrw7 == null) || (parambrw1.dist2(localbrw6) < parambrw1.dist2(localbrw7)))) {
 /* 259:277 */       localbrw7 = localbrw6;
 /* 260:    */     }
 /* 261:280 */     if (localbrw7 == null) {

@@ -4,11 +4,11 @@ package net.minecraft.src;
 /*   3:    */ public class kk
 /*   4:    */ {
 /*   5:    */   private final int b;
-/*   6:    */   private final EnumGameType c;
+/*   6:    */   private final EnumGameMode c;
 /*   7:    */   private final GameProfile d;
 /*   8:    */   private final ho e;
 /*   9:    */   
-/*  10:    */   public kk(kh paramkh, GameProfile paramGameProfile, int paramInt, EnumGameType paramarc, ho paramho)
+/*  10:    */   public kk(kh paramkh, GameProfile paramGameProfile, int paramInt, EnumGameMode paramarc, ho paramho)
 /*  11:    */   {
 /*  12:179 */     this.d = paramGameProfile;
 /*  13:180 */     this.b = paramInt;
@@ -26,7 +26,7 @@ package net.minecraft.src;
 /*  25:190 */     return this.b;
 /*  26:    */   }
 /*  27:    */   
-/*  28:    */   public EnumGameType c()
+/*  28:    */   public EnumGameMode c()
 /*  29:    */   {
 /*  30:194 */     return this.c;
 /*  31:    */   }

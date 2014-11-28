@@ -29,7 +29,7 @@ package net.minecraft.src;
 /* 28:29 */     this.lastY = this.yPos;
 /* 29:30 */     this.lastZ = this.zPos;
 /* 30:   */     
-/* 31:32 */     d(this.xVelocity, this.yVelocity, this.zVelocity);
+/* 31:32 */     move(this.xVelocity, this.yVelocity, this.zVelocity);
 /* 32:34 */     if (this.world.getBlock(new BlockPosition(this)).getProto().getMaterial() != Material.water) {
 /* 33:35 */       setDead();
 /* 34:   */     }

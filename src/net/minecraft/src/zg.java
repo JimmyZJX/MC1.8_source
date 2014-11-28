@@ -43,7 +43,7 @@ package net.minecraft.src;
 /* 42:   */   {
 /* 43:46 */     double d1 = this.b.xPos - this.a.xPos;
 /* 44:47 */     double d2 = this.b.zPos - this.a.zPos;
-/* 45:48 */     float f = MathUtils.a(d1 * d1 + d2 * d2);
+/* 45:48 */     float f = MathUtils.sqrt(d1 * d1 + d2 * d2);
 /* 46:49 */     this.a.xVelocity += d1 / f * 0.5D * 0.800000011920929D + this.a.xVelocity * 0.2000000029802322D;
 /* 47:50 */     this.a.zVelocity += d2 / f * 0.5D * 0.800000011920929D + this.a.zVelocity * 0.2000000029802322D;
 /* 48:51 */     this.a.yVelocity = this.c;

@@ -17,7 +17,7 @@ package net.minecraft.src;
 /*  16:    */ 
 /*  17:    */ 
 /*  18:    */ 
-/*  19: 27 */       paramaop.a(new ItemStack(BlockList.cG, 8, 15 - i), new Object[] { "###", "#X#", "###", Character.valueOf('#'), new ItemStack(BlockList.w), Character.valueOf('X'), new ItemStack(ItemList.dye, 1, i) });
+/*  19: 27 */       paramaop.a(new ItemStack(BlockList.cG, 8, 15 - i), new Object[] { "###", "#X#", "###", Character.valueOf('#'), new ItemStack(BlockList.glass), Character.valueOf('X'), new ItemStack(ItemList.dye, 1, i) });
 /*  20:    */       
 /*  21:    */ 
 /*  22:    */ 

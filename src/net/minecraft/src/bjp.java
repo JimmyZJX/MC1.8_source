@@ -19,7 +19,7 @@ package net.minecraft.src;
 /*  18:    */   {
 /*  19:513 */     super(0);
 /*  20:    */     
-/*  21:515 */     this.m = en.HORIZONTAL.getRandomDirection(paramRandom);
+/*  21:515 */     this.m = EnumHorizontalVertical.HORIZONTAL.getRandomDirection(paramRandom);
 /*  22:517 */     switch (bjo.a[this.m.ordinal()])
 /*  23:    */     {
 /*  24:    */     case 1: 

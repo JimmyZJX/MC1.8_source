@@ -30,7 +30,7 @@ package net.minecraft.src;
 /*  29:    */     {
 /*  30: 46 */       localbec = a(localbec, paramard, paramdt);
 /*  31:    */       
-/*  32: 48 */       return (avk)localbec.getProperty(a);
+/*  32: 48 */       return (avk)localbec.getData(a);
 /*  33:    */     }
 /*  34: 51 */     return avk.d;
 /*  35:    */   }
@@ -45,7 +45,7 @@ package net.minecraft.src;
 /*  44: 61 */     Block localbec = paramaqu.getBlock(paramdt);
 /*  45: 62 */     if (localbec.getProto() == this)
 /*  46:    */     {
-/*  47: 63 */       avk localavk = (avk)a(localbec, paramaqu, paramdt).getProperty(a);
+/*  47: 63 */       avk localavk = (avk)a(localbec, paramaqu, paramdt).getData(a);
 /*  48: 64 */       return (localavk == avk.d) || (localavk == avk.c);
 /*  49:    */     }
 /*  50: 66 */     return true;
@@ -56,7 +56,7 @@ package net.minecraft.src;
 /*  55: 71 */     if (f(paramaqu, paramdt, parambec)) {
 /*  56: 72 */       return;
 /*  57:    */     }
-/*  58: 75 */     int i = parambec.getProperty(b) == avj.a ? 1 : 0;
+/*  58: 75 */     int i = parambec.getData(b) == avj.a ? 1 : 0;
 /*  59: 76 */     BlockPosition localdt1 = i != 0 ? paramdt : paramdt.up();
 /*  60: 77 */     BlockPosition localdt2 = i != 0 ? paramdt.down() : paramdt;
 /*  61: 78 */     ProtoBlock localatr = i != 0 ? this : paramaqu.getBlock(localdt1).getProto();
@@ -75,7 +75,7 @@ package net.minecraft.src;
 /*  74:    */   
 /*  75:    */   public boolean f(World paramaqu, BlockPosition paramdt, Block parambec)
 /*  76:    */   {
-/*  77: 94 */     if (parambec.getProperty(b) == avj.a) {
+/*  77: 94 */     if (parambec.getData(b) == avj.a) {
 /*  78: 95 */       return paramaqu.getBlock(paramdt.down()).getProto() == this;
 /*  79:    */     }
 /*  80: 98 */     Block localbec = paramaqu.getBlock(paramdt.up());
@@ -84,10 +84,10 @@ package net.minecraft.src;
 /*  83:    */   
 /*  84:    */   public Item a(Block parambec, Random paramRandom, int paramInt)
 /*  85:    */   {
-/*  86:105 */     if (parambec.getProperty(b) == avj.a) {
+/*  86:105 */     if (parambec.getData(b) == avj.a) {
 /*  87:106 */       return null;
 /*  88:    */     }
-/*  89:108 */     avk localavk = (avk)parambec.getProperty(a);
+/*  89:108 */     avk localavk = (avk)parambec.getData(a);
 /*  90:109 */     if (localavk == avk.d) {
 /*  91:111 */       return null;
 /*  92:    */     }
@@ -103,10 +103,10 @@ package net.minecraft.src;
 /* 102:    */   
 /* 103:    */   public int a(Block parambec)
 /* 104:    */   {
-/* 105:125 */     if ((parambec.getProperty(b) == avj.a) || (parambec.getProperty(a) == avk.c)) {
+/* 105:125 */     if ((parambec.getData(b) == avj.a) || (parambec.getData(a) == avk.c)) {
 /* 106:126 */       return 0;
 /* 107:    */     }
-/* 108:128 */     return ((avk)parambec.getProperty(a)).a();
+/* 108:128 */     return ((avk)parambec.getData(a)).a();
 /* 109:    */   }
 /* 110:    */   
 /* 111:    */   public int a(IBlockAccess paramard, BlockPosition paramdt, int paramInt)
@@ -131,8 +131,8 @@ package net.minecraft.src;
 /* 130:    */   
 /* 131:    */   public void a(World paramaqu, EntityPlayer paramahd, BlockPosition paramdt, Block parambec, bcm parambcm)
 /* 132:    */   {
-/* 133:152 */     if ((!paramaqu.isClient) && (paramahd.bY() != null) && (paramahd.bY().getItem() == ItemList.be)) {
-/* 134:156 */       if ((parambec.getProperty(b) == avj.b) && 
+/* 133:152 */     if ((!paramaqu.isClient) && (paramahd.bY() != null) && (paramahd.bY().getItem() == ItemList.shears)) {
+/* 134:156 */       if ((parambec.getData(b) == avj.b) && 
 /* 135:157 */         (b(paramaqu, paramdt, parambec, paramahd))) {
 /* 136:158 */         return;
 /* 137:    */       }
@@ -142,18 +142,18 @@ package net.minecraft.src;
 /* 141:    */   
 /* 142:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, EntityPlayer paramahd)
 /* 143:    */   {
-/* 144:167 */     if (parambec.getProperty(b) == avj.a)
+/* 144:167 */     if (parambec.getData(b) == avj.a)
 /* 145:    */     {
 /* 146:168 */       if (paramaqu.getBlock(paramdt.down()).getProto() == this) {
-/* 147:169 */         if (!paramahd.by.d)
+/* 147:169 */         if (!paramahd.abilities.instabuild)
 /* 148:    */         {
 /* 149:171 */           Block localbec = paramaqu.getBlock(paramdt.down());
-/* 150:172 */           avk localavk = (avk)localbec.getProperty(a);
+/* 150:172 */           avk localavk = (avk)localbec.getData(a);
 /* 151:173 */           if ((localavk == avk.d) || (localavk == avk.c))
 /* 152:    */           {
 /* 153:174 */             if (!paramaqu.isClient)
 /* 154:    */             {
-/* 155:175 */               if ((paramahd.bY() != null) && (paramahd.bY().getItem() == ItemList.be))
+/* 155:175 */               if ((paramahd.bY() != null) && (paramahd.bY().getItem() == ItemList.shears))
 /* 156:    */               {
 /* 157:176 */                 b(paramaqu, paramdt, localbec, paramahd);
 /* 158:177 */                 paramaqu.g(paramdt.down());
@@ -177,7 +177,7 @@ package net.minecraft.src;
 /* 176:    */         }
 /* 177:    */       }
 /* 178:    */     }
-/* 179:192 */     else if ((paramahd.by.d) && (paramaqu.getBlock(paramdt.up()).getProto() == this)) {
+/* 179:192 */     else if ((paramahd.abilities.instabuild) && (paramaqu.getBlock(paramdt.up()).getProto() == this)) {
 /* 180:194 */       paramaqu.setBlock(paramdt.up(), BlockList.air.instance(), 2);
 /* 181:    */     }
 /* 182:197 */     super.a(paramaqu, paramdt, parambec, paramahd);
@@ -185,10 +185,10 @@ package net.minecraft.src;
 /* 184:    */   
 /* 185:    */   private boolean b(World paramaqu, BlockPosition paramdt, Block parambec, EntityPlayer paramahd)
 /* 186:    */   {
-/* 187:201 */     avk localavk = (avk)parambec.getProperty(a);
+/* 187:201 */     avk localavk = (avk)parambec.getData(a);
 /* 188:202 */     if ((localavk == avk.d) || (localavk == avk.c))
 /* 189:    */     {
-/* 190:203 */       paramahd.b(StatList.H[ProtoBlock.a(this)]);
+/* 190:203 */       paramahd.increaseStat(StatList.H[ProtoBlock.a(this)]);
 /* 191:    */       
 /* 192:205 */       int i = (localavk == avk.c ? bbi.b : bbi.c).a();
 /* 193:206 */       a(paramaqu, paramdt, new ItemStack(BlockList.tallgrass, 2, i));
@@ -236,11 +236,11 @@ package net.minecraft.src;
 /* 235:    */   
 /* 236:    */   public Block a(Block parambec, IBlockAccess paramard, BlockPosition paramdt)
 /* 237:    */   {
-/* 238:259 */     if (parambec.getProperty(b) == avj.a)
+/* 238:259 */     if (parambec.getData(b) == avj.a)
 /* 239:    */     {
 /* 240:260 */       Block localbec = paramard.getBlock(paramdt.down());
 /* 241:261 */       if (localbec.getProto() == this) {
-/* 242:262 */         parambec = parambec.setData(a, localbec.getProperty(a));
+/* 242:262 */         parambec = parambec.setData(a, localbec.getData(a));
 /* 243:    */       }
 /* 244:    */     }
 /* 245:266 */     return parambec;
@@ -248,10 +248,10 @@ package net.minecraft.src;
 /* 247:    */   
 /* 248:    */   public int c(Block parambec)
 /* 249:    */   {
-/* 250:271 */     if (parambec.getProperty(b) == avj.a) {
+/* 250:271 */     if (parambec.getData(b) == avj.a) {
 /* 251:272 */       return 8;
 /* 252:    */     }
-/* 253:274 */     return ((avk)parambec.getProperty(a)).a();
+/* 253:274 */     return ((avk)parambec.getData(a)).a();
 /* 254:    */   }
 /* 255:    */   
 /* 256:    */   protected bed e()

@@ -13,7 +13,7 @@ package net.minecraft.src;
 /* 12:   */   
 /* 13:   */   public int a(Block parambec)
 /* 14:   */   {
-/* 15:23 */     return ((bac)parambec.getProperty(a)).a();
+/* 15:23 */     return ((bac)parambec.getData(a)).a();
 /* 16:   */   }
 /* 17:   */   
 /* 18:   */   public void a(Item paramalq, CreativeTabs paramakf, List<ItemStack> paramList)
@@ -25,7 +25,7 @@ package net.minecraft.src;
 /* 24:   */   
 /* 25:   */   public MapColor g(Block parambec)
 /* 26:   */   {
-/* 27:35 */     return ((bac)parambec.getProperty(a)).c();
+/* 27:35 */     return ((bac)parambec.getData(a)).c();
 /* 28:   */   }
 /* 29:   */   
 /* 30:   */   public Block instance(int paramInt)
@@ -35,7 +35,7 @@ package net.minecraft.src;
 /* 34:   */   
 /* 35:   */   public int c(Block parambec)
 /* 36:   */   {
-/* 37:46 */     return ((bac)parambec.getProperty(a)).a();
+/* 37:46 */     return ((bac)parambec.getData(a)).a();
 /* 38:   */   }
 /* 39:   */   
 /* 40:   */   protected bed e()

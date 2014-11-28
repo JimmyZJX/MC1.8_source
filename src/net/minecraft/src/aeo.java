@@ -12,7 +12,7 @@ package net.minecraft.src;
 /* 11:   */   {
 /* 12:23 */     super.aW();
 /* 13:   */     
-/* 14:25 */     a(afs.a).a(12.0D);
+/* 14:25 */     getAttribute(MobAttribute.maxHealth).a(12.0D);
 /* 15:   */   }
 /* 16:   */   
 /* 17:   */   public boolean r(Entity paramwv)

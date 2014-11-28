@@ -4,12 +4,12 @@ package net.minecraft.src;
 /*  3:   */ {
 /*  4:12 */   private static final oa u = new oa("textures/gui/container/crafting_table.png");
 /*  5:   */   
-/*  6:   */   public byx(ahb paramahb, World paramaqu)
+/*  6:   */   public byx(Inventory paramahb, World paramaqu)
 /*  7:   */   {
 /*  8:16 */     this(paramahb, paramaqu, BlockPosition.zero);
 /*  9:   */   }
 /* 10:   */   
-/* 11:   */   public byx(ahb paramahb, World paramaqu, BlockPosition paramdt)
+/* 11:   */   public byx(Inventory paramahb, World paramaqu, BlockPosition paramdt)
 /* 12:   */   {
 /* 13:20 */     super(new aio(paramahb, paramaqu, paramdt));
 /* 14:   */   }

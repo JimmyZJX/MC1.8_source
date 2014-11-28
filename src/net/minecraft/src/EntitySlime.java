@@ -14,7 +14,7 @@ package net.minecraft.src;
 /*  13:    */   {
 /*  14: 42 */     super(paramaqu);
 /*  15:    */     
-/*  16: 44 */     this.f = new agc(this);
+/*  16: 44 */     this.moveManager = new agc(this);
 /*  17:    */     
 /*  18: 46 */     this.goalSelector.addGoal(1, new aga(this));
 /*  19:    */     
@@ -39,8 +39,8 @@ package net.minecraft.src;
 /*  38: 65 */     this.ac.b(16, Byte.valueOf((byte)paramInt));
 /*  39: 66 */     a(0.5100001F * paramInt, 0.5100001F * paramInt);
 /*  40: 67 */     setPos(this.xPos, this.yPos, this.zPos);
-/*  41: 68 */     a(afs.a).a(paramInt * paramInt);
-/*  42: 69 */     a(afs.d).a(0.2F + 0.1F * paramInt);
+/*  41: 68 */     getAttribute(MobAttribute.maxHealth).a(paramInt * paramInt);
+/*  42: 69 */     getAttribute(MobAttribute.movementSpeed).a(0.2F + 0.1F * paramInt);
 /*  43: 70 */     h(bt());
 /*  44: 71 */     this.b_ = paramInt;
 /*  45:    */   }
@@ -133,7 +133,7 @@ package net.minecraft.src;
 /* 132:151 */       a(0.5100001F * i, 0.5100001F * i);
 /* 133:152 */       this.yaw = this.aI;
 /* 134:153 */       this.aG = this.aI;
-/* 135:155 */       if ((V()) && 
+/* 135:155 */       if ((isInWater()) && 
 /* 136:156 */         (this.rng.nextInt(20) == 0)) {
 /* 137:157 */         X();
 /* 138:    */       }
@@ -174,7 +174,7 @@ package net.minecraft.src;
 /* 173:    */     }
 /* 174:    */   }
 /* 175:    */   
-/* 176:    */   public void d(EntityPlayer paramahd)
+/* 176:    */   public void onPickedUp(EntityPlayer paramahd)
 /* 177:    */   {
 /* 178:198 */     if (cg()) {
 /* 179:199 */       e(paramahd);
@@ -185,7 +185,7 @@ package net.minecraft.src;
 /* 184:    */   {
 /* 185:204 */     int i = ck();
 /* 186:205 */     if ((canSee(paramxm)) && (h(paramxm) < 0.6D * i * (0.6D * i)) && 
-/* 187:206 */       (paramxm.a(DamageSource.a(this), ch())))
+/* 187:206 */       (paramxm.a(DamageSource.fromMob(this), ch())))
 /* 188:    */     {
 /* 189:207 */       a("mob.attack", 1.0F, (this.rng.nextFloat() - this.rng.nextFloat()) * 0.2F + 1.0F);
 /* 190:208 */       a(this, paramxm);
@@ -265,7 +265,7 @@ package net.minecraft.src;
 /* 264:281 */     return ck() > 2;
 /* 265:    */   }
 /* 266:    */   
-/* 267:    */   protected void bE()
+/* 267:    */   protected void jump()
 /* 268:    */   {
 /* 269:286 */     this.yVelocity = 0.4199999868869782D;
 /* 270:287 */     this.ai = true;

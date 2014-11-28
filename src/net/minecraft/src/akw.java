@@ -40,7 +40,7 @@ package net.minecraft.src;
 /*  39:    */     {
 /*  40: 52 */       Block localbec1 = world.getBlock(pos);
 /*  41: 53 */       ProtoBlock localatr = localbec1.getProto();
-/*  42: 55 */       if ((localatr == BlockList.log) && (localbec1.getProperty(ayw.a) == EnumWoodVariant.JUNGLE))
+/*  42: 55 */       if ((localatr == BlockList.log) && (localbec1.getData(ayw.a) == EnumWoodVariant.JUNGLE))
 /*  43:    */       {
 /*  44: 56 */         if (paramej == EnumDirection.DOWN) {
 /*  45: 57 */           return false;
@@ -53,7 +53,7 @@ package net.minecraft.src;
 /*  52:    */         {
 /*  53: 65 */           Block localbec2 = BlockList.bN.a(world, pos, paramej, paramFloat1, paramFloat2, paramFloat3, 0, paramahd);
 /*  54: 66 */           world.setBlock(pos, localbec2, 2);
-/*  55: 67 */           if (!paramahd.by.d) {
+/*  55: 67 */           if (!paramahd.abilities.instabuild) {
 /*  56: 68 */             paramamj.stackSize -= 1;
 /*  57:    */           }
 /*  58:    */         }

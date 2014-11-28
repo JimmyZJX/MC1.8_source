@@ -48,16 +48,16 @@ package net.minecraft.src;
 /*  47: 54 */     this.ay = this.az;
 /*  48: 55 */     double d1 = this.xPos - this.lastX;
 /*  49: 56 */     double d2 = this.zPos - this.lastZ;
-/*  50: 57 */     float f1 = MathUtils.a(d1 * d1 + d2 * d2) * 4.0F;
+/*  50: 57 */     float f1 = MathUtils.sqrt(d1 * d1 + d2 * d2) * 4.0F;
 /*  51: 58 */     if (f1 > 1.0F) {
 /*  52: 59 */       f1 = 1.0F;
 /*  53:    */     }
 /*  54: 61 */     this.az += (f1 - this.az) * 0.4F;
 /*  55: 62 */     this.aA += this.az;
-/*  56: 64 */     if ((!this.a) && (az()) && (this.bg.a[this.bg.c] != null))
+/*  56: 64 */     if ((!this.a) && (az()) && (this.bg.items[this.bg.c] != null))
 /*  57:    */     {
-/*  58: 65 */       ItemStack localamj = this.bg.a[this.bg.c];
-/*  59: 66 */       a(this.bg.a[this.bg.c], localamj.getItem().d(localamj));
+/*  58: 65 */       ItemStack localamj = this.bg.items[this.bg.c];
+/*  59: 66 */       a(this.bg.items[this.bg.c], localamj.getItem().d(localamj));
 /*  60: 67 */       this.a = true;
 /*  61:    */     }
 /*  62: 68 */     else if ((this.a) && (!az()))
@@ -93,7 +93,7 @@ package net.minecraft.src;
 /*  92:    */     
 /*  93: 98 */     bw();
 /*  94:    */     
-/*  95:100 */     float f1 = MathUtils.a(this.xVelocity * this.xVelocity + this.zVelocity * this.zVelocity);
+/*  95:100 */     float f1 = MathUtils.sqrt(this.xVelocity * this.xVelocity + this.zVelocity * this.zVelocity);
 /*  96:101 */     float f2 = (float)Math.atan(-this.yVelocity * 0.2000000029802322D) * 15.0F;
 /*  97:102 */     if (f1 > 0.1F) {
 /*  98:103 */       f1 = 0.1F;
@@ -111,9 +111,9 @@ package net.minecraft.src;
 /* 110:    */   public void setItemStack(int paramInt, ItemStack paramamj)
 /* 111:    */   {
 /* 112:117 */     if (paramInt == 0) {
-/* 113:118 */       this.bg.a[this.bg.c] = paramamj;
+/* 113:118 */       this.bg.items[this.bg.c] = paramamj;
 /* 114:    */     } else {
-/* 115:120 */       this.bg.b[(paramInt - 1)] = paramamj;
+/* 115:120 */       this.bg.armors[(paramInt - 1)] = paramamj;
 /* 116:    */     }
 /* 117:    */   }
 /* 118:    */   

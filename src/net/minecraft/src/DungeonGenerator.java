@@ -11,7 +11,7 @@ package net.minecraft.src;
 /*  10:    */ {
 /*  11: 22 */   private static final Logger a = LogManager.getLogger();
 /*  12: 25 */   private static final String[] b = { "Skeleton", "Zombie", "Zombie", "Spider" };
-/*  13: 26 */   private static final List<vl> c = Lists.newArrayList(new vl[] { new vl(ItemList.saddle, 0, 1, 1, 10), new vl(ItemList.ironIngot, 0, 1, 4, 10), new vl(ItemList.bread, 0, 1, 1, 10), new vl(ItemList.O, 0, 1, 4, 10), new vl(ItemList.H, 0, 1, 4, 10), new vl(ItemList.F, 0, 1, 4, 10), new vl(ItemList.aw, 0, 1, 1, 10), new vl(ItemList.ao, 0, 1, 1, 1), new vl(ItemList.aC, 0, 1, 4, 10), new vl(ItemList.cq, 0, 1, 1, 4), new vl(ItemList.cr, 0, 1, 1, 4), new vl(ItemList.nameTag, 0, 1, 1, 10), new vl(ItemList.cl, 0, 1, 1, 2), new vl(ItemList.ck, 0, 1, 1, 5), new vl(ItemList.cm, 0, 1, 1, 1) });
+/*  13: 26 */   private static final List<vl> c = Lists.newArrayList(new vl[] { new vl(ItemList.saddle, 0, 1, 1, 10), new vl(ItemList.ironIngot, 0, 1, 4, 10), new vl(ItemList.bread, 0, 1, 1, 10), new vl(ItemList.wheat, 0, 1, 4, 10), new vl(ItemList.H, 0, 1, 4, 10), new vl(ItemList.string, 0, 1, 4, 10), new vl(ItemList.aw, 0, 1, 1, 10), new vl(ItemList.ao, 0, 1, 1, 1), new vl(ItemList.redstone, 0, 1, 4, 10), new vl(ItemList.cq, 0, 1, 1, 4), new vl(ItemList.cr, 0, 1, 1, 4), new vl(ItemList.nameTag, 0, 1, 1, 10), new vl(ItemList.cl, 0, 1, 1, 2), new vl(ItemList.ck, 0, 1, 1, 5), new vl(ItemList.cm, 0, 1, 1, 1) });
 /*  14:    */   
 /*  15:    */   public boolean generate(World world, Random rng, BlockPosition pos)
 /*  16:    */   {
@@ -88,7 +88,7 @@ package net.minecraft.src;
 /*  87:120 */         if (world.isEmpty(localdt2))
 /*  88:    */         {
 /*  89:124 */           int i11 = 0;
-/*  90:125 */           for (Iterator<EnumDirection> localObject1 = en.HORIZONTAL.iterator(); localObject1.hasNext();)
+/*  90:125 */           for (Iterator<EnumDirection> localObject1 = EnumHorizontalVertical.HORIZONTAL.iterator(); localObject1.hasNext();)
 /*  91:    */           {
 /*  92:125 */             EnumDirection localObject2 = localObject1.next();
 /*  93:126 */             if (world.getBlock(localdt2.offset(localObject2)).getProto().getMaterial().a()) {
@@ -100,7 +100,7 @@ package net.minecraft.src;
 /*  99:    */           {
 /* 100:135 */             world.setBlock(localdt2, BlockList.chest.f(world, localdt2, BlockList.chest.instance()), 2);
 /* 101:    */             
-/* 102:137 */             List<vl> localObject1 = vl.a(c, new vl[] { ItemList.cd.b(rng) });
+/* 102:137 */             List<vl> localObject1 = vl.a(c, new vl[] { ItemList.enchantedBook.b(rng) });
 /* 103:    */             
 /* 104:139 */             bcm localObject2 = world.s(localdt2);
 /* 105:140 */             if (!(localObject2 instanceof bcr)) {

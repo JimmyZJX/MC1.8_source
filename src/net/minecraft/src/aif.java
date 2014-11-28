@@ -20,12 +20,12 @@ package net.minecraft.src;
 /*  15:    */   
 /*  16:    */   public boolean a(EntityPlayer paramahd)
 /*  17:    */   {
-/*  18: 75 */     return ((paramahd.by.d) || (paramahd.bz >= this.c.a)) && (this.c.a > 0) && (e());
+/*  18: 75 */     return ((paramahd.abilities.instabuild) || (paramahd.bz >= this.c.a)) && (this.c.a > 0) && (e());
 /*  19:    */   }
 /*  20:    */   
 /*  21:    */   public void a(EntityPlayer paramahd, ItemStack paramamj)
 /*  22:    */   {
-/*  23: 80 */     if (!paramahd.by.d) {
+/*  23: 80 */     if (!paramahd.abilities.instabuild) {
 /*  24: 81 */       paramahd.a(-this.c.a);
 /*  25:    */     }
 /*  26: 83 */     aid.a(this.c).a(0, null);
@@ -49,9 +49,9 @@ package net.minecraft.src;
 /*  44: 95 */     this.c.a = 0;
 /*  45:    */     
 /*  46: 97 */     Object localObject = this.a.getBlock(this.b);
-/*  47: 98 */     if ((!paramahd.by.d) && (!this.a.isClient) && (((Block)localObject).getProto() == BlockList.cf) && (paramahd.getRNG().nextFloat() < 0.12F))
+/*  47: 98 */     if ((!paramahd.abilities.instabuild) && (!this.a.isClient) && (((Block)localObject).getProto() == BlockList.cf) && (paramahd.getRNG().nextFloat() < 0.12F))
 /*  48:    */     {
-/*  49: 99 */       int i = ((Integer)((Block)localObject).getProperty(BlockAnvil.b)).intValue();
+/*  49: 99 */       int i = ((Integer)((Block)localObject).getData(BlockAnvil.b)).intValue();
 /*  50:100 */       i++;
 /*  51:100 */       if (i > 2)
 /*  52:    */       {

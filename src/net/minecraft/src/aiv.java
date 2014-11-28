@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*   9:    */   private int h;
 /*  10:    */   private int i;
 /*  11:    */   
-/*  12:    */   public aiv(ahb paramahb, vq paramvq)
+/*  12:    */   public aiv(Inventory paramahb, vq paramvq)
 /*  13:    */   {
 /*  14: 26 */     this.a = paramvq;
 /*  15:    */     

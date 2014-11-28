@@ -39,7 +39,7 @@ package net.minecraft.src;
 /*  38:    */   
 /*  39:    */   public Block a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3, int paramInt, EntityLiving paramxm)
 /*  40:    */   {
-/*  41: 67 */     EnumDirection localej = paramej.d();
+/*  41: 67 */     EnumDirection localej = paramej.opposite();
 /*  42: 68 */     if (localej == EnumDirection.UP) {
 /*  43: 69 */       localej = EnumDirection.DOWN;
 /*  44:    */     }
@@ -88,7 +88,7 @@ package net.minecraft.src;
 /*  87:    */   private void e(World paramaqu, BlockPosition paramdt, Block parambec)
 /*  88:    */   {
 /*  89:115 */     boolean bool = !paramaqu.z(paramdt);
-/*  90:116 */     if (bool != ((Boolean)parambec.getProperty(b)).booleanValue()) {
+/*  90:116 */     if (bool != ((Boolean)parambec.getData(b)).booleanValue()) {
 /*  91:117 */       paramaqu.setBlock(paramdt, parambec.setData(b, Boolean.valueOf(bool)), 4);
 /*  92:    */     }
 /*  93:    */   }
@@ -159,8 +159,8 @@ package net.minecraft.src;
 /* 158:    */   {
 /* 159:185 */     int i = 0;
 /* 160:    */     
-/* 161:187 */     i |= ((EnumDirection)parambec.getProperty(a)).a();
-/* 162:189 */     if (!((Boolean)parambec.getProperty(b)).booleanValue()) {
+/* 161:187 */     i |= ((EnumDirection)parambec.getData(a)).a();
+/* 162:189 */     if (!((Boolean)parambec.getData(b)).booleanValue()) {
 /* 163:190 */       i |= 0x8;
 /* 164:    */     }
 /* 165:193 */     return i;

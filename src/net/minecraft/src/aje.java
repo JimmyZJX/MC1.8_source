@@ -141,7 +141,7 @@ package net.minecraft.src;
 /* 140:    */     }
 /* 141:    */     else
 /* 142:    */     {
-/* 143:154 */       aqd localaqd = this.a.b_(this.c);
+/* 143:154 */       TradeOfferList localaqd = this.a.b_(this.c);
 /* 144:155 */       if (localaqd != null)
 /* 145:    */       {
 /* 146:156 */         TradeOffer localaqc = localaqd.a((ItemStack)localObject, localamj, this.e);

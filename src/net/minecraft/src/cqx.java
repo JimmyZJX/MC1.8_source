@@ -49,8 +49,8 @@ package net.minecraft.src;
 /*  48: 61 */       paramDouble2 += (localbrw2.y + localbrw3.y) / 2.0D - d2;
 /*  49: 62 */       paramDouble3 += localbrw1.z - d3;
 /*  50:    */       
-/*  51: 64 */       Vec3 localbrw4 = localbrw3.b(-localbrw2.x, -localbrw2.y, -localbrw2.z);
-/*  52: 65 */       if (localbrw4.b() != 0.0D)
+/*  51: 64 */       Vec3 localbrw4 = localbrw3.add(-localbrw2.x, -localbrw2.y, -localbrw2.z);
+/*  52: 65 */       if (localbrw4.norm() != 0.0D)
 /*  53:    */       {
 /*  54: 66 */         localbrw4 = localbrw4.normalize();
 /*  55: 67 */         paramFloat1 = (float)(Math.atan2(localbrw4.z, localbrw4.x) * 180.0D / 3.141592653589793D);

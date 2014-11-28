@@ -202,13 +202,13 @@ package net.minecraft.src;
 /*  199:     */             
 /*  200: 233 */             int i6 = 2147483647;
 /*  206:     */             EnumDirection localej;
-/*  201: 234 */             for (Iterator<EnumDirection> localIterator = en.HORIZONTAL.iterator(); localIterator.hasNext();)
+/*  201: 234 */             for (Iterator<EnumDirection> localIterator = EnumHorizontalVertical.HORIZONTAL.iterator(); localIterator.hasNext();)
 /*  202:     */             {
 /*  203: 234 */               localej = localIterator.next();
 /*  204: 235 */               i6 = Math.min(i6, this.world.b(i4 + localej.g(), i5 + localej.i()));
 /*  205:     */             }
 /*  207: 238 */             checkSkylightNeighborHeight(i4, i5, i6);
-/*  208: 239 */             for (Iterator<EnumDirection> localIterator = en.HORIZONTAL.iterator(); localIterator.hasNext();)
+/*  208: 239 */             for (Iterator<EnumDirection> localIterator = EnumHorizontalVertical.HORIZONTAL.iterator(); localIterator.hasNext();)
 /*  209:     */             {
 /*  210: 239 */               localej = localIterator.next();
 /*  211: 240 */               checkSkylightNeighborHeight(i4 + localej.g(), i5 + localej.i(), i3);
@@ -324,7 +324,7 @@ package net.minecraft.src;
 /*  319:     */     }
 /*  320: 343 */     if (!this.world.t.o())
 /*  321:     */     {
-/*  322: 344 */       for (EnumDirection localej : en.HORIZONTAL) {
+/*  322: 344 */       for (EnumDirection localej : EnumHorizontalVertical.HORIZONTAL) {
 /*  323: 345 */         updateSkylightNeighborHeight(i3 + localej.g(), i4 + localej.i(), i6, i7);
 /*  324:     */       }
 /*  325: 347 */       updateSkylightNeighborHeight(i3, i4, i6, i7);
@@ -900,7 +900,7 @@ package net.minecraft.src;
 /*  895:     */       {
 /*  896: 890 */         ProtoBlock localatr = getBlock(localdt);
 /*  897: 891 */         Material localbof = localatr.getMaterial();
-/*  898: 892 */         if ((!localbof.c()) && (!localbof.isLiquid())) {
+/*  898: 892 */         if ((!localbof.material_c()) && (!localbof.isLiquid())) {
 /*  899: 893 */           localdt = localdt.down();
 /*  900:     */         } else {
 /*  901: 895 */           i5 = localdt.getY() + 1;
@@ -1128,10 +1128,10 @@ package net.minecraft.src;
 /* 1122:     */         
 /* 1123:1095 */         if (this.o)
 /* 1124:     */         {
-/* 1125:1096 */           for (EnumDirection localej : en.HORIZONTAL)
+/* 1125:1096 */           for (EnumDirection localej : EnumHorizontalVertical.HORIZONTAL)
 /* 1126:     */           {
-/* 1127:1097 */             int i3 = localej.c() == em.a ? 16 : 1;
-/* 1128:1098 */             this.world.getChunk(localdt.offset(localej, i3)).a(localej.d());
+/* 1127:1097 */             int i3 = localej.c() == EnumCoordSign.POSITIVE ? 16 : 1;
+/* 1128:1098 */             this.world.getChunk(localdt.offset(localej, i3)).a(localej.opposite());
 /* 1129:     */           }
 /* 1130:1100 */           y();
 /* 1131:     */         }

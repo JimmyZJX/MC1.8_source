@@ -64,7 +64,7 @@ package net.minecraft.src;
 /*  63: 77 */     double d1 = this.a * this.a + this.b * this.b;
 /*  64: 78 */     if ((d1 > 0.0001D) && (this.xVelocity * this.xVelocity + this.zVelocity * this.zVelocity > 0.001D))
 /*  65:    */     {
-/*  66: 79 */       d1 = MathUtils.a(d1);
+/*  66: 79 */       d1 = MathUtils.sqrt(d1);
 /*  67: 80 */       this.a /= d1;
 /*  68: 81 */       this.b /= d1;
 /*  69: 83 */       if (this.a * this.xVelocity + this.b * this.zVelocity < 0.0D)
@@ -86,7 +86,7 @@ package net.minecraft.src;
 /*  85: 96 */     double d1 = this.a * this.a + this.b * this.b;
 /*  86: 98 */     if (d1 > 0.0001D)
 /*  87:    */     {
-/*  88: 99 */       d1 = MathUtils.a(d1);
+/*  88: 99 */       d1 = MathUtils.sqrt(d1);
 /*  89:100 */       this.a /= d1;
 /*  90:101 */       this.b /= d1;
 /*  91:102 */       double d2 = 1.0D;
@@ -108,9 +108,9 @@ package net.minecraft.src;
 /* 107:    */   public boolean e(EntityPlayer paramahd)
 /* 108:    */   {
 /* 109:119 */     ItemStack localamj = paramahd.bg.h();
-/* 110:120 */     if ((localamj != null) && (localamj.getItem() == ItemList.h))
+/* 110:120 */     if ((localamj != null) && (localamj.getItem() == ItemList.coal))
 /* 111:    */     {
-/* 112:121 */       if (!paramahd.by.d) {
+/* 112:121 */       if (!paramahd.abilities.instabuild) {
 /* 113:121 */         if (--localamj.stackSize == 0) {
 /* 114:122 */           paramahd.bg.a(paramahd.bg.c, null);
 /* 115:    */         }

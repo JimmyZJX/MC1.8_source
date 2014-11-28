@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*  3:   */ {
 /*  4:   */   private aje a;
 /*  5:   */   private EntityPlayer b;
-/*  6:   */   private aqd c;
+/*  6:   */   private TradeOfferList c;
 /*  7:   */   private ho d;
 /*  8:   */   
 /*  9:   */   public agn(EntityPlayer paramahd, ho paramho)
@@ -21,17 +21,17 @@ package net.minecraft.src;
 /* 20:   */   
 /* 21:   */   public void a_(EntityPlayer paramahd) {}
 /* 22:   */   
-/* 23:   */   public aqd b_(EntityPlayer paramahd)
+/* 23:   */   public TradeOfferList b_(EntityPlayer paramahd)
 /* 24:   */   {
 /* 25:40 */     return this.c;
 /* 26:   */   }
 /* 27:   */   
-/* 28:   */   public void a(aqd paramaqd)
+/* 28:   */   public void a(TradeOfferList paramaqd)
 /* 29:   */   {
 /* 30:45 */     this.c = paramaqd;
 /* 31:   */   }
 /* 32:   */   
-/* 33:   */   public void a(TradeOffer paramaqc)
+/* 33:   */   public void trade(TradeOffer paramaqc)
 /* 34:   */   {
 /* 35:50 */     paramaqc.onUse();
 /* 36:   */   }

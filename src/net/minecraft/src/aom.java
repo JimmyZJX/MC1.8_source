@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*  3:   */ {
 /*  4:   */   public aom()
 /*  5:   */   {
-/*  6:14 */     super(3, 3, new ItemStack[] { new ItemStack(ItemList.aK), new ItemStack(ItemList.aK), new ItemStack(ItemList.aK), new ItemStack(ItemList.aK), new ItemStack(ItemList.filledMap, 0, 32767), new ItemStack(ItemList.aK), new ItemStack(ItemList.aK), new ItemStack(ItemList.aK), new ItemStack(ItemList.aK) }, new ItemStack(ItemList.map, 0, 0));
+/*  6:14 */     super(3, 3, new ItemStack[] { new ItemStack(ItemList.paper), new ItemStack(ItemList.paper), new ItemStack(ItemList.paper), new ItemStack(ItemList.paper), new ItemStack(ItemList.filledMap, 0, 32767), new ItemStack(ItemList.paper), new ItemStack(ItemList.paper), new ItemStack(ItemList.paper), new ItemStack(ItemList.paper) }, new ItemStack(ItemList.map, 0, 0));
 /*  7:   */   }
 /*  8:   */   
 /*  9:   */   public boolean a(ain paramain, World paramaqu)

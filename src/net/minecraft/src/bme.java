@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*    5:     */ public class bme
 /*    6:     */   extends bmk
 /*    7:     */ {
-/*    8: 919 */   private static final List<vl> b = Lists.newArrayList(new vl[] { new vl(ItemList.ironIngot, 0, 1, 5, 10), new vl(ItemList.goldIngot, 0, 1, 3, 5), new vl(ItemList.aC, 0, 4, 9, 5), new vl(ItemList.h, 0, 3, 8, 10), new vl(ItemList.bread, 0, 1, 3, 15), new vl(ItemList.apple, 0, 1, 3, 15), new vl(ItemList.b, 0, 1, 1, 1) });
+/*    8: 919 */   private static final List<vl> b = Lists.newArrayList(new vl[] { new vl(ItemList.ironIngot, 0, 1, 5, 10), new vl(ItemList.goldIngot, 0, 1, 3, 5), new vl(ItemList.redstone, 0, 4, 9, 5), new vl(ItemList.coal, 0, 3, 8, 10), new vl(ItemList.bread, 0, 1, 3, 15), new vl(ItemList.apple, 0, 1, 3, 15), new vl(ItemList.ironPickaxe, 0, 1, 1, 1) });
 /*    9:     */   protected int a;
 /*   10:     */   
 /*   11:     */   public bme() {}
@@ -140,7 +140,7 @@ package net.minecraft.src;
 /*  139:1062 */       a(paramaqu, BlockList.au.instance(a(BlockList.au, EnumDirection.WEST.a())), 9, 2, 3, parambjb);
 /*  140:1063 */       a(paramaqu, BlockList.au.instance(a(BlockList.au, EnumDirection.WEST.a())), 9, 3, 3, parambjb);
 /*  141:     */       
-/*  142:1065 */       a(paramaqu, parambjb, paramRandom, 3, 4, 8, vl.a(b, new vl[] { ItemList.cd.b(paramRandom) }), 1 + paramRandom.nextInt(4));
+/*  142:1065 */       a(paramaqu, parambjb, paramRandom, 3, 4, 8, vl.a(b, new vl[] { ItemList.enchantedBook.b(paramRandom) }), 1 + paramRandom.nextInt(4));
 /*  143:     */     }
 /*  144:1069 */     return true;
 /*  145:     */   }

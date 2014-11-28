@@ -26,7 +26,7 @@ package net.minecraft.src;
 /* 25:54 */     return new hz(BlockList.ai.a() + ".name", new Object[0]);
 /* 26:   */   }
 /* 27:   */   
-/* 28:   */   public aib a(ahb paramahb, EntityPlayer paramahd)
+/* 28:   */   public aib a(Inventory paramahb, EntityPlayer paramahd)
 /* 29:   */   {
 /* 30:59 */     return new aio(paramahb, this.a, this.b);
 /* 31:   */   }

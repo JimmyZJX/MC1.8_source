@@ -13,12 +13,12 @@ package net.minecraft.src;
 /*  12: 41 */   public int[] g = new int[3];
 /*  13: 42 */   public int[] h = { -1, -1, -1 };
 /*  14:    */   
-/*  15:    */   public aiq(ahb paramahb, World paramaqu)
+/*  15:    */   public aiq(Inventory paramahb, World paramaqu)
 /*  16:    */   {
 /*  17: 46 */     this(paramahb, paramaqu, BlockPosition.zero);
 /*  18:    */   }
 /*  19:    */   
-/*  20:    */   public aiq(ahb paramahb, World paramaqu, BlockPosition paramdt)
+/*  20:    */   public aiq(Inventory paramahb, World paramaqu, BlockPosition paramdt)
 /*  21:    */   {
 /*  22: 50 */     this.i = paramaqu;
 /*  23: 51 */     this.j = paramdt;
@@ -150,8 +150,8 @@ package net.minecraft.src;
 /* 149:181 */             List localList = a(localamj, n, this.g[n]);
 /* 150:182 */             if ((localList != null) && (!localList.isEmpty()))
 /* 151:    */             {
-/* 152:183 */               apo localapo = (apo)localList.get(this.k.nextInt(localList.size()));
-/* 153:184 */               this.h[n] = (localapo.b.B | localapo.c << 8);
+/* 152:183 */               WeightedRandomItemEnchantment localapo = (WeightedRandomItemEnchantment)localList.get(this.k.nextInt(localList.size()));
+/* 153:184 */               this.h[n] = (localapo.enchantment.id | localapo.level << 8);
 /* 154:    */             }
 /* 155:    */           }
 /* 156:    */         }
@@ -166,10 +166,10 @@ package net.minecraft.src;
 /* 165:198 */     ItemStack localamj2 = this.a.get(1);
 /* 166:    */     
 /* 167:200 */     int m = paramInt + 1;
-/* 168:202 */     if (((localamj2 == null) || (localamj2.stackSize < m)) && (!paramahd.by.d)) {
+/* 168:202 */     if (((localamj2 == null) || (localamj2.stackSize < m)) && (!paramahd.abilities.instabuild)) {
 /* 169:203 */       return false;
 /* 170:    */     }
-/* 171:205 */     if ((this.g[paramInt] > 0) && (localamj1 != null) && (((paramahd.bz >= m) && (paramahd.bz >= this.g[paramInt])) || (paramahd.by.d)))
+/* 171:205 */     if ((this.g[paramInt] > 0) && (localamj1 != null) && (((paramahd.bz >= m) && (paramahd.bz >= this.g[paramInt])) || (paramahd.abilities.instabuild)))
 /* 172:    */     {
 /* 173:206 */       if (!this.i.isClient)
 /* 174:    */       {
@@ -179,18 +179,18 @@ package net.minecraft.src;
 /* 178:    */         {
 /* 179:211 */           paramahd.b(m);
 /* 180:212 */           if (n != 0) {
-/* 181:213 */             localamj1.a(ItemList.cd);
+/* 181:213 */             localamj1.a(ItemList.enchantedBook);
 /* 182:    */           }
 /* 183:216 */           for (int i1 = 0; i1 < localList.size(); i1++)
 /* 184:    */           {
-/* 185:217 */             apo localapo = (apo)localList.get(i1);
+/* 185:217 */             WeightedRandomItemEnchantment localapo = (WeightedRandomItemEnchantment)localList.get(i1);
 /* 186:219 */             if (n != 0) {
-/* 187:220 */               ItemList.cd.a(localamj1, localapo);
+/* 187:220 */               ItemList.enchantedBook.addEnchantment(localamj1, localapo);
 /* 188:    */             } else {
-/* 189:222 */               localamj1.a(localapo.b, localapo.c);
+/* 189:222 */               localamj1.a(localapo.enchantment, localapo.level);
 /* 190:    */             }
 /* 191:    */           }
-/* 192:227 */           if (!paramahd.by.d)
+/* 192:227 */           if (!paramahd.abilities.instabuild)
 /* 193:    */           {
 /* 194:228 */             localamj2.stackSize -= m;
 /* 195:229 */             if (localamj2.stackSize <= 0) {

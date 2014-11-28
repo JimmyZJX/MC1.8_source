@@ -12,13 +12,13 @@ package net.minecraft.src;
 /* 11:   */   
 /* 12:   */   public static Vec3 a(EntityWalkingMob paramxu, int paramInt1, int paramInt2, Vec3 parambrw)
 /* 13:   */   {
-/* 14:19 */     a = parambrw.a(paramxu.xPos, paramxu.yPos, paramxu.zPos);
+/* 14:19 */     a = parambrw.substract(paramxu.xPos, paramxu.yPos, paramxu.zPos);
 /* 15:20 */     return c(paramxu, paramInt1, paramInt2, a);
 /* 16:   */   }
 /* 17:   */   
 /* 18:   */   public static Vec3 b(EntityWalkingMob paramxu, int paramInt1, int paramInt2, Vec3 parambrw)
 /* 19:   */   {
-/* 20:24 */     a = new Vec3(paramxu.xPos, paramxu.yPos, paramxu.zPos).d(parambrw);
+/* 20:24 */     a = new Vec3(paramxu.xPos, paramxu.yPos, paramxu.zPos).substract(parambrw);
 /* 21:25 */     return c(paramxu, paramInt1, paramInt2, a);
 /* 22:   */   }
 /* 23:   */   

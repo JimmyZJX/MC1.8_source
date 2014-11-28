@@ -124,7 +124,7 @@ package net.minecraft.src;
 /* 123:    */         
 /* 124:137 */         int i9 = (Math.abs(i6) >= 4) || (Math.abs(i7) >= 4) || (Math.abs(i8) >= 4) || (this.m % 60 == 0) ? 1 : 0;
 /* 125:138 */         int i10 = (Math.abs(i4 - this.g) >= 4) || (Math.abs(i5 - this.h) >= 4) ? 1 : 0;
-/* 126:143 */         if ((this.m > 0) || ((this.a instanceof ahj))) {
+/* 126:143 */         if ((this.m > 0) || ((this.a instanceof EntityArrow))) {
 /* 127:144 */           if ((i6 < -128) || (i6 >= 128) || (i7 < -128) || (i7 >= 128) || (i8 < -128) || (i8 >= 128) || (this.v > 400) || (this.x) || (this.y != this.a.C))
 /* 128:    */           {
 /* 129:145 */             this.y = this.a.C;
@@ -385,9 +385,9 @@ package net.minecraft.src;
 /* 384:387 */       localObject = ((EntityFishHook)this.a).b;
 /* 385:388 */       return new il(this.a, 90, localObject != null ? ((Entity)localObject).getID() : this.a.getID());
 /* 386:    */     }
-/* 387:390 */     if ((this.a instanceof ahj))
+/* 387:390 */     if ((this.a instanceof EntityArrow))
 /* 388:    */     {
-/* 389:391 */       localObject = ((ahj)this.a).c;
+/* 389:391 */       localObject = ((EntityArrow)this.a).c;
 /* 390:392 */       return new il(this.a, 60, localObject != null ? ((Entity)localObject).getID() : this.a.getID());
 /* 391:    */     }
 /* 392:394 */     if ((this.a instanceof ahq)) {

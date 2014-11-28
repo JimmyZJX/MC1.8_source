@@ -18,7 +18,7 @@ package net.minecraft.src;
 /* 17:25 */     if (i <= 0) {
 /* 18:26 */       return;
 /* 19:   */     }
-/* 20:28 */     ahj localahj = new ahj(paramxm.world, paramxm.xPos, paramxm.yPos, paramxm.zPos);
+/* 20:28 */     EntityArrow localahj = new EntityArrow(paramxm.world, paramxm.xPos, paramxm.yPos, paramxm.zPos);
 /* 21:29 */     Random localRandom = new Random(paramxm.getID());
 /* 22:30 */     bss.a();
 /* 23:31 */     for (int j = 0; j < i; j++)

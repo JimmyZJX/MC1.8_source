@@ -29,13 +29,13 @@ package net.minecraft.src;
 /* 28:   */ 
 /* 29:35 */     float f = this.mob.width * this.mob.width;
 /* 30:36 */     int i = 6;
-/* 31:37 */     if (localbrw1.g(this.d.a(this.mob, this.d.e())) < f) {
+/* 31:37 */     if (localbrw1.dist2(this.d.a(this.mob, this.d.e())) < f) {
 /* 32:38 */       this.d.a();
 /* 33:   */     }
 /* 34:41 */     for (int j = Math.min(this.d.e() + i, this.d.d() - 1); j > this.d.e(); j--)
 /* 35:   */     {
 /* 36:42 */       Vec3 localbrw2 = this.d.a(this.mob, j);
-/* 37:43 */       if (localbrw2.g(localbrw1) <= 36.0D) {
+/* 37:43 */       if (localbrw2.dist2(localbrw1) <= 36.0D) {
 /* 38:46 */         if (a(localbrw1, localbrw2, 0, 0, 0))
 /* 39:   */         {
 /* 40:47 */           this.d.c(j);

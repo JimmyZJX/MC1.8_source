@@ -37,7 +37,7 @@ package net.minecraft.src;
 /*  36:    */   public static Map<Integer,Integer> a(ItemStack paramamj)
 /*  37:    */   {
 /*  38: 45 */     LinkedHashMap<Integer,Integer> localLinkedHashMap = Maps.newLinkedHashMap();
-/*  39: 46 */     fv localfv = paramamj.getItem() == ItemList.cd ? ItemList.cd.h(paramamj) : paramamj.p();
+/*  39: 46 */     fv localfv = paramamj.getItem() == ItemList.enchantedBook ? ItemList.enchantedBook.h(paramamj) : paramamj.p();
 /*  40: 48 */     if (localfv != null) {
 /*  41: 49 */       for (int i = 0; i < localfv.c(); i++)
 /*  42:    */       {
@@ -65,14 +65,14 @@ package net.minecraft.src;
 /*  64: 72 */         localfn.setShort("lvl", (short)paramMap.get(Integer.valueOf(i)).intValue());
 /*  65:    */         
 /*  66: 74 */         localfv.a(localfn);
-/*  67: 76 */         if (paramamj.getItem() == ItemList.cd) {
-/*  68: 77 */           ItemList.cd.a(paramamj, new apo(localapf, paramMap.get(Integer.valueOf(i)).intValue()));
+/*  67: 76 */         if (paramamj.getItem() == ItemList.enchantedBook) {
+/*  68: 77 */           ItemList.enchantedBook.addEnchantment(paramamj, new WeightedRandomItemEnchantment(localapf, paramMap.get(Integer.valueOf(i)).intValue()));
 /*  69:    */         }
 /*  70:    */       }
 /*  71:    */     }
 /*  72: 81 */     if (localfv.c() > 0)
 /*  73:    */     {
-/*  74: 82 */       if (paramamj.getItem() != ItemList.cd) {
+/*  74: 82 */       if (paramamj.getItem() != ItemList.enchantedBook) {
 /*  75: 83 */         paramamj.a("ench", localfv);
 /*  76:    */       }
 /*  77:    */     }
@@ -179,63 +179,63 @@ package net.minecraft.src;
 /* 178:    */   
 /* 179:    */   public static int a(EntityLiving paramxm)
 /* 180:    */   {
-/* 181:233 */     return a(Enchantment.o.B, paramxm.getHeldItemStack());
+/* 181:233 */     return a(Enchantment.o.id, paramxm.getHeldItemStack());
 /* 182:    */   }
 /* 183:    */   
 /* 184:    */   public static int b(EntityLiving paramxm)
 /* 185:    */   {
-/* 186:237 */     return a(Enchantment.p.B, paramxm.getHeldItemStack());
+/* 186:237 */     return a(Enchantment.p.id, paramxm.getHeldItemStack());
 /* 187:    */   }
 /* 188:    */   
 /* 189:    */   public static int a(Entity paramwv)
 /* 190:    */   {
-/* 191:241 */     return a(Enchantment.h.B, paramwv.at());
+/* 191:241 */     return a(Enchantment.h.id, paramwv.at());
 /* 192:    */   }
 /* 193:    */   
 /* 194:    */   public static int b(Entity paramwv)
 /* 195:    */   {
-/* 196:245 */     return a(Enchantment.k.B, paramwv.at());
+/* 196:245 */     return a(Enchantment.k.id, paramwv.at());
 /* 197:    */   }
 /* 198:    */   
 /* 199:    */   public static int c(EntityLiving paramxm)
 /* 200:    */   {
-/* 201:249 */     return a(Enchantment.r.B, paramxm.getHeldItemStack());
+/* 201:249 */     return a(Enchantment.r.id, paramxm.getHeldItemStack());
 /* 202:    */   }
 /* 203:    */   
 /* 204:    */   public static boolean e(EntityLiving paramxm)
 /* 205:    */   {
-/* 206:257 */     return a(Enchantment.s.B, paramxm.getHeldItemStack()) > 0;
+/* 206:257 */     return a(Enchantment.s.id, paramxm.getHeldItemStack()) > 0;
 /* 207:    */   }
 /* 208:    */   
-/* 209:    */   public static int f(EntityLiving paramxm)
+/* 209:    */   public static int f(EntityLiving entity)
 /* 210:    */   {
-/* 211:261 */     return a(Enchantment.u.B, paramxm.getHeldItemStack());
+/* 211:261 */     return a(Enchantment.u.id, entity.getHeldItemStack());
 /* 212:    */   }
 /* 213:    */   
-/* 214:    */   public static int g(EntityLiving paramxm)
+/* 214:    */   public static int luckOfTheSeaLevel(EntityLiving entity)
 /* 215:    */   {
-/* 216:265 */     return a(Enchantment.z.B, paramxm.getHeldItemStack());
+/* 216:265 */     return a(Enchantment.luckOfTheSea.id, entity.getHeldItemStack());
 /* 217:    */   }
 /* 218:    */   
-/* 219:    */   public static int h(EntityLiving paramxm)
+/* 219:    */   public static int lureLevel(EntityLiving entity)
 /* 220:    */   {
-/* 221:269 */     return a(Enchantment.A.B, paramxm.getHeldItemStack());
+/* 221:269 */     return a(Enchantment.lure.id, entity.getHeldItemStack());
 /* 222:    */   }
 /* 223:    */   
-/* 224:    */   public static int i(EntityLiving paramxm)
+/* 224:    */   public static int lootingLevel(EntityLiving entity)
 /* 225:    */   {
-/* 226:273 */     return a(Enchantment.q.B, paramxm.getHeldItemStack());
+/* 226:273 */     return a(Enchantment.looting.id, entity.getHeldItemStack());
 /* 227:    */   }
 /* 228:    */   
-/* 229:    */   public static boolean j(EntityLiving paramxm)
+/* 229:    */   public static boolean j(EntityLiving entity)
 /* 230:    */   {
-/* 231:277 */     return a(Enchantment.i.B, paramxm.at()) > 0;
+/* 231:277 */     return a(Enchantment.i.id, entity.at()) > 0;
 /* 232:    */   }
 /* 233:    */   
 /* 234:    */   public static ItemStack a(Enchantment paramapf, EntityLiving paramxm)
 /* 235:    */   {
 /* 236:285 */     for (ItemStack localamj : paramxm.at()) {
-/* 237:286 */       if ((localamj != null) && (a(paramapf.B, localamj) > 0)) {
+/* 237:286 */       if ((localamj != null) && (a(paramapf.id, localamj) > 0)) {
 /* 238:287 */         return localamj;
 /* 239:    */       }
 /* 240:    */     }
@@ -262,26 +262,26 @@ package net.minecraft.src;
 /* 261:323 */     return Math.max(j, paramInt2 * 2);
 /* 262:    */   }
 /* 263:    */   
-/* 264:    */   public static ItemStack a(Random paramRandom, ItemStack paramamj, int paramInt)
+/* 264:    */   public static ItemStack randomEnchant(Random paramRandom, ItemStack paramamj, int paramInt)
 /* 265:    */   {
-/* 266:327 */     List<apo> localList = b(paramRandom, paramamj, paramInt);
-/* 267:328 */     int i = paramamj.getItem() == ItemList.book ? 1 : 0;
-/* 268:330 */     if (i != 0) {
-/* 269:331 */       paramamj.a(ItemList.cd);
+/* 266:327 */     List<WeightedRandomItemEnchantment> localList = b(paramRandom, paramamj, paramInt);
+/* 267:328 */     int isBook = paramamj.getItem() == ItemList.book ? 1 : 0;
+/* 268:330 */     if (isBook != 0) {
+/* 269:331 */       paramamj.a(ItemList.enchantedBook);
 /* 270:    */     }
 /* 271:334 */     if (localList != null) {
-/* 272:335 */       for (apo localapo : localList) {
-/* 273:336 */         if (i != 0) {
-/* 274:337 */           ItemList.cd.a(paramamj, localapo);
+/* 272:335 */       for (WeightedRandomItemEnchantment localapo : localList) {
+/* 273:336 */         if (isBook != 0) {
+/* 274:337 */           ItemList.enchantedBook.addEnchantment(paramamj, localapo);
 /* 275:    */         } else {
-/* 276:339 */           paramamj.a(localapo.b, localapo.c);
+/* 276:339 */           paramamj.a(localapo.enchantment, localapo.level);
 /* 277:    */         }
 /* 278:    */       }
 /* 279:    */     }
 /* 280:344 */     return paramamj;
 /* 281:    */   }
 /* 282:    */   
-/* 283:    */   public static List<apo> b(Random paramRandom, ItemStack paramamj, int paramInt)
+/* 283:    */   public static List<WeightedRandomItemEnchantment> b(Random paramRandom, ItemStack paramamj, int paramInt)
 /* 284:    */   {
 /* 285:355 */     Item localalq = paramamj.getItem();
 /* 286:356 */     int i = localalq.getItemEnchantability();
@@ -299,12 +299,12 @@ package net.minecraft.src;
 /* 298:369 */     if (k < 1) {
 /* 299:370 */       k = 1;
 /* 300:    */     }
-/* 301:373 */     ArrayList<apo> localArrayList = null;
+/* 301:373 */     ArrayList<WeightedRandomItemEnchantment> localArrayList = null;
 /* 302:    */     
-/* 303:375 */     Map<Integer,apo> localMap = b(k, paramamj);
+/* 303:375 */     Map<Integer,WeightedRandomItemEnchantment> localMap = b(k, paramamj);
 /* 304:376 */     if ((localMap != null) && (!localMap.isEmpty()))
 /* 305:    */     {
-/* 306:377 */       apo localapo1 = (apo)WeightedRandom.getRandomItem(paramRandom, localMap.values());
+/* 306:377 */       WeightedRandomItemEnchantment localapo1 = WeightedRandom.getRandomItem(paramRandom, localMap.values());
 /* 307:379 */       if (localapo1 != null)
 /* 308:    */       {
 /* 309:380 */         localArrayList = Lists.newArrayList();
@@ -314,13 +314,13 @@ package net.minecraft.src;
 /* 313:384 */         while (paramRandom.nextInt(50) <= m)
 /* 314:    */         {
 /* 315:386 */           Iterator<Integer> localIterator1 = localMap.keySet().iterator();
-/* 316:    */           apo localObject;
+/* 316:    */           WeightedRandomItemEnchantment localObject;
 /* 317:387 */           while (localIterator1.hasNext())
 /* 318:    */           {
 /* 319:388 */             Integer localInteger = localIterator1.next();
 /* 320:389 */             int n = 1;
-/* 321:390 */             for (apo localapo2 : localArrayList) {
-/* 322:391 */               if (!localapo2.b.a(Enchantment.c(localInteger.intValue())))
+/* 321:390 */             for (WeightedRandomItemEnchantment localapo2 : localArrayList) {
+/* 322:391 */               if (!localapo2.enchantment.a(Enchantment.c(localInteger.intValue())))
 /* 323:    */               {
 /* 324:392 */                 n = 0;
 /* 325:393 */                 break;
@@ -332,7 +332,7 @@ package net.minecraft.src;
 /* 331:    */           }
 /* 332:401 */           if (!localMap.isEmpty())
 /* 333:    */           {
-/* 334:402 */             localObject = (apo)WeightedRandom.getRandomItem(paramRandom, localMap.values());
+/* 334:402 */             localObject = (WeightedRandomItemEnchantment)WeightedRandom.getRandomItem(paramRandom, localMap.values());
 /* 335:403 */             localArrayList.add(localObject);
 /* 336:    */           }
 /* 337:406 */           m >>= 1;
@@ -342,21 +342,21 @@ package net.minecraft.src;
 /* 341:411 */     return localArrayList;
 /* 342:    */   }
 /* 343:    */   
-/* 344:    */   public static Map<Integer,apo> b(int paramInt, ItemStack paramamj)
+/* 344:    */   public static Map<Integer,WeightedRandomItemEnchantment> b(int paramInt, ItemStack stack)
 /* 345:    */   {
-/* 346:415 */     Item localalq = paramamj.getItem();
-/* 347:416 */     HashMap<Integer,apo> localHashMap = null;
-/* 348:417 */     int i = paramamj.getItem() == ItemList.book ? 1 : 0;
-/* 349:419 */     for (Enchantment localapf : Enchantment.b) {
-/* 350:420 */       if (localapf != null) {
-/* 351:425 */         if ((localapf.C.a(localalq)) || (i != 0)) {
-/* 352:429 */           for (int m = localapf.e(); m <= localapf.b(); m++) {
-/* 353:430 */             if ((paramInt >= localapf.a(m)) && (paramInt <= localapf.b(m)))
+/* 346:415 */     Item item = stack.getItem();
+/* 347:416 */     HashMap<Integer,WeightedRandomItemEnchantment> localHashMap = null;
+/* 348:417 */     int isBook = stack.getItem() == ItemList.book ? 1 : 0;
+/* 349:419 */     for (Enchantment enchantment : Enchantment.list) {
+/* 350:420 */       if (enchantment != null) {
+/* 351:425 */         if ((enchantment.C.a(item)) || (isBook != 0)) {
+/* 352:429 */           for (int level = enchantment.getLowestLevel(); level <= enchantment.getHighestLevel(); level++) {
+/* 353:430 */             if ((paramInt >= enchantment.a(level)) && (paramInt <= enchantment.b(level)))
 /* 354:    */             {
 /* 355:431 */               if (localHashMap == null) {
 /* 356:432 */                 localHashMap = Maps.newHashMap();
 /* 357:    */               }
-/* 358:435 */               localHashMap.put(Integer.valueOf(localapf.B), new apo(localapf, m));
+/* 358:435 */               localHashMap.put(Integer.valueOf(enchantment.id), new WeightedRandomItemEnchantment(enchantment, level));
 /* 359:    */             }
 /* 360:    */           }
 /* 361:    */         }

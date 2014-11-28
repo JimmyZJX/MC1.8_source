@@ -5,11 +5,11 @@ package net.minecraft.src;
 /*  3:   */ 
 /*  4:   */ public class tz
 /*  5:   */ {
-/*  6: 9 */   protected final Map<tq,tw> a = Maps.newConcurrentMap();
+/*  6: 9 */   protected final Map<PlayerStat,tw> a = Maps.newConcurrentMap();
 /*  7:   */   
 /*  8:   */   public boolean a(tk paramtk)
 /*  9:   */   {
-/* 10:12 */     return a((tq)paramtk) > 0;
+/* 10:12 */     return a((PlayerStat)paramtk) > 0;
 /* 11:   */   }
 /* 12:   */   
 /* 13:   */   public boolean b(tk paramtk)
@@ -32,7 +32,7 @@ package net.minecraft.src;
 /* 30:31 */     return i;
 /* 31:   */   }
 /* 32:   */   
-/* 33:   */   public void b(EntityPlayer paramahd, tq paramtq, int paramInt)
+/* 33:   */   public void b(EntityPlayer paramahd, PlayerStat paramtq, int paramInt)
 /* 34:   */   {
 /* 35:35 */     if ((paramtq.d()) && (!b((tk)paramtq))) {
 /* 36:36 */       return;
@@ -40,7 +40,7 @@ package net.minecraft.src;
 /* 38:38 */     a(paramahd, paramtq, a(paramtq) + paramInt);
 /* 39:   */   }
 /* 40:   */   
-/* 41:   */   public void a(EntityPlayer paramahd, tq paramtq, int paramInt)
+/* 41:   */   public void a(EntityPlayer paramahd, PlayerStat paramtq, int paramInt)
 /* 42:   */   {
 /* 43:42 */     tw localtw = (tw)this.a.get(paramtq);
 /* 44:44 */     if (localtw == null)
@@ -51,13 +51,13 @@ package net.minecraft.src;
 /* 49:49 */     localtw.a(paramInt);
 /* 50:   */   }
 /* 51:   */   
-/* 52:   */   public int a(tq paramtq)
+/* 52:   */   public int a(PlayerStat paramtq)
 /* 53:   */   {
 /* 54:53 */     tw localtw = (tw)this.a.get(paramtq);
 /* 55:54 */     return localtw == null ? 0 : localtw.a();
 /* 56:   */   }
 /* 57:   */   
-/* 58:   */   public tx b(tq paramtq)
+/* 58:   */   public tx b(PlayerStat paramtq)
 /* 59:   */   {
 /* 60:58 */     tw localtw = (tw)this.a.get(paramtq);
 /* 61:60 */     if (localtw != null) {
@@ -66,7 +66,7 @@ package net.minecraft.src;
 /* 64:63 */     return null;
 /* 65:   */   }
 /* 66:   */   
-/* 67:   */   public tx a(tq paramtq, tx paramtx)
+/* 67:   */   public tx a(PlayerStat paramtq, tx paramtx)
 /* 68:   */   {
 /* 69:68 */     tw localtw = (tw)this.a.get(paramtq);
 /* 70:70 */     if (localtw == null)

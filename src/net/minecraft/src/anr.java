@@ -66,7 +66,7 @@ package net.minecraft.src;
 /*  65: 93 */       a(paramamj, paramahd);
 /*  66:    */     }
 /*  67: 95 */     paramahd.a(paramamj);
-/*  68: 96 */     paramahd.b(StatList.J[Item.b(this)]);
+/*  68: 96 */     paramahd.increaseStat(StatList.J[Item.b(this)]);
 /*  69: 97 */     return paramamj;
 /*  70:    */   }
 /*  71:    */   

@@ -7,7 +7,7 @@ package net.minecraft.src;
 /*   7:    */   private aje f;
 /*   8:    */   private final World g;
 /*   9:    */   
-/*  10:    */   public ajf(ahb paramahb, aqb paramaqb, World paramaqu)
+/*  10:    */   public ajf(Inventory paramahb, aqb paramaqb, World paramaqu)
 /*  11:    */   {
 /*  12: 33 */     this.a = paramaqb;
 /*  13: 34 */     this.g = paramaqu;

@@ -116,7 +116,7 @@ package net.minecraft.src;
 /* 115:133 */           double d9 = localwv.yPos + localwv.getEyeHeight() - this.f;
 /* 116:134 */           double d11 = localwv.zPos - this.g;
 /* 117:    */           
-/* 118:136 */           double d12 = MathUtils.a(d7 * d7 + d9 * d9 + d11 * d11);
+/* 118:136 */           double d12 = MathUtils.sqrt(d7 * d7 + d9 * d9 + d11 * d11);
 /* 119:137 */           if (d12 != 0.0D)
 /* 120:    */           {
 /* 121:141 */             d7 /= d12;
@@ -164,7 +164,7 @@ package net.minecraft.src;
 /* 163:179 */           double d5 = d2 - this.f;
 /* 164:180 */           double d6 = d3 - this.g;
 /* 165:    */           
-/* 166:182 */           double d7 = MathUtils.a(d4 * d4 + d5 * d5 + d6 * d6);
+/* 166:182 */           double d7 = MathUtils.sqrt(d4 * d4 + d5 * d5 + d6 * d6);
 /* 167:    */           
 /* 168:184 */           d4 /= d7;
 /* 169:185 */           d5 /= d7;

@@ -162,7 +162,7 @@ package net.minecraft.src;
 /* 162:    */   
 /* 163:    */   protected void d(DamageSource paramwh, float paramFloat)
 /* 164:    */   {
-/* 165:208 */     if (b(paramwh)) {
+/* 165:208 */     if (isImmuneTo(paramwh)) {
 /* 166:209 */       return;
 /* 167:    */     }
 /* 168:211 */     h(getHealth() - paramFloat);
@@ -198,7 +198,7 @@ package net.minecraft.src;
 /* 198:236 */         this.aV = f1;
 /* 199:237 */         h(getHealth());
 /* 200:238 */         this.Z = this.aB;
-/* 201:239 */         d(DamageSource.k, f1);
+/* 201:239 */         d(DamageSource.generic, f1);
 /* 202:240 */         this.hurtTime = (this.at = 10);
 /* 203:    */       }
 /* 204:    */     }
@@ -209,19 +209,19 @@ package net.minecraft.src;
 /* 209:    */     }
 /* 210:    */   }
 /* 211:    */   
-/* 212:    */   public void a(tq paramtq, int paramInt)
+/* 212:    */   public void increaseStat(PlayerStat paramtq, int paramInt)
 /* 213:    */   {
 /* 214:250 */     if (paramtq == null) {
 /* 215:251 */       return;
 /* 216:    */     }
 /* 217:254 */     if (paramtq.f) {
-/* 218:255 */       super.a(paramtq, paramInt);
+/* 218:255 */       super.increaseStat(paramtq, paramInt);
 /* 219:    */     }
 /* 220:    */   }
 /* 221:    */   
 /* 222:    */   public void t()
 /* 223:    */   {
-/* 224:271 */     this.a.a(new mk(this.by));
+/* 224:271 */     this.a.a(new mk(this.abilities));
 /* 225:    */   }
 /* 226:    */   
 /* 227:    */   public boolean cb()
@@ -445,7 +445,7 @@ package net.minecraft.src;
 /* 445:    */     {
 /* 446:484 */       this.aX = this.b.a;
 /* 447:485 */       this.aY = this.b.b;
-/* 448:486 */       this.aW = this.b.c;
+/* 448:486 */       this.jumping = this.b.c;
 /* 449:487 */       this.h = this.f;
 /* 450:488 */       this.i = this.g;
 /* 451:489 */       this.g = ((float)(this.g + (this.pitch - this.g) * 0.5D));
@@ -521,7 +521,7 @@ package net.minecraft.src;
 /* 521:557 */     j(this.xPos + this.width * 0.35D, getAABB().minY + 0.5D, this.zPos - this.width * 0.35D);
 /* 522:558 */     j(this.xPos + this.width * 0.35D, getAABB().minY + 0.5D, this.zPos + this.width * 0.35D);
 /* 523:    */     
-/* 524:560 */     int k = (ck().a() > 6.0F) || (this.by.c) ? 1 : 0;
+/* 524:560 */     int k = (ck().a() > 6.0F) || (this.abilities.mayfly) ? 1 : 0;
 /* 525:561 */     if ((this.C) && (!bool2) && (j == 0) && (this.b.b >= f1) && (!ax()) && (k != 0) && (!bR()) && (!a(Potion.blindness))) {
 /* 526:562 */       if ((this.d > 0) || (this.c.t.af.d())) {
 /* 527:563 */         d(true);
@@ -535,12 +535,12 @@ package net.minecraft.src;
 /* 535:571 */     if ((ax()) && ((this.b.b < f1) || (this.D) || (k == 0))) {
 /* 536:572 */       d(false);
 /* 537:    */     }
-/* 538:575 */     if (this.by.c) {
+/* 538:575 */     if (this.abilities.mayfly) {
 /* 539:576 */       if (this.c.c.k())
 /* 540:    */       {
-/* 541:577 */         if (!this.by.b)
+/* 541:577 */         if (!this.abilities.flying)
 /* 542:    */         {
-/* 543:578 */           this.by.b = true;
+/* 543:578 */           this.abilities.flying = true;
 /* 544:579 */           t();
 /* 545:    */         }
 /* 546:    */       }
@@ -551,19 +551,19 @@ package net.minecraft.src;
 /* 551:    */         }
 /* 552:    */         else
 /* 553:    */         {
-/* 554:586 */           this.by.b = (!this.by.b);
+/* 554:586 */           this.abilities.flying = (!this.abilities.flying);
 /* 555:587 */           t();
 /* 556:588 */           this.bk = 0;
 /* 557:    */         }
 /* 558:    */       }
 /* 559:    */     }
-/* 560:594 */     if ((this.by.b) && (A()))
+/* 560:594 */     if ((this.abilities.flying) && (A()))
 /* 561:    */     {
 /* 562:595 */       if (this.b.d) {
-/* 563:596 */         this.yVelocity -= this.by.a() * 3.0F;
+/* 563:596 */         this.yVelocity -= this.abilities.getFlySpeed() * 3.0F;
 /* 564:    */       }
 /* 565:598 */       if (this.b.c) {
-/* 566:599 */         this.yVelocity += this.by.a() * 3.0F;
+/* 566:599 */         this.yVelocity += this.abilities.getFlySpeed() * 3.0F;
 /* 567:    */       }
 /* 568:    */     }
 /* 569:603 */     if (y())
@@ -600,9 +600,9 @@ package net.minecraft.src;
 /* 600:629 */       this.bT = 0.0F;
 /* 601:    */     }
 /* 602:632 */     super.m();
-/* 603:633 */     if ((this.C) && (this.by.b) && (!this.c.c.k()))
+/* 603:633 */     if ((this.C) && (this.abilities.flying) && (!this.c.c.k()))
 /* 604:    */     {
-/* 605:634 */       this.by.b = false;
+/* 605:634 */       this.abilities.flying = false;
 /* 606:635 */       t();
 /* 607:    */     }
 /* 608:    */   }

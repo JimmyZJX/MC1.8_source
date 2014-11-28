@@ -106,7 +106,7 @@ package net.minecraft.src;
 /* 105:    */   
 /* 106:    */   public int a(Block parambec)
 /* 107:    */   {
-/* 108:128 */     return ((EnumCobblestoneVariant)parambec.getProperty(P)).a();
+/* 108:128 */     return ((EnumCobblestoneVariant)parambec.getData(P)).a();
 /* 109:    */   }
 /* 110:    */   
 /* 111:    */   public boolean a(IBlockAccess paramard, BlockPosition paramdt, EnumDirection paramej)
@@ -124,7 +124,7 @@ package net.minecraft.src;
 /* 123:    */   
 /* 124:    */   public int c(Block parambec)
 /* 125:    */   {
-/* 126:147 */     return ((EnumCobblestoneVariant)parambec.getProperty(P)).a();
+/* 126:147 */     return ((EnumCobblestoneVariant)parambec.getData(P)).a();
 /* 127:    */   }
 /* 128:    */   
 /* 129:    */   public Block a(Block parambec, IBlockAccess paramard, BlockPosition paramdt)

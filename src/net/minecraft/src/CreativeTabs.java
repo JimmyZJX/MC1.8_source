@@ -129,7 +129,7 @@ package net.minecraft.src;
 /* 128:187 */     return false;
 /* 129:    */   }
 /* 130:    */   
-/* 131:    */   public void a(List paramList)
+/* 131:    */   public void a(List<ItemStack> paramList)
 /* 132:    */   {
 /* 133:191 */     for (Item localalq : Item.e) {
 /* 134:192 */       if ((localalq != null) && 
@@ -142,9 +142,9 @@ package net.minecraft.src;
 /* 141:    */     }
 /* 142:    */   }
 /* 143:    */   
-/* 144:    */   public void a(List paramList, apg... paramVarArgs)
+/* 144:    */   public void a(List<ItemStack> paramList, apg... paramVarArgs)
 /* 145:    */   {
-/* 146:205 */     for (Enchantment localapf : Enchantment.b) {
+/* 146:205 */     for (Enchantment localapf : Enchantment.list) {
 /* 147:206 */       if ((localapf != null) && (localapf.C != null))
 /* 148:    */       {
 /* 149:209 */         int i3 = 0;
@@ -154,7 +154,7 @@ package net.minecraft.src;
 /* 153:    */           }
 /* 154:    */         }
 /* 155:217 */         if (i3 != 0) {
-/* 156:218 */           paramList.add(ItemList.cd.a(new apo(localapf, localapf.b())));
+/* 156:218 */           paramList.add(ItemList.enchantedBook.addEnchantment(new WeightedRandomItemEnchantment(localapf, localapf.getHighestLevel())));
 /* 157:    */         }
 /* 158:    */       }
 /* 159:    */     }

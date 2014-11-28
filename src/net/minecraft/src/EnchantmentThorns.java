@@ -21,7 +21,7 @@ package net.minecraft.src;
 /* 20:28 */     return super.a(paramInt) + 50;
 /* 21:   */   }
 /* 22:   */   
-/* 23:   */   public int b()
+/* 23:   */   public int getHighestLevel()
 /* 24:   */   {
 /* 25:33 */     return 3;
 /* 26:   */   }
@@ -40,7 +40,7 @@ package net.minecraft.src;
 /* 39:47 */     ItemStack localamj = aph.a(Enchantment.j, paramxm);
 /* 40:49 */     if (a(paramInt, localRandom))
 /* 41:   */     {
-/* 42:50 */       paramwv.a(DamageSource.a(paramxm), b(paramInt, localRandom));
+/* 42:50 */       paramwv.a(DamageSource.fromMob(paramxm), b(paramInt, localRandom));
 /* 43:51 */       paramwv.a("damage.thorns", 0.5F, 1.0F);
 /* 44:53 */       if (localamj != null) {
 /* 45:54 */         localamj.a(3, paramxm);

@@ -692,7 +692,7 @@ package net.minecraft.src;
 /*  691: 740 */         if ((!((Set)localObject4).isEmpty()) && (((Set)localObject4).size() == 1))
 /*  692:     */         {
 /*  693: 743 */           localObject5 = a(paramwv, paramDouble);
-/*  694: 744 */           localObject6 = EnumDirection.a(((Vector3f)localObject5).x, ((Vector3f)localObject5).y, ((Vector3f)localObject5).z).d();
+/*  694: 744 */           localObject6 = EnumDirection.fromVector(((Vector3f)localObject5).x, ((Vector3f)localObject5).y, ((Vector3f)localObject5).z).opposite();
 /*  695: 745 */           ((Set)localObject4).remove(localObject6);
 /*  696:     */         }
 /*  697: 748 */         if (((Set)localObject4).isEmpty()) {
@@ -722,8 +722,8 @@ package net.minecraft.src;
 /*  721: 772 */         for (EnumDirection localej : EnumDirection.values())
 /*  722:     */         {
 /*  723: 773 */           cop localcop2 = a((BlockPosition)localObject1, (BlockPosition)localObject5, localej);
-/*  724: 774 */           if ((!bool) || (!localckq1.c.contains(localej.d()))) {
-/*  725: 778 */             if ((!bool) || (localObject4 == null) || (((cop)localObject3).g().a(((EnumDirection)localObject4).d(), localej))) {
+/*  724: 774 */           if ((!bool) || (!localckq1.c.contains(localej.opposite()))) {
+/*  725: 778 */             if ((!bool) || (localObject4 == null) || (((cop)localObject3).g().a(((EnumDirection)localObject4).opposite(), localej))) {
 /*  726: 782 */               if (localcop2 != null) {
 /*  727: 786 */                 if (localcop2.a(paramInt)) {
 /*  728: 790 */                   if (paramcox.a(localcop2.c))
@@ -1799,7 +1799,7 @@ package net.minecraft.src;
 /* 1798:     */     }
 /* 1799:2099 */     if (paramString != null)
 /* 1800:     */     {
-/* 1801:2100 */       amy localamy = amy.b(paramString);
+/* 1801:2100 */       ItemDisc localamy = ItemDisc.b(paramString);
 /* 1802:2101 */       if (localamy != null) {
 /* 1803:2102 */         this.h.q.a(localamy.g());
 /* 1804:     */       }
@@ -1953,7 +1953,7 @@ package net.minecraft.src;
 /* 1952:2257 */       d2 = paramdt.getY();
 /* 1953:2258 */       d3 = paramdt.getZ() + 0.5D;
 /* 1954:2260 */       for (int i3 = 0; i3 < 8; i3++) {
-/* 1955:2261 */         a(EnumParticleEffect.K, d1, d2, d3, localRandom.nextGaussian() * 0.15D, localRandom.nextDouble() * 0.2D, localRandom.nextGaussian() * 0.15D, new int[] { Item.b(ItemList.bH) });
+/* 1955:2261 */         a(EnumParticleEffect.K, d1, d2, d3, localRandom.nextGaussian() * 0.15D, localRandom.nextDouble() * 0.2D, localRandom.nextGaussian() * 0.15D, new int[] { Item.b(ItemList.enderEye) });
 /* 1956:     */       }
 /* 1957:2263 */       for (double d5 = 0.0D; d5 < 6.283185307179586D; d5 += 0.1570796326794897D)
 /* 1958:     */       {
@@ -2036,8 +2036,8 @@ package net.minecraft.src;
 /* 2035:2341 */       this.k.a(paramdt, "random.anvil_land", 0.3F, this.k.rng.nextFloat() * 0.1F + 0.9F, false);
 /* 2036:2342 */       break;
 /* 2037:     */     case 1005: 
-/* 2038:2344 */       if ((Item.b(paramInt2) instanceof amy)) {
-/* 2039:2345 */         this.k.a(paramdt, "records." + ((amy)Item.b(paramInt2)).a);
+/* 2038:2344 */       if ((Item.b(paramInt2) instanceof ItemDisc)) {
+/* 2039:2345 */         this.k.a(paramdt, "records." + ((ItemDisc)Item.b(paramInt2)).a);
 /* 2040:     */       } else {
 /* 2041:2347 */         this.k.a(paramdt, (String)null);
 /* 2042:     */       }

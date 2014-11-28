@@ -38,7 +38,7 @@ package net.minecraft.src;
 /*  37:    */           {
 /*  38:384 */             ((bdm)localbcm).a(paramamj.getDamage2());
 /*  39:    */           }
-/*  40:386 */           ((bdm)localbcm).b(localej.d().b() * 4);
+/*  40:386 */           ((bdm)localbcm).b(localej.opposite().b() * 4);
 /*  41:387 */           BlockList.ce.a(localaqu, localdt, (bdm)localbcm);
 /*  42:    */         }
 /*  43:389 */         paramamj.stackSize -= 1;

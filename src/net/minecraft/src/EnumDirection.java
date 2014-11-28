@@ -5,18 +5,18 @@ package net.minecraft.src;
 /*   4:    */ 
 /*   5:    */ public enum EnumDirection
 /*   6:    */   implements va
-/*   7:    */ { DOWN(0,1,-1,"down",em.b,EnumAxis.Y,new fd(0,-1,0)),
-				UP(1,0,-1,"up",em.a,EnumAxis.Y,new fd(0,1,0)),
-				NORTH(2,3,2,"north",em.b,EnumAxis.Z,new fd(0,0,-1)),
-				SOUTH(3,2,0,"south",em.a,EnumAxis.Z,new fd(0,0,1)),
-				WEST(4,5,1,"west",em.b,EnumAxis.X,new fd(-1,0,0)),
-				EAST(5,4,3,"east",em.a,EnumAxis.X,new fd(1,0,0));
-/*   8:    */   private final int g;
-/*   9:    */   private final int h;
-/*  10:    */   private final int i;
-/*  11:    */   private final String j;
-/*  12:    */   private final EnumAxis k;
-/*  13:    */   private final em l;
+/*   7:    */ { DOWN(0,1,-1,"down",EnumCoordSign.NEGATIVE,EnumAxis.Y,new fd(0,-1,0)),
+				UP(1,0,-1,"up",EnumCoordSign.POSITIVE,EnumAxis.Y,new fd(0,1,0)),
+				NORTH(2,3,2,"north",EnumCoordSign.NEGATIVE,EnumAxis.Z,new fd(0,0,-1)),
+				SOUTH(3,2,0,"south",EnumCoordSign.POSITIVE,EnumAxis.Z,new fd(0,0,1)),
+				WEST(4,5,1,"west",EnumCoordSign.NEGATIVE,EnumAxis.X,new fd(-1,0,0)),
+				EAST(5,4,3,"east",EnumCoordSign.POSITIVE,EnumAxis.X,new fd(1,0,0));
+/*   8:    */   private final int id;
+/*   9:    */   private final int oppositeID;
+/*  10:    */   private final int horizontalID;
+/*  11:    */   private final String name;
+/*  12:    */   private final EnumAxis axis;
+/*  13:    */   private final EnumCoordSign sign;
 /*  14:    */   private final fd m;
 /*  15:    */   private static final EnumDirection[] n;
 /*  16:    */   private static final EnumDirection[] o;
@@ -29,43 +29,43 @@ package net.minecraft.src;
 /*  23: 33 */     p = Maps.newHashMap();
 /*  24: 36 */     for (EnumDirection localej : values())
 /*  25:    */     {
-/*  26: 37 */       n[localej.g] = localej;
+/*  26: 37 */       n[localej.id] = localej;
 /*  27: 39 */       if (localej.k().c()) {
-/*  28: 40 */         o[localej.i] = localej;
+/*  28: 40 */         o[localej.horizontalID] = localej;
 /*  29:    */       }
 /*  30: 43 */       p.put(localej.j().toLowerCase(), localej);
 /*  31:    */     }
 /*  32:    */   }
 /*  33:    */   
-/*  34:    */   private EnumDirection(int paramInt1, int paramInt2, int paramInt3, String paramString, em paramem, EnumAxis paramel, fd paramfd)
+/*  34:    */   private EnumDirection(int paramInt1, int paramInt2, int paramInt3, String paramString, EnumCoordSign paramem, EnumAxis paramel, fd paramfd)
 /*  35:    */   {
-/*  36: 48 */     this.g = paramInt1;
-/*  37: 49 */     this.i = paramInt3;
-/*  38: 50 */     this.h = paramInt2;
-/*  39: 51 */     this.j = paramString;
-/*  40: 52 */     this.k = paramel;
-/*  41: 53 */     this.l = paramem;
+/*  36: 48 */     this.id = paramInt1;
+/*  37: 49 */     this.horizontalID = paramInt3;
+/*  38: 50 */     this.oppositeID = paramInt2;
+/*  39: 51 */     this.name = paramString;
+/*  40: 52 */     this.axis = paramel;
+/*  41: 53 */     this.sign = paramem;
 /*  42: 54 */     this.m = paramfd;
 /*  43:    */   }
 /*  44:    */   
 /*  45:    */   public int a()
 /*  46:    */   {
-/*  47: 58 */     return this.g;
+/*  47: 58 */     return this.id;
 /*  48:    */   }
 /*  49:    */   
 /*  50:    */   public int b()
 /*  51:    */   {
-/*  52: 62 */     return this.i;
+/*  52: 62 */     return this.horizontalID;
 /*  53:    */   }
 /*  54:    */   
-/*  55:    */   public em c()
+/*  55:    */   public EnumCoordSign c()
 /*  56:    */   {
-/*  57: 66 */     return this.l;
+/*  57: 66 */     return this.sign;
 /*  58:    */   }
 /*  59:    */   
-/*  60:    */   public EnumDirection d()
+/*  60:    */   public EnumDirection opposite()
 /*  61:    */   {
-/*  62: 70 */     return a(this.h);
+/*  62: 70 */     return a(this.oppositeID);
 /*  63:    */   }
 /*  64:    */   
 /*  65:    */   public EnumDirection a(EnumAxis paramel)
@@ -81,7 +81,7 @@ package net.minecraft.src;
 /*  75: 82 */       if ((this == UP) || (this == DOWN)) {
 /*  76: 83 */         return this;
 /*  77:    */       }
-/*  78: 85 */       return e();
+/*  78: 85 */       return yRotate();
 /*  79:    */     case 3: 
 /*  80: 88 */       if ((this == NORTH) || (this == SOUTH)) {
 /*  81: 89 */         return this;
@@ -91,7 +91,7 @@ package net.minecraft.src;
 /*  85: 94 */     throw new IllegalStateException("Unable to get CW facing for axis " + paramel);
 /*  86:    */   }
 /*  87:    */   
-/*  88:    */   public EnumDirection e()
+/*  88:    */   public EnumDirection yRotate()
 /*  89:    */   {
 /*  90:124 */     switch (ek.b[ordinal()])
 /*  91:    */     {
@@ -139,7 +139,7 @@ package net.minecraft.src;
 /* 133:179 */     throw new IllegalStateException("Unable to get Z-rotated facing of " + this);
 /* 134:    */   }
 /* 135:    */   
-/* 136:    */   public EnumDirection f()
+/* 136:    */   public EnumDirection ccw()
 /* 137:    */   {
 /* 138:199 */     switch (ek.b[ordinal()])
 /* 139:    */     {
@@ -157,36 +157,36 @@ package net.minecraft.src;
 /* 151:    */   
 /* 152:    */   public int g()
 /* 153:    */   {
-/* 154:214 */     if (this.k == EnumAxis.X) {
-/* 155:215 */       return this.l.a();
+/* 154:214 */     if (this.axis == EnumAxis.X) {
+/* 155:215 */       return this.sign.a();
 /* 156:    */     }
 /* 157:217 */     return 0;
 /* 158:    */   }
 /* 159:    */   
 /* 160:    */   public int h()
 /* 161:    */   {
-/* 162:222 */     if (this.k == EnumAxis.Y) {
-/* 163:223 */       return this.l.a();
+/* 162:222 */     if (this.axis == EnumAxis.Y) {
+/* 163:223 */       return this.sign.a();
 /* 164:    */     }
 /* 165:225 */     return 0;
 /* 166:    */   }
 /* 167:    */   
 /* 168:    */   public int i()
 /* 169:    */   {
-/* 170:230 */     if (this.k == EnumAxis.Z) {
-/* 171:231 */       return this.l.a();
+/* 170:230 */     if (this.axis == EnumAxis.Z) {
+/* 171:231 */       return this.sign.a();
 /* 172:    */     }
 /* 173:233 */     return 0;
 /* 174:    */   }
 /* 175:    */   
 /* 176:    */   public String j()
 /* 177:    */   {
-/* 178:238 */     return this.j;
+/* 178:238 */     return this.name;
 /* 179:    */   }
 /* 180:    */   
 /* 181:    */   public EnumAxis k()
 /* 182:    */   {
-/* 183:242 */     return this.k;
+/* 183:242 */     return this.axis;
 /* 184:    */   }
 /* 185:    */   
 /* 186:    */   public static EnumDirection a(String paramString)
@@ -217,30 +217,30 @@ package net.minecraft.src;
 /* 211:266 */     return values()[paramRandom.nextInt(values().length)];
 /* 212:    */   }
 /* 213:    */   
-/* 214:    */   public static EnumDirection a(float paramFloat1, float paramFloat2, float paramFloat3)
+/* 214:    */   public static EnumDirection fromVector(float x, float y, float z)
 /* 215:    */   {
-/* 216:283 */     EnumDirection localObject = NORTH;
+/* 216:283 */     EnumDirection res = NORTH;
 /* 217:284 */     float f1 = 1.4E-45F;
-/* 218:285 */     for (EnumDirection localej : values())
+/* 218:285 */     for (EnumDirection dir : values())
 /* 219:    */     {
-/* 220:286 */       float f2 = paramFloat1 * localej.m.getX() + paramFloat2 * localej.m.getY() + paramFloat3 * localej.m.getZ();
+/* 220:286 */       float f2 = x * dir.m.getX() + y * dir.m.getY() + z * dir.m.getZ();
 /* 221:288 */       if (f2 > f1)
 /* 222:    */       {
 /* 223:289 */         f1 = f2;
-/* 224:290 */         localObject = localej;
+/* 224:290 */         res = dir;
 /* 225:    */       }
 /* 226:    */     }
-/* 227:293 */     return localObject;
+/* 227:293 */     return res;
 /* 228:    */   }
 /* 229:    */   
 /* 230:    */   public String toString()
 /* 231:    */   {
-/* 232:298 */     return this.j;
+/* 232:298 */     return this.name;
 /* 233:    */   }
 /* 234:    */   
 /* 235:    */   public String toString2()
 /* 236:    */   {
-/* 237:303 */     return this.j;
+/* 237:303 */     return this.name;
 /* 238:    */   }
 /* 239:    */   
 /* 240:    */   public fd m()

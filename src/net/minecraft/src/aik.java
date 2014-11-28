@@ -23,7 +23,7 @@ package net.minecraft.src;
 /*  22:    */   public void a(EntityPlayer paramahd, ItemStack paramamj)
 /*  23:    */   {
 /*  24:144 */     if ((paramamj.getItem() == ItemList.potion) && (paramamj.getDamage2() > 0)) {
-/*  25:145 */       this.a.b(AchievementList.B);
+/*  25:145 */       this.a.increaseStat(AchievementList.B);
 /*  26:    */     }
 /*  27:147 */     super.a(paramahd, paramamj);
 /*  28:    */   }

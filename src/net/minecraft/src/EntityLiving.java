@@ -49,7 +49,7 @@ package net.minecraft.src;
 /*   49:     */   protected float aT;
 /*   50:     */   protected int aU;
 /*   51:     */   protected float aV;
-/*   52:     */   protected boolean aW;
+/*   52:     */   protected boolean jumping;
 /*   53:     */   public float aX;
 /*   54:     */   public float aY;
 /*   55:     */   protected float aZ;
@@ -65,12 +65,12 @@ package net.minecraft.src;
 /*   65:     */   private EntityLiving bi;
 /*   66:     */   private int bj;
 /*   67:     */   private float bk;
-/*   68:     */   private int bl;
+/*   68:     */   private int jumpCountDown;
 /*   69:     */   private float bm;
 /*   70:     */   
 /*   71:     */   public void G()
 /*   72:     */   {
-/*   73: 111 */     a(DamageSource.j, 3.4028235E+38F);
+/*   73: 111 */     a(DamageSource.outOfWorld, 3.4028235E+38F);
 /*   74:     */   }
 /*   75:     */   
 /*   76:     */   public EntityLiving(World world)
@@ -99,14 +99,14 @@ package net.minecraft.src;
 /*   99:     */   
 /*  100:     */   protected void aW()
 /*  101:     */   {
-/*  102: 138 */     bx().b(afs.a);
-/*  103: 139 */     bx().b(afs.c);
-/*  104: 140 */     bx().b(afs.d);
+/*  102: 138 */     bx().b(MobAttribute.maxHealth);
+/*  103: 139 */     bx().b(MobAttribute.knockbackResistance);
+/*  104: 140 */     bx().b(MobAttribute.movementSpeed);
 /*  105:     */   }
 /*  106:     */   
 /*  107:     */   protected void a(double paramDouble, boolean paramBoolean, ProtoBlock paramatr, BlockPosition paramdt)
 /*  108:     */   {
-/*  109: 145 */     if (!V()) {
+/*  109: 145 */     if (!isInWater()) {
 /*  110: 147 */       W();
 /*  111:     */     }
 /*  112: 150 */     if ((!this.world.isClient) && (this.O > 3.0F) && (paramBoolean))
@@ -143,20 +143,20 @@ package net.minecraft.src;
 /*  143: 179 */     if (ai()) {
 /*  144: 180 */       if (aj())
 /*  145:     */       {
-/*  146: 181 */         a(DamageSource.e, 1.0F);
+/*  146: 181 */         a(DamageSource.inWall, 1.0F);
 /*  147:     */       }
 /*  148: 182 */       else if ((bool) && (!this.world.af().a(getAABB())))
 /*  149:     */       {
 /*  150: 183 */         double d = this.world.af().a(this) + this.world.af().m();
 /*  151: 184 */         if (d < 0.0D) {
-/*  152: 185 */           a(DamageSource.e, Math.max(1, MathUtils.floor(-d * this.world.af().n())));
+/*  152: 185 */           a(DamageSource.inWall, Math.max(1, MathUtils.floor(-d * this.world.af().n())));
 /*  153:     */         }
 /*  154:     */       }
 /*  155:     */     }
 /*  156: 190 */     if ((T()) || (this.world.isClient)) {
 /*  157: 191 */       N();
 /*  158:     */     }
-/*  159: 193 */     int j = (bool) && (((EntityPlayer)this).by.a) ? 1 : 0;
+/*  159: 193 */     int j = (bool) && (((EntityPlayer)this).abilities.invulnerable) ? 1 : 0;
 /*  160: 195 */     if ((ai()) && (a(Material.water)))
 /*  161:     */     {
 /*  162: 196 */       if ((!aX()) && (!k(Potion.waterBreathing.id)) && (j == 0))
@@ -172,7 +172,7 @@ package net.minecraft.src;
 /*  172: 203 */             float f3 = this.rng.nextFloat() - this.rng.nextFloat();
 /*  173: 204 */             this.world.a(EnumParticleEffect.e, this.xPos + f1, this.yPos + f2, this.zPos + f3, this.xVelocity, this.yVelocity, this.zVelocity, new int[0]);
 /*  174:     */           }
-/*  175: 206 */           a(DamageSource.f, 2.0F);
+/*  175: 206 */           a(DamageSource.drown, 2.0F);
 /*  176:     */         }
 /*  177:     */       }
 /*  178: 210 */       if ((!this.world.isClient) && (av()) && ((this.vehicle instanceof EntityLiving))) {
@@ -340,7 +340,7 @@ package net.minecraft.src;
 /*  340: 362 */         this.c.a(localObject2.B());
 /*  341:     */       }
 /*  342:     */     }
-/*  343: 366 */     tag.setNBT("Attributes", afs.a(bx()));
+/*  343: 366 */     tag.setNBT("Attributes", MobAttribute.a(bx()));
 /*  344: 368 */     for (ItemStack localObject2 : at()) {
 /*  345: 369 */       if (localObject2 != null) {
 /*  346: 370 */         this.c.b(localObject2.B());
@@ -360,7 +360,7 @@ package net.minecraft.src;
 /*  360:     */   {
 /*  361: 386 */     l(paramfn.getFloat("AbsorptionAmount"));
 /*  362: 388 */     if ((paramfn.hasKey("Attributes", 9)) && (this.world != null) && (!this.world.isClient)) {
-/*  363: 389 */       afs.a(bx(), paramfn.c("Attributes", 10));
+/*  363: 389 */       MobAttribute.a(bx(), paramfn.c("Attributes", 10));
 /*  364:     */     }
 /*  365:     */     Object localObject;
 /*  366: 392 */     if (paramfn.hasKey("ActiveEffects", 9))
@@ -594,9 +594,9 @@ package net.minecraft.src;
 /*  594: 596 */     this.ac.b(6, Float.valueOf(MathUtils.clamp(paramFloat, 0.0F, bt())));
 /*  595:     */   }
 /*  596:     */   
-/*  597:     */   public boolean a(DamageSource paramwh, float paramFloat)
+/*  597:     */   public boolean a(DamageSource source, float paramFloat)
 /*  598:     */   {
-/*  599: 601 */     if (b(paramwh)) {
+/*  599: 601 */     if (isImmuneTo(source)) {
 /*  600: 602 */       return false;
 /*  601:     */     }
 /*  602: 604 */     if (this.world.isClient) {
@@ -606,10 +606,10 @@ package net.minecraft.src;
 /*  606: 608 */     if (getHealth() <= 0.0F) {
 /*  607: 609 */       return false;
 /*  608:     */     }
-/*  609: 612 */     if ((paramwh.o()) && (a(Potion.fireResistance))) {
+/*  609: 612 */     if ((source.isFire()) && (a(Potion.fireResistance))) {
 /*  610: 613 */       return false;
 /*  611:     */     }
-/*  612: 616 */     if (((paramwh == DamageSource.n) || (paramwh == DamageSource.o)) && (getItemStack(4) != null))
+/*  612: 616 */     if (((source == DamageSource.anvil) || (source == DamageSource.fallingBlock)) && (getItemStack(4) != null))
 /*  613:     */     {
 /*  614: 617 */       getItemStack(4).a((int)(paramFloat * 4.0F + this.rng.nextFloat() * paramFloat * 2.0F), this);
 /*  615: 618 */       paramFloat *= 0.75F;
@@ -622,7 +622,7 @@ package net.minecraft.src;
 /*  622: 625 */       if (paramFloat <= this.aV) {
 /*  623: 626 */         return false;
 /*  624:     */       }
-/*  625: 628 */       d(paramwh, paramFloat - this.aV);
+/*  625: 628 */       d(source, paramFloat - this.aV);
 /*  626: 629 */       this.aV = paramFloat;
 /*  627: 630 */       j = 0;
 /*  628:     */     }
@@ -630,12 +630,12 @@ package net.minecraft.src;
 /*  630:     */     {
 /*  631: 632 */       this.aV = paramFloat;
 /*  632: 633 */       this.Z = this.aB;
-/*  633: 634 */       d(paramwh, paramFloat);
+/*  633: 634 */       d(source, paramFloat);
 /*  634: 635 */       this.hurtTime = (this.at = 10);
 /*  635:     */     }
 /*  636: 638 */     this.au = 0.0F;
 /*  637:     */     
-/*  638: 640 */     Entity localwv = paramwh.j();
+/*  638: 640 */     Entity localwv = source.getAttacker();
 /*  639: 641 */     if (localwv != null)
 /*  640:     */     {
 /*  641: 642 */       if ((localwv instanceof EntityLiving)) {
@@ -659,7 +659,7 @@ package net.minecraft.src;
 /*  659: 656 */     if (j != 0)
 /*  660:     */     {
 /*  661: 657 */       this.world.sendSignal(this, (byte)2);
-/*  662: 658 */       if (paramwh != DamageSource.f) {
+/*  662: 658 */       if (source != DamageSource.drown) {
 /*  663: 659 */         ac();
 /*  664:     */       }
 /*  665: 661 */       if (localwv != null)
@@ -686,7 +686,7 @@ package net.minecraft.src;
 /*  686: 677 */       if ((j != 0) && (str != null)) {
 /*  687: 678 */         a(str, bA(), bB());
 /*  688:     */       }
-/*  689: 680 */       a(paramwh);
+/*  689: 680 */       a(source);
 /*  690:     */     }
 /*  691:     */     else
 /*  692:     */     {
@@ -711,28 +711,28 @@ package net.minecraft.src;
 /*  711: 700 */       Vec3 localbrw2 = new Vec3((this.rng.nextFloat() - 0.5D) * 0.3D, d, 0.6D);
 /*  712: 701 */       localbrw2 = localbrw2.a(-this.pitch * 3.141593F / 180.0F);
 /*  713: 702 */       localbrw2 = localbrw2.b(-this.yaw * 3.141593F / 180.0F);
-/*  714: 703 */       localbrw2 = localbrw2.b(this.xPos, this.yPos + getEyeHeight(), this.zPos);
+/*  714: 703 */       localbrw2 = localbrw2.add(this.xPos, this.yPos + getEyeHeight(), this.zPos);
 /*  715: 704 */       this.world.a(EnumParticleEffect.K, localbrw2.x, localbrw2.y, localbrw2.z, localbrw1.x, localbrw1.y + 0.05D, localbrw1.z, new int[] { Item.b(paramamj.getItem()) });
 /*  716:     */     }
 /*  717:     */   }
 /*  718:     */   
-/*  719:     */   public void a(DamageSource paramwh)
+/*  719:     */   public void a(DamageSource source)
 /*  720:     */   {
-/*  721: 709 */     Entity localwv = paramwh.j();
+/*  721: 709 */     Entity attacker = source.getAttacker();
 /*  722: 710 */     EntityLiving localxm = bs();
 /*  723: 711 */     if ((this.aU >= 0) && (localxm != null)) {
 /*  724: 712 */       localxm.b(this, this.aU);
 /*  725:     */     }
-/*  726: 715 */     if (localwv != null) {
-/*  727: 716 */       localwv.a(this);
+/*  726: 715 */     if (attacker != null) {
+/*  727: 716 */       attacker.a(this);
 /*  728:     */     }
 /*  729: 719 */     this.aN = true;
 /*  730: 720 */     br().g();
 /*  731: 722 */     if (!this.world.isClient)
 /*  732:     */     {
 /*  733: 723 */       int j = 0;
-/*  734: 724 */       if ((localwv instanceof EntityPlayer)) {
-/*  735: 725 */         j = aph.i((EntityLiving)localwv);
+/*  734: 724 */       if ((attacker instanceof EntityPlayer)) {
+/*  735: 725 */         j = aph.lootingLevel((EntityLiving)attacker);
 /*  736:     */       }
 /*  737: 727 */       if ((aZ()) && (this.world.getGameRules().getBoolean("doMobLoot")))
 /*  738:     */       {
@@ -751,11 +751,11 @@ package net.minecraft.src;
 /*  751:     */   
 /*  752:     */   public void a(Entity paramwv, float paramFloat, double paramDouble1, double paramDouble2)
 /*  753:     */   {
-/*  754: 745 */     if (this.rng.nextDouble() < a(afs.c).e()) {
+/*  754: 745 */     if (this.rng.nextDouble() < getAttribute(MobAttribute.knockbackResistance).e()) {
 /*  755: 746 */       return;
 /*  756:     */     }
 /*  757: 749 */     this.ai = true;
-/*  758: 750 */     float f1 = MathUtils.a(paramDouble1 * paramDouble1 + paramDouble2 * paramDouble2);
+/*  758: 750 */     float f1 = MathUtils.sqrt(paramDouble1 * paramDouble1 + paramDouble2 * paramDouble2);
 /*  759: 751 */     float f2 = 0.4F;
 /*  760:     */     
 /*  761: 753 */     this.xVelocity /= 2.0D;
@@ -808,7 +808,7 @@ package net.minecraft.src;
 /*  808: 808 */     if (j > 0)
 /*  809:     */     {
 /*  810: 809 */       a(n(j), 1.0F, 1.0F);
-/*  811: 810 */       a(DamageSource.i, j);
+/*  811: 810 */       a(DamageSource.fall, j);
 /*  812:     */       
 /*  813: 812 */       int k = MathUtils.floor(this.xPos);
 /*  814: 813 */       int m = MathUtils.floor(this.yPos - 0.2000000029802322D);
@@ -837,31 +837,31 @@ package net.minecraft.src;
 /*  837: 835 */     this.au = 0.0F;
 /*  838:     */   }
 /*  839:     */   
-/*  840:     */   public int bq()
+/*  840:     */   public int getArmorValue()
 /*  841:     */   {
 /*  842: 844 */     int j = 0;
-/*  843: 845 */     for (ItemStack localamj : at()) {
-/*  844: 846 */       if ((localamj != null) && ((localamj.getItem() instanceof ItemArmor)))
+/*  843: 845 */     for (ItemStack stack : at()) {
+/*  844: 846 */       if ((stack != null) && ((stack.getItem() instanceof ItemArmor)))
 /*  845:     */       {
-/*  846: 847 */         int n = ((ItemArmor)localamj.getItem()).c;
+/*  846: 847 */         int n = ((ItemArmor)stack.getItem()).c;
 /*  847: 848 */         j += n;
 /*  848:     */       }
 /*  849:     */     }
 /*  850: 851 */     return j;
 /*  851:     */   }
 /*  852:     */   
-/*  853:     */   protected void i(float paramFloat) {}
+/*  853:     */   protected void damageArmor(float paramFloat) {}
 /*  854:     */   
-/*  855:     */   protected float b(DamageSource paramwh, float paramFloat)
+/*  855:     */   protected float modifyDamage(DamageSource source, float value)
 /*  856:     */   {
-/*  857: 858 */     if (!paramwh.e())
+/*  857: 858 */     if (!source.getBypassArmor())
 /*  858:     */     {
-/*  859: 859 */       int j = 25 - bq();
-/*  860: 860 */       float f1 = paramFloat * j;
-/*  861: 861 */       i(paramFloat);
-/*  862: 862 */       paramFloat = f1 / 25.0F;
+/*  859: 859 */       int damageMultiplier = 25 - getArmorValue();
+/*  860: 860 */       float f1 = value * damageMultiplier;
+/*  861: 861 */       damageArmor(value);
+/*  862: 862 */       value = f1 / 25.0F;
 /*  863:     */     }
-/*  864: 864 */     return paramFloat;
+/*  864: 864 */     return value;
 /*  865:     */   }
 /*  866:     */   
 /*  867:     */   protected float c(DamageSource paramwh, float paramFloat)
@@ -871,7 +871,7 @@ package net.minecraft.src;
 /*  871:     */     }
 /*  872:     */     int k;
 /*  873:     */     float f1;
-/*  874: 872 */     if ((a(Potion.resistance)) && (paramwh != DamageSource.j))
+/*  874: 872 */     if ((a(Potion.resistance)) && (paramwh != DamageSource.outOfWorld))
 /*  875:     */     {
 /*  876: 873 */       int j = (b(Potion.resistance).getAmplifier() + 1) * 5;
 /*  877: 874 */       k = 25 - j;
@@ -896,10 +896,10 @@ package net.minecraft.src;
 /*  896:     */   
 /*  897:     */   protected void d(DamageSource paramwh, float paramFloat)
 /*  898:     */   {
-/*  899: 897 */     if (b(paramwh)) {
+/*  899: 897 */     if (isImmuneTo(paramwh)) {
 /*  900: 898 */       return;
 /*  901:     */     }
-/*  902: 900 */     paramFloat = b(paramwh, paramFloat);
+/*  902: 900 */     paramFloat = modifyDamage(paramwh, paramFloat);
 /*  903: 901 */     paramFloat = c(paramwh, paramFloat);
 /*  904:     */     
 /*  905: 903 */     float f1 = paramFloat;
@@ -935,7 +935,7 @@ package net.minecraft.src;
 /*  935:     */   
 /*  936:     */   public final float bt()
 /*  937:     */   {
-/*  938: 934 */     return (float)a(afs.a).e();
+/*  938: 934 */     return (float)getAttribute(MobAttribute.maxHealth).e();
 /*  939:     */   }
 /*  940:     */   
 /*  941:     */   public final int bu()
@@ -986,7 +986,7 @@ package net.minecraft.src;
 /*  986: 976 */       if (str != null) {
 /*  987: 977 */         a(bn(), bA(), (this.rng.nextFloat() - this.rng.nextFloat()) * 0.2F + 1.0F);
 /*  988:     */       }
-/*  989: 979 */       a(DamageSource.k, 0.0F);
+/*  989: 979 */       a(DamageSource.generic, 0.0F);
 /*  990:     */     }
 /*  991: 981 */     else if (paramByte == 3)
 /*  992:     */     {
@@ -995,7 +995,7 @@ package net.minecraft.src;
 /*  995: 984 */         a(bo(), bA(), (this.rng.nextFloat() - this.rng.nextFloat()) * 0.2F + 1.0F);
 /*  996:     */       }
 /*  997: 986 */       h(0.0F);
-/*  998: 987 */       a(DamageSource.k);
+/*  998: 987 */       a(DamageSource.generic);
 /*  999:     */     }
 /* 1000:     */     else
 /* 1001:     */     {
@@ -1005,7 +1005,7 @@ package net.minecraft.src;
 /* 1005:     */   
 /* 1006:     */   protected void O()
 /* 1007:     */   {
-/* 1008: 995 */     a(DamageSource.j, 4.0F);
+/* 1008: 995 */     a(DamageSource.outOfWorld, 4.0F);
 /* 1009:     */   }
 /* 1010:     */   
 /* 1011:     */   protected void bw()
@@ -1027,7 +1027,7 @@ package net.minecraft.src;
 /* 1027:1010 */     this.ax = (this.aq / j);
 /* 1028:     */   }
 /* 1029:     */   
-/* 1030:     */   public xz a(xy paramxy)
+/* 1030:     */   public xz getAttribute(xy paramxy)
 /* 1031:     */   {
 /* 1032:1014 */     return bx().a(paramxy);
 /* 1033:     */   }
@@ -1057,7 +1057,7 @@ package net.minecraft.src;
 /* 1057:     */   {
 /* 1058:1040 */     super.d(paramBoolean);
 /* 1059:     */     
-/* 1060:1042 */     xz localxz = a(afs.d);
+/* 1060:1042 */     xz localxz = getAttribute(MobAttribute.movementSpeed);
 /* 1061:1043 */     if (localxz.a(a) != null) {
 /* 1062:1044 */       localxz.c(b);
 /* 1063:     */     }
@@ -1124,14 +1124,14 @@ package net.minecraft.src;
 /* 1124:1104 */     return false;
 /* 1125:     */   }
 /* 1126:     */   
-/* 1127:     */   protected float bD()
+/* 1127:     */   protected float getJumpVelocity()
 /* 1128:     */   {
 /* 1129:1108 */     return 0.42F;
 /* 1130:     */   }
 /* 1131:     */   
-/* 1132:     */   protected void bE()
+/* 1132:     */   protected void jump()
 /* 1133:     */   {
-/* 1134:1112 */     this.yVelocity = bD();
+/* 1134:1112 */     this.yVelocity = getJumpVelocity();
 /* 1135:1113 */     if (a(Potion.jumpBoost)) {
 /* 1136:1114 */       this.yVelocity += (b(Potion.jumpBoost).getAmplifier() + 1) * 0.1F;
 /* 1137:     */     }
@@ -1145,12 +1145,12 @@ package net.minecraft.src;
 /* 1145:1122 */     this.ai = true;
 /* 1146:     */   }
 /* 1147:     */   
-/* 1148:     */   protected void bF()
+/* 1148:     */   protected void swim()
 /* 1149:     */   {
 /* 1150:1126 */     this.yVelocity += 0.03999999910593033D;
 /* 1151:     */   }
 /* 1152:     */   
-/* 1153:     */   protected void bG()
+/* 1153:     */   protected void swimInLava()
 /* 1154:     */   {
 /* 1155:1130 */     this.yVelocity += 0.03999999910593033D;
 /* 1156:     */   }
@@ -1162,7 +1162,7 @@ package net.minecraft.src;
 /* 1162:     */       double d1;
 /* 1163:     */       float f3;
 /* 1164:     */       float f4;
-/* 1165:1135 */       if ((V()) && ((!(this instanceof EntityPlayer)) || (!((EntityPlayer)this).by.b)))
+/* 1165:1135 */       if ((isInWater()) && ((!(this instanceof EntityPlayer)) || (!((EntityPlayer)this).abilities.flying)))
 /* 1166:     */       {
 /* 1167:1136 */         d1 = this.yPos;
 /* 1168:     */         
@@ -1183,7 +1183,7 @@ package net.minecraft.src;
 /* 1183:1152 */           f4 += (bH() * 1.0F - f4) * f5 / 3.0F;
 /* 1184:     */         }
 /* 1185:1155 */         a(paramFloat1, paramFloat2, f4);
-/* 1186:1156 */         d(this.xVelocity, this.yVelocity, this.zVelocity);
+/* 1186:1156 */         move(this.xVelocity, this.yVelocity, this.zVelocity);
 /* 1187:     */         
 /* 1188:1158 */         this.xVelocity *= f3;
 /* 1189:1159 */         this.yVelocity *= 0.800000011920929D;
@@ -1193,11 +1193,11 @@ package net.minecraft.src;
 /* 1193:1164 */           this.yVelocity = 0.300000011920929D;
 /* 1194:     */         }
 /* 1195:     */       }
-/* 1196:1166 */       else if ((ab()) && ((!(this instanceof EntityPlayer)) || (!((EntityPlayer)this).by.b)))
+/* 1196:1166 */       else if ((isInLava()) && ((!(this instanceof EntityPlayer)) || (!((EntityPlayer)this).abilities.flying)))
 /* 1197:     */       {
 /* 1198:1167 */         d1 = this.yPos;
 /* 1199:1168 */         a(paramFloat1, paramFloat2, 0.02F);
-/* 1200:1169 */         d(this.xVelocity, this.yVelocity, this.zVelocity);
+/* 1200:1169 */         move(this.xVelocity, this.yVelocity, this.zVelocity);
 /* 1201:1170 */         this.xVelocity *= 0.5D;
 /* 1202:1171 */         this.yVelocity *= 0.5D;
 /* 1203:1172 */         this.zVelocity *= 0.5D;
@@ -1238,7 +1238,7 @@ package net.minecraft.src;
 /* 1238:1209 */             this.yVelocity = 0.0D;
 /* 1239:     */           }
 /* 1240:     */         }
-/* 1241:1213 */         d(this.xVelocity, this.yVelocity, this.zVelocity);
+/* 1241:1213 */         move(this.xVelocity, this.yVelocity, this.zVelocity);
 /* 1242:1215 */         if ((this.D) && (j_())) {
 /* 1243:1216 */           this.yVelocity = 0.2D;
 /* 1244:     */         }
@@ -1257,7 +1257,7 @@ package net.minecraft.src;
 /* 1257:1231 */     this.ay = this.az;
 /* 1258:1232 */     double d2 = this.xPos - this.lastX;
 /* 1259:1233 */     double d3 = this.zPos - this.lastZ;
-/* 1260:1234 */     float f6 = MathUtils.a(d2 * d2 + d3 * d3) * 4.0F;
+/* 1260:1234 */     float f6 = MathUtils.sqrt(d2 * d2 + d3 * d3) * 4.0F;
 /* 1261:1235 */     if (f6 > 1.0F) {
 /* 1262:1236 */       f6 = 1.0F;
 /* 1263:     */     }
@@ -1409,8 +1409,8 @@ package net.minecraft.src;
 /* 1409:     */   
 /* 1410:     */   public void m()
 /* 1411:     */   {
-/* 1412:1385 */     if (this.bl > 0) {
-/* 1413:1386 */       this.bl -= 1;
+/* 1412:1385 */     if (this.jumpCountDown > 0) {
+/* 1413:1386 */       this.jumpCountDown -= 1;
 /* 1414:     */     }
 /* 1415:1388 */     if (this.ba > 0)
 /* 1416:     */     {
@@ -1445,7 +1445,7 @@ package net.minecraft.src;
 /* 1445:1419 */     this.world.profiler.a("ai");
 /* 1446:1420 */     if (bC())
 /* 1447:     */     {
-/* 1448:1421 */       this.aW = false;
+/* 1448:1421 */       this.jumping = false;
 /* 1449:1422 */       this.aX = 0.0F;
 /* 1450:1423 */       this.aY = 0.0F;
 /* 1451:1424 */       this.aZ = 0.0F;
@@ -1459,25 +1459,25 @@ package net.minecraft.src;
 /* 1459:1432 */     this.world.profiler.b();
 /* 1460:     */     
 /* 1461:1434 */     this.world.profiler.a("jump");
-/* 1462:1435 */     if (this.aW)
+/* 1462:1435 */     if (this.jumping)
 /* 1463:     */     {
-/* 1464:1436 */       if (V())
+/* 1464:1436 */       if (isInWater())
 /* 1465:     */       {
-/* 1466:1437 */         bF();
+/* 1466:1437 */         swim();
 /* 1467:     */       }
-/* 1468:1438 */       else if (ab())
+/* 1468:1438 */       else if (isInLava())
 /* 1469:     */       {
-/* 1470:1439 */         bG();
+/* 1470:1439 */         swimInLava();
 /* 1471:     */       }
 /* 1472:1440 */       else if ((this.C) && 
-/* 1473:1441 */         (this.bl == 0))
+/* 1473:1441 */         (this.jumpCountDown == 0))
 /* 1474:     */       {
-/* 1475:1442 */         bE();
-/* 1476:1443 */         this.bl = 10;
+/* 1475:1442 */         jump();
+/* 1476:1443 */         this.jumpCountDown = 10;
 /* 1477:     */       }
 /* 1478:     */     }
 /* 1479:     */     else {
-/* 1480:1447 */       this.bl = 0;
+/* 1480:1447 */       this.jumpCountDown = 0;
 /* 1481:     */     }
 /* 1482:1449 */     this.world.profiler.b();
 /* 1483:     */     
@@ -1553,9 +1553,9 @@ package net.minecraft.src;
 /* 1553:1518 */     this.ba = paramInt;
 /* 1554:     */   }
 /* 1555:     */   
-/* 1556:     */   public void i(boolean paramBoolean)
+/* 1556:     */   public void setJumping(boolean j)
 /* 1557:     */   {
-/* 1558:1522 */     this.aW = paramBoolean;
+/* 1558:1522 */     this.jumping = j;
 /* 1559:     */   }
 /* 1560:     */   
 /* 1561:     */   public void a(Entity paramwv, int paramInt)
@@ -1566,7 +1566,7 @@ package net.minecraft.src;
 /* 1566:1528 */       if ((paramwv instanceof EntityItem)) {
 /* 1567:1529 */         localqn.a(paramwv, new ln(paramwv.getID(), getID()));
 /* 1568:     */       }
-/* 1569:1531 */       if ((paramwv instanceof ahj)) {
+/* 1569:1531 */       if ((paramwv instanceof EntityArrow)) {
 /* 1570:1532 */         localqn.a(paramwv, new ln(paramwv.getID(), getID()));
 /* 1571:     */       }
 /* 1572:1534 */       if ((paramwv instanceof EntityExperienceOrb)) {
@@ -1621,7 +1621,7 @@ package net.minecraft.src;
 /* 1621:     */   
 /* 1622:     */   protected void ac()
 /* 1623:     */   {
-/* 1624:1583 */     this.G = (this.rng.nextDouble() >= a(afs.c).e());
+/* 1624:1583 */     this.G = (this.rng.nextDouble() >= getAttribute(MobAttribute.knockbackResistance).e());
 /* 1625:     */   }
 /* 1626:     */   
 /* 1627:     */   public float aD()

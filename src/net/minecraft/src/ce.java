@@ -16,7 +16,7 @@ package net.minecraft.src;
 /* 15:   */   
 /* 16:   */   public void a(ICommandSender paramae, String[] paramArrayOfString)
 /* 17:   */   {
-/* 18:22 */     String str = MinecraftServer.M().a(EnumGameType.b, false);
+/* 18:22 */     String str = MinecraftServer.M().a(EnumGameMode.SURVIVAL, false);
 /* 19:23 */     if (str != null) {
 /* 20:24 */       a(paramae, this, "commands.publish.started", new Object[] { str });
 /* 21:   */     } else {

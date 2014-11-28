@@ -50,7 +50,7 @@ package net.minecraft.src;
 /* 49:63 */     return this.a;
 /* 50:   */   }
 /* 51:   */   
-/* 52:   */   public aib a(ahb paramahb, EntityPlayer paramahd)
+/* 52:   */   public aib a(Inventory paramahb, EntityPlayer paramahd)
 /* 53:   */   {
 /* 54:68 */     throw new UnsupportedOperationException();
 /* 55:   */   }

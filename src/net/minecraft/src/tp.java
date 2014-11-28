@@ -25,7 +25,7 @@ package net.minecraft.src;
 /*  24: 26 */   private static final Logger b = LogManager.getLogger();
 /*  25:    */   private final MinecraftServer c;
 /*  26:    */   private final File d;
-/*  27: 30 */   private final Set<tq> e = Sets.newHashSet();
+/*  27: 30 */   private final Set<PlayerStat> e = Sets.newHashSet();
 /*  28: 31 */   private int f = -300;
 /*  29: 32 */   private boolean g = false;
 /*  30:    */   
@@ -66,7 +66,7 @@ package net.minecraft.src;
 /*  65:    */     }
 /*  66:    */   }
 /*  67:    */   
-/*  68:    */   public void a(EntityPlayer paramahd, tq paramtq, int paramInt)
+/*  68:    */   public void a(EntityPlayer paramahd, PlayerStat paramtq, int paramInt)
 /*  69:    */   {
 /*  70: 62 */     int i = paramtq.d() ? a(paramtq) : 0;
 /*  71: 63 */     super.a(paramahd, paramtq, paramInt);
@@ -87,25 +87,25 @@ package net.minecraft.src;
 /*  86:    */     }
 /*  87:    */   }
 /*  88:    */   
-/*  89:    */   public Set<tq> c()
+/*  89:    */   public Set<PlayerStat> c()
 /*  90:    */   {
-/*  91: 82 */     HashSet<tq> localHashSet = Sets.newHashSet(this.e);
+/*  91: 82 */     HashSet<PlayerStat> localHashSet = Sets.newHashSet(this.e);
 /*  92: 83 */     this.e.clear();
 /*  93: 84 */     this.g = false;
 /*  94: 85 */     return localHashSet;
 /*  95:    */   }
 /*  96:    */   
-/*  97:    */   public Map<tq,tw> a(String paramString)
+/*  97:    */   public Map<PlayerStat,tw> a(String paramString)
 /*  98:    */   {
 /*  99: 89 */     JsonElement localJsonElement = new JsonParser().parse(paramString);
 /* 100: 90 */     if (!localJsonElement.isJsonObject()) {
 /* 101: 91 */       return Maps.newHashMap();
 /* 102:    */     }
 /* 103: 93 */     JsonObject localJsonObject1 = localJsonElement.getAsJsonObject();
-/* 104: 94 */     HashMap<tq,tw> localHashMap = Maps.newHashMap();
+/* 104: 94 */     HashMap<PlayerStat,tw> localHashMap = Maps.newHashMap();
 /* 105: 96 */     for (Map.Entry<String,JsonElement> localEntry : localJsonObject1.entrySet())
 /* 106:    */     {
-/* 107: 97 */       tq localtq = StatList.a((String)localEntry.getKey());
+/* 107: 97 */       PlayerStat localtq = StatList.a((String)localEntry.getKey());
 /* 108: 99 */       if (localtq != null)
 /* 109:    */       {
 /* 110:100 */         tw localtw = new tw();
@@ -143,10 +143,10 @@ package net.minecraft.src;
 /* 142:129 */     return localHashMap;
 /* 143:    */   }
 /* 144:    */   
-/* 145:    */   public static String a(Map<tq,tw> paramMap)
+/* 145:    */   public static String a(Map<PlayerStat,tw> paramMap)
 /* 146:    */   {
 /* 147:133 */     JsonObject localJsonObject1 = new JsonObject();
-/* 148:135 */     for (Map.Entry<tq,tw> localEntry : paramMap.entrySet()) {
+/* 148:135 */     for (Map.Entry<PlayerStat,tw> localEntry : paramMap.entrySet()) {
 /* 149:136 */       if (((tw)localEntry.getValue()).b() != null)
 /* 150:    */       {
 /* 151:137 */         JsonObject localJsonObject2 = new JsonObject();
@@ -158,13 +158,13 @@ package net.minecraft.src;
 /* 157:    */         }
 /* 158:    */         catch (Throwable localThrowable)
 /* 159:    */         {
-/* 160:144 */           b.warn("Couldn't save statistic " + ((tq)localEntry.getKey()).e() + ": error serializing progress", localThrowable);
+/* 160:144 */           b.warn("Couldn't save statistic " + ((PlayerStat)localEntry.getKey()).e() + ": error serializing progress", localThrowable);
 /* 161:    */         }
-/* 162:147 */         localJsonObject1.add(((tq)localEntry.getKey()).e, localJsonObject2);
+/* 162:147 */         localJsonObject1.add(((PlayerStat)localEntry.getKey()).e, localJsonObject2);
 /* 163:    */       }
 /* 164:    */       else
 /* 165:    */       {
-/* 166:149 */         localJsonObject1.addProperty(((tq)localEntry.getKey()).e, Integer.valueOf(((tw)localEntry.getValue()).a()));
+/* 166:149 */         localJsonObject1.addProperty(((PlayerStat)localEntry.getKey()).e, Integer.valueOf(((tw)localEntry.getValue()).a()));
 /* 167:    */       }
 /* 168:    */     }
 /* 169:153 */     return localJsonObject1.toString();
@@ -172,7 +172,7 @@ package net.minecraft.src;
 /* 171:    */   
 /* 172:    */   public void d()
 /* 173:    */   {
-/* 174:157 */     for (tq localtq : this.a.keySet()) {
+/* 174:157 */     for (PlayerStat localtq : this.a.keySet()) {
 /* 175:158 */       this.e.add(localtq);
 /* 176:    */     }
 /* 177:    */   }
@@ -184,7 +184,7 @@ package net.minecraft.src;
 /* 183:166 */     if ((this.g) || (i - this.f > 300))
 /* 184:    */     {
 /* 185:167 */       this.f = i;
-/* 186:169 */       for (tq localtq : c()) {
+/* 186:169 */       for (PlayerStat localtq : c()) {
 /* 187:170 */         localHashMap.put(localtq, Integer.valueOf(a(localtq)));
 /* 188:    */       }
 /* 189:    */     }
@@ -193,11 +193,11 @@ package net.minecraft.src;
 /* 192:    */   
 /* 193:    */   public void b(qw paramqw)
 /* 194:    */   {
-/* 195:178 */     HashMap<tq,Integer> localHashMap = Maps.newHashMap();
+/* 195:178 */     HashMap<PlayerStat,Integer> localHashMap = Maps.newHashMap();
 /* 196:180 */     for (tk localtk : AchievementList.e) {
 /* 197:181 */       if (a(localtk))
 /* 198:    */       {
-/* 199:182 */         localHashMap.put(localtk, Integer.valueOf(a((tq)localtk)));
+/* 199:182 */         localHashMap.put(localtk, Integer.valueOf(a((PlayerStat)localtk)));
 /* 200:183 */         this.e.remove(localtk);
 /* 201:    */       }
 /* 202:    */     }

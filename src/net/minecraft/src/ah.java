@@ -138,8 +138,8 @@ package net.minecraft.src;
 /* 137:    */   private static List<Predicate<Entity>> c(Map paramMap)
 /* 138:    */   {
 /* 139:217 */     ArrayList<Predicate<Entity>> localArrayList = Lists.newArrayList();
-/* 140:218 */     int i = a(paramMap, "m", EnumGameType.a.a());
-/* 141:220 */     if (i != EnumGameType.a.a()) {
+/* 140:218 */     int i = a(paramMap, "m", EnumGameMode.NOT_SET.a());
+/* 141:220 */     if (i != EnumGameMode.NOT_SET.a()) {
 /* 142:221 */       localArrayList.add(new ao(i));
 /* 143:    */     }
 /* 144:233 */     return localArrayList;

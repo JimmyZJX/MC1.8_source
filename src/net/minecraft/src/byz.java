@@ -3,7 +3,6 @@ package net.minecraft.src;
 /*   2:    */ import java.util.Iterator;
 /*   3:    */ import java.util.List;
 /*   4:    */ import java.util.Map;
-/*   5:    */ import java.util.Set;
 /*   6:    */ import org.lwjgl.input.Keyboard;
 /*   7:    */ import org.lwjgl.input.Mouse;
 /*   8:    */ 
@@ -17,7 +16,7 @@ package net.minecraft.src;
 /*  16:    */   private boolean y;
 /*  17:    */   private boolean z;
 /*  18:    */   private bul A;
-/*  19:    */   private List B;
+/*  19:    */   private List<ajk> B;
 /*  20:    */   private ajk C;
 /*  21:    */   private boolean D;
 /*  22:    */   private byy E;
@@ -84,7 +83,7 @@ package net.minecraft.src;
 /*  83:184 */         else if ((paramInt3 != 5) && (paramajk.d == v))
 /*  84:    */         {
 /*  85:186 */           localObject1 = this.j.h.bg;
-/*  86:187 */           localamj1 = ((ahb)localObject1).p();
+/*  86:187 */           localamj1 = ((Inventory)localObject1).p();
 /*  87:188 */           ItemStack localamj2 = paramajk.d();
 /*  88:    */           ItemStack localamj3;
 /*  89:190 */           if (paramInt3 == 2)
@@ -100,11 +99,11 @@ package net.minecraft.src;
 /*  99:    */           }
 /* 100:199 */           if (paramInt3 == 3)
 /* 101:    */           {
-/* 102:200 */             if ((((ahb)localObject1).p() == null) && (paramajk.e()))
+/* 102:200 */             if ((((Inventory)localObject1).p() == null) && (paramajk.e()))
 /* 103:    */             {
 /* 104:201 */               localamj3 = paramajk.d().k();
 /* 105:202 */               localamj3.stackSize = localamj3.getMaxStackSize();
-/* 106:203 */               ((ahb)localObject1).b(localamj3);
+/* 106:203 */               ((Inventory)localObject1).b(localamj3);
 /* 107:    */             }
 /* 108:206 */             return;
 /* 109:    */           }
@@ -130,19 +129,19 @@ package net.minecraft.src;
 /* 129:    */               }
 /* 130:    */             }
 /* 131:229 */             else if (localamj1.stackSize <= 1) {
-/* 132:230 */               ((ahb)localObject1).b((ItemStack)null);
+/* 132:230 */               ((Inventory)localObject1).b((ItemStack)null);
 /* 133:    */             } else {
 /* 134:232 */               localamj1.stackSize -= 1;
 /* 135:    */             }
 /* 136:    */           }
 /* 137:235 */           else if ((localamj2 == null) || (localamj1 != null))
 /* 138:    */           {
-/* 139:237 */             ((ahb)localObject1).b((ItemStack)null);
+/* 139:237 */             ((Inventory)localObject1).b((ItemStack)null);
 /* 140:    */           }
 /* 141:    */           else
 /* 142:    */           {
-/* 143:240 */             ((ahb)localObject1).b(ItemStack.b(localamj2));
-/* 144:241 */             localamj1 = ((ahb)localObject1).p();
+/* 143:240 */             ((Inventory)localObject1).b(ItemStack.b(localamj2));
+/* 144:241 */             localamj1 = ((Inventory)localObject1).p();
 /* 145:242 */             if (i != 0) {
 /* 146:243 */               localamj1.stackSize = localamj1.getMaxStackSize();
 /* 147:    */             }
@@ -168,21 +167,21 @@ package net.minecraft.src;
 /* 167:    */     else
 /* 168:    */     {
 /* 169:260 */       localObject2 = this.j.h.bg;
-/* 170:261 */       if (((ahb)localObject2).p() != null)
+/* 170:261 */       if (((Inventory)localObject2).p() != null)
 /* 171:    */       {
 /* 172:262 */         if (paramInt2 == 0)
 /* 173:    */         {
-/* 174:263 */           this.j.h.a(((ahb)localObject2).p(), true);
-/* 175:264 */           this.j.c.a(((ahb)localObject2).p());
-/* 176:265 */           ((ahb)localObject2).b((ItemStack)null);
+/* 174:263 */           this.j.h.a(((Inventory)localObject2).p(), true);
+/* 175:264 */           this.j.c.a(((Inventory)localObject2).p());
+/* 176:265 */           ((Inventory)localObject2).b((ItemStack)null);
 /* 177:    */         }
 /* 178:267 */         if (paramInt2 == 1)
 /* 179:    */         {
-/* 180:268 */           localamj1 = ((ahb)localObject2).p().split(1);
+/* 180:268 */           localamj1 = ((Inventory)localObject2).p().split(1);
 /* 181:269 */           this.j.h.a(localamj1, true);
 /* 182:270 */           this.j.c.a(localamj1);
-/* 183:271 */           if (((ahb)localObject2).p().stackSize == 0) {
-/* 184:272 */             ((ahb)localObject2).b((ItemStack)null);
+/* 183:271 */           if (((Inventory)localObject2).p().stackSize == 0) {
+/* 184:272 */             ((Inventory)localObject2).b((ItemStack)null);
 /* 185:    */           }
 /* 186:    */         }
 /* 187:    */       }
@@ -265,9 +264,9 @@ package net.minecraft.src;
 /* 264:    */         }
 /* 265:    */       }
 /* 266:    */     }
-/* 267:356 */     for (Enchantment localapf : Enchantment.b) {
+/* 267:356 */     for (Enchantment localapf : Enchantment.list) {
 /* 268:357 */       if ((localapf != null) && (localapf.C != null)) {
-/* 269:361 */         ItemList.cd.a(localapf, localbza.a);
+/* 269:361 */         ItemList.enchantedBook.a(localapf, localbza.a);
 /* 270:    */       }
 /* 271:    */     }
 /* 272:364 */     Iterator<ItemStack> localObject = localbza.a.iterator();
@@ -481,16 +480,16 @@ package net.minecraft.src;
 /* 480:568 */       List<String> localList = paramamj.a(this.j.h, this.j.t.x);
 /* 481:    */       
 /* 482:570 */       Object localObject = paramamj.getItem().getCreativeTab();
-/* 483:572 */       if ((localObject == null) && (paramamj.getItem() == ItemList.cd))
+/* 483:572 */       if ((localObject == null) && (paramamj.getItem() == ItemList.enchantedBook))
 /* 484:    */       {
-/* 485:573 */         Map localMap = aph.a(paramamj);
+/* 485:573 */         Map<Integer,Integer> localMap = aph.a(paramamj);
 /* 486:575 */         if (localMap.size() == 1)
 /* 487:    */         {
-/* 488:576 */           Enchantment localapf = Enchantment.c(((Integer)localMap.keySet().iterator().next()).intValue());
-/* 489:578 */           for (CreativeTabs localakf : CreativeTabs.a) {
-/* 490:579 */             if (localakf.a(localapf.C))
+/* 488:576 */           Enchantment localapf = Enchantment.c(localMap.keySet().iterator().next().intValue());
+/* 489:578 */           for (CreativeTabs tab : CreativeTabs.a) {
+/* 490:579 */             if (tab.a(localapf.C))
 /* 491:    */             {
-/* 492:580 */               localObject = localakf;
+/* 492:580 */               localObject = tab;
 /* 493:581 */               break;
 /* 494:    */             }
 /* 495:    */           }

@@ -24,14 +24,14 @@ package net.minecraft.src;
 /* 23:25 */     return super.a(paramInt) + 50;
 /* 24:   */   }
 /* 25:   */   
-/* 26:   */   public int b()
+/* 26:   */   public int getHighestLevel()
 /* 27:   */   {
 /* 28:30 */     return 3;
 /* 29:   */   }
 /* 30:   */   
 /* 31:   */   public boolean a(Enchantment paramapf)
 /* 32:   */   {
-/* 33:35 */     return (super.a(paramapf)) && (paramapf.B != s.B);
+/* 33:35 */     return (super.a(paramapf)) && (paramapf.id != s.id);
 /* 34:   */   }
 /* 35:   */ }
 

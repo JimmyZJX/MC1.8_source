@@ -12,7 +12,7 @@ package net.minecraft.src;
 /*  11:    */   protected azk()
 /*  12:    */   {
 /*  13: 26 */     super(Material.C);
-/*  14: 27 */     j(this.L.b().setData(N, EnumDirection.NORTH));
+/*  14: 27 */     j(this.L.b().setData(facing, EnumDirection.NORTH));
 /*  15: 28 */     a(true);
 /*  16: 29 */     setCreativeTab(CreativeTabs.tabBlock);
 /*  17:    */   }
@@ -85,22 +85,22 @@ package net.minecraft.src;
 /*  84:    */   
 /*  85:    */   public Block a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3, int paramInt, EntityLiving paramxm)
 /*  86:    */   {
-/*  87: 98 */     return instance().setData(N, paramxm.aO().d());
+/*  87: 98 */     return instance().setData(facing, paramxm.aO().opposite());
 /*  88:    */   }
 /*  89:    */   
 /*  90:    */   public Block instance(int paramInt)
 /*  91:    */   {
-/*  92:103 */     return instance().setData(N, EnumDirection.b(paramInt));
+/*  92:103 */     return instance().setData(facing, EnumDirection.b(paramInt));
 /*  93:    */   }
 /*  94:    */   
 /*  95:    */   public int c(Block parambec)
 /*  96:    */   {
-/*  97:109 */     return ((EnumDirection)parambec.getProperty(N)).b();
+/*  97:109 */     return ((EnumDirection)parambec.getData(facing)).b();
 /*  98:    */   }
 /*  99:    */   
 /* 100:    */   protected bed e()
 /* 101:    */   {
-/* 102:114 */     return new bed(this, new IBlockData[] { N });
+/* 102:114 */     return new bed(this, new IBlockData[] { facing });
 /* 103:    */   }
 /* 104:    */   
 /* 105:    */   protected bek j()

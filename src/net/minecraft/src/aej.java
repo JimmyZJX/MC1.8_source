@@ -49,10 +49,10 @@ package net.minecraft.src;
 /*  48:    */   
 /*  49:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /*  50:    */   {
-/*  51: 62 */     Entity localwv = paramwh.i();
-/*  52: 63 */     if ((localwv instanceof ahj))
+/*  51: 62 */     Entity localwv = paramwh.getEntity();
+/*  52: 63 */     if ((localwv instanceof EntityArrow))
 /*  53:    */     {
-/*  54: 64 */       ahj localahj = (ahj)localwv;
+/*  54: 64 */       EntityArrow localahj = (EntityArrow)localwv;
 /*  55: 65 */       if (localahj.au()) {
 /*  56: 66 */         b(localahj.xVelocity * localahj.xVelocity + localahj.yVelocity * localahj.yVelocity + localahj.zVelocity * localahj.zVelocity);
 /*  57:    */       }
@@ -68,7 +68,7 @@ package net.minecraft.src;
 /*  67: 78 */     if (!paramwh.c()) {
 /*  68: 79 */       throwItem(new ItemStack(BlockList.W, 1), 0.0F);
 /*  69:    */     }
-/*  70: 82 */     if ((paramwh.o()) || (paramwh.c()) || (d >= 0.009999999776482582D)) {
+/*  70: 82 */     if ((paramwh.isFire()) || (paramwh.c()) || (d >= 0.009999999776482582D)) {
 /*  71: 83 */       b(d);
 /*  72:    */     }
 /*  73:    */   }

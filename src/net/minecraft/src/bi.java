@@ -38,7 +38,7 @@ package net.minecraft.src;
 /*  37: 49 */       if (localObject == null) {
 /*  38: 50 */         throw localdk;
 /*  39:    */       }
-/*  40: 52 */       i = ((Enchantment)localObject).B;
+/*  40: 52 */       i = ((Enchantment)localObject).id;
 /*  41:    */     }
 /*  42: 54 */     int j = 1;
 /*  43:    */     
@@ -54,7 +54,7 @@ package net.minecraft.src;
 /*  53: 67 */       throw new CommandException("commands.enchant.cantEnchant", new Object[0]);
 /*  54:    */     }
 /*  55: 70 */     if (paramArrayOfString.length >= 3) {
-/*  56: 71 */       j = a(paramArrayOfString[2], localapf1.e(), localapf1.b());
+/*  56: 71 */       j = a(paramArrayOfString[2], localapf1.getLowestLevel(), localapf1.getHighestLevel());
 /*  57:    */     }
 /*  58: 74 */     if (((ItemStack)localObject).hasTagCompound())
 /*  59:    */     {

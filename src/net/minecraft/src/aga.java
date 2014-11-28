@@ -15,13 +15,13 @@ package net.minecraft.src;
 /*  14:    */   
 /*  15:    */   public boolean canStart()
 /*  16:    */   {
-/*  17:447 */     return (this.a.V()) || (this.a.ab());
+/*  17:447 */     return (this.a.isInWater()) || (this.a.isInLava());
 /*  18:    */   }
 /*  19:    */   
 /*  20:    */   public void tick()
 /*  21:    */   {
 /*  22:452 */     if (this.a.getRNG().nextFloat() < 0.8F) {
-/*  23:453 */       this.a.r().a();
+/*  23:453 */       this.a.getJumpManager().jump();
 /*  24:    */     }
 /*  25:455 */     ((agc)this.a.q()).a(1.2D);
 /*  26:    */   }

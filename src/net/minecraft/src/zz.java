@@ -76,7 +76,7 @@ package net.minecraft.src;
 /* 75:81 */       if ((d1 > this.j) || (!bool)) {
 /* 76:82 */         return;
 /* 77:   */       }
-/* 78:85 */       f1 = MathUtils.a(d1) / this.i;
+/* 78:85 */       f1 = MathUtils.sqrt(d1) / this.i;
 /* 79:86 */       float f2 = f1;
 /* 80:87 */       f2 = MathUtils.clamp(f2, 0.1F, 1.0F);
 /* 81:   */       
@@ -85,7 +85,7 @@ package net.minecraft.src;
 /* 84:   */     }
 /* 85:91 */     else if (this.d < 0)
 /* 86:   */     {
-/* 87:92 */       f1 = MathUtils.a(d1) / this.i;
+/* 87:92 */       f1 = MathUtils.sqrt(d1) / this.i;
 /* 88:93 */       this.d = MathUtils.floor(f1 * (this.h - this.g) + this.g);
 /* 89:   */     }
 /* 90:   */   }

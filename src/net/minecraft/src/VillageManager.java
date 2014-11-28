@@ -165,7 +165,7 @@ package net.minecraft.src;
 /* 164:    */   private void tryAddDoor(BlockPosition pos)
 /* 165:    */   {
 /* 166:164 */     EnumDirection dir = BlockDoor.h(this.world, pos);
-/* 167:165 */     EnumDirection dir2 = dir.d();
+/* 167:165 */     EnumDirection dir2 = dir.opposite();
 /* 168:    */     
 /* 169:167 */     int i = countOutsideBlocks(pos, dir, 5);
 /* 170:168 */     int j = countOutsideBlocks(pos, dir2, i + 1);

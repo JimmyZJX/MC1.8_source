@@ -1137,8 +1137,8 @@ import net.minecraft.server.MinecraftServer;
 /* 1134:1188 */     while (curPos.getY() >= 0)
 /* 1135:     */     {
 /* 1136:1189 */       BlockPosition nextPos = curPos.down();
-/* 1137:1190 */       Material localbof = localbfh.getBlock(nextPos).getMaterial();
-/* 1138:1191 */       if ((localbof.c()) && (localbof != Material.leaves)) {
+/* 1137:1190 */       Material material = localbfh.getBlock(nextPos).getMaterial();
+/* 1138:1191 */       if ((material.material_c()) && (material != Material.leaves)) {
 /* 1139:     */         break;
 /* 1140:     */       }
 /* 1141:1195 */       curPos = nextPos;
@@ -1504,63 +1504,63 @@ import net.minecraft.server.MinecraftServer;
 /* 1501:1535 */     return false;
 /* 1502:     */   }
 /* 1503:     */   
-/* 1504:     */   public boolean a(AABB parambrt, Material parambof, Entity paramwv)
+/* 1504:     */   public boolean a(AABB parambrt, Material material, Entity entity)
 /* 1505:     */   {
-/* 1506:1539 */     int i1 = MathUtils.floor(parambrt.minX);
-/* 1507:1540 */     int i2 = MathUtils.floor(parambrt.maxX + 1.0D);
+/* 1506:1539 */     int minX = MathUtils.floor(parambrt.minX);
+/* 1507:1540 */     int maxX = MathUtils.floor(parambrt.maxX + 1.0D);
 /* 1508:     */     
-/* 1509:1542 */     int i3 = MathUtils.floor(parambrt.minY);
-/* 1510:1543 */     int i4 = MathUtils.floor(parambrt.maxY + 1.0D);
+/* 1509:1542 */     int minY = MathUtils.floor(parambrt.minY);
+/* 1510:1543 */     int maxY = MathUtils.floor(parambrt.maxY + 1.0D);
 /* 1511:     */     
-/* 1512:1545 */     int i5 = MathUtils.floor(parambrt.minZ);
-/* 1513:1546 */     int i6 = MathUtils.floor(parambrt.maxZ + 1.0D);
-/* 1514:1548 */     if (!a(i1, i3, i5, i2, i4, i6, true)) {
+/* 1512:1545 */     int minZ = MathUtils.floor(parambrt.minZ);
+/* 1513:1546 */     int maxZ = MathUtils.floor(parambrt.maxZ + 1.0D);
+/* 1514:1548 */     if (!a(minX, minY, minZ, maxX, maxY, maxZ, true)) {
 /* 1515:1549 */       return false;
 /* 1516:     */     }
-/* 1517:1552 */     boolean bool = false;
-/* 1518:1553 */     Vec3 localbrw = new Vec3(0.0D, 0.0D, 0.0D);
-/* 1519:1554 */     for (int i7 = i1; i7 < i2; i7++) {
-/* 1520:1555 */       for (int i8 = i3; i8 < i4; i8++) {
-/* 1521:1556 */         for (int i9 = i5; i9 < i6; i9++)
+/* 1517:1552 */     boolean res = false;
+/* 1518:1553 */     Vec3 acceleration = new Vec3(0.0D, 0.0D, 0.0D);
+/* 1519:1554 */     for (int x = minX; x < maxX; x++) {
+/* 1520:1555 */       for (int y = minY; y < maxY; y++) {
+/* 1521:1556 */         for (int z = minZ; z < maxZ; z++)
 /* 1522:     */         {
-/* 1523:1557 */           BlockPosition localdt = new BlockPosition(i7, i8, i9);
-/* 1524:1558 */           Block localbec = getBlock(localdt);
-/* 1525:1559 */           ProtoBlock localatr = localbec.getProto();
-/* 1526:1560 */           if (localatr.getMaterial() == parambof)
+/* 1523:1557 */           BlockPosition pos = new BlockPosition(x, y, z);
+/* 1524:1558 */           Block block = getBlock(pos);
+/* 1525:1559 */           ProtoBlock proto = block.getProto();
+/* 1526:1560 */           if (proto.getMaterial() == material)
 /* 1527:     */           {
-/* 1528:1561 */             double d2 = i8 + 1 - BlockLiquid.b(((Integer)localbec.getProperty(BlockLiquid.level)).intValue());
-/* 1529:1562 */             if (i4 >= d2)
+/* 1528:1561 */             double d2 = y + 1 - BlockLiquid.b(((Integer)block.getData(BlockLiquid.level)).intValue());
+/* 1529:1562 */             if (maxY >= d2)
 /* 1530:     */             {
-/* 1531:1563 */               bool = true;
-/* 1532:1564 */               localbrw = localatr.a(this, localdt, paramwv, localbrw);
+/* 1531:1563 */               res = true;
+/* 1532:1564 */               acceleration = proto.alterAcceleration(this, pos, entity, acceleration);
 /* 1533:     */             }
 /* 1534:     */           }
 /* 1535:     */         }
 /* 1536:     */       }
 /* 1537:     */     }
-/* 1538:1570 */     if ((localbrw.b() > 0.0D) && (paramwv.aK()))
+/* 1538:1570 */     if ((acceleration.norm() > 0.0D) && (entity.aK()))
 /* 1539:     */     {
-/* 1540:1571 */       localbrw = localbrw.normalize();
+/* 1540:1571 */       acceleration = acceleration.normalize();
 /* 1541:1572 */       double d1 = 0.014D;
-/* 1542:1573 */       paramwv.xVelocity += localbrw.x * d1;
-/* 1543:1574 */       paramwv.yVelocity += localbrw.y * d1;
-/* 1544:1575 */       paramwv.zVelocity += localbrw.z * d1;
+/* 1542:1573 */       entity.xVelocity += acceleration.x * d1;
+/* 1543:1574 */       entity.yVelocity += acceleration.y * d1;
+/* 1544:1575 */       entity.zVelocity += acceleration.z * d1;
 /* 1545:     */     }
-/* 1546:1577 */     return bool;
+/* 1546:1577 */     return res;
 /* 1547:     */   }
 /* 1548:     */   
-/* 1549:     */   public boolean a(AABB parambrt, Material parambof)
+/* 1549:     */   public boolean isTouchingMaterial(AABB aabb, Material material)
 /* 1550:     */   {
-/* 1551:1581 */     int i1 = MathUtils.floor(parambrt.minX);
-/* 1552:1582 */     int i2 = MathUtils.floor(parambrt.maxX + 1.0D);
-/* 1553:1583 */     int i3 = MathUtils.floor(parambrt.minY);
-/* 1554:1584 */     int i4 = MathUtils.floor(parambrt.maxY + 1.0D);
-/* 1555:1585 */     int i5 = MathUtils.floor(parambrt.minZ);
-/* 1556:1586 */     int i6 = MathUtils.floor(parambrt.maxZ + 1.0D);
-/* 1557:1588 */     for (int i7 = i1; i7 < i2; i7++) {
-/* 1558:1589 */       for (int i8 = i3; i8 < i4; i8++) {
-/* 1559:1590 */         for (int i9 = i5; i9 < i6; i9++) {
-/* 1560:1591 */           if (getBlock(new BlockPosition(i7, i8, i9)).getProto().getMaterial() == parambof) {
+/* 1551:1581 */     int minX = MathUtils.floor(aabb.minX);
+/* 1552:1582 */     int maxX = MathUtils.floor(aabb.maxX + 1.0D);
+/* 1553:1583 */     int minY = MathUtils.floor(aabb.minY);
+/* 1554:1584 */     int maxY = MathUtils.floor(aabb.maxY + 1.0D);
+/* 1555:1585 */     int minZ = MathUtils.floor(aabb.minZ);
+/* 1556:1586 */     int maxZ = MathUtils.floor(aabb.maxZ + 1.0D);
+/* 1557:1588 */     for (int x = minX; x < maxX; x++) {
+/* 1558:1589 */       for (int y = minY; y < maxY; y++) {
+/* 1559:1590 */         for (int z = minZ; z < maxZ; z++) {
+/* 1560:1591 */           if (getBlock(new BlockPosition(x, y, z)).getProto().getMaterial() == material) {
 /* 1561:1592 */             return true;
 /* 1562:     */           }
 /* 1563:     */         }
@@ -1586,7 +1586,7 @@ import net.minecraft.server.MinecraftServer;
 /* 1583:1613 */           ProtoBlock localatr = localbec.getProto();
 /* 1584:1614 */           if (localatr.getMaterial() == parambof)
 /* 1585:     */           {
-/* 1586:1615 */             int i10 = ((Integer)localbec.getProperty(BlockLiquid.level)).intValue();
+/* 1586:1615 */             int i10 = ((Integer)localbec.getData(BlockLiquid.level)).intValue();
 /* 1587:1616 */             double d1 = i8 + 1;
 /* 1588:1617 */             if (i10 < 8) {
 /* 1589:1618 */               d1 = i8 + 1 - i10 / 8.0D;
@@ -1768,16 +1768,16 @@ import net.minecraft.server.MinecraftServer;
 /* 1765:1775 */       return true;
 /* 1766:     */     }
 /* 1767:1777 */     if ((protoBlock instanceof BlockStairs)) {
-/* 1768:1778 */       return block.getProperty(BlockStairs.half) == EnumStairsHalf.TOP;
+/* 1768:1778 */       return block.getData(BlockStairs.half) == EnumStairsHalf.TOP;
 /* 1769:     */     }
 /* 1770:1780 */     if ((protoBlock instanceof BlockSlab)) {
-/* 1771:1781 */       return block.getProperty(BlockSlab.half) == EnumSlabHalf.TOP;
+/* 1771:1781 */       return block.getData(BlockSlab.half) == EnumSlabHalf.TOP;
 /* 1772:     */     }
 /* 1773:1783 */     if ((protoBlock instanceof BlockHopper)) {
 /* 1774:1784 */       return true;
 /* 1775:     */     }
 /* 1776:1786 */     if ((protoBlock instanceof BlockSnowLayer)) {
-/* 1777:1787 */       return ((Integer)block.getProperty(BlockSnowLayer.a)).intValue() == 7;
+/* 1777:1787 */       return ((Integer)block.getData(BlockSnowLayer.a)).intValue() == 7;
 /* 1778:     */     }
 /* 1779:1789 */     return false;
 /* 1780:     */   }
@@ -1996,7 +1996,7 @@ import net.minecraft.server.MinecraftServer;
 /* 1993:     */     {
 /* 1994:1996 */       Block localbec = getBlock(paramdt);
 /* 1995:1997 */       ProtoBlock localatr = localbec.getProto();
-/* 1996:1998 */       if (((localatr == BlockList.water) || (localatr == BlockList.flowingWater)) && (((Integer)localbec.getProperty(BlockLiquid.level)).intValue() == 0))
+/* 1996:1998 */       if (((localatr == BlockList.water) || (localatr == BlockList.flowingWater)) && (((Integer)localbec.getData(BlockLiquid.level)).intValue() == 0))
 /* 1997:     */       {
 /* 1998:1999 */         if (!paramBoolean) {
 /* 1999:2000 */           return true;
@@ -2370,34 +2370,34 @@ import net.minecraft.server.MinecraftServer;
 /* 2367:2362 */     return this.worldInfo.u();
 /* 2368:     */   }
 /* 2369:     */   
-/* 2370:     */   public int y(BlockPosition paramdt)
+/* 2370:     */   public int y(BlockPosition pos)
 /* 2371:     */   {
-/* 2372:2366 */     int i1 = 0;
-/* 2373:2367 */     i1 = Math.max(i1, a(paramdt.down(), EnumDirection.DOWN));
-/* 2374:2368 */     if (i1 >= 15) {
-/* 2375:2369 */       return i1;
+/* 2372:2366 */     int res = 0;
+/* 2373:2367 */     res = Math.max(res, a(pos.down(), EnumDirection.DOWN));
+/* 2374:2368 */     if (res >= 15) {
+/* 2375:2369 */       return res;
 /* 2376:     */     }
-/* 2377:2371 */     i1 = Math.max(i1, a(paramdt.up(), EnumDirection.UP));
-/* 2378:2372 */     if (i1 >= 15) {
-/* 2379:2373 */       return i1;
+/* 2377:2371 */     res = Math.max(res, a(pos.up(), EnumDirection.UP));
+/* 2378:2372 */     if (res >= 15) {
+/* 2379:2373 */       return res;
 /* 2380:     */     }
-/* 2381:2375 */     i1 = Math.max(i1, a(paramdt.north(), EnumDirection.NORTH));
-/* 2382:2376 */     if (i1 >= 15) {
-/* 2383:2377 */       return i1;
+/* 2381:2375 */     res = Math.max(res, a(pos.north(), EnumDirection.NORTH));
+/* 2382:2376 */     if (res >= 15) {
+/* 2383:2377 */       return res;
 /* 2384:     */     }
-/* 2385:2379 */     i1 = Math.max(i1, a(paramdt.south(), EnumDirection.SOUTH));
-/* 2386:2380 */     if (i1 >= 15) {
-/* 2387:2381 */       return i1;
+/* 2385:2379 */     res = Math.max(res, a(pos.south(), EnumDirection.SOUTH));
+/* 2386:2380 */     if (res >= 15) {
+/* 2387:2381 */       return res;
 /* 2388:     */     }
-/* 2389:2383 */     i1 = Math.max(i1, a(paramdt.west(), EnumDirection.WEST));
-/* 2390:2384 */     if (i1 >= 15) {
-/* 2391:2385 */       return i1;
+/* 2389:2383 */     res = Math.max(res, a(pos.west(), EnumDirection.WEST));
+/* 2390:2384 */     if (res >= 15) {
+/* 2391:2385 */       return res;
 /* 2392:     */     }
-/* 2393:2387 */     i1 = Math.max(i1, a(paramdt.east(), EnumDirection.EAST));
-/* 2394:2388 */     if (i1 >= 15) {
-/* 2395:2389 */       return i1;
+/* 2393:2387 */     res = Math.max(res, a(pos.east(), EnumDirection.EAST));
+/* 2394:2388 */     if (res >= 15) {
+/* 2395:2389 */       return res;
 /* 2396:     */     }
-/* 2397:2391 */     return i1;
+/* 2397:2391 */     return res;
 /* 2398:     */   }
 /* 2399:     */   
 /* 2400:     */   public boolean b(BlockPosition paramdt, EnumDirection paramej)
@@ -2405,14 +2405,14 @@ import net.minecraft.server.MinecraftServer;
 /* 2402:2395 */     return c(paramdt, paramej) > 0;
 /* 2403:     */   }
 /* 2404:     */   
-/* 2405:     */   public int c(BlockPosition paramdt, EnumDirection paramej)
+/* 2405:     */   public int c(BlockPosition pos, EnumDirection paramej)
 /* 2406:     */   {
-/* 2407:2399 */     Block localbec = getBlock(paramdt);
-/* 2408:2400 */     ProtoBlock localatr = localbec.getProto();
-/* 2409:2402 */     if (localatr.blocksMovement()) {
-/* 2410:2403 */       return y(paramdt);
+/* 2407:2399 */     Block block = getBlock(pos);
+/* 2408:2400 */     ProtoBlock proto = block.getProto();
+/* 2409:2402 */     if (proto.blocksMovement()) {
+/* 2410:2403 */       return y(pos);
 /* 2411:     */     }
-/* 2412:2405 */     return localatr.a(this, paramdt, localbec, paramej);
+/* 2412:2405 */     return proto.a(this, pos, block, paramej);
 /* 2413:     */   }
 /* 2414:     */   
 /* 2415:     */   public boolean z(BlockPosition paramdt)
@@ -2438,12 +2438,12 @@ import net.minecraft.server.MinecraftServer;
 /* 2435:2427 */     return false;
 /* 2436:     */   }
 /* 2437:     */   
-/* 2438:     */   public int A(BlockPosition paramdt)
+/* 2438:     */   public int A(BlockPosition pos)
 /* 2439:     */   {
 /* 2440:2431 */     int i1 = 0;
-/* 2441:2433 */     for (EnumDirection localej : EnumDirection.values())
+/* 2441:2433 */     for (EnumDirection dir : EnumDirection.values())
 /* 2442:     */     {
-/* 2443:2434 */       int i4 = c(paramdt.offset(localej), localej);
+/* 2443:2434 */       int i4 = c(pos.offset(dir), dir);
 /* 2444:2436 */       if (i4 >= 15) {
 /* 2445:2437 */         return 15;
 /* 2446:     */       }
@@ -2813,7 +2813,7 @@ import net.minecraft.server.MinecraftServer;
 /* 2810:     */   
 /* 2811:     */   public void e(BlockPosition paramdt, ProtoBlock paramatr)
 /* 2812:     */   {
-/* 2813:2823 */     for (EnumDirection localej : en.HORIZONTAL)
+/* 2813:2823 */     for (EnumDirection localej : EnumHorizontalVertical.HORIZONTAL)
 /* 2814:     */     {
 /* 2815:2824 */       BlockPosition localdt = paramdt.offset(localej);
 /* 2816:2826 */       if (e(localdt))

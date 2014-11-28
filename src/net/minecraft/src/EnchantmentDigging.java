@@ -19,14 +19,14 @@ package net.minecraft.src;
 /* 18:21 */     return super.a(paramInt) + 50;
 /* 19:   */   }
 /* 20:   */   
-/* 21:   */   public int b()
+/* 21:   */   public int getHighestLevel()
 /* 22:   */   {
 /* 23:26 */     return 5;
 /* 24:   */   }
 /* 25:   */   
 /* 26:   */   public boolean a(ItemStack paramamj)
 /* 27:   */   {
-/* 28:31 */     if (paramamj.getItem() == ItemList.be) {
+/* 28:31 */     if (paramamj.getItem() == ItemList.shears) {
 /* 29:32 */       return true;
 /* 30:   */     }
 /* 31:34 */     return super.a(paramamj);

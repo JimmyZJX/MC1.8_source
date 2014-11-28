@@ -173,7 +173,7 @@ package net.minecraft.src;
 /* 172:184 */     return false;
 /* 173:    */   }
 /* 174:    */   
-/* 175:    */   public EnumGameType m()
+/* 175:    */   public EnumGameMode m()
 /* 176:    */   {
 /* 177:189 */     return this.l.getGameType();
 /* 178:    */   }
@@ -257,7 +257,7 @@ package net.minecraft.src;
 /* 256:268 */     return bsu.z().ac();
 /* 257:    */   }
 /* 258:    */   
-/* 259:    */   public String a(EnumGameType paramarc, boolean paramBoolean)
+/* 259:    */   public String a(EnumGameMode paramarc, boolean paramBoolean)
 /* 260:    */   {
 /* 261:    */     try
 /* 262:    */     {
@@ -326,7 +326,7 @@ package net.minecraft.src;
 /* 325:336 */     return this.n;
 /* 326:    */   }
 /* 327:    */   
-/* 328:    */   public void a(EnumGameType paramarc)
+/* 328:    */   public void a(EnumGameMode paramarc)
 /* 329:    */   {
 /* 330:341 */     an().a(paramarc);
 /* 331:    */   }

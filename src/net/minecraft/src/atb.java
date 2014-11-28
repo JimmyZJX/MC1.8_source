@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*   3:    */ public class atb
 /*   4:    */   extends atg
 /*   5:    */ {
-/*   6: 26 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", en.HORIZONTAL);
+/*   6: 26 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", EnumHorizontalVertical.HORIZONTAL);
 /*   7: 27 */   public static final BlockDataInteger b = BlockDataInteger.getInstance("rotation", 0, 15);
 /*   8:    */   
 /*   9:    */   protected atb()

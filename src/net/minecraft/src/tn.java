@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ import java.util.List;
 /*  2:   */ 
 /*  3:   */ public class tn
-/*  4:   */   extends tq
+/*  4:   */   extends PlayerStat
 /*  5:   */ {
 /*  6:   */   public tn(String paramString, ho paramho, tv paramtv)
 /*  7:   */   {
@@ -14,7 +14,7 @@ package net.minecraft.src;
 /* 13:11 */     super(paramString, paramho);
 /* 14:   */   }
 /* 15:   */   
-/* 16:   */   public tq h()
+/* 16:   */   public PlayerStat h()
 /* 17:   */   {
 /* 18:16 */     super.h();
 /* 19:   */     

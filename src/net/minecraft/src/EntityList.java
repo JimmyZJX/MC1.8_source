@@ -54,7 +54,7 @@ import org.apache.logging.log4j.LogManager;
 /*  53:    */     
 /*  54: 78 */     a(adl.class, "LeashKnot", 8);
 /*  55: 79 */     a(adm.class, "Painting", 9);
-/*  56: 80 */     a(ahj.class, "Arrow", 10);
+/*  56: 80 */     a(EntityArrow.class, "Arrow", 10);
 /*  57: 81 */     a(ahq.class, "Snowball", 11);
 /*  58: 82 */     a(ahn.class, "Fireball", 12);
 /*  59: 83 */     a(ahp.class, "SmallFireball", 13);

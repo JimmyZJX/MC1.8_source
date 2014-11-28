@@ -5,11 +5,11 @@ package net.minecraft.src;
 /*  5:   */ public class is
 /*  6:   */   implements id<ik>
 /*  7:   */ {
-/*  8:   */   private Map<tq,Integer> a;
+/*  8:   */   private Map<PlayerStat,Integer> a;
 /*  9:   */   
 /* 10:   */   public is() {}
 /* 11:   */   
-/* 12:   */   public is(Map<tq,Integer> paramMap)
+/* 12:   */   public is(Map<PlayerStat,Integer> paramMap)
 /* 13:   */   {
 /* 14:20 */     this.a = paramMap;
 /* 15:   */   }
@@ -25,7 +25,7 @@ package net.minecraft.src;
 /* 25:31 */     this.a = Maps.newHashMap();
 /* 26:33 */     for (int j = 0; j < i; j++)
 /* 27:   */     {
-/* 28:34 */       tq localtq = StatList.a(paramhd.c(32767));
+/* 28:34 */       PlayerStat localtq = StatList.a(paramhd.c(32767));
 /* 29:35 */       int k = paramhd.e();
 /* 30:37 */       if (localtq != null) {
 /* 31:38 */         this.a.put(localtq, Integer.valueOf(k));
@@ -36,14 +36,14 @@ package net.minecraft.src;
 /* 36:   */   public void toBuffer(ByteBufWrapper paramhd)
 /* 37:   */   {
 /* 38:45 */     paramhd.b(this.a.size());
-/* 39:47 */     for (Map.Entry<tq,Integer> localEntry : this.a.entrySet())
+/* 39:47 */     for (Map.Entry<PlayerStat,Integer> localEntry : this.a.entrySet())
 /* 40:   */     {
-/* 41:48 */       paramhd.a(((tq)localEntry.getKey()).e);
+/* 41:48 */       paramhd.a(((PlayerStat)localEntry.getKey()).e);
 /* 42:49 */       paramhd.b(((Integer)localEntry.getValue()).intValue());
 /* 43:   */     }
 /* 44:   */   }
 /* 45:   */   
-/* 46:   */   public Map<tq,Integer> a()
+/* 46:   */   public Map<PlayerStat,Integer> a()
 /* 47:   */   {
 /* 48:54 */     return this.a;
 /* 49:   */   }

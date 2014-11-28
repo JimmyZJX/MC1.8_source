@@ -21,7 +21,7 @@ package net.minecraft.src;
 /*  20:    */   
 /*  21:    */   public int a(Block parambec)
 /*  22:    */   {
-/*  23: 40 */     return ((Boolean)parambec.getProperty(a)).booleanValue() ? 1 : 0;
+/*  23: 40 */     return ((Boolean)parambec.getData(a)).booleanValue() ? 1 : 0;
 /*  24:    */   }
 /*  25:    */   
 /*  26:    */   public void c(World paramaqu, BlockPosition paramdt, Block parambec)
@@ -37,7 +37,7 @@ package net.minecraft.src;
 /*  36:    */   
 /*  37:    */   protected void e(World paramaqu, BlockPosition paramdt, Block parambec)
 /*  38:    */   {
-/*  39: 55 */     if ((!((Boolean)parambec.getProperty(a)).booleanValue()) && (d(paramaqu, paramdt)))
+/*  39: 55 */     if ((!((Boolean)parambec.getData(a)).booleanValue()) && (d(paramaqu, paramdt)))
 /*  40:    */     {
 /*  41: 57 */       paramaqu.setBlock(paramdt, parambec.setData(a, Boolean.valueOf(true)), 2);
 /*  42: 58 */       paramaqu.playLevelEvent(2001, paramdt, ProtoBlock.a(BlockList.water));
@@ -48,15 +48,15 @@ package net.minecraft.src;
 /*  47:    */   {
 /*  48: 63 */     LinkedList localLinkedList = Lists.newLinkedList();
 /*  49: 64 */     ArrayList localArrayList = Lists.newArrayList();
-/*  50: 65 */     localLinkedList.add(new vi(paramdt, Integer.valueOf(0)));
+/*  50: 65 */     localLinkedList.add(new Pair(paramdt, Integer.valueOf(0)));
 /*  51:    */     
 /*  52: 67 */     int i = 0;
 /*  53:    */     BlockPosition localdt1;
 /*  54: 68 */     while (!localLinkedList.isEmpty())
 /*  55:    */     {
-/*  56: 69 */       vi localObject = (vi)localLinkedList.poll();
-/*  57: 70 */       localdt1 = (BlockPosition)((vi)localObject).a();
-/*  58: 71 */       int j = ((Integer)((vi)localObject).b()).intValue();
+/*  56: 69 */       Pair localObject = (Pair)localLinkedList.poll();
+/*  57: 70 */       localdt1 = (BlockPosition)((Pair)localObject).a();
+/*  58: 71 */       int j = ((Integer)((Pair)localObject).b()).intValue();
 /*  59: 73 */       for (EnumDirection localej : EnumDirection.values())
 /*  60:    */       {
 /*  61: 74 */         BlockPosition localdt2 = localdt1.offset(localej);
@@ -66,7 +66,7 @@ package net.minecraft.src;
 /*  65: 77 */           localArrayList.add(localdt2);
 /*  66: 78 */           i++;
 /*  67: 79 */           if (j < 6) {
-/*  68: 80 */             localLinkedList.add(new vi(localdt2, Integer.valueOf(j + 1)));
+/*  68: 80 */             localLinkedList.add(new Pair(localdt2, Integer.valueOf(j + 1)));
 /*  69:    */           }
 /*  70:    */         }
 /*  71:    */       }
@@ -95,7 +95,7 @@ package net.minecraft.src;
 /*  94:    */   
 /*  95:    */   public int c(Block parambec)
 /*  96:    */   {
-/*  97:107 */     return ((Boolean)parambec.getProperty(a)).booleanValue() ? 1 : 0;
+/*  97:107 */     return ((Boolean)parambec.getData(a)).booleanValue() ? 1 : 0;
 /*  98:    */   }
 /*  99:    */   
 /* 100:    */   protected bed e()
@@ -105,7 +105,7 @@ package net.minecraft.src;
 /* 104:    */   
 /* 105:    */   public void c(World paramaqu, BlockPosition paramdt, Block parambec, Random paramRandom)
 /* 106:    */   {
-/* 107:117 */     if (!((Boolean)parambec.getProperty(a)).booleanValue()) {
+/* 107:117 */     if (!((Boolean)parambec.getData(a)).booleanValue()) {
 /* 108:118 */       return;
 /* 109:    */     }
 /* 110:121 */     EnumDirection localej = EnumDirection.a(paramRandom);

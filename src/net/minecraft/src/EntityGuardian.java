@@ -38,7 +38,7 @@ package net.minecraft.src;
 /*  37:    */     
 /*  38: 81 */     this.targetSelector.addGoal(1, new aaq(this, EntityLiving.class, 10, true, false, new afj(this)));
 /*  39:    */     
-/*  40: 83 */     this.f = new afk(this);
+/*  40: 83 */     this.moveManager = new afk(this);
 /*  41:    */     
 /*  42: 85 */     this.c = (this.b = this.rng.nextFloat());
 /*  43:    */   }
@@ -46,10 +46,10 @@ package net.minecraft.src;
 /*  45:    */   protected void aW()
 /*  46:    */   {
 /*  47: 90 */     super.aW();
-/*  48: 91 */     a(afs.e).a(6.0D);
-/*  49: 92 */     a(afs.d).a(0.5D);
-/*  50: 93 */     a(afs.b).a(16.0D);
-/*  51: 94 */     a(afs.a).a(30.0D);
+/*  48: 91 */     getAttribute(MobAttribute.attackDamage).a(6.0D);
+/*  49: 92 */     getAttribute(MobAttribute.movementSpeed).a(0.5D);
+/*  50: 93 */     getAttribute(MobAttribute.followRange).a(16.0D);
+/*  51: 94 */     getAttribute(MobAttribute.maxHealth).a(30.0D);
 /*  52:    */   }
 /*  53:    */   
 /*  54:    */   public void readEntityFromNBT(NBTTagCompound paramfn)
@@ -123,9 +123,9 @@ package net.minecraft.src;
 /* 122:159 */     if (paramBoolean)
 /* 123:    */     {
 /* 124:160 */       a(1.9975F, 1.9975F);
-/* 125:161 */       a(afs.d).a(0.300000011920929D);
-/* 126:162 */       a(afs.e).a(8.0D);
-/* 127:163 */       a(afs.a).a(80.0D);
+/* 125:161 */       getAttribute(MobAttribute.movementSpeed).a(0.300000011920929D);
+/* 126:162 */       getAttribute(MobAttribute.attackDamage).a(8.0D);
+/* 127:163 */       getAttribute(MobAttribute.maxHealth).a(80.0D);
 /* 128:164 */       setPersistent();
 /* 129:    */       
 /* 130:    */ 
@@ -193,7 +193,7 @@ package net.minecraft.src;
 /* 192:    */   
 /* 193:    */   protected String z()
 /* 194:    */   {
-/* 195:224 */     if (!V()) {
+/* 195:224 */     if (!isInWater()) {
 /* 196:225 */       return "mob.guardian.land.idle";
 /* 197:    */     }
 /* 198:227 */     if (cl()) {
@@ -204,7 +204,7 @@ package net.minecraft.src;
 /* 203:    */   
 /* 204:    */   protected String bn()
 /* 205:    */   {
-/* 206:235 */     if (!V()) {
+/* 206:235 */     if (!isInWater()) {
 /* 207:236 */       return "mob.guardian.land.hit";
 /* 208:    */     }
 /* 209:238 */     if (cl()) {
@@ -215,7 +215,7 @@ package net.minecraft.src;
 /* 214:    */   
 /* 215:    */   protected String bo()
 /* 216:    */   {
-/* 217:246 */     if (!V()) {
+/* 217:246 */     if (!isInWater()) {
 /* 218:247 */       return "mob.guardian.land.death";
 /* 219:    */     }
 /* 220:249 */     if (cl()) {
@@ -247,7 +247,7 @@ package net.minecraft.src;
 /* 246:275 */     if (this.world.isClient)
 /* 247:    */     {
 /* 248:277 */       this.c = this.b;
-/* 249:278 */       if (!V())
+/* 249:278 */       if (!isInWater())
 /* 250:    */       {
 /* 251:279 */         this.bk = 2.0F;
 /* 252:280 */         if ((this.yVelocity > 0.0D) && (this.bp) && (!R())) {
@@ -271,7 +271,7 @@ package net.minecraft.src;
 /* 270:    */       
 /* 271:    */ 
 /* 272:296 */       this.bm = this.bl;
-/* 273:297 */       if (!V()) {
+/* 273:297 */       if (!isInWater()) {
 /* 274:298 */         this.bl = this.rng.nextFloat();
 /* 275:299 */       } else if (n()) {
 /* 276:300 */         this.bl += (0.0F - this.bl) * 0.25F;
@@ -279,7 +279,7 @@ package net.minecraft.src;
 /* 278:302 */         this.bl += (1.0F - this.bl) * 0.06F;
 /* 279:    */       }
 /* 280:    */       Object localObject;
-/* 281:305 */       if ((n()) && (V()))
+/* 281:305 */       if ((n()) && (isInWater()))
 /* 282:    */       {
 /* 283:306 */         localObject = d(0.0F);
 /* 284:307 */         for (int i = 0; i < 2; i++) {
@@ -295,7 +295,7 @@ package net.minecraft.src;
 /* 294:317 */         if (localObject != null)
 /* 295:    */         {
 /* 296:318 */           p().a((Entity)localObject, 90.0F, 90.0F);
-/* 297:319 */           p().a();
+/* 297:319 */           p().tick();
 /* 298:    */           
 /* 299:321 */           double d1 = p(0.0F);
 /* 300:322 */           double d2 = ((EntityLiving)localObject).xPos - this.xPos;
@@ -314,7 +314,7 @@ package net.minecraft.src;
 /* 313:    */         }
 /* 314:    */       }
 /* 315:    */     }
-/* 316:338 */     if (this.Y)
+/* 316:338 */     if (this.inWater)
 /* 317:    */     {
 /* 318:339 */       h(300);
 /* 319:    */     }
@@ -417,12 +417,12 @@ package net.minecraft.src;
 /* 416:    */   
 /* 417:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /* 418:    */   {
-/* 419:455 */     if ((!n()) && (!paramwh.s()) && ((paramwh.i() instanceof EntityLiving)))
+/* 419:455 */     if ((!n()) && (!paramwh.s()) && ((paramwh.getEntity() instanceof EntityLiving)))
 /* 420:    */     {
-/* 421:456 */       EntityLiving localxm = (EntityLiving)paramwh.i();
+/* 421:456 */       EntityLiving localxm = (EntityLiving)paramwh.getEntity();
 /* 422:459 */       if (!paramwh.c())
 /* 423:    */       {
-/* 424:460 */         localxm.a(DamageSource.a(this), 2.0F);
+/* 424:460 */         localxm.a(DamageSource.fromMob(this), 2.0F);
 /* 425:461 */         localxm.a("damage.thorns", 0.5F, 1.0F);
 /* 426:    */       }
 /* 427:    */     }
@@ -439,10 +439,10 @@ package net.minecraft.src;
 /* 438:    */   {
 /* 439:475 */     if (bL())
 /* 440:    */     {
-/* 441:476 */       if (V())
+/* 441:476 */       if (isInWater())
 /* 442:    */       {
 /* 443:477 */         a(paramFloat1, paramFloat2, 0.1F);
-/* 444:478 */         d(this.xVelocity, this.yVelocity, this.zVelocity);
+/* 444:478 */         move(this.xVelocity, this.yVelocity, this.zVelocity);
 /* 445:    */         
 /* 446:480 */         this.xVelocity *= 0.8999999761581421D;
 /* 447:481 */         this.yVelocity *= 0.8999999761581421D;

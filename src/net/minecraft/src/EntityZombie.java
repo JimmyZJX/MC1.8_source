@@ -18,7 +18,7 @@ package net.minecraft.src;
 /*  18: 63 */     super(paramaqu);
 /*  19:    */     
 /*  20: 65 */     ((aay)getNavigator()).b(true);
-/*  21: 66 */     this.goalSelector.addGoal(0, new yy(this));
+/*  21: 66 */     this.goalSelector.addGoal(0, new GoalSwim(this));
 /*  22: 67 */     this.goalSelector.addGoal(2, new zk(this, EntityPlayer.class, 1.0D, false));
 /*  23: 68 */     this.goalSelector.addGoal(2, this.a);
 /*  24: 69 */     this.goalSelector.addGoal(5, new zo(this, 1.0D));
@@ -47,9 +47,9 @@ package net.minecraft.src;
 /*  47:    */   {
 /*  48: 95 */     super.aW();
 /*  49:    */     
-/*  50: 97 */     a(afs.b).a(35.0D);
-/*  51: 98 */     a(afs.d).a(0.2300000041723251D);
-/*  52: 99 */     a(afs.e).a(3.0D);
+/*  50: 97 */     getAttribute(MobAttribute.followRange).a(35.0D);
+/*  51: 98 */     getAttribute(MobAttribute.movementSpeed).a(0.2300000041723251D);
+/*  52: 99 */     getAttribute(MobAttribute.attackDamage).a(3.0D);
 /*  53:    */     
 /*  54:101 */     bx().b(b).a(this.rng.nextDouble() * 0.1000000014901161D);
 /*  55:    */   }
@@ -63,9 +63,9 @@ package net.minecraft.src;
 /*  63:110 */     H().a(14, Byte.valueOf((byte)0));
 /*  64:    */   }
 /*  65:    */   
-/*  66:    */   public int bq()
+/*  66:    */   public int getArmorValue()
 /*  67:    */   {
-/*  68:115 */     int i = super.bq() + 2;
+/*  68:115 */     int i = super.getArmorValue() + 2;
 /*  69:116 */     if (i > 20) {
 /*  70:117 */       i = 20;
 /*  71:    */     }
@@ -108,7 +108,7 @@ package net.minecraft.src;
 /* 108:153 */     H().b(12, Byte.valueOf((byte)(paramBoolean ? 1 : 0)));
 /* 109:155 */     if ((this.world != null) && (!this.world.isClient))
 /* 110:    */     {
-/* 111:156 */       xz localxz = a(afs.d);
+/* 111:156 */       xz localxz = getAttribute(MobAttribute.movementSpeed);
 /* 112:157 */       localxz.c(bk);
 /* 113:158 */       if (paramBoolean) {
 /* 114:159 */         localxz.b(bk);
@@ -167,10 +167,10 @@ package net.minecraft.src;
 /* 167:208 */     if (super.a(paramwh, paramFloat))
 /* 168:    */     {
 /* 169:209 */       EntityLiving localxm = u();
-/* 170:210 */       if ((localxm == null) && ((paramwh.j() instanceof EntityLiving))) {
-/* 171:211 */         localxm = (EntityLiving)paramwh.j();
+/* 170:210 */       if ((localxm == null) && ((paramwh.getAttacker() instanceof EntityLiving))) {
+/* 171:211 */         localxm = (EntityLiving)paramwh.getAttacker();
 /* 172:    */       }
-/* 173:214 */       if ((localxm != null) && (this.world.getDifficulty() == EnumDifficulty.HARD) && (this.rng.nextFloat() < a(b).e()))
+/* 173:214 */       if ((localxm != null) && (this.world.getDifficulty() == EnumDifficulty.HARD) && (this.rng.nextFloat() < getAttribute(b).e()))
 /* 174:    */       {
 /* 175:215 */         int i = MathUtils.floor(this.xPos);
 /* 176:216 */         int j = MathUtils.floor(this.yPos);
@@ -190,8 +190,8 @@ package net.minecraft.src;
 /* 190:230 */               localagj.d(localxm);
 /* 191:231 */               localagj.beforeSpawn(this.world.E(new BlockPosition(localagj)), null);
 /* 192:    */               
-/* 193:233 */               a(b).b(new ya("Zombie reinforcement caller charge", -0.0500000007450581D, 0));
-/* 194:234 */               localagj.a(b).b(new ya("Zombie reinforcement callee charge", -0.0500000007450581D, 0));
+/* 193:233 */               getAttribute(b).b(new ya("Zombie reinforcement caller charge", -0.0500000007450581D, 0));
+/* 194:234 */               localagj.getAttribute(b).b(new ya("Zombie reinforcement callee charge", -0.0500000007450581D, 0));
 /* 195:235 */               break;
 /* 196:    */             }
 /* 197:    */           }
@@ -251,7 +251,7 @@ package net.minecraft.src;
 /* 251:    */   
 /* 252:    */   protected Item A()
 /* 253:    */   {
-/* 254:298 */     return ItemList.bt;
+/* 254:298 */     return ItemList.rottenFlesh;
 /* 255:    */   }
 /* 256:    */   
 /* 257:    */   public xs by()
@@ -281,9 +281,9 @@ package net.minecraft.src;
 /* 281:    */     {
 /* 282:326 */       int i = this.rng.nextInt(3);
 /* 283:327 */       if (i == 0) {
-/* 284:328 */         setItemStack(0, new ItemStack(ItemList.l));
+/* 284:328 */         setItemStack(0, new ItemStack(ItemList.ironSword));
 /* 285:    */       } else {
-/* 286:330 */         setItemStack(0, new ItemStack(ItemList.a));
+/* 286:330 */         setItemStack(0, new ItemStack(ItemList.ironShovel));
 /* 287:    */       }
 /* 288:    */     }
 /* 289:    */   }
@@ -409,15 +409,15 @@ package net.minecraft.src;
 /* 409:458 */         this.dropChances[4] = 0.0F;
 /* 410:    */       }
 /* 411:    */     }
-/* 412:462 */     a(afs.c).b(new ya("Random spawn bonus", this.rng.nextDouble() * 0.0500000007450581D, 0));
+/* 412:462 */     getAttribute(MobAttribute.knockbackResistance).b(new ya("Random spawn bonus", this.rng.nextDouble() * 0.0500000007450581D, 0));
 /* 413:463 */     double d = this.rng.nextDouble() * 1.5D * f;
 /* 414:464 */     if (d > 1.0D) {
-/* 415:465 */       a(afs.b).b(new ya("Random zombie-spawn bonus", d, 2));
+/* 415:465 */       getAttribute(MobAttribute.followRange).b(new ya("Random zombie-spawn bonus", d, 2));
 /* 416:    */     }
 /* 417:468 */     if (this.rng.nextFloat() < f * 0.05F)
 /* 418:    */     {
-/* 419:469 */       a(b).b(new ya("Leader zombie bonus", this.rng.nextDouble() * 0.25D + 0.5D, 0));
-/* 420:470 */       a(afs.a).b(new ya("Leader zombie bonus", this.rng.nextDouble() * 3.0D + 1.0D, 2));
+/* 419:469 */       getAttribute(b).b(new ya("Leader zombie bonus", this.rng.nextDouble() * 0.25D + 0.5D, 0));
+/* 420:470 */       getAttribute(MobAttribute.maxHealth).b(new ya("Leader zombie bonus", this.rng.nextDouble() * 3.0D + 1.0D, 2));
 /* 421:471 */       a(true);
 /* 422:    */     }
 /* 423:474 */     return paramxq;
@@ -428,7 +428,7 @@ package net.minecraft.src;
 /* 428:479 */     ItemStack localamj = paramahd.bY();
 /* 429:481 */     if ((localamj != null) && (localamj.getItem() == ItemList.ao) && (localamj.getDamage2() == 0) && (cm()) && (a(Potion.weakness)))
 /* 430:    */     {
-/* 431:482 */       if (!paramahd.by.d) {
+/* 431:482 */       if (!paramahd.abilities.instabuild) {
 /* 432:483 */         localamj.stackSize -= 1;
 /* 433:    */       }
 /* 434:485 */       if (localamj.stackSize <= 0) {
@@ -549,10 +549,10 @@ package net.minecraft.src;
 /* 549:    */   public void a(DamageSource paramwh)
 /* 550:    */   {
 /* 551:608 */     super.a(paramwh);
-/* 552:610 */     if (((paramwh.j() instanceof EntityCreeper)) && (!(this instanceof EntityZombiePigman)) && 
-/* 553:611 */       (((EntityCreeper)paramwh.j()).n()) && (((EntityCreeper)paramwh.j()).cn()))
+/* 552:610 */     if (((paramwh.getAttacker() instanceof EntityCreeper)) && (!(this instanceof EntityZombiePigman)) && 
+/* 553:611 */       (((EntityCreeper)paramwh.getAttacker()).n()) && (((EntityCreeper)paramwh.getAttacker()).cn()))
 /* 554:    */     {
-/* 555:612 */       ((EntityCreeper)paramwh.j()).co();
+/* 555:612 */       ((EntityCreeper)paramwh.getAttacker()).co();
 /* 556:613 */       throwItem(new ItemStack(ItemList.skull, 1, 2), 0.0F);
 /* 557:    */     }
 /* 558:    */   }

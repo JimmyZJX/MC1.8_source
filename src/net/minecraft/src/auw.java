@@ -28,13 +28,13 @@ package net.minecraft.src;
 /* 27:   */   
 /* 28:   */   public void a(World paramaqu, EntityPlayer paramahd, BlockPosition paramdt, Block parambec, bcm parambcm)
 /* 29:   */   {
-/* 30:42 */     if ((paramaqu.isClient) || (paramahd.bY() == null) || (paramahd.bY().getItem() != ItemList.be))
+/* 30:42 */     if ((paramaqu.isClient) || (paramahd.bY() == null) || (paramahd.bY().getItem() != ItemList.shears))
 /* 31:   */     {
 /* 32:43 */       super.a(paramaqu, paramahd, paramdt, parambec, parambcm);
 /* 33:   */     }
 /* 34:   */     else
 /* 35:   */     {
-/* 36:45 */       paramahd.b(StatList.H[ProtoBlock.a(this)]);
+/* 36:45 */       paramahd.increaseStat(StatList.H[ProtoBlock.a(this)]);
 /* 37:   */       
 /* 38:47 */       a(paramaqu, paramdt, new ItemStack(BlockList.deadbush, 1, 0));
 /* 39:   */     }

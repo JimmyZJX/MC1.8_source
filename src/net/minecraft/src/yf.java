@@ -1,5 +1,4 @@
 package net.minecraft.src;
-/*  1:   */ import com.google.common.collect.Multimap;
 /*  2:   */ import com.google.common.collect.Sets;
 /*  3:   */ import java.util.Collection;
 /*  4:   */ import java.util.HashSet;
@@ -9,8 +8,8 @@ package net.minecraft.src;
 /*  8:   */ public class yf
 /*  9:   */   extends yc
 /* 10:   */ {
-/* 11:11 */   private final Set e = Sets.newHashSet();
-/* 12:12 */   protected final Map d = new ul();
+/* 11:11 */   private final Set<xz> e = Sets.newHashSet();
+/* 12:12 */   protected final Map<String,xz> d = new StringLinkedHashMap<xz>();
 /* 13:   */   
 /* 14:   */   public ye e(xy paramxy)
 /* 15:   */   {
@@ -54,14 +53,14 @@ package net.minecraft.src;
 /* 53:   */     }
 /* 54:   */   }
 /* 55:   */   
-/* 56:   */   public Set b()
+/* 56:   */   public Set<xz> b()
 /* 57:   */   {
 /* 58:59 */     return this.e;
 /* 59:   */   }
 /* 60:   */   
-/* 61:   */   public Collection c()
+/* 61:   */   public Collection<xz> c()
 /* 62:   */   {
-/* 63:63 */     HashSet localHashSet = Sets.newHashSet();
+/* 63:63 */     HashSet<xz> localHashSet = Sets.newHashSet();
 /* 64:65 */     for (xz localxz : a()) {
 /* 65:66 */       if (localxz.a().c()) {
 /* 66:67 */         localHashSet.add(localxz);

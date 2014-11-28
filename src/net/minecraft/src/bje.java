@@ -58,7 +58,7 @@ package net.minecraft.src;
 /*  57: 78 */     return localbms;
 /*  58:    */   }
 /*  59:    */   
-/*  60:697 */   private static final List<vl> a = Lists.newArrayList(new vl[] { new vl(ItemList.ironIngot, 0, 1, 5, 10), new vl(ItemList.goldIngot, 0, 1, 3, 5), new vl(ItemList.aC, 0, 4, 9, 5), new vl(ItemList.dye, EnumDyeColor.BLUE.b(), 4, 9, 5), new vl(ItemList.diamond, 0, 1, 2, 3), new vl(ItemList.h, 0, 3, 8, 10), new vl(ItemList.bread, 0, 1, 3, 15), new vl(ItemList.b, 0, 1, 1, 1), new vl(Item.fromProtoBlock(BlockList.av), 0, 4, 8, 1), new vl(ItemList.bh, 0, 2, 4, 10), new vl(ItemList.bg, 0, 2, 4, 10), new vl(ItemList.saddle, 0, 1, 1, 3), new vl(ItemList.ck, 0, 1, 1, 1) });
+/*  60:697 */   private static final List<vl> a = Lists.newArrayList(new vl[] { new vl(ItemList.ironIngot, 0, 1, 5, 10), new vl(ItemList.goldIngot, 0, 1, 3, 5), new vl(ItemList.redstone, 0, 4, 9, 5), new vl(ItemList.dye, EnumDyeColor.BLUE.b(), 4, 9, 5), new vl(ItemList.diamond, 0, 1, 2, 3), new vl(ItemList.coal, 0, 3, 8, 10), new vl(ItemList.bread, 0, 1, 3, 15), new vl(ItemList.ironPickaxe, 0, 1, 1, 1), new vl(Item.fromProtoBlock(BlockList.av), 0, 4, 8, 1), new vl(ItemList.bh, 0, 2, 4, 10), new vl(ItemList.bg, 0, 2, 4, 10), new vl(ItemList.saddle, 0, 1, 1, 3), new vl(ItemList.ck, 0, 1, 1, 1) });
 				static bms a(bms arg0, List<bms> arg1, java.util.Random arg2, int arg3, int arg4, int arg5, EnumDirection arg6, int arg7) {return b(arg0,arg1,arg2,arg3,arg4,arg5,arg6,arg7);}
 				static List<vl> b() {return a;}
 /*  61:    */ }

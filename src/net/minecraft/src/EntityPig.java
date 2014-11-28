@@ -11,7 +11,7 @@ package net.minecraft.src;
 /*  11: 25 */     a(0.9F, 0.9F);
 /*  12:    */     
 /*  13: 27 */     ((aay)getNavigator()).a(true);
-/*  14: 28 */     this.goalSelector.addGoal(0, new yy(this));
+/*  14: 28 */     this.goalSelector.addGoal(0, new GoalSwim(this));
 /*  15: 29 */     this.goalSelector.addGoal(1, new zu(this, 1.25D));
 /*  16: 30 */     this.goalSelector.addGoal(2, this.bk = new yu(this, 0.3F));
 /*  17: 31 */     this.goalSelector.addGoal(3, new yt(this, 1.0D));
@@ -27,8 +27,8 @@ package net.minecraft.src;
 /*  27:    */   {
 /*  28: 42 */     super.aW();
 /*  29:    */     
-/*  30: 44 */     a(afs.a).a(10.0D);
-/*  31: 45 */     a(afs.d).a(0.25D);
+/*  30: 44 */     getAttribute(MobAttribute.maxHealth).a(10.0D);
+/*  31: 45 */     getAttribute(MobAttribute.movementSpeed).a(0.25D);
 /*  32:    */   }
 /*  33:    */   
 /*  34:    */   public boolean bV()
@@ -93,9 +93,9 @@ package net.minecraft.src;
 /*  93:    */   protected Item A()
 /*  94:    */   {
 /*  95:107 */     if (au()) {
-/*  96:108 */       return ItemList.am;
+/*  96:108 */       return ItemList.cookedPorkchop;
 /*  97:    */     }
-/*  98:110 */     return ItemList.al;
+/*  98:110 */     return ItemList.porkchop;
 /*  99:    */   }
 /* 100:    */   
 /* 101:    */   protected void b(boolean paramBoolean, int paramInt)
@@ -103,9 +103,9 @@ package net.minecraft.src;
 /* 103:115 */     int i = this.rng.nextInt(3) + 1 + this.rng.nextInt(1 + paramInt);
 /* 104:117 */     for (int j = 0; j < i; j++) {
 /* 105:118 */       if (au()) {
-/* 106:119 */         a(ItemList.am, 1);
+/* 106:119 */         a(ItemList.cookedPorkchop, 1);
 /* 107:    */       } else {
-/* 108:121 */         a(ItemList.al, 1);
+/* 108:121 */         a(ItemList.porkchop, 1);
 /* 109:    */       }
 /* 110:    */     }
 /* 111:125 */     if (cj()) {
@@ -143,7 +143,7 @@ package net.minecraft.src;
 /* 143:    */   {
 /* 144:157 */     super.e(paramFloat1, paramFloat2);
 /* 145:159 */     if ((paramFloat1 > 5.0F) && ((this.rider instanceof EntityPlayer))) {
-/* 146:160 */       ((EntityPlayer)this.rider).b(AchievementList.u);
+/* 146:160 */       ((EntityPlayer)this.rider).increaseStat(AchievementList.u);
 /* 147:    */     }
 /* 148:    */   }
 /* 149:    */   

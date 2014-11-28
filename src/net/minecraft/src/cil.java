@@ -14,7 +14,7 @@ package net.minecraft.src;
 /*  13:    */   public boolean v()
 /*  14:    */   {
 /*  15: 45 */     ces localces = bsu.z().t().a(cc().getId());
-/*  16: 46 */     return (localces != null) && (localces.b() == EnumGameType.e);
+/*  16: 46 */     return (localces != null) && (localces.b() == EnumGameMode.SPECTATOR);
 /*  17:    */   }
 /*  18:    */   
 /*  19:    */   public boolean a()
@@ -75,12 +75,12 @@ package net.minecraft.src;
 /*  74:    */   public float o()
 /*  75:    */   {
 /*  76:103 */     float f1 = 1.0F;
-/*  77:106 */     if (this.by.b) {
+/*  77:106 */     if (this.abilities.flying) {
 /*  78:107 */       f1 *= 1.1F;
 /*  79:    */     }
-/*  80:109 */     xz localxz = a(afs.d);
-/*  81:110 */     f1 = (float)(f1 * ((localxz.e() / this.by.b() + 1.0D) / 2.0D));
-/*  82:112 */     if ((this.by.b() == 0.0F) || (Float.isNaN(f1)) || (Float.isInfinite(f1))) {
+/*  80:109 */     xz localxz = getAttribute(MobAttribute.movementSpeed);
+/*  81:110 */     f1 = (float)(f1 * ((localxz.e() / this.abilities.getWalkSpeed() + 1.0D) / 2.0D));
+/*  82:112 */     if ((this.abilities.getWalkSpeed() == 0.0F) || (Float.isNaN(f1)) || (Float.isInfinite(f1))) {
 /*  83:113 */       f1 = 1.0F;
 /*  84:    */     }
 /*  85:117 */     if ((bR()) && (bP().getItem() == ItemList.bow))

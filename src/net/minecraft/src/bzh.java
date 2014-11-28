@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*  5:   */   private vq v;
 /*  6:   */   private vq w;
 /*  7:   */   
-/*  8:   */   public bzh(ahb paramahb, vq paramvq)
+/*  8:   */   public bzh(Inventory paramahb, vq paramvq)
 /*  9:   */   {
 /* 10:16 */     super(new aix(paramahb, paramvq, bsu.z().h));
 /* 11:17 */     this.v = paramahb;

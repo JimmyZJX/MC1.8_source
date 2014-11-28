@@ -14,7 +14,7 @@ package net.minecraft.src;
 /*  14:    */   
 /*  15:    */   public boolean a(World paramaqu, BlockPosition paramdt, Block parambec, EntityPlayer paramahd, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3)
 /*  16:    */   {
-/*  17: 67 */     if (((Boolean)parambec.getProperty(a)).booleanValue())
+/*  17: 67 */     if (((Boolean)parambec.getData(a)).booleanValue())
 /*  18:    */     {
 /*  19: 68 */       e(paramaqu, paramdt, parambec);
 /*  20:    */       
@@ -117,7 +117,7 @@ package net.minecraft.src;
 /* 117:    */   
 /* 118:    */   public int c(Block parambec)
 /* 119:    */   {
-/* 120:178 */     return ((Boolean)parambec.getProperty(a)).booleanValue() ? 1 : 0;
+/* 120:178 */     return ((Boolean)parambec.getData(a)).booleanValue() ? 1 : 0;
 /* 121:    */   }
 /* 122:    */   
 /* 123:    */   protected bed e()

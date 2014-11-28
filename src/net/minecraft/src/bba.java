@@ -16,7 +16,7 @@ package net.minecraft.src;
 /* 15:   */   
 /* 16:   */   public Item a(Block parambec, Random paramRandom, int paramInt)
 /* 17:   */   {
-/* 18:28 */     if (parambec.getProperty(a) == EnumStoneVariants.STONE) {
+/* 18:28 */     if (parambec.getData(a) == EnumStoneVariants.STONE) {
 /* 19:29 */       return Item.fromProtoBlock(BlockList.cobblestone);
 /* 20:   */     }
 /* 21:31 */     return Item.fromProtoBlock(BlockList.stone);
@@ -24,7 +24,7 @@ package net.minecraft.src;
 /* 23:   */   
 /* 24:   */   public int a(Block parambec)
 /* 25:   */   {
-/* 26:36 */     return ((EnumStoneVariants)parambec.getProperty(a)).a();
+/* 26:36 */     return ((EnumStoneVariants)parambec.getData(a)).a();
 /* 27:   */   }
 /* 28:   */   
 /* 29:   */   public void a(Item paramalq, CreativeTabs paramakf, List<ItemStack> paramList)
@@ -41,7 +41,7 @@ package net.minecraft.src;
 /* 40:   */   
 /* 41:   */   public int c(Block parambec)
 /* 42:   */   {
-/* 43:54 */     return ((EnumStoneVariants)parambec.getProperty(a)).a();
+/* 43:54 */     return ((EnumStoneVariants)parambec.getData(a)).a();
 /* 44:   */   }
 /* 45:   */   
 /* 46:   */   protected bed e()

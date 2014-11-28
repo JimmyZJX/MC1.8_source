@@ -13,8 +13,8 @@ package net.minecraft.src;
 /*  10:457 */     int i = Item.b(paramto1.a());
 /*  11:458 */     int j = Item.b(paramto2.a());
 /*  12:    */     
-/*  13:460 */     tq localtq1 = null;
-/*  14:461 */     tq localtq2 = null;
+/*  13:460 */     PlayerStat localtq1 = null;
+/*  14:461 */     PlayerStat localtq2 = null;
 /*  15:462 */     if (this.b.y == 0)
 /*  16:    */     {
 /*  17:463 */       localtq1 = StatList.K[i];

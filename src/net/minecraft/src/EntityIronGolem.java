@@ -58,8 +58,8 @@ package net.minecraft.src;
 /*  58:    */   {
 /*  59: 83 */     super.aW();
 /*  60:    */     
-/*  61: 85 */     a(afs.a).a(100.0D);
-/*  62: 86 */     a(afs.d).a(0.25D);
+/*  61: 85 */     getAttribute(MobAttribute.maxHealth).a(100.0D);
+/*  62: 86 */     getAttribute(MobAttribute.movementSpeed).a(0.25D);
 /*  63:    */   }
 /*  64:    */   
 /*  65:    */   protected int j(int paramInt)
@@ -122,7 +122,7 @@ package net.minecraft.src;
 /* 122:    */   {
 /* 123:150 */     this.c = 10;
 /* 124:151 */     this.world.sendSignal(this, (byte)4);
-/* 125:152 */     boolean bool = paramwv.a(DamageSource.a(this), 7 + this.rng.nextInt(15));
+/* 125:152 */     boolean bool = paramwv.a(DamageSource.fromMob(this), 7 + this.rng.nextInt(15));
 /* 126:153 */     if (bool)
 /* 127:    */     {
 /* 128:154 */       paramwv.yVelocity += 0.4000000059604645D;

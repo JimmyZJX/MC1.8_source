@@ -51,7 +51,7 @@ package net.minecraft.src;
 /*  50: 88 */     this.c = paramqx;
 /*  51:    */     
 /*  52: 90 */     BlockPosition localdt = paramqt.getWorldSpawn();
-/*  53: 92 */     if ((!paramqt.t.o()) && (paramqt.getWorldInfo().r() != EnumGameType.d))
+/*  53: 92 */     if ((!paramqt.t.o()) && (paramqt.getWorldInfo().r() != EnumGameMode.ADVENTURE))
 /*  54:    */     {
 /*  55: 93 */       int j = Math.max(5, paramMinecraftServer.au() - 6);
 /*  56: 94 */       int k = MathUtils.floor(paramqt.af().b(localdt.getX(), localdt.getZ()));
@@ -80,7 +80,7 @@ package net.minecraft.src;
 /*  79:119 */       if (MinecraftServer.M().av()) {
 /*  80:120 */         this.c.a(MinecraftServer.M().m());
 /*  81:    */       } else {
-/*  82:122 */         this.c.a(EnumGameType.a(paramfn.getInteger("playerGameType")));
+/*  82:122 */         this.c.a(EnumGameMode.a(paramfn.getInteger("playerGameType")));
 /*  83:    */       }
 /*  84:    */     }
 /*  85:    */   }
@@ -279,7 +279,7 @@ package net.minecraft.src;
 /* 278:    */   {
 /* 279:299 */     arm localarm1 = this.world.b(new BlockPosition(MathUtils.floor(this.xPos), 0, MathUtils.floor(this.zPos)));
 /* 280:300 */     String str1 = localarm1.ah;
-/* 281:301 */     ua localua = (ua)A().b((tq)AchievementList.L);
+/* 281:301 */     ua localua = (ua)A().b((PlayerStat)AchievementList.L);
 /* 282:303 */     if (localua == null) {
 /* 283:304 */       localua = (ua)A().a(AchievementList.L, new ua());
 /* 284:    */     }
@@ -302,7 +302,7 @@ package net.minecraft.src;
 /* 301:    */         }
 /* 302:    */       }
 /* 303:326 */       if (localHashSet.isEmpty()) {
-/* 304:327 */         b(AchievementList.L);
+/* 304:327 */         increaseStat(AchievementList.L);
 /* 305:    */       }
 /* 306:    */     }
 /* 307:    */   }
@@ -336,11 +336,11 @@ package net.minecraft.src;
 /* 335:    */     {
 /* 336:357 */       localObject3 = (xc)EntityList.entityEggs.get(Integer.valueOf(EntityList.a((Entity)localObject2)));
 /* 337:358 */       if (localObject3 != null) {
-/* 338:359 */         b(((xc)localObject3).e);
+/* 338:359 */         increaseStat(((xc)localObject3).e);
 /* 339:    */       }
 /* 340:361 */       ((EntityLiving)localObject2).b(this, this.aU);
 /* 341:    */     }
-/* 342:363 */     b(StatList.y);
+/* 342:363 */     increaseStat(StatList.y);
 /* 343:364 */     a(StatList.h);
 /* 344:    */     
 /* 345:366 */     br().g();
@@ -348,22 +348,22 @@ package net.minecraft.src;
 /* 347:    */   
 /* 348:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /* 349:    */   {
-/* 350:371 */     if (b(paramwh)) {
+/* 350:371 */     if (isImmuneTo(paramwh)) {
 /* 351:372 */       return false;
 /* 352:    */     }
 /* 353:375 */     int j = (this.b.ad()) && (cq()) && ("fall".equals(paramwh.p)) ? 1 : 0;
-/* 354:376 */     if ((j == 0) && (this.bO > 0) && (paramwh != DamageSource.j)) {
+/* 354:376 */     if ((j == 0) && (this.bO > 0) && (paramwh != DamageSource.outOfWorld)) {
 /* 355:377 */       return false;
 /* 356:    */     }
-/* 357:380 */     if ((paramwh instanceof wi))
+/* 357:380 */     if ((paramwh instanceof DamageSourceEntity))
 /* 358:    */     {
-/* 359:381 */       Entity localwv = paramwh.j();
+/* 359:381 */       Entity localwv = paramwh.getAttacker();
 /* 360:383 */       if (((localwv instanceof EntityPlayer)) && (!a((EntityPlayer)localwv))) {
 /* 361:384 */         return false;
 /* 362:    */       }
-/* 363:386 */       if ((localwv instanceof ahj))
+/* 363:386 */       if ((localwv instanceof EntityArrow))
 /* 364:    */       {
-/* 365:387 */         ahj localahj = (ahj)localwv;
+/* 365:387 */         EntityArrow localahj = (EntityArrow)localwv;
 /* 366:388 */         if (((localahj.c instanceof EntityPlayer)) && (!a((EntityPlayer)localahj.c))) {
 /* 367:389 */           return false;
 /* 368:    */         }
@@ -389,7 +389,7 @@ package net.minecraft.src;
 /* 388:    */   {
 /* 389:410 */     if ((this.dimension == 1) && (paramInt == 1))
 /* 390:    */     {
-/* 391:411 */       b(AchievementList.D);
+/* 391:411 */       increaseStat(AchievementList.D);
 /* 392:412 */       this.world.setEntityDead(this);
 /* 393:413 */       this.i = true;
 /* 394:414 */       this.a.a(new jo(4, 0.0F));
@@ -398,7 +398,7 @@ package net.minecraft.src;
 /* 397:    */     {
 /* 398:416 */       if ((this.dimension == 0) && (paramInt == 1))
 /* 399:    */       {
-/* 400:417 */         b(AchievementList.C);
+/* 400:417 */         increaseStat(AchievementList.C);
 /* 401:418 */         BlockPosition localdt = this.b.a(paramInt).m();
 /* 402:419 */         if (localdt != null) {
 /* 403:420 */           this.a.a(localdt.getX(), localdt.getY(), localdt.getZ(), 0.0F, 0.0F);
@@ -407,7 +407,7 @@ package net.minecraft.src;
 /* 406:    */       }
 /* 407:    */       else
 /* 408:    */       {
-/* 409:425 */         b(AchievementList.y);
+/* 409:425 */         increaseStat(AchievementList.y);
 /* 410:    */       }
 /* 411:428 */       this.b.an().a(this, paramInt);
 /* 412:429 */       this.bN = -1;
@@ -563,7 +563,7 @@ package net.minecraft.src;
 /* 562:581 */     ho localho = paramaqb.e_();
 /* 563:582 */     this.a.a(new je(this.bT, "minecraft:villager", localho, localaje.getSize()));
 /* 564:    */     
-/* 565:584 */     aqd localaqd = paramaqb.b_(this);
+/* 565:584 */     TradeOfferList localaqd = paramaqb.b_(this);
 /* 566:585 */     if (localaqd != null)
 /* 567:    */     {
 /* 568:586 */       ByteBufWrapper localhd = new ByteBufWrapper(Unpooled.buffer());
@@ -590,7 +590,7 @@ package net.minecraft.src;
 /* 589:    */   public void a(ItemStack paramamj)
 /* 590:    */   {
 /* 591:609 */     Item localalq = paramamj.getItem();
-/* 592:611 */     if (localalq == ItemList.bN) {
+/* 592:611 */     if (localalq == ItemList.writtenBook) {
 /* 593:612 */       this.a.a(new ji("MC|BOpen", new ByteBufWrapper(Unpooled.buffer())));
 /* 594:    */     }
 /* 595:    */   }
@@ -659,12 +659,12 @@ package net.minecraft.src;
 /* 658:682 */       if ((paramFloat2 >= -1.0F) && (paramFloat2 <= 1.0F)) {
 /* 659:683 */         this.aY = paramFloat2;
 /* 660:    */       }
-/* 661:685 */       this.aW = paramBoolean1;
+/* 661:685 */       this.jumping = paramBoolean1;
 /* 662:686 */       c(paramBoolean2);
 /* 663:    */     }
 /* 664:    */   }
 /* 665:    */   
-/* 666:    */   public void a(tq paramtq, int paramInt)
+/* 666:    */   public void increaseStat(PlayerStat paramtq, int paramInt)
 /* 667:    */   {
 /* 668:692 */     if (paramtq == null) {
 /* 669:693 */       return;
@@ -678,7 +678,7 @@ package net.minecraft.src;
 /* 677:    */     }
 /* 678:    */   }
 /* 679:    */   
-/* 680:    */   public void a(tq paramtq)
+/* 680:    */   public void a(PlayerStat paramtq)
 /* 681:    */   {
 /* 682:709 */     if (paramtq == null) {
 /* 683:710 */       return;
@@ -773,7 +773,7 @@ package net.minecraft.src;
 /* 772:801 */     if (this.a == null) {
 /* 773:802 */       return;
 /* 774:    */     }
-/* 775:804 */     this.a.a(new kd(this.by));
+/* 775:804 */     this.a.a(new kd(this.abilities));
 /* 776:805 */     B();
 /* 777:    */   }
 /* 778:    */   
@@ -782,11 +782,11 @@ package net.minecraft.src;
 /* 781:809 */     return (WorldServer)this.world;
 /* 782:    */   }
 /* 783:    */   
-/* 784:    */   public void a(EnumGameType paramarc)
+/* 784:    */   public void a(EnumGameMode paramarc)
 /* 785:    */   {
 /* 786:814 */     this.c.a(paramarc);
 /* 787:815 */     this.a.a(new jo(3, paramarc.a()));
-/* 788:817 */     if (paramarc == EnumGameType.e) {
+/* 788:817 */     if (paramarc == EnumGameMode.SPECTATOR) {
 /* 789:818 */       mount((Entity)null);
 /* 790:    */     } else {
 /* 791:820 */       e(this);
@@ -797,7 +797,7 @@ package net.minecraft.src;
 /* 796:    */   
 /* 797:    */   public boolean v()
 /* 798:    */   {
-/* 799:829 */     return this.c.b() == EnumGameType.e;
+/* 799:829 */     return this.c.b() == EnumGameMode.SPECTATOR;
 /* 800:    */   }
 /* 801:    */   
 /* 802:    */   public void a(ho paramho)
@@ -908,7 +908,7 @@ package net.minecraft.src;
 /* 907:    */   
 /* 908:    */   public void f(Entity paramwv)
 /* 909:    */   {
-/* 910:932 */     if (this.c.b() == EnumGameType.e) {
+/* 910:932 */     if (this.c.b() == EnumGameMode.SPECTATOR) {
 /* 911:933 */       e(paramwv);
 /* 912:    */     } else {
 /* 913:935 */       super.f(paramwv);

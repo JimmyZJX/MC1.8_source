@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*  4:   */ public class avq
 /*  5:   */   extends ProtoBlock
 /*  6:   */ {
-/*  7:22 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", en.HORIZONTAL);
+/*  7:22 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", EnumHorizontalVertical.HORIZONTAL);
 /*  8:23 */   public static final BlockDataBoolean b = BlockDataBoolean.getInstance("eye");
 /*  9:   */   
 /* 10:   */   public avq()
@@ -28,7 +28,7 @@ package net.minecraft.src;
 /* 27:   */   {
 /* 28:42 */     a(0.0F, 0.0F, 0.0F, 1.0F, 0.8125F, 1.0F);
 /* 29:43 */     super.a(paramaqu, paramdt, parambec, parambrt, paramList, paramwv);
-/* 30:45 */     if (((Boolean)paramaqu.getBlock(paramdt).getProperty(b)).booleanValue())
+/* 30:45 */     if (((Boolean)paramaqu.getBlock(paramdt).getData(b)).booleanValue())
 /* 31:   */     {
 /* 32:46 */       a(0.3125F, 0.8125F, 0.3125F, 0.6875F, 1.0F, 0.6875F);
 /* 33:47 */       super.a(paramaqu, paramdt, parambec, parambrt, paramList, paramwv);
@@ -43,7 +43,7 @@ package net.minecraft.src;
 /* 42:   */   
 /* 43:   */   public Block a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3, int paramInt, EntityLiving paramxm)
 /* 44:   */   {
-/* 45:60 */     return instance().setData(a, paramxm.aO().d()).setData(b, Boolean.valueOf(false));
+/* 45:60 */     return instance().setData(a, paramxm.aO().opposite()).setData(b, Boolean.valueOf(false));
 /* 46:   */   }
 /* 47:   */   
 /* 48:   */   public boolean N()
@@ -53,7 +53,7 @@ package net.minecraft.src;
 /* 52:   */   
 /* 53:   */   public int l(World paramaqu, BlockPosition paramdt)
 /* 54:   */   {
-/* 55:70 */     if (((Boolean)paramaqu.getBlock(paramdt).getProperty(b)).booleanValue()) {
+/* 55:70 */     if (((Boolean)paramaqu.getBlock(paramdt).getData(b)).booleanValue()) {
 /* 56:71 */       return 15;
 /* 57:   */     }
 /* 58:74 */     return 0;
@@ -68,8 +68,8 @@ package net.minecraft.src;
 /* 67:   */   {
 /* 68:86 */     int i = 0;
 /* 69:   */     
-/* 70:88 */     i |= ((EnumDirection)parambec.getProperty(a)).b();
-/* 71:90 */     if (((Boolean)parambec.getProperty(b)).booleanValue()) {
+/* 70:88 */     i |= ((EnumDirection)parambec.getData(a)).b();
+/* 71:90 */     if (((Boolean)parambec.getData(b)).booleanValue()) {
 /* 72:91 */       i |= 0x4;
 /* 73:   */     }
 /* 74:94 */     return i;

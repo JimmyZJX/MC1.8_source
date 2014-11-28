@@ -65,7 +65,7 @@ import net.minecraft.src.MathUtils;
 /*  63:    */   
 /*  64:    */   public static float sqrt(double paramDouble)
 /*  65:    */   {
-/*  66: 54 */     return MathUtils.a(paramDouble);
+/*  66: 54 */     return MathUtils.sqrt(paramDouble);
 /*  67:    */   }
 /*  68:    */   
 /*  69:    */   public static double clamp(double paramDouble1, double paramDouble2, double paramDouble3)

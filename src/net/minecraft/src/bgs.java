@@ -143,7 +143,7 @@ package net.minecraft.src;
 /* 142:    */                         {
 /* 143:156 */                           parambgk.a(i4, i8, localbec31, BlockList.air.instance());
 /* 144:157 */                           if (localbec5.getProto() == BlockList.sand) {
-/* 145:158 */                             parambgk.a(i4, i8 + 1, localbec31, localbec5.getProperty(BlockSand.a) == bac.b ? BlockList.cM.instance() : BlockList.A.instance());
+/* 145:158 */                             parambgk.a(i4, i8 + 1, localbec31, localbec5.getData(BlockSand.a) == bac.b ? BlockList.cM.instance() : BlockList.A.instance());
 /* 146:    */                           }
 /* 147:160 */                           if ((i7 != 0) && (parambgk.a(i4, i8 - 1, localbec31).getProto() == BlockList.dirt)) {
 /* 148:161 */                             parambgk.a(i4, i8 - 1, localbec31, this.c.b(new BlockPosition(i4 + paramInt1 * 16, 0, localbec31 + paramInt2 * 16)).ak.getProto().instance());

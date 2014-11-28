@@ -16,7 +16,7 @@ package net.minecraft.src;
 /*  15:    */   
 /*  16:    */   public boolean canStart()
 /*  17:    */   {
-/*  18:423 */     return (this.a.u() == null) && ((this.a.C) || (this.a.V()) || (this.a.ab()));
+/*  18:423 */     return (this.a.u() == null) && ((this.a.C) || (this.a.isInWater()) || (this.a.isInLava()));
 /*  19:    */   }
 /*  20:    */   
 /*  21:    */   public void tick()

@@ -77,9 +77,9 @@ package net.minecraft.src;
 /*  76:    */     }
 /*  77: 87 */     if (localahd != null)
 /*  78:    */     {
-/*  79: 88 */       localahd.b(StatList.A);
+/*  79: 88 */       localahd.increaseStat(StatList.A);
 /*  80: 90 */       if ((this.d instanceof EntityCow)) {
-/*  81: 91 */         localahd.b(AchievementList.H);
+/*  81: 91 */         localahd.increaseStat(AchievementList.H);
 /*  82:    */       }
 /*  83:    */     }
 /*  84: 95 */     this.d.setAge(6000);

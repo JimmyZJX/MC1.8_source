@@ -148,7 +148,7 @@ package net.minecraft.src;
 /* 147:180 */           str = hp.a(localhy);
 /* 148:181 */           this.y.a(j, new gc(str));
 /* 149:    */         }
-/* 150:185 */         this.h.a(ItemList.bN);
+/* 150:185 */         this.h.a(ItemList.writtenBook);
 /* 151:    */       }
 /* 152:188 */       ByteBufWrapper localhd = new ByteBufWrapper(Unpooled.buffer());
 /* 153:    */       

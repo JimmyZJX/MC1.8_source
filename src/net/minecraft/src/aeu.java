@@ -39,7 +39,7 @@ package net.minecraft.src;
 /*  38:388 */     this.g = null;
 /*  39:389 */     this.j.a(false);
 /*  40:    */     
-/*  41:391 */     xz localxz = this.j.a(afs.d);
+/*  41:391 */     xz localxz = this.j.getAttribute(MobAttribute.movementSpeed);
 /*  42:392 */     localxz.c(EntityEnderman.cn());
 /*  43:    */     
 /*  44:394 */     super.stop();
@@ -72,7 +72,7 @@ package net.minecraft.src;
 /*  71:418 */         this.j.a("mob.endermen.stare", 1.0F, 1.0F);
 /*  72:419 */         this.j.a(true);
 /*  73:    */         
-/*  74:421 */         xz localxz = this.j.a(afs.d);
+/*  74:421 */         xz localxz = this.j.getAttribute(MobAttribute.movementSpeed);
 /*  75:422 */         localxz.b(EntityEnderman.cn());
 /*  76:    */       }
 /*  77:    */     }

@@ -9,11 +9,11 @@ package net.minecraft.src;
 /*   8: 25 */   public static final Potion[] potionList = new Potion[32];
 /*   9: 26 */   private static final Map<oa,Potion> I = Maps.newHashMap();
 /*  10: 28 */   public static final Potion b = null;
-/*  11: 29 */   public static final Potion speed = new Potion(1, new oa("speed"), false, 8171462).setName("potion.moveSpeed").b(0, 0).a(afs.d, "91AEAA56-376B-4498-935B-2F7F68070635", 0.2000000029802322D, 2);
-/*  12: 30 */   public static final Potion slowness = new Potion(2, new oa("slowness"), true, 5926017).setName("potion.moveSlowdown").b(1, 0).a(afs.d, "7107DE5E-7CE8-4030-940E-514C1F160890", -0.1500000059604645D, 2);
+/*  11: 29 */   public static final Potion speed = new Potion(1, new oa("speed"), false, 8171462).setName("potion.moveSpeed").b(0, 0).a(MobAttribute.movementSpeed, "91AEAA56-376B-4498-935B-2F7F68070635", 0.2000000029802322D, 2);
+/*  12: 30 */   public static final Potion slowness = new Potion(2, new oa("slowness"), true, 5926017).setName("potion.moveSlowdown").b(1, 0).a(MobAttribute.movementSpeed, "7107DE5E-7CE8-4030-940E-514C1F160890", -0.1500000059604645D, 2);
 /*  13: 31 */   public static final Potion haste = new Potion(3, new oa("haste"), false, 14270531).setName("potion.digSpeed").b(2, 0).a(1.5D);
 /*  14: 32 */   public static final Potion miningFatigue = new Potion(4, new oa("mining_fatigue"), true, 4866583).setName("potion.digSlowDown").b(3, 0);
-/*  15: 33 */   public static final Potion strength = new wm(5, new oa("strength"), false, 9643043).setName("potion.damageBoost").b(4, 0).a(afs.e, "648D7064-6A60-4F59-8ABE-C2C23A6DD7A9", 2.5D, 2);
+/*  15: 33 */   public static final Potion strength = new wm(5, new oa("strength"), false, 9643043).setName("potion.damageBoost").b(4, 0).a(MobAttribute.attackDamage, "648D7064-6A60-4F59-8ABE-C2C23A6DD7A9", 2.5D, 2);
 /*  16: 34 */   public static final Potion instantHealth = new InstantPotion(6, new oa("instant_health"), false, 16262179).setName("potion.heal");
 /*  17: 35 */   public static final Potion instantDamage = new InstantPotion(7, new oa("instant_damage"), true, 4393481).setName("potion.harm");
 /*  18: 36 */   public static final Potion jumpBoost = new Potion(8, new oa("jump_boost"), false, 2293580).setName("potion.jump").b(2, 1);
@@ -26,10 +26,10 @@ package net.minecraft.src;
 /*  25: 43 */   public static final Potion blindness = new Potion(15, new oa("blindness"), true, 2039587).setName("potion.blindness").b(5, 1).a(0.25D);
 /*  26: 44 */   public static final Potion nightVision = new Potion(16, new oa("night_vision"), false, 2039713).setName("potion.nightVision").b(4, 1);
 /*  27: 45 */   public static final Potion hunger = new Potion(17, new oa("hunger"), true, 5797459).setName("potion.hunger").b(1, 1);
-/*  28: 46 */   public static final Potion weakness = new wm(18, new oa("weakness"), true, 4738376).setName("potion.weakness").b(5, 0).a(afs.e, "22653B89-116E-49DC-9B6B-9971489B5BE5", 2.0D, 0);
+/*  28: 46 */   public static final Potion weakness = new wm(18, new oa("weakness"), true, 4738376).setName("potion.weakness").b(5, 0).a(MobAttribute.attackDamage, "22653B89-116E-49DC-9B6B-9971489B5BE5", 2.0D, 0);
 /*  29: 47 */   public static final Potion poison = new Potion(19, new oa("poison"), true, 5149489).setName("potion.poison").b(6, 0).a(0.25D);
 /*  30: 48 */   public static final Potion wither = new Potion(20, new oa("wither"), true, 3484199).setName("potion.wither").b(1, 2).a(0.25D);
-/*  31: 49 */   public static final Potion healthBoost = new wn(21, new oa("health_boost"), false, 16284963).setName("potion.healthBoost").b(2, 2).a(afs.a, "5D6F0BA2-1186-46AC-B896-C61C5CEE99CC", 4.0D, 0);
+/*  31: 49 */   public static final Potion healthBoost = new wn(21, new oa("health_boost"), false, 16284963).setName("potion.healthBoost").b(2, 2).a(MobAttribute.maxHealth, "5D6F0BA2-1186-46AC-B896-C61C5CEE99CC", 4.0D, 0);
 /*  32: 50 */   public static final Potion absorption = new wl(22, new oa("absorption"), false, 2445989).setName("potion.absorption").b(2, 2);
 /*  33: 51 */   public static final Potion saturation = new InstantPotion(23, new oa("saturation"), false, 16262179).setName("potion.saturation");
 /*  34: 52 */   public static final Potion z = null;
@@ -101,11 +101,11 @@ package net.minecraft.src;
 /* 100:121 */     else if (this.id == poison.id)
 /* 101:    */     {
 /* 102:122 */       if (paramxm.getHealth() > 1.0F) {
-/* 103:123 */         paramxm.a(DamageSource.l, 1.0F);
+/* 103:123 */         paramxm.a(DamageSource.magic, 1.0F);
 /* 104:    */       }
 /* 105:    */     }
 /* 106:125 */     else if (this.id == wither.id) {
-/* 107:126 */       paramxm.a(DamageSource.m, 1.0F);
+/* 107:126 */       paramxm.a(DamageSource.wither, 1.0F);
 /* 108:127 */     } else if ((this.id == hunger.id) && ((paramxm instanceof EntityPlayer))) {
 /* 109:130 */       ((EntityPlayer)paramxm).a(0.025F * (paramInt + 1));
 /* 110:131 */     } else if ((this.id == saturation.id) && ((paramxm instanceof EntityPlayer)))
@@ -117,7 +117,7 @@ package net.minecraft.src;
 /* 116:135 */     else if (((this.id == instantHealth.id) && (!paramxm.bl())) || ((this.id == instantDamage.id) && (paramxm.bl()))) {
 /* 117:136 */       paramxm.g(Math.max(4 << paramInt, 0));
 /* 118:137 */     } else if (((this.id == instantDamage.id) && (!paramxm.bl())) || ((this.id == instantHealth.id) && (paramxm.bl()))) {
-/* 119:138 */       paramxm.a(DamageSource.l, 6 << paramInt);
+/* 119:138 */       paramxm.a(DamageSource.magic, 6 << paramInt);
 /* 120:    */     }
 /* 121:    */   }
 /* 122:    */   
@@ -133,7 +133,7 @@ package net.minecraft.src;
 /* 132:    */     {
 /* 133:147 */       i1 = (int)(paramDouble * (6 << paramInt) + 0.5D);
 /* 134:148 */       if (paramwv1 == null) {
-/* 135:149 */         paramxm.a(DamageSource.l, i1);
+/* 135:149 */         paramxm.a(DamageSource.magic, i1);
 /* 136:    */       } else {
 /* 137:151 */         paramxm.a(DamageSource.b(paramwv1, paramwv2), i1);
 /* 138:    */       }

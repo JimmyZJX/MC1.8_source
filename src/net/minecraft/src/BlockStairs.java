@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*   5:    */ public class BlockStairs
 /*   6:    */   extends ProtoBlock
 /*   7:    */ {
-/*   8: 29 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", en.HORIZONTAL);
+/*   8: 29 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", EnumHorizontalVertical.HORIZONTAL);
 /*   9: 30 */   public static final BlockDataEnum<EnumStairsHalf> half = BlockDataEnum.getInstance("half", EnumStairsHalf.class);
 /*  10: 31 */   public static final BlockDataEnum<bav> M = BlockDataEnum.getInstance("shape", bav.class);
 /*  11: 33 */   private static final int[][] N = { { 4, 5 }, { 5, 7 }, { 6, 7 }, { 4, 6 }, { 0, 1 }, { 1, 3 }, { 2, 3 }, { 0, 2 } };
@@ -49,7 +49,7 @@ package net.minecraft.src;
 /*  48:    */   
 /*  49:    */   public void e(IBlockAccess paramard, BlockPosition paramdt)
 /*  50:    */   {
-/*  51: 87 */     if (paramard.getBlock(paramdt).getProperty(half) == EnumStairsHalf.TOP) {
+/*  51: 87 */     if (paramard.getBlock(paramdt).getData(half) == EnumStairsHalf.TOP) {
 /*  52: 88 */       a(0.0F, 0.5F, 0.0F, 1.0F, 1.0F, 1.0F);
 /*  53:    */     } else {
 /*  54: 90 */       a(0.0F, 0.0F, 0.0F, 1.0F, 0.5F, 1.0F);
@@ -65,7 +65,7 @@ package net.minecraft.src;
 /*  64:    */   {
 /*  65: 99 */     Block localbec = paramard.getBlock(paramdt);
 /*  66:100 */     ProtoBlock localatr = localbec.getProto();
-/*  67:101 */     if ((c(localatr)) && (localbec.getProperty(half) == parambec.getProperty(half)) && (localbec.getProperty(a) == parambec.getProperty(a))) {
+/*  67:101 */     if ((c(localatr)) && (localbec.getData(half) == parambec.getData(half)) && (localbec.getData(a) == parambec.getData(a))) {
 /*  68:102 */       return true;
 /*  69:    */     }
 /*  70:105 */     return false;
@@ -74,8 +74,8 @@ package net.minecraft.src;
 /*  73:    */   public int f(IBlockAccess paramard, BlockPosition paramdt)
 /*  74:    */   {
 /*  75:109 */     Block localbec1 = paramard.getBlock(paramdt);
-/*  76:110 */     EnumDirection localej1 = (EnumDirection)localbec1.getProperty(a);
-/*  77:111 */     EnumStairsHalf localbau = (EnumStairsHalf)localbec1.getProperty(half);
+/*  76:110 */     EnumDirection localej1 = (EnumDirection)localbec1.getData(a);
+/*  77:111 */     EnumStairsHalf localbau = (EnumStairsHalf)localbec1.getData(half);
 /*  78:112 */     int i = localbau == EnumStairsHalf.TOP ? 1 : 0;
 /*  79:    */     Block localbec2;
 /*  80:    */     ProtoBlock localatr;
@@ -84,9 +84,9 @@ package net.minecraft.src;
 /*  83:    */     {
 /*  84:115 */       localbec2 = paramard.getBlock(paramdt.east());
 /*  85:116 */       localatr = localbec2.getProto();
-/*  86:117 */       if ((c(localatr)) && (localbau == localbec2.getProperty(half)))
+/*  86:117 */       if ((c(localatr)) && (localbau == localbec2.getData(half)))
 /*  87:    */       {
-/*  88:118 */         localej2 = (EnumDirection)localbec2.getProperty(a);
+/*  88:118 */         localej2 = (EnumDirection)localbec2.getData(a);
 /*  89:119 */         if ((localej2 == EnumDirection.NORTH) && (!a(paramard, paramdt.south(), localbec1))) {
 /*  90:120 */           return i != 0 ? 1 : 2;
 /*  91:    */         }
@@ -99,9 +99,9 @@ package net.minecraft.src;
 /*  98:    */     {
 /*  99:126 */       localbec2 = paramard.getBlock(paramdt.west());
 /* 100:127 */       localatr = localbec2.getProto();
-/* 101:128 */       if ((c(localatr)) && (localbau == localbec2.getProperty(half)))
+/* 101:128 */       if ((c(localatr)) && (localbau == localbec2.getData(half)))
 /* 102:    */       {
-/* 103:129 */         localej2 = (EnumDirection)localbec2.getProperty(a);
+/* 103:129 */         localej2 = (EnumDirection)localbec2.getData(a);
 /* 104:130 */         if ((localej2 == EnumDirection.NORTH) && (!a(paramard, paramdt.south(), localbec1))) {
 /* 105:131 */           return i != 0 ? 2 : 1;
 /* 106:    */         }
@@ -114,9 +114,9 @@ package net.minecraft.src;
 /* 113:    */     {
 /* 114:137 */       localbec2 = paramard.getBlock(paramdt.south());
 /* 115:138 */       localatr = localbec2.getProto();
-/* 116:139 */       if ((c(localatr)) && (localbau == localbec2.getProperty(half)))
+/* 116:139 */       if ((c(localatr)) && (localbau == localbec2.getData(half)))
 /* 117:    */       {
-/* 118:140 */         localej2 = (EnumDirection)localbec2.getProperty(a);
+/* 118:140 */         localej2 = (EnumDirection)localbec2.getData(a);
 /* 119:141 */         if ((localej2 == EnumDirection.WEST) && (!a(paramard, paramdt.east(), localbec1))) {
 /* 120:142 */           return i != 0 ? 2 : 1;
 /* 121:    */         }
@@ -129,9 +129,9 @@ package net.minecraft.src;
 /* 128:    */     {
 /* 129:148 */       localbec2 = paramard.getBlock(paramdt.north());
 /* 130:149 */       localatr = localbec2.getProto();
-/* 131:150 */       if ((c(localatr)) && (localbau == localbec2.getProperty(half)))
+/* 131:150 */       if ((c(localatr)) && (localbau == localbec2.getData(half)))
 /* 132:    */       {
-/* 133:151 */         localej2 = (EnumDirection)localbec2.getProperty(a);
+/* 133:151 */         localej2 = (EnumDirection)localbec2.getData(a);
 /* 134:152 */         if ((localej2 == EnumDirection.WEST) && (!a(paramard, paramdt.east(), localbec1))) {
 /* 135:153 */           return i != 0 ? 1 : 2;
 /* 136:    */         }
@@ -146,8 +146,8 @@ package net.minecraft.src;
 /* 145:    */   public int g(IBlockAccess paramard, BlockPosition paramdt)
 /* 146:    */   {
 /* 147:164 */     Block localbec1 = paramard.getBlock(paramdt);
-/* 148:165 */     EnumDirection localej1 = (EnumDirection)localbec1.getProperty(a);
-/* 149:166 */     EnumStairsHalf localbau = (EnumStairsHalf)localbec1.getProperty(half);
+/* 148:165 */     EnumDirection localej1 = (EnumDirection)localbec1.getData(a);
+/* 149:166 */     EnumStairsHalf localbau = (EnumStairsHalf)localbec1.getData(half);
 /* 150:167 */     int i = localbau == EnumStairsHalf.TOP ? 1 : 0;
 /* 151:    */     Block localbec2;
 /* 152:    */     ProtoBlock localatr;
@@ -156,9 +156,9 @@ package net.minecraft.src;
 /* 155:    */     {
 /* 156:170 */       localbec2 = paramard.getBlock(paramdt.west());
 /* 157:171 */       localatr = localbec2.getProto();
-/* 158:172 */       if ((c(localatr)) && (localbau == localbec2.getProperty(half)))
+/* 158:172 */       if ((c(localatr)) && (localbau == localbec2.getData(half)))
 /* 159:    */       {
-/* 160:173 */         localej2 = (EnumDirection)localbec2.getProperty(a);
+/* 160:173 */         localej2 = (EnumDirection)localbec2.getData(a);
 /* 161:174 */         if ((localej2 == EnumDirection.NORTH) && (!a(paramard, paramdt.north(), localbec1))) {
 /* 162:175 */           return i != 0 ? 1 : 2;
 /* 163:    */         }
@@ -171,9 +171,9 @@ package net.minecraft.src;
 /* 170:    */     {
 /* 171:181 */       localbec2 = paramard.getBlock(paramdt.east());
 /* 172:182 */       localatr = localbec2.getProto();
-/* 173:183 */       if ((c(localatr)) && (localbau == localbec2.getProperty(half)))
+/* 173:183 */       if ((c(localatr)) && (localbau == localbec2.getData(half)))
 /* 174:    */       {
-/* 175:184 */         localej2 = (EnumDirection)localbec2.getProperty(a);
+/* 175:184 */         localej2 = (EnumDirection)localbec2.getData(a);
 /* 176:185 */         if ((localej2 == EnumDirection.NORTH) && (!a(paramard, paramdt.north(), localbec1))) {
 /* 177:186 */           return i != 0 ? 2 : 1;
 /* 178:    */         }
@@ -186,9 +186,9 @@ package net.minecraft.src;
 /* 185:    */     {
 /* 186:192 */       localbec2 = paramard.getBlock(paramdt.north());
 /* 187:193 */       localatr = localbec2.getProto();
-/* 188:194 */       if ((c(localatr)) && (localbau == localbec2.getProperty(half)))
+/* 188:194 */       if ((c(localatr)) && (localbau == localbec2.getData(half)))
 /* 189:    */       {
-/* 190:195 */         localej2 = (EnumDirection)localbec2.getProperty(a);
+/* 190:195 */         localej2 = (EnumDirection)localbec2.getData(a);
 /* 191:196 */         if ((localej2 == EnumDirection.WEST) && (!a(paramard, paramdt.west(), localbec1))) {
 /* 192:197 */           return i != 0 ? 2 : 1;
 /* 193:    */         }
@@ -201,9 +201,9 @@ package net.minecraft.src;
 /* 200:    */     {
 /* 201:203 */       localbec2 = paramard.getBlock(paramdt.south());
 /* 202:204 */       localatr = localbec2.getProto();
-/* 203:205 */       if ((c(localatr)) && (localbau == localbec2.getProperty(half)))
+/* 203:205 */       if ((c(localatr)) && (localbau == localbec2.getData(half)))
 /* 204:    */       {
-/* 205:206 */         localej2 = (EnumDirection)localbec2.getProperty(a);
+/* 205:206 */         localej2 = (EnumDirection)localbec2.getData(a);
 /* 206:207 */         if ((localej2 == EnumDirection.WEST) && (!a(paramard, paramdt.west(), localbec1))) {
 /* 207:208 */           return i != 0 ? 1 : 2;
 /* 208:    */         }
@@ -218,8 +218,8 @@ package net.minecraft.src;
 /* 217:    */   public boolean h(IBlockAccess paramard, BlockPosition paramdt)
 /* 218:    */   {
 /* 219:219 */     Block localbec1 = paramard.getBlock(paramdt);
-/* 220:220 */     EnumDirection localej1 = (EnumDirection)localbec1.getProperty(a);
-/* 221:221 */     EnumStairsHalf localbau = (EnumStairsHalf)localbec1.getProperty(half);
+/* 220:220 */     EnumDirection localej1 = (EnumDirection)localbec1.getData(a);
+/* 221:221 */     EnumStairsHalf localbau = (EnumStairsHalf)localbec1.getData(half);
 /* 222:222 */     int i = localbau == EnumStairsHalf.TOP ? 1 : 0;
 /* 223:    */     
 /* 224:224 */     float f1 = 0.5F;
@@ -245,9 +245,9 @@ package net.minecraft.src;
 /* 244:    */       
 /* 245:243 */       localbec2 = paramard.getBlock(paramdt.east());
 /* 246:244 */       localatr = localbec2.getProto();
-/* 247:245 */       if ((c(localatr)) && (localbau == localbec2.getProperty(half)))
+/* 247:245 */       if ((c(localatr)) && (localbau == localbec2.getData(half)))
 /* 248:    */       {
-/* 249:246 */         localej2 = (EnumDirection)localbec2.getProperty(a);
+/* 249:246 */         localej2 = (EnumDirection)localbec2.getData(a);
 /* 250:247 */         if ((localej2 == EnumDirection.NORTH) && (!a(paramard, paramdt.south(), localbec1)))
 /* 251:    */         {
 /* 252:248 */           f6 = 0.5F;
@@ -267,9 +267,9 @@ package net.minecraft.src;
 /* 266:    */       
 /* 267:259 */       localbec2 = paramard.getBlock(paramdt.west());
 /* 268:260 */       localatr = localbec2.getProto();
-/* 269:261 */       if ((c(localatr)) && (localbau == localbec2.getProperty(half)))
+/* 269:261 */       if ((c(localatr)) && (localbau == localbec2.getData(half)))
 /* 270:    */       {
-/* 271:262 */         localej2 = (EnumDirection)localbec2.getProperty(a);
+/* 271:262 */         localej2 = (EnumDirection)localbec2.getData(a);
 /* 272:263 */         if ((localej2 == EnumDirection.NORTH) && (!a(paramard, paramdt.south(), localbec1)))
 /* 273:    */         {
 /* 274:264 */           f6 = 0.5F;
@@ -289,9 +289,9 @@ package net.minecraft.src;
 /* 288:    */       
 /* 289:275 */       localbec2 = paramard.getBlock(paramdt.south());
 /* 290:276 */       localatr = localbec2.getProto();
-/* 291:277 */       if ((c(localatr)) && (localbau == localbec2.getProperty(half)))
+/* 291:277 */       if ((c(localatr)) && (localbau == localbec2.getData(half)))
 /* 292:    */       {
-/* 293:278 */         localej2 = (EnumDirection)localbec2.getProperty(a);
+/* 293:278 */         localej2 = (EnumDirection)localbec2.getData(a);
 /* 294:279 */         if ((localej2 == EnumDirection.WEST) && (!a(paramard, paramdt.east(), localbec1)))
 /* 295:    */         {
 /* 296:280 */           f4 = 0.5F;
@@ -308,9 +308,9 @@ package net.minecraft.src;
 /* 307:    */     {
 /* 308:288 */       localbec2 = paramard.getBlock(paramdt.north());
 /* 309:289 */       localatr = localbec2.getProto();
-/* 310:290 */       if ((c(localatr)) && (localbau == localbec2.getProperty(half)))
+/* 310:290 */       if ((c(localatr)) && (localbau == localbec2.getData(half)))
 /* 311:    */       {
-/* 312:291 */         localej2 = (EnumDirection)localbec2.getProperty(a);
+/* 312:291 */         localej2 = (EnumDirection)localbec2.getData(a);
 /* 313:292 */         if ((localej2 == EnumDirection.WEST) && (!a(paramard, paramdt.east(), localbec1)))
 /* 314:    */         {
 /* 315:293 */           f4 = 0.5F;
@@ -330,8 +330,8 @@ package net.minecraft.src;
 /* 329:    */   public boolean i(IBlockAccess paramard, BlockPosition paramdt)
 /* 330:    */   {
 /* 331:311 */     Block localbec1 = paramard.getBlock(paramdt);
-/* 332:312 */     EnumDirection localej1 = (EnumDirection)localbec1.getProperty(a);
-/* 333:313 */     EnumStairsHalf localbau = (EnumStairsHalf)localbec1.getProperty(half);
+/* 332:312 */     EnumDirection localej1 = (EnumDirection)localbec1.getData(a);
+/* 333:313 */     EnumStairsHalf localbau = (EnumStairsHalf)localbec1.getData(half);
 /* 334:314 */     int i = localbau == EnumStairsHalf.TOP ? 1 : 0;
 /* 335:    */     
 /* 336:316 */     float f1 = 0.5F;
@@ -354,9 +354,9 @@ package net.minecraft.src;
 /* 353:    */     {
 /* 354:332 */       localbec2 = paramard.getBlock(paramdt.west());
 /* 355:333 */       localatr = localbec2.getProto();
-/* 356:334 */       if ((c(localatr)) && (localbau == localbec2.getProperty(half)))
+/* 356:334 */       if ((c(localatr)) && (localbau == localbec2.getData(half)))
 /* 357:    */       {
-/* 358:335 */         localej2 = (EnumDirection)localbec2.getProperty(a);
+/* 358:335 */         localej2 = (EnumDirection)localbec2.getData(a);
 /* 359:336 */         if ((localej2 == EnumDirection.NORTH) && (!a(paramard, paramdt.north(), localbec1)))
 /* 360:    */         {
 /* 361:337 */           f5 = 0.0F;
@@ -375,11 +375,11 @@ package net.minecraft.src;
 /* 374:    */     {
 /* 375:347 */       localbec2 = paramard.getBlock(paramdt.east());
 /* 376:348 */       localatr = localbec2.getProto();
-/* 377:349 */       if ((c(localatr)) && (localbau == localbec2.getProperty(half)))
+/* 377:349 */       if ((c(localatr)) && (localbau == localbec2.getData(half)))
 /* 378:    */       {
 /* 379:350 */         f3 = 0.5F;
 /* 380:351 */         f4 = 1.0F;
-/* 381:352 */         localej2 = (EnumDirection)localbec2.getProperty(a);
+/* 381:352 */         localej2 = (EnumDirection)localbec2.getData(a);
 /* 382:353 */         if ((localej2 == EnumDirection.NORTH) && (!a(paramard, paramdt.north(), localbec1)))
 /* 383:    */         {
 /* 384:354 */           f5 = 0.0F;
@@ -398,12 +398,12 @@ package net.minecraft.src;
 /* 397:    */     {
 /* 398:364 */       localbec2 = paramard.getBlock(paramdt.north());
 /* 399:365 */       localatr = localbec2.getProto();
-/* 400:366 */       if ((c(localatr)) && (localbau == localbec2.getProperty(half)))
+/* 400:366 */       if ((c(localatr)) && (localbau == localbec2.getData(half)))
 /* 401:    */       {
 /* 402:367 */         f5 = 0.0F;
 /* 403:368 */         f6 = 0.5F;
 /* 404:    */         
-/* 405:370 */         localej2 = (EnumDirection)localbec2.getProperty(a);
+/* 405:370 */         localej2 = (EnumDirection)localbec2.getData(a);
 /* 406:371 */         if ((localej2 == EnumDirection.WEST) && (!a(paramard, paramdt.west(), localbec1)))
 /* 407:    */         {
 /* 408:372 */           bool = true;
@@ -420,9 +420,9 @@ package net.minecraft.src;
 /* 419:    */     {
 /* 420:380 */       localbec2 = paramard.getBlock(paramdt.south());
 /* 421:381 */       localatr = localbec2.getProto();
-/* 422:382 */       if ((c(localatr)) && (localbau == localbec2.getProperty(half)))
+/* 422:382 */       if ((c(localatr)) && (localbau == localbec2.getData(half)))
 /* 423:    */       {
-/* 424:383 */         localej2 = (EnumDirection)localbec2.getProperty(a);
+/* 424:383 */         localej2 = (EnumDirection)localbec2.getData(a);
 /* 425:384 */         if ((localej2 == EnumDirection.WEST) && (!a(paramard, paramdt.west(), localbec1)))
 /* 426:    */         {
 /* 427:385 */           bool = true;
@@ -495,9 +495,9 @@ package net.minecraft.src;
 /* 494:462 */     return this.O.a(paramaqu, paramdt);
 /* 495:    */   }
 /* 496:    */   
-/* 497:    */   public Vec3 a(World paramaqu, BlockPosition paramdt, Entity paramwv, Vec3 parambrw)
+/* 497:    */   public Vec3 alterAcceleration(World paramaqu, BlockPosition paramdt, Entity paramwv, Vec3 parambrw)
 /* 498:    */   {
-/* 499:467 */     return this.O.a(paramaqu, paramdt, paramwv, parambrw);
+/* 499:467 */     return this.O.alterAcceleration(paramaqu, paramdt, paramwv, parambrw);
 /* 500:    */   }
 /* 501:    */   
 /* 502:    */   public boolean y()
@@ -566,8 +566,8 @@ package net.minecraft.src;
 /* 565:    */   {
 /* 566:542 */     HitResult[] arrayOfbru1 = new HitResult[8];
 /* 567:543 */     Block localbec = paramaqu.getBlock(paramdt);
-/* 568:544 */     int i = ((EnumDirection)localbec.getProperty(a)).b();
-/* 569:545 */     int j = localbec.getProperty(half) == EnumStairsHalf.TOP ? 1 : 0;
+/* 568:544 */     int i = ((EnumDirection)localbec.getData(a)).b();
+/* 569:545 */     int j = localbec.getData(half) == EnumStairsHalf.TOP ? 1 : 0;
 /* 570:546 */     int[] arrayOfInt = N[(i + 0)];
 /* 571:    */     
 /* 572:548 */     this.Q = true;
@@ -586,7 +586,7 @@ package net.minecraft.src;
 /* 585:567 */     for (HitResult localbru : arrayOfbru1) {
 /* 586:568 */       if (localbru != null)
 /* 587:    */       {
-/* 588:571 */         double d2 = localbru.c.g(parambrw2);
+/* 588:571 */         double d2 = localbru.c.dist2(parambrw2);
 /* 589:573 */         if (d2 > d1)
 /* 590:    */         {
 /* 591:574 */           result = localbru;
@@ -610,10 +610,10 @@ package net.minecraft.src;
 /* 609:    */   public int c(Block parambec)
 /* 610:    */   {
 /* 611:594 */     int i = 0;
-/* 612:596 */     if (parambec.getProperty(half) == EnumStairsHalf.TOP) {
+/* 612:596 */     if (parambec.getData(half) == EnumStairsHalf.TOP) {
 /* 613:597 */       i |= 0x4;
 /* 614:    */     }
-/* 615:600 */     i |= 5 - ((EnumDirection)parambec.getProperty(a)).a();
+/* 615:600 */     i |= 5 - ((EnumDirection)parambec.getData(a)).a();
 /* 616:    */     
 /* 617:602 */     return i;
 /* 618:    */   }

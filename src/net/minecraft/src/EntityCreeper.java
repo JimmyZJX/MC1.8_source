@@ -14,7 +14,7 @@ package net.minecraft.src;
 /*  13:    */   {
 /*  14: 36 */     super(paramaqu);
 /*  15:    */     
-/*  16: 38 */     this.goalSelector.addGoal(1, new yy(this));
+/*  16: 38 */     this.goalSelector.addGoal(1, new GoalSwim(this));
 /*  17: 39 */     this.goalSelector.addGoal(2, new aae(this));
 /*  18: 40 */     this.goalSelector.addGoal(2, this.a);
 /*  19: 41 */     this.goalSelector.addGoal(3, new yp(this, new aeq(this), 6.0F, 1.0D, 1.2D));
@@ -36,7 +36,7 @@ package net.minecraft.src;
 /*  35:    */   {
 /*  36: 58 */     super.aW();
 /*  37:    */     
-/*  38: 60 */     a(afs.d).a(0.25D);
+/*  38: 60 */     getAttribute(MobAttribute.movementSpeed).a(0.25D);
 /*  39:    */   }
 /*  40:    */   
 /*  41:    */   public int aF()
@@ -130,17 +130,17 @@ package net.minecraft.src;
 /* 129:    */   public void a(DamageSource paramwh)
 /* 130:    */   {
 /* 131:155 */     super.a(paramwh);
-/* 132:157 */     if ((paramwh.j() instanceof EntitySkeleton))
+/* 132:157 */     if ((paramwh.getAttacker() instanceof EntitySkeleton))
 /* 133:    */     {
 /* 134:159 */       int i = Item.b(ItemList.cq);
 /* 135:160 */       int j = Item.b(ItemList.cB);
 /* 136:161 */       int k = i + this.rng.nextInt(j - i + 1);
 /* 137:162 */       a(Item.b(k), 1);
 /* 138:    */     }
-/* 139:163 */     else if (((paramwh.j() instanceof EntityCreeper)) && 
-/* 140:164 */       (paramwh.j() != this) && (((EntityCreeper)paramwh.j()).n()) && (((EntityCreeper)paramwh.j()).cn()))
+/* 139:163 */     else if (((paramwh.getAttacker() instanceof EntityCreeper)) && 
+/* 140:164 */       (paramwh.getAttacker() != this) && (((EntityCreeper)paramwh.getAttacker()).n()) && (((EntityCreeper)paramwh.getAttacker()).cn()))
 /* 141:    */     {
-/* 142:165 */       ((EntityCreeper)paramwh.j()).co();
+/* 142:165 */       ((EntityCreeper)paramwh.getAttacker()).co();
 /* 143:166 */       throwItem(new ItemStack(ItemList.skull, 1, 4), 0.0F);
 /* 144:    */     }
 /* 145:    */   }

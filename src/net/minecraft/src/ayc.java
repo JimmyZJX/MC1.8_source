@@ -36,7 +36,7 @@ package net.minecraft.src;
 /* 35:48 */         BlockPosition localdt = paramdt.offset(paramRandom.nextInt(3) - 1, paramRandom.nextInt(5) - 3, paramRandom.nextInt(3) - 1);
 /* 36:49 */         Block localbec = paramaqu.getBlock(localdt);
 /* 37:50 */         ProtoBlock localatr = paramaqu.getBlock(localdt.up()).getProto();
-/* 38:51 */         if ((localbec.getProto() == BlockList.dirt) && (localbec.getProperty(BlockDirt.a) == avd.a) && (paramaqu.l(localdt.up()) >= 4) && (localatr.getLightOpacity() <= 2)) {
+/* 38:51 */         if ((localbec.getProto() == BlockList.dirt) && (localbec.getData(BlockDirt.a) == avd.a) && (paramaqu.l(localdt.up()) >= 4) && (localatr.getLightOpacity() <= 2)) {
 /* 39:52 */           paramaqu.setBlock(localdt, instance());
 /* 40:   */         }
 /* 41:   */       }

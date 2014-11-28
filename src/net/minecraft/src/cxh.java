@@ -331,7 +331,7 @@ package net.minecraft.src;
 /* 331:330 */     this.u.put(Item.fromProtoBlock(BlockList.cy), Lists.newArrayList(new String[] { "black_carpet", "red_carpet", "green_carpet", "brown_carpet", "blue_carpet", "purple_carpet", "cyan_carpet", "silver_carpet", "gray_carpet", "pink_carpet", "lime_carpet", "yellow_carpet", "light_blue_carpet", "magenta_carpet", "orange_carpet", "white_carpet" }));
 /* 332:331 */     this.u.put(Item.fromProtoBlock(BlockList.cF), Lists.newArrayList(new String[] { "sunflower", "syringa", "double_grass", "double_fern", "double_rose", "paeonia" }));
 /* 333:332 */     this.u.put(ItemList.bow, Lists.newArrayList(new String[] { "bow", "bow_pulling_0", "bow_pulling_1", "bow_pulling_2" }));
-/* 334:333 */     this.u.put(ItemList.h, Lists.newArrayList(new String[] { "coal", "charcoal" }));
+/* 334:333 */     this.u.put(ItemList.coal, Lists.newArrayList(new String[] { "coal", "charcoal" }));
 /* 335:334 */     this.u.put(ItemList.fishingRod, Lists.newArrayList(new String[] { "fishing_rod", "fishing_rod_cast" }));
 /* 336:335 */     this.u.put(ItemList.fish, Lists.newArrayList(new String[] { "cod", "salmon", "clownfish", "pufferfish" }));
 /* 337:336 */     this.u.put(ItemList.aV, Lists.newArrayList(new String[] { "cooked_cod", "cooked_salmon" }));

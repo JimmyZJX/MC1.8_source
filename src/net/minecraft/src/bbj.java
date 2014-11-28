@@ -135,7 +135,7 @@ package net.minecraft.src;
 /* 134:    */   
 /* 135:    */   public final boolean c(ProtoBlock paramatr)
 /* 136:    */   {
-/* 137:139 */     return (paramatr.m()) || (paramatr == this) || (paramatr == BlockList.w) || (paramatr == BlockList.cG) || (paramatr == BlockList.stainedGlassPane) || ((paramatr instanceof bbj));
+/* 137:139 */     return (paramatr.m()) || (paramatr == this) || (paramatr == BlockList.glass) || (paramatr == BlockList.cG) || (paramatr == BlockList.stainedGlassPane) || ((paramatr instanceof bbj));
 /* 138:    */   }
 /* 139:    */   
 /* 140:    */   protected boolean G()

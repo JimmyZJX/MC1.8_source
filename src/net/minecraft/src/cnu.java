@@ -40,7 +40,7 @@ package net.minecraft.src;
 /* 39:60 */     else if ((parambdv.g()) && (!parambdv.d()))
 /* 40:   */     {
 /* 41:62 */       bdu localbdu = localatr == BlockList.F ? bdu.b : bdu.a;
-/* 42:63 */       Block localbec2 = BlockList.K.instance().setData(bds.b, localbdu).setData(bds.a, localbec1.getProperty(bdq.a));
+/* 42:63 */       Block localbec2 = BlockList.K.instance().setData(bds.b, localbdu).setData(bds.a, localbec1.getData(bdq.a));
 /* 43:64 */       localbec2 = localbec2.setData(bds.M, Boolean.valueOf(parambdv.a(paramFloat) >= 0.5F));
 /* 44:65 */       this.c.b().a(localaqu, this.c.a(localbec2, localaqu, localdt), localbec2, localdt, localciv, true);
 /* 45:   */       

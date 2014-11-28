@@ -3,10 +3,10 @@ package net.minecraft.src;
 /*  2:   */   extends byl
 /*  3:   */ {
 /*  4:11 */   private static final oa u = new oa("textures/gui/container/furnace.png");
-/*  5:   */   private final ahb v;
+/*  5:   */   private final Inventory v;
 /*  6:   */   private vq w;
 /*  7:   */   
-/*  8:   */   public bzg(ahb paramahb, vq paramvq)
+/*  8:   */   public bzg(Inventory paramahb, vq paramvq)
 /*  9:   */   {
 /* 10:16 */     super(new aiv(paramahb, paramvq));
 /* 11:17 */     this.v = paramahb;

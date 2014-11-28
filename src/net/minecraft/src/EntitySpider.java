@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*   8: 31 */     super(paramaqu);
 /*   9: 32 */     a(1.4F, 0.9F);
 /*  10:    */     
-/*  11: 34 */     this.goalSelector.addGoal(1, new yy(this));
+/*  11: 34 */     this.goalSelector.addGoal(1, new GoalSwim(this));
 /*  12:    */     
 /*  13: 36 */     this.goalSelector.addGoal(2, this.a);
 /*  14: 37 */     this.goalSelector.addGoal(3, new zg(this, 0.4F));
@@ -49,8 +49,8 @@ package net.minecraft.src;
 /*  48:    */   {
 /*  49: 75 */     super.aW();
 /*  50:    */     
-/*  51: 77 */     a(afs.a).a(16.0D);
-/*  52: 78 */     a(afs.d).a(0.300000011920929D);
+/*  51: 77 */     getAttribute(MobAttribute.maxHealth).a(16.0D);
+/*  52: 78 */     getAttribute(MobAttribute.movementSpeed).a(0.300000011920929D);
 /*  53:    */   }
 /*  54:    */   
 /*  55:    */   protected String z()
@@ -75,7 +75,7 @@ package net.minecraft.src;
 /*  74:    */   
 /*  75:    */   protected Item A()
 /*  76:    */   {
-/*  77:103 */     return ItemList.F;
+/*  77:103 */     return ItemList.string;
 /*  78:    */   }
 /*  79:    */   
 /*  80:    */   protected void b(boolean paramBoolean, int paramInt)

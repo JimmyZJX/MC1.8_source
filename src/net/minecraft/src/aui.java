@@ -47,7 +47,7 @@ package net.minecraft.src;
 /*  46:    */   
 /*  47:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, Entity paramwv)
 /*  48:    */   {
-/*  49: 71 */     int i = ((Integer)parambec.getProperty(a)).intValue();
+/*  49: 71 */     int i = ((Integer)parambec.getData(a)).intValue();
 /*  50: 72 */     float f = paramdt.getY() + (6.0F + 3 * i) / 16.0F;
 /*  51: 74 */     if ((!paramaqu.isClient) && (paramwv.au()) && (i > 0) && (paramwv.getAABB().minY <= f))
 /*  52:    */     {
@@ -66,13 +66,13 @@ package net.minecraft.src;
 /*  65: 88 */     if (localamj == null) {
 /*  66: 89 */       return true;
 /*  67:    */     }
-/*  68: 92 */     int i = ((Integer)parambec.getProperty(a)).intValue();
+/*  68: 92 */     int i = ((Integer)parambec.getData(a)).intValue();
 /*  69: 93 */     Item localalq = localamj.getItem();
 /*  70: 94 */     if (localalq == ItemList.ax)
 /*  71:    */     {
 /*  72: 95 */       if (i < 3)
 /*  73:    */       {
-/*  74: 96 */         if (!paramahd.by.d) {
+/*  74: 96 */         if (!paramahd.abilities.instabuild) {
 /*  75: 97 */           paramahd.bg.a(paramahd.bg.c, new ItemStack(ItemList.aw));
 /*  76:    */         }
 /*  77:100 */         a(paramaqu, paramdt, parambec, 3);
@@ -84,7 +84,7 @@ package net.minecraft.src;
 /*  83:    */     {
 /*  84:106 */       if (i > 0)
 /*  85:    */       {
-/*  86:107 */         if (!paramahd.by.d)
+/*  86:107 */         if (!paramahd.abilities.instabuild)
 /*  87:    */         {
 /*  88:108 */           localObject = new ItemStack(ItemList.potion, 1, 0);
 /*  89:109 */           if (!paramahd.bg.a((ItemStack)localObject)) {
@@ -117,14 +117,14 @@ package net.minecraft.src;
 /* 116:137 */       localObject = localamj.k();
 /* 117:138 */       ((ItemStack)localObject).stackSize = 1;
 /* 118:139 */       bci.e((ItemStack)localObject);
-/* 119:141 */       if ((localamj.stackSize > 1) || (paramahd.by.d))
+/* 119:141 */       if ((localamj.stackSize > 1) || (paramahd.abilities.instabuild))
 /* 120:    */       {
 /* 121:143 */         if (!paramahd.bg.a((ItemStack)localObject)) {
 /* 122:144 */           paramaqu.spawnEntity(new EntityItem(paramaqu, paramdt.getX() + 0.5D, paramdt.getY() + 1.5D, paramdt.getZ() + 0.5D, (ItemStack)localObject));
 /* 123:145 */         } else if ((paramahd instanceof qw)) {
 /* 124:146 */           ((qw)paramahd).a(paramahd.bh);
 /* 125:    */         }
-/* 126:148 */         if (!paramahd.by.d) {
+/* 126:148 */         if (!paramahd.abilities.instabuild) {
 /* 127:149 */           localamj.stackSize -= 1;
 /* 128:    */         }
 /* 129:    */       }
@@ -132,7 +132,7 @@ package net.minecraft.src;
 /* 131:    */       {
 /* 132:153 */         paramahd.bg.a(paramahd.bg.c, (ItemStack)localObject);
 /* 133:    */       }
-/* 134:156 */       if (!paramahd.by.d) {
+/* 134:156 */       if (!paramahd.abilities.instabuild) {
 /* 135:157 */         a(paramaqu, paramdt, parambec, i - 1);
 /* 136:    */       }
 /* 137:159 */       return true;
@@ -152,7 +152,7 @@ package net.minecraft.src;
 /* 151:174 */       return;
 /* 152:    */     }
 /* 153:177 */     Block localbec = paramaqu.getBlock(paramdt);
-/* 154:178 */     if (((Integer)localbec.getProperty(a)).intValue() < 3) {
+/* 154:178 */     if (((Integer)localbec.getData(a)).intValue() < 3) {
 /* 155:179 */       paramaqu.setBlock(paramdt, localbec.a(a), 2);
 /* 156:    */     }
 /* 157:    */   }
@@ -174,7 +174,7 @@ package net.minecraft.src;
 /* 173:    */   
 /* 174:    */   public int l(World paramaqu, BlockPosition paramdt)
 /* 175:    */   {
-/* 176:201 */     return ((Integer)paramaqu.getBlock(paramdt).getProperty(a)).intValue();
+/* 176:201 */     return ((Integer)paramaqu.getBlock(paramdt).getData(a)).intValue();
 /* 177:    */   }
 /* 178:    */   
 /* 179:    */   public Block instance(int paramInt)
@@ -184,7 +184,7 @@ package net.minecraft.src;
 /* 183:    */   
 /* 184:    */   public int c(Block parambec)
 /* 185:    */   {
-/* 186:212 */     return ((Integer)parambec.getProperty(a)).intValue();
+/* 186:212 */     return ((Integer)parambec.getData(a)).intValue();
 /* 187:    */   }
 /* 188:    */   
 /* 189:    */   protected bed e()

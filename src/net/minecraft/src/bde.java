@@ -206,7 +206,7 @@ package net.minecraft.src;
 /* 206:236 */     if (localvq == null) {
 /* 207:237 */       return false;
 /* 208:    */     }
-/* 209:240 */     EnumDirection localej = BlockHopper.b(getData()).d();
+/* 209:240 */     EnumDirection localej = BlockHopper.b(getData()).opposite();
 /* 210:241 */     if (a(localvq, localej)) {
 /* 211:242 */       return false;
 /* 212:    */     }
@@ -538,7 +538,7 @@ package net.minecraft.src;
 /* 538:550 */     return "minecraft:hopper";
 /* 539:    */   }
 /* 540:    */   
-/* 541:    */   public aib a(ahb paramahb, EntityPlayer paramahd)
+/* 541:    */   public aib a(Inventory paramahb, EntityPlayer paramahd)
 /* 542:    */   {
 /* 543:555 */     return new aix(paramahb, this, paramahd);
 /* 544:    */   }

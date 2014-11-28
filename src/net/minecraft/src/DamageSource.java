@@ -1,73 +1,73 @@
 package net.minecraft.src;
 /*   1:    */ public class DamageSource
 /*   2:    */ {
-/*   3: 15 */   public static DamageSource a = new DamageSource("inFire").n();
-/*   4: 16 */   public static DamageSource b = new DamageSource("lightningBolt");
-/*   5: 17 */   public static DamageSource c = new DamageSource("onFire").k().n();
-/*   6: 18 */   public static DamageSource d = new DamageSource("lava").n();
-/*   7: 19 */   public static DamageSource e = new DamageSource("inWall").k();
-/*   8: 20 */   public static DamageSource f = new DamageSource("drown").k();
-/*   9: 21 */   public static DamageSource g = new DamageSource("starve").k().m();
-/*  10: 22 */   public static DamageSource h = new DamageSource("cactus");
-/*  11: 23 */   public static DamageSource i = new DamageSource("fall").k();
-/*  12: 24 */   public static DamageSource j = new DamageSource("outOfWorld").k().l();
-/*  13: 25 */   public static DamageSource k = new DamageSource("generic").k();
-/*  14: 26 */   public static DamageSource l = new DamageSource("magic").k().t();
-/*  15: 27 */   public static DamageSource m = new DamageSource("wither").k();
-/*  16: 28 */   public static DamageSource n = new DamageSource("anvil");
-/*  17: 29 */   public static DamageSource o = new DamageSource("fallingBlock");
-/*  18:    */   private boolean q;
+/*   3: 15 */   public static DamageSource inFire = new DamageSource("inFire").setFire();
+/*   4: 16 */   public static DamageSource lightningBolt = new DamageSource("lightningBolt");
+/*   5: 17 */   public static DamageSource onFire = new DamageSource("onFire").setBypassArmor().setFire();
+/*   6: 18 */   public static DamageSource lava = new DamageSource("lava").setFire();
+/*   7: 19 */   public static DamageSource inWall = new DamageSource("inWall").setBypassArmor();
+/*   8: 20 */   public static DamageSource drown = new DamageSource("drown").setBypassArmor();
+/*   9: 21 */   public static DamageSource starve = new DamageSource("starve").setBypassArmor().m();
+/*  10: 22 */   public static DamageSource cactus = new DamageSource("cactus");
+/*  11: 23 */   public static DamageSource fall = new DamageSource("fall").setBypassArmor();
+/*  12: 24 */   public static DamageSource outOfWorld = new DamageSource("outOfWorld").setBypassArmor().l();
+/*  13: 25 */   public static DamageSource generic = new DamageSource("generic").setBypassArmor();
+/*  14: 26 */   public static DamageSource magic = new DamageSource("magic").setBypassArmor().t();
+/*  15: 27 */   public static DamageSource wither = new DamageSource("wither").setBypassArmor();
+/*  16: 28 */   public static DamageSource anvil = new DamageSource("anvil");
+/*  17: 29 */   public static DamageSource fallingBlock = new DamageSource("fallingBlock");
+/*  18:    */   private boolean bypassArmor;
 /*  19:    */   private boolean r;
 /*  20:    */   private boolean s;
 /*  21:    */   
-/*  22:    */   public static DamageSource a(EntityLiving paramxm)
+/*  22:    */   public static DamageSource fromMob(EntityLiving mob)
 /*  23:    */   {
-/*  24: 32 */     return new wi("mob", paramxm);
+/*  24: 32 */     return new DamageSourceEntity("mob", mob);
 /*  25:    */   }
 /*  26:    */   
-/*  27:    */   public static DamageSource a(EntityPlayer paramahd)
+/*  27:    */   public static DamageSource fromPlayer(EntityPlayer player)
 /*  28:    */   {
-/*  29: 36 */     return new wi("player", paramahd);
+/*  29: 36 */     return new DamageSourceEntity("player", player);
 /*  30:    */   }
 /*  31:    */   
-/*  32:    */   public static DamageSource a(ahj paramahj, Entity paramwv)
+/*  32:    */   public static DamageSource fromArrow(EntityArrow arrow, Entity thrower)
 /*  33:    */   {
-/*  34: 40 */     return new wj("arrow", paramahj, paramwv).b();
+/*  34: 40 */     return new DamageSourceProjectile("arrow", arrow, thrower).b();
 /*  35:    */   }
 /*  36:    */   
-/*  37:    */   public static DamageSource a(ahl paramahl, Entity paramwv)
+/*  37:    */   public static DamageSource fromFire(ahl paramahl, Entity paramwv)
 /*  38:    */   {
 /*  39: 44 */     if (paramwv == null) {
-/*  40: 45 */       return new wj("onFire", paramahl, paramahl).n().b();
+/*  40: 45 */       return new DamageSourceProjectile("onFire", paramahl, paramahl).setFire().b();
 /*  41:    */     }
-/*  42: 47 */     return new wj("fireball", paramahl, paramwv).n().b();
+/*  42: 47 */     return new DamageSourceProjectile("fireball", paramahl, paramwv).setFire().b();
 /*  43:    */   }
 /*  44:    */   
 /*  45:    */   public static DamageSource a(Entity paramwv1, Entity paramwv2)
 /*  46:    */   {
-/*  47: 51 */     return new wj("thrown", paramwv1, paramwv2).b();
+/*  47: 51 */     return new DamageSourceProjectile("thrown", paramwv1, paramwv2).b();
 /*  48:    */   }
 /*  49:    */   
 /*  50:    */   public static DamageSource b(Entity paramwv1, Entity paramwv2)
 /*  51:    */   {
-/*  52: 55 */     return new wj("indirectMagic", paramwv1, paramwv2).k().t();
+/*  52: 55 */     return new DamageSourceProjectile("indirectMagic", paramwv1, paramwv2).setBypassArmor().t();
 /*  53:    */   }
 /*  54:    */   
-/*  55:    */   public static DamageSource a(Entity paramwv)
+/*  55:    */   public static DamageSource fromThorns(Entity paramwv)
 /*  56:    */   {
-/*  57: 59 */     return new wi("thorns", paramwv).v().t();
+/*  57: 59 */     return new DamageSourceEntity("thorns", paramwv).v().t();
 /*  58:    */   }
 /*  59:    */   
 /*  60:    */   public static DamageSource a(aqo paramaqo)
 /*  61:    */   {
 /*  62: 63 */     if ((paramaqo != null) && (paramaqo.c() != null)) {
-/*  63: 64 */       return new wi("explosion.player", paramaqo.c()).q().d();
+/*  63: 64 */       return new DamageSourceEntity("explosion.player", paramaqo.c()).q().d();
 /*  64:    */     }
 /*  65: 66 */     return new DamageSource("explosion").q().d();
 /*  66:    */   }
 /*  67:    */   
 /*  68: 74 */   private float t = 0.3F;
-/*  69:    */   private boolean u;
+/*  69:    */   private boolean fire;
 /*  70:    */   private boolean v;
 /*  71:    */   private boolean w;
 /*  72:    */   private boolean x;
@@ -96,9 +96,9 @@ package net.minecraft.src;
 /*  95: 96 */     return this;
 /*  96:    */   }
 /*  97:    */   
-/*  98:    */   public boolean e()
+/*  98:    */   public boolean getBypassArmor()
 /*  99:    */   {
-/* 100:100 */     return this.q;
+/* 100:100 */     return this.bypassArmor;
 /* 101:    */   }
 /* 102:    */   
 /* 103:    */   public float f()
@@ -121,19 +121,19 @@ package net.minecraft.src;
 /* 120:118 */     this.p = paramString;
 /* 121:    */   }
 /* 122:    */   
-/* 123:    */   public Entity i()
+/* 123:    */   public Entity getEntity()
 /* 124:    */   {
-/* 125:122 */     return j();
+/* 125:122 */     return getAttacker();
 /* 126:    */   }
 /* 127:    */   
-/* 128:    */   public Entity j()
+/* 128:    */   public Entity getAttacker()
 /* 129:    */   {
 /* 130:126 */     return null;
 /* 131:    */   }
 /* 132:    */   
-/* 133:    */   protected DamageSource k()
+/* 133:    */   protected DamageSource setBypassArmor()
 /* 134:    */   {
-/* 135:130 */     this.q = true;
+/* 135:130 */     this.bypassArmor = true;
 /* 136:    */     
 /* 137:132 */     this.t = 0.0F;
 /* 138:133 */     return this;
@@ -153,9 +153,9 @@ package net.minecraft.src;
 /* 152:145 */     return this;
 /* 153:    */   }
 /* 154:    */   
-/* 155:    */   protected DamageSource n()
+/* 155:    */   protected DamageSource setFire()
 /* 156:    */   {
-/* 157:149 */     this.u = true;
+/* 157:149 */     this.fire = true;
 /* 158:150 */     return this;
 /* 159:    */   }
 /* 160:    */   
@@ -170,9 +170,9 @@ package net.minecraft.src;
 /* 169:161 */     return new hz(str1, new Object[] { paramxm.e_() });
 /* 170:    */   }
 /* 171:    */   
-/* 172:    */   public boolean o()
+/* 172:    */   public boolean isFire()
 /* 173:    */   {
-/* 174:166 */     return this.u;
+/* 174:166 */     return this.fire;
 /* 175:    */   }
 /* 176:    */   
 /* 177:    */   public String p()
@@ -204,8 +204,8 @@ package net.minecraft.src;
 /* 203:    */   
 /* 204:    */   public boolean u()
 /* 205:    */   {
-/* 206:192 */     Entity localwv = j();
-/* 207:193 */     if (((localwv instanceof EntityPlayer)) && (((EntityPlayer)localwv).by.d)) {
+/* 206:192 */     Entity localwv = getAttacker();
+/* 207:193 */     if (((localwv instanceof EntityPlayer)) && (((EntityPlayer)localwv).abilities.instabuild)) {
 /* 208:194 */       return true;
 /* 209:    */     }
 /* 210:196 */     return false;

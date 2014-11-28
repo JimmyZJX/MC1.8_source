@@ -49,7 +49,7 @@ package net.minecraft.src;
 /* 48:52 */     if (this.f++ >= this.g) {
 /* 49:53 */       setDead();
 /* 50:   */     }
-/* 51:56 */     d(this.xVelocity, this.yVelocity, this.zVelocity);
+/* 51:56 */     move(this.xVelocity, this.yVelocity, this.zVelocity);
 /* 52:57 */     this.aq = ((float)(this.aq * 0.96D));
 /* 53:58 */     this.ar = ((float)(this.ar * 0.9D));
 /* 54:   */     

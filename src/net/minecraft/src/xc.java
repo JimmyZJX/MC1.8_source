@@ -4,8 +4,8 @@ package net.minecraft.src;
 /*   3:    */   public final int a;
 /*   4:    */   public final int b;
 /*   5:    */   public final int c;
-/*   6:    */   public final tq d;
-/*   7:    */   public final tq e;
+/*   6:    */   public final PlayerStat d;
+/*   7:    */   public final PlayerStat e;
 /*   8:    */   
 /*   9:    */   public xc(int paramInt1, int paramInt2, int paramInt3)
 /*  10:    */   {

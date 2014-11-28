@@ -19,19 +19,19 @@ package net.minecraft.src;
 /* 18:21 */     return super.a(paramInt) + 50;
 /* 19:   */   }
 /* 20:   */   
-/* 21:   */   public int b()
+/* 21:   */   public int getHighestLevel()
 /* 22:   */   {
 /* 23:26 */     return 1;
 /* 24:   */   }
 /* 25:   */   
 /* 26:   */   public boolean a(Enchantment paramapf)
 /* 27:   */   {
-/* 28:31 */     return (super.a(paramapf)) && (paramapf.B != u.B);
+/* 28:31 */     return (super.a(paramapf)) && (paramapf.id != u.id);
 /* 29:   */   }
 /* 30:   */   
 /* 31:   */   public boolean a(ItemStack paramamj)
 /* 32:   */   {
-/* 33:36 */     if (paramamj.getItem() == ItemList.be) {
+/* 33:36 */     if (paramamj.getItem() == ItemList.shears) {
 /* 34:37 */       return true;
 /* 35:   */     }
 /* 36:39 */     return super.a(paramamj);

@@ -59,7 +59,7 @@ package net.minecraft.src;
 /* 58:62 */       this.world.a(EnumParticleEffect.l, this.xPos, this.yPos, this.zPos, this.xVelocity, this.yVelocity, this.zVelocity, new int[0]);
 /* 59:   */     }
 /* 60:65 */     this.yVelocity -= 0.03D;
-/* 61:66 */     d(this.xVelocity, this.yVelocity, this.zVelocity);
+/* 61:66 */     move(this.xVelocity, this.yVelocity, this.zVelocity);
 /* 62:67 */     this.xVelocity *= 0.9990000128746033D;
 /* 63:68 */     this.yVelocity *= 0.9990000128746033D;
 /* 64:69 */     this.zVelocity *= 0.9990000128746033D;

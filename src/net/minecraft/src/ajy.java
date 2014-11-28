@@ -25,7 +25,7 @@ package net.minecraft.src;
 /* 24:31 */       if (paramaqu.getBlock(localdt).getProto().getMaterial() == Material.water)
 /* 25:   */       {
 /* 26:32 */         paramamj.stackSize -= 1;
-/* 27:33 */         paramahd.b(StatList.J[Item.b(this)]);
+/* 27:33 */         paramahd.increaseStat(StatList.J[Item.b(this)]);
 /* 28:34 */         if (paramamj.stackSize <= 0) {
 /* 29:35 */           return new ItemStack(ItemList.potion);
 /* 30:   */         }

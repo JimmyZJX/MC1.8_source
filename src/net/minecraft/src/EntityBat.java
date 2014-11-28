@@ -63,7 +63,7 @@ package net.minecraft.src;
 /*  62:    */   {
 /*  63: 81 */     super.aW();
 /*  64:    */     
-/*  65: 83 */     a(afs.a).a(6.0D);
+/*  65: 83 */     getAttribute(MobAttribute.maxHealth).a(6.0D);
 /*  66:    */   }
 /*  67:    */   
 /*  68:    */   public boolean n()
@@ -162,7 +162,7 @@ package net.minecraft.src;
 /* 161:    */   
 /* 162:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /* 163:    */   {
-/* 164:181 */     if (b(paramwh)) {
+/* 164:181 */     if (isImmuneTo(paramwh)) {
 /* 165:182 */       return false;
 /* 166:    */     }
 /* 167:184 */     if ((!this.world.isClient) && 

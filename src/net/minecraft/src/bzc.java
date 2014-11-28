@@ -3,10 +3,10 @@ package net.minecraft.src;
 /*  2:   */   extends byl
 /*  3:   */ {
 /*  4:10 */   private static final oa v = new oa("textures/gui/container/dispenser.png");
-/*  5:   */   private final ahb w;
+/*  5:   */   private final Inventory w;
 /*  6:   */   public vq u;
 /*  7:   */   
-/*  8:   */   public bzc(ahb paramahb, vq paramvq)
+/*  8:   */   public bzc(Inventory paramahb, vq paramvq)
 /*  9:   */   {
 /* 10:15 */     super(new aip(paramahb, paramvq));
 /* 11:16 */     this.w = paramahb;

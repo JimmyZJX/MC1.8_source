@@ -96,9 +96,9 @@ package net.minecraft.src;
 /*  95:876 */     a(paramaqu, BlockList.bj.instance(), 2, 3, 8, parambjb);
 /*  96:    */     
 /*  97:    */ 
-/*  98:879 */     a(paramaqu, BlockList.torch.instance().setData(bbl.a, this.m.d()), 2, 4, 7, parambjb);
-/*  99:880 */     a(paramaqu, BlockList.torch.instance().setData(bbl.a, this.m.e()), 1, 4, 6, parambjb);
-/* 100:881 */     a(paramaqu, BlockList.torch.instance().setData(bbl.a, this.m.f()), 3, 4, 6, parambjb);
+/*  98:879 */     a(paramaqu, BlockList.torch.instance().setData(bbl.a, this.m.opposite()), 2, 4, 7, parambjb);
+/*  99:880 */     a(paramaqu, BlockList.torch.instance().setData(bbl.a, this.m.yRotate()), 1, 4, 6, parambjb);
+/* 100:881 */     a(paramaqu, BlockList.torch.instance().setData(bbl.a, this.m.ccw()), 3, 4, 6, parambjb);
 /* 101:882 */     a(paramaqu, BlockList.torch.instance().setData(bbl.a, this.m), 2, 4, 5, parambjb);
 /* 102:    */     
 /* 103:    */ 

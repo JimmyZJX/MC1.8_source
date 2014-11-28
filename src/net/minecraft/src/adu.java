@@ -72,20 +72,20 @@ package net.minecraft.src;
 /*  71:    */   
 /*  72:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /*  73:    */   {
-/*  74: 89 */     if (b(paramwh)) {
+/*  74: 89 */     if (isImmuneTo(paramwh)) {
 /*  75: 90 */       return false;
 /*  76:    */     }
 /*  77: 92 */     if ((this.world.isClient) || (this.isDead)) {
 /*  78: 93 */       return true;
 /*  79:    */     }
-/*  80: 95 */     if ((this.rider != null) && (this.rider == paramwh.j()) && ((paramwh instanceof wj))) {
+/*  80: 95 */     if ((this.rider != null) && (this.rider == paramwh.getAttacker()) && ((paramwh instanceof DamageSourceProjectile))) {
 /*  81: 96 */       return false;
 /*  82:    */     }
 /*  83: 98 */     b(-m());
 /*  84: 99 */     a(10);
 /*  85:100 */     a(j() + paramFloat * 10.0F);
 /*  86:101 */     ac();
-/*  87:102 */     int j = ((paramwh.j() instanceof EntityPlayer)) && (((EntityPlayer)paramwh.j()).by.d) ? 1 : 0;
+/*  87:102 */     int j = ((paramwh.getAttacker() instanceof EntityPlayer)) && (((EntityPlayer)paramwh.getAttacker()).abilities.instabuild) ? 1 : 0;
 /*  88:103 */     if ((j != 0) || (j() > 40.0F))
 /*  89:    */     {
 /*  90:104 */       if (this.rider != null) {
@@ -321,7 +321,7 @@ package net.minecraft.src;
 /* 320:319 */       this.yVelocity *= 0.5D;
 /* 321:320 */       this.zVelocity *= 0.5D;
 /* 322:    */     }
-/* 323:322 */     d(this.xVelocity, this.yVelocity, this.zVelocity);
+/* 323:322 */     move(this.xVelocity, this.yVelocity, this.zVelocity);
 /* 324:324 */     if ((this.D) && (d2 > 0.2D))
 /* 325:    */     {
 /* 326:325 */       if ((!this.world.isClient) && (!this.isDead))

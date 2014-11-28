@@ -56,7 +56,7 @@ package net.minecraft.src;
 /*   55:     */   public int W;
 /*   56:  91 */   public int X = 1;
 /*   57:     */   private int i;
-/*   58:     */   protected boolean Y;
+/*   58:     */   protected boolean inWater;
 /*   59:     */   public int Z;
 /*   60:  98 */   protected boolean aa = true;
 /*   61:     */   protected boolean ab;
@@ -164,7 +164,7 @@ package net.minecraft.src;
 /*  163: 206 */       this.height = paramFloat2;
 /*  164: 207 */       setAABB(new AABB(getAABB().minX, getAABB().minY, getAABB().minZ, getAABB().minX + this.width, getAABB().minY + this.height, getAABB().minZ + this.width));
 /*  165: 209 */       if ((this.width > f1) && (!this.aa) && (!this.world.isClient)) {
-/*  166: 210 */         d(f1 - this.width, 0.0D, f1 - this.width);
+/*  166: 210 */         move(f1 - this.width, 0.0D, f1 - this.width);
 /*  167:     */       }
 /*  168:     */     }
 /*  169:     */   }
@@ -270,12 +270,12 @@ package net.minecraft.src;
 /*  269:     */       else
 /*  270:     */       {
 /*  271: 334 */         if (this.i % 20 == 0) {
-/*  272: 335 */           a(DamageSource.c, 1.0F);
+/*  272: 335 */           a(DamageSource.onFire, 1.0F);
 /*  273:     */         }
 /*  274: 337 */         this.i -= 1;
 /*  275:     */       }
 /*  276:     */     }
-/*  277: 342 */     if (ab())
+/*  277: 342 */     if (isInLava())
 /*  278:     */     {
 /*  279: 343 */       M();
 /*  280: 344 */       this.O *= 0.5F;
@@ -301,7 +301,7 @@ package net.minecraft.src;
 /*  300: 365 */     if (this.ab) {
 /*  301: 366 */       return;
 /*  302:     */     }
-/*  303: 369 */     a(DamageSource.d, 4.0F);
+/*  303: 369 */     a(DamageSource.lava, 4.0F);
 /*  304: 370 */     e(15);
 /*  305:     */   }
 /*  306:     */   
@@ -335,11 +335,11 @@ package net.minecraft.src;
 /*  334: 400 */     return (this.world.getCollidingAABBs(this, parambrt).isEmpty()) && (!this.world.isInLiquid(parambrt));
 /*  335:     */   }
 /*  336:     */   
-/*  337:     */   public void d(double paramDouble1, double paramDouble2, double paramDouble3)
+/*  337:     */   public void move(double dx, double dy, double dz)
 /*  338:     */   {
 /*  339: 404 */     if (this.T)
 /*  340:     */     {
-/*  341: 405 */       setAABB(getAABB().offset(paramDouble1, paramDouble2, paramDouble3));
+/*  341: 405 */       setAABB(getAABB().offset(dx, dy, dz));
 /*  342: 406 */       m();
 /*  343: 407 */       return;
 /*  344:     */     }
@@ -352,120 +352,120 @@ package net.minecraft.src;
 /*  351:     */     {
 /*  352: 418 */       this.H = false;
 /*  353:     */       
-/*  354: 420 */       paramDouble1 *= 0.25D;
-/*  355: 421 */       paramDouble2 *= 0.0500000007450581D;
-/*  356: 422 */       paramDouble3 *= 0.25D;
+/*  354: 420 */       dx *= 0.25D;
+/*  355: 421 */       dy *= 0.0500000007450581D;
+/*  356: 422 */       dz *= 0.25D;
 /*  357: 423 */       this.xVelocity = 0.0D;
 /*  358: 424 */       this.yVelocity = 0.0D;
 /*  359: 425 */       this.zVelocity = 0.0D;
 /*  360:     */     }
-/*  361: 428 */     double d4 = paramDouble1;
-/*  362: 429 */     double d5 = paramDouble2;
-/*  363: 430 */     double d6 = paramDouble3;
+/*  361: 428 */     double d4 = dx;
+/*  362: 429 */     double d5 = dy;
+/*  363: 430 */     double d6 = dz;
 /*  364:     */     
 /*  365:     */ 
 /*  366: 433 */     int i1 = (this.C) && (aw()) && ((this instanceof EntityPlayer)) ? 1 : 0;
 /*  367: 434 */     if (i1 != 0)
 /*  368:     */     {
 /*  369: 435 */       double d7 = 0.05D;
-/*  370: 438 */       while ((paramDouble1 != 0.0D) && (this.world.getCollidingAABBs(this, getAABB().offset(paramDouble1, -1.0D, 0.0D)).isEmpty()))
+/*  370: 438 */       while ((dx != 0.0D) && (this.world.getCollidingAABBs(this, getAABB().offset(dx, -1.0D, 0.0D)).isEmpty()))
 /*  371:     */       {
-/*  372: 439 */         if ((paramDouble1 < d7) && (paramDouble1 >= -d7)) {
-/*  373: 440 */           paramDouble1 = 0.0D;
-/*  374: 441 */         } else if (paramDouble1 > 0.0D) {
-/*  375: 442 */           paramDouble1 -= d7;
+/*  372: 439 */         if ((dx < d7) && (dx >= -d7)) {
+/*  373: 440 */           dx = 0.0D;
+/*  374: 441 */         } else if (dx > 0.0D) {
+/*  375: 442 */           dx -= d7;
 /*  376:     */         } else {
-/*  377: 444 */           paramDouble1 += d7;
+/*  377: 444 */           dx += d7;
 /*  378:     */         }
-/*  379: 446 */         d4 = paramDouble1;
+/*  379: 446 */         d4 = dx;
 /*  380:     */       }
-/*  381: 450 */       while ((paramDouble3 != 0.0D) && (this.world.getCollidingAABBs(this, getAABB().offset(0.0D, -1.0D, paramDouble3)).isEmpty()))
+/*  381: 450 */       while ((dz != 0.0D) && (this.world.getCollidingAABBs(this, getAABB().offset(0.0D, -1.0D, dz)).isEmpty()))
 /*  382:     */       {
-/*  383: 451 */         if ((paramDouble3 < d7) && (paramDouble3 >= -d7)) {
-/*  384: 452 */           paramDouble3 = 0.0D;
-/*  385: 453 */         } else if (paramDouble3 > 0.0D) {
-/*  386: 454 */           paramDouble3 -= d7;
+/*  383: 451 */         if ((dz < d7) && (dz >= -d7)) {
+/*  384: 452 */           dz = 0.0D;
+/*  385: 453 */         } else if (dz > 0.0D) {
+/*  386: 454 */           dz -= d7;
 /*  387:     */         } else {
-/*  388: 456 */           paramDouble3 += d7;
+/*  388: 456 */           dz += d7;
 /*  389:     */         }
-/*  390: 458 */         d6 = paramDouble3;
+/*  390: 458 */         d6 = dz;
 /*  391:     */       }
-/*  392: 462 */       while ((paramDouble1 != 0.0D) && (paramDouble3 != 0.0D) && (this.world.getCollidingAABBs(this, getAABB().offset(paramDouble1, -1.0D, paramDouble3)).isEmpty()))
+/*  392: 462 */       while ((dx != 0.0D) && (dz != 0.0D) && (this.world.getCollidingAABBs(this, getAABB().offset(dx, -1.0D, dz)).isEmpty()))
 /*  393:     */       {
-/*  394: 463 */         if ((paramDouble1 < d7) && (paramDouble1 >= -d7)) {
-/*  395: 464 */           paramDouble1 = 0.0D;
-/*  396: 465 */         } else if (paramDouble1 > 0.0D) {
-/*  397: 466 */           paramDouble1 -= d7;
+/*  394: 463 */         if ((dx < d7) && (dx >= -d7)) {
+/*  395: 464 */           dx = 0.0D;
+/*  396: 465 */         } else if (dx > 0.0D) {
+/*  397: 466 */           dx -= d7;
 /*  398:     */         } else {
-/*  399: 468 */           paramDouble1 += d7;
+/*  399: 468 */           dx += d7;
 /*  400:     */         }
-/*  401: 470 */         d4 = paramDouble1;
-/*  402: 472 */         if ((paramDouble3 < d7) && (paramDouble3 >= -d7)) {
-/*  403: 473 */           paramDouble3 = 0.0D;
-/*  404: 474 */         } else if (paramDouble3 > 0.0D) {
-/*  405: 475 */           paramDouble3 -= d7;
+/*  401: 470 */         d4 = dx;
+/*  402: 472 */         if ((dz < d7) && (dz >= -d7)) {
+/*  403: 473 */           dz = 0.0D;
+/*  404: 474 */         } else if (dz > 0.0D) {
+/*  405: 475 */           dz -= d7;
 /*  406:     */         } else {
-/*  407: 477 */           paramDouble3 += d7;
+/*  407: 477 */           dz += d7;
 /*  408:     */         }
-/*  409: 479 */         d6 = paramDouble3;
+/*  409: 479 */         d6 = dz;
 /*  410:     */       }
 /*  411:     */     }
-/*  412: 483 */     List<AABB> localList1 = this.world.getCollidingAABBs(this, getAABB().addCoord(paramDouble1, paramDouble2, paramDouble3));
+/*  412: 483 */     List<AABB> localList1 = this.world.getCollidingAABBs(this, getAABB().addCoord(dx, dy, dz));
 /*  413: 484 */     AABB localbrt1 = getAABB();
 /*  414: 487 */     for (Iterator<AABB> localIterator1 = localList1.iterator(); localIterator1.hasNext();)
 /*  415:     */     {
 /*  416: 487 */       AABB localObject1 = (AABB)localIterator1.next();
-/*  417: 488 */       paramDouble2 = ((AABB)localObject1).b(getAABB(), paramDouble2);
+/*  417: 488 */       dy = ((AABB)localObject1).b(getAABB(), dy);
 /*  418:     */     }
-/*  419: 490 */     setAABB(getAABB().offset(0.0D, paramDouble2, 0.0D));
-/*  420: 491 */     int i2 = (this.C) || ((d5 != paramDouble2) && (d5 < 0.0D)) ? 1 : 0;
+/*  419: 490 */     setAABB(getAABB().offset(0.0D, dy, 0.0D));
+/*  420: 491 */     int i2 = (this.C) || ((d5 != dy) && (d5 < 0.0D)) ? 1 : 0;
 /*  421: 495 */     for (Iterator<AABB> localObject1 = localList1.iterator(); localObject1.hasNext();)
 /*  422:     */     {
 /*  423: 495 */       AABB localbrt2 = localObject1.next();
-/*  424: 496 */       paramDouble1 = localbrt2.a(getAABB(), paramDouble1);
+/*  424: 496 */       dx = localbrt2.a(getAABB(), dx);
 /*  425:     */     }
 /*  426:     */     AABB localbrt2;
-/*  427: 498 */     setAABB(getAABB().offset(paramDouble1, 0.0D, 0.0D));
+/*  427: 498 */     setAABB(getAABB().offset(dx, 0.0D, 0.0D));
 /*  428: 501 */     for (Iterator<AABB> localObject1 = localList1.iterator(); localObject1.hasNext();)
 /*  429:     */     {
 /*  430: 501 */       localbrt2 = localObject1.next();
-/*  431: 502 */       paramDouble3 = localbrt2.c(getAABB(), paramDouble3);
+/*  431: 502 */       dz = localbrt2.c(getAABB(), dz);
 /*  432:     */     }
-/*  433: 504 */     setAABB(getAABB().offset(0.0D, 0.0D, paramDouble3));
+/*  433: 504 */     setAABB(getAABB().offset(0.0D, 0.0D, dz));
 /*  434:     */     Object localObject3;
-/*  435: 507 */     if ((this.S > 0.0F) && (i2 != 0) && ((d4 != paramDouble1) || (d6 != paramDouble3)))
+/*  435: 507 */     if ((this.S > 0.0F) && (i2 != 0) && ((d4 != dx) || (d6 != dz)))
 /*  436:     */     {
-/*  437: 508 */       double d8 = paramDouble1;
-/*  438: 509 */       double d9 = paramDouble2;
-/*  439: 510 */       double d10 = paramDouble3;
+/*  437: 508 */       double d8 = dx;
+/*  438: 509 */       double d9 = dy;
+/*  439: 510 */       double d10 = dz;
 /*  440: 511 */       localObject3 = getAABB();
 /*  441:     */       
 /*  442:     */ 
 /*  443: 514 */       setAABB(localbrt1);
-/*  444: 515 */       paramDouble1 = d4;
-/*  445: 516 */       paramDouble2 = this.S;
-/*  446: 517 */       paramDouble3 = d6;
+/*  444: 515 */       dx = d4;
+/*  445: 516 */       dy = this.S;
+/*  446: 517 */       dz = d6;
 /*  447:     */       
-/*  448: 519 */       List<AABB> localList2 = this.world.getCollidingAABBs(this, getAABB().addCoord(paramDouble1, paramDouble2, paramDouble3));
+/*  448: 519 */       List<AABB> localList2 = this.world.getCollidingAABBs(this, getAABB().addCoord(dx, dy, dz));
 /*  449:     */       
 /*  450:     */ 
 /*  451: 522 */       AABB localbrt3 = getAABB();
-/*  452: 523 */       AABB localbrt4 = localbrt3.addCoord(paramDouble1, 0.0D, paramDouble3);
-/*  453: 524 */       double d14 = paramDouble2;
+/*  452: 523 */       AABB localbrt4 = localbrt3.addCoord(dx, 0.0D, dz);
+/*  453: 524 */       double d14 = dy;
 /*  454: 525 */       for (AABB localbrt5 : localList2) {
 /*  455: 526 */         d14 = localbrt5.b(localbrt4, d14);
 /*  456:     */       }
 /*  457: 528 */       localbrt3 = localbrt3.offset(0.0D, d14, 0.0D);
 /*  458:     */       
 /*  459:     */ 
-/*  460: 531 */       double d15 = paramDouble1;
+/*  460: 531 */       double d15 = dx;
 /*  461: 533 */       for (AABB localbrt6 : localList2) {
 /*  462: 534 */         d15 = localbrt6.a(localbrt3, d15);
 /*  463:     */       }
 /*  464: 536 */       localbrt3 = localbrt3.offset(d15, 0.0D, 0.0D);
 /*  465:     */       
 /*  466:     */ 
-/*  467: 539 */       double d16 = paramDouble3;
+/*  467: 539 */       double d16 = dz;
 /*  468: 541 */       for (Iterator<AABB> localObject4 = localList2.iterator(); localObject4.hasNext();)
 /*  469:     */       {
 /*  470: 541 */         AABB localbrt7 = localObject4.next();
@@ -475,21 +475,21 @@ package net.minecraft.src;
 /*  474:     */       
 /*  475:     */ 
 /*  476: 547 */       AABB localObject4 = getAABB();
-/*  477: 548 */       double d17 = paramDouble2;
+/*  477: 548 */       double d17 = dy;
 /*  478: 549 */       for (AABB localbrt8 : localList2) {
 /*  479: 550 */         d17 = localbrt8.b((AABB)localObject4, d17);
 /*  480:     */       }
 /*  481: 552 */       localObject4 = ((AABB)localObject4).offset(0.0D, d17, 0.0D);
 /*  482:     */       
 /*  483:     */ 
-/*  484: 555 */       double d18 = paramDouble1;
+/*  484: 555 */       double d18 = dx;
 /*  485: 557 */       for (AABB localbrt9 : localList2) {
 /*  486: 558 */         d18 = localbrt9.a((AABB)localObject4, d18);
 /*  487:     */       }
 /*  488: 560 */       localObject4 = ((AABB)localObject4).offset(d18, 0.0D, 0.0D);
 /*  489:     */       
 /*  490:     */ 
-/*  491: 563 */       double d19 = paramDouble3;
+/*  491: 563 */       double d19 = dz;
 /*  492: 565 */       for (AABB localbrt10 : localList2) {
 /*  493: 566 */         d19 = localbrt10.c((AABB)localObject4, d19);
 /*  494:     */       }
@@ -500,26 +500,26 @@ package net.minecraft.src;
 /*  499: 572 */       double d21 = d18 * d18 + d19 * d19;
 /*  500: 575 */       if (d20 > d21)
 /*  501:     */       {
-/*  502: 576 */         paramDouble1 = d15;
-/*  503: 577 */         paramDouble3 = d16;
+/*  502: 576 */         dx = d15;
+/*  503: 577 */         dz = d16;
 /*  504: 578 */         setAABB(localbrt3);
 /*  505:     */       }
 /*  506:     */       else
 /*  507:     */       {
-/*  508: 580 */         paramDouble1 = d18;
-/*  509: 581 */         paramDouble3 = d19;
+/*  508: 580 */         dx = d18;
+/*  509: 581 */         dz = d19;
 /*  510: 582 */         setAABB((AABB)localObject4);
 /*  511:     */       }
-/*  512: 586 */       paramDouble2 = -this.S;
+/*  512: 586 */       dy = -this.S;
 /*  513: 587 */       for (AABB localbrt11 : localList2) {
-/*  514: 588 */         paramDouble2 = localbrt11.b(getAABB(), paramDouble2);
+/*  514: 588 */         dy = localbrt11.b(getAABB(), dy);
 /*  515:     */       }
-/*  516: 590 */       setAABB(getAABB().offset(0.0D, paramDouble2, 0.0D));
-/*  517: 593 */       if (d8 * d8 + d10 * d10 >= paramDouble1 * paramDouble1 + paramDouble3 * paramDouble3)
+/*  516: 590 */       setAABB(getAABB().offset(0.0D, dy, 0.0D));
+/*  517: 593 */       if (d8 * d8 + d10 * d10 >= dx * dx + dz * dz)
 /*  518:     */       {
-/*  519: 594 */         paramDouble1 = d8;
-/*  520: 595 */         paramDouble2 = d9;
-/*  521: 596 */         paramDouble3 = d10;
+/*  519: 594 */         dx = d8;
+/*  520: 595 */         dy = d9;
+/*  521: 596 */         dz = d10;
 /*  522: 597 */         setAABB((AABB)localObject3);
 /*  523:     */       }
 /*  524:     */     }
@@ -528,8 +528,8 @@ package net.minecraft.src;
 /*  527:     */     
 /*  528: 603 */     m();
 /*  529:     */     
-/*  530: 605 */     this.D = ((d4 != paramDouble1) || (d6 != paramDouble3));
-/*  531: 606 */     this.E = (d5 != paramDouble2);
+/*  530: 605 */     this.D = ((d4 != dx) || (d6 != dz));
+/*  531: 606 */     this.E = (d5 != dy);
 /*  532:     */     
 /*  533: 608 */     this.C = ((this.E) && (d5 < 0.0D));
 /*  534: 609 */     this.F = ((this.D) || (this.E));
@@ -550,14 +550,14 @@ package net.minecraft.src;
 /*  549: 622 */         localdt = localdt.down();
 /*  550:     */       }
 /*  551:     */     }
-/*  552: 626 */     a(paramDouble2, this.C, (ProtoBlock)localObject2, localdt);
-/*  553: 628 */     if (d4 != paramDouble1) {
+/*  552: 626 */     a(dy, this.C, (ProtoBlock)localObject2, localdt);
+/*  553: 628 */     if (d4 != dx) {
 /*  554: 629 */       this.xVelocity = 0.0D;
 /*  555:     */     }
-/*  556: 631 */     if (d6 != paramDouble3) {
+/*  556: 631 */     if (d6 != dz) {
 /*  557: 632 */       this.zVelocity = 0.0D;
 /*  558:     */     }
-/*  559: 635 */     if (d5 != paramDouble2) {
+/*  559: 635 */     if (d5 != dy) {
 /*  560: 636 */       ((ProtoBlock)localObject2).a(this.world, this);
 /*  561:     */     }
 /*  562: 639 */     if ((r_()) && (i1 == 0) && (this.vehicle == null))
@@ -571,14 +571,14 @@ package net.minecraft.src;
 /*  570: 648 */       if ((localObject2 != null) && (this.C)) {
 /*  571: 649 */         ((ProtoBlock)localObject2).a(this.world, localdt, this);
 /*  572:     */       }
-/*  573: 652 */       this.M = ((float)(this.M + MathUtils.a(d11 * d11 + d13 * d13) * 0.6D));
-/*  574: 653 */       this.N = ((float)(this.N + MathUtils.a(d11 * d11 + d12 * d12 + d13 * d13) * 0.6D));
+/*  573: 652 */       this.M = ((float)(this.M + MathUtils.sqrt(d11 * d11 + d13 * d13) * 0.6D));
+/*  574: 653 */       this.N = ((float)(this.N + MathUtils.sqrt(d11 * d11 + d12 * d12 + d13 * d13) * 0.6D));
 /*  575: 655 */       if ((this.N > this.h) && (((ProtoBlock)localObject2).getMaterial() != Material.air))
 /*  576:     */       {
 /*  577: 656 */         this.h = ((int)this.N + 1);
-/*  578: 657 */         if (V())
+/*  578: 657 */         if (isInWater())
 /*  579:     */         {
-/*  580: 658 */           float f1 = MathUtils.a(this.xVelocity * this.xVelocity * 0.2000000029802322D + this.yVelocity * this.yVelocity + this.zVelocity * this.zVelocity * 0.2000000029802322D) * 0.35F;
+/*  580: 658 */           float f1 = MathUtils.sqrt(this.xVelocity * this.xVelocity * 0.2000000029802322D + this.yVelocity * this.yVelocity + this.zVelocity * this.zVelocity * 0.2000000029802322D) * 0.35F;
 /*  581: 659 */           if (f1 > 1.0F) {
 /*  582: 660 */             f1 = 1.0F;
 /*  583:     */           }
@@ -601,7 +601,7 @@ package net.minecraft.src;
 /*  600: 676 */       throw new u((b)localObject3);
 /*  601:     */     }
 /*  602: 679 */     boolean bool = U();
-/*  603: 680 */     if (this.world.e(getAABB().d(0.001D, 0.001D, 0.001D)))
+/*  603: 680 */     if (this.world.e(getAABB().contract(0.001D, 0.001D, 0.001D)))
 /*  604:     */     {
 /*  605: 681 */       f(1);
 /*  606: 682 */       if (!bool)
@@ -729,7 +729,7 @@ package net.minecraft.src;
 /*  728:     */   protected void f(int paramInt)
 /*  729:     */   {
 /*  730: 789 */     if (!this.ab) {
-/*  731: 790 */       a(DamageSource.a, paramInt);
+/*  731: 790 */       a(DamageSource.inFire, paramInt);
 /*  732:     */     }
 /*  733:     */   }
 /*  734:     */   
@@ -747,35 +747,35 @@ package net.minecraft.src;
 /*  746:     */   
 /*  747:     */   public boolean U()
 /*  748:     */   {
-/*  749: 805 */     return (this.Y) || (this.world.C(new BlockPosition(this.xPos, this.yPos, this.zPos))) || (this.world.C(new BlockPosition(this.xPos, this.yPos + this.height, this.zPos)));
+/*  749: 805 */     return (this.inWater) || (this.world.C(new BlockPosition(this.xPos, this.yPos, this.zPos))) || (this.world.C(new BlockPosition(this.xPos, this.yPos + this.height, this.zPos)));
 /*  750:     */   }
 /*  751:     */   
-/*  752:     */   public boolean V()
+/*  752:     */   public boolean isInWater()
 /*  753:     */   {
-/*  754: 809 */     return this.Y;
+/*  754: 809 */     return this.inWater;
 /*  755:     */   }
 /*  756:     */   
 /*  757:     */   public boolean W()
 /*  758:     */   {
-/*  759: 813 */     if (this.world.a(getAABB().expand(0.0D, -0.4000000059604645D, 0.0D).d(0.001D, 0.001D, 0.001D), Material.water, this))
+/*  759: 813 */     if (this.world.a(getAABB().expand(0.0D, -0.4000000059604645D, 0.0D).contract(0.001D, 0.001D, 0.001D), Material.water, this))
 /*  760:     */     {
-/*  761: 814 */       if ((!this.Y) && (!this.aa)) {
+/*  761: 814 */       if ((!this.inWater) && (!this.aa)) {
 /*  762: 815 */         X();
 /*  763:     */       }
 /*  764: 817 */       this.O = 0.0F;
-/*  765: 818 */       this.Y = true;
+/*  765: 818 */       this.inWater = true;
 /*  766: 819 */       this.i = 0;
 /*  767:     */     }
 /*  768:     */     else
 /*  769:     */     {
-/*  770: 821 */       this.Y = false;
+/*  770: 821 */       this.inWater = false;
 /*  771:     */     }
-/*  772: 823 */     return this.Y;
+/*  772: 823 */     return this.inWater;
 /*  773:     */   }
 /*  774:     */   
 /*  775:     */   protected void X()
 /*  776:     */   {
-/*  777: 827 */     float f1 = MathUtils.a(this.xVelocity * this.xVelocity * 0.2000000029802322D + this.yVelocity * this.yVelocity + this.zVelocity * this.zVelocity * 0.2000000029802322D) * 0.2F;
+/*  777: 827 */     float f1 = MathUtils.sqrt(this.xVelocity * this.xVelocity * 0.2000000029802322D + this.yVelocity * this.yVelocity + this.zVelocity * this.zVelocity * 0.2000000029802322D) * 0.2F;
 /*  778: 828 */     if (f1 > 1.0F) {
 /*  779: 829 */       f1 = 1.0F;
 /*  780:     */     }
@@ -799,7 +799,7 @@ package net.minecraft.src;
 /*  798:     */   
 /*  799:     */   public void Y()
 /*  800:     */   {
-/*  801: 846 */     if ((ax()) && (!V())) {
+/*  801: 846 */     if ((ax()) && (!isInWater())) {
 /*  802: 847 */       Z();
 /*  803:     */     }
 /*  804:     */   }
@@ -841,9 +841,9 @@ package net.minecraft.src;
 /*  840: 884 */     return false;
 /*  841:     */   }
 /*  842:     */   
-/*  843:     */   public boolean ab()
+/*  843:     */   public boolean isInLava()
 /*  844:     */   {
-/*  845: 888 */     return this.world.a(getAABB().expand(-0.1000000014901161D, -0.4000000059604645D, -0.1000000014901161D), Material.lava);
+/*  845: 888 */     return this.world.isTouchingMaterial(getAABB().expand(-0.1000000014901161D, -0.4000000059604645D, -0.1000000014901161D), Material.lava);
 /*  846:     */   }
 /*  847:     */   
 /*  848:     */   public void a(float paramFloat1, float paramFloat2, float paramFloat3)
@@ -961,7 +961,7 @@ package net.minecraft.src;
 /*  960: 990 */     double d1 = this.xPos - paramDouble1;
 /*  961: 991 */     double d2 = this.yPos - paramDouble2;
 /*  962: 992 */     double d3 = this.zPos - paramDouble3;
-/*  963: 993 */     return MathUtils.a(d1 * d1 + d2 * d2 + d3 * d3);
+/*  963: 993 */     return MathUtils.sqrt(d1 * d1 + d2 * d2 + d3 * d3);
 /*  964:     */   }
 /*  965:     */   
 /*  966:     */   public double h(Entity paramwv)
@@ -972,7 +972,7 @@ package net.minecraft.src;
 /*  971:1000 */     return d1 * d1 + d2 * d2 + d3 * d3;
 /*  972:     */   }
 /*  973:     */   
-/*  974:     */   public void d(EntityPlayer paramahd) {}
+/*  974:     */   public void onPickedUp(EntityPlayer paramahd) {}
 /*  975:     */   
 /*  976:     */   public void i(Entity paramwv)
 /*  977:     */   {
@@ -988,7 +988,7 @@ package net.minecraft.src;
 /*  987:1017 */     double d3 = MathUtils.absMax(d1, d2);
 /*  988:1019 */     if (d3 >= 0.009999999776482582D)
 /*  989:     */     {
-/*  990:1020 */       d3 = MathUtils.a(d3);
+/*  990:1020 */       d3 = MathUtils.sqrt(d3);
 /*  991:1021 */       d1 /= d3;
 /*  992:1022 */       d2 /= d3;
 /*  993:     */       
@@ -1028,7 +1028,7 @@ package net.minecraft.src;
 /* 1027:     */   
 /* 1028:     */   public boolean a(DamageSource paramwh, float paramFloat)
 /* 1029:     */   {
-/* 1030:1058 */     if (b(paramwh)) {
+/* 1030:1058 */     if (isImmuneTo(paramwh)) {
 /* 1031:1059 */       return false;
 /* 1032:     */     }
 /* 1033:1061 */     ac();
@@ -1071,7 +1071,7 @@ package net.minecraft.src;
 /* 1070:     */   {
 /* 1071:1100 */     Vec3 localbrw1 = e(paramFloat);
 /* 1072:1101 */     Vec3 localbrw2 = d(paramFloat);
-/* 1073:1102 */     Vec3 localbrw3 = localbrw1.b(localbrw2.x * paramDouble, localbrw2.y * paramDouble, localbrw2.z * paramDouble);
+/* 1073:1102 */     Vec3 localbrw3 = localbrw1.add(localbrw2.x * paramDouble, localbrw2.y * paramDouble, localbrw2.z * paramDouble);
 /* 1074:1103 */     return this.world.a(localbrw1, localbrw3, false, false, true);
 /* 1075:     */   }
 /* 1076:     */   
@@ -1424,7 +1424,7 @@ package net.minecraft.src;
 /* 1423:1445 */     setPos(paramDouble1, paramDouble2, paramDouble3);
 /* 1424:1446 */     b(paramFloat1, paramFloat2);
 /* 1425:     */     
-/* 1426:1448 */     List<AABB> localList = this.world.getCollidingAABBs(this, getAABB().d(0.03125D, 0.0D, 0.03125D));
+/* 1426:1448 */     List<AABB> localList = this.world.getCollidingAABBs(this, getAABB().contract(0.03125D, 0.0D, 0.03125D));
 /* 1427:1449 */     if (!localList.isEmpty())
 /* 1428:     */     {
 /* 1429:1450 */       double d = 0.0D;
@@ -1580,7 +1580,7 @@ package net.minecraft.src;
 /* 1579:     */   
 /* 1580:     */   public void onStruck(ads paramads)
 /* 1581:     */   {
-/* 1582:1587 */     a(DamageSource.b, 5.0F);
+/* 1582:1587 */     a(DamageSource.lightningBolt, 5.0F);
 /* 1583:1588 */     this.i += 1;
 /* 1584:1589 */     if (this.i == 0) {
 /* 1585:1590 */       e(8);
@@ -1698,9 +1698,9 @@ package net.minecraft.src;
 /* 1697:1699 */     return String.format("%s['%s'/%d, l='%s', x=%.2f, y=%.2f, z=%.2f]", new Object[] { getClass().getSimpleName(), getName(), Integer.valueOf(this.id), this.world == null ? "~NULL~" : this.world.getWorldInfo().k(), Double.valueOf(this.xPos), Double.valueOf(this.yPos), Double.valueOf(this.zPos) });
 /* 1698:     */   }
 /* 1699:     */   
-/* 1700:     */   public boolean b(DamageSource paramwh)
+/* 1700:     */   public boolean isImmuneTo(DamageSource source)
 /* 1701:     */   {
-/* 1702:1703 */     return (this.ar) && (paramwh != DamageSource.j) && (!paramwh.u());
+/* 1702:1703 */     return (this.ar) && (source != DamageSource.outOfWorld) && (!source.u());
 /* 1703:     */   }
 /* 1704:     */   
 /* 1705:     */   public void setPositionAndAngles(Entity paramwv)

@@ -223,11 +223,11 @@ package net.minecraft.src;
 /*  218: 273 */         return;
 /*  219:     */       }
 /*  220: 276 */       float f5 = 0.0625F;
-/*  221: 277 */       boolean bool1 = localqt.getCollidingAABBs(this.b, this.b.getAABB().d(f5, f5, f5)).isEmpty();
+/*  221: 277 */       boolean bool1 = localqt.getCollidingAABBs(this.b, this.b.getAABB().contract(f5, f5, f5)).isEmpty();
 /*  222: 279 */       if ((this.b.C) && (!parammg.f()) && (d13 > 0.0D)) {
-/*  223: 281 */         this.b.bE();
+/*  223: 281 */         this.b.jump();
 /*  224:     */       }
-/*  225: 284 */       this.b.d(d12, d13, d14);
+/*  225: 284 */       this.b.move(d12, d13, d14);
 /*  226: 285 */       this.b.C = parammg.f();
 /*  227:     */       
 /*  228: 287 */       double d19 = d13;
@@ -251,7 +251,7 @@ package net.minecraft.src;
 /*  246: 304 */       this.b.k(this.b.xPos - d1, this.b.yPos - d2, this.b.zPos - d3);
 /*  247: 306 */       if (!this.b.T)
 /*  248:     */       {
-/*  249: 307 */         boolean bool2 = localqt.getCollidingAABBs(this.b, this.b.getAABB().d(f5, f5, f5)).isEmpty();
+/*  249: 307 */         boolean bool2 = localqt.getCollidingAABBs(this.b, this.b.getAABB().contract(f5, f5, f5)).isEmpty();
 /*  250: 308 */         if ((bool1) && ((i1 != 0) || (!bool2)) && (!this.b.bI()))
 /*  251:     */         {
 /*  252: 309 */           a(this.o, this.p, this.q, f3, f4);
@@ -259,7 +259,7 @@ package net.minecraft.src;
 /*  254:     */         }
 /*  255:     */       }
 /*  256: 314 */       AABB localbrt = this.b.getAABB().expand(f5, f5, f5).addCoord(0.0D, -0.55D, 0.0D);
-/*  257: 315 */       if ((!this.d.ai()) && (!this.b.by.c) && (!localqt.c(localbrt)))
+/*  257: 315 */       if ((!this.d.ai()) && (!this.b.abilities.mayfly) && (!localqt.c(localbrt)))
 /*  258:     */       {
 /*  259: 316 */         if (d19 >= -0.03125D)
 /*  260:     */         {
@@ -417,13 +417,13 @@ package net.minecraft.src;
 /*  412: 469 */     localamj = this.b.bg.h();
 /*  413: 470 */     if ((localamj != null) && (localamj.stackSize == 0))
 /*  414:     */     {
-/*  415: 471 */       this.b.bg.a[this.b.bg.c] = null;
+/*  415: 471 */       this.b.bg.items[this.b.bg.c] = null;
 /*  416: 472 */       localamj = null;
 /*  417:     */     }
 /*  418: 475 */     if ((localamj == null) || (localamj.l() == 0))
 /*  419:     */     {
 /*  420: 476 */       this.b.g = true;
-/*  421: 477 */       this.b.bg.a[this.b.bg.c] = ItemStack.b(this.b.bg.a[this.b.bg.c]);
+/*  421: 477 */       this.b.bg.items[this.b.bg.c] = ItemStack.b(this.b.bg.items[this.b.bg.c]);
 /*  422: 478 */       localObject = this.b.bi.a(this.b.bg, this.b.bg.c);
 /*  423: 479 */       this.b.bi.b();
 /*  424: 480 */       this.b.g = false;
@@ -542,7 +542,7 @@ package net.minecraft.src;
 /*  537:     */   public void a(ms paramms)
 /*  538:     */   {
 /*  539: 592 */     ig.a(paramms, this, this.b.u());
-/*  540: 593 */     if ((paramms.a() < 0) || (paramms.a() >= ahb.i()))
+/*  540: 593 */     if ((paramms.a() < 0) || (paramms.a() >= Inventory.i()))
 /*  541:     */     {
 /*  542: 594 */       c.warn(this.b.getName() + " tried to set an invalid carried item");
 /*  543: 595 */       return;
@@ -660,7 +660,7 @@ package net.minecraft.src;
 /*  655:     */         }
 /*  656: 721 */         else if (parammd.a() == me.b)
 /*  657:     */         {
-/*  658: 722 */           if (((localwv instanceof EntityItem)) || ((localwv instanceof EntityExperienceOrb)) || ((localwv instanceof ahj)) || (localwv == this.b))
+/*  658: 722 */           if (((localwv instanceof EntityItem)) || ((localwv instanceof EntityExperienceOrb)) || ((localwv instanceof EntityArrow)) || (localwv == this.b))
 /*  659:     */           {
 /*  660: 723 */             c("Attempting to attack an invalid entity");
 /*  661: 724 */             this.d.f("Player " + this.b.getName() + " tried to attack an invalid entity");
@@ -711,7 +711,7 @@ package net.minecraft.src;
 /*  706: 761 */       this.b.A().a(this.b);
 /*  707: 762 */       break;
 /*  708:     */     case 3: 
-/*  709: 764 */       this.b.b(AchievementList.f);
+/*  709: 764 */       this.b.increaseStat(AchievementList.f);
 /*  710:     */     }
 /*  711:     */   }
 /*  712:     */   
@@ -800,7 +800,7 @@ package net.minecraft.src;
 /*  795:     */           }
 /*  796:     */         }
 /*  797:     */       }
-/*  798: 845 */       int i2 = (parammt.a() >= 1) && (parammt.a() < 36 + ahb.i()) ? 1 : 0;
+/*  798: 845 */       int i2 = (parammt.a() >= 1) && (parammt.a() < 36 + Inventory.i()) ? 1 : 0;
 /*  799: 846 */       int i3 = (localamj == null) || (localamj.getItem() != null) ? 1 : 0;
 /*  800: 847 */       int i4 = (localamj == null) || ((localamj.getDamage2() >= 0) && (localamj.stackSize <= 64) && (localamj.stackSize > 0)) ? 1 : 0;
 /*  801: 849 */       if ((i2 != 0) && (i3 != 0) && (i4 != 0))
@@ -875,7 +875,7 @@ package net.minecraft.src;
 /*  870:     */   public void a(mk parammk)
 /*  871:     */   {
 /*  872: 917 */     ig.a(parammk, this, this.b.u());
-/*  873: 918 */     this.b.by.b = ((parammk.b()) && (this.b.by.c));
+/*  873: 918 */     this.b.abilities.flying = ((parammk.b()) && (this.b.abilities.mayfly));
 /*  874:     */   }
 /*  875:     */   
 /*  876:     */   public void a(lt paramlt)
@@ -944,12 +944,12 @@ package net.minecraft.src;
 /*  939: 981 */         if (localObject1 == null) {
 /*  940:     */           return;
 /*  941:     */         }
-/*  942: 984 */         if ((localamj2.getItem() == ItemList.bN) && (((ItemStack)localObject1).getItem() == ItemList.bM))
+/*  942: 984 */         if ((localamj2.getItem() == ItemList.writtenBook) && (((ItemStack)localObject1).getItem() == ItemList.bM))
 /*  943:     */         {
 /*  944: 985 */           ((ItemStack)localObject1).a("author", new gc(this.b.getName()));
 /*  945: 986 */           ((ItemStack)localObject1).a("title", new gc(localamj2.getTagCompound().getString("title")));
 /*  946: 987 */           ((ItemStack)localObject1).a("pages", localamj2.getTagCompound().c("pages", 8));
-/*  947: 988 */           ((ItemStack)localObject1).a(ItemList.bN);
+/*  947: 988 */           ((ItemStack)localObject1).a(ItemList.writtenBook);
 /*  948:     */         }
 /*  949:     */       }
 /*  950:     */       catch (Exception localException4)
@@ -986,7 +986,7 @@ package net.minecraft.src;
 /*  981:     */         {
 /*  982:1007 */           this.b.a(new hz("advMode.notEnabled", new Object[0]));
 /*  983:     */         }
-/*  984:1008 */         else if ((this.b.a(2, "")) && (this.b.by.d))
+/*  984:1008 */         else if ((this.b.a(2, "")) && (this.b.abilities.instabuild))
 /*  985:     */         {
 /*  986:1009 */           localhd2 = parammc.b();
 /*  987:     */           try

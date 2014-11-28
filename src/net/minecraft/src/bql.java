@@ -94,7 +94,7 @@ package net.minecraft.src;
 /*  93:113 */     return this.b.q();
 /*  94:    */   }
 /*  95:    */   
-/*  96:    */   public EnumGameType r()
+/*  96:    */   public EnumGameMode r()
 /*  97:    */   {
 /*  98:118 */     return this.b.r();
 /*  99:    */   }

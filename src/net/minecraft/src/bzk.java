@@ -15,7 +15,7 @@ package net.minecraft.src;
 /*  14:    */   private int z;
 /*  15:    */   private ho A;
 /*  16:    */   
-/*  17:    */   public bzk(ahb paramahb, aqb paramaqb, World paramaqu)
+/*  17:    */   public bzk(Inventory paramahb, aqb paramaqb, World paramaqu)
 /*  18:    */   {
 /*  19: 33 */     super(new ajf(paramahb, paramaqb, paramaqu));
 /*  20: 34 */     this.w = paramaqb;
@@ -47,7 +47,7 @@ package net.minecraft.src;
 /*  46:    */   {
 /*  47: 61 */     super.e();
 /*  48:    */     
-/*  49: 63 */     aqd localaqd = this.w.b_(this.j.h);
+/*  49: 63 */     TradeOfferList localaqd = this.w.b_(this.j.h);
 /*  50: 64 */     if (localaqd != null)
 /*  51:    */     {
 /*  52: 65 */       this.x.l = (this.z < localaqd.size() - 1);
@@ -63,8 +63,8 @@ package net.minecraft.src;
 /*  62:    */     {
 /*  63: 74 */       this.z += 1;
 /*  64: 75 */       localObject = this.w.b_(this.j.h);
-/*  65: 76 */       if ((localObject != null) && (this.z >= ((aqd)localObject).size())) {
-/*  66: 77 */         this.z = (((aqd)localObject).size() - 1);
+/*  65: 76 */       if ((localObject != null) && (this.z >= ((TradeOfferList)localObject).size())) {
+/*  66: 77 */         this.z = (((TradeOfferList)localObject).size() - 1);
 /*  67:    */       }
 /*  68: 79 */       i = 1;
 /*  69:    */     }
@@ -94,7 +94,7 @@ package net.minecraft.src;
 /*  93:102 */     int j = (this.m - this.g) / 2;
 /*  94:103 */     b(i, j, 0, 0, this.f, this.g);
 /*  95:    */     
-/*  96:105 */     aqd localaqd = this.w.b_(this.j.h);
+/*  96:105 */     TradeOfferList localaqd = this.w.b_(this.j.h);
 /*  97:106 */     if ((localaqd != null) && (!localaqd.isEmpty()))
 /*  98:    */     {
 /*  99:107 */       int k = this.z;
@@ -117,7 +117,7 @@ package net.minecraft.src;
 /* 116:    */   {
 /* 117:125 */     super.a(paramInt1, paramInt2, paramFloat);
 /* 118:    */     
-/* 119:127 */     aqd localaqd = this.w.b_(this.j.h);
+/* 119:127 */     TradeOfferList localaqd = this.w.b_(this.j.h);
 /* 120:128 */     if ((localaqd != null) && (!localaqd.isEmpty()))
 /* 121:    */     {
 /* 122:129 */       int i = (this.l - this.f) / 2;

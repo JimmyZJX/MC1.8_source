@@ -11,7 +11,7 @@ package net.minecraft.src;
 /*  10:309 */     brz localbrz1 = paramces1.i();
 /*  11:310 */     brz localbrz2 = paramces2.i();
 /*  12:    */     
-/*  13:312 */     return ComparisonChain.start().compareTrueFirst(paramces1.b() != EnumGameType.e, paramces2.b() != EnumGameType.e).compare(localbrz1 != null ? localbrz1.b() : "", localbrz2 != null ? localbrz2.b() : "").compare(paramces1.a().getName(), paramces2.a().getName()).result(); 
+/*  13:312 */     return ComparisonChain.start().compareTrueFirst(paramces1.b() != EnumGameMode.SPECTATOR, paramces2.b() != EnumGameMode.SPECTATOR).compare(localbrz1 != null ? localbrz1.b() : "", localbrz2 != null ? localbrz2.b() : "").compare(paramces1.a().getName(), paramces2.a().getName()).result(); 
 /*  14:    */   }
 				bvj(bvi arg0) {}
 /*  15:    */ }

@@ -206,7 +206,7 @@ package net.minecraft.src;
 /* 205:223 */       if ((localbcm instanceof bcr))
 /* 206:    */       {
 /* 207:224 */         bcr localbcr = (bcr)localbcm;
-/* 208:225 */         localbcr.a(this, paramej.d());
+/* 208:225 */         localbcr.a(this, paramej.opposite());
 /* 209:    */         
 /* 210:227 */         return localbcr;
 /* 211:    */       }
@@ -362,7 +362,7 @@ package net.minecraft.src;
 /* 361:376 */     return "minecraft:chest";
 /* 362:    */   }
 /* 363:    */   
-/* 364:    */   public aib a(ahb paramahb, EntityPlayer paramahd)
+/* 364:    */   public aib a(Inventory paramahb, EntityPlayer paramahd)
 /* 365:    */   {
 /* 366:381 */     return new aim(paramahb, this, paramahd);
 /* 367:    */   }

@@ -98,7 +98,7 @@ package net.minecraft.src;
 /*  98:    */ 
 /*  99:    */ 
 /* 100:    */ 
-/* 101:131 */     a("Redstone Ready", ItemList.aC, arm.r, new biw[] { new biw(52, BlockList.A), new biw(3, BlockList.stone), new biw(1, BlockList.bedrock) });
+/* 101:131 */     a("Redstone Ready", ItemList.redstone, arm.r, new biw[] { new biw(52, BlockList.A), new biw(3, BlockList.stone), new biw(1, BlockList.bedrock) });
 /* 102:    */   }
 /* 103:    */   
 /* 104:    */   public bwz(bwd parambwd)

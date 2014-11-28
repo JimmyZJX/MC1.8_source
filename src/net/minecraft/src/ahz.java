@@ -55,7 +55,7 @@ package net.minecraft.src;
 /*  54: 61 */       if (this.d >= 80)
 /*  55:    */       {
 /*  56: 62 */         if ((paramahd.getHealth() > 10.0F) || (localvt == EnumDifficulty.HARD) || ((paramahd.getHealth() > 1.0F) && (localvt == EnumDifficulty.NORMAL))) {
-/*  57: 63 */           paramahd.a(DamageSource.g, 1.0F);
+/*  57: 63 */           paramahd.a(DamageSource.starve, 1.0F);
 /*  58:    */         }
 /*  59: 65 */         this.d = 0;
 /*  60:    */       }

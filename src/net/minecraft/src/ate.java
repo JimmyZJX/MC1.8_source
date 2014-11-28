@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*   8:    */   
 /*   9:    */   public void a(IBlockAccess paramard, BlockPosition paramdt)
 /*  10:    */   {
-/*  11:125 */     EnumDirection localej = (EnumDirection)paramard.getBlock(paramdt).getProperty(a);
+/*  11:125 */     EnumDirection localej = (EnumDirection)paramard.getBlock(paramdt).getData(a);
 /*  12:    */     
 /*  13:127 */     float f1 = 0.0F;
 /*  14:128 */     float f2 = 0.78125F;
@@ -38,8 +38,8 @@ package net.minecraft.src;
 /*  37:    */   
 /*  38:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
 /*  39:    */   {
-/*  40:155 */     EnumDirection localej = (EnumDirection)parambec.getProperty(a);
-/*  41:157 */     if (!paramaqu.getBlock(paramdt.offset(localej.d())).getProto().getMaterial().a())
+/*  40:155 */     EnumDirection localej = (EnumDirection)parambec.getData(a);
+/*  41:157 */     if (!paramaqu.getBlock(paramdt.offset(localej.opposite())).getProto().getMaterial().a())
 /*  42:    */     {
 /*  43:158 */       b(paramaqu, paramdt, parambec, 0);
 /*  44:159 */       paramaqu.g(paramdt);
@@ -58,7 +58,7 @@ package net.minecraft.src;
 /*  57:    */   
 /*  58:    */   public int c(Block parambec)
 /*  59:    */   {
-/*  60:176 */     return ((EnumDirection)parambec.getProperty(a)).a();
+/*  60:176 */     return ((EnumDirection)parambec.getData(a)).a();
 /*  61:    */   }
 /*  62:    */   
 /*  63:    */   protected bed e()

@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*   5:    */ public class EntityFishHook
 /*   6:    */   extends Entity
 /*   7:    */ {
-/*   8: 36 */   private static final List<adp> junks = Arrays.asList(new adp[] { new adp(new ItemStack(ItemList.leatherBoots), 10).a(0.9F), new adp(new ItemStack(ItemList.leather), 10), new adp(new ItemStack(ItemList.bone), 10), new adp(new ItemStack(ItemList.potion), 10), new adp(new ItemStack(ItemList.F), 5), new adp(new ItemStack(ItemList.fishingRod), 2).a(0.9F), new adp(new ItemStack(ItemList.z), 10), new adp(new ItemStack(ItemList.stick), 5), new adp(new ItemStack(ItemList.dye, 10, EnumDyeColor.BLACK.b()), 1), new adp(new ItemStack(BlockList.bR), 10), new adp(new ItemStack(ItemList.bt), 10) });
+/*   8: 36 */   private static final List<adp> junks = Arrays.asList(new adp[] { new adp(new ItemStack(ItemList.leatherBoots), 10).a(0.9F), new adp(new ItemStack(ItemList.leather), 10), new adp(new ItemStack(ItemList.bone), 10), new adp(new ItemStack(ItemList.potion), 10), new adp(new ItemStack(ItemList.string), 5), new adp(new ItemStack(ItemList.fishingRod), 2).a(0.9F), new adp(new ItemStack(ItemList.z), 10), new adp(new ItemStack(ItemList.stick), 5), new adp(new ItemStack(ItemList.dye, 10, EnumDyeColor.BLACK.b()), 1), new adp(new ItemStack(BlockList.bR), 10), new adp(new ItemStack(ItemList.rottenFlesh), 10) });
 /*   9: 49 */   private static final List<adp> treasures = Arrays.asList(new adp[] { new adp(new ItemStack(BlockList.waterLily), 1), new adp(new ItemStack(ItemList.nameTag), 1), new adp(new ItemStack(ItemList.saddle), 1), new adp(new ItemStack(ItemList.bow), 1).a(0.25F).a(), new adp(new ItemStack(ItemList.fishingRod), 1).a(0.25F).a(), new adp(new ItemStack(ItemList.book), 1).a() });
 /*  10: 57 */   private static final List<adp> fishes = Arrays.asList(new adp[] { new adp(new ItemStack(ItemList.fish, 1, ali.a.a()), 60), new adp(new ItemStack(ItemList.fish, 1, ali.b.a()), 25), new adp(new ItemStack(ItemList.fish, 1, ali.c.a()), 2), new adp(new ItemStack(ItemList.fish, 1, ali.d.a()), 13) });
 /*  11:    */   
@@ -89,7 +89,7 @@ package net.minecraft.src;
 /*  89:    */   
 /*  90:    */   public void c(double paramDouble1, double paramDouble2, double paramDouble3, float paramFloat1, float paramFloat2)
 /*  91:    */   {
-/*  92:133 */     float f1 = MathUtils.a(paramDouble1 * paramDouble1 + paramDouble2 * paramDouble2 + paramDouble3 * paramDouble3);
+/*  92:133 */     float f1 = MathUtils.sqrt(paramDouble1 * paramDouble1 + paramDouble2 * paramDouble2 + paramDouble3 * paramDouble3);
 /*  93:    */     
 /*  94:135 */     paramDouble1 /= f1;
 /*  95:136 */     paramDouble2 /= f1;
@@ -107,7 +107,7 @@ package net.minecraft.src;
 /* 107:148 */     this.yVelocity = paramDouble2;
 /* 108:149 */     this.zVelocity = paramDouble3;
 /* 109:    */     
-/* 110:151 */     float f2 = MathUtils.a(paramDouble1 * paramDouble1 + paramDouble3 * paramDouble3);
+/* 110:151 */     float f2 = MathUtils.sqrt(paramDouble1 * paramDouble1 + paramDouble3 * paramDouble3);
 /* 111:    */     
 /* 112:153 */     this.lastYaw = (this.yaw = (float)(Math.atan2(paramDouble1, paramDouble3) * 180.0D / 3.141592741012573D));
 /* 113:154 */     this.lastPitch = (this.pitch = (float)(Math.atan2(paramDouble2, f2) * 180.0D / 3.141592741012573D));
@@ -225,7 +225,7 @@ package net.minecraft.src;
 /* 225:268 */         HitResult localbru2 = localbrt1.a((Vec3)localObject1, localbrw);
 /* 226:269 */         if (localbru2 != null)
 /* 227:    */         {
-/* 228:270 */           double d7 = ((Vec3)localObject1).f(localbru2.c);
+/* 228:270 */           double d7 = ((Vec3)localObject1).dist(localbru2.c);
 /* 229:271 */           if ((d7 < d4) || (d4 == 0.0D))
 /* 230:    */           {
 /* 231:272 */             localObject2 = localwv;
@@ -251,9 +251,9 @@ package net.minecraft.src;
 /* 251:292 */     if (this.aq) {
 /* 252:293 */       return;
 /* 253:    */     }
-/* 254:296 */     d(this.xVelocity, this.yVelocity, this.zVelocity);
+/* 254:296 */     move(this.xVelocity, this.yVelocity, this.zVelocity);
 /* 255:    */     
-/* 256:298 */     float f1 = MathUtils.a(this.xVelocity * this.xVelocity + this.zVelocity * this.zVelocity);
+/* 256:298 */     float f1 = MathUtils.sqrt(this.xVelocity * this.xVelocity + this.zVelocity * this.zVelocity);
 /* 257:299 */     this.yaw = ((float)(Math.atan2(this.xVelocity, this.zVelocity) * 180.0D / 3.141592741012573D));
 /* 258:300 */     this.pitch = ((float)(Math.atan2(this.yVelocity, f1) * 180.0D / 3.141592741012573D));
 /* 259:302 */     while (this.pitch - this.lastPitch < -180.0F) {
@@ -381,7 +381,7 @@ package net.minecraft.src;
 /* 381:    */         else
 /* 382:    */         {
 /* 383:416 */           this.au = MathUtils.nextInt(this.rng, 100, 900);
-/* 384:417 */           this.au -= aph.h(this.b) * 20 * 5;
+/* 384:417 */           this.au -= aph.lureLevel(this.b) * 20 * 5;
 /* 385:    */         }
 /* 386:    */       }
 /* 387:420 */       if (this.at > 0) {
@@ -439,10 +439,10 @@ package net.minecraft.src;
 /* 439:472 */       double d3 = this.b.yPos - this.yPos;
 /* 440:473 */       double d5 = this.b.zPos - this.zPos;
 /* 441:    */       
-/* 442:475 */       double d7 = MathUtils.a(d1 * d1 + d3 * d3 + d5 * d5);
+/* 442:475 */       double d7 = MathUtils.sqrt(d1 * d1 + d3 * d3 + d5 * d5);
 /* 443:476 */       double d9 = 0.1D;
 /* 444:477 */       this.c.xVelocity += d1 * d9;
-/* 445:478 */       this.c.yVelocity += d3 * d9 + MathUtils.a(d7) * 0.08D;
+/* 445:478 */       this.c.yVelocity += d3 * d9 + MathUtils.sqrt(d7) * 0.08D;
 /* 446:479 */       this.c.zVelocity += d5 * d9;
 /* 447:480 */       j = 3;
 /* 448:    */     }
@@ -453,10 +453,10 @@ package net.minecraft.src;
 /* 453:484 */       double d4 = this.b.yPos - this.yPos;
 /* 454:485 */       double d6 = this.b.zPos - this.zPos;
 /* 455:    */       
-/* 456:487 */       double d8 = MathUtils.a(d2 * d2 + d4 * d4 + d6 * d6);
+/* 456:487 */       double d8 = MathUtils.sqrt(d2 * d2 + d4 * d4 + d6 * d6);
 /* 457:488 */       double d10 = 0.1D;
 /* 458:489 */       localadw.xVelocity = (d2 * d10);
-/* 459:490 */       localadw.yVelocity = (d4 * d10 + MathUtils.a(d8) * 0.08D);
+/* 459:490 */       localadw.yVelocity = (d4 * d10 + MathUtils.sqrt(d8) * 0.08D);
 /* 460:491 */       localadw.zVelocity = (d6 * d10);
 /* 461:492 */       this.world.spawnEntity(localadw);
 /* 462:493 */       this.b.world.spawnEntity(new EntityExperienceOrb(this.b.world, this.b.xPos, this.b.yPos + 0.5D, this.b.zPos + 0.5D, this.rng.nextInt(6) + 1));
@@ -473,8 +473,8 @@ package net.minecraft.src;
 /* 473:    */   private ItemStack getHookedItem()
 /* 474:    */   {
 /* 475:506 */     float f1 = this.world.rng.nextFloat();
-/* 476:507 */     int j = aph.g(this.b);
-/* 477:508 */     int k = aph.h(this.b);
+/* 476:507 */     int j = aph.luckOfTheSeaLevel(this.b);
+/* 477:508 */     int k = aph.lureLevel(this.b);
 /* 478:509 */     float probJunk = 0.1F - j * 0.025F - k * 0.01F;
 /* 479:510 */     float probTreasure = 0.05F + j * 0.01F - k * 0.01F;
 /* 480:    */     
@@ -482,18 +482,18 @@ package net.minecraft.src;
 /* 482:513 */     probTreasure = MathUtils.clamp(probTreasure, 0.0F, 1.0F);
 /* 483:515 */     if (f1 < probJunk)
 /* 484:    */     {
-/* 485:516 */       this.b.b(StatList.junkFished);
+/* 485:516 */       this.b.increaseStat(StatList.junkFished);
 /* 486:517 */       return ((adp)WeightedRandom.getRandomItem(this.rng, junks)).a(this.rng);
 /* 487:    */     }
 /* 488:519 */     f1 -= probJunk;
 /* 489:521 */     if (f1 < probTreasure)
 /* 490:    */     {
-/* 491:522 */       this.b.b(StatList.treasureFished);
+/* 491:522 */       this.b.increaseStat(StatList.treasureFished);
 /* 492:523 */       return ((adp)WeightedRandom.getRandomItem(this.rng, treasures)).a(this.rng);
 /* 493:    */     }
 /* 494:525 */     f1 -= probTreasure;
 /* 495:    */     
-/* 496:527 */     this.b.b(StatList.fishCaught);
+/* 496:527 */     this.b.increaseStat(StatList.fishCaught);
 /* 497:528 */     return ((adp)WeightedRandom.getRandomItem(this.rng, fishes)).a(this.rng);
 /* 498:    */   }
 /* 499:    */   

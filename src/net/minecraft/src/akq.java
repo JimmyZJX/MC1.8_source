@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*  8:   */   
 /*  9:   */   public Item e()
 /* 10:   */   {
-/* 11:64 */     return ItemList.c;
+/* 11:64 */     return ItemList.ironAxe;
 /* 12:   */   }
 /* 13:   */ }
 

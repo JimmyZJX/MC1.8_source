@@ -92,7 +92,7 @@ package net.minecraft.src;
 /*  91:353 */     k(this.a + (7 - this.f * 8 / this.g));
 /*  92:    */     
 /*  93:355 */     this.yVelocity -= 0.004D;
-/*  94:356 */     d(this.xVelocity, this.yVelocity, this.zVelocity);
+/*  94:356 */     move(this.xVelocity, this.yVelocity, this.zVelocity);
 /*  95:357 */     this.xVelocity *= 0.910000026226044D;
 /*  96:358 */     this.yVelocity *= 0.910000026226044D;
 /*  97:359 */     this.zVelocity *= 0.910000026226044D;

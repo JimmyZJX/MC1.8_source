@@ -41,7 +41,7 @@ package net.minecraft.src;
 /*  41: 49 */     double d2 = paramdt.getZ();
 /*  42:    */     
 /*  43: 51 */     double d3 = d1 - this.xPos;double d4 = d2 - this.zPos;
-/*  44: 52 */     float f = MathUtils.a(d3 * d3 + d4 * d4);
+/*  44: 52 */     float f = MathUtils.sqrt(d3 * d3 + d4 * d4);
 /*  45: 54 */     if (f > 12.0F)
 /*  46:    */     {
 /*  47: 55 */       this.a = (this.xPos + d3 / f * 12.0D);
@@ -65,7 +65,7 @@ package net.minecraft.src;
 /*  65: 72 */     this.zVelocity = paramDouble3;
 /*  66: 73 */     if ((this.lastPitch == 0.0F) && (this.lastYaw == 0.0F))
 /*  67:    */     {
-/*  68: 74 */       float f = MathUtils.a(paramDouble1 * paramDouble1 + paramDouble3 * paramDouble3);
+/*  68: 74 */       float f = MathUtils.sqrt(paramDouble1 * paramDouble1 + paramDouble3 * paramDouble3);
 /*  69: 75 */       this.lastYaw = (this.yaw = (float)(Math.atan2(paramDouble1, paramDouble3) * 180.0D / 3.141592741012573D));
 /*  70: 76 */       this.lastPitch = (this.pitch = (float)(Math.atan2(paramDouble2, f) * 180.0D / 3.141592741012573D));
 /*  71:    */     }
@@ -82,7 +82,7 @@ package net.minecraft.src;
 /*  82: 88 */     this.yPos += this.yVelocity;
 /*  83: 89 */     this.zPos += this.zVelocity;
 /*  84:    */     
-/*  85: 91 */     float f1 = MathUtils.a(this.xVelocity * this.xVelocity + this.zVelocity * this.zVelocity);
+/*  85: 91 */     float f1 = MathUtils.sqrt(this.xVelocity * this.xVelocity + this.zVelocity * this.zVelocity);
 /*  86: 92 */     this.yaw = ((float)(Math.atan2(this.xVelocity, this.zVelocity) * 180.0D / 3.141592741012573D));
 /*  87: 93 */     this.pitch = ((float)(Math.atan2(this.yVelocity, f1) * 180.0D / 3.141592741012573D));
 /*  88: 95 */     while (this.pitch - this.lastPitch < -180.0F) {
@@ -119,7 +119,7 @@ package net.minecraft.src;
 /* 119:    */       }
 /* 120:    */     }
 /* 121:131 */     float f2 = 0.25F;
-/* 122:132 */     if (V()) {
+/* 122:132 */     if (isInWater()) {
 /* 123:133 */       for (int i = 0; i < 4; i++) {
 /* 124:134 */         this.world.a(EnumParticleEffect.e, this.xPos - this.xVelocity * f2, this.yPos - this.yVelocity * f2, this.zPos - this.zVelocity * f2, this.xVelocity, this.yVelocity, this.zVelocity, new int[0]);
 /* 125:    */       }
@@ -135,7 +135,7 @@ package net.minecraft.src;
 /* 135:    */       {
 /* 136:145 */         setDead();
 /* 137:146 */         if (this.e) {
-/* 138:147 */           this.world.spawnEntity(new EntityItem(this.world, this.xPos, this.yPos, this.zPos, new ItemStack(ItemList.bH)));
+/* 138:147 */           this.world.spawnEntity(new EntityItem(this.world, this.xPos, this.yPos, this.zPos, new ItemStack(ItemList.enderEye)));
 /* 139:    */         } else {
 /* 140:149 */           this.world.playLevelEvent(2003, new BlockPosition(this), 0);
 /* 141:    */         }

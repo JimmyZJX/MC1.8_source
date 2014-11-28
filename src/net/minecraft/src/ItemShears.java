@@ -1,8 +1,8 @@
 package net.minecraft.src;
-/*  1:   */ public class and
+/*  1:   */ public class ItemShears
 /*  2:   */   extends Item
 /*  3:   */ {
-/*  4:   */   public and()
+/*  4:   */   public ItemShears()
 /*  5:   */   {
 /*  6:13 */     setStackLimit(1);
 /*  7:14 */     setMaxDamage(238);

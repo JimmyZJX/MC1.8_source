@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*  4:   */   extends WorldServer
 /*  5:   */ {
 /*  6:14 */   private static final long I = "North Carolina".hashCode();
-/*  7:16 */   public static final WorldSettings a = new WorldSettings(I, EnumGameType.b, true, false, WorldType.DEFAULT).a();
+/*  7:16 */   public static final WorldSettings a = new WorldSettings(I, EnumGameMode.SURVIVAL, true, false, WorldType.DEFAULT).a();
 /*  8:   */   
 /*  9:   */   public qj(MinecraftServer paramMinecraftServer, bqy parambqy, WorldInfo parambqo, int paramInt, Profiler paramuw)
 /* 10:   */   {

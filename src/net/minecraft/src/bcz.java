@@ -119,7 +119,7 @@ package net.minecraft.src;
 /* 118:123 */     return new hz(getName(), new Object[0]);
 /* 119:    */   }
 /* 120:    */   
-/* 121:    */   public aib a(ahb paramahb, EntityPlayer paramahd)
+/* 121:    */   public aib a(Inventory paramahb, EntityPlayer paramahd)
 /* 122:    */   {
 /* 123:128 */     return new aiq(paramahb, this.world, this.pos);
 /* 124:    */   }

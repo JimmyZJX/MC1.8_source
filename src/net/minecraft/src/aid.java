@@ -20,12 +20,12 @@ package net.minecraft.src;
 /*  19:    */   private String l;
 /*  20:    */   private final EntityPlayer m;
 /*  21:    */   
-/*  22:    */   public aid(ahb paramahb, World paramaqu, EntityPlayer paramahd)
+/*  22:    */   public aid(Inventory paramahb, World paramaqu, EntityPlayer paramahd)
 /*  23:    */   {
 /*  24: 57 */     this(paramahb, paramaqu, BlockPosition.zero, paramahd);
 /*  25:    */   }
 /*  26:    */   
-/*  27:    */   public aid(ahb paramahb, World paramaqu, BlockPosition paramdt, EntityPlayer paramahd)
+/*  27:    */   public aid(Inventory paramahb, World paramaqu, BlockPosition paramdt, EntityPlayer paramahd)
 /*  28:    */   {
 /*  29: 61 */     this.j = paramdt;
 /*  30: 62 */     this.i = paramaqu;
@@ -90,7 +90,7 @@ package net.minecraft.src;
 /*  89:    */     Iterator localIterator1;
 /*  90:178 */     if (localamj3 != null)
 /*  91:    */     {
-/*  92:179 */       i10 = (localamj3.getItem() == ItemList.cd) && (ItemList.cd.h(localamj3).c() > 0) ? 1 : 0;
+/*  92:179 */       i10 = (localamj3.getItem() == ItemList.enchantedBook) && (ItemList.enchantedBook.h(localamj3).c() > 0) ? 1 : 0;
 /*  93:    */       int i11;
 /*  94:    */       int i13;
 /*  95:181 */       if ((localamj2.e()) && (localamj2.getItem().a(localamj1, localamj3)))
@@ -149,7 +149,7 @@ package net.minecraft.src;
 /* 148:231 */             int i17 = ((Integer)localMap2.get(Integer.valueOf(i14))).intValue();
 /* 149:232 */             i17++;i17 = i16 == i17 ? i17 : Math.max(i17, i16);
 /* 150:233 */             boolean bool = localapf.a(localamj1);
-/* 151:235 */             if ((this.m.by.d) || (localamj1.getItem() == ItemList.cd)) {
+/* 151:235 */             if ((this.m.abilities.instabuild) || (localamj1.getItem() == ItemList.enchantedBook)) {
 /* 152:236 */               bool = true;
 /* 153:    */             }
 /* 154:239 */             for (Iterator localIterator2 = localMap1.keySet().iterator(); localIterator2.hasNext();)
@@ -163,8 +163,8 @@ package net.minecraft.src;
 /* 162:    */             }
 /* 163:249 */             if (bool)
 /* 164:    */             {
-/* 165:252 */               if (i17 > localapf.b()) {
-/* 166:253 */                 i17 = localapf.b();
+/* 165:252 */               if (i17 > localapf.getHighestLevel()) {
+/* 166:253 */                 i17 = localapf.getHighestLevel();
 /* 167:    */               }
 /* 168:255 */               localMap1.put(Integer.valueOf(i14), Integer.valueOf(i17));
 /* 169:256 */               int i18 = 0;
@@ -223,7 +223,7 @@ package net.minecraft.src;
 /* 222:314 */     if ((i9 == i7) && (i9 > 0) && (this.a >= 40)) {
 /* 223:318 */       this.a = 39;
 /* 224:    */     }
-/* 225:320 */     if ((this.a >= 40) && (!this.m.by.d)) {
+/* 225:320 */     if ((this.a >= 40) && (!this.m.abilities.instabuild)) {
 /* 226:324 */       localamj2 = null;
 /* 227:    */     }
 /* 228:327 */     if (localamj2 != null)

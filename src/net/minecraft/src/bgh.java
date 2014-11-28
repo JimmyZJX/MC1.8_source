@@ -62,7 +62,7 @@ package net.minecraft.src;
 /* 61:   */   
 /* 62:   */   public boolean a(int paramInt1, int paramInt2)
 /* 63:   */   {
-/* 64:72 */     return this.world.c(new BlockPosition(paramInt1, 0, paramInt2)).getMaterial().c();
+/* 64:72 */     return this.world.c(new BlockPosition(paramInt1, 0, paramInt2)).getMaterial().material_c();
 /* 65:   */   }
 /* 66:   */   
 /* 67:   */   public BlockPosition h()

@@ -11,14 +11,14 @@ package net.minecraft.src;
 /*  10:    */   
 /*  11:    */   public mk() {}
 /*  12:    */   
-/*  13:    */   public mk(aha paramaha)
+/*  13:    */   public mk(PlayerAbilities paramaha)
 /*  14:    */   {
-/*  15: 26 */     a(paramaha.a);
-/*  16: 27 */     b(paramaha.b);
-/*  17: 28 */     c(paramaha.c);
-/*  18: 29 */     d(paramaha.d);
-/*  19: 30 */     a(paramaha.a());
-/*  20: 31 */     b(paramaha.b());
+/*  15: 26 */     a(paramaha.invulnerable);
+/*  16: 27 */     b(paramaha.flying);
+/*  17: 28 */     c(paramaha.mayfly);
+/*  18: 29 */     d(paramaha.instabuild);
+/*  19: 30 */     a(paramaha.getFlySpeed());
+/*  20: 31 */     b(paramaha.getWalkSpeed());
 /*  21:    */   }
 /*  22:    */   
 /*  23:    */   public void fromBuffer(ByteBufWrapper paramhd)

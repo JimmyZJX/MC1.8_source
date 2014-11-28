@@ -42,7 +42,7 @@ package net.minecraft.src;
 /* 41:   */           }
 /* 42:49 */           localxm.setPosition(this.xPos, this.yPos, this.zPos);
 /* 43:50 */           localxm.O = 0.0F;
-/* 44:51 */           localxm.a(DamageSource.i, 5.0F);
+/* 44:51 */           localxm.a(DamageSource.fall, 5.0F);
 /* 45:   */         }
 /* 46:   */       }
 /* 47:54 */       setDead();

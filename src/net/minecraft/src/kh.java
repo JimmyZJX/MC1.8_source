@@ -38,7 +38,7 @@ package net.minecraft.src;
 /*  37:    */     {
 /*  38: 47 */       GameProfile localGameProfile = null;
 /*  39: 48 */       int k = 0;
-/*  40: 49 */       EnumGameType localarc = null;
+/*  40: 49 */       EnumGameMode localarc = null;
 /*  41: 50 */       ho localho = null;
 /*  42: 52 */       switch (ki.a[this.a.ordinal()])
 /*  43:    */       {
@@ -55,7 +55,7 @@ package net.minecraft.src;
 /*  54: 63 */             localGameProfile.getProperties().put(str1, new Property(str1, str2));
 /*  55:    */           }
 /*  56:    */         }
-/*  57: 66 */         localarc = EnumGameType.a(paramhd.e());
+/*  57: 66 */         localarc = EnumGameMode.a(paramhd.e());
 /*  58: 67 */         k = paramhd.e();
 /*  59: 68 */         if (paramhd.readBoolean()) {
 /*  60: 69 */           localho = paramhd.d();
@@ -63,7 +63,7 @@ package net.minecraft.src;
 /*  62:    */         break;
 /*  63:    */       case 2: 
 /*  64: 73 */         localGameProfile = new GameProfile(paramhd.g(), null);
-/*  65: 74 */         localarc = EnumGameType.a(paramhd.e());
+/*  65: 74 */         localarc = EnumGameMode.a(paramhd.e());
 /*  66: 75 */         break;
 /*  67:    */       case 3: 
 /*  68: 77 */         localGameProfile = new GameProfile(paramhd.g(), null);

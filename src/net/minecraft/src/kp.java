@@ -4,12 +4,12 @@ package net.minecraft.src;
 /*  3:   */ {
 /*  4:   */   private int a;
 /*  5:   */   private EnumDifficulty b;
-/*  6:   */   private EnumGameType c;
+/*  6:   */   private EnumGameMode c;
 /*  7:   */   private WorldType d;
 /*  8:   */   
 /*  9:   */   public kp() {}
 /* 10:   */   
-/* 11:   */   public kp(int paramInt, EnumDifficulty paramvt, WorldType paramare, EnumGameType paramarc)
+/* 11:   */   public kp(int paramInt, EnumDifficulty paramvt, WorldType paramare, EnumGameMode paramarc)
 /* 12:   */   {
 /* 13:23 */     this.a = paramInt;
 /* 14:24 */     this.b = paramvt;
@@ -26,7 +26,7 @@ package net.minecraft.src;
 /* 25:   */   {
 /* 26:36 */     this.a = paramhd.readInt();
 /* 27:37 */     this.b = EnumDifficulty.a(paramhd.readUnsignedByte());
-/* 28:38 */     this.c = EnumGameType.a(paramhd.readUnsignedByte());
+/* 28:38 */     this.c = EnumGameMode.a(paramhd.readUnsignedByte());
 /* 29:39 */     this.d = WorldType.parseWorldType(paramhd.c(16));
 /* 30:40 */     if (this.d == null) {
 /* 31:41 */       this.d = WorldType.DEFAULT;
@@ -51,7 +51,7 @@ package net.minecraft.src;
 /* 50:58 */     return this.b;
 /* 51:   */   }
 /* 52:   */   
-/* 53:   */   public EnumGameType c()
+/* 53:   */   public EnumGameMode c()
 /* 54:   */   {
 /* 55:62 */     return this.c;
 /* 56:   */   }

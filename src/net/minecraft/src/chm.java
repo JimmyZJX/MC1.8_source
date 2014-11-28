@@ -49,7 +49,7 @@ package net.minecraft.src;
 /* 48:53 */     k(7 - this.f * 8 / this.g);
 /* 49:   */     
 /* 50:55 */     this.yVelocity -= 0.03D;
-/* 51:56 */     d(this.xVelocity, this.yVelocity, this.zVelocity);
+/* 51:56 */     move(this.xVelocity, this.yVelocity, this.zVelocity);
 /* 52:57 */     this.xVelocity *= 0.9900000095367432D;
 /* 53:58 */     this.yVelocity *= 0.9900000095367432D;
 /* 54:59 */     this.zVelocity *= 0.9900000095367432D;

@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*   5:    */   
 /*   6:    */   protected cxl a(Block parambec)
 /*   7:    */   {
-/*   8:172 */     azn localazn = (azn)parambec.getProperty(azl.a);
+/*   8:172 */     azn localazn = (azn)parambec.getData(azl.a);
 /*   9:173 */     switch (clk.a[localazn.ordinal()])
 /*  10:    */     {
 /*  11:    */     case 1: 

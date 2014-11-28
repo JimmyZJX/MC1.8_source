@@ -109,10 +109,10 @@ package net.minecraft.src;
 /* 108:126 */       localObject = this.a.world.getBlock(new BlockPosition(i, j, k)).getProto();
 /* 109:127 */       int i4 = (!a((ProtoBlock)localObject)) && ((((ProtoBlock)localObject).getMaterial() != Material.air) || (!a(this.a.world.getBlock(new BlockPosition(i, j - 1, k)).getProto()))) ? 1 : 0;
 /* 110:129 */       if ((i4 != 0) && (0 == bpy.a(this.a.world, this.a, m, j, n, i1, i2, i3, false, false, true)) && (1 == bpy.a(this.a.world, this.a, i, j + 1, k, i1, i2, i3, false, false, true)) && (1 == bpy.a(this.a.world, this.a, m, j + 1, n, i1, i2, i3, false, false, true))) {
-/* 111:134 */         localxu.r().a();
+/* 111:134 */         localxu.getJumpManager().jump();
 /* 112:    */       }
 /* 113:    */     }
-/* 114:138 */     if ((!localahd.by.d) && (this.c >= this.b * 0.5F) && (this.a.getRNG().nextFloat() < 0.006F) && (!this.d))
+/* 114:138 */     if ((!localahd.abilities.instabuild) && (this.c >= this.b * 0.5F) && (this.a.getRNG().nextFloat() < 0.006F) && (!this.d))
 /* 115:    */     {
 /* 116:139 */       localObject = localahd.getHeldItemStack();
 /* 117:141 */       if ((localObject != null) && (((ItemStack)localObject).getItem() == ItemList.bY))
@@ -122,7 +122,7 @@ package net.minecraft.src;
 /* 121:    */         {
 /* 122:145 */           ItemStack localamj = new ItemStack(ItemList.fishingRod);
 /* 123:146 */           localamj.setTagCompound(((ItemStack)localObject).getTagCompound());
-/* 124:147 */           localahd.bg.a[localahd.bg.c] = localamj;
+/* 124:147 */           localahd.bg.items[localahd.bg.c] = localamj;
 /* 125:    */         }
 /* 126:    */       }
 /* 127:    */     }

@@ -154,7 +154,7 @@ package net.minecraft.src;
 /* 153:166 */     return "minecraft:hopper";
 /* 154:    */   }
 /* 155:    */   
-/* 156:    */   public aib a(ahb paramahb, EntityPlayer paramahd)
+/* 156:    */   public aib a(Inventory paramahb, EntityPlayer paramahd)
 /* 157:    */   {
 /* 158:171 */     return new aix(paramahb, this, paramahd);
 /* 159:    */   }

@@ -93,14 +93,14 @@ package net.minecraft.src;
 /*  92:163 */     if ((this.world.isClient) || (this.isDead)) {
 /*  93:164 */       return true;
 /*  94:    */     }
-/*  95:166 */     if (b(paramwh)) {
+/*  95:166 */     if (isImmuneTo(paramwh)) {
 /*  96:167 */       return false;
 /*  97:    */     }
 /*  98:169 */     k(-r());
 /*  99:170 */     j(10);
 /* 100:171 */     ac();
 /* 101:172 */     a(p() + paramFloat * 10.0F);
-/* 102:173 */     int j = ((paramwh.j() instanceof EntityPlayer)) && (((EntityPlayer)paramwh.j()).by.d) ? 1 : 0;
+/* 102:173 */     int j = ((paramwh.getAttacker() instanceof EntityPlayer)) && (((EntityPlayer)paramwh.getAttacker()).abilities.instabuild) ? 1 : 0;
 /* 103:175 */     if ((j != 0) || (p() > 40.0F))
 /* 104:    */     {
 /* 105:176 */       if (this.rider != null) {
@@ -245,7 +245,7 @@ package net.minecraft.src;
 /* 244:    */     {
 /* 245:318 */       a(localdt, localbec);
 /* 246:320 */       if (localbec.getProto() == BlockList.activatorRail) {
-/* 247:321 */         a(j, k, n, ((Boolean)localbec.getProperty(azc.M)).booleanValue());
+/* 247:321 */         a(j, k, n, ((Boolean)localbec.getData(azc.M)).booleanValue());
 /* 248:    */       }
 /* 249:    */     }
 /* 250:    */     else
@@ -305,7 +305,7 @@ package net.minecraft.src;
 /* 304:377 */       this.yVelocity *= 0.5D;
 /* 305:378 */       this.zVelocity *= 0.5D;
 /* 306:    */     }
-/* 307:380 */     d(this.xVelocity, this.yVelocity, this.zVelocity);
+/* 307:380 */     move(this.xVelocity, this.yVelocity, this.zVelocity);
 /* 308:382 */     if (!this.C)
 /* 309:    */     {
 /* 310:383 */       this.xVelocity *= 0.949999988079071D;
@@ -326,11 +326,11 @@ package net.minecraft.src;
 /* 325:397 */     ati localati = (ati)parambec.getProto();
 /* 326:399 */     if (localati == BlockList.D)
 /* 327:    */     {
-/* 328:400 */       bool = ((Boolean)parambec.getProperty(azc.M)).booleanValue();
+/* 328:400 */       bool = ((Boolean)parambec.getData(azc.M)).booleanValue();
 /* 329:401 */       j = !bool ? 1 : 0;
 /* 330:    */     }
 /* 331:404 */     double d1 = 0.0078125D;
-/* 332:405 */     EnumRailState localatl = (EnumRailState)parambec.getProperty(localati.l());
+/* 332:405 */     EnumRailState localatl = (EnumRailState)parambec.getData(localati.l());
 /* 333:406 */     switch (ady.b[localatl.ordinal()])
 /* 334:    */     {
 /* 335:    */     case 1: 
@@ -442,7 +442,7 @@ package net.minecraft.src;
 /* 441:512 */     d12 = MathUtils.clamp(d12, -d14, d14);
 /* 442:513 */     d13 = MathUtils.clamp(d13, -d14, d14);
 /* 443:    */     
-/* 444:515 */     d(d12, 0.0D, d13);
+/* 444:515 */     move(d12, 0.0D, d13);
 /* 445:517 */     if ((arrayOfInt[0][1] != 0) && (MathUtils.floor(this.xPos) - paramdt.getX() == arrayOfInt[0][0]) && (MathUtils.floor(this.zPos) - paramdt.getZ() == arrayOfInt[0][2])) {
 /* 446:518 */       setPos(this.xPos, this.yPos + arrayOfInt[0][1], this.zPos);
 /* 447:519 */     } else if ((arrayOfInt[1][1] != 0) && (MathUtils.floor(this.xPos) - paramdt.getX() == arrayOfInt[1][0]) && (MathUtils.floor(this.zPos) - paramdt.getZ() == arrayOfInt[1][2])) {
@@ -537,7 +537,7 @@ package net.minecraft.src;
 /* 536:603 */     Block localbec = this.world.getBlock(new BlockPosition(j, k, m));
 /* 537:604 */     if (ati.d(localbec))
 /* 538:    */     {
-/* 539:605 */       EnumRailState localatl = (EnumRailState)localbec.getProperty(((ati)localbec.getProto()).l());
+/* 539:605 */       EnumRailState localatl = (EnumRailState)localbec.getData(((ati)localbec.getProto()).l());
 /* 540:606 */       paramDouble2 = k;
 /* 541:607 */       if (localatl.c()) {
 /* 542:608 */         paramDouble2 = k + 1;
@@ -573,7 +573,7 @@ package net.minecraft.src;
 /* 572:641 */     Block localbec = this.world.getBlock(new BlockPosition(j, k, m));
 /* 573:642 */     if (ati.d(localbec))
 /* 574:    */     {
-/* 575:643 */       EnumRailState localatl = (EnumRailState)localbec.getProperty(((ati)localbec.getProto()).l());
+/* 575:643 */       EnumRailState localatl = (EnumRailState)localbec.getData(((ati)localbec.getProto()).l());
 /* 576:644 */       int[][] arrayOfInt = c[localatl.a()];
 /* 577:    */       
 /* 578:646 */       double d1 = 0.0D;
@@ -686,7 +686,7 @@ package net.minecraft.src;
 /* 685:749 */     double d3 = d1 * d1 + d2 * d2;
 /* 686:750 */     if (d3 >= 9.999999747378752E-005D)
 /* 687:    */     {
-/* 688:751 */       d3 = MathUtils.a(d3);
+/* 688:751 */       d3 = MathUtils.sqrt(d3);
 /* 689:752 */       d1 /= d3;
 /* 690:753 */       d2 /= d3;
 /* 691:754 */       double d4 = 1.0D / d3;

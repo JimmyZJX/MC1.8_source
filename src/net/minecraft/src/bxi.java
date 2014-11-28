@@ -65,7 +65,7 @@ package net.minecraft.src;
 /* 65:68 */     else if (parambug.k == 101)
 /* 66:   */     {
 /* 67:69 */       this.j.a((bxf)null);
-/* 68:70 */       String str = this.j.F().a(EnumGameType.a(this.h), this.i);
+/* 68:70 */       String str = this.j.F().a(EnumGameMode.a(this.h), this.i);
 /* 69:   */       Object localObject;
 /* 70:73 */       if (str != null) {
 /* 71:74 */         localObject = new hz("commands.publish.started", new Object[] { str });

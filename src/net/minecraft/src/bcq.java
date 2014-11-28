@@ -301,7 +301,7 @@ package net.minecraft.src;
 /* 300:380 */     return "minecraft:brewing_stand";
 /* 301:    */   }
 /* 302:    */   
-/* 303:    */   public aib a(ahb paramahb, EntityPlayer paramahd)
+/* 303:    */   public aib a(Inventory paramahb, EntityPlayer paramahd)
 /* 304:    */   {
 /* 305:385 */     return new aii(paramahb, this);
 /* 306:    */   }

@@ -282,7 +282,7 @@ package net.minecraft.src;
 /* 281:326 */     if (localalq == ItemList.stick) {
 /* 282:327 */       return 100;
 /* 283:    */     }
-/* 284:330 */     if (localalq == ItemList.h) {
+/* 284:330 */     if (localalq == ItemList.coal) {
 /* 285:331 */       return 1600;
 /* 286:    */     }
 /* 287:334 */     if (localalq == ItemList.ay) {
@@ -291,7 +291,7 @@ package net.minecraft.src;
 /* 290:338 */     if (localalq == Item.fromProtoBlock(BlockList.sapling)) {
 /* 291:339 */       return 100;
 /* 292:    */     }
-/* 293:342 */     if (localalq == ItemList.bv) {
+/* 293:342 */     if (localalq == ItemList.blazeRod) {
 /* 294:343 */       return 2400;
 /* 295:    */     }
 /* 296:346 */     return 0;
@@ -361,7 +361,7 @@ package net.minecraft.src;
 /* 360:413 */     return "minecraft:furnace";
 /* 361:    */   }
 /* 362:    */   
-/* 363:    */   public aib a(ahb paramahb, EntityPlayer paramahd)
+/* 363:    */   public aib a(Inventory paramahb, EntityPlayer paramahd)
 /* 364:    */   {
 /* 365:418 */     return new aiv(paramahb, this);
 /* 366:    */   }

@@ -169,7 +169,7 @@ package net.minecraft.src;
 /* 168:    */   
 /* 169:    */   public boolean a(EntityPlayer paramahd)
 /* 170:    */   {
-/* 171:175 */     if (!paramahd.by.d) {
+/* 171:175 */     if (!paramahd.abilities.instabuild) {
 /* 172:176 */       return false;
 /* 173:    */     }
 /* 174:178 */     if (paramahd.e().isClient) {

@@ -32,7 +32,7 @@ package net.minecraft.src;
 /*  32:    */   {
 /*  33: 39 */     super.aW();
 /*  34:    */     
-/*  35: 41 */     a(afs.a).a(10.0D);
+/*  35: 41 */     getAttribute(MobAttribute.maxHealth).a(10.0D);
 /*  36:    */   }
 /*  37:    */   
 /*  38:    */   public float getEyeHeight()
@@ -78,7 +78,7 @@ package net.minecraft.src;
 /*  78:    */     }
 /*  79:    */   }
 /*  80:    */   
-/*  81:    */   public boolean V()
+/*  81:    */   public boolean isInWater()
 /*  82:    */   {
 /*  83: 89 */     return this.world.a(getAABB().expand(0.0D, -0.6000000238418579D, 0.0D), Material.water, this);
 /*  84:    */   }
@@ -108,12 +108,12 @@ package net.minecraft.src;
 /* 108:111 */         this.world.sendSignal(this, (byte)19);
 /* 109:    */       }
 /* 110:    */     }
-/* 111:115 */     if (this.Y)
+/* 111:115 */     if (this.inWater)
 /* 112:    */     {
 /* 113:116 */       if (this.bj < 3.141593F)
 /* 114:    */       {
 /* 115:117 */         float f = this.bj / 3.141593F;
-/* 116:118 */         this.bl = (MathUtils.a(f * f * 3.141593F) * 3.141593F * 0.25F);
+/* 116:118 */         this.bl = (MathUtils.sqrt(f * f * 3.141593F) * 3.141593F * 0.25F);
 /* 117:120 */         if (f > 0.75D)
 /* 118:    */         {
 /* 119:121 */           this.bn = 1.0F;
@@ -136,7 +136,7 @@ package net.minecraft.src;
 /* 136:134 */         this.yVelocity = (this.br * this.bn);
 /* 137:135 */         this.zVelocity = (this.bs * this.bn);
 /* 138:    */       }
-/* 139:138 */       float f = MathUtils.a(this.xVelocity * this.xVelocity + this.zVelocity * this.zVelocity);
+/* 139:138 */       float f = MathUtils.sqrt(this.xVelocity * this.xVelocity + this.zVelocity * this.zVelocity);
 /* 140:    */       
 /* 141:140 */       this.aG += (-(float)Math.atan2(this.xVelocity, this.zVelocity) * 180.0F / 3.141593F - this.aG) * 0.1F;
 /* 142:141 */       this.yaw = this.aG;
@@ -159,7 +159,7 @@ package net.minecraft.src;
 /* 159:    */   
 /* 160:    */   public void g(float paramFloat1, float paramFloat2)
 /* 161:    */   {
-/* 162:162 */     d(this.xVelocity, this.yVelocity, this.zVelocity);
+/* 162:162 */     move(this.xVelocity, this.yVelocity, this.zVelocity);
 /* 163:    */   }
 /* 164:    */   
 /* 165:    */   public boolean canSpawn()
@@ -187,7 +187,7 @@ package net.minecraft.src;
 /* 187:    */   {
 /* 188:186 */     return (this.bq != 0.0F) || (this.br != 0.0F) || (this.bs != 0.0F);
 /* 189:    */   }
-				static boolean a(EntitySquid arg0) {return arg0.Y;}
+				static boolean a(EntitySquid arg0) {return arg0.inWater;}
 /* 190:    */ }
 
 

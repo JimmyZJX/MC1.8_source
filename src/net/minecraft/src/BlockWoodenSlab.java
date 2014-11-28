@@ -66,8 +66,8 @@ package net.minecraft.src;
 /*  65:    */   {
 /*  66: 81 */     int i = 0;
 /*  67:    */     
-/*  68: 83 */     i |= ((EnumWoodVariant)parambec.getProperty(b)).getIndex();
-/*  69: 85 */     if ((!j()) && (parambec.getProperty(half) == EnumSlabHalf.TOP)) {
+/*  68: 83 */     i |= ((EnumWoodVariant)parambec.getData(b)).getIndex();
+/*  69: 85 */     if ((!j()) && (parambec.getData(half) == EnumSlabHalf.TOP)) {
 /*  70: 86 */       i |= 0x8;
 /*  71:    */     }
 /*  72: 89 */     return i;
@@ -83,7 +83,7 @@ package net.minecraft.src;
 /*  82:    */   
 /*  83:    */   public int a(Block parambec)
 /*  84:    */   {
-/*  85:103 */     return ((EnumWoodVariant)parambec.getProperty(b)).getIndex();
+/*  85:103 */     return ((EnumWoodVariant)parambec.getData(b)).getIndex();
 /*  86:    */   }
 /*  87:    */ }
 

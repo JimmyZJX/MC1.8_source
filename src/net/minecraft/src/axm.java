@@ -23,7 +23,7 @@ package net.minecraft.src;
 /* 22:   */     {
 /* 23:37 */       Block localbec = paramaqu.getBlock(localdt);
 /* 24:38 */       if ((localbec.getProto().getMaterial() == Material.leaves) && 
-/* 25:39 */         (!((Boolean)localbec.getProperty(BlockLeaves.b)).booleanValue())) {
+/* 25:39 */         (!((Boolean)localbec.getData(BlockLeaves.b)).booleanValue())) {
 /* 26:40 */         paramaqu.setBlock(localdt, localbec.setData(BlockLeaves.b, Boolean.valueOf(true)), 4);
 /* 27:   */       }
 /* 28:   */     }

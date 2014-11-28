@@ -28,7 +28,7 @@ package net.minecraft.src;
 /*  28:    */     
 /*  29:120 */     int i = paramInt1 * 16 + 8 - 29;
 /*  30:121 */     int j = paramInt2 * 16 + 8 - 29;
-/*  31:122 */     EnumDirection localej = en.HORIZONTAL.getRandomDirection(paramRandom);
+/*  31:122 */     EnumDirection localej = EnumHorizontalVertical.HORIZONTAL.getRandomDirection(paramRandom);
 /*  32:    */     
 /*  33:124 */     this.a.add(new bkr(paramRandom, i, j, localej));
 /*  34:125 */     c();

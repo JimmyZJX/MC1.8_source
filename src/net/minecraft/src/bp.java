@@ -26,7 +26,7 @@ package net.minecraft.src;
 /* 24:39 */     if (paramArrayOfString.length <= 0) {
 /* 25:40 */       throw new WrongUsageException("commands.gamemode.usage", new Object[0]);
 /* 26:   */     }
-/* 27:43 */     EnumGameType localarc = h(paramae, paramArrayOfString[0]);
+/* 27:43 */     EnumGameMode localarc = h(paramae, paramArrayOfString[0]);
 /* 28:44 */     qw localqw = paramArrayOfString.length >= 2 ? a(paramae, paramArrayOfString[1]) : b(paramae);
 /* 29:   */     
 /* 30:46 */     localqw.a(localarc);
@@ -42,21 +42,21 @@ package net.minecraft.src;
 /* 40:   */     }
 /* 41:   */   }
 /* 42:   */   
-/* 43:   */   protected EnumGameType h(ICommandSender paramae, String paramString) throws NumberInvalidException
+/* 43:   */   protected EnumGameMode h(ICommandSender paramae, String paramString) throws NumberInvalidException
 /* 44:   */   {
-/* 45:61 */     if ((paramString.equalsIgnoreCase(EnumGameType.b.b())) || (paramString.equalsIgnoreCase("s"))) {
-/* 46:62 */       return EnumGameType.b;
+/* 45:61 */     if ((paramString.equalsIgnoreCase(EnumGameMode.SURVIVAL.b())) || (paramString.equalsIgnoreCase("s"))) {
+/* 46:62 */       return EnumGameMode.SURVIVAL;
 /* 47:   */     }
-/* 48:63 */     if ((paramString.equalsIgnoreCase(EnumGameType.CREATIVE.b())) || (paramString.equalsIgnoreCase("c"))) {
-/* 49:64 */       return EnumGameType.CREATIVE;
+/* 48:63 */     if ((paramString.equalsIgnoreCase(EnumGameMode.CREATIVE.b())) || (paramString.equalsIgnoreCase("c"))) {
+/* 49:64 */       return EnumGameMode.CREATIVE;
 /* 50:   */     }
-/* 51:65 */     if ((paramString.equalsIgnoreCase(EnumGameType.d.b())) || (paramString.equalsIgnoreCase("a"))) {
-/* 52:66 */       return EnumGameType.d;
+/* 51:65 */     if ((paramString.equalsIgnoreCase(EnumGameMode.ADVENTURE.b())) || (paramString.equalsIgnoreCase("a"))) {
+/* 52:66 */       return EnumGameMode.ADVENTURE;
 /* 53:   */     }
-/* 54:67 */     if ((paramString.equalsIgnoreCase(EnumGameType.e.b())) || (paramString.equalsIgnoreCase("sp"))) {
-/* 55:68 */       return EnumGameType.e;
+/* 54:67 */     if ((paramString.equalsIgnoreCase(EnumGameMode.SPECTATOR.b())) || (paramString.equalsIgnoreCase("sp"))) {
+/* 55:68 */       return EnumGameMode.SPECTATOR;
 /* 56:   */     }
-/* 57:70 */     return WorldSettings.a(a(paramString, 0, EnumGameType.values().length - 2));
+/* 57:70 */     return WorldSettings.a(a(paramString, 0, EnumGameMode.values().length - 2));
 /* 58:   */   }
 /* 59:   */   
 /* 60:   */   public List a(ICommandSender paramae, String[] paramArrayOfString, BlockPosition paramdt)

@@ -29,7 +29,7 @@ package net.minecraft.src;
 /*  28: 38 */     super.b(paramaqu, paramdt, parambec, paramRandom);
 /*  29: 39 */     if (paramaqu.l(paramdt.up()) >= 9)
 /*  30:    */     {
-/*  31: 40 */       int i = ((Integer)parambec.getProperty(a)).intValue();
+/*  31: 40 */       int i = ((Integer)parambec.getData(a)).intValue();
 /*  32: 41 */       if (i < 7)
 /*  33:    */       {
 /*  34: 42 */         float f = a(this, paramaqu, paramdt);
@@ -42,7 +42,7 @@ package net.minecraft.src;
 /*  41:    */   
 /*  42:    */   public void g(World paramaqu, BlockPosition paramdt, Block parambec)
 /*  43:    */   {
-/*  44: 52 */     int i = ((Integer)parambec.getProperty(a)).intValue() + MathUtils.nextInt(paramaqu.rng, 2, 5);
+/*  44: 52 */     int i = ((Integer)parambec.getData(a)).intValue() + MathUtils.nextInt(paramaqu.rng, 2, 5);
 /*  45: 53 */     if (i > 7) {
 /*  46: 54 */       i = 7;
 /*  47:    */     }
@@ -63,7 +63,7 @@ package net.minecraft.src;
 /*  62: 68 */         if (((Block)localObject).getProto() == BlockList.ak)
 /*  63:    */         {
 /*  64: 69 */           f2 = 1.0F;
-/*  65: 70 */           if (((Integer)((Block)localObject).getProperty(BlockFarmLand.a)).intValue() > 0) {
+/*  65: 70 */           if (((Integer)((Block)localObject).getData(BlockFarmLand.a)).intValue() > 0) {
 /*  66: 71 */             f2 = 3.0F;
 /*  67:    */           }
 /*  68:    */         }
@@ -106,7 +106,7 @@ package net.minecraft.src;
 /* 105:    */   
 /* 106:    */   protected Item l()
 /* 107:    */   {
-/* 108:118 */     return ItemList.O;
+/* 108:118 */     return ItemList.wheat;
 /* 109:    */   }
 /* 110:    */   
 /* 111:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, float paramFloat, int paramInt)
@@ -115,7 +115,7 @@ package net.minecraft.src;
 /* 114:130 */     if (paramaqu.isClient) {
 /* 115:131 */       return;
 /* 116:    */     }
-/* 117:134 */     int i = ((Integer)parambec.getProperty(a)).intValue();
+/* 117:134 */     int i = ((Integer)parambec.getData(a)).intValue();
 /* 118:135 */     if (i >= 7)
 /* 119:    */     {
 /* 120:137 */       int j = 3 + paramInt;
@@ -129,7 +129,7 @@ package net.minecraft.src;
 /* 128:    */   
 /* 129:    */   public Item a(Block parambec, Random paramRandom, int paramInt)
 /* 130:    */   {
-/* 131:150 */     if (((Integer)parambec.getProperty(a)).intValue() == 7) {
+/* 131:150 */     if (((Integer)parambec.getData(a)).intValue() == 7) {
 /* 132:151 */       return l();
 /* 133:    */     }
 /* 134:154 */     return j();
@@ -142,7 +142,7 @@ package net.minecraft.src;
 /* 141:    */   
 /* 142:    */   public boolean a(World paramaqu, BlockPosition paramdt, Block parambec, boolean paramBoolean)
 /* 143:    */   {
-/* 144:164 */     return ((Integer)parambec.getProperty(a)).intValue() < 7;
+/* 144:164 */     return ((Integer)parambec.getData(a)).intValue() < 7;
 /* 145:    */   }
 /* 146:    */   
 /* 147:    */   public boolean a(World paramaqu, Random paramRandom, BlockPosition paramdt, Block parambec)
@@ -162,7 +162,7 @@ package net.minecraft.src;
 /* 161:    */   
 /* 162:    */   public int c(Block parambec)
 /* 163:    */   {
-/* 164:185 */     return ((Integer)parambec.getProperty(a)).intValue();
+/* 164:185 */     return ((Integer)parambec.getData(a)).intValue();
 /* 165:    */   }
 /* 166:    */   
 /* 167:    */   protected bed e()

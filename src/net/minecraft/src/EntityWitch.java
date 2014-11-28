@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*   8:    */ {
 /*   9: 29 */   private static final UUID b = UUID.fromString("5CD17E52-A79A-43D3-A529-90FDE04B181E");
 /*  10: 30 */   private static final ya c = new ya(b, "Drinking speed penalty", -0.25D, 0).a(false);
-/*  11: 33 */   private static final Item[] bk = { ItemList.aT, ItemList.aY, ItemList.aC, ItemList.bB, ItemList.bA, ItemList.H, ItemList.stick, ItemList.stick };
+/*  11: 33 */   private static final Item[] bk = { ItemList.aT, ItemList.aY, ItemList.redstone, ItemList.bB, ItemList.bA, ItemList.H, ItemList.stick, ItemList.stick };
 /*  12:    */   private int bl;
 /*  13:    */   
 /*  14:    */   public EntityWitch(World paramaqu)
@@ -17,7 +17,7 @@ package net.minecraft.src;
 /*  16: 40 */     super(paramaqu);
 /*  17: 41 */     a(0.6F, 1.95F);
 /*  18:    */     
-/*  19: 43 */     this.goalSelector.addGoal(1, new yy(this));
+/*  19: 43 */     this.goalSelector.addGoal(1, new GoalSwim(this));
 /*  20: 44 */     this.goalSelector.addGoal(2, new zz(this, 1.0D, 60, 10.0F));
 /*  21: 45 */     this.goalSelector.addGoal(2, new zy(this, 1.0D));
 /*  22: 46 */     this.goalSelector.addGoal(2, this.a);
@@ -64,8 +64,8 @@ package net.minecraft.src;
 /*  63:    */   {
 /*  64: 86 */     super.aW();
 /*  65:    */     
-/*  66: 88 */     a(afs.a).a(26.0D);
-/*  67: 89 */     a(afs.d).a(0.25D);
+/*  66: 88 */     getAttribute(MobAttribute.maxHealth).a(26.0D);
+/*  67: 89 */     getAttribute(MobAttribute.movementSpeed).a(0.25D);
 /*  68:    */   }
 /*  69:    */   
 /*  70:    */   public void m()
@@ -89,7 +89,7 @@ package net.minecraft.src;
 /*  88:    */               }
 /*  89:    */             }
 /*  90:    */           }
-/*  91:110 */           a(afs.d).c(c);
+/*  91:110 */           getAttribute(MobAttribute.movementSpeed).c(c);
 /*  92:    */         }
 /*  93:    */       }
 /*  94:    */       else
@@ -111,7 +111,7 @@ package net.minecraft.src;
 /* 110:128 */           setItemStack(0, new ItemStack(ItemList.potion, 1, i));
 /* 111:129 */           this.bl = getHeldItemStack().l();
 /* 112:130 */           a(true);
-/* 113:131 */           xz localObject1 = a(afs.d);
+/* 113:131 */           xz localObject1 = getAttribute(MobAttribute.movementSpeed);
 /* 114:132 */           localObject1.c(c);
 /* 115:133 */           localObject1.b(c);
 /* 116:    */         }
@@ -137,7 +137,7 @@ package net.minecraft.src;
 /* 136:    */   protected float c(DamageSource paramwh, float paramFloat)
 /* 137:    */   {
 /* 138:158 */     paramFloat = super.c(paramwh, paramFloat);
-/* 139:160 */     if (paramwh.j() == this) {
+/* 139:160 */     if (paramwh.getAttacker() == this) {
 /* 140:161 */       paramFloat = 0.0F;
 /* 141:    */     }
 /* 142:163 */     if (paramwh.s()) {
@@ -173,7 +173,7 @@ package net.minecraft.src;
 /* 172:195 */     double d2 = paramxm.xPos + paramxm.xVelocity - this.xPos;
 /* 173:196 */     double d3 = d1 - this.yPos;
 /* 174:197 */     double d4 = paramxm.zPos + paramxm.zVelocity - this.zPos;
-/* 175:198 */     float f = MathUtils.a(d2 * d2 + d4 * d4);
+/* 175:198 */     float f = MathUtils.sqrt(d2 * d2 + d4 * d4);
 /* 176:200 */     if ((f >= 8.0F) && (!paramxm.a(Potion.slowness))) {
 /* 177:201 */       localahv.a(32698);
 /* 178:202 */     } else if ((paramxm.getHealth() >= 8.0F) && (!paramxm.a(Potion.poison))) {

@@ -85,7 +85,7 @@ package net.minecraft.src;
 /*  84:102 */     if ((!this.world.isClient) && (i == 0))
 /*  85:    */     {
 /*  86:103 */       setDead();
-/*  87:105 */       if (paramahd.by.d)
+/*  87:105 */       if (paramahd.abilities.instabuild)
 /*  88:    */       {
 /*  89:107 */         d = 7.0D;
 /*  90:108 */         localList = this.world.getEntityList(EntityMob.class, new AABB(this.xPos - d, this.yPos - d, this.zPos - d, this.xPos + d, this.yPos + d, this.zPos + d));

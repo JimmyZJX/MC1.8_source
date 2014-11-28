@@ -41,7 +41,7 @@ package net.minecraft.src;
 /* 40:   */   
 /* 41:   */   public int c(Block parambec)
 /* 42:   */   {
-/* 43:57 */     return ((axa)parambec.getProperty(a)).a();
+/* 43:57 */     return ((axa)parambec.getData(a)).a();
 /* 44:   */   }
 /* 45:   */   
 /* 46:   */   protected bed e()

@@ -54,7 +54,7 @@ package net.minecraft.src;
 /*  53: 72 */         localaqi.a(EntityList.b(paramamj.getDamage2()));
 /*  54: 73 */         localbcm.o_();
 /*  55: 74 */         paramaqu.h(paramdt);
-/*  56: 75 */         if (!paramahd.by.d) {
+/*  56: 75 */         if (!paramahd.abilities.instabuild) {
 /*  57: 76 */           paramamj.stackSize -= 1;
 /*  58:    */         }
 /*  59: 78 */         return true;
@@ -72,7 +72,7 @@ package net.minecraft.src;
 /*  71: 92 */       if (((localwv instanceof EntityLiving)) && (paramamj.s())) {
 /*  72: 93 */         localwv.a(paramamj.q());
 /*  73:    */       }
-/*  74: 95 */       if (!paramahd.by.d) {
+/*  74: 95 */       if (!paramahd.abilities.instabuild) {
 /*  75: 96 */         paramamj.stackSize -= 1;
 /*  76:    */       }
 /*  77:    */     }
@@ -105,10 +105,10 @@ package net.minecraft.src;
 /* 104:127 */           if (((localwv instanceof EntityLiving)) && (paramamj.s())) {
 /* 105:128 */             ((EntityMob)localwv).a(paramamj.q());
 /* 106:    */           }
-/* 107:130 */           if (!paramahd.by.d) {
+/* 107:130 */           if (!paramahd.abilities.instabuild) {
 /* 108:131 */             paramamj.stackSize -= 1;
 /* 109:    */           }
-/* 110:133 */           paramahd.b(StatList.J[Item.b(this)]);
+/* 110:133 */           paramahd.increaseStat(StatList.J[Item.b(this)]);
 /* 111:    */         }
 /* 112:    */       }
 /* 113:    */     }

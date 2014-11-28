@@ -89,7 +89,7 @@ package net.minecraft.src;
 /*  88:    */   
 /*  89:    */   protected double f()
 /*  90:    */   {
-/*  91:110 */     xz localxz = this.b.a(afs.b);
+/*  91:110 */     xz localxz = this.b.getAttribute(MobAttribute.followRange);
 /*  92:111 */     return localxz == null ? 16.0D : localxz.e();
 /*  93:    */   }
 				static <T extends EntityLiving> EntityMob a(aam<T> paramaam) {return paramaam.b;}

@@ -485,7 +485,7 @@ package net.minecraft.src;
 /* 484:543 */     ahz localahz = localahd.ck();
 /* 485:544 */     int i5 = localahz.a();
 /* 486:545 */     int i6 = localahz.b();
-/* 487:546 */     xz localxz = localahd.a(afs.a);
+/* 487:546 */     xz localxz = localahd.getAttribute(MobAttribute.maxHealth);
 /* 488:    */     
 /* 489:548 */     int i7 = parambuf.a() / 2 - 91;
 /* 490:549 */     int i8 = parambuf.a() / 2 + 91;
@@ -498,7 +498,7 @@ package net.minecraft.src;
 /* 497:556 */     int i12 = i9 - (i10 - 1) * i11 - 10;
 /* 498:557 */     float f3 = f2;
 /* 499:    */     
-/* 500:559 */     int i13 = localahd.bq();
+/* 500:559 */     int i13 = localahd.getArmorValue();
 /* 501:560 */     int i14 = -1;
 /* 502:561 */     if (localahd.a(Potion.regeneration)) {
 /* 503:562 */       i14 = this.n % MathUtils.ceil(f1 + 5.0F);
@@ -804,7 +804,7 @@ package net.minecraft.src;
 /* 803:    */   
 /* 804:    */   private void a(int paramInt1, int paramInt2, int paramInt3, float paramFloat, EntityPlayer paramahd)
 /* 805:    */   {
-/* 806:864 */     ItemStack localamj = paramahd.bg.a[paramInt1];
+/* 806:864 */     ItemStack localamj = paramahd.bg.items[paramInt1];
 /* 807:865 */     if (localamj == null) {
 /* 808:866 */       return;
 /* 809:    */     }

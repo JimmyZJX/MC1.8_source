@@ -30,7 +30,7 @@ package net.minecraft.src;
 /* 29:   */   
 /* 30:   */   public boolean f()
 /* 31:   */   {
-/* 32:44 */     return this.a.j() instanceof EntityLiving;
+/* 32:44 */     return this.a.getAttacker() instanceof EntityLiving;
 /* 33:   */   }
 /* 34:   */   
 /* 35:   */   public String g()
@@ -40,12 +40,12 @@ package net.minecraft.src;
 /* 39:   */   
 /* 40:   */   public ho h()
 /* 41:   */   {
-/* 42:52 */     return a().j() == null ? null : a().j().e_();
+/* 42:52 */     return a().getAttacker() == null ? null : a().getAttacker().e_();
 /* 43:   */   }
 /* 44:   */   
 /* 45:   */   public float i()
 /* 46:   */   {
-/* 47:56 */     if (this.a == DamageSource.j) {
+/* 47:56 */     if (this.a == DamageSource.outOfWorld) {
 /* 48:57 */       return 3.4028235E+38F;
 /* 49:   */     }
 /* 50:59 */     return this.f;

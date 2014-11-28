@@ -29,7 +29,7 @@ package net.minecraft.src;
 /* 28:   */   
 /* 29:   */   protected ItemStack i(Block parambec)
 /* 30:   */   {
-/* 31:42 */     switch (axt.a[((EnumMonsterEggVariants)parambec.getProperty(a)).ordinal()])
+/* 31:42 */     switch (axt.a[((EnumMonsterEggVariants)parambec.getData(a)).ordinal()])
 /* 32:   */     {
 /* 33:   */     case 1: 
 /* 34:44 */       return new ItemStack(BlockList.cobblestone);
@@ -77,7 +77,7 @@ package net.minecraft.src;
 /* 76:   */   
 /* 77:   */   public int c(Block parambec)
 /* 78:   */   {
-/* 79:90 */     return ((EnumMonsterEggVariants)parambec.getProperty(a)).a();
+/* 79:90 */     return ((EnumMonsterEggVariants)parambec.getData(a)).a();
 /* 80:   */   }
 /* 81:   */   
 /* 82:   */   protected bed e()

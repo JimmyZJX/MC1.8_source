@@ -73,14 +73,14 @@ package net.minecraft.src;
 /*  72:    */   {
 /*  73: 91 */     int i = 0;
 /*  74:    */     
-/*  75: 93 */     i |= ((bbg)parambec.getProperty(M)).a();
+/*  75: 93 */     i |= ((bbg)parambec.getData(M)).a();
 /*  76: 95 */     if (j())
 /*  77:    */     {
-/*  78: 96 */       if (((Boolean)parambec.getProperty(b)).booleanValue()) {
+/*  78: 96 */       if (((Boolean)parambec.getData(b)).booleanValue()) {
 /*  79: 97 */         i |= 0x8;
 /*  80:    */       }
 /*  81:    */     }
-/*  82:100 */     else if (parambec.getProperty(half) == EnumSlabHalf.TOP) {
+/*  82:100 */     else if (parambec.getData(half) == EnumSlabHalf.TOP) {
 /*  83:101 */       i |= 0x8;
 /*  84:    */     }
 /*  85:105 */     return i;
@@ -96,7 +96,7 @@ package net.minecraft.src;
 /*  95:    */   
 /*  96:    */   public int a(Block parambec)
 /*  97:    */   {
-/*  98:119 */     return ((bbg)parambec.getProperty(M)).a();
+/*  98:119 */     return ((bbg)parambec.getData(M)).a();
 /*  99:    */   }
 /* 100:    */ }
 

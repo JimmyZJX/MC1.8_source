@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*   8:    */   private World g;
 /*   9:    */   private BlockPosition h;
 /*  10:    */   
-/*  11:    */   public aio(ahb paramahb, World paramaqu, BlockPosition paramdt)
+/*  11:    */   public aio(Inventory paramahb, World paramaqu, BlockPosition paramdt)
 /*  12:    */   {
 /*  13: 30 */     this.g = paramaqu;
 /*  14: 31 */     this.h = paramdt;

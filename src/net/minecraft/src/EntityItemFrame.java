@@ -29,14 +29,14 @@ package net.minecraft.src;
 /*  30:    */   
 /*  31:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /*  32:    */   {
-/*  33: 49 */     if (b(paramwh)) {
+/*  33: 49 */     if (isImmuneTo(paramwh)) {
 /*  34: 50 */       return false;
 /*  35:    */     }
 /*  36: 53 */     if ((!paramwh.c()) && (getItem() != null))
 /*  37:    */     {
 /*  38: 54 */       if (!this.world.isClient)
 /*  39:    */       {
-/*  40: 55 */         dropItem(paramwh.j(), false);
+/*  40: 55 */         dropItem(paramwh.getAttacker(), false);
 /*  41: 56 */         a((ItemStack)null);
 /*  42:    */       }
 /*  43: 58 */       return true;
@@ -75,7 +75,7 @@ package net.minecraft.src;
 /*  76: 93 */     if ((paramwv instanceof EntityPlayer))
 /*  77:    */     {
 /*  78: 94 */       EntityPlayer localahd = (EntityPlayer)paramwv;
-/*  79: 96 */       if (localahd.by.d)
+/*  79: 96 */       if (localahd.abilities.instabuild)
 /*  80:    */       {
 /*  81: 97 */         b(localamj);
 /*  82: 98 */         return;
@@ -185,7 +185,7 @@ package net.minecraft.src;
 /* 186:195 */         (!this.world.isClient))
 /* 187:    */       {
 /* 188:196 */         a(localamj);
-/* 189:198 */         if (!paramahd.by.d) {
+/* 189:198 */         if (!paramahd.abilities.instabuild) {
 /* 190:199 */           if (--localamj.stackSize <= 0) {
 /* 191:200 */             paramahd.bg.a(paramahd.bg.c, null);
 /* 192:    */           }

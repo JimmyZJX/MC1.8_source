@@ -1,6 +1,6 @@
 package net.minecraft.src;
 /*   1:    */ class aci
-/*   2:    */   extends yn
+/*   2:    */   extends MoveManager
 /*   3:    */ {
 /*   4:    */   private EntityRabbit g;
 /*   5:    */   
@@ -10,12 +10,12 @@ package net.minecraft.src;
 /*   9:476 */     this.g = paramacb;
 /*  10:    */   }
 /*  11:    */   
-/*  12:    */   public void c()
+/*  12:    */   public void tick()
 /*  13:    */   {
 /*  14:481 */     if ((this.g.C) && (!this.g.cj())) {
 /*  15:482 */       this.g.b(0.0D);
 /*  16:    */     }
-/*  17:484 */     super.c();
+/*  17:484 */     super.tick();
 /*  18:    */   }
 /*  19:    */ }
 

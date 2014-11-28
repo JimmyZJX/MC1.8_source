@@ -16,7 +16,7 @@ package net.minecraft.src;
 /* 15:   */   
 /* 16:   */   protected int e(Block parambec)
 /* 17:   */   {
-/* 18:38 */     return ((Boolean)parambec.getProperty(a)).booleanValue() ? 15 : 0;
+/* 18:38 */     return ((Boolean)parambec.getData(a)).booleanValue() ? 15 : 0;
 /* 19:   */   }
 /* 20:   */   
 /* 21:   */   protected Block a(Block parambec, int paramInt)
@@ -56,7 +56,7 @@ package net.minecraft.src;
 /* 55:   */   
 /* 56:   */   public int c(Block parambec)
 /* 57:   */   {
-/* 58:81 */     return ((Boolean)parambec.getProperty(a)).booleanValue() ? 1 : 0;
+/* 58:81 */     return ((Boolean)parambec.getData(a)).booleanValue() ? 1 : 0;
 /* 59:   */   }
 /* 60:   */   
 /* 61:   */   protected bed e()

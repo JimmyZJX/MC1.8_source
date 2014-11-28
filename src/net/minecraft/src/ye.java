@@ -16,8 +16,8 @@ import java.util.ArrayList;
 /*  13:    */ {
 /*  14:    */   private final yc a;
 /*  15:    */   private final xy b;
-/*  16: 15 */   private final Map c = Maps.newHashMap();
-/*  17: 16 */   private final Map d = Maps.newHashMap();
+/*  16: 15 */   private final Map<Integer,Set<ya>> c = Maps.newHashMap();
+/*  17: 16 */   private final Map<String,Set<ya>> d = Maps.newHashMap();
 /*  18: 17 */   private final Map<UUID,ya> e = Maps.newHashMap();
 /*  19:    */   private double f;
 /*  20: 19 */   private boolean g = true;
@@ -29,7 +29,7 @@ import java.util.ArrayList;
 /*  26: 24 */     this.b = paramxy;
 /*  27: 25 */     this.f = paramxy.b();
 /*  28: 27 */     for (int i = 0; i < 3; i++) {
-/*  29: 28 */       this.c.put(Integer.valueOf(i), Sets.newHashSet());
+/*  29: 28 */       this.c.put(Integer.valueOf(i), Sets.<ya>newHashSet());
 /*  30:    */     }
 /*  31:    */   }
 /*  32:    */   
@@ -54,12 +54,12 @@ import java.util.ArrayList;
 /*  51:    */   
 /*  52:    */   public Collection<ya> a(int paramInt)
 /*  53:    */   {
-/*  54: 53 */     return (Collection)this.c.get(Integer.valueOf(paramInt));
+/*  54: 53 */     return this.c.get(Integer.valueOf(paramInt));
 /*  55:    */   }
 /*  56:    */   
-/*  57:    */   public Collection c()
+/*  57:    */   public Collection<ya> c()
 /*  58:    */   {
-/*  59: 58 */     HashSet localHashSet = Sets.newHashSet();
+/*  59: 58 */     HashSet<ya> localHashSet = Sets.newHashSet();
 /*  60: 60 */     for (int i = 0; i < 3; i++) {
 /*  61: 61 */       localHashSet.addAll(a(i));
 /*  62:    */     }
@@ -81,14 +81,14 @@ import java.util.ArrayList;
 /*  78: 86 */     if (a(paramya.a()) != null) {
 /*  79: 87 */       throw new IllegalArgumentException("Modifier is already applied on this attribute!");
 /*  80:    */     }
-/*  81: 90 */     Set localObject = (Set)this.d.get(paramya.b());
+/*  81: 90 */     Set<ya> localObject = this.d.get(paramya.b());
 /*  82: 92 */     if (localObject == null)
 /*  83:    */     {
 /*  84: 93 */       localObject = Sets.newHashSet();
 /*  85: 94 */       this.d.put(paramya.b(), localObject);
 /*  86:    */     }
-/*  87: 97 */     ((Set)this.c.get(Integer.valueOf(paramya.c()))).add(paramya);
-/*  88: 98 */     ((Set)localObject).add(paramya);
+/*  87: 97 */     this.c.get(Integer.valueOf(paramya.c())).add(paramya);
+/*  88: 98 */     localObject.add(paramya);
 /*  89: 99 */     this.e.put(paramya.a(), paramya);
 /*  90:    */     
 /*  91:101 */     f();
@@ -104,10 +104,10 @@ import java.util.ArrayList;
 /* 101:    */   {
 /* 102:111 */     for (int i = 0; i < 3; i++)
 /* 103:    */     {
-/* 104:112 */       Set localSet2 = (Set)this.c.get(Integer.valueOf(i));
+/* 104:112 */       Set<ya> localSet2 = this.c.get(Integer.valueOf(i));
 /* 105:113 */       localSet2.remove(paramya);
 /* 106:    */     }
-/* 107:116 */     Set localSet1 = (Set)this.d.get(paramya.b());
+/* 107:116 */     Set<ya> localSet1 = this.d.get(paramya.b());
 /* 108:118 */     if (localSet1 != null)
 /* 109:    */     {
 /* 110:119 */       localSet1.remove(paramya);

@@ -68,13 +68,13 @@ package net.minecraft.src;
 /*  67:112 */     this.k.put(adm.class, new crc(this));
 /*  68:113 */     this.k.put(EntityItemFrame.class, new cqg(this, paramcqh));
 /*  69:114 */     this.k.put(adl.class, new cqt(this));
-/*  70:115 */     this.k.put(ahj.class, new cpg(this));
+/*  70:115 */     this.k.put(EntityArrow.class, new cpg(this));
 /*  71:116 */     this.k.put(ahq.class, new crp(this, ItemList.aD, paramcqh));
 /*  72:117 */     this.k.put(aht.class, new crp(this, ItemList.bu, paramcqh));
-/*  73:118 */     this.k.put(EntityEnderEye.class, new crp(this, ItemList.bH, paramcqh));
+/*  73:118 */     this.k.put(EntityEnderEye.class, new crp(this, ItemList.enderEye, paramcqh));
 /*  74:119 */     this.k.put(ahs.class, new crp(this, ItemList.aP, paramcqh));
 /*  75:120 */     this.k.put(ahv.class, new crq(this, paramcqh));
-/*  76:121 */     this.k.put(ahu.class, new crp(this, ItemList.bK, paramcqh));
+/*  76:121 */     this.k.put(ahu.class, new crp(this, ItemList.experienceBottle, paramcqh));
 /*  77:122 */     this.k.put(ahm.class, new crp(this, ItemList.cb, paramcqh));
 /*  78:123 */     this.k.put(ahn.class, new cpx(this, 2.0F));
 /*  79:124 */     this.k.put(ahp.class, new cpx(this, 0.5F));
@@ -145,7 +145,7 @@ package net.minecraft.src;
 /* 144:185 */       ProtoBlock localatr = localbec.getProto();
 /* 145:186 */       if (localatr == BlockList.C)
 /* 146:    */       {
-/* 147:187 */         int i1 = ((EnumDirection)localbec.getProperty(atp.N)).b();
+/* 147:187 */         int i1 = ((EnumDirection)localbec.getData(atp.facing)).b();
 /* 148:188 */         this.e = (i1 * 90 + 180);
 /* 149:189 */         this.f = 0.0F;
 /* 150:    */       }

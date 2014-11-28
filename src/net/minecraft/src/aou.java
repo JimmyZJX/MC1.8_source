@@ -18,7 +18,7 @@ package net.minecraft.src;
 /*  17:    */ 
 /*  18:    */ 
 /*  19:    */ 
-/*  20: 25 */     paramaop.a(new ItemStack(BlockList.bQ), new Object[] { "###", "#E#", "###", Character.valueOf('#'), BlockList.obsidian, Character.valueOf('E'), ItemList.bH });
+/*  20: 25 */     paramaop.a(new ItemStack(BlockList.bQ), new Object[] { "###", "#E#", "###", Character.valueOf('#'), BlockList.obsidian, Character.valueOf('E'), ItemList.enderEye });
 /*  21:    */     
 /*  22:    */ 
 /*  23:    */ 
@@ -128,14 +128,14 @@ package net.minecraft.src;
 /* 127:    */ 
 /* 128:    */ 
 /* 129:    */ 
-/* 130:135 */     paramaop.a(new ItemStack(BlockList.bj, 16), new Object[] { "###", "###", Character.valueOf('#'), BlockList.w });
+/* 130:135 */     paramaop.a(new ItemStack(BlockList.bj, 16), new Object[] { "###", "###", Character.valueOf('#'), BlockList.glass });
 /* 131:    */     
 /* 132:    */ 
 /* 133:    */ 
 /* 134:    */ 
 /* 135:    */ 
 /* 136:    */ 
-/* 137:142 */     paramaop.a(new ItemStack(BlockList.bJ, 1), new Object[] { " R ", "RGR", " R ", Character.valueOf('R'), ItemList.aC, Character.valueOf('G'), BlockList.glowstone });
+/* 137:142 */     paramaop.a(new ItemStack(BlockList.bJ, 1), new Object[] { " R ", "RGR", " R ", Character.valueOf('R'), ItemList.redstone, Character.valueOf('G'), BlockList.glowstone });
 /* 138:    */     
 /* 139:    */ 
 /* 140:    */ 
@@ -144,7 +144,7 @@ package net.minecraft.src;
 /* 143:    */ 
 /* 144:    */ 
 /* 145:    */ 
-/* 146:151 */     paramaop.a(new ItemStack(BlockList.bY, 1), new Object[] { "GGG", "GSG", "OOO", Character.valueOf('G'), BlockList.w, Character.valueOf('S'), ItemList.bZ, Character.valueOf('O'), BlockList.obsidian });
+/* 146:151 */     paramaop.a(new ItemStack(BlockList.bY, 1), new Object[] { "GGG", "GSG", "OOO", Character.valueOf('G'), BlockList.glass, Character.valueOf('S'), ItemList.bZ, Character.valueOf('O'), BlockList.obsidian });
 /* 147:    */     
 /* 148:    */ 
 /* 149:    */ 

@@ -28,7 +28,7 @@ package net.minecraft.src;
 /*  27: 41 */     if (i >= 3) {
 /*  28: 42 */       return;
 /*  29:    */     }
-/*  30: 45 */     int j = ((Integer)parambec.getProperty(a)).intValue();
+/*  30: 45 */     int j = ((Integer)parambec.getData(a)).intValue();
 /*  31: 46 */     if (j == 15)
 /*  32:    */     {
 /*  33: 47 */       paramaqu.setBlock(localdt, instance());
@@ -81,7 +81,7 @@ package net.minecraft.src;
 /*  80:    */   
 /*  81:    */   public boolean d(World paramaqu, BlockPosition paramdt)
 /*  82:    */   {
-/*  83: 96 */     for (Iterator<EnumDirection> localObject = en.HORIZONTAL.iterator(); (localObject).hasNext();)
+/*  83: 96 */     for (Iterator<EnumDirection> localObject = EnumHorizontalVertical.HORIZONTAL.iterator(); (localObject).hasNext();)
 /*  84:    */     {
 /*  85: 96 */       EnumDirection localej = (EnumDirection)(localObject).next();
 /*  86: 97 */       if (paramaqu.getBlock(paramdt.offset(localej)).getProto().getMaterial().a()) {
@@ -94,7 +94,7 @@ package net.minecraft.src;
 /*  93:    */   
 /*  94:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, Entity paramwv)
 /*  95:    */   {
-/*  96:107 */     paramwv.a(DamageSource.h, 1.0F);
+/*  96:107 */     paramwv.a(DamageSource.cactus, 1.0F);
 /*  97:    */   }
 /*  98:    */   
 /*  99:    */   public aql k()
@@ -109,7 +109,7 @@ package net.minecraft.src;
 /* 108:    */   
 /* 109:    */   public int c(Block parambec)
 /* 110:    */   {
-/* 111:123 */     return ((Integer)parambec.getProperty(a)).intValue();
+/* 111:123 */     return ((Integer)parambec.getData(a)).intValue();
 /* 112:    */   }
 /* 113:    */   
 /* 114:    */   protected bed e()

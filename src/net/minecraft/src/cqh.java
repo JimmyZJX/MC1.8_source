@@ -672,7 +672,7 @@ package net.minecraft.src;
 /*  671: 700 */     a(BlockList.bs, "dark_oak_fence_gate");
 /*  672: 701 */     a(BlockList.bt, "acacia_fence_gate");
 /*  673: 702 */     a(BlockList.al, "furnace");
-/*  674: 703 */     a(BlockList.w, "glass");
+/*  674: 703 */     a(BlockList.glass, "glass");
 /*  675: 704 */     a(BlockList.bj, "glass_pane");
 /*  676: 705 */     a(BlockList.glowstone, "glowstone");
 /*  677: 706 */     a(BlockList.D, "golden_rail");
@@ -697,7 +697,7 @@ package net.minecraft.src;
 /*  696: 725 */     a(BlockList.ay, "lever");
 /*  697: 726 */     a(BlockList.ch, "light_weighted_pressure_plate");
 /*  698: 727 */     a(BlockList.aZ, "lit_pumpkin");
-/*  699: 728 */     a(BlockList.bk, "melon_block");
+/*  699: 728 */     a(BlockList.melonBlock, "melon_block");
 /*  700: 729 */     a(BlockList.mossyCobblestone, "mossy_cobblestone");
 /*  701: 730 */     a(BlockList.bw, "mycelium");
 /*  702: 731 */     a(BlockList.netherrack, "netherrack");
@@ -746,24 +746,24 @@ package net.minecraft.src;
 /*  745: 774 */     a(BlockList.cg, "trapped_chest");
 /*  746: 775 */     a(BlockList.bQ, "ender_chest");
 /*  747:     */     
-/*  748: 777 */     a(ItemList.a, "iron_shovel");
-/*  749: 778 */     a(ItemList.b, "iron_pickaxe");
+/*  748: 777 */     a(ItemList.ironShovel, "iron_shovel");
+/*  749: 778 */     a(ItemList.ironPickaxe, "iron_pickaxe");
 /*  750:     */     
-/*  751: 780 */     a(ItemList.c, "iron_axe");
+/*  751: 780 */     a(ItemList.ironAxe, "iron_axe");
 /*  752: 781 */     a(ItemList.d, "flint_and_steel");
 /*  753: 782 */     a(ItemList.apple, "apple");
 /*  754: 783 */     a(ItemList.bow, 0, "bow");
 /*  755: 784 */     a(ItemList.bow, 1, "bow_pulling_0");
 /*  756: 785 */     a(ItemList.bow, 2, "bow_pulling_1");
 /*  757: 786 */     a(ItemList.bow, 3, "bow_pulling_2");
-/*  758: 787 */     a(ItemList.g, "arrow");
-/*  759: 788 */     a(ItemList.h, 0, "coal");
-/*  760: 789 */     a(ItemList.h, 1, "charcoal");
+/*  758: 787 */     a(ItemList.arrow, "arrow");
+/*  759: 788 */     a(ItemList.coal, 0, "coal");
+/*  760: 789 */     a(ItemList.coal, 1, "charcoal");
 /*  761: 790 */     a(ItemList.diamond, "diamond");
 /*  762: 791 */     a(ItemList.ironIngot, "iron_ingot");
 /*  763:     */     
 /*  764: 793 */     a(ItemList.goldIngot, "gold_ingot");
-/*  765: 794 */     a(ItemList.l, "iron_sword");
+/*  765: 794 */     a(ItemList.ironSword, "iron_sword");
 /*  766: 795 */     a(ItemList.m, "wooden_sword");
 /*  767: 796 */     a(ItemList.n, "wooden_shovel");
 /*  768: 797 */     a(ItemList.o, "wooden_pickaxe");
@@ -773,10 +773,10 @@ package net.minecraft.src;
 /*  772: 801 */     a(ItemList.s, "stone_pickaxe");
 /*  773:     */     
 /*  774: 803 */     a(ItemList.t, "stone_axe");
-/*  775: 804 */     a(ItemList.u, "diamond_sword");
+/*  775: 804 */     a(ItemList.diamondSword, "diamond_sword");
 /*  776: 805 */     a(ItemList.v, "diamond_shovel");
-/*  777: 806 */     a(ItemList.w, "diamond_pickaxe");
-/*  778: 807 */     a(ItemList.x, "diamond_axe");
+/*  777: 806 */     a(ItemList.diamondPickaxe, "diamond_pickaxe");
+/*  778: 807 */     a(ItemList.diamondAxe, "diamond_axe");
 /*  779: 808 */     a(ItemList.stick, "stick");
 /*  780: 809 */     a(ItemList.z, "bowl");
 /*  781: 810 */     a(ItemList.A, "mushroom_stew");
@@ -784,7 +784,7 @@ package net.minecraft.src;
 /*  783: 812 */     a(ItemList.C, "golden_shovel");
 /*  784: 813 */     a(ItemList.D, "golden_pickaxe");
 /*  785: 814 */     a(ItemList.E, "golden_axe");
-/*  786: 815 */     a(ItemList.F, "string");
+/*  786: 815 */     a(ItemList.string, "string");
 /*  787: 816 */     a(ItemList.G, "feather");
 /*  788: 817 */     a(ItemList.H, "gunpowder");
 /*  789: 818 */     a(ItemList.I, "wooden_hoe");
@@ -793,26 +793,26 @@ package net.minecraft.src;
 /*  792: 821 */     a(ItemList.L, "diamond_hoe");
 /*  793: 822 */     a(ItemList.M, "golden_hoe");
 /*  794: 823 */     a(ItemList.N, "wheat_seeds");
-/*  795: 824 */     a(ItemList.O, "wheat");
+/*  795: 824 */     a(ItemList.wheat, "wheat");
 /*  796: 825 */     a(ItemList.bread, "bread");
 /*  797:     */     
 /*  798: 827 */     a(ItemList.Q, "leather_helmet");
-/*  799: 828 */     a(ItemList.R, "leather_chestplate");
-/*  800: 829 */     a(ItemList.S, "leather_leggings");
+/*  799: 828 */     a(ItemList.leatherChestplate, "leather_chestplate");
+/*  800: 829 */     a(ItemList.leatherLeggings, "leather_leggings");
 /*  801: 830 */     a(ItemList.leatherBoots, "leather_boots");
 /*  802:     */     
-/*  803: 832 */     a(ItemList.U, "chainmail_helmet");
-/*  804: 833 */     a(ItemList.V, "chainmail_chestplate");
-/*  805: 834 */     a(ItemList.W, "chainmail_leggings");
-/*  806: 835 */     a(ItemList.X, "chainmail_boots");
+/*  803: 832 */     a(ItemList.chainmailHelmet, "chainmail_helmet");
+/*  804: 833 */     a(ItemList.chainmailChestplate, "chainmail_chestplate");
+/*  805: 834 */     a(ItemList.chainmailLeggings, "chainmail_leggings");
+/*  806: 835 */     a(ItemList.chainmailBoots, "chainmail_boots");
 /*  807:     */     
-/*  808: 837 */     a(ItemList.Y, "iron_helmet");
-/*  809: 838 */     a(ItemList.Z, "iron_chestplate");
+/*  808: 837 */     a(ItemList.ironHelmet, "iron_helmet");
+/*  809: 838 */     a(ItemList.ironChestplate, "iron_chestplate");
 /*  810: 839 */     a(ItemList.aa, "iron_leggings");
 /*  811: 840 */     a(ItemList.ab, "iron_boots");
 /*  812:     */     
 /*  813: 842 */     a(ItemList.ac, "diamond_helmet");
-/*  814: 843 */     a(ItemList.ad, "diamond_chestplate");
+/*  814: 843 */     a(ItemList.diamondChestplate, "diamond_chestplate");
 /*  815: 844 */     a(ItemList.ae, "diamond_leggings");
 /*  816: 845 */     a(ItemList.af, "diamond_boots");
 /*  817:     */     
@@ -821,9 +821,9 @@ package net.minecraft.src;
 /*  820: 849 */     a(ItemList.ai, "golden_leggings");
 /*  821: 850 */     a(ItemList.aj, "golden_boots");
 /*  822:     */     
-/*  823: 852 */     a(ItemList.ak, "flint");
-/*  824: 853 */     a(ItemList.al, "porkchop");
-/*  825: 854 */     a(ItemList.am, "cooked_porkchop");
+/*  823: 852 */     a(ItemList.flint, "flint");
+/*  824: 853 */     a(ItemList.porkchop, "porkchop");
+/*  825: 854 */     a(ItemList.cookedPorkchop, "cooked_porkchop");
 /*  826: 855 */     a(ItemList.an, "painting");
 /*  827: 856 */     a(ItemList.ao, "golden_apple");
 /*  828: 857 */     a(ItemList.ao, 1, "golden_apple");
@@ -841,7 +841,7 @@ package net.minecraft.src;
 /*  840: 869 */     a(ItemList.az, "minecart");
 /*  841: 870 */     a(ItemList.saddle, "saddle");
 /*  842: 871 */     a(ItemList.aB, "iron_door");
-/*  843: 872 */     a(ItemList.aC, "redstone");
+/*  843: 872 */     a(ItemList.redstone, "redstone");
 /*  844: 873 */     a(ItemList.aD, "snowball");
 /*  845: 874 */     a(ItemList.aE, "boat");
 /*  846: 875 */     a(ItemList.leather, "leather");
@@ -850,17 +850,17 @@ package net.minecraft.src;
 /*  849:     */     
 /*  850: 879 */     a(ItemList.aI, "clay_ball");
 /*  851: 880 */     a(ItemList.aJ, "reeds");
-/*  852: 881 */     a(ItemList.aK, "paper");
+/*  852: 881 */     a(ItemList.paper, "paper");
 /*  853: 882 */     a(ItemList.book, "book");
 /*  854: 883 */     a(ItemList.aM, "slime_ball");
 /*  855: 884 */     a(ItemList.aN, "chest_minecart");
 /*  856: 885 */     a(ItemList.aO, "furnace_minecart");
 /*  857: 886 */     a(ItemList.aP, "egg");
-/*  858: 887 */     a(ItemList.aQ, "compass");
+/*  858: 887 */     a(ItemList.compass, "compass");
 /*  859:     */     
 /*  860: 889 */     a(ItemList.fishingRod, "fishing_rod");
 /*  861: 890 */     a(ItemList.fishingRod, 1, "fishing_rod_cast");
-/*  862: 891 */     a(ItemList.aS, "clock");
+/*  862: 891 */     a(ItemList.clock, "clock");
 /*  863: 892 */     a(ItemList.aT, "glowstone_dust");
 /*  864: 893 */     a(ItemList.fish, ali.a.a(), "cod");
 /*  865: 894 */     a(ItemList.fish, ali.b.a(), "salmon");
@@ -889,19 +889,19 @@ package net.minecraft.src;
 /*  888: 917 */     a(ItemList.bone, "bone");
 /*  889: 918 */     a(ItemList.aY, "sugar");
 /*  890:     */     
-/*  891: 920 */     a(ItemList.aZ, "cake");
+/*  891: 920 */     a(ItemList.cake, "cake");
 /*  892: 921 */     a(ItemList.ba, "bed");
 /*  893: 922 */     a(ItemList.bb, "repeater");
-/*  894: 923 */     a(ItemList.bc, "cookie");
-/*  895: 924 */     a(ItemList.be, "shears");
+/*  894: 923 */     a(ItemList.cookie, "cookie");
+/*  895: 924 */     a(ItemList.shears, "shears");
 /*  896: 925 */     a(ItemList.bf, "melon");
 /*  897: 926 */     a(ItemList.bg, "pumpkin_seeds");
 /*  898: 927 */     a(ItemList.bh, "melon_seeds");
 /*  899:     */     
 /*  900: 929 */     a(ItemList.bi, "beef");
 /*  901: 930 */     a(ItemList.bj, "cooked_beef");
-/*  902: 931 */     a(ItemList.bk, "chicken");
-/*  903: 932 */     a(ItemList.bl, "cooked_chicken");
+/*  902: 931 */     a(ItemList.chicken, "chicken");
+/*  903: 932 */     a(ItemList.cookedChicken, "cooked_chicken");
 /*  904: 933 */     a(ItemList.bo, "rabbit");
 /*  905: 934 */     a(ItemList.bp, "cooked_rabbit");
 /*  906: 935 */     a(ItemList.bm, "mutton");
@@ -910,10 +910,10 @@ package net.minecraft.src;
 /*  909: 938 */     a(ItemList.bs, "rabbit_hide");
 /*  910: 939 */     a(ItemList.bq, "rabbit_stew");
 /*  911:     */     
-/*  912: 941 */     a(ItemList.bt, "rotten_flesh");
+/*  912: 941 */     a(ItemList.rottenFlesh, "rotten_flesh");
 /*  913: 942 */     a(ItemList.bu, "ender_pearl");
-/*  914: 943 */     a(ItemList.bv, "blaze_rod");
-/*  915: 944 */     a(ItemList.bw, "ghast_tear");
+/*  914: 943 */     a(ItemList.blazeRod, "blaze_rod");
+/*  915: 944 */     a(ItemList.ghastTear, "ghast_tear");
 /*  916: 945 */     a(ItemList.goldNugget, "gold_nugget");
 /*  917: 946 */     a(ItemList.by, "nether_wart");
 /*  918:     */     
@@ -935,7 +935,7 @@ package net.minecraft.src;
 /*  934: 963 */     a(ItemList.bE, "magma_cream");
 /*  935: 964 */     a(ItemList.bF, "brewing_stand");
 /*  936: 965 */     a(ItemList.bG, "cauldron");
-/*  937: 966 */     a(ItemList.bH, "ender_eye");
+/*  937: 966 */     a(ItemList.enderEye, "ender_eye");
 /*  938: 967 */     a(ItemList.bI, "speckled_melon");
 /*  939:     */     
 /*  940: 969 */     this.m.a(ItemList.spawnEgg, new cqo(this));
@@ -945,7 +945,7 @@ package net.minecraft.src;
 /*  944:     */ 
 /*  945:     */ 
 /*  946:     */ 
-/*  947: 976 */     a(ItemList.bK, "experience_bottle");
+/*  947: 976 */     a(ItemList.experienceBottle, "experience_bottle");
 /*  948: 977 */     a(ItemList.bL, "fire_charge");
 /*  949: 978 */     a(ItemList.bM, "writable_book");
 /*  950: 979 */     a(ItemList.emerald, "emerald");
@@ -966,7 +966,7 @@ package net.minecraft.src;
 /*  965:     */     
 /*  966: 995 */     a(ItemList.bY, "carrot_on_a_stick");
 /*  967: 996 */     a(ItemList.bZ, "nether_star");
-/*  968: 997 */     a(ItemList.ca, "pumpkin_pie");
+/*  968: 997 */     a(ItemList.pumpkinPie, "pumpkin_pie");
 /*  969: 998 */     a(ItemList.cc, "firework_charge");
 /*  970: 999 */     a(ItemList.ce, "comparator");
 /*  971:1000 */     a(ItemList.cf, "netherbrick");
@@ -1004,7 +1004,7 @@ package net.minecraft.src;
 /* 1003:1032 */     a(ItemList.cC, "prismarine_shard");
 /* 1004:1033 */     a(ItemList.cD, "prismarine_crystals");
 /* 1005:     */     
-/* 1006:1035 */     this.m.a(ItemList.cd, new cqq(this));
+/* 1006:1035 */     this.m.a(ItemList.enchantedBook, new cqq(this));
 /* 1007:     */     
 /* 1008:     */ 
 /* 1009:     */ 
@@ -1022,7 +1022,7 @@ package net.minecraft.src;
 /* 1021:1050 */     a(ItemList.cp, "command_block_minecart");
 /* 1022:1051 */     a(BlockList.barrier, "barrier");
 /* 1023:1052 */     a(BlockList.mobSpawner, "mob_spawner");
-/* 1024:1053 */     a(ItemList.bN, "written_book");
+/* 1024:1053 */     a(ItemList.writtenBook, "written_book");
 /* 1025:     */     
 /* 1026:1055 */     a(BlockList.bg, axa.k.a(), "brown_mushroom_block");
 /* 1027:1056 */     a(BlockList.bh, axa.k.a(), "red_mushroom_block");

@@ -6,26 +6,26 @@ package net.minecraft.src;
     			GOLD("gold", 7, new int[] {2, 5, 3, 1}, 25),
     			DIAMOND("diamond", 33, new int[] {3, 8, 6, 3}, 10);
 /*   3:    */   private final String name;
-/*   4:    */   private final int g;
-/*   5:    */   private final int[] h;
+/*   4:    */   private final int durabilityMultiplier;
+/*   5:    */   private final int[] armorValue;
 /*   6:    */   private final int i;
 /*   7:    */   
 /*   8:    */   private EnumArmorMaterial(String paramString, int paramInt1, int[] paramArrayOfInt, int paramInt2)
 /*   9:    */   {
 /*  10: 79 */     this.name = paramString;
-/*  11: 80 */     this.g = paramInt1;
-/*  12: 81 */     this.h = paramArrayOfInt;
+/*  11: 80 */     this.durabilityMultiplier = paramInt1;
+/*  12: 81 */     this.armorValue = paramArrayOfInt;
 /*  13: 82 */     this.i = paramInt2;
 /*  14:    */   }
 /*  15:    */   
-/*  16:    */   public int a(int paramInt)
+/*  16:    */   public int getDurability(int slot)
 /*  17:    */   {
-/*  18: 86 */     return ItemArmor.d()[paramInt] * this.g;
+/*  18: 86 */     return ItemArmor.getBaseDurability()[slot] * this.durabilityMultiplier;
 /*  19:    */   }
 /*  20:    */   
-/*  21:    */   public int b(int paramInt)
+/*  21:    */   public int getArmorValue(int slot)
 /*  22:    */   {
-/*  23: 90 */     return this.h[paramInt];
+/*  23: 90 */     return this.armorValue[slot];
 /*  24:    */   }
 /*  25:    */   
 /*  26:    */   public int a()

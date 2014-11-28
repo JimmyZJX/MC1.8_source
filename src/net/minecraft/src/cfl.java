@@ -30,7 +30,7 @@ package net.minecraft.src;
 /* 29:30 */     this.lastZ = this.zPos;
 /* 30:   */     
 /* 31:32 */     this.yVelocity += 0.002D;
-/* 32:33 */     d(this.xVelocity, this.yVelocity, this.zVelocity);
+/* 32:33 */     move(this.xVelocity, this.yVelocity, this.zVelocity);
 /* 33:34 */     this.xVelocity *= 0.8500000238418579D;
 /* 34:35 */     this.yVelocity *= 0.8500000238418579D;
 /* 35:36 */     this.zVelocity *= 0.8500000238418579D;

@@ -38,7 +38,7 @@ package net.minecraft.src;
 /*  37: 37 */     this.d = true;
 /*  38:    */   }
 /*  39:    */   
-/*  40:    */   public void a()
+/*  40:    */   public void tick()
 /*  41:    */   {
 /*  42: 41 */     this.a.pitch = 0.0F;
 /*  43: 43 */     if (this.d)
@@ -48,7 +48,7 @@ package net.minecraft.src;
 /*  47: 46 */       double d1 = this.e - this.a.xPos;
 /*  48: 47 */       double d2 = this.f - (this.a.yPos + this.a.getEyeHeight());
 /*  49: 48 */       double d3 = this.g - this.a.zPos;
-/*  50: 49 */       double d4 = MathUtils.a(d1 * d1 + d3 * d3);
+/*  50: 49 */       double d4 = MathUtils.sqrt(d1 * d1 + d3 * d3);
 /*  51:    */       
 /*  52: 51 */       float f2 = (float)(Math.atan2(d3, d1) * 180.0D / 3.141592741012573D) - 90.0F;
 /*  53: 52 */       float f3 = (float)-(Math.atan2(d2, d4) * 180.0D / 3.141592741012573D);

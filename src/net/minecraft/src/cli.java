@@ -15,7 +15,7 @@ package net.minecraft.src;
 /*  14:239 */     String str1 = bbf.M.toString((Comparable)localLinkedHashMap.remove(bbf.M));
 /*  15:240 */     localLinkedHashMap.remove(bbf.b);
 /*  16:    */     
-/*  17:242 */     String str2 = ((Boolean)parambec.getProperty(bbf.b)).booleanValue() ? "all" : "normal";
+/*  17:242 */     String str2 = ((Boolean)parambec.getData(bbf.b)).booleanValue() ? "all" : "normal";
 /*  18:243 */     return new cxl(str1 + "_double_slab", str2);
 /*  19:    */   }
 /*  20:    */ }

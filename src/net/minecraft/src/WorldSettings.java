@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ public final class WorldSettings
 /*   2:    */ {
 /*   3:    */   private final long a;
-/*   4:    */   private final EnumGameType b;
+/*   4:    */   private final EnumGameMode b;
 /*   5:    */   private final boolean c;
 /*   6:    */   private final boolean d;
 /*   7:    */   private final WorldType e;
@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*   9:    */   private boolean g;
 /*  10: 88 */   private String h = "";
 /*  11:    */   
-/*  12:    */   public WorldSettings(long paramLong, EnumGameType paramarc, boolean paramBoolean1, boolean paramBoolean2, WorldType paramare)
+/*  12:    */   public WorldSettings(long paramLong, EnumGameMode paramarc, boolean paramBoolean1, boolean paramBoolean2, WorldType paramare)
 /*  13:    */   {
 /*  14: 91 */     this.a = paramLong;
 /*  15: 92 */     this.b = paramarc;
@@ -52,7 +52,7 @@ package net.minecraft.src;
 /*  51:122 */     return this.a;
 /*  52:    */   }
 /*  53:    */   
-/*  54:    */   public EnumGameType getGameType()
+/*  54:    */   public EnumGameMode getGameType()
 /*  55:    */   {
 /*  56:126 */     return this.b;
 /*  57:    */   }
@@ -77,9 +77,9 @@ package net.minecraft.src;
 /*  76:142 */     return this.f;
 /*  77:    */   }
 /*  78:    */   
-/*  79:    */   public static EnumGameType a(int paramInt)
+/*  79:    */   public static EnumGameMode a(int paramInt)
 /*  80:    */   {
-/*  81:146 */     return EnumGameType.a(paramInt);
+/*  81:146 */     return EnumGameMode.a(paramInt);
 /*  82:    */   }
 /*  83:    */   
 /*  84:    */   public String j()

@@ -36,7 +36,7 @@ package net.minecraft.src;
 /* 35:50 */       int m = localej.b();
 /* 36:   */       
 /* 37:   */ 
-/* 38:53 */       Block localbec2 = BlockList.C.instance().setData(atp.b, Boolean.valueOf(false)).setData(atp.N, localej).setData(atp.a, atq.FOOT);
+/* 38:53 */       Block localbec2 = BlockList.C.instance().setData(atp.b, Boolean.valueOf(false)).setData(atp.facing, localej).setData(atp.a, atq.FOOT);
 /* 39:54 */       if (paramaqu.setBlock(paramdt, localbec2, 3))
 /* 40:   */       {
 /* 41:55 */         Block localbec3 = localbec2.setData(atp.a, atq.HEAD);

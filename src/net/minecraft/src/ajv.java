@@ -13,7 +13,7 @@ package net.minecraft.src;
 /* 12:   */   {
 /* 13:21 */     Block localbec1 = paramaqu.getBlock(paramdt);
 /* 14:22 */     ProtoBlock localatr = localbec1.getProto();
-/* 15:23 */     if ((localatr == BlockList.aH) && (((Integer)localbec1.getProperty(BlockSnowLayer.a)).intValue() < 1)) {
+/* 15:23 */     if ((localatr == BlockList.aH) && (((Integer)localbec1.getData(BlockSnowLayer.a)).intValue() < 1)) {
 /* 16:24 */       paramej = EnumDirection.UP;
 /* 17:25 */     } else if (!localatr.f(paramaqu, paramdt)) {
 /* 18:26 */       paramdt = paramdt.offset(paramej);

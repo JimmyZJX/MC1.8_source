@@ -16,14 +16,14 @@ package net.minecraft.src;
 /* 15:   */   
 /* 16:   */   public ItemStack a(ItemStack paramamj, World paramaqu, EntityPlayer paramahd)
 /* 17:   */   {
-/* 18:20 */     if (!paramahd.by.d) {
+/* 18:20 */     if (!paramahd.abilities.instabuild) {
 /* 19:21 */       paramamj.stackSize -= 1;
 /* 20:   */     }
 /* 21:23 */     paramaqu.a(paramahd, "random.bow", 0.5F, 0.4F / (random.nextFloat() * 0.4F + 0.8F));
 /* 22:24 */     if (!paramaqu.isClient) {
 /* 23:25 */       paramaqu.spawnEntity(new ahu(paramaqu, paramahd));
 /* 24:   */     }
-/* 25:27 */     paramahd.b(StatList.J[Item.b(this)]);
+/* 25:27 */     paramahd.increaseStat(StatList.J[Item.b(this)]);
 /* 26:28 */     return paramamj;
 /* 27:   */   }
 /* 28:   */ }

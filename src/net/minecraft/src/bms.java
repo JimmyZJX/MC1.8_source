@@ -328,7 +328,7 @@ package net.minecraft.src;
 /* 327:349 */       if (this.m == EnumDirection.SOUTH)
 /* 328:    */       {
 /* 329:350 */         if ((localej == EnumDirection.SOUTH) || (localej == EnumDirection.NORTH)) {
-/* 330:351 */           return localej.d().b();
+/* 330:351 */           return localej.opposite().b();
 /* 331:    */         }
 /* 332:    */       }
 /* 333:353 */       else if (this.m == EnumDirection.WEST)
@@ -367,7 +367,7 @@ package net.minecraft.src;
 /* 366:382 */       if (this.m == EnumDirection.SOUTH)
 /* 367:    */       {
 /* 368:383 */         if ((paramInt == EnumDirection.NORTH.a()) || (paramInt == EnumDirection.SOUTH.a())) {
-/* 369:384 */           return EnumDirection.a(paramInt).d().a();
+/* 369:384 */           return EnumDirection.a(paramInt).opposite().a();
 /* 370:    */         }
 /* 371:    */       }
 /* 372:386 */       else if (this.m == EnumDirection.WEST)
@@ -588,7 +588,7 @@ package net.minecraft.src;
 /* 587:    */   {
 /* 588:620 */     BlockPosition localdt = new BlockPosition(a(paramInt1, paramInt3), d(paramInt2), b(paramInt1, paramInt3));
 /* 589:622 */     if (parambjb.b(localdt)) {
-/* 590:623 */       akt.a(paramaqu, localdt, paramej.f(), BlockList.woodenDoor);
+/* 590:623 */       akt.a(paramaqu, localdt, paramej.ccw(), BlockList.woodenDoor);
 /* 591:    */     }
 /* 592:    */   }
 /* 593:    */ }

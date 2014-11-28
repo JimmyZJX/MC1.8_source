@@ -45,7 +45,7 @@ package net.minecraft.src;
 /*  44:172 */               if (localaqu.getGameRules().getBoolean("mobGriefing")) {
 /*  45:173 */                 localaqu.b(localdt2, true);
 /*  46:    */               } else {
-/*  47:175 */                 localaqu.setBlock(localdt2, ((EnumMonsterEggVariants)localbec.getProperty(axs.a)).d(), 3);
+/*  47:175 */                 localaqu.setBlock(localdt2, ((EnumMonsterEggVariants)localbec.getData(axs.a)).d(), 3);
 /*  48:    */               }
 /*  49:177 */               if (localRandom.nextBoolean()) {
 /*  50:    */                 return;

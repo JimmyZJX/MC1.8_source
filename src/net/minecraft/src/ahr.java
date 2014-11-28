@@ -75,7 +75,7 @@ package net.minecraft.src;
 /*  75:    */   
 /*  76:    */   public void c(double paramDouble1, double paramDouble2, double paramDouble3, float paramFloat1, float paramFloat2)
 /*  77:    */   {
-/*  78: 89 */     float f1 = MathUtils.a(paramDouble1 * paramDouble1 + paramDouble2 * paramDouble2 + paramDouble3 * paramDouble3);
+/*  78: 89 */     float f1 = MathUtils.sqrt(paramDouble1 * paramDouble1 + paramDouble2 * paramDouble2 + paramDouble3 * paramDouble3);
 /*  79:    */     
 /*  80: 91 */     paramDouble1 /= f1;
 /*  81: 92 */     paramDouble2 /= f1;
@@ -93,7 +93,7 @@ package net.minecraft.src;
 /*  93:104 */     this.yVelocity = paramDouble2;
 /*  94:105 */     this.zVelocity = paramDouble3;
 /*  95:    */     
-/*  96:107 */     float f2 = MathUtils.a(paramDouble1 * paramDouble1 + paramDouble3 * paramDouble3);
+/*  96:107 */     float f2 = MathUtils.sqrt(paramDouble1 * paramDouble1 + paramDouble3 * paramDouble3);
 /*  97:    */     
 /*  98:109 */     this.lastYaw = (this.yaw = (float)(Math.atan2(paramDouble1, paramDouble3) * 180.0D / 3.141592741012573D));
 /*  99:110 */     this.lastPitch = (this.pitch = (float)(Math.atan2(paramDouble2, f2) * 180.0D / 3.141592741012573D));
@@ -107,7 +107,7 @@ package net.minecraft.src;
 /* 107:118 */     this.zVelocity = paramDouble3;
 /* 108:119 */     if ((this.lastPitch == 0.0F) && (this.lastYaw == 0.0F))
 /* 109:    */     {
-/* 110:120 */       float f1 = MathUtils.a(paramDouble1 * paramDouble1 + paramDouble3 * paramDouble3);
+/* 110:120 */       float f1 = MathUtils.sqrt(paramDouble1 * paramDouble1 + paramDouble3 * paramDouble3);
 /* 111:121 */       this.lastYaw = (this.yaw = (float)(Math.atan2(paramDouble1, paramDouble3) * 180.0D / 3.141592741012573D));
 /* 112:122 */       this.lastPitch = (this.pitch = (float)(Math.atan2(paramDouble2, f1) * 180.0D / 3.141592741012573D));
 /* 113:    */     }
@@ -169,7 +169,7 @@ package net.minecraft.src;
 /* 169:180 */           HitResult localbru2 = localbrt.a(localbrw1, localbrw2);
 /* 170:181 */           if (localbru2 != null)
 /* 171:    */           {
-/* 172:182 */             double d2 = localbrw1.f(localbru2.c);
+/* 172:182 */             double d2 = localbrw1.dist(localbru2.c);
 /* 173:183 */             if ((d2 < d1) || (d1 == 0.0D))
 /* 174:    */             {
 /* 175:184 */               localObject = localwv;
@@ -193,7 +193,7 @@ package net.minecraft.src;
 /* 193:203 */     this.yPos += this.yVelocity;
 /* 194:204 */     this.zPos += this.zVelocity;
 /* 195:    */     
-/* 196:206 */     float f1 = MathUtils.a(this.xVelocity * this.xVelocity + this.zVelocity * this.zVelocity);
+/* 196:206 */     float f1 = MathUtils.sqrt(this.xVelocity * this.xVelocity + this.zVelocity * this.zVelocity);
 /* 197:207 */     this.yaw = ((float)(Math.atan2(this.xVelocity, this.zVelocity) * 180.0D / 3.141592741012573D));
 /* 198:208 */     this.pitch = ((float)(Math.atan2(this.yVelocity, f1) * 180.0D / 3.141592741012573D));
 /* 199:210 */     while (this.pitch - this.lastPitch < -180.0F) {
@@ -213,7 +213,7 @@ package net.minecraft.src;
 /* 213:    */     
 /* 214:227 */     float f2 = 0.99F;
 /* 215:228 */     float f3 = m();
-/* 216:230 */     if (V())
+/* 216:230 */     if (isInWater())
 /* 217:    */     {
 /* 218:231 */       for (int j = 0; j < 4; j++)
 /* 219:    */       {

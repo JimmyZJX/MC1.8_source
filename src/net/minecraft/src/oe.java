@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*  3:   */ {
 /*  4:   */   protected aho a(World paramaqu, ex paramex)
 /*  5:   */   {
-/*  6:43 */     ahj localahj = new ahj(paramaqu, paramex.a(), paramex.b(), paramex.c());
+/*  6:43 */     EntityArrow localahj = new EntityArrow(paramaqu, paramex.a(), paramex.b(), paramex.c());
 /*  7:44 */     localahj.a = 1;
 /*  8:   */     
 /*  9:46 */     return localahj;

@@ -23,8 +23,8 @@ package net.minecraft.src;
 /*  22:    */   {
 /*  23: 42 */     super.aW();
 /*  24:    */     
-/*  25: 44 */     a(afs.a).a(4.0D);
-/*  26: 45 */     a(afs.d).a(0.2000000029802322D);
+/*  25: 44 */     getAttribute(MobAttribute.maxHealth).a(4.0D);
+/*  26: 45 */     getAttribute(MobAttribute.movementSpeed).a(0.2000000029802322D);
 /*  27:    */   }
 /*  28:    */   
 /*  29:    */   public void m()
@@ -36,10 +36,10 @@ package net.minecraft.src;
 /*  35: 54 */       int j = MathUtils.floor(this.yPos);
 /*  36: 55 */       int k = MathUtils.floor(this.zPos);
 /*  37: 57 */       if (U()) {
-/*  38: 58 */         a(DamageSource.f, 1.0F);
+/*  38: 58 */         a(DamageSource.drown, 1.0F);
 /*  39:    */       }
 /*  40: 61 */       if (this.world.b(new BlockPosition(i, 0, k)).a(new BlockPosition(i, j, k)) > 1.0F) {
-/*  41: 62 */         a(DamageSource.c, 1.0F);
+/*  41: 62 */         a(DamageSource.onFire, 1.0F);
 /*  42:    */       }
 /*  43: 65 */       for (int m = 0; m < 4; m++)
 /*  44:    */       {
@@ -75,7 +75,7 @@ package net.minecraft.src;
 /*  74: 98 */     double d2 = paramxm.xPos - this.xPos;
 /*  75: 99 */     double d3 = d1 - localahq.yPos;
 /*  76:100 */     double d4 = paramxm.zPos - this.zPos;
-/*  77:101 */     float f = MathUtils.a(d2 * d2 + d4 * d4) * 0.2F;
+/*  77:101 */     float f = MathUtils.sqrt(d2 * d2 + d4 * d4) * 0.2F;
 /*  78:102 */     localahq.c(d2, d3 + f, d4, 1.6F, 12.0F);
 /*  79:    */     
 /*  80:104 */     a("random.bow", 1.0F, 1.0F / (getRNG().nextFloat() * 0.4F + 0.8F));

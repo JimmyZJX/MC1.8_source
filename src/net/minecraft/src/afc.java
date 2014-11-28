@@ -3,7 +3,7 @@ package net.minecraft.src;
 /*   2:    */ import java.util.Random;
 /*   3:    */ 
 /*   4:    */ class afc
-/*   5:    */   extends yn
+/*   5:    */   extends MoveManager
 /*   6:    */ {
 /*   7:    */   private EntityGhast g;
 /*   8:    */   private int h;
@@ -14,22 +14,22 @@ package net.minecraft.src;
 /*  13:169 */     this.g = paramafa;
 /*  14:    */   }
 /*  15:    */   
-/*  16:    */   public void c()
+/*  16:    */   public void tick()
 /*  17:    */   {
-/*  18:174 */     if (!this.f) {
+/*  18:174 */     if (!this.active) {
 /*  19:176 */       return;
 /*  20:    */     }
-/*  21:179 */     double d1 = this.b - this.g.xPos;
-/*  22:180 */     double d2 = this.c - this.g.yPos;
-/*  23:181 */     double d3 = this.d - this.g.zPos;
+/*  21:179 */     double d1 = this.targetX - this.g.xPos;
+/*  22:180 */     double d2 = this.targetY - this.g.yPos;
+/*  23:181 */     double d3 = this.targetZ - this.g.zPos;
 /*  24:    */     
 /*  25:183 */     double d4 = d1 * d1 + d2 * d2 + d3 * d3;
 /*  26:185 */     if (this.h-- <= 0)
 /*  27:    */     {
 /*  28:186 */       this.h += this.g.getRNG().nextInt(5) + 2;
 /*  29:    */       
-/*  30:188 */       d4 = MathUtils.a(d4);
-/*  31:190 */       if (b(this.b, this.c, this.d, d4))
+/*  30:188 */       d4 = MathUtils.sqrt(d4);
+/*  31:190 */       if (b(this.targetX, this.targetY, this.targetZ, d4))
 /*  32:    */       {
 /*  33:191 */         this.g.xVelocity += d1 / d4 * 0.1D;
 /*  34:192 */         this.g.yVelocity += d2 / d4 * 0.1D;
@@ -37,7 +37,7 @@ package net.minecraft.src;
 /*  36:    */       }
 /*  37:    */       else
 /*  38:    */       {
-/*  39:195 */         this.f = false;
+/*  39:195 */         this.active = false;
 /*  40:    */       }
 /*  41:    */     }
 /*  42:    */   }

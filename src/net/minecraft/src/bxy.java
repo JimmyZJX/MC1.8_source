@@ -36,7 +36,7 @@ package net.minecraft.src;
 /*  34:    */   
 /*  35:    */   protected void a(int paramInt1, int paramInt2, int paramInt3, int paramInt4, int paramInt5, int paramInt6)
 /*  36:    */   {
-/*  37:186 */     tq localtq = (tq)StatList.c.get(paramInt1);
+/*  37:186 */     PlayerStat localtq = (PlayerStat)StatList.c.get(paramInt1);
 /*  38:187 */     this.u.c(bxv.a(this.u), localtq.e().c(), paramInt2 + 2, paramInt3 + 1, paramInt1 % 2 == 0 ? 16777215 : 9474192);
 /*  39:188 */     String str = localtq.a(bxv.b(this.u).a(localtq));
 /*  40:189 */     this.u.c(bxv.c(this.u), str, paramInt2 + 2 + 213 - bxv.d(this.u).a(str), paramInt3 + 1, paramInt1 % 2 == 0 ? 16777215 : 9474192);

@@ -63,7 +63,7 @@ package net.minecraft.src;
 /*  62: 61 */     if (localbec.getProto() == BlockList.bw) {
 /*  63: 62 */       return true;
 /*  64:    */     }
-/*  65: 64 */     if ((localbec.getProto() == BlockList.dirt) && (localbec.getProperty(BlockDirt.a) == avd.c)) {
+/*  65: 64 */     if ((localbec.getProto() == BlockList.dirt) && (localbec.getData(BlockDirt.a) == avd.c)) {
 /*  66: 65 */       return true;
 /*  67:    */     }
 /*  68: 68 */     return (paramaqu.k(paramdt) < 13) && (c(localbec.getProto()));

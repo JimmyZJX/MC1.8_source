@@ -44,7 +44,7 @@ import net.minecraft.src.EntityPlayer;
 import net.minecraft.src.World;
 import net.minecraft.src.aqz;
 import net.minecraft.src.WorldSettings;
-import net.minecraft.src.EnumGameType;
+import net.minecraft.src.EnumGameMode;
 import net.minecraft.src.WorldType;
 import net.minecraft.src.b;
 import net.minecraft.src.bqj;
@@ -309,7 +309,7 @@ import net.minecraft.src.Entity;
 /*  312:     */   
 /*  313:     */   public abstract boolean l();
 /*  314:     */   
-/*  315:     */   public abstract EnumGameType m();
+/*  315:     */   public abstract EnumGameMode m();
 /*  316:     */   
 /*  317:     */   public abstract EnumDifficulty n();
 /*  318:     */   
@@ -1042,7 +1042,7 @@ import net.minecraft.src.Entity;
 /* 1045:1131 */     this.v = paramsn;
 /* 1046:     */   }
 /* 1047:     */   
-/* 1048:     */   public void a(EnumGameType paramarc)
+/* 1048:     */   public void a(EnumGameMode paramarc)
 /* 1049:     */   {
 /* 1050:1135 */     for (int i1 = 0; i1 < this.c.length; i1++) {
 /* 1051:1136 */       M().c[i1].getWorldInfo().a(paramarc);
@@ -1064,7 +1064,7 @@ import net.minecraft.src.Entity;
 /* 1067:1149 */     return false;
 /* 1068:     */   }
 /* 1069:     */   
-/* 1070:     */   public abstract String a(EnumGameType paramarc, boolean paramBoolean);
+/* 1070:     */   public abstract String a(EnumGameMode paramarc, boolean paramBoolean);
 /* 1071:     */   
 /* 1072:     */   public int ar()
 /* 1073:     */   {

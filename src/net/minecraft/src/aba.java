@@ -32,7 +32,7 @@ package net.minecraft.src;
 /* 31:47 */     return true;
 /* 32:   */   }
 /* 33:   */   
-/* 34:   */   public void k()
+/* 34:   */   public void tick()
 /* 35:   */   {
 /* 36:53 */     if (m())
 /* 37:   */     {
@@ -42,12 +42,12 @@ package net.minecraft.src;
 /* 41:57 */         if ((this.mob.c(this.f) < d) || ((this.mob.yPos > this.f.getY()) && (this.mob.c(new BlockPosition(this.f.getX(), MathUtils.floor(this.mob.yPos), this.f.getZ())) < d))) {
 /* 42:58 */           this.f = null;
 /* 43:   */         } else {
-/* 44:60 */           this.mob.q().a(this.f.getX(), this.f.getY(), this.f.getZ(), this.e);
+/* 44:60 */           this.mob.q().setTarget(this.f.getX(), this.f.getY(), this.f.getZ(), this.e);
 /* 45:   */         }
 /* 46:   */       }
 /* 47:63 */       return;
 /* 48:   */     }
-/* 49:65 */     super.k();
+/* 49:65 */     super.tick();
 /* 50:   */   }
 /* 51:   */ }
 

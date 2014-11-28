@@ -2,9 +2,9 @@ package net.minecraft.src;
 /*  1:   */ public class bsm
 /*  2:   */   extends bsi
 /*  3:   */ {
-/*  4:   */   private final tq j;
+/*  4:   */   private final PlayerStat j;
 /*  5:   */   
-/*  6:   */   public bsm(tq paramtq)
+/*  6:   */   public bsm(PlayerStat paramtq)
 /*  7:   */   {
 /*  8: 9 */     super(paramtq.e);
 /*  9:10 */     this.j = paramtq;

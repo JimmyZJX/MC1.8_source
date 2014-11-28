@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*   4:    */ import java.util.Locale;
 /*   5:    */ import java.util.Map;
 /*   6:    */ 
-/*   7:    */ public class tq
+/*   7:    */ public class PlayerStat
 /*   8:    */ {
 /*   9:    */   public final String e;
 /*  10:    */   private final ho a;
@@ -14,7 +14,7 @@ package net.minecraft.src;
 /*  13:    */   private final bsk c;
 /*  14:    */   private Class d;
 /*  15:    */   
-/*  16:    */   public tq(String paramString, ho paramho, tv paramtv)
+/*  16:    */   public PlayerStat(String paramString, ho paramho, tv paramtv)
 /*  17:    */   {
 /*  18: 23 */     this.e = paramString;
 /*  19: 24 */     this.a = paramho;
@@ -24,21 +24,21 @@ package net.minecraft.src;
 /*  23: 28 */     bsk.a.put(this.c.a(), this.c);
 /*  24:    */   }
 /*  25:    */   
-/*  26:    */   public tq(String paramString, ho paramho)
+/*  26:    */   public PlayerStat(String paramString, ho paramho)
 /*  27:    */   {
 /*  28: 32 */     this(paramString, paramho, g);
 /*  29:    */   }
 /*  30:    */   
-/*  31:    */   public tq i()
+/*  31:    */   public PlayerStat i()
 /*  32:    */   {
 /*  33: 36 */     this.f = true;
 /*  34: 37 */     return this;
 /*  35:    */   }
 /*  36:    */   
-/*  37:    */   public tq h()
+/*  37:    */   public PlayerStat h()
 /*  38:    */   {
 /*  39: 41 */     if (StatList.a.containsKey(this.e)) {
-/*  40: 42 */       throw new RuntimeException("Duplicate stat id: \"" + ((tq)StatList.a.get(this.e)).a + "\" and \"" + this.a + "\" at id " + this.e);
+/*  40: 42 */       throw new RuntimeException("Duplicate stat id: \"" + ((PlayerStat)StatList.a.get(this.e)).a + "\" and \"" + this.a + "\" at id " + this.e);
 /*  41:    */     }
 /*  42: 44 */     StatList.b.add(this);
 /*  43: 45 */     StatList.a.put(this.e, this);
@@ -87,7 +87,7 @@ package net.minecraft.src;
 /*  86:131 */     if ((paramObject == null) || (getClass() != paramObject.getClass())) {
 /*  87:132 */       return false;
 /*  88:    */     }
-/*  89:135 */     tq localtq = (tq)paramObject;
+/*  89:135 */     PlayerStat localtq = (PlayerStat)paramObject;
 /*  90:    */     
 /*  91:137 */     return this.e.equals(localtq.e);
 /*  92:    */   }
@@ -112,7 +112,7 @@ package net.minecraft.src;
 /* 111:161 */     return this.d;
 /* 112:    */   }
 /* 113:    */   
-/* 114:    */   public tq b(Class paramClass)
+/* 114:    */   public PlayerStat b(Class paramClass)
 /* 115:    */   {
 /* 116:165 */     this.d = paramClass;
 /* 117:166 */     return this;

@@ -69,7 +69,7 @@ package net.minecraft.src;
 /*  68: 91 */     localbdb.a(localamj.getItem(), localamj.getDamage2());
 /*  69: 92 */     localbdb.o_();
 /*  70: 93 */     paramaqu.h(paramdt);
-/*  71: 95 */     if (!paramahd.by.d) {
+/*  71: 95 */     if (!paramahd.abilities.instabuild) {
 /*  72: 96 */       if (--localamj.stackSize <= 0) {
 /*  73: 97 */         paramahd.bg.a(paramahd.bg.c, null);
 /*  74:    */       }
@@ -138,7 +138,7 @@ package net.minecraft.src;
 /* 137:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, EntityPlayer paramahd)
 /* 138:    */   {
 /* 139:166 */     super.a(paramaqu, paramdt, parambec, paramahd);
-/* 140:168 */     if (paramahd.by.d)
+/* 140:168 */     if (paramahd.abilities.instabuild)
 /* 141:    */     {
 /* 142:169 */       bdb localbdb = d(paramaqu, paramdt);
 /* 143:170 */       if (localbdb != null) {
@@ -226,7 +226,7 @@ package net.minecraft.src;
 /* 225:    */   
 /* 226:    */   public int c(Block parambec)
 /* 227:    */   {
-/* 228:259 */     return ((Integer)parambec.getProperty(a)).intValue();
+/* 228:259 */     return ((Integer)parambec.getData(a)).intValue();
 /* 229:    */   }
 /* 230:    */   
 /* 231:    */   public Block a(Block parambec, IBlockAccess paramard, BlockPosition paramdt)

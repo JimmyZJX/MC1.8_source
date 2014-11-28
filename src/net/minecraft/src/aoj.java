@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*  8:   */ 
 /*  9:   */ 
 /* 10:   */ 
-/* 11:16 */     paramaop.a(new ItemStack(ItemList.bc, 8), new Object[] { "#X#", Character.valueOf('X'), new ItemStack(ItemList.dye, 1, EnumDyeColor.BROWN.b()), Character.valueOf('#'), ItemList.O });
+/* 11:16 */     paramaop.a(new ItemStack(ItemList.cookie, 8), new Object[] { "#X#", Character.valueOf('X'), new ItemStack(ItemList.dye, 1, EnumDyeColor.BROWN.b()), Character.valueOf('#'), ItemList.wheat });
 /* 12:   */     
 /* 13:   */ 
 /* 14:   */ 
@@ -30,7 +30,7 @@ package net.minecraft.src;
 /* 29:   */ 
 /* 30:   */ 
 /* 31:   */ 
-/* 32:37 */     paramaop.a(new ItemStack(BlockList.bk), new Object[] { "MMM", "MMM", "MMM", Character.valueOf('M'), ItemList.bf });
+/* 32:37 */     paramaop.a(new ItemStack(BlockList.melonBlock), new Object[] { "MMM", "MMM", "MMM", Character.valueOf('M'), ItemList.bf });
 /* 33:   */     
 /* 34:   */ 
 /* 35:   */ 
@@ -50,7 +50,7 @@ package net.minecraft.src;
 /* 49:   */ 
 /* 50:   */ 
 /* 51:   */ 
-/* 52:57 */     paramaop.b(new ItemStack(ItemList.ca), new Object[] { BlockList.pumpkin, ItemList.aY, ItemList.aP });
+/* 52:57 */     paramaop.b(new ItemStack(ItemList.pumpkinPie), new Object[] { BlockList.pumpkin, ItemList.aY, ItemList.aP });
 /* 53:   */     
 /* 54:   */ 
 /* 55:   */ 
@@ -61,7 +61,7 @@ package net.minecraft.src;
 /* 60:   */ 
 /* 61:   */ 
 /* 62:   */ 
-/* 63:68 */     paramaop.b(new ItemStack(ItemList.bD, 2), new Object[] { ItemList.bv });
+/* 63:68 */     paramaop.b(new ItemStack(ItemList.bD, 2), new Object[] { ItemList.blazeRod });
 /* 64:   */     
 /* 65:   */ 
 /* 66:   */ 

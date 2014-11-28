@@ -34,7 +34,7 @@ package net.minecraft.src;
 /* 33:   */   
 /* 34:   */   public int a(Block parambec)
 /* 35:   */   {
-/* 36:51 */     azn localazn = (azn)parambec.getProperty(a);
+/* 36:51 */     azn localazn = (azn)parambec.getData(a);
 /* 37:52 */     if ((localazn == azn.d) || (localazn == azn.e)) {
 /* 38:53 */       return azn.c.a();
 /* 39:   */     }
@@ -43,7 +43,7 @@ package net.minecraft.src;
 /* 42:   */   
 /* 43:   */   protected ItemStack i(Block parambec)
 /* 44:   */   {
-/* 45:61 */     azn localazn = (azn)parambec.getProperty(a);
+/* 45:61 */     azn localazn = (azn)parambec.getData(a);
 /* 46:62 */     if ((localazn == azn.d) || (localazn == azn.e)) {
 /* 47:63 */       return new ItemStack(Item.fromProtoBlock(this), 1, azn.c.a());
 /* 48:   */     }
@@ -69,7 +69,7 @@ package net.minecraft.src;
 /* 68:   */   
 /* 69:   */   public int c(Block parambec)
 /* 70:   */   {
-/* 71:88 */     return ((azn)parambec.getProperty(a)).a();
+/* 71:88 */     return ((azn)parambec.getData(a)).a();
 /* 72:   */   }
 /* 73:   */   
 /* 74:   */   protected bed e()

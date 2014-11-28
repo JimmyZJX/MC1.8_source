@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ public class ItemArmor
 /*   2:    */   extends Item
 /*   3:    */ {
-/*   4: 28 */   private static final int[] k = { 11, 16, 15, 13 };
+/*   4: 28 */   private static final int[] baseDurability = { 11, 16, 15, 13 };
 /*   5: 33 */   public static final String[] a = { "minecraft:items/empty_armor_slot_helmet", "minecraft:items/empty_armor_slot_chestplate", "minecraft:items/empty_armor_slot_leggings", "minecraft:items/empty_armor_slot_boots" };
 /*   6: 37 */   private static final eo l = new ajo();
 /*   7:    */   public final int b;
@@ -15,8 +15,8 @@ package net.minecraft.src;
 /*  14:123 */     this.material = paramajp;
 /*  15:124 */     this.b = paramInt2;
 /*  16:125 */     this.d = paramInt1;
-/*  17:126 */     this.c = paramajp.b(paramInt2);
-/*  18:127 */     setMaxDamage(paramajp.a(paramInt2));
+/*  17:126 */     this.c = paramajp.getArmorValue(paramInt2);
+/*  18:127 */     setMaxDamage(paramajp.getDurability(paramInt2));
 /*  19:128 */     this.maxStackSize = 1;
 /*  20:129 */     setTabToDisplayOn(CreativeTabs.tabCombat);
 /*  21:130 */     ave.M.a(this, l);
@@ -130,7 +130,7 @@ package net.minecraft.src;
 /* 129:    */     }
 /* 130:240 */     return paramamj;
 /* 131:    */   }
-				static int[] d() {return k;}
+				static int[] getBaseDurability() {return baseDurability;}
 /* 132:    */ }
 
 

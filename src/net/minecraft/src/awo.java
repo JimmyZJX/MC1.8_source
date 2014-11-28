@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*  9:15 */       paramInt = 3;
 /* 10:   */     }
 /* 11:17 */     if (paramRandom.nextInt(10 - paramInt * 3) == 0) {
-/* 12:18 */       return ItemList.ak;
+/* 12:18 */       return ItemList.flint;
 /* 13:   */     }
 /* 14:20 */     return Item.fromProtoBlock(this);
 /* 15:   */   }

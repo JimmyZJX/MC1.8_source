@@ -15,21 +15,21 @@ package net.minecraft.src;
 /*  14:    */   extends bea
 /*  15:    */ {
 /*  16:    */   private final ProtoBlock a;
-/*  17:    */   private final ImmutableMap<IBlockData,Comparable> b;
+/*  17:    */   private final ImmutableMap<IBlockData<?>,Comparable<?>> b;
 /*  18:    */   private ImmutableTable c;
 /*  19:    */   
-/*  20:    */   private beg(ProtoBlock paramatr, ImmutableMap<IBlockData,Comparable> paramImmutableMap)
+/*  20:    */   private beg(ProtoBlock paramatr, ImmutableMap<IBlockData<?>,Comparable<?>> paramImmutableMap)
 /*  21:    */   {
 /*  22:100 */     this.a = paramatr;
 /*  23:101 */     this.b = paramImmutableMap;
 /*  24:    */   }
 /*  25:    */   
-/*  26:    */   public Collection<IBlockData> a()
+/*  26:    */   public Collection<IBlockData<?>> a()
 /*  27:    */   {
 /*  28:106 */     return Collections.unmodifiableCollection(this.b.keySet());
 /*  29:    */   }
 /*  30:    */   
-/*  31:    */   public Comparable<?> getProperty(IBlockData property)
+/*  31:    */   public Comparable<?> getData(IBlockData<?> property)
 /*  32:    */   {
 /*  33:111 */     if (!this.b.containsKey(property)) {
 /*  34:112 */       throw new IllegalArgumentException("Cannot get property " + property + " as it does not exist in " + this.a.O());

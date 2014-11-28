@@ -32,7 +32,7 @@ package net.minecraft.src;
 /*  31:    */ 
 /*  32: 72 */     ((aay)getNavigator()).d(true);
 /*  33:    */     
-/*  34: 74 */     this.goalSelector.addGoal(0, new yy(this));
+/*  34: 74 */     this.goalSelector.addGoal(0, new GoalSwim(this));
 /*  35: 75 */     this.goalSelector.addGoal(2, new zz(this, 1.0D, 40, 20.0F));
 /*  36:    */     
 /*  37: 77 */     this.goalSelector.addGoal(5, new zy(this, 1.0D));
@@ -107,7 +107,7 @@ package net.minecraft.src;
 /* 106:142 */         d5 = d1 * d1 + d3 * d3;
 /* 107:143 */         if (d5 > 9.0D)
 /* 108:    */         {
-/* 109:144 */           d7 = MathUtils.a(d5);
+/* 109:144 */           d7 = MathUtils.sqrt(d5);
 /* 110:145 */           this.xVelocity += (d1 / d7 * 0.5D - this.xVelocity) * 0.6000000238418579D;
 /* 111:146 */           this.zVelocity += (d3 / d7 * 0.5D - this.zVelocity) * 0.6000000238418579D;
 /* 112:    */         }
@@ -138,7 +138,7 @@ package net.minecraft.src;
 /* 137:171 */         double d8 = localwv2.xPos - d3;
 /* 138:172 */         double d9 = localwv2.yPos + localwv2.getEyeHeight() - d5;
 /* 139:173 */         double d10 = localwv2.zPos - d7;
-/* 140:174 */         double d11 = MathUtils.a(d8 * d8 + d10 * d10);
+/* 140:174 */         double d11 = MathUtils.sqrt(d8 * d8 + d10 * d10);
 /* 141:    */         
 /* 142:176 */         float f1 = (float)(Math.atan2(d10, d8) * 180.0D / 3.141592741012573D) - 90.0F;
 /* 143:177 */         float f2 = (float)-(Math.atan2(d9, d11) * 180.0D / 3.141592741012573D);
@@ -233,7 +233,7 @@ package net.minecraft.src;
 /* 231:    */             {
 /* 232:254 */               if ((localxm instanceof EntityPlayer))
 /* 233:    */               {
-/* 234:255 */                 if (((EntityPlayer)localxm).by.a) {
+/* 234:255 */                 if (((EntityPlayer)localxm).abilities.invulnerable) {
 /* 235:    */                   break;
 /* 236:    */                 }
 /* 237:256 */                 b(i, localxm.getID()); break;
@@ -292,7 +292,7 @@ package net.minecraft.src;
 /* 290:    */   
 /* 291:    */   public void aB() {}
 /* 292:    */   
-/* 293:    */   public int bq()
+/* 293:    */   public int getArmorValue()
 /* 294:    */   {
 /* 295:323 */     return 4;
 /* 296:    */   }
@@ -371,23 +371,23 @@ package net.minecraft.src;
 /* 369:    */   
 /* 370:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /* 371:    */   {
-/* 372:395 */     if (b(paramwh)) {
+/* 372:395 */     if (isImmuneTo(paramwh)) {
 /* 373:396 */       return false;
 /* 374:    */     }
-/* 375:398 */     if ((paramwh == DamageSource.f) || ((paramwh.j() instanceof EntityWither))) {
+/* 375:398 */     if ((paramwh == DamageSource.drown) || ((paramwh.getAttacker() instanceof EntityWither))) {
 /* 376:399 */       return false;
 /* 377:    */     }
-/* 378:401 */     if ((cj() > 0) && (paramwh != DamageSource.j)) {
+/* 378:401 */     if ((cj() > 0) && (paramwh != DamageSource.outOfWorld)) {
 /* 379:402 */       return false;
 /* 380:    */     }
 /* 381:405 */     if (ck())
 /* 382:    */     {
-/* 383:406 */       Entity localwv = paramwh.i();
-/* 384:407 */       if ((localwv instanceof ahj)) {
+/* 383:406 */       Entity localwv = paramwh.getEntity();
+/* 384:407 */       if ((localwv instanceof EntityArrow)) {
 /* 385:408 */         return false;
 /* 386:    */       }
 /* 387:    */     }
-/* 388:412 */     Entity localwv = paramwh.j();
+/* 388:412 */     Entity localwv = paramwh.getAttacker();
 /* 389:413 */     if ((localwv != null) && 
 /* 390:414 */       (!(localwv instanceof EntityPlayer)) && 
 /* 391:415 */       ((localwv instanceof EntityLiving)) && (((EntityLiving)localwv).by() == by())) {
@@ -410,7 +410,7 @@ package net.minecraft.src;
 /* 408:    */     }
 /* 409:438 */     if (!this.world.isClient) {
 /* 410:439 */       for (EntityPlayer localahd : this.world.getEntityList(EntityPlayer.class, getAABB().expand(50.0D, 100.0D, 50.0D))) {
-/* 411:440 */         localahd.b(AchievementList.J);
+/* 411:440 */         localahd.increaseStat(AchievementList.J);
 /* 412:    */       }
 /* 413:    */     }
 /* 414:    */   }
@@ -433,9 +433,9 @@ package net.minecraft.src;
 /* 431:    */   {
 /* 432:466 */     super.aW();
 /* 433:    */     
-/* 434:468 */     a(afs.a).a(300.0D);
-/* 435:469 */     a(afs.d).a(0.6000000238418579D);
-/* 436:470 */     a(afs.b).a(40.0D);
+/* 434:468 */     getAttribute(MobAttribute.maxHealth).a(300.0D);
+/* 435:469 */     getAttribute(MobAttribute.movementSpeed).a(0.6000000238418579D);
+/* 436:470 */     getAttribute(MobAttribute.followRange).a(40.0D);
 /* 437:    */   }
 /* 438:    */   
 /* 439:    */   public float a(int paramInt)

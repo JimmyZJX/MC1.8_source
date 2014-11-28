@@ -32,7 +32,7 @@ package net.minecraft.src;
 /*  31:    */   
 /*  32:    */   public void b(World paramaqu, BlockPosition paramdt, Block parambec, Random paramRandom)
 /*  33:    */   {
-/*  34: 50 */     int i = ((Integer)parambec.getProperty(a)).intValue();
+/*  34: 50 */     int i = ((Integer)parambec.getData(a)).intValue();
 /*  35: 52 */     if ((e(paramaqu, paramdt)) || (paramaqu.C(paramdt.up())))
 /*  36:    */     {
 /*  37: 53 */       if (i < 7) {
@@ -102,7 +102,7 @@ package net.minecraft.src;
 /* 101:    */   
 /* 102:    */   public int c(Block parambec)
 /* 103:    */   {
-/* 104:119 */     return ((Integer)parambec.getProperty(a)).intValue();
+/* 104:119 */     return ((Integer)parambec.getData(a)).intValue();
 /* 105:    */   }
 /* 106:    */   
 /* 107:    */   protected bed e()

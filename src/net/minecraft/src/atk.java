@@ -19,7 +19,7 @@ package net.minecraft.src;
 /*  16: 46 */     this.c = paramdt;
 /*  17: 47 */     this.e = parambec;
 /*  18: 48 */     this.d = ((ati)parambec.getProto());
-/*  19: 49 */     EnumRailState localatl = (EnumRailState)parambec.getProperty(paramati.l());
+/*  19: 49 */     EnumRailState localatl = (EnumRailState)parambec.getData(paramati.l());
 /*  20: 50 */     this.f = this.d.a;
 /*  21: 51 */     a(localatl);
 /*  22:    */   }
@@ -129,7 +129,7 @@ package net.minecraft.src;
 /* 126:    */   protected int a()
 /* 127:    */   {
 /* 128:153 */     int i = 0;
-/* 129:155 */     for (EnumDirection localej : en.HORIZONTAL) {
+/* 129:155 */     for (EnumDirection localej : EnumHorizontalVertical.HORIZONTAL) {
 /* 130:156 */       if (a(this.c.offset(localej))) {
 /* 131:157 */         i++;
 /* 132:    */       }

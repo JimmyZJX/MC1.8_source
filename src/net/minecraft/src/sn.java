@@ -43,7 +43,7 @@ package net.minecraft.src;
 /*  38:    */   private boolean q;
 /*  39:    */   protected int g;
 /*  40:    */   private int r;
-/*  41:    */   private EnumGameType s;
+/*  41:    */   private EnumGameMode s;
 /*  42:    */   private boolean t;
 /*  43:    */   private int u;
 /*  44:    */   
@@ -88,7 +88,7 @@ package net.minecraft.src;
 /*  83:112 */     localrj.a(new ji("MC|Brand", new ByteBufWrapper(Unpooled.buffer()).a(c().getServerModName())));
 /*  84:113 */     localrj.a(new ix(localbqo.y(), localbqo.z()));
 /*  85:114 */     localrj.a(new lh(localdt));
-/*  86:115 */     localrj.a(new kd(paramqw.by));
+/*  86:115 */     localrj.a(new kd(paramqw.abilities));
 /*  87:116 */     localrj.a(new kv(paramqw.bg.c));
 /*  88:    */     
 /*  89:118 */     paramqw.A().d();
@@ -234,7 +234,7 @@ package net.minecraft.src;
 /* 229:    */   
 /* 230:    */   public void e(qw paramqw)
 /* 231:    */   {
-/* 232:290 */     paramqw.b(StatList.f);
+/* 232:290 */     paramqw.increaseStat(StatList.f);
 /* 233:291 */     b(paramqw);
 /* 234:292 */     WorldServer localqt = paramqw.u();
 /* 235:293 */     if (paramqw.vehicle != null)
@@ -714,7 +714,7 @@ package net.minecraft.src;
 /* 708:743 */     return null;
 /* 709:    */   }
 /* 710:    */   
-/* 711:    */   public void a(EnumGameType paramarc)
+/* 711:    */   public void a(EnumGameMode paramarc)
 /* 712:    */   {
 /* 713:747 */     this.s = paramarc;
 /* 714:    */   }

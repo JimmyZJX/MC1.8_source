@@ -50,7 +50,7 @@ package net.minecraft.src;
 /*  49: 69 */             BlockPosition localdt = paramdt.offset(i1, i2, i3);
 /*  50: 70 */             Block localbec = paramaqu.getBlock(localdt);
 /*  51: 71 */             if ((localbec.getProto().getMaterial() == Material.leaves) && 
-/*  52: 72 */               (!((Boolean)localbec.getProperty(b)).booleanValue())) {
+/*  52: 72 */               (!((Boolean)localbec.getData(b)).booleanValue())) {
 /*  53: 73 */               paramaqu.setBlock(localdt, localbec.setData(b, Boolean.valueOf(true)), 4);
 /*  54:    */             }
 /*  55:    */           }
@@ -64,7 +64,7 @@ package net.minecraft.src;
 /*  63: 84 */     if (paramaqu.isClient) {
 /*  64: 85 */       return;
 /*  65:    */     }
-/*  66: 89 */     if ((((Boolean)parambec.getProperty(b)).booleanValue()) && (((Boolean)parambec.getProperty(a)).booleanValue()))
+/*  66: 89 */     if ((((Boolean)parambec.getData(b)).booleanValue()) && (((Boolean)parambec.getData(a)).booleanValue()))
 /*  67:    */     {
 /*  68: 90 */       int i = 4;
 /*  69: 91 */       int j = i + 1;

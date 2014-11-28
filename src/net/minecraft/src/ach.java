@@ -1,6 +1,6 @@
 package net.minecraft.src;
 /*   1:    */ public class ach
-/*   2:    */   extends yl
+/*   2:    */   extends JumpManager
 /*   3:    */ {
 /*   4:    */   private EntityRabbit c;
 /*   5:443 */   private boolean d = false;
@@ -13,7 +13,7 @@ package net.minecraft.src;
 /*  12:    */   
 /*  13:    */   public boolean c()
 /*  14:    */   {
-/*  15:451 */     return this.a;
+/*  15:451 */     return this.active;
 /*  16:    */   }
 /*  17:    */   
 /*  18:    */   public boolean d()
@@ -26,12 +26,12 @@ package net.minecraft.src;
 /*  25:459 */     this.d = paramBoolean;
 /*  26:    */   }
 /*  27:    */   
-/*  28:    */   public void b()
+/*  28:    */   public void tick()
 /*  29:    */   {
-/*  30:464 */     if (this.a)
+/*  30:464 */     if (this.active)
 /*  31:    */     {
 /*  32:465 */       this.c.b(ace.c);
-/*  33:466 */       this.a = false;
+/*  33:466 */       this.active = false;
 /*  34:    */     }
 /*  35:    */   }
 /*  36:    */ }

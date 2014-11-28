@@ -16,7 +16,7 @@ package net.minecraft.src;
 /*   15:     */   public void a(EnumDirection paramej, blf paramblf)
 /*   16:     */   {
 /*   17:1850 */     this.b[paramej.a()] = paramblf;
-/*   18:1851 */     paramblf.b[paramej.d().a()] = this;
+/*   18:1851 */     paramblf.b[paramej.opposite().a()] = this;
 /*   19:     */   }
 /*   20:     */   
 /*   21:     */   public void a()

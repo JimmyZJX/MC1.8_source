@@ -91,7 +91,7 @@ package net.minecraft.src;
 /*  90:    */     else
 /*  91:    */     {
 /*  92:112 */       cue localcue = null;
-/*  93:113 */       if (localalq == ItemList.aQ)
+/*  93:113 */       if (localalq == ItemList.compass)
 /*  94:    */       {
 /*  95:114 */         localcue = this.e.R().a(cun.l);
 /*  96:115 */         this.e.N().a(cua.g);

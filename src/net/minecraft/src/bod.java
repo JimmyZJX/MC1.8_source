@@ -18,7 +18,7 @@ package net.minecraft.src;
 /* 17:16 */     return false;
 /* 18:   */   }
 /* 19:   */   
-/* 20:   */   public boolean c()
+/* 20:   */   public boolean material_c()
 /* 21:   */   {
 /* 22:21 */     return false;
 /* 23:   */   }

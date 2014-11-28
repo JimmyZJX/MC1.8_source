@@ -15,7 +15,7 @@ package net.minecraft.src;
 /*  14:252 */     String str1 = ayl.M.toString((Comparable)localLinkedHashMap.remove(ayl.M));
 /*  15:253 */     localLinkedHashMap.remove(bbf.b);
 /*  16:    */     
-/*  17:255 */     String str2 = ((Boolean)parambec.getProperty(ayl.b)).booleanValue() ? "all" : "normal";
+/*  17:255 */     String str2 = ((Boolean)parambec.getData(ayl.b)).booleanValue() ? "all" : "normal";
 /*  18:256 */     return new cxl(str1 + "_double_slab", str2);
 /*  19:    */   }
 /*  20:    */ }

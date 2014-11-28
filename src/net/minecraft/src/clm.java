@@ -238,7 +238,7 @@ package net.minecraft.src;
 /* 237:238 */       Material localbof = localbec.getProto().getMaterial();
 /* 238:239 */       if (localbof == parambof)
 /* 239:    */       {
-/* 240:240 */         int k = ((Integer)localbec.getProperty(BlockLiquid.level)).intValue();
+/* 240:240 */         int k = ((Integer)localbec.getData(BlockLiquid.level)).intValue();
 /* 241:241 */         if ((k >= 8) || (k == 0))
 /* 242:    */         {
 /* 243:242 */           f += BlockLiquid.b(k) * 10.0F;

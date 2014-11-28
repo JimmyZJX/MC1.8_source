@@ -7,7 +7,7 @@
 /* 10:   */ import java.io.File;
 /* 11:   */ import java.net.Proxy;
 
-import net.minecraft.src.EnumGameType;
+import net.minecraft.src.EnumGameMode;
 import net.minecraft.src.bsu;
 import net.minecraft.src.bto;
 import net.minecraft.src.btw;
@@ -74,17 +74,17 @@ import net.minecraft.src.btw;
 /* 72:   */   
 /* 73:   */   public static int survivalId()
 /* 74:   */   {
-/* 75:62 */     return EnumGameType.b.a();
+/* 75:62 */     return EnumGameMode.SURVIVAL.a();
 /* 76:   */   }
 /* 77:   */   
 /* 78:   */   public static int creativeId()
 /* 79:   */   {
-/* 80:66 */     return EnumGameType.CREATIVE.a();
+/* 80:66 */     return EnumGameMode.CREATIVE.a();
 /* 81:   */   }
 /* 82:   */   
 /* 83:   */   public static int adventureId()
 /* 84:   */   {
-/* 85:70 */     return EnumGameType.d.a();
+/* 85:70 */     return EnumGameMode.ADVENTURE.a();
 /* 86:   */   }
 /* 87:   */ }
 

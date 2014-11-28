@@ -7,7 +7,7 @@ package net.minecraft.src;
 /*   6:    */   extends bln
 /*   7:    */ {
 /*   8: 98 */   private boolean[] e = new boolean[4];
-/*   9:101 */   private static final List<vl> f = Lists.newArrayList(new vl[] { new vl(ItemList.diamond, 0, 1, 3, 3), new vl(ItemList.ironIngot, 0, 1, 5, 10), new vl(ItemList.goldIngot, 0, 2, 7, 15), new vl(ItemList.emerald, 0, 1, 3, 2), new vl(ItemList.bone, 0, 4, 6, 20), new vl(ItemList.bt, 0, 3, 7, 16), new vl(ItemList.saddle, 0, 1, 1, 3), new vl(ItemList.ck, 0, 1, 1, 1), new vl(ItemList.cl, 0, 1, 1, 1), new vl(ItemList.cm, 0, 1, 1, 1) });
+/*   9:101 */   private static final List<vl> f = Lists.newArrayList(new vl[] { new vl(ItemList.diamond, 0, 1, 3, 3), new vl(ItemList.ironIngot, 0, 1, 5, 10), new vl(ItemList.goldIngot, 0, 2, 7, 15), new vl(ItemList.emerald, 0, 1, 3, 2), new vl(ItemList.bone, 0, 4, 6, 20), new vl(ItemList.rottenFlesh, 0, 3, 7, 16), new vl(ItemList.saddle, 0, 1, 1, 3), new vl(ItemList.ck, 0, 1, 1, 1), new vl(ItemList.cl, 0, 1, 1, 1), new vl(ItemList.cm, 0, 1, 1, 1) });
 /*  10:    */   
 /*  11:    */   public blk() {}
 /*  12:    */   
@@ -229,12 +229,12 @@ package net.minecraft.src;
 /* 228:333 */     a(paramaqu, BlockList.air.instance(), 10, -10, 12, parambjb);
 /* 229:334 */     a(paramaqu, BlockList.A.instance(bae.b.a()), 10, -10, 13, parambjb);
 /* 230:335 */     a(paramaqu, BlockList.A.instance(bae.c.a()), 10, -11, 13, parambjb);
-/* 231:338 */     for (EnumDirection localej : en.HORIZONTAL) {
+/* 231:338 */     for (EnumDirection localej : EnumHorizontalVertical.HORIZONTAL) {
 /* 232:339 */       if (!this.e[localej.b()])
 /* 233:    */       {
 /* 234:340 */         int i3 = localej.g() * 2;
 /* 235:341 */         int i4 = localej.i() * 2;
-/* 236:342 */         this.e[localej.b()] = a(paramaqu, parambjb, paramRandom, 10 + i3, -11, 10 + i4, vl.a(f, new vl[] { ItemList.cd.b(paramRandom) }), 2 + paramRandom.nextInt(5));
+/* 236:342 */         this.e[localej.b()] = a(paramaqu, parambjb, paramRandom, 10 + i3, -11, 10 + i4, vl.a(f, new vl[] { ItemList.enchantedBook.b(paramRandom) }), 2 + paramRandom.nextInt(5));
 /* 237:    */       }
 /* 238:    */     }
 /* 239:346 */     return true;

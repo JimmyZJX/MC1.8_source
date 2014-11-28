@@ -130,7 +130,7 @@ package net.minecraft.src;
 /* 129:136 */       EnumDirection localej2 = EnumDirection.b(paramwv.aG());
 /* 130:138 */       if (localej1 != null)
 /* 131:    */       {
-/* 132:139 */         EnumDirection localej3 = localej1.f();
+/* 132:139 */         EnumDirection localej3 = localej1.ccw();
 /* 133:    */         
 /* 134:141 */         BlockPosition localdt2 = ((BlockPosition)localObject1).offset(localej1);
 /* 135:142 */         boolean bool1 = a(localdt2);
@@ -139,8 +139,8 @@ package net.minecraft.src;
 /* 138:    */         {
 /* 139:146 */           localObject1 = ((BlockPosition)localObject1).offset(localej3);
 /* 140:    */           
-/* 141:148 */           localej1 = localej1.d();
-/* 142:149 */           localej3 = localej3.d();
+/* 141:148 */           localej1 = localej1.opposite();
+/* 142:149 */           localej3 = localej3.opposite();
 /* 143:    */           
 /* 144:151 */           BlockPosition localdt3 = ((BlockPosition)localObject1).offset(localej1);
 /* 145:152 */           bool1 = a(localdt3);
@@ -172,12 +172,12 @@ package net.minecraft.src;
 /* 171:182 */           f3 = 1.0F;
 /* 172:183 */           f4 = 1.0F;
 /* 173:    */         }
-/* 174:184 */         else if (localej1 == localej2.d())
+/* 174:184 */         else if (localej1 == localej2.opposite())
 /* 175:    */         {
 /* 176:185 */           f3 = -1.0F;
 /* 177:186 */           f4 = -1.0F;
 /* 178:    */         }
-/* 179:187 */         else if (localej1 == localej2.e())
+/* 179:187 */         else if (localej1 == localej2.yRotate())
 /* 180:    */         {
 /* 181:188 */           f5 = 1.0F;
 /* 182:189 */           f6 = -1.0F;

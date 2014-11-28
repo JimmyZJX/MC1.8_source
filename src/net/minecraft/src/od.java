@@ -16,7 +16,7 @@ package net.minecraft.src;
 /*  15:    */   
 /*  16:    */   static void b()
 /*  17:    */   {
-/*  18: 40 */     ave.M.a(ItemList.g, new oe());
+/*  18: 40 */     ave.M.a(ItemList.arrow, new oe());
 /*  19:    */     
 /*  20:    */ 
 /*  21:    */ 
@@ -37,7 +37,7 @@ package net.minecraft.src;
 /*  36:    */ 
 /*  37:    */ 
 /*  38:    */ 
-/*  39: 61 */     ave.M.a(ItemList.bK, new op());
+/*  39: 61 */     ave.M.a(ItemList.experienceBottle, new op());
 /*  40:    */     
 /*  41:    */ 
 /*  42:    */ 

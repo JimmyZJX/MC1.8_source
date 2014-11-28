@@ -52,7 +52,7 @@ package net.minecraft.src;
 /*  51: 60 */     makeDirt(world, pos.offset(1, -1, 1));
 /*  52: 61 */     makeDirt(world, pos.offset(0, -1, 1));
 /*  53:    */     
-/*  54: 63 */     EnumDirection slantDir = en.HORIZONTAL.getRandomDirection(paramRandom);
+/*  54: 63 */     EnumDirection slantDir = EnumHorizontalVertical.HORIZONTAL.getRandomDirection(paramRandom);
 /*  55: 64 */     int slantHeight = h - paramRandom.nextInt(4);
 /*  56: 65 */     int slantLength = 2 - paramRandom.nextInt(3);
 /*  57:    */     

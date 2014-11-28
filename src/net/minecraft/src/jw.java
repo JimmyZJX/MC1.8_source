@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*   3:    */ {
 /*   4:    */   private int a;
 /*   5:    */   private boolean b;
-/*   6:    */   private EnumGameType c;
+/*   6:    */   private EnumGameMode c;
 /*   7:    */   private int d;
 /*   8:    */   private EnumDifficulty e;
 /*   9:    */   private int f;
@@ -13,7 +13,7 @@ package net.minecraft.src;
 /*  12:    */   
 /*  13:    */   public jw() {}
 /*  14:    */   
-/*  15:    */   public jw(int paramInt1, EnumGameType paramarc, boolean paramBoolean1, int paramInt2, EnumDifficulty paramvt, int paramInt3, WorldType paramare, boolean paramBoolean2)
+/*  15:    */   public jw(int paramInt1, EnumGameMode paramarc, boolean paramBoolean1, int paramInt2, EnumDifficulty paramvt, int paramInt3, WorldType paramare, boolean paramBoolean2)
 /*  16:    */   {
 /*  17: 30 */     this.a = paramInt1;
 /*  18: 31 */     this.d = paramInt2;
@@ -32,7 +32,7 @@ package net.minecraft.src;
 /*  31: 44 */     int i = paramhd.readUnsignedByte();
 /*  32: 45 */     this.b = ((i & 0x8) == 8);
 /*  33: 46 */     i &= 0xFFFFFFF7;
-/*  34: 47 */     this.c = EnumGameType.a(i);
+/*  34: 47 */     this.c = EnumGameMode.a(i);
 /*  35:    */     
 /*  36: 49 */     this.d = paramhd.readByte();
 /*  37: 50 */     this.e = EnumDifficulty.a(paramhd.readUnsignedByte());
@@ -74,7 +74,7 @@ package net.minecraft.src;
 /*  73: 84 */     return this.b;
 /*  74:    */   }
 /*  75:    */   
-/*  76:    */   public EnumGameType c()
+/*  76:    */   public EnumGameMode c()
 /*  77:    */   {
 /*  78: 88 */     return this.c;
 /*  79:    */   }

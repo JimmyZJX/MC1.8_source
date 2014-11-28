@@ -25,7 +25,7 @@ package net.minecraft.src;
 /* 24:34 */         return a(paramamj, paramahd, paramaqu, paramdt, BlockList.ak.instance());
 /* 25:   */       }
 /* 26:35 */       if (localatr == BlockList.dirt) {
-/* 27:36 */         switch (alp.a[((avd)localbec.getProperty(BlockDirt.a)).ordinal()])
+/* 27:36 */         switch (alp.a[((avd)localbec.getData(BlockDirt.a)).ordinal()])
 /* 28:   */         {
 /* 29:   */         case 1: 
 /* 30:38 */           return a(paramamj, paramahd, paramaqu, paramdt, BlockList.ak.instance());

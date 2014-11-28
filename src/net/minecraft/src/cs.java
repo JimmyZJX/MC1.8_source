@@ -31,7 +31,7 @@ package net.minecraft.src;
 /*  30:    */   
 /*  31:    */   float b()
 /*  32:    */   {
-/*  33:274 */     return MathUtils.a(this.a * this.a + this.b * this.b);
+/*  33:274 */     return MathUtils.sqrt(this.a * this.a + this.b * this.b);
 /*  34:    */   }
 /*  35:    */   
 /*  36:    */   public void b(cs paramcs)

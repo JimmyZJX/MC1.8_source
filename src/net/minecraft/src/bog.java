@@ -7,7 +7,7 @@ package net.minecraft.src;
 /*  6:36 */     super(paramboh);
 /*  7:   */   }
 /*  8:   */   
-/*  9:   */   public boolean c()
+/*  9:   */   public boolean material_c()
 /* 10:   */   {
 /* 11:39 */     return false;
 /* 12:   */   }

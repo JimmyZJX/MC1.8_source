@@ -4,14 +4,14 @@ package net.minecraft.src;
 /*   3:    */ import org.apache.logging.log4j.LogManager;
 /*   4:    */ import org.apache.logging.log4j.Logger;
 /*   5:    */ 
-/*   6:    */ public class afs
+/*   6:    */ public class MobAttribute
 /*   7:    */ {
 /*   8: 14 */   private static final Logger f = LogManager.getLogger();
-/*   9: 15 */   public static final xy a = new yg(null, "generic.maxHealth", 20.0D, 0.0D, 1.7976931348623157E+308D).a("Max Health").a(true);
-/*  10: 16 */   public static final xy b = new yg(null, "generic.followRange", 32.0D, 0.0D, 2048.0D).a("Follow Range");
-/*  11: 17 */   public static final xy c = new yg(null, "generic.knockbackResistance", 0.0D, 0.0D, 1.0D).a("Knockback Resistance");
-/*  12: 18 */   public static final xy d = new yg(null, "generic.movementSpeed", 0.699999988079071D, 0.0D, 1.7976931348623157E+308D).a("Movement Speed").a(true);
-/*  13: 19 */   public static final xy e = new yg(null, "generic.attackDamage", 2.0D, 0.0D, 1.7976931348623157E+308D);
+/*   9: 15 */   public static final xy maxHealth = new yg(null, "generic.maxHealth", 20.0D, 0.0D, 1.7976931348623157E+308D).a("Max Health").a(true);
+/*  10: 16 */   public static final xy followRange = new yg(null, "generic.followRange", 32.0D, 0.0D, 2048.0D).a("Follow Range");
+/*  11: 17 */   public static final xy knockbackResistance = new yg(null, "generic.knockbackResistance", 0.0D, 0.0D, 1.0D).a("Knockback Resistance");
+/*  12: 18 */   public static final xy movementSpeed = new yg(null, "generic.movementSpeed", 0.699999988079071D, 0.0D, 1.7976931348623157E+308D).a("Movement Speed").a(true);
+/*  13: 19 */   public static final xy attackDamage = new yg(null, "generic.attackDamage", 2.0D, 0.0D, 1.7976931348623157E+308D);
 /*  14:    */   
 /*  15:    */   public static fv a(yc paramyc)
 /*  16:    */   {
@@ -46,15 +46,15 @@ package net.minecraft.src;
 /*  45:    */   
 /*  46:    */   private static NBTTagCompound a(ya paramya)
 /*  47:    */   {
-/*  48: 56 */     NBTTagCompound localfn = new NBTTagCompound();
+/*  48: 56 */     NBTTagCompound tag = new NBTTagCompound();
 /*  49:    */     
-/*  50: 58 */     localfn.setString("Name", paramya.b());
-/*  51: 59 */     localfn.setDouble("Amount", paramya.d());
-/*  52: 60 */     localfn.setInt("Operation", paramya.c());
-/*  53: 61 */     localfn.a("UUIDMost", paramya.a().getMostSignificantBits());
-/*  54: 62 */     localfn.a("UUIDLeast", paramya.a().getLeastSignificantBits());
+/*  50: 58 */     tag.setString("Name", paramya.b());
+/*  51: 59 */     tag.setDouble("Amount", paramya.d());
+/*  52: 60 */     tag.setInt("Operation", paramya.c());
+/*  53: 61 */     tag.a("UUIDMost", paramya.a().getMostSignificantBits());
+/*  54: 62 */     tag.a("UUIDLeast", paramya.a().getLeastSignificantBits());
 /*  55:    */     
-/*  56: 64 */     return localfn;
+/*  56: 64 */     return tag;
 /*  57:    */   }
 /*  58:    */   
 /*  59:    */   public static void a(yc paramyc, fv paramfv)

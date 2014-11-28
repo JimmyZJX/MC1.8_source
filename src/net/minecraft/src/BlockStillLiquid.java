@@ -24,7 +24,7 @@ package net.minecraft.src;
 /* 23:   */   private void f(World paramaqu, BlockPosition paramdt, Block parambec)
 /* 24:   */   {
 /* 25:30 */     BlockFlowingLiquid localavn = a(this.material);
-/* 26:31 */     paramaqu.setBlock(paramdt, localavn.instance().setData(level, parambec.getProperty(level)), 2);
+/* 26:31 */     paramaqu.setBlock(paramdt, localavn.instance().setData(level, parambec.getData(level)), 2);
 /* 27:32 */     paramaqu.a(paramdt, localavn, a(paramaqu));
 /* 28:   */   }
 /* 29:   */   
@@ -50,7 +50,7 @@ package net.minecraft.src;
 /* 49:54 */             paramaqu.setBlock(localdt1, BlockList.fire.instance());
 /* 50:   */           }
 /* 51:   */         }
-/* 52:57 */         else if (localatr.material.c()) {
+/* 52:57 */         else if (localatr.material.material_c()) {
 /* 53:58 */           return;
 /* 54:   */         }
 /* 55:   */       }

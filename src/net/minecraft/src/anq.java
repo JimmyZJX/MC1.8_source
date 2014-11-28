@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*  9:   */   public ItemStack a(ItemStack paramamj, World paramaqu, EntityPlayer paramahd)
 /* 10:   */   {
 /* 11:17 */     paramahd.a(paramamj);
-/* 12:18 */     paramahd.b(StatList.J[Item.b(this)]);
+/* 12:18 */     paramahd.increaseStat(StatList.J[Item.b(this)]);
 /* 13:19 */     return paramamj;
 /* 14:   */   }
 /* 15:   */   

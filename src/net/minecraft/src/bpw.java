@@ -10,9 +10,9 @@ package net.minecraft.src;
 /*   9: 17 */     this.c = parambpu;
 /*  10:    */   }
 /*  11:    */   
-/*  12:    */   public bpv a(IBlockAccess paramard, Entity paramwv1, Entity paramwv2, float paramFloat)
+/*  12:    */   public bpv a(IBlockAccess world, Entity paramwv1, Entity paramwv2, float paramFloat)
 /*  13:    */   {
-/*  14: 22 */     return a(paramard, paramwv1, paramwv2.xPos, paramwv2.getAABB().minY, paramwv2.zPos, paramFloat);
+/*  14: 22 */     return a(world, paramwv1, paramwv2.xPos, paramwv2.getAABB().minY, paramwv2.zPos, paramFloat);
 /*  15:    */   }
 /*  16:    */   
 /*  17:    */   public bpv a(IBlockAccess paramard, Entity paramwv, BlockPosition paramdt, float paramFloat)

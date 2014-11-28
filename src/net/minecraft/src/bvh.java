@@ -146,7 +146,7 @@ package net.minecraft.src;
 /* 146:    */           }
 /* 147:165 */           i12 += 9;
 /* 148:    */         }
-/* 149:168 */         if (localces3.b() == EnumGameType.e)
+/* 149:168 */         if (localces3.b() == EnumGameMode.SPECTATOR)
 /* 150:    */         {
 /* 151:169 */           str3 = net.minecraft.src.a.u + str3;
 /* 152:170 */           this.f.k.a(str3, i12, i13, -1862270977);
@@ -155,7 +155,7 @@ package net.minecraft.src;
 /* 155:    */         {
 /* 156:172 */           this.f.k.a(str3, i12, i13, -1);
 /* 157:    */         }
-/* 158:175 */         if ((parambry != null) && (localces3.b() != EnumGameType.e))
+/* 158:175 */         if ((parambry != null) && (localces3.b() != EnumGameMode.SPECTATOR))
 /* 159:    */         {
 /* 160:176 */           int i14 = i12 + m + 1;
 /* 161:177 */           int i15 = i14 + i4;

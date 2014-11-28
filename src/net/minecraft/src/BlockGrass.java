@@ -52,7 +52,7 @@ package net.minecraft.src;
 /*  51: 65 */         BlockPosition localdt = paramdt.offset(paramRandom.nextInt(3) - 1, paramRandom.nextInt(5) - 3, paramRandom.nextInt(3) - 1);
 /*  52: 66 */         ProtoBlock localatr = paramaqu.getBlock(localdt.up()).getProto();
 /*  53: 67 */         Block localbec = paramaqu.getBlock(localdt);
-/*  54: 68 */         if ((localbec.getProto() == BlockList.dirt) && (localbec.getProperty(BlockDirt.a) == avd.a) && (paramaqu.l(localdt.up()) >= 4) && (localatr.getLightOpacity() <= 2)) {
+/*  54: 68 */         if ((localbec.getProto() == BlockList.dirt) && (localbec.getData(BlockDirt.a) == avd.a) && (paramaqu.l(localdt.up()) >= 4) && (localatr.getLightOpacity() <= 2)) {
 /*  55: 69 */           paramaqu.setBlock(localdt, BlockList.grass.instance());
 /*  56:    */         }
 /*  57:    */       }

@@ -5,10 +5,10 @@ package net.minecraft.src;
 /*   4:    */ 
 /*   5:    */ public enum EnumAxis
 /*   6:    */   implements Predicate<EnumDirection>, va
-/*   7:    */ { X("x",en.HORIZONTAL),Y("y",en.VERTICAL),Z("z",en.HORIZONTAL);
+/*   7:    */ { X("x",EnumHorizontalVertical.HORIZONTAL),Y("y",EnumHorizontalVertical.VERTICAL),Z("z",EnumHorizontalVertical.HORIZONTAL);
 /*   8:    */   private static final Map<String,EnumAxis> d;
 /*   9:    */   private final String e;
-/*  10:    */   private final en f;
+/*  10:    */   private final EnumHorizontalVertical f;
 /*  11:    */   
 /*  12:    */   static
 /*  13:    */   {
@@ -18,7 +18,7 @@ package net.minecraft.src;
 /*  17:    */     }
 /*  18:    */   }
 /*  19:    */   
-/*  20:    */   private EnumAxis(String paramString, en paramen)
+/*  20:    */   private EnumAxis(String paramString, EnumHorizontalVertical paramen)
 /*  21:    */   {
 /*  22:324 */     this.e = paramString;
 /*  23:325 */     this.f = paramen;
@@ -39,12 +39,12 @@ package net.minecraft.src;
 /*  38:    */   
 /*  39:    */   public boolean b()
 /*  40:    */   {
-/*  41:341 */     return this.f == en.VERTICAL;
+/*  41:341 */     return this.f == EnumHorizontalVertical.VERTICAL;
 /*  42:    */   }
 /*  43:    */   
 /*  44:    */   public boolean c()
 /*  45:    */   {
-/*  46:345 */     return this.f == en.HORIZONTAL;
+/*  46:345 */     return this.f == EnumHorizontalVertical.HORIZONTAL;
 /*  47:    */   }
 /*  48:    */   
 /*  49:    */   public String toString()
@@ -57,7 +57,7 @@ package net.minecraft.src;
 /*  56:355 */     return (paramej != null) && (paramej.k() == this);
 /*  57:    */   }
 /*  58:    */   
-/*  59:    */   public en d()
+/*  59:    */   public EnumHorizontalVertical d()
 /*  60:    */   {
 /*  61:359 */     return this.f;
 /*  62:    */   }

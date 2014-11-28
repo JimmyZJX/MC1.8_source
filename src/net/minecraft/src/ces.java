@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*   4:    */ public class ces
 /*   5:    */ {
 /*   6:    */   private final GameProfile a;
-/*   7:    */   private EnumGameType b;
+/*   7:    */   private EnumGameMode b;
 /*   8:    */   private int c;
 /*   9: 22 */   private boolean d = false;
 /*  10:    */   private oa e;
@@ -35,7 +35,7 @@ package net.minecraft.src;
 /*  34: 44 */     return this.a;
 /*  35:    */   }
 /*  36:    */   
-/*  37:    */   public EnumGameType b()
+/*  37:    */   public EnumGameMode b()
 /*  38:    */   {
 /*  39: 48 */     return this.b;
 /*  40:    */   }
@@ -45,7 +45,7 @@ package net.minecraft.src;
 /*  44: 52 */     return this.c;
 /*  45:    */   }
 /*  46:    */   
-/*  47:    */   protected void a(EnumGameType paramarc)
+/*  47:    */   protected void a(EnumGameMode paramarc)
 /*  48:    */   {
 /*  49: 56 */     this.b = paramarc;
 /*  50:    */   }

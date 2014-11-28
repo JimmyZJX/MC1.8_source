@@ -7,11 +7,11 @@ package net.minecraft.src;
 /*  6:   */   private final long c;
 /*  7:   */   private final long d;
 /*  8:   */   private final boolean e;
-/*  9:   */   private final EnumGameType f;
+/*  9:   */   private final EnumGameMode f;
 /* 10:   */   private final boolean g;
 /* 11:   */   private final boolean h;
 /* 12:   */   
-/* 13:   */   public brb(String paramString1, String paramString2, long paramLong1, long paramLong2, EnumGameType paramarc, boolean paramBoolean1, boolean paramBoolean2, boolean paramBoolean3)
+/* 13:   */   public brb(String paramString1, String paramString2, long paramLong1, long paramLong2, EnumGameMode paramarc, boolean paramBoolean1, boolean paramBoolean2, boolean paramBoolean3)
 /* 14:   */   {
 /* 15:16 */     this.a = paramString1;
 /* 16:17 */     this.b = paramString2;
@@ -59,7 +59,7 @@ package net.minecraft.src;
 /* 58:54 */     return this.a.compareTo(parambrb.a);
 /* 59:   */   }
 /* 60:   */   
-/* 61:   */   public EnumGameType f()
+/* 61:   */   public EnumGameMode f()
 /* 62:   */   {
 /* 63:58 */     return this.f;
 /* 64:   */   }

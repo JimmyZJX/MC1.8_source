@@ -51,8 +51,8 @@ package net.minecraft.src;
 /* 50:54 */       ItemStack stack2 = this.a.get(1);
 /* 51:57 */       if ((a(localaqc, stack1, stack2)) || (a(localaqc, stack2, stack1)))
 /* 52:   */       {
-/* 53:58 */         this.h.a(localaqc);
-/* 54:59 */         paramahd.b(StatList.tradedWithVillager);
+/* 53:58 */         this.h.trade(localaqc);
+/* 54:59 */         paramahd.increaseStat(StatList.tradedWithVillager);
 /* 55:61 */         if ((stack1 != null) && (stack1.stackSize <= 0)) {
 /* 56:62 */           stack1 = null;
 /* 57:   */         }

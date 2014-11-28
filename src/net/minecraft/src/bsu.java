@@ -1244,7 +1244,7 @@ package net.minecraft.src;
 /* 1243:1356 */             return;
 /* 1244:     */           }
 /* 1245:1359 */           if (localamj.stackSize == 0) {
-/* 1246:1360 */             this.h.bg.a[this.h.bg.c] = null;
+/* 1246:1360 */             this.h.bg.items[this.h.bg.c] = null;
 /* 1247:1361 */           } else if ((localamj.stackSize != i2) || (this.c.h())) {
 /* 1248:1362 */             this.o.c.b();
 /* 1249:     */           }
@@ -1430,8 +1430,8 @@ package net.minecraft.src;
 /* 1429:     */               }
 /* 1430:     */               else
 /* 1431:     */               {
-/* 1432:1531 */                 float f1 = MathUtils.clamp(this.h.by.a() + i2 * 0.005F, 0.0F, 0.2F);
-/* 1433:1532 */                 this.h.by.a(f1);
+/* 1432:1531 */                 float f1 = MathUtils.clamp(this.h.abilities.getFlySpeed() + i2 * 0.005F, 0.0F, 0.2F);
+/* 1433:1532 */                 this.h.abilities.setFlySpeed(f1);
 /* 1434:     */               }
 /* 1435:     */             }
 /* 1436:     */             else
@@ -1905,7 +1905,7 @@ package net.minecraft.src;
 /* 1904:2064 */     if (this.s == null) {
 /* 1905:2065 */       return;
 /* 1906:     */     }
-/* 1907:2068 */     boolean bool1 = this.h.by.d;
+/* 1907:2068 */     boolean bool1 = this.h.abilities.instabuild;
 /* 1908:     */     
 /* 1909:2070 */     int i1 = 0;
 /* 1910:2071 */     boolean bool2 = false;
@@ -2004,7 +2004,7 @@ package net.minecraft.src;
 /* 2003:2150 */     Object localObject2 = this.h.bg;
 /* 2004:2151 */     if (localbcm == null)
 /* 2005:     */     {
-/* 2006:2152 */       ((ahb)localObject2).a((Item)localObject1, i1, bool2, bool1);
+/* 2006:2152 */       ((Inventory)localObject2).a((Item)localObject1, i1, bool2, bool1);
 /* 2007:     */     }
 /* 2008:     */     else
 /* 2009:     */     {
@@ -2017,12 +2017,12 @@ package net.minecraft.src;
 /* 2016:2160 */       localfv.a(new gc("(+NBT)"));
 /* 2017:2161 */       localfn.setNBT("Lore", localfv);
 /* 2018:2162 */       ((ItemStack)localObject4).a("display", localfn);
-/* 2019:2163 */       ((ahb)localObject2).a(((ahb)localObject2).c, (ItemStack)localObject4);
+/* 2019:2163 */       ((Inventory)localObject2).a(((Inventory)localObject2).c, (ItemStack)localObject4);
 /* 2020:     */     }
 /* 2021:2166 */     if (bool1)
 /* 2022:     */     {
-/* 2023:2167 */       int i2 = this.h.bh.c.size() - 9 + ((ahb)localObject2).c;
-/* 2024:2168 */       this.c.a(((ahb)localObject2).get(((ahb)localObject2).c), i2);
+/* 2023:2167 */       int i2 = this.h.bh.c.size() - 9 + ((Inventory)localObject2).c;
+/* 2024:2168 */       this.c.a(((Inventory)localObject2).get(((Inventory)localObject2).c), i2);
 /* 2025:     */     }
 /* 2026:     */   }
 /* 2027:     */   
@@ -2394,7 +2394,7 @@ package net.minecraft.src;
 /* 2393:     */         }
 /* 2394:2525 */         return EnumMusic.g;
 /* 2395:     */       }
-/* 2396:2529 */       if ((this.h.by.d) && (this.h.by.c)) {
+/* 2396:2529 */       if ((this.h.abilities.instabuild) && (this.h.abilities.mayfly)) {
 /* 2397:2530 */         return EnumMusic.c;
 /* 2398:     */       }
 /* 2399:2533 */       return EnumMusic.b;

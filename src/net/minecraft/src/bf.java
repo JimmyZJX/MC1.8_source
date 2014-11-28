@@ -19,13 +19,13 @@ package net.minecraft.src;
 /* 18:24 */     if (paramArrayOfString.length <= 0) {
 /* 19:25 */       throw new WrongUsageException("commands.defaultgamemode.usage", new Object[0]);
 /* 20:   */     }
-/* 21:28 */     EnumGameType localarc = h(paramae, paramArrayOfString[0]);
+/* 21:28 */     EnumGameMode localarc = h(paramae, paramArrayOfString[0]);
 /* 22:29 */     a(localarc);
 /* 23:   */     
 /* 24:31 */     a(paramae, this, "commands.defaultgamemode.success", new Object[] { new hz("gameMode." + localarc.b(), new Object[0]) });
 /* 25:   */   }
 /* 26:   */   
-/* 27:   */   protected void a(EnumGameType paramarc)
+/* 27:   */   protected void a(EnumGameMode paramarc)
 /* 28:   */   {
 /* 29:35 */     MinecraftServer localMinecraftServer = MinecraftServer.M();
 /* 30:36 */     localMinecraftServer.a(paramarc);

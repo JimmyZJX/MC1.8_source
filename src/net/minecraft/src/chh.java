@@ -50,7 +50,7 @@ package net.minecraft.src;
 /* 49:   */     }
 /* 50:56 */     k(7 - this.f * 8 / this.g);
 /* 51:   */     
-/* 52:58 */     d(this.xVelocity, this.yVelocity, this.zVelocity);
+/* 52:58 */     move(this.xVelocity, this.yVelocity, this.zVelocity);
 /* 53:59 */     if (this.yPos == this.lastY)
 /* 54:   */     {
 /* 55:60 */       this.xVelocity *= 1.1D;

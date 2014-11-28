@@ -18,7 +18,7 @@ package net.minecraft.src;
 /* 17:   */   public caz(Collection<ces> paramCollection)
 /* 18:   */   {
 /* 19:41 */     for (ces localces : a.sortedCopy(paramCollection)) {
-/* 20:42 */       if (localces.b() != EnumGameType.e) {
+/* 20:42 */       if (localces.b() != EnumGameMode.SPECTATOR) {
 /* 21:43 */         this.b.add(new cap(localces.a()));
 /* 22:   */       }
 /* 23:   */     }

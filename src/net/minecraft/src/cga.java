@@ -149,7 +149,7 @@ package net.minecraft.src;
 /* 148:199 */           double d4 = j + (this.rng.nextDouble() - this.rng.nextDouble()) * 0.5D;
 /* 149:200 */           double d5 = i + (this.rng.nextDouble() - this.rng.nextDouble()) * 0.5D;
 /* 150:201 */           double d6 = k + (this.rng.nextDouble() - this.rng.nextDouble()) * 0.5D;
-/* 151:202 */           double d7 = MathUtils.a(d4 * d4 + d5 * d5 + d6 * d6) / paramDouble + this.rng.nextGaussian() * 0.05D;
+/* 151:202 */           double d7 = MathUtils.sqrt(d4 * d4 + d5 * d5 + d6 * d6) / paramDouble + this.rng.nextGaussian() * 0.05D;
 /* 152:    */           
 /* 153:204 */           a(d1, d2, d3, d4 / d7, d5 / d7, d6 / d7, paramArrayOfInt1, paramArrayOfInt2, paramBoolean1, paramBoolean2);
 /* 154:206 */           if ((i != -paramInt) && (i != paramInt) && (j != -paramInt) && (j != paramInt)) {

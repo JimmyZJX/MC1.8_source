@@ -329,7 +329,7 @@ package net.minecraft.src;
 /* 328:364 */     int j = paramahd.bg.c;
 /* 329:365 */     ItemStack localamj2 = paramahd.bg.get(j);
 /* 330:    */     ItemStack localamj3;
-/* 331:366 */     if ((paramahd.by.d) && ((localamj1 == null) || (localamj1.getItem() == Item.fromProtoBlock(BlockList.air))) && (localamj2 != null))
+/* 331:366 */     if ((paramahd.abilities.instabuild) && ((localamj1 == null) || (localamj1.getItem() == Item.fromProtoBlock(BlockList.air))) && (localamj2 != null))
 /* 332:    */     {
 /* 333:367 */       localamj3 = localamj2.k();
 /* 334:368 */       localamj3.stackSize = 1;
@@ -356,12 +356,12 @@ package net.minecraft.src;
 /* 355:388 */     if ((this.world.isClient) || (this.h)) {
 /* 356:389 */       return false;
 /* 357:    */     }
-/* 358:392 */     if (DamageSource.j.equals(paramwh))
+/* 358:392 */     if (DamageSource.outOfWorld.equals(paramwh))
 /* 359:    */     {
 /* 360:393 */       setDead();
 /* 361:394 */       return false;
 /* 362:    */     }
-/* 363:396 */     if (b(paramwh)) {
+/* 363:396 */     if (isImmuneTo(paramwh)) {
 /* 364:397 */       return false;
 /* 365:    */     }
 /* 366:399 */     if (paramwh.c())
@@ -370,7 +370,7 @@ package net.minecraft.src;
 /* 369:401 */       setDead();
 /* 370:402 */       return false;
 /* 371:    */     }
-/* 372:404 */     if (DamageSource.a.equals(paramwh))
+/* 372:404 */     if (DamageSource.inFire.equals(paramwh))
 /* 373:    */     {
 /* 374:405 */       if (!au()) {
 /* 375:406 */         e(5);
@@ -379,7 +379,7 @@ package net.minecraft.src;
 /* 378:    */       }
 /* 379:410 */       return false;
 /* 380:    */     }
-/* 381:412 */     if ((DamageSource.c.equals(paramwh)) && (getHealth() > 0.5F))
+/* 381:412 */     if ((DamageSource.onFire.equals(paramwh)) && (getHealth() > 0.5F))
 /* 382:    */     {
 /* 383:413 */       a(4.0F);
 /* 384:414 */       return false;
@@ -389,10 +389,10 @@ package net.minecraft.src;
 /* 388:419 */     if ((!bool2) && (!bool1)) {
 /* 389:420 */       return false;
 /* 390:    */     }
-/* 391:422 */     if ((paramwh.i() instanceof ahj)) {
-/* 392:423 */       paramwh.i().setDead();
+/* 391:422 */     if ((paramwh.getEntity() instanceof EntityArrow)) {
+/* 392:423 */       paramwh.getEntity().setDead();
 /* 393:    */     }
-/* 394:425 */     if (((paramwh.j() instanceof EntityPlayer)) && (!((EntityPlayer)paramwh.j()).by.e)) {
+/* 394:425 */     if (((paramwh.getAttacker() instanceof EntityPlayer)) && (!((EntityPlayer)paramwh.getAttacker()).abilities.mayBuild)) {
 /* 395:426 */       return false;
 /* 396:    */     }
 /* 397:428 */     if (paramwh.u())

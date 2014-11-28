@@ -61,7 +61,7 @@ package net.minecraft.src;
 /* 60:   */   
 /* 61:   */   public boolean a(DamageSource paramwh, float paramFloat)
 /* 62:   */   {
-/* 63:77 */     if (b(paramwh)) {
+/* 63:77 */     if (isImmuneTo(paramwh)) {
 /* 64:78 */       return false;
 /* 65:   */     }
 /* 66:80 */     if ((!this.isDead) && (!this.world.isClient))

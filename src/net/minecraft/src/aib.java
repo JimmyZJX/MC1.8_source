@@ -101,7 +101,7 @@ package net.minecraft.src;
 /* 100:    */   public ItemStack a(int paramInt1, int paramInt2, int paramInt3, EntityPlayer paramahd)
 /* 101:    */   {
 /* 102:126 */     ItemStack localamj1 = null;
-/* 103:127 */     ahb localahb = paramahd.bg;
+/* 103:127 */     Inventory localahb = paramahd.bg;
 /* 104:    */     
 /* 105:    */     Object localObject3;
 /* 106:    */     ItemStack localamj4;
@@ -352,7 +352,7 @@ package net.minecraft.src;
 /* 351:    */             }
 /* 352:    */           }
 /* 353:    */         }
-/* 354:329 */         else if ((paramInt3 == 3) && (paramahd.by.d) && (localahb.p() == null) && (paramInt1 >= 0))
+/* 354:329 */         else if ((paramInt3 == 3) && (paramahd.abilities.instabuild) && (localahb.p() == null) && (paramInt1 >= 0))
 /* 355:    */         {
 /* 356:330 */           localajk1 = (ajk)this.c.get(paramInt1);
 /* 357:331 */           if ((localajk1 != null) && (localajk1.e()))
@@ -419,7 +419,7 @@ package net.minecraft.src;
 /* 418:    */   
 /* 419:    */   public void b(EntityPlayer paramahd)
 /* 420:    */   {
-/* 421:388 */     ahb localahb = paramahd.bg;
+/* 421:388 */     Inventory localahb = paramahd.bg;
 /* 422:389 */     if (localahb.p() != null)
 /* 423:    */     {
 /* 424:390 */       paramahd.a(localahb.p(), false);
@@ -446,7 +446,7 @@ package net.minecraft.src;
 /* 445:    */   
 /* 446:    */   public void b(int paramInt1, int paramInt2) {}
 /* 447:    */   
-/* 448:    */   public short a(ahb paramahb)
+/* 448:    */   public short a(Inventory paramahb)
 /* 449:    */   {
 /* 450:417 */     this.a = ((short)(this.a + 1));
 /* 451:418 */     return this.a;
@@ -562,7 +562,7 @@ package net.minecraft.src;
 /* 561:523 */     if (paramInt == 1) {
 /* 562:524 */       return true;
 /* 563:    */     }
-/* 564:526 */     if ((paramInt == 2) && (paramahd.by.d)) {
+/* 564:526 */     if ((paramInt == 2) && (paramahd.abilities.instabuild)) {
 /* 565:527 */       return true;
 /* 566:    */     }
 /* 567:529 */     return false;

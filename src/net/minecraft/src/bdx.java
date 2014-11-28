@@ -46,9 +46,9 @@ package net.minecraft.src;
 /*  45:    */   
 /*  46:    */   public void d(World paramaqu, BlockPosition paramdt, Block parambec)
 /*  47:    */   {
-/*  48: 68 */     BlockPosition localdt = paramdt.offset(((EnumDirection)parambec.getProperty(a)).d());
+/*  48: 68 */     BlockPosition localdt = paramdt.offset(((EnumDirection)parambec.getData(a)).opposite());
 /*  49: 69 */     Block localbec = paramaqu.getBlock(localdt);
-/*  50: 70 */     if (((localbec.getProto() instanceof bdq)) && (((Boolean)localbec.getProperty(bdq.b)).booleanValue())) {
+/*  50: 70 */     if (((localbec.getProto() instanceof bdq)) && (((Boolean)localbec.getData(bdq.b)).booleanValue())) {
 /*  51: 71 */       paramaqu.g(localdt);
 /*  52:    */     }
 /*  53:    */   }
@@ -200,8 +200,8 @@ package net.minecraft.src;
 /* 199:    */   {
 /* 200:232 */     int i = 0;
 /* 201:    */     
-/* 202:234 */     i |= ((EnumDirection)parambec.getProperty(a)).a();
-/* 203:236 */     if (parambec.getProperty(b) == bdu.b) {
+/* 202:234 */     i |= ((EnumDirection)parambec.getData(a)).a();
+/* 203:236 */     if (parambec.getData(b) == bdu.b) {
 /* 204:237 */       i |= 0x8;
 /* 205:    */     }
 /* 206:240 */     return i;

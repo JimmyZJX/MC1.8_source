@@ -419,7 +419,7 @@ package net.minecraft.src;
 /* 418:464 */             if ((i2 == 0) && (localbec2.getProto() == BlockList.sand))
 /* 419:    */             {
 /* 420:465 */               i2 = paramRandom.nextInt(4) + Math.max(0, i6 - 63);
-/* 421:466 */               localbec2 = localbec2.getProperty(BlockSand.a) == bac.b ? BlockList.cM.instance() : BlockList.A.instance();
+/* 421:466 */               localbec2 = localbec2.getData(BlockSand.a) == bac.b ? BlockList.cM.instance() : BlockList.A.instance();
 /* 422:    */             }
 /* 423:    */           }
 /* 424:    */         }

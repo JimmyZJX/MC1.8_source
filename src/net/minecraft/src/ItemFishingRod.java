@@ -36,7 +36,7 @@ package net.minecraft.src;
 /* 35:37 */         paramaqu.spawnEntity(new EntityFishHook(paramaqu, paramahd));
 /* 36:   */       }
 /* 37:39 */       paramahd.bv();
-/* 38:40 */       paramahd.b(StatList.J[Item.b(this)]);
+/* 38:40 */       paramahd.increaseStat(StatList.J[Item.b(this)]);
 /* 39:   */     }
 /* 40:42 */     return paramamj;
 /* 41:   */   }

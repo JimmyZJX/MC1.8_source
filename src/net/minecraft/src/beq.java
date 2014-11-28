@@ -28,7 +28,7 @@ package net.minecraft.src;
 /* 27:   */     }
 /* 28:36 */     for (Map.Entry<IBlockData,Predicate<Comparable>> localEntry : this.b.entrySet())
 /* 29:   */     {
-/* 30:37 */       Comparable localComparable = parambec.getProperty(localEntry.getKey());
+/* 30:37 */       Comparable localComparable = parambec.getData(localEntry.getKey());
 /* 31:38 */       if (!(localEntry.getValue()).apply(localComparable)) {
 /* 32:39 */         return false;
 /* 33:   */       }

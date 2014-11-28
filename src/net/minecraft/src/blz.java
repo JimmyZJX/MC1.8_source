@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*    5:     */ public class blz
 /*    6:     */   extends bmk
 /*    7:     */ {
-/*    8:1142 */   private static final List a = Lists.newArrayList(new vl[] { new vl(ItemList.book, 0, 1, 3, 20), new vl(ItemList.aK, 0, 2, 7, 20), new vl(ItemList.map, 0, 1, 1, 1), new vl(ItemList.aQ, 0, 1, 1, 1) });
+/*    8:1142 */   private static final List a = Lists.newArrayList(new vl[] { new vl(ItemList.book, 0, 1, 3, 20), new vl(ItemList.paper, 0, 2, 7, 20), new vl(ItemList.map, 0, 1, 1, 1), new vl(ItemList.compass, 0, 1, 1, 1) });
 /*    9:     */   private boolean b;
 /*   10:     */   
 /*   11:     */   public blz() {}
@@ -149,11 +149,11 @@ package net.minecraft.src;
 /*  148:1302 */       a(paramaqu, BlockList.torch.instance(), n, 8, i1 - 1, parambjb);
 /*  149:1303 */       a(paramaqu, BlockList.torch.instance(), n, 8, i1 + 1, parambjb);
 /*  150:     */     }
-/*  151:1307 */     a(paramaqu, parambjb, paramRandom, 3, 3, 5, vl.a(a, new vl[] { ItemList.cd.a(paramRandom, 1, 5, 2) }), 1 + paramRandom.nextInt(4));
+/*  151:1307 */     a(paramaqu, parambjb, paramRandom, 3, 3, 5, vl.a(a, new vl[] { ItemList.enchantedBook.a(paramRandom, 1, 5, 2) }), 1 + paramRandom.nextInt(4));
 /*  152:1308 */     if (this.b)
 /*  153:     */     {
 /*  154:1309 */       a(paramaqu, BlockList.air.instance(), 12, 9, 1, parambjb);
-/*  155:1310 */       a(paramaqu, parambjb, paramRandom, 12, 8, 1, vl.a(a, new vl[] { ItemList.cd.a(paramRandom, 1, 5, 2) }), 1 + paramRandom.nextInt(4));
+/*  155:1310 */       a(paramaqu, parambjb, paramRandom, 12, 8, 1, vl.a(a, new vl[] { ItemList.enchantedBook.a(paramRandom, 1, 5, 2) }), 1 + paramRandom.nextInt(4));
 /*  156:     */     }
 /*  157:1313 */     return true;
 /*  158:     */   }

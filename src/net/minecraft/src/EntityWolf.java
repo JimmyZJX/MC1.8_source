@@ -16,7 +16,7 @@ package net.minecraft.src;
 /*  17: 43 */     a(0.6F, 0.8F);
 /*  18:    */     
 /*  19: 45 */     ((aay)getNavigator()).a(true);
-/*  20: 46 */     this.goalSelector.addGoal(1, new yy(this));
+/*  20: 46 */     this.goalSelector.addGoal(1, new GoalSwim(this));
 /*  21: 47 */     this.goalSelector.addGoal(2, this.bk);
 /*  22: 48 */     this.goalSelector.addGoal(3, new zg(this, 0.4F));
 /*  23: 49 */     this.goalSelector.addGoal(4, new zk(this, 1.0D, true));
@@ -45,14 +45,14 @@ package net.minecraft.src;
 /*  46:    */   {
 /*  47: 73 */     super.aW();
 /*  48:    */     
-/*  49: 75 */     a(afs.d).a(0.300000011920929D);
+/*  49: 75 */     getAttribute(MobAttribute.movementSpeed).a(0.300000011920929D);
 /*  50: 77 */     if (cj()) {
-/*  51: 78 */       a(afs.a).a(20.0D);
+/*  51: 78 */       getAttribute(MobAttribute.maxHealth).a(20.0D);
 /*  52:    */     } else {
-/*  53: 80 */       a(afs.a).a(8.0D);
+/*  53: 80 */       getAttribute(MobAttribute.maxHealth).a(8.0D);
 /*  54:    */     }
-/*  55: 83 */     bx().b(afs.e);
-/*  56: 84 */     a(afs.e).a(2.0D);
+/*  55: 83 */     bx().b(MobAttribute.attackDamage);
+/*  56: 84 */     getAttribute(MobAttribute.attackDamage).a(2.0D);
 /*  57:    */   }
 /*  58:    */   
 /*  59:    */   public void d(EntityLiving paramxm)
@@ -238,12 +238,12 @@ package net.minecraft.src;
 /* 239:    */   
 /* 240:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /* 241:    */   {
-/* 242:264 */     if (b(paramwh)) {
+/* 242:264 */     if (isImmuneTo(paramwh)) {
 /* 243:265 */       return false;
 /* 244:    */     }
-/* 245:267 */     Entity localwv = paramwh.j();
+/* 245:267 */     Entity localwv = paramwh.getAttacker();
 /* 246:268 */     this.bk.a(false);
-/* 247:270 */     if ((localwv != null) && (!(localwv instanceof EntityPlayer)) && (!(localwv instanceof ahj))) {
+/* 247:270 */     if ((localwv != null) && (!(localwv instanceof EntityPlayer)) && (!(localwv instanceof EntityArrow))) {
 /* 248:272 */       paramFloat = (paramFloat + 1.0F) / 2.0F;
 /* 249:    */     }
 /* 250:274 */     return super.a(paramwh, paramFloat);
@@ -251,7 +251,7 @@ package net.minecraft.src;
 /* 252:    */   
 /* 253:    */   public boolean r(Entity paramwv)
 /* 254:    */   {
-/* 255:279 */     boolean bool = paramwv.a(DamageSource.a(this), (int)a(afs.e).e());
+/* 255:279 */     boolean bool = paramwv.a(DamageSource.fromMob(this), (int)getAttribute(MobAttribute.attackDamage).e());
 /* 256:280 */     if (bool) {
 /* 257:281 */       a(this, paramwv);
 /* 258:    */     }
@@ -262,11 +262,11 @@ package net.minecraft.src;
 /* 263:    */   {
 /* 264:288 */     super.m(paramBoolean);
 /* 265:290 */     if (paramBoolean) {
-/* 266:291 */       a(afs.a).a(20.0D);
+/* 266:291 */       getAttribute(MobAttribute.maxHealth).a(20.0D);
 /* 267:    */     } else {
-/* 268:293 */       a(afs.a).a(8.0D);
+/* 268:293 */       getAttribute(MobAttribute.maxHealth).a(8.0D);
 /* 269:    */     }
-/* 270:296 */     a(afs.e).a(4.0D);
+/* 270:296 */     getAttribute(MobAttribute.attackDamage).a(4.0D);
 /* 271:    */   }
 /* 272:    */   
 /* 273:    */   public boolean onRightClick(EntityPlayer paramahd)
@@ -282,7 +282,7 @@ package net.minecraft.src;
 /* 283:306 */           localObject = (all)localamj.getItem();
 /* 284:308 */           if ((((all)localObject).g()) && (this.ac.d(18) < 20.0F))
 /* 285:    */           {
-/* 286:309 */             if (!paramahd.by.d) {
+/* 286:309 */             if (!paramahd.abilities.instabuild) {
 /* 287:310 */               localamj.stackSize -= 1;
 /* 288:    */             }
 /* 289:312 */             g(((all)localObject).h(localamj));
@@ -298,7 +298,7 @@ package net.minecraft.src;
 /* 299:320 */           if (localObject != cu())
 /* 300:    */           {
 /* 301:321 */             a((EnumDyeColor)localObject);
-/* 302:323 */             if (!paramahd.by.d) {
+/* 302:323 */             if (!paramahd.abilities.instabuild) {
 /* 303:323 */               if (--localamj.stackSize <= 0) {
 /* 304:324 */                 paramahd.bg.a(paramahd.bg.c, null);
 /* 305:    */               }
@@ -311,14 +311,14 @@ package net.minecraft.src;
 /* 312:332 */         (!this.world.isClient) && (!d(localamj)))
 /* 313:    */       {
 /* 314:333 */         this.bk.a(!cl());
-/* 315:334 */         this.aW = false;
+/* 315:334 */         this.jumping = false;
 /* 316:335 */         this.navigator.n();
 /* 317:336 */         d((EntityLiving)null);
 /* 318:    */       }
 /* 319:    */     }
 /* 320:340 */     else if ((localamj != null) && (localamj.getItem() == ItemList.bone) && (!ct()))
 /* 321:    */     {
-/* 322:341 */       if (!paramahd.by.d) {
+/* 322:341 */       if (!paramahd.abilities.instabuild) {
 /* 323:342 */         localamj.stackSize -= 1;
 /* 324:    */       }
 /* 325:344 */       if (localamj.stackSize <= 0) {

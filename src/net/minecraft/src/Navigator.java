@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*   5:    */   protected bpv d;
 /*   6:    */   protected double e;
 /*   7:    */   private final xz a;
-/*   8:    */   private int f;
+/*   8:    */   private int tick;
 /*   9:    */   private int g;
 /*  10: 30 */   private Vec3 h = new Vec3(0.0D, 0.0D, 0.0D);
 /*  11: 31 */   private float i = 1.0F;
@@ -16,7 +16,7 @@ package net.minecraft.src;
 /*  15:    */   {
 /*  16: 36 */     this.mob = mob;
 /*  17: 37 */     this.world = world;
-/*  18: 38 */     this.a = mob.a(afs.b);
+/*  18: 38 */     this.a = mob.getAttribute(MobAttribute.followRange);
 /*  19: 39 */     this.j = a();
 /*  20:    */   }
 /*  21:    */   
@@ -37,7 +37,7 @@ package net.minecraft.src;
 /*  36: 54 */     return a(new BlockPosition(MathUtils.floor(paramDouble1), (int)paramDouble2, MathUtils.floor(paramDouble3)));
 /*  37:    */   }
 /*  38:    */   
-/*  39:    */   public bpv a(BlockPosition paramdt)
+/*  39:    */   public bpv a(BlockPosition pos)
 /*  40:    */   {
 /*  41: 59 */     if (!b()) {
 /*  42: 60 */       return null;
@@ -48,7 +48,7 @@ package net.minecraft.src;
 /*  47: 66 */     int k = (int)(f1 + 8.0F);
 /*  48:    */     
 /*  49: 68 */     arj localarj = new arj(this.world, localdt.offset(-k, -k, -k), localdt.offset(k, k, k), 0);
-/*  50: 69 */     bpv localbpv = this.j.a(localarj, this.mob, paramdt, f1);
+/*  50: 69 */     bpv localbpv = this.j.a(localarj, this.mob, pos, f1);
 /*  51: 70 */     this.world.profiler.b();
 /*  52: 71 */     return localbpv;
 /*  53:    */   }
@@ -105,7 +105,7 @@ package net.minecraft.src;
 /* 104:    */     }
 /* 105:122 */     this.e = paramDouble;
 /* 106:123 */     Vec3 localbrw = c();
-/* 107:124 */     this.g = this.f;
+/* 107:124 */     this.g = this.tick;
 /* 108:125 */     this.h = localbrw;
 /* 109:126 */     return true;
 /* 110:    */   }
@@ -115,9 +115,9 @@ package net.minecraft.src;
 /* 114:130 */     return this.d;
 /* 115:    */   }
 /* 116:    */   
-/* 117:    */   public void k()
+/* 117:    */   public void tick()
 /* 118:    */   {
-/* 119:134 */     this.f += 1;
+/* 119:134 */     this.tick += 1;
 /* 120:135 */     if (m()) {
 /* 121:136 */       return;
 /* 122:    */     }
@@ -140,7 +140,7 @@ package net.minecraft.src;
 /* 139:167 */     if (localbrw1 == null) {
 /* 140:168 */       return;
 /* 141:    */     }
-/* 142:171 */     this.mob.q().a(localbrw1.x, localbrw1.y, localbrw1.z, this.e);
+/* 142:171 */     this.mob.q().setTarget(localbrw1.x, localbrw1.y, localbrw1.z, this.e);
 /* 143:    */   }
 /* 144:    */   
 /* 145:    */   protected void l()
@@ -160,7 +160,7 @@ package net.minecraft.src;
 /* 159:189 */     for (int n = this.d.e(); n < k; n++)
 /* 160:    */     {
 /* 161:190 */       Vec3 localbrw2 = this.d.a(this.mob, n);
-/* 162:191 */       if (localbrw1.g(localbrw2) < f1) {
+/* 162:191 */       if (localbrw1.dist2(localbrw2) < f1) {
 /* 163:192 */         this.d.c(n + 1);
 /* 164:    */       }
 /* 165:    */     }
@@ -179,12 +179,12 @@ package net.minecraft.src;
 /* 178:    */   
 /* 179:    */   protected void a(Vec3 parambrw)
 /* 180:    */   {
-/* 181:212 */     if (this.f - this.g > 100)
+/* 181:212 */     if (this.tick - this.g > 100)
 /* 182:    */     {
-/* 183:213 */       if (parambrw.g(this.h) < 2.25D) {
+/* 183:213 */       if (parambrw.dist2(this.h) < 2.25D) {
 /* 184:214 */         n();
 /* 185:    */       }
-/* 186:216 */       this.g = this.f;
+/* 186:216 */       this.g = this.tick;
 /* 187:217 */       this.h = parambrw;
 /* 188:    */     }
 /* 189:    */   }
@@ -205,7 +205,7 @@ package net.minecraft.src;
 /* 204:    */   
 /* 205:    */   protected boolean o()
 /* 206:    */   {
-/* 207:234 */     return (this.mob.V()) || (this.mob.ab());
+/* 207:234 */     return (this.mob.isInWater()) || (this.mob.isInLava());
 /* 208:    */   }
 /* 209:    */   
 /* 210:    */   protected void d() {}

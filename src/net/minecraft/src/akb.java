@@ -35,16 +35,16 @@ package net.minecraft.src;
 /*  34:    */         }
 /*  35: 44 */         localObject = paramaqu.getBlock(localdt);
 /*  36: 45 */         Material localbof = ((Block)localObject).getProto().getMaterial();
-/*  37: 47 */         if ((localbof == Material.water) && (((Integer)((Block)localObject).getProperty(BlockLiquid.level)).intValue() == 0))
+/*  37: 47 */         if ((localbof == Material.water) && (((Integer)((Block)localObject).getData(BlockLiquid.level)).intValue() == 0))
 /*  38:    */         {
 /*  39: 48 */           paramaqu.g(localdt);
-/*  40: 49 */           paramahd.b(StatList.J[Item.b(this)]);
+/*  40: 49 */           paramahd.increaseStat(StatList.J[Item.b(this)]);
 /*  41: 50 */           return a(paramamj, paramahd, ItemList.ax);
 /*  42:    */         }
-/*  43: 53 */         if ((localbof == Material.lava) && (((Integer)((Block)localObject).getProperty(BlockLiquid.level)).intValue() == 0))
+/*  43: 53 */         if ((localbof == Material.lava) && (((Integer)((Block)localObject).getData(BlockLiquid.level)).intValue() == 0))
 /*  44:    */         {
 /*  45: 54 */           paramaqu.g(localdt);
-/*  46: 55 */           paramahd.b(StatList.J[Item.b(this)]);
+/*  46: 55 */           paramahd.increaseStat(StatList.J[Item.b(this)]);
 /*  47: 56 */           return a(paramamj, paramahd, ItemList.ay);
 /*  48:    */         }
 /*  49:    */       }
@@ -57,9 +57,9 @@ package net.minecraft.src;
 /*  56: 63 */         if (!paramahd.a((BlockPosition)localObject, localbru.b, paramamj)) {
 /*  57: 64 */           return paramamj;
 /*  58:    */         }
-/*  59: 67 */         if ((a(paramaqu, (BlockPosition)localObject)) && (!paramahd.by.d))
+/*  59: 67 */         if ((a(paramaqu, (BlockPosition)localObject)) && (!paramahd.abilities.instabuild))
 /*  60:    */         {
-/*  61: 68 */           paramahd.b(StatList.J[Item.b(this)]);
+/*  61: 68 */           paramahd.increaseStat(StatList.J[Item.b(this)]);
 /*  62: 69 */           return new ItemStack(ItemList.aw);
 /*  63:    */         }
 /*  64:    */       }
@@ -69,7 +69,7 @@ package net.minecraft.src;
 /*  68:    */   
 /*  69:    */   private ItemStack a(ItemStack paramamj, EntityPlayer paramahd, Item paramalq)
 /*  70:    */   {
-/*  71: 78 */     if (paramahd.by.d) {
+/*  71: 78 */     if (paramahd.abilities.instabuild) {
 /*  72: 79 */       return paramamj;
 /*  73:    */     }
 /*  74: 82 */     if (--paramamj.stackSize <= 0) {

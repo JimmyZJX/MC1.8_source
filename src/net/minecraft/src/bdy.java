@@ -23,7 +23,7 @@ package net.minecraft.src;
 /*  22:    */     }
 /*  23:    */     else
 /*  24:    */     {
-/*  25: 31 */       this.d = paramej.d();
+/*  25: 31 */       this.d = paramej.opposite();
 /*  26: 32 */       this.c = paramdt.offset(paramej, 2);
 /*  27:    */     }
 /*  28:    */   }
@@ -77,7 +77,7 @@ package net.minecraft.src;
 /*  76:    */     }
 /*  77: 94 */     while (localatr == BlockList.cE)
 /*  78:    */     {
-/*  79: 95 */       BlockPosition localdt1 = paramdt.offset(this.d.d(), i);
+/*  79: 95 */       BlockPosition localdt1 = paramdt.offset(this.d.opposite(), i);
 /*  80: 96 */       localatr = this.a.getBlock(localdt1).getProto();
 /*  81: 98 */       if ((localatr.getMaterial() == Material.air) || (!bdq.a(localatr, this.a, localdt1, this.d, false)) || (localdt1.equals(this.b))) {
 /*  82:    */         break;
@@ -90,7 +90,7 @@ package net.minecraft.src;
 /*  89:108 */     int j = 0;
 /*  90:111 */     for (int k = i - 1; k >= 0; k--)
 /*  91:    */     {
-/*  92:112 */       this.e.add(paramdt.offset(this.d.d(), k));
+/*  92:112 */       this.e.add(paramdt.offset(this.d.opposite(), k));
 /*  93:113 */       j++;
 /*  94:    */     }
 /*  95:117 */     for (int k = 1;; k++)

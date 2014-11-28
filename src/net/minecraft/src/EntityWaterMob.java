@@ -45,13 +45,13 @@ package net.minecraft.src;
 /* 44:56 */     int i = aA();
 /* 45:   */     
 /* 46:58 */     super.onEntityUpdate();
-/* 47:60 */     if ((ai()) && (!V()))
+/* 47:60 */     if ((ai()) && (!isInWater()))
 /* 48:   */     {
 /* 49:61 */       h(--i);
 /* 50:62 */       if (aA() == -20)
 /* 51:   */       {
 /* 52:63 */         h(0);
-/* 53:64 */         a(DamageSource.f, 2.0F);
+/* 53:64 */         a(DamageSource.drown, 2.0F);
 /* 54:   */       }
 /* 55:   */     }
 /* 56:   */     else

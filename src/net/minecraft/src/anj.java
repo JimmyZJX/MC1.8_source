@@ -28,7 +28,7 @@ package net.minecraft.src;
 /* 27:   */     }
 /* 28:37 */     if (localatr == this.a)
 /* 29:   */     {
-/* 30:38 */       int i = ((Integer)localbec1.getProperty(BlockSnowLayer.a)).intValue();
+/* 30:38 */       int i = ((Integer)localbec1.getData(BlockSnowLayer.a)).intValue();
 /* 31:40 */       if (i <= 7)
 /* 32:   */       {
 /* 33:41 */         Block localbec2 = localbec1.setData(BlockSnowLayer.a, Integer.valueOf(i + 1));

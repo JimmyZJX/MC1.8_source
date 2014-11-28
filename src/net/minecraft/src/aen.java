@@ -48,7 +48,7 @@ package net.minecraft.src;
 /*  47:207 */         this.c = 20;
 /*  48:208 */         this.a.r(localxm);
 /*  49:    */       }
-/*  50:210 */       this.a.q().a(localxm.xPos, localxm.yPos, localxm.zPos, 1.0D);
+/*  50:210 */       this.a.q().setTarget(localxm.xPos, localxm.yPos, localxm.zPos, 1.0D);
 /*  51:    */     }
 /*  52:211 */     else if (d1 < 256.0D)
 /*  53:    */     {
@@ -75,7 +75,7 @@ package net.minecraft.src;
 /*  74:    */         }
 /*  75:229 */         if (this.b > 1)
 /*  76:    */         {
-/*  77:230 */           float f = MathUtils.sqrt(MathUtils.a(d1)) * 0.5F;
+/*  77:230 */           float f = MathUtils.sqrt(MathUtils.sqrt(d1)) * 0.5F;
 /*  78:    */           
 /*  79:232 */           this.a.world.playLevelEvent(null, 1009, new BlockPosition((int)this.a.xPos, (int)this.a.yPos, (int)this.a.zPos), 0);
 /*  80:233 */           for (int i = 0; i < 1; i++)
@@ -91,7 +91,7 @@ package net.minecraft.src;
 /*  90:    */     else
 /*  91:    */     {
 /*  92:242 */       this.a.getNavigator().n();
-/*  93:243 */       this.a.q().a(localxm.xPos, localxm.yPos, localxm.zPos, 1.0D);
+/*  93:243 */       this.a.q().setTarget(localxm.xPos, localxm.yPos, localxm.zPos, 1.0D);
 /*  94:    */     }
 /*  95:246 */     super.tick();
 /*  96:    */   }

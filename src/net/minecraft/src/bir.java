@@ -153,7 +153,7 @@ package net.minecraft.src;
 /* 152:148 */             if (paramRandom.nextInt(4 - i1) == 0)
 /* 153:    */             {
 /* 154:149 */               i4 = paramRandom.nextInt(3);
-/* 155:150 */               EnumDirection localej = EnumDirection.b(i3).d();
+/* 155:150 */               EnumDirection localej = EnumDirection.b(i3).opposite();
 /* 156:    */               
 /* 157:152 */               setBlock(world, pos.offset(localej.g(), i - 5 + i1, localej.i()), BlockList.bN, i4 << 2 | EnumDirection.b(i3).b());
 /* 158:    */             }

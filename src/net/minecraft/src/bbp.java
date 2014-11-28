@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ public class bbp
 /*   2:    */   extends ProtoBlock
 /*   3:    */ {
-/*   4: 25 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", en.HORIZONTAL);
+/*   4: 25 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", EnumHorizontalVertical.HORIZONTAL);
 /*   5: 26 */   public static final BlockDataBoolean b = BlockDataBoolean.getInstance("open");
 /*   6: 27 */   public static final BlockDataEnum M = BlockDataEnum.getInstance("half", bbr.class);
 /*   7:    */   
@@ -28,7 +28,7 @@ package net.minecraft.src;
 /*  27:    */   
 /*  28:    */   public boolean b(IBlockAccess paramard, BlockPosition paramdt)
 /*  29:    */   {
-/*  30: 50 */     return !((Boolean)paramard.getBlock(paramdt).getProperty(b)).booleanValue();
+/*  30: 50 */     return !((Boolean)paramard.getBlock(paramdt).getData(b)).booleanValue();
 /*  31:    */   }
 /*  32:    */   
 /*  33:    */   public AABB a(World paramaqu, BlockPosition paramdt)
@@ -59,9 +59,9 @@ package net.minecraft.src;
 /*  58: 78 */     if (parambec.getProto() != this) {
 /*  59: 79 */       return;
 /*  60:    */     }
-/*  61: 81 */     int i = parambec.getProperty(M) == bbr.a ? 1 : 0;
-/*  62: 82 */     Boolean localBoolean = (Boolean)parambec.getProperty(b);
-/*  63: 83 */     EnumDirection localej = (EnumDirection)parambec.getProperty(a);
+/*  61: 81 */     int i = parambec.getData(M) == bbr.a ? 1 : 0;
+/*  62: 82 */     Boolean localBoolean = (Boolean)parambec.getData(b);
+/*  63: 83 */     EnumDirection localej = (EnumDirection)parambec.getData(a);
 /*  64:    */     
 /*  65: 85 */     float f = 0.1875F;
 /*  66: 86 */     if (i != 0) {
@@ -94,7 +94,7 @@ package net.minecraft.src;
 /*  93:114 */     parambec = parambec.a(b);
 /*  94:115 */     paramaqu.setBlock(paramdt, parambec, 2);
 /*  95:    */     
-/*  96:117 */     paramaqu.playLevelEvent(paramahd, ((Boolean)parambec.getProperty(b)).booleanValue() ? 1003 : 1006, paramdt, 0);
+/*  96:117 */     paramaqu.playLevelEvent(paramahd, ((Boolean)parambec.getData(b)).booleanValue() ? 1003 : 1006, paramdt, 0);
 /*  97:118 */     return true;
 /*  98:    */   }
 /*  99:    */   
@@ -103,7 +103,7 @@ package net.minecraft.src;
 /* 102:123 */     if (paramaqu.isClient) {
 /* 103:124 */       return;
 /* 104:    */     }
-/* 105:127 */     BlockPosition localdt = paramdt.offset(((EnumDirection)parambec.getProperty(a)).d());
+/* 105:127 */     BlockPosition localdt = paramdt.offset(((EnumDirection)parambec.getData(a)).opposite());
 /* 106:129 */     if (!c(paramaqu.getBlock(localdt).getProto()))
 /* 107:    */     {
 /* 108:130 */       paramaqu.g(paramdt);
@@ -113,7 +113,7 @@ package net.minecraft.src;
 /* 112:135 */     boolean bool1 = paramaqu.z(paramdt);
 /* 113:136 */     if ((bool1) || (paramatr.protoBlock_g()))
 /* 114:    */     {
-/* 115:137 */       boolean bool2 = ((Boolean)parambec.getProperty(b)).booleanValue();
+/* 115:137 */       boolean bool2 = ((Boolean)parambec.getData(b)).booleanValue();
 /* 116:139 */       if (bool2 != bool1)
 /* 117:    */       {
 /* 118:140 */         paramaqu.setBlock(paramdt, parambec.setData(b, Boolean.valueOf(bool1)), 2);
@@ -141,7 +141,7 @@ package net.minecraft.src;
 /* 140:    */   
 /* 141:    */   public boolean a(World paramaqu, BlockPosition paramdt, EnumDirection paramej)
 /* 142:    */   {
-/* 143:164 */     return (!paramej.k().b()) && (c(paramaqu.getBlock(paramdt.offset(paramej.d())).getProto()));
+/* 143:164 */     return (!paramej.k().b()) && (c(paramaqu.getBlock(paramdt.offset(paramej.opposite())).getProto()));
 /* 144:    */   }
 /* 145:    */   
 /* 146:    */   protected static EnumDirection b(int paramInt)
@@ -191,11 +191,11 @@ package net.minecraft.src;
 /* 190:    */   {
 /* 191:214 */     int i = 0;
 /* 192:    */     
-/* 193:216 */     i |= a((EnumDirection)parambec.getProperty(a));
-/* 194:218 */     if (((Boolean)parambec.getProperty(b)).booleanValue()) {
+/* 193:216 */     i |= a((EnumDirection)parambec.getData(a));
+/* 194:218 */     if (((Boolean)parambec.getData(b)).booleanValue()) {
 /* 195:219 */       i |= 0x4;
 /* 196:    */     }
-/* 197:222 */     if (parambec.getProperty(M) == bbr.a) {
+/* 197:222 */     if (parambec.getData(M) == bbr.a) {
 /* 198:223 */       i |= 0x8;
 /* 199:    */     }
 /* 200:226 */     return i;

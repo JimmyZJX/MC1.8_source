@@ -74,7 +74,7 @@ package net.minecraft.src;
 /*  74:    */       }
 /*  75:    */     }
 /*  76: 91 */     this.yVelocity -= 0.03999999910593033D;
-/*  77: 92 */     d(this.xVelocity, this.yVelocity, this.zVelocity);
+/*  77: 92 */     move(this.xVelocity, this.yVelocity, this.zVelocity);
 /*  78: 93 */     this.xVelocity *= 0.9800000190734863D;
 /*  79: 94 */     this.yVelocity *= 0.9800000190734863D;
 /*  80: 95 */     this.zVelocity *= 0.9800000190734863D;
@@ -139,13 +139,13 @@ package net.minecraft.src;
 /* 139:    */       {
 /* 140:150 */         ArrayList<Entity> localArrayList = Lists.newArrayList(this.world.b(this, getAABB()));
 /* 141:151 */         int j = localatr == BlockList.cf ? 1 : 0;
-/* 142:152 */         DamageSource localwh = j != 0 ? DamageSource.n : DamageSource.o;
+/* 142:152 */         DamageSource localwh = j != 0 ? DamageSource.anvil : DamageSource.fallingBlock;
 /* 143:154 */         for (Entity localwv : localArrayList) {
 /* 144:155 */           localwv.a(localwh, Math.min(MathUtils.floor(i * this.h), this.g));
 /* 145:    */         }
 /* 146:158 */         if ((j != 0) && (this.rng.nextFloat() < 0.0500000007450581D + i * 0.05D))
 /* 147:    */         {
-/* 148:159 */           int k = ((Integer)this.d.getProperty(BlockAnvil.b)).intValue();
+/* 148:159 */           int k = ((Integer)this.d.getData(BlockAnvil.b)).intValue();
 /* 149:    */           
 /* 150:161 */           k++;
 /* 151:161 */           if (k > 2) {

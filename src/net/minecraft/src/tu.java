@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*   5:    */ {
 /*   6:    */   public String a(int paramInt)
 /*   7:    */   {
-/*   8:108 */     return tq.n().format(paramInt * 0.1D);
+/*   8:108 */     return PlayerStat.n().format(paramInt * 0.1D);
 /*   9:    */   }
 /*  10:    */ }
 

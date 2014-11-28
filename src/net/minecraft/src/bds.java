@@ -19,12 +19,12 @@ package net.minecraft.src;
 /*  18:    */   
 /*  19:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, EntityPlayer paramahd)
 /*  20:    */   {
-/*  21: 42 */     if (paramahd.by.d)
+/*  21: 42 */     if (paramahd.abilities.instabuild)
 /*  22:    */     {
-/*  23: 43 */       EnumDirection localej = (EnumDirection)parambec.getProperty(a);
+/*  23: 43 */       EnumDirection localej = (EnumDirection)parambec.getData(a);
 /*  24: 44 */       if (localej != null)
 /*  25:    */       {
-/*  26: 45 */         BlockPosition localdt = paramdt.offset(localej.d());
+/*  26: 45 */         BlockPosition localdt = paramdt.offset(localej.opposite());
 /*  27: 46 */         ProtoBlock localatr = paramaqu.getBlock(localdt).getProto();
 /*  28: 47 */         if ((localatr == BlockList.J) || (localatr == BlockList.F)) {
 /*  29: 48 */           paramaqu.g(localdt);
@@ -37,12 +37,12 @@ package net.minecraft.src;
 /*  36:    */   public void b(World paramaqu, BlockPosition paramdt, Block parambec)
 /*  37:    */   {
 /*  38: 57 */     super.b(paramaqu, paramdt, parambec);
-/*  39: 58 */     EnumDirection localej = ((EnumDirection)parambec.getProperty(a)).d();
+/*  39: 58 */     EnumDirection localej = ((EnumDirection)parambec.getData(a)).opposite();
 /*  40: 59 */     paramdt = paramdt.offset(localej);
 /*  41:    */     
 /*  42: 61 */     Block localbec = paramaqu.getBlock(paramdt);
 /*  43: 62 */     if (((localbec.getProto() == BlockList.J) || (localbec.getProto() == BlockList.F)) && 
-/*  44: 63 */       (((Boolean)localbec.getProperty(bdq.b)).booleanValue()))
+/*  44: 63 */       (((Boolean)localbec.getData(bdq.b)).booleanValue()))
 /*  45:    */     {
 /*  46: 64 */       localbec.getProto().b(paramaqu, paramdt, localbec, 0);
 /*  47: 65 */       paramaqu.g(paramdt);
@@ -92,7 +92,7 @@ package net.minecraft.src;
 /*  91:109 */     float f3 = 0.625F;
 /*  92:110 */     float f4 = 0.25F;
 /*  93:111 */     float f5 = 0.75F;
-/*  94:113 */     switch (bdt.a[((EnumDirection)parambec.getProperty(a)).ordinal()])
+/*  94:113 */     switch (bdt.a[((EnumDirection)parambec.getData(a)).ordinal()])
 /*  95:    */     {
 /*  96:    */     case 1: 
 /*  97:115 */       a(0.375F, 0.25F, 0.375F, 0.625F, 1.0F, 0.625F);
@@ -122,7 +122,7 @@ package net.minecraft.src;
 /* 121:    */   public void d(Block parambec)
 /* 122:    */   {
 /* 123:141 */     float f = 0.25F;
-/* 124:142 */     EnumDirection localej = (EnumDirection)parambec.getProperty(a);
+/* 124:142 */     EnumDirection localej = (EnumDirection)parambec.getData(a);
 /* 125:143 */     if (localej == null) {
 /* 126:144 */       return;
 /* 127:    */     }
@@ -150,8 +150,8 @@ package net.minecraft.src;
 /* 149:    */   
 /* 150:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
 /* 151:    */   {
-/* 152:171 */     EnumDirection localej = (EnumDirection)parambec.getProperty(a);
-/* 153:172 */     BlockPosition localdt = paramdt.offset(localej.d());
+/* 152:171 */     EnumDirection localej = (EnumDirection)parambec.getData(a);
+/* 153:172 */     BlockPosition localdt = paramdt.offset(localej.opposite());
 /* 154:173 */     Block localbec = paramaqu.getBlock(localdt);
 /* 155:174 */     if ((localbec.getProto() != BlockList.J) && (localbec.getProto() != BlockList.F)) {
 /* 156:175 */       paramaqu.g(paramdt);
@@ -176,7 +176,7 @@ package net.minecraft.src;
 /* 175:    */   
 /* 176:    */   public Item b(World paramaqu, BlockPosition paramdt)
 /* 177:    */   {
-/* 178:197 */     if (paramaqu.getBlock(paramdt).getProperty(b) == bdu.b) {
+/* 178:197 */     if (paramaqu.getBlock(paramdt).getData(b) == bdu.b) {
 /* 179:198 */       return Item.fromProtoBlock(BlockList.F);
 /* 180:    */     }
 /* 181:200 */     return Item.fromProtoBlock(BlockList.J);
@@ -191,8 +191,8 @@ package net.minecraft.src;
 /* 190:    */   {
 /* 191:212 */     int i = 0;
 /* 192:    */     
-/* 193:214 */     i |= ((EnumDirection)parambec.getProperty(a)).a();
-/* 194:216 */     if (parambec.getProperty(b) == bdu.b) {
+/* 193:214 */     i |= ((EnumDirection)parambec.getData(a)).a();
+/* 194:216 */     if (parambec.getData(b) == bdu.b) {
 /* 195:217 */       i |= 0x8;
 /* 196:    */     }
 /* 197:220 */     return i;

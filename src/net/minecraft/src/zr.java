@@ -63,7 +63,7 @@ package net.minecraft.src;
 /* 62:69 */       if (localatr == BlockList.am) {
 /* 63:70 */         return true;
 /* 64:   */       }
-/* 65:71 */       if ((localatr == BlockList.C) && (localbec.getProperty(atp.a) != atq.HEAD)) {
+/* 65:71 */       if ((localatr == BlockList.C) && (localbec.getData(atp.a) != atq.HEAD)) {
 /* 66:72 */         return true;
 /* 67:   */       }
 /* 68:   */     }

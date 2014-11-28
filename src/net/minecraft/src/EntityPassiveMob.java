@@ -34,7 +34,7 @@ package net.minecraft.src;
 /*  34: 44 */             if (stack.s()) {
 /*  35: 45 */               localws.a(stack.q());
 /*  36:    */             }
-/*  37: 48 */             if (!player.by.d)
+/*  37: 48 */             if (!player.abilities.instabuild)
 /*  38:    */             {
 /*  39: 49 */               stack.stackSize -= 1;
 /*  40: 51 */               if (stack.stackSize <= 0) {

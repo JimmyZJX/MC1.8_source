@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ import java.util.Random;
 /*   2:    */ 
 /*   3:    */ class agc
-/*   4:    */   extends yn
+/*   4:    */   extends MoveManager
 /*   5:    */ {
 /*   6:    */   private float g;
 /*   7:    */   private int h;
@@ -23,31 +23,31 @@ package net.minecraft.src;
 /*  22:    */   
 /*  23:    */   public void a(double paramDouble)
 /*  24:    */   {
-/*  25:320 */     this.e = paramDouble;
-/*  26:321 */     this.f = true;
+/*  25:320 */     this.speed = paramDouble;
+/*  26:321 */     this.active = true;
 /*  27:    */   }
 /*  28:    */   
-/*  29:    */   public void c()
+/*  29:    */   public void tick()
 /*  30:    */   {
-/*  31:326 */     this.a.yaw = a(this.a.yaw, this.g, 30.0F);
-/*  32:327 */     this.a.aI = this.a.yaw;
-/*  33:328 */     this.a.aG = this.a.yaw;
-/*  34:330 */     if (!this.f)
+/*  31:326 */     this.mob.yaw = turnWithLimit(this.mob.yaw, this.g, 30.0F);
+/*  32:327 */     this.mob.aI = this.mob.yaw;
+/*  33:328 */     this.mob.aG = this.mob.yaw;
+/*  34:330 */     if (!this.active)
 /*  35:    */     {
-/*  36:331 */       this.a.m(0.0F);
+/*  36:331 */       this.mob.m(0.0F);
 /*  37:332 */       return;
 /*  38:    */     }
-/*  39:334 */     this.f = false;
-/*  40:336 */     if (this.a.C)
+/*  39:334 */     this.active = false;
+/*  40:336 */     if (this.mob.C)
 /*  41:    */     {
-/*  42:337 */       this.a.j((float)(this.e * this.a.a(afs.d).e()));
+/*  42:337 */       this.mob.j((float)(this.speed * this.mob.getAttribute(MobAttribute.movementSpeed).e()));
 /*  43:338 */       if (this.h-- <= 0)
 /*  44:    */       {
 /*  45:339 */         this.h = this.i.ce();
 /*  46:340 */         if (this.j) {
 /*  47:341 */           this.h /= 3;
 /*  48:    */         }
-/*  49:343 */         this.i.r().a();
+/*  49:343 */         this.i.getJumpManager().jump();
 /*  50:344 */         if (this.i.cl()) {
 /*  51:345 */           this.i.a(this.i.ci(), this.i.bA(), ((this.i.getRNG().nextFloat() - this.i.getRNG().nextFloat()) * 0.2F + 1.0F) * 0.8F);
 /*  52:    */         }
@@ -55,12 +55,12 @@ package net.minecraft.src;
 /*  54:    */       else
 /*  55:    */       {
 /*  56:348 */         this.i.aX = (this.i.aY = 0.0F);
-/*  57:349 */         this.a.j(0.0F);
+/*  57:349 */         this.mob.j(0.0F);
 /*  58:    */       }
 /*  59:    */     }
 /*  60:    */     else
 /*  61:    */     {
-/*  62:352 */       this.a.j((float)(this.e * this.a.a(afs.d).e()));
+/*  62:352 */       this.mob.j((float)(this.speed * this.mob.getAttribute(MobAttribute.movementSpeed).e()));
 /*  63:    */     }
 /*  64:    */   }
 /*  65:    */ }

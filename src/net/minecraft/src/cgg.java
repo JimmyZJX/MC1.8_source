@@ -44,7 +44,7 @@ package net.minecraft.src;
 /* 43:47 */     if (this.f++ >= this.g) {
 /* 44:48 */       setDead();
 /* 45:   */     }
-/* 46:51 */     d(this.xVelocity, this.yVelocity, this.zVelocity);
+/* 46:51 */     move(this.xVelocity, this.yVelocity, this.zVelocity);
 /* 47:52 */     if (this.yPos == this.lastY)
 /* 48:   */     {
 /* 49:53 */       this.xVelocity *= 1.1D;

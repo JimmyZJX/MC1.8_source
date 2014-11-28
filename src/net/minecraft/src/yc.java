@@ -8,7 +8,7 @@ package net.minecraft.src;
 /*  8:   */ public abstract class yc
 /*  9:   */ {
 /* 10:12 */   protected final Map<xy,xz> a = Maps.newHashMap();
-/* 11:13 */   protected final Map<String,xz> b = new ul<xz>();
+/* 11:13 */   protected final Map<String,xz> b = new StringLinkedHashMap<xz>();
 /* 12:14 */   protected final Multimap<xy,xy> c = HashMultimap.create();
 /* 13:   */   
 /* 14:   */   public xz a(xy paramxy)

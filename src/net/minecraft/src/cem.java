@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*   8:    */   private float f;
 /*   9:    */   private int g;
 /*  10:    */   private boolean h;
-/*  11: 39 */   private EnumGameType i = EnumGameType.b;
+/*  11: 39 */   private EnumGameMode i = EnumGameMode.SURVIVAL;
 /*  12:    */   private int j;
 /*  13:    */   
 /*  14:    */   public cem(bsu parambsu, cee paramcee)
@@ -27,18 +27,18 @@ package net.minecraft.src;
 /*  26:    */   
 /*  27:    */   public void a(EntityPlayer paramahd)
 /*  28:    */   {
-/*  29: 53 */     this.i.a(paramahd.by);
+/*  29: 53 */     this.i.setPlayerAbilities(paramahd.abilities);
 /*  30:    */   }
 /*  31:    */   
 /*  32:    */   public boolean a()
 /*  33:    */   {
-/*  34: 57 */     return this.i == EnumGameType.e;
+/*  34: 57 */     return this.i == EnumGameMode.SPECTATOR;
 /*  35:    */   }
 /*  36:    */   
-/*  37:    */   public void a(EnumGameType paramarc)
+/*  37:    */   public void a(EnumGameMode paramarc)
 /*  38:    */   {
 /*  39: 61 */     this.i = paramarc;
-/*  40: 62 */     this.i.a(this.a.h.by);
+/*  40: 62 */     this.i.setPlayerAbilities(this.a.h.abilities);
 /*  41:    */   }
 /*  42:    */   
 /*  43:    */   public void b(EntityPlayer paramahd)
@@ -53,9 +53,9 @@ package net.minecraft.src;
 /*  52:    */   
 /*  53:    */   public boolean a(BlockPosition paramdt, EnumDirection paramej)
 /*  54:    */   {
-/*  55: 74 */     if (this.i.c())
+/*  55: 74 */     if (this.i.noBuild())
 /*  56:    */     {
-/*  57: 75 */       if (this.i == EnumGameType.e) {
+/*  57: 75 */       if (this.i == EnumGameMode.SPECTATOR) {
 /*  58: 76 */         return false;
 /*  59:    */       }
 /*  60: 78 */       if (!this.a.h.cm())
@@ -104,9 +104,9 @@ package net.minecraft.src;
 /* 103:    */   public boolean b(BlockPosition paramdt, EnumDirection paramej)
 /* 104:    */   {
 /* 105:    */     ProtoBlock localatr;
-/* 106:127 */     if (this.i.c())
+/* 106:127 */     if (this.i.noBuild())
 /* 107:    */     {
-/* 108:128 */       if (this.i == EnumGameType.e) {
+/* 108:128 */       if (this.i == EnumGameMode.SPECTATOR) {
 /* 109:129 */         return false;
 /* 110:    */       }
 /* 111:131 */       if (!this.a.h.cm())
@@ -265,7 +265,7 @@ package net.minecraft.src;
 /* 264:278 */     if (!this.a.f.af().a(paramdt)) {
 /* 265:279 */       return false;
 /* 266:    */     }
-/* 267:282 */     if (this.i != EnumGameType.e)
+/* 267:282 */     if (this.i != EnumGameMode.SPECTATOR)
 /* 268:    */     {
 /* 269:283 */       Block localbec = paramcen.getBlock(paramdt);
 /* 270:284 */       if (((!paramcio.aw()) || (paramcio.getHeldItemStack() == null)) && 
@@ -281,7 +281,7 @@ package net.minecraft.src;
 /* 280:    */       }
 /* 281:    */     }
 /* 282:298 */     this.b.a(new mx(paramdt, paramej.a(), paramcio.bg.h(), f1, f2, f3));
-/* 283:299 */     if ((k != 0) || (this.i == EnumGameType.e)) {
+/* 283:299 */     if ((k != 0) || (this.i == EnumGameMode.SPECTATOR)) {
 /* 284:300 */       return true;
 /* 285:    */     }
 /* 286:303 */     if (paramamj == null) {
@@ -301,7 +301,7 @@ package net.minecraft.src;
 /* 300:    */   
 /* 301:    */   public boolean a(EntityPlayer paramahd, World paramaqu, ItemStack paramamj)
 /* 302:    */   {
-/* 303:320 */     if (this.i == EnumGameType.e) {
+/* 303:320 */     if (this.i == EnumGameMode.SPECTATOR) {
 /* 304:321 */       return false;
 /* 305:    */     }
 /* 306:323 */     m();
@@ -310,9 +310,9 @@ package net.minecraft.src;
 /* 309:326 */     ItemStack localamj = paramamj.a(paramaqu, paramahd);
 /* 310:328 */     if ((localamj != paramamj) || ((localamj != null) && (localamj.stackSize != k)))
 /* 311:    */     {
-/* 312:329 */       paramahd.bg.a[paramahd.bg.c] = localamj;
+/* 312:329 */       paramahd.bg.items[paramahd.bg.c] = localamj;
 /* 313:331 */       if (localamj.stackSize == 0) {
-/* 314:332 */         paramahd.bg.a[paramahd.bg.c] = null;
+/* 314:332 */         paramahd.bg.items[paramahd.bg.c] = null;
 /* 315:    */       }
 /* 316:334 */       return true;
 /* 317:    */     }
@@ -328,7 +328,7 @@ package net.minecraft.src;
 /* 327:    */   {
 /* 328:345 */     m();
 /* 329:346 */     this.b.a(new md(paramwv, me.b));
-/* 330:347 */     if (this.i != EnumGameType.e) {
+/* 330:347 */     if (this.i != EnumGameMode.SPECTATOR) {
 /* 331:348 */       paramahd.f(paramwv);
 /* 332:    */     }
 /* 333:    */   }
@@ -337,7 +337,7 @@ package net.minecraft.src;
 /* 336:    */   {
 /* 337:353 */     m();
 /* 338:354 */     this.b.a(new md(paramwv, me.a));
-/* 339:355 */     return (this.i != EnumGameType.e) && (paramahd.u(paramwv));
+/* 339:355 */     return (this.i != EnumGameMode.SPECTATOR) && (paramahd.u(paramwv));
 /* 340:    */   }
 /* 341:    */   
 /* 342:    */   public boolean a(EntityPlayer paramahd, Entity paramwv, HitResult parambru)
@@ -345,7 +345,7 @@ package net.minecraft.src;
 /* 344:359 */     m();
 /* 345:360 */     Vec3 localbrw = new Vec3(parambru.c.x - paramwv.xPos, parambru.c.y - paramwv.yPos, parambru.c.z - paramwv.zPos);
 /* 346:361 */     this.b.a(new md(paramwv, localbrw));
-/* 347:362 */     return (this.i != EnumGameType.e) && (paramwv.a(paramahd, localbrw));
+/* 347:362 */     return (this.i != EnumGameMode.SPECTATOR) && (paramwv.a(paramahd, localbrw));
 /* 348:    */   }
 /* 349:    */   
 /* 350:    */   public ItemStack a(int paramInt1, int paramInt2, int paramInt3, int paramInt4, EntityPlayer paramahd)
@@ -411,10 +411,10 @@ package net.minecraft.src;
 /* 410:    */   
 /* 411:    */   public boolean k()
 /* 412:    */   {
-/* 413:423 */     return this.i == EnumGameType.e;
+/* 413:423 */     return this.i == EnumGameMode.SPECTATOR;
 /* 414:    */   }
 /* 415:    */   
-/* 416:    */   public EnumGameType l()
+/* 416:    */   public EnumGameMode l()
 /* 417:    */   {
 /* 418:427 */     return this.i;
 /* 419:    */   }

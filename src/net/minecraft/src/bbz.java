@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ public class bbz
 /*  2:   */   extends bai
 /*  3:   */ {
-/*  4:12 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", en.HORIZONTAL);
+/*  4:12 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", EnumHorizontalVertical.HORIZONTAL);
 /*  5:   */   
 /*  6:   */   public bbz()
 /*  7:   */   {
@@ -11,7 +11,7 @@ package net.minecraft.src;
 /* 10:   */   
 /* 11:   */   public void a(IBlockAccess paramard, BlockPosition paramdt)
 /* 12:   */   {
-/* 13:20 */     EnumDirection localej = (EnumDirection)paramard.getBlock(paramdt).getProperty(a);
+/* 13:20 */     EnumDirection localej = (EnumDirection)paramard.getBlock(paramdt).getData(a);
 /* 14:   */     
 /* 15:22 */     float f1 = 0.28125F;
 /* 16:23 */     float f2 = 0.78125F;
@@ -39,8 +39,8 @@ package net.minecraft.src;
 /* 38:   */   
 /* 39:   */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
 /* 40:   */   {
-/* 41:49 */     EnumDirection localej = (EnumDirection)parambec.getProperty(a);
-/* 42:51 */     if (!paramaqu.getBlock(paramdt.offset(localej.d())).getProto().getMaterial().a())
+/* 41:49 */     EnumDirection localej = (EnumDirection)parambec.getData(a);
+/* 42:51 */     if (!paramaqu.getBlock(paramdt.offset(localej.opposite())).getProto().getMaterial().a())
 /* 43:   */     {
 /* 44:52 */       b(paramaqu, paramdt, parambec, 0);
 /* 45:53 */       paramaqu.g(paramdt);
@@ -59,7 +59,7 @@ package net.minecraft.src;
 /* 58:   */   
 /* 59:   */   public int c(Block parambec)
 /* 60:   */   {
-/* 61:71 */     return ((EnumDirection)parambec.getProperty(a)).a();
+/* 61:71 */     return ((EnumDirection)parambec.getData(a)).a();
 /* 62:   */   }
 /* 63:   */   
 /* 64:   */   protected bed e()

@@ -54,7 +54,7 @@ package net.minecraft.src;
 /*  53:    */       
 /*  54: 72 */       Block localbec = localaqu.getBlock(localdt);
 /*  55: 73 */       ProtoBlock localatr = localbec.getProto();
-/*  56: 75 */       if ((this.f == 0) && ((localatr instanceof auu)) && (((Integer)localbec.getProperty(auu.a)).intValue() == 7))
+/*  56: 75 */       if ((this.f == 0) && ((localatr instanceof auu)) && (((Integer)localbec.getData(auu.a)).intValue() == 7))
 /*  57:    */       {
 /*  58: 76 */         localaqu.b(localdt, true);
 /*  59:    */       }
@@ -106,7 +106,7 @@ package net.minecraft.src;
 /* 105:116 */       paramdt = paramdt.up();
 /* 106:117 */       Block localbec = paramaqu.getBlock(paramdt);
 /* 107:118 */       localatr = localbec.getProto();
-/* 108:120 */       if (((localatr instanceof auu)) && (((Integer)localbec.getProperty(auu.a)).intValue() == 7) && (this.e) && ((this.f == 0) || (this.f < 0)))
+/* 108:120 */       if (((localatr instanceof auu)) && (((Integer)localbec.getData(auu.a)).intValue() == 7) && (this.e) && ((this.f == 0) || (this.f < 0)))
 /* 109:    */       {
 /* 110:121 */         this.f = 0;
 /* 111:122 */         return true;

@@ -281,10 +281,10 @@ package net.minecraft.src;
 /*  280: 401 */       d1 = d2;
 /*  281:     */     }
 /*  282: 404 */     if (this.h.s != null) {
-/*  283: 405 */       d2 = this.h.s.c.f(localbrw1);
+/*  283: 405 */       d2 = this.h.s.c.dist(localbrw1);
 /*  284:     */     }
 /*  285: 408 */     Vec3 localbrw2 = localwv1.d(paramFloat);
-/*  286: 409 */     Vec3 localbrw3 = localbrw1.b(localbrw2.x * d1, localbrw2.y * d1, localbrw2.z * d1);
+/*  286: 409 */     Vec3 localbrw3 = localbrw1.add(localbrw2.x * d1, localbrw2.y * d1, localbrw2.z * d1);
 /*  287: 410 */     this.n = null;
 /*  288: 411 */     Vec3 localbrw4 = null;
 /*  289: 412 */     float f1 = 1.0F;
@@ -310,7 +310,7 @@ package net.minecraft.src;
 /*  309:     */         }
 /*  310: 431 */         else if (localbru != null)
 /*  311:     */         {
-/*  312: 432 */           double d4 = localbrw1.f(localbru.c);
+/*  312: 432 */           double d4 = localbrw1.dist(localbru.c);
 /*  313: 433 */           if ((d4 < d3) || (d3 == 0.0D)) {
 /*  314: 434 */             if (localwv2 == localwv1.vehicle)
 /*  315:     */             {
@@ -448,7 +448,7 @@ package net.minecraft.src;
 /*  447: 559 */         ProtoBlock localatr = localbec.getProto();
 /*  448: 560 */         if (localatr == BlockList.C)
 /*  449:     */         {
-/*  450: 561 */           int i1 = ((EnumDirection)localbec.getProperty(atp.N)).b();
+/*  450: 561 */           int i1 = ((EnumDirection)localbec.getData(atp.facing)).b();
 /*  451: 562 */           cjm.glRotatef(i1 * 90, 0.0F, 1.0F, 0.0F);
 /*  452:     */         }
 /*  453: 564 */         cjm.glRotatef(localwv.lastYaw + (localwv.yaw - localwv.lastYaw) * paramFloat + 180.0F, 0.0F, -1.0F, 0.0F);
@@ -485,7 +485,7 @@ package net.minecraft.src;
 /*  484: 593 */           HitResult localbru = this.h.f.a(new Vec3(d1 + f4, d2 + f5, d3 + f6), new Vec3(d1 - d5 + f4 + f6, d2 - d7 + f5, d3 - d6 + f6));
 /*  485: 594 */           if (localbru != null)
 /*  486:     */           {
-/*  487: 595 */             double d8 = localbru.c.f(new Vec3(d1, d2, d3));
+/*  487: 595 */             double d8 = localbru.c.dist(new Vec3(d1, d2, d3));
 /*  488: 596 */             if (d8 < d4) {
 /*  489: 597 */               d4 = d8;
 /*  490:     */             }
@@ -940,14 +940,14 @@ package net.minecraft.src;
 /*  939:     */     }
 /*  940:1061 */     Entity localwv = this.h.aa();
 /*  941:1062 */     boolean bool = ((localwv instanceof EntityPlayer)) && (!this.h.t.aw);
-/*  942:1063 */     if ((bool) && (!((EntityPlayer)localwv).by.e))
+/*  942:1063 */     if ((bool) && (!((EntityPlayer)localwv).abilities.mayBuild))
 /*  943:     */     {
 /*  944:1065 */       ItemStack localamj = ((EntityPlayer)localwv).bY();
 /*  945:1066 */       if ((this.h.s != null) && (this.h.s.a == brv.BLOCK))
 /*  946:     */       {
 /*  947:1067 */         BlockPosition localdt = this.h.s.a();
 /*  948:1068 */         ProtoBlock localatr = this.h.f.getBlock(localdt).getProto();
-/*  949:1069 */         if (this.h.c.l() == EnumGameType.e) {
+/*  949:1069 */         if (this.h.c.l() == EnumGameMode.SPECTATOR) {
 /*  950:1070 */           bool = (localatr.x()) && ((this.h.f.s(localdt) instanceof vq));
 /*  951:     */         } else {
 /*  952:1072 */           bool = (localamj != null) && ((localamj.c(localatr)) || (localamj.d(localatr)));
@@ -1385,7 +1385,7 @@ package net.minecraft.src;
 /* 1384:     */               
 /* 1385:1495 */               double d4 = i8 + 0.5F - localwv.xPos;
 /* 1386:1496 */               d5 = i7 + 0.5F - localwv.zPos;
-/* 1387:1497 */               float f10 = MathUtils.a(d4 * d4 + d5 * d5) / i5;
+/* 1387:1497 */               float f10 = MathUtils.sqrt(d4 * d4 + d5 * d5) / i5;
 /* 1388:     */               
 /* 1389:1499 */               float f11 = 1.0F;
 /* 1390:1500 */               localciv.b(localcen.b(new BlockPosition(i8, i13, i7), 0));
@@ -1415,7 +1415,7 @@ package net.minecraft.src;
 /* 1414:1521 */               float f9 = this.j.nextFloat() + f2 * (float)this.j.nextGaussian() * 0.001F;
 /* 1415:1522 */               d5 = i8 + 0.5F - localwv.xPos;
 /* 1416:1523 */               double d6 = i7 + 0.5F - localwv.zPos;
-/* 1417:1524 */               float f12 = MathUtils.a(d5 * d5 + d6 * d6) / i5;
+/* 1417:1524 */               float f12 = MathUtils.sqrt(d5 * d5 + d6 * d6) / i5;
 /* 1418:1525 */               float f13 = 1.0F;
 /* 1419:1526 */               localciv.b((localcen.b(new BlockPosition(i8, i13, i7), 0) * 3 + 15728880) / 4);
 /* 1420:1527 */               localciv.setColor(f13, f13, f13, ((1.0F - f12 * f12) * 0.3F + 0.5F) * f1);
@@ -1603,7 +1603,7 @@ package net.minecraft.src;
 /* 1602:     */     
 /* 1603:1699 */     boolean bool = false;
 /* 1604:1700 */     if ((localwv instanceof EntityPlayer)) {
-/* 1605:1701 */       bool = ((EntityPlayer)localwv).by.d;
+/* 1605:1701 */       bool = ((EntityPlayer)localwv).abilities.instabuild;
 /* 1606:     */     }
 /* 1607:1704 */     GL11.glFog(2918, a(this.Q, this.R, this.S, 1.0F));
 /* 1608:1705 */     GL11.glNormal3f(0.0F, -1.0F, 0.0F);

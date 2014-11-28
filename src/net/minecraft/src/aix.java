@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*  5:   */ {
 /*  6:   */   private final vq a;
 /*  7:   */   
-/*  8:   */   public aix(ahb paramahb, vq paramvq, EntityPlayer paramahd)
+/*  8:   */   public aix(Inventory paramahb, vq paramvq, EntityPlayer paramahd)
 /*  9:   */   {
 /* 10:14 */     this.a = paramvq;
 /* 11:15 */     paramvq.b(paramahd);

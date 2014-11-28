@@ -10,7 +10,7 @@ public abstract interface xz
   
   public abstract void a(double paramDouble);
   
-  public abstract Collection a(int paramInt);
+  public abstract Collection<ya> a(int paramInt);
   
   public abstract Collection<ya> c();
   

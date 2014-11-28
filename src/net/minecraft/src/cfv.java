@@ -28,7 +28,7 @@ package net.minecraft.src;
 /* 27:28 */     k(7 - this.f * 8 / this.g);
 /* 28:   */     
 /* 29:30 */     this.yVelocity += 0.004D;
-/* 30:31 */     d(this.xVelocity, this.yVelocity, this.zVelocity);
+/* 30:31 */     move(this.xVelocity, this.yVelocity, this.zVelocity);
 /* 31:32 */     this.xVelocity *= 0.8999999761581421D;
 /* 32:33 */     this.yVelocity *= 0.8999999761581421D;
 /* 33:34 */     this.zVelocity *= 0.8999999761581421D;

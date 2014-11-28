@@ -1,15 +1,15 @@
 package net.minecraft.src;
-/*   1:    */ public class ahb
+/*   1:    */ public class Inventory
 /*   2:    */   implements vq
 /*   3:    */ {
-/*   4: 27 */   public ItemStack[] a = new ItemStack[36];
-/*   5: 28 */   public ItemStack[] b = new ItemStack[4];
+/*   4: 27 */   public ItemStack[] items = new ItemStack[36];
+/*   5: 28 */   public ItemStack[] armors = new ItemStack[4];
 /*   6:    */   public int c;
 /*   7:    */   public EntityPlayer d;
 /*   8:    */   private ItemStack f;
 /*   9:    */   public boolean e;
 /*  10:    */   
-/*  11:    */   public ahb(EntityPlayer paramahd)
+/*  11:    */   public Inventory(EntityPlayer paramahd)
 /*  12:    */   {
 /*  13: 36 */     this.d = paramahd;
 /*  14:    */   }
@@ -17,7 +17,7 @@ package net.minecraft.src;
 /*  16:    */   public ItemStack h()
 /*  17:    */   {
 /*  18: 41 */     if ((this.c < 9) && (this.c >= 0)) {
-/*  19: 42 */       return this.a[this.c];
+/*  19: 42 */       return this.items[this.c];
 /*  20:    */     }
 /*  21: 44 */     return null;
 /*  22:    */   }
@@ -29,8 +29,8 @@ package net.minecraft.src;
 /*  28:    */   
 /*  29:    */   private int c(Item paramalq)
 /*  30:    */   {
-/*  31: 52 */     for (int i = 0; i < this.a.length; i++) {
-/*  32: 53 */       if ((this.a[i] != null) && (this.a[i].getItem() == paramalq)) {
+/*  31: 52 */     for (int i = 0; i < this.items.length; i++) {
+/*  32: 53 */       if ((this.items[i] != null) && (this.items[i].getItem() == paramalq)) {
 /*  33: 54 */         return i;
 /*  34:    */       }
 /*  35:    */     }
@@ -39,8 +39,8 @@ package net.minecraft.src;
 /*  38:    */   
 /*  39:    */   private int a(Item paramalq, int paramInt)
 /*  40:    */   {
-/*  41: 61 */     for (int i = 0; i < this.a.length; i++) {
-/*  42: 62 */       if ((this.a[i] != null) && (this.a[i].getItem() == paramalq) && (this.a[i].getDamage2() == paramInt)) {
+/*  41: 61 */     for (int i = 0; i < this.items.length; i++) {
+/*  42: 62 */       if ((this.items[i] != null) && (this.items[i].getItem() == paramalq) && (this.items[i].getDamage2() == paramInt)) {
 /*  43: 63 */         return i;
 /*  44:    */       }
 /*  45:    */     }
@@ -49,8 +49,8 @@ package net.minecraft.src;
 /*  48:    */   
 /*  49:    */   private int d(ItemStack paramamj)
 /*  50:    */   {
-/*  51: 70 */     for (int i = 0; i < this.a.length; i++) {
-/*  52: 71 */       if ((this.a[i] != null) && (this.a[i].getItem() == paramamj.getItem()) && (this.a[i].isStackable()) && (this.a[i].stackSize < this.a[i].getMaxStackSize()) && (this.a[i].stackSize < p_()) && ((!this.a[i].f()) || (this.a[i].getDamage2() == paramamj.getDamage2())) && (ItemStack.a(this.a[i], paramamj))) {
+/*  51: 70 */     for (int i = 0; i < this.items.length; i++) {
+/*  52: 71 */       if ((this.items[i] != null) && (this.items[i].getItem() == paramamj.getItem()) && (this.items[i].isStackable()) && (this.items[i].stackSize < this.items[i].getMaxStackSize()) && (this.items[i].stackSize < p_()) && ((!this.items[i].f()) || (this.items[i].getDamage2() == paramamj.getDamage2())) && (ItemStack.a(this.items[i], paramamj))) {
 /*  53: 72 */         return i;
 /*  54:    */       }
 /*  55:    */     }
@@ -59,8 +59,8 @@ package net.minecraft.src;
 /*  58:    */   
 /*  59:    */   public int j()
 /*  60:    */   {
-/*  61: 79 */     for (int i = 0; i < this.a.length; i++) {
-/*  62: 80 */       if (this.a[i] == null) {
+/*  61: 79 */     for (int i = 0; i < this.items.length; i++) {
+/*  62: 80 */       if (this.items[i] == null) {
 /*  63: 81 */         return i;
 /*  64:    */       }
 /*  65:    */     }
@@ -89,14 +89,14 @@ package net.minecraft.src;
 /*  88:    */       int m;
 /*  89:108 */       if (k >= 0)
 /*  90:    */       {
-/*  91:109 */         m = this.a[k].stackSize;
-/*  92:110 */         this.a[k] = this.a[this.c];
+/*  91:109 */         m = this.items[k].stackSize;
+/*  92:110 */         this.items[k] = this.items[this.c];
 /*  93:    */       }
 /*  94:    */       else
 /*  95:    */       {
 /*  96:112 */         m = 1;
 /*  97:    */       }
-/*  98:114 */       this.a[this.c] = new ItemStack(paramalq, m, paramInt);
+/*  98:114 */       this.items[this.c] = new ItemStack(paramalq, m, paramInt);
 /*  99:    */     }
 /* 100:    */   }
 /* 101:    */   
@@ -122,9 +122,9 @@ package net.minecraft.src;
 /* 121:137 */     int i = 0;
 /* 122:    */     ItemStack localamj;
 /* 123:    */     int k;
-/* 124:138 */     for (int j = 0; j < this.a.length; j++)
+/* 124:138 */     for (int j = 0; j < this.items.length; j++)
 /* 125:    */     {
-/* 126:139 */       localamj = this.a[j];
+/* 126:139 */       localamj = this.items[j];
 /* 127:140 */       if (localamj != null) {
 /* 128:143 */         if ((paramalq == null) || (localamj.getItem() == paramalq)) {
 /* 129:146 */           if ((paramInt1 <= -1) || (localamj.getDamage2() == paramInt1)) {
@@ -134,9 +134,9 @@ package net.minecraft.src;
 /* 133:154 */               i += k;
 /* 134:155 */               if (paramInt2 != 0)
 /* 135:    */               {
-/* 136:156 */                 this.a[j].stackSize -= k;
-/* 137:157 */                 if (this.a[j].stackSize == 0) {
-/* 138:158 */                   this.a[j] = null;
+/* 136:156 */                 this.items[j].stackSize -= k;
+/* 137:157 */                 if (this.items[j].stackSize == 0) {
+/* 138:158 */                   this.items[j] = null;
 /* 139:    */                 }
 /* 140:160 */                 if ((paramInt2 > 0) && (i >= paramInt2)) {
 /* 141:161 */                   return i;
@@ -147,9 +147,9 @@ package net.minecraft.src;
 /* 146:    */         }
 /* 147:    */       }
 /* 148:    */     }
-/* 149:165 */     for (int j = 0; j < this.b.length; j++)
+/* 149:165 */     for (int j = 0; j < this.armors.length; j++)
 /* 150:    */     {
-/* 151:166 */       localamj = this.b[j];
+/* 151:166 */       localamj = this.armors[j];
 /* 152:167 */       if (localamj != null) {
 /* 153:170 */         if ((paramalq == null) || (localamj.getItem() == paramalq)) {
 /* 154:173 */           if ((paramInt1 <= -1) || (localamj.getDamage2() == paramInt1)) {
@@ -159,9 +159,9 @@ package net.minecraft.src;
 /* 158:181 */               i += k;
 /* 159:182 */               if (paramInt2 != 0)
 /* 160:    */               {
-/* 161:183 */                 this.b[j].stackSize -= k;
-/* 162:184 */                 if (this.b[j].stackSize == 0) {
-/* 163:185 */                   this.b[j] = null;
+/* 161:183 */                 this.armors[j].stackSize -= k;
+/* 162:184 */                 if (this.armors[j].stackSize == 0) {
+/* 163:185 */                   this.armors[j] = null;
 /* 164:    */                 }
 /* 165:187 */                 if ((paramInt2 > 0) && (i >= paramInt2)) {
 /* 166:188 */                   return i;
@@ -211,35 +211,35 @@ package net.minecraft.src;
 /* 210:228 */     if (j < 0) {
 /* 211:229 */       return i;
 /* 212:    */     }
-/* 213:231 */     if (this.a[j] == null)
+/* 213:231 */     if (this.items[j] == null)
 /* 214:    */     {
-/* 215:232 */       this.a[j] = new ItemStack(localalq, 0, paramamj.getDamage2());
+/* 215:232 */       this.items[j] = new ItemStack(localalq, 0, paramamj.getDamage2());
 /* 216:233 */       if (paramamj.hasTagCompound()) {
-/* 217:234 */         this.a[j].setTagCompound((NBTTagCompound)paramamj.getTagCompound().b());
+/* 217:234 */         this.items[j].setTagCompound((NBTTagCompound)paramamj.getTagCompound().b());
 /* 218:    */       }
 /* 219:    */     }
 /* 220:238 */     int k = i;
-/* 221:239 */     if (k > this.a[j].getMaxStackSize() - this.a[j].stackSize) {
-/* 222:240 */       k = this.a[j].getMaxStackSize() - this.a[j].stackSize;
+/* 221:239 */     if (k > this.items[j].getMaxStackSize() - this.items[j].stackSize) {
+/* 222:240 */       k = this.items[j].getMaxStackSize() - this.items[j].stackSize;
 /* 223:    */     }
-/* 224:242 */     if (k > p_() - this.a[j].stackSize) {
-/* 225:243 */       k = p_() - this.a[j].stackSize;
+/* 224:242 */     if (k > p_() - this.items[j].stackSize) {
+/* 225:243 */       k = p_() - this.items[j].stackSize;
 /* 226:    */     }
 /* 227:246 */     if (k == 0) {
 /* 228:247 */       return i;
 /* 229:    */     }
 /* 230:250 */     i -= k;
-/* 231:251 */     this.a[j].stackSize += k;
-/* 232:252 */     this.a[j].c = 5;
+/* 231:251 */     this.items[j].stackSize += k;
+/* 232:252 */     this.items[j].c = 5;
 /* 233:    */     
 /* 234:254 */     return i;
 /* 235:    */   }
 /* 236:    */   
 /* 237:    */   public void k()
 /* 238:    */   {
-/* 239:258 */     for (int i = 0; i < this.a.length; i++) {
-/* 240:259 */       if (this.a[i] != null) {
-/* 241:260 */         this.a[i].a(this.d.world, this.d, i, this.c == i);
+/* 239:258 */     for (int i = 0; i < this.items.length; i++) {
+/* 240:259 */       if (this.items[i] != null) {
+/* 241:260 */         this.items[i].a(this.d.world, this.d, i, this.c == i);
 /* 242:    */       }
 /* 243:    */     }
 /* 244:    */   }
@@ -250,8 +250,8 @@ package net.minecraft.src;
 /* 249:267 */     if (i < 0) {
 /* 250:268 */       return false;
 /* 251:    */     }
-/* 252:270 */     if (--this.a[i].stackSize <= 0) {
-/* 253:271 */       this.a[i] = null;
+/* 252:270 */     if (--this.items[i].stackSize <= 0) {
+/* 253:271 */       this.items[i] = null;
 /* 254:    */     }
 /* 255:274 */     return true;
 /* 256:    */   }
@@ -280,7 +280,7 @@ package net.minecraft.src;
 /* 278:301 */           i = paramamj.stackSize;
 /* 279:302 */           paramamj.stackSize = e(paramamj);
 /* 280:303 */         } while ((paramamj.stackSize > 0) && (paramamj.stackSize < i));
-/* 281:304 */         if ((paramamj.stackSize == i) && (this.d.by.d))
+/* 281:304 */         if ((paramamj.stackSize == i) && (this.d.abilities.instabuild))
 /* 282:    */         {
 /* 283:306 */           paramamj.stackSize = 0;
 /* 284:307 */           return true;
@@ -290,12 +290,12 @@ package net.minecraft.src;
 /* 288:312 */       i = j();
 /* 289:313 */       if (i >= 0)
 /* 290:    */       {
-/* 291:314 */         this.a[i] = ItemStack.b(paramamj);
-/* 292:315 */         this.a[i].c = 5;
+/* 291:314 */         this.items[i] = ItemStack.b(paramamj);
+/* 292:315 */         this.items[i].c = 5;
 /* 293:316 */         paramamj.stackSize = 0;
 /* 294:317 */         return true;
 /* 295:    */       }
-/* 296:318 */       if (this.d.by.d)
+/* 296:318 */       if (this.d.abilities.instabuild)
 /* 297:    */       {
 /* 298:320 */         paramamj.stackSize = 0;
 /* 299:321 */         return true;
@@ -322,11 +322,11 @@ package net.minecraft.src;
 /* 320:    */   
 /* 321:    */   public ItemStack removeItems(int paramInt1, int paramInt2)
 /* 322:    */   {
-/* 323:344 */     ItemStack[] arrayOfamj = this.a;
-/* 324:345 */     if (paramInt1 >= this.a.length)
+/* 323:344 */     ItemStack[] arrayOfamj = this.items;
+/* 324:345 */     if (paramInt1 >= this.items.length)
 /* 325:    */     {
-/* 326:346 */       arrayOfamj = this.b;
-/* 327:347 */       paramInt1 -= this.a.length;
+/* 326:346 */       arrayOfamj = this.armors;
+/* 327:347 */       paramInt1 -= this.items.length;
 /* 328:    */     }
 /* 329:350 */     if (arrayOfamj[paramInt1] != null)
 /* 330:    */     {
@@ -347,11 +347,11 @@ package net.minecraft.src;
 /* 345:    */   
 /* 346:    */   public ItemStack b(int paramInt)
 /* 347:    */   {
-/* 348:369 */     ItemStack[] arrayOfamj = this.a;
-/* 349:370 */     if (paramInt >= this.a.length)
+/* 348:369 */     ItemStack[] arrayOfamj = this.items;
+/* 349:370 */     if (paramInt >= this.items.length)
 /* 350:    */     {
-/* 351:371 */       arrayOfamj = this.b;
-/* 352:372 */       paramInt -= this.a.length;
+/* 351:371 */       arrayOfamj = this.armors;
+/* 352:372 */       paramInt -= this.items.length;
 /* 353:    */     }
 /* 354:375 */     if (arrayOfamj[paramInt] != null)
 /* 355:    */     {
@@ -364,11 +364,11 @@ package net.minecraft.src;
 /* 362:    */   
 /* 363:    */   public void a(int paramInt, ItemStack paramamj)
 /* 364:    */   {
-/* 365:385 */     ItemStack[] arrayOfamj = this.a;
+/* 365:385 */     ItemStack[] arrayOfamj = this.items;
 /* 366:386 */     if (paramInt >= arrayOfamj.length)
 /* 367:    */     {
 /* 368:387 */       paramInt -= arrayOfamj.length;
-/* 369:388 */       arrayOfamj = this.b;
+/* 369:388 */       arrayOfamj = this.armors;
 /* 370:    */     }
 /* 371:391 */     arrayOfamj[paramInt] = paramamj;
 /* 372:    */   }
@@ -376,8 +376,8 @@ package net.minecraft.src;
 /* 374:    */   public float a(ProtoBlock paramatr)
 /* 375:    */   {
 /* 376:395 */     float f1 = 1.0F;
-/* 377:396 */     if (this.a[this.c] != null) {
-/* 378:397 */       f1 *= this.a[this.c].a(paramatr);
+/* 377:396 */     if (this.items[this.c] != null) {
+/* 378:397 */       f1 *= this.items[this.c].a(paramatr);
 /* 379:    */     }
 /* 380:399 */     return f1;
 /* 381:    */   }
@@ -385,21 +385,21 @@ package net.minecraft.src;
 /* 383:    */   public fv a(fv paramfv)
 /* 384:    */   {
 /* 385:    */     NBTTagCompound localfn;
-/* 386:403 */     for (int i = 0; i < this.a.length; i++) {
-/* 387:404 */       if (this.a[i] != null)
+/* 386:403 */     for (int i = 0; i < this.items.length; i++) {
+/* 387:404 */       if (this.items[i] != null)
 /* 388:    */       {
 /* 389:405 */         localfn = new NBTTagCompound();
 /* 390:406 */         localfn.setByte("Slot", (byte)i);
-/* 391:407 */         this.a[i].writeToNBT(localfn);
+/* 391:407 */         this.items[i].writeToNBT(localfn);
 /* 392:408 */         paramfv.a(localfn);
 /* 393:    */       }
 /* 394:    */     }
-/* 395:411 */     for (int i = 0; i < this.b.length; i++) {
-/* 396:412 */       if (this.b[i] != null)
+/* 395:411 */     for (int i = 0; i < this.armors.length; i++) {
+/* 396:412 */       if (this.armors[i] != null)
 /* 397:    */       {
 /* 398:413 */         localfn = new NBTTagCompound();
 /* 399:414 */         localfn.setByte("Slot", (byte)(i + 100));
-/* 400:415 */         this.b[i].writeToNBT(localfn);
+/* 400:415 */         this.armors[i].writeToNBT(localfn);
 /* 401:416 */         paramfv.a(localfn);
 /* 402:    */       }
 /* 403:    */     }
@@ -408,8 +408,8 @@ package net.minecraft.src;
 /* 406:    */   
 /* 407:    */   public void b(fv paramfv)
 /* 408:    */   {
-/* 409:423 */     this.a = new ItemStack[36];
-/* 410:424 */     this.b = new ItemStack[4];
+/* 409:423 */     this.items = new ItemStack[36];
+/* 410:424 */     this.armors = new ItemStack[4];
 /* 411:425 */     for (int i = 0; i < paramfv.c(); i++)
 /* 412:    */     {
 /* 413:426 */       NBTTagCompound localfn = paramfv.b(i);
@@ -417,11 +417,11 @@ package net.minecraft.src;
 /* 415:428 */       ItemStack localamj = ItemStack.loadItemStackFromNBT(localfn);
 /* 416:429 */       if (localamj != null)
 /* 417:    */       {
-/* 418:430 */         if ((j >= 0) && (j < this.a.length)) {
-/* 419:431 */           this.a[j] = localamj;
+/* 418:430 */         if ((j >= 0) && (j < this.items.length)) {
+/* 419:431 */           this.items[j] = localamj;
 /* 420:    */         }
-/* 421:433 */         if ((j >= 100) && (j < this.b.length + 100)) {
-/* 422:434 */           this.b[(j - 100)] = localamj;
+/* 421:433 */         if ((j >= 100) && (j < this.armors.length + 100)) {
+/* 422:434 */           this.armors[(j - 100)] = localamj;
 /* 423:    */         }
 /* 424:    */       }
 /* 425:    */     }
@@ -429,16 +429,16 @@ package net.minecraft.src;
 /* 427:    */   
 /* 428:    */   public int getSize()
 /* 429:    */   {
-/* 430:442 */     return this.a.length + 4;
+/* 430:442 */     return this.items.length + 4;
 /* 431:    */   }
 /* 432:    */   
 /* 433:    */   public ItemStack get(int paramInt)
 /* 434:    */   {
-/* 435:448 */     ItemStack[] arrayOfamj = this.a;
+/* 435:448 */     ItemStack[] arrayOfamj = this.items;
 /* 436:449 */     if (paramInt >= arrayOfamj.length)
 /* 437:    */     {
 /* 438:450 */       paramInt -= arrayOfamj.length;
-/* 439:451 */       arrayOfamj = this.b;
+/* 439:451 */       arrayOfamj = this.armors;
 /* 440:    */     }
 /* 441:454 */     return arrayOfamj[paramInt];
 /* 442:    */   }
@@ -480,16 +480,16 @@ package net.minecraft.src;
 /* 478:    */   
 /* 479:    */   public ItemStack e(int paramInt)
 /* 480:    */   {
-/* 481:493 */     return this.b[paramInt];
+/* 481:493 */     return this.armors[paramInt];
 /* 482:    */   }
 /* 483:    */   
 /* 484:    */   public int m()
 /* 485:    */   {
 /* 486:497 */     int i = 0;
-/* 487:498 */     for (int j = 0; j < this.b.length; j++) {
-/* 488:499 */       if ((this.b[j] != null) && ((this.b[j].getItem() instanceof ItemArmor)))
+/* 487:498 */     for (int j = 0; j < this.armors.length; j++) {
+/* 488:499 */       if ((this.armors[j] != null) && ((this.armors[j].getItem() instanceof ItemArmor)))
 /* 489:    */       {
-/* 490:500 */         int k = ((ItemArmor)this.b[j].getItem()).c;
+/* 490:500 */         int k = ((ItemArmor)this.armors[j].getItem()).c;
 /* 491:501 */         i += k;
 /* 492:    */       }
 /* 493:    */     }
@@ -502,12 +502,12 @@ package net.minecraft.src;
 /* 500:509 */     if (paramFloat < 1.0F) {
 /* 501:510 */       paramFloat = 1.0F;
 /* 502:    */     }
-/* 503:512 */     for (int i = 0; i < this.b.length; i++) {
-/* 504:513 */       if ((this.b[i] != null) && ((this.b[i].getItem() instanceof ItemArmor)))
+/* 503:512 */     for (int i = 0; i < this.armors.length; i++) {
+/* 504:513 */       if ((this.armors[i] != null) && ((this.armors[i].getItem() instanceof ItemArmor)))
 /* 505:    */       {
-/* 506:514 */         this.b[i].a((int)paramFloat, this.d);
-/* 507:515 */         if (this.b[i].stackSize == 0) {
-/* 508:516 */           this.b[i] = null;
+/* 506:514 */         this.armors[i].a((int)paramFloat, this.d);
+/* 507:515 */         if (this.armors[i].stackSize == 0) {
+/* 508:516 */           this.armors[i] = null;
 /* 509:    */         }
 /* 510:    */       }
 /* 511:    */     }
@@ -515,18 +515,18 @@ package net.minecraft.src;
 /* 513:    */   
 /* 514:    */   public void n()
 /* 515:    */   {
-/* 516:523 */     for (int i = 0; i < this.a.length; i++) {
-/* 517:524 */       if (this.a[i] != null)
+/* 516:523 */     for (int i = 0; i < this.items.length; i++) {
+/* 517:524 */       if (this.items[i] != null)
 /* 518:    */       {
-/* 519:525 */         this.d.a(this.a[i], true, false);
-/* 520:526 */         this.a[i] = null;
+/* 519:525 */         this.d.a(this.items[i], true, false);
+/* 520:526 */         this.items[i] = null;
 /* 521:    */       }
 /* 522:    */     }
-/* 523:529 */     for (int i = 0; i < this.b.length; i++) {
-/* 524:530 */       if (this.b[i] != null)
+/* 523:529 */     for (int i = 0; i < this.armors.length; i++) {
+/* 524:530 */       if (this.armors[i] != null)
 /* 525:    */       {
-/* 526:531 */         this.d.a(this.b[i], true, false);
-/* 527:532 */         this.b[i] = null;
+/* 526:531 */         this.d.a(this.armors[i], true, false);
+/* 527:532 */         this.armors[i] = null;
 /* 528:    */       }
 /* 529:    */     }
 /* 530:    */   }
@@ -559,13 +559,13 @@ package net.minecraft.src;
 /* 557:    */   
 /* 558:    */   public boolean c(ItemStack paramamj)
 /* 559:    */   {
-/* 560:598 */     for (int i = 0; i < this.b.length; i++) {
-/* 561:599 */       if ((this.b[i] != null) && (this.b[i].a(paramamj))) {
+/* 560:598 */     for (int i = 0; i < this.armors.length; i++) {
+/* 561:599 */       if ((this.armors[i] != null) && (this.armors[i].a(paramamj))) {
 /* 562:600 */         return true;
 /* 563:    */       }
 /* 564:    */     }
-/* 565:603 */     for (int i = 0; i < this.a.length; i++) {
-/* 566:604 */       if ((this.a[i] != null) && (this.a[i].a(paramamj))) {
+/* 565:603 */     for (int i = 0; i < this.items.length; i++) {
+/* 566:604 */       if ((this.items[i] != null) && (this.items[i].a(paramamj))) {
 /* 567:605 */         return true;
 /* 568:    */       }
 /* 569:    */     }
@@ -581,13 +581,13 @@ package net.minecraft.src;
 /* 579:621 */     return true;
 /* 580:    */   }
 /* 581:    */   
-/* 582:    */   public void b(ahb paramahb)
+/* 582:    */   public void b(Inventory paramahb)
 /* 583:    */   {
-/* 584:625 */     for (int i = 0; i < this.a.length; i++) {
-/* 585:626 */       this.a[i] = ItemStack.b(paramahb.a[i]);
+/* 584:625 */     for (int i = 0; i < this.items.length; i++) {
+/* 585:626 */       this.items[i] = ItemStack.b(paramahb.items[i]);
 /* 586:    */     }
-/* 587:628 */     for (int i = 0; i < this.b.length; i++) {
-/* 588:629 */       this.b[i] = ItemStack.b(paramahb.b[i]);
+/* 587:628 */     for (int i = 0; i < this.armors.length; i++) {
+/* 588:629 */       this.armors[i] = ItemStack.b(paramahb.armors[i]);
 /* 589:    */     }
 /* 590:631 */     this.c = paramahb.c;
 /* 591:    */   }
@@ -606,11 +606,11 @@ package net.minecraft.src;
 /* 604:    */   
 /* 605:    */   public void l()
 /* 606:    */   {
-/* 607:650 */     for (int i = 0; i < this.a.length; i++) {
-/* 608:651 */       this.a[i] = null;
+/* 607:650 */     for (int i = 0; i < this.items.length; i++) {
+/* 608:651 */       this.items[i] = null;
 /* 609:    */     }
-/* 610:653 */     for (int i = 0; i < this.b.length; i++) {
-/* 611:654 */       this.b[i] = null;
+/* 610:653 */     for (int i = 0; i < this.armors.length; i++) {
+/* 611:654 */       this.armors[i] = null;
 /* 612:    */     }
 /* 613:    */   }
 /* 614:    */ }

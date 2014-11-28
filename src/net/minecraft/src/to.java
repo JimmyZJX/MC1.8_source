@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ import java.util.Map;
 /*  2:   */ 
 /*  3:   */ public class to
-/*  4:   */   extends tq
+/*  4:   */   extends PlayerStat
 /*  5:   */ {
 /*  6:   */   private final Item a;
 /*  7:   */   

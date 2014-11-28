@@ -14,7 +14,7 @@ package net.minecraft.src;
 /*  13: 36 */     this.ab = true;
 /*  14: 37 */     this.b_ = 5;
 /*  15:    */     
-/*  16: 39 */     this.f = new afc(this);
+/*  16: 39 */     this.moveManager = new afc(this);
 /*  17:    */     
 /*  18: 41 */     this.goalSelector.addGoal(5, new afe(this));
 /*  19:    */     
@@ -49,14 +49,14 @@ package net.minecraft.src;
 /*  48:    */   
 /*  49:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /*  50:    */   {
-/*  51: 72 */     if (b(paramwh)) {
+/*  51: 72 */     if (isImmuneTo(paramwh)) {
 /*  52: 73 */       return false;
 /*  53:    */     }
 /*  54: 75 */     if (("fireball".equals(paramwh.p())) && 
-/*  55: 76 */       ((paramwh.j() instanceof EntityPlayer)))
+/*  55: 76 */       ((paramwh.getAttacker() instanceof EntityPlayer)))
 /*  56:    */     {
 /*  57: 78 */       super.a(paramwh, 1000.0F);
-/*  58: 79 */       ((EntityPlayer)paramwh.j()).b(AchievementList.z);
+/*  58: 79 */       ((EntityPlayer)paramwh.getAttacker()).increaseStat(AchievementList.z);
 /*  59: 80 */       return true;
 /*  60:    */     }
 /*  61: 84 */     return super.a(paramwh, paramFloat);
@@ -73,8 +73,8 @@ package net.minecraft.src;
 /*  72:    */   {
 /*  73: 96 */     super.aW();
 /*  74:    */     
-/*  75: 98 */     a(afs.a).a(10.0D);
-/*  76: 99 */     a(afs.b).a(100.0D);
+/*  75: 98 */     getAttribute(MobAttribute.maxHealth).a(10.0D);
+/*  76: 99 */     getAttribute(MobAttribute.followRange).a(100.0D);
 /*  77:    */   }
 /*  78:    */   
 /*  79:    */   protected String z()
@@ -101,7 +101,7 @@ package net.minecraft.src;
 /* 100:    */   {
 /* 101:124 */     int i = this.rng.nextInt(2) + this.rng.nextInt(1 + paramInt);
 /* 102:125 */     for (int j = 0; j < i; j++) {
-/* 103:126 */       a(ItemList.bw, 1);
+/* 103:126 */       a(ItemList.ghastTear, 1);
 /* 104:    */     }
 /* 105:128 */     i = this.rng.nextInt(3) + this.rng.nextInt(1 + paramInt);
 /* 106:129 */     for (j = 0; j < i; j++) {

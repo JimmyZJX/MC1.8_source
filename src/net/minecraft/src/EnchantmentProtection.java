@@ -27,7 +27,7 @@ package net.minecraft.src;
 /*  26: 49 */     return a(paramInt) + H[this.a];
 /*  27:    */   }
 /*  28:    */   
-/*  29:    */   public int b()
+/*  29:    */   public int getHighestLevel()
 /*  30:    */   {
 /*  31: 54 */     return 4;
 /*  32:    */   }
@@ -41,10 +41,10 @@ package net.minecraft.src;
 /*  40: 65 */     if (this.a == 0) {
 /*  41: 66 */       return MathUtils.floor(f * 0.75F);
 /*  42:    */     }
-/*  43: 68 */     if ((this.a == 1) && (paramwh.o())) {
+/*  43: 68 */     if ((this.a == 1) && (paramwh.isFire())) {
 /*  44: 69 */       return MathUtils.floor(f * 1.25F);
 /*  45:    */     }
-/*  46: 71 */     if ((this.a == 2) && (paramwh == DamageSource.i)) {
+/*  46: 71 */     if ((this.a == 2) && (paramwh == DamageSource.fall)) {
 /*  47: 72 */       return MathUtils.floor(f * 2.5F);
 /*  48:    */     }
 /*  49: 74 */     if ((this.a == 3) && (paramwh.c())) {
@@ -79,7 +79,7 @@ package net.minecraft.src;
 /*  78:    */   
 /*  79:    */   public static int a(Entity paramwv, int paramInt)
 /*  80:    */   {
-/*  81:105 */     int i = aph.a(Enchantment.d.B, paramwv.at());
+/*  81:105 */     int i = aph.a(Enchantment.d.id, paramwv.at());
 /*  82:107 */     if (i > 0) {
 /*  83:108 */       paramInt -= MathUtils.floor(paramInt * (i * 0.15F));
 /*  84:    */     }
@@ -88,7 +88,7 @@ package net.minecraft.src;
 /*  87:    */   
 /*  88:    */   public static double a(Entity paramwv, double paramDouble)
 /*  89:    */   {
-/*  90:115 */     int i = aph.a(Enchantment.f.B, paramwv.at());
+/*  90:115 */     int i = aph.a(Enchantment.f.id, paramwv.at());
 /*  91:117 */     if (i > 0) {
 /*  92:118 */       paramDouble -= MathUtils.floor(paramDouble * (i * 0.15F));
 /*  93:    */     }

@@ -50,7 +50,7 @@ package net.minecraft.src;
 /*  49: 48 */     this.zVelocity = (paramDouble6 + (Math.random() * 2.0D - 1.0D) * 0.4000000059604645D);
 /*  50: 49 */     float f1 = (float)(Math.random() + Math.random() + 1.0D) * 0.15F;
 /*  51:    */     
-/*  52: 51 */     float f2 = MathUtils.a(this.xVelocity * this.xVelocity + this.yVelocity * this.yVelocity + this.zVelocity * this.zVelocity);
+/*  52: 51 */     float f2 = MathUtils.sqrt(this.xVelocity * this.xVelocity + this.yVelocity * this.yVelocity + this.zVelocity * this.zVelocity);
 /*  53: 52 */     this.xVelocity = (this.xVelocity / f2 * f1 * 0.4000000059604645D);
 /*  54: 53 */     this.yVelocity = (this.yVelocity / f2 * f1 * 0.4000000059604645D + 0.1000000014901161D);
 /*  55: 54 */     this.zVelocity = (this.zVelocity / f2 * f1 * 0.4000000059604645D);
@@ -124,7 +124,7 @@ package net.minecraft.src;
 /* 123:117 */       setDead();
 /* 124:    */     }
 /* 125:120 */     this.yVelocity -= 0.04D * this.i;
-/* 126:121 */     d(this.xVelocity, this.yVelocity, this.zVelocity);
+/* 126:121 */     move(this.xVelocity, this.yVelocity, this.zVelocity);
 /* 127:122 */     this.xVelocity *= 0.9800000190734863D;
 /* 128:123 */     this.yVelocity *= 0.9800000190734863D;
 /* 129:124 */     this.zVelocity *= 0.9800000190734863D;

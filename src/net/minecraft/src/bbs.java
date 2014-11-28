@@ -49,17 +49,17 @@ package net.minecraft.src;
 /*  48:    */   
 /*  49:    */   public Item a(Block parambec, Random paramRandom, int paramInt)
 /*  50:    */   {
-/*  51: 72 */     return ItemList.F;
+/*  51: 72 */     return ItemList.string;
 /*  52:    */   }
 /*  53:    */   
 /*  54:    */   public Item b(World paramaqu, BlockPosition paramdt)
 /*  55:    */   {
-/*  56: 77 */     return ItemList.F;
+/*  56: 77 */     return ItemList.string;
 /*  57:    */   }
 /*  58:    */   
 /*  59:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
 /*  60:    */   {
-/*  61: 82 */     boolean bool1 = ((Boolean)parambec.getProperty(b)).booleanValue();
+/*  61: 82 */     boolean bool1 = ((Boolean)parambec.getData(b)).booleanValue();
 /*  62: 83 */     boolean bool2 = !World.isFlatSurface(paramaqu, paramdt.down());
 /*  63: 85 */     if (bool1 != bool2)
 /*  64:    */     {
@@ -71,8 +71,8 @@ package net.minecraft.src;
 /*  70:    */   public void a(IBlockAccess paramard, BlockPosition paramdt)
 /*  71:    */   {
 /*  72: 93 */     Block localbec = paramard.getBlock(paramdt);
-/*  73: 94 */     boolean bool1 = ((Boolean)localbec.getProperty(M)).booleanValue();
-/*  74: 95 */     boolean bool2 = ((Boolean)localbec.getProperty(b)).booleanValue();
+/*  73: 94 */     boolean bool1 = ((Boolean)localbec.getData(M)).booleanValue();
+/*  74: 95 */     boolean bool2 = ((Boolean)localbec.getData(b)).booleanValue();
 /*  75: 97 */     if (!bool2) {
 /*  76: 98 */       a(0.0F, 0.0F, 0.0F, 1.0F, 0.09375F, 1.0F);
 /*  77: 99 */     } else if (!bool1) {
@@ -99,7 +99,7 @@ package net.minecraft.src;
 /*  98:120 */     if (paramaqu.isClient) {
 /*  99:121 */       return;
 /* 100:    */     }
-/* 101:124 */     if ((paramahd.bY() != null) && (paramahd.bY().getItem() == ItemList.be)) {
+/* 101:124 */     if ((paramahd.bY() != null) && (paramahd.bY().getItem() == ItemList.shears)) {
 /* 102:125 */       paramaqu.setBlock(paramdt, parambec.setData(N, Boolean.valueOf(true)), 4);
 /* 103:    */     }
 /* 104:    */   }
@@ -113,7 +113,7 @@ package net.minecraft.src;
 /* 112:133 */         Block localbec = paramaqu.getBlock(localdt);
 /* 113:135 */         if (localbec.getProto() == BlockList.bR)
 /* 114:    */         {
-/* 115:136 */           if (localbec.getProperty(bbt.a) == localej.d()) {
+/* 115:136 */           if (localbec.getData(bbt.a) == localej.opposite()) {
 /* 116:137 */             BlockList.bR.a(paramaqu, localdt, localbec, false, true, k, parambec);
 /* 117:    */           }
 /* 118:    */         }
@@ -131,7 +131,7 @@ package net.minecraft.src;
 /* 130:150 */     if (paramaqu.isClient) {
 /* 131:151 */       return;
 /* 132:    */     }
-/* 133:154 */     if (((Boolean)parambec.getProperty(a)).booleanValue()) {
+/* 133:154 */     if (((Boolean)parambec.getData(a)).booleanValue()) {
 /* 134:155 */       return;
 /* 135:    */     }
 /* 136:158 */     d(paramaqu, paramdt);
@@ -144,7 +144,7 @@ package net.minecraft.src;
 /* 143:167 */     if (paramaqu.isClient) {
 /* 144:168 */       return;
 /* 145:    */     }
-/* 146:171 */     if (!((Boolean)paramaqu.getBlock(paramdt).getProperty(a)).booleanValue()) {
+/* 146:171 */     if (!((Boolean)paramaqu.getBlock(paramdt).getData(a)).booleanValue()) {
 /* 147:172 */       return;
 /* 148:    */     }
 /* 149:175 */     d(paramaqu, paramdt);
@@ -153,7 +153,7 @@ package net.minecraft.src;
 /* 152:    */   private void d(World paramaqu, BlockPosition paramdt)
 /* 153:    */   {
 /* 154:179 */     Block localbec = paramaqu.getBlock(paramdt);
-/* 155:180 */     boolean bool1 = ((Boolean)localbec.getProperty(a)).booleanValue();
+/* 155:180 */     boolean bool1 = ((Boolean)localbec.getData(a)).booleanValue();
 /* 156:181 */     boolean bool2 = false;
 /* 157:    */     
 /* 158:183 */     List<Entity> localList = paramaqu.b(null, new AABB(paramdt.getX() + this.B, paramdt.getY() + this.C, paramdt.getZ() + this.D, paramdt.getX() + this.E, paramdt.getY() + this.F, paramdt.getZ() + this.G));
@@ -184,13 +184,13 @@ package net.minecraft.src;
 /* 183:207 */     ProtoBlock localatr = localbec.getProto();
 /* 184:209 */     if (localatr == BlockList.bR)
 /* 185:    */     {
-/* 186:210 */       EnumDirection localej = paramej.d();
-/* 187:211 */       return localbec.getProperty(bbt.a) == localej;
+/* 186:210 */       EnumDirection localej = paramej.opposite();
+/* 187:211 */       return localbec.getData(bbt.a) == localej;
 /* 188:    */     }
 /* 189:214 */     if (localatr == BlockList.tripwire)
 /* 190:    */     {
-/* 191:215 */       boolean bool1 = ((Boolean)parambec.getProperty(b)).booleanValue();
-/* 192:216 */       boolean bool2 = ((Boolean)localbec.getProperty(b)).booleanValue();
+/* 191:215 */       boolean bool1 = ((Boolean)parambec.getData(b)).booleanValue();
+/* 192:216 */       boolean bool2 = ((Boolean)localbec.getData(b)).booleanValue();
 /* 193:217 */       return bool1 == bool2;
 /* 194:    */     }
 /* 195:220 */     return false;
@@ -204,16 +204,16 @@ package net.minecraft.src;
 /* 203:    */   public int c(Block parambec)
 /* 204:    */   {
 /* 205:234 */     int i = 0;
-/* 206:236 */     if (((Boolean)parambec.getProperty(a)).booleanValue()) {
+/* 206:236 */     if (((Boolean)parambec.getData(a)).booleanValue()) {
 /* 207:237 */       i |= 0x1;
 /* 208:    */     }
-/* 209:240 */     if (((Boolean)parambec.getProperty(b)).booleanValue()) {
+/* 209:240 */     if (((Boolean)parambec.getData(b)).booleanValue()) {
 /* 210:241 */       i |= 0x2;
 /* 211:    */     }
-/* 212:244 */     if (((Boolean)parambec.getProperty(M)).booleanValue()) {
+/* 212:244 */     if (((Boolean)parambec.getData(M)).booleanValue()) {
 /* 213:245 */       i |= 0x4;
 /* 214:    */     }
-/* 215:248 */     if (((Boolean)parambec.getProperty(N)).booleanValue()) {
+/* 215:248 */     if (((Boolean)parambec.getData(N)).booleanValue()) {
 /* 216:249 */       i |= 0x8;
 /* 217:    */     }
 /* 218:252 */     return i;

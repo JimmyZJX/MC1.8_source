@@ -111,7 +111,7 @@ import java.util.List;
 /* 109:112 */               localwv.zVelocity = this.f.i();
 /* 110:    */             }
 /* 111:    */           } else {
-/* 112:116 */             localwv.d(paramFloat2 * this.f.g(), paramFloat2 * this.f.h(), paramFloat2 * this.f.i());
+/* 112:116 */             localwv.move(paramFloat2 * this.f.g(), paramFloat2 * this.f.h(), paramFloat2 * this.f.i());
 /* 113:    */           }
 /* 114:    */         }
 /* 115:119 */         this.k.clear();

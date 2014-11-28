@@ -5,8 +5,8 @@ package net.minecraft.src;
 /*   4:    */   implements Callable<String>
 /*   5:    */ {
 				private final ItemStack a;
-				private final ahb b;
-/*   6:    */   ahc(ahb paramahb, ItemStack paramamj) {a=paramamj;b=paramahb;}
+				private final Inventory b;
+/*   6:    */   ahc(Inventory paramahb, ItemStack paramamj) {a=paramamj;b=paramahb;}
 /*   7:    */   
 /*   8:    */   public String call()
 /*   9:    */   {

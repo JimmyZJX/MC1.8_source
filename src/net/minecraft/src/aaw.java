@@ -49,7 +49,7 @@ package net.minecraft.src;
 /*  49:    */       }
 /*  50:    */     }
 /*  51: 72 */     if (((localxm instanceof EntityPlayer)) && 
-/*  52: 73 */       (((EntityPlayer)localxm).by.a)) {
+/*  52: 73 */       (((EntityPlayer)localxm).abilities.invulnerable)) {
 /*  53: 74 */       return false;
 /*  54:    */     }
 /*  55: 77 */     return true;
@@ -57,7 +57,7 @@ package net.minecraft.src;
 /*  57:    */   
 /*  58:    */   protected double f()
 /*  59:    */   {
-/*  60: 81 */     xz localxz = this.e.a(afs.b);
+/*  60: 81 */     xz localxz = this.e.getAttribute(MobAttribute.followRange);
 /*  61: 82 */     return localxz == null ? 16.0D : localxz.e();
 /*  62:    */   }
 /*  63:    */   
@@ -102,7 +102,7 @@ package net.minecraft.src;
 /* 102:    */       }
 /* 103:    */     }
 /* 104:127 */     else if (((paramxm instanceof EntityPlayer)) && 
-/* 105:128 */       (!paramBoolean1) && (((EntityPlayer)paramxm).by.a))
+/* 105:128 */       (!paramBoolean1) && (((EntityPlayer)paramxm).abilities.invulnerable))
 /* 106:    */     {
 /* 107:129 */       return false;
 /* 108:    */     }

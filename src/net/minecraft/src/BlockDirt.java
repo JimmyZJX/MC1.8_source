@@ -16,7 +16,7 @@ package net.minecraft.src;
 /* 15:   */   
 /* 16:   */   public Block a(Block parambec, IBlockAccess paramard, BlockPosition paramdt)
 /* 17:   */   {
-/* 18:30 */     if (parambec.getProperty(a) == avd.c)
+/* 18:30 */     if (parambec.getData(a) == avd.c)
 /* 19:   */     {
 /* 20:31 */       ProtoBlock localatr = paramard.getBlock(paramdt.up()).getProto();
 /* 21:32 */       parambec = parambec.setData(b, Boolean.valueOf((localatr == BlockList.aJ) || (localatr == BlockList.aH)));
@@ -37,7 +37,7 @@ package net.minecraft.src;
 /* 36:47 */     if (localbec.getProto() != this) {
 /* 37:48 */       return 0;
 /* 38:   */     }
-/* 39:50 */     return ((avd)localbec.getProperty(a)).a();
+/* 39:50 */     return ((avd)localbec.getData(a)).a();
 /* 40:   */   }
 /* 41:   */   
 /* 42:   */   public Block instance(int paramInt)
@@ -47,7 +47,7 @@ package net.minecraft.src;
 /* 46:   */   
 /* 47:   */   public int c(Block parambec)
 /* 48:   */   {
-/* 49:61 */     return ((avd)parambec.getProperty(a)).a();
+/* 49:61 */     return ((avd)parambec.getData(a)).a();
 /* 50:   */   }
 /* 51:   */   
 /* 52:   */   protected bed e()
@@ -57,7 +57,7 @@ package net.minecraft.src;
 /* 56:   */   
 /* 57:   */   public int a(Block parambec)
 /* 58:   */   {
-/* 59:71 */     avd localavd = (avd)parambec.getProperty(a);
+/* 59:71 */     avd localavd = (avd)parambec.getData(a);
 /* 60:72 */     if (localavd == avd.c) {
 /* 61:73 */       localavd = avd.a;
 /* 62:   */     }

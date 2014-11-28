@@ -131,7 +131,7 @@ package net.minecraft.src;
 /* 130:167 */       paramaqu.g(paramdt);
 /* 131:168 */       return;
 /* 132:    */     }
-/* 133:171 */     int j = ((Integer)parambec.getProperty(age)).intValue();
+/* 133:171 */     int j = ((Integer)parambec.getData(age)).intValue();
 /* 134:172 */     if (j < 15)
 /* 135:    */     {
 /* 136:173 */       parambec = parambec.setData(age, Integer.valueOf(j + paramRandom.nextInt(3) / 2));
@@ -387,7 +387,7 @@ package net.minecraft.src;
 /* 386:    */   
 /* 387:    */   public int c(Block parambec)
 /* 388:    */   {
-/* 389:417 */     return ((Integer)parambec.getProperty(age)).intValue();
+/* 389:417 */     return ((Integer)parambec.getData(age)).intValue();
 /* 390:    */   }
 /* 391:    */   
 /* 392:    */   protected bed e()

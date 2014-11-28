@@ -4,9 +4,9 @@ class ek {
 	static final int[] b;
 	static final int[] c;
 	static {
-		c=new int[en.values().length];
-		try {c[en.HORIZONTAL.ordinal()] = 1;} catch (NoSuchFieldError e) { }
-		try {c[en.VERTICAL.ordinal()] = 2;} catch (NoSuchFieldError e) { }
+		c=new int[EnumHorizontalVertical.values().length];
+		try {c[EnumHorizontalVertical.HORIZONTAL.ordinal()] = 1;} catch (NoSuchFieldError e) { }
+		try {c[EnumHorizontalVertical.VERTICAL.ordinal()] = 2;} catch (NoSuchFieldError e) { }
 		b=new int[EnumDirection.values().length];
 		try {b[EnumDirection.NORTH.ordinal()] = 1;} catch (NoSuchFieldError e) { }
 		try {b[EnumDirection.EAST.ordinal()] = 2;} catch (NoSuchFieldError e) { }

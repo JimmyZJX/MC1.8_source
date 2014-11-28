@@ -7,7 +7,7 @@ package net.minecraft.src;
 /*   7:    */ public abstract class Enchantment
 /*   8:    */ {
 /*   9: 19 */   private static final Enchantment[] a = new Enchantment[256];
-/*  10:    */   public static final Enchantment[] b;
+/*  10:    */   public static final Enchantment[] list;
 /*  11: 21 */   private static final Map<oa,Enchantment> E = Maps.newHashMap();
 /*  12: 29 */   public static final Enchantment c = new EnchantmentProtection(0, new oa("protection"), 10, 0);
 /*  13: 30 */   public static final Enchantment d = new EnchantmentProtection(1, new oa("fire_protection"), 5, 1);
@@ -23,7 +23,7 @@ package net.minecraft.src;
 /*  23: 42 */   public static final Enchantment n = new EnchantmentDamage(18, new oa("bane_of_arthropods"), 5, 2);
 /*  24: 43 */   public static final Enchantment o = new EnchantmentKnockback(19, new oa("knockback"), 5);
 /*  25: 44 */   public static final Enchantment p = new EnchantmentFireAspect(20, new oa("fire_aspect"), 2);
-/*  26: 45 */   public static final Enchantment q = new EnchantmentLooting(21, new oa("looting"), 2, apg.g);
+/*  26: 45 */   public static final Enchantment looting = new EnchantmentLooting(21, new oa("looting"), 2, apg.g);
 /*  27: 48 */   public static final Enchantment r = new EnchantmentDigging(32, new oa("efficiency"), 10);
 /*  28: 49 */   public static final Enchantment s = new EnchantmentUntouching(33, new oa("silk_touch"), 1);
 /*  29: 50 */   public static final Enchantment t = new EnchantmentDurability(34, new oa("unbreaking"), 5);
@@ -31,10 +31,10 @@ package net.minecraft.src;
 /*  31: 54 */   public static final Enchantment v = new EnchantmentArrowDamage(48, new oa("power"), 10);
 /*  32: 55 */   public static final Enchantment w = new EnchantmentArrowKnockback(49, new oa("punch"), 2);
 /*  33: 56 */   public static final Enchantment x = new EnchantmentArrowFire(50, new oa("flame"), 2);
-/*  34: 57 */   public static final Enchantment y = new EnchantmentArrowInfinite(51, new oa("infinity"), 1);
-/*  35: 60 */   public static final Enchantment z = new EnchantmentLooting(61, new oa("luck_of_the_sea"), 2, apg.i);
-/*  36: 61 */   public static final Enchantment A = new apq(62, new oa("lure"), 2, apg.i);
-/*  37:    */   public final int B;
+/*  34: 57 */   public static final Enchantment infinity = new EnchantmentArrowInfinite(51, new oa("infinity"), 1);
+/*  35: 60 */   public static final Enchantment luckOfTheSea = new EnchantmentLooting(61, new oa("luck_of_the_sea"), 2, apg.i);
+/*  36: 61 */   public static final Enchantment lure = new apq(62, new oa("lure"), 2, apg.i);
+/*  37:    */   public final int id;
 /*  38:    */   private final int F;
 /*  39:    */   public apg C;
 /*  40:    */   protected String D;
@@ -47,7 +47,7 @@ package net.minecraft.src;
 /*  47: 74 */         localArrayList.add(localapf);
 /*  48:    */       }
 /*  49:    */     }
-/*  50: 78 */     b = (Enchantment[])localArrayList.toArray(new Enchantment[localArrayList.size()]);
+/*  50: 78 */     list = (Enchantment[])localArrayList.toArray(new Enchantment[localArrayList.size()]);
 /*  51:    */   }
 /*  52:    */   
 /*  53:    */   public static Enchantment c(int paramInt)
@@ -58,15 +58,15 @@ package net.minecraft.src;
 /*  58: 85 */     return a[paramInt];
 /*  59:    */   }
 /*  60:    */   
-/*  61:    */   protected Enchantment(int paramInt1, oa paramoa, int paramInt2, apg paramapg)
+/*  61:    */   protected Enchantment(int id, oa paramoa, int paramInt2, apg paramapg)
 /*  62:    */   {
-/*  63: 89 */     this.B = paramInt1;
+/*  63: 89 */     this.id = id;
 /*  64: 90 */     this.F = paramInt2;
 /*  65: 91 */     this.C = paramapg;
-/*  66: 93 */     if (a[paramInt1] != null) {
+/*  66: 93 */     if (a[id] != null) {
 /*  67: 94 */       throw new IllegalArgumentException("Duplicate enchantment id!");
 /*  68:    */     }
-/*  69: 96 */     a[paramInt1] = this;
+/*  69: 96 */     a[id] = this;
 /*  70: 97 */     E.put(paramoa, this);
 /*  71:    */   }
 /*  72:    */   
@@ -90,12 +90,12 @@ package net.minecraft.src;
 /*  90:119 */     return this.F;
 /*  91:    */   }
 /*  92:    */   
-/*  93:    */   public int e()
+/*  93:    */   public int getLowestLevel()
 /*  94:    */   {
 /*  95:123 */     return 1;
 /*  96:    */   }
 /*  97:    */   
-/*  98:    */   public int b()
+/*  98:    */   public int getHighestLevel()
 /*  99:    */   {
 /* 100:127 */     return 1;
 /* 101:    */   }

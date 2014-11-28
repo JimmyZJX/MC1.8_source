@@ -32,7 +32,7 @@ package net.minecraft.src;
 /* 31:   */   
 /* 32:   */   public Item a(Block parambec, Random paramRandom, int paramInt)
 /* 33:   */   {
-/* 34:48 */     return ItemList.F;
+/* 34:48 */     return ItemList.string;
 /* 35:   */   }
 /* 36:   */   
 /* 37:   */   protected boolean G()

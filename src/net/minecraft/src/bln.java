@@ -19,7 +19,7 @@ package net.minecraft.src;
 /* 18:39 */     this.b = paramInt5;
 /* 19:40 */     this.c = paramInt6;
 /* 20:   */     
-/* 21:42 */     this.m = en.HORIZONTAL.getRandomDirection(paramRandom);
+/* 21:42 */     this.m = EnumHorizontalVertical.HORIZONTAL.getRandomDirection(paramRandom);
 /* 22:44 */     switch (blj.a[this.m.ordinal()])
 /* 23:   */     {
 /* 24:   */     case 1: 

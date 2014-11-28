@@ -66,10 +66,10 @@ package net.minecraft.src;
 /* 65:   */     }
 /* 66:71 */     this.b = 0;
 /* 67:73 */     if (paramamj.getItem() == ItemList.ironIngot) {
-/* 68:74 */       this.a.b(AchievementList.k);
+/* 68:74 */       this.a.increaseStat(AchievementList.k);
 /* 69:   */     }
 /* 70:76 */     if (paramamj.getItem() == ItemList.aV) {
-/* 71:77 */       this.a.b(AchievementList.p);
+/* 71:77 */       this.a.increaseStat(AchievementList.p);
 /* 72:   */     }
 /* 73:   */   }
 /* 74:   */ }

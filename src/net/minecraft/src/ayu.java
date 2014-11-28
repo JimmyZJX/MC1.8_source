@@ -13,7 +13,7 @@ package net.minecraft.src;
 /* 14:   */   public Item a(Block parambec, Random paramRandom, int paramInt)
 /* 15:   */   {
 /* 16:25 */     if (this == BlockList.coalOre) {
-/* 17:26 */       return ItemList.h;
+/* 17:26 */       return ItemList.coal;
 /* 18:   */     }
 /* 19:28 */     if (this == BlockList.diamondOre) {
 /* 20:29 */       return ItemList.diamond;

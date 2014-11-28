@@ -19,13 +19,13 @@ package net.minecraft.src;
 /* 18:24 */         paramahd.bg.a(paramahd.bg.c, new ItemStack(ItemList.A));
 /* 19:25 */         return true;
 /* 20:   */       }
-/* 21:28 */       if ((paramahd.bg.a(new ItemStack(ItemList.A))) && (!paramahd.by.d))
+/* 21:28 */       if ((paramahd.bg.a(new ItemStack(ItemList.A))) && (!paramahd.abilities.instabuild))
 /* 22:   */       {
 /* 23:29 */         paramahd.bg.removeItems(paramahd.bg.c, 1);
 /* 24:30 */         return true;
 /* 25:   */       }
 /* 26:   */     }
-/* 27:33 */     if ((localamj != null) && (localamj.getItem() == ItemList.be) && (getAge() >= 0))
+/* 27:33 */     if ((localamj != null) && (localamj.getItem() == ItemList.shears) && (getAge() >= 0))
 /* 28:   */     {
 /* 29:34 */       setDead();
 /* 30:35 */       this.world.a(EnumParticleEffect.EXPLOSION_LARGE, this.xPos, this.yPos + this.height / 2.0F, this.zPos, 0.0D, 0.0D, 0.0D, new int[0]);

@@ -18,7 +18,7 @@ package net.minecraft.src;
 /* 17:18 */     return a(paramInt) + 30;
 /* 18:   */   }
 /* 19:   */   
-/* 20:   */   public int b()
+/* 20:   */   public int getHighestLevel()
 /* 21:   */   {
 /* 22:23 */     return 3;
 /* 23:   */   }

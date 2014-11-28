@@ -41,7 +41,7 @@ package net.minecraft.src;
 /* 40:47 */     k(this.ax + (7 - this.f * 8 / this.g));
 /* 41:   */     
 /* 42:49 */     this.yVelocity += 0.004D;
-/* 43:50 */     d(this.xVelocity, this.yVelocity, this.zVelocity);
+/* 43:50 */     move(this.xVelocity, this.yVelocity, this.zVelocity);
 /* 44:51 */     if (this.yPos == this.lastY)
 /* 45:   */     {
 /* 46:52 */       this.xVelocity *= 1.1D;

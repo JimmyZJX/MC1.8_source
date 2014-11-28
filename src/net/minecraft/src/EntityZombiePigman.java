@@ -34,9 +34,9 @@ package net.minecraft.src;
 /*  35:    */   {
 /*  36: 54 */     super.aW();
 /*  37:    */     
-/*  38: 56 */     a(b).a(0.0D);
-/*  39: 57 */     a(afs.d).a(0.2300000041723251D);
-/*  40: 58 */     a(afs.e).a(5.0D);
+/*  38: 56 */     getAttribute(b).a(0.0D);
+/*  39: 57 */     getAttribute(MobAttribute.movementSpeed).a(0.2300000041723251D);
+/*  40: 58 */     getAttribute(MobAttribute.attackDamage).a(5.0D);
 /*  41:    */   }
 /*  42:    */   
 /*  43:    */   public void onUpdate()
@@ -46,7 +46,7 @@ package net.minecraft.src;
 /*  47:    */   
 /*  48:    */   protected void mobTick()
 /*  49:    */   {
-/*  50: 68 */     xz localxz = a(afs.d);
+/*  50: 68 */     xz localxz = getAttribute(MobAttribute.movementSpeed);
 /*  51: 69 */     if (ck())
 /*  52:    */     {
 /*  53: 70 */       if ((!i_()) && (!localxz.a(bk))) {
@@ -115,10 +115,10 @@ package net.minecraft.src;
 /* 116:    */   
 /* 117:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /* 118:    */   {
-/* 119:136 */     if (b(paramwh)) {
+/* 119:136 */     if (isImmuneTo(paramwh)) {
 /* 120:137 */       return false;
 /* 121:    */     }
-/* 122:139 */     Entity localwv = paramwh.j();
+/* 122:139 */     Entity localwv = paramwh.getAttacker();
 /* 123:140 */     if ((localwv instanceof EntityPlayer)) {
 /* 124:141 */       enrage(localwv);
 /* 125:    */     }
@@ -158,7 +158,7 @@ package net.minecraft.src;
 /* 159:    */   {
 /* 160:175 */     int i = this.rng.nextInt(2 + paramInt);
 /* 161:176 */     for (int j = 0; j < i; j++) {
-/* 162:177 */       a(ItemList.bt, 1);
+/* 162:177 */       a(ItemList.rottenFlesh, 1);
 /* 163:    */     }
 /* 164:179 */     i = this.rng.nextInt(2 + paramInt);
 /* 165:180 */     for (j = 0; j < i; j++) {

@@ -11,7 +11,7 @@ package net.minecraft.src;
 /*  10:    */   {
 /*  11:403 */     super(parambnk, paramInt1);
 /*  12:    */     
-/*  13:405 */     this.m = en.HORIZONTAL.getRandomDirection(paramRandom);
+/*  13:405 */     this.m = EnumHorizontalVertical.HORIZONTAL.getRandomDirection(paramRandom);
 /*  14:407 */     switch (bmz.a[this.m.ordinal()])
 /*  15:    */     {
 /*  16:    */     case 1: 

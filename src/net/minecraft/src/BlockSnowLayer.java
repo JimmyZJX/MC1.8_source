@@ -18,12 +18,12 @@ package net.minecraft.src;
 /*  17:    */   
 /*  18:    */   public boolean b(IBlockAccess paramard, BlockPosition paramdt)
 /*  19:    */   {
-/*  20: 43 */     return ((Integer)paramard.getBlock(paramdt).getProperty(a)).intValue() < 5;
+/*  20: 43 */     return ((Integer)paramard.getBlock(paramdt).getData(a)).intValue() < 5;
 /*  21:    */   }
 /*  22:    */   
 /*  23:    */   public AABB a(World paramaqu, BlockPosition paramdt, Block parambec)
 /*  24:    */   {
-/*  25: 49 */     int i = ((Integer)parambec.getProperty(a)).intValue() - 1;
+/*  25: 49 */     int i = ((Integer)parambec.getData(a)).intValue() - 1;
 /*  26: 50 */     float f = 0.125F;
 /*  27: 51 */     return new AABB(paramdt.getX() + this.B, paramdt.getY() + this.C, paramdt.getZ() + this.D, paramdt.getX() + this.E, paramdt.getY() + i * f, paramdt.getZ() + this.G);
 /*  28:    */   }
@@ -46,7 +46,7 @@ package net.minecraft.src;
 /*  45:    */   public void a(IBlockAccess paramard, BlockPosition paramdt)
 /*  46:    */   {
 /*  47: 76 */     Block localbec = paramard.getBlock(paramdt);
-/*  48: 77 */     b(((Integer)localbec.getProperty(a)).intValue());
+/*  48: 77 */     b(((Integer)localbec.getData(a)).intValue());
 /*  49:    */   }
 /*  50:    */   
 /*  51:    */   protected void b(int paramInt)
@@ -64,10 +64,10 @@ package net.minecraft.src;
 /*  63: 93 */     if (localatr.getMaterial() == Material.leaves) {
 /*  64: 94 */       return true;
 /*  65:    */     }
-/*  66: 97 */     if ((localatr == this) && (((Integer)localbec.getProperty(a)).intValue() == 7)) {
+/*  66: 97 */     if ((localatr == this) && (((Integer)localbec.getData(a)).intValue() == 7)) {
 /*  67: 98 */       return true;
 /*  68:    */     }
-/*  69:101 */     return (localatr.c()) && (localatr.material.c());
+/*  69:101 */     return (localatr.c()) && (localatr.material.material_c());
 /*  70:    */   }
 /*  71:    */   
 /*  72:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
@@ -88,10 +88,10 @@ package net.minecraft.src;
 /*  87:    */   
 /*  88:    */   public void a(World paramaqu, EntityPlayer paramahd, BlockPosition paramdt, Block parambec, bcm parambcm)
 /*  89:    */   {
-/*  90:120 */     a(paramaqu, paramdt, new ItemStack(ItemList.aD, ((Integer)parambec.getProperty(a)).intValue() + 1, 0));
+/*  90:120 */     a(paramaqu, paramdt, new ItemStack(ItemList.aD, ((Integer)parambec.getData(a)).intValue() + 1, 0));
 /*  91:121 */     paramaqu.g(paramdt);
 /*  92:    */     
-/*  93:123 */     paramahd.b(StatList.H[ProtoBlock.a(this)]);
+/*  93:123 */     paramahd.increaseStat(StatList.H[ProtoBlock.a(this)]);
 /*  94:    */   }
 /*  95:    */   
 /*  96:    */   public Item a(Block parambec, Random paramRandom, int paramInt)
@@ -128,12 +128,12 @@ package net.minecraft.src;
 /* 127:    */   
 /* 128:    */   public boolean f(World paramaqu, BlockPosition paramdt)
 /* 129:    */   {
-/* 130:161 */     return ((Integer)paramaqu.getBlock(paramdt).getProperty(a)).intValue() == 1;
+/* 130:161 */     return ((Integer)paramaqu.getBlock(paramdt).getData(a)).intValue() == 1;
 /* 131:    */   }
 /* 132:    */   
 /* 133:    */   public int c(Block parambec)
 /* 134:    */   {
-/* 135:166 */     return ((Integer)parambec.getProperty(a)).intValue() - 1;
+/* 135:166 */     return ((Integer)parambec.getData(a)).intValue() - 1;
 /* 136:    */   }
 /* 137:    */   
 /* 138:    */   protected bed e()

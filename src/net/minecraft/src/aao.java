@@ -99,7 +99,7 @@ package net.minecraft.src;
 /*  98:    */   
 /*  99:    */   protected double f()
 /* 100:    */   {
-/* 101:124 */     xz localxz = this.b.a(afs.b);
+/* 101:124 */     xz localxz = this.b.getAttribute(MobAttribute.followRange);
 /* 102:125 */     return localxz == null ? 16.0D : localxz.e();
 /* 103:    */   }
 

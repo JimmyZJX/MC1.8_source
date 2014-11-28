@@ -40,7 +40,7 @@ package net.minecraft.src;
 /*  39:    */   
 /*  40:    */   public void a(IBlockAccess paramard, BlockPosition paramdt)
 /*  41:    */   {
-/*  42: 65 */     EnumAxis localel = (EnumAxis)paramard.getBlock(paramdt).getProperty(a);
+/*  42: 65 */     EnumAxis localel = (EnumAxis)paramard.getBlock(paramdt).getData(a);
 /*  43:    */     
 /*  44: 67 */     float f1 = 0.125F;
 /*  45: 68 */     float f2 = 0.125F;
@@ -88,7 +88,7 @@ package net.minecraft.src;
 /*  87:    */   
 /*  88:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
 /*  89:    */   {
-/*  90:113 */     EnumAxis localel = (EnumAxis)parambec.getProperty(a);
+/*  90:113 */     EnumAxis localel = (EnumAxis)parambec.getData(a);
 /*  91:    */     ayz localayz;
 /*  92:115 */     if (localel == EnumAxis.X)
 /*  93:    */     {
@@ -112,7 +112,7 @@ package net.minecraft.src;
 /* 111:132 */     Block localbec = paramard.getBlock(paramdt);
 /* 112:133 */     if (paramard.getBlock(paramdt).getProto() == this)
 /* 113:    */     {
-/* 114:134 */       localel = (EnumAxis)localbec.getProperty(a);
+/* 114:134 */       localel = (EnumAxis)localbec.getData(a);
 /* 115:136 */       if (localel == null) {
 /* 116:137 */         return false;
 /* 117:    */       }
@@ -204,7 +204,7 @@ package net.minecraft.src;
 /* 203:    */   
 /* 204:    */   public int c(Block parambec)
 /* 205:    */   {
-/* 206:229 */     return a((EnumAxis)parambec.getProperty(a));
+/* 206:229 */     return a((EnumAxis)parambec.getData(a));
 /* 207:    */   }
 /* 208:    */   
 /* 209:    */   protected bed e()

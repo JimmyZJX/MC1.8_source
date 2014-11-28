@@ -28,7 +28,7 @@ package net.minecraft.src;
 /*  27:    */   
 /*  28:    */   public Vec3 normalize()
 /*  29:    */   {
-/*  30: 30 */     double d = MathUtils.a(this.x * this.x + this.y * this.y + this.z * this.z);
+/*  30: 30 */     double d = MathUtils.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
 /*  31: 31 */     if (d < 0.0001D) {
 /*  32: 32 */       return new Vec3(0.0D, 0.0D, 0.0D);
 /*  33:    */     }
@@ -40,50 +40,50 @@ package net.minecraft.src;
 /*  39: 38 */     return this.x * parambrw.x + this.y * parambrw.y + this.z * parambrw.z;
 /*  40:    */   }
 /*  41:    */   
-/*  42:    */   public Vec3 cross(Vec3 parambrw)
+/*  42:    */   public Vec3 cross(Vec3 v)
 /*  43:    */   {
-/*  44: 42 */     return new Vec3(this.y * parambrw.z - this.z * parambrw.y, this.z * parambrw.x - this.x * parambrw.z, this.x * parambrw.y - this.y * parambrw.x);
+/*  44: 42 */     return new Vec3(this.y * v.z - this.z * v.y, this.z * v.x - this.x * v.z, this.x * v.y - this.y * v.x);
 /*  45:    */   }
 /*  46:    */   
-/*  47:    */   public Vec3 d(Vec3 parambrw)
+/*  47:    */   public Vec3 substract(Vec3 v)
 /*  48:    */   {
-/*  49: 46 */     return a(parambrw.x, parambrw.y, parambrw.z);
+/*  49: 46 */     return substract(v.x, v.y, v.z);
 /*  50:    */   }
 /*  51:    */   
-/*  52:    */   public Vec3 a(double paramDouble1, double paramDouble2, double paramDouble3)
+/*  52:    */   public Vec3 substract(double x, double y, double z)
 /*  53:    */   {
-/*  54: 50 */     return b(-paramDouble1, -paramDouble2, -paramDouble3);
+/*  54: 50 */     return add(-x, -y, -z);
 /*  55:    */   }
 /*  56:    */   
-/*  57:    */   public Vec3 e(Vec3 parambrw)
+/*  57:    */   public Vec3 add(Vec3 v)
 /*  58:    */   {
-/*  59: 54 */     return b(parambrw.x, parambrw.y, parambrw.z);
+/*  59: 54 */     return add(v.x, v.y, v.z);
 /*  60:    */   }
 /*  61:    */   
-/*  62:    */   public Vec3 b(double paramDouble1, double paramDouble2, double paramDouble3)
+/*  62:    */   public Vec3 add(double x, double y, double z)
 /*  63:    */   {
-/*  64: 58 */     return new Vec3(this.x + paramDouble1, this.y + paramDouble2, this.z + paramDouble3);
+/*  64: 58 */     return new Vec3(this.x + x, this.y + y, this.z + z);
 /*  65:    */   }
 /*  66:    */   
-/*  67:    */   public double f(Vec3 parambrw)
+/*  67:    */   public double dist(Vec3 v)
 /*  68:    */   {
-/*  69: 62 */     double d1 = parambrw.x - this.x;
-/*  70: 63 */     double d2 = parambrw.y - this.y;
-/*  71: 64 */     double d3 = parambrw.z - this.z;
-/*  72: 65 */     return MathUtils.a(d1 * d1 + d2 * d2 + d3 * d3);
+/*  69: 62 */     double d1 = v.x - this.x;
+/*  70: 63 */     double d2 = v.y - this.y;
+/*  71: 64 */     double d3 = v.z - this.z;
+/*  72: 65 */     return MathUtils.sqrt(d1 * d1 + d2 * d2 + d3 * d3);
 /*  73:    */   }
 /*  74:    */   
-/*  75:    */   public double g(Vec3 parambrw)
+/*  75:    */   public double dist2(Vec3 v)
 /*  76:    */   {
-/*  77: 69 */     double d1 = parambrw.x - this.x;
-/*  78: 70 */     double d2 = parambrw.y - this.y;
-/*  79: 71 */     double d3 = parambrw.z - this.z;
+/*  77: 69 */     double d1 = v.x - this.x;
+/*  78: 70 */     double d2 = v.y - this.y;
+/*  79: 71 */     double d3 = v.z - this.z;
 /*  80: 72 */     return d1 * d1 + d2 * d2 + d3 * d3;
 /*  81:    */   }
 /*  82:    */   
-/*  83:    */   public double b()
+/*  83:    */   public double norm()
 /*  84:    */   {
-/*  85: 87 */     return MathUtils.a(this.x * this.x + this.y * this.y + this.z * this.z);
+/*  85: 87 */     return MathUtils.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
 /*  86:    */   }
 /*  87:    */   
 /*  88:    */   public Vec3 a(Vec3 parambrw, double paramDouble)

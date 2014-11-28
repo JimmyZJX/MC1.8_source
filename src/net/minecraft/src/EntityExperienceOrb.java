@@ -100,7 +100,7 @@ package net.minecraft.src;
 /* 100:110 */         this.zVelocity += d4 / d5 * d6 * 0.1D;
 /* 101:    */       }
 /* 102:    */     }
-/* 103:114 */     d(this.xVelocity, this.yVelocity, this.zVelocity);
+/* 103:114 */     move(this.xVelocity, this.yVelocity, this.zVelocity);
 /* 104:    */     
 /* 105:116 */     float f1 = 0.98F;
 /* 106:117 */     if (this.C) {
@@ -127,12 +127,12 @@ package net.minecraft.src;
 /* 127:    */   
 /* 128:    */   protected void f(int paramInt)
 /* 129:    */   {
-/* 130:144 */     a(DamageSource.a, paramInt);
+/* 130:144 */     a(DamageSource.inFire, paramInt);
 /* 131:    */   }
 /* 132:    */   
 /* 133:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /* 134:    */   {
-/* 135:149 */     if (b(paramwh)) {
+/* 135:149 */     if (isImmuneTo(paramwh)) {
 /* 136:150 */       return false;
 /* 137:    */     }
 /* 138:152 */     ac();
@@ -157,7 +157,7 @@ package net.minecraft.src;
 /* 157:171 */     this.value = tag.e("Value");
 /* 158:    */   }
 /* 159:    */   
-/* 160:    */   public void d(EntityPlayer player)
+/* 160:    */   public void onPickedUp(EntityPlayer player)
 /* 161:    */   {
 /* 162:176 */     if (this.world.isClient) {
 /* 163:177 */       return;

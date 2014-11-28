@@ -23,7 +23,7 @@ package net.minecraft.src;
 /*  22:    */   public bpt a(Entity paramwv)
 /*  23:    */   {
 /*  24:    */     int k;
-/*  25: 41 */     if ((this.i) && (paramwv.V()))
+/*  25: 41 */     if ((this.i) && (paramwv.isInWater()))
 /*  26:    */     {
 /*  27: 42 */       k = (int)paramwv.getAABB().minY;
 /*  28: 43 */       ProtoBlock localatr = this.a.getBlock(new BlockPosition(MathUtils.floor(paramwv.xPos), k, MathUtils.floor(paramwv.zPos))).getProto();
@@ -168,7 +168,7 @@ package net.minecraft.src;
 /* 167:189 */                 Material localbof = localatr.getMaterial();
 /* 168:190 */                 if (localbof == Material.lava)
 /* 169:    */                 {
-/* 170:191 */                   if (!paramwv.ab()) {
+/* 170:191 */                   if (!paramwv.isInLava()) {
 /* 171:194 */                     return -2;
 /* 172:    */                   }
 /* 173:    */                 }

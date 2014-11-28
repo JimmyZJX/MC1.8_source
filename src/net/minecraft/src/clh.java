@@ -13,7 +13,7 @@ package net.minecraft.src;
 /*  12:223 */     LinkedHashMap localLinkedHashMap = Maps.newLinkedHashMap(parambec.b());
 /*  13:    */     
 /*  14:225 */     String str = BlockDirt.a.toString((Comparable)localLinkedHashMap.remove(BlockDirt.a));
-/*  15:227 */     if (avd.c != parambec.getProperty(BlockDirt.a)) {
+/*  15:227 */     if (avd.c != parambec.getData(BlockDirt.a)) {
 /*  16:228 */       localLinkedHashMap.remove(BlockDirt.b);
 /*  17:    */     }
 /*  18:230 */     return new cxl(str, a(localLinkedHashMap));

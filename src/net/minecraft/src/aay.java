@@ -29,7 +29,7 @@ package net.minecraft.src;
 /*  28:    */   
 /*  29:    */   private int p()
 /*  30:    */   {
-/*  31: 44 */     if ((!this.mob.V()) || (!h())) {
+/*  31: 44 */     if ((!this.mob.isInWater()) || (!h())) {
 /*  32: 45 */       return (int)(this.mob.getAABB().minY + 0.5D);
 /*  33:    */     }
 /*  34: 48 */     int i = (int)this.mob.getAABB().minY;
@@ -150,7 +150,7 @@ package net.minecraft.src;
 /* 149:159 */           if (localbof == Material.air) {
 /* 150:160 */             return false;
 /* 151:    */           }
-/* 152:162 */           if ((localbof == Material.water) && (!this.mob.V())) {
+/* 152:162 */           if ((localbof == Material.water) && (!this.mob.isInWater())) {
 /* 153:163 */             return false;
 /* 154:    */           }
 /* 155:165 */           if (localbof == Material.lava) {

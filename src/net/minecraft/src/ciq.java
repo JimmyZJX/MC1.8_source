@@ -11,7 +11,7 @@ package net.minecraft.src;
 /* 10:15 */     this.b = paramho;
 /* 11:   */   }
 /* 12:   */   
-/* 13:   */   public aib a(ahb paramahb, EntityPlayer paramahd)
+/* 13:   */   public aib a(Inventory paramahb, EntityPlayer paramahd)
 /* 14:   */   {
 /* 15:20 */     throw new UnsupportedOperationException();
 /* 16:   */   }

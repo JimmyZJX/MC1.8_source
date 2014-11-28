@@ -17,7 +17,7 @@ package net.minecraft.src;
 /*  17: 28 */     a(0.4F, 0.7F);
 /*  18: 29 */     this.bq = (this.rng.nextInt(6000) + 6000);
 /*  19:    */     
-/*  20: 31 */     this.goalSelector.addGoal(0, new yy(this));
+/*  20: 31 */     this.goalSelector.addGoal(0, new GoalSwim(this));
 /*  21: 32 */     this.goalSelector.addGoal(1, new zu(this, 1.4D));
 /*  22: 33 */     this.goalSelector.addGoal(2, new yt(this, 1.0D));
 /*  23: 34 */     this.goalSelector.addGoal(3, new aag(this, 1.0D, ItemList.N, false));
@@ -36,8 +36,8 @@ package net.minecraft.src;
 /*  36:    */   {
 /*  37: 48 */     super.aW();
 /*  38:    */     
-/*  39: 50 */     a(afs.a).a(4.0D);
-/*  40: 51 */     a(afs.d).a(0.25D);
+/*  39: 50 */     getAttribute(MobAttribute.maxHealth).a(4.0D);
+/*  40: 51 */     getAttribute(MobAttribute.movementSpeed).a(0.25D);
 /*  41:    */   }
 /*  42:    */   
 /*  43:    */   public void m()
@@ -99,9 +99,9 @@ package net.minecraft.src;
 /*  99:116 */       a(ItemList.G, 1);
 /* 100:    */     }
 /* 101:119 */     if (au()) {
-/* 102:120 */       a(ItemList.bl, 1);
+/* 102:120 */       a(ItemList.cookedChicken, 1);
 /* 103:    */     } else {
-/* 104:122 */       a(ItemList.bk, 1);
+/* 104:122 */       a(ItemList.chicken, 1);
 /* 105:    */     }
 /* 106:    */   }
 /* 107:    */   

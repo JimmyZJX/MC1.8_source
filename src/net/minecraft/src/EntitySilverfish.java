@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*   8: 31 */     super(paramaqu);
 /*   9: 32 */     a(0.4F, 0.3F);
 /*  10:    */     
-/*  11: 34 */     this.goalSelector.addGoal(1, new yy(this));
+/*  11: 34 */     this.goalSelector.addGoal(1, new GoalSwim(this));
 /*  12:    */     
 /*  13: 36 */     this.goalSelector.addGoal(3, this.b = new afv(this));
 /*  14:    */     
@@ -29,9 +29,9 @@ package net.minecraft.src;
 /*  28:    */   {
 /*  29: 52 */     super.aW();
 /*  30:    */     
-/*  31: 54 */     a(afs.a).a(8.0D);
-/*  32: 55 */     a(afs.d).a(0.25D);
-/*  33: 56 */     a(afs.e).a(1.0D);
+/*  31: 54 */     getAttribute(MobAttribute.maxHealth).a(8.0D);
+/*  32: 55 */     getAttribute(MobAttribute.movementSpeed).a(0.25D);
+/*  33: 56 */     getAttribute(MobAttribute.attackDamage).a(1.0D);
 /*  34:    */   }
 /*  35:    */   
 /*  36:    */   protected boolean r_()
@@ -56,10 +56,10 @@ package net.minecraft.src;
 /*  55:    */   
 /*  56:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /*  57:    */   {
-/*  58: 81 */     if (b(paramwh)) {
+/*  58: 81 */     if (isImmuneTo(paramwh)) {
 /*  59: 82 */       return false;
 /*  60:    */     }
-/*  61: 84 */     if (((paramwh instanceof wi)) || (paramwh == DamageSource.l)) {
+/*  61: 84 */     if (((paramwh instanceof DamageSourceEntity)) || (paramwh == DamageSource.magic)) {
 /*  62: 85 */       this.b.f();
 /*  63:    */     }
 /*  64: 87 */     return super.a(paramwh, paramFloat);

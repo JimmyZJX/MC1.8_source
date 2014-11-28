@@ -8,7 +8,7 @@ package net.minecraft.src;
 /*   7:    */   private final ajk f;
 /*   8:    */   private int g;
 /*   9:    */   
-/*  10:    */   public aii(ahb paramahb, vq paramvq)
+/*  10:    */   public aii(Inventory paramahb, vq paramvq)
 /*  11:    */   {
 /*  12: 27 */     this.a = paramvq;
 /*  13:    */     

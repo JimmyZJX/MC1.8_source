@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ public class axe
 /*   2:    */   extends ProtoBlock
 /*   3:    */ {
-/*   4: 19 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", en.HORIZONTAL);
+/*   4: 19 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", EnumHorizontalVertical.HORIZONTAL);
 /*   5:    */   
 /*   6:    */   protected axe()
 /*   7:    */   {
@@ -30,7 +30,7 @@ package net.minecraft.src;
 /*  29: 44 */       return;
 /*  30:    */     }
 /*  31: 47 */     float f = 0.125F;
-/*  32: 48 */     switch (axf.a[((EnumDirection)localbec.getProperty(a)).ordinal()])
+/*  32: 48 */     switch (axf.a[((EnumDirection)localbec.getData(a)).ordinal()])
 /*  33:    */     {
 /*  34:    */     case 1: 
 /*  35: 50 */       a(0.0F, 0.0F, 1.0F - f, 1.0F, 1.0F, 1.0F);
@@ -79,7 +79,7 @@ package net.minecraft.src;
 /*  78: 91 */     if ((paramej.k().c()) && (b(paramaqu, paramdt, paramej))) {
 /*  79: 92 */       return instance().setData(a, paramej);
 /*  80:    */     }
-/*  81: 95 */     for (EnumDirection localej : en.HORIZONTAL) {
+/*  81: 95 */     for (EnumDirection localej : EnumHorizontalVertical.HORIZONTAL) {
 /*  82: 96 */       if (b(paramaqu, paramdt, localej)) {
 /*  83: 97 */         return instance().setData(a, localej);
 /*  84:    */       }
@@ -89,7 +89,7 @@ package net.minecraft.src;
 /*  88:    */   
 /*  89:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
 /*  90:    */   {
-/*  91:106 */     EnumDirection localej = (EnumDirection)parambec.getProperty(a);
+/*  91:106 */     EnumDirection localej = (EnumDirection)parambec.getData(a);
 /*  92:107 */     if (!b(paramaqu, paramdt, localej))
 /*  93:    */     {
 /*  94:108 */       b(paramaqu, paramdt, parambec, 0);
@@ -100,7 +100,7 @@ package net.minecraft.src;
 /*  99:    */   
 /* 100:    */   protected boolean b(World paramaqu, BlockPosition paramdt, EnumDirection paramej)
 /* 101:    */   {
-/* 102:116 */     return paramaqu.getBlock(paramdt.offset(paramej.d())).getProto().blocksMovement();
+/* 102:116 */     return paramaqu.getBlock(paramdt.offset(paramej.opposite())).getProto().blocksMovement();
 /* 103:    */   }
 /* 104:    */   
 /* 105:    */   public aql k()
@@ -119,7 +119,7 @@ package net.minecraft.src;
 /* 118:    */   
 /* 119:    */   public int c(Block parambec)
 /* 120:    */   {
-/* 121:136 */     return ((EnumDirection)parambec.getProperty(a)).a();
+/* 121:136 */     return ((EnumDirection)parambec.getData(a)).a();
 /* 122:    */   }
 /* 123:    */   
 /* 124:    */   protected bed e()

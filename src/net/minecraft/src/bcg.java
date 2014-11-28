@@ -79,7 +79,7 @@ package net.minecraft.src;
 /*  78:    */   
 /*  79:    */   public int a(Block parambec)
 /*  80:    */   {
-/*  81: 89 */     return ((EnumDyeColor)parambec.getProperty(a)).a();
+/*  81: 89 */     return ((EnumDyeColor)parambec.getData(a)).a();
 /*  82:    */   }
 /*  83:    */   
 /*  84:    */   public void a(Item paramalq, CreativeTabs paramakf, List paramList)
@@ -96,7 +96,7 @@ package net.minecraft.src;
 /*  95:    */   
 /*  96:    */   public int c(Block parambec)
 /*  97:    */   {
-/*  98:107 */     return ((EnumDyeColor)parambec.getProperty(a)).a();
+/*  98:107 */     return ((EnumDyeColor)parambec.getData(a)).a();
 /*  99:    */   }
 /* 100:    */   
 /* 101:    */   protected bed e()

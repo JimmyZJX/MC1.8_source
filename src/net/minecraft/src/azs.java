@@ -55,7 +55,7 @@ package net.minecraft.src;
 /*  54:    */   
 /*  55:    */   public Item a(Block parambec, Random paramRandom, int paramInt)
 /*  56:    */   {
-/*  57: 69 */     return ItemList.aC;
+/*  57: 69 */     return ItemList.redstone;
 /*  58:    */   }
 /*  59:    */   
 /*  60:    */   public int a(int paramInt, Random paramRandom)

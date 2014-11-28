@@ -25,7 +25,7 @@ package net.minecraft.src;
 /* 24:33 */     this.e = ((float)this.k.yPos);
 /* 25:34 */     this.f = ((float)this.k.zPos);
 /* 26:   */     
-/* 27:36 */     float f = MathUtils.a(this.k.xVelocity * this.k.xVelocity + this.k.zVelocity * this.k.zVelocity);
+/* 27:36 */     float f = MathUtils.sqrt(this.k.xVelocity * this.k.xVelocity + this.k.zVelocity * this.k.zVelocity);
 /* 28:37 */     if (f >= 0.01D)
 /* 29:   */     {
 /* 30:38 */       this.l = MathUtils.clamp(this.l + 0.0025F, 0.0F, 1.0F);

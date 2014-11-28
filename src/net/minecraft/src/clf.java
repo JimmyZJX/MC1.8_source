@@ -11,7 +11,7 @@ package net.minecraft.src;
 /*  10:    */   protected cxl a(Block parambec)
 /*  11:    */   {
 /*  12:199 */     LinkedHashMap localLinkedHashMap = Maps.newLinkedHashMap(parambec.b());
-/*  13:201 */     if (parambec.getProperty(bay.b) != EnumDirection.UP) {
+/*  13:201 */     if (parambec.getData(bay.b) != EnumDirection.UP) {
 /*  14:202 */       localLinkedHashMap.remove(bay.a);
 /*  15:    */     }
 /*  16:204 */     return new cxl((oa)ProtoBlock.c.c(parambec.getProto()), a(localLinkedHashMap));

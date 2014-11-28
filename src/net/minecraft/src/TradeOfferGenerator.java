@@ -1,9 +1,9 @@
 package net.minecraft.src;
 import java.util.Random;
 
-abstract interface agw
+abstract interface TradeOfferGenerator
 {
-  public abstract void a(aqd paramaqd, Random paramRandom);
+  public abstract void generate(TradeOfferList paramaqd, Random paramRandom);
 }
 
 

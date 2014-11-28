@@ -71,7 +71,7 @@ package net.minecraft.src;
 /*  70:574 */         f += 2.0F;
 /*  71:    */       }
 /*  72:576 */       localxm.a(DamageSource.b(this.a, this.a), f);
-/*  73:577 */       localxm.a(DamageSource.a(this.a), (float)this.a.a(afs.e).e());
+/*  73:577 */       localxm.a(DamageSource.fromMob(this.a), (float)this.a.getAttribute(MobAttribute.attackDamage).e());
 /*  74:578 */       this.a.d((EntityLiving)null);
 /*  75:    */     }
 /*  76:579 */     else if ((this.b < 60) || (this.b % 20 != 0)) {}

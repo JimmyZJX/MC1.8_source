@@ -30,7 +30,7 @@ package net.minecraft.src;
 /* 29:   */   
 /* 30:   */   public int c(Block parambec)
 /* 31:   */   {
-/* 32:40 */     return ((EnumRailState)parambec.getProperty(b)).a();
+/* 32:40 */     return ((EnumRailState)parambec.getData(b)).a();
 /* 33:   */   }
 /* 34:   */   
 /* 35:   */   protected bed e()

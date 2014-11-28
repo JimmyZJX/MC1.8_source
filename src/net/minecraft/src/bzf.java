@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*  10: 28 */   private static final oa C = new oa("textures/gui/container/enchanting_table.png");
 /*  11: 29 */   private static final oa D = new oa("textures/entity/enchanting_table_book.png");
 /*  12: 30 */   private static final cca E = new cca();
-/*  13:    */   private final ahb F;
+/*  13:    */   private final Inventory F;
 /*  14: 32 */   private Random G = new Random();
 /*  15:    */   private aiq H;
 /*  16:    */   public int u;
@@ -23,7 +23,7 @@ package net.minecraft.src;
 /*  23:    */   ItemStack B;
 /*  24:    */   private final vz I;
 /*  25:    */   
-/*  26:    */   public bzf(ahb paramahb, World paramaqu, vz paramvz)
+/*  26:    */   public bzf(Inventory paramahb, World paramaqu, vz paramvz)
 /*  27:    */   {
 /*  28: 43 */     super(new aiq(paramahb, paramaqu));
 /*  29: 44 */     this.F = paramahb;
@@ -150,7 +150,7 @@ package net.minecraft.src;
 /* 150:165 */         String str2 = "" + i3;
 /* 151:166 */         bty localbty = this.j.l;
 /* 152:167 */         int i4 = 6839882;
-/* 153:168 */         if (((k < m + 1) || (this.j.h.bz < i3)) && (!this.j.h.by.d))
+/* 153:168 */         if (((k < m + 1) || (this.j.h.bz < i3)) && (!this.j.h.abilities.instabuild))
 /* 154:    */         {
 /* 155:169 */           b(n, j + 14 + 19 * m, 0, 185, 108, 19);
 /* 156:170 */           b(n + 1, j + 15 + 19 * m, 16 * m, 239, 16, 16);
@@ -184,7 +184,7 @@ package net.minecraft.src;
 /* 184:    */   {
 /* 185:193 */     super.a(paramInt1, paramInt2, paramFloat);
 /* 186:    */     
-/* 187:195 */     boolean bool = this.j.h.by.d;
+/* 187:195 */     boolean bool = this.j.h.abilities.instabuild;
 /* 188:196 */     int i = this.H.e();
 /* 189:198 */     for (int j = 0; j < 3; j++)
 /* 190:    */     {

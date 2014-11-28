@@ -63,7 +63,7 @@ package net.minecraft.src;
 /*  62: 82 */     for (BlockPosition localdt : BlockPosition.a(paramdt, paramdt.offset(i - 1, i - 1, i - 1))) {
 /*  63: 83 */       for (EnumDirection localej1 : EnumDirection.values()) {
 /*  64: 84 */         for (EnumDirection localej2 : EnumDirection.values()) {
-/*  65: 85 */           if ((localej2 != localej1) && (localej2 != localej1.d()))
+/*  65: 85 */           if ((localej2 != localej1) && (localej2 != localej1.opposite()))
 /*  66:    */           {
 /*  67: 89 */             bem localbem = a(localdt, localej1, localej2, localLoadingCache);
 /*  68: 90 */             if (localbem != null) {
@@ -78,7 +78,7 @@ package net.minecraft.src;
 /*  77:    */   
 /*  78:    */   protected static BlockPosition a(BlockPosition paramdt, EnumDirection paramej1, EnumDirection paramej2, int paramInt1, int paramInt2, int paramInt3)
 /*  79:    */   {
-/*  80:101 */     if ((paramej1 == paramej2) || (paramej1 == paramej2.d())) {
+/*  80:101 */     if ((paramej1 == paramej2) || (paramej1 == paramej2.opposite())) {
 /*  81:102 */       throw new IllegalArgumentException("Invalid forwards & up combination");
 /*  82:    */     }
 /*  83:105 */     fd localfd1 = new fd(paramej1.g(), paramej1.h(), paramej1.i());

@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*   3:    */ import java.util.Iterator;
 /*   4:    */ import java.util.Random;
 /*   5:    */ 
-/*   6:    */ public enum en
+/*   6:    */ public enum EnumHorizontalVertical
 /*   7:    */   implements Predicate<EnumDirection>, Iterable<EnumDirection>
 /*   8:    */ { HORIZONTAL,VERTICAL;
 /*   9:    */   public EnumDirection[] getDirectionList()

@@ -5,9 +5,9 @@ package net.minecraft.src;
 /*  4:   */   implements Predicate<tk>
 /*  5:   */ {
 			  private final qw a;
-			  private final tq b;
+			  private final PlayerStat b;
 			  private final au c;
-/*  6:   */   av(au paramau, qw paramqw, tq paramtq) {a=paramqw;b=paramtq;c=paramau;}
+/*  6:   */   av(au paramau, qw paramqw, PlayerStat paramtq) {a=paramqw;b=paramtq;c=paramau;}
 /*  7:   */   
 /*  8:   */   public boolean apply(tk paramtk)
 /*  9:   */   {

@@ -15,7 +15,7 @@ package net.minecraft.src;
 /* 14:18 */     if (!this.a.ai()) {
 /* 15:19 */       return false;
 /* 16:   */     }
-/* 17:21 */     if (this.a.V()) {
+/* 17:21 */     if (this.a.isInWater()) {
 /* 18:22 */       return false;
 /* 19:   */     }
 /* 20:24 */     if (!this.a.C) {

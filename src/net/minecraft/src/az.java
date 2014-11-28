@@ -43,7 +43,7 @@ package net.minecraft.src;
 /* 42:   */     }
 /* 43:55 */     int k = localqw.bg.a(localalq, i, j, localfn);
 /* 44:56 */     localqw.bh.b();
-/* 45:57 */     if (!localqw.by.d) {
+/* 45:57 */     if (!localqw.abilities.instabuild) {
 /* 46:58 */       localqw.o();
 /* 47:   */     }
 /* 48:61 */     paramae.a(ag.d, k);

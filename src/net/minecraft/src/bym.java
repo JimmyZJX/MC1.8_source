@@ -10,9 +10,9 @@ package net.minecraft.src;
 /*   9: 26 */   private static final oa u = new oa("textures/gui/container/anvil.png");
 /*  10:    */   private aid v;
 /*  11:    */   private bul w;
-/*  12:    */   private ahb x;
+/*  12:    */   private Inventory x;
 /*  13:    */   
-/*  14:    */   public bym(ahb paramahb, World paramaqu)
+/*  14:    */   public bym(Inventory paramahb, World paramaqu)
 /*  15:    */   {
 /*  16: 33 */     super(new aid(paramahb, paramaqu, bsu.z().h));
 /*  17: 34 */     this.x = paramahb;
@@ -55,7 +55,7 @@ package net.minecraft.src;
 /*  54: 71 */       int i = 8453920;
 /*  55: 72 */       int j = 1;
 /*  56: 73 */       String str = cwc.a("container.repair.cost", new Object[] { Integer.valueOf(this.v.a) });
-/*  57: 74 */       if ((this.v.a >= 40) && (!this.j.h.by.d))
+/*  57: 74 */       if ((this.v.a >= 40) && (!this.j.h.abilities.instabuild))
 /*  58:    */       {
 /*  59: 75 */         str = cwc.a("container.repair.expensive", new Object[0]);
 /*  60: 76 */         i = 16736352;

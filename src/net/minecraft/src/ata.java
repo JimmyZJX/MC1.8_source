@@ -26,7 +26,7 @@ package net.minecraft.src;
 /*  25:124 */     return new hz(BlockList.cf.a() + ".name", new Object[0]);
 /*  26:    */   }
 /*  27:    */   
-/*  28:    */   public aib a(ahb paramahb, EntityPlayer paramahd)
+/*  28:    */   public aib a(Inventory paramahb, EntityPlayer paramahd)
 /*  29:    */   {
 /*  30:129 */     return new aid(paramahb, this.a, this.b, paramahd);
 /*  31:    */   }

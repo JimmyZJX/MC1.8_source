@@ -43,8 +43,8 @@ package net.minecraft.src;
 /* 42:   */   {
 /* 43:58 */     int i = 0;
 /* 44:   */     
-/* 45:60 */     i |= ((EnumWoodVariant)parambec.getProperty(b)).getIndex();
-/* 46:62 */     switch (ayt.a[((axo)parambec.getProperty(a)).ordinal()])
+/* 45:60 */     i |= ((EnumWoodVariant)parambec.getData(b)).getIndex();
+/* 46:62 */     switch (ayt.a[((axo)parambec.getData(a)).ordinal()])
 /* 47:   */     {
 /* 48:   */     case 1: 
 /* 49:64 */       i |= 0x4;
@@ -65,12 +65,12 @@ package net.minecraft.src;
 /* 64:   */   
 /* 65:   */   protected ItemStack i(Block parambec)
 /* 66:   */   {
-/* 67:84 */     return new ItemStack(Item.fromProtoBlock(this), 1, ((EnumWoodVariant)parambec.getProperty(b)).getIndex());
+/* 67:84 */     return new ItemStack(Item.fromProtoBlock(this), 1, ((EnumWoodVariant)parambec.getData(b)).getIndex());
 /* 68:   */   }
 /* 69:   */   
 /* 70:   */   public int a(Block parambec)
 /* 71:   */   {
-/* 72:89 */     return ((EnumWoodVariant)parambec.getProperty(b)).getIndex();
+/* 72:89 */     return ((EnumWoodVariant)parambec.getData(b)).getIndex();
 /* 73:   */   }
 /* 74:   */ }
 

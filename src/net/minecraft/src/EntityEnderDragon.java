@@ -60,7 +60,7 @@ package net.minecraft.src;
 /*  59:    */   {
 /*  60: 84 */     super.aW();
 /*  61:    */     
-/*  62: 86 */     a(afs.a).a(200.0D);
+/*  62: 86 */     getAttribute(MobAttribute.maxHealth).a(200.0D);
 /*  63:    */   }
 /*  64:    */   
 /*  65:    */   protected void h()
@@ -112,7 +112,7 @@ package net.minecraft.src;
 /* 111:    */     }
 /* 112:136 */     n();
 /* 113:    */     
-/* 114:138 */     float f1 = 0.2F / (MathUtils.a(this.xVelocity * this.xVelocity + this.zVelocity * this.zVelocity) * 10.0F + 1.0F);
+/* 114:138 */     float f1 = 0.2F / (MathUtils.sqrt(this.xVelocity * this.xVelocity + this.zVelocity * this.zVelocity) * 10.0F + 1.0F);
 /* 115:139 */     f1 *= (float)Math.pow(2.0D, this.yVelocity);
 /* 116:140 */     if (this.bv) {
 /* 117:141 */       this.bt += f1 * 0.5F;
@@ -183,7 +183,7 @@ package net.minecraft.src;
 /* 182:198 */       if ((this.bu) || (d4 < 100.0D) || (d4 > 22500.0D) || (this.D) || (this.E)) {
 /* 183:199 */         cd();
 /* 184:    */       }
-/* 185:201 */       d2 /= MathUtils.a(d1 * d1 + d3 * d3);
+/* 185:201 */       d2 /= MathUtils.sqrt(d1 * d1 + d3 * d3);
 /* 186:202 */       float f9 = 0.6F;
 /* 187:203 */       d2 = MathUtils.clamp(d2, -f9, f9);
 /* 188:204 */       this.yVelocity += d2 * 0.1000000014901161D;
@@ -206,7 +206,7 @@ package net.minecraft.src;
 /* 205:    */       }
 /* 206:225 */       this.aZ *= 0.8F;
 /* 207:    */       
-/* 208:227 */       float f17 = MathUtils.a(this.xVelocity * this.xVelocity + this.zVelocity * this.zVelocity) * 1.0F + 1.0F;
+/* 208:227 */       float f17 = MathUtils.sqrt(this.xVelocity * this.xVelocity + this.zVelocity * this.zVelocity) * 1.0F + 1.0F;
 /* 209:228 */       double d11 = Math.sqrt(this.xVelocity * this.xVelocity + this.zVelocity * this.zVelocity) * 1.0D + 1.0D;
 /* 210:229 */       if (d11 > 40.0D) {
 /* 211:230 */         d11 = 40.0D;
@@ -218,9 +218,9 @@ package net.minecraft.src;
 /* 217:236 */       float f19 = 0.06F;
 /* 218:237 */       a(0.0F, -1.0F, f19 * (f16 * f18 + (1.0F - f18)));
 /* 219:238 */       if (this.bv) {
-/* 220:239 */         d(this.xVelocity * 0.800000011920929D, this.yVelocity * 0.800000011920929D, this.zVelocity * 0.800000011920929D);
+/* 220:239 */         move(this.xVelocity * 0.800000011920929D, this.yVelocity * 0.800000011920929D, this.zVelocity * 0.800000011920929D);
 /* 221:    */       } else {
-/* 222:241 */         d(this.xVelocity, this.yVelocity, this.zVelocity);
+/* 222:241 */         move(this.xVelocity, this.yVelocity, this.zVelocity);
 /* 223:    */       }
 /* 224:244 */       Vec3 localbrw3 = new Vec3(this.xVelocity, this.yVelocity, this.zVelocity).normalize();
 /* 225:245 */       float f20 = ((float)localbrw3.dot(localbrw2) + 1.0F) / 2.0F;
@@ -356,7 +356,7 @@ package net.minecraft.src;
 /* 355:375 */       Entity localwv = paramList.get(i);
 /* 356:376 */       if ((localwv instanceof EntityLiving))
 /* 357:    */       {
-/* 358:377 */         localwv.a(DamageSource.a(this), 10.0F);
+/* 358:377 */         localwv.a(DamageSource.fromMob(this), 10.0F);
 /* 359:378 */         a(this, localwv);
 /* 360:    */       }
 /* 361:    */     }
@@ -448,7 +448,7 @@ package net.minecraft.src;
 /* 447:461 */     this.b = (this.yPos + this.rng.nextFloat() * 3.0F + 1.0D);
 /* 448:462 */     this.c = (this.zPos - f3 * 5.0F + (this.rng.nextFloat() - 0.5F) * 2.0F);
 /* 449:463 */     this.by = null;
-/* 450:464 */     if (((paramwh.j() instanceof EntityPlayer)) || (paramwh.c())) {
+/* 450:464 */     if (((paramwh.getAttacker() instanceof EntityPlayer)) || (paramwh.c())) {
 /* 451:465 */       e(paramwh, paramFloat);
 /* 452:    */     }
 /* 453:467 */     return true;
@@ -456,7 +456,7 @@ package net.minecraft.src;
 /* 455:    */   
 /* 456:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /* 457:    */   {
-/* 458:472 */     if (((paramwh instanceof wi)) && (((wi)paramwh).w())) {
+/* 458:472 */     if (((paramwh instanceof DamageSourceEntity)) && (((DamageSourceEntity)paramwh).w())) {
 /* 459:473 */       e(paramwh, paramFloat);
 /* 460:    */     }
 /* 461:475 */     return false;
@@ -500,7 +500,7 @@ package net.minecraft.src;
 /* 499:506 */         this.world.a(1018, new BlockPosition(this), 0);
 /* 500:    */       }
 /* 501:    */     }
-/* 502:509 */     d(0.0D, 0.1000000014901161D, 0.0D);
+/* 502:509 */     move(0.0D, 0.1000000014901161D, 0.0D);
 /* 503:510 */     this.aG = (this.yaw += 20.0F);
 /* 504:512 */     if ((this.bw == 200) && (!this.world.isClient))
 /* 505:    */     {

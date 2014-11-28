@@ -9,10 +9,10 @@ package net.minecraft.src;
 /*   9: 18 */     a(0.9F, 1.3F);
 /*  10:    */     
 /*  11: 20 */     ((aay)getNavigator()).a(true);
-/*  12: 21 */     this.goalSelector.addGoal(0, new yy(this));
+/*  12: 21 */     this.goalSelector.addGoal(0, new GoalSwim(this));
 /*  13: 22 */     this.goalSelector.addGoal(1, new zu(this, 2.0D));
 /*  14: 23 */     this.goalSelector.addGoal(2, new yt(this, 1.0D));
-/*  15: 24 */     this.goalSelector.addGoal(3, new aag(this, 1.25D, ItemList.O, false));
+/*  15: 24 */     this.goalSelector.addGoal(3, new aag(this, 1.25D, ItemList.wheat, false));
 /*  16: 25 */     this.goalSelector.addGoal(4, new za(this, 1.25D));
 /*  17: 26 */     this.goalSelector.addGoal(5, new zy(this, 1.0D));
 /*  18: 27 */     this.goalSelector.addGoal(6, new zh(this, EntityPlayer.class, 6.0F));
@@ -23,8 +23,8 @@ package net.minecraft.src;
 /*  23:    */   {
 /*  24: 33 */     super.aW();
 /*  25:    */     
-/*  26: 35 */     a(afs.a).a(10.0D);
-/*  27: 36 */     a(afs.d).a(0.2000000029802322D);
+/*  26: 35 */     getAttribute(MobAttribute.maxHealth).a(10.0D);
+/*  27: 36 */     getAttribute(MobAttribute.movementSpeed).a(0.2000000029802322D);
 /*  28:    */   }
 /*  29:    */   
 /*  30:    */   protected String z()
@@ -76,7 +76,7 @@ package net.minecraft.src;
 /*  76:    */   public boolean onRightClick(EntityPlayer paramahd)
 /*  77:    */   {
 /*  78: 89 */     ItemStack localamj = paramahd.bg.h();
-/*  79: 90 */     if ((localamj != null) && (localamj.getItem() == ItemList.aw) && (!paramahd.by.d))
+/*  79: 90 */     if ((localamj != null) && (localamj.getItem() == ItemList.aw) && (!paramahd.abilities.instabuild))
 /*  80:    */     {
 /*  81: 91 */       if (localamj.stackSize-- == 1) {
 /*  82: 92 */         paramahd.bg.a(paramahd.bg.c, new ItemStack(ItemList.aG));

@@ -3,12 +3,10 @@ package net.minecraft.src;
 /*   2:    */ import com.google.common.collect.Lists;
 /*   3:    */ import com.google.common.collect.Sets;
 /*   4:    */ import java.awt.Toolkit;
-/*   5:    */ import java.awt.datatransfer.Clipboard;
 /*   6:    */ import java.awt.datatransfer.DataFlavor;
 /*   7:    */ import java.awt.datatransfer.StringSelection;
 /*   8:    */ import java.awt.datatransfer.Transferable;
 /*   9:    */ import java.io.File;
-/*  10:    */ import java.lang.reflect.Method;
 /*  11:    */ import java.net.URI;
 /*  12:    */ import java.net.URISyntaxException;
 /*  13:    */ import java.util.ArrayList;
@@ -27,14 +25,14 @@ package net.minecraft.src;
 /*  26:    */   implements bvz
 /*  27:    */ {
 /*  28: 49 */   private static final Logger a = LogManager.getLogger();
-/*  29: 50 */   private static final Set f = Sets.newHashSet(new String[] { "http", "https" });
+/*  29: 50 */   private static final Set<String> f = Sets.newHashSet(new String[] { "http", "https" });
 /*  30: 52 */   private static final Splitter g = Splitter.on('\n');
 /*  31:    */   protected bsu j;
 /*  32:    */   protected cqh k;
 /*  33:    */   public int l;
 /*  34:    */   public int m;
 /*  35: 57 */   protected List<bug> n = Lists.newArrayList();
-/*  36: 58 */   protected List o = Lists.newArrayList();
+/*  36: 58 */   protected List<buo> o = Lists.newArrayList();
 /*  37:    */   public boolean p;
 /*  38:    */   protected bty q;
 /*  39:    */   private bug h;
@@ -46,10 +44,10 @@ package net.minecraft.src;
 /*  45:    */   public void a(int paramInt1, int paramInt2, float paramFloat)
 /*  46:    */   {
 /*  47: 68 */     for (int i1 = 0; i1 < this.n.size(); i1++) {
-/*  48: 69 */       ((bug)this.n.get(i1)).a(this.j, paramInt1, paramInt2);
+/*  48: 69 */       this.n.get(i1).a(this.j, paramInt1, paramInt2);
 /*  49:    */     }
 /*  50: 71 */     for (int i1 = 0; i1 < this.o.size(); i1++) {
-/*  51: 72 */       ((buo)this.o.get(i1)).a(this.j, paramInt1, paramInt2);
+/*  51: 72 */       this.o.get(i1).a(this.j, paramInt1, paramInt2);
 /*  52:    */     }
 /*  53:    */   }
 /*  54:    */   
@@ -90,14 +88,14 @@ package net.minecraft.src;
 /*  89:    */     catch (Exception localException) {}
 /*  90:    */   }
 /*  91:    */   
-/*  92:    */   protected void a(ItemStack paramamj, int paramInt1, int paramInt2)
+/*  92:    */   protected void a(ItemStack stack, int paramInt1, int paramInt2)
 /*  93:    */   {
-/*  94:108 */     List localList = paramamj.a(this.j.h, this.j.t.x);
+/*  94:108 */     List<String> localList = stack.a(this.j.h, this.j.t.x);
 /*  95:110 */     for (int i1 = 0; i1 < localList.size(); i1++) {
 /*  96:111 */       if (i1 == 0) {
-/*  97:112 */         localList.set(i1, paramamj.u().e + (String)localList.get(i1));
+/*  97:112 */         localList.set(i1, stack.u().e + localList.get(i1));
 /*  98:    */       } else {
-/*  99:114 */         localList.set(i1, net.minecraft.src.a.h + (String)localList.get(i1));
+/*  99:114 */         localList.set(i1, net.minecraft.src.a.h + localList.get(i1));
 /* 100:    */       }
 /* 101:    */     }
 /* 102:118 */     a(localList, paramInt1, paramInt2);
@@ -204,8 +202,8 @@ package net.minecraft.src;
 /* 203:    */     }
 /* 204:    */     else
 /* 205:    */     {
-/* 206:    */       Object localObject2;
-/* 207:    */       Object localObject3;
+/* 206:    */       
+/* 207:    */       
 /* 208:    */       String str;
 /* 209:224 */       if (localhr.a() == hs.d)
 /* 210:    */       {
@@ -215,16 +213,16 @@ package net.minecraft.src;
 /* 214:227 */             localObject1 = gg.a(localhr.b().c());
 /* 215:228 */             if ((localObject1 instanceof NBTTagCompound))
 /* 216:    */             {
-/* 217:229 */               localObject2 = Lists.newArrayList();
-/* 218:230 */               localObject3 = (NBTTagCompound)localObject1;
-/* 219:231 */               ((List)localObject2).add(((NBTTagCompound)localObject3).getString("name"));
-/* 220:232 */               if (((NBTTagCompound)localObject3).hasKey("type", 8))
+/* 217:229 */               List<String> localObject2 = Lists.newArrayList();
+/* 218:230 */               NBTTagCompound localObject3 = (NBTTagCompound)localObject1;
+/* 219:231 */               localObject2.add(localObject3.getString("name"));
+/* 220:232 */               if (localObject3.hasKey("type", 8))
 /* 221:    */               {
-/* 222:233 */                 str = ((NBTTagCompound)localObject3).getString("type");
-/* 223:234 */                 ((List)localObject2).add("Type: " + str + " (" + EntityList.a(str) + ")");
+/* 222:233 */                 str = localObject3.getString("type");
+/* 223:234 */                 localObject2.add("Type: " + str + " (" + EntityList.a(str) + ")");
 /* 224:    */               }
-/* 225:236 */               ((List)localObject2).add(((NBTTagCompound)localObject3).getString("id"));
-/* 226:237 */               a((List)localObject2, paramInt1, paramInt2);
+/* 225:236 */               localObject2.add(((NBTTagCompound)localObject3).getString("id"));
+/* 226:237 */               a(localObject2, paramInt1, paramInt2);
 /* 227:    */             }
 /* 228:    */             else
 /* 229:    */             {
@@ -243,14 +241,14 @@ package net.minecraft.src;
 /* 242:    */       }
 /* 243:247 */       else if (localhr.a() == hs.b)
 /* 244:    */       {
-/* 245:248 */         tq localtq = StatList.a(localhr.b().c());
+/* 245:248 */         PlayerStat localtq = StatList.a(localhr.b().c());
 /* 246:250 */         if (localtq != null)
 /* 247:    */         {
-/* 248:251 */           localObject2 = localtq.e();
-/* 249:252 */           localObject3 = new hz("stats.tooltip.type." + (localtq.d() ? "achievement" : "statistic"), new Object[0]);
-/* 250:253 */           ((ho)localObject3).b().b(Boolean.valueOf(true));
+/* 248:251 */           ho localObject2 = localtq.e();
+/* 249:252 */           hz localObject3 = new hz("stats.tooltip.type." + (localtq.d() ? "achievement" : "statistic"), new Object[0]);
+/* 250:253 */           localObject3.b().b(Boolean.valueOf(true));
 /* 251:254 */           str = (localtq instanceof tk) ? ((tk)localtq).f() : null;
-/* 252:255 */           ArrayList localArrayList = Lists.newArrayList(new String[] { ((ho)localObject2).d(), ((ho)localObject3).d() });
+/* 252:255 */           ArrayList<String> localArrayList = Lists.newArrayList(new String[] { localObject2.d(), localObject3.d() });
 /* 253:256 */           if (str != null) {
 /* 254:257 */             localArrayList.addAll(this.q.c(str, 150));
 /* 255:    */           }
@@ -506,7 +504,7 @@ package net.minecraft.src;
 /* 505:    */   {
 /* 506:    */     try
 /* 507:    */     {
-/* 508:479 */       Class localClass = Class.forName("java.awt.Desktop");
+/* 508:479 */       Class<?> localClass = Class.forName("java.awt.Desktop");
 /* 509:480 */       Object localObject = localClass.getMethod("getDesktop", new Class[0]).invoke(null, new Object[0]);
 /* 510:481 */       localClass.getMethod("browse", new Class[] { URI.class }).invoke(localObject, new Object[] { paramURI });
 /* 511:    */     }

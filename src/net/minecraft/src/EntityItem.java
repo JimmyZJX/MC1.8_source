@@ -66,7 +66,7 @@ package net.minecraft.src;
 /*  66:    */     
 /*  67: 85 */     this.yVelocity -= 0.03999999910593033D;
 /*  68: 86 */     this.T = j(this.xPos, (getAABB().minY + getAABB().maxY) / 2.0D, this.zPos);
-/*  69: 87 */     d(this.xVelocity, this.yVelocity, this.zVelocity);
+/*  69: 87 */     move(this.xVelocity, this.yVelocity, this.zVelocity);
 /*  70:    */     
 /*  71: 89 */     int i = ((int)this.lastX != (int)this.xPos) || ((int)this.lastY != (int)this.yPos) || ((int)this.lastZ != (int)this.zPos) ? 1 : 0;
 /*  72: 91 */     if ((i != 0) || (this.W % 25 == 0))
@@ -163,26 +163,26 @@ package net.minecraft.src;
 /* 163:    */   {
 /* 164:188 */     if (this.world.a(getAABB(), Material.water, this))
 /* 165:    */     {
-/* 166:189 */       if ((!this.Y) && (!this.aa)) {
+/* 166:189 */       if ((!this.inWater) && (!this.aa)) {
 /* 167:190 */         X();
 /* 168:    */       }
-/* 169:192 */       this.Y = true;
+/* 169:192 */       this.inWater = true;
 /* 170:    */     }
 /* 171:    */     else
 /* 172:    */     {
-/* 173:194 */       this.Y = false;
+/* 173:194 */       this.inWater = false;
 /* 174:    */     }
-/* 175:196 */     return this.Y;
+/* 175:196 */     return this.inWater;
 /* 176:    */   }
 /* 177:    */   
 /* 178:    */   protected void f(int paramInt)
 /* 179:    */   {
-/* 180:201 */     a(DamageSource.a, paramInt);
+/* 180:201 */     a(DamageSource.inFire, paramInt);
 /* 181:    */   }
 /* 182:    */   
 /* 183:    */   public boolean a(DamageSource paramwh, float paramFloat)
 /* 184:    */   {
-/* 185:206 */     if (b(paramwh)) {
+/* 185:206 */     if (isImmuneTo(paramwh)) {
 /* 186:207 */       return false;
 /* 187:    */     }
 /* 188:209 */     if ((getItemStack() != null) && (getItemStack().getItem() == ItemList.bZ) && (paramwh.c())) {
@@ -232,7 +232,7 @@ package net.minecraft.src;
 /* 232:    */     }
 /* 233:    */   }
 /* 234:    */   
-/* 235:    */   public void d(EntityPlayer player)
+/* 235:    */   public void onPickedUp(EntityPlayer player)
 /* 236:    */   {
 /* 237:258 */     if (this.world.isClient) {
 /* 238:259 */       return;
@@ -242,25 +242,25 @@ package net.minecraft.src;
 /* 242:264 */     if ((this.pickUpdelay == 0) && ((this.g == null) || (6000 - this.age <= 200) || (this.g.equals(player.getName()))) && (player.bg.a(stack)))
 /* 243:    */     {
 /* 244:265 */       if (stack.getItem() == Item.fromProtoBlock(BlockList.log)) {
-/* 245:266 */         player.b(AchievementList.mineWood);
+/* 245:266 */         player.increaseStat(AchievementList.mineWood);
 /* 246:    */       }
 /* 247:268 */       if (stack.getItem() == Item.fromProtoBlock(BlockList.log2)) {
-/* 248:269 */         player.b(AchievementList.mineWood);
+/* 248:269 */         player.increaseStat(AchievementList.mineWood);
 /* 249:    */       }
 /* 250:271 */       if (stack.getItem() == ItemList.leather) {
-/* 251:272 */         player.b(AchievementList.killCow);
+/* 251:272 */         player.increaseStat(AchievementList.killCow);
 /* 252:    */       }
 /* 253:274 */       if (stack.getItem() == ItemList.diamond) {
-/* 254:275 */         player.b(AchievementList.w);
+/* 254:275 */         player.increaseStat(AchievementList.diamonds);
 /* 255:    */       }
-/* 256:277 */       if (stack.getItem() == ItemList.bv) {
-/* 257:278 */         player.b(AchievementList.A);
+/* 256:277 */       if (stack.getItem() == ItemList.blazeRod) {
+/* 257:278 */         player.increaseStat(AchievementList.blazeRod);
 /* 258:    */       }
 /* 259:280 */       if ((stack.getItem() == ItemList.diamond) && (getThrower() != null))
 /* 260:    */       {
 /* 261:281 */         EntityPlayer thrower = this.world.getPlayer(getThrower());
 /* 262:282 */         if ((thrower != null) && (thrower != player)) {
-/* 263:283 */           thrower.b(AchievementList.diamondsToYou);
+/* 263:283 */           thrower.increaseStat(AchievementList.diamondsToYou);
 /* 264:    */         }
 /* 265:    */       }
 /* 266:286 */       if (!R()) {
@@ -353,12 +353,12 @@ package net.minecraft.src;
 /* 353:366 */     this.pickUpdelay = 32767;
 /* 354:    */   }
 /* 355:    */   
-/* 356:    */   public void a(int paramInt)
+/* 356:    */   public void setPickUpDelay(int i)
 /* 357:    */   {
-/* 358:370 */     this.pickUpdelay = paramInt;
+/* 358:370 */     this.pickUpdelay = i;
 /* 359:    */   }
 /* 360:    */   
-/* 361:    */   public boolean s()
+/* 361:    */   public boolean isUnpickable()
 /* 362:    */   {
 /* 363:374 */     return this.pickUpdelay > 0;
 /* 364:    */   }

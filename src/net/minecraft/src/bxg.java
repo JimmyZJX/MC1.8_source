@@ -48,10 +48,10 @@ package net.minecraft.src;
 /*  47:    */     }
 /*  48: 66 */     this.u = cwc.a("selectWorld.world", new Object[0]);
 /*  49: 67 */     this.v = cwc.a("selectWorld.conversion", new Object[0]);
-/*  50: 68 */     this.w[EnumGameType.b.a()] = cwc.a("gameMode.survival", new Object[0]);
-/*  51: 69 */     this.w[EnumGameType.CREATIVE.a()] = cwc.a("gameMode.creative", new Object[0]);
-/*  52: 70 */     this.w[EnumGameType.d.a()] = cwc.a("gameMode.adventure", new Object[0]);
-/*  53: 71 */     this.w[EnumGameType.e.a()] = cwc.a("gameMode.spectator", new Object[0]);
+/*  50: 68 */     this.w[EnumGameMode.SURVIVAL.a()] = cwc.a("gameMode.survival", new Object[0]);
+/*  51: 69 */     this.w[EnumGameMode.CREATIVE.a()] = cwc.a("gameMode.creative", new Object[0]);
+/*  52: 70 */     this.w[EnumGameMode.ADVENTURE.a()] = cwc.a("gameMode.adventure", new Object[0]);
+/*  53: 71 */     this.w[EnumGameMode.SPECTATOR.a()] = cwc.a("gameMode.spectator", new Object[0]);
 /*  54:    */     
 /*  55: 73 */     this.t = new bxh(this, this.j);
 /*  56: 74 */     this.t.d(4, 5);

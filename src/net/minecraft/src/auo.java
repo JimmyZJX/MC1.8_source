@@ -22,7 +22,7 @@ package net.minecraft.src;
 /*  21: 36 */     if (!paramaqu.isClient)
 /*  22:    */     {
 /*  23: 37 */       boolean bool1 = paramaqu.z(paramdt);
-/*  24: 38 */       boolean bool2 = ((Boolean)parambec.getProperty(a)).booleanValue();
+/*  24: 38 */       boolean bool2 = ((Boolean)parambec.getData(a)).booleanValue();
 /*  25: 40 */       if ((bool1) && (!bool2))
 /*  26:    */       {
 /*  27: 41 */         paramaqu.setBlock(paramdt, parambec.setData(a, Boolean.valueOf(true)), 4);
@@ -107,7 +107,7 @@ package net.minecraft.src;
 /* 106:    */   public int c(Block parambec)
 /* 107:    */   {
 /* 108:125 */     int i = 0;
-/* 109:127 */     if (((Boolean)parambec.getProperty(a)).booleanValue()) {
+/* 109:127 */     if (((Boolean)parambec.getData(a)).booleanValue()) {
 /* 110:128 */       i |= 0x1;
 /* 111:    */     }
 /* 112:131 */     return i;

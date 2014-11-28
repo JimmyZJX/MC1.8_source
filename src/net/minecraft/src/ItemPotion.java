@@ -58,7 +58,7 @@ package net.minecraft.src;
 /*  62:    */   
 /*  63:    */   public ItemStack b(ItemStack paramamj, World paramaqu, EntityPlayer paramahd)
 /*  64:    */   {
-/*  65: 80 */     if (!paramahd.by.d) {
+/*  65: 80 */     if (!paramahd.abilities.instabuild) {
 /*  66: 81 */       paramamj.stackSize -= 1;
 /*  67:    */     }
 /*  68: 84 */     if (!paramaqu.isClient)
@@ -70,8 +70,8 @@ package net.minecraft.src;
 /*  74:    */         }
 /*  75:    */       }
 /*  76:    */     }
-/*  77: 92 */     paramahd.b(StatList.J[Item.b(this)]);
-/*  78: 93 */     if (!paramahd.by.d)
+/*  77: 92 */     paramahd.increaseStat(StatList.J[Item.b(this)]);
+/*  78: 93 */     if (!paramahd.abilities.instabuild)
 /*  79:    */     {
 /*  80: 94 */       if (paramamj.stackSize <= 0) {
 /*  81: 95 */         return new ItemStack(ItemList.bA);
@@ -95,14 +95,14 @@ package net.minecraft.src;
 /*  99:    */   {
 /* 100:116 */     if (f(paramamj.getDamage2()))
 /* 101:    */     {
-/* 102:117 */       if (!paramahd.by.d) {
+/* 102:117 */       if (!paramahd.abilities.instabuild) {
 /* 103:118 */         paramamj.stackSize -= 1;
 /* 104:    */       }
 /* 105:120 */       paramaqu.a(paramahd, "random.bow", 0.5F, 0.4F / (random.nextFloat() * 0.4F + 0.8F));
 /* 106:121 */       if (!paramaqu.isClient) {
 /* 107:122 */         paramaqu.spawnEntity(new ahv(paramaqu, paramahd, paramamj));
 /* 108:    */       }
-/* 109:124 */       paramahd.b(StatList.J[Item.b(this)]);
+/* 109:124 */       paramahd.increaseStat(StatList.J[Item.b(this)]);
 /* 110:125 */       return paramamj;
 /* 111:    */     }
 /* 112:127 */     paramahd.a(paramamj, d(paramamj));

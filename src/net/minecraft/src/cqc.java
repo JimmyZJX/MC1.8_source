@@ -82,8 +82,8 @@ package net.minecraft.src;
 /*  81: 92 */       Vec3 localbrw1 = a(localxm, localxm.height * 0.5D, paramFloat2);
 /*  82: 93 */       Vec3 localbrw2 = a(paramafg, (double)f5, paramFloat2);
 /*  83:    */       
-/*  84: 95 */       Vec3 localbrw3 = localbrw1.d(localbrw2);
-/*  85: 96 */       double d1 = localbrw3.b() + 1.0D;
+/*  84: 95 */       Vec3 localbrw3 = localbrw1.substract(localbrw2);
+/*  85: 96 */       double d1 = localbrw3.norm() + 1.0D;
 /*  86: 97 */       localbrw3 = localbrw3.normalize();
 /*  87:    */       
 /*  88:    */ 

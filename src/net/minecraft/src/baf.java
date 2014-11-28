@@ -31,7 +31,7 @@ package net.minecraft.src;
 /*  30:    */   
 /*  31:    */   public void d(World paramaqu, BlockPosition paramdt, Block parambec, Random paramRandom)
 /*  32:    */   {
-/*  33: 46 */     if (((Integer)parambec.getProperty(b)).intValue() == 0) {
+/*  33: 46 */     if (((Integer)parambec.getData(b)).intValue() == 0) {
 /*  34: 47 */       paramaqu.setBlock(paramdt, parambec.a(b), 4);
 /*  35:    */     } else {
 /*  36: 49 */       e(paramaqu, paramdt, parambec, paramRandom);
@@ -45,7 +45,7 @@ package net.minecraft.src;
 /*  44: 56 */     int i = 0;
 /*  45: 57 */     int j = 0;
 /*  46: 58 */     int k = 0;
-/*  47: 60 */     switch (bag.a[((EnumWoodVariant)parambec.getProperty(a)).ordinal()])
+/*  47: 60 */     switch (bag.a[((EnumWoodVariant)parambec.getData(a)).ordinal()])
 /*  48:    */     {
 /*  49:    */     case 1: 
 /*  50: 63 */       for (i = 0; i >= -1; i--) {
@@ -137,12 +137,12 @@ package net.minecraft.src;
 /* 136:    */   public boolean a(World paramaqu, BlockPosition paramdt, EnumWoodVariant paramayx)
 /* 137:    */   {
 /* 138:152 */     Block localbec = paramaqu.getBlock(paramdt);
-/* 139:153 */     return (localbec.getProto() == this) && (localbec.getProperty(a) == paramayx);
+/* 139:153 */     return (localbec.getProto() == this) && (localbec.getData(a) == paramayx);
 /* 140:    */   }
 /* 141:    */   
 /* 142:    */   public int a(Block parambec)
 /* 143:    */   {
-/* 144:158 */     return ((EnumWoodVariant)parambec.getProperty(a)).getIndex();
+/* 144:158 */     return ((EnumWoodVariant)parambec.getData(a)).getIndex();
 /* 145:    */   }
 /* 146:    */   
 /* 147:    */   public void a(Item paramalq, CreativeTabs paramakf, List<ItemStack> paramList)
@@ -176,8 +176,8 @@ package net.minecraft.src;
 /* 175:    */   {
 /* 176:192 */     int i = 0;
 /* 177:    */     
-/* 178:194 */     i |= ((EnumWoodVariant)parambec.getProperty(a)).getIndex();
-/* 179:195 */     i |= ((Integer)parambec.getProperty(b)).intValue() << 3;
+/* 178:194 */     i |= ((EnumWoodVariant)parambec.getData(a)).getIndex();
+/* 179:195 */     i |= ((Integer)parambec.getData(b)).intValue() << 3;
 /* 180:    */     
 /* 181:197 */     return i;
 /* 182:    */   }
