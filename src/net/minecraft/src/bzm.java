@@ -83,7 +83,7 @@ package net.minecraft.src;
 /*  83: 95 */     cjm.glScalef(-f1, -f1, -f1);
 /*  84: 96 */     cjm.glRotatef(180.0F, 0.0F, 1.0F, 0.0F);
 /*  85:    */     
-/*  86: 98 */     ProtoBlock localatr = this.a.w();
+/*  86: 98 */     BlockType localatr = this.a.w();
 /*  87:100 */     if (localatr == BlockList.an)
 /*  88:    */     {
 /*  89:101 */       float f2 = this.a.getData() * 360 / 16.0F;

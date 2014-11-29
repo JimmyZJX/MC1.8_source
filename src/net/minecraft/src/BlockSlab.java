@@ -3,7 +3,7 @@ package net.minecraft.src;
 /*   2:    */ import java.util.Random;
 /*   3:    */ 
 /*   4:    */ public abstract class BlockSlab
-/*   5:    */   extends ProtoBlock
+/*   5:    */   extends BlockType
 /*   6:    */ {
 /*   7: 21 */   public static final BlockDataEnum half = BlockDataEnum.getInstance("half", EnumSlabHalf.class);
 /*   8:    */   
@@ -31,7 +31,7 @@ package net.minecraft.src;
 /*  30: 46 */       return;
 /*  31:    */     }
 /*  32: 49 */     Block localbec = paramard.getBlock(paramdt);
-/*  33: 50 */     if (localbec.getProto() == this) {
+/*  33: 50 */     if (localbec.getType() == this) {
 /*  34: 51 */       if (localbec.getData(half) == EnumSlabHalf.TOP) {
 /*  35: 52 */         a(0.0F, 0.5F, 0.0F, 1.0F, 1.0F, 1.0F);
 /*  36:    */       } else {
@@ -98,8 +98,8 @@ package net.minecraft.src;
 /*  97:118 */     Block localbec1 = paramard.getBlock(paramdt);
 /*  98:119 */     Block localbec2 = paramard.getBlock(localdt);
 /*  99:    */     
-/* 100:121 */     int i = (c(localbec1.getProto())) && (localbec1.getData(half) == EnumSlabHalf.TOP) ? 1 : 0;
-/* 101:122 */     int j = (c(localbec2.getProto())) && (localbec2.getData(half) == EnumSlabHalf.TOP) ? 1 : 0;
+/* 100:121 */     int i = (c(localbec1.getType())) && (localbec1.getData(half) == EnumSlabHalf.TOP) ? 1 : 0;
+/* 101:122 */     int j = (c(localbec2.getType())) && (localbec2.getData(half) == EnumSlabHalf.TOP) ? 1 : 0;
 /* 102:123 */     if (j != 0)
 /* 103:    */     {
 /* 104:124 */       if (paramej == EnumDirection.DOWN) {
@@ -108,7 +108,7 @@ package net.minecraft.src;
 /* 107:127 */       if ((paramej == EnumDirection.UP) && (super.a(paramard, paramdt, paramej))) {
 /* 108:128 */         return true;
 /* 109:    */       }
-/* 110:130 */       return (!c(localbec1.getProto())) || (i == 0);
+/* 110:130 */       return (!c(localbec1.getType())) || (i == 0);
 /* 111:    */     }
 /* 112:132 */     if (paramej == EnumDirection.UP) {
 /* 113:133 */       return true;
@@ -116,10 +116,10 @@ package net.minecraft.src;
 /* 115:135 */     if ((paramej == EnumDirection.DOWN) && (super.a(paramard, paramdt, paramej))) {
 /* 116:136 */       return true;
 /* 117:    */     }
-/* 118:138 */     return (!c(localbec1.getProto())) || (i != 0);
+/* 118:138 */     return (!c(localbec1.getType())) || (i != 0);
 /* 119:    */   }
 /* 120:    */   
-/* 121:    */   protected static boolean c(ProtoBlock paramatr)
+/* 121:    */   protected static boolean c(BlockType paramatr)
 /* 122:    */   {
 /* 123:143 */     return (paramatr == BlockList.U) || (paramatr == BlockList.bM) || (paramatr == BlockList.cP);
 /* 124:    */   }

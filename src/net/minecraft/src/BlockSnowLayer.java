@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ import java.util.Random;
 /*   2:    */ 
 /*   3:    */ public class BlockSnowLayer
-/*   4:    */   extends ProtoBlock
+/*   4:    */   extends BlockType
 /*   5:    */ {
 /*   6: 26 */   public static final BlockDataInteger a = BlockDataInteger.getInstance("layers", 1, 8);
 /*   7:    */   
@@ -57,7 +57,7 @@ package net.minecraft.src;
 /*  56:    */   public boolean c(World paramaqu, BlockPosition paramdt)
 /*  57:    */   {
 /*  58: 86 */     Block localbec = paramaqu.getBlock(paramdt.down());
-/*  59: 87 */     ProtoBlock localatr = localbec.getProto();
+/*  59: 87 */     BlockType localatr = localbec.getType();
 /*  60: 89 */     if ((localatr == BlockList.aI) || (localatr == BlockList.cB)) {
 /*  61: 90 */       return false;
 /*  62:    */     }
@@ -70,7 +70,7 @@ package net.minecraft.src;
 /*  69:101 */     return (localatr.c()) && (localatr.material.material_c());
 /*  70:    */   }
 /*  71:    */   
-/*  72:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/*  72:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /*  73:    */   {
 /*  74:106 */     e(paramaqu, paramdt, parambec);
 /*  75:    */   }
@@ -91,7 +91,7 @@ package net.minecraft.src;
 /*  90:120 */     a(paramaqu, paramdt, new ItemStack(ItemList.aD, ((Integer)parambec.getData(a)).intValue() + 1, 0));
 /*  91:121 */     paramaqu.g(paramdt);
 /*  92:    */     
-/*  93:123 */     paramahd.increaseStat(StatList.H[ProtoBlock.a(this)]);
+/*  93:123 */     paramahd.increaseStat(StatList.H[BlockType.a(this)]);
 /*  94:    */   }
 /*  95:    */   
 /*  96:    */   public Item a(Block parambec, Random paramRandom, int paramInt)

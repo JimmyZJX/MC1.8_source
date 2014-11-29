@@ -37,12 +37,12 @@ package net.minecraft.src;
 /*  36:337 */     return this.e;
 /*  37:    */   }
 /*  38:    */   
-/*  39:    */   public boolean b()
+/*  39:    */   public boolean isVertical()
 /*  40:    */   {
 /*  41:341 */     return this.f == EnumHorizontalVertical.VERTICAL;
 /*  42:    */   }
 /*  43:    */   
-/*  44:    */   public boolean c()
+/*  44:    */   public boolean isHorizontal()
 /*  45:    */   {
 /*  46:345 */     return this.f == EnumHorizontalVertical.HORIZONTAL;
 /*  47:    */   }
@@ -54,7 +54,7 @@ package net.minecraft.src;
 /*  53:    */   
 /*  54:    */   public boolean apply(EnumDirection paramej)
 /*  55:    */   {
-/*  56:355 */     return (paramej != null) && (paramej.k() == this);
+/*  56:355 */     return (paramej != null) && (paramej.getAxis() == this);
 /*  57:    */   }
 /*  58:    */   
 /*  59:    */   public EnumHorizontalVertical d()

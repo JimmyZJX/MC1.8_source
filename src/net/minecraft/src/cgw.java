@@ -128,7 +128,7 @@ package net.minecraft.src;
 /* 127:122 */     this.xVelocity *= 0.9800000190734863D;
 /* 128:123 */     this.yVelocity *= 0.9800000190734863D;
 /* 129:124 */     this.zVelocity *= 0.9800000190734863D;
-/* 130:126 */     if (this.C)
+/* 130:126 */     if (this.landing)
 /* 131:    */     {
 /* 132:127 */       this.xVelocity *= 0.699999988079071D;
 /* 133:128 */       this.zVelocity *= 0.699999988079071D;

@@ -2,10 +2,10 @@ package net.minecraft.src;
 /*  1:   */ public class anc
 /*  2:   */   extends Item
 /*  3:   */ {
-/*  4:   */   private ProtoBlock a;
-/*  5:   */   private ProtoBlock b;
+/*  4:   */   private BlockType a;
+/*  5:   */   private BlockType b;
 /*  6:   */   
-/*  7:   */   public anc(ProtoBlock paramatr1, ProtoBlock paramatr2)
+/*  7:   */   public anc(BlockType paramatr1, BlockType paramatr2)
 /*  8:   */   {
 /*  9:14 */     this.a = paramatr1;
 /* 10:15 */     this.b = paramatr2;
@@ -20,7 +20,7 @@ package net.minecraft.src;
 /* 19:25 */     if (!paramahd.a(paramdt.offset(paramej), paramej, paramamj)) {
 /* 20:26 */       return false;
 /* 21:   */     }
-/* 22:29 */     if ((paramaqu.getBlock(paramdt).getProto() == this.b) && (paramaqu.isEmpty(paramdt.up())))
+/* 22:29 */     if ((paramaqu.getBlock(paramdt).getType() == this.b) && (paramaqu.isEmpty(paramdt.up())))
 /* 23:   */     {
 /* 24:30 */       paramaqu.setBlock(paramdt.up(), this.a.instance());
 /* 25:31 */       paramamj.stackSize -= 1;

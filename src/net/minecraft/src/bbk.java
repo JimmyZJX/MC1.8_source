@@ -1,7 +1,7 @@
 package net.minecraft.src;
 /*   2:    */ 
 /*   3:    */ public class bbk
-/*   4:    */   extends ProtoBlock
+/*   4:    */   extends BlockType
 /*   5:    */ {
 /*   6: 21 */   public static final BlockDataBoolean a = BlockDataBoolean.getInstance("explode");
 /*   7:    */   
@@ -22,7 +22,7 @@ package net.minecraft.src;
 /*  22:    */     }
 /*  23:    */   }
 /*  24:    */   
-/*  25:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/*  25:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /*  26:    */   {
 /*  27: 41 */     if (paramaqu.z(paramdt))
 /*  28:    */     {

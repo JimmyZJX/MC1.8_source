@@ -48,7 +48,7 @@ package net.minecraft.src;
 /*  47: 58 */   protected BlockPosition pos = BlockPosition.zero;
 /*  48:    */   protected boolean d;
 /*  49: 61 */   private int data = -1;
-/*  50:    */   protected ProtoBlock e;
+/*  50:    */   protected BlockType e;
 /*  51:    */   
 /*  52:    */   public World getWorld()
 /*  53:    */   {
@@ -109,7 +109,7 @@ package net.minecraft.src;
 /* 108:110 */     if (this.data == -1)
 /* 109:    */     {
 /* 110:111 */       Block localbec = this.world.getBlock(this.pos);
-/* 111:112 */       this.data = localbec.getProto().c(localbec);
+/* 111:112 */       this.data = localbec.getType().c(localbec);
 /* 112:    */     }
 /* 113:114 */     return this.data;
 /* 114:    */   }
@@ -119,7 +119,7 @@ package net.minecraft.src;
 /* 118:122 */     if (this.world != null)
 /* 119:    */     {
 /* 120:123 */       Block localbec = this.world.getBlock(this.pos);
-/* 121:124 */       this.data = localbec.getProto().c(localbec);
+/* 121:124 */       this.data = localbec.getType().c(localbec);
 /* 122:125 */       this.world.b(this.pos, this);
 /* 123:127 */       if (w() != BlockList.air) {
 /* 124:128 */         this.world.e(this.pos, w());
@@ -145,10 +145,10 @@ package net.minecraft.src;
 /* 144:145 */     return this.pos;
 /* 145:    */   }
 /* 146:    */   
-/* 147:    */   public ProtoBlock w()
+/* 147:    */   public BlockType w()
 /* 148:    */   {
 /* 149:151 */     if (this.e == null) {
-/* 150:152 */       this.e = this.world.getBlock(this.pos).getProto();
+/* 150:152 */       this.e = this.world.getBlock(this.pos).getType();
 /* 151:    */     }
 /* 152:154 */     return this.e;
 /* 153:    */   }

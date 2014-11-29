@@ -98,8 +98,8 @@ import java.util.List;
 /*  96:    */       {
 /*  97:100 */         this.k.addAll(localList);
 /*  98:102 */         for (Entity localwv : this.k) {
-/*  99:103 */           if ((this.a.getProto() == BlockList.cE) && (this.g)) {
-/* 100:104 */             switch (bdw.a[this.f.k().ordinal()])
+/*  99:103 */           if ((this.a.getType() == BlockList.cE) && (this.g)) {
+/* 100:104 */             switch (bdw.a[this.f.getAxis().ordinal()])
 /* 101:    */             {
 /* 102:    */             case 1: 
 /* 103:106 */               localwv.xVelocity = this.f.g();
@@ -126,10 +126,10 @@ import java.util.List;
 /* 124:126 */       this.j = (this.i = 1.0F);
 /* 125:127 */       this.world.t(this.pos);
 /* 126:128 */       y();
-/* 127:129 */       if (this.world.getBlock(this.pos).getProto() == BlockList.M)
+/* 127:129 */       if (this.world.getBlock(this.pos).getType() == BlockList.M)
 /* 128:    */       {
 /* 129:130 */         this.world.setBlock(this.pos, this.a, 3);
-/* 130:131 */         this.world.d(this.pos, this.a.getProto());
+/* 130:131 */         this.world.d(this.pos, this.a.getType());
 /* 131:    */       }
 /* 132:    */     }
 /* 133:    */   }
@@ -142,10 +142,10 @@ import java.util.List;
 /* 140:141 */       a(1.0F, 0.25F);
 /* 141:142 */       this.world.t(this.pos);
 /* 142:143 */       y();
-/* 143:144 */       if (this.world.getBlock(this.pos).getProto() == BlockList.M)
+/* 143:144 */       if (this.world.getBlock(this.pos).getType() == BlockList.M)
 /* 144:    */       {
 /* 145:145 */         this.world.setBlock(this.pos, this.a, 3);
-/* 146:146 */         this.world.d(this.pos, this.a.getProto());
+/* 146:146 */         this.world.d(this.pos, this.a.getType());
 /* 147:    */       }
 /* 148:148 */       return;
 /* 149:    */     }
@@ -162,7 +162,7 @@ import java.util.List;
 /* 160:    */   {
 /* 161:163 */     super.readFromNBT(paramfn);
 /* 162:    */     
-/* 163:165 */     this.a = ProtoBlock.c(paramfn.getInteger("blockId")).instance(paramfn.getInteger("blockData"));
+/* 163:165 */     this.a = BlockType.c(paramfn.getInteger("blockId")).instance(paramfn.getInteger("blockData"));
 /* 164:166 */     this.f = EnumDirection.a(paramfn.getInteger("facing"));
 /* 165:167 */     this.j = (this.i = paramfn.getFloat("progress"));
 /* 166:168 */     this.g = paramfn.getBoolean("extending");
@@ -172,8 +172,8 @@ import java.util.List;
 /* 170:    */   {
 /* 171:173 */     super.writeToNBT(paramfn);
 /* 172:    */     
-/* 173:175 */     paramfn.setInt("blockId", ProtoBlock.a(this.a.getProto()));
-/* 174:176 */     paramfn.setInt("blockData", this.a.getProto().c(this.a));
+/* 173:175 */     paramfn.setInt("blockId", BlockType.a(this.a.getType()));
+/* 174:176 */     paramfn.setInt("blockData", this.a.getType().c(this.a));
 /* 175:177 */     paramfn.setInt("facing", this.f.a());
 /* 176:178 */     paramfn.setFloat("progress", this.j);
 /* 177:179 */     paramfn.setBoolean("extending", this.g);

@@ -4,9 +4,9 @@ package net.minecraft.src;
 /*   3:    */ public class akb
 /*   4:    */   extends Item
 /*   5:    */ {
-/*   6:    */   private ProtoBlock a;
+/*   6:    */   private BlockType a;
 /*   7:    */   
-/*   8:    */   public akb(ProtoBlock paramatr)
+/*   8:    */   public akb(BlockType paramatr)
 /*   9:    */   {
 /*  10: 19 */     this.maxStackSize = 1;
 /*  11: 20 */     this.a = paramatr;
@@ -34,7 +34,7 @@ package net.minecraft.src;
 /*  33: 42 */           return paramamj;
 /*  34:    */         }
 /*  35: 44 */         localObject = paramaqu.getBlock(localdt);
-/*  36: 45 */         Material localbof = ((Block)localObject).getProto().getMaterial();
+/*  36: 45 */         Material localbof = ((Block)localObject).getType().getMaterial();
 /*  37: 47 */         if ((localbof == Material.water) && (((Integer)((Block)localObject).getData(BlockLiquid.level)).intValue() == 0))
 /*  38:    */         {
 /*  39: 48 */           paramaqu.g(localdt);
@@ -75,7 +75,7 @@ package net.minecraft.src;
 /*  74: 82 */     if (--paramamj.stackSize <= 0) {
 /*  75: 83 */       return new ItemStack(paramalq);
 /*  76:    */     }
-/*  77: 85 */     if (!paramahd.bg.a(new ItemStack(paramalq))) {
+/*  77: 85 */     if (!paramahd.inventory.a(new ItemStack(paramalq))) {
 /*  78: 86 */       paramahd.a(new ItemStack(paramalq, 1, 0), false);
 /*  79:    */     }
 /*  80: 88 */     return paramamj;
@@ -86,7 +86,7 @@ package net.minecraft.src;
 /*  85: 93 */     if (this.a == BlockList.air) {
 /*  86: 94 */       return false;
 /*  87:    */     }
-/*  88: 97 */     Material localbof = paramaqu.getBlock(paramdt).getProto().getMaterial();
+/*  88: 97 */     Material localbof = paramaqu.getBlock(paramdt).getType().getMaterial();
 /*  89: 98 */     int i = !localbof.a() ? 1 : 0;
 /*  90: 99 */     if ((paramaqu.isEmpty(paramdt)) || (i != 0))
 /*  91:    */     {

@@ -34,12 +34,12 @@ package net.minecraft.src;
 /*   33:  73 */     this.m.a(paramalq, paramInt, new cxl(paramString, "inventory"));
 /*   34:     */   }
 /*   35:     */   
-/*   36:     */   protected void a(ProtoBlock paramatr, int paramInt, String paramString)
+/*   36:     */   protected void a(BlockType paramatr, int paramInt, String paramString)
 /*   37:     */   {
-/*   38:  77 */     a(Item.fromProtoBlock(paramatr), paramInt, paramString);
+/*   38:  77 */     a(Item.fromBlock(paramatr), paramInt, paramString);
 /*   39:     */   }
 /*   40:     */   
-/*   41:     */   private void a(ProtoBlock paramatr, String paramString)
+/*   41:     */   private void a(BlockType paramatr, String paramString)
 /*   42:     */   {
 /*   43:  81 */     a(paramatr, 0, paramString);
 /*   44:     */   }
@@ -843,7 +843,7 @@ package net.minecraft.src;
 /*  842: 871 */     a(ItemList.aB, "iron_door");
 /*  843: 872 */     a(ItemList.redstone, "redstone");
 /*  844: 873 */     a(ItemList.aD, "snowball");
-/*  845: 874 */     a(ItemList.aE, "boat");
+/*  845: 874 */     a(ItemList.boat, "boat");
 /*  846: 875 */     a(ItemList.leather, "leather");
 /*  847: 876 */     a(ItemList.aG, "milk_bucket");
 /*  848: 877 */     a(ItemList.aH, "brick");
@@ -970,7 +970,7 @@ package net.minecraft.src;
 /*  969: 998 */     a(ItemList.cc, "firework_charge");
 /*  970: 999 */     a(ItemList.ce, "comparator");
 /*  971:1000 */     a(ItemList.cf, "netherbrick");
-/*  972:1001 */     a(ItemList.cg, "quartz");
+/*  972:1001 */     a(ItemList.quartz, "quartz");
 /*  973:1002 */     a(ItemList.ch, "tnt_minecart");
 /*  974:1003 */     a(ItemList.ci, "hopper_minecart");
 /*  975:     */     
@@ -978,7 +978,7 @@ package net.minecraft.src;
 /*  977:1006 */     a(ItemList.ck, "iron_horse_armor");
 /*  978:1007 */     a(ItemList.cl, "golden_horse_armor");
 /*  979:1008 */     a(ItemList.cm, "diamond_horse_armor");
-/*  980:1009 */     a(ItemList.cn, "lead");
+/*  980:1009 */     a(ItemList.lead, "lead");
 /*  981:1010 */     a(ItemList.nameTag, "name_tag");
 /*  982:     */     
 /*  983:1012 */     this.m.a(ItemList.cE, new cqp(this));

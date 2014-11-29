@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*  3: 8 */   private String[][] a = { { "XXX", "X X" }, { "X X", "XXX", "XXX" }, { "XXX", "X X", "X X" }, { "X X", "X X" } };
 /*  4:30 */   private Item[][] b = { { ItemList.leather, ItemList.ironIngot, ItemList.diamond, ItemList.goldIngot }, { ItemList.Q, ItemList.ironHelmet, ItemList.ac, ItemList.ag }, { ItemList.leatherChestplate, ItemList.ironChestplate, ItemList.diamondChestplate, ItemList.ah }, { ItemList.leatherLeggings, ItemList.aa, ItemList.ae, ItemList.ai }, { ItemList.leatherBoots, ItemList.ab, ItemList.af, ItemList.aj } };
 /*  5:   */   
-/*  6:   */   public void a(aop paramaop)
+/*  6:   */   public void a(RecipeList paramaop)
 /*  7:   */   {
 /*  8:39 */     for (int i = 0; i < this.b[0].length; i++)
 /*  9:   */     {
@@ -12,7 +12,7 @@ package net.minecraft.src;
 /* 11:42 */       for (int j = 0; j < this.b.length - 1; j++)
 /* 12:   */       {
 /* 13:43 */         Item localalq2 = this.b[(j + 1)][i];
-/* 14:44 */         paramaop.a(new ItemStack(localalq2), new Object[] { this.a[j], Character.valueOf('X'), localalq1 });
+/* 14:44 */         paramaop.addShapedRecipe(new ItemStack(localalq2), new Object[] { this.a[j], Character.valueOf('X'), localalq1 });
 /* 15:   */       }
 /* 16:   */     }
 /* 17:   */   }

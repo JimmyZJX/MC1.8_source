@@ -45,7 +45,7 @@ package net.minecraft.src;
 /*  44: 64 */       return false;
 /*  45:    */     }
 /*  46: 67 */     Block localbec = paramaqu.getBlock(paramdt);
-/*  47: 68 */     if (localbec.getProto() == BlockList.mobSpawner)
+/*  47: 68 */     if (localbec.getType() == BlockList.mobSpawner)
 /*  48:    */     {
 /*  49: 69 */       bcm localbcm = paramaqu.s(paramdt);
 /*  50: 70 */       if ((localbcm instanceof bdg))
@@ -63,7 +63,7 @@ package net.minecraft.src;
 /*  62: 82 */     paramdt = paramdt.offset(paramej);
 /*  63:    */     
 /*  64: 84 */     double d = 0.0D;
-/*  65: 85 */     if ((paramej == EnumDirection.UP) && ((localbec instanceof avv))) {
+/*  65: 85 */     if ((paramej == EnumDirection.UP) && ((localbec instanceof BlockFence))) {
 /*  66: 87 */       d = 0.5D;
 /*  67:    */     }
 /*  68: 90 */     Entity localwv = a(paramaqu, paramamj.getDamage2(), paramdt.getX() + 0.5D, paramdt.getY() + d, paramdt.getZ() + 0.5D);
@@ -97,7 +97,7 @@ package net.minecraft.src;
 /*  96:120 */       if (!paramahd.a(localdt, localbru.b, paramamj)) {
 /*  97:121 */         return paramamj;
 /*  98:    */       }
-/*  99:124 */       if ((paramaqu.getBlock(localdt).getProto() instanceof BlockLiquid))
+/*  99:124 */       if ((paramaqu.getBlock(localdt).getType() instanceof BlockLiquid))
 /* 100:    */       {
 /* 101:125 */         Entity localwv = a(paramaqu, paramamj.getDamage2(), localdt.getX() + 0.5D, localdt.getY() + 0.5D, localdt.getZ() + 0.5D);
 /* 102:126 */         if (localwv != null)

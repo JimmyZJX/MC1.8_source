@@ -46,7 +46,7 @@ package net.minecraft.src;
 /*  45:    */   {
 /*  46: 78 */     super.h();
 /*  47:    */     
-/*  48: 80 */     this.ac.a(13, new Byte((byte)0));
+/*  48: 80 */     this.data.addData(13, new Byte((byte)0));
 /*  49:    */   }
 /*  50:    */   
 /*  51:    */   protected String z()
@@ -64,7 +64,7 @@ package net.minecraft.src;
 /*  63: 95 */     return "mob.skeleton.death";
 /*  64:    */   }
 /*  65:    */   
-/*  66:    */   protected void a(BlockPosition paramdt, ProtoBlock paramatr)
+/*  66:    */   protected void a(BlockPosition paramdt, BlockType paramatr)
 /*  67:    */   {
 /*  68:100 */     a("mob.skeleton.step", 0.15F, 1.0F);
 /*  69:    */   }
@@ -259,12 +259,12 @@ package net.minecraft.src;
 /* 258:    */   
 /* 259:    */   public int ck()
 /* 260:    */   {
-/* 261:292 */     return this.ac.a(13);
+/* 261:292 */     return this.data.getByte(13);
 /* 262:    */   }
 /* 263:    */   
 /* 264:    */   public void a(int paramInt)
 /* 265:    */   {
-/* 266:296 */     this.ac.b(13, Byte.valueOf((byte)paramInt));
+/* 266:296 */     this.data.b(13, Byte.valueOf((byte)paramInt));
 /* 267:    */     
 /* 268:298 */     this.ab = (paramInt == 1);
 /* 269:299 */     if (paramInt == 1) {

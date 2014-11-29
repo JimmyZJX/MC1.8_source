@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*   8:    */   
 /*   9:    */   public bza(EntityPlayer paramahd)
 /*  10:    */   {
-/*  11: 63 */     Inventory localahb = paramahd.bg;
+/*  11: 63 */     Inventory localahb = paramahd.inventory;
 /*  12: 64 */     for (int i = 0; i < 5; i++) {
 /*  13: 65 */       for (int j = 0; j < 9; j++) {
 /*  14: 66 */         a(new ajk(byz.f(), i * 9 + j, 9 + j * 18, 18 + i * 18));

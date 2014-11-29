@@ -30,7 +30,7 @@ package net.minecraft.src;
 /*  29: 37 */         for (int n = paramdt.getZ() - k; (n <= paramdt.getZ() + k) && (i != 0); n++) {
 /*  30: 38 */           if ((j >= 0) && (j < 256))
 /*  31:    */           {
-/*  32: 39 */             if (!canGrowInto(paramaqu.getBlock(new BlockPosition(m, j, n)).getProto())) {
+/*  32: 39 */             if (!canGrowInto(paramaqu.getBlock(new BlockPosition(m, j, n)).getType())) {
 /*  33: 40 */               i = 0;
 /*  34:    */             }
 /*  35:    */           }
@@ -43,7 +43,7 @@ package net.minecraft.src;
 /*  42: 49 */     if (i == 0) {
 /*  43: 50 */       return false;
 /*  44:    */     }
-/*  45: 53 */     ProtoBlock localatr = paramaqu.getBlock(paramdt.down()).getProto();
+/*  45: 53 */     BlockType localatr = paramaqu.getBlock(paramdt.down()).getType();
 /*  46: 54 */     if (((localatr != BlockList.grass) && (localatr != BlockList.dirt)) || (paramdt.getY() >= 256 - localbof1 - 1)) {
 /*  47: 55 */       return false;
 /*  48:    */     }
@@ -66,7 +66,7 @@ package net.minecraft.src;
 /*  65: 71 */         n--;
 /*  66:    */       }
 /*  67: 73 */       BlockPosition localdt1 = new BlockPosition(i1, localObject2, i2);
-/*  68: 74 */       localObject3 = paramaqu.getBlock(localdt1).getProto().getMaterial();
+/*  68: 74 */       localObject3 = paramaqu.getBlock(localdt1).getType().getMaterial();
 /*  69: 75 */       if ((localObject3 == Material.air) || (localObject3 == Material.leaves))
 /*  70:    */       {
 /*  71: 76 */         setBlock(paramaqu, localdt1, BlockList.log2, EnumWoodVariant.ACACIA.getIndex() - 4);
@@ -112,7 +112,7 @@ package net.minecraft.src;
 /* 111:118 */           i1 += ((EnumDirection)localObject1).g();
 /* 112:119 */           i2 += ((EnumDirection)localObject1).i();
 /* 113:120 */           BlockPosition localdt2 = new BlockPosition(i1, i6, i2);
-/* 114:121 */           Material localbof2 = paramaqu.getBlock(localdt2).getProto().getMaterial();
+/* 114:121 */           Material localbof2 = paramaqu.getBlock(localdt2).getType().getMaterial();
 /* 115:122 */           if ((localbof2 == Material.air) || (localbof2 == Material.leaves))
 /* 116:    */           {
 /* 117:123 */             setBlock(paramaqu, localdt2, BlockList.log2, EnumWoodVariant.ACACIA.getIndex() - 4);
@@ -145,7 +145,7 @@ package net.minecraft.src;
 /* 144:    */   
 /* 145:    */   private void b(World paramaqu, BlockPosition paramdt)
 /* 146:    */   {
-/* 147:150 */     Material localbof = paramaqu.getBlock(paramdt).getProto().getMaterial();
+/* 147:150 */     Material localbof = paramaqu.getBlock(paramdt).getType().getMaterial();
 /* 148:151 */     if ((localbof == Material.air) || (localbof == Material.leaves)) {
 /* 149:152 */       setBlock(paramaqu, paramdt, BlockList.leaves2, 0);
 /* 150:    */     }

@@ -103,7 +103,7 @@ package net.minecraft.src;
 /* 102:117 */                 if ((i6 >= 0) && (i6 < 128))
 /* 103:    */                 {
 /* 104:121 */                   localbec3 = parambgk.a(i4, i6, i5);
-/* 105:122 */                   if ((localbec3.getProto() == BlockList.flowingLava) || (localbec3.getProto() == BlockList.lava)) {
+/* 105:122 */                   if ((localbec3.getType() == BlockList.flowingLava) || (localbec3.getType() == BlockList.lava)) {
 /* 106:123 */                     i3 = 1;
 /* 107:    */                   }
 /* 108:125 */                   if ((i6 != i1 - 1) && (i4 != m) && (i4 != n - 1) && (i5 != localbec1) && (i5 != localbec2 - 1)) {
@@ -127,7 +127,7 @@ package net.minecraft.src;
 /* 126:141 */                   if ((d11 > -0.7D) && (d9 * d9 + d11 * d11 + d10 * d10 < 1.0D))
 /* 127:    */                   {
 /* 128:142 */                     Block localbec4 = parambgk.a(i4, i7, localbec31);
-/* 129:143 */                     if ((localbec4.getProto() == BlockList.netherrack) || (localbec4.getProto() == BlockList.dirt) || (localbec4.getProto() == BlockList.grass)) {
+/* 129:143 */                     if ((localbec4.getType() == BlockList.netherrack) || (localbec4.getType() == BlockList.dirt) || (localbec4.getType() == BlockList.grass)) {
 /* 130:144 */                       parambgk.a(i4, i7, localbec31, BlockList.air.instance());
 /* 131:    */                     }
 /* 132:    */                   }

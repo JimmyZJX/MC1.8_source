@@ -16,8 +16,8 @@ package net.minecraft.src;
 /* 15:   */   
 /* 16:   */   public boolean generate(World paramaqu, Random paramRandom, BlockPosition paramdt)
 /* 17:   */   {
-/* 18:   */     ProtoBlock localatr;
-/* 19:27 */     while ((((localatr = paramaqu.getBlock(paramdt).getProto()).getMaterial() == Material.air) || (localatr.getMaterial() == Material.leaves)) && (paramdt.getY() > 1)) {
+/* 18:   */     BlockType localatr;
+/* 19:27 */     while ((((localatr = paramaqu.getBlock(paramdt).getType()).getMaterial() == Material.air) || (localatr.getMaterial() == Material.leaves)) && (paramdt.getY() > 1)) {
 /* 20:28 */       paramdt = paramdt.down();
 /* 21:   */     }
 /* 22:31 */     if (paramdt.getY() < 1) {

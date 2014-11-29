@@ -20,19 +20,19 @@ package net.minecraft.src;
 /*  21:    */   private int itemDamage;
 /*  22:    */   private EntityItemFrame g;
 /*  23:    */   
-/*  24:    */   public ItemStack(ProtoBlock paramatr)
+/*  24:    */   public ItemStack(BlockType paramatr)
 /*  25:    */   {
 /*  26: 76 */     this(paramatr, 1);
 /*  27:    */   }
 /*  28:    */   
-/*  29:    */   public ItemStack(ProtoBlock paramatr, int paramInt)
+/*  29:    */   public ItemStack(BlockType paramatr, int paramInt)
 /*  30:    */   {
 /*  31: 80 */     this(paramatr, paramInt, 0);
 /*  32:    */   }
 /*  33:    */   
-/*  34:    */   public ItemStack(ProtoBlock paramatr, int paramInt1, int paramInt2)
+/*  34:    */   public ItemStack(BlockType paramatr, int paramInt1, int paramInt2)
 /*  35:    */   {
-/*  36: 84 */     this(Item.fromProtoBlock(paramatr), paramInt1, paramInt2);
+/*  36: 84 */     this(Item.fromBlock(paramatr), paramInt1, paramInt2);
 /*  37:    */   }
 /*  38:    */   
 /*  39:    */   public ItemStack(Item item)
@@ -88,7 +88,7 @@ package net.minecraft.src;
 /*  89:131 */     return bool;
 /*  90:    */   }
 /*  91:    */   
-/*  92:    */   public float a(ProtoBlock paramatr)
+/*  92:    */   public float a(BlockType paramatr)
 /*  93:    */   {
 /*  94:135 */     return getItem().getStrVsBlock(this, paramatr);
 /*  95:    */   }
@@ -254,7 +254,7 @@ package net.minecraft.src;
 /* 255:    */     }
 /* 256:    */   }
 /* 257:    */   
-/* 258:    */   public void a(World paramaqu, ProtoBlock paramatr, BlockPosition paramdt, EntityPlayer paramahd)
+/* 258:    */   public void a(World paramaqu, BlockType paramatr, BlockPosition paramdt, EntityPlayer paramahd)
 /* 259:    */   {
 /* 260:290 */     boolean bool = this.item.a(this, paramaqu, paramatr, paramdt, paramahd);
 /* 261:291 */     if (bool) {
@@ -262,7 +262,7 @@ package net.minecraft.src;
 /* 263:    */     }
 /* 264:    */   }
 /* 265:    */   
-/* 266:    */   public boolean canHarvestBlock(ProtoBlock paramatr)
+/* 266:    */   public boolean canHarvestBlock(BlockType paramatr)
 /* 267:    */   {
 /* 268:297 */     return this.item.canHarvestBlock(paramatr);
 /* 269:    */   }
@@ -608,7 +608,7 @@ package net.minecraft.src;
 /* 609:624 */         localArrayList.add(a.h + fi.a("item.canBreak"));
 /* 610:625 */         for (i3 = 0; i3 < localfv.c(); i3++)
 /* 611:    */         {
-/* 612:626 */           ProtoBlock localatr = ProtoBlock.b(localfv.f(i3));
+/* 612:626 */           BlockType localatr = BlockType.b(localfv.f(i3));
 /* 613:627 */           if (localatr != null) {
 /* 614:628 */             localArrayList.add(a.i + localatr.H());
 /* 615:    */           } else {
@@ -626,7 +626,7 @@ package net.minecraft.src;
 /* 627:640 */         localArrayList.add(a.h + fi.a("item.canPlace"));
 /* 628:641 */         for (i3 = 0; i3 < localfv.c(); i3++)
 /* 629:    */         {
-/* 630:642 */           ProtoBlock localatr = ProtoBlock.b(localfv.f(i3));
+/* 630:642 */           BlockType localatr = BlockType.b(localfv.f(i3));
 /* 631:643 */           if (localatr != null) {
 /* 632:644 */             localArrayList.add(a.i + localatr.H());
 /* 633:    */           } else {
@@ -784,10 +784,10 @@ package net.minecraft.src;
 /* 785:789 */     return localho;
 /* 786:    */   }
 /* 787:    */   
-/* 788:793 */   private ProtoBlock h = null;
+/* 788:793 */   private BlockType h = null;
 /* 789:794 */   private boolean i = false;
 /* 790:    */   
-/* 791:    */   public boolean c(ProtoBlock paramatr)
+/* 791:    */   public boolean c(BlockType paramatr)
 /* 792:    */   {
 /* 793:797 */     if (paramatr == this.h) {
 /* 794:798 */       return this.i;
@@ -798,7 +798,7 @@ package net.minecraft.src;
 /* 799:804 */       fv localfv = this.stackTagCompound.c("CanDestroy", 8);
 /* 800:805 */       for (int m = 0; m < localfv.c(); m++)
 /* 801:    */       {
-/* 802:806 */         ProtoBlock localatr = ProtoBlock.b(localfv.f(m));
+/* 802:806 */         BlockType localatr = BlockType.b(localfv.f(m));
 /* 803:807 */         if (localatr == paramatr)
 /* 804:    */         {
 /* 805:808 */           this.i = true;
@@ -810,10 +810,10 @@ package net.minecraft.src;
 /* 811:814 */     return false;
 /* 812:    */   }
 /* 813:    */   
-/* 814:818 */   private ProtoBlock j = null;
+/* 814:818 */   private BlockType j = null;
 /* 815:819 */   private boolean k = false;
 /* 816:    */   
-/* 817:    */   public boolean d(ProtoBlock paramatr)
+/* 817:    */   public boolean d(BlockType paramatr)
 /* 818:    */   {
 /* 819:822 */     if (paramatr == this.j) {
 /* 820:823 */       return this.k;
@@ -824,7 +824,7 @@ package net.minecraft.src;
 /* 825:829 */       fv localfv = this.stackTagCompound.c("CanPlaceOn", 8);
 /* 826:830 */       for (int m = 0; m < localfv.c(); m++)
 /* 827:    */       {
-/* 828:831 */         ProtoBlock localatr = ProtoBlock.b(localfv.f(m));
+/* 828:831 */         BlockType localatr = BlockType.b(localfv.f(m));
 /* 829:832 */         if (localatr == paramatr)
 /* 830:    */         {
 /* 831:833 */           this.k = true;

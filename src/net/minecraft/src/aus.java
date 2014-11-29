@@ -1,6 +1,6 @@
 package net.minecraft.src;
 /*  1:   */ public class aus
-/*  2:   */   extends ProtoBlock
+/*  2:   */   extends BlockType
 /*  3:   */ {
 /*  4:   */   protected aus()
 /*  5:   */   {

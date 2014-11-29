@@ -36,15 +36,15 @@ package net.minecraft.src;
 /* 35:41 */     return this.b;
 /* 36:   */   }
 /* 37:   */   
-/* 38:   */   public ProtoBlock e()
+/* 38:   */   public BlockType e()
 /* 39:   */   {
-/* 40:46 */     return this.a.getBlock(this.b).getProto();
+/* 40:46 */     return this.a.getBlock(this.b).getType();
 /* 41:   */   }
 /* 42:   */   
 /* 43:   */   public int f()
 /* 44:   */   {
 /* 45:51 */     Block localbec = this.a.getBlock(this.b);
-/* 46:52 */     return localbec.getProto().c(localbec);
+/* 46:52 */     return localbec.getType().c(localbec);
 /* 47:   */   }
 /* 48:   */   
 /* 49:   */   public bcm h()

@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*    3:     */ class aoq
 /*    4:     */   implements Comparator<aoo>
 /*    5:     */ {
-/*    6:     */   aoq(aop paramaop) {}
+/*    6:     */   aoq(RecipeList paramaop) {}
 /*    7:     */   
 /*    8:     */   public int compare(aoo paramaoo1, aoo paramaoo2)
 /*    9:     */   {

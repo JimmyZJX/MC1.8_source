@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*  3:   */ public class bhl
 /*  4:   */   extends TerrainGenerator
 /*  5:   */ {
-/*  6:   */   private ProtoBlock a;
+/*  6:   */   private BlockType a;
 /*  7:   */   private int b;
 /*  8:   */   
 /*  9:   */   public bhl(int paramInt)
@@ -15,7 +15,7 @@ package net.minecraft.src;
 /* 14:   */   
 /* 15:   */   public boolean generate(World paramaqu, Random paramRandom, BlockPosition paramdt)
 /* 16:   */   {
-/* 17:22 */     if (paramaqu.getBlock(paramdt).getProto().getMaterial() != Material.water) {
+/* 17:22 */     if (paramaqu.getBlock(paramdt).getType().getMaterial() != Material.water) {
 /* 18:23 */       return false;
 /* 19:   */     }
 /* 20:25 */     int i = paramRandom.nextInt(this.b - 2) + 2;
@@ -29,7 +29,7 @@ package net.minecraft.src;
 /* 28:34 */           for (int i2 = paramdt.getY() - j; i2 <= paramdt.getY() + j; i2++)
 /* 29:   */           {
 /* 30:35 */             BlockPosition localdt = new BlockPosition(k, i2, m);
-/* 31:36 */             ProtoBlock localatr = paramaqu.getBlock(localdt).getProto();
+/* 31:36 */             BlockType localatr = paramaqu.getBlock(localdt).getType();
 /* 32:37 */             if ((localatr == BlockList.dirt) || (localatr == BlockList.aL)) {
 /* 33:38 */               paramaqu.setBlock(localdt, this.a.instance(), 2);
 /* 34:   */             }

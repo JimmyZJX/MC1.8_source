@@ -102,7 +102,7 @@ package net.minecraft.src;
 /* 101:    */   protected boolean a(World paramaqu, BlockPosition paramdt, boolean paramBoolean, int paramInt, EnumRailState paramatl)
 /* 102:    */   {
 /* 103:109 */     Block localbec = paramaqu.getBlock(paramdt);
-/* 104:111 */     if (localbec.getProto() != this) {
+/* 104:111 */     if (localbec.getType() != this) {
 /* 105:112 */       return false;
 /* 106:    */     }
 /* 107:115 */     EnumRailState localatl = (EnumRailState)localbec.getData(b);
@@ -122,7 +122,7 @@ package net.minecraft.src;
 /* 121:130 */     return false;
 /* 122:    */   }
 /* 123:    */   
-/* 124:    */   protected void b(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/* 124:    */   protected void b(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /* 125:    */   {
 /* 126:135 */     boolean bool1 = ((Boolean)parambec.getData(M)).booleanValue();
 /* 127:136 */     boolean bool2 = (paramaqu.z(paramdt)) || (a(paramaqu, paramdt, parambec, true, 0)) || (a(paramaqu, paramdt, parambec, false, 0));

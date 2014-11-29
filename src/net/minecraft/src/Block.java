@@ -15,7 +15,7 @@ public abstract interface Block
   
   public abstract ImmutableMap<IBlockData,Comparable> b();
   
-  public abstract ProtoBlock getProto();
+  public abstract BlockType getType();
 }
 
 

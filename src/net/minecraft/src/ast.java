@@ -56,9 +56,9 @@ package net.minecraft.src;
 /* 55:63 */       int i = paramInt1 & 0xF;
 /* 56:64 */       int j = paramInt2 & 0xF;
 /* 57:65 */       for (int k = 255; k >= 0; k--) {
-/* 58:66 */         if (parambgk.a(j, k, i).getProto().getMaterial() != Material.air)
+/* 58:66 */         if (parambgk.a(j, k, i).getType().getMaterial() != Material.air)
 /* 59:   */         {
-/* 60:67 */           if ((k != 62) || (parambgk.a(j, k, i).getProto() == BlockList.water)) {
+/* 60:67 */           if ((k != 62) || (parambgk.a(j, k, i).getType() == BlockList.water)) {
 /* 61:   */             break;
 /* 62:   */           }
 /* 63:68 */           parambgk.a(j, k, i, BlockList.water.instance());

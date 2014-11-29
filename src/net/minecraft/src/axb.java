@@ -19,7 +19,7 @@ package net.minecraft.src;
 /* 18:   */   
 /* 19:   */   public void a(World paramaqu, EntityPlayer paramahd, BlockPosition paramdt, Block parambec, bcm parambcm)
 /* 20:   */   {
-/* 21:34 */     paramahd.increaseStat(StatList.H[ProtoBlock.a(this)]);
+/* 21:34 */     paramahd.increaseStat(StatList.H[BlockType.a(this)]);
 /* 22:35 */     paramahd.a(0.025F);
 /* 23:37 */     if ((G()) && (aph.e(paramahd)))
 /* 24:   */     {
@@ -38,7 +38,7 @@ package net.minecraft.src;
 /* 37:48 */       int i = aph.f(paramahd);
 /* 38:49 */       b(paramaqu, paramdt, parambec, i);
 /* 39:   */       
-/* 40:51 */       Material localbof = paramaqu.getBlock(paramdt.down()).getProto().getMaterial();
+/* 40:51 */       Material localbof = paramaqu.getBlock(paramdt.down()).getType().getMaterial();
 /* 41:52 */       if ((localbof.material_c()) || (localbof.isLiquid())) {
 /* 42:53 */         paramaqu.setBlock(paramdt, BlockList.flowingWater.instance());
 /* 43:   */       }

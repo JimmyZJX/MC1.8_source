@@ -16,14 +16,14 @@ package net.minecraft.src;
 /* 15:18 */     this.a = parambed;
 /* 16:   */   }
 /* 17:   */   
-/* 18:   */   public static beq a(ProtoBlock paramatr)
+/* 18:   */   public static beq a(BlockType paramatr)
 /* 19:   */   {
 /* 20:22 */     return new beq(paramatr.O());
 /* 21:   */   }
 /* 22:   */   
 /* 23:   */   public boolean apply(Block parambec)
 /* 24:   */   {
-/* 25:32 */     if ((parambec == null) || (!parambec.getProto().equals(this.a.c()))) {
+/* 25:32 */     if ((parambec == null) || (!parambec.getType().equals(this.a.c()))) {
 /* 26:33 */       return false;
 /* 27:   */     }
 /* 28:36 */     for (Map.Entry<IBlockData,Predicate<Comparable>> localEntry : this.b.entrySet())

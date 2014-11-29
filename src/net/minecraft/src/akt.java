@@ -2,9 +2,9 @@ package net.minecraft.src;
 /*  1:   */ public class akt
 /*  2:   */   extends Item
 /*  3:   */ {
-/*  4:   */   private ProtoBlock a;
+/*  4:   */   private BlockType a;
 /*  5:   */   
-/*  6:   */   public akt(ProtoBlock paramatr)
+/*  6:   */   public akt(BlockType paramatr)
 /*  7:   */   {
 /*  8:15 */     this.a = paramatr;
 /*  9:16 */     setTabToDisplayOn(CreativeTabs.tabRedstone);
@@ -16,7 +16,7 @@ package net.minecraft.src;
 /* 15:22 */       return false;
 /* 16:   */     }
 /* 17:25 */     Block localbec = paramaqu.getBlock(paramdt);
-/* 18:26 */     ProtoBlock localatr = localbec.getProto();
+/* 18:26 */     BlockType localatr = localbec.getType();
 /* 19:28 */     if (!localatr.f(paramaqu, paramdt)) {
 /* 20:29 */       paramdt = paramdt.offset(paramej);
 /* 21:   */     }
@@ -32,16 +32,16 @@ package net.minecraft.src;
 /* 31:42 */     return true;
 /* 32:   */   }
 /* 33:   */   
-/* 34:   */   public static void a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, ProtoBlock paramatr)
+/* 34:   */   public static void a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, BlockType paramatr)
 /* 35:   */   {
-/* 36:46 */     BlockPosition localdt1 = paramdt.offset(paramej.yRotate());
+/* 36:46 */     BlockPosition localdt1 = paramdt.offset(paramej.cw());
 /* 37:47 */     BlockPosition localdt2 = paramdt.offset(paramej.ccw());
 /* 38:   */     
-/* 39:49 */     int i = (paramaqu.getBlock(localdt2).getProto().blocksMovement() ? 1 : 0) + (paramaqu.getBlock(localdt2.up()).getProto().blocksMovement() ? 1 : 0);
-/* 40:50 */     int j = (paramaqu.getBlock(localdt1).getProto().blocksMovement() ? 1 : 0) + (paramaqu.getBlock(localdt1.up()).getProto().blocksMovement() ? 1 : 0);
+/* 39:49 */     int i = (paramaqu.getBlock(localdt2).getType().blocksMovement() ? 1 : 0) + (paramaqu.getBlock(localdt2.up()).getType().blocksMovement() ? 1 : 0);
+/* 40:50 */     int j = (paramaqu.getBlock(localdt1).getType().blocksMovement() ? 1 : 0) + (paramaqu.getBlock(localdt1.up()).getType().blocksMovement() ? 1 : 0);
 /* 41:   */     
-/* 42:52 */     int k = (paramaqu.getBlock(localdt2).getProto() == paramatr) || (paramaqu.getBlock(localdt2.up()).getProto() == paramatr) ? 1 : 0;
-/* 43:53 */     int m = (paramaqu.getBlock(localdt1).getProto() == paramatr) || (paramaqu.getBlock(localdt1.up()).getProto() == paramatr) ? 1 : 0;
+/* 42:52 */     int k = (paramaqu.getBlock(localdt2).getType() == paramatr) || (paramaqu.getBlock(localdt2.up()).getType() == paramatr) ? 1 : 0;
+/* 43:53 */     int m = (paramaqu.getBlock(localdt1).getType() == paramatr) || (paramaqu.getBlock(localdt1.up()).getType() == paramatr) ? 1 : 0;
 /* 44:   */     
 /* 45:   */ 
 /* 46:56 */     int n = 0;

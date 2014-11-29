@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*  3:   */ public class aku
 /*  4:   */   extends amr
 /*  5:   */ {
-/*  6:   */   public aku(ProtoBlock paramatr1, ProtoBlock paramatr2, Function paramFunction)
+/*  6:   */   public aku(BlockType paramatr1, BlockType paramatr2, Function paramFunction)
 /*  7:   */   {
 /*  8:10 */     super(paramatr1, paramatr2, paramFunction);
 /*  9:   */   }

@@ -16,7 +16,7 @@ package net.minecraft.src;
 /*  15:282 */         paramamj.stackSize = 0;
 /*  16:    */       }
 /*  17:    */     }
-/*  18:285 */     else if (localaqu.getBlock(localdt).getProto() == BlockList.W)
+/*  18:285 */     else if (localaqu.getBlock(localdt).getType() == BlockList.W)
 /*  19:    */     {
 /*  20:286 */       BlockList.W.d(localaqu, localdt, BlockList.W.instance().setData(bbk.a, Boolean.valueOf(true)));
 /*  21:287 */       localaqu.g(localdt);

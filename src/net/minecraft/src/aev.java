@@ -17,7 +17,7 @@ package net.minecraft.src;
 /*  16:510 */     if (!this.a.world.getGameRules().getBoolean("mobGriefing")) {
 /*  17:511 */       return false;
 /*  18:    */     }
-/*  19:513 */     if (this.a.ck().getProto().getMaterial() != Material.air) {
+/*  19:513 */     if (this.a.ck().getType().getMaterial() != Material.air) {
 /*  20:514 */       return false;
 /*  21:    */     }
 /*  22:516 */     if (this.a.getRNG().nextInt(20) != 0) {
@@ -36,7 +36,7 @@ package net.minecraft.src;
 /*  35:529 */     int k = MathUtils.floor(this.a.zPos - 2.0D + localRandom.nextDouble() * 4.0D);
 /*  36:530 */     BlockPosition localdt = new BlockPosition(i, j, k);
 /*  37:531 */     Block localbec = localaqu.getBlock(localdt);
-/*  38:532 */     ProtoBlock localatr = localbec.getProto();
+/*  38:532 */     BlockType localatr = localbec.getType();
 /*  39:533 */     if (EntityEnderman.co().contains(localatr))
 /*  40:    */     {
 /*  41:534 */       this.a.a(localbec);

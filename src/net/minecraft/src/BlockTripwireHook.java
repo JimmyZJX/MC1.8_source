@@ -2,15 +2,15 @@ package net.minecraft.src;
 /*   1:    */ import com.google.common.base.Objects;
 /*   2:    */ import java.util.Random;
 /*   3:    */ 
-/*   4:    */ public class bbt
-/*   5:    */   extends ProtoBlock
+/*   4:    */ public class BlockTripwireHook
+/*   5:    */   extends BlockType
 /*   6:    */ {
 /*   7: 24 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", EnumHorizontalVertical.HORIZONTAL);
 /*   8: 25 */   public static final BlockDataBoolean b = BlockDataBoolean.getInstance("powered");
 /*   9: 26 */   public static final BlockDataBoolean M = BlockDataBoolean.getInstance("attached");
 /*  10: 27 */   public static final BlockDataBoolean N = BlockDataBoolean.getInstance("suspended");
 /*  11:    */   
-/*  12:    */   public bbt()
+/*  12:    */   public BlockTripwireHook()
 /*  13:    */   {
 /*  14: 33 */     super(Material.q);
 /*  15: 34 */     j(this.L.b().setData(a, EnumDirection.NORTH).setData(b, Boolean.valueOf(false)).setData(M, Boolean.valueOf(false)).setData(N, Boolean.valueOf(false)));
@@ -40,13 +40,13 @@ package net.minecraft.src;
 /*  39:    */   
 /*  40:    */   public boolean a(World paramaqu, BlockPosition paramdt, EnumDirection paramej)
 /*  41:    */   {
-/*  42: 62 */     return (paramej.k().c()) && (paramaqu.getBlock(paramdt.offset(paramej.opposite())).getProto().blocksMovement());
+/*  42: 62 */     return (paramej.getAxis().isHorizontal()) && (paramaqu.getBlock(paramdt.offset(paramej.opposite())).getType().blocksMovement());
 /*  43:    */   }
 /*  44:    */   
 /*  45:    */   public boolean c(World paramaqu, BlockPosition paramdt)
 /*  46:    */   {
 /*  47: 67 */     for (EnumDirection localej : EnumHorizontalVertical.HORIZONTAL) {
-/*  48: 68 */       if (paramaqu.getBlock(paramdt.offset(localej)).getProto().blocksMovement()) {
+/*  48: 68 */       if (paramaqu.getBlock(paramdt.offset(localej)).getType().blocksMovement()) {
 /*  49: 69 */         return true;
 /*  50:    */       }
 /*  51:    */     }
@@ -56,7 +56,7 @@ package net.minecraft.src;
 /*  55:    */   public Block a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3, int paramInt, EntityLiving paramxm)
 /*  56:    */   {
 /*  57: 77 */     Block localbec = instance().setData(b, Boolean.valueOf(false)).setData(M, Boolean.valueOf(false)).setData(N, Boolean.valueOf(false));
-/*  58: 78 */     if (paramej.k().c()) {
+/*  58: 78 */     if (paramej.getAxis().isHorizontal()) {
 /*  59: 79 */       localbec = localbec.setData(a, paramej);
 /*  60:    */     }
 /*  61: 81 */     return localbec;
@@ -67,7 +67,7 @@ package net.minecraft.src;
 /*  66: 86 */     a(paramaqu, paramdt, parambec, false, false, -1, null);
 /*  67:    */   }
 /*  68:    */   
-/*  69:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/*  69:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /*  70:    */   {
 /*  71: 91 */     if (paramatr == this) {
 /*  72: 92 */       return;
@@ -75,7 +75,7 @@ package net.minecraft.src;
 /*  74: 94 */     if (e(paramaqu, paramdt, parambec))
 /*  75:    */     {
 /*  76: 95 */       EnumDirection localej = (EnumDirection)parambec.getData(a);
-/*  77: 96 */       if (!paramaqu.getBlock(paramdt.offset(localej.opposite())).getProto().blocksMovement())
+/*  77: 96 */       if (!paramaqu.getBlock(paramdt.offset(localej.opposite())).getType().blocksMovement())
 /*  78:    */       {
 /*  79: 97 */         b(paramaqu, paramdt, parambec, 0);
 /*  80: 98 */         paramaqu.g(paramdt);
@@ -101,14 +101,14 @@ package net.minecraft.src;
 /* 100:    */     {
 /* 101:115 */       localdt = paramdt.offset(localej, j);
 /* 102:116 */       localObject = paramaqu.getBlock(localdt);
-/* 103:118 */       if (((Block)localObject).getProto() == BlockList.bR)
+/* 103:118 */       if (((Block)localObject).getType() == BlockList.bR)
 /* 104:    */       {
 /* 105:119 */         if (((Block)localObject).getData(a) != localej.opposite()) {
 /* 106:    */           break;
 /* 107:    */         }
 /* 108:120 */         i = j; break;
 /* 109:    */       }
-/* 110:124 */       if ((((Block)localObject).getProto() == BlockList.tripwire) || (j == paramInt))
+/* 110:124 */       if ((((Block)localObject).getType() == BlockList.tripwire) || (j == paramInt))
 /* 111:    */       {
 /* 112:125 */         if (j == paramInt) {
 /* 113:126 */           localObject = (Block)Objects.firstNonNull(parambec2, localObject);
@@ -158,7 +158,7 @@ package net.minecraft.src;
 /* 157:170 */         BlockPosition localObject1 = paramdt.offset(localej, k);
 /* 158:171 */         Block localbec2 = arrayOfbec[k];
 /* 159:172 */         if (localbec2 != null) {
-/* 160:176 */           if (paramaqu.getBlock((BlockPosition)localObject1).getProto() != BlockList.air) {
+/* 160:176 */           if (paramaqu.getBlock((BlockPosition)localObject1).getType() != BlockList.air) {
 /* 161:177 */             paramaqu.setBlock((BlockPosition)localObject1, localbec2.setData(M, Boolean.valueOf(bool4)), 3);
 /* 162:    */           }
 /* 163:    */         }
@@ -237,12 +237,12 @@ package net.minecraft.src;
 /* 236:253 */     super.b(paramaqu, paramdt, parambec);
 /* 237:    */   }
 /* 238:    */   
-/* 239:    */   public int a(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
+/* 239:    */   public int getRedStoneSignal(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
 /* 240:    */   {
 /* 241:258 */     return ((Boolean)parambec.getData(b)).booleanValue() ? 15 : 0;
 /* 242:    */   }
 /* 243:    */   
-/* 244:    */   public int b(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
+/* 244:    */   public int getStrongRedstoneSignal(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
 /* 245:    */   {
 /* 246:263 */     if (!((Boolean)parambec.getData(b)).booleanValue()) {
 /* 247:264 */       return 0;
@@ -253,7 +253,7 @@ package net.minecraft.src;
 /* 252:271 */     return 0;
 /* 253:    */   }
 /* 254:    */   
-/* 255:    */   public boolean protoBlock_g()
+/* 255:    */   public boolean blockType_g()
 /* 256:    */   {
 /* 257:276 */     return true;
 /* 258:    */   }

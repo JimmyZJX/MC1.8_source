@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*  8:15 */     while ((paramaqu.isEmpty(paramdt)) && (paramdt.getY() > 2)) {
 /*  9:16 */       paramdt = paramdt.down();
 /* 10:   */     }
-/* 11:19 */     if (paramaqu.getBlock(paramdt).getProto() != BlockList.aJ) {
+/* 11:19 */     if (paramaqu.getBlock(paramdt).getType() != BlockList.aJ) {
 /* 12:20 */       return false;
 /* 13:   */     }
 /* 14:22 */     paramdt = paramdt.up(paramRandom.nextInt(4));
@@ -34,13 +34,13 @@ package net.minecraft.src;
 /* 33:42 */             if (((i1 != -n) && (i1 != n) && (i3 != -n) && (i3 != n)) || 
 /* 34:43 */               (paramRandom.nextFloat() <= 0.75F))
 /* 35:   */             {
-/* 36:48 */               ProtoBlock localatr2 = paramaqu.getBlock(paramdt.offset(i1, k, i3)).getProto();
+/* 36:48 */               BlockType localatr2 = paramaqu.getBlock(paramdt.offset(i1, k, i3)).getType();
 /* 37:49 */               if ((localatr2.getMaterial() == Material.air) || (localatr2 == BlockList.dirt) || (localatr2 == BlockList.aJ) || (localatr2 == BlockList.aI)) {
 /* 38:50 */                 setBlock(paramaqu, paramdt.offset(i1, k, i3), BlockList.cB);
 /* 39:   */               }
 /* 40:52 */               if ((k != 0) && (n > 1))
 /* 41:   */               {
-/* 42:53 */                 localatr2 = paramaqu.getBlock(paramdt.offset(i1, -k, i3)).getProto();
+/* 42:53 */                 localatr2 = paramaqu.getBlock(paramdt.offset(i1, -k, i3)).getType();
 /* 43:54 */                 if ((localatr2.getMaterial() == Material.air) || (localatr2 == BlockList.dirt) || (localatr2 == BlockList.aJ) || (localatr2 == BlockList.aI)) {
 /* 44:55 */                   setBlock(paramaqu, paramdt.offset(i1, -k, i3), BlockList.cB);
 /* 45:   */                 }
@@ -66,7 +66,7 @@ package net.minecraft.src;
 /* 65:   */         }
 /* 66:74 */         while (localdt.getY() > 50)
 /* 67:   */         {
-/* 68:75 */           ProtoBlock localatr1 = paramaqu.getBlock(localdt).getProto();
+/* 68:75 */           BlockType localatr1 = paramaqu.getBlock(localdt).getType();
 /* 69:76 */           if ((localatr1.getMaterial() != Material.air) && (localatr1 != BlockList.dirt) && (localatr1 != BlockList.aJ) && (localatr1 != BlockList.aI) && (localatr1 != BlockList.cB)) {
 /* 70:   */             break;
 /* 71:   */           }

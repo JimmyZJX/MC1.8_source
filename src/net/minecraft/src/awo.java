@@ -12,7 +12,7 @@ package net.minecraft.src;
 /* 11:17 */     if (paramRandom.nextInt(10 - paramInt * 3) == 0) {
 /* 12:18 */       return ItemList.flint;
 /* 13:   */     }
-/* 14:20 */     return Item.fromProtoBlock(this);
+/* 14:20 */     return Item.fromBlock(this);
 /* 15:   */   }
 /* 16:   */ }
 

@@ -72,7 +72,7 @@ import org.apache.logging.log4j.LogManager;
 /*  71:    */     
 /*  72: 96 */     a(EntityArmorStand.class, "ArmorStand", 30);
 /*  73:    */     
-/*  74: 98 */     a(adu.class, "Boat", 41);
+/*  74: 98 */     a(EntityBoat.class, "Boat", 41);
 /*  75: 99 */     a(aeg.class, EnumMinecartVariant.a.b(), 42);
 /*  76:100 */     a(aea.class, EnumMinecartVariant.b.b(), 43);
 /*  77:101 */     a(aee.class, EnumMinecartVariant.c.b(), 44);

@@ -127,22 +127,22 @@ package net.minecraft.src;
 /* 126:    */   {
 /* 127:351 */     if (this.b)
 /* 128:    */     {
-/* 129:352 */       if ((parambec.getProto() == BlockList.log) || (parambec.getProto() == BlockList.log2)) {
+/* 129:352 */       if ((parambec.getType() == BlockList.log) || (parambec.getType() == BlockList.log2)) {
 /* 130:353 */         return BlockList.A.instance();
 /* 131:    */       }
-/* 132:354 */       if (parambec.getProto() == BlockList.cobblestone) {
+/* 132:354 */       if (parambec.getType() == BlockList.cobblestone) {
 /* 133:355 */         return BlockList.A.instance(bae.a.a());
 /* 134:    */       }
-/* 135:356 */       if (parambec.getProto() == BlockList.planks) {
+/* 135:356 */       if (parambec.getType() == BlockList.planks) {
 /* 136:357 */         return BlockList.A.instance(bae.c.a());
 /* 137:    */       }
-/* 138:358 */       if (parambec.getProto() == BlockList.ad) {
+/* 138:358 */       if (parambec.getType() == BlockList.ad) {
 /* 139:359 */         return BlockList.bO.instance().setData(BlockStairs.a, parambec.getData(BlockStairs.a));
 /* 140:    */       }
-/* 141:360 */       if (parambec.getProto() == BlockList.aw) {
+/* 141:360 */       if (parambec.getType() == BlockList.aw) {
 /* 142:361 */         return BlockList.bO.instance().setData(BlockStairs.a, parambec.getData(BlockStairs.a));
 /* 143:    */       }
-/* 144:362 */       if (parambec.getProto() == BlockList.gravel) {
+/* 144:362 */       if (parambec.getType() == BlockList.gravel) {
 /* 145:363 */         return BlockList.A.instance();
 /* 146:    */       }
 /* 147:    */     }

@@ -12,7 +12,7 @@ package net.minecraft.src;
 /* 11:   */   public void a(EntityEnderman paramaer, float paramFloat1, float paramFloat2, float paramFloat3, float paramFloat4, float paramFloat5, float paramFloat6, float paramFloat7)
 /* 12:   */   {
 /* 13:22 */     Block localbec = paramaer.ck();
-/* 14:23 */     if (localbec.getProto().getMaterial() == Material.air) {
+/* 14:23 */     if (localbec.getType().getMaterial() == Material.air) {
 /* 15:24 */       return;
 /* 16:   */     }
 /* 17:27 */     cll localcll = bsu.z().ab();

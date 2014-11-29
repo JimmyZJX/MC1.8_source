@@ -106,7 +106,7 @@ package net.minecraft.src;
 /* 105:115 */     int i2 = 0;
 /* 106:117 */     for (int i3 = 255; i3 >= 0; i3--)
 /* 107:    */     {
-/* 108:118 */       if ((parambgk.a(j, i3, i).getProto().getMaterial() == Material.air) && (i3 < (int)d1)) {
+/* 108:118 */       if ((parambgk.a(j, i3, i).getType().getMaterial() == Material.air) && (i3 < (int)d1)) {
 /* 109:119 */         parambgk.a(j, i3, i, BlockList.stone.instance());
 /* 110:    */       }
 /* 111:122 */       if (i3 <= paramRandom.nextInt(5))
@@ -116,11 +116,11 @@ package net.minecraft.src;
 /* 115:    */       else
 /* 116:    */       {
 /* 117:125 */         Block localbec3 = parambgk.a(j, i3, i);
-/* 118:127 */         if (localbec3.getProto().getMaterial() == Material.air)
+/* 118:127 */         if (localbec3.getType().getMaterial() == Material.air)
 /* 119:    */         {
 /* 120:128 */           i1 = -1;
 /* 121:    */         }
-/* 122:129 */         else if (localbec3.getProto() == BlockList.stone)
+/* 122:129 */         else if (localbec3.getType() == BlockList.stone)
 /* 123:    */         {
 /* 124:    */           Block localbec4;
 /* 125:130 */           if (i1 == -1)
@@ -136,7 +136,7 @@ package net.minecraft.src;
 /* 135:136 */               localbec1 = BlockList.cu.instance();
 /* 136:137 */               localbec2 = this.al;
 /* 137:    */             }
-/* 138:140 */             if ((i3 < 63) && ((localbec1 == null) || (localbec1.getProto().getMaterial() == Material.air))) {
+/* 138:140 */             if ((i3 < 63) && ((localbec1 == null) || (localbec1.getType().getMaterial() == Material.air))) {
 /* 139:141 */               localbec1 = BlockList.water.instance();
 /* 140:    */             }
 /* 141:144 */             i1 = m + Math.max(0, i3 - 63);
@@ -170,8 +170,8 @@ package net.minecraft.src;
 /* 169:    */             else
 /* 170:    */             {
 /* 171:167 */               parambgk.a(j, i3, i, localbec2);
-/* 172:168 */               if (localbec2.getProto() == BlockList.cu) {
-/* 173:169 */                 parambgk.a(j, i3, i, localbec2.getProto().instance().setData(aun.a, EnumDyeColor.ORANGE));
+/* 172:168 */               if (localbec2.getType() == BlockList.cu) {
+/* 173:169 */                 parambgk.a(j, i3, i, localbec2.getType().instance().setData(aun.a, EnumDyeColor.ORANGE));
 /* 174:    */               }
 /* 175:    */             }
 /* 176:    */           }

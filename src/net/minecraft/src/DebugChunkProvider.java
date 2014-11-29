@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*   8:    */   
 /*   9:    */   static
 /*  10:    */   {
-/*  11: 29 */     for (ProtoBlock block : ProtoBlock.c) {
+/*  11: 29 */     for (BlockType block : BlockType.c) {
 /*  12: 30 */       a.addAll(block.O().a());
 /*  13:    */     }
 /*  14:    */   }

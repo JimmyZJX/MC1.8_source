@@ -2,11 +2,11 @@ package net.minecraft.src;
 /*  1:   */ public class aqk
 /*  2:   */ {
 /*  3:   */   private BlockPosition a;
-/*  4:   */   private ProtoBlock b;
+/*  4:   */   private BlockType b;
 /*  5:   */   private int c;
 /*  6:   */   private int d;
 /*  7:   */   
-/*  8:   */   public aqk(BlockPosition paramdt, ProtoBlock paramatr, int paramInt1, int paramInt2)
+/*  8:   */   public aqk(BlockPosition paramdt, BlockType paramatr, int paramInt1, int paramInt2)
 /*  9:   */   {
 /* 10:13 */     this.a = paramdt;
 /* 11:14 */     this.c = paramInt1;
@@ -29,7 +29,7 @@ package net.minecraft.src;
 /* 28:28 */     return this.d;
 /* 29:   */   }
 /* 30:   */   
-/* 31:   */   public ProtoBlock d()
+/* 31:   */   public BlockType d()
 /* 32:   */   {
 /* 33:32 */     return this.b;
 /* 34:   */   }

@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*  3:   */ {
 /*  4:   */   public cgw a(int paramInt, World paramaqu, double paramDouble1, double paramDouble2, double paramDouble3, double paramDouble4, double paramDouble5, double paramDouble6, int... paramVarArgs)
 /*  5:   */   {
-/*  6:47 */     return new cff(paramaqu, paramDouble1, paramDouble2, paramDouble3, Item.fromProtoBlock(BlockList.barrier));
+/*  6:47 */     return new cff(paramaqu, paramDouble1, paramDouble2, paramDouble3, Item.fromBlock(BlockList.barrier));
 /*  7:   */   }
 /*  8:   */ }
 

@@ -51,7 +51,7 @@ package net.minecraft.src;
 /* 50:   */       }
 /* 51:   */       else
 /* 52:   */       {
-/* 53:57 */         localObject = ProtoBlock.a(paramamj.getItem());
+/* 53:57 */         localObject = BlockType.a(paramamj.getItem());
 /* 54:58 */         if (localObject == BlockList.bQ) {
 /* 55:59 */           cno.a.a(this.d, 0.0D, 0.0D, 0.0D, 0.0F);
 /* 56:60 */         } else if (localObject == BlockList.cg) {

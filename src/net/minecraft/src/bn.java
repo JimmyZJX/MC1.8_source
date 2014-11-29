@@ -30,7 +30,7 @@ package net.minecraft.src;
 /*  28:    */     
 /*  29: 49 */     BlockPosition localdt1 = a(paramae, paramArrayOfString, 0, false);
 /*  30: 50 */     BlockPosition localdt2 = a(paramae, paramArrayOfString, 3, false);
-/*  31: 51 */     ProtoBlock localatr1 = CommandBase.g(paramae, paramArrayOfString[6]);
+/*  31: 51 */     BlockType localatr1 = CommandBase.g(paramae, paramArrayOfString[6]);
 /*  32:    */     
 /*  33: 53 */     int i = 0;
 /*  34: 54 */     if (paramArrayOfString.length >= 8) {
@@ -100,14 +100,14 @@ package net.minecraft.src;
 /*  98:114 */             else if ((paramArrayOfString[8].equals("replace")) && (!localatr1.x())) {
 /*  99:115 */               if (paramArrayOfString.length > 9)
 /* 100:    */               {
-/* 101:116 */                 ProtoBlock localatr3 = CommandBase.g(paramae, paramArrayOfString[9]);
-/* 102:117 */                 if (localaqu.getBlock(localdt6).getProto() != localatr3) {}
+/* 101:116 */                 BlockType localatr3 = CommandBase.g(paramae, paramArrayOfString[9]);
+/* 102:117 */                 if (localaqu.getBlock(localdt6).getType() != localatr3) {}
 /* 103:    */               }
 /* 104:121 */               else if (paramArrayOfString.length > 10)
 /* 105:    */               {
 /* 106:122 */                 int i3 = CommandBase.a(paramArrayOfString[10]);
 /* 107:123 */                 Block localbec = localaqu.getBlock(localdt6);
-/* 108:124 */                 if (localbec.getProto().c(localbec) != i3) {
+/* 108:124 */                 if (localbec.getType().c(localbec) != i3) {
 /* 109:    */                   continue;
 /* 110:    */                 }
 /* 111:    */               }
@@ -144,7 +144,7 @@ package net.minecraft.src;
 /* 142:    */     }
 /* 143:160 */     for (BlockPosition localdt5 : localObject)
 /* 144:    */     {
-/* 145:161 */       ProtoBlock localatr2 = localaqu.getBlock(localdt5).getProto();
+/* 145:161 */       BlockType localatr2 = localaqu.getBlock(localdt5).getType();
 /* 146:162 */       localaqu.b(localdt5, localatr2);
 /* 147:    */     }
 /* 148:165 */     if (j <= 0) {
@@ -163,7 +163,7 @@ package net.minecraft.src;
 /* 161:178 */       return a(paramArrayOfString, 3, paramdt);
 /* 162:    */     }
 /* 163:179 */     if (paramArrayOfString.length == 7) {
-/* 164:180 */       return a(paramArrayOfString, ProtoBlock.c.c());
+/* 164:180 */       return a(paramArrayOfString, BlockType.c.c());
 /* 165:    */     }
 /* 166:181 */     if (paramArrayOfString.length == 9) {
 /* 167:182 */       return a(paramArrayOfString, new String[] { "replace", "destroy", "keep", "hollow", "outline" });

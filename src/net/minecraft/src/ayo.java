@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ import java.util.Random;
 /*  2:   */ 
 /*  3:   */ public class ayo
-/*  4:   */   extends ProtoBlock
+/*  4:   */   extends BlockType
 /*  5:   */ {
 /*  6:   */   public ayo()
 /*  7:   */   {
@@ -12,7 +12,7 @@ package net.minecraft.src;
 /* 11:   */   
 /* 12:   */   public Item a(Block parambec, Random paramRandom, int paramInt)
 /* 13:   */   {
-/* 14:21 */     return Item.fromProtoBlock(BlockList.obsidian);
+/* 14:21 */     return Item.fromBlock(BlockList.obsidian);
 /* 15:   */   }
 /* 16:   */   
 /* 17:   */   public MapColor g(Block parambec)

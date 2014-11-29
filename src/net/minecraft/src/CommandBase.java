@@ -374,13 +374,13 @@ package net.minecraft.src;
 /* 371:381 */     return localalq;
 /* 372:    */   }
 /* 373:    */   
-/* 374:    */   public static ProtoBlock g(ICommandSender paramae, String paramString) throws NumberInvalidException
+/* 374:    */   public static BlockType g(ICommandSender paramae, String paramString) throws NumberInvalidException
 /* 375:    */   {
 /* 376:385 */     oa localoa = new oa(paramString);
-/* 377:386 */     if (!ProtoBlock.c.d(localoa)) {
+/* 377:386 */     if (!BlockType.c.d(localoa)) {
 /* 378:387 */       throw new NumberInvalidException("commands.give.notFound", new Object[] { localoa });
 /* 379:    */     }
-/* 380:390 */     ProtoBlock localatr = (ProtoBlock)ProtoBlock.c.a(localoa);
+/* 380:390 */     BlockType localatr = (BlockType)BlockType.c.a(localoa);
 /* 381:391 */     if (localatr == null) {
 /* 382:392 */       throw new NumberInvalidException("commands.give.notFound", new Object[] { localoa });
 /* 383:    */     }

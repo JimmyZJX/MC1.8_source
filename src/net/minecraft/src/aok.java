@@ -47,12 +47,12 @@ package net.minecraft.src;
 /* 46:55 */     a(BlockList.redstoneOre, new ItemStack(ItemList.redstone), 0.7F);
 /* 47:   */     
 /* 48:57 */     a(BlockList.lapisOre, new ItemStack(ItemList.dye, 1, EnumDyeColor.BLUE.b()), 0.2F);
-/* 49:58 */     a(BlockList.quartzOre, new ItemStack(ItemList.cg), 0.2F);
+/* 49:58 */     a(BlockList.quartzOre, new ItemStack(ItemList.quartz), 0.2F);
 /* 50:   */   }
 /* 51:   */   
-/* 52:   */   public void a(ProtoBlock paramatr, ItemStack paramamj, float paramFloat)
+/* 52:   */   public void a(BlockType paramatr, ItemStack paramamj, float paramFloat)
 /* 53:   */   {
-/* 54:62 */     a(Item.fromProtoBlock(paramatr), paramamj, paramFloat);
+/* 54:62 */     a(Item.fromBlock(paramatr), paramamj, paramFloat);
 /* 55:   */   }
 /* 56:   */   
 /* 57:   */   public void a(Item paramalq, ItemStack paramamj, float paramFloat)

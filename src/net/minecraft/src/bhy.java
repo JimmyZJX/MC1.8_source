@@ -4,9 +4,9 @@ package net.minecraft.src;
 /*   3:    */ public class bhy
 /*   4:    */   extends TerrainGenerator
 /*   5:    */ {
-/*   6:    */   private ProtoBlock a;
+/*   6:    */   private BlockType a;
 /*   7:    */   
-/*   8:    */   public bhy(ProtoBlock paramatr)
+/*   8:    */   public bhy(BlockType paramatr)
 /*   9:    */   {
 /*  10: 17 */     this.a = paramatr;
 /*  11:    */   }
@@ -59,11 +59,11 @@ package net.minecraft.src;
 /*  58: 62 */           int n = (!arrayOfBoolean[((j * 16 + k) * 8 + m)]) && (((j < 15) && (arrayOfBoolean[(((j + 1) * 16 + k) * 8 + m)])) || ((j > 0) && (arrayOfBoolean[(((j - 1) * 16 + k) * 8 + m)])) || ((k < 15) && (arrayOfBoolean[((j * 16 + (k + 1)) * 8 + m)])) || ((k > 0) && (arrayOfBoolean[((j * 16 + (k - 1)) * 8 + m)])) || ((m < 7) && (arrayOfBoolean[((j * 16 + k) * 8 + (m + 1))])) || ((m > 0) && (arrayOfBoolean[((j * 16 + k) * 8 + (m - 1))]))) ? 1 : 0;
 /*  59: 71 */           if (n != 0)
 /*  60:    */           {
-/*  61: 72 */             localObject = paramaqu.getBlock(paramdt.offset(j, m, k)).getProto().getMaterial();
+/*  61: 72 */             localObject = paramaqu.getBlock(paramdt.offset(j, m, k)).getType().getMaterial();
 /*  62: 73 */             if ((m >= 4) && (((Material)localObject).isLiquid())) {
 /*  63: 74 */               return false;
 /*  64:    */             }
-/*  65: 76 */             if ((m < 4) && (!((Material)localObject).a()) && (paramaqu.getBlock(paramdt.offset(j, m, k)).getProto() != this.a)) {
+/*  65: 76 */             if ((m < 4) && (!((Material)localObject).a()) && (paramaqu.getBlock(paramdt.offset(j, m, k)).getType() != this.a)) {
 /*  66: 77 */               return false;
 /*  67:    */             }
 /*  68:    */           }
@@ -85,10 +85,10 @@ package net.minecraft.src;
 /*  84: 97 */           if (arrayOfBoolean[((j * 16 + k) * 8 + m)])
 /*  85:    */           {
 /*  86: 98 */             BlockPosition localdt = paramdt.offset(j, m - 1, k);
-/*  87:100 */             if ((paramaqu.getBlock(localdt).getProto() == BlockList.dirt) && (paramaqu.getLightLevel(EnumSkyBlock.SKY, paramdt.offset(j, m, k)) > 0))
+/*  87:100 */             if ((paramaqu.getBlock(localdt).getType() == BlockList.dirt) && (paramaqu.getLightLevel(EnumSkyBlock.SKY, paramdt.offset(j, m, k)) > 0))
 /*  88:    */             {
 /*  89:101 */               localObject = paramaqu.b(localdt);
-/*  90:102 */               if (((arm)localObject).ak.getProto() == BlockList.bw) {
+/*  90:102 */               if (((arm)localObject).ak.getType() == BlockList.bw) {
 /*  91:103 */                 paramaqu.setBlock(localdt, BlockList.bw.instance(), 2);
 /*  92:    */               } else {
 /*  93:105 */                 paramaqu.setBlock(localdt, BlockList.grass.instance(), 2);
@@ -105,7 +105,7 @@ package net.minecraft.src;
 /* 104:    */           {
 /* 105:117 */             int i1 = (!arrayOfBoolean[((j * 16 + k) * 8 + m)]) && (((j < 15) && (arrayOfBoolean[(((j + 1) * 16 + k) * 8 + m)])) || ((j > 0) && (arrayOfBoolean[(((j - 1) * 16 + k) * 8 + m)])) || ((k < 15) && (arrayOfBoolean[((j * 16 + (k + 1)) * 8 + m)])) || ((k > 0) && (arrayOfBoolean[((j * 16 + (k - 1)) * 8 + m)])) || ((m < 7) && (arrayOfBoolean[((j * 16 + k) * 8 + (m + 1))])) || ((m > 0) && (arrayOfBoolean[((j * 16 + k) * 8 + (m - 1))]))) ? 1 : 0;
 /* 106:126 */             if ((i1 != 0) && 
-/* 107:127 */               ((m < 4) || (paramRandom.nextInt(2) != 0)) && (paramaqu.getBlock(paramdt.offset(j, m, k)).getProto().getMaterial().a())) {
+/* 107:127 */               ((m < 4) || (paramRandom.nextInt(2) != 0)) && (paramaqu.getBlock(paramdt.offset(j, m, k)).getType().getMaterial().a())) {
 /* 108:128 */               paramaqu.setBlock(paramdt.offset(j, m, k), BlockList.stone.instance(), 2);
 /* 109:    */             }
 /* 110:    */           }

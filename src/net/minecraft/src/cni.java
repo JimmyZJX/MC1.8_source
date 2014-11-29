@@ -3,7 +3,7 @@ import java.util.Map;
 
 public abstract interface cni
 {
-  public abstract Map<Block,cxl> a(ProtoBlock paramatr);
+  public abstract Map<Block,cxl> a(BlockType paramatr);
 }
 
 

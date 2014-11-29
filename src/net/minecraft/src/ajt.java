@@ -16,7 +16,7 @@ package net.minecraft.src;
 /* 15:25 */       return false;
 /* 16:   */     }
 /* 17:28 */     Block localbec1 = paramaqu.getBlock(paramdt);
-/* 18:29 */     ProtoBlock localatr = localbec1.getProto();
+/* 18:29 */     BlockType localatr = localbec1.getType();
 /* 19:30 */     boolean bool1 = localatr.f(paramaqu, paramdt);
 /* 20:33 */     if (!bool1) {
 /* 21:34 */       paramdt = paramdt.up();

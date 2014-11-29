@@ -10,7 +10,7 @@ public abstract interface dz
   
   public abstract BlockPosition d();
   
-  public abstract ProtoBlock e();
+  public abstract BlockType e();
   
   public abstract int f();
   

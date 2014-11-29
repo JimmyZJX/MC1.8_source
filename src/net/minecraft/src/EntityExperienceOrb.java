@@ -65,7 +65,7 @@ package net.minecraft.src;
 /*  65: 75 */     this.lastZ = this.zPos;
 /*  66:    */     
 /*  67: 77 */     this.yVelocity -= 0.02999999932944775D;
-/*  68: 78 */     if (this.world.getBlock(new BlockPosition(this)).getProto().getMaterial() == Material.lava)
+/*  68: 78 */     if (this.world.getBlock(new BlockPosition(this)).getType().getMaterial() == Material.lava)
 /*  69:    */     {
 /*  70: 79 */       this.yVelocity = 0.2000000029802322D;
 /*  71: 80 */       this.xVelocity = ((this.rng.nextFloat() - this.rng.nextFloat()) * 0.2F);
@@ -103,13 +103,13 @@ package net.minecraft.src;
 /* 103:114 */     move(this.xVelocity, this.yVelocity, this.zVelocity);
 /* 104:    */     
 /* 105:116 */     float f1 = 0.98F;
-/* 106:117 */     if (this.C) {
-/* 107:118 */       f1 = this.world.getBlock(new BlockPosition(MathUtils.floor(this.xPos), MathUtils.floor(getAABB().minY) - 1, MathUtils.floor(this.zPos))).getProto().K * 0.98F;
+/* 106:117 */     if (this.landing) {
+/* 107:118 */       f1 = this.world.getBlock(new BlockPosition(MathUtils.floor(this.xPos), MathUtils.floor(getAABB().minY) - 1, MathUtils.floor(this.zPos))).getType().K * 0.98F;
 /* 108:    */     }
 /* 109:121 */     this.xVelocity *= f1;
 /* 110:122 */     this.yVelocity *= 0.9800000190734863D;
 /* 111:123 */     this.zVelocity *= f1;
-/* 112:125 */     if (this.C) {
+/* 112:125 */     if (this.landing) {
 /* 113:126 */       this.yVelocity *= -0.8999999761581421D;
 /* 114:    */     }
 /* 115:129 */     this.a += 1;
@@ -127,10 +127,10 @@ package net.minecraft.src;
 /* 127:    */   
 /* 128:    */   protected void f(int paramInt)
 /* 129:    */   {
-/* 130:144 */     a(DamageSource.inFire, paramInt);
+/* 130:144 */     receiveDamage(DamageSource.inFire, paramInt);
 /* 131:    */   }
 /* 132:    */   
-/* 133:    */   public boolean a(DamageSource paramwh, float paramFloat)
+/* 133:    */   public boolean receiveDamage(DamageSource paramwh, float paramFloat)
 /* 134:    */   {
 /* 135:149 */     if (isImmuneTo(paramwh)) {
 /* 136:150 */       return false;

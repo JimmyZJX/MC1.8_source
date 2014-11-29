@@ -9,10 +9,10 @@ package net.minecraft.src;
 /*   7:    */   
 /*   8:    */   public String call()
 /*   9:    */   {
-/*  10:199 */     int i = ProtoBlock.a(this.a.world.getBlock(this.a.pos).getProto());
+/*  10:199 */     int i = BlockType.a(this.a.world.getBlock(this.a.pos).getType());
 /*  11:    */     try
 /*  12:    */     {
-/*  13:201 */       return String.format("ID #%d (%s // %s)", new Object[] { Integer.valueOf(i), ProtoBlock.c(i).a(), ProtoBlock.c(i).getClass().getCanonicalName() });
+/*  13:201 */       return String.format("ID #%d (%s // %s)", new Object[] { Integer.valueOf(i), BlockType.c(i).a(), BlockType.c(i).getClass().getCanonicalName() });
 /*  14:    */     }
 /*  15:    */     catch (Throwable localThrowable) {}
 /*  16:203 */     return "ID #" + i;

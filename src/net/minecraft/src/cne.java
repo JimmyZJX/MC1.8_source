@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*  3:   */ {
 /*  4:   */   protected cxl a(Block parambec)
 /*  5:   */   {
-/*  6:10 */     return new cxl((oa)ProtoBlock.c.c(parambec.getProto()), a(parambec.b()));
+/*  6:10 */     return new cxl((oa)BlockType.c.c(parambec.getType()), a(parambec.b()));
 /*  7:   */   }
 /*  8:   */ }
 

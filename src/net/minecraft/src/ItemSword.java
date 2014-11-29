@@ -22,7 +22,7 @@ package net.minecraft.src;
 /*  21: 28 */     return this.material.getDamageVsEntity();
 /*  22:    */   }
 /*  23:    */   
-/*  24:    */   public float getStrVsBlock(ItemStack paramamj, ProtoBlock paramatr)
+/*  24:    */   public float getStrVsBlock(ItemStack paramamj, BlockType paramatr)
 /*  25:    */   {
 /*  26: 33 */     if (paramatr == BlockList.web) {
 /*  27: 35 */       return 15.0F;
@@ -40,7 +40,7 @@ package net.minecraft.src;
 /*  39: 49 */     return true;
 /*  40:    */   }
 /*  41:    */   
-/*  42:    */   public boolean a(ItemStack paramamj, World paramaqu, ProtoBlock paramatr, BlockPosition paramdt, EntityLiving paramxm)
+/*  42:    */   public boolean a(ItemStack paramamj, World paramaqu, BlockType paramatr, BlockPosition paramdt, EntityLiving paramxm)
 /*  43:    */   {
 /*  44: 55 */     if (paramatr.g(paramaqu, paramdt) != 0.0D) {
 /*  45: 56 */       paramamj.a(2, paramxm);
@@ -69,7 +69,7 @@ package net.minecraft.src;
 /*  68: 79 */     return paramamj;
 /*  69:    */   }
 /*  70:    */   
-/*  71:    */   public boolean canHarvestBlock(ProtoBlock paramatr)
+/*  71:    */   public boolean canHarvestBlock(BlockType paramatr)
 /*  72:    */   {
 /*  73: 84 */     return paramatr == BlockList.web;
 /*  74:    */   }

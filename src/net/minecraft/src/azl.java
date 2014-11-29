@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ import java.util.List;
 /*  2:   */ 
 /*  3:   */ public class azl
-/*  4:   */   extends ProtoBlock
+/*  4:   */   extends BlockType
 /*  5:   */ {
 /*  6:20 */   public static final BlockDataEnum a = BlockDataEnum.getInstance("variant", azn.class);
 /*  7:   */   
@@ -17,7 +17,7 @@ package net.minecraft.src;
 /* 16:   */   {
 /* 17:30 */     if (paramInt == azn.c.a())
 /* 18:   */     {
-/* 19:31 */       switch (azm.a[paramej.k().ordinal()])
+/* 19:31 */       switch (azm.a[paramej.getAxis().ordinal()])
 /* 20:   */       {
 /* 21:   */       case 1: 
 /* 22:33 */         return instance().setData(a, azn.e);
@@ -45,7 +45,7 @@ package net.minecraft.src;
 /* 44:   */   {
 /* 45:61 */     azn localazn = (azn)parambec.getData(a);
 /* 46:62 */     if ((localazn == azn.d) || (localazn == azn.e)) {
-/* 47:63 */       return new ItemStack(Item.fromProtoBlock(this), 1, azn.c.a());
+/* 47:63 */       return new ItemStack(Item.fromBlock(this), 1, azn.c.a());
 /* 48:   */     }
 /* 49:65 */     return super.i(parambec);
 /* 50:   */   }

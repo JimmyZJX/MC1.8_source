@@ -12,7 +12,7 @@ package net.minecraft.src;
 /*  11:    */   public boolean generate(World paramaqu, Random paramRandom, BlockPosition paramdt)
 /*  12:    */   {
 /*  13: 19 */     int i = paramRandom.nextInt(4) + 5;
-/*  14: 20 */     while (paramaqu.getBlock(paramdt.down()).getProto().getMaterial() == Material.water) {
+/*  14: 20 */     while (paramaqu.getBlock(paramdt.down()).getType().getMaterial() == Material.water) {
 /*  15: 21 */       paramdt = paramdt.down();
 /*  16:    */     }
 /*  17: 24 */     int j = 1;
@@ -34,7 +34,7 @@ package net.minecraft.src;
 /*  33: 38 */         for (i2 = paramdt.getZ() - m; (i2 <= paramdt.getZ() + m) && (j != 0); i2++) {
 /*  34: 39 */           if ((k >= 0) && (k < 256))
 /*  35:    */           {
-/*  36: 40 */             ProtoBlock localatr3 = paramaqu.getBlock(new BlockPosition(n, k, i2)).getProto();
+/*  36: 40 */             BlockType localatr3 = paramaqu.getBlock(new BlockPosition(n, k, i2)).getType();
 /*  37: 41 */             if ((localatr3.getMaterial() != Material.air) && (localatr3.getMaterial() != Material.leaves)) {
 /*  38: 42 */               if ((localatr3 == BlockList.water) || (localatr3 == BlockList.flowingWater))
 /*  39:    */               {
@@ -57,7 +57,7 @@ package net.minecraft.src;
 /*  56: 57 */     if (j == 0) {
 /*  57: 58 */       return false;
 /*  58:    */     }
-/*  59: 61 */     ProtoBlock localatr1 = paramaqu.getBlock(paramdt.down()).getProto();
+/*  59: 61 */     BlockType localatr1 = paramaqu.getBlock(paramdt.down()).getType();
 /*  60: 62 */     if (((localatr1 != BlockList.grass) && (localatr1 != BlockList.dirt)) || (paramdt.getY() >= 256 - i - 1)) {
 /*  61: 63 */       return false;
 /*  62:    */     }
@@ -78,7 +78,7 @@ package net.minecraft.src;
 /*  77: 75 */           if ((Math.abs(i4) != i2) || (Math.abs(i6) != i2) || ((paramRandom.nextInt(2) != 0) && (n != 0)))
 /*  78:    */           {
 /*  79: 78 */             localdt3 = new BlockPosition(i3, m, i5);
-/*  80: 79 */             if (!paramaqu.getBlock(localdt3).getProto().m()) {
+/*  80: 79 */             if (!paramaqu.getBlock(localdt3).getType().m()) {
 /*  81: 80 */               setBlock(paramaqu, localdt3, BlockList.leaves);
 /*  82:    */             }
 /*  83:    */           }
@@ -87,7 +87,7 @@ package net.minecraft.src;
 /*  86:    */     }
 /*  87: 86 */     for (int m = 0; m < i; m++)
 /*  88:    */     {
-/*  89: 87 */       ProtoBlock localatr2 = paramaqu.getBlock(paramdt.up(m)).getProto();
+/*  89: 87 */       BlockType localatr2 = paramaqu.getBlock(paramdt.up(m)).getType();
 /*  90: 88 */       if ((localatr2.getMaterial() == Material.air) || (localatr2.getMaterial() == Material.leaves) || (localatr2 == BlockList.flowingWater) || (localatr2 == BlockList.water)) {
 /*  91: 89 */         setBlock(paramaqu, paramdt.up(m), BlockList.log);
 /*  92:    */       }
@@ -100,22 +100,22 @@ package net.minecraft.src;
 /*  99: 97 */         for (i4 = paramdt.getZ() - i2; i4 <= paramdt.getZ() + i2; i4++)
 /* 100:    */         {
 /* 101: 98 */           BlockPosition localdt1 = new BlockPosition(i3, m, i4);
-/* 102:100 */           if (paramaqu.getBlock(localdt1).getProto().getMaterial() == Material.leaves)
+/* 102:100 */           if (paramaqu.getBlock(localdt1).getType().getMaterial() == Material.leaves)
 /* 103:    */           {
 /* 104:101 */             BlockPosition localdt2 = localdt1.west();
 /* 105:102 */             localdt3 = localdt1.east();
 /* 106:103 */             BlockPosition localdt4 = localdt1.north();
 /* 107:104 */             BlockPosition localdt5 = localdt1.south();
-/* 108:106 */             if ((paramRandom.nextInt(4) == 0) && (paramaqu.getBlock(localdt2).getProto().getMaterial() == Material.air)) {
+/* 108:106 */             if ((paramRandom.nextInt(4) == 0) && (paramaqu.getBlock(localdt2).getType().getMaterial() == Material.air)) {
 /* 109:107 */               a(paramaqu, localdt2, bbv.S);
 /* 110:    */             }
-/* 111:109 */             if ((paramRandom.nextInt(4) == 0) && (paramaqu.getBlock(localdt3).getProto().getMaterial() == Material.air)) {
+/* 111:109 */             if ((paramRandom.nextInt(4) == 0) && (paramaqu.getBlock(localdt3).getType().getMaterial() == Material.air)) {
 /* 112:110 */               a(paramaqu, localdt3, bbv.T);
 /* 113:    */             }
-/* 114:112 */             if ((paramRandom.nextInt(4) == 0) && (paramaqu.getBlock(localdt4).getProto().getMaterial() == Material.air)) {
+/* 114:112 */             if ((paramRandom.nextInt(4) == 0) && (paramaqu.getBlock(localdt4).getType().getMaterial() == Material.air)) {
 /* 115:113 */               a(paramaqu, localdt4, bbv.Q);
 /* 116:    */             }
-/* 117:115 */             if ((paramRandom.nextInt(4) == 0) && (paramaqu.getBlock(localdt5).getProto().getMaterial() == Material.air)) {
+/* 117:115 */             if ((paramRandom.nextInt(4) == 0) && (paramaqu.getBlock(localdt5).getType().getMaterial() == Material.air)) {
 /* 118:116 */               a(paramaqu, localdt5, bbv.R);
 /* 119:    */             }
 /* 120:    */           }
@@ -131,7 +131,7 @@ package net.minecraft.src;
 /* 130:127 */     int i = 4;
 /* 131:    */     
 /* 132:129 */     paramdt = paramdt.down();
-/* 133:130 */     while ((paramaqu.getBlock(paramdt).getProto().getMaterial() == Material.air) && (i > 0))
+/* 133:130 */     while ((paramaqu.getBlock(paramdt).getType().getMaterial() == Material.air) && (i > 0))
 /* 134:    */     {
 /* 135:131 */       setBlock(paramaqu, paramdt, BlockList.vine, paramInt);
 /* 136:132 */       paramdt = paramdt.down();

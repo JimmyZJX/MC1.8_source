@@ -19,7 +19,7 @@ package net.minecraft.src;
 /* 18:   */   
 /* 19:   */   public void a(EntityEnderman paramaer, double paramDouble1, double paramDouble2, double paramDouble3, float paramFloat1, float paramFloat2)
 /* 20:   */   {
-/* 21:28 */     this.e.a = (paramaer.ck().getProto().getMaterial() != Material.air);
+/* 21:28 */     this.e.a = (paramaer.ck().getType().getMaterial() != Material.air);
 /* 22:29 */     this.e.b = paramaer.cm();
 /* 23:31 */     if (paramaer.cm())
 /* 24:   */     {

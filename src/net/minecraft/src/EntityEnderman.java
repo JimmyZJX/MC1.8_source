@@ -66,17 +66,17 @@ package net.minecraft.src;
 /*  65:    */   {
 /*  66:100 */     super.h();
 /*  67:    */     
-/*  68:102 */     this.ac.a(16, new Short((short)0));
-/*  69:103 */     this.ac.a(17, new Byte((byte)0));
-/*  70:104 */     this.ac.a(18, new Byte((byte)0));
+/*  68:102 */     this.data.addData(16, new Short((short)0));
+/*  69:103 */     this.data.addData(17, new Byte((byte)0));
+/*  70:104 */     this.data.addData(18, new Byte((byte)0));
 /*  71:    */   }
 /*  72:    */   
 /*  73:    */   public void writeEntityToNBT(NBTTagCompound paramfn)
 /*  74:    */   {
 /*  75:109 */     super.writeEntityToNBT(paramfn);
 /*  76:110 */     Block localbec = ck();
-/*  77:111 */     paramfn.setShort("carried", (short)ProtoBlock.a(localbec.getProto()));
-/*  78:112 */     paramfn.setShort("carriedData", (short)localbec.getProto().c(localbec));
+/*  77:111 */     paramfn.setShort("carried", (short)BlockType.a(localbec.getType()));
+/*  78:112 */     paramfn.setShort("carriedData", (short)localbec.getType().c(localbec));
 /*  79:    */   }
 /*  80:    */   
 /*  81:    */   public void readEntityFromNBT(NBTTagCompound paramfn)
@@ -84,17 +84,17 @@ package net.minecraft.src;
 /*  83:117 */     super.readEntityFromNBT(paramfn);
 /*  84:    */     Block localbec;
 /*  85:119 */     if (paramfn.hasKey("carried", 8)) {
-/*  86:120 */       localbec = ProtoBlock.b(paramfn.getString("carried")).instance(paramfn.e("carriedData") & 0xFFFF);
+/*  86:120 */       localbec = BlockType.b(paramfn.getString("carried")).instance(paramfn.e("carriedData") & 0xFFFF);
 /*  87:    */     } else {
-/*  88:122 */       localbec = ProtoBlock.c(paramfn.e("carried")).instance(paramfn.e("carriedData") & 0xFFFF);
+/*  88:122 */       localbec = BlockType.c(paramfn.e("carried")).instance(paramfn.e("carriedData") & 0xFFFF);
 /*  89:    */     }
 /*  90:124 */     a(localbec);
 /*  91:    */   }
 /*  92:    */   
 /*  93:    */   private boolean c(EntityPlayer paramahd)
 /*  94:    */   {
-/*  95:128 */     ItemStack localamj = paramahd.bg.armors[3];
-/*  96:129 */     if ((localamj != null) && (localamj.getItem() == Item.fromProtoBlock(BlockList.pumpkin))) {
+/*  95:128 */     ItemStack localamj = paramahd.inventory.armors[3];
+/*  96:129 */     if ((localamj != null) && (localamj.getItem() == Item.fromBlock(BlockList.pumpkin))) {
 /*  97:130 */       return false;
 /*  98:    */     }
 /*  99:133 */     Vec3 localbrw1 = paramahd.d(1.0F).normalize();
@@ -128,7 +128,7 @@ package net.minecraft.src;
 /* 127:    */   protected void mobTick()
 /* 128:    */   {
 /* 129:164 */     if (U()) {
-/* 130:165 */       a(DamageSource.drown, 1.0F);
+/* 130:165 */       receiveDamage(DamageSource.drown, 1.0F);
 /* 131:    */     }
 /* 132:168 */     if ((cm()) && (!this.bl) && (this.rng.nextInt(100) == 0)) {
 /* 133:169 */       a(false);
@@ -185,7 +185,7 @@ package net.minecraft.src;
 /* 184:217 */       while ((j == 0) && (((BlockPosition)localObject).getY() > 0))
 /* 185:    */       {
 /* 186:218 */         BlockPosition localdt = ((BlockPosition)localObject).down();
-/* 187:219 */         ProtoBlock localatr = this.world.getBlock(localdt).getProto();
+/* 187:219 */         BlockType localatr = this.world.getBlock(localdt).getType();
 /* 188:220 */         if (localatr.getMaterial().material_c())
 /* 189:    */         {
 /* 190:221 */           j = 1;
@@ -262,15 +262,15 @@ package net.minecraft.src;
 /* 261:    */   
 /* 262:    */   public void a(Block parambec)
 /* 263:    */   {
-/* 264:293 */     this.ac.b(16, Short.valueOf((short)(ProtoBlock.f(parambec) & 0xFFFF)));
+/* 264:293 */     this.data.b(16, Short.valueOf((short)(BlockType.f(parambec) & 0xFFFF)));
 /* 265:    */   }
 /* 266:    */   
 /* 267:    */   public Block ck()
 /* 268:    */   {
-/* 269:297 */     return ProtoBlock.d(this.ac.b(16) & 0xFFFF);
+/* 269:297 */     return BlockType.d(this.data.getShort(16) & 0xFFFF);
 /* 270:    */   }
 /* 271:    */   
-/* 272:    */   public boolean a(DamageSource paramwh, float paramFloat)
+/* 272:    */   public boolean receiveDamage(DamageSource paramwh, float paramFloat)
 /* 273:    */   {
 /* 274:310 */     if (isImmuneTo(paramwh)) {
 /* 275:311 */       return false;
@@ -298,7 +298,7 @@ package net.minecraft.src;
 /* 297:335 */         return false;
 /* 298:    */       }
 /* 299:    */     }
-/* 300:339 */     boolean bool = super.a(paramwh, paramFloat);
+/* 300:339 */     boolean bool = super.receiveDamage(paramwh, paramFloat);
 /* 301:340 */     if ((paramwh.getBypassArmor()) && (this.rng.nextInt(10) != 0)) {
 /* 302:341 */       n();
 /* 303:    */     }
@@ -307,12 +307,12 @@ package net.minecraft.src;
 /* 306:    */   
 /* 307:    */   public boolean cm()
 /* 308:    */   {
-/* 309:347 */     return this.ac.a(18) > 0;
+/* 309:347 */     return this.data.getByte(18) > 0;
 /* 310:    */   }
 /* 311:    */   
 /* 312:    */   public void a(boolean paramBoolean)
 /* 313:    */   {
-/* 314:351 */     this.ac.b(18, Byte.valueOf((byte)(paramBoolean ? 1 : 0)));
+/* 314:351 */     this.data.b(18, Byte.valueOf((byte)(paramBoolean ? 1 : 0)));
 /* 315:    */   }
 				static ya cn() {return c;}
 				static boolean a(EntityEnderman arg0, EntityPlayer arg1) {return arg0.c(arg1);}

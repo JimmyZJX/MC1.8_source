@@ -23,7 +23,7 @@ package net.minecraft.src;
 /*  22: 35 */     j();
 /*  23: 37 */     if (this.b.j_())
 /*  24:    */     {
-/*  25: 38 */       ProtoBlock localatr = this.b.world.getBlock(new BlockPosition(this.b.xPos, this.b.getAABB().minY, this.b.zPos)).getProto();
+/*  25: 38 */       BlockType localatr = this.b.world.getBlock(new BlockPosition(this.b.xPos, this.b.getAABB().minY, this.b.zPos)).getType();
 /*  26: 40 */       if (localatr == BlockList.au) {
 /*  27: 41 */         this.h = "ladder";
 /*  28: 42 */       } else if (localatr == BlockList.vine) {
@@ -41,7 +41,7 @@ package net.minecraft.src;
 /*  40: 51 */     g();
 /*  41: 52 */     a();
 /*  42:    */     
-/*  43: 54 */     wf localwf = new wf(paramwh, this.b.W, paramFloat1, paramFloat2, this.h, this.b.O);
+/*  43: 54 */     wf localwf = new wf(paramwh, this.b.W, paramFloat1, paramFloat2, this.h, this.b.fallDistance);
 /*  44:    */     
 /*  45: 56 */     this.a.add(localwf);
 /*  46: 57 */     this.c = this.b.W;

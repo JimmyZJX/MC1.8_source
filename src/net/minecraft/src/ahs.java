@@ -22,7 +22,7 @@ package net.minecraft.src;
 /* 21:   */   protected void a(HitResult parambru)
 /* 22:   */   {
 /* 23:27 */     if (parambru.d != null) {
-/* 24:28 */       parambru.d.a(DamageSource.a(this, n()), 0.0F);
+/* 24:28 */       parambru.d.receiveDamage(DamageSource.a(this, n()), 0.0F);
 /* 25:   */     }
 /* 26:30 */     if ((!this.world.isClient) && (this.rng.nextInt(8) == 0))
 /* 27:   */     {

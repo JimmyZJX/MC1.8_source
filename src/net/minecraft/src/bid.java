@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*  8:13 */     for (int i = 0; i < 64; i++)
 /*  9:   */     {
 /* 10:14 */       BlockPosition localdt = paramdt.offset(paramRandom.nextInt(8) - paramRandom.nextInt(8), paramRandom.nextInt(4) - paramRandom.nextInt(4), paramRandom.nextInt(8) - paramRandom.nextInt(8));
-/* 11:15 */       if ((BlockList.melonBlock.c(paramaqu, localdt)) && (paramaqu.getBlock(localdt.down()).getProto() == BlockList.grass)) {
+/* 11:15 */       if ((BlockList.melonBlock.c(paramaqu, localdt)) && (paramaqu.getBlock(localdt.down()).getType() == BlockList.grass)) {
 /* 12:16 */         paramaqu.setBlock(localdt, BlockList.melonBlock.instance(), 2);
 /* 13:   */       }
 /* 14:   */     }

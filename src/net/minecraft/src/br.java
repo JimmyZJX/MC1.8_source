@@ -44,7 +44,7 @@ package net.minecraft.src;
 /*  42: 53 */         throw new CommandException("commands.give.tagError", new Object[] { localgf.getMessage() });
 /*  43:    */       }
 /*  44:    */     }
-/*  45: 57 */     boolean bool = localqw.bg.a(localamj);
+/*  45: 57 */     boolean bool = localqw.inventory.a(localamj);
 /*  46: 58 */     if (bool)
 /*  47:    */     {
 /*  48: 59 */       localqw.world.a(localqw, "random.pop", 0.2F, ((localqw.getRNG().nextFloat() - localqw.getRNG().nextFloat()) * 0.7F + 1.0F) * 2.0F);

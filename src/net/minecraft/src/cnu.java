@@ -8,7 +8,7 @@ package net.minecraft.src;
 /*  7:   */   {
 /*  8:28 */     BlockPosition localdt = parambdv.v();
 /*  9:29 */     Block localbec1 = parambdv.b();
-/* 10:30 */     ProtoBlock localatr = localbec1.getProto();
+/* 10:30 */     BlockType localatr = localbec1.getType();
 /* 11:31 */     if ((localatr.getMaterial() == Material.air) || (parambdv.a(paramFloat) >= 1.0F)) {
 /* 12:32 */       return;
 /* 13:   */     }

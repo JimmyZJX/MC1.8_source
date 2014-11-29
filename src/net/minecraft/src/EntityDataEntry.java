@@ -1,37 +1,37 @@
 package net.minecraft.src;
-/*   1:    */ public class xw
+/*   1:    */ public class EntityDataEntry
 /*   2:    */ {
-/*   3:    */   private final int a;
-/*   4:    */   private final int b;
-/*   5:    */   private Object c;
+/*   3:    */   private final int id;
+/*   4:    */   private final int typeID;
+/*   5:    */   private Object value;
 /*   6:    */   private boolean d;
 /*   7:    */   
-/*   8:    */   public xw(int paramInt1, int paramInt2, Object paramObject)
+/*   8:    */   public EntityDataEntry(int id, int typeID, Object value)
 /*   9:    */   {
-/*  10:352 */     this.b = paramInt2;
-/*  11:353 */     this.c = paramObject;
-/*  12:354 */     this.a = paramInt1;
+/*  10:352 */     this.typeID = typeID;
+/*  11:353 */     this.value = value;
+/*  12:354 */     this.id = id;
 /*  13:355 */     this.d = true;
 /*  14:    */   }
 /*  15:    */   
-/*  16:    */   public int a()
+/*  16:    */   public int getType()
 /*  17:    */   {
-/*  18:359 */     return this.b;
+/*  18:359 */     return this.typeID;
 /*  19:    */   }
 /*  20:    */   
-/*  21:    */   public void a(Object paramObject)
+/*  21:    */   public void setValue(Object v)
 /*  22:    */   {
-/*  23:363 */     this.c = paramObject;
+/*  23:363 */     this.value = v;
 /*  24:    */   }
 /*  25:    */   
-/*  26:    */   public Object b()
+/*  26:    */   public Object getValue()
 /*  27:    */   {
-/*  28:367 */     return this.c;
+/*  28:367 */     return this.value;
 /*  29:    */   }
 /*  30:    */   
-/*  31:    */   public int c()
+/*  31:    */   public int getID()
 /*  32:    */   {
-/*  33:371 */     return this.a;
+/*  33:371 */     return this.id;
 /*  34:    */   }
 /*  35:    */   
 /*  36:    */   public boolean d()
@@ -43,7 +43,7 @@ package net.minecraft.src;
 /*  42:    */   {
 /*  43:379 */     this.d = paramBoolean;
 /*  44:    */   }
-				static boolean a(xw arg0, boolean arg1) {return arg0.d=arg1;}
+				static boolean a(EntityDataEntry arg0, boolean arg1) {return arg0.d=arg1;}
 /*  45:    */ }
 
 

@@ -23,7 +23,7 @@ package net.minecraft.src;
 /* 22:28 */     LinkedHashMap localLinkedHashMap = Maps.newLinkedHashMap(parambec.b());
 /* 23:   */     String str;
 /* 24:31 */     if (this.a == null) {
-/* 25:32 */       str = ((oa)ProtoBlock.c.c(parambec.getProto())).toString();
+/* 25:32 */       str = ((oa)BlockType.c.c(parambec.getType())).toString();
 /* 26:   */     } else {
 /* 27:34 */       str = this.a.toString((Comparable)localLinkedHashMap.remove(this.a));
 /* 28:   */     }

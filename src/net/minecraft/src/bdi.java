@@ -26,10 +26,10 @@ package net.minecraft.src;
 /* 25:   */   
 /* 26:   */   public void a(World paramaqu, BlockPosition paramdt)
 /* 27:   */   {
-/* 28:33 */     if (paramaqu.getBlock(paramdt.up()).getProto().getMaterial() != Material.air) {
+/* 28:33 */     if (paramaqu.getBlock(paramdt.up()).getType().getMaterial() != Material.air) {
 /* 29:34 */       return;
 /* 30:   */     }
-/* 31:37 */     Material localbof = paramaqu.getBlock(paramdt.down()).getProto().getMaterial();
+/* 31:37 */     Material localbof = paramaqu.getBlock(paramdt.down()).getType().getMaterial();
 /* 32:   */     
 /* 33:39 */     int i = 0;
 /* 34:40 */     if (localbof == Material.rock) {

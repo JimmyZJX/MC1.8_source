@@ -21,21 +21,21 @@ package net.minecraft.src;
 /*  20: 29 */     a(paramaqu, paramdt.getX(), paramdt.getZ(), paramdt.getY() + i, 0, paramRandom);
 /*  21: 31 */     for (int j = 0; j < i; j++)
 /*  22:    */     {
-/*  23: 32 */       ProtoBlock localatr = paramaqu.getBlock(paramdt.up(j)).getProto();
+/*  23: 32 */       BlockType localatr = paramaqu.getBlock(paramdt.up(j)).getType();
 /*  24: 33 */       if ((localatr.getMaterial() == Material.air) || (localatr.getMaterial() == Material.leaves)) {
 /*  25: 34 */         setBlock(paramaqu, paramdt.up(j), BlockList.log, this.b);
 /*  26:    */       }
 /*  27: 36 */       if (j < i - 1)
 /*  28:    */       {
-/*  29: 37 */         localatr = paramaqu.getBlock(paramdt.offset(1, j, 0)).getProto();
+/*  29: 37 */         localatr = paramaqu.getBlock(paramdt.offset(1, j, 0)).getType();
 /*  30: 38 */         if ((localatr.getMaterial() == Material.air) || (localatr.getMaterial() == Material.leaves)) {
 /*  31: 39 */           setBlock(paramaqu, paramdt.offset(1, j, 0), BlockList.log, this.b);
 /*  32:    */         }
-/*  33: 41 */         localatr = paramaqu.getBlock(paramdt.offset(1, j, 1)).getProto();
+/*  33: 41 */         localatr = paramaqu.getBlock(paramdt.offset(1, j, 1)).getType();
 /*  34: 42 */         if ((localatr.getMaterial() == Material.air) || (localatr.getMaterial() == Material.leaves)) {
 /*  35: 43 */           setBlock(paramaqu, paramdt.offset(1, j, 1), BlockList.log, this.b);
 /*  36:    */         }
-/*  37: 45 */         localatr = paramaqu.getBlock(paramdt.offset(0, j, 1)).getProto();
+/*  37: 45 */         localatr = paramaqu.getBlock(paramdt.offset(0, j, 1)).getType();
 /*  38: 46 */         if ((localatr.getMaterial() == Material.air) || (localatr.getMaterial() == Material.leaves)) {
 /*  39: 47 */           setBlock(paramaqu, paramdt.offset(0, j, 1), BlockList.log, this.b);
 /*  40:    */         }
@@ -91,7 +91,7 @@ package net.minecraft.src;
 /*  90: 95 */     for (int i = 2; i >= -3; i--)
 /*  91:    */     {
 /*  92: 96 */       BlockPosition localdt = paramdt.up(i);
-/*  93: 97 */       ProtoBlock localatr = paramaqu.getBlock(localdt).getProto();
+/*  93: 97 */       BlockType localatr = paramaqu.getBlock(localdt).getType();
 /*  94: 98 */       if ((localatr == BlockList.grass) || (localatr == BlockList.dirt)) {
 /*  95: 99 */         setBlock(paramaqu, localdt, BlockList.dirt, avd.c.a());
 /*  96:    */       } else {

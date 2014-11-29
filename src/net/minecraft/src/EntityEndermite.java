@@ -58,7 +58,7 @@ package net.minecraft.src;
 /*  57: 69 */     return "mob.silverfish.kill";
 /*  58:    */   }
 /*  59:    */   
-/*  60:    */   protected void a(BlockPosition paramdt, ProtoBlock paramatr)
+/*  60:    */   protected void a(BlockPosition paramdt, BlockType paramatr)
 /*  61:    */   {
 /*  62: 74 */     a("mob.silverfish.step", 0.15F, 1.0F);
 /*  63:    */   }

@@ -30,7 +30,7 @@ package net.minecraft.src;
 /* 29:   */     }
 /* 30:44 */     Item localalq = localamj.getItem();
 /* 31:45 */     bsu localbsu = bsu.z();
-/* 32:46 */     if (((localalq instanceof aju)) && (ProtoBlock.a(localalq).b() == 2))
+/* 32:46 */     if (((localalq instanceof aju)) && (BlockType.a(localalq).b() == 2))
 /* 33:   */     {
 /* 34:47 */       cjm.glTranslatef(0.0F, 0.1875F, -0.3125F);
 /* 35:48 */       cjm.glRotatef(20.0F, 1.0F, 0.0F, 0.0F);

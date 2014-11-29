@@ -19,12 +19,12 @@ package net.minecraft.src;
 /* 18:   */   
 /* 19:   */   public void e() {}
 /* 20:   */   
-/* 21:   */   protected void setBlock(World paramaqu, BlockPosition paramdt, ProtoBlock paramatr)
+/* 21:   */   protected void setBlock(World paramaqu, BlockPosition paramdt, BlockType paramatr)
 /* 22:   */   {
 /* 23:29 */     setBlock(paramaqu, paramdt, paramatr, 0);
 /* 24:   */   }
 /* 25:   */   
-/* 26:   */   protected void setBlock(World paramaqu, BlockPosition paramdt, ProtoBlock paramatr, int paramInt)
+/* 26:   */   protected void setBlock(World paramaqu, BlockPosition paramdt, BlockType paramatr, int paramInt)
 /* 27:   */   {
 /* 28:34 */     setBlock(paramaqu, paramdt, paramatr.instance(paramInt));
 /* 29:   */   }

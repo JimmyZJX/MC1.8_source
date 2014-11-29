@@ -3,13 +3,13 @@ package net.minecraft.src;
 /*  2:   */ {
 /*  3:12 */   private Object[][] a = { { BlockList.R, new ItemStack(ItemList.goldIngot, 9) }, { BlockList.S, new ItemStack(ItemList.ironIngot, 9) }, { BlockList.diamondBlock, new ItemStack(ItemList.diamond, 9) }, { BlockList.emeraldBlock, new ItemStack(ItemList.emerald, 9) }, { BlockList.y, new ItemStack(ItemList.dye, 9, EnumDyeColor.BLUE.b()) }, { BlockList.cn, new ItemStack(ItemList.redstone, 9) }, { BlockList.cA, new ItemStack(ItemList.coal, 9, 0) }, { BlockList.cx, new ItemStack(ItemList.wheat, 9) }, { BlockList.cE, new ItemStack(ItemList.aM, 9) } };
 /*  4:   */   
-/*  5:   */   public void a(aop paramaop)
+/*  5:   */   public void a(RecipeList paramaop)
 /*  6:   */   {
 /*  7:25 */     for (int i = 0; i < this.a.length; i++)
 /*  8:   */     {
-/*  9:26 */       ProtoBlock localatr = (ProtoBlock)this.a[i][0];
+/*  9:26 */       BlockType localatr = (BlockType)this.a[i][0];
 /* 10:27 */       ItemStack localamj = (ItemStack)this.a[i][1];
-/* 11:28 */       paramaop.a(new ItemStack(localatr), new Object[] { "###", "###", "###", Character.valueOf('#'), localamj });
+/* 11:28 */       paramaop.addShapedRecipe(new ItemStack(localatr), new Object[] { "###", "###", "###", Character.valueOf('#'), localamj });
 /* 12:   */       
 /* 13:   */ 
 /* 14:   */ 
@@ -17,16 +17,16 @@ package net.minecraft.src;
 /* 16:   */ 
 /* 17:   */ 
 /* 18:   */ 
-/* 19:36 */       paramaop.a(localamj, new Object[] { "#", Character.valueOf('#'), localatr });
+/* 19:36 */       paramaop.addShapedRecipe(localamj, new Object[] { "#", Character.valueOf('#'), localatr });
 /* 20:   */     }
-/* 21:42 */     paramaop.a(new ItemStack(ItemList.goldIngot), new Object[] { "###", "###", "###", Character.valueOf('#'), ItemList.goldNugget });
+/* 21:42 */     paramaop.addShapedRecipe(new ItemStack(ItemList.goldIngot), new Object[] { "###", "###", "###", Character.valueOf('#'), ItemList.goldNugget });
 /* 22:   */     
 /* 23:   */ 
 /* 24:   */ 
 /* 25:   */ 
 /* 26:   */ 
 /* 27:   */ 
-/* 28:49 */     paramaop.a(new ItemStack(ItemList.goldNugget, 9), new Object[] { "#", Character.valueOf('#'), ItemList.goldIngot });
+/* 28:49 */     paramaop.addShapedRecipe(new ItemStack(ItemList.goldNugget, 9), new Object[] { "#", Character.valueOf('#'), ItemList.goldIngot });
 /* 29:   */   }
 /* 30:   */ }
 

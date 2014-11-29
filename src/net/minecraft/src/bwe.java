@@ -74,8 +74,8 @@ package net.minecraft.src;
 /*  72:    */     
 /*  73:    */ 
 /*  74:205 */     Block localbec = localbiw.c();
-/*  75:206 */     ProtoBlock localatr = localbec.getProto();
-/*  76:207 */     Item localalq = Item.fromProtoBlock(localatr);
+/*  75:206 */     BlockType localatr = localbec.getType();
+/*  76:207 */     Item localalq = Item.fromBlock(localatr);
 /*  77:208 */     ItemStack localamj = (localatr == BlockList.air) || (localalq == null) ? null : new ItemStack(localalq, 1, localatr.c(localbec));
 /*  78:209 */     String str1 = localamj == null ? "Air" : localalq.a(localamj);
 /*  79:210 */     if (localalq == null)

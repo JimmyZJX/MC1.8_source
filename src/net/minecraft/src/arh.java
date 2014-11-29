@@ -86,9 +86,9 @@ package net.minecraft.src;
 /*  85: 91 */           while (((BlockPosition)localObject3).getY() >= 0)
 /*  86:    */           {
 /*  87: 92 */             BlockPosition localdt1 = ((BlockPosition)localObject3).down();
-/*  88: 94 */             if (this.a.getBlock((BlockPosition)localObject3).getProto() == BlockList.aY)
+/*  88: 94 */             if (this.a.getBlock((BlockPosition)localObject3).getType() == BlockList.aY)
 /*  89:    */             {
-/*  90: 96 */               while (this.a.getBlock(localdt1 = ((BlockPosition)localObject3).down()).getProto() == BlockList.aY) {
+/*  90: 96 */               while (this.a.getBlock(localdt1 = ((BlockPosition)localObject3).down()).getType() == BlockList.aY) {
 /*  91: 97 */                 localObject3 = localdt1;
 /*  92:    */               }
 /*  93:100 */               double d5 = ((BlockPosition)localObject3).dist2((fd)localObject2);
@@ -115,16 +115,16 @@ package net.minecraft.src;
 /* 114:120 */       double d4 = ((BlockPosition)localObject1).getZ() + 0.5D;
 /* 115:    */       
 /* 116:122 */       EnumDirection localej1 = null;
-/* 117:123 */       if (this.a.getBlock(((BlockPosition)localObject1).west()).getProto() == BlockList.aY) {
+/* 117:123 */       if (this.a.getBlock(((BlockPosition)localObject1).west()).getType() == BlockList.aY) {
 /* 118:124 */         localej1 = EnumDirection.NORTH;
 /* 119:    */       }
-/* 120:126 */       if (this.a.getBlock(((BlockPosition)localObject1).east()).getProto() == BlockList.aY) {
+/* 120:126 */       if (this.a.getBlock(((BlockPosition)localObject1).east()).getType() == BlockList.aY) {
 /* 121:127 */         localej1 = EnumDirection.SOUTH;
 /* 122:    */       }
-/* 123:129 */       if (this.a.getBlock(((BlockPosition)localObject1).north()).getProto() == BlockList.aY) {
+/* 123:129 */       if (this.a.getBlock(((BlockPosition)localObject1).north()).getType() == BlockList.aY) {
 /* 124:130 */         localej1 = EnumDirection.EAST;
 /* 125:    */       }
-/* 126:132 */       if (this.a.getBlock(((BlockPosition)localObject1).south()).getProto() == BlockList.aY) {
+/* 126:132 */       if (this.a.getBlock(((BlockPosition)localObject1).south()).getType() == BlockList.aY) {
 /* 127:133 */         localej1 = EnumDirection.WEST;
 /* 128:    */       }
 /* 129:136 */       EnumDirection localej2 = EnumDirection.b(paramwv.aG());
@@ -177,7 +177,7 @@ package net.minecraft.src;
 /* 176:185 */           f3 = -1.0F;
 /* 177:186 */           f4 = -1.0F;
 /* 178:    */         }
-/* 179:187 */         else if (localej1 == localej2.yRotate())
+/* 179:187 */         else if (localej1 == localej2.cw())
 /* 180:    */         {
 /* 181:188 */           f5 = 1.0F;
 /* 182:189 */           f6 = -1.0F;
@@ -259,7 +259,7 @@ package net.minecraft.src;
 /* 258:252 */                     i17 = d5 + (i13 - 1) * i8 + i10 * i9;
 /* 259:253 */                     i18 = i6 + i14;
 /* 260:254 */                     int i19 = i3 + (i13 - 1) * i9 - i10 * i8;
-/* 261:256 */                     if ((i14 < 0) && (!this.a.getBlock(new BlockPosition(i17, i18, i19)).getProto().getMaterial().a())) {
+/* 261:256 */                     if ((i14 < 0) && (!this.a.getBlock(new BlockPosition(i17, i18, i19)).getType().getMaterial().a())) {
 /* 262:    */                       break label469;
 /* 263:    */                     }
 /* 264:259 */                     if ((i14 >= 0) && (!this.a.isEmpty(new BlockPosition(i17, i18, i19)))) {
@@ -307,7 +307,7 @@ package net.minecraft.src;
 /* 306:296 */                     int i15 = d5 + (i11 - 1) * i8;
 /* 307:297 */                     i17 = i6 + i13;
 /* 308:298 */                     i18 = i3 + (i11 - 1) * i9;
-/* 309:300 */                     if ((i13 < 0) && (!this.a.getBlock(new BlockPosition(i15, i17, i18)).getProto().getMaterial().a())) {
+/* 309:300 */                     if ((i13 < 0) && (!this.a.getBlock(new BlockPosition(i15, i17, i18)).getType().getMaterial().a())) {
 /* 310:    */                       break label858;
 /* 311:    */                     }
 /* 312:303 */                     if ((i13 >= 0) && (!this.a.isEmpty(new BlockPosition(i15, i17, i18)))) {
@@ -386,7 +386,7 @@ package net.minecraft.src;
 /* 385:374 */           i13 = i2 + i9;
 /* 386:375 */           i16 = i3 + (i8 - 1) * i5;
 /* 387:    */           
-/* 388:377 */           this.a.c(new BlockPosition(i12, i13, i16), this.a.getBlock(new BlockPosition(i12, i13, i16)).getProto());
+/* 388:377 */           this.a.c(new BlockPosition(i12, i13, i16), this.a.getBlock(new BlockPosition(i12, i13, i16)).getType());
 /* 389:    */         }
 /* 390:    */       }
 /* 391:    */     }

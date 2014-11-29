@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  3:   */ import java.util.Random;
 /*  4:   */ 
 /*  5:   */ public class ayu
-/*  6:   */   extends ProtoBlock
+/*  6:   */   extends BlockType
 /*  7:   */ {
 /*  8:   */   public ayu()
 /*  9:   */   {
@@ -25,9 +25,9 @@ package net.minecraft.src;
 /* 26:35 */       return ItemList.emerald;
 /* 27:   */     }
 /* 28:37 */     if (this == BlockList.quartzOre) {
-/* 29:38 */       return ItemList.cg;
+/* 29:38 */       return ItemList.quartz;
 /* 30:   */     }
-/* 31:40 */     return Item.fromProtoBlock(this);
+/* 31:40 */     return Item.fromBlock(this);
 /* 32:   */   }
 /* 33:   */   
 /* 34:   */   public int a(Random paramRandom)
@@ -40,7 +40,7 @@ package net.minecraft.src;
 /* 41:   */   
 /* 42:   */   public int a(int paramInt, Random paramRandom)
 /* 43:   */   {
-/* 44:53 */     if ((paramInt > 0) && (Item.fromProtoBlock(this) != a((Block)O().a().iterator().next(), paramRandom, paramInt)))
+/* 44:53 */     if ((paramInt > 0) && (Item.fromBlock(this) != a((Block)O().a().iterator().next(), paramRandom, paramInt)))
 /* 45:   */     {
 /* 46:54 */       int i = paramRandom.nextInt(paramInt + 2) - 1;
 /* 47:55 */       if (i < 0) {
@@ -54,7 +54,7 @@ package net.minecraft.src;
 /* 55:   */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, float paramFloat, int paramInt)
 /* 56:   */   {
 /* 57:65 */     super.a(paramaqu, paramdt, parambec, paramFloat, paramInt);
-/* 58:68 */     if (a(parambec, paramaqu.rng, paramInt) != Item.fromProtoBlock(this))
+/* 58:68 */     if (a(parambec, paramaqu.rng, paramInt) != Item.fromBlock(this))
 /* 59:   */     {
 /* 60:69 */       int i = 0;
 /* 61:70 */       if (this == BlockList.coalOre) {

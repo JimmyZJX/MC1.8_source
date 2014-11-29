@@ -14,9 +14,9 @@ package net.minecraft.src;
 /*  14:    */   
 /*  15:    */   public abstract EntityPassiveMob getBaby(EntityPassiveMob paramws);
 /*  16:    */   
-/*  17:    */   public boolean onRightClick(EntityPlayer player)
+/*  17:    */   public boolean onRightClickMob(EntityPlayer player)
 /*  18:    */   {
-/*  19: 31 */     ItemStack stack = player.bg.h();
+/*  19: 31 */     ItemStack stack = player.inventory.getHeldItem();
 /*  20: 33 */     if ((stack != null) && (stack.getItem() == ItemList.spawnEgg))
 /*  21:    */     {
 /*  22: 34 */       if (!this.world.isClient)
@@ -38,7 +38,7 @@ package net.minecraft.src;
 /*  38:    */             {
 /*  39: 49 */               stack.stackSize -= 1;
 /*  40: 51 */               if (stack.stackSize <= 0) {
-/*  41: 52 */                 player.bg.a(player.bg.c, null);
+/*  41: 52 */                 player.inventory.a(player.inventory.c, null);
 /*  42:    */               }
 /*  43:    */             }
 /*  44:    */           }
@@ -52,13 +52,13 @@ package net.minecraft.src;
 /*  52:    */   protected void h()
 /*  53:    */   {
 /*  54: 65 */     super.h();
-/*  55: 66 */     this.ac.a(12, Byte.valueOf((byte)0));
+/*  55: 66 */     this.data.addData(12, Byte.valueOf((byte)0));
 /*  56:    */   }
 /*  57:    */   
 /*  58:    */   public int getAge()
 /*  59:    */   {
 /*  60: 70 */     if (this.world.isClient) {
-/*  61: 71 */       return this.ac.a(12);
+/*  61: 71 */       return this.data.getByte(12);
 /*  62:    */     }
 /*  63: 73 */     return this.age;
 /*  64:    */   }
@@ -96,7 +96,7 @@ package net.minecraft.src;
 /*  96:    */   
 /*  97:    */   public void setAge(int paramInt)
 /*  98:    */   {
-/*  99:105 */     this.ac.b(12, Byte.valueOf((byte)MathUtils.clamp(paramInt, -1, 1)));
+/*  99:105 */     this.data.b(12, Byte.valueOf((byte)MathUtils.clamp(paramInt, -1, 1)));
 /* 100:106 */     this.age = paramInt;
 /* 101:107 */     a(i_());
 /* 102:    */   }

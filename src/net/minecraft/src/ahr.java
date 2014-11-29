@@ -8,7 +8,7 @@ package net.minecraft.src;
 /*   8: 22 */   private int c = -1;
 /*   9: 23 */   private int d = -1;
 /*  10: 24 */   private int e = -1;
-/*  11:    */   private ProtoBlock f;
+/*  11:    */   private BlockType f;
 /*  12:    */   protected boolean a;
 /*  13:    */   public int b;
 /*  14:    */   private EntityLiving g;
@@ -124,7 +124,7 @@ package net.minecraft.src;
 /* 124:    */     }
 /* 125:137 */     if (this.a)
 /* 126:    */     {
-/* 127:138 */       if (this.world.getBlock(new BlockPosition(this.c, this.d, this.e)).getProto() == this.f)
+/* 127:138 */       if (this.world.getBlock(new BlockPosition(this.c, this.d, this.e)).getType() == this.f)
 /* 128:    */       {
 /* 129:139 */         this.i += 1;
 /* 130:140 */         if (this.i == 1200) {
@@ -183,7 +183,7 @@ package net.minecraft.src;
 /* 183:    */       }
 /* 184:    */     }
 /* 185:195 */     if (localbru1 != null) {
-/* 186:196 */       if ((localbru1.a == brv.BLOCK) && (this.world.getBlock(localbru1.a()).getProto() == BlockList.aY)) {
+/* 186:196 */       if ((localbru1.a == brv.BLOCK) && (this.world.getBlock(localbru1.a()).getType() == BlockList.aY)) {
 /* 187:197 */         aq();
 /* 188:    */       } else {
 /* 189:199 */         a(localbru1);
@@ -242,7 +242,7 @@ package net.minecraft.src;
 /* 242:254 */     paramfn.setShort("xTile", (short)this.c);
 /* 243:255 */     paramfn.setShort("yTile", (short)this.d);
 /* 244:256 */     paramfn.setShort("zTile", (short)this.e);
-/* 245:257 */     oa localoa = (oa)ProtoBlock.c.c(this.f);
+/* 245:257 */     oa localoa = (oa)BlockType.c.c(this.f);
 /* 246:258 */     paramfn.setString("inTile", localoa == null ? "" : localoa.toString());
 /* 247:259 */     paramfn.setByte("shake", (byte)this.b);
 /* 248:260 */     paramfn.setByte("inGround", (byte)(this.a ? 1 : 0));
@@ -258,9 +258,9 @@ package net.minecraft.src;
 /* 258:271 */     this.d = paramfn.e("yTile");
 /* 259:272 */     this.e = paramfn.e("zTile");
 /* 260:273 */     if (paramfn.hasKey("inTile", 8)) {
-/* 261:274 */       this.f = ProtoBlock.b(paramfn.getString("inTile"));
+/* 261:274 */       this.f = BlockType.b(paramfn.getString("inTile"));
 /* 262:    */     } else {
-/* 263:276 */       this.f = ProtoBlock.c(paramfn.d("inTile") & 0xFF);
+/* 263:276 */       this.f = BlockType.c(paramfn.d("inTile") & 0xFF);
 /* 264:    */     }
 /* 265:278 */     this.b = (paramfn.d("shake") & 0xFF);
 /* 266:279 */     this.a = (paramfn.d("inGround") == 1);

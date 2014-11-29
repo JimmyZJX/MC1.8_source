@@ -12,7 +12,7 @@ package net.minecraft.src;
 /*  11:    */   
 /*  12:    */   public void tick()
 /*  13:    */   {
-/*  14:481 */     if ((this.g.C) && (!this.g.cj())) {
+/*  14:481 */     if ((this.g.landing) && (!this.g.cj())) {
 /*  15:482 */       this.g.b(0.0D);
 /*  16:    */     }
 /*  17:484 */     super.tick();

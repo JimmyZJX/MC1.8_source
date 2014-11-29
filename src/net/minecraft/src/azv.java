@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ import java.util.Random;
 /*  2:   */ 
 /*  3:   */ public class azv
-/*  4:   */   extends ProtoBlock
+/*  4:   */   extends BlockType
 /*  5:   */ {
 /*  6:   */   private final boolean a;
 /*  7:   */   
@@ -27,7 +27,7 @@ package net.minecraft.src;
 /* 26:   */     }
 /* 27:   */   }
 /* 28:   */   
-/* 29:   */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/* 29:   */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /* 30:   */   {
 /* 31:40 */     if (paramaqu.isClient) {
 /* 32:41 */       return;
@@ -51,12 +51,12 @@ package net.minecraft.src;
 /* 50:   */   
 /* 51:   */   public Item a(Block parambec, Random paramRandom, int paramInt)
 /* 52:   */   {
-/* 53:65 */     return Item.fromProtoBlock(BlockList.bJ);
+/* 53:65 */     return Item.fromBlock(BlockList.bJ);
 /* 54:   */   }
 /* 55:   */   
 /* 56:   */   public Item b(World paramaqu, BlockPosition paramdt)
 /* 57:   */   {
-/* 58:70 */     return Item.fromProtoBlock(BlockList.bJ);
+/* 58:70 */     return Item.fromBlock(BlockList.bJ);
 /* 59:   */   }
 /* 60:   */   
 /* 61:   */   protected ItemStack i(Block parambec)

@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ import java.util.Random;
 /*  2:   */ 
 /*  3:   */ public class BlockMushroom
-/*  4:   */   extends ProtoBlock
+/*  4:   */   extends BlockType
 /*  5:   */ {
 /*  6:   */   protected BlockMushroom(Material parambof)
 /*  7:   */   {
@@ -20,15 +20,15 @@ package net.minecraft.src;
 /* 19:   */   
 /* 20:   */   public boolean c(World paramaqu, BlockPosition paramdt)
 /* 21:   */   {
-/* 22:29 */     return (super.c(paramaqu, paramdt)) && (c(paramaqu.getBlock(paramdt.down()).getProto()));
+/* 22:29 */     return (super.c(paramaqu, paramdt)) && (c(paramaqu.getBlock(paramdt.down()).getType()));
 /* 23:   */   }
 /* 24:   */   
-/* 25:   */   protected boolean c(ProtoBlock paramatr)
+/* 25:   */   protected boolean c(BlockType paramatr)
 /* 26:   */   {
 /* 27:33 */     return (paramatr == BlockList.grass) || (paramatr == BlockList.dirt) || (paramatr == BlockList.ak);
 /* 28:   */   }
 /* 29:   */   
-/* 30:   */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/* 30:   */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /* 31:   */   {
 /* 32:38 */     super.a(paramaqu, paramdt, parambec, paramatr);
 /* 33:39 */     e(paramaqu, paramdt, parambec);
@@ -50,7 +50,7 @@ package net.minecraft.src;
 /* 49:   */   
 /* 50:   */   public boolean f(World paramaqu, BlockPosition paramdt, Block parambec)
 /* 51:   */   {
-/* 52:55 */     return c(paramaqu.getBlock(paramdt.down()).getProto());
+/* 52:55 */     return c(paramaqu.getBlock(paramdt.down()).getType());
 /* 53:   */   }
 /* 54:   */   
 /* 55:   */   public AABB a(World paramaqu, BlockPosition paramdt, Block parambec)

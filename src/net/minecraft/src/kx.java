@@ -10,7 +10,7 @@ import java.io.IOException;
 /*  8:   */   
 /*  9:   */   public kx() {}
 /* 10:   */   
-/* 11:   */   public kx(int paramInt, xv paramxv, boolean paramBoolean)
+/* 11:   */   public kx(int paramInt, EntityData paramxv, boolean paramBoolean)
 /* 12:   */   {
 /* 13:19 */     this.a = paramInt;
 /* 14:20 */     if (paramBoolean) {
@@ -23,13 +23,13 @@ import java.io.IOException;
 /* 21:   */   public void fromBuffer(ByteBufWrapper paramhd) throws IOException
 /* 22:   */   {
 /* 23:29 */     this.a = paramhd.e();
-/* 24:30 */     this.b = xv.b(paramhd);
+/* 24:30 */     this.b = EntityData.readEntries(paramhd);
 /* 25:   */   }
 /* 26:   */   
 /* 27:   */   public void toBuffer(ByteBufWrapper paramhd)
 /* 28:   */   {
 /* 29:35 */     paramhd.b(this.a);
-/* 30:36 */     xv.a(this.b, paramhd);
+/* 30:36 */     EntityData.a(this.b, paramhd);
 /* 31:   */   }
 /* 32:   */   
 /* 33:   */   public void a(ik paramik)

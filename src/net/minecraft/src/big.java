@@ -33,7 +33,7 @@ package net.minecraft.src;
 /* 32:40 */         for (i4 = paramdt.getZ() - i2; (i4 <= paramdt.getZ() + i2) && (n != 0); i4++) {
 /* 33:41 */           if ((i1 >= 0) && (i1 < 256))
 /* 34:   */           {
-/* 35:42 */             if (!canGrowInto(paramaqu.getBlock(new BlockPosition(i3, i1, i4)).getProto())) {
+/* 35:42 */             if (!canGrowInto(paramaqu.getBlock(new BlockPosition(i3, i1, i4)).getType())) {
 /* 36:43 */               n = 0;
 /* 37:   */             }
 /* 38:   */           }
@@ -46,7 +46,7 @@ package net.minecraft.src;
 /* 45:52 */     if (n == 0) {
 /* 46:53 */       return false;
 /* 47:   */     }
-/* 48:57 */     ProtoBlock localatr1 = paramaqu.getBlock(paramdt.down()).getProto();
+/* 48:57 */     BlockType localatr1 = paramaqu.getBlock(paramdt.down()).getType();
 /* 49:58 */     if (((localatr1 != BlockList.grass) && (localatr1 != BlockList.dirt)) || (paramdt.getY() >= 256 - i - 1)) {
 /* 50:59 */       return false;
 /* 51:   */     }
@@ -65,7 +65,7 @@ package net.minecraft.src;
 /* 64:71 */           if ((Math.abs(i5) != i2) || (Math.abs(i7) != i2) || (i2 <= 0))
 /* 65:   */           {
 /* 66:74 */             BlockPosition localdt = new BlockPosition(i4, i3, i6);
-/* 67:75 */             if (!paramaqu.getBlock(localdt).getProto().m()) {
+/* 67:75 */             if (!paramaqu.getBlock(localdt).getType().m()) {
 /* 68:76 */               setBlock(paramaqu, localdt, BlockList.leaves, EnumWoodVariant.SPRUCE.getIndex());
 /* 69:   */             }
 /* 70:   */           }
@@ -79,7 +79,7 @@ package net.minecraft.src;
 /* 78:   */     }
 /* 79:87 */     for (int i3 = 0; i3 < i - 1; i3++)
 /* 80:   */     {
-/* 81:88 */       ProtoBlock localatr2 = paramaqu.getBlock(paramdt.up(i3)).getProto();
+/* 81:88 */       BlockType localatr2 = paramaqu.getBlock(paramdt.up(i3)).getType();
 /* 82:89 */       if ((localatr2.getMaterial() == Material.air) || (localatr2.getMaterial() == Material.leaves)) {
 /* 83:90 */         setBlock(paramaqu, paramdt.up(i3), BlockList.log, EnumWoodVariant.SPRUCE.getIndex());
 /* 84:   */       }

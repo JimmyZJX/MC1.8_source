@@ -17,7 +17,7 @@ package net.minecraft.src;
 /* 16:   */     
 /* 17:28 */     BlockPosition localdt = paramdz.d().offset(localej);
 /* 18:29 */     Block localbec = localaqu.getBlock(localdt);
-/* 19:30 */     EnumRailState localatl1 = (localbec.getProto() instanceof ati) ? (EnumRailState)localbec.getData(((ati)localbec.getProto()).l()) : EnumRailState.a;
+/* 19:30 */     EnumRailState localatl1 = (localbec.getType() instanceof ati) ? (EnumRailState)localbec.getData(((ati)localbec.getType()).l()) : EnumRailState.a;
 /* 20:   */     double d4;
 /* 21:33 */     if (ati.d(localbec))
 /* 22:   */     {
@@ -27,10 +27,10 @@ package net.minecraft.src;
 /* 26:37 */         d4 = 0.1D;
 /* 27:   */       }
 /* 28:   */     }
-/* 29:39 */     else if ((localbec.getProto().getMaterial() == Material.air) && (ati.d(localaqu.getBlock(localdt.down()))))
+/* 29:39 */     else if ((localbec.getType().getMaterial() == Material.air) && (ati.d(localaqu.getBlock(localdt.down()))))
 /* 30:   */     {
 /* 31:40 */       Block localObject = localaqu.getBlock(localdt.down());
-/* 32:41 */       EnumRailState localatl2 = (((Block)localObject).getProto() instanceof ati) ? (EnumRailState)((Block)localObject).getData(((ati)((Block)localObject).getProto()).l()) : EnumRailState.a;
+/* 32:41 */       EnumRailState localatl2 = (((Block)localObject).getType() instanceof ati) ? (EnumRailState)((Block)localObject).getData(((ati)((Block)localObject).getType()).l()) : EnumRailState.a;
 /* 33:42 */       if ((localej == EnumDirection.DOWN) || (!localatl2.c())) {
 /* 34:43 */         d4 = -0.9D;
 /* 35:   */       } else {

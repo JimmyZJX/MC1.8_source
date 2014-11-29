@@ -29,7 +29,7 @@ package net.minecraft.src;
 /*  28: 41 */     paramae.a(ag.b, 0);
 /*  29:    */     
 /*  30: 43 */     BlockPosition localdt = a(paramae, paramArrayOfString, 0, false);
-/*  31: 44 */     ProtoBlock localatr1 = ProtoBlock.b(paramArrayOfString[3]);
+/*  31: 44 */     BlockType localatr1 = BlockType.b(paramArrayOfString[3]);
 /*  32: 45 */     if (localatr1 == null) {
 /*  33: 46 */       throw new NumberInvalidException("commands.setblock.notFound", new Object[] { paramArrayOfString[3] });
 /*  34:    */     }
@@ -57,13 +57,13 @@ package net.minecraft.src;
 /*  56:    */       }
 /*  57:    */     }
 /*  58: 71 */     Object localObject = localaqu.getBlock(localdt);
-/*  59: 72 */     ProtoBlock localatr2 = ((Block)localObject).getProto();
+/*  59: 72 */     BlockType localatr2 = ((Block)localObject).getType();
 /*  60: 73 */     if (localatr2 != localatr1) {
 /*  61: 74 */       throw new CommandException("commands.testforblock.failed.tile", new Object[] { Integer.valueOf(localdt.getX()), Integer.valueOf(localdt.getY()), Integer.valueOf(localdt.getZ()), localatr2.H(), localatr1.H() });
 /*  62:    */     }
 /*  63: 77 */     if (i > -1)
 /*  64:    */     {
-/*  65: 78 */       int k = ((Block)localObject).getProto().c((Block)localObject);
+/*  65: 78 */       int k = ((Block)localObject).getType().c((Block)localObject);
 /*  66: 79 */       if (k != i) {
 /*  67: 80 */         throw new CommandException("commands.testforblock.failed.data", new Object[] { Integer.valueOf(localdt.getX()), Integer.valueOf(localdt.getY()), Integer.valueOf(localdt.getZ()), Integer.valueOf(k), Integer.valueOf(i) });
 /*  68:    */       }
@@ -148,7 +148,7 @@ package net.minecraft.src;
 /* 147:159 */       return a(paramArrayOfString, 0, paramdt);
 /* 148:    */     }
 /* 149:160 */     if (paramArrayOfString.length == 4) {
-/* 150:161 */       return a(paramArrayOfString, ProtoBlock.c.c());
+/* 150:161 */       return a(paramArrayOfString, BlockType.c.c());
 /* 151:    */     }
 /* 152:164 */     return null;
 /* 153:    */   }

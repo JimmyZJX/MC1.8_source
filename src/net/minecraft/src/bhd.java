@@ -71,7 +71,7 @@ package net.minecraft.src;
 /*  70:    */     }
 /*  71:    */   }
 /*  72:    */   
-/*  73:    */   void a(BlockPosition paramdt, float paramFloat, ProtoBlock paramatr)
+/*  73:    */   void a(BlockPosition paramdt, float paramFloat, BlockType paramatr)
 /*  74:    */   {
 /*  75:105 */     int n = (int)(paramFloat + 0.618D);
 /*  76:107 */     for (int i1 = -n; i1 <= n; i1++) {
@@ -82,7 +82,7 @@ package net.minecraft.src;
 /*  81:    */           
 /*  82:    */ 
 /*  83:    */ 
-/*  84:114 */           Material localbof = this.world.getBlock(localdt).getProto().getMaterial();
+/*  84:114 */           Material localbof = this.world.getBlock(localdt).getType().getMaterial();
 /*  85:115 */           if ((localbof == Material.air) || (localbof == Material.leaves)) {
 /*  86:116 */             setBlock(this.world, localdt, paramatr, 0);
 /*  87:    */           }
@@ -126,7 +126,7 @@ package net.minecraft.src;
 /* 125:    */     }
 /* 126:    */   }
 /* 127:    */   
-/* 128:    */   void a(BlockPosition paramdt1, BlockPosition paramdt2, ProtoBlock block)
+/* 128:    */   void a(BlockPosition paramdt1, BlockPosition paramdt2, BlockType block)
 /* 129:    */   {
 /* 130:167 */     BlockPosition localdt1 = paramdt2.offset(-paramdt1.getX(), -paramdt1.getY(), -paramdt1.getZ());
 /* 131:    */     
@@ -190,7 +190,7 @@ package net.minecraft.src;
 /* 189:    */   {
 /* 190:226 */     BlockPosition localdt1 = this.pos;
 /* 191:227 */     BlockPosition localdt2 = this.pos.up(this.b);
-/* 192:228 */     ProtoBlock localatr = BlockList.log;
+/* 192:228 */     BlockType localatr = BlockList.log;
 /* 193:    */     
 /* 194:230 */     a(localdt1, localdt2, localatr);
 /* 195:231 */     if (this.g == 2)
@@ -228,7 +228,7 @@ package net.minecraft.src;
 /* 227:263 */     for (int i1 = 0; i1 <= n; i1++)
 /* 228:    */     {
 /* 229:264 */       BlockPosition localdt2 = paramdt1.a(0.5F + i1 * f1, 0.5F + i1 * f2, 0.5F + i1 * f3);
-/* 230:266 */       if (!canGrowInto(this.world.getBlock(localdt2).getProto())) {
+/* 230:266 */       if (!canGrowInto(this.world.getBlock(localdt2).getType())) {
 /* 231:267 */         return i1;
 /* 232:    */       }
 /* 233:    */     }
@@ -262,7 +262,7 @@ package net.minecraft.src;
 /* 261:    */   
 /* 262:    */   private boolean f()
 /* 263:    */   {
-/* 264:320 */     ProtoBlock block = this.world.getBlock(this.pos.down()).getProto();
+/* 264:320 */     BlockType block = this.world.getBlock(this.pos.down()).getType();
 /* 265:321 */     if ((block != BlockList.dirt) && (block != BlockList.grass) && (block != BlockList.ak)) {
 /* 266:322 */       return false;
 /* 267:    */     }

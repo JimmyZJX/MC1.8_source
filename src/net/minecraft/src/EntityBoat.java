@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ import java.util.List;
 /*   2:    */ import java.util.Random;
 /*   3:    */ 
-/*   4:    */ public class adu
+/*   4:    */ public class EntityBoat
 /*   5:    */   extends Entity
 /*   6:    */ {
 /*   7: 33 */   private boolean a = true;
@@ -17,7 +17,7 @@ package net.minecraft.src;
 /*  16:    */   private double ap;
 /*  17:    */   private double aq;
 /*  18:    */   
-/*  19:    */   public adu(World paramaqu)
+/*  19:    */   public EntityBoat(World paramaqu)
 /*  20:    */   {
 /*  21: 37 */     super(paramaqu);
 /*  22: 38 */     this.k = true;
@@ -31,9 +31,9 @@ package net.minecraft.src;
 /*  30:    */   
 /*  31:    */   protected void h()
 /*  32:    */   {
-/*  33: 49 */     this.ac.a(17, new Integer(0));
-/*  34: 50 */     this.ac.a(18, new Integer(1));
-/*  35: 51 */     this.ac.a(19, new Float(0.0F));
+/*  33: 49 */     this.data.addData(17, new Integer(0));
+/*  34: 50 */     this.data.addData(18, new Integer(1));
+/*  35: 51 */     this.data.addData(19, new Float(0.0F));
 /*  36:    */   }
 /*  37:    */   
 /*  38:    */   public AABB j(Entity paramwv)
@@ -51,18 +51,18 @@ package net.minecraft.src;
 /*  50: 66 */     return true;
 /*  51:    */   }
 /*  52:    */   
-/*  53:    */   public adu(World paramaqu, double paramDouble1, double paramDouble2, double paramDouble3)
+/*  53:    */   public EntityBoat(World world, double x, double y, double z)
 /*  54:    */   {
-/*  55: 70 */     this(paramaqu);
-/*  56: 71 */     setPos(paramDouble1, paramDouble2, paramDouble3);
+/*  55: 70 */     this(world);
+/*  56: 71 */     setPos(x, y, z);
 /*  57:    */     
 /*  58: 73 */     this.xVelocity = 0.0D;
 /*  59: 74 */     this.yVelocity = 0.0D;
 /*  60: 75 */     this.zVelocity = 0.0D;
 /*  61:    */     
-/*  62: 77 */     this.lastX = paramDouble1;
-/*  63: 78 */     this.lastY = paramDouble2;
-/*  64: 79 */     this.lastZ = paramDouble3;
+/*  62: 77 */     this.lastX = x;
+/*  63: 78 */     this.lastY = y;
+/*  64: 79 */     this.lastZ = z;
 /*  65:    */   }
 /*  66:    */   
 /*  67:    */   public double an()
@@ -70,29 +70,29 @@ package net.minecraft.src;
 /*  69: 84 */     return this.height * 0.0D - 0.300000011920929D;
 /*  70:    */   }
 /*  71:    */   
-/*  72:    */   public boolean a(DamageSource paramwh, float paramFloat)
+/*  72:    */   public boolean receiveDamage(DamageSource source, float value)
 /*  73:    */   {
-/*  74: 89 */     if (isImmuneTo(paramwh)) {
+/*  74: 89 */     if (isImmuneTo(source)) {
 /*  75: 90 */       return false;
 /*  76:    */     }
 /*  77: 92 */     if ((this.world.isClient) || (this.isDead)) {
 /*  78: 93 */       return true;
 /*  79:    */     }
-/*  80: 95 */     if ((this.rider != null) && (this.rider == paramwh.getAttacker()) && ((paramwh instanceof DamageSourceProjectile))) {
+/*  80: 95 */     if ((this.rider != null) && (this.rider == source.getAttacker()) && ((source instanceof DamageSourceProjectile))) {
 /*  81: 96 */       return false;
 /*  82:    */     }
 /*  83: 98 */     b(-m());
 /*  84: 99 */     a(10);
-/*  85:100 */     a(j() + paramFloat * 10.0F);
+/*  85:100 */     a(j() + value * 10.0F);
 /*  86:101 */     ac();
-/*  87:102 */     int j = ((paramwh.getAttacker() instanceof EntityPlayer)) && (((EntityPlayer)paramwh.getAttacker()).abilities.instabuild) ? 1 : 0;
+/*  87:102 */     int j = ((source.getAttacker() instanceof EntityPlayer)) && (((EntityPlayer)source.getAttacker()).abilities.instabuild) ? 1 : 0;
 /*  88:103 */     if ((j != 0) || (j() > 40.0F))
 /*  89:    */     {
 /*  90:104 */       if (this.rider != null) {
 /*  91:105 */         this.rider.mount(this);
 /*  92:    */       }
 /*  93:107 */       if (j == 0) {
-/*  94:108 */         throwItem(ItemList.aE, 1, 0.0F);
+/*  94:108 */         throwItem(ItemList.boat, 1, 0.0F);
 /*  95:    */       }
 /*  96:110 */       setDead();
 /*  97:    */     }
@@ -239,7 +239,7 @@ package net.minecraft.src;
 /* 238:243 */         d7 = this.yPos + this.yVelocity;
 /* 239:244 */         d9 = this.zPos + this.zVelocity;
 /* 240:245 */         setPos(d4, d7, d9);
-/* 241:246 */         if (this.C)
+/* 241:246 */         if (this.landing)
 /* 242:    */         {
 /* 243:247 */           this.xVelocity *= 0.5D;
 /* 244:248 */           this.yVelocity *= 0.5D;
@@ -302,33 +302,33 @@ package net.minecraft.src;
 /* 301:303 */         int i4 = MathUtils.floor(this.yPos) + i3;
 /* 302:    */         
 /* 303:305 */         BlockPosition localdt = new BlockPosition(n, i4, i2);
-/* 304:306 */         ProtoBlock localatr = this.world.getBlock(localdt).getProto();
+/* 304:306 */         BlockType localatr = this.world.getBlock(localdt).getType();
 /* 305:307 */         if (localatr == BlockList.aH)
 /* 306:    */         {
 /* 307:308 */           this.world.g(localdt);
-/* 308:309 */           this.D = false;
+/* 308:309 */           this.horizontalColliding = false;
 /* 309:    */         }
 /* 310:310 */         else if (localatr == BlockList.waterLily)
 /* 311:    */         {
 /* 312:311 */           this.world.b(localdt, true);
-/* 313:312 */           this.D = false;
+/* 313:312 */           this.horizontalColliding = false;
 /* 314:    */         }
 /* 315:    */       }
 /* 316:    */     }
-/* 317:317 */     if (this.C)
+/* 317:317 */     if (this.landing)
 /* 318:    */     {
 /* 319:318 */       this.xVelocity *= 0.5D;
 /* 320:319 */       this.yVelocity *= 0.5D;
 /* 321:320 */       this.zVelocity *= 0.5D;
 /* 322:    */     }
 /* 323:322 */     move(this.xVelocity, this.yVelocity, this.zVelocity);
-/* 324:324 */     if ((this.D) && (d2 > 0.2D))
+/* 324:324 */     if ((this.horizontalColliding) && (d2 > 0.2D))
 /* 325:    */     {
 /* 326:325 */       if ((!this.world.isClient) && (!this.isDead))
 /* 327:    */       {
 /* 328:326 */         setDead();
 /* 329:327 */         for (int m = 0; m < 3; m++) {
-/* 330:328 */           throwItem(Item.fromProtoBlock(BlockList.planks), 1, 0.0F);
+/* 330:328 */           throwItem(Item.fromBlock(BlockList.planks), 1, 0.0F);
 /* 331:    */         }
 /* 332:330 */         for (int m = 0; m < 2; m++) {
 /* 333:331 */           throwItem(ItemList.stick, 1, 0.0F);
@@ -360,12 +360,12 @@ package net.minecraft.src;
 /* 359:360 */     if (this.world.isClient) {
 /* 360:361 */       return;
 /* 361:    */     }
-/* 362:364 */     List localList = this.world.b(this, getAABB().expand(0.2000000029802322D, 0.0D, 0.2000000029802322D));
+/* 362:364 */     List<Entity> localList = this.world.b(this, getAABB().expand(0.2000000029802322D, 0.0D, 0.2000000029802322D));
 /* 363:365 */     if ((localList != null) && (!localList.isEmpty())) {
 /* 364:366 */       for (int i5 = 0; i5 < localList.size(); i5++)
 /* 365:    */       {
 /* 366:367 */         Entity localwv = (Entity)localList.get(i5);
-/* 367:368 */         if ((localwv != this.rider) && (localwv.ae()) && ((localwv instanceof adu))) {
+/* 367:368 */         if ((localwv != this.rider) && (localwv.ae()) && ((localwv instanceof EntityBoat))) {
 /* 368:369 */           localwv.i(this);
 /* 369:    */         }
 /* 370:    */       }
@@ -390,7 +390,7 @@ package net.minecraft.src;
 /* 389:    */   
 /* 390:    */   protected void readEntityFromNBT(NBTTagCompound paramfn) {}
 /* 391:    */   
-/* 392:    */   public boolean e(EntityPlayer paramahd)
+/* 392:    */   public boolean onRightClick(EntityPlayer paramahd)
 /* 393:    */   {
 /* 394:402 */     if ((this.rider != null) && ((this.rider instanceof EntityPlayer)) && (this.rider != paramahd)) {
 /* 395:403 */       return true;
@@ -401,60 +401,60 @@ package net.minecraft.src;
 /* 400:408 */     return true;
 /* 401:    */   }
 /* 402:    */   
-/* 403:    */   protected void a(double paramDouble, boolean paramBoolean, ProtoBlock paramatr, BlockPosition paramdt)
+/* 403:    */   protected void onMoveTo(double dy, boolean landing, BlockType block, BlockPosition pos)
 /* 404:    */   {
-/* 405:413 */     if (paramBoolean)
+/* 405:413 */     if (landing)
 /* 406:    */     {
-/* 407:414 */       if (this.O > 3.0F)
+/* 407:414 */       if (this.fallDistance > 3.0F)
 /* 408:    */       {
-/* 409:415 */         e(this.O, 1.0F);
+/* 409:415 */         e(this.fallDistance, 1.0F);
 /* 410:416 */         if ((!this.world.isClient) && (!this.isDead))
 /* 411:    */         {
 /* 412:417 */           setDead();
 /* 413:418 */           for (int j = 0; j < 3; j++) {
-/* 414:419 */             throwItem(Item.fromProtoBlock(BlockList.planks), 1, 0.0F);
+/* 414:419 */             throwItem(Item.fromBlock(BlockList.planks), 1, 0.0F);
 /* 415:    */           }
-/* 416:421 */           for (j = 0; j < 2; j++) {
+/* 416:421 */           for (int j = 0; j < 2; j++) {
 /* 417:422 */             throwItem(ItemList.stick, 1, 0.0F);
 /* 418:    */           }
 /* 419:    */         }
-/* 420:425 */         this.O = 0.0F;
+/* 420:425 */         this.fallDistance = 0.0F;
 /* 421:    */       }
 /* 422:    */     }
-/* 423:427 */     else if ((this.world.getBlock(new BlockPosition(this).down()).getProto().getMaterial() != Material.water) && 
-/* 424:428 */       (paramDouble < 0.0D)) {
-/* 425:429 */       this.O = ((float)(this.O - paramDouble));
+/* 423:427 */     else if ((this.world.getBlock(new BlockPosition(this).down()).getType().getMaterial() != Material.water) && 
+/* 424:428 */       (dy < 0.0D)) {
+/* 425:429 */       this.fallDistance = ((float)(this.fallDistance - dy));
 /* 426:    */     }
 /* 427:    */   }
 /* 428:    */   
 /* 429:    */   public void a(float paramFloat)
 /* 430:    */   {
-/* 431:435 */     this.ac.b(19, Float.valueOf(paramFloat));
+/* 431:435 */     this.data.b(19, Float.valueOf(paramFloat));
 /* 432:    */   }
 /* 433:    */   
 /* 434:    */   public float j()
 /* 435:    */   {
-/* 436:439 */     return this.ac.d(19);
+/* 436:439 */     return this.data.getFloat(19);
 /* 437:    */   }
 /* 438:    */   
 /* 439:    */   public void a(int paramInt)
 /* 440:    */   {
-/* 441:443 */     this.ac.b(17, Integer.valueOf(paramInt));
+/* 441:443 */     this.data.b(17, Integer.valueOf(paramInt));
 /* 442:    */   }
 /* 443:    */   
 /* 444:    */   public int l()
 /* 445:    */   {
-/* 446:447 */     return this.ac.c(17);
+/* 446:447 */     return this.data.getInteger(17);
 /* 447:    */   }
 /* 448:    */   
 /* 449:    */   public void b(int paramInt)
 /* 450:    */   {
-/* 451:451 */     this.ac.b(18, Integer.valueOf(paramInt));
+/* 451:451 */     this.data.b(18, Integer.valueOf(paramInt));
 /* 452:    */   }
 /* 453:    */   
 /* 454:    */   public int m()
 /* 455:    */   {
-/* 456:455 */     return this.ac.c(18);
+/* 456:455 */     return this.data.getInteger(18);
 /* 457:    */   }
 /* 458:    */   
 /* 459:    */   public void a(boolean paramBoolean)

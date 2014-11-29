@@ -1,6 +1,6 @@
 package net.minecraft.src;
 /*  1:   */ public abstract class avb
-/*  2:   */   extends ProtoBlock
+/*  2:   */   extends BlockType
 /*  3:   */ {
 /*  4: 8 */   public static final BlockDataDirection facing = BlockDataDirection.getInstance("facing", EnumHorizontalVertical.HORIZONTAL);
 /*  5:   */   

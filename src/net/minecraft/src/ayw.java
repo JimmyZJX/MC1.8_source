@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ import java.util.List;
 /*  2:   */ 
 /*  3:   */ public class ayw
-/*  4:   */   extends ProtoBlock
+/*  4:   */   extends BlockType
 /*  5:   */ {
 /*  6:15 */   public static final BlockDataEnum a = BlockDataEnum.getInstance("variant", EnumWoodVariant.class);
 /*  7:   */   

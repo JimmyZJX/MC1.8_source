@@ -20,7 +20,7 @@ package net.minecraft.src;
 /* 19:26 */     this.d = MathUtils.floor(paramwv.zPos * 32.0D);
 /* 20:27 */     this.e = ((byte)(int)(paramwv.yaw * 256.0F / 360.0F));
 /* 21:28 */     this.f = ((byte)(int)(paramwv.pitch * 256.0F / 360.0F));
-/* 22:29 */     this.g = paramwv.C;
+/* 22:29 */     this.g = paramwv.landing;
 /* 23:   */   }
 /* 24:   */   
 /* 25:   */   public lo(int paramInt1, int paramInt2, int paramInt3, int paramInt4, byte paramByte1, byte paramByte2, boolean paramBoolean)

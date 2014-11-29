@@ -27,7 +27,7 @@ package net.minecraft.src;
 /*  26:    */   
 /*  27:    */   public Block a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3, int paramInt, EntityLiving paramxm)
 /*  28:    */   {
-/*  29: 51 */     EnumDirection localej = paramxm.aO().yRotate();
+/*  29: 51 */     EnumDirection localej = paramxm.aO().cw();
 /*  30: 52 */     return super.a(paramaqu, paramdt, paramej, paramFloat1, paramFloat2, paramFloat3, paramInt, paramxm).setData(a, localej).setData(b, Integer.valueOf(paramInt >> 2));
 /*  31:    */   }
 /*  32:    */   
@@ -47,7 +47,7 @@ package net.minecraft.src;
 /*  46:    */   public void a(IBlockAccess paramard, BlockPosition paramdt)
 /*  47:    */   {
 /*  48: 71 */     EnumDirection localej = (EnumDirection)paramard.getBlock(paramdt).getData(a);
-/*  49: 72 */     if (localej.k() == EnumAxis.X) {
+/*  49: 72 */     if (localej.getAxis() == EnumAxis.X) {
 /*  50: 73 */       a(0.0F, 0.0F, 0.125F, 1.0F, 1.0F, 0.875F);
 /*  51:    */     } else {
 /*  52: 75 */       a(0.125F, 0.0F, 0.0F, 0.875F, 1.0F, 1.0F);

@@ -7,7 +7,7 @@ package net.minecraft.src;
 /*   7: 23 */   private int e = -1;
 /*   8: 24 */   private int f = -1;
 /*   9: 25 */   private int g = -1;
-/*  10:    */   private ProtoBlock h;
+/*  10:    */   private BlockType h;
 /*  11:    */   private boolean i;
 /*  12:    */   public EntityLiving a;
 /*  13:    */   private int ap;
@@ -77,7 +77,7 @@ package net.minecraft.src;
 /*  77: 90 */     e(1);
 /*  78: 92 */     if (this.i)
 /*  79:    */     {
-/*  80: 93 */       if (this.world.getBlock(new BlockPosition(this.e, this.f, this.g)).getProto() == this.h)
+/*  80: 93 */       if (this.world.getBlock(new BlockPosition(this.e, this.f, this.g)).getType() == this.h)
 /*  81:    */       {
 /*  82: 94 */         this.ap += 1;
 /*  83: 95 */         if (this.ap == 600) {
@@ -190,7 +190,7 @@ package net.minecraft.src;
 /* 190:204 */     paramfn.setShort("xTile", (short)this.e);
 /* 191:205 */     paramfn.setShort("yTile", (short)this.f);
 /* 192:206 */     paramfn.setShort("zTile", (short)this.g);
-/* 193:207 */     oa localoa = (oa)ProtoBlock.c.c(this.h);
+/* 193:207 */     oa localoa = (oa)BlockType.c.c(this.h);
 /* 194:208 */     paramfn.setString("inTile", localoa == null ? "" : localoa.toString());
 /* 195:209 */     paramfn.setByte("inGround", (byte)(this.i ? 1 : 0));
 /* 196:210 */     paramfn.setNBT("direction", a(new double[] { this.xVelocity, this.yVelocity, this.zVelocity }));
@@ -202,9 +202,9 @@ package net.minecraft.src;
 /* 202:216 */     this.f = paramfn.e("yTile");
 /* 203:217 */     this.g = paramfn.e("zTile");
 /* 204:218 */     if (paramfn.hasKey("inTile", 8)) {
-/* 205:219 */       this.h = ProtoBlock.b(paramfn.getString("inTile"));
+/* 205:219 */       this.h = BlockType.b(paramfn.getString("inTile"));
 /* 206:    */     } else {
-/* 207:221 */       this.h = ProtoBlock.c(paramfn.d("inTile") & 0xFF);
+/* 207:221 */       this.h = BlockType.c(paramfn.d("inTile") & 0xFF);
 /* 208:    */     }
 /* 209:223 */     this.i = (paramfn.d("inGround") == 1);
 /* 210:227 */     if (paramfn.hasKey("direction", 9))
@@ -230,7 +230,7 @@ package net.minecraft.src;
 /* 230:244 */     return 1.0F;
 /* 231:    */   }
 /* 232:    */   
-/* 233:    */   public boolean a(DamageSource paramwh, float paramFloat)
+/* 233:    */   public boolean receiveDamage(DamageSource paramwh, float paramFloat)
 /* 234:    */   {
 /* 235:249 */     if (isImmuneTo(paramwh)) {
 /* 236:250 */       return false;

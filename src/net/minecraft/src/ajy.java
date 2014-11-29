@@ -22,14 +22,14 @@ package net.minecraft.src;
 /* 21:28 */       if (!paramahd.a(localdt.offset(localbru.b), localbru.b, paramamj)) {
 /* 22:29 */         return paramamj;
 /* 23:   */       }
-/* 24:31 */       if (paramaqu.getBlock(localdt).getProto().getMaterial() == Material.water)
+/* 24:31 */       if (paramaqu.getBlock(localdt).getType().getMaterial() == Material.water)
 /* 25:   */       {
 /* 26:32 */         paramamj.stackSize -= 1;
 /* 27:33 */         paramahd.increaseStat(StatList.J[Item.b(this)]);
 /* 28:34 */         if (paramamj.stackSize <= 0) {
 /* 29:35 */           return new ItemStack(ItemList.potion);
 /* 30:   */         }
-/* 31:37 */         if (!paramahd.bg.a(new ItemStack(ItemList.potion))) {
+/* 31:37 */         if (!paramahd.inventory.a(new ItemStack(ItemList.potion))) {
 /* 32:38 */           paramahd.a(new ItemStack(ItemList.potion, 1, 0), false);
 /* 33:   */         }
 /* 34:   */       }

@@ -156,7 +156,7 @@ package net.minecraft.src;
 /* 155:    */   {
 /* 156:351 */     BlockPosition localdt = new BlockPosition(a(paramInt1, paramInt3), d(paramInt2), b(paramInt1, paramInt3));
 /* 157:352 */     if ((parambjb.b(localdt)) && 
-/* 158:353 */       (paramaqu.getBlock(localdt).getProto().getMaterial() == Material.air))
+/* 158:353 */       (paramaqu.getBlock(localdt).getType().getMaterial() == Material.air))
 /* 159:    */     {
 /* 160:354 */       int i = paramRandom.nextBoolean() ? 1 : 0;
 /* 161:355 */       paramaqu.setBlock(localdt, BlockList.av.instance(a(BlockList.av, i)), 2);
@@ -243,7 +243,7 @@ package net.minecraft.src;
 /* 242:    */       {
 /* 243:436 */         i3 = -1;
 /* 244:437 */         Block localbec2 = a(paramaqu, i1, i3, i2, parambjb);
-/* 245:438 */         if (localbec2.getProto().getMaterial() == Material.air)
+/* 245:438 */         if (localbec2.getType().getMaterial() == Material.air)
 /* 246:    */         {
 /* 247:439 */           i5 = -1;
 /* 248:440 */           a(paramaqu, BlockList.planks.instance(), i1, i5, i2, parambjb);
@@ -254,7 +254,7 @@ package net.minecraft.src;
 /* 253:446 */       for (int i1 = 0; i1 <= n; i1++)
 /* 254:    */       {
 /* 255:447 */         Block localbec1 = a(paramaqu, 1, -1, i1, parambjb);
-/* 256:448 */         if ((localbec1.getProto().getMaterial() != Material.air) && (localbec1.getProto().m())) {
+/* 256:448 */         if ((localbec1.getType().getMaterial() != Material.air) && (localbec1.getType().m())) {
 /* 257:449 */           a(paramaqu, parambjb, paramRandom, 0.7F, 1, 0, i1, BlockList.av.instance(a(BlockList.av, 0)));
 /* 258:    */         }
 /* 259:    */       }

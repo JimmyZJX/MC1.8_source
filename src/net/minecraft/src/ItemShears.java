@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*  8:15 */     setTabToDisplayOn(CreativeTabs.tabTools);
 /*  9:   */   }
 /* 10:   */   
-/* 11:   */   public boolean a(ItemStack paramamj, World paramaqu, ProtoBlock paramatr, BlockPosition paramdt, EntityLiving paramxm)
+/* 11:   */   public boolean a(ItemStack paramamj, World paramaqu, BlockType paramatr, BlockPosition paramdt, EntityLiving paramxm)
 /* 12:   */   {
 /* 13:20 */     if ((paramatr.getMaterial() == Material.leaves) || (paramatr == BlockList.web) || (paramatr == BlockList.tallgrass) || (paramatr == BlockList.vine) || (paramatr == BlockList.tripwire) || (paramatr == BlockList.wool))
 /* 14:   */     {
@@ -19,12 +19,12 @@ package net.minecraft.src;
 /* 18:24 */     return super.a(paramamj, paramaqu, paramatr, paramdt, paramxm);
 /* 19:   */   }
 /* 20:   */   
-/* 21:   */   public boolean canHarvestBlock(ProtoBlock paramatr)
+/* 21:   */   public boolean canHarvestBlock(BlockType paramatr)
 /* 22:   */   {
 /* 23:29 */     return (paramatr == BlockList.web) || (paramatr == BlockList.redstoneWire) || (paramatr == BlockList.tripwire);
 /* 24:   */   }
 /* 25:   */   
-/* 26:   */   public float getStrVsBlock(ItemStack paramamj, ProtoBlock paramatr)
+/* 26:   */   public float getStrVsBlock(ItemStack paramamj, BlockType paramatr)
 /* 27:   */   {
 /* 28:34 */     if ((paramatr == BlockList.web) || (paramatr.getMaterial() == Material.leaves)) {
 /* 29:35 */       return 15.0F;

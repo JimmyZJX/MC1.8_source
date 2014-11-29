@@ -567,7 +567,7 @@ package net.minecraft.src;
 /*  566: 614 */           localObject3 = this.k.s((BlockPosition)localObject2);
 /*  567:     */         }
 /*  568:     */       }
-/*  569: 617 */       localObject4 = this.k.getBlock((BlockPosition)localObject2).getProto();
+/*  569: 617 */       localObject4 = this.k.getBlock((BlockPosition)localObject2).getType();
 /*  570: 618 */       if ((localObject3 != null) && (((localObject4 instanceof BlockChest)) || ((localObject4 instanceof avr)) || ((localObject4 instanceof bai)) || ((localObject4 instanceof baj)))) {
 /*  571: 619 */         cno.a.a((bcm)localObject3, paramFloat, ((qi)localObject1).c());
 /*  572:     */       }
@@ -700,7 +700,7 @@ package net.minecraft.src;
 /*  699:     */         }
 /*  700: 752 */         if ((i2 == 0) || (paramBoolean))
 /*  701:     */         {
-/*  702: 753 */           if ((paramBoolean) && (this.k.getBlock((BlockPosition)localObject1).getProto().c())) {
+/*  702: 753 */           if ((paramBoolean) && (this.k.getBlock((BlockPosition)localObject1).getType().c())) {
 /*  703: 754 */             bool = false;
 /*  704:     */           }
 /*  705: 757 */           localcop1.a(paramInt);
@@ -1668,7 +1668,7 @@ package net.minecraft.src;
 /* 1667:1971 */         double d4 = localdt.getX() - d1;
 /* 1668:1972 */         double d5 = localdt.getY() - d2;
 /* 1669:1973 */         double d6 = localdt.getZ() - d3;
-/* 1670:1974 */         ProtoBlock localatr = this.k.getBlock(localdt).getProto();
+/* 1670:1974 */         BlockType localatr = this.k.getBlock(localdt).getType();
 /* 1671:1975 */         if ((!(localatr instanceof BlockChest)) && (!(localatr instanceof avr)) && (!(localatr instanceof bai)) && (!(localatr instanceof baj))) {
 /* 1672:1978 */           if (d4 * d4 + d5 * d5 + d6 * d6 > 1024.0D)
 /* 1673:     */           {
@@ -1677,7 +1677,7 @@ package net.minecraft.src;
 /* 1676:     */           else
 /* 1677:     */           {
 /* 1678:1982 */             Block localbec = this.k.getBlock(localdt);
-/* 1679:1983 */             if (localbec.getProto().getMaterial() != Material.air)
+/* 1679:1983 */             if (localbec.getType().getMaterial() != Material.air)
 /* 1680:     */             {
 /* 1681:1985 */               int i1 = localqi.c();
 /* 1682:1986 */               cue localcue = this.y[i1];
@@ -1706,7 +1706,7 @@ package net.minecraft.src;
 /* 1705:2007 */       float f1 = 0.002F;
 /* 1706:     */       
 /* 1707:2009 */       BlockPosition localdt = parambru.a();
-/* 1708:2010 */       ProtoBlock localatr = this.k.getBlock(localdt).getProto();
+/* 1708:2010 */       BlockType localatr = this.k.getBlock(localdt).getType();
 /* 1709:2011 */       if ((localatr.getMaterial() != Material.air) && (this.k.af().a(localdt)))
 /* 1710:     */       {
 /* 1711:2012 */         localatr.a(this.k, localdt);
@@ -1997,7 +1997,7 @@ package net.minecraft.src;
 /* 1996:2303 */       this.k.a(paramdt, "game.potion.smash", 1.0F, this.k.rng.nextFloat() * 0.1F + 0.9F, false);
 /* 1997:2304 */       break;
 /* 1998:     */     case 2001: 
-/* 1999:2306 */       ProtoBlock localatr = ProtoBlock.c(paramInt2 & 0xFFF);
+/* 1999:2306 */       BlockType localatr = BlockType.c(paramInt2 & 0xFFF);
 /* 2000:2307 */       if (localatr.getMaterial() != Material.air) {
 /* 2001:2308 */         this.h.U().a(new cxy(new oa(localatr.H.a()), (localatr.H.d() + 1.0F) / 2.0F, localatr.H.e() * 0.8F, paramdt.getX() + 0.5F, paramdt.getY() + 0.5F, paramdt.getZ() + 0.5F));
 /* 2002:     */       }

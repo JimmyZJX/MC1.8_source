@@ -10,9 +10,9 @@ package net.minecraft.src;
 /*  9:15 */     j(this.L.b().setData(b, EnumRailState.a));
 /* 10:   */   }
 /* 11:   */   
-/* 12:   */   protected void b(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/* 12:   */   protected void b(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /* 13:   */   {
-/* 14:20 */     if ((paramatr.protoBlock_g()) && 
+/* 14:20 */     if ((paramatr.blockType_g()) && 
 /* 15:21 */       (new atk(this, paramaqu, paramdt, parambec).a() == 3)) {
 /* 16:22 */       a(paramaqu, paramdt, parambec, false);
 /* 17:   */     }

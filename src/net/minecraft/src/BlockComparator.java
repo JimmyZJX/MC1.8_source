@@ -46,7 +46,7 @@ package net.minecraft.src;
 /*  45: 67 */     aur localaur = (aur)parambec.getData(b);
 /*  46: 68 */     EnumDirection localej = (EnumDirection)parambec.getData(facing);
 /*  47:    */     
-/*  48: 70 */     return BlockList.cj.instance().setData(facing, localej).setData(a, localBoolean).setData(b, localaur);
+/*  48: 70 */     return BlockList.unpowered_comparator.instance().setData(facing, localej).setData(a, localBoolean).setData(b, localaur);
 /*  49:    */   }
 /*  50:    */   
 /*  51:    */   protected boolean l(Block parambec)
@@ -93,7 +93,7 @@ package net.minecraft.src;
 /*  92:    */     
 /*  93:118 */     EnumDirection localej = (EnumDirection)parambec.getData(facing);
 /*  94:119 */     BlockPosition localdt = paramdt.offset(localej);
-/*  95:120 */     ProtoBlock localatr = paramaqu.getBlock(localdt).getProto();
+/*  95:120 */     BlockType localatr = paramaqu.getBlock(localdt).getType();
 /*  96:122 */     if (localatr.N())
 /*  97:    */     {
 /*  98:123 */       i = localatr.l(paramaqu, localdt);
@@ -101,7 +101,7 @@ package net.minecraft.src;
 /* 100:124 */     else if ((i < 15) && (localatr.blocksMovement()))
 /* 101:    */     {
 /* 102:125 */       localdt = localdt.offset(localej);
-/* 103:126 */       localatr = paramaqu.getBlock(localdt).getProto();
+/* 103:126 */       localatr = paramaqu.getBlock(localdt).getType();
 /* 104:128 */       if (localatr.N())
 /* 105:    */       {
 /* 106:129 */         i = localatr.l(paramaqu, localdt);

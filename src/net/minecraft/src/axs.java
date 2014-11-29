@@ -3,7 +3,7 @@ package net.minecraft.src;
 /*  2:   */ import java.util.Random;
 /*  3:   */ 
 /*  4:   */ public class axs
-/*  5:   */   extends ProtoBlock
+/*  5:   */   extends BlockType
 /*  6:   */ {
 /*  7:20 */   public static final BlockDataEnum a = BlockDataEnum.getInstance("variant", EnumMonsterEggVariants.class);
 /*  8:   */   
@@ -22,7 +22,7 @@ package net.minecraft.src;
 /* 21:   */   
 /* 22:   */   public static boolean d(Block parambec)
 /* 23:   */   {
-/* 24:35 */     ProtoBlock localatr = parambec.getProto();
+/* 24:35 */     BlockType localatr = parambec.getType();
 /* 25:   */     
 /* 26:37 */     return (parambec == BlockList.stone.instance().setData(bba.a, EnumStoneVariants.STONE)) || (localatr == BlockList.cobblestone) || (localatr == BlockList.stoneBrick);
 /* 27:   */   }
@@ -60,7 +60,7 @@ package net.minecraft.src;
 /* 59:   */   public int j(World paramaqu, BlockPosition paramdt)
 /* 60:   */   {
 /* 61:71 */     Block localbec = paramaqu.getBlock(paramdt);
-/* 62:72 */     return localbec.getProto().c(localbec);
+/* 62:72 */     return localbec.getType().c(localbec);
 /* 63:   */   }
 /* 64:   */   
 /* 65:   */   public void a(Item paramalq, CreativeTabs paramakf, List<ItemStack> paramList)

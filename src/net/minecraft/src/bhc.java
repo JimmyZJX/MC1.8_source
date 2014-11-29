@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*  8:13 */     super(paramBoolean);
 /*  9:   */   }
 /* 10:   */   
-/* 11:   */   protected boolean canGrowInto(ProtoBlock paramatr)
+/* 11:   */   protected boolean canGrowInto(BlockType paramatr)
 /* 12:   */   {
 /* 13:17 */     return (paramatr.getMaterial() == Material.air) || (paramatr.getMaterial() == Material.leaves) || (paramatr == BlockList.grass) || (paramatr == BlockList.dirt) || (paramatr == BlockList.log) || (paramatr == BlockList.log2) || (paramatr == BlockList.sapling) || (paramatr == BlockList.vine);
 /* 14:   */   }
@@ -18,7 +18,7 @@ package net.minecraft.src;
 /* 17:   */   
 /* 18:   */   protected void makeDirt(World paramaqu, BlockPosition paramdt)
 /* 19:   */   {
-/* 20:25 */     if (paramaqu.getBlock(paramdt).getProto() != BlockList.dirt) {
+/* 20:25 */     if (paramaqu.getBlock(paramdt).getType() != BlockList.dirt) {
 /* 21:26 */       setBlock(paramaqu, paramdt, BlockList.dirt.instance());
 /* 22:   */     }
 /* 23:   */   }

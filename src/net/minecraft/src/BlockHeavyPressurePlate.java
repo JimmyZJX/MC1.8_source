@@ -1,13 +1,13 @@
 package net.minecraft.src;
 /*  1:   */ import java.util.List;
 /*  2:   */ 
-/*  3:   */ public class bcd
-/*  4:   */   extends ath
+/*  3:   */ public class BlockHeavyPressurePlate
+/*  4:   */   extends BlockPressurePlate
 /*  5:   */ {
 /*  6:15 */   public static final BlockDataInteger a = BlockDataInteger.getInstance("power", 0, 15);
 /*  7:   */   private final int b;
 /*  8:   */   
-/*  9:   */   protected bcd(String paramString, Material parambof, int paramInt)
+/*  9:   */   protected BlockHeavyPressurePlate(String paramString, Material parambof, int paramInt)
 /* 10:   */   {
 /* 11:20 */     super(parambof);
 /* 12:21 */     j(this.L.b().setData(a, Integer.valueOf(0)));

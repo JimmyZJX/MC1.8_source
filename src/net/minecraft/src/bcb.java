@@ -14,7 +14,7 @@ package net.minecraft.src;
 /* 13:   */   
 /* 14:   */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, AABB parambrt, List paramList, Entity paramwv)
 /* 15:   */   {
-/* 16:29 */     if ((paramwv == null) || (!(paramwv instanceof adu))) {
+/* 16:29 */     if ((paramwv == null) || (!(paramwv instanceof EntityBoat))) {
 /* 17:30 */       super.a(paramaqu, paramdt, parambec, parambrt, paramList, paramwv);
 /* 18:   */     }
 /* 19:   */   }
@@ -39,7 +39,7 @@ package net.minecraft.src;
 /* 38:52 */     return 2129968;
 /* 39:   */   }
 /* 40:   */   
-/* 41:   */   protected boolean c(ProtoBlock paramatr)
+/* 41:   */   protected boolean c(BlockType paramatr)
 /* 42:   */   {
 /* 43:57 */     return paramatr == BlockList.water;
 /* 44:   */   }
@@ -50,7 +50,7 @@ package net.minecraft.src;
 /* 49:63 */       return false;
 /* 50:   */     }
 /* 51:65 */     Block localbec = paramaqu.getBlock(paramdt.down());
-/* 52:66 */     return (localbec.getProto().getMaterial() == Material.water) && (((Integer)localbec.getData(BlockLiquid.level)).intValue() == 0);
+/* 52:66 */     return (localbec.getType().getMaterial() == Material.water) && (((Integer)localbec.getData(BlockLiquid.level)).intValue() == 0);
 /* 53:   */   }
 /* 54:   */   
 /* 55:   */   public int c(Block parambec)

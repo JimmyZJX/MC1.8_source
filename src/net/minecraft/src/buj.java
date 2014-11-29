@@ -145,10 +145,10 @@ import java.util.Map;
 /* 140:188 */       BlockPosition localdt = this.a.s.a();
 /* 141:189 */       Block localbec = this.a.f.getBlock(localdt);
 /* 142:191 */       if (this.a.f.G() != WorldType.DEBUG_ALL_BLOCK_STATES) {
-/* 143:192 */         localbec = localbec.getProto().a(localbec, this.a.f, localdt);
+/* 143:192 */         localbec = localbec.getType().a(localbec, this.a.f, localdt);
 /* 144:    */       }
 /* 145:195 */       localArrayList.add("");
-/* 146:196 */       localArrayList.add(String.valueOf(ProtoBlock.c.c(localbec.getProto())));
+/* 146:196 */       localArrayList.add(String.valueOf(BlockType.c.c(localbec.getType())));
 /* 147:198 */       for (Map.Entry<IBlockData,Comparable> localEntry : localbec.b().entrySet())
 /* 148:    */       {
 /* 149:199 */         String str = ((Comparable)localEntry.getValue()).toString();

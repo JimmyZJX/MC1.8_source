@@ -12,7 +12,7 @@ package net.minecraft.src;
 /*  11:    */   public boolean a(ItemStack itemStack, EntityPlayer player, World world, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3)
 /*  12:    */   {
 /*  13: 25 */     Block localbec1 = world.getBlock(paramdt);
-/*  14: 27 */     if ((player.a(paramdt.offset(paramej), paramej, itemStack)) && (localbec1.getProto() == BlockList.endPortalFrame) && (!((Boolean)localbec1.getData(avq.b)).booleanValue()))
+/*  14: 27 */     if ((player.a(paramdt.offset(paramej), paramej, itemStack)) && (localbec1.getType() == BlockList.endPortalFrame) && (!((Boolean)localbec1.getData(avq.b)).booleanValue()))
 /*  15:    */     {
 /*  16: 28 */       if (world.isClient) {
 /*  17: 29 */         return true;
@@ -38,14 +38,14 @@ package net.minecraft.src;
 /*  37: 51 */       int j1 = 0;
 /*  38: 52 */       int j = 0;
 /*  39: 53 */       int k = 1;
-/*  40: 54 */       EnumDirection localej2 = localej1.yRotate();
+/*  40: 54 */       EnumDirection localej2 = localej1.cw();
 /*  41:    */       BlockPosition localdt5;
 /*  42:    */       Object localObject1;
 /*  43: 55 */       for (int l1 = -2; l1 <= 2; l1++)
 /*  44:    */       {
 /*  45: 56 */         localdt5 = paramdt.offset(localej2, l1);
 /*  46: 57 */         localObject1 = world.getBlock(localdt5);
-/*  47: 59 */         if (((Block)localObject1).getProto() == BlockList.endPortalFrame)
+/*  47: 59 */         if (((Block)localObject1).getType() == BlockList.endPortalFrame)
 /*  48:    */         {
 /*  49: 60 */           if (!((Boolean)((Block)localObject1).getData(avq.b)).booleanValue())
 /*  50:    */           {
@@ -68,7 +68,7 @@ package net.minecraft.src;
 /*  67:    */         {
 /*  68: 77 */           localObject1 = localdt4.offset(localej2, localdt51);
 /*  69: 78 */           localObject2 = world.getBlock((BlockPosition)localObject1);
-/*  70: 80 */           if ((((Block)localObject2).getProto() != BlockList.endPortalFrame) || (!((Boolean)((Block)localObject2).getData(avq.b)).booleanValue()))
+/*  70: 80 */           if ((((Block)localObject2).getType() != BlockList.endPortalFrame) || (!((Boolean)((Block)localObject2).getData(avq.b)).booleanValue()))
 /*  71:    */           {
 /*  72: 81 */             k = 0;
 /*  73: 82 */             break;
@@ -82,7 +82,7 @@ package net.minecraft.src;
 /*  81:    */           {
 /*  82: 90 */             localObject2 = localdt4.offset(localej1, m);
 /*  83: 91 */             Block localbec2 = world.getBlock((BlockPosition)localObject2);
-/*  84: 93 */             if ((localbec2.getProto() != BlockList.endPortalFrame) || (!((Boolean)localbec2.getData(avq.b)).booleanValue()))
+/*  84: 93 */             if ((localbec2.getType() != BlockList.endPortalFrame) || (!((Boolean)localbec2.getData(avq.b)).booleanValue()))
 /*  85:    */             {
 /*  86: 94 */               k = 0;
 /*  87: 95 */               break;
@@ -111,7 +111,7 @@ package net.minecraft.src;
 /* 110:    */   {
 /* 111:119 */     HitResult hitResult = a(world, player, false);
 /* 112:120 */     if ((hitResult != null) && (hitResult.a == brv.BLOCK) && 
-/* 113:121 */       (world.getBlock(hitResult.a()).getProto() == BlockList.endPortalFrame)) {
+/* 113:121 */       (world.getBlock(hitResult.a()).getType() == BlockList.endPortalFrame)) {
 /* 114:122 */       return itemStack;
 /* 115:    */     }
 /* 116:126 */     if (!world.isClient)

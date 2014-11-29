@@ -18,7 +18,7 @@ package net.minecraft.src;
 /* 17:23 */     if (!paramahd.a(paramdt, paramej, paramamj)) {
 /* 18:24 */       return false;
 /* 19:   */     }
-/* 20:27 */     if (paramaqu.getBlock(paramdt).getProto().getMaterial() == Material.air)
+/* 20:27 */     if (paramaqu.getBlock(paramdt).getType().getMaterial() == Material.air)
 /* 21:   */     {
 /* 22:28 */       paramaqu.a(paramdt.getX() + 0.5D, paramdt.getY() + 0.5D, paramdt.getZ() + 0.5D, "item.fireCharge.use", 1.0F, (random.nextFloat() - random.nextFloat()) * 0.2F + 1.0F);
 /* 23:29 */       paramaqu.setBlock(paramdt, BlockList.fire.instance());

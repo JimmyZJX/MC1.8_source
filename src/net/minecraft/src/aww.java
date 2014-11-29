@@ -41,12 +41,12 @@ package net.minecraft.src;
 /* 40:   */   
 /* 41:   */   protected ItemStack i(Block parambec)
 /* 42:   */   {
-/* 43:55 */     return new ItemStack(Item.fromProtoBlock(this), 1, 0);
+/* 43:55 */     return new ItemStack(Item.fromBlock(this), 1, 0);
 /* 44:   */   }
 /* 45:   */   
 /* 46:   */   public Block a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3, int paramInt, EntityLiving paramxm)
 /* 47:   */   {
-/* 48:60 */     return super.a(paramaqu, paramdt, paramej, paramFloat1, paramFloat2, paramFloat3, paramInt, paramxm).setData(M, paramej.k());
+/* 48:60 */     return super.a(paramaqu, paramdt, paramej, paramFloat1, paramFloat2, paramFloat3, paramInt, paramxm).setData(M, paramej.getAxis());
 /* 49:   */   }
 /* 50:   */ }
 

@@ -1,14 +1,14 @@
 package net.minecraft.src;
-/*   1:    */ public class axi
-/*   2:    */   extends ProtoBlock
+/*   1:    */ public class BlockLever
+/*   2:    */   extends BlockType
 /*   3:    */ {
-/*   4: 22 */   public static final BlockDataEnum a = BlockDataEnum.getInstance("facing", axk.class);
-/*   5: 23 */   public static final BlockDataBoolean b = BlockDataBoolean.getInstance("powered");
+/*   4: 22 */   public static final BlockDataEnum<EnumLeverFacing> facing = BlockDataEnum.getInstance("facing", EnumLeverFacing.class);
+/*   5: 23 */   public static final BlockDataBoolean powered = BlockDataBoolean.getInstance("powered");
 /*   6:    */   
-/*   7:    */   protected axi()
+/*   7:    */   protected BlockLever()
 /*   8:    */   {
 /*   9: 26 */     super(Material.q);
-/*  10: 27 */     j(this.L.b().setData(a, axk.e).setData(b, Boolean.valueOf(false)));
+/*  10: 27 */     j(this.L.b().setData(facing, EnumLeverFacing.NORTH).setData(powered, Boolean.valueOf(false)));
 /*  11: 28 */     setCreativeTab(CreativeTabs.tabRedstone);
 /*  12:    */   }
 /*  13:    */   
@@ -63,22 +63,22 @@ package net.minecraft.src;
 /*  62:    */   
 /*  63:    */   protected boolean d(World paramaqu, BlockPosition paramdt)
 /*  64:    */   {
-/*  65: 76 */     return paramaqu.getBlock(paramdt).getProto().blocksMovement();
+/*  65: 76 */     return paramaqu.getBlock(paramdt).getType().blocksMovement();
 /*  66:    */   }
 /*  67:    */   
 /*  68:    */   public Block a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3, int paramInt, EntityLiving paramxm)
 /*  69:    */   {
-/*  70: 81 */     Block localbec = instance().setData(b, Boolean.valueOf(false));
+/*  70: 81 */     Block localbec = instance().setData(powered, Boolean.valueOf(false));
 /*  71: 83 */     if (d(paramaqu, paramdt.offset(paramej.opposite()))) {
-/*  72: 84 */       return localbec.setData(a, axk.a(paramej, paramxm.aO()));
+/*  72: 84 */       return localbec.setData(facing, EnumLeverFacing.a(paramej, paramxm.aO()));
 /*  73:    */     }
 /*  74: 87 */     for (EnumDirection localej : EnumHorizontalVertical.HORIZONTAL) {
 /*  75: 88 */       if ((localej != paramej) && (d(paramaqu, paramdt.offset(localej.opposite())))) {
-/*  76: 89 */         return localbec.setData(a, axk.a(localej, paramxm.aO()));
+/*  76: 89 */         return localbec.setData(facing, EnumLeverFacing.a(localej, paramxm.aO()));
 /*  77:    */       }
 /*  78:    */     }
 /*  79: 93 */     if (World.isFlatSurface(paramaqu, paramdt.down())) {
-/*  80: 94 */       return localbec.setData(a, axk.a(EnumDirection.UP, paramxm.aO()));
+/*  80: 94 */       return localbec.setData(facing, EnumLeverFacing.a(EnumDirection.UP, paramxm.aO()));
 /*  81:    */     }
 /*  82: 97 */     return localbec;
 /*  83:    */   }
@@ -103,10 +103,10 @@ package net.minecraft.src;
 /* 102:116 */     return -1;
 /* 103:    */   }
 /* 104:    */   
-/* 105:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/* 105:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /* 106:    */   {
 /* 107:121 */     if ((e(paramaqu, paramdt)) && 
-/* 108:122 */       (!d(paramaqu, paramdt.offset(((axk)parambec.getData(a)).c().opposite()))))
+/* 108:122 */       (!d(paramaqu, paramdt.offset(((EnumLeverFacing)parambec.getData(facing)).c().opposite()))))
 /* 109:    */     {
 /* 110:123 */       b(paramaqu, paramdt, parambec, 0);
 /* 111:124 */       paramaqu.g(paramdt);
@@ -126,7 +126,7 @@ package net.minecraft.src;
 /* 125:    */   public void a(IBlockAccess paramard, BlockPosition paramdt)
 /* 126:    */   {
 /* 127:141 */     float f = 0.1875F;
-/* 128:142 */     switch (axj.b[((axk)paramard.getBlock(paramdt).getData(a)).ordinal()])
+/* 128:142 */     switch (axj.b[((EnumLeverFacing)paramard.getBlock(paramdt).getData(facing)).ordinal()])
 /* 129:    */     {
 /* 130:    */     case 1: 
 /* 131:144 */       a(0.0F, 0.2F, 0.5F - f, f * 2.0F, 0.8F, 0.5F + f);
@@ -157,12 +157,12 @@ package net.minecraft.src;
 /* 156:170 */     if (paramaqu.isClient) {
 /* 157:171 */       return true;
 /* 158:    */     }
-/* 159:174 */     parambec = parambec.a(b);
+/* 159:174 */     parambec = parambec.a(powered);
 /* 160:175 */     paramaqu.setBlock(paramdt, parambec, 3);
-/* 161:176 */     paramaqu.a(paramdt.getX() + 0.5D, paramdt.getY() + 0.5D, paramdt.getZ() + 0.5D, "random.click", 0.3F, ((Boolean)parambec.getData(b)).booleanValue() ? 0.6F : 0.5F);
+/* 161:176 */     paramaqu.a(paramdt.getX() + 0.5D, paramdt.getY() + 0.5D, paramdt.getZ() + 0.5D, "random.click", 0.3F, ((Boolean)parambec.getData(powered)).booleanValue() ? 0.6F : 0.5F);
 /* 162:177 */     paramaqu.c(paramdt, this);
 /* 163:    */     
-/* 164:179 */     EnumDirection localej = ((axk)parambec.getData(a)).c();
+/* 164:179 */     EnumDirection localej = ((EnumLeverFacing)parambec.getData(facing)).c();
 /* 165:180 */     paramaqu.c(paramdt.offset(localej.opposite()), this);
 /* 166:    */     
 /* 167:182 */     return true;
@@ -170,47 +170,47 @@ package net.minecraft.src;
 /* 169:    */   
 /* 170:    */   public void b(World paramaqu, BlockPosition paramdt, Block parambec)
 /* 171:    */   {
-/* 172:187 */     if (((Boolean)parambec.getData(b)).booleanValue())
+/* 172:187 */     if (((Boolean)parambec.getData(powered)).booleanValue())
 /* 173:    */     {
 /* 174:188 */       paramaqu.c(paramdt, this);
-/* 175:189 */       EnumDirection localej = ((axk)parambec.getData(a)).c();
+/* 175:189 */       EnumDirection localej = ((EnumLeverFacing)parambec.getData(facing)).c();
 /* 176:190 */       paramaqu.c(paramdt.offset(localej.opposite()), this);
 /* 177:    */     }
 /* 178:192 */     super.b(paramaqu, paramdt, parambec);
 /* 179:    */   }
 /* 180:    */   
-/* 181:    */   public int a(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
+/* 181:    */   public int getRedStoneSignal(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
 /* 182:    */   {
-/* 183:197 */     return ((Boolean)parambec.getData(b)).booleanValue() ? 15 : 0;
+/* 183:197 */     return ((Boolean)parambec.getData(powered)).booleanValue() ? 15 : 0;
 /* 184:    */   }
 /* 185:    */   
-/* 186:    */   public int b(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
+/* 186:    */   public int getStrongRedstoneSignal(IBlockAccess world, BlockPosition pos, Block block, EnumDirection dir)
 /* 187:    */   {
-/* 188:202 */     if (!((Boolean)parambec.getData(b)).booleanValue()) {
+/* 188:202 */     if (!((Boolean)block.getData(powered)).booleanValue()) {
 /* 189:203 */       return 0;
 /* 190:    */     }
-/* 191:206 */     if (((axk)parambec.getData(a)).c() == paramej) {
+/* 191:206 */     if (((EnumLeverFacing)block.getData(facing)).c() == dir) {
 /* 192:207 */       return 15;
 /* 193:    */     }
 /* 194:210 */     return 0;
 /* 195:    */   }
 /* 196:    */   
-/* 197:    */   public boolean protoBlock_g()
+/* 197:    */   public boolean blockType_g()
 /* 198:    */   {
 /* 199:215 */     return true;
 /* 200:    */   }
 /* 201:    */   
 /* 202:    */   public Block instance(int paramInt)
 /* 203:    */   {
-/* 204:220 */     return instance().setData(a, axk.a(paramInt & 0x7)).setData(b, Boolean.valueOf((paramInt & 0x8) > 0));
+/* 204:220 */     return instance().setData(facing, EnumLeverFacing.a(paramInt & 0x7)).setData(powered, Boolean.valueOf((paramInt & 0x8) > 0));
 /* 205:    */   }
 /* 206:    */   
 /* 207:    */   public int c(Block parambec)
 /* 208:    */   {
 /* 209:227 */     int i = 0;
 /* 210:    */     
-/* 211:229 */     i |= ((axk)parambec.getData(a)).a();
-/* 212:231 */     if (((Boolean)parambec.getData(b)).booleanValue()) {
+/* 211:229 */     i |= ((EnumLeverFacing)parambec.getData(facing)).a();
+/* 212:231 */     if (((Boolean)parambec.getData(powered)).booleanValue()) {
 /* 213:232 */       i |= 0x8;
 /* 214:    */     }
 /* 215:235 */     return i;
@@ -218,7 +218,7 @@ package net.minecraft.src;
 /* 217:    */   
 /* 218:    */   protected bed e()
 /* 219:    */   {
-/* 220:240 */     return new bed(this, new IBlockData[] { a, b });
+/* 220:240 */     return new bed(this, new IBlockData[] { facing, powered });
 /* 221:    */   }
 /* 222:    */ }
 

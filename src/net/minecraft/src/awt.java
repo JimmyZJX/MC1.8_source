@@ -1,6 +1,6 @@
 package net.minecraft.src;
 /*  1:   */ public class awt
-/*  2:   */   extends ProtoBlock
+/*  2:   */   extends BlockType
 /*  3:   */ {
 /*  4:   */   private boolean a;
 /*  5:   */   
@@ -18,7 +18,7 @@ package net.minecraft.src;
 /* 17:   */   public boolean a(IBlockAccess paramard, BlockPosition paramdt, EnumDirection paramej)
 /* 18:   */   {
 /* 19:24 */     Block localbec = paramard.getBlock(paramdt);
-/* 20:25 */     ProtoBlock localatr = localbec.getProto();
+/* 20:25 */     BlockType localatr = localbec.getType();
 /* 21:27 */     if ((this == BlockList.glass) || (this == BlockList.cG))
 /* 22:   */     {
 /* 23:28 */       if (paramard.getBlock(paramdt.offset(paramej.opposite())) != localbec) {

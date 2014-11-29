@@ -158,8 +158,8 @@ package net.minecraft.src;
 /* 157:    */     
 /* 158:199 */     EntityWither localadf = new EntityWither(paramaqu);
 /* 159:200 */     Object localObject = localbem.a(1, 2, 0).d();
-/* 160:201 */     localadf.setPositionAndAngles(((BlockPosition)localObject).getX() + 0.5D, ((BlockPosition)localObject).getY() + 0.55D, ((BlockPosition)localObject).getZ() + 0.5D, localbem.b().k() == EnumAxis.X ? 0.0F : 90.0F, 0.0F);
-/* 161:202 */     localadf.aG = (localbem.b().k() == EnumAxis.X ? 0.0F : 90.0F);
+/* 160:201 */     localadf.setPositionAndAngles(((BlockPosition)localObject).getX() + 0.5D, ((BlockPosition)localObject).getY() + 0.55D, ((BlockPosition)localObject).getZ() + 0.5D, localbem.b().getAxis() == EnumAxis.X ? 0.0F : 90.0F, 0.0F);
+/* 161:202 */     localadf.aG = (localbem.b().getAxis() == EnumAxis.X ? 0.0F : 90.0F);
 /* 162:203 */     localadf.n();
 /* 163:205 */     for (EntityPlayer localahd : paramaqu.getEntityList(EntityPlayer.class, localadf.getAABB().expand(50.0D, 50.0D, 50.0D))) {
 /* 164:206 */       localahd.increaseStat(AchievementList.I);

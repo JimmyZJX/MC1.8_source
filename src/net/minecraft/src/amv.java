@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ public class amv
 /*  2:   */   extends aju
 /*  3:   */ {
-/*  4:   */   public amv(ProtoBlock paramatr)
+/*  4:   */   public amv(BlockType paramatr)
 /*  5:   */   {
 /*  6: 8 */     super(paramatr);
 /*  7:   */   }

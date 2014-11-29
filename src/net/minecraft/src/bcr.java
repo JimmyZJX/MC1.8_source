@@ -219,7 +219,7 @@ package net.minecraft.src;
 /* 218:235 */     if (this.world == null) {
 /* 219:236 */       return false;
 /* 220:    */     }
-/* 221:239 */     ProtoBlock localatr = this.world.getBlock(paramdt).getProto();
+/* 221:239 */     BlockType localatr = this.world.getBlock(paramdt).getType();
 /* 222:    */     
 /* 223:241 */     return ((localatr instanceof BlockChest)) && (((BlockChest)localatr).b == n());
 /* 224:    */   }

@@ -70,7 +70,7 @@ package net.minecraft.src;
 /*   70:     */   
 /*   71:     */   public void G()
 /*   72:     */   {
-/*   73: 111 */     a(DamageSource.outOfWorld, 3.4028235E+38F);
+/*   73: 111 */     receiveDamage(DamageSource.outOfWorld, 3.4028235E+38F);
 /*   74:     */   }
 /*   75:     */   
 /*   76:     */   public EntityLiving(World world)
@@ -91,10 +91,10 @@ package net.minecraft.src;
 /*   91:     */   
 /*   92:     */   protected void h()
 /*   93:     */   {
-/*   94: 131 */     this.ac.a(7, Integer.valueOf(0));
-/*   95: 132 */     this.ac.a(8, Byte.valueOf((byte)0));
-/*   96: 133 */     this.ac.a(9, Byte.valueOf((byte)0));
-/*   97: 134 */     this.ac.a(6, Float.valueOf(1.0F));
+/*   94: 131 */     this.data.addData(7, Integer.valueOf(0));
+/*   95: 132 */     this.data.addData(8, Byte.valueOf((byte)0));
+/*   96: 133 */     this.data.addData(9, Byte.valueOf((byte)0));
+/*   97: 134 */     this.data.addData(6, Float.valueOf(1.0F));
 /*   98:     */   }
 /*   99:     */   
 /*  100:     */   protected void aW()
@@ -104,27 +104,27 @@ package net.minecraft.src;
 /*  104: 140 */     bx().b(MobAttribute.movementSpeed);
 /*  105:     */   }
 /*  106:     */   
-/*  107:     */   protected void a(double paramDouble, boolean paramBoolean, ProtoBlock paramatr, BlockPosition paramdt)
+/*  107:     */   protected void onMoveTo(double paramDouble, boolean landing, BlockType paramatr, BlockPosition pos)
 /*  108:     */   {
 /*  109: 145 */     if (!isInWater()) {
 /*  110: 147 */       W();
 /*  111:     */     }
-/*  112: 150 */     if ((!this.world.isClient) && (this.O > 3.0F) && (paramBoolean))
+/*  112: 150 */     if ((!this.world.isClient) && (this.fallDistance > 3.0F) && (landing))
 /*  113:     */     {
-/*  114: 151 */       Block localbec = this.world.getBlock(paramdt);
-/*  115: 152 */       ProtoBlock localatr = localbec.getProto();
-/*  116: 153 */       float f1 = MathUtils.ceil(this.O - 3.0F);
-/*  117: 154 */       if (localatr.getMaterial() != Material.air)
+/*  114: 151 */       Block block = this.world.getBlock(pos);
+/*  115: 152 */       BlockType type = block.getType();
+/*  116: 153 */       float f1 = MathUtils.ceil(this.fallDistance - 3.0F);
+/*  117: 154 */       if (type.getMaterial() != Material.air)
 /*  118:     */       {
 /*  119: 155 */         double d = Math.min(0.2F + f1 / 15.0F, 10.0F);
 /*  120: 156 */         if (d > 2.5D) {
 /*  121: 157 */           d = 2.5D;
 /*  122:     */         }
 /*  123: 159 */         int j = (int)(150.0D * d);
-/*  124: 160 */         ((WorldServer)this.world).a(EnumParticleEffect.M, this.xPos, this.yPos, this.zPos, j, 0.0D, 0.0D, 0.0D, 0.1500000059604645D, new int[] { ProtoBlock.f(localbec) });
+/*  124: 160 */         ((WorldServer)this.world).a(EnumParticleEffect.M, this.xPos, this.yPos, this.zPos, j, 0.0D, 0.0D, 0.0D, 0.1500000059604645D, new int[] { BlockType.f(block) });
 /*  125:     */       }
 /*  126:     */     }
-/*  127: 164 */     super.a(paramDouble, paramBoolean, paramatr, paramdt);
+/*  127: 164 */     super.onMoveTo(paramDouble, landing, paramatr, pos);
 /*  128:     */   }
 /*  129:     */   
 /*  130:     */   public boolean aX()
@@ -143,13 +143,13 @@ package net.minecraft.src;
 /*  143: 179 */     if (ai()) {
 /*  144: 180 */       if (aj())
 /*  145:     */       {
-/*  146: 181 */         a(DamageSource.inWall, 1.0F);
+/*  146: 181 */         receiveDamage(DamageSource.inWall, 1.0F);
 /*  147:     */       }
 /*  148: 182 */       else if ((bool) && (!this.world.af().a(getAABB())))
 /*  149:     */       {
 /*  150: 183 */         double d = this.world.af().a(this) + this.world.af().m();
 /*  151: 184 */         if (d < 0.0D) {
-/*  152: 185 */           a(DamageSource.inWall, Math.max(1, MathUtils.floor(-d * this.world.af().n())));
+/*  152: 185 */           receiveDamage(DamageSource.inWall, Math.max(1, MathUtils.floor(-d * this.world.af().n())));
 /*  153:     */         }
 /*  154:     */       }
 /*  155:     */     }
@@ -172,7 +172,7 @@ package net.minecraft.src;
 /*  172: 203 */             float f3 = this.rng.nextFloat() - this.rng.nextFloat();
 /*  173: 204 */             this.world.a(EnumParticleEffect.e, this.xPos + f1, this.yPos + f2, this.zPos + f3, this.xVelocity, this.yVelocity, this.zVelocity, new int[0]);
 /*  174:     */           }
-/*  175: 206 */           a(DamageSource.drown, 2.0F);
+/*  175: 206 */           receiveDamage(DamageSource.drown, 2.0F);
 /*  176:     */         }
 /*  177:     */       }
 /*  178: 210 */       if ((!this.world.isClient) && (av()) && ((this.vehicle instanceof EntityLiving))) {
@@ -421,8 +421,8 @@ package net.minecraft.src;
 /*  421:     */       }
 /*  422: 444 */       this.i = false;
 /*  423:     */     }
-/*  424: 446 */     int j = this.ac.c(7);
-/*  425: 447 */     int k = this.ac.a(8) > 0 ? 1 : 0;
+/*  424: 446 */     int j = this.data.getInteger(7);
+/*  425: 447 */     int k = this.data.getByte(8) > 0 ? 1 : 0;
 /*  426: 449 */     if (j > 0)
 /*  427:     */     {
 /*  428: 450 */       boolean bool = false;
@@ -456,16 +456,16 @@ package net.minecraft.src;
 /*  456:     */     else
 /*  457:     */     {
 /*  458: 480 */       int j = PotionHelper.calcPotionColor(this.g.values());
-/*  459: 481 */       this.ac.b(8, Byte.valueOf((byte)(PotionHelper.isAmbient(this.g.values()) ? 1 : 0)));
-/*  460: 482 */       this.ac.b(7, Integer.valueOf(j));
+/*  459: 481 */       this.data.b(8, Byte.valueOf((byte)(PotionHelper.isAmbient(this.g.values()) ? 1 : 0)));
+/*  460: 482 */       this.data.b(7, Integer.valueOf(j));
 /*  461: 483 */       e(k(Potion.invisibility.id));
 /*  462:     */     }
 /*  463:     */   }
 /*  464:     */   
 /*  465:     */   protected void bi()
 /*  466:     */   {
-/*  467: 488 */     this.ac.b(8, Byte.valueOf((byte)0));
-/*  468: 489 */     this.ac.b(7, Integer.valueOf(0));
+/*  467: 488 */     this.data.b(8, Byte.valueOf((byte)0));
+/*  468: 489 */     this.data.b(7, Integer.valueOf(0));
 /*  469:     */   }
 /*  470:     */   
 /*  471:     */   public void bj()
@@ -586,15 +586,15 @@ package net.minecraft.src;
 /*  586:     */   
 /*  587:     */   public final float getHealth()
 /*  588:     */   {
-/*  589: 592 */     return this.ac.d(6);
+/*  589: 592 */     return this.data.getFloat(6);
 /*  590:     */   }
 /*  591:     */   
 /*  592:     */   public void h(float paramFloat)
 /*  593:     */   {
-/*  594: 596 */     this.ac.b(6, Float.valueOf(MathUtils.clamp(paramFloat, 0.0F, bt())));
+/*  594: 596 */     this.data.b(6, Float.valueOf(MathUtils.clamp(paramFloat, 0.0F, bt())));
 /*  595:     */   }
 /*  596:     */   
-/*  597:     */   public boolean a(DamageSource source, float paramFloat)
+/*  597:     */   public boolean receiveDamage(DamageSource source, float paramFloat)
 /*  598:     */   {
 /*  599: 601 */     if (isImmuneTo(source)) {
 /*  600: 602 */       return false;
@@ -789,7 +789,7 @@ package net.minecraft.src;
 /*  789: 788 */     int j = MathUtils.floor(this.xPos);
 /*  790: 789 */     int k = MathUtils.floor(getAABB().minY);
 /*  791: 790 */     int m = MathUtils.floor(this.zPos);
-/*  792: 791 */     ProtoBlock localatr = this.world.getBlock(new BlockPosition(j, k, m)).getProto();
+/*  792: 791 */     BlockType localatr = this.world.getBlock(new BlockPosition(j, k, m)).getType();
 /*  793: 792 */     return ((localatr == BlockList.au) || (localatr == BlockList.vine)) && ((!(this instanceof EntityPlayer)) || (!((EntityPlayer)this).v()));
 /*  794:     */   }
 /*  795:     */   
@@ -808,13 +808,13 @@ package net.minecraft.src;
 /*  808: 808 */     if (j > 0)
 /*  809:     */     {
 /*  810: 809 */       a(n(j), 1.0F, 1.0F);
-/*  811: 810 */       a(DamageSource.fall, j);
+/*  811: 810 */       receiveDamage(DamageSource.fall, j);
 /*  812:     */       
 /*  813: 812 */       int k = MathUtils.floor(this.xPos);
 /*  814: 813 */       int m = MathUtils.floor(this.yPos - 0.2000000029802322D);
 /*  815: 814 */       int n = MathUtils.floor(this.zPos);
 /*  816:     */       
-/*  817: 816 */       ProtoBlock localatr = this.world.getBlock(new BlockPosition(k, m, n)).getProto();
+/*  817: 816 */       BlockType localatr = this.world.getBlock(new BlockPosition(k, m, n)).getType();
 /*  818: 817 */       if (localatr.getMaterial() != Material.air)
 /*  819:     */       {
 /*  820: 818 */         atx localatx = localatr.H;
@@ -940,12 +940,12 @@ package net.minecraft.src;
 /*  940:     */   
 /*  941:     */   public final int bu()
 /*  942:     */   {
-/*  943: 938 */     return this.ac.a(9);
+/*  943: 938 */     return this.data.getByte(9);
 /*  944:     */   }
 /*  945:     */   
 /*  946:     */   public final void o(int paramInt)
 /*  947:     */   {
-/*  948: 942 */     this.ac.b(9, Byte.valueOf((byte)paramInt));
+/*  948: 942 */     this.data.b(9, Byte.valueOf((byte)paramInt));
 /*  949:     */   }
 /*  950:     */   
 /*  951:     */   private int n()
@@ -986,7 +986,7 @@ package net.minecraft.src;
 /*  986: 976 */       if (str != null) {
 /*  987: 977 */         a(bn(), bA(), (this.rng.nextFloat() - this.rng.nextFloat()) * 0.2F + 1.0F);
 /*  988:     */       }
-/*  989: 979 */       a(DamageSource.generic, 0.0F);
+/*  989: 979 */       receiveDamage(DamageSource.generic, 0.0F);
 /*  990:     */     }
 /*  991: 981 */     else if (paramByte == 3)
 /*  992:     */     {
@@ -1005,7 +1005,7 @@ package net.minecraft.src;
 /* 1005:     */   
 /* 1006:     */   protected void O()
 /* 1007:     */   {
-/* 1008: 995 */     a(DamageSource.outOfWorld, 4.0F);
+/* 1008: 995 */     receiveDamage(DamageSource.outOfWorld, 4.0F);
 /* 1009:     */   }
 /* 1010:     */   
 /* 1011:     */   protected void bw()
@@ -1106,7 +1106,7 @@ package net.minecraft.src;
 /* 1106:1088 */               setPosition(this.xPos + k, this.yPos + 1.0D, this.zPos + m);
 /* 1107:1089 */               return;
 /* 1108:     */             }
-/* 1109:1090 */             if ((World.isFlatSurface(this.world, new BlockPosition(n, (int)this.yPos - 1, i1))) || (this.world.getBlock(new BlockPosition(n, (int)this.yPos - 1, i1)).getProto().getMaterial() == Material.water))
+/* 1109:1090 */             if ((World.isFlatSurface(this.world, new BlockPosition(n, (int)this.yPos - 1, i1))) || (this.world.getBlock(new BlockPosition(n, (int)this.yPos - 1, i1)).getType().getMaterial() == Material.water))
 /* 1110:     */             {
 /* 1111:1091 */               d1 = this.xPos + k;
 /* 1112:1092 */               d2 = this.yPos + 1.0D;
@@ -1173,7 +1173,7 @@ package net.minecraft.src;
 /* 1173:1142 */         if (f5 > 3.0F) {
 /* 1174:1143 */           f5 = 3.0F;
 /* 1175:     */         }
-/* 1176:1145 */         if (!this.C) {
+/* 1176:1145 */         if (!this.landing) {
 /* 1177:1146 */           f5 *= 0.5F;
 /* 1178:     */         }
 /* 1179:1148 */         if (f5 > 0.0F)
@@ -1189,7 +1189,7 @@ package net.minecraft.src;
 /* 1189:1159 */         this.yVelocity *= 0.800000011920929D;
 /* 1190:1160 */         this.zVelocity *= f3;
 /* 1191:1161 */         this.yVelocity -= 0.02D;
-/* 1192:1163 */         if ((this.D) && (c(this.xVelocity, this.yVelocity + 0.6000000238418579D - this.yPos + d1, this.zVelocity))) {
+/* 1192:1163 */         if ((this.horizontalColliding) && (c(this.xVelocity, this.yVelocity + 0.6000000238418579D - this.yPos + d1, this.zVelocity))) {
 /* 1193:1164 */           this.yVelocity = 0.300000011920929D;
 /* 1194:     */         }
 /* 1195:     */       }
@@ -1202,18 +1202,18 @@ package net.minecraft.src;
 /* 1202:1171 */         this.yVelocity *= 0.5D;
 /* 1203:1172 */         this.zVelocity *= 0.5D;
 /* 1204:1173 */         this.yVelocity -= 0.02D;
-/* 1205:1175 */         if ((this.D) && (c(this.xVelocity, this.yVelocity + 0.6000000238418579D - this.yPos + d1, this.zVelocity))) {
+/* 1205:1175 */         if ((this.horizontalColliding) && (c(this.xVelocity, this.yVelocity + 0.6000000238418579D - this.yPos + d1, this.zVelocity))) {
 /* 1206:1176 */           this.yVelocity = 0.300000011920929D;
 /* 1207:     */         }
 /* 1208:     */       }
 /* 1209:     */       else
 /* 1210:     */       {
 /* 1211:1179 */         float f1 = 0.91F;
-/* 1212:1180 */         if (this.C) {
-/* 1213:1181 */           f1 = this.world.getBlock(new BlockPosition(MathUtils.floor(this.xPos), MathUtils.floor(getAABB().minY) - 1, MathUtils.floor(this.zPos))).getProto().K * 0.91F;
+/* 1212:1180 */         if (this.landing) {
+/* 1213:1181 */           f1 = this.world.getBlock(new BlockPosition(MathUtils.floor(this.xPos), MathUtils.floor(getAABB().minY) - 1, MathUtils.floor(this.zPos))).getType().K * 0.91F;
 /* 1214:     */         }
 /* 1215:1184 */         float f2 = 0.1627714F / (f1 * f1 * f1);
-/* 1216:1187 */         if (this.C) {
+/* 1216:1187 */         if (this.landing) {
 /* 1217:1188 */           f3 = bH() * f2;
 /* 1218:     */         } else {
 /* 1219:1190 */           f3 = this.aK;
@@ -1221,15 +1221,15 @@ package net.minecraft.src;
 /* 1221:1193 */         a(paramFloat1, paramFloat2, f3);
 /* 1222:     */         
 /* 1223:1195 */         f1 = 0.91F;
-/* 1224:1196 */         if (this.C) {
-/* 1225:1197 */           f1 = this.world.getBlock(new BlockPosition(MathUtils.floor(this.xPos), MathUtils.floor(getAABB().minY) - 1, MathUtils.floor(this.zPos))).getProto().K * 0.91F;
+/* 1224:1196 */         if (this.landing) {
+/* 1225:1197 */           f1 = this.world.getBlock(new BlockPosition(MathUtils.floor(this.xPos), MathUtils.floor(getAABB().minY) - 1, MathUtils.floor(this.zPos))).getType().K * 0.91F;
 /* 1226:     */         }
 /* 1227:1199 */         if (j_())
 /* 1228:     */         {
 /* 1229:1200 */           f4 = 0.15F;
 /* 1230:1201 */           this.xVelocity = MathUtils.clamp(this.xVelocity, -f4, f4);
 /* 1231:1202 */           this.zVelocity = MathUtils.clamp(this.zVelocity, -f4, f4);
-/* 1232:1203 */           this.O = 0.0F;
+/* 1232:1203 */           this.fallDistance = 0.0F;
 /* 1233:1204 */           if (this.yVelocity < -0.15D) {
 /* 1234:1205 */             this.yVelocity = -0.15D;
 /* 1235:     */           }
@@ -1239,7 +1239,7 @@ package net.minecraft.src;
 /* 1239:     */           }
 /* 1240:     */         }
 /* 1241:1213 */         move(this.xVelocity, this.yVelocity, this.zVelocity);
-/* 1242:1215 */         if ((this.D) && (j_())) {
+/* 1242:1215 */         if ((this.horizontalColliding) && (j_())) {
 /* 1243:1216 */           this.yVelocity = 0.2D;
 /* 1244:     */         }
 /* 1245:1219 */         if ((!this.world.isClient) || ((this.world.e(new BlockPosition((int)this.xPos, 0, (int)this.zPos))) && (this.world.getChunk(new BlockPosition((int)this.xPos, 0, (int)this.zPos)).o()))) {
@@ -1343,7 +1343,7 @@ package net.minecraft.src;
 /* 1343:1313 */     if (this.ax > 0.0F) {
 /* 1344:1314 */       f2 = this.yaw;
 /* 1345:     */     }
-/* 1346:1316 */     if (!this.C) {
+/* 1346:1316 */     if (!this.landing) {
 /* 1347:1317 */       f4 = 0.0F;
 /* 1348:     */     }
 /* 1349:1319 */     this.aQ += (f4 - this.aQ) * 0.3F;
@@ -1469,7 +1469,7 @@ package net.minecraft.src;
 /* 1469:     */       {
 /* 1470:1439 */         swimInLava();
 /* 1471:     */       }
-/* 1472:1440 */       else if ((this.C) && 
+/* 1472:1440 */       else if ((this.landing) && 
 /* 1473:1441 */         (this.jumpCountDown == 0))
 /* 1474:     */       {
 /* 1475:1442 */         jump();
@@ -1539,7 +1539,7 @@ package net.minecraft.src;
 /* 1539:1504 */     super.updateVehicle();
 /* 1540:1505 */     this.aP = this.aQ;
 /* 1541:1506 */     this.aQ = 0.0F;
-/* 1542:1507 */     this.O = 0.0F;
+/* 1542:1507 */     this.fallDistance = 0.0F;
 /* 1543:     */   }
 /* 1544:     */   
 /* 1545:     */   public void a(double paramDouble1, double paramDouble2, double paramDouble3, float paramFloat1, float paramFloat2, int paramInt, boolean paramBoolean)

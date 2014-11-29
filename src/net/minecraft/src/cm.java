@@ -27,7 +27,7 @@ package net.minecraft.src;
 /*  26: 43 */     paramae.a(ag.b, 0);
 /*  27:    */     
 /*  28: 45 */     BlockPosition localdt = a(paramae, paramArrayOfString, 0, false);
-/*  29: 46 */     ProtoBlock localatr = CommandBase.g(paramae, paramArrayOfString[3]);
+/*  29: 46 */     BlockType localatr = CommandBase.g(paramae, paramArrayOfString[3]);
 /*  30:    */     
 /*  31: 48 */     int i = 0;
 /*  32: 49 */     if (paramArrayOfString.length >= 5) {
@@ -90,7 +90,7 @@ package net.minecraft.src;
 /*  89:104 */         localbcm.readFromNBT(localfn);
 /*  90:    */       }
 /*  91:    */     }
-/*  92:107 */     localaqu.b(localdt, localbec.getProto());
+/*  92:107 */     localaqu.b(localdt, localbec.getType());
 /*  93:108 */     paramae.a(ag.b, 1);
 /*  94:109 */     a(paramae, this, "commands.setblock.success", new Object[0]);
 /*  95:    */   }
@@ -101,7 +101,7 @@ package net.minecraft.src;
 /* 100:116 */       return a(paramArrayOfString, 0, paramdt);
 /* 101:    */     }
 /* 102:117 */     if (paramArrayOfString.length == 4) {
-/* 103:118 */       return a(paramArrayOfString, ProtoBlock.c.c());
+/* 103:118 */       return a(paramArrayOfString, BlockType.c.c());
 /* 104:    */     }
 /* 105:119 */     if (paramArrayOfString.length == 6) {
 /* 106:120 */       return a(paramArrayOfString, new String[] { "replace", "destroy", "keep" });

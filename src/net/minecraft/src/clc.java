@@ -23,7 +23,7 @@ package net.minecraft.src;
 /*  22:    */   
 /*  23:    */   public cue a(Block parambec)
 /*  24:    */   {
-/*  25: 42 */     ProtoBlock localatr = parambec.getProto();
+/*  25: 42 */     BlockType localatr = parambec.getType();
 /*  26: 43 */     cxe localcxe = b(parambec);
 /*  27: 44 */     if ((localcxe == null) || (localcxe == this.c.a()))
 /*  28:    */     {
@@ -74,19 +74,19 @@ package net.minecraft.src;
 /*  73:    */     }
 /*  74:    */   }
 /*  75:    */   
-/*  76:    */   public void a(ProtoBlock paramatr, cni paramcni)
+/*  76:    */   public void a(BlockType paramatr, cni paramcni)
 /*  77:    */   {
 /*  78: 88 */     this.b.a(paramatr, paramcni);
 /*  79:    */   }
 /*  80:    */   
-/*  81:    */   public void a(ProtoBlock... paramVarArgs)
+/*  81:    */   public void a(BlockType... paramVarArgs)
 /*  82:    */   {
 /*  83: 92 */     this.b.a(paramVarArgs);
 /*  84:    */   }
 /*  85:    */   
 /*  86:    */   private void d()
 /*  87:    */   {
-/*  88: 96 */     a(new ProtoBlock[] { BlockList.air, BlockList.flowingWater, BlockList.water, BlockList.flowingLava, BlockList.lava, BlockList.M, BlockList.chest, BlockList.bQ, BlockList.cg, BlockList.an, BlockList.ce, BlockList.endPortal, BlockList.barrier, BlockList.ax, BlockList.cL, BlockList.cK });
+/*  88: 96 */     a(new BlockType[] { BlockList.air, BlockList.flowingWater, BlockList.water, BlockList.flowingLava, BlockList.lava, BlockList.M, BlockList.chest, BlockList.bQ, BlockList.cg, BlockList.an, BlockList.ce, BlockList.endPortal, BlockList.barrier, BlockList.ax, BlockList.cL, BlockList.cK });
 /*  89:    */     
 /*  90:    */ 
 /*  91:    */ 
@@ -113,14 +113,14 @@ package net.minecraft.src;
 /* 112:120 */     a(BlockList.reeds, new cnh().a(new IBlockData[] { azy.a }).a());
 /* 113:121 */     a(BlockList.aN, new cnh().a(new IBlockData[] { axc.a }).a());
 /* 114:122 */     a(BlockList.bX, new cnh().a(new IBlockData[] { auo.a }).a());
-/* 115:123 */     a(BlockList.bZ, new cnh().a(bbx.P).a("_wall").a());
+/* 115:123 */     a(BlockList.bZ, new cnh().a(BlockCobbleWall.P).a("_wall").a());
 /* 116:124 */     a(BlockList.cF, new cnh().a(avi.a).a());
-/* 117:125 */     a(BlockList.bo, new cnh().a(new IBlockData[] { avw.b }).a());
-/* 118:126 */     a(BlockList.bp, new cnh().a(new IBlockData[] { avw.b }).a());
-/* 119:127 */     a(BlockList.bq, new cnh().a(new IBlockData[] { avw.b }).a());
-/* 120:128 */     a(BlockList.br, new cnh().a(new IBlockData[] { avw.b }).a());
-/* 121:129 */     a(BlockList.bs, new cnh().a(new IBlockData[] { avw.b }).a());
-/* 122:130 */     a(BlockList.bt, new cnh().a(new IBlockData[] { avw.b }).a());
+/* 117:125 */     a(BlockList.bo, new cnh().a(new IBlockData[] { BlockFenceGate.b }).a());
+/* 118:126 */     a(BlockList.bp, new cnh().a(new IBlockData[] { BlockFenceGate.b }).a());
+/* 119:127 */     a(BlockList.bq, new cnh().a(new IBlockData[] { BlockFenceGate.b }).a());
+/* 120:128 */     a(BlockList.br, new cnh().a(new IBlockData[] { BlockFenceGate.b }).a());
+/* 121:129 */     a(BlockList.bs, new cnh().a(new IBlockData[] { BlockFenceGate.b }).a());
+/* 122:130 */     a(BlockList.bt, new cnh().a(new IBlockData[] { BlockFenceGate.b }).a());
 /* 123:131 */     a(BlockList.tripwire, new cnh().a(new IBlockData[] { bbs.N, bbs.a }).a());
 /* 124:132 */     a(BlockList.bL, new cnh().a(ayw.a).a("_double_slab").a());
 /* 125:133 */     a(BlockList.bM, new cnh().a(ayw.a).a("_slab").a());

@@ -31,7 +31,7 @@ package net.minecraft.src;
 /* 30:32 */     double d1 = paramex.a();
 /* 31:33 */     double d2 = paramex.b();
 /* 32:34 */     double d3 = paramex.c();
-/* 33:36 */     if (paramej.k() == EnumAxis.Y) {
+/* 33:36 */     if (paramej.getAxis() == EnumAxis.Y) {
 /* 34:38 */       d2 -= 0.125D;
 /* 35:   */     } else {
 /* 36:41 */       d2 -= 0.15625D;

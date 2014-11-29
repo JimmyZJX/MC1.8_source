@@ -37,7 +37,7 @@ package net.minecraft.src;
 /*  37: 78 */     this.dimension = 0;
 /*  38:    */   }
 /*  39:    */   
-/*  40:    */   public boolean a(DamageSource paramwh, float paramFloat)
+/*  40:    */   public boolean receiveDamage(DamageSource paramwh, float paramFloat)
 /*  41:    */   {
 /*  42: 83 */     return false;
 /*  43:    */   }
@@ -60,7 +60,7 @@ package net.minecraft.src;
 /*  60:105 */     super.onUpdate();
 /*  61:107 */     if (av())
 /*  62:    */     {
-/*  63:108 */       this.a.a(new mj(this.yaw, this.pitch, this.C));
+/*  63:108 */       this.a.a(new mj(this.yaw, this.pitch, this.landing));
 /*  64:109 */       this.a.a(new mp(this.aX, this.aY, this.b.c, this.b.d));
 /*  65:    */     }
 /*  66:    */     else
@@ -105,18 +105,18 @@ package net.minecraft.src;
 /* 105:149 */       if (this.vehicle == null)
 /* 106:    */       {
 /* 107:150 */         if ((j != 0) && (k != 0)) {
-/* 108:151 */           this.a.a(new mi(this.xPos, getAABB().minY, this.zPos, this.yaw, this.pitch, this.C));
+/* 108:151 */           this.a.a(new mi(this.xPos, getAABB().minY, this.zPos, this.yaw, this.pitch, this.landing));
 /* 109:152 */         } else if (j != 0) {
-/* 110:153 */           this.a.a(new mh(this.xPos, getAABB().minY, this.zPos, this.C));
+/* 110:153 */           this.a.a(new mh(this.xPos, getAABB().minY, this.zPos, this.landing));
 /* 111:154 */         } else if (k != 0) {
-/* 112:155 */           this.a.a(new mj(this.yaw, this.pitch, this.C));
+/* 112:155 */           this.a.a(new mj(this.yaw, this.pitch, this.landing));
 /* 113:    */         } else {
-/* 114:157 */           this.a.a(new mg(this.C));
+/* 114:157 */           this.a.a(new mg(this.landing));
 /* 115:    */         }
 /* 116:    */       }
 /* 117:    */       else
 /* 118:    */       {
-/* 119:160 */         this.a.a(new mi(this.xVelocity, -999.0D, this.zVelocity, this.yaw, this.pitch, this.C));
+/* 119:160 */         this.a.a(new mi(this.xVelocity, -999.0D, this.zVelocity, this.yaw, this.pitch, this.landing));
 /* 120:161 */         j = 0;
 /* 121:    */       }
 /* 122:164 */       this.bP += 1;
@@ -176,7 +176,7 @@ package net.minecraft.src;
 /* 176:    */   
 /* 177:    */   public void q()
 /* 178:    */   {
-/* 179:222 */     this.bg.b((ItemStack)null);
+/* 179:222 */     this.inventory.b((ItemStack)null);
 /* 180:223 */     super.n();
 /* 181:224 */     this.c.a((bxf)null);
 /* 182:    */   }
@@ -311,7 +311,7 @@ package net.minecraft.src;
 /* 311:    */   
 /* 312:    */   private boolean d(BlockPosition paramdt)
 /* 313:    */   {
-/* 314:354 */     return (!this.world.getBlock(paramdt).getProto().blocksMovement()) && (!this.world.getBlock(paramdt.up()).getProto().blocksMovement());
+/* 314:354 */     return (!this.world.getBlock(paramdt).getType().blocksMovement()) && (!this.world.getBlock(paramdt.up()).getType().blocksMovement());
 /* 315:    */   }
 /* 316:    */   
 /* 317:    */   public void d(boolean paramBoolean)
@@ -384,42 +384,42 @@ package net.minecraft.src;
 /* 384:    */   {
 /* 385:423 */     String str = (paramvq instanceof vv) ? ((vv)paramvq).k() : "minecraft:container";
 /* 386:424 */     if ("minecraft:chest".equals(str)) {
-/* 387:425 */       this.c.a(new byw(this.bg, paramvq));
+/* 387:425 */       this.c.a(new byw(this.inventory, paramvq));
 /* 388:426 */     } else if ("minecraft:hopper".equals(str)) {
-/* 389:427 */       this.c.a(new bzh(this.bg, paramvq));
+/* 389:427 */       this.c.a(new bzh(this.inventory, paramvq));
 /* 390:428 */     } else if ("minecraft:furnace".equals(str)) {
-/* 391:429 */       this.c.a(new bzg(this.bg, paramvq));
+/* 391:429 */       this.c.a(new bzg(this.inventory, paramvq));
 /* 392:430 */     } else if ("minecraft:brewing_stand".equals(str)) {
-/* 393:431 */       this.c.a(new byu(this.bg, paramvq));
+/* 393:431 */       this.c.a(new byu(this.inventory, paramvq));
 /* 394:432 */     } else if ("minecraft:beacon".equals(str)) {
-/* 395:433 */       this.c.a(new byn(this.bg, paramvq));
+/* 395:433 */       this.c.a(new byn(this.inventory, paramvq));
 /* 396:434 */     } else if (("minecraft:dispenser".equals(str)) || ("minecraft:dropper".equals(str))) {
-/* 397:435 */       this.c.a(new bzc(this.bg, paramvq));
+/* 397:435 */       this.c.a(new bzc(this.inventory, paramvq));
 /* 398:    */     } else {
-/* 399:437 */       this.c.a(new byw(this.bg, paramvq));
+/* 399:437 */       this.c.a(new byw(this.inventory, paramvq));
 /* 400:    */     }
 /* 401:    */   }
 /* 402:    */   
 /* 403:    */   public void a(EntityHorse paramabt, vq paramvq)
 /* 404:    */   {
-/* 405:443 */     this.c.a(new bzi(this.bg, paramvq, paramabt));
+/* 405:443 */     this.c.a(new bzi(this.inventory, paramvq, paramabt));
 /* 406:    */   }
 /* 407:    */   
 /* 408:    */   public void a(vv paramvv)
 /* 409:    */   {
 /* 410:448 */     String str = paramvv.k();
 /* 411:449 */     if ("minecraft:crafting_table".equals(str)) {
-/* 412:450 */       this.c.a(new byx(this.bg, this.world));
+/* 412:450 */       this.c.a(new byx(this.inventory, this.world));
 /* 413:451 */     } else if ("minecraft:enchanting_table".equals(str)) {
-/* 414:452 */       this.c.a(new bzf(this.bg, this.world, paramvv));
+/* 414:452 */       this.c.a(new bzf(this.inventory, this.world, paramvv));
 /* 415:453 */     } else if ("minecraft:anvil".equals(str)) {
-/* 416:454 */       this.c.a(new bym(this.bg, this.world));
+/* 416:454 */       this.c.a(new bym(this.inventory, this.world));
 /* 417:    */     }
 /* 418:    */   }
 /* 419:    */   
 /* 420:    */   public void a(aqb paramaqb)
 /* 421:    */   {
-/* 422:460 */     this.c.a(new bzk(this.bg, paramaqb, this.world));
+/* 422:460 */     this.c.a(new bzk(this.inventory, paramaqb, this.world));
 /* 423:    */   }
 /* 424:    */   
 /* 425:    */   public void b(Entity paramwv)
@@ -522,7 +522,7 @@ package net.minecraft.src;
 /* 522:558 */     j(this.xPos + this.width * 0.35D, getAABB().minY + 0.5D, this.zPos + this.width * 0.35D);
 /* 523:    */     
 /* 524:560 */     int k = (ck().a() > 6.0F) || (this.abilities.mayfly) ? 1 : 0;
-/* 525:561 */     if ((this.C) && (!bool2) && (j == 0) && (this.b.b >= f1) && (!ax()) && (k != 0) && (!bR()) && (!a(Potion.blindness))) {
+/* 525:561 */     if ((this.landing) && (!bool2) && (j == 0) && (this.b.b >= f1) && (!ax()) && (k != 0) && (!bR()) && (!a(Potion.blindness))) {
 /* 526:562 */       if ((this.d > 0) || (this.c.t.af.d())) {
 /* 527:563 */         d(true);
 /* 528:    */       } else {
@@ -532,7 +532,7 @@ package net.minecraft.src;
 /* 532:568 */     if ((!ax()) && (this.b.b >= f1) && (k != 0) && (!bR()) && (!a(Potion.blindness)) && (this.c.t.af.d())) {
 /* 533:569 */       d(true);
 /* 534:    */     }
-/* 535:571 */     if ((ax()) && ((this.b.b < f1) || (this.D) || (k == 0))) {
+/* 535:571 */     if ((ax()) && ((this.b.b < f1) || (this.horizontalColliding) || (k == 0))) {
 /* 536:572 */       d(false);
 /* 537:    */     }
 /* 538:575 */     if (this.abilities.mayfly) {
@@ -600,7 +600,7 @@ package net.minecraft.src;
 /* 600:629 */       this.bT = 0.0F;
 /* 601:    */     }
 /* 602:632 */     super.m();
-/* 603:633 */     if ((this.C) && (this.abilities.flying) && (!this.c.c.k()))
+/* 603:633 */     if ((this.landing) && (this.abilities.flying) && (!this.c.c.k()))
 /* 604:    */     {
 /* 605:634 */       this.abilities.flying = false;
 /* 606:635 */       t();

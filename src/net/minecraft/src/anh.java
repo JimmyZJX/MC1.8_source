@@ -20,11 +20,11 @@ package net.minecraft.src;
 /*  19: 36 */       return false;
 /*  20:    */     }
 /*  21: 39 */     Block localbec = paramaqu.getBlock(paramdt);
-/*  22: 40 */     ProtoBlock localatr = localbec.getProto();
+/*  22: 40 */     BlockType localatr = localbec.getType();
 /*  23: 41 */     boolean bool = localatr.f(paramaqu, paramdt);
 /*  24: 43 */     if (!bool)
 /*  25:    */     {
-/*  26: 44 */       if (!paramaqu.getBlock(paramdt).getProto().getMaterial().a()) {
+/*  26: 44 */       if (!paramaqu.getBlock(paramdt).getType().getMaterial().a()) {
 /*  27: 45 */         return false;
 /*  28:    */       }
 /*  29: 47 */       paramdt = paramdt.offset(paramej);

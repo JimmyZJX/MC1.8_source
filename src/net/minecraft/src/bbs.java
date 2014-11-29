@@ -3,7 +3,7 @@ package net.minecraft.src;
 /*   2:    */ import java.util.Random;
 /*   3:    */ 
 /*   4:    */ public class bbs
-/*   5:    */   extends ProtoBlock
+/*   5:    */   extends BlockType
 /*   6:    */ {
 /*   7: 23 */   public static final BlockDataBoolean a = BlockDataBoolean.getInstance("powered");
 /*   8: 24 */   public static final BlockDataBoolean b = BlockDataBoolean.getInstance("suspended");
@@ -57,7 +57,7 @@ package net.minecraft.src;
 /*  56: 77 */     return ItemList.string;
 /*  57:    */   }
 /*  58:    */   
-/*  59:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/*  59:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /*  60:    */   {
 /*  61: 82 */     boolean bool1 = ((Boolean)parambec.getData(b)).booleanValue();
 /*  62: 83 */     boolean bool2 = !World.isFlatSurface(paramaqu, paramdt.down());
@@ -111,14 +111,14 @@ package net.minecraft.src;
 /* 110:    */       {
 /* 111:132 */         BlockPosition localdt = paramdt.offset(localej, k);
 /* 112:133 */         Block localbec = paramaqu.getBlock(localdt);
-/* 113:135 */         if (localbec.getProto() == BlockList.bR)
+/* 113:135 */         if (localbec.getType() == BlockList.bR)
 /* 114:    */         {
-/* 115:136 */           if (localbec.getData(bbt.a) == localej.opposite()) {
+/* 115:136 */           if (localbec.getData(BlockTripwireHook.a) == localej.opposite()) {
 /* 116:137 */             BlockList.bR.a(paramaqu, localdt, localbec, false, true, k, parambec);
 /* 117:    */           }
 /* 118:    */         }
 /* 119:    */         else {
-/* 120:141 */           if (localbec.getProto() != BlockList.tripwire) {
+/* 120:141 */           if (localbec.getType() != BlockList.tripwire) {
 /* 121:    */             break;
 /* 122:    */           }
 /* 123:    */         }
@@ -181,11 +181,11 @@ package net.minecraft.src;
 /* 180:    */   {
 /* 181:205 */     BlockPosition localdt = paramdt.offset(paramej);
 /* 182:206 */     Block localbec = paramard.getBlock(localdt);
-/* 183:207 */     ProtoBlock localatr = localbec.getProto();
+/* 183:207 */     BlockType localatr = localbec.getType();
 /* 184:209 */     if (localatr == BlockList.bR)
 /* 185:    */     {
 /* 186:210 */       EnumDirection localej = paramej.opposite();
-/* 187:211 */       return localbec.getData(bbt.a) == localej;
+/* 187:211 */       return localbec.getData(BlockTripwireHook.a) == localej;
 /* 188:    */     }
 /* 189:214 */     if (localatr == BlockList.tripwire)
 /* 190:    */     {

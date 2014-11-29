@@ -34,14 +34,14 @@ package net.minecraft.src;
 /*  33:    */   {
 /*  34: 57 */     super.h();
 /*  35:    */     
-/*  36: 59 */     this.ac.a(16, new Byte((byte)0));
+/*  36: 59 */     this.data.addData(16, new Byte((byte)0));
 /*  37:    */   }
 /*  38:    */   
 /*  39:    */   public void onUpdate()
 /*  40:    */   {
 /*  41: 64 */     super.onUpdate();
 /*  42: 66 */     if (!this.world.isClient) {
-/*  43: 69 */       a(this.D);
+/*  43: 69 */       a(this.horizontalColliding);
 /*  44:    */     }
 /*  45:    */   }
 /*  46:    */   
@@ -68,7 +68,7 @@ package net.minecraft.src;
 /*  67: 93 */     return "mob.spider.death";
 /*  68:    */   }
 /*  69:    */   
-/*  70:    */   protected void a(BlockPosition paramdt, ProtoBlock paramatr)
+/*  70:    */   protected void a(BlockPosition paramdt, BlockType paramatr)
 /*  71:    */   {
 /*  72: 98 */     a("mob.spider.step", 0.15F, 1.0F);
 /*  73:    */   }
@@ -108,18 +108,18 @@ package net.minecraft.src;
 /* 107:    */   
 /* 108:    */   public boolean n()
 /* 109:    */   {
-/* 110:143 */     return (this.ac.a(16) & 0x1) != 0;
+/* 110:143 */     return (this.data.getByte(16) & 0x1) != 0;
 /* 111:    */   }
 /* 112:    */   
 /* 113:    */   public void a(boolean paramBoolean)
 /* 114:    */   {
-/* 115:147 */     byte b = this.ac.a(16);
+/* 115:147 */     byte b = this.data.getByte(16);
 /* 116:148 */     if (paramBoolean) {
 /* 117:149 */       b = (byte)(b | 0x1);
 /* 118:    */     } else {
 /* 119:151 */       b = (byte)(b & 0xFFFFFFFE);
 /* 120:    */     }
-/* 121:153 */     this.ac.b(16, Byte.valueOf(b));
+/* 121:153 */     this.data.b(16, Byte.valueOf(b));
 /* 122:    */   }
 /* 123:    */   
 /* 124:    */   public xq beforeSpawn(vu paramvu, xq paramxq)

@@ -32,7 +32,7 @@ package net.minecraft.src;
 /*  32:    */   protected void h()
 /*  33:    */   {
 /*  34: 61 */     super.h();
-/*  35: 62 */     this.ac.a(16, Byte.valueOf((byte)0));
+/*  35: 62 */     this.data.addData(16, Byte.valueOf((byte)0));
 /*  36:    */   }
 /*  37:    */   
 /*  38:    */   protected void mobTick()
@@ -91,9 +91,9 @@ package net.minecraft.src;
 /*  91:118 */       int j = MathUtils.floor(this.yPos - 0.2000000029802322D);
 /*  92:119 */       int k = MathUtils.floor(this.zPos);
 /*  93:120 */       Block localbec = this.world.getBlock(new BlockPosition(i, j, k));
-/*  94:121 */       ProtoBlock localatr = localbec.getProto();
+/*  94:121 */       BlockType localatr = localbec.getType();
 /*  95:122 */       if (localatr.getMaterial() != Material.air) {
-/*  96:123 */         this.world.a(EnumParticleEffect.L, this.xPos + (this.rng.nextFloat() - 0.5D) * this.width, getAABB().minY + 0.1D, this.zPos + (this.rng.nextFloat() - 0.5D) * this.width, 4.0D * (this.rng.nextFloat() - 0.5D), 0.5D, (this.rng.nextFloat() - 0.5D) * 4.0D, new int[] { ProtoBlock.f(localbec) });
+/*  96:123 */         this.world.a(EnumParticleEffect.L, this.xPos + (this.rng.nextFloat() - 0.5D) * this.width, getAABB().minY + 0.1D, this.zPos + (this.rng.nextFloat() - 0.5D) * this.width, 4.0D * (this.rng.nextFloat() - 0.5D), 0.5D, (this.rng.nextFloat() - 0.5D) * 4.0D, new int[] { BlockType.f(localbec) });
 /*  97:    */       }
 /*  98:    */     }
 /*  99:    */   }
@@ -122,7 +122,7 @@ package net.minecraft.src;
 /* 122:    */   {
 /* 123:150 */     this.c = 10;
 /* 124:151 */     this.world.sendSignal(this, (byte)4);
-/* 125:152 */     boolean bool = paramwv.a(DamageSource.fromMob(this), 7 + this.rng.nextInt(15));
+/* 125:152 */     boolean bool = paramwv.receiveDamage(DamageSource.fromMob(this), 7 + this.rng.nextInt(15));
 /* 126:153 */     if (bool)
 /* 127:    */     {
 /* 128:154 */       paramwv.yVelocity += 0.4000000059604645D;
@@ -175,7 +175,7 @@ package net.minecraft.src;
 /* 175:193 */     return "mob.irongolem.death";
 /* 176:    */   }
 /* 177:    */   
-/* 178:    */   protected void a(BlockPosition paramdt, ProtoBlock paramatr)
+/* 178:    */   protected void a(BlockPosition paramdt, BlockType paramatr)
 /* 179:    */   {
 /* 180:198 */     a("mob.irongolem.walk", 1.0F, 1.0F);
 /* 181:    */   }
@@ -184,7 +184,7 @@ package net.minecraft.src;
 /* 184:    */   {
 /* 185:203 */     int i = this.rng.nextInt(3);
 /* 186:204 */     for (int j = 0; j < i; j++) {
-/* 187:205 */       throwItem(Item.fromProtoBlock(BlockList.redFlower), 1, EnumFlowerVariant.b.b());
+/* 187:205 */       throwItem(Item.fromBlock(BlockList.redFlower), 1, EnumFlowerVariant.b.b());
 /* 188:    */     }
 /* 189:207 */     j = 3 + this.rng.nextInt(3);
 /* 190:208 */     for (int k = 0; k < j; k++) {
@@ -199,16 +199,16 @@ package net.minecraft.src;
 /* 199:    */   
 /* 200:    */   public boolean cl()
 /* 201:    */   {
-/* 202:218 */     return (this.ac.a(16) & 0x1) != 0;
+/* 202:218 */     return (this.data.getByte(16) & 0x1) != 0;
 /* 203:    */   }
 /* 204:    */   
 /* 205:    */   public void l(boolean paramBoolean)
 /* 206:    */   {
-/* 207:222 */     int i = this.ac.a(16);
+/* 207:222 */     int i = this.data.getByte(16);
 /* 208:223 */     if (paramBoolean) {
-/* 209:224 */       this.ac.b(16, Byte.valueOf((byte)(i | 0x1)));
+/* 209:224 */       this.data.b(16, Byte.valueOf((byte)(i | 0x1)));
 /* 210:    */     } else {
-/* 211:226 */       this.ac.b(16, Byte.valueOf((byte)(i & 0xFFFFFFFE)));
+/* 211:226 */       this.data.b(16, Byte.valueOf((byte)(i & 0xFFFFFFFE)));
 /* 212:    */     }
 /* 213:    */   }
 /* 214:    */   

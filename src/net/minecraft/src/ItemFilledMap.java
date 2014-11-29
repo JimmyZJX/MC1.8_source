@@ -118,11 +118,11 @@ package net.minecraft.src;
 /* 117:    */                       {
 /* 118:139 */                         i15--;
 /* 119:140 */                         localObject = localbfh.g(new BlockPosition(i13 + i10, i15, i14 + i11));
-/* 120:141 */                       } while ((((Block)localObject).getProto().g((Block)localObject) == MapColor.b) && (i15 > 0));
-/* 121:143 */                       if ((i15 > 0) && (((Block)localObject).getProto().getMaterial().isLiquid()))
+/* 120:141 */                       } while ((((Block)localObject).getType().g((Block)localObject) == MapColor.b) && (i15 > 0));
+/* 121:143 */                       if ((i15 > 0) && (((Block)localObject).getType().getMaterial().isLiquid()))
 /* 122:    */                       {
 /* 123:144 */                         i16 = i15 - 1;
-/* 124:    */                         ProtoBlock localatr;
+/* 124:    */                         BlockType localatr;
 /* 125:    */                         do
 /* 126:    */                         {
 /* 127:147 */                           localatr = localbfh.getBlockAtWorldCoord(i13 + i10, i16--, i14 + i11);
@@ -132,7 +132,7 @@ package net.minecraft.src;
 /* 131:    */                     }
 /* 132:153 */                     d2 += i15 / (i * i);
 /* 133:    */                     
-/* 134:155 */                     localHashMultiset.add(((Block)localObject).getProto().g((Block)localObject));
+/* 134:155 */                     localHashMultiset.add(((Block)localObject).getType().g((Block)localObject));
 /* 135:    */                   }
 /* 136:    */                 }
 /* 137:    */               }

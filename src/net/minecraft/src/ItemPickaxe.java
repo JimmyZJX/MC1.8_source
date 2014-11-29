@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*  4:   */ public class ItemPickaxe
 /*  5:   */   extends ItemTool
 /*  6:   */ {
-/*  7:11 */   private static final Set<ProtoBlock> blocksEffectiveAgainst = Sets.newHashSet(new ProtoBlock[] {
+/*  7:11 */   private static final Set<BlockType> blocksEffectiveAgainst = Sets.newHashSet(new BlockType[] {
 				BlockList.activatorRail, BlockList.coalOre, BlockList.cobblestone, BlockList.detector_rail,
 				BlockList.diamondBlock, BlockList.diamondOre, BlockList.T, BlockList.D,
 				BlockList.R, BlockList.goldOre, BlockList.aI, BlockList.S,
@@ -20,7 +20,7 @@ package net.minecraft.src;
 /* 11:40 */     super(2.0F, paramami, blocksEffectiveAgainst);
 /* 12:   */   }
 /* 13:   */   
-/* 14:   */   public boolean canHarvestBlock(ProtoBlock paramatr)
+/* 14:   */   public boolean canHarvestBlock(BlockType paramatr)
 /* 15:   */   {
 /* 16:45 */     if (paramatr == BlockList.obsidian) {
 /* 17:46 */       return this.toolMaterial.getHarvestLevel() == 3;
@@ -55,7 +55,7 @@ package net.minecraft.src;
 /* 46:75 */     return false;
 /* 47:   */   }
 /* 48:   */   
-/* 49:   */   public float getStrVsBlock(ItemStack paramamj, ProtoBlock paramatr)
+/* 49:   */   public float getStrVsBlock(ItemStack paramamj, BlockType paramatr)
 /* 50:   */   {
 /* 51:80 */     if ((paramatr.getMaterial() == Material.f) || (paramatr.getMaterial() == Material.g) || (paramatr.getMaterial() == Material.rock)) {
 /* 52:81 */       return this.efficiencyOnProperMaterial;

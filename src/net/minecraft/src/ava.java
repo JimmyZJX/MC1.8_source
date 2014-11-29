@@ -50,14 +50,14 @@ package net.minecraft.src;
 /*  49:    */     {
 /*  50: 65 */       paramaqu.setBlock(paramdt, e(parambec), 2);
 /*  51: 66 */       if (!bool) {
-/*  52: 67 */         paramaqu.a(paramdt, e(parambec).getProto(), m(parambec), -1);
+/*  52: 67 */         paramaqu.a(paramdt, e(parambec).getType(), m(parambec), -1);
 /*  53:    */       }
 /*  54:    */     }
 /*  55:    */   }
 /*  56:    */   
 /*  57:    */   public boolean a(IBlockAccess paramard, BlockPosition paramdt, EnumDirection paramej)
 /*  58:    */   {
-/*  59: 75 */     return paramej.k() != EnumAxis.Y;
+/*  59: 75 */     return paramej.getAxis() != EnumAxis.Y;
 /*  60:    */   }
 /*  61:    */   
 /*  62:    */   protected boolean l(Block parambec)
@@ -65,12 +65,12 @@ package net.minecraft.src;
 /*  64: 79 */     return this.M;
 /*  65:    */   }
 /*  66:    */   
-/*  67:    */   public int b(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
+/*  67:    */   public int getStrongRedstoneSignal(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
 /*  68:    */   {
-/*  69: 84 */     return a(paramard, paramdt, parambec, paramej);
+/*  69: 84 */     return getRedStoneSignal(paramard, paramdt, parambec, paramej);
 /*  70:    */   }
 /*  71:    */   
-/*  72:    */   public int a(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
+/*  72:    */   public int getRedStoneSignal(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
 /*  73:    */   {
 /*  74: 89 */     if (!l(parambec)) {
 /*  75: 90 */       return 0;
@@ -81,7 +81,7 @@ package net.minecraft.src;
 /*  80: 97 */     return 0;
 /*  81:    */   }
 /*  82:    */   
-/*  83:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/*  83:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /*  84:    */   {
 /*  85:102 */     if (d(paramaqu, paramdt))
 /*  86:    */     {
@@ -133,13 +133,13 @@ package net.minecraft.src;
 /* 132:148 */       return i;
 /* 133:    */     }
 /* 134:151 */     Block localbec = paramaqu.getBlock(localdt);
-/* 135:152 */     return Math.max(i, localbec.getProto() == BlockList.redstoneWire ? ((Integer)localbec.getData(BlockRedstoneWire.power)).intValue() : 0);
+/* 135:152 */     return Math.max(i, localbec.getType() == BlockList.redstoneWire ? ((Integer)localbec.getData(BlockRedstoneWire.power)).intValue() : 0);
 /* 136:    */   }
 /* 137:    */   
 /* 138:    */   protected int c(IBlockAccess paramard, BlockPosition paramdt, Block parambec)
 /* 139:    */   {
 /* 140:156 */     EnumDirection localej1 = (EnumDirection)parambec.getData(facing);
-/* 141:157 */     EnumDirection localej2 = localej1.yRotate();
+/* 141:157 */     EnumDirection localej2 = localej1.cw();
 /* 142:158 */     EnumDirection localej3 = localej1.ccw();
 /* 143:159 */     return Math.max(c(paramard, paramdt.offset(localej2), localej2), c(paramard, paramdt.offset(localej3), localej3));
 /* 144:    */   }
@@ -147,18 +147,18 @@ package net.minecraft.src;
 /* 146:    */   protected int c(IBlockAccess paramard, BlockPosition paramdt, EnumDirection paramej)
 /* 147:    */   {
 /* 148:163 */     Block localbec = paramard.getBlock(paramdt);
-/* 149:164 */     ProtoBlock localatr = localbec.getProto();
+/* 149:164 */     BlockType localatr = localbec.getType();
 /* 150:165 */     if (c(localatr))
 /* 151:    */     {
 /* 152:166 */       if (localatr == BlockList.redstoneWire) {
 /* 153:167 */         return ((Integer)localbec.getData(BlockRedstoneWire.power)).intValue();
 /* 154:    */       }
-/* 155:169 */       return paramard.a(paramdt, paramej);
+/* 155:169 */       return paramard.getStrongRedstoneSignal(paramdt, paramej);
 /* 156:    */     }
 /* 157:172 */     return 0;
 /* 158:    */   }
 /* 159:    */   
-/* 160:    */   public boolean protoBlock_g()
+/* 160:    */   public boolean blockType_g()
 /* 161:    */   {
 /* 162:177 */     return true;
 /* 163:    */   }
@@ -204,9 +204,9 @@ package net.minecraft.src;
 /* 203:217 */     return false;
 /* 204:    */   }
 /* 205:    */   
-/* 206:    */   protected boolean c(ProtoBlock paramatr)
+/* 206:    */   protected boolean c(BlockType paramatr)
 /* 207:    */   {
-/* 208:228 */     return paramatr.protoBlock_g();
+/* 208:228 */     return paramatr.blockType_g();
 /* 209:    */   }
 /* 210:    */   
 /* 211:    */   protected int a(IBlockAccess paramard, BlockPosition paramdt, Block parambec)
@@ -214,21 +214,21 @@ package net.minecraft.src;
 /* 213:232 */     return 15;
 /* 214:    */   }
 /* 215:    */   
-/* 216:    */   public static boolean d(ProtoBlock paramatr)
+/* 216:    */   public static boolean d(BlockType paramatr)
 /* 217:    */   {
-/* 218:236 */     return (BlockList.unpoweredRepeater.e(paramatr)) || (BlockList.cj.e(paramatr));
+/* 218:236 */     return (BlockList.unpoweredRepeater.e(paramatr)) || (BlockList.unpowered_comparator.e(paramatr));
 /* 219:    */   }
 /* 220:    */   
-/* 221:    */   public boolean e(ProtoBlock paramatr)
+/* 221:    */   public boolean e(BlockType paramatr)
 /* 222:    */   {
-/* 223:240 */     return (paramatr == e(instance()).getProto()) || (paramatr == k(instance()).getProto());
+/* 223:240 */     return (paramatr == e(instance()).getType()) || (paramatr == k(instance()).getType());
 /* 224:    */   }
 /* 225:    */   
 /* 226:    */   public boolean i(World paramaqu, BlockPosition paramdt, Block parambec)
 /* 227:    */   {
 /* 228:244 */     EnumDirection localej = ((EnumDirection)parambec.getData(facing)).opposite();
 /* 229:245 */     BlockPosition localdt = paramdt.offset(localej);
-/* 230:247 */     if (d(paramaqu.getBlock(localdt).getProto())) {
+/* 230:247 */     if (d(paramaqu.getBlock(localdt).getType())) {
 /* 231:248 */       return paramaqu.getBlock(localdt).getData(facing) != localej;
 /* 232:    */     }
 /* 233:250 */     return false;
@@ -245,7 +245,7 @@ package net.minecraft.src;
 /* 244:    */   
 /* 245:    */   protected abstract Block k(Block parambec);
 /* 246:    */   
-/* 247:    */   public boolean b(ProtoBlock paramatr)
+/* 247:    */   public boolean b(BlockType paramatr)
 /* 248:    */   {
 /* 249:265 */     return e(paramatr);
 /* 250:    */   }

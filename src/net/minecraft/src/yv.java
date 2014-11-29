@@ -19,7 +19,7 @@ package net.minecraft.src;
 /* 18:   */   
 /* 19:   */   public boolean canStart()
 /* 20:   */   {
-/* 21:28 */     if (!this.a.D) {
+/* 21:28 */     if (!this.a.horizontalColliding) {
 /* 22:29 */       return false;
 /* 23:   */     }
 /* 24:31 */     aay localaay = (aay)this.a.getNavigator();
@@ -68,7 +68,7 @@ package net.minecraft.src;
 /* 67:   */   
 /* 68:   */   private BlockDoor a(BlockPosition paramdt)
 /* 69:   */   {
-/* 70:78 */     ProtoBlock localatr = this.a.world.getBlock(paramdt).getProto();
+/* 70:78 */     BlockType localatr = this.a.world.getBlock(paramdt).getType();
 /* 71:79 */     if (((localatr instanceof BlockDoor)) && (localatr.getMaterial() == Material.wood)) {
 /* 72:80 */       return (BlockDoor)localatr;
 /* 73:   */     }

@@ -8,14 +8,14 @@ package net.minecraft.src;
 /*   7:    */ import java.util.Set;
 /*   8:    */ 
 /*   9:    */ public class BlockRedstoneWire
-/*  10:    */   extends ProtoBlock
+/*  10:    */   extends BlockType
 /*  11:    */ {
 /*  12: 30 */   public static final BlockDataEnum<azu> north = BlockDataEnum.getInstance("north", azu.class);
 /*  13: 31 */   public static final BlockDataEnum<azu> east = BlockDataEnum.getInstance("east", azu.class);
 /*  14: 32 */   public static final BlockDataEnum<azu> south = BlockDataEnum.getInstance("south", azu.class);
 /*  15: 33 */   public static final BlockDataEnum<azu> west = BlockDataEnum.getInstance("west", azu.class);
 /*  16: 34 */   public static final BlockDataInteger power = BlockDataInteger.getInstance("power", 0, 15);
-/*  17: 36 */   private boolean P = true;
+/*  17: 36 */   private boolean notUpdating = true;
 /*  18: 37 */   private final Set<BlockPosition> Q = Sets.newHashSet();
 /*  19:    */   
 /*  20:    */   public BlockRedstoneWire()
@@ -38,12 +38,12 @@ package net.minecraft.src;
 /*  37:    */   private azu c(IBlockAccess world, BlockPosition pos0, EnumDirection dir)
 /*  38:    */   {
 /*  39: 56 */     BlockPosition pos = pos0.offset(dir);
-/*  40: 57 */     ProtoBlock block1 = world.getBlock(pos0.offset(dir)).getProto();
-/*  41: 59 */     if ((a(world.getBlock(pos), dir)) || ((!block1.cutsRedstone()) && (d(world.getBlock(pos.down()))))) {
+/*  40: 57 */     BlockType block1 = world.getBlock(pos0.offset(dir)).getType();
+/*  41: 59 */     if ((canLinkTo(world.getBlock(pos), dir)) || ((!block1.cutsRedstone()) && (isWire(world.getBlock(pos.down()))))) {
 /*  42: 60 */       return azu.SIDE;
 /*  43:    */     }
-/*  44: 63 */     ProtoBlock block2 = world.getBlock(pos0.up()).getProto();
-/*  45: 64 */     if ((!block2.cutsRedstone()) && (block1.cutsRedstone()) && (d(world.getBlock(pos.up())))) {
+/*  44: 63 */     BlockType block2 = world.getBlock(pos0.up()).getType();
+/*  45: 64 */     if ((!block2.cutsRedstone()) && (block1.cutsRedstone()) && (isWire(world.getBlock(pos.up())))) {
 /*  46: 65 */       return azu.UP;
 /*  47:    */     }
 /*  48: 68 */     return azu.NONE;
@@ -67,7 +67,7 @@ package net.minecraft.src;
 /*  66:    */   public int a(IBlockAccess paramard, BlockPosition paramdt, int paramInt)
 /*  67:    */   {
 /*  68: 89 */     Block localbec = paramard.getBlock(paramdt);
-/*  69: 91 */     if (localbec.getProto() != this) {
+/*  69: 91 */     if (localbec.getType() != this) {
 /*  70: 92 */       return super.a(paramard, paramdt, paramInt);
 /*  71:    */     }
 /*  72: 95 */     return b(((Integer)localbec.getData(power)).intValue());
@@ -75,7 +75,7 @@ package net.minecraft.src;
 /*  74:    */   
 /*  75:    */   public boolean c(World paramaqu, BlockPosition paramdt)
 /*  76:    */   {
-/*  77:100 */     return (World.isFlatSurface(paramaqu, paramdt.down())) || (paramaqu.getBlock(paramdt.down()).getProto() == BlockList.glowstone);
+/*  77:100 */     return (World.isFlatSurface(paramaqu, paramdt.down())) || (paramaqu.getBlock(paramdt.down()).getType() == BlockList.glowstone);
 /*  78:    */   }
 /*  79:    */   
 /*  80:    */   private Block e(World paramaqu, BlockPosition paramdt, Block parambec)
@@ -90,17 +90,17 @@ package net.minecraft.src;
 /*  89:112 */     return parambec;
 /*  90:    */   }
 /*  91:    */   
-/*  92:    */   private Block a(World world, BlockPosition paramdt1, BlockPosition paramdt2, Block block)
+/*  92:    */   private Block a(World world, BlockPosition pos1, BlockPosition pos2, Block block)
 /*  93:    */   {
 /*  94:116 */     Block block0 = block;
 /*  95:117 */     int powerValue = ((Integer)block0.getData(power)).intValue();
 /*  96:118 */     int j = 0;
 /*  97:    */     
-/*  98:120 */     j = getPower(world, paramdt2, j);
+/*  98:120 */     j = getPower(world, pos2, j);
 /*  99:    */     
-/* 100:122 */     this.P = false;
-/* 101:123 */     int k = world.A(paramdt1);
-/* 102:124 */     this.P = true;
+/* 100:122 */     this.notUpdating = false;
+/* 101:123 */     int k = world.A(pos1);
+/* 102:124 */     this.notUpdating = true;
 /* 103:126 */     if ((k > 0) && (k > j - 1)) {
 /* 104:127 */       j = k;
 /* 105:    */     }
@@ -108,19 +108,19 @@ package net.minecraft.src;
 /* 107:131 */     for (Iterator<EnumDirection> it = EnumHorizontalVertical.HORIZONTAL.iterator(); it.hasNext();)
 /* 108:    */     {
 /* 109:131 */       EnumDirection dir = it.next();
-/* 110:132 */       BlockPosition localdt = paramdt1.offset(dir);
-/* 111:133 */       int i2 = (localdt.getX() != paramdt2.getX()) || (localdt.getZ() != paramdt2.getZ()) ? 1 : 0;
+/* 110:132 */       BlockPosition localdt = pos1.offset(dir);
+/* 111:133 */       int i2 = (localdt.getX() != pos2.getX()) || (localdt.getZ() != pos2.getZ()) ? 1 : 0;
 /* 112:135 */       if (i2 != 0) {
 /* 113:136 */         m = getPower(world, localdt, m);
 /* 114:    */       }
-/* 115:138 */       if ((world.getBlock(localdt).getProto().blocksMovement()) && (!world.getBlock(paramdt1.up()).getProto().blocksMovement()))
+/* 115:138 */       if ((world.getBlock(localdt).getType().blocksMovement()) && (!world.getBlock(pos1.up()).getType().blocksMovement()))
 /* 116:    */       {
-/* 117:139 */         if ((i2 != 0) && (paramdt1.getY() >= paramdt2.getY())) {
+/* 117:139 */         if ((i2 != 0) && (pos1.getY() >= pos2.getY())) {
 /* 118:140 */           m = getPower(world, localdt.up(), m);
 /* 119:    */         }
 /* 120:    */       }
-/* 121:142 */       else if ((!world.getBlock(localdt).getProto().blocksMovement()) && 
-/* 122:143 */         (i2 != 0) && (paramdt1.getY() <= paramdt2.getY())) {
+/* 121:142 */       else if ((!world.getBlock(localdt).getType().blocksMovement()) && 
+/* 122:143 */         (i2 != 0) && (pos1.getY() <= pos2.getY())) {
 /* 123:144 */         m = getPower(world, localdt.down(), m);
 /* 124:    */       }
 /* 125:    */     }
@@ -137,12 +137,12 @@ package net.minecraft.src;
 /* 136:160 */     if (powerValue != j)
 /* 137:    */     {
 /* 138:161 */       block = block.setData(power, Integer.valueOf(j));
-/* 139:163 */       if (world.getBlock(paramdt1) == block0) {
-/* 140:164 */         world.setBlock(paramdt1, block, 2);
+/* 139:163 */       if (world.getBlock(pos1) == block0) {
+/* 140:164 */         world.setBlock(pos1, block, 2);
 /* 141:    */       }
-/* 142:167 */       this.Q.add(paramdt1);
+/* 142:167 */       this.Q.add(pos1);
 /* 143:168 */       for (EnumDirection dir : EnumDirection.values()) {
-/* 144:169 */         this.Q.add(paramdt1.offset(dir));
+/* 144:169 */         this.Q.add(pos1.offset(dir));
 /* 145:    */       }
 /* 146:    */     }
 /* 147:173 */     return block;
@@ -150,7 +150,7 @@ package net.minecraft.src;
 /* 149:    */   
 /* 150:    */   private void d(World paramaqu, BlockPosition paramdt)
 /* 151:    */   {
-/* 152:177 */     if (paramaqu.getBlock(paramdt).getProto() != this) {
+/* 152:177 */     if (paramaqu.getBlock(paramdt).getType() != this) {
 /* 153:178 */       return;
 /* 154:    */     }
 /* 155:181 */     paramaqu.c(paramdt, this);
@@ -181,7 +181,7 @@ package net.minecraft.src;
 /* 179:    */     {
 /* 180:203 */       localej = localIterator.next();
 /* 181:204 */       BlockPosition localdt = paramdt.offset(localej);
-/* 182:206 */       if (paramaqu.getBlock(localdt).getProto().blocksMovement()) {
+/* 182:206 */       if (paramaqu.getBlock(localdt).getType().blocksMovement()) {
 /* 183:207 */         d(paramaqu, localdt.up());
 /* 184:    */       } else {
 /* 185:209 */         d(paramaqu, localdt.down());
@@ -210,7 +210,7 @@ package net.minecraft.src;
 /* 207:    */     {
 /* 208:230 */       localej1 = localIterator.next();
 /* 209:231 */       BlockPosition localdt = paramdt.offset(localej1);
-/* 210:233 */       if (paramaqu.getBlock(localdt).getProto().blocksMovement()) {
+/* 210:233 */       if (paramaqu.getBlock(localdt).getType().blocksMovement()) {
 /* 211:234 */         d(paramaqu, localdt.up());
 /* 212:    */       } else {
 /* 213:236 */         d(paramaqu, localdt.down());
@@ -220,7 +220,7 @@ package net.minecraft.src;
 /* 217:    */   
 /* 218:    */   private int getPower(World world, BlockPosition pos, int currentVal)
 /* 219:    */   {
-/* 220:242 */     if (world.getBlock(pos).getProto() != this) {
+/* 220:242 */     if (world.getBlock(pos).getType() != this) {
 /* 221:243 */       return currentVal;
 /* 222:    */     }
 /* 223:245 */     int i = ((Integer)world.getBlock(pos).getData(power)).intValue();
@@ -230,7 +230,7 @@ package net.minecraft.src;
 /* 227:249 */     return currentVal;
 /* 228:    */   }
 /* 229:    */   
-/* 230:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/* 230:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /* 231:    */   {
 /* 232:254 */     if (paramaqu.isClient) {
 /* 233:255 */       return;
@@ -251,20 +251,20 @@ package net.minecraft.src;
 /* 248:269 */     return ItemList.redstone;
 /* 249:    */   }
 /* 250:    */   
-/* 251:    */   public int b(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
+/* 251:    */   public int getStrongRedstoneSignal(IBlockAccess world, BlockPosition pos, Block block, EnumDirection dir)
 /* 252:    */   {
-/* 253:274 */     if (!this.P) {
+/* 253:274 */     if (!this.notUpdating) {
 /* 254:275 */       return 0;
 /* 255:    */     }
-/* 256:277 */     return a(paramard, paramdt, parambec, paramej);
+/* 256:277 */     return getRedStoneSignal(world, pos, block, dir);
 /* 257:    */   }
 /* 258:    */   
-/* 259:    */   public int a(IBlockAccess world, BlockPosition pos, Block parambec, EnumDirection dir)
+/* 259:    */   public int getRedStoneSignal(IBlockAccess world, BlockPosition pos, Block block, EnumDirection dir)
 /* 260:    */   {
-/* 261:282 */     if (!this.P) {
+/* 261:282 */     if (!this.notUpdating) {
 /* 262:283 */       return 0;
 /* 263:    */     }
-/* 264:286 */     int i = ((Integer)parambec.getData(power)).intValue();
+/* 264:286 */     int i = ((Integer)block.getData(power)).intValue();
 /* 265:287 */     if (i == 0) {
 /* 266:288 */       return 0;
 /* 267:    */     }
@@ -277,65 +277,65 @@ package net.minecraft.src;
 /* 274:298 */         localEnumSet.add(dir1);
 /* 275:    */       }
 /* 276:    */     }
-/* 277:302 */     if ((dir.k().c()) && (localEnumSet.isEmpty())) {
+/* 277:302 */     if ((dir.getAxis().isHorizontal()) && (localEnumSet.isEmpty())) {
 /* 278:303 */       return i;
 /* 279:    */     }
-/* 280:306 */     if ((localEnumSet.contains(dir)) && (!localEnumSet.contains(dir.ccw())) && (!localEnumSet.contains(dir.yRotate()))) {
+/* 280:306 */     if ((localEnumSet.contains(dir)) && (!localEnumSet.contains(dir.ccw())) && (!localEnumSet.contains(dir.cw()))) {
 /* 281:307 */       return i;
 /* 282:    */     }
 /* 283:310 */     return 0;
 /* 284:    */   }
 /* 285:    */   
-/* 286:    */   private boolean d(IBlockAccess paramard, BlockPosition paramdt, EnumDirection paramej)
+/* 286:    */   private boolean d(IBlockAccess world, BlockPosition pos, EnumDirection dir)
 /* 287:    */   {
-/* 288:314 */     BlockPosition localdt = paramdt.offset(paramej);
-/* 289:315 */     Block localbec = paramard.getBlock(localdt);
-/* 290:316 */     ProtoBlock localatr = localbec.getProto();
-/* 291:317 */     boolean bool1 = localatr.blocksMovement();
+/* 288:314 */     BlockPosition pos1 = pos.offset(dir);
+/* 289:315 */     Block block = world.getBlock(pos1);
+/* 290:316 */     BlockType type = block.getType();
+/* 291:317 */     boolean hasNextBlock = type.blocksMovement();
 /* 292:    */     
-/* 293:319 */     boolean bool2 = paramard.getBlock(paramdt.up()).getProto().blocksMovement();
-/* 294:320 */     if ((!bool2) && (bool1) && (e(paramard, localdt.up()))) {
+/* 293:319 */     boolean hasBlockUp = world.getBlock(pos.up()).getType().blocksMovement();
+/* 294:320 */     if ((!hasBlockUp) && (hasNextBlock) && (isWire(world, pos1.up()))) {
 /* 295:321 */       return true;
 /* 296:    */     }
-/* 297:323 */     if (a(localbec, paramej)) {
+/* 297:323 */     if (canLinkTo(block, dir)) {
 /* 298:324 */       return true;
 /* 299:    */     }
-/* 300:326 */     if ((localatr == BlockList.poweredRepeater) && (localbec.getData(ava.facing) == paramej)) {
+/* 300:326 */     if ((type == BlockList.poweredRepeater) && (block.getData(ava.facing) == dir)) {
 /* 301:327 */       return true;
 /* 302:    */     }
-/* 303:329 */     if ((!bool1) && (e(paramard, localdt.down()))) {
+/* 303:329 */     if ((!hasNextBlock) && (isWire(world, pos1.down()))) {
 /* 304:330 */       return true;
 /* 305:    */     }
 /* 306:333 */     return false;
 /* 307:    */   }
 /* 308:    */   
-/* 309:    */   protected static boolean e(IBlockAccess paramard, BlockPosition paramdt)
+/* 309:    */   protected static boolean isWire(IBlockAccess world, BlockPosition pos)
 /* 310:    */   {
-/* 311:337 */     return d(paramard.getBlock(paramdt));
+/* 311:337 */     return isWire(world.getBlock(pos));
 /* 312:    */   }
 /* 313:    */   
-/* 314:    */   protected static boolean d(Block parambec)
+/* 314:    */   protected static boolean isWire(Block block)
 /* 315:    */   {
-/* 316:341 */     return a(parambec, null);
+/* 316:341 */     return canLinkTo(block, null);
 /* 317:    */   }
 /* 318:    */   
-/* 319:    */   protected static boolean a(Block block, EnumDirection dir)
+/* 319:    */   protected static boolean canLinkTo(Block block, EnumDirection dir)
 /* 320:    */   {
-/* 321:345 */     ProtoBlock proto = block.getProto();
-/* 322:346 */     if (proto == BlockList.redstoneWire) {
+/* 321:345 */     BlockType type = block.getType();
+/* 322:346 */     if (type == BlockList.redstoneWire) {
 /* 323:347 */       return true;
 /* 324:    */     }
-/* 325:350 */     if (BlockList.unpoweredRepeater.e(proto))
+/* 325:350 */     if (BlockList.unpoweredRepeater.e(type))
 /* 326:    */     {
 /* 327:351 */       EnumDirection dir1 = (EnumDirection)block.getData(BlockRepeater.facing);
 /* 328:352 */       return (dir1 == dir) || (dir1.opposite() == dir);
 /* 329:    */     }
-/* 330:355 */     return (proto.protoBlock_g()) && (dir != null);
+/* 330:355 */     return (type.blockType_g()) && (dir != null);
 /* 331:    */   }
 /* 332:    */   
-/* 333:    */   public boolean protoBlock_g()
+/* 333:    */   public boolean blockType_g()
 /* 334:    */   {
-/* 335:360 */     return this.P;
+/* 335:360 */     return this.notUpdating;
 /* 336:    */   }
 /* 337:    */   
 /* 338:    */   private int b(int paramInt)

@@ -96,13 +96,13 @@ package net.minecraft.src;
 /*  96:123 */     cos localcos = new cos();
 /*  97:124 */     if (!localcja.W())
 /*  98:    */     {
-/* 130:    */       ProtoBlock localatr;
+/* 130:    */       BlockType localatr;
 /*  99:125 */       a += 1;
 /* 100:127 */       for (Iterator<dy> localObject2 = BlockPosition.b(localdt1, localdt2).iterator(); localObject2.hasNext();)
 /* 101:    */       {
 /* 102:127 */         dy localdy = localObject2.next();
 /* 103:128 */         Block localbec = localcja.getBlock(localdy);
-/* 104:129 */         localatr = localbec.getProto();
+/* 104:129 */         localatr = localbec.getType();
 /* 105:130 */         if (localatr.c()) {
 /* 106:131 */           localcos.a(localdy);
 /* 107:    */         }

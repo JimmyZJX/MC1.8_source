@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*   4:    */ import java.util.Map;
 /*   5:    */ import java.util.Random;
 /*   6:    */ 
-/*   7:    */ public class azw
+/*   7:    */ public class BlockRedstoneTorch
 /*   8:    */   extends bbl
 /*   9:    */ {
 /*  10: 24 */   private static Map<World,List<azx>> b = Maps.newHashMap();
@@ -35,7 +35,7 @@ package net.minecraft.src;
 /*  34: 58 */     return false;
 /*  35:    */   }
 /*  36:    */   
-/*  37:    */   protected azw(boolean paramBoolean)
+/*  37:    */   protected BlockRedstoneTorch(boolean paramBoolean)
 /*  38:    */   {
 /*  39: 62 */     this.M = paramBoolean;
 /*  40: 63 */     a(true);
@@ -65,7 +65,7 @@ package net.minecraft.src;
 /*  64:    */     }
 /*  65:    */   }
 /*  66:    */   
-/*  67:    */   public int a(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
+/*  67:    */   public int getRedStoneSignal(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
 /*  68:    */   {
 /*  69: 92 */     if ((this.M) && (parambec.getData(a) != paramej)) {
 /*  70: 93 */       return 15;
@@ -107,7 +107,7 @@ package net.minecraft.src;
 /* 106:    */             
 /* 107:130 */             paramaqu.a(EnumParticleEffect.l, d1, d2, d3, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 108:    */           }
-/* 109:133 */           paramaqu.a(paramdt, paramaqu.getBlock(paramdt).getProto(), 160);
+/* 109:133 */           paramaqu.a(paramdt, paramaqu.getBlock(paramdt).getType(), 160);
 /* 110:    */         }
 /* 111:    */       }
 /* 112:    */     }
@@ -117,7 +117,7 @@ package net.minecraft.src;
 /* 116:    */     }
 /* 117:    */   }
 /* 118:    */   
-/* 119:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/* 119:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /* 120:    */   {
 /* 121:147 */     if (e(paramaqu, paramdt, parambec)) {
 /* 122:148 */       return;
@@ -127,20 +127,20 @@ package net.minecraft.src;
 /* 126:    */     }
 /* 127:    */   }
 /* 128:    */   
-/* 129:    */   public int b(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
+/* 129:    */   public int getStrongRedstoneSignal(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
 /* 130:    */   {
 /* 131:158 */     if (paramej == EnumDirection.DOWN) {
-/* 132:159 */       return a(paramard, paramdt, parambec, paramej);
+/* 132:159 */       return getRedStoneSignal(paramard, paramdt, parambec, paramej);
 /* 133:    */     }
 /* 134:161 */     return 0;
 /* 135:    */   }
 /* 136:    */   
 /* 137:    */   public Item a(Block parambec, Random paramRandom, int paramInt)
 /* 138:    */   {
-/* 139:167 */     return Item.fromProtoBlock(BlockList.aF);
+/* 139:167 */     return Item.fromBlock(BlockList.aF);
 /* 140:    */   }
 /* 141:    */   
-/* 142:    */   public boolean protoBlock_g()
+/* 142:    */   public boolean blockType_g()
 /* 143:    */   {
 /* 144:172 */     return true;
 /* 145:    */   }
@@ -155,7 +155,7 @@ package net.minecraft.src;
 /* 154:182 */     double d3 = paramdt.getZ() + 0.5F + (paramRandom.nextFloat() - 0.5F) * 0.2D;
 /* 155:    */     
 /* 156:184 */     EnumDirection localej1 = (EnumDirection)parambec.getData(a);
-/* 157:185 */     if (localej1.k().c())
+/* 157:185 */     if (localej1.getAxis().isHorizontal())
 /* 158:    */     {
 /* 159:186 */       EnumDirection localej2 = localej1.opposite();
 /* 160:    */       
@@ -170,10 +170,10 @@ package net.minecraft.src;
 /* 169:    */   
 /* 170:    */   public Item b(World paramaqu, BlockPosition paramdt)
 /* 171:    */   {
-/* 172:199 */     return Item.fromProtoBlock(BlockList.aF);
+/* 172:199 */     return Item.fromBlock(BlockList.aF);
 /* 173:    */   }
 /* 174:    */   
-/* 175:    */   public boolean b(ProtoBlock paramatr)
+/* 175:    */   public boolean b(BlockType paramatr)
 /* 176:    */   {
 /* 177:204 */     return (paramatr == BlockList.aE) || (paramatr == BlockList.aF);
 /* 178:    */   }

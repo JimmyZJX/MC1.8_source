@@ -110,24 +110,24 @@ package net.minecraft.src;
 /* 109:141 */             if ((n != 0) || (i1 != 0)) {
 /* 110:145 */               if ((this.i.isEmpty(this.j.offset(i1, 0, n))) && (this.i.isEmpty(this.j.offset(i1, 1, n))))
 /* 111:    */               {
-/* 112:146 */                 if (this.i.getBlock(this.j.offset(i1 * 2, 0, n * 2)).getProto() == BlockList.bookshelf) {
+/* 112:146 */                 if (this.i.getBlock(this.j.offset(i1 * 2, 0, n * 2)).getType() == BlockList.bookshelf) {
 /* 113:147 */                   m++;
 /* 114:    */                 }
-/* 115:149 */                 if (this.i.getBlock(this.j.offset(i1 * 2, 1, n * 2)).getProto() == BlockList.bookshelf) {
+/* 115:149 */                 if (this.i.getBlock(this.j.offset(i1 * 2, 1, n * 2)).getType() == BlockList.bookshelf) {
 /* 116:150 */                   m++;
 /* 117:    */                 }
 /* 118:153 */                 if ((i1 != 0) && (n != 0))
 /* 119:    */                 {
-/* 120:154 */                   if (this.i.getBlock(this.j.offset(i1 * 2, 0, n)).getProto() == BlockList.bookshelf) {
+/* 120:154 */                   if (this.i.getBlock(this.j.offset(i1 * 2, 0, n)).getType() == BlockList.bookshelf) {
 /* 121:155 */                     m++;
 /* 122:    */                   }
-/* 123:157 */                   if (this.i.getBlock(this.j.offset(i1 * 2, 1, n)).getProto() == BlockList.bookshelf) {
+/* 123:157 */                   if (this.i.getBlock(this.j.offset(i1 * 2, 1, n)).getType() == BlockList.bookshelf) {
 /* 124:158 */                     m++;
 /* 125:    */                   }
-/* 126:160 */                   if (this.i.getBlock(this.j.offset(i1, 0, n * 2)).getProto() == BlockList.bookshelf) {
+/* 126:160 */                   if (this.i.getBlock(this.j.offset(i1, 0, n * 2)).getType() == BlockList.bookshelf) {
 /* 127:161 */                     m++;
 /* 128:    */                   }
-/* 129:163 */                   if (this.i.getBlock(this.j.offset(i1, 1, n * 2)).getProto() == BlockList.bookshelf) {
+/* 129:163 */                   if (this.i.getBlock(this.j.offset(i1, 1, n * 2)).getType() == BlockList.bookshelf) {
 /* 130:164 */                     m++;
 /* 131:    */                   }
 /* 132:    */                 }
@@ -244,7 +244,7 @@ package net.minecraft.src;
 /* 243:    */   
 /* 244:    */   public boolean a(EntityPlayer paramahd)
 /* 245:    */   {
-/* 246:280 */     if (this.i.getBlock(this.j).getProto() != BlockList.bC) {
+/* 246:280 */     if (this.i.getBlock(this.j).getType() != BlockList.bC) {
 /* 247:281 */       return false;
 /* 248:    */     }
 /* 249:283 */     if (paramahd.dist2(this.j.getX() + 0.5D, this.j.getY() + 0.5D, this.j.getZ() + 0.5D) > 64.0D) {

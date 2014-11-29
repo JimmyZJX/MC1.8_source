@@ -105,7 +105,7 @@ package net.minecraft.src;
 /* 104:    */   {
 /* 105:154 */     super.h();
 /* 106:    */     
-/* 107:156 */     this.ac.a(18, Byte.valueOf((byte)0));
+/* 107:156 */     this.data.addData(18, Byte.valueOf((byte)0));
 /* 108:    */   }
 /* 109:    */   
 /* 110:159 */   private EntityPlayer bt = null;
@@ -127,7 +127,7 @@ package net.minecraft.src;
 /* 126:177 */         this.bs = 0;
 /* 127:    */       }
 /* 128:    */     }
-/* 129:181 */     if (this.C)
+/* 129:181 */     if (this.landing)
 /* 130:    */     {
 /* 131:182 */       if (!this.bp)
 /* 132:    */       {
@@ -163,7 +163,7 @@ package net.minecraft.src;
 /* 162:209 */         cr();
 /* 163:    */       }
 /* 164:    */     }
-/* 165:213 */     this.bp = this.C;
+/* 165:213 */     this.bp = this.landing;
 /* 166:    */   }
 /* 167:    */   
 /* 168:    */   public void Y() {}
@@ -258,9 +258,9 @@ package net.minecraft.src;
 /* 257:299 */     if (cl() == 99)
 /* 258:    */     {
 /* 259:300 */       a("mob.attack", 1.0F, (this.rng.nextFloat() - this.rng.nextFloat()) * 0.2F + 1.0F);
-/* 260:301 */       return paramwv.a(DamageSource.fromMob(this), 8.0F);
+/* 260:301 */       return paramwv.receiveDamage(DamageSource.fromMob(this), 8.0F);
 /* 261:    */     }
-/* 262:303 */     return paramwv.a(DamageSource.fromMob(this), 3.0F);
+/* 262:303 */     return paramwv.receiveDamage(DamageSource.fromMob(this), 3.0F);
 /* 263:    */   }
 /* 264:    */   
 /* 265:    */   public int getArmorValue()
@@ -271,12 +271,12 @@ package net.minecraft.src;
 /* 270:311 */     return super.getArmorValue();
 /* 271:    */   }
 /* 272:    */   
-/* 273:    */   public boolean a(DamageSource paramwh, float paramFloat)
+/* 273:    */   public boolean receiveDamage(DamageSource paramwh, float paramFloat)
 /* 274:    */   {
 /* 275:316 */     if (isImmuneTo(paramwh)) {
 /* 276:317 */       return false;
 /* 277:    */     }
-/* 278:319 */     return super.a(paramwh, paramFloat);
+/* 278:319 */     return super.receiveDamage(paramwh, paramFloat);
 /* 279:    */   }
 /* 280:    */   
 /* 281:    */   protected void bp()
@@ -302,7 +302,7 @@ package net.minecraft.src;
 /* 301:    */   
 /* 302:    */   private boolean a(Item paramalq)
 /* 303:    */   {
-/* 304:347 */     return (paramalq == ItemList.carrot) || (paramalq == ItemList.bW) || (paramalq == Item.fromProtoBlock(BlockList.yellowFlower));
+/* 304:347 */     return (paramalq == ItemList.carrot) || (paramalq == ItemList.bW) || (paramalq == Item.fromBlock(BlockList.yellowFlower));
 /* 305:    */   }
 /* 306:    */   
 /* 307:    */   public EntityRabbit b(EntityPassiveMob paramws)
@@ -321,7 +321,7 @@ package net.minecraft.src;
 /* 320:    */   
 /* 321:    */   public int cl()
 /* 322:    */   {
-/* 323:365 */     return this.ac.a(18);
+/* 323:365 */     return this.data.getByte(18);
 /* 324:    */   }
 /* 325:    */   
 /* 326:    */   public void r(int paramInt)
@@ -337,7 +337,7 @@ package net.minecraft.src;
 /* 336:377 */         a(fi.a("entity.KillerBunny.name"));
 /* 337:    */       }
 /* 338:    */     }
-/* 339:381 */     this.ac.b(18, Byte.valueOf((byte)paramInt));
+/* 339:381 */     this.data.b(18, Byte.valueOf((byte)paramInt));
 /* 340:    */   }
 /* 341:    */   
 /* 342:    */   public xq beforeSpawn(vu paramvu, xq paramxq)
@@ -374,7 +374,7 @@ package net.minecraft.src;
 /* 373:    */   
 /* 374:    */   protected void cn()
 /* 375:    */   {
-/* 376:425 */     this.world.a(EnumParticleEffect.M, this.xPos + this.rng.nextFloat() * this.width * 2.0F - this.width, this.yPos + 0.5D + this.rng.nextFloat() * this.height, this.zPos + this.rng.nextFloat() * this.width * 2.0F - this.width, 0.0D, 0.0D, 0.0D, new int[] { ProtoBlock.f(BlockList.cb.instance(7)) });
+/* 376:425 */     this.world.a(EnumParticleEffect.M, this.xPos + this.rng.nextFloat() * this.width * 2.0F - this.width, this.yPos + 0.5D + this.rng.nextFloat() * this.height, this.zPos + this.rng.nextFloat() * this.width * 2.0F - this.width, 0.0D, 0.0D, 0.0D, new int[] { BlockType.f(BlockList.cb.instance(7)) });
 /* 377:426 */     this.bs = 100;
 /* 378:    */   }
 /* 379:    */   

@@ -32,7 +32,7 @@ package net.minecraft.src;
 /* 31:32 */     this.xVelocity *= 0.8999999761581421D;
 /* 32:33 */     this.yVelocity *= 0.8999999761581421D;
 /* 33:34 */     this.zVelocity *= 0.8999999761581421D;
-/* 34:36 */     if (this.C)
+/* 34:36 */     if (this.landing)
 /* 35:   */     {
 /* 36:37 */       this.xVelocity *= 0.699999988079071D;
 /* 37:38 */       this.zVelocity *= 0.699999988079071D;

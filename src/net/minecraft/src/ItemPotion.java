@@ -76,7 +76,7 @@ package net.minecraft.src;
 /*  80: 94 */       if (paramamj.stackSize <= 0) {
 /*  81: 95 */         return new ItemStack(ItemList.bA);
 /*  82:    */       }
-/*  83: 97 */       paramahd.bg.a(new ItemStack(ItemList.bA));
+/*  83: 97 */       paramahd.inventory.a(new ItemStack(ItemList.bA));
 /*  84:    */     }
 /*  85:101 */     return paramamj;
 /*  86:    */   }

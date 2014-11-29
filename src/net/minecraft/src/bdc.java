@@ -242,7 +242,7 @@ package net.minecraft.src;
 /* 241:281 */     } else if (this.h[2].getItem() == localamj.getItem()) {
 /* 242:282 */       this.h[2].stackSize += 1;
 /* 243:    */     }
-/* 244:285 */     if ((this.h[0].getItem() == Item.fromProtoBlock(BlockList.v)) && (this.h[0].getDamage2() == 1) && (this.h[1] != null) && (this.h[1].getItem() == ItemList.aw)) {
+/* 244:285 */     if ((this.h[0].getItem() == Item.fromBlock(BlockList.v)) && (this.h[0].getDamage2() == 1) && (this.h[1] != null) && (this.h[1].getItem() == ItemList.aw)) {
 /* 245:286 */       this.h[1] = new ItemStack(ItemList.ax);
 /* 246:    */     }
 /* 247:289 */     this.h[0].stackSize -= 1;
@@ -257,9 +257,9 @@ package net.minecraft.src;
 /* 256:297 */       return 0;
 /* 257:    */     }
 /* 258:299 */     Item localalq = paramamj.getItem();
-/* 259:302 */     if (((localalq instanceof aju)) && (ProtoBlock.a(localalq) != BlockList.air))
+/* 259:302 */     if (((localalq instanceof aju)) && (BlockType.a(localalq) != BlockList.air))
 /* 260:    */     {
-/* 261:303 */       ProtoBlock localatr = ProtoBlock.a(localalq);
+/* 261:303 */       BlockType localatr = BlockType.a(localalq);
 /* 262:305 */       if (localatr == BlockList.bM) {
 /* 263:306 */         return 150;
 /* 264:    */       }
@@ -288,7 +288,7 @@ package net.minecraft.src;
 /* 287:334 */     if (localalq == ItemList.ay) {
 /* 288:335 */       return 20000;
 /* 289:    */     }
-/* 290:338 */     if (localalq == Item.fromProtoBlock(BlockList.sapling)) {
+/* 290:338 */     if (localalq == Item.fromBlock(BlockList.sapling)) {
 /* 291:339 */       return 100;
 /* 292:    */     }
 /* 293:342 */     if (localalq == ItemList.blazeRod) {

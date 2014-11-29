@@ -20,11 +20,11 @@ package net.minecraft.src;
 /* 19:   */ {
 /* 20:16 */   private static final Joiner a = Joiner.on(", ");
 /* 21:17 */   private static final Function b = new bee();
-/* 22:   */   private final ProtoBlock c;
+/* 22:   */   private final BlockType c;
 /* 23:   */   private final ImmutableList<IBlockData> d;
 /* 24:   */   private final ImmutableList<beg> e;
 /* 25:   */   
-/* 26:   */   public bed(ProtoBlock paramatr, IBlockData... paramVarArgs)
+/* 26:   */   public bed(BlockType paramatr, IBlockData... paramVarArgs)
 /* 27:   */   {
 /* 28:30 */     this.c = paramatr;
 /* 29:   */     
@@ -79,7 +79,7 @@ package net.minecraft.src;
 /* 78:75 */     return (Block)this.e.get(0);
 /* 79:   */   }
 /* 80:   */   
-/* 81:   */   public ProtoBlock c()
+/* 81:   */   public BlockType c()
 /* 82:   */   {
 /* 83:79 */     return this.c;
 /* 84:   */   }
@@ -91,7 +91,7 @@ package net.minecraft.src;
 /* 90:   */   
 /* 91:   */   public String toString()
 /* 92:   */   {
-/* 93:88 */     return Objects.toStringHelper(this).add("block", ProtoBlock.c.c(this.c)).add("properties", Iterables.transform(this.d, b)).toString();
+/* 93:88 */     return Objects.toStringHelper(this).add("block", BlockType.c.c(this.c)).add("properties", Iterables.transform(this.d, b)).toString();
 /* 94:   */   }
 /* 95:   */ }
 

@@ -1,6 +1,6 @@
 package net.minecraft.src;
 /*   1:    */ public class bbp
-/*   2:    */   extends ProtoBlock
+/*   2:    */   extends BlockType
 /*   3:    */ {
 /*   4: 25 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", EnumHorizontalVertical.HORIZONTAL);
 /*   5: 26 */   public static final BlockDataBoolean b = BlockDataBoolean.getInstance("open");
@@ -56,7 +56,7 @@ package net.minecraft.src;
 /*  55:    */   
 /*  56:    */   public void d(Block parambec)
 /*  57:    */   {
-/*  58: 78 */     if (parambec.getProto() != this) {
+/*  58: 78 */     if (parambec.getType() != this) {
 /*  59: 79 */       return;
 /*  60:    */     }
 /*  61: 81 */     int i = parambec.getData(M) == bbr.a ? 1 : 0;
@@ -98,20 +98,20 @@ package net.minecraft.src;
 /*  97:118 */     return true;
 /*  98:    */   }
 /*  99:    */   
-/* 100:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/* 100:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /* 101:    */   {
 /* 102:123 */     if (paramaqu.isClient) {
 /* 103:124 */       return;
 /* 104:    */     }
 /* 105:127 */     BlockPosition localdt = paramdt.offset(((EnumDirection)parambec.getData(a)).opposite());
-/* 106:129 */     if (!c(paramaqu.getBlock(localdt).getProto()))
+/* 106:129 */     if (!c(paramaqu.getBlock(localdt).getType()))
 /* 107:    */     {
 /* 108:130 */       paramaqu.g(paramdt);
 /* 109:131 */       b(paramaqu, paramdt, parambec, 0);
 /* 110:132 */       return;
 /* 111:    */     }
 /* 112:135 */     boolean bool1 = paramaqu.z(paramdt);
-/* 113:136 */     if ((bool1) || (paramatr.protoBlock_g()))
+/* 113:136 */     if ((bool1) || (paramatr.blockType_g()))
 /* 114:    */     {
 /* 115:137 */       boolean bool2 = ((Boolean)parambec.getData(b)).booleanValue();
 /* 116:139 */       if (bool2 != bool1)
@@ -131,7 +131,7 @@ package net.minecraft.src;
 /* 130:    */   public Block a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3, int paramInt, EntityLiving paramxm)
 /* 131:    */   {
 /* 132:154 */     Block localbec = instance();
-/* 133:155 */     if (paramej.k().c())
+/* 133:155 */     if (paramej.getAxis().isHorizontal())
 /* 134:    */     {
 /* 135:156 */       localbec = localbec.setData(a, paramej).setData(b, Boolean.valueOf(false));
 /* 136:157 */       localbec = localbec.setData(M, paramFloat2 > 0.5F ? bbr.a : bbr.b);
@@ -141,7 +141,7 @@ package net.minecraft.src;
 /* 140:    */   
 /* 141:    */   public boolean a(World paramaqu, BlockPosition paramdt, EnumDirection paramej)
 /* 142:    */   {
-/* 143:164 */     return (!paramej.k().b()) && (c(paramaqu.getBlock(paramdt.offset(paramej.opposite())).getProto()));
+/* 143:164 */     return (!paramej.getAxis().isVertical()) && (c(paramaqu.getBlock(paramdt.offset(paramej.opposite())).getType()));
 /* 144:    */   }
 /* 145:    */   
 /* 146:    */   protected static EnumDirection b(int paramInt)
@@ -172,7 +172,7 @@ package net.minecraft.src;
 /* 171:191 */     return 3;
 /* 172:    */   }
 /* 173:    */   
-/* 174:    */   private static boolean c(ProtoBlock paramatr)
+/* 174:    */   private static boolean c(BlockType paramatr)
 /* 175:    */   {
 /* 176:196 */     return ((paramatr.material.isOpaque()) && (paramatr.isOpaqueCube())) || (paramatr == BlockList.glowstone) || ((paramatr instanceof BlockSlab)) || ((paramatr instanceof BlockStairs));
 /* 177:    */   }

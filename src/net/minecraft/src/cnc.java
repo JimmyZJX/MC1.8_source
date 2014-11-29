@@ -28,7 +28,7 @@ package net.minecraft.src;
 /* 27:32 */     return localStringBuilder.toString();
 /* 28:   */   }
 /* 29:   */   
-/* 30:   */   public Map<Block,cxl> a(ProtoBlock paramatr)
+/* 30:   */   public Map<Block,cxl> a(BlockType paramatr)
 /* 31:   */   {
 /* 32:37 */     for (Block localbec : paramatr.O().a()) {
 /* 33:38 */       this.b.put(localbec, a(localbec));

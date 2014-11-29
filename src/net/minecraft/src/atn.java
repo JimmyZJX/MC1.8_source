@@ -16,7 +16,7 @@ package net.minecraft.src;
 /* 13:   */         break;
 /* 14:   */       }
 /* 15:94 */       Block localbec = this.a.getBlock(localdt);
-/* 16:95 */       if (localbec.getProto() == BlockList.bY) {
+/* 16:95 */       if (localbec.getType() == BlockList.bY) {
 /* 17:96 */         ((WorldServer)this.a).a(new ato(this, localdt));
 /* 18:   */       }
 /* 19:   */     }

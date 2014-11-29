@@ -146,7 +146,7 @@ package net.minecraft.src;
 /*  145:     */     }
 /*  146: 190 */     else if (paramil.j() == 1)
 /*  147:     */     {
-/*  148: 191 */       localObject1 = new adu(this.g, d1, d2, d3);
+/*  148: 191 */       localObject1 = new EntityBoat(this.g, d1, d2, d3);
 /*  149:     */     }
 /*  150: 192 */     else if (paramil.j() == 50)
 /*  151:     */     {
@@ -166,7 +166,7 @@ package net.minecraft.src;
 /*  165:     */     }
 /*  166: 200 */     else if (paramil.j() == 70)
 /*  167:     */     {
-/*  168: 201 */       localObject1 = new adv(this.g, d1, d2, d3, ProtoBlock.d(paramil.k() & 0xFFFF));
+/*  168: 201 */       localObject1 = new adv(this.g, d1, d2, d3, BlockType.d(paramil.k() & 0xFFFF));
 /*  169: 202 */       paramil.g(0);
 /*  170:     */     }
 /*  171: 205 */     if (localObject1 != null)
@@ -276,9 +276,9 @@ package net.minecraft.src;
 /*  275:     */     
 /*  276: 306 */     int m = paramiq.i();
 /*  277: 307 */     if (m == 0) {
-/*  278: 308 */       localcip.bg.items[localcip.bg.c] = null;
+/*  278: 308 */       localcip.inventory.items[localcip.inventory.c] = null;
 /*  279:     */     } else {
-/*  280: 310 */       localcip.bg.items[localcip.bg.c] = new ItemStack(Item.b(m), 1, 0);
+/*  280: 310 */       localcip.inventory.items[localcip.inventory.c] = new ItemStack(Item.b(m), 1, 0);
 /*  281:     */     }
 /*  282: 312 */     localcip.a(d1, d2, d3, f1, f2);
 /*  283: 313 */     this.g.a(paramiq.b(), localcip);
@@ -309,14 +309,14 @@ package net.minecraft.src;
 /*  308:     */     } else {
 /*  309: 339 */       localwv.a(localwv.xPos, localwv.yPos, localwv.zPos, f1, f2, 3, true);
 /*  310:     */     }
-/*  311: 341 */     localwv.C = paramlo.g();
+/*  311: 341 */     localwv.landing = paramlo.g();
 /*  312:     */   }
 /*  313:     */   
 /*  314:     */   public void a(kv paramkv)
 /*  315:     */   {
 /*  316: 346 */     ig.a(paramkv, this, this.f);
 /*  317: 347 */     if ((paramkv.a() >= 0) && (paramkv.a() < Inventory.i())) {
-/*  318: 348 */       this.f.h.bg.c = paramkv.a();
+/*  318: 348 */       this.f.h.inventory.c = paramkv.a();
 /*  319:     */     }
 /*  320:     */   }
 /*  321:     */   
@@ -336,7 +336,7 @@ package net.minecraft.src;
 /*  335: 365 */     float f1 = paramjy.f() ? paramjy.d() * 360 / 256.0F : localwv.yaw;
 /*  336: 366 */     float f2 = paramjy.f() ? paramjy.e() * 360 / 256.0F : localwv.pitch;
 /*  337: 367 */     localwv.a(d1, d2, d3, f1, f2, 3, false);
-/*  338: 368 */     localwv.C = paramjy.g();
+/*  338: 368 */     localwv.landing = paramjy.g();
 /*  339:     */   }
 /*  340:     */   
 /*  341:     */   public void a(kq paramkq)
@@ -563,7 +563,7 @@ package net.minecraft.src;
 /*  562: 588 */     localxm.zVelocity = (paramio.i() / 8000.0F);
 /*  563: 589 */     this.g.a(paramio.b(), localxm);
 /*  564:     */     
-/*  565: 591 */     List<xw> localList = paramio.a();
+/*  565: 591 */     List<EntityDataEntry> localList = paramio.a();
 /*  566: 592 */     if (localList != null) {
 /*  567: 593 */       localxm.H().a(localList);
 /*  568:     */     }
@@ -594,14 +594,14 @@ package net.minecraft.src;
 /*  593: 619 */       if (paramky.b() == this.f.h.getID())
 /*  594:     */       {
 /*  595: 620 */         localObject = this.f.h;
-/*  596: 622 */         if ((localwv instanceof adu)) {
-/*  597: 623 */           ((adu)localwv).a(false);
+/*  596: 622 */         if ((localwv instanceof EntityBoat)) {
+/*  597: 623 */           ((EntityBoat)localwv).a(false);
 /*  598:     */         }
 /*  599: 626 */         m = (((Entity)localObject).vehicle == null) && (localwv != null) ? 1 : 0;
 /*  600:     */       }
-/*  601: 627 */       else if ((localwv instanceof adu))
+/*  601: 627 */       else if ((localwv instanceof EntityBoat))
 /*  602:     */       {
-/*  603: 628 */         ((adu)localwv).a(true);
+/*  603: 628 */         ((EntityBoat)localwv).a(true);
 /*  604:     */       }
 /*  605: 631 */       if (localObject == null) {
 /*  606: 632 */         return;
@@ -725,7 +725,7 @@ package net.minecraft.src;
 /*  724: 739 */     cio localcio = this.f.h;
 /*  725: 740 */     if (paramjh.a() == -1)
 /*  726:     */     {
-/*  727: 741 */       localcio.bg.b(paramjh.c());
+/*  727: 741 */       localcio.inventory.b(paramjh.c());
 /*  728:     */     }
 /*  729:     */     else
 /*  730:     */     {

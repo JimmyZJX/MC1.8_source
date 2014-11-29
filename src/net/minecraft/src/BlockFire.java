@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*   3:    */ import java.util.Random;
 /*   4:    */ 
 /*   5:    */ public class BlockFire
-/*   6:    */   extends ProtoBlock
+/*   6:    */   extends BlockType
 /*   7:    */ {
 /*   8: 25 */   public static final BlockDataInteger age = BlockDataInteger.getInstance("age", 0, 15);
 /*   9: 26 */   public static final BlockDataBoolean flip = BlockDataBoolean.getInstance("flip");
@@ -82,7 +82,7 @@ package net.minecraft.src;
 /*  81:116 */     BlockList.fire.a(BlockList.cy, 60, 20);
 /*  82:    */   }
 /*  83:    */   
-/*  84:    */   public void a(ProtoBlock paramatr, int paramInt1, int paramInt2)
+/*  84:    */   public void a(BlockType paramatr, int paramInt1, int paramInt2)
 /*  85:    */   {
 /*  86:120 */     this.S.put(paramatr, Integer.valueOf(paramInt1));
 /*  87:121 */     this.T.put(paramatr, Integer.valueOf(paramInt2));
@@ -121,7 +121,7 @@ package net.minecraft.src;
 /* 120:156 */     if (!c(paramaqu, paramdt)) {
 /* 121:157 */       paramaqu.g(paramdt);
 /* 122:    */     }
-/* 123:160 */     ProtoBlock localatr = paramaqu.getBlock(paramdt.down()).getProto();
+/* 123:160 */     BlockType localatr = paramaqu.getBlock(paramdt.down()).getType();
 /* 124:161 */     int i = localatr == BlockList.netherrack ? 1 : 0;
 /* 125:162 */     if (((paramaqu.t instanceof bgh)) && (localatr == BlockList.bedrock)) {
 /* 126:163 */       i = 1;
@@ -207,13 +207,13 @@ package net.minecraft.src;
 /* 206:249 */     return false;
 /* 207:    */   }
 /* 208:    */   
-/* 209:    */   private int c(ProtoBlock paramatr)
+/* 209:    */   private int c(BlockType paramatr)
 /* 210:    */   {
 /* 211:253 */     Integer localInteger = (Integer)this.T.get(paramatr);
 /* 212:254 */     return localInteger == null ? 0 : localInteger.intValue();
 /* 213:    */   }
 /* 214:    */   
-/* 215:    */   private int d(ProtoBlock paramatr)
+/* 215:    */   private int d(BlockType paramatr)
 /* 216:    */   {
 /* 217:258 */     Integer localInteger = (Integer)this.S.get(paramatr);
 /* 218:259 */     return localInteger == null ? 0 : localInteger.intValue();
@@ -221,7 +221,7 @@ package net.minecraft.src;
 /* 220:    */   
 /* 221:    */   private void a(World paramaqu, BlockPosition paramdt, int paramInt1, Random paramRandom, int paramInt2)
 /* 222:    */   {
-/* 223:263 */     int i = c(paramaqu.getBlock(paramdt).getProto());
+/* 223:263 */     int i = c(paramaqu.getBlock(paramdt).getType());
 /* 224:264 */     if (paramRandom.nextInt(paramInt1) < i)
 /* 225:    */     {
 /* 226:265 */       Block localbec = paramaqu.getBlock(paramdt);
@@ -237,7 +237,7 @@ package net.minecraft.src;
 /* 236:    */       {
 /* 237:274 */         paramaqu.g(paramdt);
 /* 238:    */       }
-/* 239:277 */       if (localbec.getProto() == BlockList.W) {
+/* 239:277 */       if (localbec.getType() == BlockList.W) {
 /* 240:278 */         BlockList.W.d(paramaqu, paramdt, localbec.setData(bbk.a, Boolean.valueOf(true)));
 /* 241:    */       }
 /* 242:    */     }
@@ -260,7 +260,7 @@ package net.minecraft.src;
 /* 259:    */     }
 /* 260:298 */     int i = 0;
 /* 261:299 */     for (EnumDirection localej : EnumDirection.values()) {
-/* 262:300 */       i = Math.max(d(paramaqu.getBlock(paramdt.offset(localej)).getProto()), i);
+/* 262:300 */       i = Math.max(d(paramaqu.getBlock(paramdt.offset(localej)).getType()), i);
 /* 263:    */     }
 /* 264:303 */     return i;
 /* 265:    */   }
@@ -272,7 +272,7 @@ package net.minecraft.src;
 /* 271:    */   
 /* 272:    */   public boolean e(IBlockAccess paramard, BlockPosition paramdt)
 /* 273:    */   {
-/* 274:312 */     return d(paramard.getBlock(paramdt).getProto()) > 0;
+/* 274:312 */     return d(paramard.getBlock(paramdt).getType()) > 0;
 /* 275:    */   }
 /* 276:    */   
 /* 277:    */   public boolean c(World paramaqu, BlockPosition paramdt)
@@ -280,7 +280,7 @@ package net.minecraft.src;
 /* 279:317 */     return (World.isFlatSurface(paramaqu, paramdt.down())) || (e(paramaqu, paramdt));
 /* 280:    */   }
 /* 281:    */   
-/* 282:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/* 282:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /* 283:    */   {
 /* 284:322 */     if ((!World.isFlatSurface(paramaqu, paramdt.down())) && (!e(paramaqu, paramdt))) {
 /* 285:323 */       paramaqu.g(paramdt);

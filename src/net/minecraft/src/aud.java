@@ -3,7 +3,7 @@ package net.minecraft.src;
 /*   2:    */ import java.util.Random;
 /*   3:    */ 
 /*   4:    */ public abstract class aud
-/*   5:    */   extends ProtoBlock
+/*   5:    */   extends BlockType
 /*   6:    */ {
 /*   7: 25 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing");
 /*   8: 26 */   public static final BlockDataBoolean b = BlockDataBoolean.getInstance("powered");
@@ -40,13 +40,13 @@ package net.minecraft.src;
 /*  39:    */   
 /*  40:    */   public boolean a(World paramaqu, BlockPosition paramdt, EnumDirection paramej)
 /*  41:    */   {
-/*  42: 61 */     return paramaqu.getBlock(paramdt.offset(paramej.opposite())).getProto().blocksMovement();
+/*  42: 61 */     return paramaqu.getBlock(paramdt.offset(paramej.opposite())).getType().blocksMovement();
 /*  43:    */   }
 /*  44:    */   
 /*  45:    */   public boolean c(World paramaqu, BlockPosition paramdt)
 /*  46:    */   {
 /*  47: 66 */     for (EnumDirection localej : EnumDirection.values()) {
-/*  48: 67 */       if (paramaqu.getBlock(paramdt.offset(localej)).getProto().blocksMovement()) {
+/*  48: 67 */       if (paramaqu.getBlock(paramdt.offset(localej)).getType().blocksMovement()) {
 /*  49: 68 */         return true;
 /*  50:    */       }
 /*  51:    */     }
@@ -55,18 +55,18 @@ package net.minecraft.src;
 /*  54:    */   
 /*  55:    */   public Block a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3, int paramInt, EntityLiving paramxm)
 /*  56:    */   {
-/*  57: 76 */     if (paramaqu.getBlock(paramdt.offset(paramej.opposite())).getProto().blocksMovement()) {
+/*  57: 76 */     if (paramaqu.getBlock(paramdt.offset(paramej.opposite())).getType().blocksMovement()) {
 /*  58: 77 */       return instance().setData(a, paramej).setData(b, Boolean.valueOf(false));
 /*  59:    */     }
 /*  60: 79 */     return instance().setData(a, EnumDirection.DOWN).setData(b, Boolean.valueOf(false));
 /*  61:    */   }
 /*  62:    */   
-/*  63:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/*  63:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /*  64:    */   {
 /*  65: 85 */     if (e(paramaqu, paramdt, parambec))
 /*  66:    */     {
 /*  67: 86 */       EnumDirection localej = (EnumDirection)parambec.getData(a);
-/*  68: 88 */       if (!paramaqu.getBlock(paramdt.offset(localej.opposite())).getProto().blocksMovement())
+/*  68: 88 */       if (!paramaqu.getBlock(paramdt.offset(localej.opposite())).getType().blocksMovement())
 /*  69:    */       {
 /*  70: 89 */         b(paramaqu, paramdt, parambec, 0);
 /*  71: 90 */         paramaqu.g(paramdt);
@@ -147,12 +147,12 @@ package net.minecraft.src;
 /* 146:164 */     super.b(paramaqu, paramdt, parambec);
 /* 147:    */   }
 /* 148:    */   
-/* 149:    */   public int a(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
+/* 149:    */   public int getRedStoneSignal(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
 /* 150:    */   {
 /* 151:169 */     return ((Boolean)parambec.getData(b)).booleanValue() ? 15 : 0;
 /* 152:    */   }
 /* 153:    */   
-/* 154:    */   public int b(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
+/* 154:    */   public int getStrongRedstoneSignal(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
 /* 155:    */   {
 /* 156:174 */     if (!((Boolean)parambec.getData(b)).booleanValue()) {
 /* 157:175 */       return 0;
@@ -163,7 +163,7 @@ package net.minecraft.src;
 /* 162:182 */     return 0;
 /* 163:    */   }
 /* 164:    */   
-/* 165:    */   public boolean protoBlock_g()
+/* 165:    */   public boolean blockType_g()
 /* 166:    */   {
 /* 167:187 */     return true;
 /* 168:    */   }

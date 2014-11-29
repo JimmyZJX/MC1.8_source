@@ -172,9 +172,9 @@ package net.minecraft.src;
 /* 171:161 */     return this.d;
 /* 172:    */   }
 /* 173:    */   
-/* 174:    */   public static void a(j paramj, BlockPosition paramdt, ProtoBlock paramatr, int paramInt)
+/* 174:    */   public static void a(j paramj, BlockPosition paramdt, BlockType paramatr, int paramInt)
 /* 175:    */   {
-/* 176:165 */     int i = ProtoBlock.a(paramatr);
+/* 176:165 */     int i = BlockType.a(paramatr);
 /* 177:166 */     paramj.a("Block type", new k(i, paramatr));
 /* 178:    */     
 /* 179:    */ 

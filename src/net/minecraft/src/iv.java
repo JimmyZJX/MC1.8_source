@@ -5,11 +5,11 @@ package net.minecraft.src;
 /*  4:   */   private BlockPosition a;
 /*  5:   */   private int b;
 /*  6:   */   private int c;
-/*  7:   */   private ProtoBlock d;
+/*  7:   */   private BlockType d;
 /*  8:   */   
 /*  9:   */   public iv() {}
 /* 10:   */   
-/* 11:   */   public iv(BlockPosition paramdt, ProtoBlock paramatr, int paramInt1, int paramInt2)
+/* 11:   */   public iv(BlockPosition paramdt, BlockType paramatr, int paramInt1, int paramInt2)
 /* 12:   */   {
 /* 13:21 */     this.a = paramdt;
 /* 14:22 */     this.b = paramInt1;
@@ -22,7 +22,7 @@ package net.minecraft.src;
 /* 21:29 */     this.a = paramhd.readBlockPosition();
 /* 22:30 */     this.b = paramhd.readUnsignedByte();
 /* 23:31 */     this.c = paramhd.readUnsignedByte();
-/* 24:32 */     this.d = ProtoBlock.c(paramhd.e() & 0xFFF);
+/* 24:32 */     this.d = BlockType.c(paramhd.e() & 0xFFF);
 /* 25:   */   }
 /* 26:   */   
 /* 27:   */   public void toBuffer(ByteBufWrapper paramhd)
@@ -30,7 +30,7 @@ package net.minecraft.src;
 /* 29:37 */     paramhd.writeBlockPosition(this.a);
 /* 30:38 */     paramhd.writeByte(this.b);
 /* 31:39 */     paramhd.writeByte(this.c);
-/* 32:40 */     paramhd.b(ProtoBlock.a(this.d) & 0xFFF);
+/* 32:40 */     paramhd.b(BlockType.a(this.d) & 0xFFF);
 /* 33:   */   }
 /* 34:   */   
 /* 35:   */   public void a(ik paramik)
@@ -53,7 +53,7 @@ package net.minecraft.src;
 /* 52:57 */     return this.c;
 /* 53:   */   }
 /* 54:   */   
-/* 55:   */   public ProtoBlock d()
+/* 55:   */   public BlockType d()
 /* 56:   */   {
 /* 57:61 */     return this.d;
 /* 58:   */   }

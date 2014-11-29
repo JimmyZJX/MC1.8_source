@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ import java.util.List;
 /*   2:    */ 
 /*   3:    */ public class bcg
-/*   4:    */   extends ProtoBlock
+/*   4:    */   extends BlockType
 /*   5:    */ {
 /*   6: 19 */   public static final BlockDataEnum a = BlockDataEnum.getInstance("color", EnumDyeColor.class);
 /*   7:    */   
@@ -48,7 +48,7 @@ package net.minecraft.src;
 /*  47: 58 */     return (super.c(paramaqu, paramdt)) && (d(paramaqu, paramdt));
 /*  48:    */   }
 /*  49:    */   
-/*  50:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/*  50:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /*  51:    */   {
 /*  52: 63 */     e(paramaqu, paramdt, parambec);
 /*  53:    */   }

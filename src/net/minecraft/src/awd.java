@@ -43,7 +43,7 @@ package net.minecraft.src;
 /*  42:    */     {
 /*  43: 61 */       Item localalq = ((bdb)localbcm).b();
 /*  44: 63 */       if ((localalq instanceof aju)) {
-/*  45: 64 */         return ProtoBlock.a(localalq).a(paramard, paramdt, paramInt);
+/*  45: 64 */         return BlockType.a(localalq).a(paramard, paramdt, paramInt);
 /*  46:    */       }
 /*  47:    */     }
 /*  48: 68 */     return 16777215;
@@ -51,7 +51,7 @@ package net.minecraft.src;
 /*  50:    */   
 /*  51:    */   public boolean a(World paramaqu, BlockPosition paramdt, Block parambec, EntityPlayer paramahd, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3)
 /*  52:    */   {
-/*  53: 73 */     ItemStack localamj = paramahd.bg.h();
+/*  53: 73 */     ItemStack localamj = paramahd.inventory.getHeldItem();
 /*  54: 74 */     if ((localamj == null) || (!(localamj.getItem() instanceof aju))) {
 /*  55: 75 */       return false;
 /*  56:    */     }
@@ -62,7 +62,7 @@ package net.minecraft.src;
 /*  61: 83 */     if (localbdb.b() != null) {
 /*  62: 84 */       return false;
 /*  63:    */     }
-/*  64: 87 */     ProtoBlock localatr = ProtoBlock.a(localamj.getItem());
+/*  64: 87 */     BlockType localatr = BlockType.a(localamj.getItem());
 /*  65: 88 */     if (!a(localatr, localamj.getDamage2())) {
 /*  66: 89 */       return false;
 /*  67:    */     }
@@ -71,13 +71,13 @@ package net.minecraft.src;
 /*  70: 93 */     paramaqu.h(paramdt);
 /*  71: 95 */     if (!paramahd.abilities.instabuild) {
 /*  72: 96 */       if (--localamj.stackSize <= 0) {
-/*  73: 97 */         paramahd.bg.a(paramahd.bg.c, null);
+/*  73: 97 */         paramahd.inventory.a(paramahd.inventory.c, null);
 /*  74:    */       }
 /*  75:    */     }
 /*  76:101 */     return true;
 /*  77:    */   }
 /*  78:    */   
-/*  79:    */   private boolean a(ProtoBlock paramatr, int paramInt)
+/*  79:    */   private boolean a(BlockType paramatr, int paramInt)
 /*  80:    */   {
 /*  81:105 */     if ((paramatr == BlockList.yellowFlower) || (paramatr == BlockList.redFlower) || (paramatr == BlockList.cactus) || (paramatr == BlockList.brownMushroom) || (paramatr == BlockList.redMushroom) || (paramatr == BlockList.sapling) || (paramatr == BlockList.deadbush)) {
 /*  82:106 */       return true;
@@ -116,7 +116,7 @@ package net.minecraft.src;
 /* 115:141 */     return (super.c(paramaqu, paramdt)) && (World.isFlatSurface(paramaqu, paramdt.down()));
 /* 116:    */   }
 /* 117:    */   
-/* 118:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/* 118:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /* 119:    */   {
 /* 120:146 */     if (!World.isFlatSurface(paramaqu, paramdt.down()))
 /* 121:    */     {
@@ -163,7 +163,7 @@ package net.minecraft.src;
 /* 162:    */   
 /* 163:    */   public bcm a(World paramaqu, int paramInt)
 /* 164:    */   {
-/* 165:196 */     ProtoBlock block = null;
+/* 165:196 */     BlockType block = null;
 /* 166:197 */     int variant = 0;
 /* 167:198 */     switch (paramInt)
 /* 168:    */     {
@@ -216,7 +216,7 @@ package net.minecraft.src;
 /* 215:245 */       block = BlockList.tallgrass;
 /* 216:246 */       variant = bbi.c.a();
 /* 217:    */     }
-/* 218:249 */     return new bdb(Item.fromProtoBlock(block), variant);
+/* 218:249 */     return new bdb(Item.fromBlock(block), variant);
 /* 219:    */   }
 /* 220:    */   
 /* 221:    */   protected bed e()
@@ -241,7 +241,7 @@ package net.minecraft.src;
 /* 240:271 */       if ((localalq instanceof aju))
 /* 241:    */       {
 /* 242:272 */         int i = localbdb.c();
-/* 243:273 */         ProtoBlock localatr = ProtoBlock.a(localalq);
+/* 243:273 */         BlockType localatr = BlockType.a(localalq);
 /* 244:274 */         if (localatr == BlockList.sapling) {
 /* 245:275 */           switch (awe.a[EnumWoodVariant.fromIndex(i).ordinal()])
 /* 246:    */           {

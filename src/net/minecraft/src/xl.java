@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*  8:   */   
 /*  9:   */   public void e(float paramFloat1, float paramFloat2) {}
 /* 10:   */   
-/* 11:   */   protected void a(double paramDouble, boolean paramBoolean, ProtoBlock paramatr, BlockPosition paramdt) {}
+/* 11:   */   protected void onMoveTo(double paramDouble, boolean paramBoolean, BlockType paramatr, BlockPosition paramdt) {}
 /* 12:   */   
 /* 13:   */   public void g(float paramFloat1, float paramFloat2)
 /* 14:   */   {
@@ -33,15 +33,15 @@ package net.minecraft.src;
 /* 32:   */     else
 /* 33:   */     {
 /* 34:39 */       float f1 = 0.91F;
-/* 35:40 */       if (this.C) {
-/* 36:41 */         f1 = this.world.getBlock(new BlockPosition(MathUtils.floor(this.xPos), MathUtils.floor(getAABB().minY) - 1, MathUtils.floor(this.zPos))).getProto().K * 0.91F;
+/* 35:40 */       if (this.landing) {
+/* 36:41 */         f1 = this.world.getBlock(new BlockPosition(MathUtils.floor(this.xPos), MathUtils.floor(getAABB().minY) - 1, MathUtils.floor(this.zPos))).getType().K * 0.91F;
 /* 37:   */       }
 /* 38:44 */       float f2 = 0.1627714F / (f1 * f1 * f1);
-/* 39:45 */       a(paramFloat1, paramFloat2, this.C ? 0.1F * f2 : 0.02F);
+/* 39:45 */       a(paramFloat1, paramFloat2, this.landing ? 0.1F * f2 : 0.02F);
 /* 40:   */       
 /* 41:47 */       f1 = 0.91F;
-/* 42:48 */       if (this.C) {
-/* 43:49 */         f1 = this.world.getBlock(new BlockPosition(MathUtils.floor(this.xPos), MathUtils.floor(getAABB().minY) - 1, MathUtils.floor(this.zPos))).getProto().K * 0.91F;
+/* 42:48 */       if (this.landing) {
+/* 43:49 */         f1 = this.world.getBlock(new BlockPosition(MathUtils.floor(this.xPos), MathUtils.floor(getAABB().minY) - 1, MathUtils.floor(this.zPos))).getType().K * 0.91F;
 /* 44:   */       }
 /* 45:52 */       move(this.xVelocity, this.yVelocity, this.zVelocity);
 /* 46:   */       

@@ -9,7 +9,7 @@ package net.minecraft.src;
 /*  8:   */   
 /*  9:   */   public Item e()
 /* 10:   */   {
-/* 11:39 */     return Item.fromProtoBlock(BlockList.D);
+/* 11:39 */     return Item.fromBlock(BlockList.D);
 /* 12:   */   }
 /* 13:   */ }
 

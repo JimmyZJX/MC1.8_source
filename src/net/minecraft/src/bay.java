@@ -8,9 +8,9 @@ package net.minecraft.src;
 /*   7:    */ {
 /*   8: 23 */   public static final BlockDataInteger a = BlockDataInteger.getInstance("age", 0, 7);
 /*   9: 24 */   public static final BlockDataDirection b = BlockDataDirection.getInstance("facing", new baz());
-/*  10:    */   private final ProtoBlock M;
+/*  10:    */   private final BlockType M;
 /*  11:    */   
-/*  12:    */   protected bay(ProtoBlock paramatr)
+/*  12:    */   protected bay(BlockType paramatr)
 /*  13:    */   {
 /*  14: 34 */     j(this.L.b().setData(a, Integer.valueOf(0)).setData(b, EnumDirection.UP));
 /*  15: 35 */     this.M = paramatr;
@@ -24,7 +24,7 @@ package net.minecraft.src;
 /*  23:    */   {
 /*  24: 44 */     parambec = parambec.setData(b, EnumDirection.UP);
 /*  25: 45 */     for (EnumDirection localej : EnumHorizontalVertical.HORIZONTAL) {
-/*  26: 46 */       if (paramard.getBlock(paramdt.offset(localej)).getProto() == this.M)
+/*  26: 46 */       if (paramard.getBlock(paramdt.offset(localej)).getType() == this.M)
 /*  27:    */       {
 /*  28: 47 */         parambec = parambec.setData(b, localej);
 /*  29: 48 */         break;
@@ -33,7 +33,7 @@ package net.minecraft.src;
 /*  32: 51 */     return parambec;
 /*  33:    */   }
 /*  34:    */   
-/*  35:    */   protected boolean c(ProtoBlock paramatr)
+/*  35:    */   protected boolean c(BlockType paramatr)
 /*  36:    */   {
 /*  37: 56 */     return paramatr == BlockList.ak;
 /*  38:    */   }
@@ -58,14 +58,14 @@ package net.minecraft.src;
 /*  57: 73 */         for (Iterator<EnumDirection> localObject = EnumHorizontalVertical.HORIZONTAL.iterator(); localObject.hasNext();)
 /*  58:    */         {
 /*  59: 73 */           EnumDirection localej = localObject.next();
-/*  60: 74 */           if (paramaqu.getBlock(paramdt.offset(localej)).getProto() == this.M) {
+/*  60: 74 */           if (paramaqu.getBlock(paramdt.offset(localej)).getType() == this.M) {
 /*  61: 75 */             return;
 /*  62:    */           }
 /*  63:    */         }
 /*  64: 79 */         paramdt = paramdt.offset(EnumHorizontalVertical.HORIZONTAL.getRandomDirection(paramRandom));
 /*  65:    */         
-/*  66: 81 */         ProtoBlock localObject = paramaqu.getBlock(paramdt.down()).getProto();
-/*  67: 82 */         if ((paramaqu.getBlock(paramdt).getProto().material == Material.air) && ((localObject == BlockList.ak) || (localObject == BlockList.dirt) || (localObject == BlockList.grass))) {
+/*  66: 81 */         BlockType localObject = paramaqu.getBlock(paramdt.down()).getType();
+/*  67: 82 */         if ((paramaqu.getBlock(paramdt).getType().material == Material.air) && ((localObject == BlockList.ak) || (localObject == BlockList.dirt) || (localObject == BlockList.grass))) {
 /*  68: 83 */           paramaqu.setBlock(paramdt, this.M.instance());
 /*  69:    */         }
 /*  70:    */       }
@@ -80,7 +80,7 @@ package net.minecraft.src;
 /*  79:    */   
 /*  80:    */   public int h(Block parambec)
 /*  81:    */   {
-/*  82: 96 */     if (parambec.getProto() != this) {
+/*  82: 96 */     if (parambec.getType() != this) {
 /*  83: 97 */       return super.h(parambec);
 /*  84:    */     }
 /*  85:100 */     int i = ((Integer)parambec.getData(a)).intValue();

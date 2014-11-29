@@ -88,7 +88,7 @@ package net.minecraft.src;
 /*  87:    */     {
 /*  88: 77 */       a(paramwv, 80, 3, true);
 /*  89:    */     }
-/*  90: 78 */     else if ((paramwv instanceof adu))
+/*  90: 78 */     else if ((paramwv instanceof EntityBoat))
 /*  91:    */     {
 /*  92: 79 */       a(paramwv, 80, 3, true);
 /*  93:    */     }

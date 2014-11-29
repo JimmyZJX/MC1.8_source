@@ -4,21 +4,21 @@ package net.minecraft.src;
 /*  3:   */ public class BlockIs
 /*  4:   */   implements Predicate<Block>
 /*  5:   */ {
-/*  6:   */   private final ProtoBlock a;
+/*  6:   */   private final BlockType a;
 /*  7:   */   
-/*  8:   */   private BlockIs(ProtoBlock paramatr)
+/*  8:   */   private BlockIs(BlockType paramatr)
 /*  9:   */   {
 /* 10:13 */     this.a = paramatr;
 /* 11:   */   }
 /* 12:   */   
-/* 13:   */   public static BlockIs instance(ProtoBlock paramatr)
+/* 13:   */   public static BlockIs instance(BlockType paramatr)
 /* 14:   */   {
 /* 15:17 */     return new BlockIs(paramatr);
 /* 16:   */   }
 /* 17:   */   
 /* 18:   */   public boolean apply(Block parambec)
 /* 19:   */   {
-/* 20:23 */     if ((parambec == null) || (parambec.getProto() != this.a)) {
+/* 20:23 */     if ((parambec == null) || (parambec.getType() != this.a)) {
 /* 21:24 */       return false;
 /* 22:   */     }
 /* 23:26 */     return true;

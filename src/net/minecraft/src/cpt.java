@@ -88,7 +88,7 @@ package net.minecraft.src;
 /*  87:132 */     this.k.put(aej.class, new crr(this));
 /*  88:133 */     this.k.put(aeh.class, new cqy(this));
 /*  89:134 */     this.k.put(adx.class, new cqx(this));
-/*  90:135 */     this.k.put(adu.class, new cpj(this));
+/*  90:135 */     this.k.put(EntityBoat.class, new cpj(this));
 /*  91:136 */     this.k.put(EntityFishHook.class, new cpy(this));
 /*  92:    */     
 /*  93:138 */     this.k.put(EntityHorse.class, new cqd(this, new ccj(), 0.75F));
@@ -142,7 +142,7 @@ package net.minecraft.src;
 /* 141:183 */     if (((paramwv1 instanceof EntityLiving)) && (((EntityLiving)paramwv1).bI()))
 /* 142:    */     {
 /* 143:184 */       Block localbec = paramaqu.getBlock(new BlockPosition(paramwv1));
-/* 144:185 */       ProtoBlock localatr = localbec.getProto();
+/* 144:185 */       BlockType localatr = localbec.getType();
 /* 145:186 */       if (localatr == BlockList.C)
 /* 146:    */       {
 /* 147:187 */         int i1 = ((EnumDirection)localbec.getData(atp.facing)).b();

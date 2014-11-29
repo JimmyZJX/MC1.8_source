@@ -1169,7 +1169,7 @@ package net.minecraft.src;
 /* 1168:1279 */     if ((paramBoolean) && (this.s != null) && (this.s.a == brv.BLOCK))
 /* 1169:     */     {
 /* 1170:1280 */       BlockPosition localdt = this.s.a();
-/* 1171:1282 */       if ((this.f.getBlock(localdt).getProto().getMaterial() != Material.air) && 
+/* 1171:1282 */       if ((this.f.getBlock(localdt).getType().getMaterial() != Material.air) && 
 /* 1172:1283 */         (this.c.c(localdt, this.s.b)))
 /* 1173:     */       {
 /* 1174:1284 */         this.j.a(localdt, this.s.b);
@@ -1201,7 +1201,7 @@ package net.minecraft.src;
 /* 1200:1311 */       break;
 /* 1201:     */     case 2: 
 /* 1202:1313 */       BlockPosition localdt = this.s.a();
-/* 1203:1315 */       if (this.f.getBlock(localdt).getProto().getMaterial() != Material.air) {
+/* 1203:1315 */       if (this.f.getBlock(localdt).getType().getMaterial() != Material.air) {
 /* 1204:1316 */         this.c.b(localdt, this.s.b);
 /* 1205:     */       }
 /* 1206:1317 */       break;
@@ -1216,7 +1216,7 @@ package net.minecraft.src;
 /* 1215:1329 */     this.al = 4;
 /* 1216:1330 */     int i1 = 1;
 /* 1217:     */     
-/* 1218:1332 */     ItemStack localamj = this.h.bg.h();
+/* 1218:1332 */     ItemStack localamj = this.h.inventory.getHeldItem();
 /* 1219:     */     Object localObject;
 /* 1220:1333 */     if (this.s == null) {
 /* 1221:1334 */       I.warn("Null returned as 'hitResult', this shouldn't happen!");
@@ -1232,7 +1232,7 @@ package net.minecraft.src;
 /* 1231:     */         break;
 /* 1232:     */       case 2: 
 /* 1233:1347 */         localObject = this.s.a();
-/* 1234:1349 */         if (this.f.getBlock((BlockPosition)localObject).getProto().getMaterial() != Material.air)
+/* 1234:1349 */         if (this.f.getBlock((BlockPosition)localObject).getType().getMaterial() != Material.air)
 /* 1235:     */         {
 /* 1236:1350 */           int i2 = localamj != null ? localamj.stackSize : 0;
 /* 1237:1351 */           if (this.c.a(this.h, this.f, localamj, (BlockPosition)localObject, this.s.b, this.s.c))
@@ -1244,7 +1244,7 @@ package net.minecraft.src;
 /* 1243:1356 */             return;
 /* 1244:     */           }
 /* 1245:1359 */           if (localamj.stackSize == 0) {
-/* 1246:1360 */             this.h.bg.items[this.h.bg.c] = null;
+/* 1246:1360 */             this.h.inventory.items[this.h.inventory.c] = null;
 /* 1247:1361 */           } else if ((localamj.stackSize != i2) || (this.c.h())) {
 /* 1248:1362 */             this.o.c.b();
 /* 1249:     */           }
@@ -1254,7 +1254,7 @@ package net.minecraft.src;
 /* 1253:     */     }
 /* 1254:1369 */     if (i1 != 0)
 /* 1255:     */     {
-/* 1256:1370 */       localObject = this.h.bg.h();
+/* 1256:1370 */       localObject = this.h.inventory.getHeldItem();
 /* 1257:1371 */       if ((localObject != null) && 
 /* 1258:1372 */         (this.c.a(this.h, this.f, (ItemStack)localObject))) {
 /* 1259:1373 */         this.o.c.c();
@@ -1436,7 +1436,7 @@ package net.minecraft.src;
 /* 1435:     */             }
 /* 1436:     */             else
 /* 1437:     */             {
-/* 1438:1535 */               this.h.bg.d(i2);
+/* 1438:1535 */               this.h.inventory.d(i2);
 /* 1439:     */             }
 /* 1440:     */           }
 /* 1441:1539 */           if (this.m == null)
@@ -1584,7 +1584,7 @@ package net.minecraft.src;
 /* 1583:1741 */           if (this.h.v()) {
 /* 1584:1742 */             this.q.g().a(i1);
 /* 1585:     */           } else {
-/* 1586:1744 */             this.h.bg.c = i1;
+/* 1586:1744 */             this.h.inventory.c = i1;
 /* 1587:     */           }
 /* 1588:     */         }
 /* 1589:     */       }
@@ -1917,19 +1917,19 @@ package net.minecraft.src;
 /* 1916:     */     {
 /* 1917:2075 */       BlockPosition localObject2 = this.s.a();
 /* 1918:     */       
-/* 1919:2077 */       localObject3 = this.f.getBlock((BlockPosition)localObject2).getProto();
-/* 1920:2079 */       if (((ProtoBlock)localObject3).getMaterial() == Material.air) {
+/* 1919:2077 */       localObject3 = this.f.getBlock((BlockPosition)localObject2).getType();
+/* 1920:2079 */       if (((BlockType)localObject3).getMaterial() == Material.air) {
 /* 1921:2080 */         return;
 /* 1922:     */       }
-/* 1923:2083 */       localObject1 = ((ProtoBlock)localObject3).b(this.f, (BlockPosition)localObject2);
+/* 1923:2083 */       localObject1 = ((BlockType)localObject3).b(this.f, (BlockPosition)localObject2);
 /* 1924:2084 */       if (localObject1 == null) {
 /* 1925:2085 */         return;
 /* 1926:     */       }
 /* 1927:2088 */       if ((bool1) && (bxf.q())) {
 /* 1928:2089 */         localbcm = this.f.s((BlockPosition)localObject2);
 /* 1929:     */       }
-/* 1930:2092 */       localObject4 = ((localObject1 instanceof aju)) && (!((ProtoBlock)localObject3).L()) ? ProtoBlock.a((Item)localObject1) : localObject3;
-/* 1931:2093 */       i1 = ((ProtoBlock)localObject4).j(this.f, (BlockPosition)localObject2);
+/* 1930:2092 */       localObject4 = ((localObject1 instanceof aju)) && (!((BlockType)localObject3).L()) ? BlockType.a((Item)localObject1) : localObject3;
+/* 1931:2093 */       i1 = ((BlockType)localObject4).j(this.f, (BlockPosition)localObject2);
 /* 1932:2094 */       bool2 = ((Item)localObject1).k();
 /* 1933:     */     }
 /* 1934:2095 */     else if ((this.s.a == brv.ENTITY) && (this.s.d != null) && (bool1))
@@ -1940,7 +1940,7 @@ package net.minecraft.src;
 /* 1939:     */       }
 /* 1940:2098 */       else if ((this.s.d instanceof adl))
 /* 1941:     */       {
-/* 1942:2099 */         localObject1 = ItemList.cn;
+/* 1942:2099 */         localObject1 = ItemList.lead;
 /* 1943:     */       }
 /* 1944:2100 */       else if ((this.s.d instanceof EntityItemFrame))
 /* 1945:     */       {
@@ -1981,9 +1981,9 @@ package net.minecraft.src;
 /* 1980:2130 */           localObject1 = ItemList.az;
 /* 1981:     */         }
 /* 1982:     */       }
-/* 1983:2133 */       else if ((this.s.d instanceof adu))
+/* 1983:2133 */       else if ((this.s.d instanceof EntityBoat))
 /* 1984:     */       {
-/* 1985:2134 */         localObject1 = ItemList.aE;
+/* 1985:2134 */         localObject1 = ItemList.boat;
 /* 1986:     */       }
 /* 1987:2135 */       else if ((this.s.d instanceof EntityArmorStand))
 /* 1988:     */       {
@@ -2001,7 +2001,7 @@ package net.minecraft.src;
 /* 2000:     */     {
 /* 2001:2147 */       return;
 /* 2002:     */     }
-/* 2003:2150 */     Object localObject2 = this.h.bg;
+/* 2003:2150 */     Object localObject2 = this.h.inventory;
 /* 2004:2151 */     if (localbcm == null)
 /* 2005:     */     {
 /* 2006:2152 */       ((Inventory)localObject2).a((Item)localObject1, i1, bool2, bool1);

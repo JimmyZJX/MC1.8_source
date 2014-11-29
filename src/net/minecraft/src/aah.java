@@ -18,7 +18,7 @@ package net.minecraft.src;
 /* 17:21 */     if (this.a.isInWater()) {
 /* 18:22 */       return false;
 /* 19:   */     }
-/* 20:24 */     if (!this.a.C) {
+/* 20:24 */     if (!this.a.landing) {
 /* 21:25 */       return false;
 /* 22:   */     }
 /* 23:27 */     if (this.a.G) {

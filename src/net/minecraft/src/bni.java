@@ -97,7 +97,7 @@ package net.minecraft.src;
 /*  96:    */     
 /*  97:    */ 
 /*  98:879 */     a(paramaqu, BlockList.torch.instance().setData(bbl.a, this.m.opposite()), 2, 4, 7, parambjb);
-/*  99:880 */     a(paramaqu, BlockList.torch.instance().setData(bbl.a, this.m.yRotate()), 1, 4, 6, parambjb);
+/*  99:880 */     a(paramaqu, BlockList.torch.instance().setData(bbl.a, this.m.cw()), 1, 4, 6, parambjb);
 /* 100:881 */     a(paramaqu, BlockList.torch.instance().setData(bbl.a, this.m.ccw()), 3, 4, 6, parambjb);
 /* 101:882 */     a(paramaqu, BlockList.torch.instance().setData(bbl.a, this.m), 2, 4, 5, parambjb);
 /* 102:    */     
@@ -109,7 +109,7 @@ package net.minecraft.src;
 /* 108:891 */     a(paramaqu, BlockList.air.instance(), 2, 1, 0, parambjb);
 /* 109:892 */     a(paramaqu, BlockList.air.instance(), 2, 2, 0, parambjb);
 /* 110:893 */     a(paramaqu, parambjb, paramRandom, 2, 1, 0, EnumDirection.b(a(BlockList.woodenDoor, 1)));
-/* 111:894 */     if ((a(paramaqu, 2, 0, -1, parambjb).getProto().getMaterial() == Material.air) && (a(paramaqu, 2, -1, -1, parambjb).getProto().getMaterial() != Material.air)) {
+/* 111:894 */     if ((a(paramaqu, 2, 0, -1, parambjb).getType().getMaterial() == Material.air) && (a(paramaqu, 2, -1, -1, parambjb).getType().getMaterial() != Material.air)) {
 /* 112:895 */       a(paramaqu, BlockList.aw.instance(a(BlockList.aw, 3)), 2, 0, -1, parambjb);
 /* 113:    */     }
 /* 114:898 */     for (int j = 0; j < 9; j++) {

@@ -42,7 +42,7 @@ package net.minecraft.src;
 /*  42: 51 */     return "mob.cow.hurt";
 /*  43:    */   }
 /*  44:    */   
-/*  45:    */   protected void a(BlockPosition paramdt, ProtoBlock paramatr)
+/*  45:    */   protected void a(BlockPosition paramdt, BlockType paramatr)
 /*  46:    */   {
 /*  47: 56 */     a("mob.cow.step", 0.15F, 1.0F);
 /*  48:    */   }
@@ -73,19 +73,19 @@ package net.minecraft.src;
 /*  73:    */     }
 /*  74:    */   }
 /*  75:    */   
-/*  76:    */   public boolean onRightClick(EntityPlayer paramahd)
+/*  76:    */   public boolean onRightClickMob(EntityPlayer paramahd)
 /*  77:    */   {
-/*  78: 89 */     ItemStack localamj = paramahd.bg.h();
+/*  78: 89 */     ItemStack localamj = paramahd.inventory.getHeldItem();
 /*  79: 90 */     if ((localamj != null) && (localamj.getItem() == ItemList.aw) && (!paramahd.abilities.instabuild))
 /*  80:    */     {
 /*  81: 91 */       if (localamj.stackSize-- == 1) {
-/*  82: 92 */         paramahd.bg.a(paramahd.bg.c, new ItemStack(ItemList.aG));
-/*  83: 93 */       } else if (!paramahd.bg.a(new ItemStack(ItemList.aG))) {
+/*  82: 92 */         paramahd.inventory.a(paramahd.inventory.c, new ItemStack(ItemList.aG));
+/*  83: 93 */       } else if (!paramahd.inventory.a(new ItemStack(ItemList.aG))) {
 /*  84: 94 */         paramahd.a(new ItemStack(ItemList.aG, 1, 0), false);
 /*  85:    */       }
 /*  86: 97 */       return true;
 /*  87:    */     }
-/*  88: 99 */     return super.onRightClick(paramahd);
+/*  88: 99 */     return super.onRightClickMob(paramahd);
 /*  89:    */   }
 /*  90:    */   
 /*  91:    */   public EntityCow getBaby(EntityPassiveMob paramws)

@@ -20,12 +20,12 @@ package net.minecraft.src;
 /*  19:    */   
 /*  20:    */   public Item a(Block parambec, Random paramRandom, int paramInt)
 /*  21:    */   {
-/*  22: 34 */     return Item.fromProtoBlock(BlockList.bM);
+/*  22: 34 */     return Item.fromBlock(BlockList.bM);
 /*  23:    */   }
 /*  24:    */   
 /*  25:    */   public Item b(World paramaqu, BlockPosition paramdt)
 /*  26:    */   {
-/*  27: 39 */     return Item.fromProtoBlock(BlockList.bM);
+/*  27: 39 */     return Item.fromBlock(BlockList.bM);
 /*  28:    */   }
 /*  29:    */   
 /*  30:    */   public String b(int paramInt)
@@ -45,7 +45,7 @@ package net.minecraft.src;
 /*  44:    */   
 /*  45:    */   public void a(Item paramalq, CreativeTabs paramakf, List<ItemStack> paramList)
 /*  46:    */   {
-/*  47: 59 */     if (paramalq == Item.fromProtoBlock(BlockList.bL)) {
+/*  47: 59 */     if (paramalq == Item.fromBlock(BlockList.bL)) {
 /*  48: 60 */       return;
 /*  49:    */     }
 /*  50: 63 */     for (EnumWoodVariant localayx : EnumWoodVariant.values()) {

@@ -65,8 +65,8 @@ package net.minecraft.src;
 /*  64: 81 */       f2 += f2 * 1.15F * MathUtils.sin(this.e / this.f * 3.141593F);
 /*  65:    */     }
 /*  66: 84 */     float f3 = 0.91F;
-/*  67: 85 */     if (this.a.C) {
-/*  68: 86 */       f3 = this.a.world.getBlock(new BlockPosition(MathUtils.floor(i), MathUtils.floor(j) - 1, MathUtils.floor(k))).getProto().K * 0.91F;
+/*  67: 85 */     if (this.a.landing) {
+/*  68: 86 */       f3 = this.a.world.getBlock(new BlockPosition(MathUtils.floor(i), MathUtils.floor(j) - 1, MathUtils.floor(k))).getType().K * 0.91F;
 /*  69:    */     }
 /*  70: 88 */     float f4 = 0.1627714F / (f3 * f3 * f3);
 /*  71: 89 */     float f5 = MathUtils.sin(localxu.yaw * 3.141593F / 180.0F);
@@ -106,8 +106,8 @@ package net.minecraft.src;
 /* 105:    */     Object localObject;
 /* 106:123 */     if ((i != m) || (k != n))
 /* 107:    */     {
-/* 108:126 */       localObject = this.a.world.getBlock(new BlockPosition(i, j, k)).getProto();
-/* 109:127 */       int i4 = (!a((ProtoBlock)localObject)) && ((((ProtoBlock)localObject).getMaterial() != Material.air) || (!a(this.a.world.getBlock(new BlockPosition(i, j - 1, k)).getProto()))) ? 1 : 0;
+/* 108:126 */       localObject = this.a.world.getBlock(new BlockPosition(i, j, k)).getType();
+/* 109:127 */       int i4 = (!a((BlockType)localObject)) && ((((BlockType)localObject).getMaterial() != Material.air) || (!a(this.a.world.getBlock(new BlockPosition(i, j - 1, k)).getType()))) ? 1 : 0;
 /* 110:129 */       if ((i4 != 0) && (0 == bpy.a(this.a.world, this.a, m, j, n, i1, i2, i3, false, false, true)) && (1 == bpy.a(this.a.world, this.a, i, j + 1, k, i1, i2, i3, false, false, true)) && (1 == bpy.a(this.a.world, this.a, m, j + 1, n, i1, i2, i3, false, false, true))) {
 /* 111:134 */         localxu.getJumpManager().jump();
 /* 112:    */       }
@@ -122,14 +122,14 @@ package net.minecraft.src;
 /* 121:    */         {
 /* 122:145 */           ItemStack localamj = new ItemStack(ItemList.fishingRod);
 /* 123:146 */           localamj.setTagCompound(((ItemStack)localObject).getTagCompound());
-/* 124:147 */           localahd.bg.items[localahd.bg.c] = localamj;
+/* 124:147 */           localahd.inventory.items[localahd.inventory.c] = localamj;
 /* 125:    */         }
 /* 126:    */       }
 /* 127:    */     }
 /* 128:152 */     this.a.g(0.0F, f2);
 /* 129:    */   }
 /* 130:    */   
-/* 131:    */   private boolean a(ProtoBlock paramatr)
+/* 131:    */   private boolean a(BlockType paramatr)
 /* 132:    */   {
 /* 133:156 */     return ((paramatr instanceof BlockStairs)) || ((paramatr instanceof BlockSlab));
 /* 134:    */   }

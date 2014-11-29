@@ -40,7 +40,7 @@ package net.minecraft.src;
 /*  39:    */           {
 /*  40:168 */             BlockPosition localdt2 = localdt1.offset(j, i, k);
 /*  41:169 */             Block localbec = localaqu.getBlock(localdt2);
-/*  42:171 */             if (localbec.getProto() == BlockList.monsterEgg)
+/*  42:171 */             if (localbec.getType() == BlockList.monsterEgg)
 /*  43:    */             {
 /*  44:172 */               if (localaqu.getGameRules().getBoolean("mobGriefing")) {
 /*  45:173 */                 localaqu.b(localdt2, true);

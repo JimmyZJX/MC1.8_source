@@ -21,7 +21,7 @@ package net.minecraft.src;
 /*  20:    */   
 /*  21:    */   public void a(Block parambec, BlockPosition paramdt, cue paramcue, IBlockAccess paramard)
 /*  22:    */   {
-/*  23: 40 */     ProtoBlock localatr = parambec.getProto();
+/*  23: 40 */     BlockType localatr = parambec.getType();
 /*  24: 41 */     int i = localatr.b();
 /*  25: 42 */     if (i != 3) {
 /*  26: 43 */       return;
@@ -37,7 +37,7 @@ package net.minecraft.src;
 /*  36:    */   {
 /*  37:    */     try
 /*  38:    */     {
-/*  39: 55 */       int i = parambec.getProto().b();
+/*  39: 55 */       int i = parambec.getType().b();
 /*  40: 56 */       if (i == -1) {
 /*  41: 57 */         return false;
 /*  42:    */       }
@@ -57,7 +57,7 @@ package net.minecraft.src;
 /*  56: 70 */       Object localObject = net.minecraft.src.b.a(localThrowable, "Tesselating block in world");
 /*  57: 71 */       j localj = ((b)localObject).a("Block being tesselated");
 /*  58:    */       
-/*  59: 73 */       j.a(localj, paramdt, parambec.getProto(), parambec.getProto().c(parambec));
+/*  59: 73 */       j.a(localj, paramdt, parambec.getType(), parambec.getType().c(parambec));
 /*  60:    */       
 /*  61: 75 */       throw new u((b)localObject);
 /*  62:    */     }
@@ -80,7 +80,7 @@ package net.minecraft.src;
 /*  79:    */   
 /*  80:    */   public cxe a(Block parambec, IBlockAccess paramard, BlockPosition paramdt)
 /*  81:    */   {
-/*  82: 93 */     ProtoBlock localatr = parambec.getProto();
+/*  82: 93 */     BlockType localatr = parambec.getType();
 /*  83: 94 */     if (paramard.G() != WorldType.DEBUG_ALL_BLOCK_STATES) {
 /*  84:    */       try
 /*  85:    */       {
@@ -97,7 +97,7 @@ package net.minecraft.src;
 /*  96:    */   
 /*  97:    */   public void a(Block parambec, float paramFloat)
 /*  98:    */   {
-/*  99:110 */     int i = parambec.getProto().b();
+/*  99:110 */     int i = parambec.getType().b();
 /* 100:111 */     if (i == -1) {
 /* 101:112 */       return;
 /* 102:    */     }
@@ -108,12 +108,12 @@ package net.minecraft.src;
 /* 107:118 */       this.c.a(localcxe, parambec, paramFloat, true);
 /* 108:119 */       break;
 /* 109:    */     case 2: 
-/* 110:121 */       this.d.a(parambec.getProto(), paramFloat);
+/* 110:121 */       this.d.a(parambec.getType(), paramFloat);
 /* 111:122 */       break;
 /* 112:    */     }
 /* 113:    */   }
 /* 114:    */   
-/* 115:    */   public boolean a(ProtoBlock paramatr, int paramInt)
+/* 115:    */   public boolean a(BlockType paramatr, int paramInt)
 /* 116:    */   {
 /* 117:131 */     if (paramatr == null) {
 /* 118:132 */       return false;

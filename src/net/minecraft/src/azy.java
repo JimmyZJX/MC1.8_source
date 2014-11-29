@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ import java.util.Random;
 /*   2:    */ 
 /*   3:    */ public class azy
-/*   4:    */   extends ProtoBlock
+/*   4:    */   extends BlockType
 /*   5:    */ {
 /*   6: 20 */   public static final BlockDataInteger a = BlockDataInteger.getInstance("age", 0, 15);
 /*   7:    */   
@@ -17,13 +17,13 @@ package net.minecraft.src;
 /*  16:    */   
 /*  17:    */   public void b(World paramaqu, BlockPosition paramdt, Block parambec, Random paramRandom)
 /*  18:    */   {
-/*  19: 32 */     if ((paramaqu.getBlock(paramdt.down()).getProto() != BlockList.reeds) && (!e(paramaqu, paramdt, parambec))) {
+/*  19: 32 */     if ((paramaqu.getBlock(paramdt.down()).getType() != BlockList.reeds) && (!e(paramaqu, paramdt, parambec))) {
 /*  20: 33 */       return;
 /*  21:    */     }
 /*  22: 36 */     if (paramaqu.isEmpty(paramdt.up()))
 /*  23:    */     {
 /*  24: 37 */       int i = 1;
-/*  25: 38 */       while (paramaqu.getBlock(paramdt.down(i)).getProto() == this) {
+/*  25: 38 */       while (paramaqu.getBlock(paramdt.down(i)).getType() == this) {
 /*  26: 39 */         i++;
 /*  27:    */       }
 /*  28: 41 */       if (i < 3)
@@ -44,14 +44,14 @@ package net.minecraft.src;
 /*  43:    */   
 /*  44:    */   public boolean c(World paramaqu, BlockPosition paramdt)
 /*  45:    */   {
-/*  46: 55 */     ProtoBlock localatr = paramaqu.getBlock(paramdt.down()).getProto();
+/*  46: 55 */     BlockType localatr = paramaqu.getBlock(paramdt.down()).getType();
 /*  47: 56 */     if (localatr == this) {
 /*  48: 57 */       return true;
 /*  49:    */     }
 /*  50: 60 */     if ((localatr == BlockList.grass) || (localatr == BlockList.dirt) || (localatr == BlockList.sand))
 /*  51:    */     {
 /*  52: 61 */       for (EnumDirection localej : EnumHorizontalVertical.HORIZONTAL) {
-/*  53: 62 */         if (paramaqu.getBlock(paramdt.offset(localej).down()).getProto().getMaterial() == Material.water) {
+/*  53: 62 */         if (paramaqu.getBlock(paramdt.offset(localej).down()).getType().getMaterial() == Material.water) {
 /*  54: 63 */           return true;
 /*  55:    */         }
 /*  56:    */       }
@@ -60,7 +60,7 @@ package net.minecraft.src;
 /*  59: 69 */     return false;
 /*  60:    */   }
 /*  61:    */   
-/*  62:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/*  62:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /*  63:    */   {
 /*  64: 74 */     e(paramaqu, paramdt, parambec);
 /*  65:    */   }

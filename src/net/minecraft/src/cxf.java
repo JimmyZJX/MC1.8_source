@@ -58,7 +58,7 @@ package net.minecraft.src;
 /*  54: 72 */     for (int i1 = 0; i1 < this.t; i1++) {
 /*  55: 73 */       localej = localej.a(EnumAxis.X);
 /*  56:    */     }
-/*  57: 76 */     if (localej.k() != EnumAxis.Y) {
+/*  57: 76 */     if (localej.getAxis() != EnumAxis.Y) {
 /*  58: 77 */       for (int i1 = 0; i1 < this.u; i1++) {
 /*  59: 78 */         localej = localej.a(EnumAxis.Y);
 /*  60:    */       }
@@ -69,14 +69,14 @@ package net.minecraft.src;
 /*  65:    */   public int a(EnumDirection paramej, int paramInt)
 /*  66:    */   {
 /*  67: 86 */     int i1 = paramInt;
-/*  68: 87 */     if (paramej.k() == EnumAxis.X) {
+/*  68: 87 */     if (paramej.getAxis() == EnumAxis.X) {
 /*  69: 88 */       i1 = (i1 + this.t) % 4;
 /*  70:    */     }
 /*  71: 91 */     EnumDirection localej = paramej;
 /*  72: 92 */     for (int i2 = 0; i2 < this.t; i2++) {
 /*  73: 93 */       localej = localej.a(EnumAxis.X);
 /*  74:    */     }
-/*  75: 96 */     if (localej.k() == EnumAxis.Y) {
+/*  75: 96 */     if (localej.getAxis() == EnumAxis.Y) {
 /*  76: 97 */       i1 = (i1 + this.u) % 4;
 /*  77:    */     }
 /*  78:100 */     return i1;

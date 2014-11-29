@@ -3,7 +3,7 @@ package net.minecraft.src;
 /*   2:    */ import java.util.Random;
 /*   3:    */ 
 /*   4:    */ public class bds
-/*   5:    */   extends ProtoBlock
+/*   5:    */   extends BlockType
 /*   6:    */ {
 /*   7: 26 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing");
 /*   8: 27 */   public static final BlockDataEnum b = BlockDataEnum.getInstance("type", bdu.class);
@@ -25,7 +25,7 @@ package net.minecraft.src;
 /*  24: 44 */       if (localej != null)
 /*  25:    */       {
 /*  26: 45 */         BlockPosition localdt = paramdt.offset(localej.opposite());
-/*  27: 46 */         ProtoBlock localatr = paramaqu.getBlock(localdt).getProto();
+/*  27: 46 */         BlockType localatr = paramaqu.getBlock(localdt).getType();
 /*  28: 47 */         if ((localatr == BlockList.J) || (localatr == BlockList.F)) {
 /*  29: 48 */           paramaqu.g(localdt);
 /*  30:    */         }
@@ -41,10 +41,10 @@ package net.minecraft.src;
 /*  40: 59 */     paramdt = paramdt.offset(localej);
 /*  41:    */     
 /*  42: 61 */     Block localbec = paramaqu.getBlock(paramdt);
-/*  43: 62 */     if (((localbec.getProto() == BlockList.J) || (localbec.getProto() == BlockList.F)) && 
+/*  43: 62 */     if (((localbec.getType() == BlockList.J) || (localbec.getType() == BlockList.F)) && 
 /*  44: 63 */       (((Boolean)localbec.getData(bdq.b)).booleanValue()))
 /*  45:    */     {
-/*  46: 64 */       localbec.getProto().b(paramaqu, paramdt, localbec, 0);
+/*  46: 64 */       localbec.getType().b(paramaqu, paramdt, localbec, 0);
 /*  47: 65 */       paramaqu.g(paramdt);
 /*  48:    */     }
 /*  49:    */   }
@@ -148,15 +148,15 @@ package net.minecraft.src;
 /* 147:    */     }
 /* 148:    */   }
 /* 149:    */   
-/* 150:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/* 150:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /* 151:    */   {
 /* 152:171 */     EnumDirection localej = (EnumDirection)parambec.getData(a);
 /* 153:172 */     BlockPosition localdt = paramdt.offset(localej.opposite());
 /* 154:173 */     Block localbec = paramaqu.getBlock(localdt);
-/* 155:174 */     if ((localbec.getProto() != BlockList.J) && (localbec.getProto() != BlockList.F)) {
+/* 155:174 */     if ((localbec.getType() != BlockList.J) && (localbec.getType() != BlockList.F)) {
 /* 156:175 */       paramaqu.g(paramdt);
 /* 157:    */     } else {
-/* 158:177 */       localbec.getProto().a(paramaqu, localdt, localbec, paramatr);
+/* 158:177 */       localbec.getType().a(paramaqu, localdt, localbec, paramatr);
 /* 159:    */     }
 /* 160:    */   }
 /* 161:    */   
@@ -177,9 +177,9 @@ package net.minecraft.src;
 /* 176:    */   public Item b(World paramaqu, BlockPosition paramdt)
 /* 177:    */   {
 /* 178:197 */     if (paramaqu.getBlock(paramdt).getData(b) == bdu.b) {
-/* 179:198 */       return Item.fromProtoBlock(BlockList.F);
+/* 179:198 */       return Item.fromBlock(BlockList.F);
 /* 180:    */     }
-/* 181:200 */     return Item.fromProtoBlock(BlockList.J);
+/* 181:200 */     return Item.fromBlock(BlockList.J);
 /* 182:    */   }
 /* 183:    */   
 /* 184:    */   public Block instance(int paramInt)

@@ -39,7 +39,7 @@ package net.minecraft.src;
 /*  38: 49 */     else if (localakv == EnumDyeColor.BROWN)
 /*  39:    */     {
 /*  40: 52 */       Block localbec1 = world.getBlock(pos);
-/*  41: 53 */       ProtoBlock localatr = localbec1.getProto();
+/*  41: 53 */       BlockType localatr = localbec1.getType();
 /*  42: 55 */       if ((localatr == BlockList.log) && (localbec1.getData(ayw.a) == EnumWoodVariant.JUNGLE))
 /*  43:    */       {
 /*  44: 56 */         if (paramej == EnumDirection.DOWN) {
@@ -66,9 +66,9 @@ package net.minecraft.src;
 /*  65:    */   public static boolean a(ItemStack paramamj, World paramaqu, BlockPosition paramdt)
 /*  66:    */   {
 /*  67: 79 */     Block localbec = paramaqu.getBlock(paramdt);
-/*  68: 81 */     if ((localbec.getProto() instanceof atz))
+/*  68: 81 */     if ((localbec.getType() instanceof atz))
 /*  69:    */     {
-/*  70: 82 */       atz localatz = (atz)localbec.getProto();
+/*  70: 82 */       atz localatz = (atz)localbec.getType();
 /*  71: 84 */       if (localatz.a(paramaqu, paramdt, localbec, paramaqu.isClient))
 /*  72:    */       {
 /*  73: 85 */         if (!paramaqu.isClient)
@@ -89,7 +89,7 @@ package net.minecraft.src;
 /*  88: 98 */     if (paramInt == 0) {
 /*  89: 99 */       paramInt = 15;
 /*  90:    */     }
-/*  91:102 */     ProtoBlock localatr = world.getBlock(pos).getProto();
+/*  91:102 */     BlockType localatr = world.getBlock(pos).getType();
 /*  92:103 */     if (localatr.getMaterial() == Material.air) {
 /*  93:104 */       return;
 /*  94:    */     }

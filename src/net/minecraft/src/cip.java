@@ -24,7 +24,7 @@ package net.minecraft.src;
 /*  23: 30 */     this.j = 10.0D;
 /*  24:    */   }
 /*  25:    */   
-/*  26:    */   public boolean a(DamageSource paramwh, float paramFloat)
+/*  26:    */   public boolean receiveDamage(DamageSource paramwh, float paramFloat)
 /*  27:    */   {
 /*  28: 35 */     return true;
 /*  29:    */   }
@@ -54,10 +54,10 @@ package net.minecraft.src;
 /*  53:    */     }
 /*  54: 61 */     this.az += (f1 - this.az) * 0.4F;
 /*  55: 62 */     this.aA += this.az;
-/*  56: 64 */     if ((!this.a) && (az()) && (this.bg.items[this.bg.c] != null))
+/*  56: 64 */     if ((!this.a) && (az()) && (this.inventory.items[this.inventory.c] != null))
 /*  57:    */     {
-/*  58: 65 */       ItemStack localamj = this.bg.items[this.bg.c];
-/*  59: 66 */       a(this.bg.items[this.bg.c], localamj.getItem().d(localamj));
+/*  58: 65 */       ItemStack localamj = this.inventory.items[this.inventory.c];
+/*  59: 66 */       a(this.inventory.items[this.inventory.c], localamj.getItem().d(localamj));
 /*  60: 67 */       this.a = true;
 /*  61:    */     }
 /*  62: 68 */     else if ((this.a) && (!az()))
@@ -98,10 +98,10 @@ package net.minecraft.src;
 /*  97:102 */     if (f1 > 0.1F) {
 /*  98:103 */       f1 = 0.1F;
 /*  99:    */     }
-/* 100:105 */     if ((!this.C) || (getHealth() <= 0.0F)) {
+/* 100:105 */     if ((!this.landing) || (getHealth() <= 0.0F)) {
 /* 101:106 */       f1 = 0.0F;
 /* 102:    */     }
-/* 103:108 */     if ((this.C) || (getHealth() <= 0.0F)) {
+/* 103:108 */     if ((this.landing) || (getHealth() <= 0.0F)) {
 /* 104:109 */       f2 = 0.0F;
 /* 105:    */     }
 /* 106:111 */     this.bm += (f1 - this.bm) * 0.4F;
@@ -111,9 +111,9 @@ package net.minecraft.src;
 /* 110:    */   public void setItemStack(int paramInt, ItemStack paramamj)
 /* 111:    */   {
 /* 112:117 */     if (paramInt == 0) {
-/* 113:118 */       this.bg.items[this.bg.c] = paramamj;
+/* 113:118 */       this.inventory.items[this.inventory.c] = paramamj;
 /* 114:    */     } else {
-/* 115:120 */       this.bg.armors[(paramInt - 1)] = paramamj;
+/* 115:120 */       this.inventory.armors[(paramInt - 1)] = paramamj;
 /* 116:    */     }
 /* 117:    */   }
 /* 118:    */   

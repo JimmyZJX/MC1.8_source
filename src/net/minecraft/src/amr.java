@@ -4,10 +4,10 @@ package net.minecraft.src;
 /*  3:   */ public class amr
 /*  4:   */   extends aju
 /*  5:   */ {
-/*  6:   */   protected final ProtoBlock b;
+/*  6:   */   protected final BlockType b;
 /*  7:   */   protected final Function c;
 /*  8:   */   
-/*  9:   */   public amr(ProtoBlock paramatr1, ProtoBlock paramatr2, Function paramFunction)
+/*  9:   */   public amr(BlockType paramatr1, BlockType paramatr2, Function paramFunction)
 /* 10:   */   {
 /* 11:13 */     super(paramatr1);
 /* 12:   */     
@@ -18,7 +18,7 @@ package net.minecraft.src;
 /* 17:19 */     a(true);
 /* 18:   */   }
 /* 19:   */   
-/* 20:   */   public amr(ProtoBlock paramatr1, ProtoBlock paramatr2, String[] paramArrayOfString)
+/* 20:   */   public amr(BlockType paramatr1, BlockType paramatr2, String[] paramArrayOfString)
 /* 21:   */   {
 /* 22:23 */     this(paramatr1, paramatr2, new ams(paramArrayOfString));
 /* 23:   */   }

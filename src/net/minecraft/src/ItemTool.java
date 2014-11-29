@@ -6,12 +6,12 @@ package net.minecraft.src;
 /*  4:   */ public class ItemTool
 /*  5:   */   extends Item
 /*  6:   */ {
-/*  7:   */   private Set<ProtoBlock> blocksEffectiveAgainst;
+/*  7:   */   private Set<BlockType> blocksEffectiveAgainst;
 /*  8:15 */   protected float efficiencyOnProperMaterial = 4.0F;
 /*  9:   */   private float damageVsEntity;
 /* 10:   */   protected EnumToolMaterial toolMaterial;
 /* 11:   */   
-/* 12:   */   protected ItemTool(float baseDamage, EnumToolMaterial material, Set<ProtoBlock> blocks)
+/* 12:   */   protected ItemTool(float baseDamage, EnumToolMaterial material, Set<BlockType> blocks)
 /* 13:   */   {
 /* 14:21 */     this.toolMaterial = material;
 /* 15:22 */     this.blocksEffectiveAgainst = blocks;
@@ -22,7 +22,7 @@ package net.minecraft.src;
 /* 20:27 */     setTabToDisplayOn(CreativeTabs.tabTools);
 /* 21:   */   }
 /* 22:   */   
-/* 23:   */   public float getStrVsBlock(ItemStack itemStack, ProtoBlock block)
+/* 23:   */   public float getStrVsBlock(ItemStack itemStack, BlockType block)
 /* 24:   */   {
 /* 25:32 */     return this.blocksEffectiveAgainst.contains(block) ? this.efficiencyOnProperMaterial : 1.0F;
 /* 26:   */   }
@@ -33,7 +33,7 @@ package net.minecraft.src;
 /* 31:38 */     return true;
 /* 32:   */   }
 /* 33:   */   
-/* 34:   */   public boolean a(ItemStack paramamj, World paramaqu, ProtoBlock paramatr, BlockPosition paramdt, EntityLiving paramxm)
+/* 34:   */   public boolean a(ItemStack paramamj, World paramaqu, BlockType paramatr, BlockPosition paramdt, EntityLiving paramxm)
 /* 35:   */   {
 /* 36:44 */     if (paramatr.g(paramaqu, paramdt) != 0.0D) {
 /* 37:45 */       paramamj.a(1, paramxm);

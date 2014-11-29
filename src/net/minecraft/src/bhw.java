@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*  3:   */ public class bhw
 /*  4:   */   extends TerrainGenerator
 /*  5:   */ {
-/*  6:   */   private ProtoBlock a;
+/*  6:   */   private BlockType a;
 /*  7:   */   private int b;
 /*  8:   */   
 /*  9:   */   public bhw(int paramInt)
@@ -18,7 +18,7 @@ package net.minecraft.src;
 /* 17:21 */     while ((paramaqu.isEmpty(paramdt)) && (paramdt.getY() > 2)) {
 /* 18:22 */       paramdt = paramdt.down();
 /* 19:   */     }
-/* 20:25 */     if (paramaqu.getBlock(paramdt).getProto() != BlockList.aJ) {
+/* 20:25 */     if (paramaqu.getBlock(paramdt).getType() != BlockList.aJ) {
 /* 21:26 */       return false;
 /* 22:   */     }
 /* 23:28 */     int i = paramRandom.nextInt(this.b - 2) + 2;
@@ -32,7 +32,7 @@ package net.minecraft.src;
 /* 31:37 */           for (int i2 = paramdt.getY() - j; i2 <= paramdt.getY() + j; i2++)
 /* 32:   */           {
 /* 33:38 */             BlockPosition localdt = new BlockPosition(k, i2, m);
-/* 34:39 */             ProtoBlock localatr = paramaqu.getBlock(localdt).getProto();
+/* 34:39 */             BlockType localatr = paramaqu.getBlock(localdt).getType();
 /* 35:40 */             if ((localatr == BlockList.dirt) || (localatr == BlockList.aJ) || (localatr == BlockList.aI)) {
 /* 36:41 */               paramaqu.setBlock(localdt, this.a.instance(), 2);
 /* 37:   */             }

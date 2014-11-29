@@ -26,11 +26,11 @@ package net.minecraft.src;
 /*  25: 41 */     if ((this.i) && (paramwv.isInWater()))
 /*  26:    */     {
 /*  27: 42 */       k = (int)paramwv.getAABB().minY;
-/*  28: 43 */       ProtoBlock localatr = this.a.getBlock(new BlockPosition(MathUtils.floor(paramwv.xPos), k, MathUtils.floor(paramwv.zPos))).getProto();
+/*  28: 43 */       BlockType localatr = this.a.getBlock(new BlockPosition(MathUtils.floor(paramwv.xPos), k, MathUtils.floor(paramwv.zPos))).getType();
 /*  29: 44 */       while ((localatr == BlockList.flowingWater) || (localatr == BlockList.water))
 /*  30:    */       {
 /*  31: 45 */         k++;
-/*  32: 46 */         localatr = this.a.getBlock(new BlockPosition(MathUtils.floor(paramwv.xPos), k, MathUtils.floor(paramwv.zPos))).getProto();
+/*  32: 46 */         localatr = this.a.getBlock(new BlockPosition(MathUtils.floor(paramwv.xPos), k, MathUtils.floor(paramwv.zPos))).getType();
 /*  33:    */       }
 /*  34: 48 */       this.h = false;
 /*  35:    */     }
@@ -132,7 +132,7 @@ package net.minecraft.src;
 /* 131:149 */         for (int i1 = paramInt3; i1 < paramInt3 + paramInt6; i1++)
 /* 132:    */         {
 /* 133:150 */           BlockPosition localdt2 = new BlockPosition(m, n, i1);
-/* 134:151 */           ProtoBlock localatr = paramard.getBlock(localdt2).getProto();
+/* 134:151 */           BlockType localatr = paramard.getBlock(localdt2).getType();
 /* 135:152 */           if (localatr.getMaterial() != Material.air)
 /* 136:    */           {
 /* 137:155 */             if ((localatr == BlockList.bd) || (localatr == BlockList.cw))
@@ -150,16 +150,16 @@ package net.minecraft.src;
 /* 149:    */             {
 /* 150:164 */               return 0;
 /* 151:    */             }
-/* 152:167 */             if ((paramwv.world.getBlock(localdt2).getProto() instanceof ati))
+/* 152:167 */             if ((paramwv.world.getBlock(localdt2).getType() instanceof ati))
 /* 153:    */             {
-/* 154:168 */               if ((!(paramwv.world.getBlock(localdt1).getProto() instanceof ati)) && (!(paramwv.world.getBlock(localdt1.down()).getProto() instanceof ati))) {
+/* 154:168 */               if ((!(paramwv.world.getBlock(localdt1).getType() instanceof ati)) && (!(paramwv.world.getBlock(localdt1.down()).getType() instanceof ati))) {
 /* 155:171 */                 return -3;
 /* 156:    */               }
 /* 157:    */             }
 /* 158:175 */             else if (!localatr.b(paramard, localdt2)) {
 /* 159:178 */               if ((!paramBoolean2) || (!(localatr instanceof BlockDoor)) || (localatr.getMaterial() != Material.wood))
 /* 160:    */               {
-/* 161:182 */                 if (((localatr instanceof avv)) || ((localatr instanceof avw)) || ((localatr instanceof bbx))) {
+/* 161:182 */                 if (((localatr instanceof BlockFence)) || ((localatr instanceof BlockFenceGate)) || ((localatr instanceof BlockCobbleWall))) {
 /* 162:183 */                   return -3;
 /* 163:    */                 }
 /* 164:186 */                 if ((localatr == BlockList.bd) || (localatr == BlockList.cw)) {

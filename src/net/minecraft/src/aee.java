@@ -26,7 +26,7 @@ package net.minecraft.src;
 /*  25:    */   protected void h()
 /*  26:    */   {
 /*  27: 38 */     super.h();
-/*  28: 39 */     this.ac.a(16, new Byte((byte)0));
+/*  28: 39 */     this.data.addData(16, new Byte((byte)0));
 /*  29:    */   }
 /*  30:    */   
 /*  31:    */   public void onUpdate()
@@ -105,14 +105,14 @@ package net.minecraft.src;
 /* 104:114 */     super.o();
 /* 105:    */   }
 /* 106:    */   
-/* 107:    */   public boolean e(EntityPlayer paramahd)
+/* 107:    */   public boolean onRightClick(EntityPlayer paramahd)
 /* 108:    */   {
-/* 109:119 */     ItemStack localamj = paramahd.bg.h();
+/* 109:119 */     ItemStack localamj = paramahd.inventory.getHeldItem();
 /* 110:120 */     if ((localamj != null) && (localamj.getItem() == ItemList.coal))
 /* 111:    */     {
 /* 112:121 */       if (!paramahd.abilities.instabuild) {
 /* 113:121 */         if (--localamj.stackSize == 0) {
-/* 114:122 */           paramahd.bg.a(paramahd.bg.c, null);
+/* 114:122 */           paramahd.inventory.a(paramahd.inventory.c, null);
 /* 115:    */         }
 /* 116:    */       }
 /* 117:124 */       this.c += 3600;
@@ -141,15 +141,15 @@ package net.minecraft.src;
 /* 140:    */   
 /* 141:    */   protected boolean j()
 /* 142:    */   {
-/* 143:149 */     return (this.ac.a(16) & 0x1) != 0;
+/* 143:149 */     return (this.data.getByte(16) & 0x1) != 0;
 /* 144:    */   }
 /* 145:    */   
 /* 146:    */   protected void i(boolean paramBoolean)
 /* 147:    */   {
 /* 148:153 */     if (paramBoolean) {
-/* 149:154 */       this.ac.b(16, Byte.valueOf((byte)(this.ac.a(16) | 0x1)));
+/* 149:154 */       this.data.b(16, Byte.valueOf((byte)(this.data.getByte(16) | 0x1)));
 /* 150:    */     } else {
-/* 151:156 */       this.ac.b(16, Byte.valueOf((byte)(this.ac.a(16) & 0xFFFFFFFE)));
+/* 151:156 */       this.data.b(16, Byte.valueOf((byte)(this.data.getByte(16) & 0xFFFFFFFE)));
 /* 152:    */     }
 /* 153:    */   }
 /* 154:    */   

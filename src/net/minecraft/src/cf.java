@@ -92,7 +92,7 @@ package net.minecraft.src;
 /*  89:    */     }
 /*  90:    */     catch (NumberInvalidException localdk)
 /*  91:    */     {
-/*  92:110 */       if (ProtoBlock.b(paramArrayOfString[j]) == BlockList.air) {
+/*  92:110 */       if (BlockType.b(paramArrayOfString[j]) == BlockList.air) {
 /*  93:111 */         localalq = null;
 /*  94:    */       } else {
 /*  95:113 */         throw localdk;

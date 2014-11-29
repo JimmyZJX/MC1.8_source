@@ -41,7 +41,7 @@ package net.minecraft.src;
 /*  41:    */   protected void h()
 /*  42:    */   {
 /*  43: 57 */     super.h();
-/*  44: 58 */     this.ac.a(16, Byte.valueOf((byte)0));
+/*  44: 58 */     this.data.addData(16, Byte.valueOf((byte)0));
 /*  45:    */   }
 /*  46:    */   
 /*  47:    */   public void writeEntityToNBT(NBTTagCompound paramfn)
@@ -71,14 +71,14 @@ package net.minecraft.src;
 /*  71: 85 */     return "mob.pig.death";
 /*  72:    */   }
 /*  73:    */   
-/*  74:    */   protected void a(BlockPosition paramdt, ProtoBlock paramatr)
+/*  74:    */   protected void a(BlockPosition paramdt, BlockType paramatr)
 /*  75:    */   {
 /*  76: 90 */     a("mob.pig.step", 0.15F, 1.0F);
 /*  77:    */   }
 /*  78:    */   
-/*  79:    */   public boolean onRightClick(EntityPlayer paramahd)
+/*  79:    */   public boolean onRightClickMob(EntityPlayer paramahd)
 /*  80:    */   {
-/*  81: 95 */     if (!super.onRightClick(paramahd))
+/*  81: 95 */     if (!super.onRightClickMob(paramahd))
 /*  82:    */     {
 /*  83: 96 */       if ((cj()) && (!this.world.isClient) && ((this.rider == null) || (this.rider == paramahd)))
 /*  84:    */       {
@@ -115,15 +115,15 @@ package net.minecraft.src;
 /* 115:    */   
 /* 116:    */   public boolean cj()
 /* 117:    */   {
-/* 118:131 */     return (this.ac.a(16) & 0x1) != 0;
+/* 118:131 */     return (this.data.getByte(16) & 0x1) != 0;
 /* 119:    */   }
 /* 120:    */   
 /* 121:    */   public void l(boolean paramBoolean)
 /* 122:    */   {
 /* 123:135 */     if (paramBoolean) {
-/* 124:136 */       this.ac.b(16, Byte.valueOf((byte)1));
+/* 124:136 */       this.data.b(16, Byte.valueOf((byte)1));
 /* 125:    */     } else {
-/* 126:138 */       this.ac.b(16, Byte.valueOf((byte)0));
+/* 126:138 */       this.data.b(16, Byte.valueOf((byte)0));
 /* 127:    */     }
 /* 128:    */   }
 /* 129:    */   

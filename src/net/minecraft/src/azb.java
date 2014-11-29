@@ -8,12 +8,12 @@ package net.minecraft.src;
 /*  7:14 */     setCreativeTab(CreativeTabs.tabRedstone);
 /*  8:   */   }
 /*  9:   */   
-/* 10:   */   public boolean protoBlock_g()
+/* 10:   */   public boolean blockType_g()
 /* 11:   */   {
 /* 12:19 */     return true;
 /* 13:   */   }
 /* 14:   */   
-/* 15:   */   public int a(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
+/* 15:   */   public int getRedStoneSignal(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
 /* 16:   */   {
 /* 17:24 */     return 15;
 /* 18:   */   }

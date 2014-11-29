@@ -257,7 +257,7 @@ import java.io.IOException;
 /* 254:    */       {
 /* 255:263 */         localObject6 = localObject5.next();
 /* 256:264 */         NBTTagCompound localfn2 = new NBTTagCompound();
-/* 257:265 */         oa localoa = (oa)ProtoBlock.c.c(((TickListener)localObject6).a());
+/* 257:265 */         oa localoa = (oa)BlockType.c.c(((TickListener)localObject6).a());
 /* 258:266 */         localfn2.setString("i", localoa == null ? "" : localoa.toString());
 /* 259:267 */         localfn2.setInt("x", ((TickListener)localObject6).a.getX());
 /* 260:268 */         localfn2.setInt("y", ((TickListener)localObject6).a.getY());
@@ -369,11 +369,11 @@ import java.io.IOException;
 /* 366:    */         {
 /* 367:367 */           NBTTagCompound localObject2 = localfv4.b(i3);
 /* 368:370 */           if (((NBTTagCompound)localObject2).hasKey("i", 8)) {
-/* 369:371 */             localObject3 = ProtoBlock.b(((NBTTagCompound)localObject2).getString("i"));
+/* 369:371 */             localObject3 = BlockType.b(((NBTTagCompound)localObject2).getString("i"));
 /* 370:    */           } else {
-/* 371:373 */             localObject3 = ProtoBlock.c(((NBTTagCompound)localObject2).getInteger("i"));
+/* 371:373 */             localObject3 = BlockType.c(((NBTTagCompound)localObject2).getInteger("i"));
 /* 372:    */           }
-/* 373:375 */           paramaqu.b(new BlockPosition(((NBTTagCompound)localObject2).getInteger("x"), ((NBTTagCompound)localObject2).getInteger("y"), ((NBTTagCompound)localObject2).getInteger("z")), (ProtoBlock)localObject3, ((NBTTagCompound)localObject2).getInteger("t"), ((NBTTagCompound)localObject2).getInteger("p"));
+/* 373:375 */           paramaqu.b(new BlockPosition(((NBTTagCompound)localObject2).getInteger("x"), ((NBTTagCompound)localObject2).getInteger("y"), ((NBTTagCompound)localObject2).getInteger("z")), (BlockType)localObject3, ((NBTTagCompound)localObject2).getInteger("t"), ((NBTTagCompound)localObject2).getInteger("p"));
 /* 374:    */         }
 /* 375:    */       }
 /* 376:    */     }

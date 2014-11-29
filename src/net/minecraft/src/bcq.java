@@ -67,7 +67,7 @@ package net.minecraft.src;
 /*  66:    */       {
 /*  67: 92 */         this.i = arrayOfBoolean;
 /*  68: 93 */         Block localbec = this.world.getBlock(v());
-/*  69: 94 */         if (!(localbec.getProto() instanceof aub)) {
+/*  69: 94 */         if (!(localbec.getType() instanceof aub)) {
 /*  70: 95 */           return;
 /*  71:    */         }
 /*  72: 97 */         for (int m = 0; m < aub.a.length; m++) {

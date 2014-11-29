@@ -5,8 +5,8 @@ package net.minecraft.src;
 /*   4:    */   implements Callable<String>
 /*   5:    */ {
 				private final int a;
-				private final ProtoBlock b;
-/*   6:    */   k(int paramInt, ProtoBlock paramatr) {a=paramInt;b=paramatr;}
+				private final BlockType b;
+/*   6:    */   k(int paramInt, BlockType paramatr) {a=paramInt;b=paramatr;}
 /*   7:    */   
 /*   8:    */   public String call()
 /*   9:    */   {

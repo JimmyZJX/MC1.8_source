@@ -15,7 +15,7 @@ package net.minecraft.src;
 /* 15:   */   public void a(ItemStack stack, World world, EntityPlayer paramahd, int paramInt)
 /* 16:   */   {
 /* 17:27 */     int i = (paramahd.abilities.instabuild) || (aph.a(Enchantment.infinity.id, stack) > 0) ? 1 : 0;
-/* 18:29 */     if ((i != 0) || (paramahd.bg.b(ItemList.arrow)))
+/* 18:29 */     if ((i != 0) || (paramahd.inventory.b(ItemList.arrow)))
 /* 19:   */     {
 /* 20:30 */       int j = d(stack) - paramInt;
 /* 21:31 */       float f = j / 20.0F;
@@ -47,7 +47,7 @@ package net.minecraft.src;
 /* 47:58 */       if (i != 0) {
 /* 48:59 */         localahj.a = 2;
 /* 49:   */       } else {
-/* 50:61 */         paramahd.bg.a(ItemList.arrow);
+/* 50:61 */         paramahd.inventory.a(ItemList.arrow);
 /* 51:   */       }
 /* 52:63 */       paramahd.increaseStat(StatList.J[Item.b(this)]);
 /* 53:64 */       if (!world.isClient) {
@@ -73,7 +73,7 @@ package net.minecraft.src;
 /* 73:   */   
 /* 74:   */   public ItemStack a(ItemStack paramamj, World paramaqu, EntityPlayer paramahd)
 /* 75:   */   {
-/* 76:87 */     if ((paramahd.abilities.instabuild) || (paramahd.bg.b(ItemList.arrow))) {
+/* 76:87 */     if ((paramahd.abilities.instabuild) || (paramahd.inventory.b(ItemList.arrow))) {
 /* 77:88 */       paramahd.a(paramamj, d(paramamj));
 /* 78:   */     }
 /* 79:90 */     return paramamj;

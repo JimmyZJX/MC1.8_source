@@ -50,7 +50,7 @@ package net.minecraft.src;
 /*  50:    */   
 /*  51:    */   public void onUpdate()
 /*  52:    */   {
-/*  53: 71 */     ProtoBlock localatr = this.d.getProto();
+/*  53: 71 */     BlockType localatr = this.d.getType();
 /*  54: 72 */     if (localatr.getMaterial() == Material.air)
 /*  55:    */     {
 /*  56: 73 */       setDead();
@@ -63,7 +63,7 @@ package net.minecraft.src;
 /*  63: 81 */     if (this.a++ == 0)
 /*  64:    */     {
 /*  65: 82 */       localdt = new BlockPosition(this);
-/*  66: 83 */       if (this.world.getBlock(localdt).getProto() == localatr)
+/*  66: 83 */       if (this.world.getBlock(localdt).getType() == localatr)
 /*  67:    */       {
 /*  68: 84 */         this.world.g(localdt);
 /*  69:    */       }
@@ -81,12 +81,12 @@ package net.minecraft.src;
 /*  81: 97 */     if (!this.world.isClient)
 /*  82:    */     {
 /*  83: 98 */       localdt = new BlockPosition(this);
-/*  84:100 */       if (this.C)
+/*  84:100 */       if (this.landing)
 /*  85:    */       {
 /*  86:101 */         this.xVelocity *= 0.699999988079071D;
 /*  87:102 */         this.zVelocity *= 0.699999988079071D;
 /*  88:103 */         this.yVelocity *= -0.5D;
-/*  89:105 */         if (this.world.getBlock(localdt).getProto() != BlockList.M)
+/*  89:105 */         if (this.world.getBlock(localdt).getType() != BlockList.M)
 /*  90:    */         {
 /*  91:106 */           setDead();
 /*  92:108 */           if ((!this.e) && (this.world.a(localatr, localdt, true, EnumDirection.UP, null, null)) && (!avt.d(this.world, localdt.down())) && (this.world.setBlock(localdt, this.d, 3)))
@@ -131,7 +131,7 @@ package net.minecraft.src;
 /* 131:    */   
 /* 132:    */   public void e(float paramFloat1, float paramFloat2)
 /* 133:    */   {
-/* 134:146 */     ProtoBlock localatr = this.d.getProto();
+/* 134:146 */     BlockType localatr = this.d.getType();
 /* 135:147 */     if (this.f)
 /* 136:    */     {
 /* 137:148 */       int i = MathUtils.ceil(paramFloat1 - 1.0F);
@@ -141,7 +141,7 @@ package net.minecraft.src;
 /* 141:151 */         int j = localatr == BlockList.cf ? 1 : 0;
 /* 142:152 */         DamageSource localwh = j != 0 ? DamageSource.anvil : DamageSource.fallingBlock;
 /* 143:154 */         for (Entity localwv : localArrayList) {
-/* 144:155 */           localwv.a(localwh, Math.min(MathUtils.floor(i * this.h), this.g));
+/* 144:155 */           localwv.receiveDamage(localwh, Math.min(MathUtils.floor(i * this.h), this.g));
 /* 145:    */         }
 /* 146:158 */         if ((j != 0) && (this.rng.nextFloat() < 0.0500000007450581D + i * 0.05D))
 /* 147:    */         {
@@ -160,8 +160,8 @@ package net.minecraft.src;
 /* 160:    */   
 /* 161:    */   protected void writeEntityToNBT(NBTTagCompound paramfn)
 /* 162:    */   {
-/* 163:173 */     ProtoBlock localatr = this.d != null ? this.d.getProto() : BlockList.air;
-/* 164:174 */     oa localoa = (oa)ProtoBlock.c.c(localatr);
+/* 163:173 */     BlockType localatr = this.d != null ? this.d.getType() : BlockList.air;
+/* 164:174 */     oa localoa = (oa)BlockType.c.c(localatr);
 /* 165:175 */     paramfn.setString("Block", localoa == null ? "" : localoa.toString());
 /* 166:176 */     paramfn.setByte("Data", (byte)localatr.c(this.d));
 /* 167:177 */     paramfn.setByte("Time", (byte)this.a);
@@ -178,15 +178,15 @@ package net.minecraft.src;
 /* 178:    */   {
 /* 179:189 */     int i = paramfn.d("Data") & 0xFF;
 /* 180:190 */     if (paramfn.hasKey("Block", 8)) {
-/* 181:191 */       this.d = ProtoBlock.b(paramfn.getString("Block")).instance(i);
+/* 181:191 */       this.d = BlockType.b(paramfn.getString("Block")).instance(i);
 /* 182:192 */     } else if (paramfn.hasKey("TileID", 99)) {
-/* 183:193 */       this.d = ProtoBlock.c(paramfn.getInteger("TileID")).instance(i);
+/* 183:193 */       this.d = BlockType.c(paramfn.getInteger("TileID")).instance(i);
 /* 184:    */     } else {
-/* 185:195 */       this.d = ProtoBlock.c(paramfn.d("Tile") & 0xFF).instance(i);
+/* 185:195 */       this.d = BlockType.c(paramfn.d("Tile") & 0xFF).instance(i);
 /* 186:    */     }
 /* 187:198 */     this.a = (paramfn.d("Time") & 0xFF);
 /* 188:    */     
-/* 189:200 */     ProtoBlock localatr = this.d.getProto();
+/* 189:200 */     BlockType localatr = this.d.getType();
 /* 190:201 */     if (paramfn.hasKey("HurtEntities", 99))
 /* 191:    */     {
 /* 192:202 */       this.f = paramfn.getBoolean("HurtEntities");
@@ -228,8 +228,8 @@ package net.minecraft.src;
 /* 228:237 */     super.a(paramj);
 /* 229:238 */     if (this.d != null)
 /* 230:    */     {
-/* 231:239 */       ProtoBlock localatr = this.d.getProto();
-/* 232:240 */       paramj.a("Immitating block ID", Integer.valueOf(ProtoBlock.a(localatr)));
+/* 231:239 */       BlockType localatr = this.d.getType();
+/* 232:240 */       paramj.a("Immitating block ID", Integer.valueOf(BlockType.a(localatr)));
 /* 233:241 */       paramj.a("Immitating block data", Integer.valueOf(localatr.c(this.d)));
 /* 234:    */     }
 /* 235:    */   }

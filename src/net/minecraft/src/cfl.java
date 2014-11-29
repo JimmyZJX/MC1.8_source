@@ -34,7 +34,7 @@ package net.minecraft.src;
 /* 33:34 */     this.xVelocity *= 0.8500000238418579D;
 /* 34:35 */     this.yVelocity *= 0.8500000238418579D;
 /* 35:36 */     this.zVelocity *= 0.8500000238418579D;
-/* 36:38 */     if (this.world.getBlock(new BlockPosition(this)).getProto().getMaterial() != Material.water) {
+/* 36:38 */     if (this.world.getBlock(new BlockPosition(this)).getType().getMaterial() != Material.water) {
 /* 37:39 */       setDead();
 /* 38:   */     }
 /* 39:42 */     if (this.g-- <= 0) {

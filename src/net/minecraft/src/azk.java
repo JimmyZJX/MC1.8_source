@@ -80,7 +80,7 @@ package net.minecraft.src;
 /*  79:    */   
 /*  80:    */   public boolean c(World paramaqu, BlockPosition paramdt)
 /*  81:    */   {
-/*  82: 93 */     return (paramaqu.getBlock(paramdt).getProto().material.j()) && (World.isFlatSurface(paramaqu, paramdt.down()));
+/*  82: 93 */     return (paramaqu.getBlock(paramdt).getType().material.j()) && (World.isFlatSurface(paramaqu, paramdt.down()));
 /*  83:    */   }
 /*  84:    */   
 /*  85:    */   public Block a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3, int paramInt, EntityLiving paramxm)

@@ -17,7 +17,7 @@ package net.minecraft.src;
 /*  16: 31 */     return new bct();
 /*  17:    */   }
 /*  18:    */   
-/*  19:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/*  19:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /*  20:    */   {
 /*  21: 36 */     if (!paramaqu.isClient)
 /*  22:    */     {

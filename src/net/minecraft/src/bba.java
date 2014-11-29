@@ -3,7 +3,7 @@ package net.minecraft.src;
 /*  2:   */ import java.util.Random;
 /*  3:   */ 
 /*  4:   */ public class bba
-/*  5:   */   extends ProtoBlock
+/*  5:   */   extends BlockType
 /*  6:   */ {
 /*  7:17 */   public static final BlockDataEnum a = BlockDataEnum.getInstance("variant", EnumStoneVariants.class);
 /*  8:   */   
@@ -17,9 +17,9 @@ package net.minecraft.src;
 /* 16:   */   public Item a(Block parambec, Random paramRandom, int paramInt)
 /* 17:   */   {
 /* 18:28 */     if (parambec.getData(a) == EnumStoneVariants.STONE) {
-/* 19:29 */       return Item.fromProtoBlock(BlockList.cobblestone);
+/* 19:29 */       return Item.fromBlock(BlockList.cobblestone);
 /* 20:   */     }
-/* 21:31 */     return Item.fromProtoBlock(BlockList.stone);
+/* 21:31 */     return Item.fromBlock(BlockList.stone);
 /* 22:   */   }
 /* 23:   */   
 /* 24:   */   public int a(Block parambec)

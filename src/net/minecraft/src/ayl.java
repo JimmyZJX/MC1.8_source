@@ -23,12 +23,12 @@ package net.minecraft.src;
 /*  22:    */   
 /*  23:    */   public Item a(Block parambec, Random paramRandom, int paramInt)
 /*  24:    */   {
-/*  25: 39 */     return Item.fromProtoBlock(BlockList.cP);
+/*  25: 39 */     return Item.fromBlock(BlockList.cP);
 /*  26:    */   }
 /*  27:    */   
 /*  28:    */   public Item b(World paramaqu, BlockPosition paramdt)
 /*  29:    */   {
-/*  30: 44 */     return Item.fromProtoBlock(BlockList.cP);
+/*  30: 44 */     return Item.fromBlock(BlockList.cP);
 /*  31:    */   }
 /*  32:    */   
 /*  33:    */   public String b(int paramInt)
@@ -48,7 +48,7 @@ package net.minecraft.src;
 /*  47:    */   
 /*  48:    */   public void a(Item paramalq, CreativeTabs paramakf, List paramList)
 /*  49:    */   {
-/*  50: 64 */     if (paramalq == Item.fromProtoBlock(BlockList.cO)) {
+/*  50: 64 */     if (paramalq == Item.fromBlock(BlockList.cO)) {
 /*  51: 65 */       return;
 /*  52:    */     }
 /*  53: 68 */     for (aym localaym : aym.values()) {

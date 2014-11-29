@@ -38,7 +38,7 @@ package net.minecraft.src;
 /*  37:    */   
 /*  38:    */   public void a(vq paramvq)
 /*  39:    */   {
-/*  40: 85 */     this.f.a(0, aop.a().a(this.a, this.h.world));
+/*  40: 85 */     this.f.a(0, RecipeList.a().a(this.a, this.h.world));
 /*  41:    */   }
 /*  42:    */   
 /*  43:    */   public void b(EntityPlayer paramahd)

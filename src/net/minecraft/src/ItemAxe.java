@@ -5,14 +5,14 @@ package net.minecraft.src;
 /*  4:   */ public class ItemAxe
 /*  5:   */   extends ItemTool
 /*  6:   */ {
-/*  7:11 */   private static final Set<ProtoBlock> blocksEffectiveAgainst = Sets.newHashSet(new ProtoBlock[] { BlockList.planks, BlockList.bookshelf, BlockList.log, BlockList.log2, BlockList.chest, BlockList.pumpkin, BlockList.aZ, BlockList.melonBlock, BlockList.au });
+/*  7:11 */   private static final Set<BlockType> blocksEffectiveAgainst = Sets.newHashSet(new BlockType[] { BlockList.planks, BlockList.bookshelf, BlockList.log, BlockList.log2, BlockList.chest, BlockList.pumpkin, BlockList.aZ, BlockList.melonBlock, BlockList.au });
 /*  8:   */   
 /*  9:   */   protected ItemAxe(EnumToolMaterial material)
 /* 10:   */   {
 /* 11:24 */     super(3.0F, material, blocksEffectiveAgainst);
 /* 12:   */   }
 /* 13:   */   
-/* 14:   */   public float getStrVsBlock(ItemStack paramamj, ProtoBlock paramatr)
+/* 14:   */   public float getStrVsBlock(ItemStack paramamj, BlockType paramatr)
 /* 15:   */   {
 /* 16:29 */     if ((paramatr.getMaterial() == Material.wood) || (paramatr.getMaterial() == Material.plants) || (paramatr.getMaterial() == Material.l)) {
 /* 17:30 */       return this.efficiencyOnProperMaterial;

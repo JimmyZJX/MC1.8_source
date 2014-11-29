@@ -4,10 +4,10 @@ package net.minecraft.src;
 /*  3:   */ public class bhg
 /*  4:   */   extends TerrainGenerator
 /*  5:   */ {
-/*  6:   */   private final ProtoBlock a;
+/*  6:   */   private final BlockType a;
 /*  7:   */   private final int b;
 /*  8:   */   
-/*  9:   */   public bhg(ProtoBlock paramatr, int paramInt)
+/*  9:   */   public bhg(BlockType paramatr, int paramInt)
 /* 10:   */   {
 /* 11:15 */     super(false);
 /* 12:16 */     this.a = paramatr;
@@ -20,7 +20,7 @@ package net.minecraft.src;
 /* 19:   */     {
 /* 20:23 */       if (!paramaqu.isEmpty(paramdt.down()))
 /* 21:   */       {
-/* 22:24 */         ProtoBlock localatr = paramaqu.getBlock(paramdt.down()).getProto();
+/* 22:24 */         BlockType localatr = paramaqu.getBlock(paramdt.down()).getType();
 /* 23:25 */         if ((localatr == BlockList.grass) || (localatr == BlockList.dirt) || (localatr == BlockList.stone)) {
 /* 24:   */           break;
 /* 25:   */         }

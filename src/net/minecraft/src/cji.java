@@ -378,7 +378,7 @@ package net.minecraft.src;
 /*  377:     */       
 /*  378: 492 */       f1 /= ((1.0F - 500.0F / (f2 + 500.0F)) * 2.0F + 1.0F);
 /*  379:     */     }
-/*  380: 495 */     ProtoBlock localatr = bsp.a(this.h.f, localwv, paramFloat);
+/*  380: 495 */     BlockType localatr = bsp.a(this.h.f, localwv, paramFloat);
 /*  381: 496 */     if (localatr.getMaterial() == Material.water) {
 /*  382: 497 */       f1 = f1 * 60.0F / 70.0F;
 /*  383:     */     }
@@ -445,7 +445,7 @@ package net.minecraft.src;
 /*  444:     */       {
 /*  445: 557 */         BlockPosition localdt = new BlockPosition(localwv);
 /*  446: 558 */         Block localbec = this.h.f.getBlock(localdt);
-/*  447: 559 */         ProtoBlock localatr = localbec.getProto();
+/*  447: 559 */         BlockType localatr = localbec.getType();
 /*  448: 560 */         if (localatr == BlockList.C)
 /*  449:     */         {
 /*  450: 561 */           int i1 = ((EnumDirection)localbec.getData(atp.facing)).b();
@@ -946,7 +946,7 @@ package net.minecraft.src;
 /*  945:1066 */       if ((this.h.s != null) && (this.h.s.a == brv.BLOCK))
 /*  946:     */       {
 /*  947:1067 */         BlockPosition localdt = this.h.s.a();
-/*  948:1068 */         ProtoBlock localatr = this.h.f.getBlock(localdt).getProto();
+/*  948:1068 */         BlockType localatr = this.h.f.getBlock(localdt).getType();
 /*  949:1069 */         if (this.h.c.l() == EnumGameMode.SPECTATOR) {
 /*  950:1070 */           bool = (localatr.x()) && ((this.h.f.s(localdt) instanceof vq));
 /*  951:     */         } else {
@@ -1265,7 +1265,7 @@ package net.minecraft.src;
 /* 1264:     */       
 /* 1265:1378 */       arm localarm = localcen.b(localdt2);
 /* 1266:1379 */       BlockPosition localdt3 = localdt2.down();
-/* 1267:1380 */       ProtoBlock localatr = localcen.getBlock(localdt3).getProto();
+/* 1267:1380 */       BlockType localatr = localcen.getBlock(localdt3).getType();
 /* 1268:1382 */       if ((localdt2.getY() <= localdt1.getY() + i1) && (localdt2.getY() >= localdt1.getY() - i1) && (localarm.e()) && (localarm.a(localdt2) >= 0.15F))
 /* 1269:     */       {
 /* 1270:1383 */         float f2 = this.j.nextFloat();
@@ -1511,7 +1511,7 @@ package net.minecraft.src;
 /* 1510:1610 */       this.R *= f7;
 /* 1511:1611 */       this.S *= f7;
 /* 1512:     */     }
-/* 1513:1614 */     ProtoBlock localatr = bsp.a(this.h.f, localwv, paramFloat);
+/* 1513:1614 */     BlockType localatr = bsp.a(this.h.f, localwv, paramFloat);
 /* 1514:1615 */     if (this.B)
 /* 1515:     */     {
 /* 1516:1616 */       Vec3 localbrw4 = localcen.e(paramFloat);
@@ -1609,7 +1609,7 @@ package net.minecraft.src;
 /* 1608:1705 */     GL11.glNormal3f(0.0F, -1.0F, 0.0F);
 /* 1609:1706 */     cjm.c(1.0F, 1.0F, 1.0F, 1.0F);
 /* 1610:     */     
-/* 1611:1708 */     ProtoBlock localatr = bsp.a(this.h.f, localwv, paramFloat);
+/* 1611:1708 */     BlockType localatr = bsp.a(this.h.f, localwv, paramFloat);
 /* 1612:     */     float f1;
 /* 1613:1710 */     if (((localwv instanceof EntityLiving)) && (((EntityLiving)localwv).a(Potion.blindness)))
 /* 1614:     */     {

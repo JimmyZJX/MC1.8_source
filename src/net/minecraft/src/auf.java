@@ -3,7 +3,7 @@ package net.minecraft.src;
 /*   2:    */ import java.util.Random;
 /*   3:    */ 
 /*   4:    */ public class auf
-/*   5:    */   extends ProtoBlock
+/*   5:    */   extends BlockType
 /*   6:    */ {
 /*   7: 20 */   public static final BlockDataInteger a = BlockDataInteger.getInstance("age", 0, 15);
 /*   8:    */   
@@ -22,7 +22,7 @@ package net.minecraft.src;
 /*  21: 33 */       return;
 /*  22:    */     }
 /*  23: 36 */     int i = 1;
-/*  24: 37 */     while (paramaqu.getBlock(paramdt.down(i)).getProto() == this) {
+/*  24: 37 */     while (paramaqu.getBlock(paramdt.down(i)).getType() == this) {
 /*  25: 38 */       i++;
 /*  26:    */     }
 /*  27: 41 */     if (i >= 3) {
@@ -72,7 +72,7 @@ package net.minecraft.src;
 /*  71: 85 */     return false;
 /*  72:    */   }
 /*  73:    */   
-/*  74:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/*  74:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /*  75:    */   {
 /*  76: 90 */     if (!d(paramaqu, paramdt)) {
 /*  77: 91 */       paramaqu.b(paramdt, true);
@@ -84,17 +84,17 @@ package net.minecraft.src;
 /*  83: 96 */     for (Iterator<EnumDirection> localObject = EnumHorizontalVertical.HORIZONTAL.iterator(); (localObject).hasNext();)
 /*  84:    */     {
 /*  85: 96 */       EnumDirection localej = (EnumDirection)(localObject).next();
-/*  86: 97 */       if (paramaqu.getBlock(paramdt.offset(localej)).getProto().getMaterial().a()) {
+/*  86: 97 */       if (paramaqu.getBlock(paramdt.offset(localej)).getType().getMaterial().a()) {
 /*  87: 98 */         return false;
 /*  88:    */       }
 /*  89:    */     }
-/*  90:101 */     ProtoBlock localObject = paramaqu.getBlock(paramdt.down()).getProto();
+/*  90:101 */     BlockType localObject = paramaqu.getBlock(paramdt.down()).getType();
 /*  91:102 */     return (localObject == BlockList.cactus) || (localObject == BlockList.sand);
 /*  92:    */   }
 /*  93:    */   
 /*  94:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, Entity paramwv)
 /*  95:    */   {
-/*  96:107 */     paramwv.a(DamageSource.cactus, 1.0F);
+/*  96:107 */     paramwv.receiveDamage(DamageSource.cactus, 1.0F);
 /*  97:    */   }
 /*  98:    */   
 /*  99:    */   public aql k()

@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ import java.util.Random;
 /*  2:   */ 
 /*  3:   */ public class avt
-/*  4:   */   extends ProtoBlock
+/*  4:   */   extends BlockType
 /*  5:   */ {
 /*  6:   */   public static boolean M;
 /*  7:   */   
@@ -22,7 +22,7 @@ package net.minecraft.src;
 /* 21:26 */     paramaqu.a(paramdt, this, a(paramaqu));
 /* 22:   */   }
 /* 23:   */   
-/* 24:   */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/* 24:   */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /* 25:   */   {
 /* 26:31 */     paramaqu.a(paramdt, this, a(paramaqu));
 /* 27:   */   }
@@ -70,7 +70,7 @@ package net.minecraft.src;
 /* 69:   */   
 /* 70:   */   public static boolean d(World paramaqu, BlockPosition paramdt)
 /* 71:   */   {
-/* 72:75 */     ProtoBlock localatr = paramaqu.getBlock(paramdt).getProto();
+/* 72:75 */     BlockType localatr = paramaqu.getBlock(paramdt).getType();
 /* 73:76 */     Material localbof = localatr.material;
 /* 74:77 */     return (localatr == BlockList.fire) || (localbof == Material.air) || (localbof == Material.water) || (localbof == Material.lava);
 /* 75:   */   }

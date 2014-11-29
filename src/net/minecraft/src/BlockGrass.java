@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ import java.util.Random;
 /*   2:    */ 
 /*   3:    */ public class BlockGrass
-/*   4:    */   extends ProtoBlock
+/*   4:    */   extends BlockType
 /*   5:    */   implements atz
 /*   6:    */ {
 /*   7: 20 */   public static final BlockDataBoolean a = BlockDataBoolean.getInstance("snowy");
@@ -17,7 +17,7 @@ package net.minecraft.src;
 /*  16:    */   
 /*  17:    */   public Block a(Block parambec, IBlockAccess paramard, BlockPosition paramdt)
 /*  18:    */   {
-/*  19: 33 */     ProtoBlock localatr = paramard.getBlock(paramdt.up()).getProto();
+/*  19: 33 */     BlockType localatr = paramard.getBlock(paramdt.up()).getType();
 /*  20: 34 */     return parambec.setData(a, Boolean.valueOf((localatr == BlockList.aJ) || (localatr == BlockList.aH)));
 /*  21:    */   }
 /*  22:    */   
@@ -41,7 +41,7 @@ package net.minecraft.src;
 /*  40: 54 */     if (paramaqu.isClient) {
 /*  41: 55 */       return;
 /*  42:    */     }
-/*  43: 58 */     if ((paramaqu.l(paramdt.up()) < 4) && (paramaqu.getBlock(paramdt.up()).getProto().getLightOpacity() > 2))
+/*  43: 58 */     if ((paramaqu.l(paramdt.up()) < 4) && (paramaqu.getBlock(paramdt.up()).getType().getLightOpacity() > 2))
 /*  44:    */     {
 /*  45: 59 */       paramaqu.setBlock(paramdt, BlockList.dirt.instance());
 /*  46: 60 */       return;
@@ -50,9 +50,9 @@ package net.minecraft.src;
 /*  49: 64 */       for (int i = 0; i < 4; i++)
 /*  50:    */       {
 /*  51: 65 */         BlockPosition localdt = paramdt.offset(paramRandom.nextInt(3) - 1, paramRandom.nextInt(5) - 3, paramRandom.nextInt(3) - 1);
-/*  52: 66 */         ProtoBlock localatr = paramaqu.getBlock(localdt.up()).getProto();
+/*  52: 66 */         BlockType localatr = paramaqu.getBlock(localdt.up()).getType();
 /*  53: 67 */         Block localbec = paramaqu.getBlock(localdt);
-/*  54: 68 */         if ((localbec.getProto() == BlockList.dirt) && (localbec.getData(BlockDirt.a) == avd.a) && (paramaqu.l(localdt.up()) >= 4) && (localatr.getLightOpacity() <= 2)) {
+/*  54: 68 */         if ((localbec.getType() == BlockList.dirt) && (localbec.getData(BlockDirt.a) == avd.a) && (paramaqu.l(localdt.up()) >= 4) && (localatr.getLightOpacity() <= 2)) {
 /*  55: 69 */           paramaqu.setBlock(localdt, BlockList.grass.instance());
 /*  56:    */         }
 /*  57:    */       }
@@ -84,11 +84,11 @@ package net.minecraft.src;
 /*  83: 97 */       for (int j = 0; j < i / 16; j++)
 /*  84:    */       {
 /*  85: 98 */         localdt2 = localdt2.offset(paramRandom.nextInt(3) - 1, (paramRandom.nextInt(3) - 1) * paramRandom.nextInt(3) / 2, paramRandom.nextInt(3) - 1);
-/*  86: 99 */         if ((paramaqu.getBlock(localdt2.down()).getProto() != BlockList.grass) || (paramaqu.getBlock(localdt2).getProto().blocksMovement())) {
+/*  86: 99 */         if ((paramaqu.getBlock(localdt2.down()).getType() != BlockList.grass) || (paramaqu.getBlock(localdt2).getType().blocksMovement())) {
 /*  87:    */           break label260;
 /*  88:    */         }
 /*  89:    */       }
-/*  90:104 */       if (paramaqu.getBlock(localdt2).getProto().material == Material.air)
+/*  90:104 */       if (paramaqu.getBlock(localdt2).getType().material == Material.air)
 /*  91:    */       {
 /*  92:    */         Object localObject;
 /*  93:108 */         if (paramRandom.nextInt(8) == 0)

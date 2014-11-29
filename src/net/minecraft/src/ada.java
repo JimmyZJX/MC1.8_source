@@ -30,7 +30,7 @@ package net.minecraft.src;
 /* 29:   */   
 /* 30:   */   protected void h()
 /* 31:   */   {
-/* 32:42 */     this.ac.a(8, Integer.valueOf(this.b));
+/* 32:42 */     this.data.addData(8, Integer.valueOf(this.b));
 /* 33:   */   }
 /* 34:   */   
 /* 35:   */   public void onUpdate()
@@ -40,12 +40,12 @@ package net.minecraft.src;
 /* 39:49 */     this.lastZ = this.zPos;
 /* 40:50 */     this.a += 1;
 /* 41:   */     
-/* 42:52 */     this.ac.b(8, Integer.valueOf(this.b));
+/* 42:52 */     this.data.b(8, Integer.valueOf(this.b));
 /* 43:   */     
 /* 44:54 */     int i = MathUtils.floor(this.xPos);
 /* 45:55 */     int j = MathUtils.floor(this.yPos);
 /* 46:56 */     int k = MathUtils.floor(this.zPos);
-/* 47:57 */     if (((this.world.t instanceof bgh)) && (this.world.getBlock(new BlockPosition(i, j, k)).getProto() != BlockList.fire)) {
+/* 47:57 */     if (((this.world.t instanceof bgh)) && (this.world.getBlock(new BlockPosition(i, j, k)).getType() != BlockList.fire)) {
 /* 48:58 */       this.world.setBlock(new BlockPosition(i, j, k), BlockList.fire.instance());
 /* 49:   */     }
 /* 50:   */   }
@@ -59,7 +59,7 @@ package net.minecraft.src;
 /* 58:72 */     return true;
 /* 59:   */   }
 /* 60:   */   
-/* 61:   */   public boolean a(DamageSource paramwh, float paramFloat)
+/* 61:   */   public boolean receiveDamage(DamageSource paramwh, float paramFloat)
 /* 62:   */   {
 /* 63:77 */     if (isImmuneTo(paramwh)) {
 /* 64:78 */       return false;

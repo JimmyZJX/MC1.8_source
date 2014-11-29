@@ -58,7 +58,7 @@ package net.minecraft.src;
 /*  57:    */   
 /*  58:    */   public void readEntityFromNBT(NBTTagCompound paramfn) {}
 /*  59:    */   
-/*  60:    */   public boolean e(EntityPlayer paramahd)
+/*  60:    */   public boolean onRightClick(EntityPlayer paramahd)
 /*  61:    */   {
 /*  62: 86 */     ItemStack localamj = paramahd.getHeldItemStack();
 /*  63:    */     
@@ -66,7 +66,7 @@ package net.minecraft.src;
 /*  65:    */     double d;
 /*  66:    */     List localList;
 /*  67:    */     Iterator localIterator;
-/*  68: 89 */     if ((localamj != null) && (localamj.getItem() == ItemList.cn) && 
+/*  68: 89 */     if ((localamj != null) && (localamj.getItem() == ItemList.lead) && 
 /*  69: 90 */       (!this.world.isClient))
 /*  70:    */     {
 /*  71: 92 */       d = 7.0D;
@@ -103,7 +103,7 @@ package net.minecraft.src;
 /* 102:    */   
 /* 103:    */   public boolean j()
 /* 104:    */   {
-/* 105:122 */     return this.world.getBlock(this.a).getProto() instanceof avv;
+/* 105:122 */     return this.world.getBlock(this.a).getType() instanceof BlockFence;
 /* 106:    */   }
 /* 107:    */   
 /* 108:    */   public static adl a(World paramaqu, BlockPosition paramdt)

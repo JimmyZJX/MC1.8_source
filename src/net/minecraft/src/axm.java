@@ -22,7 +22,7 @@ package net.minecraft.src;
 /* 21:36 */     for (BlockPosition localdt : BlockPosition.a(paramdt.offset(-i, -i, -i), paramdt.offset(i, i, i)))
 /* 22:   */     {
 /* 23:37 */       Block localbec = paramaqu.getBlock(localdt);
-/* 24:38 */       if ((localbec.getProto().getMaterial() == Material.leaves) && 
+/* 24:38 */       if ((localbec.getType().getMaterial() == Material.leaves) && 
 /* 25:39 */         (!((Boolean)localbec.getData(BlockLeaves.b)).booleanValue())) {
 /* 26:40 */         paramaqu.setBlock(localdt, localbec.setData(BlockLeaves.b, Boolean.valueOf(true)), 4);
 /* 27:   */       }
@@ -31,7 +31,7 @@ package net.minecraft.src;
 /* 30:   */   
 /* 31:   */   public Block a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3, int paramInt, EntityLiving paramxm)
 /* 32:   */   {
-/* 33:51 */     return super.a(paramaqu, paramdt, paramej, paramFloat1, paramFloat2, paramFloat3, paramInt, paramxm).setData(a, axo.a(paramej.k()));
+/* 33:51 */     return super.a(paramaqu, paramdt, paramej, paramFloat1, paramFloat2, paramFloat3, paramInt, paramxm).setData(a, axo.a(paramej.getAxis()));
 /* 34:   */   }
 /* 35:   */ }
 

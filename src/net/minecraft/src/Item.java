@@ -11,7 +11,7 @@ package net.minecraft.src;
 /*   9:    */ public class Item
 /*  10:    */ {
 /*  11: 38 */   public static final ev<oa,Item> e = new ev<oa,Item>();
-/*  12: 39 */   private static final Map<ProtoBlock, Item> a = Maps.newHashMap();
+/*  12: 39 */   private static final Map<BlockType, Item> a = Maps.newHashMap();
 /*  13: 41 */   protected static final UUID f = UUID.fromString("CB3F55D3-645C-4F38-A497-9C13A33DB5CF");
 /*  14:    */   private CreativeTabs creativeTab;
 /*  15:    */   
@@ -25,7 +25,7 @@ package net.minecraft.src;
 /*  23: 56 */     return (Item)e.a(paramInt);
 /*  24:    */   }
 /*  25:    */   
-/*  26:    */   public static Item fromProtoBlock(ProtoBlock paramatr)
+/*  26:    */   public static Item fromBlock(BlockType paramatr)
 /*  27:    */   {
 /*  28: 60 */     return a.get(paramatr);
 /*  29:    */   }
@@ -68,7 +68,7 @@ package net.minecraft.src;
 /*  66:155 */     return false;
 /*  67:    */   }
 /*  68:    */   
-/*  69:    */   public float getStrVsBlock(ItemStack paramamj, ProtoBlock paramatr)
+/*  69:    */   public float getStrVsBlock(ItemStack paramamj, BlockType paramatr)
 /*  70:    */   {
 /*  71:159 */     return 1.0F;
 /*  72:    */   }
@@ -125,12 +125,12 @@ package net.minecraft.src;
 /* 123:204 */     return false;
 /* 124:    */   }
 /* 125:    */   
-/* 126:    */   public boolean a(ItemStack paramamj, World paramaqu, ProtoBlock paramatr, BlockPosition paramdt, EntityLiving paramxm)
+/* 126:    */   public boolean a(ItemStack paramamj, World paramaqu, BlockType paramatr, BlockPosition paramdt, EntityLiving paramxm)
 /* 127:    */   {
 /* 128:211 */     return false;
 /* 129:    */   }
 /* 130:    */   
-/* 131:    */   public boolean canHarvestBlock(ProtoBlock paramatr)
+/* 131:    */   public boolean canHarvestBlock(BlockType paramatr)
 /* 132:    */   {
 /* 133:215 */     return false;
 /* 134:    */   }
@@ -739,7 +739,7 @@ package net.minecraft.src;
 /* 737:799 */     a(401, "fireworks", new alg().setID("fireworks"));
 /* 738:800 */     a(402, "firework_charge", new alf().setID("fireworksCharge").setTabToDisplayOn(CreativeTabs.tabMisc));
 /* 739:801 */     a(403, "enchanted_book", new ItemEnchantedBook().setStackLimit(1).setID("enchantedBook"));
-/* 740:802 */     a(404, "comparator", new ajv(BlockList.cj).setID("comparator").setTabToDisplayOn(CreativeTabs.tabRedstone));
+/* 740:802 */     a(404, "comparator", new ajv(BlockList.unpowered_comparator).setID("comparator").setTabToDisplayOn(CreativeTabs.tabRedstone));
 /* 741:803 */     a(405, "netherbrick", new Item().setID("netherbrick").setTabToDisplayOn(CreativeTabs.tabMaterials));
 /* 742:804 */     a(406, "quartz", new Item().setID("netherquartz").setTabToDisplayOn(CreativeTabs.tabMaterials));
 /* 743:805 */     a(407, "tnt_minecart", new amp(EnumMinecartVariant.d).setID("minecartTnt"));
@@ -782,14 +782,14 @@ package net.minecraft.src;
 /* 780:842 */     a(2267, "record_wait", new ItemDisc("wait").setID("record"));
 /* 781:    */   }
 /* 782:    */   
-/* 783:    */   private static void c(ProtoBlock paramatr)
+/* 783:    */   private static void c(BlockType paramatr)
 /* 784:    */   {
 /* 785:846 */     a(paramatr, new aju(paramatr));
 /* 786:    */   }
 /* 787:    */   
-/* 788:    */   protected static void a(ProtoBlock paramatr, Item paramalq)
+/* 788:    */   protected static void a(BlockType paramatr, Item paramalq)
 /* 789:    */   {
-/* 790:850 */     a(ProtoBlock.a(paramatr), (oa)ProtoBlock.c.c(paramatr), paramalq);
+/* 790:850 */     a(BlockType.a(paramatr), (oa)BlockType.c.c(paramatr), paramalq);
 /* 791:851 */     a.put(paramatr, paramalq);
 /* 792:    */   }
 /* 793:    */   

@@ -33,8 +33,8 @@ package net.minecraft.src;
 /*  32: 51 */       return;
 /*  33:    */     }
 /*  34: 54 */     EnumDirection localej = (EnumDirection)parambec.getData(a);
-/*  35: 55 */     boolean bool1 = paramaqu.getBlock(paramdt.north()).getProto().m();
-/*  36: 56 */     boolean bool2 = paramaqu.getBlock(paramdt.south()).getProto().m();
+/*  35: 55 */     boolean bool1 = paramaqu.getBlock(paramdt.north()).getType().m();
+/*  36: 56 */     boolean bool2 = paramaqu.getBlock(paramdt.south()).getType().m();
 /*  37: 57 */     if ((localej == EnumDirection.NORTH) && (bool1) && (!bool2))
 /*  38:    */     {
 /*  39: 58 */       localej = EnumDirection.SOUTH;
@@ -45,8 +45,8 @@ package net.minecraft.src;
 /*  44:    */     }
 /*  45:    */     else
 /*  46:    */     {
-/*  47: 62 */       boolean bool3 = paramaqu.getBlock(paramdt.west()).getProto().m();
-/*  48: 63 */       boolean bool4 = paramaqu.getBlock(paramdt.east()).getProto().m();
+/*  47: 62 */       boolean bool3 = paramaqu.getBlock(paramdt.west()).getType().m();
+/*  48: 63 */       boolean bool4 = paramaqu.getBlock(paramdt.east()).getType().m();
 /*  49: 64 */       if ((localej == EnumDirection.WEST) && (bool3) && (!bool4)) {
 /*  50: 65 */         localej = EnumDirection.EAST;
 /*  51: 66 */       } else if ((localej == EnumDirection.EAST) && (bool4) && (!bool3)) {
@@ -96,7 +96,7 @@ package net.minecraft.src;
 /*  95:112 */     return M.a(paramamj == null ? null : paramamj.getItem());
 /*  96:    */   }
 /*  97:    */   
-/*  98:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/*  98:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /*  99:    */   {
 /* 100:117 */     int i = (paramaqu.z(paramdt)) || (paramaqu.z(paramdt.up())) ? 1 : 0;
 /* 101:118 */     boolean bool = ((Boolean)parambec.getData(b)).booleanValue();

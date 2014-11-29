@@ -14,7 +14,7 @@ package net.minecraft.src;
 /*  13:201 */     if (parambec.getData(bay.b) != EnumDirection.UP) {
 /*  14:202 */       localLinkedHashMap.remove(bay.a);
 /*  15:    */     }
-/*  16:204 */     return new cxl((oa)ProtoBlock.c.c(parambec.getProto()), a(localLinkedHashMap));
+/*  16:204 */     return new cxl((oa)BlockType.c.c(parambec.getType()), a(localLinkedHashMap));
 /*  17:    */   }
 /*  18:    */ }
 

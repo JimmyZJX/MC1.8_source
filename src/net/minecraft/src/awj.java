@@ -17,7 +17,7 @@ package net.minecraft.src;
 /*  16:    */   
 /*  17:    */   public Item a(Block parambec, Random paramRandom, int paramInt)
 /*  18:    */   {
-/*  19: 38 */     return Item.fromProtoBlock(BlockList.al);
+/*  19: 38 */     return Item.fromBlock(BlockList.al);
 /*  20:    */   }
 /*  21:    */   
 /*  22:    */   public void c(World paramaqu, BlockPosition paramdt, Block parambec)
@@ -30,10 +30,10 @@ package net.minecraft.src;
 /*  29: 47 */     if (paramaqu.isClient) {
 /*  30: 48 */       return;
 /*  31:    */     }
-/*  32: 51 */     ProtoBlock localatr1 = paramaqu.getBlock(paramdt.north()).getProto();
-/*  33: 52 */     ProtoBlock localatr2 = paramaqu.getBlock(paramdt.south()).getProto();
-/*  34: 53 */     ProtoBlock localatr3 = paramaqu.getBlock(paramdt.west()).getProto();
-/*  35: 54 */     ProtoBlock localatr4 = paramaqu.getBlock(paramdt.east()).getProto();
+/*  32: 51 */     BlockType localatr1 = paramaqu.getBlock(paramdt.north()).getType();
+/*  33: 52 */     BlockType localatr2 = paramaqu.getBlock(paramdt.south()).getType();
+/*  34: 53 */     BlockType localatr3 = paramaqu.getBlock(paramdt.west()).getType();
+/*  35: 54 */     BlockType localatr4 = paramaqu.getBlock(paramdt.east()).getType();
 /*  36:    */     
 /*  37: 56 */     EnumDirection localej = (EnumDirection)parambec.getData(a);
 /*  38: 58 */     if ((localej == EnumDirection.NORTH) && (localatr1.m()) && (!localatr2.m())) {
@@ -165,7 +165,7 @@ package net.minecraft.src;
 /* 164:    */   
 /* 165:    */   public Item b(World paramaqu, BlockPosition paramdt)
 /* 166:    */   {
-/* 167:187 */     return Item.fromProtoBlock(BlockList.al);
+/* 167:187 */     return Item.fromBlock(BlockList.al);
 /* 168:    */   }
 /* 169:    */   
 /* 170:    */   public int b()
@@ -181,7 +181,7 @@ package net.minecraft.src;
 /* 180:    */   public Block instance(int paramInt)
 /* 181:    */   {
 /* 182:202 */     EnumDirection localej = EnumDirection.a(paramInt);
-/* 183:203 */     if (localej.k() == EnumAxis.Y) {
+/* 183:203 */     if (localej.getAxis() == EnumAxis.Y) {
 /* 184:204 */       localej = EnumDirection.NORTH;
 /* 185:    */     }
 /* 186:206 */     return instance().setData(a, localej);

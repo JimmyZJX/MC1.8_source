@@ -16,8 +16,8 @@ package net.minecraft.src;
 /*  16:    */   protected void h()
 /*  17:    */   {
 /*  18: 30 */     super.h();
-/*  19: 31 */     this.ac.a(16, Byte.valueOf((byte)0));
-/*  20: 32 */     this.ac.a(17, "");
+/*  19: 31 */     this.data.addData(16, Byte.valueOf((byte)0));
+/*  20: 32 */     this.data.addData(17, "");
 /*  21:    */   }
 /*  22:    */   
 /*  23:    */   public void writeEntityToNBT(NBTTagCompound paramfn)
@@ -81,16 +81,16 @@ package net.minecraft.src;
 /*  81:    */   
 /*  82:    */   public boolean cj()
 /*  83:    */   {
-/*  84: 89 */     return (this.ac.a(16) & 0x4) != 0;
+/*  84: 89 */     return (this.data.getByte(16) & 0x4) != 0;
 /*  85:    */   }
 /*  86:    */   
 /*  87:    */   public void m(boolean paramBoolean)
 /*  88:    */   {
-/*  89: 93 */     int i = this.ac.a(16);
+/*  89: 93 */     int i = this.data.getByte(16);
 /*  90: 94 */     if (paramBoolean) {
-/*  91: 95 */       this.ac.b(16, Byte.valueOf((byte)(i | 0x4)));
+/*  91: 95 */       this.data.b(16, Byte.valueOf((byte)(i | 0x4)));
 /*  92:    */     } else {
-/*  93: 97 */       this.ac.b(16, Byte.valueOf((byte)(i & 0xFFFFFFFB)));
+/*  93: 97 */       this.data.b(16, Byte.valueOf((byte)(i & 0xFFFFFFFB)));
 /*  94:    */     }
 /*  95:100 */     ck();
 /*  96:    */   }
@@ -99,27 +99,27 @@ package net.minecraft.src;
 /*  99:    */   
 /* 100:    */   public boolean cl()
 /* 101:    */   {
-/* 102:107 */     return (this.ac.a(16) & 0x1) != 0;
+/* 102:107 */     return (this.data.getByte(16) & 0x1) != 0;
 /* 103:    */   }
 /* 104:    */   
 /* 105:    */   public void n(boolean paramBoolean)
 /* 106:    */   {
-/* 107:111 */     int i = this.ac.a(16);
+/* 107:111 */     int i = this.data.getByte(16);
 /* 108:112 */     if (paramBoolean) {
-/* 109:113 */       this.ac.b(16, Byte.valueOf((byte)(i | 0x1)));
+/* 109:113 */       this.data.b(16, Byte.valueOf((byte)(i | 0x1)));
 /* 110:    */     } else {
-/* 111:115 */       this.ac.b(16, Byte.valueOf((byte)(i & 0xFFFFFFFE)));
+/* 111:115 */       this.data.b(16, Byte.valueOf((byte)(i & 0xFFFFFFFE)));
 /* 112:    */     }
 /* 113:    */   }
 /* 114:    */   
 /* 115:    */   public String b()
 /* 116:    */   {
-/* 117:121 */     return this.ac.e(17);
+/* 117:121 */     return this.data.getString(17);
 /* 118:    */   }
 /* 119:    */   
 /* 120:    */   public void b(String paramString)
 /* 121:    */   {
-/* 122:125 */     this.ac.b(17, paramString);
+/* 122:125 */     this.data.b(17, paramString);
 /* 123:    */   }
 /* 124:    */   
 /* 125:    */   public EntityLiving l_()

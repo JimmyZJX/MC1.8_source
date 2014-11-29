@@ -46,7 +46,7 @@ package net.minecraft.src;
 /*  46:    */   
 /*  47:    */   protected void h()
 /*  48:    */   {
-/*  49: 68 */     H().a(10, 5);
+/*  49: 68 */     H().addNullData(10, 5);
 /*  50:    */   }
 /*  51:    */   
 /*  52:    */   public void onUpdate()
@@ -71,7 +71,7 @@ package net.minecraft.src;
 /*  71: 89 */     int i = ((int)this.lastX != (int)this.xPos) || ((int)this.lastY != (int)this.yPos) || ((int)this.lastZ != (int)this.zPos) ? 1 : 0;
 /*  72: 91 */     if ((i != 0) || (this.W % 25 == 0))
 /*  73:    */     {
-/*  74: 92 */       if (this.world.getBlock(new BlockPosition(this)).getProto().getMaterial() == Material.lava)
+/*  74: 92 */       if (this.world.getBlock(new BlockPosition(this)).getType().getMaterial() == Material.lava)
 /*  75:    */       {
 /*  76: 93 */         this.yVelocity = 0.2000000029802322D;
 /*  77: 94 */         this.xVelocity = ((this.rng.nextFloat() - this.rng.nextFloat()) * 0.2F);
@@ -83,13 +83,13 @@ package net.minecraft.src;
 /*  83:    */       }
 /*  84:    */     }
 /*  85:104 */     float f1 = 0.98F;
-/*  86:105 */     if (this.C) {
-/*  87:106 */       f1 = this.world.getBlock(new BlockPosition(MathUtils.floor(this.xPos), MathUtils.floor(getAABB().minY) - 1, MathUtils.floor(this.zPos))).getProto().K * 0.98F;
+/*  86:105 */     if (this.landing) {
+/*  87:106 */       f1 = this.world.getBlock(new BlockPosition(MathUtils.floor(this.xPos), MathUtils.floor(getAABB().minY) - 1, MathUtils.floor(this.zPos))).getType().K * 0.98F;
 /*  88:    */     }
 /*  89:109 */     this.xVelocity *= f1;
 /*  90:110 */     this.yVelocity *= 0.9800000190734863D;
 /*  91:111 */     this.zVelocity *= f1;
-/*  92:113 */     if (this.C) {
+/*  92:113 */     if (this.landing) {
 /*  93:114 */       this.yVelocity *= -0.5D;
 /*  94:    */     }
 /*  95:117 */     if (this.age != -32768) {
@@ -177,10 +177,10 @@ package net.minecraft.src;
 /* 177:    */   
 /* 178:    */   protected void f(int paramInt)
 /* 179:    */   {
-/* 180:201 */     a(DamageSource.inFire, paramInt);
+/* 180:201 */     receiveDamage(DamageSource.inFire, paramInt);
 /* 181:    */   }
 /* 182:    */   
-/* 183:    */   public boolean a(DamageSource paramwh, float paramFloat)
+/* 183:    */   public boolean receiveDamage(DamageSource paramwh, float paramFloat)
 /* 184:    */   {
 /* 185:206 */     if (isImmuneTo(paramwh)) {
 /* 186:207 */       return false;
@@ -239,12 +239,12 @@ package net.minecraft.src;
 /* 239:    */     }
 /* 240:262 */     ItemStack stack = getItemStack();
 /* 241:263 */     int i = stack.stackSize;
-/* 242:264 */     if ((this.pickUpdelay == 0) && ((this.g == null) || (6000 - this.age <= 200) || (this.g.equals(player.getName()))) && (player.bg.a(stack)))
+/* 242:264 */     if ((this.pickUpdelay == 0) && ((this.g == null) || (6000 - this.age <= 200) || (this.g.equals(player.getName()))) && (player.inventory.a(stack)))
 /* 243:    */     {
-/* 244:265 */       if (stack.getItem() == Item.fromProtoBlock(BlockList.log)) {
+/* 244:265 */       if (stack.getItem() == Item.fromBlock(BlockList.log)) {
 /* 245:266 */         player.increaseStat(AchievementList.mineWood);
 /* 246:    */       }
-/* 247:268 */       if (stack.getItem() == Item.fromProtoBlock(BlockList.log2)) {
+/* 247:268 */       if (stack.getItem() == Item.fromBlock(BlockList.log2)) {
 /* 248:269 */         player.increaseStat(AchievementList.mineWood);
 /* 249:    */       }
 /* 250:271 */       if (stack.getItem() == ItemList.leather) {
@@ -296,7 +296,7 @@ package net.minecraft.src;
 /* 296:    */   
 /* 297:    */   public ItemStack getItemStack()
 /* 298:    */   {
-/* 299:320 */     ItemStack stack = H().f(10);
+/* 299:320 */     ItemStack stack = H().getItemStack(10);
 /* 300:322 */     if (stack == null)
 /* 301:    */     {
 /* 302:323 */       if (this.world != null) {

@@ -36,7 +36,7 @@ package net.minecraft.src;
 /*  35: 62 */         for (i8 = i3; i8 <= i4; i8++)
 /*  36:    */         {
 /*  37: 63 */           localdt1 = pos.offset(i6, i7, i8);
-/*  38: 64 */           Material localbof = world.getBlock(localdt1).getProto().getMaterial();
+/*  38: 64 */           Material localbof = world.getBlock(localdt1).getType().getMaterial();
 /*  39: 65 */           boolean bool = localbof.a();
 /*  40: 67 */           if ((i7 == -1) && (!bool)) {
 /*  41: 68 */             return false;
@@ -61,10 +61,10 @@ package net.minecraft.src;
 /*  60: 90 */           localdt1 = pos.offset(i6, i7, i8);
 /*  61: 92 */           if ((i6 == k) || (i7 == -1) || (i8 == i3) || (i6 == m) || (i7 == 4) || (i8 == i4))
 /*  62:    */           {
-/*  63: 93 */             if ((localdt1.getY() >= 0) && (!world.getBlock(localdt1.down()).getProto().getMaterial().a())) {
+/*  63: 93 */             if ((localdt1.getY() >= 0) && (!world.getBlock(localdt1.down()).getType().getMaterial().a())) {
 /*  64: 94 */               world.g(localdt1);
-/*  65: 95 */             } else if ((world.getBlock(localdt1).getProto().getMaterial().a()) && 
-/*  66: 96 */               (world.getBlock(localdt1).getProto() != BlockList.chest)) {
+/*  65: 95 */             } else if ((world.getBlock(localdt1).getType().getMaterial().a()) && 
+/*  66: 96 */               (world.getBlock(localdt1).getType() != BlockList.chest)) {
 /*  67: 97 */               if ((i7 == -1) && (rng.nextInt(4) != 0)) {
 /*  68: 98 */                 world.setBlock(localdt1, BlockList.mossyCobblestone.instance(), 2);
 /*  69:    */               } else {
@@ -72,7 +72,7 @@ package net.minecraft.src;
 /*  71:    */               }
 /*  72:    */             }
 /*  73:    */           }
-/*  74:105 */           else if (world.getBlock(localdt1).getProto() != BlockList.chest) {
+/*  74:105 */           else if (world.getBlock(localdt1).getType() != BlockList.chest) {
 /*  75:106 */             world.g(localdt1);
 /*  76:    */           }
 /*  77:    */         }
@@ -91,7 +91,7 @@ package net.minecraft.src;
 /*  90:125 */           for (Iterator<EnumDirection> localObject1 = EnumHorizontalVertical.HORIZONTAL.iterator(); localObject1.hasNext();)
 /*  91:    */           {
 /*  92:125 */             EnumDirection localObject2 = localObject1.next();
-/*  93:126 */             if (world.getBlock(localdt2.offset(localObject2)).getProto().getMaterial().a()) {
+/*  93:126 */             if (world.getBlock(localdt2.offset(localObject2)).getType().getMaterial().a()) {
 /*  94:127 */               i11++;
 /*  95:    */             }
 /*  96:    */           }

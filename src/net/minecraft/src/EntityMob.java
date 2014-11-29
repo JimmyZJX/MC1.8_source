@@ -98,7 +98,7 @@ package net.minecraft.src;
 /*  98:    */   protected void h()
 /*  99:    */   {
 /* 100:140 */     super.h();
-/* 101:141 */     this.ac.a(15, Byte.valueOf((byte)0));
+/* 101:141 */     this.data.addData(15, Byte.valueOf((byte)0));
 /* 102:    */   }
 /* 103:    */   
 /* 104:    */   public int w()
@@ -622,7 +622,7 @@ package net.minecraft.src;
 /* 622:    */   
 /* 623:    */   public static int getSlot(ItemStack paramamj)
 /* 624:    */   {
-/* 625:641 */     if ((paramamj.getItem() == Item.fromProtoBlock(BlockList.pumpkin)) || (paramamj.getItem() == ItemList.skull)) {
+/* 625:641 */     if ((paramamj.getItem() == Item.fromBlock(BlockList.pumpkin)) || (paramamj.getItem() == ItemList.skull)) {
 /* 626:642 */       return 4;
 /* 627:    */     }
 /* 628:645 */     if ((paramamj.getItem() instanceof ItemArmor)) {
@@ -766,41 +766,41 @@ package net.minecraft.src;
 /* 766:786 */     return this.persistent;
 /* 767:    */   }
 /* 768:    */   
-/* 769:    */   public final boolean e(EntityPlayer paramahd)
+/* 769:    */   public final boolean onRightClick(EntityPlayer player)
 /* 770:    */   {
-/* 771:791 */     if ((cb()) && (cc() == paramahd))
+/* 771:791 */     if ((cb()) && (cc() == player))
 /* 772:    */     {
-/* 773:792 */       a(true, !paramahd.abilities.instabuild);
+/* 773:792 */       a(true, !player.abilities.instabuild);
 /* 774:793 */       return true;
 /* 775:    */     }
-/* 776:796 */     ItemStack localamj = paramahd.bg.h();
-/* 777:797 */     if (localamj != null) {
-/* 778:801 */       if ((localamj.getItem() == ItemList.cn) && 
+/* 776:796 */     ItemStack stack = player.inventory.getHeldItem();
+/* 777:797 */     if (stack != null) {
+/* 778:801 */       if ((stack.getItem() == ItemList.lead) && 
 /* 779:802 */         (ca())) {
 /* 780:803 */         if (((this instanceof EntityPet)) && (((EntityPet)this).cj()))
 /* 781:    */         {
-/* 782:804 */           if (((EntityPet)this).e(paramahd))
+/* 782:804 */           if (((EntityPet)this).onRightClick(player))
 /* 783:    */           {
-/* 784:805 */             a(paramahd, true);
-/* 785:806 */             localamj.stackSize -= 1;
+/* 784:805 */             a(player, true);
+/* 785:806 */             stack.stackSize -= 1;
 /* 786:807 */             return true;
 /* 787:    */           }
 /* 788:    */         }
 /* 789:    */         else
 /* 790:    */         {
-/* 791:810 */           a(paramahd, true);
-/* 792:811 */           localamj.stackSize -= 1;
+/* 791:810 */           a(player, true);
+/* 792:811 */           stack.stackSize -= 1;
 /* 793:812 */           return true;
 /* 794:    */         }
 /* 795:    */       }
 /* 796:    */     }
-/* 797:818 */     if (onRightClick(paramahd)) {
+/* 797:818 */     if (onRightClickMob(player)) {
 /* 798:819 */       return true;
 /* 799:    */     }
-/* 800:822 */     return super.e(paramahd);
+/* 800:822 */     return super.onRightClick(player);
 /* 801:    */   }
 /* 802:    */   
-/* 803:    */   protected boolean onRightClick(EntityPlayer paramahd)
+/* 803:    */   protected boolean onRightClickMob(EntityPlayer paramahd)
 /* 804:    */   {
 /* 805:826 */     return false;
 /* 806:    */   }
@@ -830,7 +830,7 @@ package net.minecraft.src;
 /* 830:854 */       this.leashed = false;
 /* 831:855 */       this.bn = null;
 /* 832:856 */       if ((!this.world.isClient) && (paramBoolean2)) {
-/* 833:857 */         a(ItemList.cn, 1);
+/* 833:857 */         a(ItemList.lead, 1);
 /* 834:    */       }
 /* 835:860 */       if ((!this.world.isClient) && (paramBoolean1) && ((this.world instanceof WorldServer))) {
 /* 836:861 */         ((WorldServer)this.world).s().a(this, new ky(1, this, null));
@@ -927,12 +927,12 @@ package net.minecraft.src;
 /* 927:    */   
 /* 928:    */   protected void setNoAI(boolean paramBoolean)
 /* 929:    */   {
-/* 930:939 */     this.ac.b(15, Byte.valueOf((byte)(paramBoolean ? 1 : 0)));
+/* 930:939 */     this.data.b(15, Byte.valueOf((byte)(paramBoolean ? 1 : 0)));
 /* 931:    */   }
 /* 932:    */   
 /* 933:    */   private boolean getNoAI()
 /* 934:    */   {
-/* 935:943 */     return this.ac.a(15) != 0;
+/* 935:943 */     return this.data.getByte(15) != 0;
 /* 936:    */   }
 /* 937:    */ }
 

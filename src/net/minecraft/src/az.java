@@ -41,7 +41,7 @@ package net.minecraft.src;
 /* 40:51 */     if ((paramArrayOfString.length >= 2) && (localalq == null)) {
 /* 41:52 */       throw new CommandException("commands.clear.failure", new Object[] { localqw.getName() });
 /* 42:   */     }
-/* 43:55 */     int k = localqw.bg.a(localalq, i, j, localfn);
+/* 43:55 */     int k = localqw.inventory.a(localalq, i, j, localfn);
 /* 44:56 */     localqw.bh.b();
 /* 45:57 */     if (!localqw.abilities.instabuild) {
 /* 46:58 */       localqw.o();

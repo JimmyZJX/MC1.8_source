@@ -9,17 +9,17 @@ package net.minecraft.src;
 /*  8:17 */     super(paramaqu, paramDouble1, paramDouble2, paramDouble3, paramDouble4, paramDouble5, paramDouble6);
 /*  9:18 */     this.a = parambec;
 /* 10:19 */     a(bsu.z().ab().a().a(parambec));
-/* 11:20 */     this.i = parambec.getProto().I;
+/* 11:20 */     this.i = parambec.getType().I;
 /* 12:21 */     this.ap = (this.aq = this.ar = 0.6F);
 /* 13:22 */     this.h /= 2.0F;
 /* 14:   */   }
 /* 15:   */   
 /* 16:   */   public cid a(BlockPosition paramdt)
 /* 17:   */   {
-/* 18:27 */     if (this.a.getProto() == BlockList.grass) {
+/* 18:27 */     if (this.a.getType() == BlockList.grass) {
 /* 19:28 */       return this;
 /* 20:   */     }
-/* 21:30 */     int i = this.a.getProto().d(this.world, paramdt);
+/* 21:30 */     int i = this.a.getType().d(this.world, paramdt);
 /* 22:31 */     this.ap *= (i >> 16 & 0xFF) / 255.0F;
 /* 23:32 */     this.aq *= (i >> 8 & 0xFF) / 255.0F;
 /* 24:33 */     this.ar *= (i & 0xFF) / 255.0F;
@@ -28,7 +28,7 @@ package net.minecraft.src;
 /* 27:   */   
 /* 28:   */   public cid l()
 /* 29:   */   {
-/* 30:39 */     ProtoBlock localatr = this.a.getProto();
+/* 30:39 */     BlockType localatr = this.a.getType();
 /* 31:40 */     if (localatr == BlockList.grass) {
 /* 32:41 */       return this;
 /* 33:   */     }

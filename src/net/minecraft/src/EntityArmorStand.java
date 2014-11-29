@@ -43,13 +43,13 @@ package net.minecraft.src;
 /*  42:    */   protected void h()
 /*  43:    */   {
 /*  44: 88 */     super.h();
-/*  45: 89 */     this.ac.a(10, Byte.valueOf((byte)0));
-/*  46: 90 */     this.ac.a(11, a);
-/*  47: 91 */     this.ac.a(12, b);
-/*  48: 92 */     this.ac.a(13, c);
-/*  49: 93 */     this.ac.a(14, d);
-/*  50: 94 */     this.ac.a(15, e);
-/*  51: 95 */     this.ac.a(16, f);
+/*  45: 89 */     this.data.addData(10, Byte.valueOf((byte)0));
+/*  46: 90 */     this.data.addData(11, a);
+/*  47: 91 */     this.data.addData(12, b);
+/*  48: 92 */     this.data.addData(13, c);
+/*  49: 93 */     this.data.addData(14, d);
+/*  50: 94 */     this.data.addData(15, e);
+/*  51: 95 */     this.data.addData(16, f);
 /*  52:    */   }
 /*  53:    */   
 /*  54:    */   public ItemStack getHeldItemStack()
@@ -258,7 +258,7 @@ package net.minecraft.src;
 /* 257:303 */         j = 4;
 /* 258:    */       }
 /* 259:    */     }
-/* 260:306 */     if ((k != 0) && ((localamj.getItem() == ItemList.skull) || (localamj.getItem() == Item.fromProtoBlock(BlockList.pumpkin)))) {
+/* 260:306 */     if ((k != 0) && ((localamj.getItem() == ItemList.skull) || (localamj.getItem() == Item.fromBlock(BlockList.pumpkin)))) {
 /* 261:307 */       j = 4;
 /* 262:    */     }
 /* 263:310 */     double d1 = 0.1D;
@@ -326,10 +326,10 @@ package net.minecraft.src;
 /* 325:359 */     if ((localamj1 == null) && ((this.bg & 1 << paramInt + 16) != 0)) {
 /* 326:361 */       return;
 /* 327:    */     }
-/* 328:364 */     int j = paramahd.bg.c;
-/* 329:365 */     ItemStack localamj2 = paramahd.bg.get(j);
+/* 328:364 */     int j = paramahd.inventory.c;
+/* 329:365 */     ItemStack localamj2 = paramahd.inventory.get(j);
 /* 330:    */     ItemStack localamj3;
-/* 331:366 */     if ((paramahd.abilities.instabuild) && ((localamj1 == null) || (localamj1.getItem() == Item.fromProtoBlock(BlockList.air))) && (localamj2 != null))
+/* 331:366 */     if ((paramahd.abilities.instabuild) && ((localamj1 == null) || (localamj1.getItem() == Item.fromBlock(BlockList.air))) && (localamj2 != null))
 /* 332:    */     {
 /* 333:367 */       localamj3 = localamj2.k();
 /* 334:368 */       localamj3.stackSize = 1;
@@ -348,10 +348,10 @@ package net.minecraft.src;
 /* 347:380 */       return;
 /* 348:    */     }
 /* 349:382 */     setItemStack(paramInt, localamj2);
-/* 350:383 */     paramahd.bg.a(j, localamj1);
+/* 350:383 */     paramahd.inventory.a(j, localamj1);
 /* 351:    */   }
 /* 352:    */   
-/* 353:    */   public boolean a(DamageSource paramwh, float paramFloat)
+/* 353:    */   public boolean receiveDamage(DamageSource paramwh, float paramFloat)
 /* 354:    */   {
 /* 355:388 */     if ((this.world.isClient) || (this.h)) {
 /* 356:389 */       return false;
@@ -418,7 +418,7 @@ package net.minecraft.src;
 /* 417:    */   private void z()
 /* 418:    */   {
 /* 419:446 */     if ((this.world instanceof WorldServer)) {
-/* 420:447 */       ((WorldServer)this.world).a(EnumParticleEffect.M, this.xPos, this.yPos + this.height / 1.5D, this.zPos, 10, this.width / 4.0F, this.height / 4.0F, this.width / 4.0F, 0.05D, new int[] { ProtoBlock.f(BlockList.planks.instance()) });
+/* 420:447 */       ((WorldServer)this.world).a(EnumParticleEffect.M, this.xPos, this.yPos + this.height / 1.5D, this.zPos, 10, this.width / 4.0F, this.height / 4.0F, this.width / 4.0F, 0.05D, new int[] { BlockType.f(BlockList.planks.instance()) });
 /* 421:    */     }
 /* 422:    */   }
 /* 423:    */   
@@ -439,7 +439,7 @@ package net.minecraft.src;
 /* 438:    */   
 /* 439:    */   private void A()
 /* 440:    */   {
-/* 441:463 */     ProtoBlock.a(this.world, new BlockPosition(this), new ItemStack(ItemList.armorStand));
+/* 441:463 */     BlockType.a(this.world, new BlockPosition(this), new ItemStack(ItemList.armorStand));
 /* 442:464 */     C();
 /* 443:    */   }
 /* 444:    */   
@@ -449,7 +449,7 @@ package net.minecraft.src;
 /* 448:469 */       if ((this.g[j] != null) && (this.g[j].stackSize > 0))
 /* 449:    */       {
 /* 450:470 */         if (this.g[j] != null) {
-/* 451:471 */           ProtoBlock.a(this.world, new BlockPosition(this).up(), this.g[j]);
+/* 451:471 */           BlockType.a(this.world, new BlockPosition(this).up(), this.g[j]);
 /* 452:    */         }
 /* 453:473 */         this.g[j] = null;
 /* 454:    */       }
@@ -480,27 +480,27 @@ package net.minecraft.src;
 /* 479:    */   {
 /* 480:500 */     super.onUpdate();
 /* 481:    */     
-/* 482:502 */     fa localfa1 = this.ac.h(11);
+/* 482:502 */     fa localfa1 = this.data.h(11);
 /* 483:503 */     if (!this.bh.equals(localfa1)) {
 /* 484:504 */       a(localfa1);
 /* 485:    */     }
-/* 486:506 */     fa localfa2 = this.ac.h(12);
+/* 486:506 */     fa localfa2 = this.data.h(12);
 /* 487:507 */     if (!this.bi.equals(localfa2)) {
 /* 488:508 */       b(localfa2);
 /* 489:    */     }
-/* 490:510 */     fa localfa3 = this.ac.h(13);
+/* 490:510 */     fa localfa3 = this.data.h(13);
 /* 491:511 */     if (!this.bj.equals(localfa3)) {
 /* 492:512 */       c(localfa3);
 /* 493:    */     }
-/* 494:514 */     fa localfa4 = this.ac.h(14);
+/* 494:514 */     fa localfa4 = this.data.h(14);
 /* 495:515 */     if (!this.bk.equals(localfa4)) {
 /* 496:516 */       d(localfa4);
 /* 497:    */     }
-/* 498:518 */     fa localfa5 = this.ac.h(15);
+/* 498:518 */     fa localfa5 = this.data.h(15);
 /* 499:519 */     if (!this.bl.equals(localfa5)) {
 /* 500:520 */       e(localfa5);
 /* 501:    */     }
-/* 502:522 */     fa localfa6 = this.ac.h(16);
+/* 502:522 */     fa localfa6 = this.data.h(16);
 /* 503:523 */     if (!this.bm.equals(localfa6)) {
 /* 504:524 */       f(localfa6);
 /* 505:    */     }
@@ -534,102 +534,102 @@ package net.minecraft.src;
 /* 533:    */   
 /* 534:    */   private void a(boolean paramBoolean)
 /* 535:    */   {
-/* 536:555 */     byte b1 = this.ac.a(10);
+/* 536:555 */     byte b1 = this.data.getByte(10);
 /* 537:556 */     if (paramBoolean) {
 /* 538:557 */       b1 = (byte)(b1 | 0x1);
 /* 539:    */     } else {
 /* 540:559 */       b1 = (byte)(b1 & 0xFFFFFFFE);
 /* 541:    */     }
-/* 542:561 */     this.ac.b(10, Byte.valueOf(b1));
+/* 542:561 */     this.data.b(10, Byte.valueOf(b1));
 /* 543:    */   }
 /* 544:    */   
 /* 545:    */   public boolean n()
 /* 546:    */   {
-/* 547:565 */     return (this.ac.a(10) & 0x1) != 0;
+/* 547:565 */     return (this.data.getByte(10) & 0x1) != 0;
 /* 548:    */   }
 /* 549:    */   
 /* 550:    */   private void j(boolean paramBoolean)
 /* 551:    */   {
-/* 552:569 */     byte b1 = this.ac.a(10);
+/* 552:569 */     byte b1 = this.data.getByte(10);
 /* 553:570 */     if (paramBoolean) {
 /* 554:571 */       b1 = (byte)(b1 | 0x2);
 /* 555:    */     } else {
 /* 556:573 */       b1 = (byte)(b1 & 0xFFFFFFFD);
 /* 557:    */     }
-/* 558:575 */     this.ac.b(10, Byte.valueOf(b1));
+/* 558:575 */     this.data.b(10, Byte.valueOf(b1));
 /* 559:    */   }
 /* 560:    */   
 /* 561:    */   public boolean p()
 /* 562:    */   {
-/* 563:579 */     return (this.ac.a(10) & 0x2) != 0;
+/* 563:579 */     return (this.data.getByte(10) & 0x2) != 0;
 /* 564:    */   }
 /* 565:    */   
 /* 566:    */   private void k(boolean paramBoolean)
 /* 567:    */   {
-/* 568:583 */     byte b1 = this.ac.a(10);
+/* 568:583 */     byte b1 = this.data.getByte(10);
 /* 569:584 */     if (paramBoolean) {
 /* 570:585 */       b1 = (byte)(b1 | 0x4);
 /* 571:    */     } else {
 /* 572:587 */       b1 = (byte)(b1 & 0xFFFFFFFB);
 /* 573:    */     }
-/* 574:589 */     this.ac.b(10, Byte.valueOf(b1));
+/* 574:589 */     this.data.b(10, Byte.valueOf(b1));
 /* 575:    */   }
 /* 576:    */   
 /* 577:    */   public boolean q()
 /* 578:    */   {
-/* 579:593 */     return (this.ac.a(10) & 0x4) != 0;
+/* 579:593 */     return (this.data.getByte(10) & 0x4) != 0;
 /* 580:    */   }
 /* 581:    */   
 /* 582:    */   private void l(boolean paramBoolean)
 /* 583:    */   {
-/* 584:597 */     byte b1 = this.ac.a(10);
+/* 584:597 */     byte b1 = this.data.getByte(10);
 /* 585:598 */     if (paramBoolean) {
 /* 586:599 */       b1 = (byte)(b1 | 0x8);
 /* 587:    */     } else {
 /* 588:601 */       b1 = (byte)(b1 & 0xFFFFFFF7);
 /* 589:    */     }
-/* 590:603 */     this.ac.b(10, Byte.valueOf(b1));
+/* 590:603 */     this.data.b(10, Byte.valueOf(b1));
 /* 591:    */   }
 /* 592:    */   
 /* 593:    */   public boolean r()
 /* 594:    */   {
-/* 595:607 */     return (this.ac.a(10) & 0x8) != 0;
+/* 595:607 */     return (this.data.getByte(10) & 0x8) != 0;
 /* 596:    */   }
 /* 597:    */   
 /* 598:    */   public void a(fa paramfa)
 /* 599:    */   {
 /* 600:611 */     this.bh = paramfa;
-/* 601:612 */     this.ac.b(11, paramfa);
+/* 601:612 */     this.data.b(11, paramfa);
 /* 602:    */   }
 /* 603:    */   
 /* 604:    */   public void b(fa paramfa)
 /* 605:    */   {
 /* 606:616 */     this.bi = paramfa;
-/* 607:617 */     this.ac.b(12, paramfa);
+/* 607:617 */     this.data.b(12, paramfa);
 /* 608:    */   }
 /* 609:    */   
 /* 610:    */   public void c(fa paramfa)
 /* 611:    */   {
 /* 612:621 */     this.bj = paramfa;
-/* 613:622 */     this.ac.b(13, paramfa);
+/* 613:622 */     this.data.b(13, paramfa);
 /* 614:    */   }
 /* 615:    */   
 /* 616:    */   public void d(fa paramfa)
 /* 617:    */   {
 /* 618:626 */     this.bk = paramfa;
-/* 619:627 */     this.ac.b(14, paramfa);
+/* 619:627 */     this.data.b(14, paramfa);
 /* 620:    */   }
 /* 621:    */   
 /* 622:    */   public void e(fa paramfa)
 /* 623:    */   {
 /* 624:631 */     this.bl = paramfa;
-/* 625:632 */     this.ac.b(15, paramfa);
+/* 625:632 */     this.data.b(15, paramfa);
 /* 626:    */   }
 /* 627:    */   
 /* 628:    */   public void f(fa paramfa)
 /* 629:    */   {
 /* 630:636 */     this.bm = paramfa;
-/* 631:637 */     this.ac.b(16, paramfa);
+/* 631:637 */     this.data.b(16, paramfa);
 /* 632:    */   }
 /* 633:    */   
 /* 634:    */   public fa s()

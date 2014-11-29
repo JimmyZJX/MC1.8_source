@@ -13,8 +13,8 @@ package net.minecraft.src;
 /* 12:   */   
 /* 13:   */   public boolean generate(World paramaqu, Random paramRandom, BlockPosition paramdt)
 /* 14:   */   {
-/* 15:   */     ProtoBlock localatr;
-/* 16:24 */     while ((((localatr = paramaqu.getBlock(paramdt).getProto()).getMaterial() == Material.air) || (localatr.getMaterial() == Material.leaves)) && (paramdt.getY() > 0)) {
+/* 15:   */     BlockType localatr;
+/* 16:24 */     while ((((localatr = paramaqu.getBlock(paramdt).getType()).getMaterial() == Material.air) || (localatr.getMaterial() == Material.leaves)) && (paramdt.getY() > 0)) {
 /* 17:25 */       paramdt = paramdt.down();
 /* 18:   */     }
 /* 19:28 */     for (int i = 0; i < 128; i++)

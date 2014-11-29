@@ -248,7 +248,7 @@ package net.minecraft.src;
 /* 247:273 */         cue localcue = a(BlockList.sand);
 /* 248:275 */         if ((i14 > 37) || (i4 + i12 == 35))
 /* 249:    */         {
-/* 250:276 */           ProtoBlock localatr = BlockList.bedrock;
+/* 250:276 */           BlockType localatr = BlockList.bedrock;
 /* 251:277 */           localcue = a(localatr);
 /* 252:    */         }
 /* 253:278 */         else if (i14 == 22)
@@ -468,7 +468,7 @@ package net.minecraft.src;
 /* 467:498 */     bss.a();
 /* 468:    */   }
 /* 469:    */   
-/* 470:    */   private cue a(ProtoBlock paramatr)
+/* 470:    */   private cue a(BlockType paramatr)
 /* 471:    */   {
 /* 472:502 */     return bsu.z().ab().a().a(paramatr.instance());
 /* 473:    */   }

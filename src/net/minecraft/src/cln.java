@@ -6,17 +6,17 @@ package net.minecraft.src;
 /*   5:    */ {
 /*   6:    */   public boolean a(IBlockAccess paramard, cxe paramcxe, Block parambec, BlockPosition paramdt, VertexBuffer paramciv)
 /*   7:    */   {
-/*   8: 33 */     ProtoBlock localatr = parambec.getProto();
+/*   8: 33 */     BlockType localatr = parambec.getType();
 /*   9: 34 */     localatr.a(paramard, paramdt);
 /*  10: 35 */     return a(paramard, paramcxe, parambec, paramdt, paramciv, true);
 /*  11:    */   }
 /*  12:    */   
 /*  13:    */   public boolean a(IBlockAccess paramard, cxe paramcxe, Block parambec, BlockPosition paramdt, VertexBuffer paramciv, boolean paramBoolean)
 /*  14:    */   {
-/*  15: 39 */     boolean bool = (bsu.w()) && (parambec.getProto().p() == 0) && (paramcxe.b());
+/*  15: 39 */     boolean bool = (bsu.w()) && (parambec.getType().p() == 0) && (paramcxe.b());
 /*  16:    */     try
 /*  17:    */     {
-/*  18: 41 */       ProtoBlock localatr = parambec.getProto();
+/*  18: 41 */       BlockType localatr = parambec.getType();
 /*  19: 42 */       if (bool) {
 /*  20: 43 */         return a(paramard, paramcxe, localatr, paramdt, paramciv, paramBoolean);
 /*  21:    */       }
@@ -33,7 +33,7 @@ package net.minecraft.src;
 /*  32:    */     }
 /*  33:    */   }
 /*  34:    */   
-/*  35:    */   public boolean a(IBlockAccess paramard, cxe paramcxe, ProtoBlock paramatr, BlockPosition paramdt, VertexBuffer paramciv, boolean paramBoolean)
+/*  35:    */   public boolean a(IBlockAccess paramard, cxe paramcxe, BlockType paramatr, BlockPosition paramdt, VertexBuffer paramciv, boolean paramBoolean)
 /*  36:    */   {
 /*  37: 58 */     boolean bool = false;
 /*  38:    */     
@@ -64,7 +64,7 @@ package net.minecraft.src;
 /*  63: 85 */     return bool;
 /*  64:    */   }
 /*  65:    */   
-/*  66:    */   public boolean b(IBlockAccess paramard, cxe paramcxe, ProtoBlock paramatr, BlockPosition paramdt, VertexBuffer paramciv, boolean paramBoolean)
+/*  66:    */   public boolean b(IBlockAccess paramard, cxe paramcxe, BlockType paramatr, BlockPosition paramdt, VertexBuffer paramciv, boolean paramBoolean)
 /*  67:    */   {
 /*  68: 89 */     boolean bool = false;
 /*  69:    */     
@@ -93,7 +93,7 @@ package net.minecraft.src;
 /*  92:115 */     return bool;
 /*  93:    */   }
 /*  94:    */   
-/*  95:    */   private void a(IBlockAccess paramard, ProtoBlock paramatr, BlockPosition paramdt, VertexBuffer paramciv, List<clt> paramList, float[] paramArrayOfFloat, BitSet paramBitSet, clq paramclq)
+/*  95:    */   private void a(IBlockAccess paramard, BlockType paramatr, BlockPosition paramdt, VertexBuffer paramciv, List<clt> paramList, float[] paramArrayOfFloat, BitSet paramBitSet, clq paramclq)
 /*  96:    */   {
 /*  97:119 */     double d1 = paramdt.getX();
 /*  98:120 */     double d2 = paramdt.getY();
@@ -143,7 +143,7 @@ package net.minecraft.src;
 /* 142:    */     }
 /* 143:    */   }
 /* 144:    */   
-/* 145:    */   private void a(ProtoBlock paramatr, int[] paramArrayOfInt, EnumDirection paramej, float[] paramArrayOfFloat, BitSet paramBitSet)
+/* 145:    */   private void a(BlockType paramatr, int[] paramArrayOfInt, EnumDirection paramej, float[] paramArrayOfFloat, BitSet paramBitSet)
 /* 146:    */   {
 /* 147:164 */     float f1 = 32.0F;
 /* 148:165 */     float f2 = 32.0F;
@@ -208,7 +208,7 @@ package net.minecraft.src;
 /* 207:    */     }
 /* 208:    */   }
 /* 209:    */   
-/* 210:    */   private void a(IBlockAccess paramard, ProtoBlock paramatr, BlockPosition paramdt, EnumDirection paramej, int paramInt, boolean paramBoolean, VertexBuffer paramciv, List<clt> paramList, BitSet paramBitSet)
+/* 210:    */   private void a(IBlockAccess paramard, BlockType paramatr, BlockPosition paramdt, EnumDirection paramej, int paramInt, boolean paramBoolean, VertexBuffer paramciv, List<clt> paramList, BitSet paramBitSet)
 /* 211:    */   {
 /* 212:228 */     double d1 = paramdt.getX();
 /* 213:229 */     double d2 = paramdt.getY();
@@ -268,7 +268,7 @@ package net.minecraft.src;
 /* 267:    */   
 /* 268:    */   public void a(cxe paramcxe, Block parambec, float paramFloat, boolean paramBoolean)
 /* 269:    */   {
-/* 270:281 */     ProtoBlock localatr = parambec.getProto();
+/* 270:281 */     BlockType localatr = parambec.getType();
 /* 271:282 */     localatr.h();
 /* 272:283 */     cjm.glRotatef(90.0F, 0.0F, 1.0F, 0.0F);
 /* 273:    */     

@@ -145,7 +145,7 @@ package net.minecraft.src;
 /* 144:    */     }
 /* 145:    */   }
 /* 146:    */   
-/* 147:    */   public boolean e(EntityPlayer paramahd)
+/* 147:    */   public boolean onRightClick(EntityPlayer paramahd)
 /* 148:    */   {
 /* 149:170 */     if (!this.world.isClient) {
 /* 150:171 */       paramahd.a((vq)this);

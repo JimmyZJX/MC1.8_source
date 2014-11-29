@@ -25,7 +25,7 @@ package net.minecraft.src;
 /* 24:26 */     if ((d < 4.0D) || (d > 16.0D)) {
 /* 25:27 */       return false;
 /* 26:   */     }
-/* 27:29 */     if (!this.a.C) {
+/* 27:29 */     if (!this.a.landing) {
 /* 28:30 */       return false;
 /* 29:   */     }
 /* 30:32 */     if (this.a.getRNG().nextInt(5) != 0) {
@@ -36,7 +36,7 @@ package net.minecraft.src;
 /* 35:   */   
 /* 36:   */   public boolean canContinue()
 /* 37:   */   {
-/* 38:40 */     return !this.a.C;
+/* 38:40 */     return !this.a.landing;
 /* 39:   */   }
 /* 40:   */   
 /* 41:   */   public void start()

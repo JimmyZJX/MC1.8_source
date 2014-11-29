@@ -13,7 +13,7 @@ package net.minecraft.src;
 /* 12:22 */     setCreativeTab(CreativeTabs.tabRedstone);
 /* 13:   */   }
 /* 14:   */   
-/* 15:   */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/* 15:   */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /* 16:   */   {
 /* 17:27 */     boolean bool = paramaqu.z(paramdt);
 /* 18:   */     

@@ -21,7 +21,7 @@ package net.minecraft.src;
 /*  20: 46 */     return 20;
 /*  21:    */   }
 /*  22:    */   
-/*  23:    */   public boolean protoBlock_g()
+/*  23:    */   public boolean blockType_g()
 /*  24:    */   {
 /*  25: 51 */     return true;
 /*  26:    */   }
@@ -47,12 +47,12 @@ package net.minecraft.src;
 /*  46: 77 */     e(paramaqu, paramdt, parambec);
 /*  47:    */   }
 /*  48:    */   
-/*  49:    */   public int a(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
+/*  49:    */   public int getRedStoneSignal(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
 /*  50:    */   {
 /*  51: 82 */     return ((Boolean)parambec.getData(M)).booleanValue() ? 15 : 0;
 /*  52:    */   }
 /*  53:    */   
-/*  54:    */   public int b(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
+/*  54:    */   public int getStrongRedstoneSignal(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
 /*  55:    */   {
 /*  56: 87 */     if (!((Boolean)parambec.getData(M)).booleanValue()) {
 /*  57: 88 */       return 0;

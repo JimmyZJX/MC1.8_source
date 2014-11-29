@@ -19,7 +19,7 @@ package net.minecraft.src;
 /*  18:    */   
 /*  19:    */   protected boolean b()
 /*  20:    */   {
-/*  21: 35 */     return (this.mob.C) || ((h()) && (o())) || ((this.mob.av()) && ((this.mob instanceof EntityZombie)) && ((this.mob.vehicle instanceof EntityChicken)));
+/*  21: 35 */     return (this.mob.landing) || ((h()) && (o())) || ((this.mob.av()) && ((this.mob instanceof EntityZombie)) && ((this.mob.vehicle instanceof EntityChicken)));
 /*  22:    */   }
 /*  23:    */   
 /*  24:    */   protected Vec3 c()
@@ -33,12 +33,12 @@ package net.minecraft.src;
 /*  32: 45 */       return (int)(this.mob.getAABB().minY + 0.5D);
 /*  33:    */     }
 /*  34: 48 */     int i = (int)this.mob.getAABB().minY;
-/*  35: 49 */     ProtoBlock localatr = this.world.getBlock(new BlockPosition(MathUtils.floor(this.mob.xPos), i, MathUtils.floor(this.mob.zPos))).getProto();
+/*  35: 49 */     BlockType localatr = this.world.getBlock(new BlockPosition(MathUtils.floor(this.mob.xPos), i, MathUtils.floor(this.mob.zPos))).getType();
 /*  36: 50 */     int j = 0;
 /*  37: 51 */     while ((localatr == BlockList.flowingWater) || (localatr == BlockList.water))
 /*  38:    */     {
 /*  39: 52 */       i++;
-/*  40: 53 */       localatr = this.world.getBlock(new BlockPosition(MathUtils.floor(this.mob.xPos), i, MathUtils.floor(this.mob.zPos))).getProto();
+/*  40: 53 */       localatr = this.world.getBlock(new BlockPosition(MathUtils.floor(this.mob.xPos), i, MathUtils.floor(this.mob.zPos))).getType();
 /*  41: 54 */       j++;
 /*  42: 54 */       if (j > 16) {
 /*  43: 55 */         return (int)this.mob.getAABB().minY;
@@ -145,7 +145,7 @@ package net.minecraft.src;
 /* 144:153 */         double d2 = m + 0.5D - parambrw.z;
 /* 145:154 */         if (d1 * paramDouble1 + d2 * paramDouble2 >= 0.0D)
 /* 146:    */         {
-/* 147:157 */           ProtoBlock localatr = this.world.getBlock(new BlockPosition(k, paramInt2 - 1, m)).getProto();
+/* 147:157 */           BlockType localatr = this.world.getBlock(new BlockPosition(k, paramInt2 - 1, m)).getType();
 /* 148:158 */           Material localbof = localatr.getMaterial();
 /* 149:159 */           if (localbof == Material.air) {
 /* 150:160 */             return false;
@@ -170,7 +170,7 @@ package net.minecraft.src;
 /* 169:177 */       double d2 = localdt.getZ() + 0.5D - parambrw.z;
 /* 170:178 */       if (d1 * paramDouble1 + d2 * paramDouble2 >= 0.0D)
 /* 171:    */       {
-/* 172:181 */         ProtoBlock localatr = this.world.getBlock(localdt).getProto();
+/* 172:181 */         BlockType localatr = this.world.getBlock(localdt).getType();
 /* 173:182 */         if (!localatr.b((IBlockAccess)this.world, localdt)) {
 /* 174:183 */           return false;
 /* 175:    */         }

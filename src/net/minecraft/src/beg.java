@@ -14,11 +14,11 @@ package net.minecraft.src;
 /*  13:    */ class beg
 /*  14:    */   extends bea
 /*  15:    */ {
-/*  16:    */   private final ProtoBlock a;
+/*  16:    */   private final BlockType a;
 /*  17:    */   private final ImmutableMap<IBlockData<?>,Comparable<?>> b;
 /*  18:    */   private ImmutableTable c;
 /*  19:    */   
-/*  20:    */   private beg(ProtoBlock paramatr, ImmutableMap<IBlockData<?>,Comparable<?>> paramImmutableMap)
+/*  20:    */   private beg(BlockType paramatr, ImmutableMap<IBlockData<?>,Comparable<?>> paramImmutableMap)
 /*  21:    */   {
 /*  22:100 */     this.a = paramatr;
 /*  23:101 */     this.b = paramImmutableMap;
@@ -43,7 +43,7 @@ package net.minecraft.src;
 /*  42:121 */       throw new IllegalArgumentException("Cannot set property " + parambex + " as it does not exist in " + this.a.O());
 /*  43:    */     }
 /*  44:123 */     if (!parambex.getValues().contains(paramComparable)) {
-/*  45:124 */       throw new IllegalArgumentException("Cannot set property " + parambex + " to " + paramComparable + " on block " + ProtoBlock.c.c(this.a) + ", it is not an allowed value");
+/*  45:124 */       throw new IllegalArgumentException("Cannot set property " + parambex + " to " + paramComparable + " on block " + BlockType.c.c(this.a) + ", it is not an allowed value");
 /*  46:    */     }
 /*  47:126 */     if (this.b.get(parambex) == paramComparable) {
 /*  48:127 */       return this;
@@ -56,7 +56,7 @@ package net.minecraft.src;
 /*  55:135 */     return this.b;
 /*  56:    */   }
 /*  57:    */   
-/*  58:    */   public ProtoBlock getProto()
+/*  58:    */   public BlockType getType()
 /*  59:    */   {
 /*  60:140 */     return this.a;
 /*  61:    */   }
@@ -96,7 +96,7 @@ package net.minecraft.src;
 /*  95:173 */     localHashMap.put(parambex, paramComparable);
 /*  96:174 */     return localHashMap;
 /*  97:    */   }
-				beg(ProtoBlock arg0, ImmutableMap arg1, bee arg2) {this(arg0,arg1);}
+				beg(BlockType arg0, ImmutableMap arg1, bee arg2) {this(arg0,arg1);}
 /*  98:    */ }
 
 

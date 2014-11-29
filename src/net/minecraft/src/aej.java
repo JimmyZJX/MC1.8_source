@@ -38,7 +38,7 @@ package net.minecraft.src;
 /*  37:    */     {
 /*  38: 48 */       b(this.xVelocity * this.xVelocity + this.zVelocity * this.zVelocity);
 /*  39:    */     }
-/*  40: 51 */     if (this.D)
+/*  40: 51 */     if (this.horizontalColliding)
 /*  41:    */     {
 /*  42: 52 */       double d = this.xVelocity * this.xVelocity + this.zVelocity * this.zVelocity;
 /*  43: 54 */       if (d >= 0.009999999776482582D) {
@@ -47,7 +47,7 @@ package net.minecraft.src;
 /*  46:    */     }
 /*  47:    */   }
 /*  48:    */   
-/*  49:    */   public boolean a(DamageSource paramwh, float paramFloat)
+/*  49:    */   public boolean receiveDamage(DamageSource paramwh, float paramFloat)
 /*  50:    */   {
 /*  51: 62 */     Entity localwv = paramwh.getEntity();
 /*  52: 63 */     if ((localwv instanceof EntityArrow))
@@ -57,7 +57,7 @@ package net.minecraft.src;
 /*  56: 66 */         b(localahj.xVelocity * localahj.xVelocity + localahj.yVelocity * localahj.yVelocity + localahj.zVelocity * localahj.zVelocity);
 /*  57:    */       }
 /*  58:    */     }
-/*  59: 69 */     return super.a(paramwh, paramFloat);
+/*  59: 69 */     return super.receiveDamage(paramwh, paramFloat);
 /*  60:    */   }
 /*  61:    */   
 /*  62:    */   public void a(DamageSource paramwh)

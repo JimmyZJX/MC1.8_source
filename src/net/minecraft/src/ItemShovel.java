@@ -5,14 +5,14 @@ package net.minecraft.src;
 /*  4:   */ public class ItemShovel
 /*  5:   */   extends ItemTool
 /*  6:   */ {
-/*  7:10 */   private static final Set c = Sets.newHashSet(new ProtoBlock[] { BlockList.aL, BlockList.dirt, BlockList.ak, BlockList.grass, BlockList.gravel, BlockList.bw, BlockList.sand, BlockList.aJ, BlockList.aH, BlockList.soulSand });
+/*  7:10 */   private static final Set c = Sets.newHashSet(new BlockType[] { BlockList.aL, BlockList.dirt, BlockList.ak, BlockList.grass, BlockList.gravel, BlockList.bw, BlockList.sand, BlockList.aJ, BlockList.aH, BlockList.soulSand });
 /*  8:   */   
 /*  9:   */   public ItemShovel(EnumToolMaterial paramami)
 /* 10:   */   {
 /* 11:24 */     super(1.0F, paramami, c);
 /* 12:   */   }
 /* 13:   */   
-/* 14:   */   public boolean canHarvestBlock(ProtoBlock paramatr)
+/* 14:   */   public boolean canHarvestBlock(BlockType paramatr)
 /* 15:   */   {
 /* 16:29 */     if (paramatr == BlockList.aH) {
 /* 17:30 */       return true;

@@ -26,12 +26,12 @@ package net.minecraft.src;
 /*  25:    */   
 /*  26:    */   public boolean n()
 /*  27:    */   {
-/*  28: 50 */     return this.ac.a(16) != 0;
+/*  28: 50 */     return this.data.getByte(16) != 0;
 /*  29:    */   }
 /*  30:    */   
 /*  31:    */   public void a(boolean paramBoolean)
 /*  32:    */   {
-/*  33: 54 */     this.ac.b(16, Byte.valueOf((byte)(paramBoolean ? 1 : 0)));
+/*  33: 54 */     this.data.b(16, Byte.valueOf((byte)(paramBoolean ? 1 : 0)));
 /*  34:    */   }
 /*  35:    */   
 /*  36:    */   public int cd()
@@ -47,7 +47,7 @@ package net.minecraft.src;
 /*  46:    */     }
 /*  47:    */   }
 /*  48:    */   
-/*  49:    */   public boolean a(DamageSource paramwh, float paramFloat)
+/*  49:    */   public boolean receiveDamage(DamageSource paramwh, float paramFloat)
 /*  50:    */   {
 /*  51: 72 */     if (isImmuneTo(paramwh)) {
 /*  52: 73 */       return false;
@@ -55,18 +55,18 @@ package net.minecraft.src;
 /*  54: 75 */     if (("fireball".equals(paramwh.p())) && 
 /*  55: 76 */       ((paramwh.getAttacker() instanceof EntityPlayer)))
 /*  56:    */     {
-/*  57: 78 */       super.a(paramwh, 1000.0F);
+/*  57: 78 */       super.receiveDamage(paramwh, 1000.0F);
 /*  58: 79 */       ((EntityPlayer)paramwh.getAttacker()).increaseStat(AchievementList.z);
 /*  59: 80 */       return true;
 /*  60:    */     }
-/*  61: 84 */     return super.a(paramwh, paramFloat);
+/*  61: 84 */     return super.receiveDamage(paramwh, paramFloat);
 /*  62:    */   }
 /*  63:    */   
 /*  64:    */   protected void h()
 /*  65:    */   {
 /*  66: 89 */     super.h();
 /*  67:    */     
-/*  68: 91 */     this.ac.a(16, Byte.valueOf((byte)0));
+/*  68: 91 */     this.data.addData(16, Byte.valueOf((byte)0));
 /*  69:    */   }
 /*  70:    */   
 /*  71:    */   protected void aW()

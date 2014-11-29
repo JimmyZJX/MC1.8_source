@@ -25,7 +25,7 @@ package net.minecraft.src;
 /*  24:223 */       return;
 /*  25:    */     }
 /*  26:226 */     Item localalq = paramamj.getItem();
-/*  27:227 */     ProtoBlock localatr = ProtoBlock.a(localalq);
+/*  27:227 */     BlockType localatr = BlockType.a(localalq);
 /*  28:    */     
 /*  29:229 */     cjm.glPushMatrix();
 /*  30:231 */     if (this.h.a(paramamj))
@@ -42,7 +42,7 @@ package net.minecraft.src;
 /*  41:246 */     cjm.glPopMatrix();
 /*  42:    */   }
 /*  43:    */   
-/*  44:    */   private boolean a(ProtoBlock paramatr)
+/*  44:    */   private boolean a(BlockType paramatr)
 /*  45:    */   {
 /*  46:250 */     return (paramatr != null) && (paramatr.k() == aql.d);
 /*  47:    */   }
@@ -354,11 +354,11 @@ package net.minecraft.src;
 /* 353:    */         
 /* 354:536 */         BlockPosition localdt = new BlockPosition(d1, d2 + localcio.getEyeHeight(), d3);
 /* 355:537 */         Block localbec = this.c.f.getBlock(localdt);
-/* 356:539 */         if (localbec.getProto().u()) {
+/* 356:539 */         if (localbec.getType().u()) {
 /* 357:540 */           localObject = localbec;
 /* 358:    */         }
 /* 359:    */       }
-/* 360:544 */       if (((Block)localObject).getProto().b() != -1) {
+/* 360:544 */       if (((Block)localObject).getType().b() != -1) {
 /* 361:545 */         a(paramFloat, this.c.ab().a().a((Block)localObject));
 /* 362:    */       }
 /* 363:    */     }
@@ -497,7 +497,7 @@ package net.minecraft.src;
 /* 496:678 */     this.f = this.e;
 /* 497:    */     
 /* 498:680 */     cio localcio = this.c.h;
-/* 499:681 */     ItemStack localamj = localcio.bg.h();
+/* 499:681 */     ItemStack localamj = localcio.inventory.getHeldItem();
 /* 500:    */     
 /* 501:683 */     int j = 0;
 /* 502:684 */     if ((this.d != null) && (localamj != null))
@@ -519,7 +519,7 @@ package net.minecraft.src;
 /* 518:700 */     if (this.e < 0.1F)
 /* 519:    */     {
 /* 520:701 */       this.d = localamj;
-/* 521:702 */       this.i = localcio.bg.c;
+/* 521:702 */       this.i = localcio.inventory.c;
 /* 522:    */     }
 /* 523:    */   }
 /* 524:    */   

@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ import java.util.List;
 /*  2:   */ 
 /*  3:   */ public class BlockDirt
-/*  4:   */   extends ProtoBlock
+/*  4:   */   extends BlockType
 /*  5:   */ {
 /*  6:19 */   public static final BlockDataEnum a = BlockDataEnum.getInstance("variant", avd.class);
 /*  7:20 */   public static final BlockDataBoolean b = BlockDataBoolean.getInstance("snowy");
@@ -18,7 +18,7 @@ package net.minecraft.src;
 /* 17:   */   {
 /* 18:30 */     if (parambec.getData(a) == avd.c)
 /* 19:   */     {
-/* 20:31 */       ProtoBlock localatr = paramard.getBlock(paramdt.up()).getProto();
+/* 20:31 */       BlockType localatr = paramard.getBlock(paramdt.up()).getType();
 /* 21:32 */       parambec = parambec.setData(b, Boolean.valueOf((localatr == BlockList.aJ) || (localatr == BlockList.aH)));
 /* 22:   */     }
 /* 23:34 */     return parambec;
@@ -34,7 +34,7 @@ package net.minecraft.src;
 /* 33:   */   public int j(World paramaqu, BlockPosition paramdt)
 /* 34:   */   {
 /* 35:46 */     Block localbec = paramaqu.getBlock(paramdt);
-/* 36:47 */     if (localbec.getProto() != this) {
+/* 36:47 */     if (localbec.getType() != this) {
 /* 37:48 */       return 0;
 /* 38:   */     }
 /* 39:50 */     return ((avd)localbec.getData(a)).a();

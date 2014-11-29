@@ -32,7 +32,7 @@ package net.minecraft.src;
 /*  31:    */   {
 /*  32: 56 */     super.h();
 /*  33:    */     
-/*  34: 58 */     H().a(21, Byte.valueOf((byte)0));
+/*  34: 58 */     H().addData(21, Byte.valueOf((byte)0));
 /*  35:    */   }
 /*  36:    */   
 /*  37:    */   protected String z()
@@ -57,7 +57,7 @@ package net.minecraft.src;
 /*  56:    */   
 /*  57:    */   public boolean n()
 /*  58:    */   {
-/*  59: 81 */     return H().a(21) == 1;
+/*  59: 81 */     return H().getByte(21) == 1;
 /*  60:    */   }
 /*  61:    */   
 /*  62:    */   protected void aW()

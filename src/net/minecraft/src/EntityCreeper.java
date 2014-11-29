@@ -61,15 +61,15 @@ package net.minecraft.src;
 /*  60:    */   {
 /*  61: 84 */     super.h();
 /*  62:    */     
-/*  63: 86 */     this.ac.a(16, Byte.valueOf((byte)-1));
-/*  64: 87 */     this.ac.a(17, Byte.valueOf((byte)0));
-/*  65: 88 */     this.ac.a(18, Byte.valueOf((byte)0));
+/*  63: 86 */     this.data.addData(16, Byte.valueOf((byte)-1));
+/*  64: 87 */     this.data.addData(17, Byte.valueOf((byte)0));
+/*  65: 88 */     this.data.addData(18, Byte.valueOf((byte)0));
 /*  66:    */   }
 /*  67:    */   
 /*  68:    */   public void writeEntityToNBT(NBTTagCompound paramfn)
 /*  69:    */   {
 /*  70: 93 */     super.writeEntityToNBT(paramfn);
-/*  71: 94 */     if (this.ac.a(17) == 1) {
+/*  71: 94 */     if (this.data.getByte(17) == 1) {
 /*  72: 95 */       paramfn.setBoolean("powered", true);
 /*  73:    */     }
 /*  74: 97 */     paramfn.setShort("Fuse", (short)this.bk);
@@ -80,7 +80,7 @@ package net.minecraft.src;
 /*  79:    */   public void readEntityFromNBT(NBTTagCompound paramfn)
 /*  80:    */   {
 /*  81:104 */     super.readEntityFromNBT(paramfn);
-/*  82:105 */     this.ac.b(17, Byte.valueOf((byte)(paramfn.getBoolean("powered") ? 1 : 0)));
+/*  82:105 */     this.data.b(17, Byte.valueOf((byte)(paramfn.getBoolean("powered") ? 1 : 0)));
 /*  83:106 */     if (paramfn.hasKey("Fuse", 99)) {
 /*  84:107 */       this.bk = paramfn.e("Fuse");
 /*  85:    */     }
@@ -152,7 +152,7 @@ package net.minecraft.src;
 /* 151:    */   
 /* 152:    */   public boolean n()
 /* 153:    */   {
-/* 154:177 */     return this.ac.a(17) == 1;
+/* 154:177 */     return this.data.getByte(17) == 1;
 /* 155:    */   }
 /* 156:    */   
 /* 157:    */   public float a(float paramFloat)
@@ -167,23 +167,23 @@ package net.minecraft.src;
 /* 166:    */   
 /* 167:    */   public int ck()
 /* 168:    */   {
-/* 169:190 */     return this.ac.a(16);
+/* 169:190 */     return this.data.getByte(16);
 /* 170:    */   }
 /* 171:    */   
 /* 172:    */   public void a(int paramInt)
 /* 173:    */   {
-/* 174:194 */     this.ac.b(16, Byte.valueOf((byte)paramInt));
+/* 174:194 */     this.data.b(16, Byte.valueOf((byte)paramInt));
 /* 175:    */   }
 /* 176:    */   
 /* 177:    */   public void onStruck(ads paramads)
 /* 178:    */   {
 /* 179:199 */     super.onStruck(paramads);
-/* 180:200 */     this.ac.b(17, Byte.valueOf((byte)1));
+/* 180:200 */     this.data.b(17, Byte.valueOf((byte)1));
 /* 181:    */   }
 /* 182:    */   
-/* 183:    */   protected boolean onRightClick(EntityPlayer paramahd)
+/* 183:    */   protected boolean onRightClickMob(EntityPlayer paramahd)
 /* 184:    */   {
-/* 185:205 */     ItemStack localamj = paramahd.bg.h();
+/* 185:205 */     ItemStack localamj = paramahd.inventory.getHeldItem();
 /* 186:206 */     if ((localamj != null) && (localamj.getItem() == ItemList.d))
 /* 187:    */     {
 /* 188:207 */       this.world.a(this.xPos + 0.5D, this.yPos + 0.5D, this.zPos + 0.5D, "fire.ignite", 1.0F, this.rng.nextFloat() * 0.4F + 0.8F);
@@ -195,7 +195,7 @@ package net.minecraft.src;
 /* 194:212 */         return true;
 /* 195:    */       }
 /* 196:    */     }
-/* 197:216 */     return super.onRightClick(paramahd);
+/* 197:216 */     return super.onRightClickMob(paramahd);
 /* 198:    */   }
 /* 199:    */   
 /* 200:    */   private void cp()
@@ -211,12 +211,12 @@ package net.minecraft.src;
 /* 210:    */   
 /* 211:    */   public boolean cl()
 /* 212:    */   {
-/* 213:229 */     return this.ac.a(18) != 0;
+/* 213:229 */     return this.data.getByte(18) != 0;
 /* 214:    */   }
 /* 215:    */   
 /* 216:    */   public void cm()
 /* 217:    */   {
-/* 218:233 */     this.ac.b(18, Byte.valueOf((byte)1));
+/* 218:233 */     this.data.b(18, Byte.valueOf((byte)1));
 /* 219:    */   }
 /* 220:    */   
 /* 221:    */   public boolean cn()

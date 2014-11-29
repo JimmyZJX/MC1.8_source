@@ -54,7 +54,7 @@ package net.minecraft.src;
 /*  53: 76 */     return "mob.silverfish.kill";
 /*  54:    */   }
 /*  55:    */   
-/*  56:    */   public boolean a(DamageSource paramwh, float paramFloat)
+/*  56:    */   public boolean receiveDamage(DamageSource paramwh, float paramFloat)
 /*  57:    */   {
 /*  58: 81 */     if (isImmuneTo(paramwh)) {
 /*  59: 82 */       return false;
@@ -62,10 +62,10 @@ package net.minecraft.src;
 /*  61: 84 */     if (((paramwh instanceof DamageSourceEntity)) || (paramwh == DamageSource.magic)) {
 /*  62: 85 */       this.b.f();
 /*  63:    */     }
-/*  64: 87 */     return super.a(paramwh, paramFloat);
+/*  64: 87 */     return super.receiveDamage(paramwh, paramFloat);
 /*  65:    */   }
 /*  66:    */   
-/*  67:    */   protected void a(BlockPosition paramdt, ProtoBlock paramatr)
+/*  67:    */   protected void a(BlockPosition paramdt, BlockType paramatr)
 /*  68:    */   {
 /*  69: 92 */     a("mob.silverfish.step", 0.15F, 1.0F);
 /*  70:    */   }
@@ -84,7 +84,7 @@ package net.minecraft.src;
 /*  83:    */   
 /*  84:    */   public float a(BlockPosition paramdt)
 /*  85:    */   {
-/*  86:111 */     if (this.world.getBlock(paramdt.down()).getProto() == BlockList.stone) {
+/*  86:111 */     if (this.world.getBlock(paramdt.down()).getType() == BlockList.stone) {
 /*  87:112 */       return 10.0F;
 /*  88:    */     }
 /*  89:114 */     return super.a(paramdt);

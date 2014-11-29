@@ -49,7 +49,7 @@ package net.minecraft.src;
 /*  44: 95 */     this.c.a = 0;
 /*  45:    */     
 /*  46: 97 */     Object localObject = this.a.getBlock(this.b);
-/*  47: 98 */     if ((!paramahd.abilities.instabuild) && (!this.a.isClient) && (((Block)localObject).getProto() == BlockList.cf) && (paramahd.getRNG().nextFloat() < 0.12F))
+/*  47: 98 */     if ((!paramahd.abilities.instabuild) && (!this.a.isClient) && (((Block)localObject).getType() == BlockList.cf) && (paramahd.getRNG().nextFloat() < 0.12F))
 /*  48:    */     {
 /*  49: 99 */       int i = ((Integer)((Block)localObject).getData(BlockAnvil.b)).intValue();
 /*  50:100 */       i++;

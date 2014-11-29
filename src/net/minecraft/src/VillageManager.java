@@ -201,7 +201,7 @@ package net.minecraft.src;
 /* 200:    */   
 /* 201:    */   private boolean isWoodenDoor(BlockPosition pos)
 /* 202:    */   {
-/* 203:199 */     ProtoBlock block = this.world.getBlock(pos).getProto();
+/* 203:199 */     BlockType block = this.world.getBlock(pos).getType();
 /* 204:200 */     if ((block instanceof BlockDoor)) {
 /* 205:201 */       return block.getMaterial() == Material.wood;
 /* 206:    */     }

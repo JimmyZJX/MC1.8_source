@@ -17,7 +17,7 @@ package net.minecraft.src;
 /* 16:   */     
 /* 17:   */ 
 /* 18:33 */     Block localbec = paramadv.l();
-/* 19:34 */     ProtoBlock localatr = localbec.getProto();
+/* 19:34 */     BlockType localatr = localbec.getType();
 /* 20:   */     
 /* 21:36 */     BlockPosition localdt = new BlockPosition(paramadv);
 /* 22:37 */     World localaqu = paramadv.j();

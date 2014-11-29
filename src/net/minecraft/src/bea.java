@@ -35,7 +35,7 @@ package net.minecraft.src;
 /* 34:   */   public String toString()
 /* 35:   */   {
 /* 36:51 */     StringBuilder localStringBuilder = new StringBuilder();
-/* 37:52 */     localStringBuilder.append(ProtoBlock.c.c(getProto()));
+/* 37:52 */     localStringBuilder.append(BlockType.c.c(getType()));
 /* 38:54 */     if (!b().isEmpty())
 /* 39:   */     {
 /* 40:55 */       localStringBuilder.append("[");

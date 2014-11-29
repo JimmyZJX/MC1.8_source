@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*  9:   */   protected void a(aeh paramaeh, float paramFloat, Block parambec)
 /* 10:   */   {
 /* 11:15 */     super.a(paramaeh, paramFloat, parambec);
-/* 12:17 */     if (parambec.getProto() == BlockList.mobSpawner) {
+/* 12:17 */     if (parambec.getType() == BlockList.mobSpawner) {
 /* 13:18 */       cnt.a(paramaeh.j(), paramaeh.xPos, paramaeh.yPos, paramaeh.zPos, paramFloat);
 /* 14:   */     }
 /* 15:   */   }

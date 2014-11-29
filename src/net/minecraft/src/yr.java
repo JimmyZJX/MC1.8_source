@@ -57,7 +57,7 @@ package net.minecraft.src;
 /* 57:   */   
 /* 58:   */   private boolean a(EntityPlayer paramahd)
 /* 59:   */   {
-/* 60:63 */     ItemStack localamj = paramahd.bg.h();
+/* 60:63 */     ItemStack localamj = paramahd.inventory.getHeldItem();
 /* 61:64 */     if (localamj == null) {
 /* 62:65 */       return false;
 /* 63:   */     }

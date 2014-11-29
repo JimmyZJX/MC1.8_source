@@ -33,7 +33,7 @@ package net.minecraft.src;
 /* 32:39 */       for (qw localqw : MinecraftServer.M().an().e)
 /* 33:   */       {
 /* 34:40 */         localqw.a(paramarc);
-/* 35:41 */         localqw.O = 0.0F;
+/* 35:41 */         localqw.fallDistance = 0.0F;
 /* 36:   */       }
 /* 37:   */     }
 /* 38:   */   }

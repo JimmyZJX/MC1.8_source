@@ -16,7 +16,7 @@ package net.minecraft.src;
 /* 15:   */   {
 /* 16:27 */     super.a(paramwh);
 /* 17:   */     
-/* 18:29 */     throwItem(Item.fromProtoBlock(BlockList.chest), 1, 0.0F);
+/* 18:29 */     throwItem(Item.fromBlock(BlockList.chest), 1, 0.0F);
 /* 19:   */   }
 /* 20:   */   
 /* 21:   */   public int getSize()

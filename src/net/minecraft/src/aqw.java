@@ -4,18 +4,18 @@ package net.minecraft.src;
 /*   3:    */ class aqw
 /*   4:    */   implements Callable<String>
 /*   5:    */ {
-				private final ProtoBlock a;
+				private final BlockType a;
 				private final World b;
-/*   6:    */   aqw(World paramaqu, ProtoBlock paramatr) {a=paramatr;b=paramaqu;}
+/*   6:    */   aqw(World paramaqu, BlockType paramatr) {a=paramatr;b=paramaqu;}
 /*   7:    */   
 /*   8:    */   public String call()
 /*   9:    */   {
 /*  10:    */     try
 /*  11:    */     {
-/*  12:436 */       return String.format("ID #%d (%s // %s)", new Object[] { Integer.valueOf(ProtoBlock.a(this.a)), this.a.a(), this.a.getClass().getCanonicalName() });
+/*  12:436 */       return String.format("ID #%d (%s // %s)", new Object[] { Integer.valueOf(BlockType.a(this.a)), this.a.a(), this.a.getClass().getCanonicalName() });
 /*  13:    */     }
 /*  14:    */     catch (Throwable localThrowable) {}
-/*  15:438 */     return "ID #" + ProtoBlock.a(this.a);
+/*  15:438 */     return "ID #" + BlockType.a(this.a);
 /*  16:    */   }
 /*  17:    */ }
 

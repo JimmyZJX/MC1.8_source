@@ -139,7 +139,7 @@ package net.minecraft.src;
 /*  134: 185 */           f1 = parammg.d();
 /*  135: 186 */           f2 = parammg.e();
 /*  136:     */         }
-/*  137: 189 */         this.b.C = parammg.f();
+/*  137: 189 */         this.b.landing = parammg.f();
 /*  138: 190 */         this.b.l();
 /*  139: 191 */         this.b.a(d9, d10, d11, f1, f2);
 /*  140: 192 */         if (this.b.vehicle != null) {
@@ -224,11 +224,11 @@ package net.minecraft.src;
 /*  219:     */       }
 /*  220: 276 */       float f5 = 0.0625F;
 /*  221: 277 */       boolean bool1 = localqt.getCollidingAABBs(this.b, this.b.getAABB().contract(f5, f5, f5)).isEmpty();
-/*  222: 279 */       if ((this.b.C) && (!parammg.f()) && (d13 > 0.0D)) {
+/*  222: 279 */       if ((this.b.landing) && (!parammg.f()) && (d13 > 0.0D)) {
 /*  223: 281 */         this.b.jump();
 /*  224:     */       }
 /*  225: 284 */       this.b.move(d12, d13, d14);
-/*  226: 285 */       this.b.C = parammg.f();
+/*  226: 285 */       this.b.landing = parammg.f();
 /*  227:     */       
 /*  228: 287 */       double d19 = d13;
 /*  229:     */       
@@ -274,7 +274,7 @@ package net.minecraft.src;
 /*  269:     */       else {
 /*  270: 325 */         this.g = 0;
 /*  271:     */       }
-/*  272: 328 */       this.b.C = parammg.f();
+/*  272: 328 */       this.b.landing = parammg.f();
 /*  273: 329 */       this.d.an().d(this.b);
 /*  274: 330 */       this.b.a(this.b.yPos - d8, parammg.f());
 /*  275:     */     }
@@ -371,7 +371,7 @@ package net.minecraft.src;
 /*  366: 424 */       } else if (paramml.c() == mm.b) {
 /*  367: 425 */         this.b.c.e();
 /*  368:     */       }
-/*  369: 428 */       if (localqt.getBlock(localdt).getProto().getMaterial() != Material.air) {
+/*  369: 428 */       if (localqt.getBlock(localdt).getType().getMaterial() != Material.air) {
 /*  370: 429 */         this.b.a.a(new iw(localqt, localdt));
 /*  371:     */       }
 /*  372:     */     }
@@ -381,7 +381,7 @@ package net.minecraft.src;
 /*  376:     */   {
 /*  377: 436 */     ig.a(parammx, this, this.b.u());
 /*  378: 437 */     WorldServer localqt = this.d.a(this.b.dimension);
-/*  379: 438 */     ItemStack localamj = this.b.bg.h();
+/*  379: 438 */     ItemStack localamj = this.b.inventory.getHeldItem();
 /*  380: 439 */     int i1 = 0;
 /*  381: 440 */     BlockPosition localdt = parammx.a();
 /*  382: 441 */     EnumDirection localej = EnumDirection.a(parammx.b());
@@ -414,21 +414,21 @@ package net.minecraft.src;
 /*  409: 465 */       this.b.a.a(new iw(localqt, localdt));
 /*  410: 466 */       this.b.a.a(new iw(localqt, localdt.offset(localej)));
 /*  411:     */     }
-/*  412: 469 */     localamj = this.b.bg.h();
+/*  412: 469 */     localamj = this.b.inventory.getHeldItem();
 /*  413: 470 */     if ((localamj != null) && (localamj.stackSize == 0))
 /*  414:     */     {
-/*  415: 471 */       this.b.bg.items[this.b.bg.c] = null;
+/*  415: 471 */       this.b.inventory.items[this.b.inventory.c] = null;
 /*  416: 472 */       localamj = null;
 /*  417:     */     }
 /*  418: 475 */     if ((localamj == null) || (localamj.l() == 0))
 /*  419:     */     {
 /*  420: 476 */       this.b.g = true;
-/*  421: 477 */       this.b.bg.items[this.b.bg.c] = ItemStack.b(this.b.bg.items[this.b.bg.c]);
-/*  422: 478 */       localObject = this.b.bi.a(this.b.bg, this.b.bg.c);
+/*  421: 477 */       this.b.inventory.items[this.b.inventory.c] = ItemStack.b(this.b.inventory.items[this.b.inventory.c]);
+/*  422: 478 */       localObject = this.b.bi.a(this.b.inventory, this.b.inventory.c);
 /*  423: 479 */       this.b.bi.b();
 /*  424: 480 */       this.b.g = false;
-/*  425: 482 */       if (!ItemStack.b(this.b.bg.h(), parammx.c())) {
-/*  426: 483 */         a(new jh(this.b.bi.d, ((ajk)localObject).e, this.b.bg.h()));
+/*  425: 482 */       if (!ItemStack.b(this.b.inventory.getHeldItem(), parammx.c())) {
+/*  426: 483 */         a(new jh(this.b.bi.d, ((ajk)localObject).e, this.b.inventory.getHeldItem()));
 /*  427:     */       }
 /*  428:     */     }
 /*  429:     */   }
@@ -450,7 +450,7 @@ package net.minecraft.src;
 /*  445:     */       }
 /*  446: 504 */       if (localwv != null)
 /*  447:     */       {
-/*  448: 505 */         this.b.e(this.b);
+/*  448: 505 */         this.b.onRightClick(this.b);
 /*  449: 506 */         this.b.mount((Entity)null);
 /*  450: 508 */         if (localwv.world != this.b.world)
 /*  451:     */         {
@@ -547,7 +547,7 @@ package net.minecraft.src;
 /*  542: 594 */       c.warn(this.b.getName() + " tried to set an invalid carried item");
 /*  543: 595 */       return;
 /*  544:     */     }
-/*  545: 597 */     this.b.bg.c = paramms.a();
+/*  545: 597 */     this.b.inventory.c = paramms.a();
 /*  546: 598 */     this.b.z();
 /*  547:     */   }
 /*  548:     */   
@@ -911,7 +911,7 @@ package net.minecraft.src;
 /*  906: 950 */         if (!anq.b(localamj1.getTagCompound())) {
 /*  907: 951 */           throw new IOException("Invalid book tag!");
 /*  908:     */         }
-/*  909: 955 */         localObject1 = this.b.bg.h();
+/*  909: 955 */         localObject1 = this.b.inventory.getHeldItem();
 /*  910: 956 */         if (localObject1 == null) {
 /*  911:     */           return;
 /*  912:     */         }
@@ -940,7 +940,7 @@ package net.minecraft.src;
 /*  935: 975 */         if (!anr.b(localamj2.getTagCompound())) {
 /*  936: 976 */           throw new IOException("Invalid book tag!");
 /*  937:     */         }
-/*  938: 980 */         localObject1 = this.b.bg.h();
+/*  938: 980 */         localObject1 = this.b.inventory.getHeldItem();
 /*  939: 981 */         if (localObject1 == null) {
 /*  940:     */           return;
 /*  941:     */         }

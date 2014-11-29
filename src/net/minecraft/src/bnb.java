@@ -5,10 +5,10 @@ package net.minecraft.src;
 /*    4:     */ public class bnb
 /*    5:     */   extends bnn
 /*    6:     */ {
-/*    7:     */   private ProtoBlock a;
-/*    8:     */   private ProtoBlock b;
-/*    9:     */   private ProtoBlock c;
-/*   10:     */   private ProtoBlock d;
+/*    7:     */   private BlockType a;
+/*    8:     */   private BlockType b;
+/*    9:     */   private BlockType c;
+/*   10:     */   private BlockType d;
 /*   11:     */   
 /*   12:     */   public bnb() {}
 /*   13:     */   
@@ -28,22 +28,22 @@ package net.minecraft.src;
 /*   27:     */   protected void a(NBTTagCompound paramfn)
 /*   28:     */   {
 /*   29:1748 */     super.a(paramfn);
-/*   30:1749 */     paramfn.setInt("CA", ProtoBlock.c.b(this.a));
-/*   31:1750 */     paramfn.setInt("CB", ProtoBlock.c.b(this.b));
-/*   32:1751 */     paramfn.setInt("CC", ProtoBlock.c.b(this.c));
-/*   33:1752 */     paramfn.setInt("CD", ProtoBlock.c.b(this.d));
+/*   30:1749 */     paramfn.setInt("CA", BlockType.c.b(this.a));
+/*   31:1750 */     paramfn.setInt("CB", BlockType.c.b(this.b));
+/*   32:1751 */     paramfn.setInt("CC", BlockType.c.b(this.c));
+/*   33:1752 */     paramfn.setInt("CD", BlockType.c.b(this.d));
 /*   34:     */   }
 /*   35:     */   
 /*   36:     */   protected void b(NBTTagCompound paramfn)
 /*   37:     */   {
 /*   38:1757 */     super.b(paramfn);
-/*   39:1758 */     this.a = ProtoBlock.c(paramfn.getInteger("CA"));
-/*   40:1759 */     this.b = ProtoBlock.c(paramfn.getInteger("CB"));
-/*   41:1760 */     this.c = ProtoBlock.c(paramfn.getInteger("CC"));
-/*   42:1761 */     this.d = ProtoBlock.c(paramfn.getInteger("CD"));
+/*   39:1758 */     this.a = BlockType.c(paramfn.getInteger("CA"));
+/*   40:1759 */     this.b = BlockType.c(paramfn.getInteger("CB"));
+/*   41:1760 */     this.c = BlockType.c(paramfn.getInteger("CC"));
+/*   42:1761 */     this.d = BlockType.c(paramfn.getInteger("CD"));
 /*   43:     */   }
 /*   44:     */   
-/*   45:     */   private ProtoBlock a(Random paramRandom)
+/*   45:     */   private BlockType a(Random paramRandom)
 /*   46:     */   {
 /*   47:1765 */     switch (paramRandom.nextInt(5))
 /*   48:     */     {

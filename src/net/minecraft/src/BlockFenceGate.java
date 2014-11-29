@@ -1,12 +1,12 @@
 package net.minecraft.src;
-/*   1:    */ public class avw
+/*   1:    */ public class BlockFenceGate
 /*   2:    */   extends avb
 /*   3:    */ {
 /*   4: 19 */   public static final BlockDataBoolean a = BlockDataBoolean.getInstance("open");
 /*   5: 20 */   public static final BlockDataBoolean b = BlockDataBoolean.getInstance("powered");
 /*   6: 21 */   public static final BlockDataBoolean M = BlockDataBoolean.getInstance("in_wall");
 /*   7:    */   
-/*   8:    */   public avw()
+/*   8:    */   public BlockFenceGate()
 /*   9:    */   {
 /*  10: 24 */     super(Material.wood);
 /*  11:    */     
@@ -16,8 +16,8 @@ package net.minecraft.src;
 /*  15:    */   
 /*  16:    */   public Block a(Block parambec, IBlockAccess paramard, BlockPosition paramdt)
 /*  17:    */   {
-/*  18: 32 */     EnumAxis localel = ((EnumDirection)parambec.getData(facing)).k();
-/*  19: 33 */     if (((localel == EnumAxis.Z) && ((paramard.getBlock(paramdt.west()).getProto() == BlockList.bZ) || (paramard.getBlock(paramdt.east()).getProto() == BlockList.bZ))) || ((localel == EnumAxis.X) && ((paramard.getBlock(paramdt.north()).getProto() == BlockList.bZ) || (paramard.getBlock(paramdt.south()).getProto() == BlockList.bZ)))) {
+/*  18: 32 */     EnumAxis localel = ((EnumDirection)parambec.getData(facing)).getAxis();
+/*  19: 33 */     if (((localel == EnumAxis.Z) && ((paramard.getBlock(paramdt.west()).getType() == BlockList.bZ) || (paramard.getBlock(paramdt.east()).getType() == BlockList.bZ))) || ((localel == EnumAxis.X) && ((paramard.getBlock(paramdt.north()).getType() == BlockList.bZ) || (paramard.getBlock(paramdt.south()).getType() == BlockList.bZ)))) {
 /*  20: 37 */       parambec = parambec.setData(M, Boolean.valueOf(true));
 /*  21:    */     }
 /*  22: 40 */     return parambec;
@@ -25,7 +25,7 @@ package net.minecraft.src;
 /*  24:    */   
 /*  25:    */   public boolean c(World paramaqu, BlockPosition paramdt)
 /*  26:    */   {
-/*  27: 45 */     if (paramaqu.getBlock(paramdt.down()).getProto().getMaterial().a()) {
+/*  27: 45 */     if (paramaqu.getBlock(paramdt.down()).getType().getMaterial().a()) {
 /*  28: 46 */       return super.c(paramaqu, paramdt);
 /*  29:    */     }
 /*  30: 49 */     return false;
@@ -36,7 +36,7 @@ package net.minecraft.src;
 /*  35: 55 */     if (((Boolean)parambec.getData(a)).booleanValue()) {
 /*  36: 56 */       return null;
 /*  37:    */     }
-/*  38: 59 */     EnumAxis localel = ((EnumDirection)parambec.getData(facing)).k();
+/*  38: 59 */     EnumAxis localel = ((EnumDirection)parambec.getData(facing)).getAxis();
 /*  39: 60 */     if (localel == EnumAxis.Z) {
 /*  40: 61 */       return new AABB(paramdt.getX(), paramdt.getY(), paramdt.getZ() + 0.375F, paramdt.getX() + 1, paramdt.getY() + 1.5F, paramdt.getZ() + 0.625F);
 /*  41:    */     }
@@ -45,7 +45,7 @@ package net.minecraft.src;
 /*  44:    */   
 /*  45:    */   public void a(IBlockAccess paramard, BlockPosition paramdt)
 /*  46:    */   {
-/*  47: 69 */     EnumAxis localel = ((EnumDirection)paramard.getBlock(paramdt).getData(facing)).k();
+/*  47: 69 */     EnumAxis localel = ((EnumDirection)paramard.getBlock(paramdt).getData(facing)).getAxis();
 /*  48: 70 */     if (localel == EnumAxis.Z) {
 /*  49: 71 */       a(0.0F, 0.0F, 0.375F, 1.0F, 1.0F, 0.625F);
 /*  50:    */     } else {
@@ -93,13 +93,13 @@ package net.minecraft.src;
 /*  92:113 */     return true;
 /*  93:    */   }
 /*  94:    */   
-/*  95:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/*  95:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /*  96:    */   {
 /*  97:118 */     if (paramaqu.isClient) {
 /*  98:119 */       return;
 /*  99:    */     }
 /* 100:122 */     boolean bool = paramaqu.z(paramdt);
-/* 101:123 */     if ((bool) || (paramatr.protoBlock_g())) {
+/* 101:123 */     if ((bool) || (paramatr.blockType_g())) {
 /* 102:124 */       if ((bool) && (!((Boolean)parambec.getData(a)).booleanValue()) && (!((Boolean)parambec.getData(b)).booleanValue()))
 /* 103:    */       {
 /* 104:125 */         paramaqu.setBlock(paramdt, parambec.setData(a, Boolean.valueOf(true)).setData(b, Boolean.valueOf(true)), 2);

@@ -53,7 +53,7 @@ package net.minecraft.src;
 /*  53:105 */       return;
 /*  54:    */     }
 /*  55:108 */     paramaqu.playLevelEvent(1005, paramdt, 0);
-/*  56:109 */     paramaqu.a(paramdt, null);
+/*  56:109 */     paramaqu.getStrongRedstoneSignal(paramdt, null);
 /*  57:110 */     localaxd.a((ItemStack)null);
 /*  58:    */     
 /*  59:112 */     float f = 0.7F;

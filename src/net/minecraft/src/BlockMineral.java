@@ -1,6 +1,6 @@
 package net.minecraft.src;
 /*  1:   */ public class BlockMineral
-/*  2:   */   extends ProtoBlock
+/*  2:   */   extends BlockType
 /*  3:   */ {
 /*  4:   */   private final MapColor a;
 /*  5:   */   

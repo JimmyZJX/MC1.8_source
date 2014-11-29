@@ -3,7 +3,7 @@ package net.minecraft.src;
 /*   2:    */ import java.util.Random;
 /*   3:    */ 
 /*   4:    */ public class aui
-/*   5:    */   extends ProtoBlock
+/*   5:    */   extends BlockType
 /*   6:    */ {
 /*   7: 27 */   public static final BlockDataInteger a = BlockDataInteger.getInstance("level", 0, 3);
 /*   8:    */   
@@ -62,7 +62,7 @@ package net.minecraft.src;
 /*  61: 83 */     if (paramaqu.isClient) {
 /*  62: 84 */       return true;
 /*  63:    */     }
-/*  64: 87 */     ItemStack localamj = paramahd.bg.h();
+/*  64: 87 */     ItemStack localamj = paramahd.inventory.getHeldItem();
 /*  65: 88 */     if (localamj == null) {
 /*  66: 89 */       return true;
 /*  67:    */     }
@@ -73,7 +73,7 @@ package net.minecraft.src;
 /*  72: 95 */       if (i < 3)
 /*  73:    */       {
 /*  74: 96 */         if (!paramahd.abilities.instabuild) {
-/*  75: 97 */           paramahd.bg.a(paramahd.bg.c, new ItemStack(ItemList.aw));
+/*  75: 97 */           paramahd.inventory.a(paramahd.inventory.c, new ItemStack(ItemList.aw));
 /*  76:    */         }
 /*  77:100 */         a(paramaqu, paramdt, parambec, 3);
 /*  78:    */       }
@@ -87,14 +87,14 @@ package net.minecraft.src;
 /*  86:107 */         if (!paramahd.abilities.instabuild)
 /*  87:    */         {
 /*  88:108 */           localObject = new ItemStack(ItemList.potion, 1, 0);
-/*  89:109 */           if (!paramahd.bg.a((ItemStack)localObject)) {
+/*  89:109 */           if (!paramahd.inventory.a((ItemStack)localObject)) {
 /*  90:110 */             paramaqu.spawnEntity(new EntityItem(paramaqu, paramdt.getX() + 0.5D, paramdt.getY() + 1.5D, paramdt.getZ() + 0.5D, (ItemStack)localObject));
 /*  91:111 */           } else if ((paramahd instanceof qw)) {
 /*  92:112 */             ((qw)paramahd).a(paramahd.bh);
 /*  93:    */           }
 /*  94:115 */           localamj.stackSize -= 1;
 /*  95:116 */           if (localamj.stackSize <= 0) {
-/*  96:117 */             paramahd.bg.a(paramahd.bg.c, null);
+/*  96:117 */             paramahd.inventory.a(paramahd.inventory.c, null);
 /*  97:    */           }
 /*  98:    */         }
 /*  99:121 */         a(paramaqu, paramdt, parambec, i - 1);
@@ -119,7 +119,7 @@ package net.minecraft.src;
 /* 118:139 */       bci.e((ItemStack)localObject);
 /* 119:141 */       if ((localamj.stackSize > 1) || (paramahd.abilities.instabuild))
 /* 120:    */       {
-/* 121:143 */         if (!paramahd.bg.a((ItemStack)localObject)) {
+/* 121:143 */         if (!paramahd.inventory.a((ItemStack)localObject)) {
 /* 122:144 */           paramaqu.spawnEntity(new EntityItem(paramaqu, paramdt.getX() + 0.5D, paramdt.getY() + 1.5D, paramdt.getZ() + 0.5D, (ItemStack)localObject));
 /* 123:145 */         } else if ((paramahd instanceof qw)) {
 /* 124:146 */           ((qw)paramahd).a(paramahd.bh);
@@ -130,7 +130,7 @@ package net.minecraft.src;
 /* 129:    */       }
 /* 130:    */       else
 /* 131:    */       {
-/* 132:153 */         paramahd.bg.a(paramahd.bg.c, (ItemStack)localObject);
+/* 132:153 */         paramahd.inventory.a(paramahd.inventory.c, (ItemStack)localObject);
 /* 133:    */       }
 /* 134:156 */       if (!paramahd.abilities.instabuild) {
 /* 135:157 */         a(paramaqu, paramdt, parambec, i - 1);

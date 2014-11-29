@@ -131,7 +131,7 @@ package net.minecraft.src;
 /* 130:589 */     a(paramaqu, parambjb, this.l.d - 1, this.l.b, this.l.f - 1, this.l.d - 1, this.l.e, this.l.f - 1, BlockList.planks.instance(), BlockList.air.instance(), false);
 /* 131:593 */     for (int i = this.l.a; i <= this.l.d; i++) {
 /* 132:594 */       for (int j = this.l.c; j <= this.l.f; j++) {
-/* 133:595 */         if (a(paramaqu, i, this.l.b - 1, j, parambjb).getProto().getMaterial() == Material.air) {
+/* 133:595 */         if (a(paramaqu, i, this.l.b - 1, j, parambjb).getType().getMaterial() == Material.air) {
 /* 134:596 */           a(paramaqu, BlockList.planks.instance(), i, this.l.b - 1, j, parambjb);
 /* 135:    */         }
 /* 136:    */       }

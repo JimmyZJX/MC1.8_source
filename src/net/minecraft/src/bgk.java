@@ -15,7 +15,7 @@ package net.minecraft.src;
 /* 14:21 */     if ((paramInt < 0) || (paramInt >= this.a.length)) {
 /* 15:22 */       throw new IndexOutOfBoundsException("The coordinate is out of range");
 /* 16:   */     }
-/* 17:25 */     Block localbec = (Block)ProtoBlock.d.a(this.a[paramInt]);
+/* 17:25 */     Block localbec = (Block)BlockType.d.a(this.a[paramInt]);
 /* 18:27 */     if (localbec != null) {
 /* 19:28 */       return localbec;
 /* 20:   */     }
@@ -34,7 +34,7 @@ package net.minecraft.src;
 /* 33:42 */     if ((paramInt < 0) || (paramInt >= this.a.length)) {
 /* 34:43 */       throw new IndexOutOfBoundsException("The coordinate is out of range");
 /* 35:   */     }
-/* 36:46 */     this.a[paramInt] = ((short)ProtoBlock.d.b(parambec));
+/* 36:46 */     this.a[paramInt] = ((short)BlockType.d.b(parambec));
 /* 37:   */   }
 /* 38:   */ }
 

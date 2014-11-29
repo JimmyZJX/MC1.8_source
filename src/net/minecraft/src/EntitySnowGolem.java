@@ -36,17 +36,17 @@ package net.minecraft.src;
 /*  35: 54 */       int j = MathUtils.floor(this.yPos);
 /*  36: 55 */       int k = MathUtils.floor(this.zPos);
 /*  37: 57 */       if (U()) {
-/*  38: 58 */         a(DamageSource.drown, 1.0F);
+/*  38: 58 */         receiveDamage(DamageSource.drown, 1.0F);
 /*  39:    */       }
 /*  40: 61 */       if (this.world.b(new BlockPosition(i, 0, k)).a(new BlockPosition(i, j, k)) > 1.0F) {
-/*  41: 62 */         a(DamageSource.onFire, 1.0F);
+/*  41: 62 */         receiveDamage(DamageSource.onFire, 1.0F);
 /*  42:    */       }
 /*  43: 65 */       for (int m = 0; m < 4; m++)
 /*  44:    */       {
 /*  45: 66 */         i = MathUtils.floor(this.xPos + (m % 2 * 2 - 1) * 0.25F);
 /*  46: 67 */         j = MathUtils.floor(this.yPos);
 /*  47: 68 */         k = MathUtils.floor(this.zPos + (m / 2 % 2 * 2 - 1) * 0.25F);
-/*  48: 69 */         if ((this.world.getBlock(new BlockPosition(i, j, k)).getProto().getMaterial() == Material.air) && 
+/*  48: 69 */         if ((this.world.getBlock(new BlockPosition(i, j, k)).getType().getMaterial() == Material.air) && 
 /*  49: 70 */           (this.world.b(new BlockPosition(i, 0, k)).a(new BlockPosition(i, j, k)) < 0.8F) && 
 /*  50: 71 */           (BlockList.aH.c(this.world, new BlockPosition(i, j, k)))) {
 /*  51: 72 */           this.world.setBlock(new BlockPosition(i, j, k), BlockList.aH.instance());

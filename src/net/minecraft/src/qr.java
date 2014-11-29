@@ -115,7 +115,7 @@ package net.minecraft.src;
 /* 112:    */       
 /* 113:128 */       BlockPosition localdt = new BlockPosition(i, j, k);
 /* 114:129 */       a(new iw(qq.a(this.a), localdt));
-/* 115:130 */       if (qq.a(this.a).getBlock(localdt).getProto().x()) {
+/* 115:130 */       if (qq.a(this.a).getBlock(localdt).getType().x()) {
 /* 116:131 */         a(qq.a(this.a).s(localdt));
 /* 117:    */       }
 /* 118:    */     }
@@ -150,7 +150,7 @@ package net.minecraft.src;
 /* 147:154 */           m = (this.d[i] >> 8 & 0xF) + this.c.z * 16;
 /* 148:    */           
 /* 149:156 */           localObject = new BlockPosition(j, k, m);
-/* 150:157 */           if (qq.a(this.a).getBlock((BlockPosition)localObject).getProto().x()) {
+/* 150:157 */           if (qq.a(this.a).getBlock((BlockPosition)localObject).getType().x()) {
 /* 151:158 */             a(qq.a(this.a).s((BlockPosition)localObject));
 /* 152:    */           }
 /* 153:    */         }

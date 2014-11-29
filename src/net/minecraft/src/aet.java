@@ -16,7 +16,7 @@ package net.minecraft.src;
 /*  15:454 */     if (!this.a.world.getGameRules().getBoolean("mobGriefing")) {
 /*  16:455 */       return false;
 /*  17:    */     }
-/*  18:457 */     if (this.a.ck().getProto().getMaterial() == Material.air) {
+/*  18:457 */     if (this.a.ck().getType().getMaterial() == Material.air) {
 /*  19:458 */       return false;
 /*  20:    */     }
 /*  21:460 */     if (this.a.getRNG().nextInt(2000) != 0) {
@@ -34,16 +34,16 @@ package net.minecraft.src;
 /*  33:472 */     int j = MathUtils.floor(this.a.yPos + localRandom.nextDouble() * 2.0D);
 /*  34:473 */     int k = MathUtils.floor(this.a.zPos - 1.0D + localRandom.nextDouble() * 2.0D);
 /*  35:474 */     BlockPosition localdt = new BlockPosition(i, j, k);
-/*  36:475 */     ProtoBlock localatr1 = localaqu.getBlock(localdt).getProto();
-/*  37:476 */     ProtoBlock localatr2 = localaqu.getBlock(localdt.down()).getProto();
-/*  38:478 */     if (a(localaqu, localdt, this.a.ck().getProto(), localatr1, localatr2))
+/*  36:475 */     BlockType localatr1 = localaqu.getBlock(localdt).getType();
+/*  37:476 */     BlockType localatr2 = localaqu.getBlock(localdt.down()).getType();
+/*  38:478 */     if (a(localaqu, localdt, this.a.ck().getType(), localatr1, localatr2))
 /*  39:    */     {
 /*  40:479 */       localaqu.setBlock(localdt, this.a.ck(), 3);
 /*  41:480 */       this.a.a(BlockList.air.instance());
 /*  42:    */     }
 /*  43:    */   }
 /*  44:    */   
-/*  45:    */   private boolean a(World paramaqu, BlockPosition paramdt, ProtoBlock paramatr1, ProtoBlock paramatr2, ProtoBlock paramatr3)
+/*  45:    */   private boolean a(World paramaqu, BlockPosition paramdt, BlockType paramatr1, BlockType paramatr2, BlockType paramatr3)
 /*  46:    */   {
 /*  47:485 */     if (!paramatr1.c(paramaqu, paramdt)) {
 /*  48:486 */       return false;

@@ -94,17 +94,17 @@ package net.minecraft.src;
 /*  93:119 */       BlockPosition localdt = new BlockPosition(i2, i6, i4);
 /*  94:120 */       Block localbec = this.world.getBlock(localdt);
 /*  95:    */       float[] arrayOfFloat;
-/*  96:122 */       if (localbec.getProto() == BlockList.cG)
+/*  96:122 */       if (localbec.getType() == BlockList.cG)
 /*  97:    */       {
 /*  98:123 */         arrayOfFloat = EntitySheep.a((EnumDyeColor)localbec.getData(bar.a));
 /*  99:    */       }
-/* 100:124 */       else if (localbec.getProto() == BlockList.stainedGlassPane)
+/* 100:124 */       else if (localbec.getType() == BlockList.stainedGlassPane)
 /* 101:    */       {
 /* 102:125 */         arrayOfFloat = EntitySheep.a((EnumDyeColor)localbec.getData(bas.a));
 /* 103:    */       }
 /* 104:    */       else
 /* 105:    */       {
-/* 106:126 */         if (localbec.getProto().getLightOpacity() < 15)
+/* 106:126 */         if (localbec.getType().getLightOpacity() < 15)
 /* 107:    */         {
 /* 108:127 */           localbcl.a();
 /* 109:128 */           continue;
@@ -139,7 +139,7 @@ package net.minecraft.src;
 /* 138:160 */         for (int i9 = i2 - i6; (i9 <= i2 + i6) && (i8 != 0); i9++) {
 /* 139:161 */           for (int i10 = i4 - i6; i10 <= i4 + i6; i10++)
 /* 140:    */           {
-/* 141:162 */             ProtoBlock localatr = this.world.getBlock(new BlockPosition(i9, i7, i10)).getProto();
+/* 141:162 */             BlockType localatr = this.world.getBlock(new BlockPosition(i9, i7, i10)).getType();
 /* 142:163 */             if ((localatr != BlockList.emeraldBlock) && (localatr != BlockList.R) && (localatr != BlockList.diamondBlock) && (localatr != BlockList.S))
 /* 143:    */             {
 /* 144:164 */               i8 = 0;

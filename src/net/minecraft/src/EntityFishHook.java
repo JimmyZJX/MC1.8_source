@@ -17,7 +17,7 @@ package net.minecraft.src;
 /*  17: 69 */   private int g = -1;
 /*  18: 70 */   private int h = -1;
 /*  19: 71 */   private int i = -1;
-/*  20:    */   private ProtoBlock ap;
+/*  20:    */   private BlockType ap;
 /*  21:    */   private boolean aq;
 /*  22:    */   public int a;
 /*  23:    */   public EntityPlayer b;
@@ -183,7 +183,7 @@ package net.minecraft.src;
 /* 183:    */     }
 /* 184:228 */     if (this.aq)
 /* 185:    */     {
-/* 186:229 */       if (this.world.getBlock(new BlockPosition(this.g, this.h, this.i)).getProto() == this.ap)
+/* 186:229 */       if (this.world.getBlock(new BlockPosition(this.g, this.h, this.i)).getType() == this.ap)
 /* 187:    */       {
 /* 188:230 */         this.ar += 1;
 /* 189:231 */         if (this.ar == 1200) {
@@ -240,7 +240,7 @@ package net.minecraft.src;
 /* 240:282 */     if (localbru1 != null) {
 /* 241:283 */       if (localbru1.d != null)
 /* 242:    */       {
-/* 243:284 */         if (localbru1.d.a(DamageSource.a(this, this.b), 0.0F)) {
+/* 243:284 */         if (localbru1.d.receiveDamage(DamageSource.a(this, this.b), 0.0F)) {
 /* 244:285 */           this.c = localbru1.d;
 /* 245:    */         }
 /* 246:    */       }
@@ -272,7 +272,7 @@ package net.minecraft.src;
 /* 272:317 */     this.yaw = (this.lastYaw + (this.yaw - this.lastYaw) * 0.2F);
 /* 273:    */     
 /* 274:319 */     float f2 = 0.92F;
-/* 275:321 */     if ((this.C) || (this.D)) {
+/* 275:321 */     if ((this.landing) || (this.horizontalColliding)) {
 /* 276:322 */       f2 = 0.5F;
 /* 277:    */     }
 /* 278:325 */     int k = 5;
@@ -407,7 +407,7 @@ package net.minecraft.src;
 /* 407:441 */     paramfn.setShort("xTile", (short)this.g);
 /* 408:442 */     paramfn.setShort("yTile", (short)this.h);
 /* 409:443 */     paramfn.setShort("zTile", (short)this.i);
-/* 410:444 */     oa localoa = (oa)ProtoBlock.c.c(this.ap);
+/* 410:444 */     oa localoa = (oa)BlockType.c.c(this.ap);
 /* 411:445 */     paramfn.setString("inTile", localoa == null ? "" : localoa.toString());
 /* 412:446 */     paramfn.setByte("shake", (byte)this.a);
 /* 413:447 */     paramfn.setByte("inGround", (byte)(this.aq ? 1 : 0));
@@ -419,9 +419,9 @@ package net.minecraft.src;
 /* 419:453 */     this.h = paramfn.e("yTile");
 /* 420:454 */     this.i = paramfn.e("zTile");
 /* 421:455 */     if (paramfn.hasKey("inTile", 8)) {
-/* 422:456 */       this.ap = ProtoBlock.b(paramfn.getString("inTile"));
+/* 422:456 */       this.ap = BlockType.b(paramfn.getString("inTile"));
 /* 423:    */     } else {
-/* 424:458 */       this.ap = ProtoBlock.c(paramfn.d("inTile") & 0xFF);
+/* 424:458 */       this.ap = BlockType.c(paramfn.d("inTile") & 0xFF);
 /* 425:    */     }
 /* 426:460 */     this.a = (paramfn.d("shake") & 0xFF);
 /* 427:461 */     this.aq = (paramfn.d("inGround") == 1);

@@ -158,7 +158,7 @@ package net.minecraft.src;
 /* 156:166 */     localciv.begin();
 /* 157:167 */     for (BlockPosition localdt : BlockPosition.a(new BlockPosition(i, k, n), new BlockPosition(j, m, i1)))
 /* 158:    */     {
-/* 159:168 */       ProtoBlock localatr = localaqu.getBlock(localdt.down()).getProto();
+/* 159:168 */       BlockType localatr = localaqu.getBlock(localdt.down()).getType();
 /* 160:169 */       if ((localatr.b() != -1) && (localaqu.l(localdt) > 3)) {
 /* 161:170 */         a(localatr, paramDouble1, paramDouble2, paramDouble3, localdt, paramFloat1, f, d4, d5, d6);
 /* 162:    */       }
@@ -175,7 +175,7 @@ package net.minecraft.src;
 /* 173:181 */     return this.b.b;
 /* 174:    */   }
 /* 175:    */   
-/* 176:    */   private void a(ProtoBlock paramatr, double paramDouble1, double paramDouble2, double paramDouble3, BlockPosition paramdt, float paramFloat1, float paramFloat2, double paramDouble4, double paramDouble5, double paramDouble6)
+/* 176:    */   private void a(BlockType paramatr, double paramDouble1, double paramDouble2, double paramDouble3, BlockPosition paramdt, float paramFloat1, float paramFloat2, double paramDouble4, double paramDouble5, double paramDouble6)
 /* 177:    */   {
 /* 178:185 */     if (!paramatr.isOpaqueCube()) {
 /* 179:186 */       return;

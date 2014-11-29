@@ -14,7 +14,7 @@ package net.minecraft.src;
 /*  13: 36 */     this.d = paramahd;
 /*  14:    */   }
 /*  15:    */   
-/*  16:    */   public ItemStack h()
+/*  16:    */   public ItemStack getHeldItem()
 /*  17:    */   {
 /*  18: 41 */     if ((this.c < 9) && (this.c >= 0)) {
 /*  19: 42 */       return this.items[this.c];
@@ -69,7 +69,7 @@ package net.minecraft.src;
 /*  68:    */   
 /*  69:    */   public void a(Item paramalq, int paramInt, boolean paramBoolean1, boolean paramBoolean2)
 /*  70:    */   {
-/*  71: 88 */     ItemStack localamj = h();
+/*  71: 88 */     ItemStack localamj = getHeldItem();
 /*  72: 89 */     int i = paramBoolean1 ? a(paramalq, paramInt) : c(paramalq);
 /*  73: 90 */     if ((i >= 0) && (i < 9))
 /*  74:    */     {
@@ -373,7 +373,7 @@ package net.minecraft.src;
 /* 371:391 */     arrayOfamj[paramInt] = paramamj;
 /* 372:    */   }
 /* 373:    */   
-/* 374:    */   public float a(ProtoBlock paramatr)
+/* 374:    */   public float a(BlockType paramatr)
 /* 375:    */   {
 /* 376:395 */     float f1 = 1.0F;
 /* 377:396 */     if (this.items[this.c] != null) {
@@ -466,7 +466,7 @@ package net.minecraft.src;
 /* 464:477 */     return 64;
 /* 465:    */   }
 /* 466:    */   
-/* 467:    */   public boolean canHarvestBlock(ProtoBlock paramatr)
+/* 467:    */   public boolean canHarvestBlock(BlockType paramatr)
 /* 468:    */   {
 /* 469:481 */     if (paramatr.getMaterial().l()) {
 /* 470:482 */       return true;

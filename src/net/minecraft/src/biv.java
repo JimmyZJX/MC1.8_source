@@ -114,7 +114,7 @@ package net.minecraft.src;
 /* 114:121 */         return null;
 /* 115:    */       }
 /* 116:    */     }
-/* 117:125 */     ProtoBlock localatr = null;
+/* 117:125 */     BlockType localatr = null;
 /* 118:    */     try
 /* 119:    */     {
 /* 120:127 */       String str = arrayOfString[(arrayOfString.length - 1)];
@@ -124,19 +124,19 @@ package net.minecraft.src;
 /* 124:130 */         if (arrayOfString.length > 1) {
 /* 125:131 */           j = Integer.parseInt(arrayOfString[1]);
 /* 126:    */         }
-/* 127:133 */         localatr = ProtoBlock.c(Integer.parseInt(arrayOfString[0]));
+/* 127:133 */         localatr = BlockType.c(Integer.parseInt(arrayOfString[0]));
 /* 128:    */       }
 /* 129:    */       else
 /* 130:    */       {
 /* 131:135 */         arrayOfString = str.split(":", 3);
-/* 132:136 */         localatr = arrayOfString.length > 1 ? ProtoBlock.b(arrayOfString[0] + ":" + arrayOfString[1]) : null;
+/* 132:136 */         localatr = arrayOfString.length > 1 ? BlockType.b(arrayOfString[0] + ":" + arrayOfString[1]) : null;
 /* 133:137 */         if (localatr != null)
 /* 134:    */         {
 /* 135:138 */           j = arrayOfString.length > 2 ? Integer.parseInt(arrayOfString[2]) : 0;
 /* 136:    */         }
 /* 137:    */         else
 /* 138:    */         {
-/* 139:140 */           localatr = ProtoBlock.b(arrayOfString[0]);
+/* 139:140 */           localatr = BlockType.b(arrayOfString[0]);
 /* 140:141 */           if (localatr != null) {
 /* 141:142 */             j = arrayOfString.length > 1 ? Integer.parseInt(arrayOfString[1]) : 0;
 /* 142:    */           }

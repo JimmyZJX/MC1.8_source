@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ public class ajm
 /*  2:   */   extends amr
 /*  3:   */ {
-/*  4:   */   public ajm(ProtoBlock paramatr)
+/*  4:   */   public ajm(BlockType paramatr)
 /*  5:   */   {
 /*  6: 7 */     super(paramatr, paramatr, new String[] { "intact", "slightlyDamaged", "veryDamaged" });
 /*  7:   */   }

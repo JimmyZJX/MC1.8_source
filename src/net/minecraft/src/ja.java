@@ -22,7 +22,7 @@ package net.minecraft.src;
 /* 21:32 */     this.a = new ChunkID(paramhd.readInt(), paramhd.readInt());
 /* 22:33 */     this.b = new jb[paramhd.e()];
 /* 23:35 */     for (int i = 0; i < this.b.length; i++) {
-/* 24:36 */       this.b[i] = new jb(this, paramhd.readShort(), (Block)ProtoBlock.d.a(paramhd.e()));
+/* 24:36 */       this.b[i] = new jb(this, paramhd.readShort(), (Block)BlockType.d.a(paramhd.e()));
 /* 25:   */     }
 /* 26:   */   }
 /* 27:   */   
@@ -34,7 +34,7 @@ package net.minecraft.src;
 /* 33:45 */     for (jb localjb : this.b)
 /* 34:   */     {
 /* 35:46 */       paramhd.writeShort(localjb.b());
-/* 36:47 */       paramhd.b(ProtoBlock.d.b(localjb.c()));
+/* 36:47 */       paramhd.b(BlockType.d.b(localjb.c()));
 /* 37:   */     }
 /* 38:   */   }
 /* 39:   */   

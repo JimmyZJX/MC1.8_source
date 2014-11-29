@@ -39,7 +39,7 @@ package net.minecraft.src;
 /*  38: 51 */     return 5;
 /*  39:    */   }
 /*  40:    */   
-/*  41:    */   public boolean e(EntityPlayer paramahd)
+/*  41:    */   public boolean onRightClick(EntityPlayer paramahd)
 /*  42:    */   {
 /*  43: 56 */     if (!this.world.isClient) {
 /*  44: 57 */       paramahd.a((vq)this);
@@ -124,7 +124,7 @@ package net.minecraft.src;
 /* 123:    */   {
 /* 124:139 */     super.a(paramwh);
 /* 125:    */     
-/* 126:141 */     throwItem(Item.fromProtoBlock(BlockList.cp), 1, 0.0F);
+/* 126:141 */     throwItem(Item.fromBlock(BlockList.cp), 1, 0.0F);
 /* 127:    */   }
 /* 128:    */   
 /* 129:    */   protected void writeEntityToNBT(NBTTagCompound paramfn)

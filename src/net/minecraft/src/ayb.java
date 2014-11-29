@@ -22,7 +22,7 @@ package net.minecraft.src;
 /*  21: 23 */       for (Iterator<dy> localObject = BlockPosition.b(paramdt.offset(-4, -1, -4), paramdt.offset(4, 1, 4)).iterator(); (localObject).hasNext();)
 /*  22:    */       {
 /*  23: 23 */         BlockPosition localdt = (BlockPosition)(localObject).next();
-/*  24: 24 */         if (paramaqu.getBlock(localdt).getProto() == this)
+/*  24: 24 */         if (paramaqu.getBlock(localdt).getType() == this)
 /*  25:    */         {
 /*  26: 24 */           i--;
 /*  27: 24 */           if (i <= 0) {
@@ -49,7 +49,7 @@ package net.minecraft.src;
 /*  48: 46 */     return (super.c(paramaqu, paramdt)) && (f(paramaqu, paramdt, instance()));
 /*  49:    */   }
 /*  50:    */   
-/*  51:    */   protected boolean c(ProtoBlock paramatr)
+/*  51:    */   protected boolean c(BlockType paramatr)
 /*  52:    */   {
 /*  53: 51 */     return paramatr.m();
 /*  54:    */   }
@@ -60,13 +60,13 @@ package net.minecraft.src;
 /*  59: 57 */       return false;
 /*  60:    */     }
 /*  61: 60 */     Block localbec = paramaqu.getBlock(paramdt.down());
-/*  62: 61 */     if (localbec.getProto() == BlockList.bw) {
+/*  62: 61 */     if (localbec.getType() == BlockList.bw) {
 /*  63: 62 */       return true;
 /*  64:    */     }
-/*  65: 64 */     if ((localbec.getProto() == BlockList.dirt) && (localbec.getData(BlockDirt.a) == avd.c)) {
+/*  65: 64 */     if ((localbec.getType() == BlockList.dirt) && (localbec.getData(BlockDirt.a) == avd.c)) {
 /*  66: 65 */       return true;
 /*  67:    */     }
-/*  68: 68 */     return (paramaqu.k(paramdt) < 13) && (c(localbec.getProto()));
+/*  68: 68 */     return (paramaqu.k(paramdt) < 13) && (c(localbec.getType()));
 /*  69:    */   }
 /*  70:    */   
 /*  71:    */   public boolean d(World paramaqu, BlockPosition paramdt, Block parambec, Random paramRandom)

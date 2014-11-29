@@ -315,10 +315,10 @@ package net.minecraft.src;
 /* 314:    */   
 /* 315:    */   public void a(BlockPosition paramdt, Block parambec)
 /* 316:    */   {
-/* 317:337 */     if (parambec.getProto().getMaterial() == Material.air) {
+/* 317:337 */     if (parambec.getType().getMaterial() == Material.air) {
 /* 318:338 */       return;
 /* 319:    */     }
-/* 320:341 */     parambec = parambec.getProto().a(parambec, this.a, paramdt);
+/* 320:341 */     parambec = parambec.getType().a(parambec, this.a, paramdt);
 /* 321:    */     
 /* 322:343 */     int i = 4;
 /* 323:344 */     for (int j = 0; j < i; j++) {
@@ -337,7 +337,7 @@ package net.minecraft.src;
 /* 336:    */   public void a(BlockPosition paramdt, EnumDirection paramej)
 /* 337:    */   {
 /* 338:357 */     Block localbec = this.a.getBlock(paramdt);
-/* 339:358 */     ProtoBlock localatr = localbec.getProto();
+/* 339:358 */     BlockType localatr = localbec.getType();
 /* 340:359 */     if (localatr.b() == -1) {
 /* 341:360 */       return;
 /* 342:    */     }

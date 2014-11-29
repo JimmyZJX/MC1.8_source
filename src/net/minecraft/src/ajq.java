@@ -15,14 +15,14 @@ package net.minecraft.src;
 /* 14:25 */     if (paramej == EnumDirection.DOWN) {
 /* 15:26 */       return false;
 /* 16:   */     }
-/* 17:29 */     boolean bool = paramaqu.getBlock(paramdt).getProto().f(paramaqu, paramdt);
+/* 17:29 */     boolean bool = paramaqu.getBlock(paramdt).getType().f(paramaqu, paramdt);
 /* 18:30 */     BlockPosition localdt1 = bool ? paramdt : paramdt.offset(paramej);
 /* 19:31 */     if (!paramahd.a(localdt1, paramej, paramamj)) {
 /* 20:32 */       return false;
 /* 21:   */     }
 /* 22:35 */     BlockPosition localdt2 = localdt1.up();
-/* 23:36 */     int i = (!paramaqu.isEmpty(localdt1)) && (!paramaqu.getBlock(localdt1).getProto().f(paramaqu, localdt1)) ? 1 : 0;
-/* 24:37 */     i |= ((!paramaqu.isEmpty(localdt2)) && (!paramaqu.getBlock(localdt2).getProto().f(paramaqu, localdt2)) ? 1 : 0);
+/* 23:36 */     int i = (!paramaqu.isEmpty(localdt1)) && (!paramaqu.getBlock(localdt1).getType().f(paramaqu, localdt1)) ? 1 : 0;
+/* 24:37 */     i |= ((!paramaqu.isEmpty(localdt2)) && (!paramaqu.getBlock(localdt2).getType().f(paramaqu, localdt2)) ? 1 : 0);
 /* 25:38 */     if (i != 0) {
 /* 26:39 */       return false;
 /* 27:   */     }

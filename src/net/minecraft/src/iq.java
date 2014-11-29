@@ -16,7 +16,7 @@ import java.io.IOException;
 /*  13:    */   private byte f;
 /*  14:    */   private byte g;
 /*  15:    */   private int h;
-/*  16:    */   private xv i;
+/*  16:    */   private EntityData i;
 /*  17:    */   private List j;
 /*  18:    */   
 /*  19:    */   public iq() {}
@@ -31,7 +31,7 @@ import java.io.IOException;
 /*  28: 38 */     this.f = ((byte)(int)(paramahd.yaw * 256.0F / 360.0F));
 /*  29: 39 */     this.g = ((byte)(int)(paramahd.pitch * 256.0F / 360.0F));
 /*  30:    */     
-/*  31: 41 */     ItemStack localamj = paramahd.bg.h();
+/*  31: 41 */     ItemStack localamj = paramahd.inventory.getHeldItem();
 /*  32: 42 */     this.h = (localamj == null ? 0 : Item.b(localamj.getItem()));
 /*  33:    */     
 /*  34: 44 */     this.i = paramahd.H();
@@ -47,7 +47,7 @@ import java.io.IOException;
 /*  44: 54 */     this.f = paramhd.readByte();
 /*  45: 55 */     this.g = paramhd.readByte();
 /*  46: 56 */     this.h = paramhd.readShort();
-/*  47: 57 */     this.j = xv.b(paramhd);
+/*  47: 57 */     this.j = EntityData.readEntries(paramhd);
 /*  48:    */   }
 /*  49:    */   
 /*  50:    */   public void toBuffer(ByteBufWrapper paramhd)

@@ -17,7 +17,7 @@ package net.minecraft.src;
 /*  16: 20 */     this(paramString1, paramString2, paramInt1, paramInt2, new ItemStack(paramalq), paramtk);
 /*  17:    */   }
 /*  18:    */   
-/*  19:    */   public tk(String paramString1, String paramString2, int paramInt1, int paramInt2, ProtoBlock paramatr, tk paramtk)
+/*  19:    */   public tk(String paramString1, String paramString2, int paramInt1, int paramInt2, BlockType paramatr, tk paramtk)
 /*  20:    */   {
 /*  21: 24 */     this(paramString1, paramString2, paramInt1, paramInt2, new ItemStack(paramatr), paramtk);
 /*  22:    */   }

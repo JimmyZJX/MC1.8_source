@@ -23,7 +23,7 @@ package net.minecraft.src;
 /*  22: 44 */       while ((!World.isFlatSurface(world, pos1)) && (pos1.getY() > 0)) {
 /*  23: 45 */         pos1 = pos1.down();
 /*  24:    */       }
-/*  25: 47 */       if ((i > 0) && (!world.getBlock(pos1.up()).getProto().blocksMovement()))
+/*  25: 47 */       if ((i > 0) && (!world.getBlock(pos1.up()).getType().blocksMovement()))
 /*  26:    */       {
 /*  27: 49 */         Entity localwv = anl.a(world, 57, pos1.getX() + 0.5D, pos1.getY() + 1.1D, pos1.getZ() + 0.5D);
 /*  28: 50 */         if (localwv != null) {
@@ -86,7 +86,7 @@ package net.minecraft.src;
 /*  85:108 */     return false;
 /*  86:    */   }
 /*  87:    */   
-/*  88:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/*  88:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /*  89:    */   {
 /*  90:113 */     EnumAxis localel = (EnumAxis)parambec.getData(a);
 /*  91:    */     ayz localayz;
@@ -110,7 +110,7 @@ package net.minecraft.src;
 /* 109:    */   {
 /* 110:131 */     EnumAxis localel = null;
 /* 111:132 */     Block localbec = paramard.getBlock(paramdt);
-/* 112:133 */     if (paramard.getBlock(paramdt).getProto() == this)
+/* 112:133 */     if (paramard.getBlock(paramdt).getType() == this)
 /* 113:    */     {
 /* 114:134 */       localel = (EnumAxis)localbec.getData(a);
 /* 115:136 */       if (localel == null) {
@@ -123,11 +123,11 @@ package net.minecraft.src;
 /* 122:143 */         return false;
 /* 123:    */       }
 /* 124:    */     }
-/* 125:147 */     int i = (paramard.getBlock(paramdt.west()).getProto() == this) && (paramard.getBlock(paramdt.west(2)).getProto() != this) ? 1 : 0;
-/* 126:148 */     int j = (paramard.getBlock(paramdt.east()).getProto() == this) && (paramard.getBlock(paramdt.east(2)).getProto() != this) ? 1 : 0;
+/* 125:147 */     int i = (paramard.getBlock(paramdt.west()).getType() == this) && (paramard.getBlock(paramdt.west(2)).getType() != this) ? 1 : 0;
+/* 126:148 */     int j = (paramard.getBlock(paramdt.east()).getType() == this) && (paramard.getBlock(paramdt.east(2)).getType() != this) ? 1 : 0;
 /* 127:    */     
-/* 128:150 */     int k = (paramard.getBlock(paramdt.north()).getProto() == this) && (paramard.getBlock(paramdt.north(2)).getProto() != this) ? 1 : 0;
-/* 129:151 */     int m = (paramard.getBlock(paramdt.south()).getProto() == this) && (paramard.getBlock(paramdt.south(2)).getProto() != this) ? 1 : 0;
+/* 128:150 */     int k = (paramard.getBlock(paramdt.north()).getType() == this) && (paramard.getBlock(paramdt.north(2)).getType() != this) ? 1 : 0;
+/* 129:151 */     int m = (paramard.getBlock(paramdt.south()).getType() == this) && (paramard.getBlock(paramdt.south(2)).getType() != this) ? 1 : 0;
 /* 130:    */     
 /* 131:153 */     int n = (i != 0) || (j != 0) || (localel == EnumAxis.X) ? 1 : 0;
 /* 132:154 */     int i1 = (k != 0) || (m != 0) || (localel == EnumAxis.Z) ? 1 : 0;
@@ -178,7 +178,7 @@ package net.minecraft.src;
 /* 177:201 */       double d6 = (paramRandom.nextFloat() - 0.5D) * 0.5D;
 /* 178:    */       
 /* 179:203 */       int j = paramRandom.nextInt(2) * 2 - 1;
-/* 180:204 */       if ((paramaqu.getBlock(paramdt.west()).getProto() == this) || (paramaqu.getBlock(paramdt.east()).getProto() == this))
+/* 180:204 */       if ((paramaqu.getBlock(paramdt.west()).getType() == this) || (paramaqu.getBlock(paramdt.east()).getType() == this))
 /* 181:    */       {
 /* 182:205 */         d3 = paramdt.getZ() + 0.5D + 0.25D * j;
 /* 183:206 */         d6 = paramRandom.nextFloat() * 2.0F * j;

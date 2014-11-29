@@ -16,8 +16,8 @@ import java.io.IOException;
 /*  14:    */   private byte i;
 /*  15:    */   private byte j;
 /*  16:    */   private byte k;
-/*  17:    */   private xv l;
-/*  18:    */   private List<xw> m;
+/*  17:    */   private EntityData l;
+/*  18:    */   private List<EntityDataEntry> m;
 /*  19:    */   
 /*  20:    */   public io() {}
 /*  21:    */   
@@ -76,7 +76,7 @@ import java.io.IOException;
 /*  74: 85 */     this.f = paramhd.readShort();
 /*  75: 86 */     this.g = paramhd.readShort();
 /*  76: 87 */     this.h = paramhd.readShort();
-/*  77: 88 */     this.m = xv.b(paramhd);
+/*  77: 88 */     this.m = EntityData.readEntries(paramhd);
 /*  78:    */   }
 /*  79:    */   
 /*  80:    */   public void toBuffer(ByteBufWrapper paramhd)
@@ -100,7 +100,7 @@ import java.io.IOException;
 /*  98:109 */     paramik.a(this);
 /*  99:    */   }
 /* 100:    */   
-/* 101:    */   public List<xw> a()
+/* 101:    */   public List<EntityDataEntry> a()
 /* 102:    */   {
 /* 103:113 */     if (this.m == null) {
 /* 104:114 */       this.m = this.l.c();

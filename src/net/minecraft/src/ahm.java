@@ -15,7 +15,7 @@ package net.minecraft.src;
 /*  14:    */   
 /*  15:    */   protected void h()
 /*  16:    */   {
-/*  17: 28 */     this.ac.a(8, 5);
+/*  17: 28 */     this.data.addNullData(8, 5);
 /*  18:    */   }
 /*  19:    */   
 /*  20:    */   public boolean a(double paramDouble)
@@ -35,7 +35,7 @@ package net.minecraft.src;
 /*  34: 44 */     int i = 1;
 /*  35: 45 */     if ((paramamj != null) && (paramamj.hasTagCompound()))
 /*  36:    */     {
-/*  37: 46 */       this.ac.b(8, paramamj);
+/*  37: 46 */       this.data.b(8, paramamj);
 /*  38:    */       
 /*  39: 48 */       NBTTagCompound localfn1 = paramamj.getTagCompound();
 /*  40: 49 */       NBTTagCompound localfn2 = localfn1.getCompoundTag("Fireworks");
@@ -110,7 +110,7 @@ package net.minecraft.src;
 /* 109:    */   {
 /* 110:122 */     if ((paramByte == 17) && (this.world.isClient))
 /* 111:    */     {
-/* 112:123 */       ItemStack localamj = this.ac.f(8);
+/* 112:123 */       ItemStack localamj = this.data.getItemStack(8);
 /* 113:124 */       NBTTagCompound localfn = null;
 /* 114:125 */       if ((localamj != null) && (localamj.hasTagCompound())) {
 /* 115:126 */         localfn = localamj.getTagCompound().getCompoundTag("Fireworks");
@@ -124,7 +124,7 @@ package net.minecraft.src;
 /* 123:    */   {
 /* 124:135 */     paramfn.setInt("Life", this.a);
 /* 125:136 */     paramfn.setInt("LifeTime", this.b);
-/* 126:137 */     ItemStack localamj = this.ac.f(8);
+/* 126:137 */     ItemStack localamj = this.data.getItemStack(8);
 /* 127:138 */     if (localamj != null)
 /* 128:    */     {
 /* 129:139 */       NBTTagCompound localfn = new NBTTagCompound();
@@ -143,7 +143,7 @@ package net.minecraft.src;
 /* 142:    */     {
 /* 143:152 */       ItemStack localamj = ItemStack.loadItemStackFromNBT(localfn);
 /* 144:153 */       if (localamj != null) {
-/* 145:154 */         this.ac.b(8, localamj);
+/* 145:154 */         this.data.b(8, localamj);
 /* 146:    */       }
 /* 147:    */     }
 /* 148:    */   }

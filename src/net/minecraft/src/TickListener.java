@@ -3,13 +3,13 @@ package net.minecraft.src;
 /*  2:   */   implements Comparable<TickListener>
 /*  3:   */ {
 /*  4:   */   private static long d;
-/*  5:   */   private final ProtoBlock e;
+/*  5:   */   private final BlockType e;
 /*  6:   */   public final BlockPosition a;
 /*  7:   */   public long time;
 /*  8:   */   public int c;
 /*  9:12 */   private long f = d++;
 /* 10:   */   
-/* 11:   */   public TickListener(BlockPosition paramdt, ProtoBlock paramatr)
+/* 11:   */   public TickListener(BlockPosition paramdt, BlockType paramatr)
 /* 12:   */   {
 /* 13:15 */     this.a = paramdt;
 /* 14:16 */     this.e = paramatr;
@@ -20,7 +20,7 @@ package net.minecraft.src;
 /* 19:20 */     if ((paramObject instanceof TickListener))
 /* 20:   */     {
 /* 21:21 */       TickListener localark = (TickListener)paramObject;
-/* 22:22 */       return (this.a.equals(localark.a)) && (ProtoBlock.a(this.e, localark.e));
+/* 22:22 */       return (this.a.equals(localark.a)) && (BlockType.a(this.e, localark.e));
 /* 23:   */     }
 /* 24:24 */     return false;
 /* 25:   */   }
@@ -63,10 +63,10 @@ package net.minecraft.src;
 /* 62:   */   
 /* 63:   */   public String toString()
 /* 64:   */   {
-/* 65:61 */     return ProtoBlock.a(this.e) + ": " + this.a + ", " + this.time + ", " + this.c + ", " + this.f;
+/* 65:61 */     return BlockType.a(this.e) + ": " + this.a + ", " + this.time + ", " + this.c + ", " + this.f;
 /* 66:   */   }
 /* 67:   */   
-/* 68:   */   public ProtoBlock a()
+/* 68:   */   public BlockType a()
 /* 69:   */   {
 /* 70:65 */     return this.e;
 /* 71:   */   }

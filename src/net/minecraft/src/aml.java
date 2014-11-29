@@ -11,8 +11,8 @@ package net.minecraft.src;
 /* 10:   */   
 /* 11:   */   public boolean a(ItemStack paramamj, EntityPlayer paramahd, World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3)
 /* 12:   */   {
-/* 13:22 */     ProtoBlock localatr = paramaqu.getBlock(paramdt).getProto();
-/* 14:23 */     if ((localatr instanceof avv))
+/* 13:22 */     BlockType localatr = paramaqu.getBlock(paramdt).getType();
+/* 14:23 */     if ((localatr instanceof BlockFence))
 /* 15:   */     {
 /* 16:24 */       if (paramaqu.isClient) {
 /* 17:25 */         return true;

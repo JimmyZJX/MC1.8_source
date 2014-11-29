@@ -10,15 +10,15 @@ package net.minecraft.src;
 /*  8:   */ 
 /*  9:   */ public class cnd
 /* 10:   */ {
-/* 11:15 */   private Map<ProtoBlock, cni> a = Maps.newIdentityHashMap();
-/* 12:16 */   private Set<ProtoBlock> b = Sets.newIdentityHashSet();
+/* 11:15 */   private Map<BlockType, cni> a = Maps.newIdentityHashMap();
+/* 12:16 */   private Set<BlockType> b = Sets.newIdentityHashSet();
 /* 13:   */   
-/* 14:   */   public void a(ProtoBlock paramatr, cni paramcni)
+/* 14:   */   public void a(BlockType paramatr, cni paramcni)
 /* 15:   */   {
 /* 16:19 */     this.a.put(paramatr, paramcni);
 /* 17:   */   }
 /* 18:   */   
-/* 19:   */   public void a(ProtoBlock... paramVarArgs)
+/* 19:   */   public void a(BlockType... paramVarArgs)
 /* 20:   */   {
 /* 21:23 */     Collections.addAll(this.b, paramVarArgs);
 /* 22:   */   }
@@ -26,7 +26,7 @@ package net.minecraft.src;
 /* 24:   */   public Map<Block,cxl> a()
 /* 25:   */   {
 /* 26:27 */     IdentityHashMap<Block,cxl> localIdentityHashMap = Maps.newIdentityHashMap();
-/* 27:29 */     for (ProtoBlock localatr : ProtoBlock.c) {
+/* 27:29 */     for (BlockType localatr : BlockType.c) {
 /* 28:30 */       if (!this.b.contains(localatr)) {
 /* 29:34 */         localIdentityHashMap.putAll(Objects.firstNonNull(this.a.get(localatr), new cne()).a(localatr));
 /* 30:   */       }

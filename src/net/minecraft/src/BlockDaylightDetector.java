@@ -27,7 +27,7 @@ package net.minecraft.src;
 /*  26: 46 */     a(0.0F, 0.0F, 0.0F, 1.0F, 0.375F, 1.0F);
 /*  27:    */   }
 /*  28:    */   
-/*  29:    */   public int a(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
+/*  29:    */   public int getRedStoneSignal(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
 /*  30:    */   {
 /*  31: 51 */     return ((Integer)parambec.getData(a)).intValue();
 /*  32:    */   }
@@ -79,12 +79,12 @@ package net.minecraft.src;
 /*  78:    */   
 /*  79:    */   public Item a(Block parambec, Random paramRandom, int paramInt)
 /*  80:    */   {
-/*  81:100 */     return Item.fromProtoBlock(BlockList.cl);
+/*  81:100 */     return Item.fromBlock(BlockList.cl);
 /*  82:    */   }
 /*  83:    */   
 /*  84:    */   public Item b(World paramaqu, BlockPosition paramdt)
 /*  85:    */   {
-/*  86:105 */     return Item.fromProtoBlock(BlockList.cl);
+/*  86:105 */     return Item.fromBlock(BlockList.cl);
 /*  87:    */   }
 /*  88:    */   
 /*  89:    */   public boolean isOpaqueCube()
@@ -102,7 +102,7 @@ package net.minecraft.src;
 /* 101:124 */     return 3;
 /* 102:    */   }
 /* 103:    */   
-/* 104:    */   public boolean protoBlock_g()
+/* 104:    */   public boolean blockType_g()
 /* 105:    */   {
 /* 106:129 */     return true;
 /* 107:    */   }

@@ -40,7 +40,7 @@ package net.minecraft.src;
 /*  39: 43 */         for (i2 = paramdt.getZ() - n; (i2 <= paramdt.getZ() + n) && (k != 0); i2++) {
 /*  40: 44 */           if ((m >= 0) && (m < 256))
 /*  41:    */           {
-/*  42: 45 */             ProtoBlock localatr3 = paramaqu.getBlock(new BlockPosition(i1, m, i2)).getProto();
+/*  42: 45 */             BlockType localatr3 = paramaqu.getBlock(new BlockPosition(i1, m, i2)).getType();
 /*  43: 46 */             if ((localatr3.getMaterial() != Material.air) && (localatr3.getMaterial() != Material.leaves)) {
 /*  44: 47 */               k = 0;
 /*  45:    */             }
@@ -55,7 +55,7 @@ package net.minecraft.src;
 /*  54: 56 */     if (k == 0) {
 /*  55: 57 */       return false;
 /*  56:    */     }
-/*  57: 60 */     ProtoBlock localatr1 = paramaqu.getBlock(paramdt.down()).getProto();
+/*  57: 60 */     BlockType localatr1 = paramaqu.getBlock(paramdt.down()).getType();
 /*  58: 61 */     if ((localatr1 != BlockList.dirt) && (localatr1 != BlockList.grass) && (localatr1 != BlockList.bw)) {
 /*  59: 62 */       return false;
 /*  60:    */     }
@@ -124,8 +124,8 @@ package net.minecraft.src;
 /* 123:129 */           if ((i5 != 0) || (paramdt.getY() >= paramdt.getY() + j - 1))
 /* 124:    */           {
 /* 125:131 */             BlockPosition localdt = new BlockPosition(i3, i1, i4);
-/* 126:132 */             if (!paramaqu.getBlock(localdt).getProto().m()) {
-/* 127:133 */               setBlock(paramaqu, localdt, ProtoBlock.c(ProtoBlock.a(BlockList.bg) + i), i5);
+/* 126:132 */             if (!paramaqu.getBlock(localdt).getType().m()) {
+/* 127:133 */               setBlock(paramaqu, localdt, BlockType.c(BlockType.a(BlockList.bg) + i), i5);
 /* 128:    */             }
 /* 129:    */           }
 /* 130:    */         }
@@ -133,9 +133,9 @@ package net.minecraft.src;
 /* 132:    */     }
 /* 133:139 */     for (int i1 = 0; i1 < j; i1++)
 /* 134:    */     {
-/* 135:140 */       ProtoBlock localatr2 = paramaqu.getBlock(paramdt.up(i1)).getProto();
+/* 135:140 */       BlockType localatr2 = paramaqu.getBlock(paramdt.up(i1)).getType();
 /* 136:142 */       if (!localatr2.m()) {
-/* 137:143 */         setBlock(paramaqu, paramdt.up(i1), ProtoBlock.c(ProtoBlock.a(BlockList.bg) + i), 10);
+/* 137:143 */         setBlock(paramaqu, paramdt.up(i1), BlockType.c(BlockType.a(BlockList.bg) + i), 10);
 /* 138:    */       }
 /* 139:    */     }
 /* 140:146 */     return true;

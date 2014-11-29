@@ -2,12 +2,12 @@ package net.minecraft.src;
 /*  1:   */ import java.util.Random;
 /*  2:   */ 
 /*  3:   */ public class awz
-/*  4:   */   extends ProtoBlock
+/*  4:   */   extends BlockType
 /*  5:   */ {
 /*  6:18 */   public static final BlockDataEnum a = BlockDataEnum.getInstance("variant", axa.class);
-/*  7:   */   private final ProtoBlock b;
+/*  7:   */   private final BlockType b;
 /*  8:   */   
-/*  9:   */   public awz(Material parambof, ProtoBlock paramatr)
+/*  9:   */   public awz(Material parambof, BlockType paramatr)
 /* 10:   */   {
 /* 11:23 */     super(parambof);
 /* 12:24 */     j(this.L.b().setData(a, axa.l));
@@ -21,12 +21,12 @@ package net.minecraft.src;
 /* 20:   */   
 /* 21:   */   public Item a(Block parambec, Random paramRandom, int paramInt)
 /* 22:   */   {
-/* 23:36 */     return Item.fromProtoBlock(this.b);
+/* 23:36 */     return Item.fromBlock(this.b);
 /* 24:   */   }
 /* 25:   */   
 /* 26:   */   public Item b(World paramaqu, BlockPosition paramdt)
 /* 27:   */   {
-/* 28:41 */     return Item.fromProtoBlock(this.b);
+/* 28:41 */     return Item.fromBlock(this.b);
 /* 29:   */   }
 /* 30:   */   
 /* 31:   */   public Block a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3, int paramInt, EntityLiving paramxm)

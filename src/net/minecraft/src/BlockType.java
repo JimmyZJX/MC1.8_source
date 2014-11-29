@@ -3,26 +3,26 @@ package net.minecraft.src;
 /*    3:     */ import java.util.List;
 /*    4:     */ import java.util.Random;
 /*    5:     */ 
-/*    6:     */ public class ProtoBlock
+/*    6:     */ public class BlockType
 /*    7:     */ {
 /*    8:  43 */   private static final oa air = new oa("air");
-/*    9:  44 */   public static final eh<oa,ProtoBlock> c = new eh<oa,ProtoBlock>(air);
+/*    9:  44 */   public static final eh<oa,BlockType> c = new eh<oa,BlockType>(air);
 /*   10:  45 */   public static final er<Block> d = new er<Block>();
 /*   11:     */   private CreativeTabs creativeTab;
 /*   12:     */   
-/*   13:     */   public static int a(ProtoBlock paramatr)
+/*   13:     */   public static int a(BlockType paramatr)
 /*   14:     */   {
 /*   15:  65 */     return c.b(paramatr);
 /*   16:     */   }
 /*   17:     */   
 /*   18:     */   public static int f(Block parambec)
 /*   19:     */   {
-/*   20:  69 */     return a(parambec.getProto()) + (parambec.getProto().c(parambec) << 12);
+/*   20:  69 */     return a(parambec.getType()) + (parambec.getType().c(parambec) << 12);
 /*   21:     */   }
 /*   22:     */   
-/*   23:     */   public static ProtoBlock c(int paramInt)
+/*   23:     */   public static BlockType c(int paramInt)
 /*   24:     */   {
-/*   25:  73 */     return (ProtoBlock)c.a(paramInt);
+/*   25:  73 */     return (BlockType)c.a(paramInt);
 /*   26:     */   }
 /*   27:     */   
 /*   28:     */   public static Block d(int paramInt)
@@ -32,7 +32,7 @@ package net.minecraft.src;
 /*   32:  79 */     return c(i1).instance(i2);
 /*   33:     */   }
 /*   34:     */   
-/*   35:     */   public static ProtoBlock a(Item paramalq)
+/*   35:     */   public static BlockType a(Item paramalq)
 /*   36:     */   {
 /*   37:  83 */     if ((paramalq instanceof aju)) {
 /*   38:  84 */       return ((aju)paramalq).d();
@@ -40,15 +40,15 @@ package net.minecraft.src;
 /*   40:  87 */     return null;
 /*   41:     */   }
 /*   42:     */   
-/*   43:     */   public static ProtoBlock b(String paramString)
+/*   43:     */   public static BlockType b(String paramString)
 /*   44:     */   {
 /*   45:  92 */     oa localoa = new oa(paramString);
 /*   46:  93 */     if (c.d(localoa)) {
-/*   47:  94 */       return (ProtoBlock)c.a(localoa);
+/*   47:  94 */       return (BlockType)c.a(localoa);
 /*   48:     */     }
 /*   49:     */     try
 /*   50:     */     {
-/*   51:  98 */       return (ProtoBlock)c.a(Integer.parseInt(paramString));
+/*   51:  98 */       return (BlockType)c.a(Integer.parseInt(paramString));
 /*   52:     */     }
 /*   53:     */     catch (NumberFormatException localNumberFormatException) {}
 /*   54: 102 */     return null;
@@ -144,7 +144,7 @@ package net.minecraft.src;
 /*  144:     */   private Block M;
 /*  145:     */   private String name;
 /*  146:     */   
-/*  147:     */   protected ProtoBlock(Material material)
+/*  147:     */   protected BlockType(Material material)
 /*  148:     */   {
 /*  149: 266 */     this.material = material;
 /*  150: 267 */     a(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
@@ -156,25 +156,25 @@ package net.minecraft.src;
 /*  156: 273 */     j(this.L.b());
 /*  157:     */   }
 /*  158:     */   
-/*  159:     */   protected ProtoBlock a(atx paramatx)
+/*  159:     */   protected BlockType a(atx paramatx)
 /*  160:     */   {
 /*  161: 277 */     this.H = paramatx;
 /*  162: 278 */     return this;
 /*  163:     */   }
 /*  164:     */   
-/*  165:     */   protected ProtoBlock e(int paramInt)
+/*  165:     */   protected BlockType e(int paramInt)
 /*  166:     */   {
 /*  167: 282 */     this.s = paramInt;
 /*  168: 283 */     return this;
 /*  169:     */   }
 /*  170:     */   
-/*  171:     */   protected ProtoBlock a(float paramFloat)
+/*  171:     */   protected BlockType a(float paramFloat)
 /*  172:     */   {
 /*  173: 287 */     this.u = ((int)(15.0F * paramFloat));
 /*  174: 288 */     return this;
 /*  175:     */   }
 /*  176:     */   
-/*  177:     */   protected ProtoBlock b(float paramFloat)
+/*  177:     */   protected BlockType b(float paramFloat)
 /*  178:     */   {
 /*  179: 292 */     this.x = (paramFloat * 3.0F);
 /*  180: 293 */     return this;
@@ -187,7 +187,7 @@ package net.minecraft.src;
 /*  187:     */   
 /*  188:     */   public boolean blocksMovement()
 /*  189:     */   {
-/*  190: 305 */     return (this.material.isOpaque()) && (isOpaqueCube()) && (!protoBlock_g());
+/*  190: 305 */     return (this.material.isOpaque()) && (isOpaqueCube()) && (!blockType_g());
 /*  191:     */   }
 /*  192:     */   
 /*  193:     */   public boolean u()
@@ -215,7 +215,7 @@ package net.minecraft.src;
 /*  215: 326 */     return false;
 /*  216:     */   }
 /*  217:     */   
-/*  218:     */   protected ProtoBlock c(float paramFloat)
+/*  218:     */   protected BlockType c(float paramFloat)
 /*  219:     */   {
 /*  220: 330 */     this.w = paramFloat;
 /*  221: 331 */     if (this.x < paramFloat * 5.0F) {
@@ -224,7 +224,7 @@ package net.minecraft.src;
 /*  224: 334 */     return this;
 /*  225:     */   }
 /*  226:     */   
-/*  227:     */   protected ProtoBlock v()
+/*  227:     */   protected BlockType v()
 /*  228:     */   {
 /*  229: 338 */     c(-1.0F);
 /*  230: 339 */     return this;
@@ -235,7 +235,7 @@ package net.minecraft.src;
 /*  235: 343 */     return this.w;
 /*  236:     */   }
 /*  237:     */   
-/*  238:     */   protected ProtoBlock a(boolean paramBoolean)
+/*  238:     */   protected BlockType a(boolean paramBoolean)
 /*  239:     */   {
 /*  240: 347 */     this.z = paramBoolean;
 /*  241: 348 */     return this;
@@ -263,12 +263,12 @@ package net.minecraft.src;
 /*  263:     */   
 /*  264:     */   public int c(IBlockAccess paramard, BlockPosition paramdt)
 /*  265:     */   {
-/*  266: 369 */     ProtoBlock localatr = paramard.getBlock(paramdt).getProto();
+/*  266: 369 */     BlockType localatr = paramard.getBlock(paramdt).getType();
 /*  267: 370 */     int i1 = paramard.b(paramdt, localatr.p());
 /*  268: 373 */     if ((i1 == 0) && ((localatr instanceof BlockSlab)))
 /*  269:     */     {
 /*  270: 374 */       paramdt = paramdt.down();
-/*  271: 375 */       localatr = paramard.getBlock(paramdt).getProto();
+/*  271: 375 */       localatr = paramard.getBlock(paramdt).getType();
 /*  272: 376 */       return paramard.b(paramdt, localatr.p());
 /*  273:     */     }
 /*  274: 378 */     return i1;
@@ -294,12 +294,12 @@ package net.minecraft.src;
 /*  294: 397 */     if ((paramej == EnumDirection.EAST) && (this.E < 1.0D)) {
 /*  295: 398 */       return true;
 /*  296:     */     }
-/*  297: 400 */     return !paramard.getBlock(paramdt).getProto().c();
+/*  297: 400 */     return !paramard.getBlock(paramdt).getType().c();
 /*  298:     */   }
 /*  299:     */   
 /*  300:     */   public boolean b(IBlockAccess paramard, BlockPosition paramdt, EnumDirection paramej)
 /*  301:     */   {
-/*  302: 405 */     return paramard.getBlock(paramdt).getProto().getMaterial().a();
+/*  302: 405 */     return paramard.getBlock(paramdt).getType().getMaterial().a();
 /*  303:     */   }
 /*  304:     */   
 /*  305:     */   public AABB a(World paramaqu, BlockPosition paramdt)
@@ -346,7 +346,7 @@ package net.minecraft.src;
 /*  346:     */   
 /*  347:     */   public void d(World paramaqu, BlockPosition paramdt, Block parambec) {}
 /*  348:     */   
-/*  349:     */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr) {}
+/*  349:     */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr) {}
 /*  350:     */   
 /*  351:     */   public int a(World paramaqu)
 /*  352:     */   {
@@ -364,7 +364,7 @@ package net.minecraft.src;
 /*  364:     */   
 /*  365:     */   public Item a(Block parambec, Random paramRandom, int paramInt)
 /*  366:     */   {
-/*  367: 471 */     return Item.fromProtoBlock(this);
+/*  367: 471 */     return Item.fromBlock(this);
 /*  368:     */   }
 /*  369:     */   
 /*  370:     */   public float a(EntityPlayer paramahd, World paramaqu, BlockPosition paramdt)
@@ -557,7 +557,7 @@ package net.minecraft.src;
 /*  557:     */   
 /*  558:     */   public boolean c(World paramaqu, BlockPosition paramdt)
 /*  559:     */   {
-/*  560: 667 */     return paramaqu.getBlock(paramdt).getProto().material.j();
+/*  560: 667 */     return paramaqu.getBlock(paramdt).getType().material.j();
 /*  561:     */   }
 /*  562:     */   
 /*  563:     */   public boolean a(World paramaqu, BlockPosition paramdt, Block parambec, EntityPlayer paramahd, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3)
@@ -631,19 +631,19 @@ package net.minecraft.src;
 /*  631: 731 */     return a(paramard, paramdt, 0);
 /*  632:     */   }
 /*  633:     */   
-/*  634:     */   public int a(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
+/*  634:     */   public int getRedStoneSignal(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
 /*  635:     */   {
 /*  636: 735 */     return 0;
 /*  637:     */   }
 /*  638:     */   
-/*  639:     */   public boolean protoBlock_g()
+/*  639:     */   public boolean blockType_g()
 /*  640:     */   {
 /*  641: 739 */     return false;
 /*  642:     */   }
 /*  643:     */   
 /*  644:     */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, Entity paramwv) {}
 /*  645:     */   
-/*  646:     */   public int b(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
+/*  646:     */   public int getStrongRedstoneSignal(IBlockAccess paramard, BlockPosition paramdt, Block parambec, EnumDirection paramej)
 /*  647:     */   {
 /*  648: 746 */     return 0;
 /*  649:     */   }
@@ -676,7 +676,7 @@ package net.minecraft.src;
 /*  676:     */   protected ItemStack i(Block parambec)
 /*  677:     */   {
 /*  678: 772 */     int i1 = 0;
-/*  679: 773 */     Item localalq = Item.fromProtoBlock(this);
+/*  679: 773 */     Item localalq = Item.fromBlock(this);
 /*  680: 774 */     if ((localalq != null) && (localalq.k())) {
 /*  681: 775 */       i1 = c(parambec);
 /*  682:     */     }
@@ -690,7 +690,7 @@ package net.minecraft.src;
 /*  690:     */   
 /*  691:     */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, EntityLiving paramxm, ItemStack paramamj) {}
 /*  692:     */   
-/*  693:     */   public ProtoBlock setName(String paramString)
+/*  693:     */   public BlockType setName(String paramString)
 /*  694:     */   {
 /*  695: 789 */     this.name = paramString;
 /*  696: 790 */     return this;
@@ -716,7 +716,7 @@ package net.minecraft.src;
 /*  716: 807 */     return this.y;
 /*  717:     */   }
 /*  718:     */   
-/*  719:     */   protected ProtoBlock J()
+/*  719:     */   protected BlockType J()
 /*  720:     */   {
 /*  721: 811 */     this.y = false;
 /*  722: 812 */     return this;
@@ -744,7 +744,7 @@ package net.minecraft.src;
 /*  744:     */   
 /*  745:     */   public Item b(World paramaqu, BlockPosition paramdt)
 /*  746:     */   {
-/*  747: 832 */     return Item.fromProtoBlock(this);
+/*  747: 832 */     return Item.fromBlock(this);
 /*  748:     */   }
 /*  749:     */   
 /*  750:     */   public int j(World paramaqu, BlockPosition paramdt)
@@ -762,7 +762,7 @@ package net.minecraft.src;
 /*  762: 844 */     return this.creativeTab;
 /*  763:     */   }
 /*  764:     */   
-/*  765:     */   public ProtoBlock setCreativeTab(CreativeTabs t)
+/*  765:     */   public BlockType setCreativeTab(CreativeTabs t)
 /*  766:     */   {
 /*  767: 848 */     this.creativeTab = t;
 /*  768: 849 */     return this;
@@ -787,12 +787,12 @@ package net.minecraft.src;
 /*  787: 867 */     return true;
 /*  788:     */   }
 /*  789:     */   
-/*  790:     */   public boolean b(ProtoBlock paramatr)
+/*  790:     */   public boolean b(BlockType paramatr)
 /*  791:     */   {
 /*  792: 871 */     return this == paramatr;
 /*  793:     */   }
 /*  794:     */   
-/*  795:     */   public static boolean a(ProtoBlock paramatr1, ProtoBlock paramatr2)
+/*  795:     */   public static boolean a(BlockType paramatr1, BlockType paramatr2)
 /*  796:     */   {
 /*  797: 875 */     if ((paramatr1 == null) || (paramatr2 == null)) {
 /*  798: 876 */       return false;
@@ -849,12 +849,12 @@ package net.minecraft.src;
 /*  849: 925 */     a(1, "stone", new bba().c(1.5F).b(10.0F).a(i).setName("stone"));
 /*  850: 926 */     a(2, "grass", new BlockGrass().c(0.6F).a(h).setName("grass"));
 /*  851: 927 */     a(3, "dirt", new BlockDirt().c(0.5F).a(g).setName("dirt"));
-/*  852: 928 */     ProtoBlock localatr1 = new ProtoBlock(Material.rock).c(2.0F).b(10.0F).a(i).setName("stonebrick").setCreativeTab(CreativeTabs.tabBlock);
+/*  852: 928 */     BlockType localatr1 = new BlockType(Material.rock).c(2.0F).b(10.0F).a(i).setName("stonebrick").setCreativeTab(CreativeTabs.tabBlock);
 /*  853: 929 */     a(4, "cobblestone", localatr1);
-/*  854: 930 */     ProtoBlock localatr2 = new ayw().c(2.0F).b(5.0F).a(f).setName("wood");
+/*  854: 930 */     BlockType localatr2 = new ayw().c(2.0F).b(5.0F).a(f).setName("wood");
 /*  855: 931 */     a(5, "planks", localatr2);
 /*  856: 932 */     a(6, "sapling", new baf().c(0.0F).a(h).setName("sapling"));
-/*  857: 933 */     a(7, "bedrock", new ProtoBlock(Material.rock).v().b(6000000.0F).a(i).setName("bedrock").J().setCreativeTab(CreativeTabs.tabBlock));
+/*  857: 933 */     a(7, "bedrock", new BlockType(Material.rock).v().b(6000000.0F).a(i).setName("bedrock").J().setCreativeTab(CreativeTabs.tabBlock));
 /*  858: 934 */     a(8, "flowing_water", new BlockFlowingLiquid(Material.water).c(100.0F).e(3).setName("water").J());
 /*  859: 935 */     a(9, "water", new BlockStillLiquid(Material.water).c(100.0F).e(3).setName("water").J());
 /*  860: 936 */     a(10, "flowing_lava", new BlockFlowingLiquid(Material.lava).c(100.0F).a(1.0F).setName("lava").J());
@@ -871,7 +871,7 @@ package net.minecraft.src;
 /*  871: 947 */     a(21, "lapis_ore", new ayu().c(3.0F).b(5.0F).a(i).setName("oreLapis"));
 /*  872: 948 */     a(22, "lapis_block", new BlockMineral(MapColor.H).c(3.0F).b(5.0F).a(i).setName("blockLapis").setCreativeTab(CreativeTabs.tabBlock));
 /*  873: 949 */     a(23, "dispenser", new ave().c(3.5F).a(i).setName("dispenser"));
-/*  874: 950 */     ProtoBlock localatr3 = new bad().a(i).c(0.8F).setName("sandStone");
+/*  874: 950 */     BlockType localatr3 = new bad().a(i).c(0.8F).setName("sandStone");
 /*  875: 951 */     a(24, "sandstone", localatr3);
 /*  876: 952 */     a(25, "noteblock", new ayn().c(0.8F).setName("musicBlock"));
 /*  877: 953 */     a(26, "bed", new atp().a(f).c(0.2F).setName("bed").J());
@@ -887,19 +887,19 @@ package net.minecraft.src;
 /*  887: 963 */     a(36, "piston_extension", new bdx());
 /*  888: 964 */     a(37, "yellow_flower", new bch().c(0.0F).a(h).setName("flower1"));
 /*  889: 965 */     a(38, "red_flower", new azp().c(0.0F).a(h).setName("flower2"));
-/*  890: 966 */     ProtoBlock localatr4 = new ayb().c(0.0F).a(h).a(0.125F).setName("mushroom");
+/*  890: 966 */     BlockType localatr4 = new ayb().c(0.0F).a(h).a(0.125F).setName("mushroom");
 /*  891: 967 */     a(39, "brown_mushroom", localatr4);
-/*  892: 968 */     ProtoBlock localatr5 = new ayb().c(0.0F).a(h).setName("mushroom");
+/*  892: 968 */     BlockType localatr5 = new ayb().c(0.0F).a(h).setName("mushroom");
 /*  893: 969 */     a(40, "red_mushroom", localatr5);
 /*  894: 970 */     a(41, "gold_block", new BlockMineral(MapColor.F).c(3.0F).b(10.0F).a(j).setName("blockGold"));
 /*  895: 971 */     a(42, "iron_block", new BlockMineral(MapColor.h).c(5.0F).b(10.0F).a(j).setName("blockIron"));
 /*  896: 972 */     a(43, "double_stone_slab", new awh().c(2.0F).b(10.0F).a(i).setName("stoneSlab"));
 /*  897: 973 */     a(44, "stone_slab", new aws().c(2.0F).b(10.0F).a(i).setName("stoneSlab"));
-/*  898: 974 */     ProtoBlock localatr6 = new ProtoBlock(Material.rock).c(2.0F).b(10.0F).a(i).setName("brick").setCreativeTab(CreativeTabs.tabBlock);
+/*  898: 974 */     BlockType localatr6 = new BlockType(Material.rock).c(2.0F).b(10.0F).a(i).setName("brick").setCreativeTab(CreativeTabs.tabBlock);
 /*  899: 975 */     a(45, "brick_block", localatr6);
 /*  900: 976 */     a(46, "tnt", new bbk().c(0.0F).a(h).setName("tnt"));
 /*  901: 977 */     a(47, "bookshelf", new aua().c(1.5F).a(f).setName("bookshelf"));
-/*  902: 978 */     a(48, "mossy_cobblestone", new ProtoBlock(Material.rock).c(2.0F).b(10.0F).a(i).setName("stoneMoss").setCreativeTab(CreativeTabs.tabBlock));
+/*  902: 978 */     a(48, "mossy_cobblestone", new BlockType(Material.rock).c(2.0F).b(10.0F).a(i).setName("stoneMoss").setCreativeTab(CreativeTabs.tabBlock));
 /*  903: 979 */     a(49, "obsidian", new ayo().c(50.0F).b(2000.0F).a(i).setName("obsidian"));
 /*  904: 980 */     a(50, "torch", new bbl().c(0.0F).a(0.9375F).a(f).setName("torch"));
 /*  905: 981 */     a(51, "fire", new BlockFire().c(0.0F).a(1.0F).a(l).setName("fire").J());
@@ -911,7 +911,7 @@ package net.minecraft.src;
 /*  911: 987 */     a(57, "diamond_block", new BlockMineral(MapColor.G).c(5.0F).b(10.0F).a(j).setName("blockDiamond"));
 /*  912: 988 */     a(58, "crafting_table", new aus().c(2.5F).a(f).setName("workbench"));
 /*  913: 989 */     a(59, "wheat", new auu().setName("crops"));
-/*  914: 990 */     ProtoBlock localatr7 = new BlockFarmLand().c(0.6F).a(g).setName("farmland");
+/*  914: 990 */     BlockType localatr7 = new BlockFarmLand().c(0.6F).a(g).setName("farmland");
 /*  915: 991 */     a(60, "farmland", localatr7);
 /*  916: 992 */     a(61, "furnace", new awj(false).c(3.5F).a(i).setName("furnace").setCreativeTab(CreativeTabs.tabDeco));
 /*  917: 993 */     a(62, "lit_furnace", new awj(true).c(3.5F).a(i).a(0.875F).setName("furnace"));
@@ -921,14 +921,14 @@ package net.minecraft.src;
 /*  921: 997 */     a(66, "rail", new azo().c(0.7F).a(j).setName("rail"));
 /*  922: 998 */     a(67, "stone_stairs", new BlockStairs(localatr1.instance()).setName("stairsStone"));
 /*  923: 999 */     a(68, "wall_sign", new bbz().c(1.0F).a(f).setName("sign").J());
-/*  924:1000 */     a(69, "lever", new axi().c(0.5F).a(f).setName("lever"));
-/*  925:1001 */     a(70, "stone_pressure_plate", new BlockPressurePlate(Material.rock, azh.b).c(0.5F).a(i).setName("pressurePlateStone"));
+/*  924:1000 */     a(69, "lever", new BlockLever().c(0.5F).a(f).setName("lever"));
+/*  925:1001 */     a(70, "stone_pressure_plate", new BlockLightPressurePlate(Material.rock, azh.MOBS).c(0.5F).a(i).setName("pressurePlateStone"));
 /*  926:1002 */     a(71, "iron_door", new BlockDoor(Material.f).c(5.0F).a(j).setName("doorIron").J());
-/*  927:1003 */     a(72, "wooden_pressure_plate", new BlockPressurePlate(Material.wood, azh.a).c(0.5F).a(f).setName("pressurePlateWood"));
+/*  927:1003 */     a(72, "wooden_pressure_plate", new BlockLightPressurePlate(Material.wood, azh.EVERYTHING).c(0.5F).a(f).setName("pressurePlateWood"));
 /*  928:1004 */     a(73, "redstone_ore", new azs(false).c(3.0F).b(5.0F).a(i).setName("oreRedstone").setCreativeTab(CreativeTabs.tabBlock));
 /*  929:1005 */     a(74, "lit_redstone_ore", new azs(true).a(0.625F).c(3.0F).b(5.0F).a(i).setName("oreRedstone"));
-/*  930:1006 */     a(75, "unlit_redstone_torch", new azw(false).c(0.0F).a(f).setName("notGate"));
-/*  931:1007 */     a(76, "redstone_torch", new azw(true).c(0.0F).a(0.5F).a(f).setName("notGate").setCreativeTab(CreativeTabs.tabRedstone));
+/*  930:1006 */     a(75, "unlit_redstone_torch", new BlockRedstoneTorch(false).c(0.0F).a(f).setName("notGate"));
+/*  931:1007 */     a(76, "redstone_torch", new BlockRedstoneTorch(true).c(0.0F).a(0.5F).a(f).setName("notGate").setCreativeTab(CreativeTabs.tabRedstone));
 /*  932:1008 */     a(77, "stone_button", new bbe().c(0.5F).a(i).setName("button"));
 /*  933:1009 */     a(78, "snow_layer", new BlockSnowLayer().c(0.1F).a(n).setName("snow").e(0));
 /*  934:1010 */     a(79, "ice", new axb().c(0.5F).e(3).a(k).setName("ice"));
@@ -937,8 +937,8 @@ package net.minecraft.src;
 /*  937:1013 */     a(82, "clay", new auk().c(0.6F).a(g).setName("clay"));
 /*  938:1014 */     a(83, "reeds", new azy().c(0.0F).a(h).setName("reeds").J());
 /*  939:1015 */     a(84, "jukebox", new axc().c(2.0F).b(10.0F).a(i).setName("jukebox"));
-/*  940:1016 */     a(85, "fence", new avv(Material.wood).c(2.0F).b(5.0F).a(f).setName("fence"));
-/*  941:1017 */     ProtoBlock localatr8 = new azk().c(1.0F).a(f).setName("pumpkin");
+/*  940:1016 */     a(85, "fence", new BlockFence(Material.wood).c(2.0F).b(5.0F).a(f).setName("fence"));
+/*  941:1017 */     BlockType localatr8 = new azk().c(1.0F).a(f).setName("pumpkin");
 /*  942:1018 */     a(86, "pumpkin", localatr8);
 /*  943:1019 */     a(87, "netherrack", new ayf().c(0.4F).a(i).setName("hellrock"));
 /*  944:1020 */     a(88, "soul_sand", new bap().c(0.5F).a(m).setName("hellsand"));
@@ -951,25 +951,25 @@ package net.minecraft.src;
 /*  951:1027 */     a(95, "stained_glass", new bar(Material.s).c(0.3F).a(k).setName("stainedGlass"));
 /*  952:1028 */     a(96, "trapdoor", new bbp(Material.wood).c(3.0F).a(f).setName("trapdoor").J());
 /*  953:1029 */     a(97, "monster_egg", new axs().c(0.75F).setName("monsterStoneEgg"));
-/*  954:1030 */     ProtoBlock localatr9 = new bbc().c(1.5F).b(10.0F).a(i).setName("stonebricksmooth");
+/*  954:1030 */     BlockType localatr9 = new bbc().c(1.5F).b(10.0F).a(i).setName("stonebricksmooth");
 /*  955:1031 */     a(98, "stonebrick", localatr9);
 /*  956:1032 */     a(99, "brown_mushroom_block", new awz(Material.wood, localatr4).c(0.2F).a(f).setName("mushroom"));
 /*  957:1033 */     a(100, "red_mushroom_block", new awz(Material.wood, localatr5).c(0.2F).a(f).setName("mushroom"));
 /*  958:1034 */     a(101, "iron_bars", new bbj(Material.f, true).c(5.0F).b(10.0F).a(j).setName("fenceIron"));
 /*  959:1035 */     a(102, "glass_pane", new bbj(Material.s, false).c(0.3F).a(k).setName("thinGlass"));
-/*  960:1036 */     ProtoBlock localatr10 = new axp().c(1.0F).a(f).setName("melon");
+/*  960:1036 */     BlockType localatr10 = new axp().c(1.0F).a(f).setName("melon");
 /*  961:1037 */     a(103, "melon_block", localatr10);
 /*  962:1038 */     a(104, "pumpkin_stem", new bay(localatr8).c(0.0F).a(f).setName("pumpkinStem"));
 /*  963:1039 */     a(105, "melon_stem", new bay(localatr10).c(0.0F).a(f).setName("pumpkinStem"));
 /*  964:1040 */     a(106, "vine", new bbv().c(0.2F).a(h).setName("vine"));
-/*  965:1041 */     a(107, "fence_gate", new avw().c(2.0F).b(5.0F).a(f).setName("fenceGate"));
+/*  965:1041 */     a(107, "fence_gate", new BlockFenceGate().c(2.0F).b(5.0F).a(f).setName("fenceGate"));
 /*  966:1042 */     a(108, "brick_stairs", new BlockStairs(localatr6.instance()).setName("stairsBrick"));
 /*  967:1043 */     a(109, "stone_brick_stairs", new BlockStairs(localatr9.instance().setData(bbc.a, bbd.a)).setName("stairsStoneBrickSmooth"));
 /*  968:1044 */     a(110, "mycelium", new ayc().c(0.6F).a(h).setName("mycel"));
 /*  969:1045 */     a(111, "waterlily", new bcb().c(0.0F).a(h).setName("waterlily"));
-/*  970:1046 */     ProtoBlock localatr11 = new ayd().c(2.0F).b(10.0F).a(i).setName("netherBrick").setCreativeTab(CreativeTabs.tabBlock);
+/*  970:1046 */     BlockType localatr11 = new ayd().c(2.0F).b(10.0F).a(i).setName("netherBrick").setCreativeTab(CreativeTabs.tabBlock);
 /*  971:1047 */     a(112, "nether_brick", localatr11);
-/*  972:1048 */     a(113, "nether_brick_fence", new avv(Material.rock).c(2.0F).b(10.0F).a(i).setName("netherFence"));
+/*  972:1048 */     a(113, "nether_brick_fence", new BlockFence(Material.rock).c(2.0F).b(10.0F).a(i).setName("netherFence"));
 /*  973:1049 */     a(114, "nether_brick_stairs", new BlockStairs(localatr11.instance()).setName("stairsNetherBrick"));
 /*  974:1050 */     a(115, "nether_wart", new aye().setName("netherStalk"));
 /*  975:1051 */     a(116, "enchanting_table", new avo().c(5.0F).b(2000.0F).setName("enchantmentTable"));
@@ -977,7 +977,7 @@ package net.minecraft.src;
 /*  977:1053 */     a(118, "cauldron", new aui().c(2.0F).setName("cauldron"));
 /*  978:1054 */     a(119, "end_portal", new avp(Material.E).c(-1.0F).b(6000000.0F));
 /*  979:1055 */     a(120, "end_portal_frame", new avq().a(k).a(0.125F).c(-1.0F).setName("endPortalFrame").b(6000000.0F).setCreativeTab(CreativeTabs.tabDeco));
-/*  980:1056 */     a(121, "end_stone", new ProtoBlock(Material.rock).c(3.0F).b(15.0F).a(i).setName("whiteStone").setCreativeTab(CreativeTabs.tabBlock));
+/*  980:1056 */     a(121, "end_stone", new BlockType(Material.rock).c(3.0F).b(15.0F).a(i).setName("whiteStone").setCreativeTab(CreativeTabs.tabBlock));
 /*  981:1057 */     a(122, "dragon_egg", new avl().c(3.0F).b(15.0F).a(i).a(0.125F).setName("dragonEgg"));
 /*  982:1058 */     a(123, "redstone_lamp", new azv(false).c(0.3F).a(k).setName("redstoneLight").setCreativeTab(CreativeTabs.tabRedstone));
 /*  983:1059 */     a(124, "lit_redstone_lamp", new azv(true).c(0.3F).a(k).setName("redstoneLight"));
@@ -987,7 +987,7 @@ package net.minecraft.src;
 /*  987:1063 */     a(128, "sandstone_stairs", new BlockStairs(localatr3.instance().setData(bad.a, bae.c)).setName("stairsSandStone"));
 /*  988:1064 */     a(129, "emerald_ore", new ayu().c(3.0F).b(5.0F).a(i).setName("oreEmerald"));
 /*  989:1065 */     a(130, "ender_chest", new avr().c(22.5F).b(1000.0F).a(i).setName("enderChest").a(0.5F));
-/*  990:1066 */     a(131, "tripwire_hook", new bbt().setName("tripWireSource"));
+/*  990:1066 */     a(131, "tripwire_hook", new BlockTripwireHook().setName("tripWireSource"));
 /*  991:1067 */     a(132, "tripwire", new bbs().setName("tripWire"));
 /*  992:1068 */     a(133, "emerald_block", new BlockMineral(MapColor.I).c(5.0F).b(10.0F).a(j).setName("blockEmerald"));
 /*  993:1069 */     a(134, "spruce_stairs", new BlockStairs(localatr2.instance().setData(ayw.a, EnumWoodVariant.SPRUCE)).setName("stairsWoodSpruce"));
@@ -995,7 +995,7 @@ package net.minecraft.src;
 /*  995:1071 */     a(136, "jungle_stairs", new BlockStairs(localatr2.instance().setData(ayw.a, EnumWoodVariant.JUNGLE)).setName("stairsWoodJungle"));
 /*  996:1072 */     a(137, "command_block", new auo().v().b(6000000.0F).setName("commandBlock"));
 /*  997:1073 */     a(138, "beacon", new BlockBeacon().setName("beacon").a(1.0F));
-/*  998:1074 */     a(139, "cobblestone_wall", new bbx(localatr1).setName("cobbleWall"));
+/*  998:1074 */     a(139, "cobblestone_wall", new BlockCobbleWall(localatr1).setName("cobbleWall"));
 /*  999:1075 */     a(140, "flower_pot", new awd().c(0.0F).a(e).setName("flowerPot"));
 /* 1000:1076 */     a(141, "carrots", new auh().setName("carrots"));
 /* 1001:1077 */     a(142, "potatoes", new aza().setName("potatoes"));
@@ -1003,15 +1003,15 @@ package net.minecraft.src;
 /* 1003:1079 */     a(144, "skull", new baj().c(1.0F).a(i).setName("skull"));
 /* 1004:1080 */     a(145, "anvil", new BlockAnvil().c(5.0F).a(p).b(2000.0F).setName("anvil"));
 /* 1005:1081 */     a(146, "trapped_chest", new BlockChest(1).c(2.5F).a(f).setName("chestTrap"));
-/* 1006:1082 */     a(147, "light_weighted_pressure_plate", new bcd("gold_block", Material.f, 15).c(0.5F).a(f).setName("weightedPlate_light"));
-/* 1007:1083 */     a(148, "heavy_weighted_pressure_plate", new bcd("iron_block", Material.f, 150).c(0.5F).a(f).setName("weightedPlate_heavy"));
+/* 1006:1082 */     a(147, "light_weighted_pressure_plate", new BlockHeavyPressurePlate("gold_block", Material.f, 15).c(0.5F).a(f).setName("weightedPlate_light"));
+/* 1007:1083 */     a(148, "heavy_weighted_pressure_plate", new BlockHeavyPressurePlate("iron_block", Material.f, 150).c(0.5F).a(f).setName("weightedPlate_heavy"));
 /* 1008:1084 */     a(149, "unpowered_comparator", new BlockComparator(false).c(0.0F).a(f).setName("comparator").J());
 /* 1009:1085 */     a(150, "powered_comparator", new BlockComparator(true).c(0.0F).a(0.625F).a(f).setName("comparator").J());
 /* 1010:1086 */     a(151, "daylight_detector", new BlockDaylightDetector(false));
 /* 1011:1087 */     a(152, "redstone_block", new azb(MapColor.f).c(5.0F).b(10.0F).a(j).setName("blockRedstone"));
 /* 1012:1088 */     a(153, "quartz_ore", new ayu().c(3.0F).b(5.0F).a(i).setName("netherquartz"));
 /* 1013:1089 */     a(154, "hopper", new BlockHopper().c(3.0F).b(8.0F).a(j).setName("hopper"));
-/* 1014:1090 */     ProtoBlock localatr12 = new azl().a(i).c(0.8F).setName("quartzBlock");
+/* 1014:1090 */     BlockType localatr12 = new azl().a(i).c(0.8F).setName("quartzBlock");
 /* 1015:1091 */     a(155, "quartz_block", localatr12);
 /* 1016:1092 */     a(156, "quartz_stairs", new BlockStairs(localatr12.instance().setData(azl.a, azn.a)).setName("stairsQuartz"));
 /* 1017:1093 */     a(157, "activator_rail", new azc().c(0.7F).a(j).setName("activatorRail"));
@@ -1030,27 +1030,27 @@ package net.minecraft.src;
 /* 1030:1106 */     a(170, "hay_block", new aww().c(0.5F).a(h).setName("hayBlock").setCreativeTab(CreativeTabs.tabBlock));
 /* 1031:1107 */     a(171, "carpet", new bcg().c(0.1F).a(l).setName("woolCarpet").e(0));
 /* 1032:1108 */     a(172, "hardened_clay", new awv().c(1.25F).b(7.0F).a(i).setName("clayHardened"));
-/* 1033:1109 */     a(173, "coal_block", new ProtoBlock(Material.rock).c(5.0F).b(10.0F).a(i).setName("blockCoal").setCreativeTab(CreativeTabs.tabBlock));
+/* 1033:1109 */     a(173, "coal_block", new BlockType(Material.rock).c(5.0F).b(10.0F).a(i).setName("blockCoal").setCreativeTab(CreativeTabs.tabBlock));
 /* 1034:1110 */     a(174, "packed_ice", new ayv().c(0.5F).a(k).setName("icePacked"));
 /* 1035:1111 */     a(175, "double_plant", new avi());
 /* 1036:1112 */     a(176, "standing_banner", new BlockBanner().c(1.0F).a(f).setName("banner").J());
 /* 1037:1113 */     a(177, "wall_banner", new ate().c(1.0F).a(f).setName("banner").J());
 /* 1038:1114 */     a(178, "daylight_detector_inverted", new BlockDaylightDetector(true));
-/* 1039:1115 */     ProtoBlock localatr13 = new azq().a(i).c(0.8F).setName("redSandStone");
+/* 1039:1115 */     BlockType localatr13 = new azq().a(i).c(0.8F).setName("redSandStone");
 /* 1040:1116 */     a(179, "red_sandstone", localatr13);
 /* 1041:1117 */     a(180, "red_sandstone_stairs", new BlockStairs(localatr13.instance().setData(azq.a, azr.c)).setName("stairsRedSandStone"));
 /* 1042:1118 */     a(181, "double_stone_slab2", new awg().c(2.0F).b(10.0F).a(i).setName("stoneSlab2"));
 /* 1043:1119 */     a(182, "stone_slab2", new awp().c(2.0F).b(10.0F).a(i).setName("stoneSlab2"));
-/* 1044:1120 */     a(183, "spruce_fence_gate", new avw().c(2.0F).b(5.0F).a(f).setName("spruceFenceGate"));
-/* 1045:1121 */     a(184, "birch_fence_gate", new avw().c(2.0F).b(5.0F).a(f).setName("birchFenceGate"));
-/* 1046:1122 */     a(185, "jungle_fence_gate", new avw().c(2.0F).b(5.0F).a(f).setName("jungleFenceGate"));
-/* 1047:1123 */     a(186, "dark_oak_fence_gate", new avw().c(2.0F).b(5.0F).a(f).setName("darkOakFenceGate"));
-/* 1048:1124 */     a(187, "acacia_fence_gate", new avw().c(2.0F).b(5.0F).a(f).setName("acaciaFenceGate"));
-/* 1049:1125 */     a(188, "spruce_fence", new avv(Material.wood).c(2.0F).b(5.0F).a(f).setName("spruceFence"));
-/* 1050:1126 */     a(189, "birch_fence", new avv(Material.wood).c(2.0F).b(5.0F).a(f).setName("birchFence"));
-/* 1051:1127 */     a(190, "jungle_fence", new avv(Material.wood).c(2.0F).b(5.0F).a(f).setName("jungleFence"));
-/* 1052:1128 */     a(191, "dark_oak_fence", new avv(Material.wood).c(2.0F).b(5.0F).a(f).setName("darkOakFence"));
-/* 1053:1129 */     a(192, "acacia_fence", new avv(Material.wood).c(2.0F).b(5.0F).a(f).setName("acaciaFence"));
+/* 1044:1120 */     a(183, "spruce_fence_gate", new BlockFenceGate().c(2.0F).b(5.0F).a(f).setName("spruceFenceGate"));
+/* 1045:1121 */     a(184, "birch_fence_gate", new BlockFenceGate().c(2.0F).b(5.0F).a(f).setName("birchFenceGate"));
+/* 1046:1122 */     a(185, "jungle_fence_gate", new BlockFenceGate().c(2.0F).b(5.0F).a(f).setName("jungleFenceGate"));
+/* 1047:1123 */     a(186, "dark_oak_fence_gate", new BlockFenceGate().c(2.0F).b(5.0F).a(f).setName("darkOakFenceGate"));
+/* 1048:1124 */     a(187, "acacia_fence_gate", new BlockFenceGate().c(2.0F).b(5.0F).a(f).setName("acaciaFenceGate"));
+/* 1049:1125 */     a(188, "spruce_fence", new BlockFence(Material.wood).c(2.0F).b(5.0F).a(f).setName("spruceFence"));
+/* 1050:1126 */     a(189, "birch_fence", new BlockFence(Material.wood).c(2.0F).b(5.0F).a(f).setName("birchFence"));
+/* 1051:1127 */     a(190, "jungle_fence", new BlockFence(Material.wood).c(2.0F).b(5.0F).a(f).setName("jungleFence"));
+/* 1052:1128 */     a(191, "dark_oak_fence", new BlockFence(Material.wood).c(2.0F).b(5.0F).a(f).setName("darkOakFence"));
+/* 1053:1129 */     a(192, "acacia_fence", new BlockFence(Material.wood).c(2.0F).b(5.0F).a(f).setName("acaciaFence"));
 /* 1054:1130 */     a(193, "spruce_door", new BlockDoor(Material.wood).c(3.0F).a(f).setName("doorSpruce").J());
 /* 1055:1131 */     a(194, "birch_door", new BlockDoor(Material.wood).c(3.0F).a(f).setName("doorBirch").J());
 /* 1056:1132 */     a(195, "jungle_door", new BlockDoor(Material.wood).c(3.0F).a(f).setName("doorJungle").J());
@@ -1058,8 +1058,8 @@ package net.minecraft.src;
 /* 1058:1134 */     a(197, "dark_oak_door", new BlockDoor(Material.wood).c(3.0F).a(f).setName("doorDarkOak").J());
 /* 1059:     */     
 /* 1060:1136 */     c.a();
-/* 1082:     */     ProtoBlock localatr14;
-/* 1061:1139 */     for (Iterator<ProtoBlock> localIterator1 = c.iterator(); localIterator1.hasNext();)
+/* 1082:     */     BlockType localatr14;
+/* 1061:1139 */     for (Iterator<BlockType> localIterator1 = c.iterator(); localIterator1.hasNext();)
 /* 1062:     */     {
 /* 1063:1139 */       localatr14 = localIterator1.next();
 /* 1064:1140 */       if (localatr14.material == Material.air)
@@ -1080,7 +1080,7 @@ package net.minecraft.src;
 /* 1079:1156 */         localatr14.v = bool1;
 /* 1080:     */       }
 /* 1081:     */     }
-/* 1083:1159 */     for (Iterator<ProtoBlock> localIterator1 = c.iterator(); localIterator1.hasNext();)
+/* 1083:1159 */     for (Iterator<BlockType> localIterator1 = c.iterator(); localIterator1.hasNext();)
 /* 1084:     */     {
 /* 1085:1159 */       localatr14 = localIterator1.next();
 /* 1086:1160 */       for (Block localbec : localatr14.O().a())
@@ -1091,12 +1091,12 @@ package net.minecraft.src;
 /* 1091:     */     }
 /* 1092:     */   }
 /* 1093:     */   
-/* 1094:     */   private static void a(int paramInt, oa paramoa, ProtoBlock paramatr)
+/* 1094:     */   private static void a(int paramInt, oa paramoa, BlockType paramatr)
 /* 1095:     */   {
 /* 1096:1168 */     c.a(paramInt, paramoa, paramatr);
 /* 1097:     */   }
 /* 1098:     */   
-/* 1099:     */   private static void a(int paramInt, String paramString, ProtoBlock paramatr)
+/* 1099:     */   private static void a(int paramInt, String paramString, BlockType paramatr)
 /* 1100:     */   {
 /* 1101:1172 */     a(paramInt, new oa(paramString), paramatr);
 /* 1102:     */   }

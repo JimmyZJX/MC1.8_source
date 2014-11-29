@@ -31,12 +31,12 @@ package net.minecraft.src;
 /*  30:    */   {
 /*  31: 59 */     super.h();
 /*  32:    */     
-/*  33: 61 */     this.ac.a(16, Byte.valueOf((byte)1));
+/*  33: 61 */     this.data.addData(16, Byte.valueOf((byte)1));
 /*  34:    */   }
 /*  35:    */   
 /*  36:    */   protected void a(int paramInt)
 /*  37:    */   {
-/*  38: 65 */     this.ac.b(16, Byte.valueOf((byte)paramInt));
+/*  38: 65 */     this.data.b(16, Byte.valueOf((byte)paramInt));
 /*  39: 66 */     a(0.5100001F * paramInt, 0.5100001F * paramInt);
 /*  40: 67 */     setPos(this.xPos, this.yPos, this.zPos);
 /*  41: 68 */     getAttribute(MobAttribute.maxHealth).a(paramInt * paramInt);
@@ -47,7 +47,7 @@ package net.minecraft.src;
 /*  46:    */   
 /*  47:    */   public int ck()
 /*  48:    */   {
-/*  49: 75 */     return this.ac.a(16);
+/*  49: 75 */     return this.data.getByte(16);
 /*  50:    */   }
 /*  51:    */   
 /*  52:    */   public void writeEntityToNBT(NBTTagCompound paramfn)
@@ -86,7 +86,7 @@ package net.minecraft.src;
 /*  85:110 */     this.b += (this.a - this.b) * 0.5F;
 /*  86:111 */     this.c = this.b;
 /*  87:112 */     super.onUpdate();
-/*  88:114 */     if ((this.C) && (!this.bi))
+/*  88:114 */     if ((this.landing) && (!this.bi))
 /*  89:    */     {
 /*  90:115 */       int i = ck();
 /*  91:116 */       for (int j = 0; j < i * 8; j++)
@@ -102,11 +102,11 @@ package net.minecraft.src;
 /* 101:    */       }
 /* 102:127 */       this.a = -0.5F;
 /* 103:    */     }
-/* 104:128 */     else if ((!this.C) && (this.bi))
+/* 104:128 */     else if ((!this.landing) && (this.bi))
 /* 105:    */     {
 /* 106:129 */       this.a = 1.0F;
 /* 107:    */     }
-/* 108:131 */     this.bi = this.C;
+/* 108:131 */     this.bi = this.landing;
 /* 109:132 */     cf();
 /* 110:    */   }
 /* 111:    */   
@@ -177,7 +177,7 @@ package net.minecraft.src;
 /* 176:    */   public void onPickedUp(EntityPlayer paramahd)
 /* 177:    */   {
 /* 178:198 */     if (cg()) {
-/* 179:199 */       e(paramahd);
+/* 179:199 */       onRightClick(paramahd);
 /* 180:    */     }
 /* 181:    */   }
 /* 182:    */   
@@ -185,7 +185,7 @@ package net.minecraft.src;
 /* 184:    */   {
 /* 185:204 */     int i = ck();
 /* 186:205 */     if ((canSee(paramxm)) && (h(paramxm) < 0.6D * i * (0.6D * i)) && 
-/* 187:206 */       (paramxm.a(DamageSource.fromMob(this), ch())))
+/* 187:206 */       (paramxm.receiveDamage(DamageSource.fromMob(this), ch())))
 /* 188:    */     {
 /* 189:207 */       a("mob.attack", 1.0F, (this.rng.nextFloat() - this.rng.nextFloat()) * 0.2F + 1.0F);
 /* 190:208 */       a(this, paramxm);

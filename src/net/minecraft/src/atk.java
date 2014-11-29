@@ -18,7 +18,7 @@ package net.minecraft.src;
 /*  15: 45 */     this.b = paramaqu;
 /*  16: 46 */     this.c = paramdt;
 /*  17: 47 */     this.e = parambec;
-/*  18: 48 */     this.d = ((ati)parambec.getProto());
+/*  18: 48 */     this.d = ((ati)parambec.getType());
 /*  19: 49 */     EnumRailState localatl = (EnumRailState)parambec.getData(paramati.l());
 /*  20: 50 */     this.f = this.d.a;
 /*  21: 51 */     a(localatl);

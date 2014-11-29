@@ -50,7 +50,7 @@ package net.minecraft.src;
 /* 49:58 */       return false;
 /* 50:   */     }
 /* 51:61 */     Block localbec = paramaqu.getBlock(paramdt);
-/* 52:62 */     ProtoBlock localatr = localbec.getProto();
+/* 52:62 */     BlockType localatr = localbec.getType();
 /* 53:64 */     if (localatr == BlockList.chest)
 /* 54:   */     {
 /* 55:65 */       bcm localbcm = paramaqu.s(paramdt);

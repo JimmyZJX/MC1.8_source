@@ -58,33 +58,33 @@ package net.minecraft.src;
 /*   59:     */   protected void h()
 /*   60:     */   {
 /*   61: 172 */     super.h();
-/*   62: 173 */     this.ac.a(16, Integer.valueOf(0));
-/*   63: 174 */     this.ac.a(19, Byte.valueOf((byte)0));
-/*   64: 175 */     this.ac.a(20, Integer.valueOf(0));
-/*   65: 176 */     this.ac.a(21, String.valueOf(""));
-/*   66: 177 */     this.ac.a(22, Integer.valueOf(0));
+/*   62: 173 */     this.data.addData(16, Integer.valueOf(0));
+/*   63: 174 */     this.data.addData(19, Byte.valueOf((byte)0));
+/*   64: 175 */     this.data.addData(20, Integer.valueOf(0));
+/*   65: 176 */     this.data.addData(21, String.valueOf(""));
+/*   66: 177 */     this.data.addData(22, Integer.valueOf(0));
 /*   67:     */   }
 /*   68:     */   
 /*   69:     */   public void r(int paramInt)
 /*   70:     */   {
-/*   71: 181 */     this.ac.b(19, Byte.valueOf((byte)paramInt));
+/*   71: 181 */     this.data.b(19, Byte.valueOf((byte)paramInt));
 /*   72: 182 */     da();
 /*   73:     */   }
 /*   74:     */   
 /*   75:     */   public int cj()
 /*   76:     */   {
-/*   77: 186 */     return this.ac.a(19);
+/*   77: 186 */     return this.data.getByte(19);
 /*   78:     */   }
 /*   79:     */   
 /*   80:     */   public void s(int paramInt)
 /*   81:     */   {
-/*   82: 190 */     this.ac.b(20, Integer.valueOf(paramInt));
+/*   82: 190 */     this.data.b(20, Integer.valueOf(paramInt));
 /*   83: 191 */     da();
 /*   84:     */   }
 /*   85:     */   
 /*   86:     */   public int ck()
 /*   87:     */   {
-/*   88: 195 */     return this.ac.c(20);
+/*   88: 195 */     return this.data.getInteger(20);
 /*   89:     */   }
 /*   90:     */   
 /*   91:     */   public String getName()
@@ -110,16 +110,16 @@ package net.minecraft.src;
 /*  111:     */   
 /*  112:     */   private boolean w(int paramInt)
 /*  113:     */   {
-/*  114: 221 */     return (this.ac.c(16) & paramInt) != 0;
+/*  114: 221 */     return (this.data.getInteger(16) & paramInt) != 0;
 /*  115:     */   }
 /*  116:     */   
 /*  117:     */   private void c(int paramInt, boolean paramBoolean)
 /*  118:     */   {
-/*  119: 225 */     int i = this.ac.c(16);
+/*  119: 225 */     int i = this.data.getInteger(16);
 /*  120: 226 */     if (paramBoolean) {
-/*  121: 227 */       this.ac.b(16, Integer.valueOf(i | paramInt));
+/*  121: 227 */       this.data.b(16, Integer.valueOf(i | paramInt));
 /*  122:     */     } else {
-/*  123: 229 */       this.ac.b(16, Integer.valueOf(i & (paramInt ^ 0xFFFFFFFF)));
+/*  123: 229 */       this.data.b(16, Integer.valueOf(i & (paramInt ^ 0xFFFFFFFF)));
 /*  124:     */     }
 /*  125:     */   }
 /*  126:     */   
@@ -140,12 +140,12 @@ package net.minecraft.src;
 /*  141:     */   
 /*  142:     */   public String cr()
 /*  143:     */   {
-/*  144: 246 */     return this.ac.e(21);
+/*  144: 246 */     return this.data.getString(21);
 /*  145:     */   }
 /*  146:     */   
 /*  147:     */   public void b(String paramString)
 /*  148:     */   {
-/*  149: 250 */     this.ac.b(21, paramString);
+/*  149: 250 */     this.data.b(21, paramString);
 /*  150:     */   }
 /*  151:     */   
 /*  152:     */   public float cs()
@@ -200,7 +200,7 @@ package net.minecraft.src;
 /*  201:     */   
 /*  202:     */   public int cv()
 /*  203:     */   {
-/*  204: 299 */     return this.ac.c(22);
+/*  204: 299 */     return this.data.getInteger(22);
 /*  205:     */   }
 /*  206:     */   
 /*  207:     */   private int f(ItemStack paramamj)
@@ -243,7 +243,7 @@ package net.minecraft.src;
 /*  244:     */   
 /*  245:     */   public void e(ItemStack paramamj)
 /*  246:     */   {
-/*  247: 334 */     this.ac.b(22, Integer.valueOf(f(paramamj)));
+/*  247: 334 */     this.data.b(22, Integer.valueOf(f(paramamj)));
 /*  248: 335 */     da();
 /*  249:     */   }
 /*  250:     */   
@@ -285,13 +285,13 @@ package net.minecraft.src;
 /*  286: 366 */     return i;
 /*  287:     */   }
 /*  288:     */   
-/*  289:     */   public boolean a(DamageSource paramwh, float paramFloat)
+/*  289:     */   public boolean receiveDamage(DamageSource paramwh, float paramFloat)
 /*  290:     */   {
 /*  291: 371 */     Entity localwv = paramwh.getAttacker();
 /*  292: 372 */     if ((this.rider != null) && (this.rider.equals(localwv))) {
 /*  293: 373 */       return false;
 /*  294:     */     }
-/*  295: 376 */     return super.a(paramwh, paramFloat);
+/*  295: 376 */     return super.receiveDamage(paramwh, paramFloat);
 /*  296:     */   }
 /*  297:     */   
 /*  298:     */   public int getArmorValue()
@@ -318,7 +318,7 @@ package net.minecraft.src;
 /*  319: 402 */     if ((this.world.isClient) || (!cu())) {
 /*  320: 403 */       return;
 /*  321:     */     }
-/*  322: 406 */     a(Item.fromProtoBlock(BlockList.chest), 1);
+/*  322: 406 */     a(Item.fromBlock(BlockList.chest), 1);
 /*  323: 407 */     o(false);
 /*  324:     */   }
 /*  325:     */   
@@ -339,11 +339,11 @@ package net.minecraft.src;
 /*  340: 427 */     if (i <= 0) {
 /*  341: 428 */       return;
 /*  342:     */     }
-/*  343: 431 */     a(DamageSource.fall, i);
+/*  343: 431 */     receiveDamage(DamageSource.fall, i);
 /*  344: 433 */     if (this.rider != null) {
-/*  345: 434 */       this.rider.a(DamageSource.fall, i);
+/*  345: 434 */       this.rider.receiveDamage(DamageSource.fall, i);
 /*  346:     */     }
-/*  347: 437 */     ProtoBlock localatr = this.world.getBlock(new BlockPosition(this.xPos, this.yPos - 0.2D - this.lastYaw, this.zPos)).getProto();
+/*  347: 437 */     BlockType localatr = this.world.getBlock(new BlockPosition(this.xPos, this.yPos - 0.2D - this.lastYaw, this.zPos)).getType();
 /*  348: 438 */     if ((localatr.getMaterial() != Material.air) && (!R()))
 /*  349:     */     {
 /*  350: 439 */       atx localatx = localatr.H;
@@ -532,10 +532,10 @@ package net.minecraft.src;
 /*  533: 622 */     return "mob.horse.angry";
 /*  534:     */   }
 /*  535:     */   
-/*  536:     */   protected void a(BlockPosition paramdt, ProtoBlock paramatr)
+/*  536:     */   protected void a(BlockPosition paramdt, BlockType paramatr)
 /*  537:     */   {
 /*  538: 629 */     atx localatx = paramatr.H;
-/*  539: 630 */     if (this.world.getBlock(paramdt.up()).getProto() == BlockList.aH) {
+/*  539: 630 */     if (this.world.getBlock(paramdt.up()).getType() == BlockList.aH) {
 /*  540: 631 */       localatx = BlockList.aH.H;
 /*  541:     */     }
 /*  542: 633 */     if (!paramatr.getMaterial().isLiquid())
@@ -556,7 +556,7 @@ package net.minecraft.src;
 /*  557: 643 */           a("mob.horse.wood", localatx.d() * 0.15F, localatx.e());
 /*  558:     */         }
 /*  559:     */       }
-/*  560: 645 */       else if (localatx == ProtoBlock.f)
+/*  560: 645 */       else if (localatx == BlockType.f)
 /*  561:     */       {
 /*  562: 646 */         a("mob.horse.wood", localatx.d() * 0.15F, localatx.e());
 /*  563:     */       }
@@ -684,11 +684,11 @@ package net.minecraft.src;
 /*  685:     */     }
 /*  686:     */   }
 /*  687:     */   
-/*  688:     */   public boolean onRightClick(EntityPlayer paramahd)
+/*  688:     */   public boolean onRightClickMob(EntityPlayer paramahd)
 /*  689:     */   {
-/*  690: 764 */     ItemStack localamj = paramahd.bg.h();
+/*  690: 764 */     ItemStack localamj = paramahd.inventory.getHeldItem();
 /*  691: 766 */     if ((localamj != null) && (localamj.getItem() == ItemList.spawnEgg)) {
-/*  692: 767 */       return super.onRightClick(paramahd);
+/*  692: 767 */       return super.onRightClickMob(paramahd);
 /*  693:     */     }
 /*  694: 770 */     if ((!cm()) && 
 /*  695: 771 */       (cP())) {
@@ -700,7 +700,7 @@ package net.minecraft.src;
 /*  701: 778 */       return true;
 /*  702:     */     }
 /*  703: 781 */     if ((cn()) && (this.rider != null)) {
-/*  704: 782 */       return super.onRightClick(paramahd);
+/*  704: 782 */       return super.onRightClickMob(paramahd);
 /*  705:     */     }
 /*  706: 786 */     if (localamj != null)
 /*  707:     */     {
@@ -743,7 +743,7 @@ package net.minecraft.src;
 /*  744: 821 */           k = 30;
 /*  745: 822 */           m = 3;
 /*  746:     */         }
-/*  747: 823 */         else if (ProtoBlock.a(localamj.getItem()) == BlockList.cx)
+/*  747: 823 */         else if (BlockType.a(localamj.getItem()) == BlockList.cx)
 /*  748:     */         {
 /*  749: 824 */           f = 20.0F;
 /*  750: 825 */           k = 180;
@@ -804,7 +804,7 @@ package net.minecraft.src;
 /*  805: 869 */         return true;
 /*  806:     */       }
 /*  807: 872 */       if ((i == 0) && (cN()) && (!cu()) && 
-/*  808: 873 */         (localamj.getItem() == Item.fromProtoBlock(BlockList.chest)))
+/*  808: 873 */         (localamj.getItem() == Item.fromBlock(BlockList.chest)))
 /*  809:     */       {
 /*  810: 874 */         o(true);
 /*  811: 875 */         a("mob.chickenplop", 1.0F, (this.rng.nextFloat() - this.rng.nextFloat()) * 0.2F + 1.0F);
@@ -821,7 +821,7 @@ package net.minecraft.src;
 /*  822:     */       {
 /*  823: 889 */         if (!paramahd.abilities.instabuild) {
 /*  824: 890 */           if (--localamj.stackSize == 0) {
-/*  825: 891 */             paramahd.bg.a(paramahd.bg.c, null);
+/*  825: 891 */             paramahd.inventory.a(paramahd.inventory.c, null);
 /*  826:     */           }
 /*  827:     */         }
 /*  828: 894 */         return true;
@@ -835,7 +835,7 @@ package net.minecraft.src;
 /*  836: 904 */       i(paramahd);
 /*  837: 905 */       return true;
 /*  838:     */     }
-/*  839: 907 */     return super.onRightClick(paramahd);
+/*  839: 907 */     return super.onRightClickMob(paramahd);
 /*  840:     */   }
 /*  841:     */   
 /*  842:     */   private void i(EntityPlayer paramahd)
@@ -909,7 +909,7 @@ package net.minecraft.src;
 /*  910:1011 */         g(1.0F);
 /*  911:     */       }
 /*  912:1014 */       if ((!cw()) && (this.rider == null) && (this.rng.nextInt(300) == 0) && 
-/*  913:1015 */         (this.world.getBlock(new BlockPosition(MathUtils.floor(this.xPos), MathUtils.floor(this.yPos) - 1, MathUtils.floor(this.zPos))).getProto() == BlockList.grass)) {
+/*  913:1015 */         (this.world.getBlock(new BlockPosition(MathUtils.floor(this.xPos), MathUtils.floor(this.yPos) - 1, MathUtils.floor(this.zPos))).getType() == BlockList.grass)) {
 /*  914:1016 */         r(true);
 /*  915:     */       }
 /*  916:1020 */       if ((cw()) && (++this.bz > 50))
@@ -930,9 +930,9 @@ package net.minecraft.src;
 /*  931:     */   public void onUpdate()
 /*  932:     */   {
 /*  933:1036 */     super.onUpdate();
-/*  934:1039 */     if ((this.world.isClient) && (this.ac.a()))
+/*  934:1039 */     if ((this.world.isClient) && (this.data.a()))
 /*  935:     */     {
-/*  936:1040 */       this.ac.e();
+/*  936:1040 */       this.data.e();
 /*  937:1041 */       da();
 /*  938:     */     }
 /*  939:1044 */     if ((this.bA > 0) && (++this.bA > 30))
@@ -1104,12 +1104,12 @@ package net.minecraft.src;
 /* 1105:1210 */       paramFloat2 *= 0.25F;
 /* 1106:1211 */       this.bL = 0;
 /* 1107:     */     }
-/* 1108:1214 */     if ((this.C) && (this.bp == 0.0F) && (cx()) && (!this.bE))
+/* 1108:1214 */     if ((this.landing) && (this.bp == 0.0F) && (cx()) && (!this.bE))
 /* 1109:     */     {
 /* 1110:1215 */       paramFloat1 = 0.0F;
 /* 1111:1216 */       paramFloat2 = 0.0F;
 /* 1112:     */     }
-/* 1113:1219 */     if ((this.bp > 0.0F) && (!ct()) && (this.C))
+/* 1113:1219 */     if ((this.bp > 0.0F) && (!ct()) && (this.landing))
 /* 1114:     */     {
 /* 1115:1220 */       this.yVelocity = (cD() * this.bp);
 /* 1116:1221 */       if (a(Potion.jumpBoost)) {
@@ -1136,7 +1136,7 @@ package net.minecraft.src;
 /* 1137:1243 */       j((float)getAttribute(MobAttribute.movementSpeed).e());
 /* 1138:1244 */       super.g(paramFloat1, paramFloat2);
 /* 1139:     */     }
-/* 1140:1247 */     if (this.C)
+/* 1140:1247 */     if (this.landing)
 /* 1141:     */     {
 /* 1142:1249 */       this.bp = 0.0F;
 /* 1143:1250 */       m(false);
@@ -1492,7 +1492,7 @@ package net.minecraft.src;
 /* 1493:1599 */         cY();
 /* 1494:1600 */         return true;
 /* 1495:     */       }
-/* 1496:1601 */       if ((paramamj != null) && (paramamj.getItem() == Item.fromProtoBlock(BlockList.chest)) && (!cu()))
+/* 1496:1601 */       if ((paramamj != null) && (paramamj.getItem() == Item.fromBlock(BlockList.chest)) && (!cu()))
 /* 1497:     */       {
 /* 1498:1602 */         o(true);
 /* 1499:1603 */         cY();

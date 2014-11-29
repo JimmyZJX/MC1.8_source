@@ -55,21 +55,21 @@ package net.minecraft.src;
 /*  54: 67 */     return new Vec3(d4, d5, d6);
 /*  55:    */   }
 /*  56:    */   
-/*  57:    */   public static ProtoBlock a(World paramaqu, Entity paramwv, float paramFloat)
+/*  57:    */   public static BlockType a(World paramaqu, Entity paramwv, float paramFloat)
 /*  58:    */   {
 /*  59: 71 */     Vec3 localbrw = a(paramwv, paramFloat);
 /*  60: 72 */     BlockPosition localdt = new BlockPosition(localbrw);
 /*  61: 73 */     Block localbec = paramaqu.getBlock(localdt);
-/*  62: 74 */     ProtoBlock localatr = localbec.getProto();
+/*  62: 74 */     BlockType localatr = localbec.getType();
 /*  63: 75 */     if (localatr.getMaterial().isLiquid())
 /*  64:    */     {
 /*  65: 76 */       float f1 = 0.0F;
-/*  66: 77 */       if ((localbec.getProto() instanceof BlockLiquid)) {
+/*  66: 77 */       if ((localbec.getType() instanceof BlockLiquid)) {
 /*  67: 78 */         f1 = BlockLiquid.b(((Integer)localbec.getData(BlockLiquid.level)).intValue()) - 0.1111111F;
 /*  68:    */       }
 /*  69: 80 */       float f2 = localdt.getY() + 1 - f1;
 /*  70: 81 */       if (localbrw.y >= f2) {
-/*  71: 82 */         localatr = paramaqu.getBlock(localdt.up()).getProto();
+/*  71: 82 */         localatr = paramaqu.getBlock(localdt.up()).getType();
 /*  72:    */       }
 /*  73:    */     }
 /*  74: 85 */     return localatr;

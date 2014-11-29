@@ -25,7 +25,7 @@ package net.minecraft.src;
 /*  24:    */   
 /*  25:    */   public void generateSkylightMap() {}
 /*  26:    */   
-/*  27:    */   public ProtoBlock getBlock(BlockPosition paramdt)
+/*  27:    */   public BlockType getBlock(BlockPosition paramdt)
 /*  28:    */   {
 /*  29: 43 */     return BlockList.air;
 /*  30:    */   }

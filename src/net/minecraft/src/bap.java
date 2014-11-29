@@ -1,6 +1,6 @@
 package net.minecraft.src;
 /*  1:   */ public class bap
-/*  2:   */   extends ProtoBlock
+/*  2:   */   extends BlockType
 /*  3:   */ {
 /*  4:   */   public bap()
 /*  5:   */   {

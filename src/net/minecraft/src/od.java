@@ -154,7 +154,7 @@ package net.minecraft.src;
 /* 153:    */ 
 /* 154:    */ 
 /* 155:    */ 
-/* 156:178 */     ave.M.a(ItemList.aE, new ov());
+/* 156:178 */     ave.M.a(ItemList.boat, new ov());
 /* 157:    */     
 /* 158:    */ 
 /* 159:    */ 
@@ -316,7 +316,7 @@ package net.minecraft.src;
 /* 315:    */ 
 /* 316:    */ 
 /* 317:    */ 
-/* 318:340 */     ave.M.a(Item.fromProtoBlock(BlockList.W), new oj());
+/* 318:340 */     ave.M.a(Item.fromBlock(BlockList.W), new oj());
 /* 319:    */     
 /* 320:    */ 
 /* 321:    */ 
@@ -384,7 +384,7 @@ package net.minecraft.src;
 /* 383:    */ 
 /* 384:    */ 
 /* 385:    */ 
-/* 386:408 */     ave.M.a(Item.fromProtoBlock(BlockList.pumpkin), new ol());
+/* 386:408 */     ave.M.a(Item.fromBlock(BlockList.pumpkin), new ol());
 /* 387:    */     
 /* 388:    */ 
 /* 389:    */ 
@@ -415,7 +415,7 @@ package net.minecraft.src;
 /* 414:    */ 
 /* 415:    */ 
 /* 416:    */ 
-/* 417:439 */     ave.M.a(Item.fromProtoBlock(BlockList.bX), new om());
+/* 417:439 */     ave.M.a(Item.fromBlock(BlockList.bX), new om());
 /* 418:    */   }
 /* 419:    */   
 /* 420:    */   public static void c()
@@ -427,7 +427,7 @@ package net.minecraft.src;
 /* 426:473 */     if (c.isDebugEnabled()) {
 /* 427:474 */       d();
 /* 428:    */     }
-/* 429:477 */     ProtoBlock.R();
+/* 429:477 */     BlockType.R();
 /* 430:478 */     BlockFire.j();
 /* 431:    */     
 /* 432:480 */     Item.t();

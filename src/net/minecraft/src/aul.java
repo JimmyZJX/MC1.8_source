@@ -34,7 +34,7 @@ package net.minecraft.src;
 /*  33: 45 */     paramdt = paramdt.offset((EnumDirection)parambec.getData(facing));
 /*  34:    */     
 /*  35: 47 */     Block localbec = paramaqu.getBlock(paramdt);
-/*  36: 48 */     return (localbec.getProto() == BlockList.log) && (localbec.getData(ayw.a) == EnumWoodVariant.JUNGLE);
+/*  36: 48 */     return (localbec.getType() == BlockList.log) && (localbec.getData(ayw.a) == EnumWoodVariant.JUNGLE);
 /*  37:    */   }
 /*  38:    */   
 /*  39:    */   public boolean isOpaqueCube()
@@ -93,13 +93,13 @@ package net.minecraft.src;
 /*  92:    */   
 /*  93:    */   public Block a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3, int paramInt, EntityLiving paramxm)
 /*  94:    */   {
-/*  95:109 */     if (!paramej.k().c()) {
+/*  95:109 */     if (!paramej.getAxis().isHorizontal()) {
 /*  96:110 */       paramej = EnumDirection.NORTH;
 /*  97:    */     }
 /*  98:112 */     return instance().setData(facing, paramej.opposite()).setData(a, Integer.valueOf(0));
 /*  99:    */   }
 /* 100:    */   
-/* 101:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/* 101:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /* 102:    */   {
 /* 103:117 */     if (!e(paramaqu, paramdt, parambec)) {
 /* 104:118 */       f(paramaqu, paramdt, parambec);

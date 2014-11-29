@@ -36,7 +36,7 @@ package net.minecraft.src;
 /*  35:    */   {
 /*  36: 52 */     super.h();
 /*  37:    */     
-/*  38: 54 */     this.ac.a(16, new Byte((byte)0));
+/*  38: 54 */     this.data.addData(16, new Byte((byte)0));
 /*  39:    */   }
 /*  40:    */   
 /*  41:    */   protected String z()
@@ -66,7 +66,7 @@ package net.minecraft.src;
 /*  65:    */   
 /*  66:    */   public void m()
 /*  67:    */   {
-/*  68: 85 */     if ((!this.C) && (this.yVelocity < 0.0D)) {
+/*  68: 85 */     if ((!this.landing) && (this.yVelocity < 0.0D)) {
 /*  69: 86 */       this.yVelocity *= 0.6D;
 /*  70:    */     }
 /*  71: 89 */     if (this.world.isClient)
@@ -84,7 +84,7 @@ package net.minecraft.src;
 /*  83:    */   protected void mobTick()
 /*  84:    */   {
 /*  85:103 */     if (U()) {
-/*  86:104 */       a(DamageSource.drown, 1.0F);
+/*  86:104 */       receiveDamage(DamageSource.drown, 1.0F);
 /*  87:    */     }
 /*  88:107 */     this.c -= 1;
 /*  89:108 */     if (this.c <= 0)
@@ -126,18 +126,18 @@ package net.minecraft.src;
 /* 125:    */   
 /* 126:    */   public boolean n()
 /* 127:    */   {
-/* 128:147 */     return (this.ac.a(16) & 0x1) != 0;
+/* 128:147 */     return (this.data.getByte(16) & 0x1) != 0;
 /* 129:    */   }
 /* 130:    */   
 /* 131:    */   public void a(boolean paramBoolean)
 /* 132:    */   {
-/* 133:151 */     byte b1 = this.ac.a(16);
+/* 133:151 */     byte b1 = this.data.getByte(16);
 /* 134:152 */     if (paramBoolean) {
 /* 135:153 */       b1 = (byte)(b1 | 0x1);
 /* 136:    */     } else {
 /* 137:155 */       b1 = (byte)(b1 & 0xFFFFFFFE);
 /* 138:    */     }
-/* 139:157 */     this.ac.b(16, Byte.valueOf(b1));
+/* 139:157 */     this.data.b(16, Byte.valueOf(b1));
 /* 140:    */   }
 /* 141:    */   
 /* 142:    */   protected boolean spawnLightCheck()

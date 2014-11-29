@@ -4,18 +4,18 @@ package net.minecraft.src;
 /*   3:    */ public class BlockRepeater
 /*   4:    */   extends ava
 /*   5:    */ {
-/*   6: 21 */   public static final BlockDataBoolean a = BlockDataBoolean.getInstance("locked");
-/*   7: 22 */   public static final BlockDataInteger b = BlockDataInteger.getInstance("delay", 1, 4);
+/*   6: 21 */   public static final BlockDataBoolean locked = BlockDataBoolean.getInstance("locked");
+/*   7: 22 */   public static final BlockDataInteger delay = BlockDataInteger.getInstance("delay", 1, 4);
 /*   8:    */   
 /*   9:    */   protected BlockRepeater(boolean paramBoolean)
 /*  10:    */   {
 /*  11: 25 */     super(paramBoolean);
-/*  12: 26 */     j(this.L.b().setData(facing, EnumDirection.NORTH).setData(b, Integer.valueOf(1)).setData(a, Boolean.valueOf(false)));
+/*  12: 26 */     j(this.L.b().setData(facing, EnumDirection.NORTH).setData(delay, Integer.valueOf(1)).setData(locked, Boolean.valueOf(false)));
 /*  13:    */   }
 /*  14:    */   
 /*  15:    */   public Block a(Block parambec, IBlockAccess paramard, BlockPosition paramdt)
 /*  16:    */   {
-/*  17: 31 */     return parambec.setData(a, Boolean.valueOf(b(paramard, paramdt, parambec)));
+/*  17: 31 */     return parambec.setData(locked, Boolean.valueOf(b(paramard, paramdt, parambec)));
 /*  18:    */   }
 /*  19:    */   
 /*  20:    */   public boolean a(World paramaqu, BlockPosition paramdt, Block parambec, EntityPlayer paramahd, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3)
@@ -23,29 +23,29 @@ package net.minecraft.src;
 /*  22: 36 */     if (!paramahd.abilities.mayBuild) {
 /*  23: 37 */       return false;
 /*  24:    */     }
-/*  25: 40 */     paramaqu.setBlock(paramdt, parambec.a(b), 3);
+/*  25: 40 */     paramaqu.setBlock(paramdt, parambec.a(delay), 3);
 /*  26: 41 */     return true;
 /*  27:    */   }
 /*  28:    */   
 /*  29:    */   protected int d(Block parambec)
 /*  30:    */   {
-/*  31: 46 */     return ((Integer)parambec.getData(b)).intValue() * 2;
+/*  31: 46 */     return ((Integer)parambec.getData(delay)).intValue() * 2;
 /*  32:    */   }
 /*  33:    */   
 /*  34:    */   protected Block e(Block parambec)
 /*  35:    */   {
-/*  36: 51 */     Integer localInteger = (Integer)parambec.getData(b);
-/*  37: 52 */     Boolean localBoolean = (Boolean)parambec.getData(a);
+/*  36: 51 */     Integer localInteger = (Integer)parambec.getData(delay);
+/*  37: 52 */     Boolean localBoolean = (Boolean)parambec.getData(locked);
 /*  38: 53 */     EnumDirection localej = (EnumDirection)parambec.getData(facing);
-/*  39: 54 */     return BlockList.poweredRepeater.instance().setData(facing, localej).setData(b, localInteger).setData(a, localBoolean);
+/*  39: 54 */     return BlockList.poweredRepeater.instance().setData(facing, localej).setData(delay, localInteger).setData(locked, localBoolean);
 /*  40:    */   }
 /*  41:    */   
 /*  42:    */   protected Block k(Block parambec)
 /*  43:    */   {
-/*  44: 59 */     Integer localInteger = (Integer)parambec.getData(b);
-/*  45: 60 */     Boolean localBoolean = (Boolean)parambec.getData(a);
+/*  44: 59 */     Integer localInteger = (Integer)parambec.getData(delay);
+/*  45: 60 */     Boolean localBoolean = (Boolean)parambec.getData(locked);
 /*  46: 61 */     EnumDirection localej = (EnumDirection)parambec.getData(facing);
-/*  47: 62 */     return BlockList.unpoweredRepeater.instance().setData(facing, localej).setData(b, localInteger).setData(a, localBoolean);
+/*  47: 62 */     return BlockList.unpoweredRepeater.instance().setData(facing, localej).setData(delay, localInteger).setData(locked, localBoolean);
 /*  48:    */   }
 /*  49:    */   
 /*  50:    */   public Item a(Block parambec, Random paramRandom, int paramInt)
@@ -63,7 +63,7 @@ package net.minecraft.src;
 /*  62: 78 */     return c(paramard, paramdt, parambec) > 0;
 /*  63:    */   }
 /*  64:    */   
-/*  65:    */   protected boolean c(ProtoBlock paramatr)
+/*  65:    */   protected boolean c(BlockType paramatr)
 /*  66:    */   {
 /*  67: 83 */     return d(paramatr);
 /*  68:    */   }
@@ -81,7 +81,7 @@ package net.minecraft.src;
 /*  80:    */     
 /*  81: 97 */     float f = -5.0F;
 /*  82: 98 */     if (paramRandom.nextBoolean()) {
-/*  83: 99 */       f = ((Integer)parambec.getData(b)).intValue() * 2 - 1;
+/*  83: 99 */       f = ((Integer)parambec.getData(delay)).intValue() * 2 - 1;
 /*  84:    */     }
 /*  85:101 */     f /= 16.0F;
 /*  86:    */     
@@ -99,7 +99,7 @@ package net.minecraft.src;
 /*  98:    */   
 /*  99:    */   public Block instance(int paramInt)
 /* 100:    */   {
-/* 101:117 */     return instance().setData(facing, EnumDirection.b(paramInt)).setData(a, Boolean.valueOf(false)).setData(b, Integer.valueOf(1 + (paramInt >> 2)));
+/* 101:117 */     return instance().setData(facing, EnumDirection.b(paramInt)).setData(locked, Boolean.valueOf(false)).setData(delay, Integer.valueOf(1 + (paramInt >> 2)));
 /* 102:    */   }
 /* 103:    */   
 /* 104:    */   public int c(Block parambec)
@@ -107,14 +107,14 @@ package net.minecraft.src;
 /* 106:125 */     int i = 0;
 /* 107:    */     
 /* 108:127 */     i |= ((EnumDirection)parambec.getData(facing)).b();
-/* 109:128 */     i |= ((Integer)parambec.getData(b)).intValue() - 1 << 2;
+/* 109:128 */     i |= ((Integer)parambec.getData(delay)).intValue() - 1 << 2;
 /* 110:    */     
 /* 111:130 */     return i;
 /* 112:    */   }
 /* 113:    */   
 /* 114:    */   protected bed e()
 /* 115:    */   {
-/* 116:135 */     return new bed(this, new IBlockData[] { facing, b, a });
+/* 116:135 */     return new bed(this, new IBlockData[] { facing, delay, locked });
 /* 117:    */   }
 /* 118:    */ }
 

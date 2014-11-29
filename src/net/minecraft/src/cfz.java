@@ -96,7 +96,7 @@ package net.minecraft.src;
 /*  95:357 */     this.xVelocity *= 0.910000026226044D;
 /*  96:358 */     this.yVelocity *= 0.910000026226044D;
 /*  97:359 */     this.zVelocity *= 0.910000026226044D;
-/*  98:361 */     if (this.C)
+/*  98:361 */     if (this.landing)
 /*  99:    */     {
 /* 100:362 */       this.xVelocity *= 0.699999988079071D;
 /* 101:363 */       this.zVelocity *= 0.699999988079071D;

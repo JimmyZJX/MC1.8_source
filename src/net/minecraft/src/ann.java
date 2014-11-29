@@ -2,10 +2,10 @@ package net.minecraft.src;
 /*  1:   */ public class ann
 /*  2:   */   extends aju
 /*  3:   */ {
-/*  4:   */   private final ProtoBlock b;
+/*  4:   */   private final BlockType b;
 /*  5:   */   private String[] c;
 /*  6:   */   
-/*  7:   */   public ann(ProtoBlock paramatr, boolean paramBoolean)
+/*  7:   */   public ann(BlockType paramatr, boolean paramBoolean)
 /*  8:   */   {
 /*  9:10 */     super(paramatr);
 /* 10:11 */     this.b = paramatr;

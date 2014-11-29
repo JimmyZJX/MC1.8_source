@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*    5:     */ public class bnj
 /*    6:     */   extends bnn
 /*    7:     */ {
-/*    8:1467 */   private static final List<vl> a = Lists.newArrayList(new vl[] { new vl(ItemList.diamond, 0, 1, 3, 3), new vl(ItemList.ironIngot, 0, 1, 5, 10), new vl(ItemList.goldIngot, 0, 1, 3, 5), new vl(ItemList.bread, 0, 1, 3, 15), new vl(ItemList.apple, 0, 1, 3, 15), new vl(ItemList.ironPickaxe, 0, 1, 1, 5), new vl(ItemList.ironSword, 0, 1, 1, 5), new vl(ItemList.ironChestplate, 0, 1, 1, 5), new vl(ItemList.ironHelmet, 0, 1, 1, 5), new vl(ItemList.aa, 0, 1, 1, 5), new vl(ItemList.ab, 0, 1, 1, 5), new vl(Item.fromProtoBlock(BlockList.obsidian), 0, 3, 7, 5), new vl(Item.fromProtoBlock(BlockList.sapling), 0, 3, 7, 5), new vl(ItemList.saddle, 0, 1, 1, 3), new vl(ItemList.ck, 0, 1, 1, 1), new vl(ItemList.cl, 0, 1, 1, 1), new vl(ItemList.cm, 0, 1, 1, 1) });
+/*    8:1467 */   private static final List<vl> a = Lists.newArrayList(new vl[] { new vl(ItemList.diamond, 0, 1, 3, 3), new vl(ItemList.ironIngot, 0, 1, 5, 10), new vl(ItemList.goldIngot, 0, 1, 3, 5), new vl(ItemList.bread, 0, 1, 3, 15), new vl(ItemList.apple, 0, 1, 3, 15), new vl(ItemList.ironPickaxe, 0, 1, 1, 5), new vl(ItemList.ironSword, 0, 1, 1, 5), new vl(ItemList.ironChestplate, 0, 1, 1, 5), new vl(ItemList.ironHelmet, 0, 1, 1, 5), new vl(ItemList.aa, 0, 1, 1, 5), new vl(ItemList.ab, 0, 1, 1, 5), new vl(Item.fromBlock(BlockList.obsidian), 0, 3, 7, 5), new vl(Item.fromBlock(BlockList.sapling), 0, 3, 7, 5), new vl(ItemList.saddle, 0, 1, 1, 3), new vl(ItemList.ck, 0, 1, 1, 1), new vl(ItemList.cl, 0, 1, 1, 1), new vl(ItemList.cm, 0, 1, 1, 1) });
 /*    9:     */   private boolean b;
 /*   10:     */   
 /*   11:     */   public bnj() {}
@@ -106,7 +106,7 @@ package net.minecraft.src;
 /*  105:1592 */       a(paramaqu, parambjb, paramRandom, 5, 1, 5, a, 3 + paramRandom.nextInt(6));
 /*  106:     */     }
 /*  107:1597 */     for (int i = 6; i <= 8; i++) {
-/*  108:1598 */       if ((a(paramaqu, i, 0, -1, parambjb).getProto().getMaterial() == Material.air) && (a(paramaqu, i, -1, -1, parambjb).getProto().getMaterial() != Material.air)) {
+/*  108:1598 */       if ((a(paramaqu, i, 0, -1, parambjb).getType().getMaterial() == Material.air) && (a(paramaqu, i, -1, -1, parambjb).getType().getMaterial() != Material.air)) {
 /*  109:1599 */         a(paramaqu, BlockList.aw.instance(a(BlockList.aw, 3)), i, 0, -1, parambjb);
 /*  110:     */       }
 /*  111:     */     }

@@ -1,6 +1,6 @@
 package net.minecraft.src;
 /*  1:   */ public abstract class baa
-/*  2:   */   extends ProtoBlock
+/*  2:   */   extends BlockType
 /*  3:   */ {
 /*  4: 8 */   public static final BlockDataEnum M = BlockDataEnum.getInstance("axis", EnumAxis.class);
 /*  5:   */   

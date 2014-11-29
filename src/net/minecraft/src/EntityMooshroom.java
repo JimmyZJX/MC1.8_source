@@ -9,19 +9,19 @@ package net.minecraft.src;
 /*  8:16 */     this.bl = BlockList.bw;
 /*  9:   */   }
 /* 10:   */   
-/* 11:   */   public boolean onRightClick(EntityPlayer paramahd)
+/* 11:   */   public boolean onRightClickMob(EntityPlayer paramahd)
 /* 12:   */   {
-/* 13:21 */     ItemStack localamj = paramahd.bg.h();
+/* 13:21 */     ItemStack localamj = paramahd.inventory.getHeldItem();
 /* 14:22 */     if ((localamj != null) && (localamj.getItem() == ItemList.z) && (getAge() >= 0))
 /* 15:   */     {
 /* 16:23 */       if (localamj.stackSize == 1)
 /* 17:   */       {
-/* 18:24 */         paramahd.bg.a(paramahd.bg.c, new ItemStack(ItemList.A));
+/* 18:24 */         paramahd.inventory.a(paramahd.inventory.c, new ItemStack(ItemList.A));
 /* 19:25 */         return true;
 /* 20:   */       }
-/* 21:28 */       if ((paramahd.bg.a(new ItemStack(ItemList.A))) && (!paramahd.abilities.instabuild))
+/* 21:28 */       if ((paramahd.inventory.a(new ItemStack(ItemList.A))) && (!paramahd.abilities.instabuild))
 /* 22:   */       {
-/* 23:29 */         paramahd.bg.removeItems(paramahd.bg.c, 1);
+/* 23:29 */         paramahd.inventory.removeItems(paramahd.inventory.c, 1);
 /* 24:30 */         return true;
 /* 25:   */       }
 /* 26:   */     }
@@ -47,7 +47,7 @@ package net.minecraft.src;
 /* 46:   */       }
 /* 47:51 */       return true;
 /* 48:   */     }
-/* 49:53 */     return super.onRightClick(paramahd);
+/* 49:53 */     return super.onRightClickMob(paramahd);
 /* 50:   */   }
 /* 51:   */   
 /* 52:   */   public EntityMooshroom c(EntityPassiveMob paramws)

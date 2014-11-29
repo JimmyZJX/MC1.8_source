@@ -52,7 +52,7 @@ package net.minecraft.src;
 /*  51:    */     }
 /*  52:    */     else
 /*  53:    */     {
-/*  54: 68 */       ItemStack localamj = paramcil.bg.h();
+/*  54: 68 */       ItemStack localamj = paramcil.inventory.getHeldItem();
 /*  55:    */       
 /*  56: 70 */       localcct.a(true);
 /*  57:    */       

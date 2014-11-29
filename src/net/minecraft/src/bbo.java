@@ -1,6 +1,6 @@
 package net.minecraft.src;
 /*  1:   */ public class bbo
-/*  2:   */   extends ProtoBlock
+/*  2:   */   extends BlockType
 /*  3:   */ {
 /*  4:   */   protected boolean Q;
 /*  5:   */   
@@ -17,7 +17,7 @@ package net.minecraft.src;
 /* 16:   */   
 /* 17:   */   public boolean a(IBlockAccess paramard, BlockPosition paramdt, EnumDirection paramej)
 /* 18:   */   {
-/* 19:23 */     if ((!this.Q) && (paramard.getBlock(paramdt).getProto() == this)) {
+/* 19:23 */     if ((!this.Q) && (paramard.getBlock(paramdt).getType() == this)) {
 /* 20:24 */       return false;
 /* 21:   */     }
 /* 22:27 */     return super.a(paramard, paramdt, paramej);

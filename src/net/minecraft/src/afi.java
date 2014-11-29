@@ -70,8 +70,8 @@ package net.minecraft.src;
 /*  69:573 */       if (this.a.cl()) {
 /*  70:574 */         f += 2.0F;
 /*  71:    */       }
-/*  72:576 */       localxm.a(DamageSource.b(this.a, this.a), f);
-/*  73:577 */       localxm.a(DamageSource.fromMob(this.a), (float)this.a.getAttribute(MobAttribute.attackDamage).e());
+/*  72:576 */       localxm.receiveDamage(DamageSource.b(this.a, this.a), f);
+/*  73:577 */       localxm.receiveDamage(DamageSource.fromMob(this.a), (float)this.a.getAttribute(MobAttribute.attackDamage).e());
 /*  74:578 */       this.a.d((EntityLiving)null);
 /*  75:    */     }
 /*  76:579 */     else if ((this.b < 60) || (this.b % 20 != 0)) {}

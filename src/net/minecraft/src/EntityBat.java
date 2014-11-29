@@ -19,7 +19,7 @@ package net.minecraft.src;
 /*  18:    */   {
 /*  19: 30 */     super.h();
 /*  20:    */     
-/*  21: 32 */     this.ac.a(16, new Byte((byte)0));
+/*  21: 32 */     this.data.addData(16, new Byte((byte)0));
 /*  22:    */   }
 /*  23:    */   
 /*  24:    */   protected float bA()
@@ -68,16 +68,16 @@ package net.minecraft.src;
 /*  67:    */   
 /*  68:    */   public boolean n()
 /*  69:    */   {
-/*  70: 87 */     return (this.ac.a(16) & 0x1) != 0;
+/*  70: 87 */     return (this.data.getByte(16) & 0x1) != 0;
 /*  71:    */   }
 /*  72:    */   
 /*  73:    */   public void a(boolean paramBoolean)
 /*  74:    */   {
-/*  75: 91 */     int i = this.ac.a(16);
+/*  75: 91 */     int i = this.data.getByte(16);
 /*  76: 92 */     if (paramBoolean) {
-/*  77: 93 */       this.ac.b(16, Byte.valueOf((byte)(i | 0x1)));
+/*  77: 93 */       this.data.b(16, Byte.valueOf((byte)(i | 0x1)));
 /*  78:    */     } else {
-/*  79: 95 */       this.ac.b(16, Byte.valueOf((byte)(i & 0xFFFFFFFE)));
+/*  79: 95 */       this.data.b(16, Byte.valueOf((byte)(i & 0xFFFFFFFE)));
 /*  80:    */     }
 /*  81:    */   }
 /*  82:    */   
@@ -103,7 +103,7 @@ package net.minecraft.src;
 /* 102:116 */     BlockPosition localdt2 = localdt1.up();
 /* 103:118 */     if (n())
 /* 104:    */     {
-/* 105:119 */       if (!this.world.getBlock(localdt2).getProto().blocksMovement())
+/* 105:119 */       if (!this.world.getBlock(localdt2).getType().blocksMovement())
 /* 106:    */       {
 /* 107:120 */         a(false);
 /* 108:121 */         this.world.playLevelEvent(null, 1015, localdt1, 0);
@@ -140,7 +140,7 @@ package net.minecraft.src;
 /* 139:149 */       float f2 = MathUtils.wrapDegrees(f1 - this.yaw);
 /* 140:150 */       this.aY = 0.5F;
 /* 141:151 */       this.yaw += f2;
-/* 142:153 */       if ((this.rng.nextInt(100) == 0) && (this.world.getBlock(localdt2).getProto().blocksMovement())) {
+/* 142:153 */       if ((this.rng.nextInt(100) == 0) && (this.world.getBlock(localdt2).getType().blocksMovement())) {
 /* 143:154 */         a(true);
 /* 144:    */       }
 /* 145:    */     }
@@ -153,14 +153,14 @@ package net.minecraft.src;
 /* 152:    */   
 /* 153:    */   public void e(float paramFloat1, float paramFloat2) {}
 /* 154:    */   
-/* 155:    */   protected void a(double paramDouble, boolean paramBoolean, ProtoBlock paramatr, BlockPosition paramdt) {}
+/* 155:    */   protected void onMoveTo(double paramDouble, boolean paramBoolean, BlockType paramatr, BlockPosition paramdt) {}
 /* 156:    */   
 /* 157:    */   public boolean aH()
 /* 158:    */   {
 /* 159:176 */     return true;
 /* 160:    */   }
 /* 161:    */   
-/* 162:    */   public boolean a(DamageSource paramwh, float paramFloat)
+/* 162:    */   public boolean receiveDamage(DamageSource paramwh, float paramFloat)
 /* 163:    */   {
 /* 164:181 */     if (isImmuneTo(paramwh)) {
 /* 165:182 */       return false;
@@ -169,21 +169,21 @@ package net.minecraft.src;
 /* 168:185 */       (n())) {
 /* 169:186 */       a(false);
 /* 170:    */     }
-/* 171:190 */     return super.a(paramwh, paramFloat);
+/* 171:190 */     return super.receiveDamage(paramwh, paramFloat);
 /* 172:    */   }
 /* 173:    */   
 /* 174:    */   public void readEntityFromNBT(NBTTagCompound paramfn)
 /* 175:    */   {
 /* 176:195 */     super.readEntityFromNBT(paramfn);
 /* 177:    */     
-/* 178:197 */     this.ac.b(16, Byte.valueOf(paramfn.d("BatFlags")));
+/* 178:197 */     this.data.b(16, Byte.valueOf(paramfn.d("BatFlags")));
 /* 179:    */   }
 /* 180:    */   
 /* 181:    */   public void writeEntityToNBT(NBTTagCompound paramfn)
 /* 182:    */   {
 /* 183:202 */     super.writeEntityToNBT(paramfn);
 /* 184:    */     
-/* 185:204 */     paramfn.setByte("BatFlags", this.ac.a(16));
+/* 185:204 */     paramfn.setByte("BatFlags", this.data.getByte(16));
 /* 186:    */   }
 /* 187:    */   
 /* 188:    */   public boolean canSpawn()

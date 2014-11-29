@@ -86,7 +86,7 @@ package net.minecraft.src;
 /*  85: 99 */     for (int n = 0; n <= 4; n++) {
 /*  86:100 */       for (int i1 = 0; i1 <= 4; i1++) {
 /*  87:101 */         if ((n < 1) || (i1 < 1) || (n > 3) || (i1 > 3)) {
-/*  88:104 */           if ((World.isFlatSurface(this.a, new BlockPosition(j + n, m - 1, k + i1))) && (!this.a.getBlock(new BlockPosition(j + n, m, k + i1)).getProto().isOpaqueCube()) && (!this.a.getBlock(new BlockPosition(j + n, m + 1, k + i1)).getProto().isOpaqueCube()))
+/*  88:104 */           if ((World.isFlatSurface(this.a, new BlockPosition(j + n, m - 1, k + i1))) && (!this.a.getBlock(new BlockPosition(j + n, m, k + i1)).getType().isOpaqueCube()) && (!this.a.getBlock(new BlockPosition(j + n, m + 1, k + i1)).getType().isOpaqueCube()))
 /*  89:    */           {
 /*  90:105 */             this.d.setPositionAndAngles(j + n + 0.5F, m, k + i1 + 0.5F, this.d.yaw, this.d.pitch);
 /*  91:106 */             this.g.n();

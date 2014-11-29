@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*   4:    */   extends EntityPassiveMob
 /*   5:    */   implements wt
 /*   6:    */ {
-/*   7: 20 */   protected ProtoBlock bl = BlockList.grass;
+/*   7: 20 */   protected BlockType bl = BlockList.grass;
 /*   8:    */   private int bk;
 /*   9:    */   private EntityPlayer bm;
 /*  10:    */   
@@ -41,18 +41,18 @@ package net.minecraft.src;
 /*  40:    */     }
 /*  41:    */   }
 /*  42:    */   
-/*  43:    */   public boolean a(DamageSource paramwh, float paramFloat)
+/*  43:    */   public boolean receiveDamage(DamageSource paramwh, float paramFloat)
 /*  44:    */   {
 /*  45: 57 */     if (isImmuneTo(paramwh)) {
 /*  46: 58 */       return false;
 /*  47:    */     }
 /*  48: 60 */     this.bk = 0;
-/*  49: 61 */     return super.a(paramwh, paramFloat);
+/*  49: 61 */     return super.receiveDamage(paramwh, paramFloat);
 /*  50:    */   }
 /*  51:    */   
 /*  52:    */   public float a(BlockPosition paramdt)
 /*  53:    */   {
-/*  54: 66 */     if (this.world.getBlock(paramdt.down()).getProto() == BlockList.grass) {
+/*  54: 66 */     if (this.world.getBlock(paramdt.down()).getType() == BlockList.grass) {
 /*  55: 67 */       return 10.0F;
 /*  56:    */     }
 /*  57: 69 */     return this.world.o(paramdt) - 0.5F;
@@ -76,7 +76,7 @@ package net.minecraft.src;
 /*  75: 87 */     int j = MathUtils.floor(getAABB().minY);
 /*  76: 88 */     int k = MathUtils.floor(this.zPos);
 /*  77: 89 */     BlockPosition localdt = new BlockPosition(i, j, k);
-/*  78: 90 */     return (this.world.getBlock(localdt.down()).getProto() == this.bl) && (this.world.k(localdt) > 8) && (super.canSpawn());
+/*  78: 90 */     return (this.world.getBlock(localdt.down()).getType() == this.bl) && (this.world.k(localdt) > 8) && (super.canSpawn());
 /*  79:    */   }
 /*  80:    */   
 /*  81:    */   public int w()
@@ -102,9 +102,9 @@ package net.minecraft.src;
 /* 101:112 */     return paramamj.getItem() == ItemList.wheat;
 /* 102:    */   }
 /* 103:    */   
-/* 104:    */   public boolean onRightClick(EntityPlayer paramahd)
+/* 104:    */   public boolean onRightClickMob(EntityPlayer paramahd)
 /* 105:    */   {
-/* 106:117 */     ItemStack localamj = paramahd.bg.h();
+/* 106:117 */     ItemStack localamj = paramahd.inventory.getHeldItem();
 /* 107:118 */     if (localamj != null)
 /* 108:    */     {
 /* 109:119 */       if ((d(localamj)) && (getAge() == 0) && (this.bk <= 0))
@@ -120,7 +120,7 @@ package net.minecraft.src;
 /* 119:126 */         return true;
 /* 120:    */       }
 /* 121:    */     }
-/* 122:129 */     return super.onRightClick(paramahd);
+/* 122:129 */     return super.onRightClickMob(paramahd);
 /* 123:    */   }
 /* 124:    */   
 /* 125:    */   protected void a(EntityPlayer paramahd, ItemStack paramamj)
@@ -129,7 +129,7 @@ package net.minecraft.src;
 /* 128:    */     {
 /* 129:134 */       paramamj.stackSize -= 1;
 /* 130:135 */       if (paramamj.stackSize <= 0) {
-/* 131:136 */         paramahd.bg.a(paramahd.bg.c, null);
+/* 131:136 */         paramahd.inventory.a(paramahd.inventory.c, null);
 /* 132:    */       }
 /* 133:    */     }
 /* 134:    */   }

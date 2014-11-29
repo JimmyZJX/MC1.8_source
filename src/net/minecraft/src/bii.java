@@ -12,7 +12,7 @@ package net.minecraft.src;
 /* 11:17 */       if (paramaqu.isEmpty(localdt1))
 /* 12:   */       {
 /* 13:18 */         BlockPosition localdt2 = localdt1.down();
-/* 14:20 */         if ((paramaqu.getBlock(localdt2.west()).getProto().getMaterial() == Material.water) || (paramaqu.getBlock(localdt2.east()).getProto().getMaterial() == Material.water) || (paramaqu.getBlock(localdt2.north()).getProto().getMaterial() == Material.water) || (paramaqu.getBlock(localdt2.south()).getProto().getMaterial() == Material.water))
+/* 14:20 */         if ((paramaqu.getBlock(localdt2.west()).getType().getMaterial() == Material.water) || (paramaqu.getBlock(localdt2.east()).getType().getMaterial() == Material.water) || (paramaqu.getBlock(localdt2.north()).getType().getMaterial() == Material.water) || (paramaqu.getBlock(localdt2.south()).getType().getMaterial() == Material.water))
 /* 15:   */         {
 /* 16:21 */           int j = 2 + paramRandom.nextInt(paramRandom.nextInt(3) + 1);
 /* 17:22 */           for (int k = 0; k < j; k++) {

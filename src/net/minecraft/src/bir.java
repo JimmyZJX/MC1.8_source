@@ -44,7 +44,7 @@ package net.minecraft.src;
 /*  43: 49 */         for (int i1 = pos.getZ() - m; (i1 <= pos.getZ() + m) && (j != 0); i1++) {
 /*  44: 50 */           if ((k >= 0) && (k < 256))
 /*  45:    */           {
-/*  46: 51 */             if (!canGrowInto(world.getBlock(new BlockPosition(n, k, i1)).getProto())) {
+/*  46: 51 */             if (!canGrowInto(world.getBlock(new BlockPosition(n, k, i1)).getType())) {
 /*  47: 52 */               j = 0;
 /*  48:    */             }
 /*  49:    */           }
@@ -57,7 +57,7 @@ package net.minecraft.src;
 /*  56: 61 */     if (j == 0) {
 /*  57: 62 */       return false;
 /*  58:    */     }
-/*  59: 65 */     ProtoBlock localatr1 = world.getBlock(pos.down()).getProto();
+/*  59: 65 */     BlockType localatr1 = world.getBlock(pos.down()).getType();
 /*  60: 66 */     if (((localatr1 != BlockList.grass) && (localatr1 != BlockList.dirt) && (localatr1 != BlockList.ak)) || (pos.getY() >= 256 - i - 1)) {
 /*  61: 67 */       return false;
 /*  62:    */     }
@@ -83,8 +83,8 @@ package net.minecraft.src;
 /*  82: 81 */           if ((Math.abs(i6) != i4) || (Math.abs(i8) != i4) || ((paramRandom.nextInt(2) != 0) && (i2 != 0)))
 /*  83:    */           {
 /*  84: 84 */             localdt3 = new BlockPosition(i5, i1, i7);
-/*  85: 85 */             localObject = world.getBlock(localdt3).getProto();
-/*  86: 86 */             if ((((ProtoBlock)localObject).getMaterial() == Material.air) || (((ProtoBlock)localObject).getMaterial() == Material.leaves) || (((ProtoBlock)localObject).getMaterial() == Material.l)) {
+/*  85: 85 */             localObject = world.getBlock(localdt3).getType();
+/*  86: 86 */             if ((((BlockType)localObject).getMaterial() == Material.air) || (((BlockType)localObject).getMaterial() == Material.leaves) || (((BlockType)localObject).getMaterial() == Material.l)) {
 /*  87: 87 */               setBlock(world, localdt3, BlockList.leaves, this.d);
 /*  88:    */             }
 /*  89:    */           }
@@ -93,7 +93,7 @@ package net.minecraft.src;
 /*  92:    */     }
 /*  93: 92 */     for (int i1 = 0; i1 < i; i1++)
 /*  94:    */     {
-/*  95: 93 */       ProtoBlock localatr2 = world.getBlock(pos.up(i1)).getProto();
+/*  95: 93 */       BlockType localatr2 = world.getBlock(pos.up(i1)).getType();
 /*  96: 94 */       if ((localatr2.getMaterial() == Material.air) || (localatr2.getMaterial() == Material.leaves) || (localatr2.getMaterial() == Material.l))
 /*  97:    */       {
 /*  98: 95 */         setBlock(world, pos.up(i1), BlockList.log, this.c);
@@ -125,22 +125,22 @@ package net.minecraft.src;
 /* 124:118 */           for (i6 = pos.getZ() - i4; i6 <= pos.getZ() + i4; i6++)
 /* 125:    */           {
 /* 126:119 */             BlockPosition localdt1 = new BlockPosition(i5, i1, i6);
-/* 127:121 */             if (world.getBlock(localdt1).getProto().getMaterial() == Material.leaves)
+/* 127:121 */             if (world.getBlock(localdt1).getType().getMaterial() == Material.leaves)
 /* 128:    */             {
 /* 129:122 */               BlockPosition localdt2 = localdt1.west();
 /* 130:123 */               localdt3 = localdt1.east();
 /* 131:124 */               localObject = localdt1.north();
 /* 132:125 */               BlockPosition localdt4 = localdt1.south();
-/* 133:127 */               if ((paramRandom.nextInt(4) == 0) && (world.getBlock(localdt2).getProto().getMaterial() == Material.air)) {
+/* 133:127 */               if ((paramRandom.nextInt(4) == 0) && (world.getBlock(localdt2).getType().getMaterial() == Material.air)) {
 /* 134:128 */                 a(world, localdt2, bbv.S);
 /* 135:    */               }
-/* 136:130 */               if ((paramRandom.nextInt(4) == 0) && (world.getBlock(localdt3).getProto().getMaterial() == Material.air)) {
+/* 136:130 */               if ((paramRandom.nextInt(4) == 0) && (world.getBlock(localdt3).getType().getMaterial() == Material.air)) {
 /* 137:131 */                 a(world, localdt3, bbv.T);
 /* 138:    */               }
-/* 139:133 */               if ((paramRandom.nextInt(4) == 0) && (world.getBlock((BlockPosition)localObject).getProto().getMaterial() == Material.air)) {
+/* 139:133 */               if ((paramRandom.nextInt(4) == 0) && (world.getBlock((BlockPosition)localObject).getType().getMaterial() == Material.air)) {
 /* 140:134 */                 a(world, (BlockPosition)localObject, bbv.Q);
 /* 141:    */               }
-/* 142:136 */               if ((paramRandom.nextInt(4) == 0) && (world.getBlock(localdt4).getProto().getMaterial() == Material.air)) {
+/* 142:136 */               if ((paramRandom.nextInt(4) == 0) && (world.getBlock(localdt4).getType().getMaterial() == Material.air)) {
 /* 143:137 */                 a(world, localdt4, bbv.R);
 /* 144:    */               }
 /* 145:    */             }
@@ -170,7 +170,7 @@ package net.minecraft.src;
 /* 169:163 */     int i = 4;
 /* 170:    */     
 /* 171:165 */     paramdt = paramdt.down();
-/* 172:166 */     while ((paramaqu.getBlock(paramdt).getProto().getMaterial() == Material.air) && (i > 0))
+/* 172:166 */     while ((paramaqu.getBlock(paramdt).getType().getMaterial() == Material.air) && (i > 0))
 /* 173:    */     {
 /* 174:167 */       setBlock(paramaqu, paramdt, BlockList.vine, paramInt);
 /* 175:168 */       paramdt = paramdt.down();

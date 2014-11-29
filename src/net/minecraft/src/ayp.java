@@ -14,7 +14,7 @@ package net.minecraft.src;
 /*  13:    */   
 /*  14:    */   public int h(Block parambec)
 /*  15:    */   {
-/*  16: 35 */     if (parambec.getProto() != this) {
+/*  16: 35 */     if (parambec.getType() != this) {
 /*  17: 36 */       return super.h(parambec);
 /*  18:    */     }
 /*  19: 39 */     EnumWoodVariant localayx = (EnumWoodVariant)parambec.getData(P);
@@ -30,7 +30,7 @@ package net.minecraft.src;
 /*  29:    */   public int a(IBlockAccess paramard, BlockPosition paramdt, int paramInt)
 /*  30:    */   {
 /*  31: 52 */     Block localbec = paramard.getBlock(paramdt);
-/*  32: 53 */     if (localbec.getProto() == this)
+/*  32: 53 */     if (localbec.getType() == this)
 /*  33:    */     {
 /*  34: 54 */       EnumWoodVariant localayx = (EnumWoodVariant)localbec.getData(P);
 /*  35: 56 */       if (localayx == EnumWoodVariant.SPRUCE) {
@@ -68,7 +68,7 @@ package net.minecraft.src;
 /*  67:    */   
 /*  68:    */   protected ItemStack i(Block parambec)
 /*  69:    */   {
-/*  70: 93 */     return new ItemStack(Item.fromProtoBlock(this), 1, ((EnumWoodVariant)parambec.getData(P)).getIndex());
+/*  70: 93 */     return new ItemStack(Item.fromBlock(this), 1, ((EnumWoodVariant)parambec.getData(P)).getIndex());
 /*  71:    */   }
 /*  72:    */   
 /*  73:    */   public Block instance(int paramInt)
@@ -109,10 +109,10 @@ package net.minecraft.src;
 /* 108:    */   {
 /* 109:138 */     if ((!paramaqu.isClient) && (paramahd.bY() != null) && (paramahd.bY().getItem() == ItemList.shears))
 /* 110:    */     {
-/* 111:139 */       paramahd.increaseStat(StatList.H[ProtoBlock.a(this)]);
+/* 111:139 */       paramahd.increaseStat(StatList.H[BlockType.a(this)]);
 /* 112:    */       
 /* 113:    */ 
-/* 114:142 */       a(paramaqu, paramdt, new ItemStack(Item.fromProtoBlock(this), 1, ((EnumWoodVariant)parambec.getData(P)).getIndex()));
+/* 114:142 */       a(paramaqu, paramdt, new ItemStack(Item.fromBlock(this), 1, ((EnumWoodVariant)parambec.getData(P)).getIndex()));
 /* 115:143 */       return;
 /* 116:    */     }
 /* 117:146 */     super.a(paramaqu, paramahd, paramdt, parambec, parambcm);

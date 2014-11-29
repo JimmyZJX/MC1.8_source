@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ public class akx
 /*  2:   */   extends aju
 /*  3:   */ {
-/*  4:   */   public akx(ProtoBlock paramatr)
+/*  4:   */   public akx(BlockType paramatr)
 /*  5:   */   {
 /*  6: 7 */     super(paramatr);
 /*  7:   */     

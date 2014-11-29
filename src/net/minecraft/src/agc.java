@@ -38,7 +38,7 @@ package net.minecraft.src;
 /*  37:332 */       return;
 /*  38:    */     }
 /*  39:334 */     this.active = false;
-/*  40:336 */     if (this.mob.C)
+/*  40:336 */     if (this.mob.landing)
 /*  41:    */     {
 /*  42:337 */       this.mob.j((float)(this.speed * this.mob.getAttribute(MobAttribute.movementSpeed).e()));
 /*  43:338 */       if (this.h-- <= 0)

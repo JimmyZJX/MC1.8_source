@@ -1,17 +1,17 @@
 package net.minecraft.src;
 /*   1:    */ import java.util.List;
 /*   2:    */ 
-/*   3:    */ public class bbx
-/*   4:    */   extends ProtoBlock
+/*   3:    */ public class BlockCobbleWall
+/*   4:    */   extends BlockType
 /*   5:    */ {
 /*   6: 22 */   public static final BlockDataBoolean a = BlockDataBoolean.getInstance("up");
 /*   7: 23 */   public static final BlockDataBoolean b = BlockDataBoolean.getInstance("north");
 /*   8: 24 */   public static final BlockDataBoolean M = BlockDataBoolean.getInstance("east");
 /*   9: 25 */   public static final BlockDataBoolean N = BlockDataBoolean.getInstance("south");
 /*  10: 26 */   public static final BlockDataBoolean O = BlockDataBoolean.getInstance("west");
-/*  11: 27 */   public static final BlockDataEnum P = BlockDataEnum.getInstance("variant", EnumCobblestoneVariant.class);
+/*  11: 27 */   public static final BlockDataEnum<EnumCobblestoneVariant> P = BlockDataEnum.getInstance("variant", EnumCobblestoneVariant.class);
 /*  12:    */   
-/*  13:    */   public bbx(ProtoBlock paramatr)
+/*  13:    */   public BlockCobbleWall(BlockType paramatr)
 /*  14:    */   {
 /*  15: 35 */     super(paramatr.material);
 /*  16: 36 */     j(this.L.b().setData(a, Boolean.valueOf(false)).setData(b, Boolean.valueOf(false)).setData(M, Boolean.valueOf(false)).setData(N, Boolean.valueOf(false)).setData(O, Boolean.valueOf(false)).setData(P, EnumCobblestoneVariant.a));
@@ -84,11 +84,11 @@ package net.minecraft.src;
 /*  83:    */   
 /*  84:    */   public boolean e(IBlockAccess paramard, BlockPosition paramdt)
 /*  85:    */   {
-/*  86:106 */     ProtoBlock localatr = paramard.getBlock(paramdt).getProto();
+/*  86:106 */     BlockType localatr = paramard.getBlock(paramdt).getType();
 /*  87:107 */     if (localatr == BlockList.barrier) {
 /*  88:108 */       return false;
 /*  89:    */     }
-/*  90:110 */     if ((localatr == this) || ((localatr instanceof avw))) {
+/*  90:110 */     if ((localatr == this) || ((localatr instanceof BlockFenceGate))) {
 /*  91:111 */       return true;
 /*  92:    */     }
 /*  93:113 */     if ((localatr.material.isOpaque()) && (localatr.isOpaqueCube())) {

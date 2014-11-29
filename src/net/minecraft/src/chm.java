@@ -53,7 +53,7 @@ package net.minecraft.src;
 /* 52:57 */     this.xVelocity *= 0.9900000095367432D;
 /* 53:58 */     this.yVelocity *= 0.9900000095367432D;
 /* 54:59 */     this.zVelocity *= 0.9900000095367432D;
-/* 55:61 */     if (this.C)
+/* 55:61 */     if (this.landing)
 /* 56:   */     {
 /* 57:62 */       this.xVelocity *= 0.699999988079071D;
 /* 58:63 */       this.zVelocity *= 0.699999988079071D;

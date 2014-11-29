@@ -24,7 +24,7 @@ package net.minecraft.src;
 /* 23:32 */     return true;
 /* 24:   */   }
 /* 25:   */   
-/* 26:   */   public boolean a(DamageSource paramwh, float paramFloat)
+/* 26:   */   public boolean receiveDamage(DamageSource paramwh, float paramFloat)
 /* 27:   */   {
 /* 28:37 */     if (isImmuneTo(paramwh)) {
 /* 29:38 */       return false;

@@ -54,7 +54,7 @@ package net.minecraft.src;
 /* 54:   */     }
 /* 55:   */   }
 /* 56:   */   
-/* 57:   */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/* 57:   */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /* 58:   */   {
 /* 59:74 */     bcm localbcm = paramaqu.s(paramdt);
 /* 60:75 */     if ((localbcm instanceof bck))

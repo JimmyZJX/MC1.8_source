@@ -83,7 +83,7 @@ package net.minecraft.src;
 /*  82: 86 */     if (this.g-- <= 0) {
 /*  83: 87 */       setDead();
 /*  84:    */     }
-/*  85: 90 */     if (this.C)
+/*  85: 90 */     if (this.landing)
 /*  86:    */     {
 /*  87: 91 */       if (this.a == Material.water)
 /*  88:    */       {
@@ -99,11 +99,11 @@ package net.minecraft.src;
 /*  98:    */     }
 /*  99:101 */     BlockPosition localdt = new BlockPosition(this);
 /* 100:102 */     Block localbec = this.world.getBlock(localdt);
-/* 101:103 */     Material localbof = localbec.getProto().getMaterial();
+/* 101:103 */     Material localbof = localbec.getType().getMaterial();
 /* 102:104 */     if ((localbof.isLiquid()) || (localbof.a()))
 /* 103:    */     {
 /* 104:105 */       double d1 = 0.0D;
-/* 105:106 */       if ((localbec.getProto() instanceof BlockLiquid)) {
+/* 105:106 */       if ((localbec.getType() instanceof BlockLiquid)) {
 /* 106:107 */         d1 = BlockLiquid.b(((Integer)localbec.getData(BlockLiquid.level)).intValue());
 /* 107:    */       }
 /* 108:109 */       double d2 = MathUtils.floor(this.yPos) + 1 - d1;

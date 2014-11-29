@@ -5,7 +5,7 @@ package net.minecraft.src;
 /*   4:    */   private final BlockSlab b;
 /*   5:    */   private final BlockSlab c;
 /*   6:    */   
-/*   7:    */   public ani(ProtoBlock paramatr, BlockSlab paramawq1, BlockSlab paramawq2)
+/*   7:    */   public ani(BlockType paramatr, BlockSlab paramawq1, BlockSlab paramawq2)
 /*   8:    */   {
 /*   9: 17 */     super(paramatr);
 /*  10: 18 */     this.b = paramawq1;
@@ -35,7 +35,7 @@ package net.minecraft.src;
 /*  34:    */     }
 /*  35: 44 */     Object localObject = this.b.a(paramamj);
 /*  36: 45 */     Block localbec1 = paramaqu.getBlock(paramdt);
-/*  37: 47 */     if (localbec1.getProto() == this.b)
+/*  37: 47 */     if (localbec1.getType() == this.b)
 /*  38:    */     {
 /*  39: 48 */       IBlockData localbex = this.b.l();
 /*  40: 49 */       Comparable localComparable = localbec1.getData(localbex);
@@ -65,7 +65,7 @@ package net.minecraft.src;
 /*  64: 75 */     Object localObject = this.b.a(paramamj);
 /*  65:    */     
 /*  66: 77 */     Block localbec1 = paramaqu.getBlock(paramdt);
-/*  67: 79 */     if (localbec1.getProto() == this.b)
+/*  67: 79 */     if (localbec1.getType() == this.b)
 /*  68:    */     {
 /*  69: 80 */       int i = localbec1.getData(BlockSlab.half) == EnumSlabHalf.TOP ? 1 : 0;
 /*  70: 82 */       if (((paramej == EnumDirection.UP) && (i == 0)) || ((paramej == EnumDirection.DOWN) && (i != 0) && (localObject == localbec1.getData(localbex)))) {
@@ -74,7 +74,7 @@ package net.minecraft.src;
 /*  73:    */     }
 /*  74: 87 */     paramdt = paramdt.offset(paramej);
 /*  75: 88 */     Block localbec2 = paramaqu.getBlock(paramdt);
-/*  76: 89 */     if ((localbec2.getProto() == this.b) && (localObject == localbec2.getData(localbex))) {
+/*  76: 89 */     if ((localbec2.getType() == this.b) && (localObject == localbec2.getData(localbex))) {
 /*  77: 90 */       return true;
 /*  78:    */     }
 /*  79: 93 */     return super.a(paramaqu, localdt, paramej, paramahd, paramamj);
@@ -83,7 +83,7 @@ package net.minecraft.src;
 /*  82:    */   private boolean a(ItemStack paramamj, World paramaqu, BlockPosition paramdt, Object paramObject)
 /*  83:    */   {
 /*  84: 97 */     Block localbec1 = paramaqu.getBlock(paramdt);
-/*  85: 98 */     if (localbec1.getProto() == this.b)
+/*  85: 98 */     if (localbec1.getType() == this.b)
 /*  86:    */     {
 /*  87: 99 */       Comparable localComparable = localbec1.getData(this.b.l());
 /*  88:101 */       if (localComparable == paramObject)

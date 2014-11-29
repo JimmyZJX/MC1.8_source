@@ -15,14 +15,14 @@ package net.minecraft.src;
 /*  14: 24 */     setCreativeTab(null);
 /*  15:    */   }
 /*  16:    */   
-/*  17:    */   protected boolean c(ProtoBlock paramatr)
+/*  17:    */   protected boolean c(BlockType paramatr)
 /*  18:    */   {
 /*  19: 29 */     return paramatr == BlockList.soulSand;
 /*  20:    */   }
 /*  21:    */   
 /*  22:    */   public boolean f(World paramaqu, BlockPosition paramdt, Block parambec)
 /*  23:    */   {
-/*  24: 34 */     return c(paramaqu.getBlock(paramdt.down()).getProto());
+/*  24: 34 */     return c(paramaqu.getBlock(paramdt.down()).getType());
 /*  25:    */   }
 /*  26:    */   
 /*  27:    */   public void b(World paramaqu, BlockPosition paramdt, Block parambec, Random paramRandom)

@@ -75,9 +75,9 @@ package net.minecraft.src;
 /*  74:    */             {
 /*  75: 90 */               BlockPosition localdt = new BlockPosition(d6, d8, d10);
 /*  76: 91 */               Block localbec = this.d.getBlock(localdt);
-/*  77: 93 */               if (localbec.getProto().getMaterial() != Material.air)
+/*  77: 93 */               if (localbec.getType().getMaterial() != Material.air)
 /*  78:    */               {
-/*  79: 94 */                 float f4 = this.h != null ? this.h.a(this, this.d, localdt, localbec) : localbec.getProto().a((Entity)null);
+/*  79: 94 */                 float f4 = this.h != null ? this.h.a(this, this.d, localdt, localbec) : localbec.getType().a((Entity)null);
 /*  80: 95 */                 f2 -= (f4 + 0.3F) * 0.3F;
 /*  81:    */               }
 /*  82: 98 */               if ((f2 > 0.0F) && ((this.h == null) || (this.h.a(this, this.d, localdt, localbec, f2)))) {
@@ -125,7 +125,7 @@ package net.minecraft.src;
 /* 124:    */             
 /* 125:145 */             double d13 = this.d.a(localbrw, localwv.getAABB());
 /* 126:146 */             double d14 = (1.0D - d5) * d13;
-/* 127:147 */             localwv.a(DamageSource.a(this), (int)((d14 * d14 + d14) / 2.0D * 8.0D * f1 + 1.0D));
+/* 127:147 */             localwv.receiveDamage(DamageSource.a(this), (int)((d14 * d14 + d14) / 2.0D * 8.0D * f1 + 1.0D));
 /* 128:    */             
 /* 129:149 */             double d15 = EnchantmentProtection.a(localwv, d14);
 /* 130:150 */             localwv.xVelocity += d7 * d15;
@@ -153,7 +153,7 @@ package net.minecraft.src;
 /* 152:170 */       for (localIterator = this.j.iterator(); localIterator.hasNext();)
 /* 153:    */       {
 /* 154:170 */         BlockPosition localdt = localIterator.next();
-/* 155:171 */         ProtoBlock localatr = this.d.getBlock(localdt).getProto();
+/* 155:171 */         BlockType localatr = this.d.getBlock(localdt).getType();
 /* 156:173 */         if (paramBoolean)
 /* 157:    */         {
 /* 158:174 */           double d1 = localdt.getX() + this.d.rng.nextFloat();
@@ -194,7 +194,7 @@ package net.minecraft.src;
 /* 193:208 */       for (localIterator = this.j.iterator(); localIterator.hasNext();)
 /* 194:    */       {
 /* 195:208 */         localdt = localIterator.next();
-/* 196:209 */         if ((this.d.getBlock(localdt).getProto().getMaterial() == Material.air) && (this.d.getBlock(localdt.down()).getProto().m()) && (this.c.nextInt(3) == 0)) {
+/* 196:209 */         if ((this.d.getBlock(localdt).getType().getMaterial() == Material.air) && (this.d.getBlock(localdt.down()).getType().m()) && (this.c.nextInt(3) == 0)) {
 /* 197:210 */           this.d.setBlock(localdt, BlockList.fire.instance());
 /* 198:    */         }
 /* 199:    */       }

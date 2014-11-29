@@ -41,7 +41,7 @@ package net.minecraft.src;
 /*  40: 49 */     for (int k = 0; k < i; k++)
 /*  41:    */     {
 /*  42: 50 */       BlockPosition localdt1 = paramdt.up(k);
-/*  43: 51 */       if (a(paramaqu.getBlock(localdt1).getProto().getMaterial()))
+/*  43: 51 */       if (a(paramaqu.getBlock(localdt1).getType().getMaterial()))
 /*  44:    */       {
 /*  45: 52 */         setBlock(paramaqu, localdt1, BlockList.log, this.b);
 /*  46: 53 */         if (k > 0)
@@ -53,7 +53,7 @@ package net.minecraft.src;
 /*  52: 59 */       if (k < i - 1)
 /*  53:    */       {
 /*  54: 60 */         BlockPosition localdt2 = localdt1.east();
-/*  55: 61 */         if (a(paramaqu.getBlock(localdt2).getProto().getMaterial()))
+/*  55: 61 */         if (a(paramaqu.getBlock(localdt2).getType().getMaterial()))
 /*  56:    */         {
 /*  57: 62 */           setBlock(paramaqu, localdt2, BlockList.log, this.b);
 /*  58: 63 */           if (k > 0)
@@ -63,7 +63,7 @@ package net.minecraft.src;
 /*  62:    */           }
 /*  63:    */         }
 /*  64: 69 */         BlockPosition localdt3 = localdt1.south().east();
-/*  65: 70 */         if (a(paramaqu.getBlock(localdt3).getProto().getMaterial()))
+/*  65: 70 */         if (a(paramaqu.getBlock(localdt3).getType().getMaterial()))
 /*  66:    */         {
 /*  67: 71 */           setBlock(paramaqu, localdt3, BlockList.log, this.b);
 /*  68: 72 */           if (k > 0)
@@ -73,7 +73,7 @@ package net.minecraft.src;
 /*  72:    */           }
 /*  73:    */         }
 /*  74: 78 */         BlockPosition localdt4 = localdt1.south();
-/*  75: 79 */         if (a(paramaqu.getBlock(localdt4).getProto().getMaterial()))
+/*  75: 79 */         if (a(paramaqu.getBlock(localdt4).getType().getMaterial()))
 /*  76:    */         {
 /*  77: 80 */           setBlock(paramaqu, localdt4, BlockList.log, this.b);
 /*  78: 81 */           if (k > 0)

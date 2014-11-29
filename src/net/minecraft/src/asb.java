@@ -46,7 +46,7 @@ package net.minecraft.src;
 /* 44:54 */       int n = paramRandom.nextInt(16);
 /* 45:   */       
 /* 46:56 */       BlockPosition localdt = paramdt.offset(k, m, n);
-/* 47:57 */       if (paramaqu.getBlock(localdt).getProto() == BlockList.stone) {
+/* 47:57 */       if (paramaqu.getBlock(localdt).getType() == BlockList.stone) {
 /* 48:58 */         paramaqu.setBlock(localdt, BlockList.bP.instance(), 2);
 /* 49:   */       }
 /* 50:   */     }

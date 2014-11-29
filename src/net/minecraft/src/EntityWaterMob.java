@@ -51,7 +51,7 @@ package net.minecraft.src;
 /* 50:62 */       if (aA() == -20)
 /* 51:   */       {
 /* 52:63 */         h(0);
-/* 53:64 */         a(DamageSource.drown, 2.0F);
+/* 53:64 */         receiveDamage(DamageSource.drown, 2.0F);
 /* 54:   */       }
 /* 55:   */     }
 /* 56:   */     else

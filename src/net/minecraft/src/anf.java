@@ -13,7 +13,7 @@ package net.minecraft.src;
 /* 12:23 */     if (paramej == EnumDirection.DOWN) {
 /* 13:24 */       return false;
 /* 14:   */     }
-/* 15:26 */     if (!paramaqu.getBlock(paramdt).getProto().getMaterial().a()) {
+/* 15:26 */     if (!paramaqu.getBlock(paramdt).getType().getMaterial().a()) {
 /* 16:27 */       return false;
 /* 17:   */     }
 /* 18:30 */     paramdt = paramdt.offset(paramej);

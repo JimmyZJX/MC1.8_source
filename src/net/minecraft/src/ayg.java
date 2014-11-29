@@ -27,7 +27,7 @@ package net.minecraft.src;
 /*  26:    */   public int j(World paramaqu, BlockPosition paramdt)
 /*  27:    */   {
 /*  28: 48 */     Block localbec = paramaqu.getBlock(paramdt);
-/*  29: 49 */     return localbec.getProto().c(localbec) & 0x3;
+/*  29: 49 */     return localbec.getType().c(localbec) & 0x3;
 /*  30:    */   }
 /*  31:    */   
 /*  32:    */   public void a(Item paramalq, CreativeTabs paramakf, List paramList)
@@ -38,7 +38,7 @@ package net.minecraft.src;
 /*  37:    */   
 /*  38:    */   protected ItemStack i(Block parambec)
 /*  39:    */   {
-/*  40: 60 */     return new ItemStack(Item.fromProtoBlock(this), 1, ((EnumWoodVariant)parambec.getData(P)).getIndex() - 4);
+/*  40: 60 */     return new ItemStack(Item.fromBlock(this), 1, ((EnumWoodVariant)parambec.getData(P)).getIndex() - 4);
 /*  41:    */   }
 /*  42:    */   
 /*  43:    */   public Block instance(int paramInt)
@@ -74,10 +74,10 @@ package net.minecraft.src;
 /*  73:    */   {
 /*  74:100 */     if ((!paramaqu.isClient) && (paramahd.bY() != null) && (paramahd.bY().getItem() == ItemList.shears))
 /*  75:    */     {
-/*  76:101 */       paramahd.increaseStat(StatList.H[ProtoBlock.a(this)]);
+/*  76:101 */       paramahd.increaseStat(StatList.H[BlockType.a(this)]);
 /*  77:    */       
 /*  78:    */ 
-/*  79:104 */       a(paramaqu, paramdt, new ItemStack(Item.fromProtoBlock(this), 1, ((EnumWoodVariant)parambec.getData(P)).getIndex() - 4));
+/*  79:104 */       a(paramaqu, paramdt, new ItemStack(Item.fromBlock(this), 1, ((EnumWoodVariant)parambec.getData(P)).getIndex() - 4));
 /*  80:105 */       return;
 /*  81:    */     }
 /*  82:108 */     super.a(paramaqu, paramahd, paramdt, parambec, parambcm);

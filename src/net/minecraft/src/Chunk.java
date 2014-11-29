@@ -66,7 +66,7 @@ package net.minecraft.src;
 /*   63:     */         {
 /*   64:  94 */           int i5 = i2 * i1 * 16 | i3 * i1 | i4;
 /*   65:  95 */           Block localbec = parambgk.a(i5);
-/*   66:  97 */           if (localbec.getProto().getMaterial() != Material.air)
+/*   66:  97 */           if (localbec.getType().getMaterial() != Material.air)
 /*   67:     */           {
 /*   68: 101 */             int i6 = i4 >> 4;
 /*   69: 102 */             if (this.storageArrays[i6] == null) {
@@ -119,7 +119,7 @@ package net.minecraft.src;
 /*  116: 153 */         this.precipationHeightMap[(x + (z << 4))] = -999;
 /*  117: 155 */         for (int y = top + 16; y > 0; y--)
 /*  118:     */         {
-/*  119: 156 */           ProtoBlock block = getBlock(x, y - 1, z);
+/*  119: 156 */           BlockType block = getBlock(x, y - 1, z);
 /*  120: 157 */           if (block.getLightOpacity() != 0)
 /*  121:     */           {
 /*  122: 158 */             this.heightMap[(z << 4 | x)] = y;
@@ -342,9 +342,9 @@ package net.minecraft.src;
 /*  337: 365 */     return getBlock(paramInt1, paramInt2, paramInt3).getLightOpacity();
 /*  338:     */   }
 /*  339:     */   
-/*  340:     */   private ProtoBlock getBlock(int paramInt1, int paramInt2, int paramInt3)
+/*  340:     */   private BlockType getBlock(int paramInt1, int paramInt2, int paramInt3)
 /*  341:     */   {
-/*  342: 369 */     ProtoBlock localatr = BlockList.air;
+/*  342: 369 */     BlockType localatr = BlockList.air;
 /*  343: 370 */     if ((paramInt2 >= 0) && (paramInt2 >> 4 < this.storageArrays.length))
 /*  344:     */     {
 /*  345: 371 */       ExtendedBlockStorage localbfm = this.storageArrays[(paramInt2 >> 4)];
@@ -364,7 +364,7 @@ package net.minecraft.src;
 /*  359: 382 */     return localatr;
 /*  360:     */   }
 /*  361:     */   
-/*  362:     */   public ProtoBlock getBlockAtWorldCoord(int paramInt1, int paramInt2, int paramInt3)
+/*  362:     */   public BlockType getBlockAtWorldCoord(int paramInt1, int paramInt2, int paramInt3)
 /*  363:     */   {
 /*  364:     */     try
 /*  365:     */     {
@@ -383,7 +383,7 @@ package net.minecraft.src;
 /*  378:     */     }
 /*  379:     */   }
 /*  380:     */   
-/*  381:     */   public ProtoBlock getBlock(BlockPosition paramdt)
+/*  381:     */   public BlockType getBlock(BlockPosition paramdt)
 /*  382:     */   {
 /*  383:     */     try
 /*  384:     */     {
@@ -478,8 +478,8 @@ package net.minecraft.src;
 /*  473: 486 */     if (localbec == parambec) {
 /*  474: 487 */       return null;
 /*  475:     */     }
-/*  476: 490 */     ProtoBlock localatr1 = parambec.getProto();
-/*  477: 491 */     ProtoBlock localatr2 = localbec.getProto();
+/*  476: 490 */     BlockType localatr1 = parambec.getType();
+/*  477: 491 */     BlockType localatr2 = localbec.getType();
 /*  478:     */     
 /*  479: 493 */     ExtendedBlockStorage localbfm = this.storageArrays[(i2 >> 4)];
 /*  480: 494 */     int i6 = 0;
@@ -677,7 +677,7 @@ package net.minecraft.src;
 /*  672:     */   
 /*  673:     */   private bcm i(BlockPosition paramdt)
 /*  674:     */   {
-/*  675: 685 */     ProtoBlock localatr = getBlock(paramdt);
+/*  675: 685 */     BlockType localatr = getBlock(paramdt);
 /*  676: 686 */     if (!localatr.x()) {
 /*  677: 687 */       return null;
 /*  678:     */     }
@@ -898,7 +898,7 @@ package net.minecraft.src;
 /*  893: 888 */       int i5 = -1;
 /*  894: 889 */       while ((localdt.getY() > 0) && (i5 == -1))
 /*  895:     */       {
-/*  896: 890 */         ProtoBlock localatr = getBlock(localdt);
+/*  896: 890 */         BlockType localatr = getBlock(localdt);
 /*  897: 891 */         Material localbof = localatr.getMaterial();
 /*  898: 892 */         if ((!localbof.material_c()) && (!localbof.isLiquid())) {
 /*  899: 893 */           localdt = localdt.down();
@@ -1096,7 +1096,7 @@ package net.minecraft.src;
 /* 1091:1067 */           for (EnumDirection localej : EnumDirection.values())
 /* 1092:     */           {
 /* 1093:1068 */             BlockPosition localdt3 = localdt2.offset(localej);
-/* 1094:1069 */             if (this.world.getBlock(localdt3).getProto().p() > 0) {
+/* 1094:1069 */             if (this.world.getBlock(localdt3).getType().p() > 0) {
 /* 1095:1070 */               this.world.x(localdt3);
 /* 1096:     */             }
 /* 1097:     */           }

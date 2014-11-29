@@ -10,7 +10,7 @@ package net.minecraft.src;
 /*   9:    */   
 /*  10:    */   public void a(bdj parambdj, double paramDouble1, double paramDouble2, double paramDouble3, float paramFloat, int paramInt)
 /*  11:    */   {
-/*  12: 26 */     ProtoBlock localatr = parambdj.w();
+/*  12: 26 */     BlockType localatr = parambdj.w();
 /*  13:    */     
 /*  14: 28 */     cjm.glPushMatrix();
 /*  15: 29 */     float f1 = 0.6666667F;

@@ -129,7 +129,7 @@ package net.minecraft.src;
 /* 128:    */     {
 /* 129:143 */       Vec3 localbrw1 = c();
 /* 130:144 */       Vec3 localbrw2 = this.d.a(this.mob, this.d.e());
-/* 131:145 */       if ((localbrw1.y > localbrw2.y) && (!this.mob.C) && (MathUtils.floor(localbrw1.x) == MathUtils.floor(localbrw2.x)) && (MathUtils.floor(localbrw1.z) == MathUtils.floor(localbrw2.z))) {
+/* 131:145 */       if ((localbrw1.y > localbrw2.y) && (!this.mob.landing) && (MathUtils.floor(localbrw1.x) == MathUtils.floor(localbrw2.x)) && (MathUtils.floor(localbrw1.z) == MathUtils.floor(localbrw2.z))) {
 /* 132:146 */         this.d.c(this.d.e() + 1);
 /* 133:    */       }
 /* 134:    */     }

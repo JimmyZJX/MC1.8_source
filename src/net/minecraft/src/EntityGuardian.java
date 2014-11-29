@@ -75,22 +75,22 @@ package net.minecraft.src;
 /*  74:    */   {
 /*  75:118 */     super.h();
 /*  76:    */     
-/*  77:120 */     this.ac.a(16, Integer.valueOf(0));
-/*  78:121 */     this.ac.a(17, Integer.valueOf(0));
+/*  77:120 */     this.data.addData(16, Integer.valueOf(0));
+/*  78:121 */     this.data.addData(17, Integer.valueOf(0));
 /*  79:    */   }
 /*  80:    */   
 /*  81:    */   private boolean a(int paramInt)
 /*  82:    */   {
-/*  83:125 */     return (this.ac.c(16) & paramInt) != 0;
+/*  83:125 */     return (this.data.getInteger(16) & paramInt) != 0;
 /*  84:    */   }
 /*  85:    */   
 /*  86:    */   private void a(int paramInt, boolean paramBoolean)
 /*  87:    */   {
-/*  88:129 */     int i = this.ac.c(16);
+/*  88:129 */     int i = this.data.getInteger(16);
 /*  89:130 */     if (paramBoolean) {
-/*  90:131 */       this.ac.b(16, Integer.valueOf(i | paramInt));
+/*  90:131 */       this.data.b(16, Integer.valueOf(i | paramInt));
 /*  91:    */     } else {
-/*  92:133 */       this.ac.b(16, Integer.valueOf(i & (paramInt ^ 0xFFFFFFFF)));
+/*  92:133 */       this.data.b(16, Integer.valueOf(i & (paramInt ^ 0xFFFFFFFF)));
 /*  93:    */     }
 /*  94:    */   }
 /*  95:    */   
@@ -141,12 +141,12 @@ package net.minecraft.src;
 /* 140:    */   
 /* 141:    */   private void b(int paramInt)
 /* 142:    */   {
-/* 143:177 */     this.ac.b(17, Integer.valueOf(paramInt));
+/* 143:177 */     this.data.b(17, Integer.valueOf(paramInt));
 /* 144:    */   }
 /* 145:    */   
 /* 146:    */   public boolean cn()
 /* 147:    */   {
-/* 148:181 */     return this.ac.c(17) != 0;
+/* 148:181 */     return this.data.getInteger(17) != 0;
 /* 149:    */   }
 /* 150:    */   
 /* 151:    */   public EntityLiving co()
@@ -159,7 +159,7 @@ package net.minecraft.src;
 /* 158:189 */       if (this.bn != null) {
 /* 159:190 */         return this.bn;
 /* 160:    */       }
-/* 161:192 */       Entity localwv = this.world.a(this.ac.c(17));
+/* 161:192 */       Entity localwv = this.world.a(this.data.getInteger(17));
 /* 162:193 */       if ((localwv instanceof EntityLiving))
 /* 163:    */       {
 /* 164:194 */         this.bn = ((EntityLiving)localwv);
@@ -236,7 +236,7 @@ package net.minecraft.src;
 /* 235:    */   
 /* 236:    */   public float a(BlockPosition paramdt)
 /* 237:    */   {
-/* 238:267 */     if (this.world.getBlock(paramdt).getProto().getMaterial() == Material.water) {
+/* 238:267 */     if (this.world.getBlock(paramdt).getType().getMaterial() == Material.water) {
 /* 239:268 */       return 10.0F + this.world.o(paramdt) - 0.5F;
 /* 240:    */     }
 /* 241:270 */     return super.a(paramdt);
@@ -318,13 +318,13 @@ package net.minecraft.src;
 /* 317:    */     {
 /* 318:339 */       h(300);
 /* 319:    */     }
-/* 320:346 */     else if (this.C)
+/* 320:346 */     else if (this.landing)
 /* 321:    */     {
 /* 322:347 */       this.yVelocity += 0.5D;
 /* 323:348 */       this.xVelocity += (this.rng.nextFloat() * 2.0F - 1.0F) * 0.4F;
 /* 324:349 */       this.zVelocity += (this.rng.nextFloat() * 2.0F - 1.0F) * 0.4F;
 /* 325:350 */       this.yaw = (this.rng.nextFloat() * 360.0F);
-/* 326:351 */       this.C = false;
+/* 326:351 */       this.landing = false;
 /* 327:352 */       this.ai = true;
 /* 328:    */     }
 /* 329:356 */     if (cn()) {
@@ -415,19 +415,19 @@ package net.minecraft.src;
 /* 414:450 */     return ((this.rng.nextInt(20) == 0) || (!this.world.j(new BlockPosition(this)))) && (super.canSpawn());
 /* 415:    */   }
 /* 416:    */   
-/* 417:    */   public boolean a(DamageSource paramwh, float paramFloat)
+/* 417:    */   public boolean receiveDamage(DamageSource paramwh, float paramFloat)
 /* 418:    */   {
 /* 419:455 */     if ((!n()) && (!paramwh.s()) && ((paramwh.getEntity() instanceof EntityLiving)))
 /* 420:    */     {
 /* 421:456 */       EntityLiving localxm = (EntityLiving)paramwh.getEntity();
 /* 422:459 */       if (!paramwh.c())
 /* 423:    */       {
-/* 424:460 */         localxm.a(DamageSource.fromMob(this), 2.0F);
+/* 424:460 */         localxm.receiveDamage(DamageSource.fromMob(this), 2.0F);
 /* 425:461 */         localxm.a("damage.thorns", 0.5F, 1.0F);
 /* 426:    */       }
 /* 427:    */     }
 /* 428:464 */     this.bq.f();
-/* 429:465 */     return super.a(paramwh, paramFloat);
+/* 429:465 */     return super.receiveDamage(paramwh, paramFloat);
 /* 430:    */   }
 /* 431:    */   
 /* 432:    */   public int bP()

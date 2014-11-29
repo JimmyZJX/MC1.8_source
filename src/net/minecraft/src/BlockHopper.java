@@ -80,7 +80,7 @@ package net.minecraft.src;
 /*  79:106 */     return true;
 /*  80:    */   }
 /*  81:    */   
-/*  82:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/*  82:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /*  83:    */   {
 /*  84:111 */     e(paramaqu, paramdt, parambec);
 /*  85:    */   }

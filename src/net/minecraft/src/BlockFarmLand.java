@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ import java.util.Random;
 /*   2:    */ 
 /*   3:    */ public class BlockFarmLand
-/*   4:    */   extends ProtoBlock
+/*   4:    */   extends BlockType
 /*   5:    */ {
 /*   6: 20 */   public static final BlockDataInteger a = BlockDataInteger.getInstance("moisture", 0, 7);
 /*   7:    */   
@@ -63,24 +63,24 @@ package net.minecraft.src;
 /*  62:    */   
 /*  63:    */   private boolean d(World paramaqu, BlockPosition paramdt)
 /*  64:    */   {
-/*  65: 78 */     ProtoBlock localatr = paramaqu.getBlock(paramdt.up()).getProto();
+/*  65: 78 */     BlockType localatr = paramaqu.getBlock(paramdt.up()).getType();
 /*  66: 79 */     return ((localatr instanceof auu)) || ((localatr instanceof bay));
 /*  67:    */   }
 /*  68:    */   
 /*  69:    */   private boolean e(World paramaqu, BlockPosition paramdt)
 /*  70:    */   {
 /*  71: 83 */     for (dy localdy : BlockPosition.b(paramdt.offset(-4, 0, -4), paramdt.offset(4, 1, 4))) {
-/*  72: 84 */       if (paramaqu.getBlock(localdy).getProto().getMaterial() == Material.water) {
+/*  72: 84 */       if (paramaqu.getBlock(localdy).getType().getMaterial() == Material.water) {
 /*  73: 85 */         return true;
 /*  74:    */       }
 /*  75:    */     }
 /*  76: 88 */     return false;
 /*  77:    */   }
 /*  78:    */   
-/*  79:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/*  79:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /*  80:    */   {
 /*  81: 93 */     super.a(paramaqu, paramdt, parambec, paramatr);
-/*  82: 95 */     if (paramaqu.getBlock(paramdt.up()).getProto().getMaterial().a()) {
+/*  82: 95 */     if (paramaqu.getBlock(paramdt.up()).getType().getMaterial().a()) {
 /*  83: 96 */       paramaqu.setBlock(paramdt, BlockList.dirt.instance());
 /*  84:    */     }
 /*  85:    */   }
@@ -92,7 +92,7 @@ package net.minecraft.src;
 /*  91:    */   
 /*  92:    */   public Item b(World paramaqu, BlockPosition paramdt)
 /*  93:    */   {
-/*  94:108 */     return Item.fromProtoBlock(BlockList.dirt);
+/*  94:108 */     return Item.fromBlock(BlockList.dirt);
 /*  95:    */   }
 /*  96:    */   
 /*  97:    */   public Block instance(int paramInt)

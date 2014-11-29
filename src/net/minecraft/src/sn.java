@@ -89,7 +89,7 @@ package net.minecraft.src;
 /*  84:113 */     localrj.a(new ix(localbqo.y(), localbqo.z()));
 /*  85:114 */     localrj.a(new lh(localdt));
 /*  86:115 */     localrj.a(new kd(paramqw.abilities));
-/*  87:116 */     localrj.a(new kv(paramqw.bg.c));
+/*  87:116 */     localrj.a(new kv(paramqw.inventory.c));
 /*  88:    */     
 /*  89:118 */     paramqw.A().d();
 /*  90:119 */     paramqw.A().b(paramqw);
@@ -665,7 +665,7 @@ package net.minecraft.src;
 /* 659:    */   {
 /* 660:697 */     paramqw.a(paramqw.bh);
 /* 661:698 */     paramqw.r();
-/* 662:699 */     paramqw.a.a(new kv(paramqw.bg.c));
+/* 662:699 */     paramqw.a.a(new kv(paramqw.inventory.c));
 /* 663:    */   }
 /* 664:    */   
 /* 665:    */   public int p()

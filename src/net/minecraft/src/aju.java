@@ -4,9 +4,9 @@ package net.minecraft.src;
 /*   3:    */ public class aju
 /*   4:    */   extends Item
 /*   5:    */ {
-/*   6:    */   protected final ProtoBlock a;
+/*   6:    */   protected final BlockType a;
 /*   7:    */   
-/*   8:    */   public aju(ProtoBlock paramatr)
+/*   8:    */   public aju(BlockType paramatr)
 /*   9:    */   {
 /*  10: 24 */     this.a = paramatr;
 /*  11:    */   }
@@ -20,7 +20,7 @@ package net.minecraft.src;
 /*  19:    */   public boolean a(ItemStack paramamj, EntityPlayer paramahd, World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3)
 /*  20:    */   {
 /*  21: 35 */     Block localbec1 = paramaqu.getBlock(paramdt);
-/*  22: 36 */     ProtoBlock localatr = localbec1.getProto();
+/*  22: 36 */     BlockType localatr = localbec1.getType();
 /*  23: 37 */     if ((localatr == BlockList.aH) && (((Integer)localbec1.getData(BlockSnowLayer.a)).intValue() < 1)) {
 /*  24: 38 */       paramej = EnumDirection.UP;
 /*  25: 39 */     } else if (!localatr.f(paramaqu, paramdt)) {
@@ -42,7 +42,7 @@ package net.minecraft.src;
 /*  41: 57 */       if (paramaqu.setBlock(paramdt, localbec2, 3))
 /*  42:    */       {
 /*  43: 58 */         localbec2 = paramaqu.getBlock(paramdt);
-/*  44: 62 */         if (localbec2.getProto() == this.a)
+/*  44: 62 */         if (localbec2.getType() == this.a)
 /*  45:    */         {
 /*  46: 63 */           a(paramaqu, paramdt, paramamj);
 /*  47: 64 */           this.a.a(paramaqu, paramdt, localbec2, paramahd, paramamj);
@@ -84,7 +84,7 @@ package net.minecraft.src;
 /*  83:    */   
 /*  84:    */   public boolean a(World paramaqu, BlockPosition paramdt, EnumDirection paramej, EntityPlayer paramahd, ItemStack paramamj)
 /*  85:    */   {
-/*  86: 99 */     ProtoBlock localatr = paramaqu.getBlock(paramdt).getProto();
+/*  86: 99 */     BlockType localatr = paramaqu.getBlock(paramdt).getType();
 /*  87:100 */     if (localatr == BlockList.aH) {
 /*  88:101 */       paramej = EnumDirection.UP;
 /*  89:102 */     } else if (!localatr.f(paramaqu, paramdt)) {
@@ -113,7 +113,7 @@ package net.minecraft.src;
 /* 112:126 */     this.a.a(paramalq, paramakf, paramList);
 /* 113:    */   }
 /* 114:    */   
-/* 115:    */   public ProtoBlock d()
+/* 115:    */   public BlockType d()
 /* 116:    */   {
 /* 117:130 */     return this.a;
 /* 118:    */   }

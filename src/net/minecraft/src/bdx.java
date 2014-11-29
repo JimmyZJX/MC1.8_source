@@ -48,7 +48,7 @@ package net.minecraft.src;
 /*  47:    */   {
 /*  48: 68 */     BlockPosition localdt = paramdt.offset(((EnumDirection)parambec.getData(a)).opposite());
 /*  49: 69 */     Block localbec = paramaqu.getBlock(localdt);
-/*  50: 70 */     if (((localbec.getProto() instanceof bdq)) && (((Boolean)localbec.getData(bdq.b)).booleanValue())) {
+/*  50: 70 */     if (((localbec.getType() instanceof bdq)) && (((Boolean)localbec.getData(bdq.b)).booleanValue())) {
 /*  51: 71 */       paramaqu.g(localdt);
 /*  52:    */     }
 /*  53:    */   }
@@ -88,7 +88,7 @@ package net.minecraft.src;
 /*  87:110 */       return;
 /*  88:    */     }
 /*  89:113 */     Block localbec = localbdv.b();
-/*  90:114 */     localbec.getProto().b(paramaqu, paramdt, localbec, 0);
+/*  90:114 */     localbec.getType().b(paramaqu, paramdt, localbec, 0);
 /*  91:    */   }
 /*  92:    */   
 /*  93:    */   public HitResult a(World paramaqu, BlockPosition paramdt, Vec3 parambrw1, Vec3 parambrw2)
@@ -96,7 +96,7 @@ package net.minecraft.src;
 /*  95:120 */     return null;
 /*  96:    */   }
 /*  97:    */   
-/*  98:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/*  98:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /*  99:    */   {
 /* 100:125 */     if (!paramaqu.isClient) {
 /* 101:126 */       paramaqu.s(paramdt);
@@ -122,7 +122,7 @@ package net.minecraft.src;
 /* 121:149 */     if (localbdv != null)
 /* 122:    */     {
 /* 123:150 */       Block localbec = localbdv.b();
-/* 124:151 */       ProtoBlock localatr = localbec.getProto();
+/* 124:151 */       BlockType localatr = localbec.getType();
 /* 125:152 */       if ((localatr == this) || (localatr.getMaterial() == Material.air)) {
 /* 126:153 */         return;
 /* 127:    */       }
@@ -146,10 +146,10 @@ package net.minecraft.src;
 /* 145:    */   
 /* 146:    */   public AABB a(World paramaqu, BlockPosition paramdt, Block parambec, float paramFloat, EnumDirection paramej)
 /* 147:    */   {
-/* 148:175 */     if ((parambec.getProto() == this) || (parambec.getProto().getMaterial() == Material.air)) {
+/* 148:175 */     if ((parambec.getType() == this) || (parambec.getType().getMaterial() == Material.air)) {
 /* 149:176 */       return null;
 /* 150:    */     }
-/* 151:178 */     AABB localbrt = parambec.getProto().a(paramaqu, paramdt, parambec);
+/* 151:178 */     AABB localbrt = parambec.getType().a(paramaqu, paramdt, parambec);
 /* 152:180 */     if (localbrt == null) {
 /* 153:181 */       return null;
 /* 154:    */     }

@@ -25,7 +25,7 @@ package net.minecraft.src;
 /* 24:28 */     if (paramamj.stackSize <= 0) {
 /* 25:29 */       return localamj;
 /* 26:   */     }
-/* 27:31 */     if (!paramahd.bg.a(localamj.k())) {
+/* 27:31 */     if (!paramahd.inventory.a(localamj.k())) {
 /* 28:32 */       paramahd.a(localamj, false);
 /* 29:   */     }
 /* 30:35 */     paramahd.increaseStat(StatList.J[Item.b(this)]);

@@ -27,7 +27,7 @@ package net.minecraft.src;
 /*  26:    */   protected void a(EnumDirection paramej)
 /*  27:    */   {
 /*  28: 38 */     Validate.notNull(paramej);
-/*  29: 39 */     Validate.isTrue(paramej.k().c());
+/*  29: 39 */     Validate.isTrue(paramej.getAxis().isHorizontal());
 /*  30:    */     
 /*  31: 41 */     this.b = paramej;
 /*  32: 42 */     this.lastYaw = (this.yaw = this.b.b() * 90);
@@ -63,7 +63,7 @@ package net.minecraft.src;
 /*  62: 72 */     double d7 = l();
 /*  63: 73 */     double d8 = m();
 /*  64: 74 */     double d9 = l();
-/*  65: 76 */     if (this.b.k() == EnumAxis.Z) {
+/*  65: 76 */     if (this.b.getAxis() == EnumAxis.Z) {
 /*  66: 77 */       d9 = 1.0D;
 /*  67:    */     } else {
 /*  68: 79 */       d7 = 1.0D;
@@ -111,7 +111,7 @@ package net.minecraft.src;
 /* 110:    */       {
 /* 111:119 */         localObject = localdt.offset(localej, k).up(m);
 /* 112:    */         
-/* 113:121 */         ProtoBlock localatr = this.world.getBlock((BlockPosition)localObject).getProto();
+/* 113:121 */         BlockType localatr = this.world.getBlock((BlockPosition)localObject).getType();
 /* 114:122 */         if ((!localatr.getMaterial().a()) && (!ava.d(localatr))) {
 /* 115:123 */           return false;
 /* 116:    */         }
@@ -136,7 +136,7 @@ package net.minecraft.src;
 /* 135:    */   public boolean l(Entity paramwv)
 /* 136:    */   {
 /* 137:145 */     if ((paramwv instanceof EntityPlayer)) {
-/* 138:146 */       return a(DamageSource.fromPlayer((EntityPlayer)paramwv), 0.0F);
+/* 138:146 */       return receiveDamage(DamageSource.fromPlayer((EntityPlayer)paramwv), 0.0F);
 /* 139:    */     }
 /* 140:148 */     return false;
 /* 141:    */   }
@@ -146,7 +146,7 @@ package net.minecraft.src;
 /* 145:153 */     return this.b;
 /* 146:    */   }
 /* 147:    */   
-/* 148:    */   public boolean a(DamageSource paramwh, float paramFloat)
+/* 148:    */   public boolean receiveDamage(DamageSource paramwh, float paramFloat)
 /* 149:    */   {
 /* 150:158 */     if (isImmuneTo(paramwh)) {
 /* 151:159 */       return false;

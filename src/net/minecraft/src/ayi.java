@@ -63,7 +63,7 @@ package net.minecraft.src;
 /* 62:   */   
 /* 63:   */   protected ItemStack i(Block parambec)
 /* 64:   */   {
-/* 65:82 */     return new ItemStack(Item.fromProtoBlock(this), 1, ((EnumWoodVariant)parambec.getData(b)).getIndex() - 4);
+/* 65:82 */     return new ItemStack(Item.fromBlock(this), 1, ((EnumWoodVariant)parambec.getData(b)).getIndex() - 4);
 /* 66:   */   }
 /* 67:   */   
 /* 68:   */   public int a(Block parambec)

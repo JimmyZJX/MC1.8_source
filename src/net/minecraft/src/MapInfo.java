@@ -87,14 +87,14 @@ package net.minecraft.src;
 /*  86:140 */       this.i.put(paramahd, localbqf);
 /*  87:141 */       this.g.add(localbqf);
 /*  88:    */     }
-/*  89:144 */     if (!paramahd.bg.c(paramamj)) {
+/*  89:144 */     if (!paramahd.inventory.c(paramamj)) {
 /*  90:145 */       this.icons.remove(paramahd.getName());
 /*  91:    */     }
 /*  92:    */     
 /*  93:148 */     for (int j = 0; j < this.g.size(); j++)
 /*  94:    */     {
 /*  95:149 */       bqf localbqf = this.g.get(j);
-/*  96:151 */       if ((localbqf.player.isDead) || ((!localbqf.player.bg.c(paramamj)) && (!paramamj.y())))
+/*  96:151 */       if ((localbqf.player.isDead) || ((!localbqf.player.inventory.c(paramamj)) && (!paramamj.y())))
 /*  97:    */       {
 /*  98:152 */         this.i.remove(localbqf.player);
 /*  99:153 */         this.g.remove(localbqf);

@@ -80,7 +80,7 @@ package net.minecraft.src;
 /*  81:132 */     for (int x = x0; x < x0 + size.getX(); x++) {
 /*  82:133 */       for (int y = pos.getY(); y < pos.getY() + size.getY(); y++) {
 /*  83:134 */         for (int z = z0; z < z0 + size.getZ(); z++) {
-/*  84:135 */           if (this.world.getBlock(new BlockPosition(x, y, z)).getProto().blocksMovement()) {
+/*  84:135 */           if (this.world.getBlock(new BlockPosition(x, y, z)).getType().blocksMovement()) {
 /*  85:136 */             return false;
 /*  86:    */           }
 /*  87:    */         }
@@ -289,7 +289,7 @@ package net.minecraft.src;
 /* 290:    */   
 /* 291:    */   private boolean isWoodenDoor(BlockPosition pos)
 /* 292:    */   {
-/* 293:326 */     ProtoBlock block = this.world.getBlock(pos).getProto();
+/* 293:326 */     BlockType block = this.world.getBlock(pos).getType();
 /* 294:327 */     if ((block instanceof BlockDoor)) {
 /* 295:328 */       return block.getMaterial() == Material.wood;
 /* 296:    */     }

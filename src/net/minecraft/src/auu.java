@@ -19,7 +19,7 @@ package net.minecraft.src;
 /*  18: 28 */     J();
 /*  19:    */   }
 /*  20:    */   
-/*  21:    */   protected boolean c(ProtoBlock paramatr)
+/*  21:    */   protected boolean c(BlockType paramatr)
 /*  22:    */   {
 /*  23: 33 */     return paramatr == BlockList.ak;
 /*  24:    */   }
@@ -49,7 +49,7 @@ package net.minecraft.src;
 /*  48: 56 */     paramaqu.setBlock(paramdt, parambec.setData(a, Integer.valueOf(i)), 2);
 /*  49:    */   }
 /*  50:    */   
-/*  51:    */   protected static float a(ProtoBlock paramatr, World paramaqu, BlockPosition paramdt)
+/*  51:    */   protected static float a(BlockType paramatr, World paramaqu, BlockPosition paramdt)
 /*  52:    */   {
 /*  53: 60 */     float f1 = 1.0F;
 /*  54:    */     
@@ -60,7 +60,7 @@ package net.minecraft.src;
 /*  59: 65 */         float f2 = 0.0F;
 /*  60:    */         
 /*  61: 67 */         Block localObject = paramaqu.getBlock(localdt1.offset(i, 0, j));
-/*  62: 68 */         if (((Block)localObject).getProto() == BlockList.ak)
+/*  62: 68 */         if (((Block)localObject).getType() == BlockList.ak)
 /*  63:    */         {
 /*  64: 69 */           f2 = 1.0F;
 /*  65: 70 */           if (((Integer)((Block)localObject).getData(BlockFarmLand.a)).intValue() > 0) {
@@ -78,15 +78,15 @@ package net.minecraft.src;
 /*  77: 85 */     BlockPosition localdt4 = paramdt.west();
 /*  78: 86 */     Object localObject = paramdt.east();
 /*  79:    */     
-/*  80: 88 */     int k = (paramatr == paramaqu.getBlock(localdt4).getProto()) || (paramatr == paramaqu.getBlock((BlockPosition)localObject).getProto()) ? 1 : 0;
-/*  81: 89 */     int m = (paramatr == paramaqu.getBlock(localdt2).getProto()) || (paramatr == paramaqu.getBlock(localdt3).getProto()) ? 1 : 0;
+/*  80: 88 */     int k = (paramatr == paramaqu.getBlock(localdt4).getType()) || (paramatr == paramaqu.getBlock((BlockPosition)localObject).getType()) ? 1 : 0;
+/*  81: 89 */     int m = (paramatr == paramaqu.getBlock(localdt2).getType()) || (paramatr == paramaqu.getBlock(localdt3).getType()) ? 1 : 0;
 /*  82: 91 */     if ((k != 0) && (m != 0))
 /*  83:    */     {
 /*  84: 92 */       f1 /= 2.0F;
 /*  85:    */     }
 /*  86:    */     else
 /*  87:    */     {
-/*  88: 95 */       int n = (paramatr == paramaqu.getBlock(localdt4.north()).getProto()) || (paramatr == paramaqu.getBlock(((BlockPosition)localObject).north()).getProto()) || (paramatr == paramaqu.getBlock(((BlockPosition)localObject).south()).getProto()) || (paramatr == paramaqu.getBlock(localdt4.south()).getProto()) ? 1 : 0;
+/*  88: 95 */       int n = (paramatr == paramaqu.getBlock(localdt4.north()).getType()) || (paramatr == paramaqu.getBlock(((BlockPosition)localObject).north()).getType()) || (paramatr == paramaqu.getBlock(((BlockPosition)localObject).south()).getType()) || (paramatr == paramaqu.getBlock(localdt4.south()).getType()) ? 1 : 0;
 /*  89:100 */       if (n != 0) {
 /*  90:101 */         f1 /= 2.0F;
 /*  91:    */       }
@@ -96,7 +96,7 @@ package net.minecraft.src;
 /*  95:    */   
 /*  96:    */   public boolean f(World paramaqu, BlockPosition paramdt, Block parambec)
 /*  97:    */   {
-/*  98:110 */     return ((paramaqu.k(paramdt) >= 8) || (paramaqu.hasDaylight(paramdt))) && (c(paramaqu.getBlock(paramdt.down()).getProto()));
+/*  98:110 */     return ((paramaqu.k(paramdt) >= 8) || (paramaqu.hasDaylight(paramdt))) && (c(paramaqu.getBlock(paramdt.down()).getType()));
 /*  99:    */   }
 /* 100:    */   
 /* 101:    */   protected Item j()

@@ -18,8 +18,8 @@ package net.minecraft.src;
 /* 17:26 */       return false;
 /* 18:   */     }
 /* 19:29 */     Block localbec = paramaqu.getBlock(paramdt);
-/* 20:30 */     ProtoBlock localatr = localbec.getProto();
-/* 21:32 */     if ((paramej != EnumDirection.DOWN) && (paramaqu.getBlock(paramdt.up()).getProto().getMaterial() == Material.air))
+/* 20:30 */     BlockType localatr = localbec.getType();
+/* 21:32 */     if ((paramej != EnumDirection.DOWN) && (paramaqu.getBlock(paramdt.up()).getType().getMaterial() == Material.air))
 /* 22:   */     {
 /* 23:33 */       if (localatr == BlockList.grass) {
 /* 24:34 */         return a(paramamj, paramahd, paramaqu, paramdt, BlockList.ak.instance());
@@ -39,7 +39,7 @@ package net.minecraft.src;
 /* 38:   */   
 /* 39:   */   protected boolean a(ItemStack paramamj, EntityPlayer paramahd, World paramaqu, BlockPosition paramdt, Block parambec)
 /* 40:   */   {
-/* 41:49 */     paramaqu.a(paramdt.getX() + 0.5F, paramdt.getY() + 0.5F, paramdt.getZ() + 0.5F, parambec.getProto().H.c(), (parambec.getProto().H.d() + 1.0F) / 2.0F, parambec.getProto().H.e() * 0.8F);
+/* 41:49 */     paramaqu.a(paramdt.getX() + 0.5F, paramdt.getY() + 0.5F, paramdt.getZ() + 0.5F, parambec.getType().H.c(), (parambec.getType().H.d() + 1.0F) / 2.0F, parambec.getType().H.e() * 0.8F);
 /* 42:51 */     if (paramaqu.isClient) {
 /* 43:52 */       return true;
 /* 44:   */     }

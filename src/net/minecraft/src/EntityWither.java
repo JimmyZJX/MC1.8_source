@@ -49,10 +49,10 @@ package net.minecraft.src;
 /*  48:    */   {
 /*  49: 89 */     super.h();
 /*  50:    */     
-/*  51: 91 */     this.ac.a(17, new Integer(0));
-/*  52: 92 */     this.ac.a(18, new Integer(0));
-/*  53: 93 */     this.ac.a(19, new Integer(0));
-/*  54: 94 */     this.ac.a(20, new Integer(0));
+/*  51: 91 */     this.data.addData(17, new Integer(0));
+/*  52: 92 */     this.data.addData(18, new Integer(0));
+/*  53: 93 */     this.data.addData(19, new Integer(0));
+/*  54: 94 */     this.data.addData(20, new Integer(0));
 /*  55:    */   }
 /*  56:    */   
 /*  57:    */   public void writeEntityToNBT(NBTTagCompound paramfn)
@@ -267,7 +267,7 @@ package net.minecraft.src;
 /* 265:291 */               int i3 = j + n;
 /* 266:292 */               int i4 = i + i2;
 /* 267:293 */               int i5 = k + i1;
-/* 268:294 */               ProtoBlock localatr = this.world.getBlock(new BlockPosition(i3, i4, i5)).getProto();
+/* 268:294 */               BlockType localatr = this.world.getBlock(new BlockPosition(i3, i4, i5)).getType();
 /* 269:295 */               if ((localatr.getMaterial() != Material.air) && (localatr != BlockList.bedrock) && (localatr != BlockList.endPortal) && (localatr != BlockList.endPortalFrame) && (localatr != BlockList.bX) && (localatr != BlockList.barrier)) {
 /* 270:296 */                 m = (this.world.b(new BlockPosition(i3, i4, i5), true)) || (m != 0) ? 1 : 0;
 /* 271:    */               }
@@ -369,7 +369,7 @@ package net.minecraft.src;
 /* 367:390 */     a(0, paramxm);
 /* 368:    */   }
 /* 369:    */   
-/* 370:    */   public boolean a(DamageSource paramwh, float paramFloat)
+/* 370:    */   public boolean receiveDamage(DamageSource paramwh, float paramFloat)
 /* 371:    */   {
 /* 372:395 */     if (isImmuneTo(paramwh)) {
 /* 373:396 */       return false;
@@ -399,7 +399,7 @@ package net.minecraft.src;
 /* 397:424 */     for (int i = 0; i < this.bn.length; i++) {
 /* 398:425 */       this.bn[i] += 3;
 /* 399:    */     }
-/* 400:428 */     return super.a(paramwh, paramFloat);
+/* 400:428 */     return super.receiveDamage(paramwh, paramFloat);
 /* 401:    */   }
 /* 402:    */   
 /* 403:    */   protected void b(boolean paramBoolean, int paramInt)
@@ -450,22 +450,22 @@ package net.minecraft.src;
 /* 448:    */   
 /* 449:    */   public int cj()
 /* 450:    */   {
-/* 451:482 */     return this.ac.c(20);
+/* 451:482 */     return this.data.getInteger(20);
 /* 452:    */   }
 /* 453:    */   
 /* 454:    */   public void r(int paramInt)
 /* 455:    */   {
-/* 456:486 */     this.ac.b(20, Integer.valueOf(paramInt));
+/* 456:486 */     this.data.b(20, Integer.valueOf(paramInt));
 /* 457:    */   }
 /* 458:    */   
 /* 459:    */   public int s(int paramInt)
 /* 460:    */   {
-/* 461:490 */     return this.ac.c(17 + paramInt);
+/* 461:490 */     return this.data.getInteger(17 + paramInt);
 /* 462:    */   }
 /* 463:    */   
 /* 464:    */   public void b(int paramInt1, int paramInt2)
 /* 465:    */   {
-/* 466:494 */     this.ac.b(17 + paramInt1, Integer.valueOf(paramInt2));
+/* 466:494 */     this.data.b(17 + paramInt1, Integer.valueOf(paramInt2));
 /* 467:    */   }
 /* 468:    */   
 /* 469:    */   public boolean ck()

@@ -9,12 +9,12 @@ package net.minecraft.src;
 /*  8:   */   
 /*  9:   */   public boolean a(ItemStack paramamj, EntityPlayer paramahd, World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3)
 /* 10:   */   {
-/* 11:17 */     boolean bool = paramaqu.getBlock(paramdt).getProto().f(paramaqu, paramdt);
+/* 11:17 */     boolean bool = paramaqu.getBlock(paramdt).getType().f(paramaqu, paramdt);
 /* 12:18 */     BlockPosition localdt = bool ? paramdt : paramdt.offset(paramej);
 /* 13:20 */     if (!paramahd.a(localdt, paramej, paramamj)) {
 /* 14:21 */       return false;
 /* 15:   */     }
-/* 16:24 */     ProtoBlock localatr = paramaqu.getBlock(localdt).getProto();
+/* 16:24 */     BlockType localatr = paramaqu.getBlock(localdt).getType();
 /* 17:25 */     if (!paramaqu.a(localatr, localdt, false, paramej, null, paramamj)) {
 /* 18:26 */       return false;
 /* 19:   */     }

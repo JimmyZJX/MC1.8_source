@@ -18,8 +18,8 @@ package net.minecraft.src;
 /*  17:    */   protected void h()
 /*  18:    */   {
 /*  19: 71 */     super.h();
-/*  20: 72 */     H().a(23, "");
-/*  21: 73 */     H().a(24, "");
+/*  20: 72 */     H().addData(23, "");
+/*  21: 73 */     H().addData(24, "");
 /*  22:    */   }
 /*  23:    */   
 /*  24:    */   protected void readEntityFromNBT(NBTTagCompound paramfn)
@@ -61,7 +61,7 @@ package net.minecraft.src;
 /*  60:    */     }
 /*  61:    */   }
 /*  62:    */   
-/*  63:    */   public boolean e(EntityPlayer paramahd)
+/*  63:    */   public boolean onRightClick(EntityPlayer paramahd)
 /*  64:    */   {
 /*  65:116 */     this.a.a(paramahd);
 /*  66:117 */     return false;
@@ -73,11 +73,11 @@ package net.minecraft.src;
 /*  72:124 */     if (paramInt == 24) {
 /*  73:    */       try
 /*  74:    */       {
-/*  75:126 */         this.a.b(hp.a(H().e(24)));
+/*  75:126 */         this.a.b(hp.a(H().getString(24)));
 /*  76:    */       }
 /*  77:    */       catch (Throwable localThrowable) {}
 /*  78:128 */     } else if (paramInt == 23) {
-/*  79:129 */       this.a.a(H().e(23));
+/*  79:129 */       this.a.a(H().getString(23));
 /*  80:    */     }
 /*  81:    */   }
 /*  82:    */ }

@@ -33,7 +33,7 @@ package net.minecraft.src;
 /*  32:    */   
 /*  33:    */   public void a(vq paramvq)
 /*  34:    */   {
-/*  35: 54 */     this.f.a(0, aop.a().a(this.a, this.g));
+/*  35: 54 */     this.f.a(0, RecipeList.a().a(this.a, this.g));
 /*  36:    */   }
 /*  37:    */   
 /*  38:    */   public void b(EntityPlayer paramahd)
@@ -53,7 +53,7 @@ package net.minecraft.src;
 /*  52:    */   
 /*  53:    */   public boolean a(EntityPlayer paramahd)
 /*  54:    */   {
-/*  55: 74 */     if (this.g.getBlock(this.h).getProto() != BlockList.ai) {
+/*  55: 74 */     if (this.g.getBlock(this.h).getType() != BlockList.ai) {
 /*  56: 75 */       return false;
 /*  57:    */     }
 /*  58: 77 */     if (paramahd.dist2(this.h.getX() + 0.5D, this.h.getY() + 0.5D, this.h.getZ() + 0.5D) > 64.0D) {

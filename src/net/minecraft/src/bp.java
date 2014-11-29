@@ -30,7 +30,7 @@ package net.minecraft.src;
 /* 28:44 */     qw localqw = paramArrayOfString.length >= 2 ? a(paramae, paramArrayOfString[1]) : b(paramae);
 /* 29:   */     
 /* 30:46 */     localqw.a(localarc);
-/* 31:47 */     localqw.O = 0.0F;
+/* 31:47 */     localqw.fallDistance = 0.0F;
 /* 32:48 */     if (paramae.e().getGameRules().getBoolean("sendCommandFeedback")) {
 /* 33:49 */       localqw.a(new hz("gameMode.changed", new Object[0]));
 /* 34:   */     }

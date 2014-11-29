@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ import java.util.Random;
 /*   2:    */ 
 /*   3:    */ public class aug
-/*   4:    */   extends ProtoBlock
+/*   4:    */   extends BlockType
 /*   5:    */ {
 /*   6: 24 */   public static final BlockDataInteger a = BlockDataInteger.getInstance("bites", 0, 6);
 /*   7:    */   
@@ -84,7 +84,7 @@ package net.minecraft.src;
 /*  83:102 */     return false;
 /*  84:    */   }
 /*  85:    */   
-/*  86:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/*  86:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /*  87:    */   {
 /*  88:107 */     if (!d(paramaqu, paramdt)) {
 /*  89:108 */       paramaqu.g(paramdt);
@@ -93,7 +93,7 @@ package net.minecraft.src;
 /*  92:    */   
 /*  93:    */   private boolean d(World paramaqu, BlockPosition paramdt)
 /*  94:    */   {
-/*  95:113 */     return paramaqu.getBlock(paramdt.down()).getProto().getMaterial().a();
+/*  95:113 */     return paramaqu.getBlock(paramdt.down()).getType().getMaterial().a();
 /*  96:    */   }
 /*  97:    */   
 /*  98:    */   public int a(Random paramRandom)

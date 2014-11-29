@@ -102,7 +102,7 @@ package net.minecraft.src;
 /* 101:124 */     localfn.setNBT("pages", localfv);
 /* 102:125 */     if (((paramahd instanceof qw)) && (paramahd.bY() == paramamj))
 /* 103:    */     {
-/* 104:126 */       ajk localajk = paramahd.bi.a(paramahd.bg, paramahd.bg.c);
+/* 104:126 */       ajk localajk = paramahd.bi.a(paramahd.inventory, paramahd.inventory.c);
 /* 105:127 */       ((qw)paramahd).a.a(new jh(0, localajk.e, paramamj));
 /* 106:    */     }
 /* 107:    */   }

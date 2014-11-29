@@ -107,9 +107,9 @@ package net.minecraft.src;
 /* 106:118 */         for (int i5 = 127; i5 >= 0; i5--)
 /* 107:    */         {
 /* 108:119 */           Block localbec3 = parambgk.a(i1, i5, i2);
-/* 109:120 */           if (localbec3.getProto().getMaterial() == Material.air) {
+/* 109:120 */           if (localbec3.getType().getMaterial() == Material.air) {
 /* 110:121 */             i4 = -1;
-/* 111:122 */           } else if (localbec3.getProto() == BlockList.stone) {
+/* 111:122 */           } else if (localbec3.getType() == BlockList.stone) {
 /* 112:123 */             if (i4 == -1)
 /* 113:    */             {
 /* 114:124 */               if (i3 <= 0)

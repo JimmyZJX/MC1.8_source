@@ -1,15 +1,15 @@
 package net.minecraft.src;
 /*   1:    */ import java.util.List;
 /*   2:    */ 
-/*   3:    */ public class avv
-/*   4:    */   extends ProtoBlock
+/*   3:    */ public class BlockFence
+/*   4:    */   extends BlockType
 /*   5:    */ {
 /*   6: 20 */   public static final BlockDataBoolean a = BlockDataBoolean.getInstance("north");
 /*   7: 21 */   public static final BlockDataBoolean b = BlockDataBoolean.getInstance("east");
 /*   8: 22 */   public static final BlockDataBoolean M = BlockDataBoolean.getInstance("south");
 /*   9: 23 */   public static final BlockDataBoolean N = BlockDataBoolean.getInstance("west");
 /*  10:    */   
-/*  11:    */   public avv(Material parambof)
+/*  11:    */   public BlockFence(Material parambof)
 /*  12:    */   {
 /*  13: 26 */     super(parambof);
 /*  14: 27 */     j(this.L.b().setData(a, Boolean.valueOf(false)).setData(b, Boolean.valueOf(false)).setData(M, Boolean.valueOf(false)).setData(N, Boolean.valueOf(false)));
@@ -103,11 +103,11 @@ package net.minecraft.src;
 /* 102:    */   
 /* 103:    */   public boolean e(IBlockAccess paramard, BlockPosition paramdt)
 /* 104:    */   {
-/* 105:120 */     ProtoBlock localatr = paramard.getBlock(paramdt).getProto();
+/* 105:120 */     BlockType localatr = paramard.getBlock(paramdt).getType();
 /* 106:121 */     if (localatr == BlockList.barrier) {
 /* 107:122 */       return false;
 /* 108:    */     }
-/* 109:124 */     if ((((localatr instanceof avv)) && (localatr.material == this.material)) || ((localatr instanceof avw))) {
+/* 109:124 */     if ((((localatr instanceof BlockFence)) && (localatr.material == this.material)) || ((localatr instanceof BlockFenceGate))) {
 /* 110:125 */       return true;
 /* 111:    */     }
 /* 112:127 */     if ((localatr.material.isOpaque()) && (localatr.isOpaqueCube())) {

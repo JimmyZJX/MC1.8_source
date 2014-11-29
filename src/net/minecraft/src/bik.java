@@ -4,10 +4,10 @@ package net.minecraft.src;
 /*  3:   */ public class bik
 /*  4:   */   extends TerrainGenerator
 /*  5:   */ {
-/*  6:   */   private ProtoBlock block;
+/*  6:   */   private BlockType block;
 /*  7:   */   private int size;
 /*  8:   */   
-/*  9:   */   public bik(ProtoBlock b, int s)
+/*  9:   */   public bik(BlockType b, int s)
 /* 10:   */   {
 /* 11:16 */     this.block = b;
 /* 12:17 */     this.size = s;
@@ -15,7 +15,7 @@ package net.minecraft.src;
 /* 14:   */   
 /* 15:   */   public boolean generate(World paramaqu, Random paramRandom, BlockPosition position)
 /* 16:   */   {
-/* 17:22 */     if (paramaqu.getBlock(position).getProto().getMaterial() != Material.water) {
+/* 17:22 */     if (paramaqu.getBlock(position).getType().getMaterial() != Material.water) {
 /* 18:23 */       return false;
 /* 19:   */     }
 /* 20:25 */     int hSize = paramRandom.nextInt(this.size - 2) + 2;
@@ -29,7 +29,7 @@ package net.minecraft.src;
 /* 28:34 */           for (int y = position.getY() - vSize; y <= position.getY() + vSize; y++)
 /* 29:   */           {
 /* 30:35 */             BlockPosition pos = new BlockPosition(x, y, z);
-/* 31:36 */             ProtoBlock oldBlock = paramaqu.getBlock(pos).getProto();
+/* 31:36 */             BlockType oldBlock = paramaqu.getBlock(pos).getType();
 /* 32:37 */             if ((oldBlock == BlockList.dirt) || (oldBlock == BlockList.grass)) {
 /* 33:38 */               paramaqu.setBlock(pos, this.block.instance(), 2);
 /* 34:   */             }

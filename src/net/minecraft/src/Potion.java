@@ -101,11 +101,11 @@ package net.minecraft.src;
 /* 100:121 */     else if (this.id == poison.id)
 /* 101:    */     {
 /* 102:122 */       if (paramxm.getHealth() > 1.0F) {
-/* 103:123 */         paramxm.a(DamageSource.magic, 1.0F);
+/* 103:123 */         paramxm.receiveDamage(DamageSource.magic, 1.0F);
 /* 104:    */       }
 /* 105:    */     }
 /* 106:125 */     else if (this.id == wither.id) {
-/* 107:126 */       paramxm.a(DamageSource.wither, 1.0F);
+/* 107:126 */       paramxm.receiveDamage(DamageSource.wither, 1.0F);
 /* 108:127 */     } else if ((this.id == hunger.id) && ((paramxm instanceof EntityPlayer))) {
 /* 109:130 */       ((EntityPlayer)paramxm).a(0.025F * (paramInt + 1));
 /* 110:131 */     } else if ((this.id == saturation.id) && ((paramxm instanceof EntityPlayer)))
@@ -117,7 +117,7 @@ package net.minecraft.src;
 /* 116:135 */     else if (((this.id == instantHealth.id) && (!paramxm.bl())) || ((this.id == instantDamage.id) && (paramxm.bl()))) {
 /* 117:136 */       paramxm.g(Math.max(4 << paramInt, 0));
 /* 118:137 */     } else if (((this.id == instantDamage.id) && (!paramxm.bl())) || ((this.id == instantHealth.id) && (paramxm.bl()))) {
-/* 119:138 */       paramxm.a(DamageSource.magic, 6 << paramInt);
+/* 119:138 */       paramxm.receiveDamage(DamageSource.magic, 6 << paramInt);
 /* 120:    */     }
 /* 121:    */   }
 /* 122:    */   
@@ -133,9 +133,9 @@ package net.minecraft.src;
 /* 132:    */     {
 /* 133:147 */       i1 = (int)(paramDouble * (6 << paramInt) + 0.5D);
 /* 134:148 */       if (paramwv1 == null) {
-/* 135:149 */         paramxm.a(DamageSource.magic, i1);
+/* 135:149 */         paramxm.receiveDamage(DamageSource.magic, i1);
 /* 136:    */       } else {
-/* 137:151 */         paramxm.a(DamageSource.b(paramwv1, paramwv2), i1);
+/* 137:151 */         paramxm.receiveDamage(DamageSource.b(paramwv1, paramwv2), i1);
 /* 138:    */       }
 /* 139:    */     }
 /* 140:    */   }

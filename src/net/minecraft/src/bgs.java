@@ -104,7 +104,7 @@ package net.minecraft.src;
 /* 103:121 */                 if ((i6 >= 0) && (i6 < 256))
 /* 104:    */                 {
 /* 105:124 */                   localbec3 = parambgk.a(i4, i6, i5);
-/* 106:125 */                   if ((localbec3.getProto() == BlockList.flowingWater) || (localbec3.getProto() == BlockList.water)) {
+/* 106:125 */                   if ((localbec3.getType() == BlockList.flowingWater) || (localbec3.getType() == BlockList.water)) {
 /* 107:126 */                     i3 = 1;
 /* 108:    */                   }
 /* 109:128 */                   if ((i6 != i1 - 1) && (i4 != m) && (i4 != n - 1) && (i5 != localbec1) && (i5 != localbec2 - 1)) {
@@ -131,7 +131,7 @@ package net.minecraft.src;
 /* 130:    */                     {
 /* 131:147 */                       Block localbec4 = parambgk.a(i4, i8, localbec31);
 /* 132:148 */                       Block localbec5 = (Block)Objects.firstNonNull(parambgk.a(i4, i8 + 1, localbec31), BlockList.air.instance());
-/* 133:149 */                       if ((localbec4.getProto() == BlockList.grass) || (localbec4.getProto() == BlockList.bw)) {
+/* 133:149 */                       if ((localbec4.getType() == BlockList.grass) || (localbec4.getType() == BlockList.bw)) {
 /* 134:150 */                         i7 = 1;
 /* 135:    */                       }
 /* 136:152 */                       if (a(localbec4, localbec5)) {
@@ -142,11 +142,11 @@ package net.minecraft.src;
 /* 141:    */                         else
 /* 142:    */                         {
 /* 143:156 */                           parambgk.a(i4, i8, localbec31, BlockList.air.instance());
-/* 144:157 */                           if (localbec5.getProto() == BlockList.sand) {
+/* 144:157 */                           if (localbec5.getType() == BlockList.sand) {
 /* 145:158 */                             parambgk.a(i4, i8 + 1, localbec31, localbec5.getData(BlockSand.a) == bac.b ? BlockList.cM.instance() : BlockList.A.instance());
 /* 146:    */                           }
-/* 147:160 */                           if ((i7 != 0) && (parambgk.a(i4, i8 - 1, localbec31).getProto() == BlockList.dirt)) {
-/* 148:161 */                             parambgk.a(i4, i8 - 1, localbec31, this.c.b(new BlockPosition(i4 + paramInt1 * 16, 0, localbec31 + paramInt2 * 16)).ak.getProto().instance());
+/* 147:160 */                           if ((i7 != 0) && (parambgk.a(i4, i8 - 1, localbec31).getType() == BlockList.dirt)) {
+/* 148:161 */                             parambgk.a(i4, i8 - 1, localbec31, this.c.b(new BlockPosition(i4 + paramInt1 * 16, 0, localbec31 + paramInt2 * 16)).ak.getType().instance());
 /* 149:    */                           }
 /* 150:    */                         }
 /* 151:    */                       }
@@ -166,34 +166,34 @@ package net.minecraft.src;
 /* 165:    */   
 /* 166:    */   protected boolean a(Block parambec1, Block parambec2)
 /* 167:    */   {
-/* 168:177 */     if (parambec1.getProto() == BlockList.stone) {
+/* 168:177 */     if (parambec1.getType() == BlockList.stone) {
 /* 169:178 */       return true;
 /* 170:    */     }
-/* 171:180 */     if (parambec1.getProto() == BlockList.dirt) {
+/* 171:180 */     if (parambec1.getType() == BlockList.dirt) {
 /* 172:181 */       return true;
 /* 173:    */     }
-/* 174:183 */     if (parambec1.getProto() == BlockList.grass) {
+/* 174:183 */     if (parambec1.getType() == BlockList.grass) {
 /* 175:184 */       return true;
 /* 176:    */     }
-/* 177:186 */     if (parambec1.getProto() == BlockList.cz) {
+/* 177:186 */     if (parambec1.getType() == BlockList.cz) {
 /* 178:187 */       return true;
 /* 179:    */     }
-/* 180:189 */     if (parambec1.getProto() == BlockList.cu) {
+/* 180:189 */     if (parambec1.getType() == BlockList.cu) {
 /* 181:190 */       return true;
 /* 182:    */     }
-/* 183:192 */     if (parambec1.getProto() == BlockList.A) {
+/* 183:192 */     if (parambec1.getType() == BlockList.A) {
 /* 184:193 */       return true;
 /* 185:    */     }
-/* 186:195 */     if (parambec1.getProto() == BlockList.cM) {
+/* 186:195 */     if (parambec1.getType() == BlockList.cM) {
 /* 187:196 */       return true;
 /* 188:    */     }
-/* 189:198 */     if (parambec1.getProto() == BlockList.bw) {
+/* 189:198 */     if (parambec1.getType() == BlockList.bw) {
 /* 190:199 */       return true;
 /* 191:    */     }
-/* 192:201 */     if (parambec1.getProto() == BlockList.aH) {
+/* 192:201 */     if (parambec1.getType() == BlockList.aH) {
 /* 193:202 */       return true;
 /* 194:    */     }
-/* 195:204 */     if (((parambec1.getProto() == BlockList.sand) || (parambec1.getProto() == BlockList.gravel)) && (parambec2.getProto().getMaterial() != Material.water)) {
+/* 195:204 */     if (((parambec1.getType() == BlockList.sand) || (parambec1.getType() == BlockList.gravel)) && (parambec2.getType().getMaterial() != Material.water)) {
 /* 196:205 */       return true;
 /* 197:    */     }
 /* 198:208 */     return false;

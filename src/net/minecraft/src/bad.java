@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ import java.util.List;
 /*  2:   */ 
 /*  3:   */ public class bad
-/*  4:   */   extends ProtoBlock
+/*  4:   */   extends BlockType
 /*  5:   */ {
 /*  6:15 */   public static final BlockDataEnum a = BlockDataEnum.getInstance("type", bae.class);
 /*  7:   */   

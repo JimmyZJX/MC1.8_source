@@ -11,7 +11,7 @@ package net.minecraft.src;
 /* 10:21 */     a(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, 0.8F, 0.5F + f);
 /* 11:   */   }
 /* 12:   */   
-/* 13:   */   protected boolean c(ProtoBlock paramatr)
+/* 13:   */   protected boolean c(BlockType paramatr)
 /* 14:   */   {
 /* 15:26 */     return (paramatr == BlockList.sand) || (paramatr == BlockList.cz) || (paramatr == BlockList.cu) || (paramatr == BlockList.dirt);
 /* 16:   */   }
@@ -34,7 +34,7 @@ package net.minecraft.src;
 /* 33:   */     }
 /* 34:   */     else
 /* 35:   */     {
-/* 36:45 */       paramahd.increaseStat(StatList.H[ProtoBlock.a(this)]);
+/* 36:45 */       paramahd.increaseStat(StatList.H[BlockType.a(this)]);
 /* 37:   */       
 /* 38:47 */       a(paramaqu, paramdt, new ItemStack(BlockList.deadbush, 1, 0));
 /* 39:   */     }

@@ -19,7 +19,7 @@ package net.minecraft.src;
 /* 18:21 */     if (this.a.isInWater()) {
 /* 19:22 */       return false;
 /* 20:   */     }
-/* 21:24 */     if (!this.a.C) {
+/* 21:24 */     if (!this.a.landing) {
 /* 22:25 */       return false;
 /* 23:   */     }
 /* 24:28 */     EntityLiving localxm = this.a.l_();

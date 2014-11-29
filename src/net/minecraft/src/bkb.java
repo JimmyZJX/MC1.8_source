@@ -6,7 +6,7 @@ package net.minecraft.src;
 /*   5:    */ abstract class bkb
 /*   6:    */   extends bms
 /*   7:    */ {
-/*   8:126 */   protected static final List a = Lists.newArrayList(new vl[] { new vl(ItemList.diamond, 0, 1, 3, 5), new vl(ItemList.ironIngot, 0, 1, 5, 5), new vl(ItemList.goldIngot, 0, 1, 3, 15), new vl(ItemList.goldenSword, 0, 1, 1, 5), new vl(ItemList.ah, 0, 1, 1, 5), new vl(ItemList.d, 0, 1, 1, 5), new vl(ItemList.by, 0, 3, 7, 5), new vl(ItemList.saddle, 0, 1, 1, 10), new vl(ItemList.cl, 0, 1, 1, 8), new vl(ItemList.ck, 0, 1, 1, 5), new vl(ItemList.cm, 0, 1, 1, 3), new vl(Item.fromProtoBlock(BlockList.obsidian), 0, 2, 4, 2) });
+/*   8:126 */   protected static final List a = Lists.newArrayList(new vl[] { new vl(ItemList.diamond, 0, 1, 3, 5), new vl(ItemList.ironIngot, 0, 1, 5, 5), new vl(ItemList.goldIngot, 0, 1, 3, 15), new vl(ItemList.goldenSword, 0, 1, 1, 5), new vl(ItemList.ah, 0, 1, 1, 5), new vl(ItemList.d, 0, 1, 1, 5), new vl(ItemList.by, 0, 3, 7, 5), new vl(ItemList.saddle, 0, 1, 1, 10), new vl(ItemList.cl, 0, 1, 1, 8), new vl(ItemList.ck, 0, 1, 1, 5), new vl(ItemList.cm, 0, 1, 1, 3), new vl(Item.fromBlock(BlockList.obsidian), 0, 2, 4, 2) });
 /*   9:    */   
 /*  10:    */   public bkb() {}
 /*  11:    */   

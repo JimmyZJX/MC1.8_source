@@ -107,7 +107,7 @@ package net.minecraft.src;
 /* 107:126 */     b(paramInt1, paramInt2);
 /* 108:127 */     bss.c();
 /* 109:    */     
-/* 110:129 */     Inventory localahb = this.j.h.bg;
+/* 110:129 */     Inventory localahb = this.j.h.inventory;
 /* 111:130 */     Object localObject = this.x == null ? localahb.p() : this.x;
 /* 112:132 */     if (localObject != null)
 /* 113:    */     {
@@ -178,7 +178,7 @@ package net.minecraft.src;
 /* 178:197 */     ItemStack localamj1 = paramajk.d();
 /* 179:198 */     int m = 0;
 /* 180:199 */     int n = (paramajk == this.v) && (this.x != null) && (!this.w) ? 1 : 0;
-/* 181:200 */     ItemStack localamj2 = this.j.h.bg.p();
+/* 181:200 */     ItemStack localamj2 = this.j.h.inventory.p();
 /* 182:201 */     String str1 = null;
 /* 183:203 */     if ((paramajk == this.v) && (this.x != null) && (this.w) && (localamj1 != null))
 /* 184:    */     {
@@ -243,7 +243,7 @@ package net.minecraft.src;
 /* 243:    */   
 /* 244:    */   private void a()
 /* 245:    */   {
-/* 246:257 */     ItemStack localamj1 = this.j.h.bg.p();
+/* 246:257 */     ItemStack localamj1 = this.j.h.inventory.p();
 /* 247:258 */     if ((localamj1 == null) || (!this.t)) {
 /* 248:259 */       return;
 /* 249:    */     }
@@ -296,7 +296,7 @@ package net.minecraft.src;
 /* 296:306 */       if (n != 0) {
 /* 297:307 */         i1 = -999;
 /* 298:    */       }
-/* 299:310 */       if ((this.j.t.z) && (n != 0) && (this.j.h.bg.p() == null))
+/* 299:310 */       if ((this.j.t.z) && (n != 0) && (this.j.h.inventory.p() == null))
 /* 300:    */       {
 /* 301:311 */         this.j.a((bxf)null);
 /* 302:312 */         return;
@@ -316,7 +316,7 @@ package net.minecraft.src;
 /* 316:    */           }
 /* 317:    */         }
 /* 318:324 */         else if (!this.t) {
-/* 319:325 */           if (this.j.h.bg.p() == null)
+/* 319:325 */           if (this.j.h.inventory.p() == null)
 /* 320:    */           {
 /* 321:326 */             if (paramInt3 == this.j.t.ae.i() + 100)
 /* 322:    */             {
@@ -363,7 +363,7 @@ package net.minecraft.src;
 /* 363:    */   protected void a(int paramInt1, int paramInt2, int paramInt3, long paramLong)
 /* 364:    */   {
 /* 365:364 */     ajk localajk = c(paramInt1, paramInt2);
-/* 366:365 */     ItemStack localamj = this.j.h.bg.p();
+/* 366:365 */     ItemStack localamj = this.j.h.inventory.p();
 /* 367:367 */     if ((this.v != null) && (this.j.t.z))
 /* 368:    */     {
 /* 369:368 */       if ((paramInt3 == 0) || (paramInt3 == 1)) {
@@ -464,7 +464,7 @@ package net.minecraft.src;
 /* 464:    */           {
 /* 465:446 */             a(this.v, this.v.e, paramInt3, 0);
 /* 466:447 */             a(localajk1, n, 0, 0);
-/* 467:449 */             if (this.j.h.bg.p() != null)
+/* 467:449 */             if (this.j.h.inventory.p() != null)
 /* 468:    */             {
 /* 469:450 */               a(this.v, this.v.e, paramInt3, 0);
 /* 470:451 */               this.y = (paramInt1 - j);
@@ -500,7 +500,7 @@ package net.minecraft.src;
 /* 500:    */         }
 /* 501:477 */         a(null, -999, aib.d(2, this.F), 5);
 /* 502:    */       }
-/* 503:478 */       else if (this.j.h.bg.p() != null)
+/* 503:478 */       else if (this.j.h.inventory.p() != null)
 /* 504:    */       {
 /* 505:479 */         if (paramInt3 == this.j.t.ae.i() + 100)
 /* 506:    */         {
@@ -516,7 +516,7 @@ package net.minecraft.src;
 /* 516:    */         }
 /* 517:    */       }
 /* 518:    */     }
-/* 519:491 */     if (this.j.h.bg.p() == null) {
+/* 519:491 */     if (this.j.h.inventory.p() == null) {
 /* 520:492 */       this.J = 0L;
 /* 521:    */     }
 /* 522:495 */     this.t = false;
@@ -562,7 +562,7 @@ package net.minecraft.src;
 /* 562:    */   
 /* 563:    */   protected boolean b(int paramInt)
 /* 564:    */   {
-/* 565:536 */     if ((this.j.h.bg.p() == null) && (this.u != null)) {
+/* 565:536 */     if ((this.j.h.inventory.p() == null) && (this.u != null)) {
 /* 566:537 */       for (int j = 0; j < 9; j++) {
 /* 567:538 */         if (paramInt == this.j.t.as[j].i())
 /* 568:    */         {

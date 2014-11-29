@@ -4,35 +4,35 @@ package net.minecraft.src;
 /*  3:   */ public class bin
 /*  4:   */   extends TerrainGenerator
 /*  5:   */ {
-/*  6:   */   private ProtoBlock a;
+/*  6:   */   private BlockType a;
 /*  7:   */   
-/*  8:   */   public bin(ProtoBlock paramatr)
+/*  8:   */   public bin(BlockType paramatr)
 /*  9:   */   {
 /* 10:15 */     this.a = paramatr;
 /* 11:   */   }
 /* 12:   */   
 /* 13:   */   public boolean generate(World paramaqu, Random paramRandom, BlockPosition paramdt)
 /* 14:   */   {
-/* 15:20 */     if (paramaqu.getBlock(paramdt.up()).getProto() != BlockList.stone) {
+/* 15:20 */     if (paramaqu.getBlock(paramdt.up()).getType() != BlockList.stone) {
 /* 16:21 */       return false;
 /* 17:   */     }
-/* 18:23 */     if (paramaqu.getBlock(paramdt.down()).getProto() != BlockList.stone) {
+/* 18:23 */     if (paramaqu.getBlock(paramdt.down()).getType() != BlockList.stone) {
 /* 19:24 */       return false;
 /* 20:   */     }
-/* 21:27 */     if ((paramaqu.getBlock(paramdt).getProto().getMaterial() != Material.air) && (paramaqu.getBlock(paramdt).getProto() != BlockList.stone)) {
+/* 21:27 */     if ((paramaqu.getBlock(paramdt).getType().getMaterial() != Material.air) && (paramaqu.getBlock(paramdt).getType() != BlockList.stone)) {
 /* 22:28 */       return false;
 /* 23:   */     }
 /* 24:31 */     int i = 0;
-/* 25:32 */     if (paramaqu.getBlock(paramdt.west()).getProto() == BlockList.stone) {
+/* 25:32 */     if (paramaqu.getBlock(paramdt.west()).getType() == BlockList.stone) {
 /* 26:33 */       i++;
 /* 27:   */     }
-/* 28:35 */     if (paramaqu.getBlock(paramdt.east()).getProto() == BlockList.stone) {
+/* 28:35 */     if (paramaqu.getBlock(paramdt.east()).getType() == BlockList.stone) {
 /* 29:36 */       i++;
 /* 30:   */     }
-/* 31:38 */     if (paramaqu.getBlock(paramdt.north()).getProto() == BlockList.stone) {
+/* 31:38 */     if (paramaqu.getBlock(paramdt.north()).getType() == BlockList.stone) {
 /* 32:39 */       i++;
 /* 33:   */     }
-/* 34:41 */     if (paramaqu.getBlock(paramdt.south()).getProto() == BlockList.stone) {
+/* 34:41 */     if (paramaqu.getBlock(paramdt.south()).getType() == BlockList.stone) {
 /* 35:42 */       i++;
 /* 36:   */     }
 /* 37:45 */     int j = 0;

@@ -51,7 +51,7 @@ package net.minecraft.src;
 /* 50:63 */         for (int k = paramInt3; k < paramInt3 + this.e; k++)
 /* 51:   */         {
 /* 52:64 */           BlockPosition localdt = new BlockPosition(i, j, k);
-/* 53:65 */           ProtoBlock localatr = this.a.getBlock(localdt).getProto();
+/* 53:65 */           BlockType localatr = this.a.getBlock(localdt).getType();
 /* 54:66 */           if (localatr.getMaterial() != Material.water) {
 /* 55:67 */             return 0;
 /* 56:   */           }

@@ -42,7 +42,7 @@ package net.minecraft.src;
 /*  41: 59 */       throw new CommandException("commands.clone.tooManyBlocks", new Object[] { Integer.valueOf(i), Integer.valueOf(32768) });
 /*  42:    */     }
 /*  43: 61 */     int j = 0;
-/*  44: 62 */     ProtoBlock localatr = null;
+/*  44: 62 */     BlockType localatr = null;
 /*  45: 63 */     int k = -1;
 /*  46: 64 */     if (((paramArrayOfString.length < 11) || ((!paramArrayOfString[10].equals("force")) && (!paramArrayOfString[10].equals("move")))) && (localbjb1.a(localbjb2))) {
 /*  47: 65 */       throw new CommandException("commands.clone.noOverlap", new Object[0]);
@@ -92,11 +92,11 @@ package net.minecraft.src;
 /*  91:104 */           BlockPosition localObject5 = ((BlockPosition)localObject4).offset(localdt4);
 /*  92:    */           
 /*  93:106 */           Block localObject6 = localaqu.getBlock((BlockPosition)localObject4);
-/*  94:107 */           if ((m == 0) || (((Block)localObject6).getProto() != BlockList.air)) {
+/*  94:107 */           if ((m == 0) || (((Block)localObject6).getType() != BlockList.air)) {
 /*  95:109 */             if (localatr != null)
 /*  96:    */             {
-/*  97:110 */               if (((Block)localObject6).getProto() == localatr) {
-/*  98:113 */                 if ((k >= 0) && (((Block)localObject6).getProto().c((Block)localObject6) != k)) {}
+/*  97:110 */               if (((Block)localObject6).getType() == localatr) {
+/*  98:113 */                 if ((k >= 0) && (((Block)localObject6).getType().c((Block)localObject6) != k)) {}
 /*  99:    */               }
 /* 100:    */             }
 /* 101:    */             else
@@ -109,7 +109,7 @@ package net.minecraft.src;
 /* 108:122 */                 localArrayList2.add(new bb((BlockPosition)localObject5, (Block)localObject6, localfn));
 /* 109:123 */                 localLinkedList.addLast(localObject4);
 /* 110:    */               }
-/* 111:124 */               else if ((((Block)localObject6).getProto().m()) || (((Block)localObject6).getProto().isOpaqueCube()))
+/* 111:124 */               else if ((((Block)localObject6).getType().m()) || (((Block)localObject6).getType().isOpaqueCube()))
 /* 112:    */               {
 /* 113:125 */                 localArrayList1.add(new bb((BlockPosition)localObject5, (Block)localObject6, null));
 /* 114:126 */                 localLinkedList.addLast(localObject4);
@@ -181,7 +181,7 @@ package net.minecraft.src;
 /* 180:180 */     for (Iterator<bb> localObject3 = ((List)localObject2).iterator(); ((Iterator)localObject3).hasNext();)
 /* 181:    */     {
 /* 182:180 */       bb localObject4 = (bb)((Iterator)localObject3).next();
-/* 183:181 */       localaqu.b(((bb)localObject4).a, ((bb)localObject4).b.getProto());
+/* 183:181 */       localaqu.b(((bb)localObject4).a, ((bb)localObject4).b.getType());
 /* 184:    */     }
 /* 185:184 */     List<TickListener> localObject3 = localaqu.a(localbjb1, false);
 /* 186:185 */     if (localObject3 != null) {
@@ -220,7 +220,7 @@ package net.minecraft.src;
 /* 219:213 */       return a(paramArrayOfString, new String[] { "normal", "force", "move" });
 /* 220:    */     }
 /* 221:214 */     if ((paramArrayOfString.length == 12) && ("filtered".equals(paramArrayOfString[9]))) {
-/* 222:215 */       return a(paramArrayOfString, ProtoBlock.c.c());
+/* 222:215 */       return a(paramArrayOfString, BlockType.c.c());
 /* 223:    */     }
 /* 224:217 */     return null;
 /* 225:    */   }

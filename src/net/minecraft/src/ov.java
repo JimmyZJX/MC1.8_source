@@ -15,16 +15,16 @@ package net.minecraft.src;
 /*  14:189 */     double d3 = paramdz.c() + localej.i() * 1.125F;
 /*  15:    */     
 /*  16:191 */     BlockPosition localdt = paramdz.d().offset(localej);
-/*  17:192 */     Material localbof = localaqu.getBlock(localdt).getProto().getMaterial();
+/*  17:192 */     Material localbof = localaqu.getBlock(localdt).getType().getMaterial();
 /*  18:    */     double d4;
 /*  19:195 */     if (Material.water.equals(localbof)) {
 /*  20:196 */       d4 = 1.0D;
-/*  21:197 */     } else if ((Material.air.equals(localbof)) && (Material.water.equals(localaqu.getBlock(localdt.down()).getProto().getMaterial()))) {
+/*  21:197 */     } else if ((Material.air.equals(localbof)) && (Material.water.equals(localaqu.getBlock(localdt.down()).getType().getMaterial()))) {
 /*  22:198 */       d4 = 0.0D;
 /*  23:    */     } else {
 /*  24:200 */       return this.b.a(paramdz, paramamj);
 /*  25:    */     }
-/*  26:203 */     adu localadu = new adu(localaqu, d1, d2 + d4, d3);
+/*  26:203 */     EntityBoat localadu = new EntityBoat(localaqu, d1, d2 + d4, d3);
 /*  27:204 */     localaqu.spawnEntity(localadu);
 /*  28:    */     
 /*  29:206 */     paramamj.split(1);

@@ -92,7 +92,7 @@ package net.minecraft.src;
 /*  91:165 */     if ((paramdt.getY() < 0) || (paramdt.getY() >= 256)) {
 /*  92:166 */       return paramarf.c;
 /*  93:    */     }
-/*  94:169 */     if (getBlock(paramdt).getProto().q())
+/*  94:169 */     if (getBlock(paramdt).getType().q())
 /*  95:    */     {
 /*  96:170 */       int i = 0;
 /*  97:171 */       for (EnumDirection localej : EnumDirection.values())
@@ -115,7 +115,7 @@ package net.minecraft.src;
 /* 114:    */   
 /* 115:    */   public boolean isEmpty(BlockPosition paramdt)
 /* 116:    */   {
-/* 117:191 */     return getBlock(paramdt).getProto().getMaterial() == Material.air;
+/* 117:191 */     return getBlock(paramdt).getType().getMaterial() == Material.air;
 /* 118:    */   }
 /* 119:    */   
 /* 120:    */   public int b(EnumSkyBlock paramarf, BlockPosition paramdt)
@@ -129,10 +129,10 @@ package net.minecraft.src;
 /* 128:202 */     return this.c[i][j].a(paramarf, paramdt);
 /* 129:    */   }
 /* 130:    */   
-/* 131:    */   public int a(BlockPosition paramdt, EnumDirection paramej)
+/* 131:    */   public int getStrongRedstoneSignal(BlockPosition pos, EnumDirection dir)
 /* 132:    */   {
-/* 133:212 */     Block localbec = getBlock(paramdt);
-/* 134:213 */     return localbec.getProto().b(this, paramdt, localbec, paramej);
+/* 133:212 */     Block block = getBlock(pos);
+/* 134:213 */     return block.getType().getStrongRedstoneSignal(this, pos, block, dir);
 /* 135:    */   }
 /* 136:    */   
 /* 137:    */   public WorldType G()

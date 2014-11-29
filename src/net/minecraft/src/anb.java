@@ -2,10 +2,10 @@ package net.minecraft.src;
 /*  1:   */ public class anb
 /*  2:   */   extends all
 /*  3:   */ {
-/*  4:   */   private ProtoBlock b;
-/*  5:   */   private ProtoBlock c;
+/*  4:   */   private BlockType b;
+/*  5:   */   private BlockType c;
 /*  6:   */   
-/*  7:   */   public anb(int paramInt, float paramFloat, ProtoBlock paramatr1, ProtoBlock paramatr2)
+/*  7:   */   public anb(int paramInt, float paramFloat, BlockType paramatr1, BlockType paramatr2)
 /*  8:   */   {
 /*  9:14 */     super(paramInt, paramFloat, false);
 /* 10:   */     
@@ -21,7 +21,7 @@ package net.minecraft.src;
 /* 20:26 */     if (!paramahd.a(paramdt.offset(paramej), paramej, paramamj)) {
 /* 21:27 */       return false;
 /* 22:   */     }
-/* 23:30 */     if ((paramaqu.getBlock(paramdt).getProto() == this.c) && (paramaqu.isEmpty(paramdt.up())))
+/* 23:30 */     if ((paramaqu.getBlock(paramdt).getType() == this.c) && (paramaqu.isEmpty(paramdt.up())))
 /* 24:   */     {
 /* 25:31 */       paramaqu.setBlock(paramdt.up(), this.b.instance());
 /* 26:32 */       paramamj.stackSize -= 1;

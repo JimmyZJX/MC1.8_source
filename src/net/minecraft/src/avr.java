@@ -31,7 +31,7 @@ package net.minecraft.src;
 /*  30:    */   
 /*  31:    */   public Item a(Block parambec, Random paramRandom, int paramInt)
 /*  32:    */   {
-/*  33: 56 */     return Item.fromProtoBlock(BlockList.obsidian);
+/*  33: 56 */     return Item.fromBlock(BlockList.obsidian);
 /*  34:    */   }
 /*  35:    */   
 /*  36:    */   public int a(Random paramRandom)
@@ -61,7 +61,7 @@ package net.minecraft.src;
 /*  60: 83 */     if ((localajh == null) || (!(localbcm instanceof bda))) {
 /*  61: 84 */       return true;
 /*  62:    */     }
-/*  63: 87 */     if (paramaqu.getBlock(paramdt.up()).getProto().blocksMovement()) {
+/*  63: 87 */     if (paramaqu.getBlock(paramdt.up()).getType().blocksMovement()) {
 /*  64: 88 */       return true;
 /*  65:    */     }
 /*  66: 91 */     if (paramaqu.isClient) {
@@ -99,7 +99,7 @@ package net.minecraft.src;
 /*  98:    */   public Block instance(int paramInt)
 /*  99:    */   {
 /* 100:125 */     EnumDirection localej = EnumDirection.a(paramInt);
-/* 101:126 */     if (localej.k() == EnumAxis.Y) {
+/* 101:126 */     if (localej.getAxis() == EnumAxis.Y) {
 /* 102:127 */       localej = EnumDirection.NORTH;
 /* 103:    */     }
 /* 104:129 */     return instance().setData(a, localej);

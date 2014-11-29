@@ -73,8 +73,8 @@ package net.minecraft.src;
 /*  72:    */     } else {
 /*  73:123 */       cjm.glBlendFuncSeparate(770, 771, 1, 0);
 /*  74:    */     }
-/*  75:127 */     ItemStack localamj = this.j.h.bg.e(3);
-/*  76:128 */     if ((this.j.t.ax == 0) && (localamj != null) && (localamj.getItem() == Item.fromProtoBlock(BlockList.pumpkin))) {
+/*  75:127 */     ItemStack localamj = this.j.h.inventory.e(3);
+/*  76:128 */     if ((this.j.t.ax == 0) && (localamj != null) && (localamj.getItem() == Item.fromBlock(BlockList.pumpkin))) {
 /*  77:129 */       e(localbuf);
 /*  78:    */     }
 /*  79:132 */     if (!this.j.h.a(Potion.nausea))
@@ -261,7 +261,7 @@ package net.minecraft.src;
 /* 260:320 */     float f1 = this.e;
 /* 261:321 */     this.e = -90.0F;
 /* 262:322 */     b(i1 - 91, parambuf.b() - 22, 0, 0, 182, 22);
-/* 263:323 */     b(i1 - 91 - 1 + localahd.bg.c * 20, parambuf.b() - 22 - 1, 0, 22, 24, 22);
+/* 263:323 */     b(i1 - 91 - 1 + localahd.inventory.c * 20, parambuf.b() - 22 - 1, 0, 22, 24, 22);
 /* 264:324 */     this.e = f1;
 /* 265:    */     
 /* 266:326 */     cjm.B();
@@ -804,7 +804,7 @@ package net.minecraft.src;
 /* 803:    */   
 /* 804:    */   private void a(int paramInt1, int paramInt2, int paramInt3, float paramFloat, EntityPlayer paramahd)
 /* 805:    */   {
-/* 806:864 */     ItemStack localamj = paramahd.bg.items[paramInt1];
+/* 806:864 */     ItemStack localamj = paramahd.inventory.items[paramInt1];
 /* 807:865 */     if (localamj == null) {
 /* 808:866 */       return;
 /* 809:    */     }
@@ -843,7 +843,7 @@ package net.minecraft.src;
 /* 842:900 */     this.m.a();
 /* 843:902 */     if (this.j.h != null)
 /* 844:    */     {
-/* 845:903 */       ItemStack localamj = this.j.h.bg.h();
+/* 845:903 */       ItemStack localamj = this.j.h.inventory.getHeldItem();
 /* 846:905 */       if (localamj == null) {
 /* 847:906 */         this.r = 0;
 /* 848:907 */       } else if ((this.s == null) || (localamj.getItem() != this.s.getItem()) || (!ItemStack.a(localamj, this.s)) || ((!localamj.e()) && (localamj.getDamage2() != this.s.getDamage2()))) {

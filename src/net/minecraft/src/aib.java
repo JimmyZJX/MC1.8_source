@@ -101,7 +101,7 @@ package net.minecraft.src;
 /* 100:    */   public ItemStack a(int paramInt1, int paramInt2, int paramInt3, EntityPlayer paramahd)
 /* 101:    */   {
 /* 102:126 */     ItemStack localamj1 = null;
-/* 103:127 */     Inventory localahb = paramahd.bg;
+/* 103:127 */     Inventory localahb = paramahd.inventory;
 /* 104:    */     
 /* 105:    */     Object localObject3;
 /* 106:    */     ItemStack localamj4;
@@ -419,7 +419,7 @@ package net.minecraft.src;
 /* 418:    */   
 /* 419:    */   public void b(EntityPlayer paramahd)
 /* 420:    */   {
-/* 421:388 */     Inventory localahb = paramahd.bg;
+/* 421:388 */     Inventory localahb = paramahd.inventory;
 /* 422:389 */     if (localahb.p() != null)
 /* 423:    */     {
 /* 424:390 */       paramahd.a(localahb.p(), false);

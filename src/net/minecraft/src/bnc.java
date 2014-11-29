@@ -5,8 +5,8 @@ package net.minecraft.src;
 /*    4:     */ public class bnc
 /*    5:     */   extends bnn
 /*    6:     */ {
-/*    7:     */   private ProtoBlock a;
-/*    8:     */   private ProtoBlock b;
+/*    7:     */   private BlockType a;
+/*    8:     */   private BlockType b;
 /*    9:     */   
 /*   10:     */   public bnc() {}
 /*   11:     */   
@@ -24,18 +24,18 @@ package net.minecraft.src;
 /*   23:     */   protected void a(NBTTagCompound paramfn)
 /*   24:     */   {
 /*   25:1645 */     super.a(paramfn);
-/*   26:1646 */     paramfn.setInt("CA", ProtoBlock.c.b(this.a));
-/*   27:1647 */     paramfn.setInt("CB", ProtoBlock.c.b(this.b));
+/*   26:1646 */     paramfn.setInt("CA", BlockType.c.b(this.a));
+/*   27:1647 */     paramfn.setInt("CB", BlockType.c.b(this.b));
 /*   28:     */   }
 /*   29:     */   
 /*   30:     */   protected void b(NBTTagCompound paramfn)
 /*   31:     */   {
 /*   32:1652 */     super.b(paramfn);
-/*   33:1653 */     this.a = ProtoBlock.c(paramfn.getInteger("CA"));
-/*   34:1654 */     this.b = ProtoBlock.c(paramfn.getInteger("CB"));
+/*   33:1653 */     this.a = BlockType.c(paramfn.getInteger("CA"));
+/*   34:1654 */     this.b = BlockType.c(paramfn.getInteger("CB"));
 /*   35:     */   }
 /*   36:     */   
-/*   37:     */   private ProtoBlock a(Random paramRandom)
+/*   37:     */   private BlockType a(Random paramRandom)
 /*   38:     */   {
 /*   39:1658 */     switch (paramRandom.nextInt(5))
 /*   40:     */     {

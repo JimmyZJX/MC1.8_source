@@ -113,7 +113,7 @@ package net.minecraft.src;
 /* 114:    */     }
 /* 115:    */   }
 /* 116:    */   
-/* 117:    */   public boolean a(DamageSource paramwh, float paramFloat)
+/* 117:    */   public boolean receiveDamage(DamageSource paramwh, float paramFloat)
 /* 118:    */   {
 /* 119:136 */     if (isImmuneTo(paramwh)) {
 /* 120:137 */       return false;
@@ -122,7 +122,7 @@ package net.minecraft.src;
 /* 123:140 */     if ((localwv instanceof EntityPlayer)) {
 /* 124:141 */       enrage(localwv);
 /* 125:    */     }
-/* 126:143 */     return super.a(paramwh, paramFloat);
+/* 126:143 */     return super.receiveDamage(paramwh, paramFloat);
 /* 127:    */   }
 /* 128:    */   
 /* 129:    */   private void enrage(Entity paramwv)
@@ -166,7 +166,7 @@ package net.minecraft.src;
 /* 167:    */     }
 /* 168:    */   }
 /* 169:    */   
-/* 170:    */   public boolean onRightClick(EntityPlayer paramahd)
+/* 170:    */   public boolean onRightClickMob(EntityPlayer paramahd)
 /* 171:    */   {
 /* 172:187 */     return false;
 /* 173:    */   }

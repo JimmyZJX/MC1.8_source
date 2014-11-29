@@ -21,7 +21,7 @@ package net.minecraft.src;
 /* 20:   */   public boolean a(ItemStack paramamj, EntityPlayer paramahd, World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3)
 /* 21:   */   {
 /* 22:32 */     Block localbec = paramaqu.getBlock(paramdt);
-/* 23:33 */     if ((localbec.getProto() == BlockList.aN) && (!((Boolean)localbec.getData(axc.a)).booleanValue()))
+/* 23:33 */     if ((localbec.getType() == BlockList.aN) && (!((Boolean)localbec.getData(axc.a)).booleanValue()))
 /* 24:   */     {
 /* 25:34 */       if (paramaqu.isClient) {
 /* 26:35 */         return true;

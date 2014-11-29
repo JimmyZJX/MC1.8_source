@@ -34,7 +34,7 @@ package net.minecraft.src;
 /*  33:    */   public float a(aqo paramaqo, World paramaqu, BlockPosition paramdt, Block parambec)
 /*  34:    */   {
 /*  35: 48 */     float f = super.a(paramaqo, paramaqu, paramdt, parambec);
-/*  36: 50 */     if ((l()) && (parambec.getProto() != BlockList.bedrock) && (parambec.getProto() != BlockList.endPortal) && (parambec.getProto() != BlockList.endPortalFrame) && (parambec.getProto() != BlockList.bX)) {
+/*  36: 50 */     if ((l()) && (parambec.getType() != BlockList.bedrock) && (parambec.getType() != BlockList.endPortal) && (parambec.getType() != BlockList.endPortalFrame) && (parambec.getType() != BlockList.bX)) {
 /*  37: 51 */       f = Math.min(0.8F, f);
 /*  38:    */     }
 /*  39: 54 */     return f;
@@ -48,7 +48,7 @@ package net.minecraft.src;
 /*  47:    */       {
 /*  48: 61 */         if (this.a != null)
 /*  49:    */         {
-/*  50: 62 */           if (parambru.d.a(DamageSource.fromMob(this.a), 8.0F)) {
+/*  50: 62 */           if (parambru.d.receiveDamage(DamageSource.fromMob(this.a), 8.0F)) {
 /*  51: 63 */             if (!parambru.d.ai()) {
 /*  52: 64 */               this.a.g(5.0F);
 /*  53:    */             } else {
@@ -57,7 +57,7 @@ package net.minecraft.src;
 /*  56:    */           }
 /*  57:    */         }
 /*  58:    */         else {
-/*  59: 70 */           parambru.d.a(DamageSource.magic, 5.0F);
+/*  59: 70 */           parambru.d.receiveDamage(DamageSource.magic, 5.0F);
 /*  60:    */         }
 /*  61: 72 */         if ((parambru.d instanceof EntityLiving))
 /*  62:    */         {
@@ -82,24 +82,24 @@ package net.minecraft.src;
 /*  81: 91 */     return false;
 /*  82:    */   }
 /*  83:    */   
-/*  84:    */   public boolean a(DamageSource paramwh, float paramFloat)
+/*  84:    */   public boolean receiveDamage(DamageSource paramwh, float paramFloat)
 /*  85:    */   {
 /*  86: 96 */     return false;
 /*  87:    */   }
 /*  88:    */   
 /*  89:    */   protected void h()
 /*  90:    */   {
-/*  91:101 */     this.ac.a(10, Byte.valueOf((byte)0));
+/*  91:101 */     this.data.addData(10, Byte.valueOf((byte)0));
 /*  92:    */   }
 /*  93:    */   
 /*  94:    */   public boolean l()
 /*  95:    */   {
-/*  96:105 */     return this.ac.a(10) == 1;
+/*  96:105 */     return this.data.getByte(10) == 1;
 /*  97:    */   }
 /*  98:    */   
 /*  99:    */   public void a(boolean paramBoolean)
 /* 100:    */   {
-/* 101:109 */     this.ac.b(10, Byte.valueOf((byte)(paramBoolean ? 1 : 0)));
+/* 101:109 */     this.data.b(10, Byte.valueOf((byte)(paramBoolean ? 1 : 0)));
 /* 102:    */   }
 /* 103:    */ }
 

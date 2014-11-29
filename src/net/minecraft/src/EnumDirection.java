@@ -30,7 +30,7 @@ package net.minecraft.src;
 /*  24: 36 */     for (EnumDirection localej : values())
 /*  25:    */     {
 /*  26: 37 */       n[localej.id] = localej;
-/*  27: 39 */       if (localej.k().c()) {
+/*  27: 39 */       if (localej.getAxis().isHorizontal()) {
 /*  28: 40 */         o[localej.horizontalID] = localej;
 /*  29:    */       }
 /*  30: 43 */       p.put(localej.j().toLowerCase(), localej);
@@ -81,7 +81,7 @@ package net.minecraft.src;
 /*  75: 82 */       if ((this == UP) || (this == DOWN)) {
 /*  76: 83 */         return this;
 /*  77:    */       }
-/*  78: 85 */       return yRotate();
+/*  78: 85 */       return cw();
 /*  79:    */     case 3: 
 /*  80: 88 */       if ((this == NORTH) || (this == SOUTH)) {
 /*  81: 89 */         return this;
@@ -91,7 +91,7 @@ package net.minecraft.src;
 /*  85: 94 */     throw new IllegalStateException("Unable to get CW facing for axis " + paramel);
 /*  86:    */   }
 /*  87:    */   
-/*  88:    */   public EnumDirection yRotate()
+/*  88:    */   public EnumDirection cw()
 /*  89:    */   {
 /*  90:124 */     switch (ek.b[ordinal()])
 /*  91:    */     {
@@ -184,7 +184,7 @@ package net.minecraft.src;
 /* 178:238 */     return this.name;
 /* 179:    */   }
 /* 180:    */   
-/* 181:    */   public EnumAxis k()
+/* 181:    */   public EnumAxis getAxis()
 /* 182:    */   {
 /* 183:242 */     return this.axis;
 /* 184:    */   }

@@ -61,12 +61,12 @@ package net.minecraft.src;
 /* 60:73 */     if (localbru.a == brv.BLOCK)
 /* 61:   */     {
 /* 62:74 */       BlockPosition localdt = localbru.a();
-/* 63:75 */       if (paramaqu.getBlock(localdt).getProto() == BlockList.aH) {
+/* 63:75 */       if (paramaqu.getBlock(localdt).getType() == BlockList.aH) {
 /* 64:76 */         localdt = localdt.down();
 /* 65:   */       }
-/* 66:79 */       localObject = new adu(paramaqu, localdt.getX() + 0.5F, localdt.getY() + 1.0F, localdt.getZ() + 0.5F);
-/* 67:80 */       ((adu)localObject).yaw = (((MathUtils.floor(paramahd.yaw * 4.0F / 360.0F + 0.5D) & 0x3) - 1) * 90);
-/* 68:81 */       if (!paramaqu.getCollidingAABBs((Entity)localObject, ((adu)localObject).getAABB().expand(-0.1D, -0.1D, -0.1D)).isEmpty()) {
+/* 66:79 */       localObject = new EntityBoat(paramaqu, localdt.getX() + 0.5F, localdt.getY() + 1.0F, localdt.getZ() + 0.5F);
+/* 67:80 */       ((EntityBoat)localObject).yaw = (((MathUtils.floor(paramahd.yaw * 4.0F / 360.0F + 0.5D) & 0x3) - 1) * 90);
+/* 68:81 */       if (!paramaqu.getCollidingAABBs((Entity)localObject, ((EntityBoat)localObject).getAABB().expand(-0.1D, -0.1D, -0.1D)).isEmpty()) {
 /* 69:82 */         return paramamj;
 /* 70:   */       }
 /* 71:84 */       if (!paramaqu.isClient) {

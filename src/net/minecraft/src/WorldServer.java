@@ -38,7 +38,7 @@ package net.minecraft.src;
 /*  34: 80 */   protected final abk d = new abk(this);
 /*  35: 87 */   private qv[] S = { new qv(null), new qv(null) };
 /*  36:    */   private int T;
-/*  37: 92 */   private static final List<vl> U = Lists.newArrayList(new vl[] { new vl(ItemList.stick, 0, 1, 3, 10), new vl(Item.fromProtoBlock(BlockList.planks), 0, 1, 3, 10), new vl(Item.fromProtoBlock(BlockList.log), 0, 1, 3, 10), new vl(ItemList.t, 0, 1, 1, 3), new vl(ItemList.p, 0, 1, 1, 5), new vl(ItemList.s, 0, 1, 1, 3), new vl(ItemList.o, 0, 1, 1, 5), new vl(ItemList.apple, 0, 2, 3, 5), new vl(ItemList.bread, 0, 2, 3, 3), new vl(Item.fromProtoBlock(BlockList.log2), 0, 1, 3, 10) });
+/*  37: 92 */   private static final List<vl> U = Lists.newArrayList(new vl[] { new vl(ItemList.stick, 0, 1, 3, 10), new vl(Item.fromBlock(BlockList.planks), 0, 1, 3, 10), new vl(Item.fromBlock(BlockList.log), 0, 1, 3, 10), new vl(ItemList.t, 0, 1, 1, 3), new vl(ItemList.p, 0, 1, 1, 5), new vl(ItemList.s, 0, 1, 1, 3), new vl(ItemList.o, 0, 1, 1, 5), new vl(ItemList.apple, 0, 2, 3, 5), new vl(ItemList.bread, 0, 2, 3, 3), new vl(Item.fromBlock(BlockList.log2), 0, 1, 3, 10) });
 /*  38:    */   
 /*  39:    */   public WorldServer(MinecraftServer paramMinecraftServer, bqy parambqy, WorldInfo parambqo, int paramInt, Profiler paramuw)
 /*  40:    */   {
@@ -293,7 +293,7 @@ package net.minecraft.src;
 /* 289:    */         }
 /* 290:359 */         if ((S()) && 
 /* 291:360 */           (b(localdt1).e())) {
-/* 292:361 */           getBlock(localdt1).getProto().k(this, localdt1);
+/* 292:361 */           getBlock(localdt1).getType().k(this, localdt1);
 /* 293:    */         }
 /* 294:    */       }
 /* 295:366 */       this.profiler.c("tickBlocks");
@@ -312,7 +312,7 @@ package net.minecraft.src;
 /* 308:378 */               j++;
 /* 309:379 */               BlockPosition localdt2 = new BlockPosition(i5 + k, i7 + localObject2.getY(), i6 + m);
 /* 310:380 */               Block localbec = localObject2.a(i5, i7, i6);
-/* 311:381 */               ProtoBlock localatr = localbec.getProto();
+/* 311:381 */               BlockType localatr = localbec.getType();
 /* 312:382 */               if (localatr.w())
 /* 313:    */               {
 /* 314:383 */                 i++;
@@ -338,18 +338,18 @@ package net.minecraft.src;
 /* 334:409 */     return localdt;
 /* 335:    */   }
 /* 336:    */   
-/* 337:    */   public boolean a(BlockPosition paramdt, ProtoBlock paramatr)
+/* 337:    */   public boolean a(BlockPosition paramdt, BlockType paramatr)
 /* 338:    */   {
 /* 339:414 */     TickListener localark = new TickListener(paramdt, paramatr);
 /* 340:415 */     return this.tickingList.contains(localark);
 /* 341:    */   }
 /* 342:    */   
-/* 343:    */   public void a(BlockPosition paramdt, ProtoBlock paramatr, int paramInt)
+/* 343:    */   public void a(BlockPosition paramdt, BlockType paramatr, int paramInt)
 /* 344:    */   {
 /* 345:420 */     a(paramdt, paramatr, paramInt, 0);
 /* 346:    */   }
 /* 347:    */   
-/* 348:    */   public void a(BlockPosition paramdt, ProtoBlock paramatr, int paramInt1, int paramInt2)
+/* 348:    */   public void a(BlockPosition paramdt, BlockType paramatr, int paramInt1, int paramInt2)
 /* 349:    */   {
 /* 350:425 */     TickListener localark = new TickListener(paramdt, paramatr);
 /* 351:426 */     int i = 0;
@@ -361,8 +361,8 @@ package net.minecraft.src;
 /* 357:430 */         if (a(localark.a.offset(-i, -i, -i), localark.a.offset(i, i, i)))
 /* 358:    */         {
 /* 359:431 */           Block localbec = getBlock(localark.a);
-/* 360:433 */           if ((localbec.getProto().getMaterial() != Material.air) && (localbec.getProto() == localark.a())) {
-/* 361:434 */             localbec.getProto().b(this, localark.a, localbec, this.rng);
+/* 360:433 */           if ((localbec.getType().getMaterial() != Material.air) && (localbec.getType() == localark.a())) {
+/* 361:434 */             localbec.getType().b(this, localark.a, localbec, this.rng);
 /* 362:    */           }
 /* 363:    */         }
 /* 364:437 */         return;
@@ -384,7 +384,7 @@ package net.minecraft.src;
 /* 380:    */     }
 /* 381:    */   }
 /* 382:    */   
-/* 383:    */   public void b(BlockPosition paramdt, ProtoBlock paramatr, int paramInt1, int paramInt2)
+/* 383:    */   public void b(BlockPosition paramdt, BlockType paramatr, int paramInt1, int paramInt2)
 /* 384:    */   {
 /* 385:457 */     TickListener localark = new TickListener(paramdt, paramatr);
 /* 386:458 */     localark.a(paramInt2);
@@ -454,10 +454,10 @@ package net.minecraft.src;
 /* 450:523 */       if (a(listener.a.offset(-k, -k, -k), listener.a.offset(k, k, k)))
 /* 451:    */       {
 /* 452:524 */         Block block = getBlock(listener.a);
-/* 453:525 */         if ((block.getProto().getMaterial() != Material.air) && (ProtoBlock.a(block.getProto(), listener.a()))) {
+/* 453:525 */         if ((block.getType().getMaterial() != Material.air) && (BlockType.a(block.getType(), listener.a()))) {
 /* 454:    */           try
 /* 455:    */           {
-/* 456:527 */             block.getProto().b(this, listener.a, block, this.rng);
+/* 456:527 */             block.getType().b(this, listener.a, block, this.rng);
 /* 457:    */           }
 /* 458:    */           catch (Throwable localThrowable)
 /* 459:    */           {
@@ -793,7 +793,7 @@ package net.minecraft.src;
 /* 789:861 */     return localaqo;
 /* 790:    */   }
 /* 791:    */   
-/* 792:    */   public void c(BlockPosition paramdt, ProtoBlock paramatr, int paramInt1, int paramInt2)
+/* 792:    */   public void c(BlockPosition paramdt, BlockType paramatr, int paramInt1, int paramInt2)
 /* 793:    */   {
 /* 794:866 */     aqk localaqk1 = new aqk(paramdt, paramatr, paramInt1, paramInt2);
 /* 795:867 */     for (aqk localaqk2 : this.S[this.T]) {
@@ -822,8 +822,8 @@ package net.minecraft.src;
 /* 818:    */   private boolean a(aqk paramaqk)
 /* 819:    */   {
 /* 820:891 */     Block localbec = getBlock(paramaqk.a());
-/* 821:892 */     if (localbec.getProto() == paramaqk.d()) {
-/* 822:893 */       return localbec.getProto().a(this, paramaqk.a(), localbec, paramaqk.b(), paramaqk.c());
+/* 821:892 */     if (localbec.getType() == paramaqk.d()) {
+/* 822:893 */       return localbec.getType().a(this, paramaqk.a(), localbec, paramaqk.b(), paramaqk.c());
 /* 823:    */     }
 /* 824:895 */     return false;
 /* 825:    */   }

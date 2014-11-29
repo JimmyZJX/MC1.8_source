@@ -44,7 +44,7 @@ package net.minecraft.src;
 /*  43: 48 */       for (int k = -j; (k <= j) && (bool); k++) {
 /*  44: 49 */         for (int m = -j; (m <= j) && (bool); m++) {
 /*  45: 50 */           if ((paramdt.getY() + i < 0) || (paramdt.getY() + i >= 256) || 
-/*  46: 51 */             (!canGrowInto(paramaqu.getBlock(paramdt.offset(k, i, m)).getProto()))) {
+/*  46: 51 */             (!canGrowInto(paramaqu.getBlock(paramdt.offset(k, i, m)).getType()))) {
 /*  47: 55 */             bool = false;
 /*  48:    */           }
 /*  49:    */         }
@@ -56,7 +56,7 @@ package net.minecraft.src;
 /*  55:    */   private boolean a(BlockPosition paramdt, World paramaqu)
 /*  56:    */   {
 /*  57: 64 */     BlockPosition localdt = paramdt.down();
-/*  58: 65 */     ProtoBlock localatr = paramaqu.getBlock(localdt).getProto();
+/*  58: 65 */     BlockType localatr = paramaqu.getBlock(localdt).getType();
 /*  59: 66 */     if (((localatr != BlockList.grass) && (localatr != BlockList.dirt)) || (paramdt.getY() < 2)) {
 /*  60: 67 */       return false;
 /*  61:    */     }
@@ -84,7 +84,7 @@ package net.minecraft.src;
 /*  83: 89 */         if ((j * j + k * k <= i) || (m * m + n * n <= i) || (j * j + n * n <= i) || (m * m + k * k <= i))
 /*  84:    */         {
 /*  85: 93 */           BlockPosition localdt = paramdt.offset(j, 0, k);
-/*  86: 94 */           Material localbof = paramaqu.getBlock(localdt).getProto().getMaterial();
+/*  86: 94 */           Material localbof = paramaqu.getBlock(localdt).getType().getMaterial();
 /*  87: 95 */           if ((localbof == Material.air) || (localbof == Material.leaves)) {
 /*  88: 96 */             setBlock(paramaqu, localdt, BlockList.leaves, this.c);
 /*  89:    */           }
@@ -101,7 +101,7 @@ package net.minecraft.src;
 /* 100:107 */         if (j * j + k * k <= i)
 /* 101:    */         {
 /* 102:111 */           BlockPosition localdt = paramdt.offset(j, 0, k);
-/* 103:112 */           Material localbof = paramaqu.getBlock(localdt).getProto().getMaterial();
+/* 103:112 */           Material localbof = paramaqu.getBlock(localdt).getType().getMaterial();
 /* 104:113 */           if ((localbof == Material.air) || (localbof == Material.leaves)) {
 /* 105:114 */             setBlock(paramaqu, localdt, BlockList.leaves, this.c);
 /* 106:    */           }

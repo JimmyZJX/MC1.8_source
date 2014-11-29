@@ -203,14 +203,14 @@ package net.minecraft.src;
 /* 202:235 */     if (localObject1 != this) {
 /* 203:236 */       if (!((Entity)localObject1).ai())
 /* 204:    */       {
-/* 205:237 */         e(this);
+/* 205:237 */         onRightClick(this);
 /* 206:    */       }
 /* 207:    */       else
 /* 208:    */       {
 /* 209:239 */         a(((Entity)localObject1).xPos, ((Entity)localObject1).yPos, ((Entity)localObject1).zPos, ((Entity)localObject1).yaw, ((Entity)localObject1).pitch);
 /* 210:240 */         this.b.an().d(this);
 /* 211:241 */         if (aw()) {
-/* 212:242 */           e(this);
+/* 212:242 */           onRightClick(this);
 /* 213:    */         }
 /* 214:    */       }
 /* 215:    */     }
@@ -221,9 +221,9 @@ package net.minecraft.src;
 /* 220:    */     try
 /* 221:    */     {
 /* 222:250 */       super.onUpdate();
-/* 223:252 */       for (int j = 0; j < this.bg.getSize(); j++)
+/* 223:252 */       for (int j = 0; j < this.inventory.getSize(); j++)
 /* 224:    */       {
-/* 225:253 */         ItemStack localObject1 = this.bg.get(j);
+/* 225:253 */         ItemStack localObject1 = this.inventory.get(j);
 /* 226:254 */         if ((localObject1 != null) && 
 /* 227:255 */           (localObject1.getItem().f()))
 /* 228:    */         {
@@ -321,7 +321,7 @@ package net.minecraft.src;
 /* 320:    */       }
 /* 321:    */     }
 /* 322:344 */     if (!this.world.getGameRules().getBoolean("keepInventory")) {
-/* 323:345 */       this.bg.n();
+/* 323:345 */       this.inventory.n();
 /* 324:    */     }
 /* 325:348 */     Object localObject1 = this.world.Z().a(bsk.d);
 /* 326:350 */     for (Object localObject2 = ((Collection)localObject1).iterator(); ((Iterator)localObject2).hasNext();)
@@ -346,7 +346,7 @@ package net.minecraft.src;
 /* 345:366 */     br().g();
 /* 346:    */   }
 /* 347:    */   
-/* 348:    */   public boolean a(DamageSource paramwh, float paramFloat)
+/* 348:    */   public boolean receiveDamage(DamageSource paramwh, float paramFloat)
 /* 349:    */   {
 /* 350:371 */     if (isImmuneTo(paramwh)) {
 /* 351:372 */       return false;
@@ -369,7 +369,7 @@ package net.minecraft.src;
 /* 368:    */         }
 /* 369:    */       }
 /* 370:    */     }
-/* 371:393 */     return super.a(paramwh, paramFloat);
+/* 371:393 */     return super.receiveDamage(paramwh, paramFloat);
 /* 372:    */   }
 /* 373:    */   
 /* 374:    */   public boolean a(EntityPlayer paramahd)
@@ -479,7 +479,7 @@ package net.minecraft.src;
 /* 478:    */     }
 /* 479:    */   }
 /* 480:    */   
-/* 481:    */   protected void a(double paramDouble, boolean paramBoolean, ProtoBlock paramatr, BlockPosition paramdt) {}
+/* 481:    */   protected void onMoveTo(double paramDouble, boolean paramBoolean, BlockType paramatr, BlockPosition paramdt) {}
 /* 482:    */   
 /* 483:    */   public void a(double paramDouble, boolean paramBoolean)
 /* 484:    */   {
@@ -489,17 +489,17 @@ package net.minecraft.src;
 /* 488:    */     
 /* 489:    */ 
 /* 490:506 */     BlockPosition localdt = new BlockPosition(j, k, m);
-/* 491:507 */     ProtoBlock localatr1 = this.world.getBlock(localdt).getProto();
+/* 491:507 */     BlockType localatr1 = this.world.getBlock(localdt).getType();
 /* 492:508 */     if (localatr1.getMaterial() == Material.air)
 /* 493:    */     {
-/* 494:509 */       ProtoBlock localatr2 = this.world.getBlock(localdt.down()).getProto();
-/* 495:510 */       if (((localatr2 instanceof avv)) || ((localatr2 instanceof bbx)) || ((localatr2 instanceof avw)))
+/* 494:509 */       BlockType localatr2 = this.world.getBlock(localdt.down()).getType();
+/* 495:510 */       if (((localatr2 instanceof BlockFence)) || ((localatr2 instanceof BlockCobbleWall)) || ((localatr2 instanceof BlockFenceGate)))
 /* 496:    */       {
 /* 497:511 */         localdt = localdt.down();
-/* 498:512 */         localatr1 = this.world.getBlock(localdt).getProto();
+/* 498:512 */         localatr1 = this.world.getBlock(localdt).getType();
 /* 499:    */       }
 /* 500:    */     }
-/* 501:516 */     super.a(paramDouble, paramBoolean, localatr1, localdt);
+/* 501:516 */     super.onMoveTo(paramDouble, paramBoolean, localatr1, localdt);
 /* 502:    */   }
 /* 503:    */   
 /* 504:    */   public void a(bdj parambdj)
@@ -517,7 +517,7 @@ package net.minecraft.src;
 /* 516:    */   {
 /* 517:536 */     cr();
 /* 518:537 */     this.a.a(new je(this.bT, paramvv.k(), paramvv.e_()));
-/* 519:538 */     this.bi = paramvv.a(this.bg, this);
+/* 519:538 */     this.bi = paramvv.a(this.inventory, this);
 /* 520:539 */     this.bi.d = this.bT;
 /* 521:540 */     this.bi.a((ail)this);
 /* 522:    */   }
@@ -541,12 +541,12 @@ package net.minecraft.src;
 /* 540:561 */     if ((paramvq instanceof vv))
 /* 541:    */     {
 /* 542:562 */       this.a.a(new je(this.bT, ((vv)paramvq).k(), paramvq.e_(), paramvq.getSize()));
-/* 543:563 */       this.bi = ((vv)paramvq).a(this.bg, this);
+/* 543:563 */       this.bi = ((vv)paramvq).a(this.inventory, this);
 /* 544:    */     }
 /* 545:    */     else
 /* 546:    */     {
 /* 547:565 */       this.a.a(new je(this.bT, "minecraft:container", paramvq.e_(), paramvq.getSize()));
-/* 548:566 */       this.bi = new aim(this.bg, paramvq, this);
+/* 548:566 */       this.bi = new aim(this.inventory, paramvq, this);
 /* 549:    */     }
 /* 550:569 */     this.bi.d = this.bT;
 /* 551:570 */     this.bi.a((ail)this);
@@ -555,7 +555,7 @@ package net.minecraft.src;
 /* 554:    */   public void a(aqb paramaqb)
 /* 555:    */   {
 /* 556:575 */     cr();
-/* 557:576 */     this.bi = new ajf(this.bg, paramaqb, this.world);
+/* 557:576 */     this.bi = new ajf(this.inventory, paramaqb, this.world);
 /* 558:577 */     this.bi.d = this.bT;
 /* 559:578 */     this.bi.a((ail)this);
 /* 560:579 */     aje localaje = ((ajf)this.bi).e();
@@ -582,7 +582,7 @@ package net.minecraft.src;
 /* 581:    */     }
 /* 582:600 */     cr();
 /* 583:601 */     this.a.a(new je(this.bT, "EntityHorse", paramvq.e_(), paramvq.getSize(), paramabt.getID()));
-/* 584:602 */     this.bi = new aiy(this.bg, paramvq, paramabt, this);
+/* 584:602 */     this.bi = new aiy(this.inventory, paramvq, paramabt, this);
 /* 585:603 */     this.bi.d = this.bT;
 /* 586:604 */     this.bi.a((ail)this);
 /* 587:    */   }
@@ -614,7 +614,7 @@ package net.minecraft.src;
 /* 613:    */   public void a(aib paramaib, List paramList)
 /* 614:    */   {
 /* 615:639 */     this.a.a(new jf(paramaib.d, paramList));
-/* 616:640 */     this.a.a(new jh(-1, -1, this.bg.p()));
+/* 616:640 */     this.a.a(new jh(-1, -1, this.inventory.p()));
 /* 617:    */   }
 /* 618:    */   
 /* 619:    */   public void a(aib paramaib, int paramInt1, int paramInt2)
@@ -640,7 +640,7 @@ package net.minecraft.src;
 /* 639:662 */     if (this.g) {
 /* 640:667 */       return;
 /* 641:    */     }
-/* 642:669 */     this.a.a(new jh(-1, -1, this.bg.p()));
+/* 642:669 */     this.a.a(new jh(-1, -1, this.inventory.p()));
 /* 643:    */   }
 /* 644:    */   
 /* 645:    */   public void p()
@@ -789,7 +789,7 @@ package net.minecraft.src;
 /* 788:817 */     if (paramarc == EnumGameMode.SPECTATOR) {
 /* 789:818 */       mount((Entity)null);
 /* 790:    */     } else {
-/* 791:820 */       e(this);
+/* 791:820 */       onRightClick(this);
 /* 792:    */     }
 /* 793:823 */     t();
 /* 794:824 */     bO();

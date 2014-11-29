@@ -11,7 +11,7 @@ package net.minecraft.src;
 /*  10:244 */     BlockPosition localdt = paramdz.d().offset(ave.b(paramdz.f()));
 /*  11:    */     
 /*  12:246 */     Block localbec = localaqu.getBlock(localdt);
-/*  13:247 */     ProtoBlock localatr = localbec.getProto();
+/*  13:247 */     BlockType localatr = localbec.getType();
 /*  14:248 */     Material localbof = localatr.getMaterial();
 /*  15:    */     Item localalq;
 /*  16:251 */     if ((Material.water.equals(localbof)) && ((localatr instanceof BlockLiquid)) && (((Integer)localbec.getData(BlockLiquid.level)).intValue() == 0)) {

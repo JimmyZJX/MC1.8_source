@@ -13,7 +13,7 @@ public abstract interface IBlockAccess
   
   public abstract boolean W();
   
-  public abstract int a(BlockPosition paramdt, EnumDirection paramej);
+  public abstract int getStrongRedstoneSignal(BlockPosition paramdt, EnumDirection paramej);
   
   public abstract WorldType G();
 }

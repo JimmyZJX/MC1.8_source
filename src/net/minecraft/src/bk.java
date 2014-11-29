@@ -38,11 +38,11 @@ package net.minecraft.src;
 /*  37: 53 */       double d4 = b(d1, paramArrayOfString[5], false);
 /*  38: 54 */       double d5 = b(d2, paramArrayOfString[6], false);
 /*  39: 55 */       double d6 = b(d3, paramArrayOfString[7], false);
-/*  40: 56 */       ProtoBlock localatr = g(paramae, paramArrayOfString[8]);
+/*  40: 56 */       BlockType localatr = g(paramae, paramArrayOfString[8]);
 /*  41: 57 */       int k = a(paramArrayOfString[9], -1, 15);
 /*  42: 58 */       BlockPosition localdt2 = new BlockPosition(d4, d5, d6);
 /*  43: 59 */       Block localbec = ((World)localObject).getBlock(localdt2);
-/*  44: 60 */       if ((localbec.getProto() != localatr) || ((k >= 0) && (localbec.getProto().c(localbec) != k))) {
+/*  44: 60 */       if ((localbec.getType() != localatr) || ((k >= 0) && (localbec.getType().c(localbec) != k))) {
 /*  45: 61 */         throw new CommandException("commands.execute.failed", new Object[] { "detect", localwv.getName() });
 /*  46:    */       }
 /*  47: 63 */       i = 10;
@@ -128,7 +128,7 @@ package net.minecraft.src;
 /* 127:140 */       return a(paramArrayOfString, 5, paramdt);
 /* 128:    */     }
 /* 129:141 */     if ((paramArrayOfString.length == 9) && ("detect".equals(paramArrayOfString[4]))) {
-/* 130:142 */       return a(paramArrayOfString, ProtoBlock.c.c());
+/* 130:142 */       return a(paramArrayOfString, BlockType.c.c());
 /* 131:    */     }
 /* 132:145 */     return null;
 /* 133:    */   }

@@ -35,7 +35,7 @@ package net.minecraft.src;
 /* 34:40 */     if (this.g-- <= 0) {
 /* 35:41 */       setDead();
 /* 36:   */     }
-/* 37:44 */     if (this.C)
+/* 37:44 */     if (this.landing)
 /* 38:   */     {
 /* 39:45 */       if (Math.random() < 0.5D) {
 /* 40:46 */         setDead();
@@ -45,13 +45,13 @@ package net.minecraft.src;
 /* 44:   */     }
 /* 45:52 */     BlockPosition localdt = new BlockPosition(this);
 /* 46:53 */     Block localbec = this.world.getBlock(localdt);
-/* 47:54 */     ProtoBlock localatr = localbec.getProto();
+/* 47:54 */     BlockType localatr = localbec.getType();
 /* 48:55 */     localatr.a(this.world, localdt);
-/* 49:56 */     Material localbof = localbec.getProto().getMaterial();
+/* 49:56 */     Material localbof = localbec.getType().getMaterial();
 /* 50:57 */     if ((localbof.isLiquid()) || (localbof.a()))
 /* 51:   */     {
 /* 52:58 */       double d1 = 0.0D;
-/* 53:59 */       if ((localbec.getProto() instanceof BlockLiquid)) {
+/* 53:59 */       if ((localbec.getType() instanceof BlockLiquid)) {
 /* 54:60 */         d1 = 1.0F - BlockLiquid.b(((Integer)localbec.getData(BlockLiquid.level)).intValue());
 /* 55:   */       } else {
 /* 56:62 */         d1 = localatr.C();

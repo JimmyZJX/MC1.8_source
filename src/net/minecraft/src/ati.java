@@ -1,6 +1,6 @@
 package net.minecraft.src;
 /*   1:    */ public abstract class ati
-/*   2:    */   extends ProtoBlock
+/*   2:    */   extends BlockType
 /*   3:    */ {
 /*   4:    */   protected final boolean a;
 /*   5:    */   
@@ -11,7 +11,7 @@ package net.minecraft.src;
 /*  10:    */   
 /*  11:    */   public static boolean d(Block parambec)
 /*  12:    */   {
-/*  13:364 */     ProtoBlock localatr = parambec.getProto();
+/*  13:364 */     BlockType localatr = parambec.getType();
 /*  14:365 */     return (localatr == BlockList.av) || (localatr == BlockList.D) || (localatr == BlockList.detector_rail) || (localatr == BlockList.activatorRail);
 /*  15:    */   }
 /*  16:    */   
@@ -42,7 +42,7 @@ package net.minecraft.src;
 /*  41:    */   public void a(IBlockAccess paramard, BlockPosition paramdt)
 /*  42:    */   {
 /*  43:398 */     Block localbec = paramard.getBlock(paramdt);
-/*  44:399 */     EnumRailState localObject = localbec.getProto() == this ? (EnumRailState)localbec.getData(l()) : null;
+/*  44:399 */     EnumRailState localObject = localbec.getType() == this ? (EnumRailState)localbec.getData(l()) : null;
 /*  45:400 */     if ((localObject != null) && (localObject.c())) {
 /*  46:401 */       a(0.0F, 0.0F, 0.0F, 1.0F, 0.625F, 1.0F);
 /*  47:    */     } else {
@@ -74,7 +74,7 @@ package net.minecraft.src;
 /*  73:    */     }
 /*  74:    */   }
 /*  75:    */   
-/*  76:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/*  76:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /*  77:    */   {
 /*  78:433 */     if (paramaqu.isClient) {
 /*  79:434 */       return;
@@ -104,7 +104,7 @@ package net.minecraft.src;
 /* 103:    */     }
 /* 104:    */   }
 /* 105:    */   
-/* 106:    */   protected void b(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr) {}
+/* 106:    */   protected void b(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr) {}
 /* 107:    */   
 /* 108:    */   protected Block a(World paramaqu, BlockPosition paramdt, Block parambec, boolean paramBoolean)
 /* 109:    */   {

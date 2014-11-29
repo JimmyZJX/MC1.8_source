@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ import java.util.Random;
 /*  2:   */ 
 /*  3:   */ public class ayc
-/*  4:   */   extends ProtoBlock
+/*  4:   */   extends BlockType
 /*  5:   */ {
 /*  6:18 */   public static final BlockDataBoolean a = BlockDataBoolean.getInstance("snowy");
 /*  7:   */   
@@ -16,7 +16,7 @@ package net.minecraft.src;
 /* 15:   */   
 /* 16:   */   public Block a(Block parambec, IBlockAccess paramard, BlockPosition paramdt)
 /* 17:   */   {
-/* 18:31 */     ProtoBlock localatr = paramard.getBlock(paramdt.up()).getProto();
+/* 18:31 */     BlockType localatr = paramard.getBlock(paramdt.up()).getType();
 /* 19:32 */     return parambec.setData(a, Boolean.valueOf((localatr == BlockList.aJ) || (localatr == BlockList.aH)));
 /* 20:   */   }
 /* 21:   */   
@@ -25,7 +25,7 @@ package net.minecraft.src;
 /* 24:37 */     if (paramaqu.isClient) {
 /* 25:38 */       return;
 /* 26:   */     }
-/* 27:41 */     if ((paramaqu.l(paramdt.up()) < 4) && (paramaqu.getBlock(paramdt.up()).getProto().getLightOpacity() > 2))
+/* 27:41 */     if ((paramaqu.l(paramdt.up()) < 4) && (paramaqu.getBlock(paramdt.up()).getType().getLightOpacity() > 2))
 /* 28:   */     {
 /* 29:42 */       paramaqu.setBlock(paramdt, BlockList.dirt.instance().setData(BlockDirt.a, avd.a));
 /* 30:43 */       return;
@@ -35,8 +35,8 @@ package net.minecraft.src;
 /* 34:   */       {
 /* 35:48 */         BlockPosition localdt = paramdt.offset(paramRandom.nextInt(3) - 1, paramRandom.nextInt(5) - 3, paramRandom.nextInt(3) - 1);
 /* 36:49 */         Block localbec = paramaqu.getBlock(localdt);
-/* 37:50 */         ProtoBlock localatr = paramaqu.getBlock(localdt.up()).getProto();
-/* 38:51 */         if ((localbec.getProto() == BlockList.dirt) && (localbec.getData(BlockDirt.a) == avd.a) && (paramaqu.l(localdt.up()) >= 4) && (localatr.getLightOpacity() <= 2)) {
+/* 37:50 */         BlockType localatr = paramaqu.getBlock(localdt.up()).getType();
+/* 38:51 */         if ((localbec.getType() == BlockList.dirt) && (localbec.getData(BlockDirt.a) == avd.a) && (paramaqu.l(localdt.up()) >= 4) && (localatr.getLightOpacity() <= 2)) {
 /* 39:52 */           paramaqu.setBlock(localdt, instance());
 /* 40:   */         }
 /* 41:   */       }

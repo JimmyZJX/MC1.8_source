@@ -3,7 +3,7 @@ package net.minecraft.src;
 /*  2:   */ import java.util.Random;
 /*  3:   */ 
 /*  4:   */ public class avq
-/*  5:   */   extends ProtoBlock
+/*  5:   */   extends BlockType
 /*  6:   */ {
 /*  7:22 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", EnumHorizontalVertical.HORIZONTAL);
 /*  8:23 */   public static final BlockDataBoolean b = BlockDataBoolean.getInstance("eye");

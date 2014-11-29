@@ -1,6 +1,6 @@
 package net.minecraft.src;
 /*  1:   */ public class cpj
-/*  2:   */   extends cpu<adu>
+/*  2:   */   extends cpu<EntityBoat>
 /*  3:   */ {
 /*  4:11 */   private static final oa e = new oa("textures/entity/boat.png");
 /*  5:12 */   protected ccq a = new cbz();
@@ -11,7 +11,7 @@ package net.minecraft.src;
 /* 10:16 */     this.c = 0.5F;
 /* 11:   */   }
 /* 12:   */   
-/* 13:   */   public void a(adu paramadu, double paramDouble1, double paramDouble2, double paramDouble3, float paramFloat1, float paramFloat2)
+/* 13:   */   public void a(EntityBoat paramadu, double paramDouble1, double paramDouble2, double paramDouble3, float paramFloat1, float paramFloat2)
 /* 14:   */   {
 /* 15:21 */     cjm.glPushMatrix();
 /* 16:   */     
@@ -38,7 +38,7 @@ package net.minecraft.src;
 /* 37:44 */     super.a(paramadu, paramDouble1, paramDouble2, paramDouble3, paramFloat1, paramFloat2);
 /* 38:   */   }
 /* 39:   */   
-/* 40:   */   protected oa a(adu paramadu)
+/* 40:   */   protected oa a(EntityBoat paramadu)
 /* 41:   */   {
 /* 42:49 */     return e;
 /* 43:   */   }

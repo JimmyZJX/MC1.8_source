@@ -7,9 +7,9 @@ package net.minecraft.src;
 /*   6:187 */     j(this.L.b().setData(b, Integer.valueOf(0)));
 /*   7:    */   }
 /*   8:    */   
-/*   9:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/*   9:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /*  10:    */   {
-/*  11:192 */     if (!paramaqu.getBlock(paramdt.down()).getProto().getMaterial().a())
+/*  11:192 */     if (!paramaqu.getBlock(paramdt.down()).getType().getMaterial().a())
 /*  12:    */     {
 /*  13:193 */       b(paramaqu, paramdt, parambec, 0);
 /*  14:194 */       paramaqu.g(paramdt);

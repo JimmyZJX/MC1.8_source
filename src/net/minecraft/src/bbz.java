@@ -37,10 +37,10 @@ package net.minecraft.src;
 /* 36:   */     }
 /* 37:   */   }
 /* 38:   */   
-/* 39:   */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/* 39:   */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /* 40:   */   {
 /* 41:49 */     EnumDirection localej = (EnumDirection)parambec.getData(a);
-/* 42:51 */     if (!paramaqu.getBlock(paramdt.offset(localej.opposite())).getProto().getMaterial().a())
+/* 42:51 */     if (!paramaqu.getBlock(paramdt.offset(localej.opposite())).getType().getMaterial().a())
 /* 43:   */     {
 /* 44:52 */       b(paramaqu, paramdt, parambec, 0);
 /* 45:53 */       paramaqu.g(paramdt);
@@ -51,7 +51,7 @@ package net.minecraft.src;
 /* 50:   */   public Block instance(int paramInt)
 /* 51:   */   {
 /* 52:61 */     EnumDirection localej = EnumDirection.a(paramInt);
-/* 53:62 */     if (localej.k() == EnumAxis.Y) {
+/* 53:62 */     if (localej.getAxis() == EnumAxis.Y) {
 /* 54:63 */       localej = EnumDirection.NORTH;
 /* 55:   */     }
 /* 56:65 */     return instance().setData(a, localej);

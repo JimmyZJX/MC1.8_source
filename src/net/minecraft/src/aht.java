@@ -18,7 +18,7 @@ package net.minecraft.src;
 /* 17:   */   {
 /* 18:24 */     EntityLiving localxm = n();
 /* 19:26 */     if (parambru.d != null) {
-/* 20:27 */       parambru.d.a(DamageSource.a(this, localxm), 0.0F);
+/* 20:27 */       parambru.d.receiveDamage(DamageSource.a(this, localxm), 0.0F);
 /* 21:   */     }
 /* 22:30 */     for (int i = 0; i < 32; i++) {
 /* 23:31 */       this.world.a(EnumParticleEffect.y, this.xPos, this.yPos + this.rng.nextDouble() * 2.0D, this.zPos, this.rng.nextGaussian(), 0.0D, this.rng.nextGaussian(), new int[0]);
@@ -41,8 +41,8 @@ package net.minecraft.src;
 /* 40:47 */             localxm.mount((Entity)null);
 /* 41:   */           }
 /* 42:49 */           localxm.setPosition(this.xPos, this.yPos, this.zPos);
-/* 43:50 */           localxm.O = 0.0F;
-/* 44:51 */           localxm.a(DamageSource.fall, 5.0F);
+/* 43:50 */           localxm.fallDistance = 0.0F;
+/* 44:51 */           localxm.receiveDamage(DamageSource.fall, 5.0F);
 /* 45:   */         }
 /* 46:   */       }
 /* 47:54 */       setDead();

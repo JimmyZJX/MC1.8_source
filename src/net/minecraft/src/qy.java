@@ -49,7 +49,7 @@ package net.minecraft.src;
 /*  48: 68 */     this.h = MathUtils.floor(paramwv.pitch * 256.0F / 360.0F);
 /*  49:    */     
 /*  50: 70 */     this.i = MathUtils.floor(paramwv.aD() * 256.0F / 360.0F);
-/*  51: 71 */     this.y = paramwv.C;
+/*  51: 71 */     this.y = paramwv.landing;
 /*  52:    */   }
 /*  53:    */   
 /*  54:    */   public boolean equals(Object paramObject)
@@ -125,23 +125,23 @@ package net.minecraft.src;
 /* 124:137 */         int i9 = (Math.abs(i6) >= 4) || (Math.abs(i7) >= 4) || (Math.abs(i8) >= 4) || (this.m % 60 == 0) ? 1 : 0;
 /* 125:138 */         int i10 = (Math.abs(i4 - this.g) >= 4) || (Math.abs(i5 - this.h) >= 4) ? 1 : 0;
 /* 126:143 */         if ((this.m > 0) || ((this.a instanceof EntityArrow))) {
-/* 127:144 */           if ((i6 < -128) || (i6 >= 128) || (i7 < -128) || (i7 >= 128) || (i8 < -128) || (i8 >= 128) || (this.v > 400) || (this.x) || (this.y != this.a.C))
+/* 127:144 */           if ((i6 < -128) || (i6 >= 128) || (i7 < -128) || (i7 >= 128) || (i8 < -128) || (i8 >= 128) || (this.v > 400) || (this.x) || (this.y != this.a.landing))
 /* 128:    */           {
-/* 129:145 */             this.y = this.a.C;
+/* 129:145 */             this.y = this.a.landing;
 /* 130:146 */             this.v = 0;
-/* 131:147 */             localObject = new lo(this.a.getID(), i1, i2, i3, (byte)i4, (byte)i5, this.a.C);
+/* 131:147 */             localObject = new lo(this.a.getID(), i1, i2, i3, (byte)i4, (byte)i5, this.a.landing);
 /* 132:    */           }
 /* 133:149 */           else if ((i9 != 0) && (i10 != 0))
 /* 134:    */           {
-/* 135:150 */             localObject = new ka(this.a.getID(), (byte)i6, (byte)i7, (byte)i8, (byte)i4, (byte)i5, this.a.C);
+/* 135:150 */             localObject = new ka(this.a.getID(), (byte)i6, (byte)i7, (byte)i8, (byte)i4, (byte)i5, this.a.landing);
 /* 136:    */           }
 /* 137:151 */           else if (i9 != 0)
 /* 138:    */           {
-/* 139:152 */             localObject = new jz(this.a.getID(), (byte)i6, (byte)i7, (byte)i8, this.a.C);
+/* 139:152 */             localObject = new jz(this.a.getID(), (byte)i6, (byte)i7, (byte)i8, this.a.landing);
 /* 140:    */           }
 /* 141:153 */           else if (i10 != 0)
 /* 142:    */           {
-/* 143:154 */             localObject = new kb(this.a.getID(), (byte)i4, (byte)i5, this.a.C);
+/* 143:154 */             localObject = new kb(this.a.getID(), (byte)i4, (byte)i5, this.a.landing);
 /* 144:    */           }
 /* 145:    */         }
 /* 146:159 */         if (this.u)
@@ -185,7 +185,7 @@ package net.minecraft.src;
 /* 184:197 */         i3 = (Math.abs(i1 - this.g) >= 4) || (Math.abs(i2 - this.h) >= 4) ? 1 : 0;
 /* 185:198 */         if (i3 != 0)
 /* 186:    */         {
-/* 187:199 */           a(new kb(this.a.getID(), (byte)i1, (byte)i2, this.a.C));
+/* 187:199 */           a(new kb(this.a.getID(), (byte)i1, (byte)i2, this.a.landing));
 /* 188:200 */           this.g = i1;
 /* 189:201 */           this.h = i2;
 /* 190:    */         }
@@ -215,7 +215,7 @@ package net.minecraft.src;
 /* 214:    */   
 /* 215:    */   private void b()
 /* 216:    */   {
-/* 217:230 */     xv localxv = this.a.H();
+/* 217:230 */     EntityData localxv = this.a.H();
 /* 218:231 */     if (localxv.a()) {
 /* 219:232 */       b(new kx(this.a.getID(), localxv, false));
 /* 220:    */     }
@@ -274,7 +274,7 @@ package net.minecraft.src;
 /* 273:280 */         this.o.add(paramqw);
 /* 274:281 */         id localid = c();
 /* 275:282 */         paramqw.a.a(localid);
-/* 276:284 */         if (!this.a.H().d()) {
+/* 276:284 */         if (!this.a.H().isClean()) {
 /* 277:285 */           paramqw.a.a(new kx(this.a.getID(), this.a.H(), true));
 /* 278:    */         }
 /* 279:288 */         NBTTagCompound localfn = this.a.aU();
@@ -372,7 +372,7 @@ package net.minecraft.src;
 /* 371:376 */       localObject = (adx)this.a;
 /* 372:377 */       return new il(this.a, 10, ((adx)localObject).s().a());
 /* 373:    */     }
-/* 374:379 */     if ((this.a instanceof adu)) {
+/* 374:379 */     if ((this.a instanceof EntityBoat)) {
 /* 375:380 */       return new il(this.a, 1);
 /* 376:    */     }
 /* 377:382 */     if ((this.a instanceof wt))
@@ -441,7 +441,7 @@ package net.minecraft.src;
 /* 440:440 */     if ((this.a instanceof adv))
 /* 441:    */     {
 /* 442:441 */       localObject = (adv)this.a;
-/* 443:442 */       return new il(this.a, 70, ProtoBlock.f(((adv)localObject).l()));
+/* 443:442 */       return new il(this.a, 70, BlockType.f(((adv)localObject).l()));
 /* 444:    */     }
 /* 445:444 */     if ((this.a instanceof EntityArmorStand)) {
 /* 446:445 */       return new il(this.a, 78);

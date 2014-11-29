@@ -72,7 +72,7 @@ package net.minecraft.src;
 /*  71:306 */     while (localdt.getY() > 0)
 /*  72:    */     {
 /*  73:307 */       localdt = localdt.down();
-/*  74:309 */       if (paramaqu.getBlock(localdt).getProto().getMaterial() != Material.air) {
+/*  74:309 */       if (paramaqu.getBlock(localdt).getType().getMaterial() != Material.air) {
 /*  75:310 */         return localdt.getY() + 1;
 /*  76:    */       }
 /*  77:    */     }
@@ -86,7 +86,7 @@ package net.minecraft.src;
 /*  85:    */     {
 /*  86:320 */       localdt = localdt.down();
 /*  87:    */       
-/*  88:322 */       Material localbof = paramaqu.getBlock(localdt).getProto().getMaterial();
+/*  88:322 */       Material localbof = paramaqu.getBlock(localdt).getType().getMaterial();
 /*  89:323 */       if (localbof != Material.air) {
 /*  90:324 */         return (!localbof.isLiquid()) && (localbof != Material.o);
 /*  91:    */       }

@@ -3,7 +3,7 @@ package net.minecraft.src;
 /*   2:    */ import java.util.Random;
 /*   3:    */ 
 /*   4:    */ public class bbj
-/*   5:    */   extends ProtoBlock
+/*   5:    */   extends BlockType
 /*   6:    */ {
 /*   7: 22 */   public static final BlockDataBoolean b = BlockDataBoolean.getInstance("north");
 /*   8: 23 */   public static final BlockDataBoolean M = BlockDataBoolean.getInstance("east");
@@ -21,7 +21,7 @@ package net.minecraft.src;
 /*  20:    */   
 /*  21:    */   public Block a(Block parambec, IBlockAccess paramard, BlockPosition paramdt)
 /*  22:    */   {
-/*  23: 38 */     return parambec.setData(b, Boolean.valueOf(c(paramard.getBlock(paramdt.north()).getProto()))).setData(N, Boolean.valueOf(c(paramard.getBlock(paramdt.south()).getProto()))).setData(O, Boolean.valueOf(c(paramard.getBlock(paramdt.west()).getProto()))).setData(M, Boolean.valueOf(c(paramard.getBlock(paramdt.east()).getProto())));
+/*  23: 38 */     return parambec.setData(b, Boolean.valueOf(c(paramard.getBlock(paramdt.north()).getType()))).setData(N, Boolean.valueOf(c(paramard.getBlock(paramdt.south()).getType()))).setData(O, Boolean.valueOf(c(paramard.getBlock(paramdt.west()).getType()))).setData(M, Boolean.valueOf(c(paramard.getBlock(paramdt.east()).getType())));
 /*  24:    */   }
 /*  25:    */   
 /*  26:    */   public Item a(Block parambec, Random paramRandom, int paramInt)
@@ -44,7 +44,7 @@ package net.minecraft.src;
 /*  43:    */   
 /*  44:    */   public boolean a(IBlockAccess paramard, BlockPosition paramdt, EnumDirection paramej)
 /*  45:    */   {
-/*  46: 66 */     if (paramard.getBlock(paramdt).getProto() == this) {
+/*  46: 66 */     if (paramard.getBlock(paramdt).getType() == this) {
 /*  47: 67 */       return false;
 /*  48:    */     }
 /*  49: 69 */     return super.a(paramard, paramdt, paramej);
@@ -52,10 +52,10 @@ package net.minecraft.src;
 /*  51:    */   
 /*  52:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, AABB parambrt, List paramList, Entity paramwv)
 /*  53:    */   {
-/*  54: 74 */     boolean bool1 = c(paramaqu.getBlock(paramdt.north()).getProto());
-/*  55: 75 */     boolean bool2 = c(paramaqu.getBlock(paramdt.south()).getProto());
-/*  56: 76 */     boolean bool3 = c(paramaqu.getBlock(paramdt.west()).getProto());
-/*  57: 77 */     boolean bool4 = c(paramaqu.getBlock(paramdt.east()).getProto());
+/*  54: 74 */     boolean bool1 = c(paramaqu.getBlock(paramdt.north()).getType());
+/*  55: 75 */     boolean bool2 = c(paramaqu.getBlock(paramdt.south()).getType());
+/*  56: 76 */     boolean bool3 = c(paramaqu.getBlock(paramdt.west()).getType());
+/*  57: 77 */     boolean bool4 = c(paramaqu.getBlock(paramdt.east()).getType());
 /*  58: 79 */     if (((bool3) && (bool4)) || ((!bool3) && (!bool4) && (!bool1) && (!bool2)))
 /*  59:    */     {
 /*  60: 80 */       a(0.0F, 0.0F, 0.4375F, 1.0F, 1.0F, 0.5625F);
@@ -100,10 +100,10 @@ package net.minecraft.src;
 /*  99:110 */     float f3 = 0.4375F;
 /* 100:111 */     float f4 = 0.5625F;
 /* 101:    */     
-/* 102:113 */     boolean bool1 = c(paramard.getBlock(paramdt.north()).getProto());
-/* 103:114 */     boolean bool2 = c(paramard.getBlock(paramdt.south()).getProto());
-/* 104:115 */     boolean bool3 = c(paramard.getBlock(paramdt.west()).getProto());
-/* 105:116 */     boolean bool4 = c(paramard.getBlock(paramdt.east()).getProto());
+/* 102:113 */     boolean bool1 = c(paramard.getBlock(paramdt.north()).getType());
+/* 103:114 */     boolean bool2 = c(paramard.getBlock(paramdt.south()).getType());
+/* 104:115 */     boolean bool3 = c(paramard.getBlock(paramdt.west()).getType());
+/* 105:116 */     boolean bool4 = c(paramard.getBlock(paramdt.east()).getType());
 /* 106:118 */     if (((bool3) && (bool4)) || ((!bool3) && (!bool4) && (!bool1) && (!bool2)))
 /* 107:    */     {
 /* 108:119 */       f1 = 0.0F;
@@ -133,7 +133,7 @@ package net.minecraft.src;
 /* 132:135 */     a(f1, 0.0F, f3, f2, 1.0F, f4);
 /* 133:    */   }
 /* 134:    */   
-/* 135:    */   public final boolean c(ProtoBlock paramatr)
+/* 135:    */   public final boolean c(BlockType paramatr)
 /* 136:    */   {
 /* 137:139 */     return (paramatr.m()) || (paramatr == this) || (paramatr == BlockList.glass) || (paramatr == BlockList.cG) || (paramatr == BlockList.stainedGlassPane) || ((paramatr instanceof bbj));
 /* 138:    */   }

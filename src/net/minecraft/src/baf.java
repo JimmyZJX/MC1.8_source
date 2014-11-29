@@ -137,7 +137,7 @@ package net.minecraft.src;
 /* 136:    */   public boolean a(World paramaqu, BlockPosition paramdt, EnumWoodVariant paramayx)
 /* 137:    */   {
 /* 138:152 */     Block localbec = paramaqu.getBlock(paramdt);
-/* 139:153 */     return (localbec.getProto() == this) && (localbec.getData(a) == paramayx);
+/* 139:153 */     return (localbec.getType() == this) && (localbec.getData(a) == paramayx);
 /* 140:    */   }
 /* 141:    */   
 /* 142:    */   public int a(Block parambec)

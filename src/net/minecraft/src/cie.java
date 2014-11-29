@@ -4,7 +4,7 @@ package net.minecraft.src;
 /*  3:   */ {
 /*  4:   */   public cgw a(int paramInt, World paramaqu, double paramDouble1, double paramDouble2, double paramDouble3, double paramDouble4, double paramDouble5, double paramDouble6, int... paramVarArgs)
 /*  5:   */   {
-/*  6:84 */     return new cid(paramaqu, paramDouble1, paramDouble2, paramDouble3, paramDouble4, paramDouble5, paramDouble6, ProtoBlock.d(paramVarArgs[0])).l();
+/*  6:84 */     return new cid(paramaqu, paramDouble1, paramDouble2, paramDouble3, paramDouble4, paramDouble5, paramDouble6, BlockType.d(paramVarArgs[0])).l();
 /*  7:   */   }
 /*  8:   */ }
 

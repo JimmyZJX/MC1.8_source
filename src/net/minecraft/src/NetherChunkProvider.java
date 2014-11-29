@@ -143,9 +143,9 @@ package net.minecraft.src;
 /* 142:    */           else
 /* 143:    */           {
 /* 144:160 */             Block localbec3 = parambgk.a(i3, i8, i2);
-/* 145:161 */             if ((localbec3.getProto() == null) || (localbec3.getProto().getMaterial() == Material.air)) {
+/* 145:161 */             if ((localbec3.getType() == null) || (localbec3.getType().getMaterial() == Material.air)) {
 /* 146:162 */               i7 = -1;
-/* 147:163 */             } else if (localbec3.getProto() == BlockList.netherrack) {
+/* 147:163 */             } else if (localbec3.getType() == BlockList.netherrack) {
 /* 148:164 */               if (i7 == -1)
 /* 149:    */               {
 /* 150:165 */                 if (i6 <= 0)
@@ -168,7 +168,7 @@ package net.minecraft.src;
 /* 167:177 */                     localbec2 = BlockList.soulSand.instance();
 /* 168:    */                   }
 /* 169:    */                 }
-/* 170:181 */                 if ((i8 < i1) && ((localbec1 == null) || (localbec1.getProto().getMaterial() == Material.air))) {
+/* 170:181 */                 if ((i8 < i1) && ((localbec1 == null) || (localbec1.getType().getMaterial() == Material.air))) {
 /* 171:182 */                   localbec1 = BlockList.lava.instance();
 /* 172:    */                 }
 /* 173:185 */                 i7 = i6;
@@ -358,7 +358,7 @@ package net.minecraft.src;
 /* 357:389 */       if (this.B.b(paramdt)) {
 /* 358:390 */         return this.B.b();
 /* 359:    */       }
-/* 360:392 */       if ((this.B.a(this.world, paramdt)) && (this.world.getBlock(paramdt.down()).getProto() == BlockList.netherBrick)) {
+/* 360:392 */       if ((this.B.a(this.world, paramdt)) && (this.world.getBlock(paramdt.down()).getType() == BlockList.netherBrick)) {
 /* 361:393 */         return this.B.b();
 /* 362:    */       }
 /* 363:    */     }

@@ -49,7 +49,7 @@ package net.minecraft.src;
 /*  48:    */           {
 /*  49: 69 */             BlockPosition localdt = paramdt.offset(i1, i2, i3);
 /*  50: 70 */             Block localbec = paramaqu.getBlock(localdt);
-/*  51: 71 */             if ((localbec.getProto().getMaterial() == Material.leaves) && 
+/*  51: 71 */             if ((localbec.getType().getMaterial() == Material.leaves) && 
 /*  52: 72 */               (!((Boolean)localbec.getData(b)).booleanValue())) {
 /*  53: 73 */               paramaqu.setBlock(localdt, localbec.setData(b, Boolean.valueOf(true)), 4);
 /*  54:    */             }
@@ -86,7 +86,7 @@ package net.minecraft.src;
 /*  85:105 */           for (i5 = -i; i5 <= i; i5++) {
 /*  86:106 */             for (i6 = -i; i6 <= i; i6++)
 /*  87:    */             {
-/*  88:107 */               ProtoBlock localatr = paramaqu.getBlock(new BlockPosition(k + i4, m + i5, n + i6)).getProto();
+/*  88:107 */               BlockType localatr = paramaqu.getBlock(new BlockPosition(k + i4, m + i5, n + i6)).getType();
 /*  89:108 */               if ((localatr == BlockList.log) || (localatr == BlockList.log2)) {
 /*  90:109 */                 this.M[((i4 + i3) * i2 + (i5 + i3) * i1 + (i6 + i3))] = 0;
 /*  91:110 */               } else if (localatr.getMaterial() == Material.leaves) {
@@ -161,7 +161,7 @@ package net.minecraft.src;
 /* 160:    */   
 /* 161:    */   public Item a(Block parambec, Random paramRandom, int paramInt)
 /* 162:    */   {
-/* 163:181 */     return Item.fromProtoBlock(BlockList.sapling);
+/* 163:181 */     return Item.fromBlock(BlockList.sapling);
 /* 164:    */   }
 /* 165:    */   
 /* 166:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, float paramFloat, int paramInt)

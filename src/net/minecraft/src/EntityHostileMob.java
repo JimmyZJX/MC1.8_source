@@ -40,12 +40,12 @@ package net.minecraft.src;
 /*  40: 57 */     return "game.hostile.swim.splash";
 /*  41:    */   }
 /*  42:    */   
-/*  43:    */   public boolean a(DamageSource paramwh, float paramFloat)
+/*  43:    */   public boolean receiveDamage(DamageSource paramwh, float paramFloat)
 /*  44:    */   {
 /*  45: 62 */     if (isImmuneTo(paramwh)) {
 /*  46: 63 */       return false;
 /*  47:    */     }
-/*  48: 65 */     if (super.a(paramwh, paramFloat))
+/*  48: 65 */     if (super.receiveDamage(paramwh, paramFloat))
 /*  49:    */     {
 /*  50: 66 */       Entity localwv = paramwh.getAttacker();
 /*  51: 67 */       if ((this.rider == localwv) || (this.vehicle == localwv)) {
@@ -83,7 +83,7 @@ package net.minecraft.src;
 /*  83:106 */       f += aph.a(getHeldItemStack(), ((EntityLiving)paramwv).by());
 /*  84:107 */       i += aph.a(this);
 /*  85:    */     }
-/*  86:110 */     boolean bool = paramwv.a(DamageSource.fromMob(this), f);
+/*  86:110 */     boolean bool = paramwv.receiveDamage(DamageSource.fromMob(this), f);
 /*  87:112 */     if (bool)
 /*  88:    */     {
 /*  89:113 */       if (i > 0)

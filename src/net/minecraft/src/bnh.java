@@ -97,7 +97,7 @@ package net.minecraft.src;
 /*   96:1154 */     a(paramaqu, BlockList.air.instance(), 1, 1, 0, parambjb);
 /*   97:1155 */     a(paramaqu, BlockList.air.instance(), 1, 2, 0, parambjb);
 /*   98:1156 */     a(paramaqu, parambjb, paramRandom, 1, 1, 0, EnumDirection.b(a(BlockList.woodenDoor, 1)));
-/*   99:1157 */     if ((a(paramaqu, 1, 0, -1, parambjb).getProto().getMaterial() == Material.air) && (a(paramaqu, 1, -1, -1, parambjb).getProto().getMaterial() != Material.air)) {
+/*   99:1157 */     if ((a(paramaqu, 1, 0, -1, parambjb).getType().getMaterial() == Material.air) && (a(paramaqu, 1, -1, -1, parambjb).getType().getMaterial() != Material.air)) {
 /*  100:1158 */       a(paramaqu, BlockList.aw.instance(a(BlockList.aw, 3)), 1, 0, -1, parambjb);
 /*  101:     */     }
 /*  102:1161 */     for (int i = 0; i < 5; i++) {

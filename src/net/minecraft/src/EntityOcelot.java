@@ -30,7 +30,7 @@ package net.minecraft.src;
 /*  32:    */   {
 /*  33: 63 */     super.h();
 /*  34:    */     
-/*  35: 65 */     this.ac.a(18, Byte.valueOf((byte)0));
+/*  35: 65 */     this.data.addData(18, Byte.valueOf((byte)0));
 /*  36:    */   }
 /*  37:    */   
 /*  38:    */   public void mobTick()
@@ -125,26 +125,26 @@ package net.minecraft.src;
 /* 127:    */   
 /* 128:    */   public boolean r(Entity paramwv)
 /* 129:    */   {
-/* 130:155 */     return paramwv.a(DamageSource.fromMob(this), 3.0F);
+/* 130:155 */     return paramwv.receiveDamage(DamageSource.fromMob(this), 3.0F);
 /* 131:    */   }
 /* 132:    */   
-/* 133:    */   public boolean a(DamageSource paramwh, float paramFloat)
+/* 133:    */   public boolean receiveDamage(DamageSource paramwh, float paramFloat)
 /* 134:    */   {
 /* 135:160 */     if (isImmuneTo(paramwh)) {
 /* 136:161 */       return false;
 /* 137:    */     }
 /* 138:163 */     this.bk.a(false);
-/* 139:164 */     return super.a(paramwh, paramFloat);
+/* 139:164 */     return super.receiveDamage(paramwh, paramFloat);
 /* 140:    */   }
 /* 141:    */   
 /* 142:    */   protected void b(boolean paramBoolean, int paramInt) {}
 /* 143:    */   
-/* 144:    */   public boolean onRightClick(EntityPlayer paramahd)
+/* 144:    */   public boolean onRightClickMob(EntityPlayer paramahd)
 /* 145:    */   {
-/* 146:173 */     ItemStack localamj = paramahd.bg.h();
+/* 146:173 */     ItemStack localamj = paramahd.inventory.getHeldItem();
 /* 147:174 */     if (cj())
 /* 148:    */     {
-/* 149:175 */       if ((e(paramahd)) && 
+/* 149:175 */       if ((onRightClick(paramahd)) && 
 /* 150:176 */         (!this.world.isClient) && (!d(localamj))) {
 /* 151:177 */         this.bk.a(!cl());
 /* 152:    */       }
@@ -155,7 +155,7 @@ package net.minecraft.src;
 /* 157:183 */         localamj.stackSize -= 1;
 /* 158:    */       }
 /* 159:185 */       if (localamj.stackSize <= 0) {
-/* 160:186 */         paramahd.bg.a(paramahd.bg.c, null);
+/* 160:186 */         paramahd.inventory.a(paramahd.inventory.c, null);
 /* 161:    */       }
 /* 162:189 */       if (!this.world.isClient) {
 /* 163:190 */         if (this.rng.nextInt(3) == 0)
@@ -175,7 +175,7 @@ package net.minecraft.src;
 /* 177:    */       }
 /* 178:202 */       return true;
 /* 179:    */     }
-/* 180:205 */     return super.onRightClick(paramahd);
+/* 180:205 */     return super.onRightClickMob(paramahd);
 /* 181:    */   }
 /* 182:    */   
 /* 183:    */   public EntityOcelot getBaby(EntityPassiveMob paramws)
@@ -215,12 +215,12 @@ package net.minecraft.src;
 /* 217:    */   
 /* 218:    */   public int cr()
 /* 219:    */   {
-/* 220:245 */     return this.ac.a(18);
+/* 220:245 */     return this.data.getByte(18);
 /* 221:    */   }
 /* 222:    */   
 /* 223:    */   public void r(int paramInt)
 /* 224:    */   {
-/* 225:249 */     this.ac.b(18, Byte.valueOf((byte)paramInt));
+/* 225:249 */     this.data.b(18, Byte.valueOf((byte)paramInt));
 /* 226:    */   }
 /* 227:    */   
 /* 228:    */   public boolean canSpawn()
@@ -239,7 +239,7 @@ package net.minecraft.src;
 /* 241:266 */       if (localdt.getY() < 63) {
 /* 242:267 */         return false;
 /* 243:    */       }
-/* 244:270 */       ProtoBlock localatr = this.world.getBlock(localdt.down()).getProto();
+/* 244:270 */       BlockType localatr = this.world.getBlock(localdt.down()).getType();
 /* 245:271 */       if ((localatr == BlockList.grass) || (localatr.getMaterial() == Material.leaves)) {
 /* 246:272 */         return true;
 /* 247:    */       }

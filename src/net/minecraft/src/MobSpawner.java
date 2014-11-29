@@ -66,7 +66,7 @@ package net.minecraft.src;
 /*  67: 82 */                 int y = randPos.getY();
 /*  68: 83 */                 int z = randPos.getZ();
 /*  69:    */                 
-/*  70: 85 */                 ProtoBlock block = world.getBlock(randPos).getProto();
+/*  70: 85 */                 BlockType block = world.getBlock(randPos).getType();
 /*  71: 86 */                 if (!block.blocksMovement())
 /*  72:    */                 {
 /*  73: 90 */                   int i7 = 0;
@@ -164,17 +164,17 @@ package net.minecraft.src;
 /* 163:    */   {
 /* 164:169 */     if (world.af().a(pos))
 /* 165:    */     {
-/* 166:170 */       ProtoBlock block = world.getBlock(pos).getProto();
+/* 166:170 */       BlockType block = world.getBlock(pos).getType();
 /* 167:172 */       if (paramxo == xo.IN_WATER) {
-/* 168:173 */         return (block.getMaterial().isLiquid()) && (world.getBlock(pos.down()).getProto().getMaterial().isLiquid()) && (!world.getBlock(pos.up()).getProto().blocksMovement());
+/* 168:173 */         return (block.getMaterial().isLiquid()) && (world.getBlock(pos.down()).getType().getMaterial().isLiquid()) && (!world.getBlock(pos.up()).getType().blocksMovement());
 /* 169:    */       }
 /* 170:175 */       BlockPosition posUnder = pos.down();
 /* 171:176 */       if (!World.isFlatSurface(world, posUnder)) {
 /* 172:177 */         return false;
 /* 173:    */       }
-/* 174:179 */       ProtoBlock blockUnder = world.getBlock(posUnder).getProto();
+/* 174:179 */       BlockType blockUnder = world.getBlock(posUnder).getType();
 /* 175:180 */       int i = (blockUnder != BlockList.bedrock) && (blockUnder != BlockList.barrier) ? 1 : 0;
-/* 176:181 */       return (i != 0) && (!block.blocksMovement()) && (!block.getMaterial().isLiquid()) && (!world.getBlock(pos.up()).getProto().blocksMovement());
+/* 176:181 */       return (i != 0) && (!block.blocksMovement()) && (!block.getMaterial().isLiquid()) && (!world.getBlock(pos.up()).getType().blocksMovement());
 /* 177:    */     }
 /* 178:185 */     return false;
 /* 179:    */   }

@@ -2,9 +2,9 @@ package net.minecraft.src;
 /*  1:   */ public class ajv
 /*  2:   */   extends Item
 /*  3:   */ {
-/*  4:   */   private ProtoBlock a;
+/*  4:   */   private BlockType a;
 /*  5:   */   
-/*  6:   */   public ajv(ProtoBlock paramatr)
+/*  6:   */   public ajv(BlockType paramatr)
 /*  7:   */   {
 /*  8:16 */     this.a = paramatr;
 /*  9:   */   }
@@ -12,7 +12,7 @@ package net.minecraft.src;
 /* 11:   */   public boolean a(ItemStack paramamj, EntityPlayer paramahd, World paramaqu, BlockPosition paramdt, EnumDirection paramej, float paramFloat1, float paramFloat2, float paramFloat3)
 /* 12:   */   {
 /* 13:21 */     Block localbec1 = paramaqu.getBlock(paramdt);
-/* 14:22 */     ProtoBlock localatr = localbec1.getProto();
+/* 14:22 */     BlockType localatr = localbec1.getType();
 /* 15:23 */     if ((localatr == BlockList.aH) && (((Integer)localbec1.getData(BlockSnowLayer.a)).intValue() < 1)) {
 /* 16:24 */       paramej = EnumDirection.UP;
 /* 17:25 */     } else if (!localatr.f(paramaqu, paramdt)) {
@@ -30,10 +30,10 @@ package net.minecraft.src;
 /* 29:38 */       if (paramaqu.setBlock(paramdt, localbec2, 3))
 /* 30:   */       {
 /* 31:39 */         localbec2 = paramaqu.getBlock(paramdt);
-/* 32:43 */         if (localbec2.getProto() == this.a)
+/* 32:43 */         if (localbec2.getType() == this.a)
 /* 33:   */         {
 /* 34:44 */           aju.a(paramaqu, paramdt, paramamj);
-/* 35:45 */           localbec2.getProto().a(paramaqu, paramdt, localbec2, paramahd, paramamj);
+/* 35:45 */           localbec2.getType().a(paramaqu, paramdt, localbec2, paramahd, paramamj);
 /* 36:   */         }
 /* 37:47 */         paramaqu.a(paramdt.getX() + 0.5F, paramdt.getY() + 0.5F, paramdt.getZ() + 0.5F, this.a.H.b(), (this.a.H.d() + 1.0F) / 2.0F, this.a.H.e() * 0.8F);
 /* 38:48 */         paramamj.stackSize -= 1;

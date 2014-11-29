@@ -51,7 +51,7 @@ package net.minecraft.src;
 /*  50:551 */       BlockPosition localdt = this.b.up();
 /*  51:    */       
 /*  52:553 */       Block localbec = localaqu.getBlock(localdt);
-/*  53:554 */       ProtoBlock localatr = localbec.getProto();
+/*  53:554 */       BlockType localatr = localbec.getType();
 /*  54:556 */       if ((this.e) && ((localatr instanceof auh)) && (((Integer)localbec.getData(auh.a)).intValue() == 7))
 /*  55:    */       {
 /*  56:557 */         localaqu.setBlock(localdt, BlockList.air.instance(), 2);
@@ -67,12 +67,12 @@ package net.minecraft.src;
 /*  66:    */   
 /*  67:    */   protected boolean a(World paramaqu, BlockPosition paramdt)
 /*  68:    */   {
-/*  69:571 */     ProtoBlock localatr = paramaqu.getBlock(paramdt).getProto();
+/*  69:571 */     BlockType localatr = paramaqu.getBlock(paramdt).getType();
 /*  70:573 */     if (localatr == BlockList.ak)
 /*  71:    */     {
 /*  72:574 */       paramdt = paramdt.up();
 /*  73:575 */       Block localbec = paramaqu.getBlock(paramdt);
-/*  74:576 */       localatr = localbec.getProto();
+/*  74:576 */       localatr = localbec.getType();
 /*  75:578 */       if (((localatr instanceof auh)) && (((Integer)localbec.getData(auh.a)).intValue() == 7) && (this.d) && (!this.e))
 /*  76:    */       {
 /*  77:579 */         this.e = true;

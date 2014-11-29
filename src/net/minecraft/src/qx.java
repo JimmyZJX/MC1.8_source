@@ -60,7 +60,7 @@ package net.minecraft.src;
 /*  60: 73 */     if (this.h)
 /*  61:    */     {
 /*  62: 74 */       int m = this.g - this.j;
-/*  63: 75 */       ProtoBlock localatr2 = this.a.getBlock(this.i).getProto();
+/*  63: 75 */       BlockType localatr2 = this.a.getBlock(this.i).getType();
 /*  64: 76 */       if (localatr2.getMaterial() == Material.air)
 /*  65:    */       {
 /*  66: 77 */         this.h = false;
@@ -83,7 +83,7 @@ package net.minecraft.src;
 /*  83:    */     }
 /*  84: 92 */     else if (this.d)
 /*  85:    */     {
-/*  86: 93 */       ProtoBlock localatr1 = this.a.getBlock(this.f).getProto();
+/*  86: 93 */       BlockType localatr1 = this.a.getBlock(this.f).getType();
 /*  87: 95 */       if (localatr1.getMaterial() == Material.air)
 /*  88:    */       {
 /*  89: 96 */         this.a.c(this.b.getID(), this.f, -1);
@@ -113,7 +113,7 @@ package net.minecraft.src;
 /* 113:    */       }
 /* 114:117 */       return;
 /* 115:    */     }
-/* 116:120 */     ProtoBlock localatr = this.a.getBlock(paramdt).getProto();
+/* 116:120 */     BlockType localatr = this.a.getBlock(paramdt).getType();
 /* 117:121 */     if (this.c.noBuild())
 /* 118:    */     {
 /* 119:122 */       if (this.c == EnumGameMode.SPECTATOR) {
@@ -159,7 +159,7 @@ package net.minecraft.src;
 /* 159:    */     {
 /* 160:158 */       int m = this.g - this.e;
 /* 161:    */       
-/* 162:160 */       ProtoBlock localatr = this.a.getBlock(paramdt).getProto();
+/* 162:160 */       BlockType localatr = this.a.getBlock(paramdt).getType();
 /* 163:161 */       if (localatr.getMaterial() != Material.air)
 /* 164:    */       {
 /* 165:162 */         float f1 = localatr.a(this.b, this.b.world, paramdt) * (m + 1);
@@ -191,11 +191,11 @@ package net.minecraft.src;
 /* 191:    */   {
 /* 192:184 */     Block localbec = this.a.getBlock(paramdt);
 /* 193:    */     
-/* 194:186 */     localbec.getProto().a(this.a, paramdt, localbec, this.b);
+/* 194:186 */     localbec.getType().a(this.a, paramdt, localbec, this.b);
 /* 195:    */     
 /* 196:188 */     boolean bool = this.a.g(paramdt);
 /* 197:189 */     if (bool) {
-/* 198:190 */       localbec.getProto().d(this.a, paramdt, localbec);
+/* 198:190 */       localbec.getType().d(this.a, paramdt, localbec);
 /* 199:    */     }
 /* 200:192 */     return bool;
 /* 201:    */   }
@@ -219,12 +219,12 @@ package net.minecraft.src;
 /* 219:211 */         if (localamj1 == null) {
 /* 220:212 */           return false;
 /* 221:    */         }
-/* 222:214 */         if (!localamj1.c(localbec.getProto())) {
+/* 222:214 */         if (!localamj1.c(localbec.getType())) {
 /* 223:215 */           return false;
 /* 224:    */         }
 /* 225:    */       }
 /* 226:    */     }
-/* 227:220 */     this.a.playLevelEvent(this.b, 2001, paramdt, ProtoBlock.f(localbec));
+/* 227:220 */     this.a.playLevelEvent(this.b, 2001, paramdt, BlockType.f(localbec));
 /* 228:    */     
 /* 229:222 */     boolean bool1 = c(paramdt);
 /* 230:224 */     if (d())
@@ -234,16 +234,16 @@ package net.minecraft.src;
 /* 234:    */     else
 /* 235:    */     {
 /* 236:227 */       ItemStack localamj2 = this.b.bY();
-/* 237:228 */       boolean bool2 = this.b.canHarvestBlock(localbec.getProto());
+/* 237:228 */       boolean bool2 = this.b.canHarvestBlock(localbec.getType());
 /* 238:229 */       if (localamj2 != null)
 /* 239:    */       {
-/* 240:230 */         localamj2.a(this.a, localbec.getProto(), paramdt, this.b);
+/* 240:230 */         localamj2.a(this.a, localbec.getType(), paramdt, this.b);
 /* 241:231 */         if (localamj2.stackSize == 0) {
 /* 242:232 */           this.b.bZ();
 /* 243:    */         }
 /* 244:    */       }
 /* 245:235 */       if ((bool1) && (bool2)) {
-/* 246:236 */         localbec.getProto().a(this.a, this.b, paramdt, localbec, localbcm);
+/* 246:236 */         localbec.getType().a(this.a, this.b, paramdt, localbec, localbcm);
 /* 247:    */       }
 /* 248:    */     }
 /* 249:239 */     return bool1;
@@ -259,7 +259,7 @@ package net.minecraft.src;
 /* 259:248 */     ItemStack localamj = paramamj.a(paramaqu, paramahd);
 /* 260:249 */     if ((localamj != paramamj) || ((localamj != null) && ((localamj.stackSize != m) || (localamj.l() > 0) || (localamj.getDamage2() != n))))
 /* 261:    */     {
-/* 262:250 */       paramahd.bg.items[paramahd.bg.c] = localamj;
+/* 262:250 */       paramahd.inventory.items[paramahd.inventory.c] = localamj;
 /* 263:251 */       if (d())
 /* 264:    */       {
 /* 265:252 */         localamj.stackSize = m;
@@ -268,7 +268,7 @@ package net.minecraft.src;
 /* 268:    */         }
 /* 269:    */       }
 /* 270:257 */       if (localamj.stackSize == 0) {
-/* 271:258 */         paramahd.bg.items[paramahd.bg.c] = null;
+/* 271:258 */         paramahd.inventory.items[paramahd.inventory.c] = null;
 /* 272:    */       }
 /* 273:260 */       if (!paramahd.bR()) {
 /* 274:261 */         ((qw)paramahd).a(paramahd.bh);
@@ -286,7 +286,7 @@ package net.minecraft.src;
 /* 286:270 */       localObject = paramaqu.s(paramdt);
 /* 287:271 */       if ((localObject instanceof vy))
 /* 288:    */       {
-/* 289:272 */         ProtoBlock localatr = paramaqu.getBlock(paramdt).getProto();
+/* 289:272 */         BlockType localatr = paramaqu.getBlock(paramdt).getType();
 /* 290:273 */         vy localvy = (vy)localObject;
 /* 291:275 */         if (((localvy instanceof bcr)) && ((localatr instanceof BlockChest))) {
 /* 292:276 */           localvy = ((BlockChest)localatr).d(paramaqu, paramdt);
@@ -307,7 +307,7 @@ package net.minecraft.src;
 /* 307:290 */     if ((!paramahd.aw()) || (paramahd.getHeldItemStack() == null))
 /* 308:    */     {
 /* 309:291 */       localObject = paramaqu.getBlock(paramdt);
-/* 310:292 */       if (((Block)localObject).getProto().a(paramaqu, paramdt, (Block)localObject, paramahd, paramej, paramFloat1, paramFloat2, paramFloat3)) {
+/* 310:292 */       if (((Block)localObject).getType().a(paramaqu, paramdt, (Block)localObject, paramahd, paramej, paramFloat1, paramFloat2, paramFloat3)) {
 /* 311:293 */         return true;
 /* 312:    */       }
 /* 313:    */     }

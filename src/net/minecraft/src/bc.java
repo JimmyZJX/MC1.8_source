@@ -60,7 +60,7 @@ package net.minecraft.src;
 /*  59:    */           
 /*  60: 80 */           int i1 = 0;
 /*  61: 81 */           Block localbec = localaqu.getBlock(localdt5);
-/*  62: 82 */           if ((j == 0) || (localbec.getProto() != BlockList.air))
+/*  62: 82 */           if ((j == 0) || (localbec.getType() != BlockList.air))
 /*  63:    */           {
 /*  64: 85 */             if (localbec == localaqu.getBlock(localdt6))
 /*  65:    */             {

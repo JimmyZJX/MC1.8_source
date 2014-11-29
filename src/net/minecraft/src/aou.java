@@ -1,9 +1,9 @@
 package net.minecraft.src;
 /*   1:    */ public class aou
 /*   2:    */ {
-/*   3:    */   public void a(aop paramaop)
+/*   3:    */   public void a(RecipeList paramaop)
 /*   4:    */   {
-/*   5: 10 */     paramaop.a(new ItemStack(BlockList.chest), new Object[] { "###", "# #", "###", Character.valueOf('#'), BlockList.planks });
+/*   5: 10 */     paramaop.addShapedRecipe(new ItemStack(BlockList.chest), new Object[] { "###", "# #", "###", Character.valueOf('#'), BlockList.planks });
 /*   6:    */     
 /*   7:    */ 
 /*   8:    */ 
@@ -11,14 +11,14 @@ package net.minecraft.src;
 /*  10:    */ 
 /*  11:    */ 
 /*  12:    */ 
-/*  13: 18 */     paramaop.a(new ItemStack(BlockList.cg), new Object[] { "#-", Character.valueOf('#'), BlockList.chest, Character.valueOf('-'), BlockList.bR });
+/*  13: 18 */     paramaop.addShapedRecipe(new ItemStack(BlockList.cg), new Object[] { "#-", Character.valueOf('#'), BlockList.chest, Character.valueOf('-'), BlockList.bR });
 /*  14:    */     
 /*  15:    */ 
 /*  16:    */ 
 /*  17:    */ 
 /*  18:    */ 
 /*  19:    */ 
-/*  20: 25 */     paramaop.a(new ItemStack(BlockList.bQ), new Object[] { "###", "#E#", "###", Character.valueOf('#'), BlockList.obsidian, Character.valueOf('E'), ItemList.enderEye });
+/*  20: 25 */     paramaop.addShapedRecipe(new ItemStack(BlockList.bQ), new Object[] { "###", "#E#", "###", Character.valueOf('#'), BlockList.obsidian, Character.valueOf('E'), ItemList.enderEye });
 /*  21:    */     
 /*  22:    */ 
 /*  23:    */ 
@@ -27,7 +27,7 @@ package net.minecraft.src;
 /*  26:    */ 
 /*  27:    */ 
 /*  28:    */ 
-/*  29: 34 */     paramaop.a(new ItemStack(BlockList.al), new Object[] { "###", "# #", "###", Character.valueOf('#'), BlockList.cobblestone });
+/*  29: 34 */     paramaop.addShapedRecipe(new ItemStack(BlockList.al), new Object[] { "###", "# #", "###", Character.valueOf('#'), BlockList.cobblestone });
 /*  30:    */     
 /*  31:    */ 
 /*  32:    */ 
@@ -35,107 +35,107 @@ package net.minecraft.src;
 /*  34:    */ 
 /*  35:    */ 
 /*  36:    */ 
-/*  37: 42 */     paramaop.a(new ItemStack(BlockList.ai), new Object[] { "##", "##", Character.valueOf('#'), BlockList.planks });
+/*  37: 42 */     paramaop.addShapedRecipe(new ItemStack(BlockList.ai), new Object[] { "##", "##", Character.valueOf('#'), BlockList.planks });
 /*  38:    */     
 /*  39:    */ 
 /*  40:    */ 
 /*  41:    */ 
 /*  42:    */ 
 /*  43:    */ 
-/*  44: 49 */     paramaop.a(new ItemStack(BlockList.A), new Object[] { "##", "##", Character.valueOf('#'), new ItemStack(BlockList.sand, 1, bac.a.a()) });
+/*  44: 49 */     paramaop.addShapedRecipe(new ItemStack(BlockList.A), new Object[] { "##", "##", Character.valueOf('#'), new ItemStack(BlockList.sand, 1, bac.a.a()) });
 /*  45:    */     
 /*  46:    */ 
 /*  47:    */ 
 /*  48:    */ 
 /*  49:    */ 
 /*  50:    */ 
-/*  51: 56 */     paramaop.a(new ItemStack(BlockList.cM), new Object[] { "##", "##", Character.valueOf('#'), new ItemStack(BlockList.sand, 1, bac.b.a()) });
+/*  51: 56 */     paramaop.addShapedRecipe(new ItemStack(BlockList.cM), new Object[] { "##", "##", Character.valueOf('#'), new ItemStack(BlockList.sand, 1, bac.b.a()) });
 /*  52:    */     
 /*  53:    */ 
 /*  54:    */ 
 /*  55:    */ 
 /*  56:    */ 
 /*  57:    */ 
-/*  58: 63 */     paramaop.a(new ItemStack(BlockList.A, 4, bae.c.a()), new Object[] { "##", "##", Character.valueOf('#'), new ItemStack(BlockList.A, 1, bae.a.a()) });
+/*  58: 63 */     paramaop.addShapedRecipe(new ItemStack(BlockList.A, 4, bae.c.a()), new Object[] { "##", "##", Character.valueOf('#'), new ItemStack(BlockList.A, 1, bae.a.a()) });
 /*  59:    */     
 /*  60:    */ 
 /*  61:    */ 
 /*  62:    */ 
 /*  63:    */ 
 /*  64:    */ 
-/*  65: 70 */     paramaop.a(new ItemStack(BlockList.cM, 4, azr.c.a()), new Object[] { "##", "##", Character.valueOf('#'), new ItemStack(BlockList.cM, 1, azr.a.a()) });
+/*  65: 70 */     paramaop.addShapedRecipe(new ItemStack(BlockList.cM, 4, azr.c.a()), new Object[] { "##", "##", Character.valueOf('#'), new ItemStack(BlockList.cM, 1, azr.a.a()) });
 /*  66:    */     
 /*  67:    */ 
 /*  68:    */ 
 /*  69:    */ 
 /*  70:    */ 
 /*  71:    */ 
-/*  72: 77 */     paramaop.a(new ItemStack(BlockList.A, 1, bae.b.a()), new Object[] { "#", "#", Character.valueOf('#'), new ItemStack(BlockList.U, 1, bbg.b.a()) });
+/*  72: 77 */     paramaop.addShapedRecipe(new ItemStack(BlockList.A, 1, bae.b.a()), new Object[] { "#", "#", Character.valueOf('#'), new ItemStack(BlockList.U, 1, bbg.b.a()) });
 /*  73:    */     
 /*  74:    */ 
 /*  75:    */ 
 /*  76:    */ 
 /*  77:    */ 
 /*  78:    */ 
-/*  79: 84 */     paramaop.a(new ItemStack(BlockList.cM, 1, azr.b.a()), new Object[] { "#", "#", Character.valueOf('#'), new ItemStack(BlockList.cP, 1, aym.a.a()) });
+/*  79: 84 */     paramaop.addShapedRecipe(new ItemStack(BlockList.cM, 1, azr.b.a()), new Object[] { "#", "#", Character.valueOf('#'), new ItemStack(BlockList.cP, 1, aym.a.a()) });
 /*  80:    */     
 /*  81:    */ 
 /*  82:    */ 
 /*  83:    */ 
 /*  84:    */ 
 /*  85:    */ 
-/*  86: 91 */     paramaop.a(new ItemStack(BlockList.cq, 1, azn.b.a()), new Object[] { "#", "#", Character.valueOf('#'), new ItemStack(BlockList.U, 1, bbg.h.a()) });
+/*  86: 91 */     paramaop.addShapedRecipe(new ItemStack(BlockList.cq, 1, azn.b.a()), new Object[] { "#", "#", Character.valueOf('#'), new ItemStack(BlockList.U, 1, bbg.h.a()) });
 /*  87:    */     
 /*  88:    */ 
 /*  89:    */ 
 /*  90:    */ 
 /*  91:    */ 
 /*  92:    */ 
-/*  93: 98 */     paramaop.a(new ItemStack(BlockList.cq, 2, azn.c.a()), new Object[] { "#", "#", Character.valueOf('#'), new ItemStack(BlockList.cq, 1, azn.a.a()) });
+/*  93: 98 */     paramaop.addShapedRecipe(new ItemStack(BlockList.cq, 2, azn.c.a()), new Object[] { "#", "#", Character.valueOf('#'), new ItemStack(BlockList.cq, 1, azn.a.a()) });
 /*  94:    */     
 /*  95:    */ 
 /*  96:    */ 
 /*  97:    */ 
 /*  98:    */ 
 /*  99:    */ 
-/* 100:105 */     paramaop.a(new ItemStack(BlockList.stoneBrick, 4), new Object[] { "##", "##", Character.valueOf('#'), new ItemStack(BlockList.stone, 1, EnumStoneVariants.STONE.a()) });
+/* 100:105 */     paramaop.addShapedRecipe(new ItemStack(BlockList.stoneBrick, 4), new Object[] { "##", "##", Character.valueOf('#'), new ItemStack(BlockList.stone, 1, EnumStoneVariants.STONE.a()) });
 /* 101:    */     
 /* 102:    */ 
 /* 103:    */ 
 /* 104:    */ 
 /* 105:    */ 
 /* 106:    */ 
-/* 107:112 */     paramaop.a(new ItemStack(BlockList.stoneBrick, 1, bbc.O), new Object[] { "#", "#", Character.valueOf('#'), new ItemStack(BlockList.U, 1, bbg.f.a()) });
+/* 107:112 */     paramaop.addShapedRecipe(new ItemStack(BlockList.stoneBrick, 1, bbc.O), new Object[] { "#", "#", Character.valueOf('#'), new ItemStack(BlockList.U, 1, bbg.f.a()) });
 /* 108:    */     
 /* 109:    */ 
 /* 110:    */ 
 /* 111:    */ 
 /* 112:    */ 
 /* 113:    */ 
-/* 114:119 */     paramaop.b(new ItemStack(BlockList.stoneBrick, 1, bbc.M), new Object[] { BlockList.stoneBrick, BlockList.vine });
+/* 114:119 */     paramaop.addShapelessRecipe(new ItemStack(BlockList.stoneBrick, 1, bbc.M), new Object[] { BlockList.stoneBrick, BlockList.vine });
 /* 115:    */     
 /* 116:    */ 
 /* 117:    */ 
-/* 118:123 */     paramaop.b(new ItemStack(BlockList.mossyCobblestone, 1), new Object[] { BlockList.cobblestone, BlockList.vine });
+/* 118:123 */     paramaop.addShapelessRecipe(new ItemStack(BlockList.mossyCobblestone, 1), new Object[] { BlockList.cobblestone, BlockList.vine });
 /* 119:    */     
 /* 120:    */ 
 /* 121:    */ 
 /* 122:    */ 
-/* 123:128 */     paramaop.a(new ItemStack(BlockList.ironBars, 16), new Object[] { "###", "###", Character.valueOf('#'), ItemList.ironIngot });
+/* 123:128 */     paramaop.addShapedRecipe(new ItemStack(BlockList.ironBars, 16), new Object[] { "###", "###", Character.valueOf('#'), ItemList.ironIngot });
 /* 124:    */     
 /* 125:    */ 
 /* 126:    */ 
 /* 127:    */ 
 /* 128:    */ 
 /* 129:    */ 
-/* 130:135 */     paramaop.a(new ItemStack(BlockList.bj, 16), new Object[] { "###", "###", Character.valueOf('#'), BlockList.glass });
+/* 130:135 */     paramaop.addShapedRecipe(new ItemStack(BlockList.bj, 16), new Object[] { "###", "###", Character.valueOf('#'), BlockList.glass });
 /* 131:    */     
 /* 132:    */ 
 /* 133:    */ 
 /* 134:    */ 
 /* 135:    */ 
 /* 136:    */ 
-/* 137:142 */     paramaop.a(new ItemStack(BlockList.bJ, 1), new Object[] { " R ", "RGR", " R ", Character.valueOf('R'), ItemList.redstone, Character.valueOf('G'), BlockList.glowstone });
+/* 137:142 */     paramaop.addShapedRecipe(new ItemStack(BlockList.bJ, 1), new Object[] { " R ", "RGR", " R ", Character.valueOf('R'), ItemList.redstone, Character.valueOf('G'), BlockList.glowstone });
 /* 138:    */     
 /* 139:    */ 
 /* 140:    */ 
@@ -144,7 +144,7 @@ package net.minecraft.src;
 /* 143:    */ 
 /* 144:    */ 
 /* 145:    */ 
-/* 146:151 */     paramaop.a(new ItemStack(BlockList.bY, 1), new Object[] { "GGG", "GSG", "OOO", Character.valueOf('G'), BlockList.glass, Character.valueOf('S'), ItemList.bZ, Character.valueOf('O'), BlockList.obsidian });
+/* 146:151 */     paramaop.addShapedRecipe(new ItemStack(BlockList.bY, 1), new Object[] { "GGG", "GSG", "OOO", Character.valueOf('G'), BlockList.glass, Character.valueOf('S'), ItemList.bZ, Character.valueOf('O'), BlockList.obsidian });
 /* 147:    */     
 /* 148:    */ 
 /* 149:    */ 
@@ -154,14 +154,14 @@ package net.minecraft.src;
 /* 153:    */ 
 /* 154:    */ 
 /* 155:    */ 
-/* 156:161 */     paramaop.a(new ItemStack(BlockList.netherBrick, 1), new Object[] { "NN", "NN", Character.valueOf('N'), ItemList.cf });
+/* 156:161 */     paramaop.addShapedRecipe(new ItemStack(BlockList.netherBrick, 1), new Object[] { "NN", "NN", Character.valueOf('N'), ItemList.cf });
 /* 157:    */     
 /* 158:    */ 
 /* 159:    */ 
 /* 160:    */ 
 /* 161:    */ 
 /* 162:    */ 
-/* 163:168 */     paramaop.a(new ItemStack(BlockList.stone, 2, EnumStoneVariants.DIORITE.a()), new Object[] { "CQ", "QC", Character.valueOf('C'), BlockList.cobblestone, Character.valueOf('Q'), ItemList.cg });
+/* 163:168 */     paramaop.addShapedRecipe(new ItemStack(BlockList.stone, 2, EnumStoneVariants.DIORITE.a()), new Object[] { "CQ", "QC", Character.valueOf('C'), BlockList.cobblestone, Character.valueOf('Q'), ItemList.quartz });
 /* 164:    */     
 /* 165:    */ 
 /* 166:    */ 
@@ -169,16 +169,16 @@ package net.minecraft.src;
 /* 168:    */ 
 /* 169:    */ 
 /* 170:    */ 
-/* 171:176 */     paramaop.b(new ItemStack(BlockList.stone, 1, EnumStoneVariants.GRANITE.a()), new Object[] { new ItemStack(BlockList.stone, 1, EnumStoneVariants.DIORITE.a()), ItemList.cg });
+/* 171:176 */     paramaop.addShapelessRecipe(new ItemStack(BlockList.stone, 1, EnumStoneVariants.GRANITE.a()), new Object[] { new ItemStack(BlockList.stone, 1, EnumStoneVariants.DIORITE.a()), ItemList.quartz });
 /* 172:    */     
 /* 173:    */ 
 /* 174:    */ 
-/* 175:180 */     paramaop.b(new ItemStack(BlockList.stone, 2, EnumStoneVariants.ANDESITE.a()), new Object[] { new ItemStack(BlockList.stone, 1, EnumStoneVariants.DIORITE.a()), BlockList.cobblestone });
+/* 175:180 */     paramaop.addShapelessRecipe(new ItemStack(BlockList.stone, 2, EnumStoneVariants.ANDESITE.a()), new Object[] { new ItemStack(BlockList.stone, 1, EnumStoneVariants.DIORITE.a()), BlockList.cobblestone });
 /* 176:    */     
 /* 177:    */ 
 /* 178:    */ 
 /* 179:    */ 
-/* 180:185 */     paramaop.a(new ItemStack(BlockList.dirt, 4, avd.b.a()), new Object[] { "DG", "GD", Character.valueOf('D'), new ItemStack(BlockList.dirt, 1, avd.a.a()), Character.valueOf('G'), BlockList.gravel });
+/* 180:185 */     paramaop.addShapedRecipe(new ItemStack(BlockList.dirt, 4, avd.b.a()), new Object[] { "DG", "GD", Character.valueOf('D'), new ItemStack(BlockList.dirt, 1, avd.a.a()), Character.valueOf('G'), BlockList.gravel });
 /* 181:    */     
 /* 182:    */ 
 /* 183:    */ 
@@ -186,21 +186,21 @@ package net.minecraft.src;
 /* 185:    */ 
 /* 186:    */ 
 /* 187:    */ 
-/* 188:193 */     paramaop.a(new ItemStack(BlockList.stone, 4, EnumStoneVariants.DIORITE_SMOOTH.a()), new Object[] { "SS", "SS", Character.valueOf('S'), new ItemStack(BlockList.stone, 1, EnumStoneVariants.DIORITE.a()) });
+/* 188:193 */     paramaop.addShapedRecipe(new ItemStack(BlockList.stone, 4, EnumStoneVariants.DIORITE_SMOOTH.a()), new Object[] { "SS", "SS", Character.valueOf('S'), new ItemStack(BlockList.stone, 1, EnumStoneVariants.DIORITE.a()) });
 /* 189:    */     
 /* 190:    */ 
 /* 191:    */ 
 /* 192:    */ 
 /* 193:    */ 
 /* 194:    */ 
-/* 195:200 */     paramaop.a(new ItemStack(BlockList.stone, 4, EnumStoneVariants.GRANITE_SMOOTH.a()), new Object[] { "SS", "SS", Character.valueOf('S'), new ItemStack(BlockList.stone, 1, EnumStoneVariants.GRANITE.a()) });
+/* 195:200 */     paramaop.addShapedRecipe(new ItemStack(BlockList.stone, 4, EnumStoneVariants.GRANITE_SMOOTH.a()), new Object[] { "SS", "SS", Character.valueOf('S'), new ItemStack(BlockList.stone, 1, EnumStoneVariants.GRANITE.a()) });
 /* 196:    */     
 /* 197:    */ 
 /* 198:    */ 
 /* 199:    */ 
 /* 200:    */ 
 /* 201:    */ 
-/* 202:207 */     paramaop.a(new ItemStack(BlockList.stone, 4, EnumStoneVariants.ANDESITE_SMOOTH.a()), new Object[] { "SS", "SS", Character.valueOf('S'), new ItemStack(BlockList.stone, 1, EnumStoneVariants.ANDESITE.a()) });
+/* 202:207 */     paramaop.addShapedRecipe(new ItemStack(BlockList.stone, 4, EnumStoneVariants.ANDESITE_SMOOTH.a()), new Object[] { "SS", "SS", Character.valueOf('S'), new ItemStack(BlockList.stone, 1, EnumStoneVariants.ANDESITE.a()) });
 /* 203:    */     
 /* 204:    */ 
 /* 205:    */ 
@@ -208,20 +208,20 @@ package net.minecraft.src;
 /* 207:    */ 
 /* 208:    */ 
 /* 209:    */ 
-/* 210:215 */     paramaop.a(new ItemStack(BlockList.cI, 1, azi.b), new Object[] { "SS", "SS", Character.valueOf('S'), ItemList.cC });
+/* 210:215 */     paramaop.addShapedRecipe(new ItemStack(BlockList.cI, 1, azi.b), new Object[] { "SS", "SS", Character.valueOf('S'), ItemList.cC });
 /* 211:    */     
 /* 212:    */ 
 /* 213:    */ 
 /* 214:    */ 
 /* 215:    */ 
-/* 216:221 */     paramaop.a(new ItemStack(BlockList.cI, 1, azi.M), new Object[] { "SSS", "SSS", "SSS", Character.valueOf('S'), ItemList.cC });
+/* 216:221 */     paramaop.addShapedRecipe(new ItemStack(BlockList.cI, 1, azi.M), new Object[] { "SSS", "SSS", "SSS", Character.valueOf('S'), ItemList.cC });
 /* 217:    */     
 /* 218:    */ 
 /* 219:    */ 
 /* 220:    */ 
 /* 221:    */ 
 /* 222:    */ 
-/* 223:228 */     paramaop.a(new ItemStack(BlockList.cI, 1, azi.N), new Object[] { "SSS", "SIS", "SSS", Character.valueOf('S'), ItemList.cC, Character.valueOf('I'), new ItemStack(ItemList.dye, 1, EnumDyeColor.BLACK.b()) });
+/* 223:228 */     paramaop.addShapedRecipe(new ItemStack(BlockList.cI, 1, azi.N), new Object[] { "SSS", "SIS", "SSS", Character.valueOf('S'), ItemList.cC, Character.valueOf('I'), new ItemStack(ItemList.dye, 1, EnumDyeColor.BLACK.b()) });
 /* 224:    */     
 /* 225:    */ 
 /* 226:    */ 
@@ -229,7 +229,7 @@ package net.minecraft.src;
 /* 228:    */ 
 /* 229:    */ 
 /* 230:    */ 
-/* 231:236 */     paramaop.a(new ItemStack(BlockList.seaLantern, 1, 0), new Object[] { "SCS", "CCC", "SCS", Character.valueOf('S'), ItemList.cC, Character.valueOf('C'), ItemList.cD });
+/* 231:236 */     paramaop.addShapedRecipe(new ItemStack(BlockList.seaLantern, 1, 0), new Object[] { "SCS", "CCC", "SCS", Character.valueOf('S'), ItemList.cC, Character.valueOf('C'), ItemList.cD });
 /* 232:    */   }
 /* 233:    */ }
 

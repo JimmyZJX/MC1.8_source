@@ -12,7 +12,7 @@ package net.minecraft.src;
 /* 11:12 */     super(paramaqu, paramDouble1, paramDouble2, paramDouble3);
 /* 12:   */   }
 /* 13:   */   
-/* 14:   */   public boolean e(EntityPlayer paramahd)
+/* 14:   */   public boolean onRightClick(EntityPlayer paramahd)
 /* 15:   */   {
 /* 16:17 */     if ((this.rider != null) && ((this.rider instanceof EntityPlayer)) && (this.rider != paramahd)) {
 /* 17:18 */       return true;

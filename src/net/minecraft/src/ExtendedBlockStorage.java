@@ -20,7 +20,7 @@ package net.minecraft.src;
 /*  19:    */   
 /*  20:    */   public Block a(int paramInt1, int paramInt2, int paramInt3)
 /*  21:    */   {
-/*  22: 30 */     Block result = ProtoBlock.d.a(this.d[(paramInt2 << 8 | paramInt3 << 4 | paramInt1)]);
+/*  22: 30 */     Block result = BlockType.d.a(this.d[(paramInt2 << 8 | paramInt3 << 4 | paramInt1)]);
 /*  23: 31 */     if (result != null) {
 /*  24: 32 */       return result;
 /*  25:    */     }
@@ -30,8 +30,8 @@ package net.minecraft.src;
 /*  29:    */   public void a(int paramInt1, int paramInt2, int paramInt3, Block parambec)
 /*  30:    */   {
 /*  31: 39 */     Block localbec = a(paramInt1, paramInt2, paramInt3);
-/*  32: 40 */     ProtoBlock localatr1 = localbec.getProto();
-/*  33: 41 */     ProtoBlock localatr2 = parambec.getProto();
+/*  32: 40 */     BlockType localatr1 = localbec.getType();
+/*  33: 41 */     BlockType localatr2 = parambec.getType();
 /*  34: 43 */     if (localatr1 != BlockList.air)
 /*  35:    */     {
 /*  36: 44 */       this.b -= 1;
@@ -46,18 +46,18 @@ package net.minecraft.src;
 /*  45: 53 */         this.c += 1;
 /*  46:    */       }
 /*  47:    */     }
-/*  48: 57 */     this.d[(paramInt2 << 8 | paramInt3 << 4 | paramInt1)] = ((char)ProtoBlock.d.b(parambec));
+/*  48: 57 */     this.d[(paramInt2 << 8 | paramInt3 << 4 | paramInt1)] = ((char)BlockType.d.b(parambec));
 /*  49:    */   }
 /*  50:    */   
-/*  51:    */   public ProtoBlock b(int paramInt1, int paramInt2, int paramInt3)
+/*  51:    */   public BlockType b(int paramInt1, int paramInt2, int paramInt3)
 /*  52:    */   {
-/*  53: 61 */     return a(paramInt1, paramInt2, paramInt3).getProto();
+/*  53: 61 */     return a(paramInt1, paramInt2, paramInt3).getType();
 /*  54:    */   }
 /*  55:    */   
 /*  56:    */   public int c(int paramInt1, int paramInt2, int paramInt3)
 /*  57:    */   {
 /*  58: 69 */     Block localbec = a(paramInt1, paramInt2, paramInt3);
-/*  59: 70 */     return localbec.getProto().c(localbec);
+/*  59: 70 */     return localbec.getType().c(localbec);
 /*  60:    */   }
 /*  61:    */   
 /*  62:    */   public boolean a()
@@ -103,7 +103,7 @@ package net.minecraft.src;
 /* 102:110 */       for (int j = 0; j < 16; j++) {
 /* 103:111 */         for (int k = 0; k < 16; k++)
 /* 104:    */         {
-/* 105:112 */           ProtoBlock localatr = b(i, j, k);
+/* 105:112 */           BlockType localatr = b(i, j, k);
 /* 106:114 */           if (localatr != BlockList.air)
 /* 107:    */           {
 /* 108:115 */             this.b += 1;

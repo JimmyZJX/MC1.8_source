@@ -58,9 +58,9 @@ package net.minecraft.src;
 /*  58:    */   {
 /*  59:106 */     super.h();
 /*  60:    */     
-/*  61:108 */     H().a(12, Byte.valueOf((byte)0));
-/*  62:109 */     H().a(13, Byte.valueOf((byte)0));
-/*  63:110 */     H().a(14, Byte.valueOf((byte)0));
+/*  61:108 */     H().addData(12, Byte.valueOf((byte)0));
+/*  62:109 */     H().addData(13, Byte.valueOf((byte)0));
+/*  63:110 */     H().addData(14, Byte.valueOf((byte)0));
 /*  64:    */   }
 /*  65:    */   
 /*  66:    */   public int getArmorValue()
@@ -92,7 +92,7 @@ package net.minecraft.src;
 /*  92:    */   
 /*  93:    */   public boolean i_()
 /*  94:    */   {
-/*  95:140 */     return H().a(12) == 1;
+/*  95:140 */     return H().getByte(12) == 1;
 /*  96:    */   }
 /*  97:    */   
 /*  98:    */   protected int b(EntityPlayer paramahd)
@@ -119,7 +119,7 @@ package net.minecraft.src;
 /* 119:    */   
 /* 120:    */   public boolean cm()
 /* 121:    */   {
-/* 122:167 */     return H().a(13) == 1;
+/* 122:167 */     return H().getByte(13) == 1;
 /* 123:    */   }
 /* 124:    */   
 /* 125:    */   public void m(boolean paramBoolean)
@@ -162,9 +162,9 @@ package net.minecraft.src;
 /* 162:203 */     super.m();
 /* 163:    */   }
 /* 164:    */   
-/* 165:    */   public boolean a(DamageSource paramwh, float paramFloat)
+/* 165:    */   public boolean receiveDamage(DamageSource paramwh, float paramFloat)
 /* 166:    */   {
-/* 167:208 */     if (super.a(paramwh, paramFloat))
+/* 167:208 */     if (super.receiveDamage(paramwh, paramFloat))
 /* 168:    */     {
 /* 169:209 */       EntityLiving localxm = u();
 /* 170:210 */       if ((localxm == null) && ((paramwh.getAttacker() instanceof EntityLiving))) {
@@ -244,7 +244,7 @@ package net.minecraft.src;
 /* 244:288 */     return "mob.zombie.death";
 /* 245:    */   }
 /* 246:    */   
-/* 247:    */   protected void a(BlockPosition paramdt, ProtoBlock paramatr)
+/* 247:    */   protected void a(BlockPosition paramdt, BlockType paramatr)
 /* 248:    */   {
 /* 249:293 */     a("mob.zombie.step", 0.15F, 1.0F);
 /* 250:    */   }
@@ -423,7 +423,7 @@ package net.minecraft.src;
 /* 423:474 */     return paramxq;
 /* 424:    */   }
 /* 425:    */   
-/* 426:    */   public boolean onRightClick(EntityPlayer paramahd)
+/* 426:    */   public boolean onRightClickMob(EntityPlayer paramahd)
 /* 427:    */   {
 /* 428:479 */     ItemStack localamj = paramahd.bY();
 /* 429:481 */     if ((localamj != null) && (localamj.getItem() == ItemList.ao) && (localamj.getDamage2() == 0) && (cm()) && (a(Potion.weakness)))
@@ -432,7 +432,7 @@ package net.minecraft.src;
 /* 432:483 */         localamj.stackSize -= 1;
 /* 433:    */       }
 /* 434:485 */       if (localamj.stackSize <= 0) {
-/* 435:486 */         paramahd.bg.a(paramahd.bg.c, null);
+/* 435:486 */         paramahd.inventory.a(paramahd.inventory.c, null);
 /* 436:    */       }
 /* 437:489 */       if (!this.world.isClient) {
 /* 438:490 */         a(this.rng.nextInt(2401) + 3600);
@@ -473,7 +473,7 @@ package net.minecraft.src;
 /* 473:    */   
 /* 474:    */   public boolean cn()
 /* 475:    */   {
-/* 476:526 */     return H().a(14) == 1;
+/* 476:526 */     return H().getByte(14) == 1;
 /* 477:    */   }
 /* 478:    */   
 /* 479:    */   protected void cure()
@@ -502,7 +502,7 @@ package net.minecraft.src;
 /* 502:551 */         for (int m = (int)this.yPos - 4; (m < (int)this.yPos + 4) && (j < 14); m++) {
 /* 503:552 */           for (int n = (int)this.zPos - 4; (n < (int)this.zPos + 4) && (j < 14); n++)
 /* 504:    */           {
-/* 505:553 */             ProtoBlock localatr = this.world.getBlock(new BlockPosition(k, m, n)).getProto();
+/* 505:553 */             BlockType localatr = this.world.getBlock(new BlockPosition(k, m, n)).getType();
 /* 506:554 */             if ((localatr == BlockList.ironBars) || (localatr == BlockList.C))
 /* 507:    */             {
 /* 508:555 */               if (this.rng.nextFloat() < 0.3F) {

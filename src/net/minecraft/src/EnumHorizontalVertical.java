@@ -27,7 +27,7 @@ package net.minecraft.src;
 /*  26:    */   
 /*  27:    */   public boolean apply(EnumDirection dir)
 /*  28:    */   {
-/*  29:436 */     return (dir != null) && (dir.k().d() == this);
+/*  29:436 */     return (dir != null) && (dir.getAxis().d() == this);
 /*  30:    */   }
 /*  31:    */   
 /*  32:    */   public Iterator<EnumDirection> iterator()

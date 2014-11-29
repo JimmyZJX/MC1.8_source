@@ -37,7 +37,7 @@ package net.minecraft.src;
 /* 36:44 */         for (i1 = paramdt.getZ() - m; (i1 <= paramdt.getZ() + m) && (j != 0); i1++) {
 /* 37:45 */           if ((k >= 0) && (k < 256))
 /* 38:   */           {
-/* 39:46 */             if (!canGrowInto(paramaqu.getBlock(new BlockPosition(n, k, i1)).getProto())) {
+/* 39:46 */             if (!canGrowInto(paramaqu.getBlock(new BlockPosition(n, k, i1)).getType())) {
 /* 40:47 */               j = 0;
 /* 41:   */             }
 /* 42:   */           }
@@ -50,7 +50,7 @@ package net.minecraft.src;
 /* 49:56 */     if (j == 0) {
 /* 50:57 */       return false;
 /* 51:   */     }
-/* 52:60 */     ProtoBlock localatr1 = paramaqu.getBlock(paramdt.down()).getProto();
+/* 52:60 */     BlockType localatr1 = paramaqu.getBlock(paramdt.down()).getType();
 /* 53:61 */     if (((localatr1 != BlockList.grass) && (localatr1 != BlockList.dirt) && (localatr1 != BlockList.ak)) || (paramdt.getY() >= 256 - i - 1)) {
 /* 54:62 */       return false;
 /* 55:   */     }
@@ -68,7 +68,7 @@ package net.minecraft.src;
 /* 67:74 */           if ((Math.abs(i3) != i1) || (Math.abs(i5) != i1) || ((paramRandom.nextInt(2) != 0) && (n != 0)))
 /* 68:   */           {
 /* 69:77 */             BlockPosition localdt = new BlockPosition(i2, m, i4);
-/* 70:78 */             ProtoBlock localatr3 = paramaqu.getBlock(localdt).getProto();
+/* 70:78 */             BlockType localatr3 = paramaqu.getBlock(localdt).getType();
 /* 71:79 */             if ((localatr3.getMaterial() == Material.air) || (localatr3.getMaterial() == Material.leaves)) {
 /* 72:80 */               setBlock(paramaqu, localdt, BlockList.leaves, EnumWoodVariant.BIRCH.getIndex());
 /* 73:   */             }
@@ -78,7 +78,7 @@ package net.minecraft.src;
 /* 77:   */     }
 /* 78:85 */     for (int m = 0; m < i; m++)
 /* 79:   */     {
-/* 80:86 */       ProtoBlock localatr2 = paramaqu.getBlock(paramdt.up(m)).getProto();
+/* 80:86 */       BlockType localatr2 = paramaqu.getBlock(paramdt.up(m)).getType();
 /* 81:87 */       if ((localatr2.getMaterial() == Material.air) || (localatr2.getMaterial() == Material.leaves)) {
 /* 82:88 */         setBlock(paramaqu, paramdt.up(m), BlockList.log, EnumWoodVariant.BIRCH.getIndex());
 /* 83:   */       }

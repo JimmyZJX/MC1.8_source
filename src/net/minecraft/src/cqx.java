@@ -72,7 +72,7 @@ package net.minecraft.src;
 /*  71: 83 */     int i = paramadx.v();
 /*  72:    */     
 /*  73: 85 */     Block localbec = paramadx.t();
-/*  74: 86 */     if (localbec.getProto().b() != -1)
+/*  74: 86 */     if (localbec.getType().b() != -1)
 /*  75:    */     {
 /*  76: 87 */       cjm.glPushMatrix();
 /*  77:    */       

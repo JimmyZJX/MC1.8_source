@@ -374,9 +374,9 @@ package net.minecraft.src;
 /* 373:    */       else
 /* 374:    */       {
 /* 375:427 */         Block localbec3 = parambgk.a(i5, i6, i4);
-/* 376:429 */         if (localbec3.getProto().getMaterial() == Material.air) {
+/* 376:429 */         if (localbec3.getType().getMaterial() == Material.air) {
 /* 377:430 */           i2 = -1;
-/* 378:431 */         } else if (localbec3.getProto() == BlockList.stone) {
+/* 378:431 */         } else if (localbec3.getType() == BlockList.stone) {
 /* 379:432 */           if (i2 == -1)
 /* 380:    */           {
 /* 381:433 */             if (i3 <= 0)
@@ -389,7 +389,7 @@ package net.minecraft.src;
 /* 388:437 */               localbec1 = this.ak;
 /* 389:438 */               localbec2 = this.al;
 /* 390:    */             }
-/* 391:441 */             if ((i6 < 63) && ((localbec1 == null) || (localbec1.getProto().getMaterial() == Material.air))) {
+/* 391:441 */             if ((i6 < 63) && ((localbec1 == null) || (localbec1.getType().getMaterial() == Material.air))) {
 /* 392:442 */               if (a(new BlockPosition(paramInt1, i6, paramInt2)) < 0.15F) {
 /* 393:443 */                 localbec1 = BlockList.aI.instance();
 /* 394:    */               } else {
@@ -416,7 +416,7 @@ package net.minecraft.src;
 /* 415:    */           {
 /* 416:460 */             i2--;
 /* 417:461 */             parambgk.a(i5, i6, i4, localbec2);
-/* 418:464 */             if ((i2 == 0) && (localbec2.getProto() == BlockList.sand))
+/* 418:464 */             if ((i2 == 0) && (localbec2.getType() == BlockList.sand))
 /* 419:    */             {
 /* 420:465 */               i2 = paramRandom.nextInt(4) + Math.max(0, i6 - 63);
 /* 421:466 */               localbec2 = localbec2.getData(BlockSand.a) == bac.b ? BlockList.cM.instance() : BlockList.A.instance();

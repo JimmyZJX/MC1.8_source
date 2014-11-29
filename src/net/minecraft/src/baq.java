@@ -8,7 +8,7 @@ package net.minecraft.src;
 /*   7:    */ import java.util.Random;
 /*   8:    */ 
 /*   9:    */ public class baq
-/*  10:    */   extends ProtoBlock
+/*  10:    */   extends BlockType
 /*  11:    */ {
 /*  12: 24 */   public static final BlockDataBoolean a = BlockDataBoolean.getInstance("wet");
 /*  13:    */   
@@ -29,7 +29,7 @@ package net.minecraft.src;
 /*  28: 45 */     e(paramaqu, paramdt, parambec);
 /*  29:    */   }
 /*  30:    */   
-/*  31:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/*  31:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /*  32:    */   {
 /*  33: 50 */     e(paramaqu, paramdt, parambec);
 /*  34: 51 */     super.a(paramaqu, paramdt, parambec, paramatr);
@@ -40,7 +40,7 @@ package net.minecraft.src;
 /*  39: 55 */     if ((!((Boolean)parambec.getData(a)).booleanValue()) && (d(paramaqu, paramdt)))
 /*  40:    */     {
 /*  41: 57 */       paramaqu.setBlock(paramdt, parambec.setData(a, Boolean.valueOf(true)), 2);
-/*  42: 58 */       paramaqu.playLevelEvent(2001, paramdt, ProtoBlock.a(BlockList.water));
+/*  42: 58 */       paramaqu.playLevelEvent(2001, paramdt, BlockType.a(BlockList.water));
 /*  43:    */     }
 /*  44:    */   }
 /*  45:    */   
@@ -60,7 +60,7 @@ package net.minecraft.src;
 /*  59: 73 */       for (EnumDirection localej : EnumDirection.values())
 /*  60:    */       {
 /*  61: 74 */         BlockPosition localdt2 = localdt1.offset(localej);
-/*  62: 75 */         if (paramaqu.getBlock(localdt2).getProto().getMaterial() == Material.water)
+/*  62: 75 */         if (paramaqu.getBlock(localdt2).getType().getMaterial() == Material.water)
 /*  63:    */         {
 /*  64: 76 */           paramaqu.setBlock(localdt2, BlockList.air.instance(), 2);
 /*  65: 77 */           localArrayList.add(localdt2);
@@ -124,7 +124,7 @@ package net.minecraft.src;
 /* 123:    */     else
 /* 124:    */     {
 /* 125:137 */       d2 += paramRandom.nextDouble() * 0.8D;
-/* 126:138 */       if (localej.k() == EnumAxis.X)
+/* 126:138 */       if (localej.getAxis() == EnumAxis.X)
 /* 127:    */       {
 /* 128:139 */         d3 += paramRandom.nextDouble();
 /* 129:140 */         if (localej == EnumDirection.EAST) {

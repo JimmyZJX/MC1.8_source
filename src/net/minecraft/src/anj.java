@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*  1:   */ public class anj
 /*  2:   */   extends aju
 /*  3:   */ {
-/*  4:   */   public anj(ProtoBlock paramatr)
+/*  4:   */   public anj(BlockType paramatr)
 /*  5:   */   {
 /*  6:13 */     super(paramatr);
 /*  7:   */     
@@ -19,12 +19,12 @@ package net.minecraft.src;
 /* 18:25 */       return false;
 /* 19:   */     }
 /* 20:28 */     Block localbec1 = paramaqu.getBlock(paramdt);
-/* 21:29 */     ProtoBlock localatr = localbec1.getProto();
+/* 21:29 */     BlockType localatr = localbec1.getType();
 /* 22:31 */     if ((localatr != this.a) && (paramej != EnumDirection.UP))
 /* 23:   */     {
 /* 24:32 */       paramdt = paramdt.offset(paramej);
 /* 25:33 */       localbec1 = paramaqu.getBlock(paramdt);
-/* 26:34 */       localatr = localbec1.getProto();
+/* 26:34 */       localatr = localbec1.getType();
 /* 27:   */     }
 /* 28:37 */     if (localatr == this.a)
 /* 29:   */     {

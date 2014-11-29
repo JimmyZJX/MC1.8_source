@@ -20,7 +20,7 @@ package net.minecraft.src;
 /* 19:   */     {
 /* 20:80 */       if (!paramaqu.isClient)
 /* 21:   */       {
-/* 22:81 */         EnumRailState localatl = (localbec.getProto() instanceof ati) ? (EnumRailState)localbec.getData(((ati)localbec.getProto()).l()) : EnumRailState.a;
+/* 22:81 */         EnumRailState localatl = (localbec.getType() instanceof ati) ? (EnumRailState)localbec.getData(((ati)localbec.getType()).l()) : EnumRailState.a;
 /* 23:82 */         double d = 0.0D;
 /* 24:83 */         if (localatl.c()) {
 /* 25:84 */           d = 0.5D;

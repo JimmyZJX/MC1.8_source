@@ -102,7 +102,7 @@ package net.minecraft.src;
 /* 101:117 */                 if ((i5 >= 0) && (i5 < 256))
 /* 102:    */                 {
 /* 103:121 */                   localbec3 = parambgk.a(i3, i5, i4);
-/* 104:122 */                   if ((localbec3.getProto() == BlockList.flowingWater) || (localbec3.getProto() == BlockList.water)) {
+/* 104:122 */                   if ((localbec3.getType() == BlockList.flowingWater) || (localbec3.getType() == BlockList.water)) {
 /* 105:123 */                     i2 = 1;
 /* 106:    */                   }
 /* 107:125 */                   if ((i5 != n - 1) && (i3 != k) && (i3 != m - 1) && (i4 != localbec1) && (i4 != localbec2 - 1)) {
@@ -128,10 +128,10 @@ package net.minecraft.src;
 /* 127:143 */                     if ((d9 * d9 + d10 * d10) * this.d[(i7 - 1)] + d11 * d11 / 6.0D < 1.0D)
 /* 128:    */                     {
 /* 129:144 */                       Block localbec4 = parambgk.a(i3, i7, localbec31);
-/* 130:145 */                       if (localbec4.getProto() == BlockList.grass) {
+/* 130:145 */                       if (localbec4.getType() == BlockList.grass) {
 /* 131:146 */                         i6 = 1;
 /* 132:    */                       }
-/* 133:148 */                       if ((localbec4.getProto() == BlockList.stone) || (localbec4.getProto() == BlockList.dirt) || (localbec4.getProto() == BlockList.grass)) {
+/* 133:148 */                       if ((localbec4.getType() == BlockList.stone) || (localbec4.getType() == BlockList.dirt) || (localbec4.getType() == BlockList.grass)) {
 /* 134:149 */                         if (i7 - 1 < 10)
 /* 135:    */                         {
 /* 136:150 */                           parambgk.a(i3, i7, localbec31, BlockList.flowingLava.instance());
@@ -139,7 +139,7 @@ package net.minecraft.src;
 /* 138:    */                         else
 /* 139:    */                         {
 /* 140:152 */                           parambgk.a(i3, i7, localbec31, BlockList.air.instance());
-/* 141:153 */                           if ((i6 != 0) && (parambgk.a(i3, i7 - 1, localbec31).getProto() == BlockList.dirt)) {
+/* 141:153 */                           if ((i6 != 0) && (parambgk.a(i3, i7 - 1, localbec31).getType() == BlockList.dirt)) {
 /* 142:154 */                             parambgk.a(i3, i7 - 1, localbec31, this.c.b(new BlockPosition(i3 + paramInt1 * 16, 0, localbec31 + paramInt2 * 16)).ak);
 /* 143:    */                           }
 /* 144:    */                         }

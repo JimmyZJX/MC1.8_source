@@ -3,7 +3,7 @@ package net.minecraft.src;
 /*   2:    */ import java.util.Random;
 /*   3:    */ 
 /*   4:    */ public abstract class BlockLiquid
-/*   5:    */   extends ProtoBlock
+/*   5:    */   extends BlockType
 /*   6:    */ {
 /*   7: 23 */   public static final BlockDataInteger level = BlockDataInteger.getInstance("level", 0, 15);
 /*   8:    */   
@@ -38,7 +38,7 @@ package net.minecraft.src;
 /*  37:    */   
 /*  38:    */   protected int e(IBlockAccess paramard, BlockPosition paramdt)
 /*  39:    */   {
-/*  40: 53 */     if (paramard.getBlock(paramdt).getProto().getMaterial() == this.material) {
+/*  40: 53 */     if (paramard.getBlock(paramdt).getType().getMaterial() == this.material) {
 /*  41: 54 */       return ((Integer)paramard.getBlock(paramdt).getData(level)).intValue();
 /*  42:    */     }
 /*  43: 57 */     return -1;
@@ -68,7 +68,7 @@ package net.minecraft.src;
 /*  67:    */   
 /*  68:    */   public boolean b(IBlockAccess paramard, BlockPosition paramdt, EnumDirection paramej)
 /*  69:    */   {
-/*  70: 83 */     Material localbof = paramard.getBlock(paramdt).getProto().getMaterial();
+/*  70: 83 */     Material localbof = paramard.getBlock(paramdt).getType().getMaterial();
 /*  71: 84 */     if (localbof == this.material) {
 /*  72: 85 */       return false;
 /*  73:    */     }
@@ -83,7 +83,7 @@ package net.minecraft.src;
 /*  82:    */   
 /*  83:    */   public boolean a(IBlockAccess paramard, BlockPosition paramdt, EnumDirection paramej)
 /*  84:    */   {
-/*  85: 98 */     if (paramard.getBlock(paramdt).getProto().getMaterial() == this.material) {
+/*  85: 98 */     if (paramard.getBlock(paramdt).getType().getMaterial() == this.material) {
 /*  86: 99 */       return false;
 /*  87:    */     }
 /*  88:101 */     if (paramej == EnumDirection.UP) {
@@ -98,7 +98,7 @@ package net.minecraft.src;
 /*  97:110 */       for (int j = -1; j <= 1; j++)
 /*  98:    */       {
 /*  99:111 */         Block localbec = paramard.getBlock(paramdt.offset(i, 0, j));
-/* 100:112 */         ProtoBlock localatr = localbec.getProto();
+/* 100:112 */         BlockType localatr = localbec.getType();
 /* 101:113 */         Material localbof = localatr.getMaterial();
 /* 102:114 */         if ((localbof != this.material) && (!localatr.m())) {
 /* 103:115 */           return true;
@@ -141,7 +141,7 @@ package net.minecraft.src;
 /* 140:    */       int k;
 /* 141:151 */       if (j < 0)
 /* 142:    */       {
-/* 143:152 */         if (!world.getBlock(pos1).getProto().getMaterial().material_c())
+/* 143:152 */         if (!world.getBlock(pos1).getType().getMaterial().material_c())
 /* 144:    */         {
 /* 145:153 */           j = f(world, pos1.down());
 /* 146:154 */           if (j >= 0)
@@ -227,7 +227,7 @@ package net.minecraft.src;
 /* 226:    */       }
 /* 227:    */     }
 /* 228:227 */     if ((this.material == Material.lava) && 
-/* 229:228 */       (paramaqu.getBlock(paramdt.up()).getProto().getMaterial() == Material.air) && (!paramaqu.getBlock(paramdt.up()).getProto().c()))
+/* 229:228 */       (paramaqu.getBlock(paramdt.up()).getType().getMaterial() == Material.air) && (!paramaqu.getBlock(paramdt.up()).getType().c()))
 /* 230:    */     {
 /* 231:229 */       if (paramRandom.nextInt(100) == 0)
 /* 232:    */       {
@@ -243,7 +243,7 @@ package net.minecraft.src;
 /* 242:    */     }
 /* 243:242 */     if ((paramRandom.nextInt(10) == 0) && (World.isFlatSurface(paramaqu, paramdt.down())))
 /* 244:    */     {
-/* 245:243 */       Material localbof = paramaqu.getBlock(paramdt.down(2)).getProto().getMaterial();
+/* 245:243 */       Material localbof = paramaqu.getBlock(paramdt.down(2)).getType().getMaterial();
 /* 246:244 */       if ((!localbof.material_c()) && (!localbof.isLiquid()))
 /* 247:    */       {
 /* 248:245 */         double d5 = d1 + paramRandom.nextFloat();
@@ -272,7 +272,7 @@ package net.minecraft.src;
 /* 271:269 */     e(paramaqu, paramdt, parambec);
 /* 272:    */   }
 /* 273:    */   
-/* 274:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/* 274:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /* 275:    */   {
 /* 276:274 */     e(paramaqu, paramdt, parambec);
 /* 277:    */   }
@@ -283,7 +283,7 @@ package net.minecraft.src;
 /* 282:    */     {
 /* 283:279 */       int i = 0;
 /* 284:280 */       for (EnumDirection localej : EnumDirection.values()) {
-/* 285:281 */         if ((localej != EnumDirection.DOWN) && (paramaqu.getBlock(paramdt.offset(localej)).getProto().getMaterial() == Material.water))
+/* 285:281 */         if ((localej != EnumDirection.DOWN) && (paramaqu.getBlock(paramdt.offset(localej)).getType().getMaterial() == Material.water))
 /* 286:    */         {
 /* 287:282 */           i = 1;
 /* 288:283 */           break;

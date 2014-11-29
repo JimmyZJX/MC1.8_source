@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ import java.util.Random;
 /*   2:    */ 
 /*   3:    */ public class bbl
-/*   4:    */   extends ProtoBlock
+/*   4:    */   extends BlockType
 /*   5:    */ {
 /*   6: 23 */   public static final BlockDataDirection a = BlockDataDirection.getInstance("facing", new bbm());
 /*   7:    */   
@@ -34,8 +34,8 @@ package net.minecraft.src;
 /*  33: 54 */     if (World.isFlatSurface(paramaqu, paramdt)) {
 /*  34: 55 */       return true;
 /*  35:    */     }
-/*  36: 57 */     ProtoBlock localatr = paramaqu.getBlock(paramdt).getProto();
-/*  37: 58 */     return ((localatr instanceof avv)) || (localatr == BlockList.glass) || (localatr == BlockList.bZ) || (localatr == BlockList.cG);
+/*  36: 57 */     BlockType localatr = paramaqu.getBlock(paramdt).getType();
+/*  37: 58 */     return ((localatr instanceof BlockFence)) || (localatr == BlockList.glass) || (localatr == BlockList.bZ) || (localatr == BlockList.cG);
 /*  38:    */   }
 /*  39:    */   
 /*  40:    */   public boolean c(World paramaqu, BlockPosition paramdt)
@@ -52,7 +52,7 @@ package net.minecraft.src;
 /*  51:    */   {
 /*  52: 73 */     BlockPosition localdt = paramdt.offset(paramej.opposite());
 /*  53:    */     
-/*  54: 75 */     boolean bool = paramej.k().c();
+/*  54: 75 */     boolean bool = paramej.getAxis().isHorizontal();
 /*  55: 76 */     return ((bool) && (paramaqu.d(localdt, true))) || ((paramej.equals(EnumDirection.UP)) && (d(paramaqu, localdt)));
 /*  56:    */   }
 /*  57:    */   
@@ -74,7 +74,7 @@ package net.minecraft.src;
 /*  73: 96 */     f(paramaqu, paramdt, parambec);
 /*  74:    */   }
 /*  75:    */   
-/*  76:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/*  76:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /*  77:    */   {
 /*  78:101 */     e(paramaqu, paramdt, parambec);
 /*  79:    */   }
@@ -85,13 +85,13 @@ package net.minecraft.src;
 /*  84:106 */       return true;
 /*  85:    */     }
 /*  86:109 */     EnumDirection localej1 = (EnumDirection)parambec.getData(a);
-/*  87:110 */     EnumAxis localel = localej1.k();
+/*  87:110 */     EnumAxis localel = localej1.getAxis();
 /*  88:111 */     EnumDirection localej2 = localej1.opposite();
 /*  89:    */     
 /*  90:113 */     int i = 0;
-/*  91:114 */     if ((localel.c()) && (!paramaqu.d(paramdt.offset(localej2), true))) {
+/*  91:114 */     if ((localel.isHorizontal()) && (!paramaqu.d(paramdt.offset(localej2), true))) {
 /*  92:115 */       i = 1;
-/*  93:116 */     } else if ((localel.b()) && (!d(paramaqu, paramdt.offset(localej2)))) {
+/*  93:116 */     } else if ((localel.isVertical()) && (!d(paramaqu, paramdt.offset(localej2)))) {
 /*  94:117 */       i = 1;
 /*  95:    */     }
 /*  96:120 */     if (i != 0)
@@ -105,11 +105,11 @@ package net.minecraft.src;
 /* 104:    */   
 /* 105:    */   protected boolean f(World paramaqu, BlockPosition paramdt, Block parambec)
 /* 106:    */   {
-/* 107:130 */     if ((parambec.getProto() == this) && 
+/* 107:130 */     if ((parambec.getType() == this) && 
 /* 108:131 */       (b(paramaqu, paramdt, (EnumDirection)parambec.getData(a)))) {
 /* 109:132 */       return true;
 /* 110:    */     }
-/* 111:136 */     if (paramaqu.getBlock(paramdt).getProto() == this)
+/* 111:136 */     if (paramaqu.getBlock(paramdt).getType() == this)
 /* 112:    */     {
 /* 113:137 */       b(paramaqu, paramdt, parambec, 0);
 /* 114:138 */       paramaqu.g(paramdt);
@@ -154,7 +154,7 @@ package net.minecraft.src;
 /* 153:170 */     double d3 = paramdt.getZ() + 0.5D;
 /* 154:171 */     double d4 = 0.22D;
 /* 155:172 */     double d5 = 0.27D;
-/* 156:174 */     if (localej1.k().c())
+/* 156:174 */     if (localej1.getAxis().isHorizontal())
 /* 157:    */     {
 /* 158:175 */       EnumDirection localej2 = localej1.opposite();
 /* 159:176 */       paramaqu.a(EnumParticleEffect.l, d1 + d5 * localej2.g(), d2 + d4, d3 + d5 * localej2.i(), 0.0D, 0.0D, 0.0D, new int[0]);

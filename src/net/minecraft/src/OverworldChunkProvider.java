@@ -19,7 +19,7 @@ package net.minecraft.src;
 /*  18:    */   private final double[] p;
 /*  19:    */   private final float[] q;
 /*  20:    */   private bgl r;
-/*  21: 64 */   private ProtoBlock s = BlockList.water;
+/*  21: 64 */   private BlockType s = BlockList.water;
 /*  22:    */   
 /*  23:    */   public OverworldChunkProvider(World paramaqu, long paramLong, boolean paramBoolean, String paramString)
 /*  24:    */   {

@@ -30,7 +30,7 @@ package net.minecraft.src;
 /* 29:43 */           for (int k = 0; k <= 1; k++)
 /* 30:   */           {
 /* 31:44 */             BlockPosition localdt = paramdt.offset(i, k, j);
-/* 32:45 */             if (paramaqu.getBlock(localdt).getProto() == BlockList.bookshelf)
+/* 32:45 */             if (paramaqu.getBlock(localdt).getType() == BlockList.bookshelf)
 /* 33:   */             {
 /* 34:46 */               if (!paramaqu.isEmpty(paramdt.offset(i / 2, 0, j / 2))) {
 /* 35:   */                 break;

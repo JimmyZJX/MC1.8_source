@@ -62,7 +62,7 @@ package net.minecraft.src;
 /*  61: 79 */       for (int k = localbiw.d(); k < localbiw.d() + localbiw.b(); k++)
 /*  62:    */       {
 /*  63: 80 */         Block localbec = localbiw.c();
-/*  64: 81 */         if (localbec.getProto() != BlockList.air)
+/*  64: 81 */         if (localbec.getType() != BlockList.air)
 /*  65:    */         {
 /*  66: 84 */           j = 0;
 /*  67: 85 */           this.c[k] = localbec;

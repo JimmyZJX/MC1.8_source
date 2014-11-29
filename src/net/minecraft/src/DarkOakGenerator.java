@@ -30,7 +30,7 @@ package net.minecraft.src;
 /*  29: 37 */         for (int z = pos.getZ() - m; (z <= pos.getZ() + m) && (flag != 0); z++) {
 /*  30: 38 */           if ((y >= 0) && (y < 256))
 /*  31:    */           {
-/*  32: 39 */             if (!canGrowInto(world.getBlock(new BlockPosition(x, y, z)).getProto())) {
+/*  32: 39 */             if (!canGrowInto(world.getBlock(new BlockPosition(x, y, z)).getType())) {
 /*  33: 40 */               flag = 0;
 /*  34:    */             }
 /*  35:    */           }
@@ -43,7 +43,7 @@ package net.minecraft.src;
 /*  42: 49 */     if (flag == 0) {
 /*  43: 50 */       return false;
 /*  44:    */     }
-/*  45: 53 */     ProtoBlock blockUnder = world.getBlock(pos.down()).getProto();
+/*  45: 53 */     BlockType blockUnder = world.getBlock(pos.down()).getType();
 /*  46: 54 */     if (((blockUnder != BlockList.grass) && (blockUnder != BlockList.dirt)) || (pos.getY() >= 256 - h - 1)) {
 /*  47: 55 */       return false;
 /*  48:    */     }
@@ -69,7 +69,7 @@ package net.minecraft.src;
 /*  68: 74 */         slantLength--;
 /*  69:    */       }
 /*  70: 76 */       BlockPosition trunkPos = new BlockPosition(xx, yy, zz);
-/*  71: 77 */       Material localbof = world.getBlock(trunkPos).getProto().getMaterial();
+/*  71: 77 */       Material localbof = world.getBlock(trunkPos).getType().getMaterial();
 /*  72: 78 */       if ((localbof == Material.air) || (localbof == Material.leaves))
 /*  73:    */       {
 /*  74: 79 */         setBlock(world, trunkPos, BlockList.log2, EnumWoodVariant.DARK_OAK.getIndex() - 4);
@@ -145,7 +145,7 @@ package net.minecraft.src;
 /* 144:    */   
 /* 145:    */   private void makeLeaf(World paramaqu, int paramInt1, int paramInt2, int paramInt3)
 /* 146:    */   {
-/* 147:156 */     ProtoBlock localatr = paramaqu.getBlock(new BlockPosition(paramInt1, paramInt2, paramInt3)).getProto();
+/* 147:156 */     BlockType localatr = paramaqu.getBlock(new BlockPosition(paramInt1, paramInt2, paramInt3)).getType();
 /* 148:157 */     if (localatr.getMaterial() == Material.air) {
 /* 149:158 */       setBlock(paramaqu, new BlockPosition(paramInt1, paramInt2, paramInt3), BlockList.leaves2, 1);
 /* 150:    */     }

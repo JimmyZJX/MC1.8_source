@@ -27,7 +27,7 @@ package net.minecraft.src;
 /* 26:41 */     if (b.apply(this.d.getBlock(localdt))) {
 /* 27:42 */       return true;
 /* 28:   */     }
-/* 29:44 */     if (this.d.getBlock(localdt.down()).getProto() == BlockList.grass) {
+/* 29:44 */     if (this.d.getBlock(localdt.down()).getType() == BlockList.grass) {
 /* 30:45 */       return true;
 /* 31:   */     }
 /* 32:47 */     return false;
@@ -72,11 +72,11 @@ package net.minecraft.src;
 /* 71:   */     else
 /* 72:   */     {
 /* 73:86 */       BlockPosition localdt2 = localdt1.down();
-/* 74:87 */       if (this.d.getBlock(localdt2).getProto() == BlockList.grass)
+/* 74:87 */       if (this.d.getBlock(localdt2).getType() == BlockList.grass)
 /* 75:   */       {
 /* 76:88 */         if (this.d.getGameRules().getBoolean("mobGriefing"))
 /* 77:   */         {
-/* 78:89 */           this.d.playLevelEvent(2001, localdt2, ProtoBlock.a(BlockList.grass));
+/* 78:89 */           this.d.playLevelEvent(2001, localdt2, BlockType.a(BlockList.grass));
 /* 79:90 */           this.d.setBlock(localdt2, BlockList.dirt.instance(), 2);
 /* 80:   */         }
 /* 81:92 */         this.c.v();

@@ -60,7 +60,7 @@ package net.minecraft.src;
 /* 59:   */     {
 /* 60:66 */       this.a.world.g(this.b);
 /* 61:67 */       this.a.world.playLevelEvent(1012, this.b, 0);
-/* 62:68 */       this.a.world.playLevelEvent(2001, this.b, ProtoBlock.a(this.c));
+/* 62:68 */       this.a.world.playLevelEvent(2001, this.b, BlockType.a(this.c));
 /* 63:   */     }
 /* 64:   */   }
 /* 65:   */ }

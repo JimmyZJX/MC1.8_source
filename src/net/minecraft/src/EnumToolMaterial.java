@@ -48,10 +48,10 @@ package net.minecraft.src;
 /*  43:    */   public Item f()
 /*  44:    */   {
 /*  45:120 */     if (this == WOOD) {
-/*  46:121 */       return Item.fromProtoBlock(BlockList.planks);
+/*  46:121 */       return Item.fromBlock(BlockList.planks);
 /*  47:    */     }
 /*  48:122 */     if (this == STONE) {
-/*  49:123 */       return Item.fromProtoBlock(BlockList.cobblestone);
+/*  49:123 */       return Item.fromBlock(BlockList.cobblestone);
 /*  50:    */     }
 /*  51:124 */     if (this == GOLD) {
 /*  52:125 */       return ItemList.goldIngot;

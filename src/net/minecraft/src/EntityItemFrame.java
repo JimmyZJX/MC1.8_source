@@ -18,8 +18,8 @@ package net.minecraft.src;
 /*  19:    */   
 /*  20:    */   protected void h()
 /*  21:    */   {
-/*  22: 38 */     H().a(8, 5);
-/*  23: 39 */     H().a(9, Byte.valueOf((byte)0));
+/*  22: 38 */     H().addNullData(8, 5);
+/*  23: 39 */     H().addData(9, Byte.valueOf((byte)0));
 /*  24:    */   }
 /*  25:    */   
 /*  26:    */   public float ao()
@@ -27,7 +27,7 @@ package net.minecraft.src;
 /*  28: 44 */     return 0.0F;
 /*  29:    */   }
 /*  30:    */   
-/*  31:    */   public boolean a(DamageSource paramwh, float paramFloat)
+/*  31:    */   public boolean receiveDamage(DamageSource paramwh, float paramFloat)
 /*  32:    */   {
 /*  33: 49 */     if (isImmuneTo(paramwh)) {
 /*  34: 50 */       return false;
@@ -41,7 +41,7 @@ package net.minecraft.src;
 /*  42:    */       }
 /*  43: 58 */       return true;
 /*  44:    */     }
-/*  45: 60 */     return super.a(paramwh, paramFloat);
+/*  45: 60 */     return super.receiveDamage(paramwh, paramFloat);
 /*  46:    */   }
 /*  47:    */   
 /*  48:    */   public int l()
@@ -107,7 +107,7 @@ package net.minecraft.src;
 /* 108:    */   
 /* 109:    */   public ItemStack getItem()
 /* 110:    */   {
-/* 111:124 */     return H().f(8);
+/* 111:124 */     return H().getItemStack(8);
 /* 112:    */   }
 /* 113:    */   
 /* 114:    */   public void a(ItemStack paramamj)
@@ -132,7 +132,7 @@ package net.minecraft.src;
 /* 133:    */   
 /* 134:    */   public int p()
 /* 135:    */   {
-/* 136:146 */     return H().a(9);
+/* 136:146 */     return H().getByte(9);
 /* 137:    */   }
 /* 138:    */   
 /* 139:    */   public void a(int paramInt)
@@ -176,7 +176,7 @@ package net.minecraft.src;
 /* 177:187 */     super.readEntityFromNBT(tag);
 /* 178:    */   }
 /* 179:    */   
-/* 180:    */   public boolean e(EntityPlayer paramahd)
+/* 180:    */   public boolean onRightClick(EntityPlayer paramahd)
 /* 181:    */   {
 /* 182:192 */     if (getItem() == null)
 /* 183:    */     {
@@ -187,7 +187,7 @@ package net.minecraft.src;
 /* 188:196 */         a(localamj);
 /* 189:198 */         if (!paramahd.abilities.instabuild) {
 /* 190:199 */           if (--localamj.stackSize <= 0) {
-/* 191:200 */             paramahd.bg.a(paramahd.bg.c, null);
+/* 191:200 */             paramahd.inventory.a(paramahd.inventory.c, null);
 /* 192:    */           }
 /* 193:    */         }
 /* 194:    */       }

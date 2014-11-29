@@ -1,6 +1,6 @@
 package net.minecraft.src;
 /*  1:   */ public abstract class atg
-/*  2:   */   extends ProtoBlock
+/*  2:   */   extends BlockType
 /*  3:   */   implements avs
 /*  4:   */ {
 /*  5:   */   protected atg(Material parambof)

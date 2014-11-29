@@ -8,7 +8,7 @@ package net.minecraft.src;
 /*   8: 41 */   private int d = -1;
 /*   9: 42 */   private int e = -1;
 /*  10: 43 */   private int f = -1;
-/*  11:    */   private ProtoBlock g;
+/*  11:    */   private BlockType g;
 /*  12:    */   private int h;
 /*  13:    */   private boolean i;
 /*  14:    */   public int a;
@@ -90,7 +90,7 @@ package net.minecraft.src;
 /*  90:    */   
 /*  91:    */   protected void h()
 /*  92:    */   {
-/*  93:126 */     this.ac.a(16, Byte.valueOf((byte)0));
+/*  93:126 */     this.data.addData(16, Byte.valueOf((byte)0));
 /*  94:    */   }
 /*  95:    */   
 /*  96:    */   public void c(double paramDouble1, double paramDouble2, double paramDouble3, float paramFloat1, float paramFloat2)
@@ -154,7 +154,7 @@ package net.minecraft.src;
 /* 154:    */     }
 /* 155:188 */     BlockPosition localdt1 = new BlockPosition(this.d, this.e, this.f);
 /* 156:189 */     Block localbec = this.world.getBlock(localdt1);
-/* 157:190 */     ProtoBlock localatr = localbec.getProto();
+/* 157:190 */     BlockType localatr = localbec.getType();
 /* 158:191 */     if (localatr.getMaterial() != Material.air)
 /* 159:    */     {
 /* 160:192 */       localatr.a(this.world, localdt1);
@@ -249,7 +249,7 @@ package net.minecraft.src;
 /* 249:284 */         if ((au()) && (!(localbru1.d instanceof EntityEnderman))) {
 /* 250:285 */           localbru1.d.e(5);
 /* 251:    */         }
-/* 252:287 */         if (localbru1.d.a(localwh, n))
+/* 252:287 */         if (localbru1.d.receiveDamage(localwh, n))
 /* 253:    */         {
 /* 254:288 */           if ((localbru1.d instanceof EntityLiving))
 /* 255:    */           {
@@ -295,7 +295,7 @@ package net.minecraft.src;
 /* 295:326 */         this.e = localdt2.getY();
 /* 296:327 */         this.f = localdt2.getZ();
 /* 297:328 */         localbec = this.world.getBlock(localdt2);
-/* 298:329 */         this.g = localbec.getProto();
+/* 298:329 */         this.g = localbec.getType();
 /* 299:330 */         this.h = this.g.c(localbec);
 /* 300:331 */         this.xVelocity = ((float)(localbru1.c.x - this.xPos));
 /* 301:332 */         this.yVelocity = ((float)(localbru1.c.y - this.yPos));
@@ -371,7 +371,7 @@ package net.minecraft.src;
 /* 371:409 */     paramfn.setShort("yTile", (short)this.e);
 /* 372:410 */     paramfn.setShort("zTile", (short)this.f);
 /* 373:411 */     paramfn.setShort("life", (short)this.ap);
-/* 374:412 */     oa localoa = (oa)ProtoBlock.c.c(this.g);
+/* 374:412 */     oa localoa = (oa)BlockType.c.c(this.g);
 /* 375:413 */     paramfn.setString("inTile", localoa == null ? "" : localoa.toString());
 /* 376:414 */     paramfn.setByte("inData", (byte)this.h);
 /* 377:415 */     paramfn.setByte("shake", (byte)this.b);
@@ -387,9 +387,9 @@ package net.minecraft.src;
 /* 387:425 */     this.f = paramfn.e("zTile");
 /* 388:426 */     this.ap = paramfn.e("life");
 /* 389:427 */     if (paramfn.hasKey("inTile", 8)) {
-/* 390:428 */       this.g = ProtoBlock.b(paramfn.getString("inTile"));
+/* 390:428 */       this.g = BlockType.b(paramfn.getString("inTile"));
 /* 391:    */     } else {
-/* 392:430 */       this.g = ProtoBlock.c(paramfn.d("inTile") & 0xFF);
+/* 392:430 */       this.g = BlockType.c(paramfn.d("inTile") & 0xFF);
 /* 393:    */     }
 /* 394:432 */     this.h = (paramfn.d("inData") & 0xFF);
 /* 395:433 */     this.b = (paramfn.d("shake") & 0xFF);
@@ -411,7 +411,7 @@ package net.minecraft.src;
 /* 411:    */     }
 /* 412:452 */     int j = (this.a == 1) || ((this.a == 2) && (paramahd.abilities.instabuild)) ? 1 : 0;
 /* 413:454 */     if ((this.a == 1) && 
-/* 414:455 */       (!paramahd.bg.a(new ItemStack(ItemList.arrow, 1)))) {
+/* 414:455 */       (!paramahd.inventory.a(new ItemStack(ItemList.arrow, 1)))) {
 /* 415:456 */       j = 0;
 /* 416:    */     }
 /* 417:460 */     if (j != 0)
@@ -449,17 +449,17 @@ package net.minecraft.src;
 /* 449:    */   
 /* 450:    */   public void a(boolean paramBoolean)
 /* 451:    */   {
-/* 452:490 */     int j = this.ac.a(16);
+/* 452:490 */     int j = this.data.getByte(16);
 /* 453:491 */     if (paramBoolean) {
-/* 454:492 */       this.ac.b(16, Byte.valueOf((byte)(j | 0x1)));
+/* 454:492 */       this.data.b(16, Byte.valueOf((byte)(j | 0x1)));
 /* 455:    */     } else {
-/* 456:494 */       this.ac.b(16, Byte.valueOf((byte)(j & 0xFFFFFFFE)));
+/* 456:494 */       this.data.b(16, Byte.valueOf((byte)(j & 0xFFFFFFFE)));
 /* 457:    */     }
 /* 458:    */   }
 /* 459:    */   
 /* 460:    */   public boolean l()
 /* 461:    */   {
-/* 462:499 */     int j = this.ac.a(16);
+/* 462:499 */     int j = this.data.getByte(16);
 /* 463:500 */     return (j & 0x1) != 0;
 /* 464:    */   }
 /* 465:    */ }

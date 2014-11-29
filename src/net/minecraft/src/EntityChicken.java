@@ -47,13 +47,13 @@ package net.minecraft.src;
 /*  47: 58 */     this.bo = this.bk;
 /*  48: 59 */     this.bn = this.bm;
 /*  49:    */     
-/*  50: 61 */     this.bm = ((float)(this.bm + (this.C ? -1 : 4) * 0.3D));
+/*  50: 61 */     this.bm = ((float)(this.bm + (this.landing ? -1 : 4) * 0.3D));
 /*  51: 62 */     this.bm = MathUtils.clamp(this.bm, 0.0F, 1.0F);
-/*  52: 64 */     if ((!this.C) && (this.bp < 1.0F)) {
+/*  52: 64 */     if ((!this.landing) && (this.bp < 1.0F)) {
 /*  53: 65 */       this.bp = 1.0F;
 /*  54:    */     }
 /*  55: 67 */     this.bp = ((float)(this.bp * 0.9D));
-/*  56: 69 */     if ((!this.C) && (this.yVelocity < 0.0D)) {
+/*  56: 69 */     if ((!this.landing) && (this.yVelocity < 0.0D)) {
 /*  57: 70 */       this.yVelocity *= 0.6D;
 /*  58:    */     }
 /*  59: 73 */     this.bk += this.bp * 2.0F;
@@ -82,7 +82,7 @@ package net.minecraft.src;
 /*  82: 98 */     return "mob.chicken.hurt";
 /*  83:    */   }
 /*  84:    */   
-/*  85:    */   protected void a(BlockPosition paramdt, ProtoBlock paramatr)
+/*  85:    */   protected void a(BlockPosition paramdt, BlockType paramatr)
 /*  86:    */   {
 /*  87:103 */     a("mob.chicken.step", 0.15F, 1.0F);
 /*  88:    */   }

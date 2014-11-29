@@ -103,7 +103,7 @@ package net.minecraft.src;
 /*  102:1277 */     a(paramaqu, BlockList.air.instance(), 2, 2, 0, parambjb);
 /*  103:1278 */     a(paramaqu, BlockList.torch.instance().setData(bbl.a, this.m), 2, 3, 1, parambjb);
 /*  104:1279 */     a(paramaqu, parambjb, paramRandom, 2, 1, 0, EnumDirection.b(a(BlockList.woodenDoor, 1)));
-/*  105:1280 */     if ((a(paramaqu, 2, 0, -1, parambjb).getProto().getMaterial() == Material.air) && (a(paramaqu, 2, -1, -1, parambjb).getProto().getMaterial() != Material.air)) {
+/*  105:1280 */     if ((a(paramaqu, 2, 0, -1, parambjb).getType().getMaterial() == Material.air) && (a(paramaqu, 2, -1, -1, parambjb).getType().getMaterial() != Material.air)) {
 /*  106:1281 */       a(paramaqu, BlockList.aw.instance(a(BlockList.aw, 3)), 2, 0, -1, parambjb);
 /*  107:     */     }
 /*  108:1285 */     a(paramaqu, BlockList.air.instance(), 6, 1, 5, parambjb);

@@ -19,14 +19,14 @@ package net.minecraft.src;
 /*  19:    */   
 /*  20:    */   static
 /*  21:    */   {
-/*  22: 52 */     a("Classic Flat", Item.fromProtoBlock(BlockList.grass), arm.q, Arrays.asList(new String[] { "village" }), new biw[] { new biw(1, BlockList.grass), new biw(2, BlockList.dirt), new biw(1, BlockList.bedrock) });
+/*  22: 52 */     a("Classic Flat", Item.fromBlock(BlockList.grass), arm.q, Arrays.asList(new String[] { "village" }), new biw[] { new biw(1, BlockList.grass), new biw(2, BlockList.dirt), new biw(1, BlockList.bedrock) });
 /*  23:    */     
 /*  24:    */ 
 /*  25:    */ 
 /*  26:    */ 
 /*  27:    */ 
 /*  28:    */ 
-/*  29: 59 */     a("Tunnelers' Dream", Item.fromProtoBlock(BlockList.stone), arm.s, Arrays.asList(new String[] { "biome_1", "dungeon", "decoration", "stronghold", "mineshaft" }), new biw[] { new biw(1, BlockList.grass), new biw(5, BlockList.dirt), new biw(230, BlockList.stone), new biw(1, BlockList.bedrock) });
+/*  29: 59 */     a("Tunnelers' Dream", Item.fromBlock(BlockList.stone), arm.s, Arrays.asList(new String[] { "biome_1", "dungeon", "decoration", "stronghold", "mineshaft" }), new biw[] { new biw(1, BlockList.grass), new biw(5, BlockList.dirt), new biw(230, BlockList.stone), new biw(1, BlockList.bedrock) });
 /*  30:    */     
 /*  31:    */ 
 /*  32:    */ 
@@ -50,7 +50,7 @@ package net.minecraft.src;
 /*  50:    */ 
 /*  51:    */ 
 /*  52:    */ 
-/*  53: 83 */     a("Overworld", Item.fromProtoBlock(BlockList.tallgrass), bbi.b.a(), arm.q, Arrays.asList(new String[] { "village", "biome_1", "decoration", "stronghold", "mineshaft", "dungeon", "lake", "lava_lake" }), new biw[] { new biw(1, BlockList.grass), new biw(3, BlockList.dirt), new biw(59, BlockList.stone), new biw(1, BlockList.bedrock) });
+/*  53: 83 */     a("Overworld", Item.fromBlock(BlockList.tallgrass), bbi.b.a(), arm.q, Arrays.asList(new String[] { "village", "biome_1", "decoration", "stronghold", "mineshaft", "dungeon", "lake", "lava_lake" }), new biw[] { new biw(1, BlockList.grass), new biw(3, BlockList.dirt), new biw(59, BlockList.stone), new biw(1, BlockList.bedrock) });
 /*  54:    */     
 /*  55:    */ 
 /*  56:    */ 
@@ -67,7 +67,7 @@ package net.minecraft.src;
 /*  67:    */ 
 /*  68:    */ 
 /*  69:    */ 
-/*  70:100 */     a("Snowy Kingdom", Item.fromProtoBlock(BlockList.aH), arm.B, Arrays.asList(new String[] { "village", "biome_1" }), new biw[] { new biw(1, BlockList.aH), new biw(1, BlockList.grass), new biw(3, BlockList.dirt), new biw(59, BlockList.stone), new biw(1, BlockList.bedrock) });
+/*  70:100 */     a("Snowy Kingdom", Item.fromBlock(BlockList.aH), arm.B, Arrays.asList(new String[] { "village", "biome_1" }), new biw[] { new biw(1, BlockList.aH), new biw(1, BlockList.grass), new biw(3, BlockList.dirt), new biw(59, BlockList.stone), new biw(1, BlockList.bedrock) });
 /*  71:    */     
 /*  72:    */ 
 /*  73:    */ 
@@ -83,7 +83,7 @@ package net.minecraft.src;
 /*  83:    */ 
 /*  84:    */ 
 /*  85:    */ 
-/*  86:116 */     a("Desert", Item.fromProtoBlock(BlockList.sand), arm.r, Arrays.asList(new String[] { "village", "biome_1", "decoration", "stronghold", "mineshaft", "dungeon" }), new biw[] { new biw(8, BlockList.sand), new biw(52, BlockList.A), new biw(3, BlockList.stone), new biw(1, BlockList.bedrock) });
+/*  86:116 */     a("Desert", Item.fromBlock(BlockList.sand), arm.r, Arrays.asList(new String[] { "village", "biome_1", "decoration", "stronghold", "mineshaft", "dungeon" }), new biw[] { new biw(8, BlockList.sand), new biw(52, BlockList.A), new biw(3, BlockList.stone), new biw(1, BlockList.bedrock) });
 /*  87:    */     
 /*  88:    */ 
 /*  89:    */ 

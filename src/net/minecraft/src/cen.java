@@ -211,7 +211,7 @@ package net.minecraft.src;
 /* 210:246 */     Random localRandom = new Random();
 /* 211:    */     
 /* 212:248 */     ItemStack localamj = this.I.h.getHeldItemStack();
-/* 213:249 */     int j = (this.I.c.l() == EnumGameMode.CREATIVE) && (localamj != null) && (ProtoBlock.a(localamj.getItem()) == BlockList.barrier) ? 1 : 0;
+/* 213:249 */     int j = (this.I.c.l() == EnumGameMode.CREATIVE) && (localamj != null) && (BlockType.a(localamj.getItem()) == BlockList.barrier) ? 1 : 0;
 /* 214:251 */     for (int k = 0; k < 1000; k++)
 /* 215:    */     {
 /* 216:252 */       int m = paramInt1 + this.rng.nextInt(i) - this.rng.nextInt(i);
@@ -220,8 +220,8 @@ package net.minecraft.src;
 /* 219:    */       
 /* 220:256 */       BlockPosition localdt = new BlockPosition(m, n, i1);
 /* 221:257 */       Block localbec = getBlock(localdt);
-/* 222:258 */       localbec.getProto().c(this, localdt, localbec, localRandom);
-/* 223:260 */       if ((j != 0) && (localbec.getProto() == BlockList.barrier)) {
+/* 222:258 */       localbec.getType().c(this, localdt, localbec, localRandom);
+/* 223:260 */       if ((j != 0) && (localbec.getType() == BlockList.barrier)) {
 /* 224:261 */         a(EnumParticleEffect.J, m + 0.5F, n + 0.5F, i1 + 0.5F, 0.0D, 0.0D, 0.0D, new int[0]);
 /* 225:    */       }
 /* 226:    */     }

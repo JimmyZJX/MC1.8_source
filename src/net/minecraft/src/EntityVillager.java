@@ -141,9 +141,9 @@ package net.minecraft.src;
 /*  142: 198 */     super.mobTick();
 /*  143:     */   }
 /*  144:     */   
-/*  145:     */   public boolean onRightClick(EntityPlayer player)
+/*  145:     */   public boolean onRightClickMob(EntityPlayer player)
 /*  146:     */   {
-/*  147: 204 */     ItemStack stack = player.bg.h();
+/*  147: 204 */     ItemStack stack = player.inventory.getHeldItem();
 /*  148: 205 */     int usingEgg = (stack != null) && (stack.getItem() == ItemList.spawnEgg) ? 1 : 0;
 /*  149: 207 */     if ((usingEgg == 0) && (ai()) && (!cm()) && (!i_()))
 /*  150:     */     {
@@ -155,13 +155,13 @@ package net.minecraft.src;
 /*  156: 213 */       player.increaseStat(StatList.talkedToVillager);
 /*  157: 214 */       return true;
 /*  158:     */     }
-/*  159: 216 */     return super.onRightClick(player);
+/*  159: 216 */     return super.onRightClickMob(player);
 /*  160:     */   }
 /*  161:     */   
 /*  162:     */   protected void h()
 /*  163:     */   {
 /*  164: 221 */     super.h();
-/*  165: 222 */     this.ac.a(16, Integer.valueOf(0));
+/*  165: 222 */     this.data.addData(16, Integer.valueOf(0));
 /*  166:     */   }
 /*  167:     */   
 /*  168:     */   public void writeEntityToNBT(NBTTagCompound tag)
@@ -236,12 +236,12 @@ package net.minecraft.src;
 /*  237:     */   
 /*  238:     */   public void setProfession(int paramInt)
 /*  239:     */   {
-/*  240: 294 */     this.ac.b(16, Integer.valueOf(paramInt));
+/*  240: 294 */     this.data.b(16, Integer.valueOf(paramInt));
 /*  241:     */   }
 /*  242:     */   
 /*  243:     */   public int getProfession()
 /*  244:     */   {
-/*  245: 298 */     return Math.max(this.ac.c(16) % 5, 0);
+/*  245: 298 */     return Math.max(this.data.getInteger(16) % 5, 0);
 /*  246:     */   }
 /*  247:     */   
 /*  248:     */   public boolean ck()
@@ -515,11 +515,11 @@ package net.minecraft.src;
 								  new SellOfferGenerator(ItemList.bread, new IntervalRandomVarible(-4, -2))
 							  },
 							  {
-								  new BuyOfferGenerator(Item.fromProtoBlock(BlockList.pumpkin), new IntervalRandomVarible(8, 13)),
+								  new BuyOfferGenerator(Item.fromBlock(BlockList.pumpkin), new IntervalRandomVarible(8, 13)),
 								  new SellOfferGenerator(ItemList.pumpkinPie, new IntervalRandomVarible(-3, -2))
 							  },
 							  {
-								  new BuyOfferGenerator(Item.fromProtoBlock(BlockList.melonBlock), new IntervalRandomVarible(7, 12)),
+								  new BuyOfferGenerator(Item.fromBlock(BlockList.melonBlock), new IntervalRandomVarible(7, 12)),
 								  new SellOfferGenerator(ItemList.apple, new IntervalRandomVarible(-5, -7))
 							  },
 							  {
@@ -539,26 +539,26 @@ package net.minecraft.src;
 						  },
 						  {
 							  {
-								  new BuyOfferGenerator(Item.fromProtoBlock(BlockList.wool), new IntervalRandomVarible(16, 22)),
+								  new BuyOfferGenerator(Item.fromBlock(BlockList.wool), new IntervalRandomVarible(16, 22)),
 								  new SellOfferGenerator(ItemList.shears, new IntervalRandomVarible(3, 4))
 							  },
 							  {
-								  new SellOfferGenerator(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 0), new IntervalRandomVarible(1, 2)),
-								  new SellOfferGenerator(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 1), new IntervalRandomVarible(1, 2)),
-								  new SellOfferGenerator(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 2), new IntervalRandomVarible(1, 2)),
-								  new SellOfferGenerator(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 3), new IntervalRandomVarible(1, 2)),
-								  new SellOfferGenerator(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 4), new IntervalRandomVarible(1, 2)),
-								  new SellOfferGenerator(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 5), new IntervalRandomVarible(1, 2)),
-								  new SellOfferGenerator(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 6), new IntervalRandomVarible(1, 2)),
-								  new SellOfferGenerator(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 7), new IntervalRandomVarible(1, 2)),
-								  new SellOfferGenerator(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 8), new IntervalRandomVarible(1, 2)),
-								  new SellOfferGenerator(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 9), new IntervalRandomVarible(1, 2)),
-								  new SellOfferGenerator(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 10), new IntervalRandomVarible(1, 2)),
-								  new SellOfferGenerator(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 11), new IntervalRandomVarible(1, 2)),
-								  new SellOfferGenerator(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 12), new IntervalRandomVarible(1, 2)),
-								  new SellOfferGenerator(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 13), new IntervalRandomVarible(1, 2)),
-								  new SellOfferGenerator(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 14), new IntervalRandomVarible(1, 2)),
-								  new SellOfferGenerator(new ItemStack(Item.fromProtoBlock(BlockList.wool), 1, 15), new IntervalRandomVarible(1, 2))
+								  new SellOfferGenerator(new ItemStack(Item.fromBlock(BlockList.wool), 1, 0), new IntervalRandomVarible(1, 2)),
+								  new SellOfferGenerator(new ItemStack(Item.fromBlock(BlockList.wool), 1, 1), new IntervalRandomVarible(1, 2)),
+								  new SellOfferGenerator(new ItemStack(Item.fromBlock(BlockList.wool), 1, 2), new IntervalRandomVarible(1, 2)),
+								  new SellOfferGenerator(new ItemStack(Item.fromBlock(BlockList.wool), 1, 3), new IntervalRandomVarible(1, 2)),
+								  new SellOfferGenerator(new ItemStack(Item.fromBlock(BlockList.wool), 1, 4), new IntervalRandomVarible(1, 2)),
+								  new SellOfferGenerator(new ItemStack(Item.fromBlock(BlockList.wool), 1, 5), new IntervalRandomVarible(1, 2)),
+								  new SellOfferGenerator(new ItemStack(Item.fromBlock(BlockList.wool), 1, 6), new IntervalRandomVarible(1, 2)),
+								  new SellOfferGenerator(new ItemStack(Item.fromBlock(BlockList.wool), 1, 7), new IntervalRandomVarible(1, 2)),
+								  new SellOfferGenerator(new ItemStack(Item.fromBlock(BlockList.wool), 1, 8), new IntervalRandomVarible(1, 2)),
+								  new SellOfferGenerator(new ItemStack(Item.fromBlock(BlockList.wool), 1, 9), new IntervalRandomVarible(1, 2)),
+								  new SellOfferGenerator(new ItemStack(Item.fromBlock(BlockList.wool), 1, 10), new IntervalRandomVarible(1, 2)),
+								  new SellOfferGenerator(new ItemStack(Item.fromBlock(BlockList.wool), 1, 11), new IntervalRandomVarible(1, 2)),
+								  new SellOfferGenerator(new ItemStack(Item.fromBlock(BlockList.wool), 1, 12), new IntervalRandomVarible(1, 2)),
+								  new SellOfferGenerator(new ItemStack(Item.fromBlock(BlockList.wool), 1, 13), new IntervalRandomVarible(1, 2)),
+								  new SellOfferGenerator(new ItemStack(Item.fromBlock(BlockList.wool), 1, 14), new IntervalRandomVarible(1, 2)),
+								  new SellOfferGenerator(new ItemStack(Item.fromBlock(BlockList.wool), 1, 15), new IntervalRandomVarible(1, 2))
 						      }
 						  },
 						  {
@@ -568,7 +568,7 @@ package net.minecraft.src;
 							  },
 							  {
 								  new SellOfferGenerator(ItemList.bow, new IntervalRandomVarible(2, 3)),
-								  new ServiceOfferGenerator(Item.fromProtoBlock(BlockList.gravel), new IntervalRandomVarible(10, 10), ItemList.flint, new IntervalRandomVarible(6, 10))
+								  new ServiceOfferGenerator(Item.fromBlock(BlockList.gravel), new IntervalRandomVarible(10, 10), ItemList.flint, new IntervalRandomVarible(6, 10))
 							  }
 						  }
 					  },
@@ -581,12 +581,12 @@ package net.minecraft.src;
 							  {
 								  new BuyOfferGenerator(ItemList.book, new IntervalRandomVarible(8, 10)),
 								  new SellOfferGenerator(ItemList.compass, new IntervalRandomVarible(10, 12)),
-								  new SellOfferGenerator(Item.fromProtoBlock(BlockList.bookshelf), new IntervalRandomVarible(3, 4))
+								  new SellOfferGenerator(Item.fromBlock(BlockList.bookshelf), new IntervalRandomVarible(3, 4))
 							  },
 							  {
 								  new BuyOfferGenerator(ItemList.writtenBook, new IntervalRandomVarible(2, 2)),
 								  new SellOfferGenerator(ItemList.clock, new IntervalRandomVarible(10, 12)),
-								  new SellOfferGenerator(Item.fromProtoBlock(BlockList.glass), new IntervalRandomVarible(-5, -3))
+								  new SellOfferGenerator(Item.fromBlock(BlockList.glass), new IntervalRandomVarible(-5, -3))
 							  },
 							  {
 								  new EnchantBookOfferGenerator()
@@ -611,7 +611,7 @@ package net.minecraft.src;
 							  }, 
 							  { 
 								  new SellOfferGenerator(ItemList.enderEye, new IntervalRandomVarible(7, 11)), 
-								  new SellOfferGenerator(Item.fromProtoBlock(BlockList.glowstone), new IntervalRandomVarible(-3, -1)) 
+								  new SellOfferGenerator(Item.fromBlock(BlockList.glowstone), new IntervalRandomVarible(-3, -1)) 
 							  }, 
 							  { 
 								  new SellOfferGenerator(ItemList.experienceBottle, new IntervalRandomVarible(3, 11)) 

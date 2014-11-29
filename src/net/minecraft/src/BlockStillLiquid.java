@@ -14,7 +14,7 @@ package net.minecraft.src;
 /* 13:   */     }
 /* 14:   */   }
 /* 15:   */   
-/* 16:   */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, ProtoBlock paramatr)
+/* 16:   */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, BlockType paramatr)
 /* 17:   */   {
 /* 18:24 */     if (!e(paramaqu, paramdt, parambec)) {
 /* 19:25 */       f(paramaqu, paramdt, parambec);
@@ -43,7 +43,7 @@ package net.minecraft.src;
 /* 42:49 */       for (int k = 0; k < i; k++)
 /* 43:   */       {
 /* 44:50 */         localdt1 = localdt1.offset(paramRandom.nextInt(3) - 1, 1, paramRandom.nextInt(3) - 1);
-/* 45:51 */         ProtoBlock localatr = paramaqu.getBlock(localdt1).getProto();
+/* 45:51 */         BlockType localatr = paramaqu.getBlock(localdt1).getType();
 /* 46:52 */         if (localatr.material == Material.air)
 /* 47:   */         {
 /* 48:53 */           if (e(paramaqu, localdt1)) {
@@ -79,7 +79,7 @@ package net.minecraft.src;
 /* 78:   */   
 /* 79:   */   private boolean m(World paramaqu, BlockPosition paramdt)
 /* 80:   */   {
-/* 81:81 */     return paramaqu.getBlock(paramdt).getProto().getMaterial().h();
+/* 81:81 */     return paramaqu.getBlock(paramdt).getType().getMaterial().h();
 /* 82:   */   }
 /* 83:   */ }
 

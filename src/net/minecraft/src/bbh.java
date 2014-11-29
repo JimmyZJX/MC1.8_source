@@ -23,7 +23,7 @@ package net.minecraft.src;
 /*  22:    */   
 /*  23:    */   public boolean f(World paramaqu, BlockPosition paramdt, Block parambec)
 /*  24:    */   {
-/*  25: 41 */     return c(paramaqu.getBlock(paramdt.down()).getProto());
+/*  25: 41 */     return c(paramaqu.getBlock(paramdt.down()).getType());
 /*  26:    */   }
 /*  27:    */   
 /*  28:    */   public boolean f(World paramaqu, BlockPosition paramdt)
@@ -33,7 +33,7 @@ package net.minecraft.src;
 /*  32:    */   
 /*  33:    */   public int h(Block parambec)
 /*  34:    */   {
-/*  35: 51 */     if (parambec.getProto() != this) {
+/*  35: 51 */     if (parambec.getType() != this) {
 /*  36: 52 */       return super.h(parambec);
 /*  37:    */     }
 /*  38: 55 */     bbi localbbi = (bbi)parambec.getData(a);
@@ -65,7 +65,7 @@ package net.minecraft.src;
 /*  64:    */   {
 /*  65: 85 */     if ((!paramaqu.isClient) && (paramahd.bY() != null) && (paramahd.bY().getItem() == ItemList.shears))
 /*  66:    */     {
-/*  67: 86 */       paramahd.increaseStat(StatList.H[ProtoBlock.a(this)]);
+/*  67: 86 */       paramahd.increaseStat(StatList.H[BlockType.a(this)]);
 /*  68:    */       
 /*  69:    */ 
 /*  70: 89 */       a(paramaqu, paramdt, new ItemStack(BlockList.tallgrass, 1, ((bbi)parambec.getData(a)).a()));
@@ -79,7 +79,7 @@ package net.minecraft.src;
 /*  78:    */   public int j(World paramaqu, BlockPosition paramdt)
 /*  79:    */   {
 /*  80: 97 */     Block localbec = paramaqu.getBlock(paramdt);
-/*  81: 98 */     return localbec.getProto().c(localbec);
+/*  81: 98 */     return localbec.getType().c(localbec);
 /*  82:    */   }
 /*  83:    */   
 /*  84:    */   public void a(Item paramalq, CreativeTabs paramakf, List<ItemStack> paramList)

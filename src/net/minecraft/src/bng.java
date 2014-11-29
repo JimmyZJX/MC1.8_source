@@ -82,7 +82,7 @@ package net.minecraft.src;
 /*  81:725 */     a(paramaqu, BlockList.planks.instance(), 3, 3, 0, parambjb);
 /*  82:726 */     a(paramaqu, BlockList.planks.instance(), 3, 2, 0, parambjb);
 /*  83:727 */     a(paramaqu, BlockList.planks.instance(), 3, 1, 0, parambjb);
-/*  84:728 */     if ((a(paramaqu, 2, 0, -1, parambjb).getProto().getMaterial() == Material.air) && (a(paramaqu, 2, -1, -1, parambjb).getProto().getMaterial() != Material.air)) {
+/*  84:728 */     if ((a(paramaqu, 2, 0, -1, parambjb).getType().getMaterial() == Material.air) && (a(paramaqu, 2, -1, -1, parambjb).getType().getMaterial() != Material.air)) {
 /*  85:729 */       a(paramaqu, BlockList.aw.instance(a(BlockList.aw, 3)), 2, 0, -1, parambjb);
 /*  86:    */     }
 /*  87:733 */     a(paramaqu, parambjb, 1, 1, 1, 3, 3, 3, BlockList.air.instance(), BlockList.air.instance(), false);

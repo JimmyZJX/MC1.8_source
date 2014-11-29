@@ -33,7 +33,7 @@ package net.minecraft.src;
 /*  32: 37 */     this.e.clear();
 /*  33: 38 */     this.f.clear();
 /*  34:    */     
-/*  35: 40 */     ProtoBlock localatr = this.a.getBlock(this.c).getProto();
+/*  35: 40 */     BlockType localatr = this.a.getBlock(this.c).getType();
 /*  36: 42 */     if (!bdq.a(localatr, this.a, this.c, this.d, false))
 /*  37:    */     {
 /*  38: 43 */       if (localatr.i() != 1) {
@@ -48,7 +48,7 @@ package net.minecraft.src;
 /*  47: 57 */     for (int i = 0; i < this.e.size(); i++)
 /*  48:    */     {
 /*  49: 58 */       BlockPosition localdt = (BlockPosition)this.e.get(i);
-/*  50: 61 */       if ((this.a.getBlock(localdt).getProto() == BlockList.cE) && 
+/*  50: 61 */       if ((this.a.getBlock(localdt).getType() == BlockList.cE) && 
 /*  51: 62 */         (!b(localdt))) {
 /*  52: 64 */         return false;
 /*  53:    */       }
@@ -58,7 +58,7 @@ package net.minecraft.src;
 /*  57:    */   
 /*  58:    */   private boolean a(BlockPosition paramdt)
 /*  59:    */   {
-/*  60: 73 */     ProtoBlock localatr = this.a.getBlock(paramdt).getProto();
+/*  60: 73 */     BlockType localatr = this.a.getBlock(paramdt).getType();
 /*  61: 74 */     if (localatr.getMaterial() == Material.air) {
 /*  62: 76 */       return true;
 /*  63:    */     }
@@ -78,7 +78,7 @@ package net.minecraft.src;
 /*  77: 94 */     while (localatr == BlockList.cE)
 /*  78:    */     {
 /*  79: 95 */       BlockPosition localdt1 = paramdt.offset(this.d.opposite(), i);
-/*  80: 96 */       localatr = this.a.getBlock(localdt1).getProto();
+/*  80: 96 */       localatr = this.a.getBlock(localdt1).getType();
 /*  81: 98 */       if ((localatr.getMaterial() == Material.air) || (!bdq.a(localatr, this.a, localdt1, this.d, false)) || (localdt1.equals(this.b))) {
 /*  82:    */         break;
 /*  83:    */       }
@@ -104,14 +104,14 @@ package net.minecraft.src;
 /* 103:128 */         for (int n = 0; n <= m + j; n++)
 /* 104:    */         {
 /* 105:129 */           BlockPosition localdt3 = (BlockPosition)this.e.get(n);
-/* 106:130 */           if ((this.a.getBlock(localdt3).getProto() == BlockList.cE) && 
+/* 106:130 */           if ((this.a.getBlock(localdt3).getType() == BlockList.cE) && 
 /* 107:131 */             (!b(localdt3))) {
 /* 108:132 */             return false;
 /* 109:    */           }
 /* 110:    */         }
 /* 111:137 */         return true;
 /* 112:    */       }
-/* 113:140 */       localatr = this.a.getBlock(localdt2).getProto();
+/* 113:140 */       localatr = this.a.getBlock(localdt2).getType();
 /* 114:142 */       if (localatr.getMaterial() == Material.air) {
 /* 115:144 */         return true;
 /* 116:    */       }
@@ -150,7 +150,7 @@ package net.minecraft.src;
 /* 149:    */   private boolean b(BlockPosition paramdt)
 /* 150:    */   {
 /* 151:182 */     for (EnumDirection localej : EnumDirection.values()) {
-/* 152:183 */       if ((localej.k() != this.d.k()) && 
+/* 152:183 */       if ((localej.getAxis() != this.d.getAxis()) && 
 /* 153:184 */         (!a(paramdt.offset(localej)))) {
 /* 154:185 */         return false;
 /* 155:    */       }

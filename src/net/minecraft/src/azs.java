@@ -2,7 +2,7 @@ package net.minecraft.src;
 /*   1:    */ import java.util.Random;
 /*   2:    */ 
 /*   3:    */ public class azs
-/*   4:    */   extends ProtoBlock
+/*   4:    */   extends BlockType
 /*   5:    */ {
 /*   6:    */   private final boolean a;
 /*   7:    */   
@@ -71,7 +71,7 @@ package net.minecraft.src;
 /*  70:    */   public void a(World paramaqu, BlockPosition paramdt, Block parambec, float paramFloat, int paramInt)
 /*  71:    */   {
 /*  72: 84 */     super.a(paramaqu, paramdt, parambec, paramFloat, paramInt);
-/*  73: 87 */     if (a(parambec, paramaqu.rng, paramInt) != Item.fromProtoBlock(this))
+/*  73: 87 */     if (a(parambec, paramaqu.rng, paramInt) != Item.fromBlock(this))
 /*  74:    */     {
 /*  75: 88 */       int i = 1 + paramaqu.rng.nextInt(5);
 /*  76: 89 */       b(paramaqu, paramdt, i);
@@ -94,22 +94,22 @@ package net.minecraft.src;
 /*  93:104 */       double d2 = paramdt.getX() + localRandom.nextFloat();
 /*  94:105 */       double d3 = paramdt.getY() + localRandom.nextFloat();
 /*  95:106 */       double d4 = paramdt.getZ() + localRandom.nextFloat();
-/*  96:107 */       if ((i == 0) && (!paramaqu.getBlock(paramdt.up()).getProto().c())) {
+/*  96:107 */       if ((i == 0) && (!paramaqu.getBlock(paramdt.up()).getType().c())) {
 /*  97:108 */         d3 = paramdt.getY() + d1 + 1.0D;
 /*  98:    */       }
-/*  99:110 */       if ((i == 1) && (!paramaqu.getBlock(paramdt.down()).getProto().c())) {
+/*  99:110 */       if ((i == 1) && (!paramaqu.getBlock(paramdt.down()).getType().c())) {
 /* 100:111 */         d3 = paramdt.getY() - d1;
 /* 101:    */       }
-/* 102:113 */       if ((i == 2) && (!paramaqu.getBlock(paramdt.south()).getProto().c())) {
+/* 102:113 */       if ((i == 2) && (!paramaqu.getBlock(paramdt.south()).getType().c())) {
 /* 103:114 */         d4 = paramdt.getZ() + d1 + 1.0D;
 /* 104:    */       }
-/* 105:116 */       if ((i == 3) && (!paramaqu.getBlock(paramdt.north()).getProto().c())) {
+/* 105:116 */       if ((i == 3) && (!paramaqu.getBlock(paramdt.north()).getType().c())) {
 /* 106:117 */         d4 = paramdt.getZ() - d1;
 /* 107:    */       }
-/* 108:119 */       if ((i == 4) && (!paramaqu.getBlock(paramdt.east()).getProto().c())) {
+/* 108:119 */       if ((i == 4) && (!paramaqu.getBlock(paramdt.east()).getType().c())) {
 /* 109:120 */         d2 = paramdt.getX() + d1 + 1.0D;
 /* 110:    */       }
-/* 111:122 */       if ((i == 5) && (!paramaqu.getBlock(paramdt.west()).getProto().c())) {
+/* 111:122 */       if ((i == 5) && (!paramaqu.getBlock(paramdt.west()).getType().c())) {
 /* 112:123 */         d2 = paramdt.getX() - d1;
 /* 113:    */       }
 /* 114:125 */       if ((d2 < paramdt.getX()) || (d2 > paramdt.getX() + 1) || (d3 < 0.0D) || (d3 > paramdt.getY() + 1) || (d4 < paramdt.getZ()) || (d4 > paramdt.getZ() + 1)) {

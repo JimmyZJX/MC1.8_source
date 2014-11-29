@@ -64,7 +64,7 @@ package net.minecraft.src;
 /*  62:    */   private static void b()
 /*  63:    */   {
 /*  64: 79 */     HashSet<Item> localHashSet = Sets.newHashSet();
-/*  65: 81 */     for (Iterator<aoo> localIterator = aop.a().b().iterator(); localIterator.hasNext();)
+/*  65: 81 */     for (Iterator<aoo> localIterator = RecipeList.a().b().iterator(); localIterator.hasNext();)
 /*  66:    */     {
 /*  67: 81 */       aoo localObject = (aoo)localIterator.next();
 /*  68: 82 */       if (localObject.b() != null) {
@@ -94,12 +94,12 @@ package net.minecraft.src;
 /*  92:    */   
 /*  93:    */   private static void c()
 /*  94:    */   {
-/*  95:107 */     for (ProtoBlock localatr : ProtoBlock.c)
+/*  95:107 */     for (BlockType localatr : BlockType.c)
 /*  96:    */     {
-/*  97:108 */       Item localalq = Item.fromProtoBlock(localatr);
+/*  97:108 */       Item localalq = Item.fromBlock(localatr);
 /*  98:109 */       if (localalq != null)
 /*  99:    */       {
-/* 100:113 */         int i1 = ProtoBlock.a(localatr);
+/* 100:113 */         int i1 = BlockType.a(localatr);
 /* 101:114 */         String str = a(localalq);
 /* 102:115 */         if ((str != null) && (localatr.I()))
 /* 103:    */         {
@@ -164,7 +164,7 @@ package net.minecraft.src;
 /* 162:174 */     a(paramArrayOftq, BlockList.aD, BlockList.redstoneOre);
 /* 163:    */     
 /* 164:176 */     a(paramArrayOftq, BlockList.poweredRepeater, BlockList.unpoweredRepeater);
-/* 165:177 */     a(paramArrayOftq, BlockList.ck, BlockList.cj);
+/* 165:177 */     a(paramArrayOftq, BlockList.ck, BlockList.unpowered_comparator);
 /* 166:178 */     a(paramArrayOftq, BlockList.aF, BlockList.aE);
 /* 167:179 */     a(paramArrayOftq, BlockList.bK, BlockList.bJ);
 /* 168:    */     
@@ -176,10 +176,10 @@ package net.minecraft.src;
 /* 174:186 */     a(paramArrayOftq, BlockList.ak, BlockList.dirt);
 /* 175:    */   }
 /* 176:    */   
-/* 177:    */   private static void a(PlayerStat[] paramArrayOftq, ProtoBlock paramatr1, ProtoBlock paramatr2)
+/* 177:    */   private static void a(PlayerStat[] paramArrayOftq, BlockType paramatr1, BlockType paramatr2)
 /* 178:    */   {
-/* 179:190 */     int i1 = ProtoBlock.a(paramatr1);
-/* 180:191 */     int i2 = ProtoBlock.a(paramatr2);
+/* 179:190 */     int i1 = BlockType.a(paramatr1);
+/* 180:191 */     int i2 = BlockType.a(paramatr2);
 /* 181:193 */     if ((paramArrayOftq[i1] != null) && (paramArrayOftq[i2] == null))
 /* 182:    */     {
 /* 183:195 */       paramArrayOftq[i2] = paramArrayOftq[i1];

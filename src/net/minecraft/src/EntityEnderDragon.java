@@ -180,7 +180,7 @@ package net.minecraft.src;
 /* 179:195 */         this.a += this.rng.nextGaussian() * 2.0D;
 /* 180:196 */         this.c += this.rng.nextGaussian() * 2.0D;
 /* 181:    */       }
-/* 182:198 */       if ((this.bu) || (d4 < 100.0D) || (d4 > 22500.0D) || (this.D) || (this.E)) {
+/* 182:198 */       if ((this.bu) || (d4 < 100.0D) || (d4 > 22500.0D) || (this.horizontalColliding) || (this.verticalColliding)) {
 /* 183:199 */         cd();
 /* 184:    */       }
 /* 185:201 */       d2 /= MathUtils.sqrt(d1 * d1 + d3 * d3);
@@ -356,7 +356,7 @@ package net.minecraft.src;
 /* 355:375 */       Entity localwv = paramList.get(i);
 /* 356:376 */       if ((localwv instanceof EntityLiving))
 /* 357:    */       {
-/* 358:377 */         localwv.a(DamageSource.fromMob(this), 10.0F);
+/* 358:377 */         localwv.receiveDamage(DamageSource.fromMob(this), 10.0F);
 /* 359:378 */         a(this, localwv);
 /* 360:    */       }
 /* 361:    */     }
@@ -414,7 +414,7 @@ package net.minecraft.src;
 /* 413:426 */       for (int i4 = j; i4 <= n; i4++) {
 /* 414:427 */         for (int i5 = k; i5 <= i1; i5++)
 /* 415:    */         {
-/* 416:428 */           ProtoBlock localatr = this.world.getBlock(new BlockPosition(i3, i4, i5)).getProto();
+/* 416:428 */           BlockType localatr = this.world.getBlock(new BlockPosition(i3, i4, i5)).getType();
 /* 417:429 */           if (localatr.getMaterial() != Material.air) {
 /* 418:431 */             if ((localatr == BlockList.barrier) || (localatr == BlockList.obsidian) || (localatr == BlockList.endStone) || (localatr == BlockList.bedrock) || (localatr == BlockList.bX) || (!this.world.getGameRules().getBoolean("mobGriefing"))) {
 /* 419:432 */               bool = true;
@@ -454,7 +454,7 @@ package net.minecraft.src;
 /* 453:467 */     return true;
 /* 454:    */   }
 /* 455:    */   
-/* 456:    */   public boolean a(DamageSource paramwh, float paramFloat)
+/* 456:    */   public boolean receiveDamage(DamageSource paramwh, float paramFloat)
 /* 457:    */   {
 /* 458:472 */     if (((paramwh instanceof DamageSourceEntity)) && (((DamageSourceEntity)paramwh).w())) {
 /* 459:473 */       e(paramwh, paramFloat);
@@ -464,7 +464,7 @@ package net.minecraft.src;
 /* 463:    */   
 /* 464:    */   protected boolean e(DamageSource paramwh, float paramFloat)
 /* 465:    */   {
-/* 466:479 */     return super.a(paramwh, paramFloat);
+/* 466:479 */     return super.receiveDamage(paramwh, paramFloat);
 /* 467:    */   }
 /* 468:    */   
 /* 469:    */   public void G()

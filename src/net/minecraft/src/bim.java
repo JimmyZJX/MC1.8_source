@@ -4,16 +4,16 @@ package net.minecraft.src;
 /*  3:   */ public class bim
 /*  4:   */   extends TerrainGenerator
 /*  5:   */ {
-/*  6:   */   private ProtoBlock a;
+/*  6:   */   private BlockType a;
 /*  7:   */   
-/*  8:   */   public bim(ProtoBlock paramatr)
+/*  8:   */   public bim(BlockType paramatr)
 /*  9:   */   {
 /* 10:16 */     this.a = paramatr;
 /* 11:   */   }
 /* 12:   */   
 /* 13:   */   public boolean generate(World paramaqu, Random paramRandom, BlockPosition paramdt)
 /* 14:   */   {
-/* 15:21 */     if ((!paramaqu.isEmpty(paramdt)) || (paramaqu.getBlock(paramdt.down()).getProto() != this.a)) {
+/* 15:21 */     if ((!paramaqu.isEmpty(paramdt)) || (paramaqu.getBlock(paramdt.down()).getType() != this.a)) {
 /* 16:22 */       return false;
 /* 17:   */     }
 /* 18:24 */     int i = paramRandom.nextInt(32) + 6;
@@ -27,7 +27,7 @@ package net.minecraft.src;
 /* 26:28 */         n = k - paramdt.getX();
 /* 27:29 */         i1 = m - paramdt.getZ();
 /* 28:30 */         if ((n * n + i1 * i1 <= j * j + 1) && 
-/* 29:31 */           (paramaqu.getBlock(new BlockPosition(k, paramdt.getY() - 1, m)).getProto() != this.a)) {
+/* 29:31 */           (paramaqu.getBlock(new BlockPosition(k, paramdt.getY() - 1, m)).getType() != this.a)) {
 /* 30:32 */           return false;
 /* 31:   */         }
 /* 32:   */       }

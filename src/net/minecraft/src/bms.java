@@ -86,10 +86,10 @@ package net.minecraft.src;
 /*  85:132 */     for (int i4 = i; i4 <= i1; i4++) {
 /*  86:133 */       for (i5 = k; i5 <= i3; i5++)
 /*  87:    */       {
-/*  88:134 */         if (paramaqu.getBlock(new BlockPosition(i4, j, i5)).getProto().getMaterial().isLiquid()) {
+/*  88:134 */         if (paramaqu.getBlock(new BlockPosition(i4, j, i5)).getType().getMaterial().isLiquid()) {
 /*  89:135 */           return true;
 /*  90:    */         }
-/*  91:137 */         if (paramaqu.getBlock(new BlockPosition(i4, i2, i5)).getProto().getMaterial().isLiquid()) {
+/*  91:137 */         if (paramaqu.getBlock(new BlockPosition(i4, i2, i5)).getType().getMaterial().isLiquid()) {
 /*  92:138 */           return true;
 /*  93:    */         }
 /*  94:    */       }
@@ -97,10 +97,10 @@ package net.minecraft.src;
 /*  96:143 */     for (int i4 = i; i4 <= i1; i4++) {
 /*  97:144 */       for (i5 = j; i5 <= i2; i5++)
 /*  98:    */       {
-/*  99:145 */         if (paramaqu.getBlock(new BlockPosition(i4, i5, k)).getProto().getMaterial().isLiquid()) {
+/*  99:145 */         if (paramaqu.getBlock(new BlockPosition(i4, i5, k)).getType().getMaterial().isLiquid()) {
 /* 100:146 */           return true;
 /* 101:    */         }
-/* 102:148 */         if (paramaqu.getBlock(new BlockPosition(i4, i5, i3)).getProto().getMaterial().isLiquid()) {
+/* 102:148 */         if (paramaqu.getBlock(new BlockPosition(i4, i5, i3)).getType().getMaterial().isLiquid()) {
 /* 103:149 */           return true;
 /* 104:    */         }
 /* 105:    */       }
@@ -108,10 +108,10 @@ package net.minecraft.src;
 /* 107:154 */     for (int i4 = k; i4 <= i3; i4++) {
 /* 108:155 */       for (i5 = j; i5 <= i2; i5++)
 /* 109:    */       {
-/* 110:156 */         if (paramaqu.getBlock(new BlockPosition(i, i5, i4)).getProto().getMaterial().isLiquid()) {
+/* 110:156 */         if (paramaqu.getBlock(new BlockPosition(i, i5, i4)).getType().getMaterial().isLiquid()) {
 /* 111:157 */           return true;
 /* 112:    */         }
-/* 113:159 */         if (paramaqu.getBlock(new BlockPosition(i1, i5, i4)).getProto().getMaterial().isLiquid()) {
+/* 113:159 */         if (paramaqu.getBlock(new BlockPosition(i1, i5, i4)).getType().getMaterial().isLiquid()) {
 /* 114:160 */           return true;
 /* 115:    */         }
 /* 116:    */       }
@@ -163,7 +163,7 @@ package net.minecraft.src;
 /* 162:206 */     return paramInt2;
 /* 163:    */   }
 /* 164:    */   
-/* 165:    */   protected int a(ProtoBlock paramatr, int paramInt)
+/* 165:    */   protected int a(BlockType paramatr, int paramInt)
 /* 166:    */   {
 /* 167:212 */     if (paramatr == BlockList.av)
 /* 168:    */     {
@@ -440,7 +440,7 @@ package net.minecraft.src;
 /* 439:462 */     for (int i = paramInt2; i <= paramInt5; i++) {
 /* 440:463 */       for (int j = paramInt1; j <= paramInt4; j++) {
 /* 441:464 */         for (int k = paramInt3; k <= paramInt6; k++) {
-/* 442:465 */           if ((!paramBoolean) || (a(paramaqu, j, i, k, parambjb).getProto().getMaterial() != Material.air)) {
+/* 442:465 */           if ((!paramBoolean) || (a(paramaqu, j, i, k, parambjb).getType().getMaterial() != Material.air)) {
 /* 443:468 */             if ((i == paramInt2) || (i == paramInt5) || (j == paramInt1) || (j == paramInt4) || (k == paramInt3) || (k == paramInt6)) {
 /* 444:469 */               a(paramaqu, parambec1, j, i, k, parambjb);
 /* 445:    */             } else {
@@ -457,7 +457,7 @@ package net.minecraft.src;
 /* 456:483 */     for (int i = paramInt2; i <= paramInt5; i++) {
 /* 457:484 */       for (int j = paramInt1; j <= paramInt4; j++) {
 /* 458:485 */         for (int k = paramInt3; k <= paramInt6; k++) {
-/* 459:486 */           if ((!paramBoolean) || (a(paramaqu, j, i, k, parambjb).getProto().getMaterial() != Material.air))
+/* 459:486 */           if ((!paramBoolean) || (a(paramaqu, j, i, k, parambjb).getType().getMaterial() != Material.air))
 /* 460:    */           {
 /* 461:489 */             parambmu.a(paramRandom, j, i, k, (i == paramInt2) || (i == paramInt5) || (j == paramInt1) || (j == paramInt4) || (k == paramInt3) || (k == paramInt6));
 /* 462:490 */             a(paramaqu, parambmu.a(), j, i, k, parambjb);
@@ -473,7 +473,7 @@ package net.minecraft.src;
 /* 472:502 */       for (int j = paramInt1; j <= paramInt4; j++) {
 /* 473:503 */         for (int k = paramInt3; k <= paramInt6; k++) {
 /* 474:504 */           if (paramRandom.nextFloat() <= paramFloat) {
-/* 475:507 */             if ((!paramBoolean) || (a(paramaqu, j, i, k, parambjb).getProto().getMaterial() != Material.air)) {
+/* 475:507 */             if ((!paramBoolean) || (a(paramaqu, j, i, k, parambjb).getType().getMaterial() != Material.air)) {
 /* 476:510 */               if ((i == paramInt2) || (i == paramInt5) || (j == paramInt1) || (j == paramInt4) || (k == paramInt3) || (k == paramInt6)) {
 /* 477:511 */                 a(paramaqu, parambec1, j, i, k, parambjb);
 /* 478:    */               } else {
@@ -509,7 +509,7 @@ package net.minecraft.src;
 /* 508:539 */         for (int k = paramInt3; k <= paramInt6; k++)
 /* 509:    */         {
 /* 510:540 */           float f8 = (k - f5) / (f3 * 0.5F);
-/* 511:542 */           if ((!paramBoolean) || (a(paramaqu, j, i, k, parambjb).getProto().getMaterial() != Material.air))
+/* 511:542 */           if ((!paramBoolean) || (a(paramaqu, j, i, k, parambjb).getType().getMaterial() != Material.air))
 /* 512:    */           {
 /* 513:546 */             float f9 = f7 * f7 + f6 * f6 + f8 * f8;
 /* 514:548 */             if (f9 <= 1.05F) {
@@ -542,7 +542,7 @@ package net.minecraft.src;
 /* 541:574 */     if (!parambjb.b(new BlockPosition(i, j, k))) {
 /* 542:575 */       return;
 /* 543:    */     }
-/* 544:578 */     while (((paramaqu.isEmpty(new BlockPosition(i, j, k))) || (paramaqu.getBlock(new BlockPosition(i, j, k)).getProto().getMaterial().isLiquid())) && (j > 1))
+/* 544:578 */     while (((paramaqu.isEmpty(new BlockPosition(i, j, k))) || (paramaqu.getBlock(new BlockPosition(i, j, k)).getType().getMaterial().isLiquid())) && (j > 1))
 /* 545:    */     {
 /* 546:579 */       paramaqu.setBlock(new BlockPosition(i, j, k), parambec, 2);
 /* 547:580 */       j--;
@@ -553,7 +553,7 @@ package net.minecraft.src;
 /* 552:    */   {
 /* 553:585 */     BlockPosition localdt = new BlockPosition(a(paramInt1, paramInt3), d(paramInt2), b(paramInt1, paramInt3));
 /* 554:587 */     if ((parambjb.b(localdt)) && 
-/* 555:588 */       (paramaqu.getBlock(localdt).getProto() != BlockList.chest))
+/* 555:588 */       (paramaqu.getBlock(localdt).getType() != BlockList.chest))
 /* 556:    */     {
 /* 557:589 */       Block localbec = BlockList.chest.instance();
 /* 558:590 */       paramaqu.setBlock(localdt, BlockList.chest.f(paramaqu, localdt, localbec), 2);
@@ -571,7 +571,7 @@ package net.minecraft.src;
 /* 570:    */   {
 /* 571:603 */     BlockPosition localdt = new BlockPosition(a(paramInt1, paramInt3), d(paramInt2), b(paramInt1, paramInt3));
 /* 572:605 */     if ((parambjb.b(localdt)) && 
-/* 573:606 */       (paramaqu.getBlock(localdt).getProto() != BlockList.z))
+/* 573:606 */       (paramaqu.getBlock(localdt).getType() != BlockList.z))
 /* 574:    */     {
 /* 575:607 */       paramaqu.setBlock(localdt, BlockList.z.instance(a(BlockList.z, paramInt4)), 2);
 /* 576:    */       

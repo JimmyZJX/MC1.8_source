@@ -11,7 +11,7 @@ package net.minecraft.src;
 /*   10:     */ public abstract class EntityPlayer
 /*   11:     */   extends EntityLiving
 /*   12:     */ {
-/*   13: 119 */   public Inventory bg = new Inventory(this);
+/*   13: 119 */   public Inventory inventory = new Inventory(this);
 /*   14: 120 */   private ajh a = new ajh();
 /*   15:     */   public aib bh;
 /*   16:     */   public aib bi;
@@ -56,7 +56,7 @@ package net.minecraft.src;
 /*   55:     */     
 /*   56: 164 */     this.bF = paramGameProfile;
 /*   57:     */     
-/*   58: 166 */     this.bh = new ajb(this.bg, !paramaqu.isClient, this);
+/*   58: 166 */     this.bh = new ajb(this.inventory, !paramaqu.isClient, this);
 /*   59: 167 */     this.bi = this.bh;
 /*   60:     */     
 /*   61: 169 */     BlockPosition localdt = paramaqu.getWorldSpawn();
@@ -78,10 +78,10 @@ package net.minecraft.src;
 /*   77:     */   {
 /*   78: 186 */     super.h();
 /*   79:     */     
-/*   80: 188 */     this.ac.a(16, Byte.valueOf((byte)0));
-/*   81: 189 */     this.ac.a(17, Float.valueOf(0.0F));
-/*   82: 190 */     this.ac.a(18, Integer.valueOf(0));
-/*   83: 191 */     this.ac.a(10, Byte.valueOf((byte)0));
+/*   80: 188 */     this.data.addData(16, Byte.valueOf((byte)0));
+/*   81: 189 */     this.data.addData(17, Float.valueOf(0.0F));
+/*   82: 190 */     this.data.addData(18, Integer.valueOf(0));
+/*   83: 191 */     this.data.addData(10, Byte.valueOf((byte)0));
 /*   84:     */   }
 /*   85:     */   
 /*   86:     */   public ItemStack bP()
@@ -133,11 +133,11 @@ package net.minecraft.src;
 /*  132:     */   {
 /*  133: 234 */     this.T = v();
 /*  134: 235 */     if (v()) {
-/*  135: 236 */       this.C = false;
+/*  135: 236 */       this.landing = false;
 /*  136:     */     }
 /*  137: 238 */     if (this.g != null)
 /*  138:     */     {
-/*  139: 239 */       ItemStack localamj = this.bg.h();
+/*  139: 239 */       ItemStack localamj = this.inventory.getHeldItem();
 /*  140: 240 */       if (localamj == this.g)
 /*  141:     */       {
 /*  142: 241 */         if ((this.h <= 25) && (this.h % 4 == 0)) {
@@ -299,9 +299,9 @@ package net.minecraft.src;
 /*  298: 399 */       ItemStack localamj = this.g.b(this.world, this);
 /*  299: 400 */       if ((localamj != this.g) || ((localamj != null) && (localamj.stackSize != j)))
 /*  300:     */       {
-/*  301: 401 */         this.bg.items[this.bg.c] = localamj;
+/*  301: 401 */         this.inventory.items[this.inventory.c] = localamj;
 /*  302: 402 */         if (localamj.stackSize == 0) {
-/*  303: 403 */           this.bg.items[this.bg.c] = null;
+/*  303: 403 */           this.inventory.items[this.inventory.c] = null;
 /*  304:     */         }
 /*  305:     */       }
 /*  306: 406 */       bU();
@@ -387,7 +387,7 @@ package net.minecraft.src;
 /*  386: 486 */         this.bj.a(this.bj.a() + 1);
 /*  387:     */       }
 /*  388:     */     }
-/*  389: 490 */     this.bg.k();
+/*  389: 490 */     this.inventory.k();
 /*  390: 491 */     this.bl = this.bm;
 /*  391:     */     
 /*  392: 493 */     super.m();
@@ -407,10 +407,10 @@ package net.minecraft.src;
 /*  406: 508 */     if (f1 > 0.1F) {
 /*  407: 509 */       f1 = 0.1F;
 /*  408:     */     }
-/*  409: 511 */     if ((!this.C) || (getHealth() <= 0.0F)) {
+/*  409: 511 */     if ((!this.landing) || (getHealth() <= 0.0F)) {
 /*  410: 512 */       f1 = 0.0F;
 /*  411:     */     }
-/*  412: 514 */     if ((this.C) || (getHealth() <= 0.0F)) {
+/*  412: 514 */     if ((this.landing) || (getHealth() <= 0.0F)) {
 /*  413: 515 */       f2 = 0.0F;
 /*  414:     */     }
 /*  415: 517 */     this.bm += (f1 - this.bm) * 0.4F;
@@ -441,18 +441,18 @@ package net.minecraft.src;
 /*  440:     */   
 /*  441:     */   public int bW()
 /*  442:     */   {
-/*  443: 545 */     return this.ac.c(18);
+/*  443: 545 */     return this.data.getInteger(18);
 /*  444:     */   }
 /*  445:     */   
 /*  446:     */   public void r(int paramInt)
 /*  447:     */   {
-/*  448: 549 */     this.ac.b(18, Integer.valueOf(paramInt));
+/*  448: 549 */     this.data.b(18, Integer.valueOf(paramInt));
 /*  449:     */   }
 /*  450:     */   
 /*  451:     */   public void s(int paramInt)
 /*  452:     */   {
 /*  453: 553 */     int j = bW();
-/*  454: 554 */     this.ac.b(18, Integer.valueOf(j + paramInt));
+/*  454: 554 */     this.data.b(18, Integer.valueOf(j + paramInt));
 /*  455:     */   }
 /*  456:     */   
 /*  457:     */   public void a(DamageSource paramwh)
@@ -465,7 +465,7 @@ package net.minecraft.src;
 /*  464: 565 */       a(new ItemStack(ItemList.apple, 1), true, false);
 /*  465:     */     }
 /*  466: 567 */     if (!this.world.getGameRules().getBoolean("keepInventory")) {
-/*  467: 568 */       this.bg.n();
+/*  467: 568 */       this.inventory.n();
 /*  468:     */     }
 /*  469: 571 */     if (paramwh != null)
 /*  470:     */     {
@@ -538,7 +538,7 @@ package net.minecraft.src;
 /*  537:     */   
 /*  538:     */   public EntityItem a(boolean paramBoolean)
 /*  539:     */   {
-/*  540: 639 */     return a(this.bg.removeItems(this.bg.c, (paramBoolean) && (this.bg.h() != null) ? this.bg.h().stackSize : 1), false, true);
+/*  540: 639 */     return a(this.inventory.removeItems(this.inventory.c, (paramBoolean) && (this.inventory.getHeldItem() != null) ? this.inventory.getHeldItem().stackSize : 1), false, true);
 /*  541:     */   }
 /*  542:     */   
 /*  543:     */   public EntityItem a(ItemStack paramamj, boolean paramBoolean)
@@ -595,13 +595,13 @@ package net.minecraft.src;
 /*  594: 693 */     this.world.spawnEntity(paramadw);
 /*  595:     */   }
 /*  596:     */   
-/*  597:     */   public float a(ProtoBlock paramatr)
+/*  597:     */   public float a(BlockType paramatr)
 /*  598:     */   {
-/*  599: 697 */     float f1 = this.bg.a(paramatr);
+/*  599: 697 */     float f1 = this.inventory.a(paramatr);
 /*  600: 698 */     if (f1 > 1.0F)
 /*  601:     */     {
 /*  602: 699 */       int j = aph.c(this);
-/*  603: 700 */       ItemStack localamj = this.bg.h();
+/*  603: 700 */       ItemStack localamj = this.inventory.getHeldItem();
 /*  604: 702 */       if ((j > 0) && (localamj != null)) {
 /*  605: 703 */         f1 += j * j + 1;
 /*  606:     */       }
@@ -632,15 +632,15 @@ package net.minecraft.src;
 /*  631: 732 */     if ((a(Material.water)) && (!aph.j(this))) {
 /*  632: 733 */       f1 /= 5.0F;
 /*  633:     */     }
-/*  634: 735 */     if (!this.C) {
+/*  634: 735 */     if (!this.landing) {
 /*  635: 736 */       f1 /= 5.0F;
 /*  636:     */     }
 /*  637: 739 */     return f1;
 /*  638:     */   }
 /*  639:     */   
-/*  640:     */   public boolean canHarvestBlock(ProtoBlock paramatr)
+/*  640:     */   public boolean canHarvestBlock(BlockType paramatr)
 /*  641:     */   {
-/*  642: 743 */     return this.bg.canHarvestBlock(paramatr);
+/*  642: 743 */     return this.inventory.canHarvestBlock(paramatr);
 /*  643:     */   }
 /*  644:     */   
 /*  645:     */   public void readEntityFromNBT(NBTTagCompound paramfn)
@@ -648,8 +648,8 @@ package net.minecraft.src;
 /*  647: 749 */     super.readEntityFromNBT(paramfn);
 /*  648: 750 */     this.uuid = a(this.bF);
 /*  649: 751 */     fv localfv1 = paramfn.c("Inventory", 10);
-/*  650: 752 */     this.bg.b(localfv1);
-/*  651: 753 */     this.bg.c = paramfn.getInteger("SelectedItemSlot");
+/*  650: 752 */     this.inventory.b(localfv1);
+/*  651: 753 */     this.inventory.c = paramfn.getInteger("SelectedItemSlot");
 /*  652: 754 */     this.bu = paramfn.getBoolean("Sleeping");
 /*  653: 755 */     this.b = paramfn.e("SleepTimer");
 /*  654:     */     
@@ -683,8 +683,8 @@ package net.minecraft.src;
 /*  682:     */   public void writeEntityToNBT(NBTTagCompound paramfn)
 /*  683:     */   {
 /*  684: 787 */     super.writeEntityToNBT(paramfn);
-/*  685: 788 */     paramfn.setNBT("Inventory", this.bg.a(new fv()));
-/*  686: 789 */     paramfn.setInt("SelectedItemSlot", this.bg.c);
+/*  685: 788 */     paramfn.setNBT("Inventory", this.inventory.a(new fv()));
+/*  686: 789 */     paramfn.setInt("SelectedItemSlot", this.inventory.c);
 /*  687: 790 */     paramfn.setBoolean("Sleeping", this.bu);
 /*  688: 791 */     paramfn.setShort("SleepTimer", (short)this.b);
 /*  689: 792 */     paramfn.setFloat("XpP", this.bB);
@@ -703,13 +703,13 @@ package net.minecraft.src;
 /*  702: 806 */     this.abilities.a(paramfn);
 /*  703: 807 */     paramfn.setNBT("EnderItems", this.a.h());
 /*  704:     */     
-/*  705: 809 */     ItemStack localamj = this.bg.h();
+/*  705: 809 */     ItemStack localamj = this.inventory.getHeldItem();
 /*  706: 810 */     if ((localamj != null) && (localamj.getItem() != null)) {
 /*  707: 811 */       paramfn.setNBT("SelectedItem", localamj.writeToNBT(new NBTTagCompound()));
 /*  708:     */     }
 /*  709:     */   }
 /*  710:     */   
-/*  711:     */   public boolean a(DamageSource paramwh, float paramFloat)
+/*  711:     */   public boolean receiveDamage(DamageSource paramwh, float paramFloat)
 /*  712:     */   {
 /*  713: 819 */     if (isImmuneTo(paramwh)) {
 /*  714: 820 */       return false;
@@ -744,7 +744,7 @@ package net.minecraft.src;
 /*  743: 853 */       (((EntityArrow)localwv).c != null)) {
 /*  744: 854 */       localwv = ((EntityArrow)localwv).c;
 /*  745:     */     }
-/*  746: 858 */     return super.a(paramwh, paramFloat);
+/*  746: 858 */     return super.receiveDamage(paramwh, paramFloat);
 /*  747:     */   }
 /*  748:     */   
 /*  749:     */   public boolean a(EntityPlayer paramahd)
@@ -762,23 +762,23 @@ package net.minecraft.src;
 /*  761:     */   
 /*  762:     */   protected void damageArmor(float paramFloat)
 /*  763:     */   {
-/*  764: 876 */     this.bg.a(paramFloat);
+/*  764: 876 */     this.inventory.a(paramFloat);
 /*  765:     */   }
 /*  766:     */   
 /*  767:     */   public int getArmorValue()
 /*  768:     */   {
-/*  769: 881 */     return this.bg.m();
+/*  769: 881 */     return this.inventory.m();
 /*  770:     */   }
 /*  771:     */   
 /*  772:     */   public float bX()
 /*  773:     */   {
 /*  774: 885 */     int j = 0;
-/*  775: 886 */     for (ItemStack localamj : this.bg.armors) {
+/*  775: 886 */     for (ItemStack localamj : this.inventory.armors) {
 /*  776: 887 */       if (localamj != null) {
 /*  777: 888 */         j++;
 /*  778:     */       }
 /*  779:     */     }
-/*  780: 891 */     return j / this.bg.armors.length;
+/*  780: 891 */     return j / this.inventory.armors.length;
 /*  781:     */   }
 /*  782:     */   
 /*  783:     */   protected void d(DamageSource source, float value)
@@ -832,7 +832,7 @@ package net.minecraft.src;
 /*  831:     */     }
 /*  832: 955 */     Object localObject1 = bY();
 /*  833: 956 */     ItemStack localObject2 = localObject1 != null ? ((ItemStack)localObject1).k() : null;
-/*  834: 957 */     if (paramwv.e(this))
+/*  834: 957 */     if (paramwv.onRightClick(this))
 /*  835:     */     {
 /*  836: 961 */       if ((localObject1 != null) && (localObject1 == bY())) {
 /*  837: 962 */         if ((((ItemStack)localObject1).stackSize <= 0) && (!this.abilities.instabuild)) {
@@ -861,12 +861,12 @@ package net.minecraft.src;
 /*  860:     */   
 /*  861:     */   public ItemStack bY()
 /*  862:     */   {
-/*  863: 990 */     return this.bg.h();
+/*  863: 990 */     return this.inventory.getHeldItem();
 /*  864:     */   }
 /*  865:     */   
 /*  866:     */   public void bZ()
 /*  867:     */   {
-/*  868: 994 */     this.bg.a(this.bg.c, null);
+/*  868: 994 */     this.inventory.a(this.inventory.c, null);
 /*  869:     */   }
 /*  870:     */   
 /*  871:     */   public double am()
@@ -897,7 +897,7 @@ package net.minecraft.src;
 /*  896:     */     }
 /*  897:1025 */     if ((f1 > 0.0F) || (f2 > 0.0F))
 /*  898:     */     {
-/*  899:1026 */       int k = (this.O > 0.0F) && (!this.C) && (!j_()) && (!isInWater()) && (!a(Potion.blindness)) && (this.vehicle == null) && ((paramwv instanceof EntityLiving)) ? 1 : 0;
+/*  899:1026 */       int k = (this.fallDistance > 0.0F) && (!this.landing) && (!j_()) && (!isInWater()) && (!a(Potion.blindness)) && (this.vehicle == null) && ((paramwv instanceof EntityLiving)) ? 1 : 0;
 /*  900:1027 */       if ((k != 0) && (f1 > 0.0F)) {
 /*  901:1028 */         f1 *= 1.5F;
 /*  902:     */       }
@@ -916,7 +916,7 @@ package net.minecraft.src;
 /*  915:1042 */       double d2 = paramwv.yVelocity;
 /*  916:1043 */       double d3 = paramwv.zVelocity;
 /*  917:     */       
-/*  918:1045 */       boolean bool = paramwv.a(DamageSource.fromPlayer(this), f1);
+/*  918:1045 */       boolean bool = paramwv.receiveDamage(DamageSource.fromPlayer(this), f1);
 /*  919:1046 */       if (bool)
 /*  920:     */       {
 /*  921:1047 */         if (j > 0)
@@ -1098,7 +1098,7 @@ package net.minecraft.src;
 /* 1097:1252 */     a(0.6F, 1.8F);
 /* 1098:     */     
 /* 1099:1254 */     Block localbec = this.world.getBlock(this.bv);
-/* 1100:1257 */     if ((this.bv != null) && (localbec.getProto() == BlockList.C))
+/* 1100:1257 */     if ((this.bv != null) && (localbec.getType() == BlockList.C))
 /* 1101:     */     {
 /* 1102:1258 */       this.world.setBlock(this.bv, localbec.setData(atp.b, Boolean.valueOf(false)), 4);
 /* 1103:     */       
@@ -1120,18 +1120,18 @@ package net.minecraft.src;
 /* 1119:     */   
 /* 1120:     */   private boolean p()
 /* 1121:     */   {
-/* 1122:1280 */     return this.world.getBlock(this.bv).getProto() == BlockList.C;
+/* 1122:1280 */     return this.world.getBlock(this.bv).getType() == BlockList.C;
 /* 1123:     */   }
 /* 1124:     */   
 /* 1125:     */   public static BlockPosition a(World paramaqu, BlockPosition paramdt, boolean paramBoolean)
 /* 1126:     */   {
-/* 1127:1286 */     if (paramaqu.getBlock(paramdt).getProto() != BlockList.C)
+/* 1127:1286 */     if (paramaqu.getBlock(paramdt).getType() != BlockList.C)
 /* 1128:     */     {
 /* 1129:1287 */       if (!paramBoolean) {
 /* 1130:1288 */         return null;
 /* 1131:     */       }
-/* 1132:1291 */       Material localbof1 = paramaqu.getBlock(paramdt).getProto().getMaterial();
-/* 1133:1292 */       Material localbof2 = paramaqu.getBlock(paramdt.up()).getProto().getMaterial();
+/* 1132:1291 */       Material localbof1 = paramaqu.getBlock(paramdt).getType().getMaterial();
+/* 1133:1292 */       Material localbof2 = paramaqu.getBlock(paramdt.up()).getType().getMaterial();
 /* 1134:1293 */       int j = (!localbof1.a()) && (!localbof1.isLiquid()) ? 1 : 0;
 /* 1135:1294 */       int k = (!localbof2.a()) && (!localbof2.isLiquid()) ? 1 : 0;
 /* 1136:1296 */       if ((j != 0) && (k != 0)) {
@@ -1278,7 +1278,7 @@ package net.minecraft.src;
 /* 1277:1441 */         increaseStat(StatList.n, (int)Math.round(paramDouble2 * 100.0D));
 /* 1278:     */       }
 /* 1279:     */     }
-/* 1280:1443 */     else if (this.C)
+/* 1280:1443 */     else if (this.landing)
 /* 1281:     */     {
 /* 1282:1444 */       j = Math.round(MathUtils.sqrt(paramDouble1 * paramDouble1 + paramDouble3 * paramDouble3) * 100.0F);
 /* 1283:1445 */       if (j > 0)
@@ -1322,7 +1322,7 @@ package net.minecraft.src;
 /* 1321:1475 */             increaseStat(AchievementList.q);
 /* 1322:     */           }
 /* 1323:     */         }
-/* 1324:1477 */         else if ((this.vehicle instanceof adu))
+/* 1324:1477 */         else if ((this.vehicle instanceof EntityBoat))
 /* 1325:     */         {
 /* 1326:1478 */           increaseStat(StatList.r, j);
 /* 1327:     */         }
@@ -1384,7 +1384,7 @@ package net.minecraft.src;
 /* 1383:     */   
 /* 1384:     */   public ItemStack getArmor(int paramInt)
 /* 1385:     */   {
-/* 1386:1537 */     return this.bg.e(paramInt);
+/* 1386:1537 */     return this.inventory.e(paramInt);
 /* 1387:     */   }
 /* 1388:     */   
 /* 1389:     */   public void u(int paramInt)
@@ -1500,7 +1500,7 @@ package net.minecraft.src;
 /* 1499:1646 */       return false;
 /* 1500:     */     }
 /* 1501:1649 */     BlockPosition localdt = paramdt.offset(paramej.opposite());
-/* 1502:1650 */     ProtoBlock localatr = this.world.getBlock(localdt).getProto();
+/* 1502:1650 */     BlockType localatr = this.world.getBlock(localdt).getType();
 /* 1503:     */     
 /* 1504:1652 */     return (paramamj.d(localatr)) || (paramamj.x());
 /* 1505:     */   }
@@ -1531,7 +1531,7 @@ package net.minecraft.src;
 /* 1530:     */   {
 /* 1531:1680 */     if (paramBoolean)
 /* 1532:     */     {
-/* 1533:1681 */       this.bg.b(paramahd.bg);
+/* 1533:1681 */       this.inventory.b(paramahd.inventory);
 /* 1534:     */       
 /* 1535:1683 */       h(paramahd.getHealth());
 /* 1536:1684 */       this.bj = paramahd.bj;
@@ -1545,7 +1545,7 @@ package net.minecraft.src;
 /* 1544:     */     }
 /* 1545:1692 */     else if (this.world.getGameRules().getBoolean("keepInventory"))
 /* 1546:     */     {
-/* 1547:1693 */       this.bg.b(paramahd.bg);
+/* 1547:1693 */       this.inventory.b(paramahd.inventory);
 /* 1548:     */       
 /* 1549:1695 */       this.bz = paramahd.bz;
 /* 1550:1696 */       this.bA = paramahd.bA;
@@ -1553,7 +1553,7 @@ package net.minecraft.src;
 /* 1552:1698 */       r(paramahd.bW());
 /* 1553:     */     }
 /* 1554:1700 */     this.a = paramahd.a;
-/* 1555:1701 */     H().b(10, Byte.valueOf(paramahd.H().a(10)));
+/* 1555:1701 */     H().b(10, Byte.valueOf(paramahd.H().getByte(10)));
 /* 1556:     */   }
 /* 1557:     */   
 /* 1558:     */   protected boolean r_()
@@ -1578,19 +1578,19 @@ package net.minecraft.src;
 /* 1577:     */   public ItemStack getItemStack(int paramInt)
 /* 1578:     */   {
 /* 1579:1726 */     if (paramInt == 0) {
-/* 1580:1727 */       return this.bg.h();
+/* 1580:1727 */       return this.inventory.getHeldItem();
 /* 1581:     */     }
-/* 1582:1729 */     return this.bg.armors[(paramInt - 1)];
+/* 1582:1729 */     return this.inventory.armors[(paramInt - 1)];
 /* 1583:     */   }
 /* 1584:     */   
 /* 1585:     */   public ItemStack getHeldItemStack()
 /* 1586:     */   {
-/* 1587:1734 */     return this.bg.h();
+/* 1587:1734 */     return this.inventory.getHeldItem();
 /* 1588:     */   }
 /* 1589:     */   
 /* 1590:     */   public void setItemStack(int paramInt, ItemStack paramamj)
 /* 1591:     */   {
-/* 1592:1739 */     this.bg.armors[paramInt] = paramamj;
+/* 1592:1739 */     this.inventory.armors[paramInt] = paramamj;
 /* 1593:     */   }
 /* 1594:     */   
 /* 1595:     */   public boolean f(EntityPlayer paramahd)
@@ -1612,7 +1612,7 @@ package net.minecraft.src;
 /* 1611:     */   
 /* 1612:     */   public ItemStack[] at()
 /* 1613:     */   {
-/* 1614:1763 */     return this.bg.armors;
+/* 1614:1763 */     return this.inventory.armors;
 /* 1615:     */   }
 /* 1616:     */   
 /* 1617:     */   public boolean aK()
@@ -1661,7 +1661,7 @@ package net.minecraft.src;
 /* 1660:     */   
 /* 1661:     */   public float bM()
 /* 1662:     */   {
-/* 1663:1813 */     return H().d(17);
+/* 1663:1813 */     return H().getFloat(17);
 /* 1664:     */   }
 /* 1665:     */   
 /* 1666:     */   public static UUID a(GameProfile paramGameProfile)
@@ -1692,7 +1692,7 @@ package net.minecraft.src;
 /* 1691:     */   
 /* 1692:     */   public boolean a(ahh paramahh)
 /* 1693:     */   {
-/* 1694:1841 */     return (H().a(10) & paramahh.a()) == paramahh.a();
+/* 1694:1841 */     return (H().getByte(10) & paramahh.a()) == paramahh.a();
 /* 1695:     */   }
 /* 1696:     */   
 /* 1697:     */   public boolean t_()
@@ -1702,13 +1702,13 @@ package net.minecraft.src;
 /* 1701:     */   
 /* 1702:     */   public boolean d(int paramInt, ItemStack paramamj)
 /* 1703:     */   {
-/* 1704:1851 */     if ((paramInt >= 0) && (paramInt < this.bg.items.length))
+/* 1704:1851 */     if ((paramInt >= 0) && (paramInt < this.inventory.items.length))
 /* 1705:     */     {
-/* 1706:1852 */       this.bg.a(paramInt, paramamj);
+/* 1706:1852 */       this.inventory.a(paramInt, paramamj);
 /* 1707:1853 */       return true;
 /* 1708:     */     }
 /* 1709:1855 */     int j = paramInt - 100;
-/* 1710:1856 */     if ((j >= 0) && (j < this.bg.armors.length))
+/* 1710:1856 */     if ((j >= 0) && (j < this.inventory.armors.length))
 /* 1711:     */     {
 /* 1712:1857 */       int k = j + 1;
 /* 1713:1858 */       if ((paramamj != null) && (paramamj.getItem() != null)) {
@@ -1722,7 +1722,7 @@ package net.minecraft.src;
 /* 1721:1864 */           return false;
 /* 1722:     */         }
 /* 1723:     */       }
-/* 1724:1867 */       this.bg.a(j + this.bg.items.length, paramamj);
+/* 1724:1867 */       this.inventory.a(j + this.inventory.items.length, paramamj);
 /* 1725:1868 */       return true;
 /* 1726:     */     }
 /* 1727:1870 */     int k = paramInt - 200;
